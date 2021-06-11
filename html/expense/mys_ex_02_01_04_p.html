@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_EX_02_01_04_P] 지출 > 정기지출 > 항목별 보기 (작성자: 누리어 시스템 김삼희)// -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>상세보기 | 지출 | KB국민은행 마이데이터</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
+    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
+    <link rel="stylesheet" href="../../static/css/ui.css">
+</head>
+
+<body>
+    <div class="skip-nav">
+        <a href="#content">본문으로 이동하기</a>
+    </div>
+    <div class="app">
+        <!-- app-header (for MyMoney) //-->
+        <!-- app-header [s] -->
+        <header class="app-header">
+            <strong class="page-tit">상세보기</strong>
+            <!-- <button class="btn-close"><span>닫기</span></button> -->
+            <!-- 수정 : layer 팝업 -> 페이지로 전환용 -->
+            <a href="javascript:history.back();" class="btn-close" role="button"><span>뒤로가기</span></a>
+        </header>
+        <!-- app-header [e] -->
+        <!-- // app-header (for MyMoney) -->
+
+        <!-- app-container //-->
+        <div class="app-container">
+            <!-- app-content // -->
+            <main class="app-content regulaer-expense-layered">
+                <!-- 타이틀//-->
+                <section class="kb-sec tit-area_icon-bg">
+                    <h3 class="h3"><span class="icon-box_circle"><i class="icon-20"></i></span>정기지출 항목명</h3>
+                    <div class="mt24">
+                        <a href="../../html/expense/mys_ex_02_02_00.html" class="btn-line_icon btn-edit-regular-list"><i class="icon-20"></i><span>수정하기</span></a>
+                        <button class="btn-line_icon btn-delete-regular-list" onclick="deleteRegularExpenseList()"><i class="icon-20"></i><span>삭제하기</span></button>
+                    </div>
+                </section>
+                <!-- //타이틀 -->
+                <!-- 이용정보//-->
+                <section class="kb-sec dividing-line-bottom">
+                    <h4 class="h4">이용정보</h4>
+                    <dl class="description-list type2">
+                        <dt>이용요금</dt>
+                        <dd class="amount"><span class="num">20,000</span>원</dd>
+                        <dt>이용주기</dt>
+                        <dd>1개월</dd>
+                        <dt>이용시작</dt>
+                        <dd class="date">2021.06.13</dd>
+                    </dl>
+                </section>
+                <!-- //이용정보 -->
+                <!-- 결제정보//-->
+                <section class="kb-sec  dividing-line-bottom">
+                    <h4 class="h4">결제정보</h4>
+                    <dl class="description-list type2">
+                        <dt>결제수단</dt>
+                        <dd>XX카드상품명(카드번호)</dd>
+                        <dt>결제일</dt>
+                        <dd class="date">매월15일</dd>
+                    </dl>
+                </section>
+                <!-- //결제정보 -->
+                <!-- 이용내역//-->
+                <section class="kb-sec">
+                    <h4 class="h4 type-icon">
+                        <strong>이용내역 <span>(최근 3개월)</span></strong>
+                        <button type="button" class="btn-share-regular-list" data-call-layered="bsShareRegularExpenseList">
+                            <span class="icon-box_circle_line"><i class="icon-share"></i></span>
+                        </button>
+                    </h4>
+                    <ul class="pay-use-list">
+                        <li>
+                            <p>
+                                <span class="date">4월 28일</span>
+                                <strong class="amount"><span class="num">20,000</span>원</strong>
+                            </p>
+                            <span class="tag-label" data-state="wait">D-3 예정</span>
+                        </li>
+                        <li>
+                            <p>
+                                <span class="date">4월 28일</span>
+                                <strong class="amount"><span class="num">20,000</span>원</strong>
+                            </p>
+                            <span class="tag-label" data-state="complete">결제완료</span>
+                        </li>
+                        <li>
+                            <p>
+                                <span class="date">4월 28일</span>
+                                <strong class="amount"><span class="num">20,000</span>원</strong>
+                            </p>
+                            <span class="tag-label" data-state="complete">결제완료</span>
+                        </li>
+                        <li>
+                            <p>
+                                <span class="date">4월 28일</span>
+                                <strong class="amount"><span class="num">20,000</span>원</strong>
+                            </p>
+                            <span class="tag-label" data-state="complete">결제완료</span>
+                        </li>
+                    </ul>
+                </section>
+                <!-- //이용내역 -->
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+        <!-- Layer (fullpage popup, modal, bottom sheet) // -->
+        <div class="layered">
+            <!-- [MYS_EX_01_02_00] 지출 > 가계부 > 수기등록 > 카테고리 아이콘 선택 팝업 (작성자: 누리어 시스템 김삼희)// -->
+            <div class="bottom-sheet" data-layered-name="bsShareRegularExpenseList">
+                <div class="bottom-sheet_header">
+                    <span class="tit">공유</span>
+                </div>
+                <div class="bottom-sheet_contents">
+                    <ul class="grid-list" data-col="3">
+                        <li><button type="button" class=""><i class="icon-20"></i><span>카카오톡</span></button></li>
+                        <li><button type="button" class=""><i class="icon-20"></i><span>리브똑똑</span></button></li>
+                        <li><button type="button" class=""><i class="icon-20"></i><span>SMS전송</span></button></li>
+                    </ul>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!--// 지출 > 가계부 > 수기등록 > 카테고리 아이콘 선택 팝업 -->
+        </div>
+        <!-- // Layer (fullpage popup, modal, bottom sheet) -->
+    </div>
+
+    <!-- Script -->
+    <!-- Common Library -->
+    <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
+    <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
+    <script src="../../static/common/lib/current-device.min.js"></script>
+    <script src="../../static/common/lib/moment.min.js"></script>
+    <script src="../../static/common/lib/swiper-bundle.min.js"></script>
+    <!-- <script src="../../static/js/bottomSheet.js"></script> -->
+    <script src="../../static/js/modalPopup.js"></script>
+    <script src="../../static/js/menu.js"></script>
+    <!-- Add Library (this page only)-->
+    <script src="../../static/js/ui.js"></script>
+    <script>
+        function deleteRegularExpenseList() {
+            modalPopup({
+                title: "내역에서 삭제",
+                message: "{정기지출내역}에서 {정기지출항목}을(를) 삭제하시겠습니까?",
+                type: "confirm",
+                textOkButton: "확인",
+                textCancelButton: "취소",
+                onOk: function() {
+                    deleteRegularExpenseListConfirm();
+                },
+                onCancel: function() {
+                    console.log('DEMO 3 cancel');
+                }
+            });
+        }
+
+        function deleteRegularExpenseListConfirm() {
+            modalPopup({
+                title: "내역에서 삭제",
+                message: "{정기지출항목}아(가) 삭제되었습니다.",
+                type: "confirm",
+                textOkButton: "확인"
+            });
+        }
+    </script>
+    <!-- Add Script -->
+
+</body>
+
+</html>

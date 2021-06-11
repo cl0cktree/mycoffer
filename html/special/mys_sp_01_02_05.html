@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_SP_01_02_05] 작성자: 누리어 시스템 황철민 -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>나만의 대출상품 | 신용관리 | KB국민은행 마이데이터</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
+    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
+    <link rel="stylesheet" href="../../static/css/ui.css">
+</head>
+
+<body>
+    <div class="skip-nav">
+        <a href="#content">본문으로 이동하기</a>
+    </div>
+    <div class="app">
+        <!-- app-header (for MyMoney) //-->
+        <!-- app-header [s] -->
+        <header class="app-header">
+            <a href="javascript:history.back();" class="btn-history-back" role="button"><i class="icon-back">뒤로가기</i></a>
+            <strong class="page-tit">나만의 대출상품</strong>
+            <button type="button" class="btn-allmenu"><i class="icon-menu">전체메뉴</i></button>
+        </header>
+        <!-- app-header [e] -->
+        <div class="app-menu">
+            <div class="all-menu-top">
+                <div class="util-menu">
+                    <a href="javascript:;" class="" role="button"><i class="icon-setting_24">설정</i></a>
+                    <a href="javascript:;" class="all-menu-notice new" role="button"><i class="icon-bell_24">알림</i></a><!-- 새로운 알림이 있을 때 .new -->
+                    <button type="button" class="btn-close"><span>닫기</span></button>
+                </div>
+                <div><a href="javascript:;" class="user-name"><strong>김국민 님</strong><i class="icon-move"></i></a></div>
+                <ul class="major-menu">
+                    <li><a href="javascript:;"><span><i class="icon-assets_24"></i></span><strong>자산등록</strong></a></li>
+                    <li><a href="javascript:;"><span><i class="icon-graph_24"></i></span><strong>소비 리포트</strong></a></li>
+                    <li><a href="javascript:;"><span><i class="icon-doc_24"></i></span><strong>공지사항</strong></a></li>
+                    <li><a href="javascript:;"><span><i class="icon-gift_24"></i></span><strong>My 혜택</strong></a></li><!-- 수정 : 2021.06.09 -->
+                </ul>
+            </div>
+            <div class="all-menu-list-wrap">
+                <div class="manage-mydata">
+                    <strong class="tit">마이데이터 관리</strong><!-- 수정 : 2021.06.01 -->
+                    <a href="javascript:;"><span>70</span><i class="icon-move"></i></a>
+                </div>
+                <ul class="all-menu-list">
+                    <li class="is-active">
+                        <a href="javascript:;">자산</a>
+                        <ul>
+                            <li><a href="javascript:;">자산통합조회</a></li>
+                            <li><a href="javascript:;">입출금&middot;페이</a></li>
+                            <li><a href="javascript:;">예적금</a></li>
+                            <li><a href="javascript:;">투자</a></li>
+                            <li><a href="javascript:;">보험</a></li>
+                            <li><a href="javascript:;">대출&middot;부채</a></li>
+                            <li><a href="javascript:;">부동산</a></li>
+                            <li><a href="javascript:;">자동차</a></li>
+                            <li><a href="javascript:;">My 금고</a></li><!-- 수정 : 2021.06.01 -->
+                            <li><a href="javascript:;">외화</a></li>
+                            <li><a href="javascript:;">적립포인트</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">D플랜</a>
+                        <ul>
+                            <li><a href="javascript:;">월수령액</a></li>
+                            <li><a href="javascript:;">라이프이벤트</a></li>
+                            <li><a href="javascript:;">나의기록</a></li>
+                            <li><a href="javascript:;">D플랜 설정</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">지출</a>
+                        <ul>
+                            <li><a href="javascript:;">가계부</a></li>
+                            <li><a href="javascript:;">정기지출</a></li>
+                            <li><a href="javascript:;">카드관리</a></li>
+                            <li><a href="javascript:;">소비리포트</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">목표 챌린지</a>
+                        <ul>
+                            <li><a href="javascript:;">아낀만큼</a></li>
+                            <li><a href="javascript:;">쓰는만큼</a></li><!-- 수정 : 2021.06.09 -->
+                            <li><a href="javascript:;">남들만큼</a></li>
+                            <li><a href="javascript:;">저금통</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">제휴/특화</a>
+                        <ul>
+                            <li><a href="javascript:;">신용</a></li>
+                            <li><a href="javascript:;">My Fun Data</a></li><!-- 수정 : 2021.06.09 -->
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">슬그Money</a><!-- 수정 : 2021.06.09 -->
+                    </li>
+                    <li>
+                        <a href="javascript:;">마이페이지</a>
+                        <ul>
+                            <li><a href="javascript:;">마이데이터 관리</a></li><!-- 수정 : 2021.06.01 -->
+                            <li><a href="javascript:;">내정보</a></li>
+                            <li><a href="javascript:;">My 혜택</a></li><!-- 수정 : 2021.06.09 -->
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">고객센터</a>
+                        <ul>
+                            <li><a href="javascript:;">FAQ</a></li>
+                            <li><a href="javascript:;">전화상담</a></li>
+                            <li><a href="javascript:;">약관 및 정책</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- // app-header -->
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+
+            <!-- app-lnb //-->
+            <div class="app-lnb">
+                <!-- 프로세스 -->
+                <!-- TAB -->
+            </div>
+            <!-- //app-lnb -->
+
+            <!-- app-content // -->
+            <main class="app-content">
+                <!-- 컨텐츠 영역 -->
+                <!-- 자산에 대출이 있으면 // -->
+                <section class="kb-sec full loan-top-box my-loan-rate">
+                    <div class="inner">
+                        <span class="name"><strong>김국민</strong>님의</span>
+                        <span class="rate">평균 금리는 <strong class="num">4.53%</strong> 입니다.</span>
+                    </div>
+                </section>
+                <!-- // 자산에 대출이 있으면 -->
+                <!-- 자산에 대출이 없으면 // -->
+                <section class="kb-sec full loan-top-box my-loan-link">
+                    <a href="#">
+                        <span class="txt1">서류NO! 방문NO! 금융지원 OK~</span>
+                        <strong>신용대출!</strong>
+                        <span class="txt2">내 신용만으로도 쉽고 빠르게~</span>
+                    </a>
+                </section>
+                <!-- // 자산에 대출이 없으면 -->
+                <section class="kb-sec loan-product-banners tab-swiper-wrap">
+                    <div class="tab swiper-container" style="margin-right: -24px;">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide is-active"><a href="#target01">신용대출</a></li>
+                            <li class="swiper-slide"><a href="#target02">주택자금대출</a></li>
+                            <li class="swiper-slide"><a href="#target03">자동차 대출</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab_contents">
+                        <div class="items is-active" id="target01">
+                            <div class="swiper-container">
+                                <ul class="swiper-wrapper">
+                                    <li class="swiper-slide">
+                                        <a class="item" href="#">
+                                            <span class="text1">내게 꼭 맞는 신용대출</span>
+                                            <span class="name">KB Star 신용대출 최대 2줄까지 KB Star 신용대출 최대 2줄까지 2줄까지</span>
+                                            <span class="text2">대출한도 : 최대 1.5억원</span>
+                                        </a>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <a class="item" href="#">
+                                            <span class="text1">내게 꼭 맞는 신용대출</span>
+                                            <span class="name">KB Star 신용대출</span>
+                                            <span class="text2">대출한도 : 최대 1.5억원</span>
+                                        </a>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <a class="item" href="#">
+                                            <span class="text1">내게 꼭 맞는 신용대출</span>
+                                            <span class="name">KB Star 신용대출 길면 2줄까지3</span>
+                                            <span class="text2">대출한도 : 최대 1.5억원</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="swiper-pagination" data-type="fraction"></div>
+                            </div>
+                        </div>
+                        <div class="items" id="target02">
+                            <div class="swiper-container">
+                                <ul class="swiper-wrapper">
+                                    <li class="swiper-slide">
+                                        <a class="item" href="#">
+                                            <span class="text1">내 집 구입을 계획하신다면</span>
+                                            <span class="name">KB Star 주택구매자금대출1</span>
+                                            <span class="text2"></span>
+                                        </a>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <a class="item" href="#">
+                                            <span class="text1">내 집 구입을 계획하신다면</span>
+                                            <span class="name">KB Star 주택구매자금대출2</span>
+                                            <span class="text2"></span>
+                                        </a>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <a class="item" href="#">
+                                            <span class="text1">내 집 구입을 계획하신다면</span>
+                                            <span class="name">KB Star 주택구매자금대출3</span>
+                                            <span class="text2"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="swiper-pagination" data-type="fraction"></div>
+                            </div>
+                        </div>
+                        <div class="items" id="target03">
+                            <div class="no-data">
+                                <i class="icon-info_24"></i>
+                                <p>추천 상품이 없습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="kb-sec recommend-prod-job">
+                    <strong class="tit">직업별 우대 대출 추천상품</strong>
+                    <ul class="prod-lists">
+                        <li><a href="#"><span class="subtxt">재직중인 교직원을 위한</span><span class="maintxt">KB 선생님든든 신용대출(교직원)</span></a></li>
+                        <li><a href="#"><span class="subtxt">자영업자, 프리랜서라면 이 상품</span><span class="maintxt">KB 행복드림론 II(i-STAR 행복드림론 II-자영업자)</span></a></li>
+                        <li><a href="#"><span class="subtxt">퇴직금, 재직기간따라 한도 조정</span><span class="maintxt">KB 공무원우대대출</span></a></li>
+                        <li><a href="#"><span class="subtxt">나라를 지키는 당신을 위한</span><span class="maintxt">군인생활안정자금대출 (KB i-STAR 군인생활안정자금대출)</span></a></li>
+                    </ul>
+                </section>
+                <!--  // SECTION -->
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+        <!-- Layer (fullpage popup, modal, bottom sheet) // -->
+        <div class="layered">
+
+        </div>
+        <!-- // Layer (fullpage popup, modal, bottom sheet) -->
+    </div>
+
+    <!-- Script -->
+    <!-- Common Library -->
+    <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
+    <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
+    <script src="../../static/common/lib/current-device.min.js"></script>
+    <script src="../../static/common/lib/moment.min.js"></script>
+    <script src="../../static/common/lib/swiper-bundle.min.js"></script>
+    <!-- <script src="../../static/js/bottomSheet.js"></script> -->
+    <script src="../../static/js/modalPopup.js"></script>
+    <script src="../../static/js/menu.js"></script>
+    <!-- Add Library (this page only)-->
+    <script src="../../static/js/ui.js"></script>
+    <!-- Add Script -->
+    <script>
+        // var tabSwiper1 = new Swiper('#target01 .swiper-container',{});
+        // var tabSwiper2 = new Swiper('#target02 .swiper-container',{});
+        // var tabSwiper3 = new Swiper('#target03 .swiper-container',{});
+    </script>
+
+</body>
+
+</html>

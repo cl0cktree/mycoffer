@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [mys_ex_04] 작성자 : 누리어 시스템 김삼희 -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LAYER | 소비리포트 | KB국민은행 마이데이터</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
+    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
+    <link rel="stylesheet" href="../../static/css/ui.css">
+    <style>
+        .layer-call {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .layer-call>button {
+            flex-flow: column;
+            margin-top: 10px;
+        }
+
+        .layer-call>button:before {
+            content: attr(data-page-id);
+        }
+
+        .layer-call>button span {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layer-call">
+        <!-- 지출 > 소비리포트 //--->
+        <h1 class="h2">소비리포트</h1>
+        <button type="button" class="btn-line" data-call-layered="bsExpenseReportSelectMonthly" data-page-id="MYS_EX_04_01_01_P"><span>월간 리포트 선택 팝업</span></button>
+        <button type="button" class="btn-line" data-call-layered="bsExpenseReportSelectWeekly" data-page-id="MYS_EX_04_03_01_P"><span>주간 리포트 선택 팝업</span></button>
+        <button type="button" class="btn-line" data-call-layered="bsYear" data-page-id="MYS_EX_04_00_00_P01"><span>연도 선택 팝업</span></button>
+        <!--// 지출 > 소비리포트 --->
+    </div>
+
+    <div class="layered">
+
+        <!-- 연도 선택 바텀시트 //-->
+        <div class="bottom-sheet" data-layered-name="bsYear">
+            <div class="bottom-sheet_header">
+                <span class="tit">연도 선택</span>
+            </div>
+            <div class="bottom-sheet_contents">
+                <section class="kb-sec">
+                    <ul class="select-list">
+                        <li class="is-active"><button type="button"><strong class="tit">2021년</strong><i class="icon-20"></i></button></li>
+                        <li><button type="button"><strong class="tit">2020년</strong><i class="icon-20"></i></button></li>
+                        <li><button type="button"><strong class="tit">2019년</strong><i class="icon-20"></i></button></li>
+                        <li><button type="button"><strong class="tit">2018년</strong><i class="icon-20"></i></button></li>
+                    </ul>
+                </section>
+            </div>
+            <div class="bottom-sheet_buttons">
+                <button class="btn-solid_sticky" data-action="close"><span>확인</span></button>
+            </div>
+            <button class="btn-close" data-action="close"><span>닫기</span></button>
+        </div>
+        <!-- //연도 선택 바텀시트  -->
+        <!-- [MYS_EX_04_01_01_P] 지출 > 소비리포트 > 월긴리포트선택 팝업 (작성자: 누리어 시스템 김삼희)// -->
+        <div class="bottom-sheet" data-layered-name="bsExpenseReportSelectMonthly">
+            <div class="bottom-sheet_header">
+                <span class="tit">월간리포트 선택</span>
+            </div>
+            <div class="bottom-sheet_contents expense-layered">
+                <section class="kb-sec">
+                    <ul class="checkbox-group_right full-width">
+                        <li><span class="form-checkbox_20"><input type="radio" id="selectMonthlyReportOption01"><label for="selectMonthlyReportOption01">YYYY년 M월 월간리포트</label></span></li>
+                        <li><span class="form-checkbox_20"><input type="radio" id="selectMonthlyReportOption02"><label for="selectMonthlyReportOption02">YYYY년 M월 월간리포트</label></span></li>
+                        <li><span class="form-checkbox_20"><input type="radio" id="selectMonthlyReportOption03" checked=""><label for="selectMonthlyReportOption03">YYYY년 M월 월간리포트</label></span></li>
+                        <li><span class="form-checkbox_20"><input type="radio" id="selectMonthlyReportOption04" checked=""><label for="selectMonthlyReportOption04">YYYY년 M월 월간리포트</label></span></li>
+                    </ul>
+                </section>
+            </div>
+            <button class="btn-close" data-action="close"><span>닫기</span></button>
+        </div>
+        <!-- //지출 > 소비리포트 > 월긴리포트선택 팝업 -->
+
+
+        <!-- [MYS_EX_04_03_01_P] 지출 > 소비리포트 > 주간리포트선택 팝업 (작성자: 누리어 시스템 김삼희)// -->
+        <div class="bottom-sheet" data-layered-name="bsExpenseReportSelectWeekly">
+            <div class="bottom-sheet_header">
+                <span class="tit">소비리포트 선택</span>
+            </div>
+            <div class="bottom-sheet_contents expense-layered">
+                <section class="kb-sec">
+                    <ul class="checkbox-group_right full-width">
+                        <li><span class="form-checkbox_20"><input type="radio" id="selectWeeklyReportOption01"><label for="selectWeeklyReportOption01">M월 N주차 소비리포트</label></span></li>
+                        <li><span class="form-checkbox_20"><input type="radio" id="selectWeeklyReportOption02"><label for="selectWeeklyReportOption02">M월 N주차 소비리포트</label></span></li>
+                        <li><span class="form-checkbox_20"><input type="radio" id="selectWeeklyReportOption03" checked=""><label for="selectWeeklyReportOption03">M월 N주차 소비리포트</label></span></li>
+                        <li><span class="form-checkbox_20"><input type="radio" id="selectWeeklyReportOption04" checked=""><label for="selectWeeklyReportOption04">M월 N주차 소비리포트</label></span></li>
+                    </ul>
+                </section>
+            </div>
+            <button class="btn-close" data-action="close"><span>닫기</span></button>
+        </div>
+        <!-- //지출 > 소비리포트 > 주간리포트선택 팝업 -->
+
+
+    </div>
+
+    <!-- Script -->
+    <!-- Common Library -->
+    <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
+    <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
+    <script src="../../static/common/lib/current-device.min.js"></script>
+    <script src="../../static/common/lib/moment.min.js"></script>
+    <script src="../../static/common/lib/swiper-bundle.min.js"></script>
+    <!-- <script src="../../static/js/bottomSheet.js"></script> -->
+    <script src="../../static/js/modalPopup.js"></script>
+    <script src="../../static/js/menu.js"></script>
+    <!-- Add Library (this page only)-->
+    <script src="../../static/js/ui.js"></script>
+    <!-- Add Script -->
+
+    <script>
+        //레이어 확인용 스크립트 (개발시 삭제) [s]
+        var url = window.location.href;
+        var urlArr = url.split('#');
+        var pageID = urlArr[urlArr.length - 1].toUpperCase();
+
+        $('.layer-call').on('click', 'button', function() {
+            var newUrl = url.replace(pageID, '');
+            window.location.href = urlArr[0] + '#' + $(this).data('page-id');
+        });
+
+        if (pageID.indexOf('/HTML/') < 0) $('button[data-page-id=' + pageID + ']').click();
+        //레이어 확인용 스크립트 (개발시 삭제) [e]
+    </script>
+
+
+</body>
+
+</html>

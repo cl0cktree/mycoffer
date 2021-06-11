@@ -1,0 +1,179 @@
+<!-- [MYS_CO_06_01_01_08] 전송요구방법 > 통합인증 > 기관선택 > 전송 요구 항목 설정 > 공동인증서 선택 > 인증서 비밀번호 입력 > 자산 선택 > 인증서 비밀번호 입력 > 완료(작성자: 누리어 시스템 이진우)// -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Last Depth | 1st Depth | KB국민은행 마이데이터</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
+    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
+    <link rel="stylesheet" href="../../static/css/ui.css">
+</head>
+
+<body>
+    <div class="skip-nav">
+        <a href="#content">본문으로 이동하기</a>
+    </div>
+    <div class="app">
+        <!-- app-header //-->
+        <!-- app-header [s] -->
+        <header class="app-header">
+            <a href="javascript:history.back();" class="btn-history-back" role="button"><i class="icon-back">뒤로가기</i></a>
+            <strong class="page-tit"></strong>
+        </header>
+        <!-- app-header [e] -->
+        <!-- // app-header -->
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content select-assets-complete">
+                <!--// SECTION -->
+                <section class="kb-sec">
+                    <h1 class="h2">자산 정보 가져오기가 <br>완료되었습니다.</h1>
+                </section>
+                <section class="kb-sec select-recommend-employee">
+                    <h2 class="h4">권유직원선택</h2>
+                    <p>고객님의 마이데이터 서비스 가입에 가장 도움이 된 상담직원 또는 전담직원을 선택해 주시기 바랍니다.</p>
+                    <ul class="radio-group">
+                        <li>
+                            <span class="form-radio">
+                                <input type="radio" id="recommendMember" name="recommendMember" checked>
+                                <label for="recommendMember">
+                                    김민국
+                                    <em class="employee-info">
+                                        <span class="date">2021.05.31</span>
+                                        <span class="branch">역삼동 영업점 내점 상담</span>
+                                    </em>
+                                </label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="form-radio">
+                                <input type="radio" id="recommendMember02" name="recommendMember">
+                                <label for="recommendMember02">
+                                    김민국
+                                    <em class="employee-info">
+                                        <span class="date">2021.05.31</span>
+                                        <span class="branch">역삼동 영업점 내점 상담</span>
+                                    </em>
+                                </label>
+                            </span>
+                        </li>
+                    </ul>
+                    <div class="recommend-employees">
+                        <ul class="btn-segmented">
+                            <li><button><span>지점명</span></button></li>
+                            <li><button><span>직원이름</span></button></li>
+                            <li><button><span>직원번호</span></button></li>
+                            <li><button><span>없음</span></button></li>
+                        </ul>
+                        <div class="recommend-employees-form">
+                            <!-- 지점명 // -->
+                            <div class="kb-form js-recommend-employees01" data-status="">
+                                <label for="recommendEmployees01">지점명</label>
+                                <div class="kb-form_inner form-select">
+                                    <button type="button" class="selected-option"></button>
+                                    <select name="" id="recommendEmployees01" title="지점명/지역명 선택">
+                                        <option value="">지점명/지역명 선택</option>
+                                        <option value="">지점명</option>
+                                        <option value="">지역명(시,구,군,읍,면,동)</option>
+                                    </select>
+                                </div>
+                                <em class="validation">Message</em>
+                            </div>
+                            <div class="kb-form js-recommend-employees02" data-status="">
+                                <label for="recommendEmployees02">지점명 or 지역명</label>
+                                <div class="kb-form_inner form-text">
+                                    <input type="text" id="recommendEmployees02" value="">
+                                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                                    <a href="../../html/terms/employee-search.html" class="btn-solid_form"><span>검색</span></a> <!-- 2021-06-10 수정-->
+                                </div>
+                                <em class="validation">Success Message</em>
+                            </div>
+                            <!-- // 지점명 -->
+                            <!-- 직원이름 //-->
+                            <div class="kb-form js-recommend-employees04" data-status="">
+                                <label for="recommendEmployees04">직원이름</label>
+                                <div class="kb-form_inner form-text">
+                                    <input type="text" id="recommendEmployees04" value="">
+                                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                                    <a href="../../html/terms/employee-search.html" class="btn-solid_form"><span>검색</span></a> <!-- 2021-06-10 수정-->
+                                </div>
+                                <em class="validation">Success Message</em>
+                            </div>
+                            <!-- // 직원이름 -->
+                            <!-- 직원번호 //-->
+                            <div class="kb-form js-recommend-employees03" data-status="">
+                                <label for="recommendEmployees03">직원번호</label>
+                                <div class="kb-form_inner form-text">
+                                    <input type="text" id="recommendEmployees03" value="">
+                                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                                    <a href="../../html/terms/employee-search.html" class="btn-solid_form"><span>검색</span></a> <!-- 2021-06-10 수정-->
+                                </div>
+                                <em class="validation">Success Message</em>
+                            </div>
+                            <!-- // 직원번호 -->
+
+                            <p><button type="button" class="btn-line_form"><span>검색 초기화</span></button></p>
+                        </div>
+                    </div>
+                    <div class="kb-form is-active is-readonly">
+                        <label for="">추천인코드</label>
+                        <div class="kb-form_inner form-text">
+                            <input type="text" id="" value="abcdefg12345" readonly>
+                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                        </div>
+                    </div>
+                </section>
+                <!-- SECTION //-->
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid_sticky lv2"><span>자산 추가하기</span></button>
+                        <button type="button" class="btn-solid_sticky"><span>메인</span></button>
+                    </div>
+                </div>
+
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+        <!-- Layer (fullpage popup, modal, bottom sheet) // -->
+        <div class="layered">
+
+
+        </div>
+        <!-- // Layer (fullpage popup, modal, bottom sheet) -->
+    </div>
+
+    <!-- Script -->
+    <!-- Common Library -->
+    <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
+    <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
+    <script src="../../static/common/lib/current-device.min.js"></script>
+    <script src="../../static/common/lib/moment.min.js"></script>
+    <script src="../../static/common/lib/swiper-bundle.min.js"></script>
+    <!-- <script src="../../static/js/bottomSheet.js"></script> -->
+    <script src="../../static/js/modalPopup.js"></script>
+    <script src="../../static/js/menu.js"></script>
+    <!-- Add Library (this page only)-->
+    <script src="../../static/js/ui.js"></script>
+    <!-- Add Script -->
+
+</body>
+
+</html>
+<!-- // [MYS_CO_06_01_01_09] 전송요구방법 > 통합인증 > 기관선택 > 검색결과 -->

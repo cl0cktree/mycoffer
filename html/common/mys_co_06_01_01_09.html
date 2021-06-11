@@ -1,0 +1,121 @@
+<!-- [MYS_CO_06_01_01_09] 전송요구방법 > 통합인증 > 기관 선택_검색결과 (작성자: 누리어 시스템 이진우)// -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Last Depth | 1st Depth | KB국민은행 마이데이터</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
+    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
+    <link rel="stylesheet" href="../../static/css/ui.css">
+</head>
+
+<body>
+    <div class="skip-nav">
+        <a href="#content">본문으로 이동하기</a>
+    </div>
+    <div class="app">
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content search-organization-result">
+                <div class="page-header">
+                    <strong class="tit">기관 검색결과</strong>
+                    <button class="btn-close"><span>닫기</span></button>
+                </div>
+                <!--// SECTION -->
+                <section class="kb-sec search-organization-form">
+                    <div class="kb-form mt12" data-status="info">
+                        <div class="kb-form_inner form-text">
+                            <input type="text" inputmode="search" id="formTextSample0555" value="KB" placeholder="기관명" title="기관명">
+                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                            <button type="button" class="btn-icon_form btn-search"><i class="icon-search"></i></button>
+                        </div>
+                    </div>
+                    <div class="autocomplete-box">
+                        <ul>
+                            <li>KB국민카드</li>
+                            <li>KB증권</li>
+                            <li>KB손해보험</li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- SECTION //-->
+                <!--// SECTION -->
+                <section class="kb-sec search-result-list">
+                    <strong class="h4 list-tit"><span>KB</span> 검색결과</strong>
+                    <ul class="checkbox-group result-list">
+                        <li><span class="form-checkbox_20"><input type="checkbox" id="select11"><label for="select11">KB국민은행</label></span></li>
+                        <li><span class="form-checkbox_20"><input type="checkbox" id="select12"><label for="select12">신한은행</label></span></li>
+                        <li><span class="form-checkbox_20"><input type="checkbox" id="select13" disabled><label for="select13">NH농협은행 <span class="tag-label" data-state="inprogress">연동 중</span></label></span></li>
+                    </ul>
+                    <!-- [D]] 검색 결과 없을 때 //-->
+                    <!-- <div class="no-data">
+                        <i class="icon-info_24"></i>
+                        <p>내역이 없습니다.</p>
+                    </div> -->
+                    <!--// [D]] 검색 결과 없을 때 -->
+                </section>
+                <!-- SECTION //-->
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid_sticky" data-action="close"><span>확인</span></button>
+                    </div>
+                </div>
+
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+        <!-- Layer (fullpage popup, modal, bottom sheet) // -->
+        <div class="layered">
+
+        </div>
+        <!-- // Layer (fullpage popup, modal, bottom sheet) -->
+    </div>
+
+    <!-- Script -->
+    <!-- Common Library -->
+    <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
+    <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
+    <script src="../../static/common/lib/current-device.min.js"></script>
+    <script src="../../static/common/lib/moment.min.js"></script>
+    <script src="../../static/common/lib/swiper-bundle.min.js"></script>
+    <!-- <script src="../../static/js/bottomSheet.js"></script> -->
+    <script src="../../static/js/modalPopup.js"></script>
+    <script src="../../static/js/menu.js"></script>
+    <!-- Add Library (this page only)-->
+    <script src="../../static/js/ui.js"></script>
+    <script>
+        //자동완성
+        $('.search-organization-form')
+            .on('keypress', 'input[type=text]', function() {
+                var autocompleteChk = $('.autocomplete-box').hasClass('is-active');
+                if (!autocompleteChk) {
+                    $('.autocomplete-box').addClass('is-active');
+                }
+            })
+            .on('focusout', 'input[type=text]', function() {
+                $('.autocomplete-box').removeClass('is-active');
+            });
+    </script>
+    <!-- Add Script -->
+
+</body>
+
+</html>
+<!-- // [MYS_CO_06_01_01_09] 전송요구방법 > 통합인증 > 기관 선택_검색결과 -->

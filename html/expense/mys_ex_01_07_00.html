@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_EX_01_00_00] 지출 > 가계부 (작성자: 누리어 시스템 김삼희)// -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>가계부 | 지출 | KB국민은행 마이데이터</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
+    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
+    <link rel="stylesheet" href="../../static/css/ui.css">
+</head>
+
+<body>
+    <div class="skip-nav">
+        <a href="#content">본문으로 이동하기</a>
+    </div>
+    <div class="app">
+        <!-- app-header (for MyMoney) //-->
+        <!-- app-header [s] -->
+        <header class="app-header">
+            <a href="javascript:history.back();" class="btn-history-back" role="button"><i class="icon-back">뒤로가기</i></a>
+            <strong class="page-tit">가계부</strong>
+            <button type="button" class="btn-allmenu"><i class="icon-menu">전체메뉴</i></button>
+        </header>
+        <!-- app-header [e] -->
+        <div class="app-menu">
+            <div class="all-menu-top">
+                <div class="util-menu">
+                    <a href="javascript:;" class="" role="button"><i class="icon-setting_24">설정</i></a>
+                    <a href="javascript:;" class="all-menu-notice new" role="button"><i class="icon-bell_24">알림</i></a><!-- 새로운 알림이 있을 때 .new -->
+                    <button type="button" class="btn-close"><span>닫기</span></button>
+                </div>
+                <div><a href="javascript:;" class="user-name"><strong>김국민 님</strong><i class="icon-move"></i></a></div>
+                <ul class="major-menu">
+                    <li><a href="javascript:;"><span><i class="icon-assets_24"></i></span><strong>자산등록</strong></a></li>
+                    <li><a href="javascript:;"><span><i class="icon-graph_24"></i></span><strong>소비 리포트</strong></a></li>
+                    <li><a href="javascript:;"><span><i class="icon-doc_24"></i></span><strong>공지사항</strong></a></li>
+                    <li><a href="javascript:;"><span><i class="icon-gift_24"></i></span><strong>My 혜택</strong></a></li><!-- 수정 : 2021.06.09 -->
+                </ul>
+            </div>
+            <div class="all-menu-list-wrap">
+                <div class="manage-mydata">
+                    <strong class="tit">마이데이터 관리</strong><!-- 수정 : 2021.06.01 -->
+                    <a href="javascript:;"><span>70</span><i class="icon-move"></i></a>
+                </div>
+                <ul class="all-menu-list">
+                    <li class="is-active">
+                        <a href="javascript:;">자산</a>
+                        <ul>
+                            <li><a href="javascript:;">자산통합조회</a></li>
+                            <li><a href="javascript:;">입출금&middot;페이</a></li>
+                            <li><a href="javascript:;">예적금</a></li>
+                            <li><a href="javascript:;">투자</a></li>
+                            <li><a href="javascript:;">보험</a></li>
+                            <li><a href="javascript:;">대출&middot;부채</a></li>
+                            <li><a href="javascript:;">부동산</a></li>
+                            <li><a href="javascript:;">자동차</a></li>
+                            <li><a href="javascript:;">My 금고</a></li><!-- 수정 : 2021.06.01 -->
+                            <li><a href="javascript:;">외화</a></li>
+                            <li><a href="javascript:;">적립포인트</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">D플랜</a>
+                        <ul>
+                            <li><a href="javascript:;">월수령액</a></li>
+                            <li><a href="javascript:;">라이프이벤트</a></li>
+                            <li><a href="javascript:;">나의기록</a></li>
+                            <li><a href="javascript:;">D플랜 설정</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">지출</a>
+                        <ul>
+                            <li><a href="javascript:;">가계부</a></li>
+                            <li><a href="javascript:;">정기지출</a></li>
+                            <li><a href="javascript:;">카드관리</a></li>
+                            <li><a href="javascript:;">소비리포트</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">목표 챌린지</a>
+                        <ul>
+                            <li><a href="javascript:;">아낀만큼</a></li>
+                            <li><a href="javascript:;">쓰는만큼</a></li><!-- 수정 : 2021.06.09 -->
+                            <li><a href="javascript:;">남들만큼</a></li>
+                            <li><a href="javascript:;">저금통</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">제휴/특화</a>
+                        <ul>
+                            <li><a href="javascript:;">신용</a></li>
+                            <li><a href="javascript:;">My Fun Data</a></li><!-- 수정 : 2021.06.09 -->
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">슬그Money</a><!-- 수정 : 2021.06.09 -->
+                    </li>
+                    <li>
+                        <a href="javascript:;">마이페이지</a>
+                        <ul>
+                            <li><a href="javascript:;">마이데이터 관리</a></li><!-- 수정 : 2021.06.01 -->
+                            <li><a href="javascript:;">내정보</a></li>
+                            <li><a href="javascript:;">My 혜택</a></li><!-- 수정 : 2021.06.09 -->
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">고객센터</a>
+                        <ul>
+                            <li><a href="javascript:;">FAQ</a></li>
+                            <li><a href="javascript:;">전화상담</a></li>
+                            <li><a href="javascript:;">약관 및 정책</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- // app-header -->
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+
+            <!-- app-lnb //-->
+            <div class="app-lnb">
+                <!-- 수정 : 2021.06.09 1depth 메뉴만 고정 // -->
+                <!-- GNB //-->
+                <div class="app-gnb-wrap">
+                    <div class="app-gnb tab swiper-container">
+                        <ul class="swiper-wrapper">
+                            <!-- 동작(ui.js) / 구성(menu.js) -->
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="app-sub-wrap">
+                    <div class="tab depth2 swiper-container app-sub">
+                        <ul class="swiper-wrapper">
+                            <!-- 선택된 GNB 메뉴에 따라 append (ui.js)-->
+                        </ul>
+                    </div>
+                </div>
+                <!-- // GNB -->
+                <!-- // 수정 : 2021.06.09  1depth 메뉴만 고정 -->
+            </div>
+            <!-- //app-lnb -->
+
+            <!-- app-content // -->
+            <main class="app-content expense-account-book-total">
+                <!-- 지출 가계부 그래프 요약 영역 //-->
+                <section class="kb-sec full bg-gray expense-guide">
+                    <div>
+                        <div class="content-box shadow">
+                            <div class="content-box-info">
+                                <div class="content-box-tit flex-box">
+                                    <h4 class="h4">
+                                        <button><i class="icon-arrow-left">이전달</i></button><strong>5월</strong><button><i class="icon-arrow-right">다음달</i></button> <span class="tit">지출가이드</span><button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                        <div class="tooltip">
+                                            <div class="cont">&#8251; 최근 과거 5개월간 사용한 지출 금액을 기준으로 월 평균 추천지출액 및 일별 평균 추천지출액을 제시해드립니다. 매월 평균 추철 지출액은 사용한 지출액에 따라 변동됩니다.</div>
+                                            <button class="btn-close"><span>닫기</span></button>
+                                        </div>
+                                    </h4>
+                                    <a href="../../html/common/mys_co_08_01_00_p1.html" role="button" class="btn-more"><i class="icon-more_24"></i></a>
+                                    <span class="date">04.26~05.25</span>
+                                </div>
+                                <div class="total-summary"><span class="color_blue"><strong class="emphasis">평소보다 아껴쓰고 있어요.</strong> 이대로 직진!</span></div>
+                                <a href="javascript:;" role="button" class="link-box_block compare-amount" data-call-layered="bsDailyExpenseGraph">
+                                    <p>
+                                        <span>실지출액</span>
+                                        <strong><em class="num">3,200,000</em>원</strong>
+                                    </p>
+                                    <em class="strict-inequality" data-compare-value="lt"></em>
+                                    <p>
+                                        <span>목표지출액</span>
+                                        <strong><em class="num">3,500,000</em>원</strong>
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="highcharts-box no-space">
+                        <div class="swiper-container t01 mt16 js-swiper" data-swiper-options="highchartSwiperOptions">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure content-box">
+                                            <div class="content-box-info">
+                                                <a href="mys_ex_04_01_00.html" role="button" class="link-box_block">
+                                                    <div class="content-box-tit t01 flex-box">
+                                                        <h4 class="h4">월간 지출 추이</h4>
+                                                        <button type="button" class=""><i class="icon-arrow-right"></i></button>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <!-- [chart area] //-->
+                                            <!--
+                                                [차트 디자인 정보]
+                                                * 그래프(막대) 색상(컬러별)
+                                                - 노란색 :  #ffd338;
+                                                - 회색 :  #c6cbd0;
+                                                - 주황색 : #ff5858'
+
+                                                - 차트 텍스트 컬러/크기 : #26282c/14px
+                                                - X축 텍스트 컬러/크기 : #8c949e/14px
+                                                - data labels 텍스트 컬러/크기 : #ff5858/14px
+                                            -->
+                                            <div class="highcharts_column" id="">
+                                                <img class="temp" src="../../static/images/_temp/chart_ex0103.png" alt="차트 예시 이미지">
+                                            </div>
+                                            <!--// [chart area] -->
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure content-box">
+                                            <div class="content-box-info">
+                                                <div class="content-box-tit">
+                                                    <h4 class="h4">이번달 지출 소비 패턴</h4>
+                                                    <p class="content-box-desc">이번달 <strong>식비</strong>지출이 많았어요</p>
+                                                </div>
+                                            </div>
+                                            <!-- [Chart Area] // -->
+                                            <!--
+                                                [차트 디자인 정보]
+                                                * 그래프(원) 크기/색상(컬러별)
+                                                - 노란색 :  122*122px / linear-gradient(to top, #fbc60a, #ffe381);
+                                                - 주황색 :  141*141px / linear-gradient(to top, #f8956d, #fbb192);
+                                                - 보라색 :  81*81px / linear-gradient(to top, #e69afc, #edb7fd);
+                                                - 파랑색 :  58*58px / linear-gradient(to top, #6cb7fa, #89c6fc);
+                                                - 하늘색 :  45*45px / linear-gradient(to top, #fbb192, #88dada
+
+                                                텍스트 컬러 : #26282c
+                                                이름 텍스트 크기 : 14px
+                                                값 텍스트 크기 : 18px/bold
+                                            -->
+                                            <div class="highcharts_column" id="">
+                                                <img class="temp" src="../../static/images/_temp/chart_ex0203.png" alt="차트 예시 이미지">
+                                            </div>
+                                            <!--// [chart area] -->
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </section>
+                <!--// 지출 가계부 그래프 요약 영역 -->
+                <!-- 지출 가계부 상세 내역 //-->
+                <section class="kb-sec full expense-account-book-list">
+                    <!-- 타입 설정 -->
+                    <div class="list-view-type">
+                        <a href="mys_ex_01_02_00.html" class="btn-line_form" role="button"><i class="icon-calendar_20_bk"></i><span>캘린더 보기</span></a>
+                        <a href="javascript:;" class="btn-line_form is-active" role="button"><i class="icon-list_20"></i><span>일자별 보기</span></a>
+                    </div>
+                    <!-- 필터 영역 -->
+                    <div class="filter-area">
+                        <button class="btn-filter" data-call-layered="bsExpenseListFilterSetting"><i class="icon-filter_24"><span>필터 설정</span></i></button>
+                        <ul>
+                            <li><button class="btn-filter-search" data-call-layered="bsExpenseListSearch"><i class="icon-search_24_gray"><span>검색</span></i></button></li>
+                            <li><button class="btn-filter-register" data-call-layered="popupUserRegisterList"><i class="icon-plus_24"><span>사용자 등록</span></i></button></li>
+                            <li><button class="btn-filter-setting" data-call-layered="bsExpenseAccountBookSetting"><i class="icon-more_24"><span>가계부 설정</span></i></button></li>
+                        </ul>
+                    </div>
+                    <!-- 리스트 영역 -->
+                    <!-- 검색 결과 없음 -->
+                    <div class="no-data">
+                        <i class="icon-info_24"></i>
+                        <p>내역이 없습니다.</p>
+                    </div>
+                </section>
+                <!--// 지출 가계부 상세 내역 -->
+                <!-- 가맹점 연계 정보 //-->
+                <section class="kb-sec full bg-gray expense-monthly-place">
+                    <div class="highcharts-box no-space">
+                        <div class="graph-area">
+                            <figure class="highcharts-figure content-box">
+                                <div class="content-box-info">
+                                    <a href="mys_ex_04_01_00.html" role="button" class="link-box_block">
+                                        <div class="content-box-tit t01 flex-box">
+                                            <h4 class="h4">이번달 많이 찾은 곳</h4>
+                                            <button type="button" class=""><i class="icon-arrow-right"></i></button>
+                                        </div>
+                                    </a>
+                                    <p class="total-summary">
+                                        <span class="date">04.26~05.25</span>
+                                        <strong class="emphasis">스타벅스에 23회</strong>로 가장 많이 방문하고, <br>
+                                        <strong class="emphasis">애플스토어</strong>에서 <strong class="emphasis color_blue">5,100,000원</strong>으로<br>가장 많이 지출했어요.
+                                    </p>
+                                </div>
+                                <!-- [chart area] //-->
+                                <!--
+                                    [차트 디자인 정보]
+                                    * 그래프(워드클라우드) 색상(컬러별)
+                                    - 파란색 :  #287eff;
+                                    - 검정색 :  #26282c;
+                                    - 회색 : #666d75;
+                                -->
+                                <div class="highcharts_column" id="">
+                                    <img class="temp" src="../../static/images/_temp/chart_ex0102.png" alt="차트 예시 이미지">
+                                </div>
+                                <!--// [chart area] -->
+                            </figure>
+                        </div>
+                    </div>
+                </section>
+                <!--// 가맹점 연계 정보 -->
+                <section class="kb-sec full bg-gray expense-management-goal">
+                    <div class="content-tit"><strong class="h4">목표관리가 필요한 지출</strong></div>
+                    <div class="highcharts-box no-space">
+                        <div class="graph-area">
+                            <figure class="highcharts-figure content-box"></figure>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+        <div class="layered">
+            <!-- Bottom Sheet // -->
+            <!-- 지출 > 가계부 > 일 지출액 추이 그래프 (작성자: 누리어 시스템 김삼희)// -->
+            <div class="bottom-sheet" data-layered-name="bsDailyExpenseGraph">
+                <div class="bottom-sheet_header">
+                    <span class="tit">일 지출액 추이 그래프</span>
+                </div>
+                <div class="bottom-sheet_contents expense-layered">
+                    <section class="kb-sec">
+                        <div class="content-box">
+                            <!-- [chart area] //-->
+                            <!--
+                    [차트 디자인 정보]
+                    * 그래프(라인) 색상(컬러별)
+                    - 주황색 : #fa7d4f;
+                    - 회색 : #c6cbd0;
+                    - 배경 라인 컬러 : #dde1e4;
+                    - X축 텍스트 컬러/사이즈 : #8c949e / 15px;
+                    - legend 텍스트 컬러/사이즈 : #26282c  14px;
+                    
+                    * dataLabel 텍스트 컬러/사이즈 :
+                    - 회색 : #696e76 / 14px;
+                    - 빨간색 : #ff5858 / 14px;
+                    - 검정 : #26282c / 14px;
+                -->
+                            <div class="highcharts_column" id="">
+                                <img class="temp" src="../../static/images/_temp/chart_ex0101.png" alt="차트 예시 이미지">
+                            </div>
+                            <!--// [chart area] -->
+                        </div>
+                    </section>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- // 지출 > 가계부 > 내역 상세보기 팝업 -->
+            <!-- [MYS_EX_01_01_02_P] 지출 > 가계부 > 수기 등록 > 필터 설정 팝업 (작성자: 누리어 시스템 김삼희)// -->
+            <div class="bottom-sheet" data-layered-name="bsExpenseListFilterSetting">
+                <div class="bottom-sheet_header">
+                    <span class="tit">조회 선택</span>
+                </div>
+                <div class="bottom-sheet_contents expense-layered">
+                    <div class="tab swiper-container">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide is-active"><a href="#target01">기간/유형</a></li>
+                            <li class="swiper-slide"><a href="#target02">카테고리</a></li>
+                        </ul>
+                    </div>
+                    <section class="kb-sec tab_contents">
+                        <div class="filter-period-setting is-active">
+                            <div class="kb-form">
+                                <strong class="label">조회기간</strong>
+                                <div class="lookup-period">
+                                    <ul class="btn-segmented">
+                                        <li><button><span>1개월</span></button></li>
+                                        <li><button><span>3개월</span></button></li>
+                                        <li><button><span>6개월</span></button></li>
+                                        <li><button class="is-selected"><span>직접입력</span></button></li>
+                                    </ul>
+                                    <div class="kb-form" data-status="error">
+                                        <!-- [D] 수정 21-06-04 : 캘린더 열리게 추가 //-->
+                                        <div class="period-selector">
+                                            <input type="text" title="시작날짜" value="2021.08.28" data-call-layered="bsCalendar">
+                                            <span>~</span>
+                                            <input type="text" title="종료날짜" value="2021.08.31" data-call-layered="bsTime">
+                                        </div>
+                                        <!--// [D] 수정 21-06-04 : 캘린더 열리게 추가 -->
+                                        <em class="validation">조회기간은 최대 60개월 입니다.</em>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="kb-form">
+                                <strong class="label">거래유형</strong>
+                                <div class="lookup-period">
+                                    <!-- [D] 수정 2021-06-04 : 단순 탭을 체크박스 기능으로 변경 //-->
+                                    <ul class="btn-segmented_check">
+                                        <li>
+                                            <input type="checkbox" name="btncheckbox" id="btncheckbox1" checked="">
+                                            <label for="btncheckbox1">수입</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="btncheckbox" id="btncheckbox2">
+                                            <label for="btncheckbox2">지출</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="btncheckbox" id="btncheckbox3">
+                                            <label for="btncheckbox3">이체</label>
+                                        </li>
+                                    </ul>
+                                    <!-- [D] 수정 2021-06-03 : 단순 탭을 체크박스 기능으로 변경 //-->
+                                </div>
+                                <div class="checkbox-group flex-box" data-col="2">
+                                    <li><span class="form-checkbox_20"><input type="checkbox" id="expenseFillterPayMethodCalling"><label for="expenseFillterPayMethodCalling">신용&sol;체크</label></span></li>
+                                    <li><span class="form-checkbox_20"><input type="checkbox" id="expenseFillterPayMethodCash"><label for="expenseFillterPayMethodCash">현금</label></span></li>
+                                    <li><span class="form-checkbox_20"><input type="checkbox" id="expenseFillterPayMethodCellphone" checked=""><label for="expenseFillterPayMethodCellphone">통신사소액결제</label></span></li>
+                                </div>
+                            </div>
+                            <div class="kb-form">
+                                <strong class="label">내역정렬</strong><!-- 수정 : 2021.06.09 -->
+                                <div class="lookup-period">
+                                    <ul class="btn-segmented">
+                                        <li><button><span>최신순</span></button></li><!-- 수정 : 2021.06.09 -->
+                                        <li><button class="is-selected"><span>과거순</span></button></li><!-- 수정 : 2021.06.09 -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-category-setting">
+                            <dl class="accordian js-checkbox-selector">
+                                <dt>
+                                    <span class="form-checkbox"><input type="checkbox" id="incomeCategoryAll"><label for="incomeCategoryAll">수입 카테고리</label></span>
+                                    <button type="button"><i></i></button>
+                                </dt>
+                                <dd>
+                                    <ul class="checkbox-group st-list">
+                                        <li><span class="form-checkbox_20"><input type="checkbox" id="incomeCategory01"><label for="incomeCategory01">급여</label></span></li>
+                                        <li><span class="form-checkbox_20"><input type="checkbox" id="incomeCategory02"><label for="incomeCategory02">용돈</label></span></li>
+                                        <li><span class="form-checkbox_20"><input type="checkbox" id="incomeCategory03"><label for="incomeCategory03">사업소득</label></span></li>
+                                        <li><span class="form-checkbox_20"><input type="checkbox" id="incomeCategory04"><label for="incomeCategory04">금융소득</label></span></li>
+                                        <li><span class="form-checkbox_20"><input type="checkbox" id="incomeCategory05"><label for="incomeCategory05">임대소득</label></span></li>
+                                        <li><span class="form-checkbox_20"><input type="checkbox" id="incomeCategory06"><label for="incomeCategory06">기타소득</label></span></li>
+                                    </ul>
+                                </dd>
+                                <dt>
+                                    <span class="form-checkbox"><input type="checkbox" id="outcomeCategoryAll"><label for="outcomeCategoryAll">지출 카테고리</label></span>
+                                    <button type="button"><i></i></button>
+                                </dt>
+                                <dd>
+                                    <ul class="checkbox-group st-list">
+                                        <li><span class="form-checkbox_20"><input type="checkbox" id="outcomeCategory01"><label for="outcomeCategory01">급여</label></span></li>
+                                        <li><span class="form-checkbox_20"><input type="checkbox" id="outcomeCategory02"><label for="outcomeCategory02">용돈</label></span></li>
+                                        <li><span class="form-checkbox_20"><input type="checkbox" id="outcomeCategory03"><label for="outcomeCategory03">사업소득</label></span></li>
+                                        <li><span class="form-checkbox_20"><input type="checkbox" id="outcomeCategory04"><label for="outcomeCategory04">금융소득</label></span></li>
+                                        <li><span class="form-checkbox_20"><input type="checkbox" id="outcomeCategory05"><label for="outcomeCategory05">임대소득</label></span></li>
+                                        <li><span class="form-checkbox_20"><input type="checkbox" id="outcomeCategory06"><label for="outcomeCategory06">기타소득</label></span></li>
+                                    </ul>
+                                </dd>
+                                <dt>
+                                    <span class="form-checkbox"><input type="checkbox" id="transferCategoryAll"><label for="transferCategoryAll">이체 카테고리</label></span>
+                                    <button type="button"><i></i></button>
+                                </dt>
+                                <dd>
+                                    <ul class="checkbox-group st-list">
+                                        <li><span class="form-checkbox_20"><input type="checkbox" id="transferCategory01"><label for="transferCategory01">급여</label></span></li>
+                                        <li><span class="form-checkbox_20"><input type="checkbox" id="transferCategory02"><label for="transferCategory02">용돈</label></span></li>
+                                        <li><span class="form-checkbox_20"><input type="checkbox" id="transferCategory03"><label for="transferCategory03">사업소득</label></span></li>
+                                        <li><span class="form-checkbox_20"><input type="checkbox" id="transferCategory04"><label for="transferCategory04">금융소득</label></span></li>
+                                        <li><span class="form-checkbox_20"><input type="checkbox" id="transferCategory05"><label for="transferCategory05">임대소득</label></span></li>
+                                        <li><span class="form-checkbox_20"><input type="checkbox" id="transferCategory06"><label for="transferCategory06">기타소득</label></span></li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                    </section>
+                </div>
+                <div class="bottom-sheet_buttons">
+                    <button class="btn-solid_sticky lv2" data-action="close"><span>초기화</span></button>
+                    <button class="btn-solid_sticky"><span>확인</span></button>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- //지출 > 가계부 > 필터 설정 팝업 -->
+            <!-- [MYS_EX_01_01_03_P] 지출 > 가계부 > 수기 등록 > 검색 팝업 (작성자: 누리어 시스템 김삼희)// -->
+            <div class="bottom-sheet" data-layered-name="bsExpenseListSearch">
+                <div class="bottom-sheet_header">
+                    <span class="tit">조회 선택</span>
+                </div>
+                <div class="bottom-sheet_contents expense-layered">
+                    <section class="kb-sec">
+                        <div class="kb-form">
+                            <strong class="label">조회기간</strong>
+                            <div class="lookup-period">
+                                <ul class="btn-segmented">
+                                    <li><button><span>1개월</span></button></li>
+                                    <li><button><span>3개월</span></button></li>
+                                    <li><button><span>6개월</span></button></li>
+                                    <li><button class="is-selected"><span>직접입력</span></button></li>
+                                </ul>
+                                <div class="period-selector">
+                                    <input type="text" title="시작날짜" value="2021.08.28" data-call-layered="bsCalendar">
+                                    <span>~</span>
+                                    <input type="text" title="종료날짜" value="2021.08.31" data-call-layered="bsTime">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kb-form">
+                            <div class="kb-form mt32" data-status="info">
+                                <label for="expenseSearchKey">검색어</label>
+                                <div class="kb-form_inner form-text">
+                                    <input type="text" id="expenseSearchKey" placeholder="금액이나 가맹점명을 입력해보세요" value=""><!-- 수정 : 2021.06.02 -->
+                                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                                </div>
+                                <em class="validation">금액을 입력하는 경우 숫자만 입력 (원은 입력하지 마세요) 가맹점명 입력 시 한글이나 영문 1자 이상 입력해주세요</em>
+                            </div>
+                            <!-- 에러메시지 -->
+                            <div class="kb-form mt32" data-status="error">
+                                <em class="validation">숫자만 입력 가능합니다.</em>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="bottom-sheet_buttons">
+                    <button class="btn-solid_sticky lv2" data-action="close"><span>초기화</span></button>
+                    <button class="btn-solid_sticky"><span>확인</span></button>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- //지출 > 가계부 > 검색 팝업 -->
+            <!-- [MYS_EX_01_05_01_P] 지출 > 가계부 > 수기 등록 > 날짜 선택 팝업 (작성자: 누리어 시스템 김삼희)// -->
+            <div class="bottom-sheet full-size" data-layered-name="bsUserRegisterSelectDate">
+                <div class="bottom-sheet_header">
+                    <span class="tit">날짜 선택</span>
+                </div>
+                <div class="bottom-sheet_contents">
+                    <section class="kb-sec">
+                        <div class="calendar-nav">
+                            <button type="button" class="btn-first"><i class="icon-pagination_first">지난해</i></button>
+                            <button type="button" class="btn-prev"><i class="icon-pagination_prev">지난달</i></button>
+                            <strong>2021년 3월</strong>
+                            <button type="button" class="btn-next"><i class="icon-pagination_next">다음달</i></button>
+                            <button type="button" class="btn-last"><i class="icon-pagination_last">다음해</i></button>
+                            <button type="button" class="btn-text"><span>오늘</span></button>
+                        </div>
+                        <div class="calendar-area">
+                            <table>
+                                <caption>날짜 선택 달력</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">일</th>
+                                        <th scope="col">월</th>
+                                        <th scope="col">화</th>
+                                        <th scope="col">수</th>
+                                        <th scope="col">목</th>
+                                        <th scope="col">금</th>
+                                        <th scope="col">토</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td><button type="button"><span>1</span></button></td>
+                                        <td><button type="button"><span>2</span></button></td>
+                                        <td><button type="button"><span>3</span></button></td>
+                                        <td class="today"><button type="button"><span>4</span></button></td><!-- 오늘 날짜 -->
+                                        <td><button type="button"><span>5</span></button></td>
+                                        <td><button type="button"><span>6</span></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><button type="button"><span>7</span></button></td>
+                                        <td><button type="button"><span>8</span></button></td>
+                                        <td><button type="button"><span>9</span></button></td>
+                                        <td><button type="button"><span>10</span></button></td>
+                                        <td><button type="button"><span>11</span></button></td>
+                                        <td><button type="button"><span>12</span></button></td>
+                                        <td><button type="button"><span>13</span></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><button type="button"><span>14</span></button></td>
+                                        <td><button type="button"><span>15</span></button></td>
+                                        <td><button type="button"><span>16</span></button></td>
+                                        <td><button type="button"><span>17</span></button></td>
+                                        <td><button type="button"><span>18</span></button></td>
+                                        <td><button type="button"><span>19</span></button></td>
+                                        <td><button type="button"><span>20</span></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><button type="button"><span>21</span></button></td>
+                                        <td><button type="button"><span>22</span></button></td>
+                                        <td><button type="button"><span>23</span></button></td>
+                                        <td><button type="button"><span>24</span></button></td>
+                                        <td><button type="button"><span>25</span></button></td>
+                                        <td><button type="button"><span>26</span></button></td>
+                                        <td><button type="button"><span>27</span></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><button type="button"><span>28</span></button></td>
+                                        <td><button type="button"><span>29</span></button></td>
+                                        <td><button type="button"><span>30</span></button></td>
+                                        <td><button type="button"><span>31</span></button></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+                <div class="bottom-sheet_buttons">
+                    <button class="btn-solid_sticky"><span>확인</span></button>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- //지출 > 가계부 > 수기 등록 > 날짜 선택 팝업 -->
+            <!-- [MYS_EX_01_05_04_P] 카테고리 아이콘 선택 : 지출 > 가계부 > 수기 등록 > 카테고리 설정 팝업 > 카테고리 아이콘 선택 (작성자: 누리어 시스템 김삼희)// -->
+            <div class="bottom-sheet" data-layered-name="bsUserRegisterSetCategoryIcon">
+                <div class="bottom-sheet_header">
+                    <span class="tit">카테고리 아이콘 선택</span>
+                </div>
+                <div class="bottom-sheet_contents expense-layered">
+                    <section class="kb-secs">
+                        <ul class="grid-list select-icon-list" data-col="4">
+                            <li><button type="button" class=""><i class="icon-20"></i><span>입출금</span></button></li>
+                            <li><button type="button" class=""><i class="icon-20"></i><span>예/적금</span></button></li>
+                            <li><button type="button" class=""><i class="icon-20"></i><span>신탁</span></button></li>
+                            <li><button type="button" class=""><i class="icon-20"></i><span>펀드</span></button></li>
+                            <li><button type="button" class=""><i class="icon-20"></i><span>증권</span></button></li>
+                            <li><button type="button" class=""><i class="icon-20"></i><span>대출</span></button></li>
+                            <li><button type="button" class=""><i class="icon-20"></i><span>연금</span></button></li>
+                            <li><button type="button" class=""><i class="icon-20"></i><span>보험</span></button></li>
+                        </ul>
+                    </section>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- //* 카테고리 아이콘 선택 : 지출 > 가계부 > 수기 등록 > 카테고리 설정 팝업 > 카테고리 아이콘 선택 -->
+            <!-- [MYS_EX_01_05_06_P] 지출 > 가계부 > 수기 등록 > 할부 선택 팝업 (작성자: 누리어 시스템 김삼희)// -->
+            <div class="bottom-sheet" data-layered-name="bsUserRegisterExpenseFormsInstallment">
+                <div class="bottom-sheet_header">
+                    <span class="tit">할부 선택</span>
+                </div>
+                <div class="bottom-sheet_contents expense-layered">
+                    <section class="kb-sec">
+                        <ul class="select-list">
+                            <li class="is-active"><button type="button"><strong class="tit">일시불</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">02개월</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">03개월</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">04개월</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">05개월</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">06개월</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">07개월</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">08개월</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">09개월</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">10개월</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">11개월</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">12개월</strong><i class="icon-20"></i></button></li>
+                        </ul>
+                    </section>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- //지출 > 가계부 > 수기 등록 > 할부 선택 팝업 -->
+            <!-- [MYS_EX_01_05_07_P] 지출 > 가계부 > 수기 등록 > 거래수단 선택 팝업 (작성자: 누리어 시스템 김삼희)// -->
+            <div class="bottom-sheet" data-layered-name="userRegisterExpenseFormsMethod">
+                <div class="bottom-sheet_header">
+                    <span class="tit">거래수단 선택</span>
+                </div>
+                <div class="bottom-sheet_contents expense-layered">
+                    <section class="kb-sec">
+                        <ul class="select-list">
+                            <li class="is-active"><button type="button"><strong class="tit">신용&sol;체크카드</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">현금</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">통신사 소액결제</strong><i class="icon-20"></i></button></li>
+                        </ul>
+                    </section>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- //지출 > 가계부 > 수기 등록 > 거래수단 선택 팝업 -->
+            <!-- [MYS_EX_01_06_00] 지출 > 가계부 > 가계부 설정 팝업 (작성자: 누리어 시스템 김삼희)// -->
+            <div class="bottom-sheet" data-layered-name="bsExpenseAccountBookSetting">
+                <div class="bottom-sheet_header">
+                    <span class="tit">가계부 설정</span>
+                </div>
+                <div class="bottom-sheet_contents expense-layered">
+                    <section class="kb-sec">
+                        <ul class="select-list">
+                            <!-- [D] 수정 21-06-04 //-->
+                            <li class="is-active"><button type="button" data-call-layered="bsUserRegisterSetCategory_import"><strong class="tit">수입카테고리 설정</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button" data-call-layered="bsUserRegisterSetCategory_expense"><strong class="tit">지출카테고리 설정</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button" data-call-layered="bsUserRegisterSetCategory_transfer"><strong class="tit">이체카테고리 설정</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button" data-call-layered="expenseAccountBookSettingDay"><strong class="tit">월 시작일 설정</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button" data-call-layered=""><strong class="tit">계좌 설정</strong><i class="icon-20"></i></button></li>
+                            <li><a href="mys_ex_01_04_00.html" role="button"><strong class="tit">숨긴지출보기</strong><i class="icon-20"></i></a></li>
+                            <!-- // [D] 수정 21-06-04 -->
+                        </ul>
+                    </section>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- //지출 > 가계부 > 가계부 설정 팝업 -->
+            <!-- 지출 > 가계부 > 월 시작일 설정 팝업 (작성자: 누리어 시스템 김삼희)// -->
+            <div class="bottom-sheet" data-layered-name="expenseAccountBookSettingDay">
+                <div class="bottom-sheet_header">
+                    <span class="tit">월 시작일 설정</span>
+                </div>
+                <div class="bottom-sheet_contents expense-layered">
+                    <section class="kb-sec">
+                        <ul class="select-list">
+                            <li class="is-active"><button type="button"><strong class="tit">1일</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">2일</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">3일</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">4일</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">5일</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">6일</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">7일</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">8일</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">9일</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">10일</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">11일</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">12일</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">13일</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">14일</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">15일</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">16일</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">17일</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">18일</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">19일</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">20일</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">21일</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">22일</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">23일</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">24일</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">25일</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">26일</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">27일</strong><i class="icon-20"></i></button></li>
+                        </ul>
+                    </section>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- //지출 > 가계부 > 월 시작일 설정 팝업 -->
+            <!-- 공통 -->
+
+            <!-- 조회 바텀시트 //-->
+            <div class="bottom-sheet" data-layered-name="bsTime">
+                <div class="bottom-sheet_header">
+                    <span class="tit">시간 선택</span>
+                </div>
+                <div class="bottom-sheet_contents">
+                    <section class="kb-sec">
+                        <ul class="select-list">
+                            <li class="is-active"><button type="button"><strong class="tit">00:00 ~ 01:00</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">01:00 ~ 02:00</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">02:00 ~ 03:00</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">03:00 ~ 04:00</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">04:00 ~ 05:00</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">05:00 ~ 06:00</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">06:00 ~ 07:00</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">07:00 ~ 08:00</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">08:00 ~ 09:00</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">09:00 ~ 10:00</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">10:00 ~ 11:00</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">11:00 ~ 12:00</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">12:00 ~ 13:00</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">13:00 ~ 14:00</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">14:00 ~ 15:00</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">15:00 ~ 16:00</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">16:00 ~ 17:00</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">17:00 ~ 18:00</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">18:00 ~ 19:00</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">19:00 ~ 20:00</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">20:00 ~ 21:00</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">21:00 ~ 22:00</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">22:00 ~ 23:00</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><strong class="tit">23:00 ~ 24:00</strong><i class="icon-20"></i></button></li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="bottom-sheet_buttons">
+                    <button class="btn-solid_sticky" data-action="close"><span>확인</span></button>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- //조회 바텀시트  -->
+
+            <!-- 조회 바텀시트 //-->
+            <div class="bottom-sheet full-size" data-layered-name="bsCalendar">
+                <div class="bottom-sheet_header">
+                    <span class="tit">날짜 선택</span>
+                </div>
+                <div class="bottom-sheet_contents">
+                    <section class="kb-sec">
+                        <div class="calendar-nav">
+                            <button type="button" class="btn-first"><i class="icon-pagination_first">지난해</i></button>
+                            <button type="button" class="btn-prev"><i class="icon-pagination_prev">지난달</i></button>
+                            <strong></strong>
+                            <button type="button" class="btn-next"><i class="icon-pagination_next">다음달</i></button>
+                            <button type="button" class="btn-last"><i class="icon-pagination_last">다음해</i></button>
+                            <button type="button" class="btn-text"><span>오늘</span></button>
+                        </div>
+                        <div class="calendar-area" id="datepicker"></div>
+                    </section>
+                </div>
+                <div class="bottom-sheet_buttons">
+                    <button class="btn-solid_sticky lv2" data-action="close"><span>취소</span></button><!-- 수정 : 2021.06.02 -->
+                    <button class="btn-solid_sticky" data-action="close"><span>확인</span></button>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- //조회 바텀시트  -->
+        </div>
+    </div>
+
+    <!-- Script -->
+    <!-- Common Library -->
+    <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
+    <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
+    <script src="../../static/common/lib/current-device.min.js"></script>
+    <script src="../../static/common/lib/moment.min.js"></script>
+    <script src="../../static/common/lib/swiper-bundle.min.js"></script>
+    <!-- <script src="../../static/js/bottomSheet.js"></script> -->
+    <script src="../../static/js/modalPopup.js"></script>
+    <script src="../../static/js/menu.js"></script>
+    <!-- Add Library (this page only)-->
+    <script src="../../static/js/ui.js"></script>
+    <script>
+        gfn_gnb.select(1, 2);
+        var highchartSwiperOptions = {
+            "pagination": {
+                "el": ".swiper-pagination"
+            }
+        };
+    </script>
+    <!-- Add Script -->
+
+</body>
+
+</html>

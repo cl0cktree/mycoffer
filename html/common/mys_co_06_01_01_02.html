@@ -1,0 +1,133 @@
+<!-- [MYS_CO_04_01_01] 로그인 > 공동인증서 > 공동인증서 목록 (작성자: 누리어 시스템 이진우)// -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Last Depth | 1st Depth | KB국민은행 마이데이터</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
+    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
+    <link rel="stylesheet" href="../../static/css/ui.css">
+</head>
+
+<body>
+    <div class="skip-nav">
+        <a href="#content">본문으로 이동하기</a>
+    </div>
+    <div class="app">
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content joint-certificate">
+                <div class="page-header">
+                    <a href="javascript:history.back();" class="btn-history-back" role="button"><i class="icon-back">뒤로가기</i></a>
+                    <!-- <strong class="tit">공동인증서 로그인</strong> -->
+                </div>
+
+                <section class="kb-sec">
+                    <h1 class="h1">인증서를 선택해 주세요.</h1>
+                    <ul class="joint-certificate-list">
+                        <li>
+                            <a href="javascript:;">
+                                <i class="icon-certificate-active"></i><!-- 인증서 활성화 icon -->
+                                <strong class="name">김민국</strong>
+                                <p><span>은행개인</span><strong>yessign</strong></p>
+                                <p><span>만료일</span><strong class="num">2022.04.14</strong></p>
+                                <i class="icon-link_20"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <i class="icon-certificate-expire"></i><!-- 인증서 만료 icon -->
+                                <strong class="name">김민국</strong>
+                                <p><span>은행개인</span><strong>yessign</strong></p>
+                                <p><span>만료일</span><strong class="num">2022.04.14</strong></p>
+                                <i class="icon-link_20"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <i class="icon-certificate-expire"></i><!-- 인증서 만료 icon -->
+                                <strong class="name">김민국</strong>
+                                <p><span>은행개인</span><strong>yessign</strong></p>
+                                <p><span>만료일</span><strong class="num">2022.04.14</strong></p>
+                                <i class="icon-link_20"></i>
+                            </a>
+                        </li>
+                        <!-- 유효한 공인인증서가 없을 경우 // -->
+                        <li>
+                            <a href="javascript:;">
+                                <i class="icon-certificate-none"></i><!-- 인증서 없음 icon -->
+                                <strong class="name">유효한 공동인증서가 없습니다.</strong>
+                                <p>스타뱅킹 인증센터에서 인증서 추가 후 <br>이용해주세요.</p>
+                                <i class="icon-link_20"></i>
+                            </a>
+                        </li>
+                        <!-- // 유효한 공인인증서가 없을 경우 -->
+                    </ul>
+                </section>
+                <div class="sticky-bottom-menu">
+                    <p class="certificate-center"><a href="javascript:;" class="btn-text" role="button"><span>인증센터</span></a></p>
+                </div>
+            </main>
+            <!-- // app-content -->
+
+            <!-- // app-container -->
+        </div>
+
+        <div class="layered">
+
+
+            <!-- 조회 바텀시트 //-->
+            <div class="bottom-sheet full-size" data-layered-name="bsOtherLogin">
+                <div class="bottom-sheet_header">
+                    <span class="tit">다른 로그인 방법</span>
+                </div>
+                <div class="bottom-sheet_contents">
+                    <section class="kb-sec">
+                        <ul class="select-list">
+                            <!-- <li><button type="button"><span class="badge_48"><img src="../../static/images/_temp/hana.png" alt=""></span><strong class="tit">간편비밀번호</strong><i class="icon-20"></i></button></li> -->
+                            <li><button type="button"><span class="badge_48"><img src="../../static/images/_temp/hana.png" alt=""></span><strong class="tit">공동 인증서</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><span class="badge_48"><img src="../../static/images/_temp/hana.png" alt=""></span><strong class="tit">KB모바일 인증서</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><span class="badge_48"><img src="../../static/images/_temp/hana.png" alt=""></span><strong class="tit">금융 인증서</strong><i class="icon-20"></i></button></li>
+                        </ul>
+                    </section>
+                </div>
+                <!-- <div class="bottom-sheet_buttons">
+        <button class="btn-solid_sticky" data-action="close"><span>확인</span></button>
+    </div> -->
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- //조회 바텀시트  -->
+
+        </div>
+
+        <!-- Script -->
+        <!-- Common Library -->
+        <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
+        <script src="../../static/common/lib/jquery-ui.min.js"></script>
+        <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
+        <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
+        <script src="../../static/common/lib/current-device.min.js"></script>
+        <script src="../../static/common/lib/moment.min.js"></script>
+        <script src="../../static/common/lib/swiper-bundle.min.js"></script>
+        <!-- <script src="../../static/js/bottomSheet.js"></script> -->
+        <script src="../../static/js/modalPopup.js"></script>
+        <script src="../../static/js/menu.js"></script>
+        <!-- Add Library (this page only)-->
+        <script src="../../static/js/ui.js"></script>
+        <!-- Add Script -->
+
+</body>
+
+</html>

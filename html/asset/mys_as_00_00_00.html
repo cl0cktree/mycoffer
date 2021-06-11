@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_AS_00_00_00] 작성자: 누리어 시스템 김은경 -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>자산 | 자산통합조회 | KB국민은행 마이데이터</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
+    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
+    <link rel="stylesheet" href="../../static/css/ui.css">
+</head>
+
+<body>
+    <div class="skip-nav">
+        <a href="#content">본문으로 이동하기</a>
+    </div>
+    <div class="app" data-page="submain">
+        <!-- app-header (for MyMoney) //-->
+        <!-- app-header [s] -->
+        <header class="app-header">
+            <a href="javascript:history.back();" class="btn-history-back" role="button"><i class="icon-back">뒤로가기</i></a>
+            <strong class="page-tit">자산통합조회</strong>
+            <button type="button" class="btn-allmenu"><i class="icon-menu">전체메뉴</i></button>
+        </header>
+        <!-- app-header [e] -->
+        <div class="app-menu">
+            <div class="all-menu-top">
+                <div class="util-menu">
+                    <a href="javascript:;" class="" role="button"><i class="icon-setting_24">설정</i></a>
+                    <a href="javascript:;" class="all-menu-notice new" role="button"><i class="icon-bell_24">알림</i></a><!-- 새로운 알림이 있을 때 .new -->
+                    <button type="button" class="btn-close"><span>닫기</span></button>
+                </div>
+                <div><a href="javascript:;" class="user-name"><strong>김국민 님</strong><i class="icon-move"></i></a></div>
+                <ul class="major-menu">
+                    <li><a href="javascript:;"><span><i class="icon-assets_24"></i></span><strong>자산등록</strong></a></li>
+                    <li><a href="javascript:;"><span><i class="icon-graph_24"></i></span><strong>소비 리포트</strong></a></li>
+                    <li><a href="javascript:;"><span><i class="icon-doc_24"></i></span><strong>공지사항</strong></a></li>
+                    <li><a href="javascript:;"><span><i class="icon-gift_24"></i></span><strong>My 혜택</strong></a></li><!-- 수정 : 2021.06.09 -->
+                </ul>
+            </div>
+            <div class="all-menu-list-wrap">
+                <div class="manage-mydata">
+                    <strong class="tit">마이데이터 관리</strong><!-- 수정 : 2021.06.01 -->
+                    <a href="javascript:;"><span>70</span><i class="icon-move"></i></a>
+                </div>
+                <ul class="all-menu-list">
+                    <li class="is-active">
+                        <a href="javascript:;">자산</a>
+                        <ul>
+                            <li><a href="javascript:;">자산통합조회</a></li>
+                            <li><a href="javascript:;">입출금&middot;페이</a></li>
+                            <li><a href="javascript:;">예적금</a></li>
+                            <li><a href="javascript:;">투자</a></li>
+                            <li><a href="javascript:;">보험</a></li>
+                            <li><a href="javascript:;">대출&middot;부채</a></li>
+                            <li><a href="javascript:;">부동산</a></li>
+                            <li><a href="javascript:;">자동차</a></li>
+                            <li><a href="javascript:;">My 금고</a></li><!-- 수정 : 2021.06.01 -->
+                            <li><a href="javascript:;">외화</a></li>
+                            <li><a href="javascript:;">적립포인트</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">D플랜</a>
+                        <ul>
+                            <li><a href="javascript:;">월수령액</a></li>
+                            <li><a href="javascript:;">라이프이벤트</a></li>
+                            <li><a href="javascript:;">나의기록</a></li>
+                            <li><a href="javascript:;">D플랜 설정</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">지출</a>
+                        <ul>
+                            <li><a href="javascript:;">가계부</a></li>
+                            <li><a href="javascript:;">정기지출</a></li>
+                            <li><a href="javascript:;">카드관리</a></li>
+                            <li><a href="javascript:;">소비리포트</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">목표 챌린지</a>
+                        <ul>
+                            <li><a href="javascript:;">아낀만큼</a></li>
+                            <li><a href="javascript:;">쓰는만큼</a></li><!-- 수정 : 2021.06.09 -->
+                            <li><a href="javascript:;">남들만큼</a></li>
+                            <li><a href="javascript:;">저금통</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">제휴/특화</a>
+                        <ul>
+                            <li><a href="javascript:;">신용</a></li>
+                            <li><a href="javascript:;">My Fun Data</a></li><!-- 수정 : 2021.06.09 -->
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">슬그Money</a><!-- 수정 : 2021.06.09 -->
+                    </li>
+                    <li>
+                        <a href="javascript:;">마이페이지</a>
+                        <ul>
+                            <li><a href="javascript:;">마이데이터 관리</a></li><!-- 수정 : 2021.06.01 -->
+                            <li><a href="javascript:;">내정보</a></li>
+                            <li><a href="javascript:;">My 혜택</a></li><!-- 수정 : 2021.06.09 -->
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">고객센터</a>
+                        <ul>
+                            <li><a href="javascript:;">FAQ</a></li>
+                            <li><a href="javascript:;">전화상담</a></li>
+                            <li><a href="javascript:;">약관 및 정책</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- // app-header -->
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+            <!-- app-lnb //-->
+            <div class="app-lnb">
+                <!-- 상단 GNB 공통 (메뉴 구성 전 )-->
+                <!-- 수정 : 2021.06.09 1depth 메뉴만 고정 // -->
+                <!-- GNB //-->
+                <div class="app-gnb-wrap">
+                    <div class="app-gnb tab swiper-container">
+                        <ul class="swiper-wrapper">
+                            <!-- 동작(ui.js) / 구성(menu.js) -->
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="app-sub-wrap">
+                    <div class="tab depth2 swiper-container app-sub">
+                        <ul class="swiper-wrapper">
+                            <!-- 선택된 GNB 메뉴에 따라 append (ui.js)-->
+                        </ul>
+                    </div>
+                </div>
+                <!-- // GNB -->
+                <!-- // 수정 : 2021.06.09  1depth 메뉴만 고정 -->
+            </div>
+            <!-- //app-lnb -->
+            <!-- app-content // -->
+            <main class="app-content my-asset bg-gray-bottom asset-index">
+                <!-- 2021-06-09  asset-index 추가 -->
+                <section class="kb-sec full bg-gray asset-summary">
+                    <div class="highcharts-box charts-type_square no-space">
+                        <!-- 2021-06-09 수정 // -->
+                        <div class="swiper-container t01 js-swiper" data-swiper-options="assetIndexSummarySwiperOptions">
+                            <script>
+                                var assetIndexSummarySwiperOptions = {
+                                    "pagination": {
+                                        "el": ".swiper-pagination"
+                                    },
+                                    "autoHeight": true
+                                };
+                            </script>
+                            <!-- // 2021-06-09 수정 -->
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure content-box">
+                                            <div class="graph-info">
+                                                <div class="graph-msg">
+                                                    <p class="txt">
+                                                        김국민님,<br>지난달보다 <br><b><em><span class="num">1</span>억 <span class="">8000</span>만원</em> 늘었어요!</b>
+                                                    </p>
+                                                    <button class="btn-more"><i class="icon-more_24"></i></button>
+                                                </div>
+                                                <div class="graph-tit flex-box">
+                                                    <h4>순자산 <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                                        <div class="tooltip">
+                                                            <strong class="tit">순자산이란?</strong>
+                                                            <div class="cont">
+                                                                <ul data-style="list">
+                                                                    <li>툴립영역으로 기본형과 타이틀형이 있습니다.</li>
+                                                                    <li>툴립영역으로 기본형과 타이틀형이 있습니다.</li>
+                                                                    <li>툴립영역으로 기본형과 타이틀형이 있습니다.</li>
+                                                                </ul>
+                                                            </div>
+                                                            <button class="btn-close"><span>닫기</span></button>
+                                                        </div>
+                                                    </h4>
+                                                    <div class="price-wrap">
+                                                        <p class="amount"><span class="num">201,320,000</span>원</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- [chart area] //-->
+                                            <!--
+                                                [차트 디자인 정보]
+                                                * 그래프(막대) 색상(컬러별)
+                                                - 노란색 :  #ffd338;
+                                                - 회색 :  #c6cbd0;
+
+                                                - 차트 텍스트 컬러/크기 : #26282c/14px
+                                                - X축 텍스트 컬러/크기 : #8c949e/14px
+												- data labels 텍스트 컬러/크기 : #26282c/14px
+                                            -->
+                                            <div class="highcharts_column" id="">
+                                                <img class="temp" src="../../static/images/_temp/chart_as0000_1.png" alt="차트 예시 이미지">
+                                            </div>
+                                            <!--// [chart area] -->
+                                            <div class="my-average">
+                                                <em>내 평균 <span class="num">4,665,210</span>원</em>
+                                            </div>
+                                        </figure>
+
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure content-box">
+                                            <div class="graph-info">
+                                                <div class="graph-msg">
+                                                    <p class="txt">
+                                                        김국민님,<br>대출비중이 금융자산의 <b><em><span class="num">00%</span></em><br>더 늘리면 곤란할 수 있어요</b>
+                                                    </p>
+                                                    <button class="btn-more"><i class="icon-more_24"></i></button>
+                                                </div>
+                                                <div class="graph-tit flex-box">
+                                                    <h4 class="h4">금융자산 &amp; 부채<button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                                        <div class="tooltip">
+                                                            <strong class="tit">금융자산 &amp; 부채?</strong>
+                                                            <div class="cont">
+                                                                <ul data-style="list">
+                                                                    <li>- 금융자산 : 입출금&middot;Pay/예적금/투자/대출부채/보험/연금/My금고/외화/적립포인트</li>
+                                                                    <li>- 부채 : 대출+카드이용금액+부동산임대보증금</li>
+                                                                </ul>
+                                                            </div>
+                                                            <button class="btn-close"><span>닫기</span></button>
+                                                        </div>
+                                                    </h4>
+                                                    <div class="price-wrap">
+                                                        <p class="amount"><span class="num">201,320,000</span>원</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- [chart area] //-->
+                                            <!--
+                                                [차트 디자인 정보]
+                                                * 그래프(막대) 색상(컬러별)
+
+                                                디자인 없음
+                                            -->
+                                            <div class="highcharts_column" id="">
+                                                <img class="temp" src="../../static/images/_temp/chart_as0000_1.png" alt="차트 예시 이미지">
+                                            </div>
+                                            <!--// [chart area] -->
+                                            <div class="my-average">
+                                                <em>내 평균 <span class="num">4,665,210</span>원</em>
+                                            </div>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="kb-sec full asset-list">
+                    <ul>
+                        <li class="total">
+                            <button type="button" class="detail-con" title="자산항목편집">
+                                <p class="title">내자산</p>
+                                <p class="amount">
+                                    <span class="num">1</span>억 <span class="num">9,232</span>만원
+                                    <i class="icon-more_24"></i>
+                                </p>
+                            </button>
+                        </li>
+                        <li>
+                            <a href="#" class="detail-con">
+                                <p class="type">
+                                    <span class="type">입출금&middot;페이 <em class="num">5</em></span>
+                                </p>
+                                <p class="amount">
+                                    <span class="num">1</span>억 <span class="num">9,232</span>만원
+                                    <i class="icon-go_detail_24"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="detail-con">
+                                <p class="type">
+                                    <span class="type">예적금 <em class="num">2</em></span>
+                                </p>
+                                <p class="amount">
+                                    <span class="num">800</span>만원
+                                    <i class="icon-go_detail_24"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="detail-con">
+                                <p class="type">
+                                    <span class="type">투자 <em class="num">2</em></span>
+                                </p>
+                                <p class="amount">
+                                    <span class="num">200</span>만원
+                                    <i class="icon-go_detail_24"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="detail-con">
+                                <p class="type">
+                                    <span class="type">부동산임차보증금 <em class="num">2</em></span>
+                                </p>
+                                <p class="amount">
+                                    <span class="num">2000</span>만원
+                                    <i class="icon-go_detail_24"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="split">
+                            <a href="#" class="detail-con">
+                                <p class="type">
+                                    <span class="type">대출&middot;부채<em class="num">2</em></span>
+                                </p>
+                                <p class="amount">
+                                    <span class="num">2000</span>만원
+                                    <i class="icon-go_detail_24"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="detail-con">
+                                <p class="type">
+                                    <span class="type">외화 <em class="num">2</em></span>
+                                </p>
+                                <p class="amount">
+                                    <span class="num">200</span>만원
+                                    <i class="icon-go_detail_24"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="detail-con">
+                                <p class="type">
+                                    <span class="type">적립포인트 <em class="num">11</em></span>
+                                </p>
+                                <p>
+                                    <i class="icon-go_detail_24"></i>
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+                <section class="kb-sec bg-gray asset-gravity">
+                    <div class="content-box shadow">
+                        <div class="top-area">
+                            <h4 class="h4">자산비중 <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                <div class="tooltip">
+                                    <strong class="tit">자산비중이란?</strong>
+                                    <div class="cont">
+                                        <p class="tit">비교그룹과 나의 자산항목별 비중(%) 비교 안내</p>
+                                        <ul data-style="list">
+                                            <li>- 자산 : 금융자산+비금융자산</li>
+                                            <li>- 비슷한사람 : 연령,자산</li>
+                                        </ul>
+                                        <p class="info">※ 금융자산 : 입출금&middot;Pay / 예적금 / 투자 / 대출&middot;부채 / 보험 / 연금 / My금고 / 외화 / 적립포인트 / 기타</p>
+                                        <p class="info">※ 비금융자산 : 부동산+자동차+기타</p>
+                                    </div>
+                                    <button class="btn-close"><span>닫기</span></button>
+                                </div>
+                            </h4>
+                            <button type="button" title="비중이 적은 항목으로 이동"><i class="icon-go_detail_24"></i></button>
+                        </div>
+                        <div class="graph-area">
+                            <span class="form-checkbox_24"><input type="checkbox" id="viewOnlyFinance"><label for="viewOnlyFinance">금융상품만 보기</label></span>
+                            <p class="msg">
+                                <b>비교그룹 보다 연금은 <b class="num">00%</b>많고, 투자는 <b class="num">00%</b>적어요.</b> 부족한 부분을 점검해 보세요.
+                            </p>
+                            <!-- [chart area] //-->
+                            <!--
+										[차트 디자인 정보]
+										* 그래프(도넛) 색상(컬러별)
+										- 입출금 페이 :  #ffd338;
+										- 예적금 : #96857f
+										- 투자 : #d575c9
+										- 보험 : #3f6fd1
+										- 대출 부채 : #f78657
+										- 연금 : #67d3d3
+										- 외화 : #f674cc
+										- My금고 : #42b68e
+										- 적립포인트 : #c1d367
+
+
+										- 차트 텍스트 컬러/크기 : #696e76/14px
+									-->
+                            <div class="highcharts_column" id="">
+                                <img class="temp" src="../../static/images/_temp/chart_as0000_2.png" alt="차트 예시 이미지">
+                            </div>
+                            <!-- // [chart area] -->
+                        </div>
+                    </div>
+                    <div class="content-box shadow">
+                        <div class="top-area">
+                            <h4 class="h4">자산흐름 <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                <div class="tooltip">
+                                    <strong class="tit">자산흐름이란?</strong>
+                                    <div class="cont">
+                                        <p class="tit">최근 3개월동안 비교그룹과 나의 자산흐름 비교 안내</p>
+                                        <ul data-style="list">
+                                            <li>- 자산 : 금융자산+비금융자산</li>
+                                            <li>- 비슷한사람 : 연령,자산</li>
+                                        </ul>
+                                        <p class="info">※ 금융자산 : 입출금&middot;Pay / 예적금 / 투자 / 대출&middot;부채 / 보험 / 연금 / My금고 / 외화 / 적립포인트 / 기타</p>
+                                        <p class="info">※ 비금융자산 : 부동산+자동차+기타</p>
+                                    </div>
+                                    <button class="btn-close"><span>닫기</span></button>
+                                </div>
+                            </h4>
+                            <button type="button" title="변동이 가장 큰 항목으로 이동"><i class="icon-go_detail_24"></i></button>
+                        </div>
+                        <div class="graph-area">
+                            <span class="form-checkbox_24"><input type="checkbox" id="viewOnlyFinance"><label for="viewOnlyFinance">금융상품만 보기</label></span>
+                            <p class="msg">
+                                <b>비교그룹 보다 보유자산이 줄고 있어요.</b> 줄어든 자산을 확인해보세요.
+                            </p>
+                            <!-- [chart area] //-->
+                            <!--
+										[차트 디자인 정보]
+										* 그래프(도넛) 색상(컬러별)
+										- 노랑 :  #ffd435
+										- 회색 : #c7ccd1
+
+										- X축 텍스트 컬러/크기 : #8c949e/14px
+										- data labels 텍스트 컬러/크기 : #26282c/14px
+									-->
+                            <div class="highcharts_column" id="">
+                                <img class="temp" src="../../static/images/_temp/chart_as0000_3.png" alt="차트 예시 이미지">
+                            </div>
+                            <!-- // [chart area] -->
+                        </div>
+                    </div>
+                    <div class="content-box shadow">
+                        <div class="top-area">
+                            <h4 class="h4">미래설계 <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                <div class="tooltip">
+                                    <strong class="tit">미래설계?</strong>
+                                    <div class="cont">
+                                        <ul data-style="list">
+                                            <li>65세 기준으로 예상 월 수령액을 계산합니다.</li>
+                                        </ul>
+                                    </div>
+                                    <button class="btn-close"><span>닫기</span></button>
+                                </div>
+                            </h4>
+                            <button type="button" title="D플랜으로 이동"><i class="icon-go_detail_24"></i></button>
+                        </div>
+                        <div class="graph-area">
+                            <p class="msg">
+                                40대 여성 평균보다 <em class="point">월수령액이 <span class="num">700,000</span>원</em> 부족할 수 있어요.
+                            </p>
+                            <div class="compare-box">
+                                <div class="tit">예상 월 수령액</div>
+                                <ul>
+                                    <li class="mine">
+                                        <p class="type">나</p>
+                                        <p class="amount"><span class="num">9,000,000</span>원</p>
+                                        </dd>
+                                    <li class="other">
+                                        <p class="type">40대여성</p>
+                                        <p class="amount"><span class="num">5,000,000</span>원</p>
+                                    </li>
+                                </ul>
+                                <div class="compare gt">
+                                    <!-- 내 수령액이 평균보다 클때 gt, 작을때 lt 추가 -->
+                                </div>
+                            </div>
+
+                            <p class="info"><i class="icon-bang_20_gray"></i> 개인연금, 퇴직연금만을 추정한 금액입니다.</p>
+                        </div>
+                    </div>
+                    <div class="btn-area">
+                        <a href="#" class="btn-add-data"><i class="icon-add-data_24"></i> 자산등록</a>
+                    </div>
+                </section>
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+        <!-- Layer (fullpage popup, modal, bottom sheet) // -->
+        <div class="layered">
+        </div>
+        <!-- // Layer (fullpage popup, modal, bottom sheet) -->
+    </div>
+
+    <!-- Script -->
+    <!-- Common Library -->
+    <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
+    <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
+    <script src="../../static/common/lib/current-device.min.js"></script>
+    <script src="../../static/common/lib/moment.min.js"></script>
+    <script src="../../static/common/lib/swiper-bundle.min.js"></script>
+    <!-- <script src="../../static/js/bottomSheet.js"></script> -->
+    <script src="../../static/js/modalPopup.js"></script>
+    <script src="../../static/js/menu.js"></script>
+    <!-- Add Library (this page only)-->
+    <script src="../../static/js/ui.js"></script>
+    <!-- Add Script -->
+
+</body>
+
+</html>

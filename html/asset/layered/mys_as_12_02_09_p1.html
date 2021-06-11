@@ -1,0 +1,84 @@
+<!-- [MYS_AS_12_02_09_P1] Wish Car 수정 (작성자: 누리어 시스템 황철민) // -->
+<div class="popup" data-layered-name="popupWishCarModify">
+    <div class="popup_header">
+        <strong class="tit">Wish Car 수정</strong>
+    </div>
+    <div class="popup_contents">
+
+        <section class="kb-sec wishcar-add-forms">
+            <div class="pop-notice">
+                <em>* 표시된 항목은 필수 입력 사항입니다.</em>
+            </div>
+
+            <div class="kb-form" data-status="">
+                <label for="wishcarModifyForm4" class="required">등급</label>
+                <div class="kb-form_inner form-select">
+                    <button type="button" class="selected-option"></button>
+                    <select name="" id="wishcarModifyForm4" title="등급 선택">
+                        <!-- 수정 2021-05-24 -->
+                        <option value="">등급</option>
+                        <option value="">1.4 터보 튜너 패키지 (2016~현재)</option>
+                        <option value="">1.4 터보 스마트 (2016~현재)</option>
+                        <option value="" selected>1.4 터보 모던 (2016~현재)</option>
+                        <option value="">1.4 터보 프리미엄 (2016~현재)</option>
+                    </select>
+                </div>
+                <em class="validation">Message</em>
+            </div>
+            <div class="kb-form" data-status="">
+                <label for="wishcarModifyForm5" class="required">연식</label>
+                <div class="kb-form_inner form-select">
+                    <button type="button" class="selected-option"></button>
+                    <select name="" id="wishcarModifyForm5" title="연식 선택" onchange="carYearChange(this, 'wishcarModifyForm6')">
+                        <!-- 수정 2021-05-24 -->
+                        <option value="">연식</option>
+                        <option value="" selected>2016</option>
+                        <option value="">2017</option>
+                        <option value="">2018</option>
+                        <option value="">신차</option>
+                    </select>
+                </div>
+                <em class="validation">Message</em>
+            </div>
+            <div class="kb-form" data-status="">
+                <label for="wishcarModifyForm6">주행거리(km)</label>
+                <div class="kb-form_inner form-text">
+                    <input type="text" inputmode="numeric" id="wishcarModifyForm6" placeholder="" maxlength="7" value="123000" data-unit="km" data-action="autoSeperator">
+                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                </div>
+            </div>
+            <div class="kb-form" data-status="">
+                <label for="wishcarModifyForm7">별명</label>
+                <div class="kb-form_inner form-text">
+                    <input type="text" id="wishcarModifyForm7" maxlength="10" value="위시카" placeholder="최대 10자">
+                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                </div>
+            </div>
+            <script>
+                // 연식=신차 선택시 주행거리 비활성
+                function carYearChange(obj, targetId) {
+                    var _target = document.querySelector("#" + targetId);
+                    var _targetKbForm = document.querySelector("#" + targetId).parentElement.parentElement;
+                    for (var i = 0; i < obj.options.length; i++) {
+                        if (obj.options[i].selected && obj.options[i].innerText === "신차") {
+                            _target.disabled = true;
+                            _targetKbForm.classList.add("is-disabled");
+                        } else {
+                            _target.disabled = false;
+                            _targetKbForm.classList.remove("is-disabled");
+                        }
+                    }
+                }
+            </script>
+        </section>
+
+    </div>
+    <div class="popup_buttons sticky-bottom">
+        <div class="btn-area">
+            <button type="button" class="btn-solid_sticky lv2" data-action="close"><span>삭제</span></button>
+            <button type="button" class="btn-solid_sticky" data-action="close"><span>저장</span></button>
+        </div>
+    </div>
+    <button class="btn-close" data-action="close"><span>닫기</span></button>
+</div>
+<!-- // [MYS_AS_12_02_09_P1] Wish Car 수정 -->
