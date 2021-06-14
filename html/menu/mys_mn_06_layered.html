@@ -1,91 +1,30 @@
 <!DOCTYPE html>
 <html lang="ko">
 <!-- [MYS_MN_06] 작성자 : 누리어 시스템 이진우 -->
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>LAYER | 전체메뉴 | KB국민은행 마이데이터</title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
-    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
-    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
-    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
-    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
-    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
-    <link rel="stylesheet" href="../../static/css/ui.css">
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "LAYER | 전체메뉴"
+    })
     <style>
-        .layer-call {
-            max-width: 300px;
-            margin: 0 auto;
-            padding: 40px 0;
-        }
-
-        .layer-call>button {
-            flex-flow: column;
-            margin-top: 10px;
-        }
-
-        .layer-call>button:before {
-            content: attr(data-page-id);
-        }
-
-        .layer-call>button span {
-            display: block;
-        }
+        .layer-call{max-width:300px;margin:0 auto;padding:40px 0;}
+        .layer-call > button{flex-flow:column;margin-top:10px;}
+        .layer-call > button:before{content:attr(data-page-id);}
+        .layer-call > button span{display:block;}
     </style>
 </head>
-
-<body>
+<body>    
     <div class="layer-call">
         <button type="button" class="btn-line" data-call-layered="bsRewardDetail" data-page-id="MYS_MN_06_01_04_P1"><span>리워드 혜택 안내 팝업</span></button>
-
+        
     </div>
 
     <div class="layered">
-        <!-- [MYS_MN_06_01_04_P01] 전체메뉴 > 플러스존(My 혜택) > 리워드 혜택 상세 (작성자: 누리어 시스템 이진우)// -->
-        <!-- 조회 바텀시트 //-->
-        <div class="bottom-sheet full-size" data-layered-name="bsRewardDetail">
-            <div class="bottom-sheet_header">
-                <span class="tit">계좌를 추가하고 룰렛 돌리세요!</span>
-            </div>
-            <div class="bottom-sheet_contents">
-                <section class="kb-sec">
-                    <img src="" alt="쿠폰 이미지">
-                    <dl>
-                        <dt>스타벅스 아메리카노 1잔</dt>
-                        <dd>
-                            참여해 주셔서 감사합니다.<br>
-                            자세한 사항은 My 혜택 리워드에서 확인하세요.
-                            <!-- 수정 : 2021.06.09 -->
-                        </dd>
-                    </dl>
-
-                </section>
-            </div>
-            <div class="bottom-sheet_buttons">
-                <button class="btn-solid_sticky"><span>My 혜택</span></button><!-- 수정 : 2021.06.09 -->
-            </div>
-            <button class="btn-close" data-action="close"><span>닫기</span></button>
-        </div>
-        <!-- //조회 바텀시트  -->
+        @@include('@@webRoot/html/menu/layered/mys_mn_06_01_04_p01.html')
     </div>
     <!-- Script -->
-    <!-- Common Library -->
-    <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
-    <script src="../../static/common/lib/jquery-ui.min.js"></script>
-    <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
-    <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
-    <script src="../../static/common/lib/current-device.min.js"></script>
-    <script src="../../static/common/lib/moment.min.js"></script>
-    <script src="../../static/common/lib/swiper-bundle.min.js"></script>
-    <!-- <script src="../../static/js/bottomSheet.js"></script> -->
-    <script src="../../static/js/modalPopup.js"></script>
-    <script src="../../static/js/menu.js"></script>
+    @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
-    <script src="../../static/js/ui.js"></script>
+    <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
 
     <script>
@@ -94,16 +33,15 @@
         var urlArr = url.split('#');
         var pageID = urlArr[urlArr.length - 1].toUpperCase();
 
-        $('.layer-call').on('click', 'button', function() {
+        $('.layer-call').on('click','button',function(){
             var newUrl = url.replace(pageID, '');
             window.location.href = urlArr[0] + '#' + $(this).data('page-id');
         });
-
-        if (pageID.indexOf('/HTML/') < 0) $('button[data-page-id=' + pageID + ']').click();
+        
+        if(pageID.indexOf('/HTML/') < 0) $('button[data-page-id=' + pageID + ']').click();
         //레이어 확인용 스크립트 (개발시 삭제) [e]
     </script>
-
+    
 
 </body>
-
 </html>

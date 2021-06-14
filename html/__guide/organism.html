@@ -2,33 +2,17 @@
 <html lang="ko">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Organism | KB국민은행 마이데이터</title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
-    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
-    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
-    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
-    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
-    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
-    <link rel="stylesheet" href="../../static/css/ui.css">
-
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Organism"
+    })
+    
     <link rel="stylesheet" href="./resources/guide.css">
     <link rel="stylesheet" href="./resources/jquery-ui.css">
     <link rel="stylesheet" href="./resources/a11y-dark.min.css">
     <script src="./resources/highlight.min.js"></script>
-    <script>
-        hljs.highlightAll();
-    </script>
+    <script>hljs.highlightAll();</script>
     <style>
-        .h2 {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
+        .h2{display:flex;justify-content:space-between;margin-bottom:10px;}
     </style>
 </head>
 
@@ -41,8 +25,8 @@
             <li class="is-active"><a href="./organism.html">Organism</a></li>
             <li><a href="./template.html">Template</a></li>
             <li><a href="./highcharts-sample.html">Highcharts</a></li>
-        </ul>
-    </div>
+        </ul>        
+    </div>    
     <div class="guide-container">
         <!-- <div class="box">
             <h2 class="h2">Common (in _include)</h2>
@@ -74,7 +58,7 @@
         <hr> -->
         <div class="box">
             <h2 class="h2">Botom Sheets (in _layered) <a href="../_layered/_bottom-sheets.html" target="_blank">샘플페이지 바로가기 &gt;</a></h2>
-            <div class="table">
+            <div class="table">            
                 <table class="tbl-t01">
                     <caption></caption>
                     <colgroup>
@@ -83,23 +67,23 @@
                         <col style="width:20%">
                     </colgroup>
                     <thead>
-                        <tr>
-                            <th>내용</th>
-                            <th>File Name</th>
-                            <th>비고</th>
-                        </tr>
+                    <tr>
+                        <th>내용</th>
+                        <th>File Name</th>
+                        <th>비고</th>
+                    </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>셀렉트 내용을 호출</td>
-                            <td>/html/_layered/bsSelect.html</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>날짜선택</td>
-                            <td>/html/_layered/bs-calendar.html</td>
-                            <td></td>
-                        </tr>
+                    <tr>
+                        <td>셀렉트 내용을 호출</td>
+                        <td>/html/_layered/bsSelect.html</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>날짜선택</td>
+                        <td>/html/_layered/bs-calendar.html</td>
+                        <td></td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -111,8 +95,7 @@
                 </dt>
                 <dd style="display:none;">
                     <!-- 바텀시트 //-->
-                    <div class="bottom-sheet" data-layered-name="bsName">
-                        <!-- Bottom Sheet Name : bs+Name-->
+                    <div class="bottom-sheet" data-layered-name="bsName"><!-- Bottom Sheet Name : bs+Name-->
                         <div class="bottom-sheet_header">
                             <span class="tit">타이틀</span>
                         </div>
@@ -144,23 +127,23 @@
                         <col style="width:40%">
                     </colgroup>
                     <thead>
-                        <tr>
-                            <th>이미지</th>
-                            <th>File Name</th>
-                            <th>Description</th>
-                        </tr>
+                    <tr>
+                        <th>이미지</th>
+                        <th>File Name</th>
+                        <th>Description</th>
+                    </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><img src="./img/alert.png" alt=""></td>
-                            <td>modal-alert.html</td>
-                            <td>알럿형 모달</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./img/alert.png" alt=""></td>
-                            <td>modal-confirm.html</td>
-                            <td>컨펌형 모달</td>
-                        </tr>
+                    <tr>
+                        <td><img src="./img/alert.png" alt=""></td>
+                        <td>modal-alert.html</td>
+                        <td>알럿형 모달</td>
+                    </tr>
+                    <tr>
+                        <td><img src="./img/alert.png" alt=""></td>
+                        <td>modal-confirm.html</td>
+                        <td>컨펌형 모달</td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -230,7 +213,7 @@
                         $('#'+id).modalPopup('open');
                     });
                     </code>
-                </pre>
+                </pre>                
             </div>
 
             <h4 class="h4">Example</h4>
@@ -258,7 +241,7 @@
     }
 });</code></pre>
             </div>
-            <div class="ex">
+            <div class="ex">                
                 <div class="modal" id="modalPopup1">
                     <div class="modal_contents">
                         로그아웃 후 인증서 발급이 가능합니다.<br>
@@ -397,21 +380,21 @@
                         </dt>
                         <dd>
                             내용
-                        </dd>
+                        </dd>                       
                         <dt>
                             <strong>타이틀</strong>
                             <button type="button"><i></i></button>
                         </dt>
                         <dd>
                             내용
-                        </dd>
+                        </dd>                       
                         <dt>
                             <span>타이틀</span>
                             <button type="button"><i></i></button>
                         </dt>
                         <dd>
                             내용
-                        </dd>
+                        </dd>                       
                     </dl>
                 </dd>
             </dl>
@@ -595,9 +578,9 @@
                     <div class="swiper-container t01 js-swiper" data-swiper-options="recommFundSwiperOptions">
                         <script>
                             var recommFundSwiperOptions = {
-                                "slidesPerView": 2,
-                                "slidesPerGroup": 2,
-                                "spaceBetween": 20,
+                                "slidesPerView": 2, 
+                                "slidesPerGroup": 2, 
+                                "spaceBetween": 20, 
                                 "pagination": {
                                     "el": ".swiper-pagination"
                                 }
@@ -619,357 +602,29 @@
 
     <div class="layered">
         <!-- Layer // -->
-        <!-- popup (Full Page) Sample //-->
-        <div class="popup" data-layered-name="popupSample">
-            <div class="popup_header">
-                <strong class="tit">팝업 타이틀</strong>
-            </div>
-            <div class="popup_contents">
-                <div class="tab swiper-container">
-                    <ul class="swiper-wrapper">
-                        <li class="swiper-slide is-active"><a href="#target01">홈</a></li>
-                        <li class="swiper-slide"><a href="#target02">메뉴명2</a></li>
-                        <li class="swiper-slide"><a href="#target03">메뉴명3</a></li>
-                    </ul>
-                </div>
-                <section class="kb-sec bg-gray">
-                    bg-gray<br>
-                    bg-gray<br>
-                    bg-gray<br>
-                    bg-gray<br>
-                    bg-gray<br>
-                    bg-gray<br>
-                    bg-gray<br>
-                    bg-gray<br>
-                    bg-gray<br>
-                </section>
-                <section class="kb-sec">
-                    팝업 컨텐츠<br>
-                    <p><button type="button" class="btn-line" data-call-layered="modalSample"><span>모달 호출</span></button></p>
-                    <p><button type="button" class="btn-line" data-call-layered="popupSample02"><span>팝업02 호출</span></button></p>
-                    <p><button type="button" class="btn-line" data-call-layered="bsSample"><span>바텀시트 호출</span></button></p>
-                    <p><button type="button" class="btn-line" data-call-layered="bsSample02"><span>바텀시트02 호출</span></button></p>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-
-                </section>
-            </div>
-            <div class="popup_buttons sticky-bottom">
-                <div class="btn-area">
-                    <button type="button" class="btn-solid_sticky" data-action="close"><span>확인</span></button>
-                </div>
-            </div>
-            <button class="btn-close" data-action="close"><span>닫기</span></button>
-        </div>
-        <!-- // popup (Full Page) Sample -->
-        <!-- popup (Full Page) Sample //-->
-        <div class="popup" data-layered-name="popupSample02">
-            <div class="popup_header">
-                <strong class="tit">팝업 타이틀02</strong>
-            </div>
-            <div class="popup_contents">
-                <div class="tab swiper-container">
-                    <ul class="swiper-wrapper">
-                        <li class="swiper-slide is-active"><a href="#target01">홈</a></li>
-                        <li class="swiper-slide"><a href="#target02">메뉴명2</a></li>
-                        <li class="swiper-slide"><a href="#target03">메뉴명3</a></li>
-                    </ul>
-                </div>
-                <section class="kb-sec">
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    <p><button type="button" class="btn-line" data-call-layered="modalSample"><span>모달 호출</span></button></p>
-                    <p><button type="button" class="btn-line" data-call-layered="popupSample"><span>팝업 호출</span></button></p>
-                    <p><button type="button" class="btn-line" data-call-layered="bsSample"><span>바텀시트 호출</span></button></p>
-                    <p><button type="button" class="btn-line" data-call-layered="bsSample02"><span>바텀시트02 호출</span></button></p>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-                    팝업 컨텐츠<br>
-
-                </section>
-            </div>
-            <div class="popup_buttons sticky-bottom">
-                <div class="btn-area">
-                    <button type="button" class="btn-solid_sticky" data-action="close"><span>확인</span></button>
-                </div>
-            </div>
-            <button class="btn-close" data-action="close"><span>닫기</span></button>
-        </div>
-        <!-- // popup (Full Page) Sample -->
+        @@include('@@webRoot/html/_layered/_popup-sample.html')
         <!-- // Layer -->
 
         <!-- Bottom Sheet // -->
-
-        <!-- Bottom Sheet 샘플 //-->
-        <div class="bottom-sheet" data-layered-name="bsSample">
-            <div class="bottom-sheet_header">
-                <span class="tit">바텀시트 타이틀</span>
-            </div>
-            <div class="bottom-sheet_contents">
-                <!-- 바텀 시트 내용 -->
-                <section class="kb-sec">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam non, eaque dolore velit corporis eius perferendis officia, atque excepturi consequatur impedit? Illo doloremque minus odit placeat? Accusamus sapiente ullam distinctio.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta doloremque, molestiae quam non odio, placeat quia vero quibusdam necessitatibus dolorum vitae. Natus earum debitis facere nisi nesciunt enim, expedita ea!</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, est expedita hic debitis velit odit voluptatem minima deleniti similique aliquam vitae provident nam reprehenderit doloremque architecto magni optio iusto ipsa.</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic earum ducimus distinctio? Vero, id, enim sint voluptate aliquid sed, provident quaerat earum ducimus atque officiis delectus! Sunt veniam tempore cum?</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat repudiandae sequi animi a nam, doloremque at repellendus totam maxime alias cupiditate aspernatur quo obcaecati nisi nihil eos? Quis, maxime molestias.</p>
-                    <p><button type="button" class="btn-line" data-call-layered="popupSample"><span>팝업 호출</span></button></p>
-                    <p><button type="button" class="btn-line" data-call-layered="popupSample02"><span>팝업02 호출</span></button></p>
-                    <p><button type="button" class="btn-line" data-call-layered="bsSample02"><span>바텀시트02 호출</span></button></p>
-                    <p><button type="button" class="btn-line" data-call-layered="modalSample"><span>모달 호출</span></button></p>
-                </section>
-            </div>
-            <div class="bottom-sheet_buttons">
-                <button class="btn-solid_sticky lv2" data-action="close"><span>취소</span></button>
-                <button class="btn-solid_sticky"><span>확인</span></button>
-            </div>
-            <button class="btn-close" data-action="close"><span>닫기</span></button>
-        </div>
-        <!-- //Bottom Sheet -->
-        <!-- Bottom Sheet 샘플 //-->
-        <div class="bottom-sheet" data-layered-name="bsSample02">
-            <div class="bottom-sheet_header">
-                <span class="tit">바텀시트 타이틀02</span>
-            </div>
-            <div class="bottom-sheet_contents">
-                <!-- 바텀 시트 내용 -->
-                <section class="kb-sec">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam non, eaque dolore velit corporis eius perferendis officia, atque excepturi consequatur impedit? Illo doloremque minus odit placeat? Accusamus sapiente ullam distinctio.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta doloremque, molestiae quam non odio, placeat quia vero quibusdam necessitatibus dolorum vitae. Natus earum debitis facere nisi nesciunt enim, expedita ea!</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, est expedita hic debitis velit odit voluptatem minima deleniti similique aliquam vitae provident nam reprehenderit doloremque architecto magni optio iusto ipsa.</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic earum ducimus distinctio? Vero, id, enim sint voluptate aliquid sed, provident quaerat earum ducimus atque officiis delectus! Sunt veniam tempore cum?</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat repudiandae sequi animi a nam, doloremque at repellendus totam maxime alias cupiditate aspernatur quo obcaecati nisi nihil eos? Quis, maxime molestias.</p>
-                    <p><button type="button" class="btn-line" data-call-layered="popupSample"><span>팝업 호출</span></button></p>
-                    <p><button type="button" class="btn-line" data-call-layered="popupSample02"><span>팝업02 호출</span></button></p>
-                    <p><button type="button" class="btn-line" data-call-layered="bsSample"><span>바텀시트 호출</span></button></p>
-                    <p><button type="button" class="btn-line" data-call-layered="modalSample"><span>모달 호출</span></button></p>
-                </section>
-            </div>
-            <div class="bottom-sheet_buttons">
-                <button class="btn-solid_sticky lv2" data-action="close"><span>취소</span></button>
-                <button class="btn-solid_sticky"><span>확인</span></button>
-            </div>
-            <button class="btn-close" data-action="close"><span>닫기</span></button>
-        </div>
-        <!-- //Bottom Sheet -->
-        <div class="bottom-sheet" data-layered-name="bsSelect">
-            <div class="bottom-sheet_header">
-                <span class="tit"></span>
-            </div>
-            <div class="bottom-sheet_contents">
-
-            </div>
-            <button class="btn-close" data-action="close"><span>닫기</span></button>
-        </div>
-
-        <!-- 조회 바텀시트 //-->
-        <div class="bottom-sheet" data-layered-name="bsLookUp">
-            <div class="bottom-sheet_header">
-                <span class="tit">조회 선택</span>
-            </div>
-            <div class="bottom-sheet_contents">
-                <div class="tab swiper-container">
-                    <ul class="swiper-wrapper">
-                        <li class="swiper-slide is-active"><a href="#target01">기간/유형</a></li>
-                        <li class="swiper-slide"><a href="#target02">카테고리</a></li>
-                    </ul>
-                </div>
-                <section class="kb-sec tab_contents">
-                    <div class="is-active">
-                        <div class="kb-form">
-                            <strong class="label">조회기간</strong>
-                            <div class="lookup-period">
-                                <ul class="btn-segmented">
-                                    <li><button><span>1개월</span></button></li>
-                                    <li><button><span>3개월</span></button></li>
-                                    <li><button><span>6개월</span></button></li>
-                                    <li><button class="is-selected"><span>직접입력</span></button></li>
-                                </ul>
-                                <div class="period-selector">
-                                    <input type="text" title="시작날짜" value="2021.08.28">
-                                    <span>~</span>
-                                    <input type="text" title="종료날짜" value="2021.08.31">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="kb-form">
-                            <strong class="label">거래유형</strong>
-                            <div class="lookup-period">
-                                <ul class="btn-segmented">
-                                    <li><button><span>수입</span></button></li>
-                                    <li><button><span>지출</span></button></li>
-                                    <li><button class="is-selected"><span>이체</span></button></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="kb-form">
-                            <strong class="label">정렬순서</strong>
-                            <div class="lookup-period">
-                                <ul class="btn-segmented">
-                                    <li><button><span>최신</span></button></li>
-                                    <li><button class="is-selected"><span>과거</span></button></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="kb-form">
-                            <span class="form-checkbox"><input type="checkbox" id="conditionSearch"><label for="conditionSearch">조건검색</label></span>
-                            <div class="kb-form mt32" data-status="info">
-                                <div class="kb-form_inner form-text">
-                                    <input type="text" id="" value="" placeholder="금액이나 사용처를 입력하세요">
-                                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                                </div>
-                                <em class="validation">금액을 입력하는 경우 숫자만 입력 <br>(, 원 은 입력하지 마세요) <br>가맹점명 입력 시 한글이나 영문 1자 이상 입력해주세요</em>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <dl class="accordian">
-                            <dt>
-                                <span class="form-checkbox"><input type="checkbox" id="incomeCategoryAll"><label for="incomeCategoryAll">수입 카테고리</label></span>
-                                <button type="button"><i></i></button>
-                            </dt>
-                            <dd>
-                                <ul class="checkbox-group st-list">
-                                    <li><span class="form-checkbox_20"><input type="checkbox" id="incomeCategory01"><label for="incomeCategory01">급여</label></span></li>
-                                    <li><span class="form-checkbox_20"><input type="checkbox" id="incomeCategory02"><label for="incomeCategory02">용돈</label></span></li>
-                                    <li><span class="form-checkbox_20"><input type="checkbox" id="incomeCategory03"><label for="incomeCategory03">사업소득</label></span></li>
-                                    <li><span class="form-checkbox_20"><input type="checkbox" id="incomeCategory04"><label for="incomeCategory04">금융소득</label></span></li>
-                                    <li><span class="form-checkbox_20"><input type="checkbox" id="incomeCategory05"><label for="incomeCategory05">임대소득</label></span></li>
-                                    <li><span class="form-checkbox_20"><input type="checkbox" id="incomeCategory06"><label for="incomeCategory06">기타소득</label></span></li>
-                                </ul>
-                            </dd>
-                            <dt>
-                                <span class="form-checkbox"><input type="checkbox" id="outcomeCategoryAll"><label for="outcomeCategoryAll">지출 카테고리</label></span>
-                                <button type="button"><i></i></button>
-                            </dt>
-                            <dd>
-                                <ul class="checkbox-group st-list">
-                                    <li><span class="form-checkbox_20"><input type="checkbox" id="outcomeCategory01"><label for="outcomeCategory01">급여</label></span></li>
-                                    <li><span class="form-checkbox_20"><input type="checkbox" id="outcomeCategory02"><label for="outcomeCategory02">용돈</label></span></li>
-                                    <li><span class="form-checkbox_20"><input type="checkbox" id="outcomeCategory03"><label for="outcomeCategory03">사업소득</label></span></li>
-                                    <li><span class="form-checkbox_20"><input type="checkbox" id="outcomeCategory04"><label for="outcomeCategory04">금융소득</label></span></li>
-                                    <li><span class="form-checkbox_20"><input type="checkbox" id="outcomeCategory05"><label for="outcomeCategory05">임대소득</label></span></li>
-                                    <li><span class="form-checkbox_20"><input type="checkbox" id="outcomeCategory06"><label for="outcomeCategory06">기타소득</label></span></li>
-                                </ul>
-                            </dd>
-                            <dt>
-                                <span class="form-checkbox"><input type="checkbox" id="transferCategoryAll"><label for="transferCategoryAll">지출 카테고리</label></span>
-                                <button type="button"><i></i></button>
-                            </dt>
-                            <dd>
-                                <ul class="checkbox-group st-list">
-                                    <li><span class="form-checkbox_20"><input type="checkbox" id="transferCategory01"><label for="transferCategory01">급여</label></span></li>
-                                    <li><span class="form-checkbox_20"><input type="checkbox" id="transferCategory02"><label for="transferCategory02">용돈</label></span></li>
-                                    <li><span class="form-checkbox_20"><input type="checkbox" id="transferCategory03"><label for="transferCategory03">사업소득</label></span></li>
-                                    <li><span class="form-checkbox_20"><input type="checkbox" id="transferCategory04"><label for="transferCategory04">금융소득</label></span></li>
-                                    <li><span class="form-checkbox_20"><input type="checkbox" id="transferCategory05"><label for="transferCategory05">임대소득</label></span></li>
-                                    <li><span class="form-checkbox_20"><input type="checkbox" id="transferCategory06"><label for="transferCategory06">기타소득</label></span></li>
-                                </ul>
-                            </dd>
-                        </dl>
-                    </div>
-                </section>
-            </div>
-            <div class="bottom-sheet_buttons">
-                <button class="btn-solid_sticky lv2" data-action="close"><span>취소</span></button>
-                <button class="btn-solid_sticky"><span>확인</span></button>
-            </div>
-            <button class="btn-close" data-action="close"><span>닫기</span></button>
-        </div>
-        <!-- //조회 바텀시트  -->
+        @@include('@@webRoot/html/_layered/_bottom-sheet-sample.html')
+        @@include('@@webRoot/html/_layered/bs-select.html')
+        @@include('@@webRoot/html/_layered/bs-lookup.html')
         <!-- // Bottom Sheet -->
 
         <!-- Modal // -->
-        <!-- Modal 샘플 //-->
-        <div class="modal" data-layered-name="modalSample">
-            <div class="modal_header">
-                <strong class="tit">모달 타이틀</strong>
-            </div>
-            <div class="modal_contents">
-                모달 내용<br>
-                모달 내용<br>
-                모달 내용<br>
-            </div>
-            <div class="modal_buttons btn-area">
-                <button class="btn-solid_sticky lv2" data-action="close"><span>취소</span></button>
-                <button class="btn-solid_sticky"><span>확인</span></button>
-            </div>
-        </div>
-        <!-- //Modal -->
-        <!-- Modal 샘플 //-->
-        <div class="modal" id="alertModalSample">
-            <div class="modal_contents">
-                메시지 내용 들어가는 곳
-            </div>
-            <div class="modal_buttons btn-area">
-                <button class="btn-solid_sticky ok"><span>확인</span></button>
-            </div>
-        </div>
-        <!-- //Modal -->
-        <!-- Modal 샘플 //-->
-        <div class="modal" id="confirmModalSample">
-            <div class="modal_contents">
-                메시지 내용 들어가는 곳
-            </div>
-            <div class="modal_buttons btn-area">
-                <button class="btn-solid_sticky lv2 cancel"><span>취소</span></button>
-                <button class="btn-solid_sticky ok"><span>확인</span></button>
-            </div>
-        </div>
-        <!-- //Modal -->
+        @@include('@@webRoot/html/_layered/_modal-sample.html')
+        @@include('@@webRoot/html/_layered/modal-alert.html')
+        @@include('@@webRoot/html/_layered/modal-confirm.html')
         <!-- // Modal -->
     </div>
 
-    <!-- Common Library -->
-    <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
-    <script src="../../static/common/lib/jquery-ui.min.js"></script>
-    <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
-    <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
-    <script src="../../static/common/lib/current-device.min.js"></script>
-    <script src="../../static/common/lib/moment.min.js"></script>
-    <script src="../../static/common/lib/swiper-bundle.min.js"></script>
-    <!-- <script src="../../static/js/bottomSheet.js"></script> -->
-    <script src="../../static/js/modalPopup.js"></script>
-    <script src="../../static/js/menu.js"></script>
-    <!-- Add Library (this page only)-->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->    
     <script src="./resources/guide.js"></script>
 
-    <script src="../../static/js/ui.js"></script>
-
-
+    <script src="@@webRoot/static/js/ui.js"></script>
+    
+    
     <script>
         $("#modalPopup1").modalPopup({
             onOk: function() {

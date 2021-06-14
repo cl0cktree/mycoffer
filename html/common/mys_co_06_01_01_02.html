@@ -3,25 +3,13 @@
 <html lang="ko">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Last Depth | 1st Depth | KB국민은행 마이데이터</title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
-    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
-    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
-    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
-    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
-    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
-    <link rel="stylesheet" href="../../static/css/ui.css">
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Last Depth | 1st Depth"
+    })
 </head>
 
 <body>
-    <div class="skip-nav">
-        <a href="#content">본문으로 이동하기</a>
-    </div>
+    @@include('@@webRoot/html/_include/app-a11y.html')
     <div class="app">
 
         <!-- app-container (for MyMoney) //-->
@@ -31,7 +19,7 @@
             <main class="app-content joint-certificate">
                 <div class="page-header">
                     <a href="javascript:history.back();" class="btn-history-back" role="button"><i class="icon-back">뒤로가기</i></a>
-                    <!-- <strong class="tit">공동인증서 로그인</strong> -->
+                    <!-- <strong class="tit">공동인증서 로그인</strong> -->                    
                 </div>
 
                 <section class="kb-sec">
@@ -82,51 +70,20 @@
             </main>
             <!-- // app-content -->
 
-            <!-- // app-container -->
-        </div>
+        <!-- // app-container -->
+    </div>
 
-        <div class="layered">
+    <div class="layered">
 
+        @@include('@@webRoot/html/_layered/bs-other-login.html')
 
-            <!-- 조회 바텀시트 //-->
-            <div class="bottom-sheet full-size" data-layered-name="bsOtherLogin">
-                <div class="bottom-sheet_header">
-                    <span class="tit">다른 로그인 방법</span>
-                </div>
-                <div class="bottom-sheet_contents">
-                    <section class="kb-sec">
-                        <ul class="select-list">
-                            <!-- <li><button type="button"><span class="badge_48"><img src="../../static/images/_temp/hana.png" alt=""></span><strong class="tit">간편비밀번호</strong><i class="icon-20"></i></button></li> -->
-                            <li><button type="button"><span class="badge_48"><img src="../../static/images/_temp/hana.png" alt=""></span><strong class="tit">공동 인증서</strong><i class="icon-20"></i></button></li>
-                            <li><button type="button"><span class="badge_48"><img src="../../static/images/_temp/hana.png" alt=""></span><strong class="tit">KB모바일 인증서</strong><i class="icon-20"></i></button></li>
-                            <li><button type="button"><span class="badge_48"><img src="../../static/images/_temp/hana.png" alt=""></span><strong class="tit">금융 인증서</strong><i class="icon-20"></i></button></li>
-                        </ul>
-                    </section>
-                </div>
-                <!-- <div class="bottom-sheet_buttons">
-        <button class="btn-solid_sticky" data-action="close"><span>확인</span></button>
-    </div> -->
-                <button class="btn-close" data-action="close"><span>닫기</span></button>
-            </div>
-            <!-- //조회 바텀시트  -->
+    </div>
 
-        </div>
-
-        <!-- Script -->
-        <!-- Common Library -->
-        <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
-        <script src="../../static/common/lib/jquery-ui.min.js"></script>
-        <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
-        <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
-        <script src="../../static/common/lib/current-device.min.js"></script>
-        <script src="../../static/common/lib/moment.min.js"></script>
-        <script src="../../static/common/lib/swiper-bundle.min.js"></script>
-        <!-- <script src="../../static/js/bottomSheet.js"></script> -->
-        <script src="../../static/js/modalPopup.js"></script>
-        <script src="../../static/js/menu.js"></script>
-        <!-- Add Library (this page only)-->
-        <script src="../../static/js/ui.js"></script>
-        <!-- Add Script -->
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
 
 </body>
 

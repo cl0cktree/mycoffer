@@ -3,44 +3,20 @@
 <!-- [MYS_CO_04] 작성자: 누리어 시스템 이진우 -->
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>LAYER | 로그인, 회원가입 | KB국민은행 마이데이터</title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
-    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
-    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
-    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
-    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
-    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
-    <link rel="stylesheet" href="../../static/css/ui.css">
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "LAYER | 로그인, 회원가입"
+    })
     <style>
-        .layer-call {
-            max-width: 300px;
-            margin: 0 auto;
-            padding: 40px 0;
-        }
-
-        .layer-call>button {
-            flex-flow: column;
-            margin-top: 10px;
-        }
-
-        .layer-call>button:before {
-            content: attr(data-page-id);
-        }
-
-        .layer-call>button span {
-            display: block;
-        }
+        .layer-call{max-width:300px;margin:0 auto;padding:40px 0;}
+        .layer-call > button{flex-flow:column;margin-top:10px;}
+        .layer-call > button:before{content:attr(data-page-id);}
+        .layer-call > button span{display:block;}
     </style>
 </head>
 
-<body>
+<body>    
     <div class="layer-call">
-        <h1 class="h2">레이어 모음</h1>
+        <h1 class="h2">레이어 모음</h1>        
         <button type="button" class="btn-line" data-page-id="MYS_CO_04_01_03_M01"><span>지문(Face ID)-저장된지문없음</span></button>
         <button type="button" class="btn-line" data-page-id="MYS_CO_04_01_03_08"><span>지문(Face ID)-설정완료</span></button>
         <button type="button" class="btn-line" data-call-layered="modalErrorLogin01" data-page-id="MYS_CO_04_04_01_M01"><span>간편비밀번호(오류메세지1)</span></button>
@@ -49,9 +25,9 @@
         <button type="button" class="btn-line" data-page-id="MYS_CO_04_04_01_M04"><span>간편비밀번호(알림메세지2)</span></button>
         <button type="button" class="btn-line" data-call-layered="simplePasswordInput02" data-page-id="MYS_CO_04_04_03_04_M01"><span>간편비밀번호 등록완료</span></button>
         <button type="button" class="btn-line" data-call-layered="popupMobieCetification" data-page-id="MYS_CO_04_04_03_01"><span>휴대폰 본인인증</span></button>
-        <a href="../../html/terms/agree-unique-id-info.html" class="btn-line"><span>고유식별정보 처리 동의</span></a> <!-- 2021-06-10 수정 -->
-        <a href="../../html/terms/agree-terms-of-use-of-telecommunications-company.html" class="btn-line"><span>통신사 이용약관 동의</span></a> <!-- 2021-06-10 수정 -->
-        <a href="../../html/terms/agree-mobile-id-personal-info-collection.html" class="btn-line"><span>휴대폰본인확인 개인정보 수집이용동의</span></a> <!-- 2021-06-10 수정 -->
+        <a href="@@webRoot/html/terms/agree-unique-id-info.html" class="btn-line"><span>고유식별정보 처리 동의</span></a> <!-- 2021-06-10 수정 -->
+        <a href="@@webRoot/html/terms/agree-terms-of-use-of-telecommunications-company.html" class="btn-line"><span>통신사 이용약관 동의</span></a> <!-- 2021-06-10 수정 -->
+        <a href="@@webRoot/html/terms/agree-mobile-id-personal-info-collection.html" class="btn-line"><span>휴대폰본인확인 개인정보 수집이용동의</span></a> <!-- 2021-06-10 수정 -->
         <button type="button" class="btn-line" data-call-layered="popupAgreeMobileIDPersonalInfoService" data-page-id="MYS_CO_04_04_03_01_P4"><span>휴대폰본인확인 서비스 이용약관 동의</span></button>
 
         <button type="button" class="btn-line" data-call-layered="bsOtherLogin" data-page-id="MYS_CO_04_05_00_P1"><span>다른 로그인 방법</span></button>
@@ -61,180 +37,100 @@
         <button type="button" class="btn-line" data-call-layered="bsServiceJoinStatus" data-page-id="MYS_CO_05_04_00_BS01"><span>가입완료(마이데이터 서비스 가입현황)</span></button>
     </div>
 
-    <div class="layered">
-        <!-- [MYS_CO_04_04_01] 간편비밀번호 (작성자: 누리어 시스템 이진우)// -->
-        <!-- Login 오류 메세지 //-->
-        <div class="modal" data-layered-name="modalErrorLogin01" id="modalErrorLogin01">
-            <div class="modal_header">
-                <strong class="tit">고객님 죄송합니다.</strong>
-                <span class="error-code">응답코드(UKFK0111)</span>
-            </div>
-            <div class="modal_contents">
-                <ul data-style="list">
-                    <li>간편비밀번호 1회 오류입니다. <br>5회 연속 오류 시 재발급 해야합니다.</li>
-                    <li>대표전화<br>1588-9999, 1599-9999, 1644-9999</li>
-                </ul>
-            </div>
-            <div class="modal_buttons btn-area">
-                <button class="btn-solid_sticky ok" data-action="close"><span>확인</span></button>
-            </div>
-        </div>
-        <!-- /Login 오류 메세지 -->
-        <!-- [MYS_CO_04_04_01] 간편비밀번호 (작성자: 누리어 시스템 이진우)// -->
-        <!-- Login 오류 메세지 //-->
-        <div class="modal" data-layered-name="modalErrorLogin02" id="modalErrorLogin02">
-            <div class="modal_header">
-                <strong class="tit">고객님 죄송합니다.</strong>
-                <span class="error-code">응답코드(UKFK0111)</span>
-            </div>
-            <div class="modal_contents">
-                <ul data-style="list">
-                    <li>간편비밀번호 5회 오류입력되었습니다. <br>다시 등록해 주세요.</li>
-                    <li>대표전화<br>1588-9999, 1599-9999, 1644-9999</li>
-                </ul>
-            </div>
-            <div class="modal_buttons btn-area">
-                <button class="btn-solid_sticky ok" data-action="close"><span>확인</span></button>
-            </div>
-        </div>
-        <!-- /Login 오류 메세지 -->
-
-        <!-- [MYS_CO_04_05_00_P1] 다른 로그인 방법 (작성자: 누리어 시스템 이진우)// -->
-        <!-- 다른 로그인 방법 //-->
-        <div class="bottom-sheet full-size" data-layered-name="bsOtherLogin">
-            <div class="bottom-sheet_header">
-                <span class="tit">다른 로그인 방법</span>
-            </div>
-            <div class="bottom-sheet_contents">
-                <section class="kb-sec">
-                    <ul class="select-list">
-                        <li class="is-active"><button type="button"><span class="badge_48"><img src="../../static/images/_temp/hana.png" alt=""></span><strong class="tit">간편비밀번호</strong><i class="icon-20"></i></button></li>
-                        <li><button type="button"><span class="badge_48"><img src="../../static/images/_temp/hana.png" alt=""></span><strong class="tit">KB모바일 인증서</strong><i class="icon-20"></i></button></li>
-                        <li><button type="button"><span class="badge_48"><img src="../../static/images/_temp/hana.png" alt=""></span><strong class="tit">공동 인증서</strong><i class="icon-20"></i></button></li>
-                        <li><button type="button"><span class="badge_48"><img src="../../static/images/_temp/hana.png" alt=""></span><strong class="tit">금융 인증서</strong><i class="icon-20"></i></button></li>
-                    </ul>
-                </section>
-            </div>
-            <!-- <div class="bottom-sheet_buttons">
-        <button class="btn-solid_sticky" data-action="close"><span>확인</span></button>
-    </div> -->
-            <button class="btn-close" data-action="close"><span>닫기</span></button>
-        </div>
-        <!-- // 다른 로그인 방법  -->
-        <!-- [MYS_CO_04_06_00_P1] 작성자: 누리어 시스템 이진우 -->
-        <!-- 로그인 연장 //-->
-        <div class="modal" data-layered-name="modalLoginExtension" id="modalLoginExtension">
-            <div class="modal_header">
-                <strong class="tit">로그인 연장</strong>
-            </div>
-            <div class="modal_contents">
-                <div class="login-extension-time"><strong>60</strong>초</div>
-                <ul data-style="list">
-                    <li>고객님의 안전한 금융거래 보호를 위해 로그인 후 약 10분동안 이용이 없어 자동 로그아웃 됩니다.</li>
-                    <li>로그인 시간을 연장하시려면 ‘로그인 연장’ 버튼을 선택해주세요.</li>
-                </ul>
-            </div>
-            <div class="modal_buttons btn-area">
-                <button class="btn-solid_sticky lv2 cancel" data-action="close"><span>로그아웃</span></button>
-                <button class="btn-solid_sticky ok" data-action="close"><span>로그인 연장</span></button>
-            </div>
-        </div>
-        <!-- /로그인 연장 -->
-
+    <div class="layered">        
+        @@include('@@webRoot/html/common/layered/mys_co_04_04_01_m01.html')
+        @@include('@@webRoot/html/common/layered/mys_co_04_04_01_m02.html')        
+        @@include('@@webRoot/html/common/layered/mys_co_04_05_00_p1.html')
+        @@include('@@webRoot/html/common/layered/mys_co_04_06_00_p1.html')                
+        <!-- @@include('@@webRoot/html/_layered/popup-agree-unique-id-info.html')
+        @@include('@@webRoot/html/_layered/popup-agree-mobile-id-personal-info-collection.html')
+        @@include('@@webRoot/html/_layered/popup-agree-terms-of-use-of-telecommunications-company.html')
+        @@include('@@webRoot/html/_layered/popup-agree-mobile-id-personal-info-service.html') -->
     </div>
 
     <!-- Script -->
-    <!-- Common Library -->
-    <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
-    <script src="../../static/common/lib/jquery-ui.min.js"></script>
-    <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
-    <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
-    <script src="../../static/common/lib/current-device.min.js"></script>
-    <script src="../../static/common/lib/moment.min.js"></script>
-    <script src="../../static/common/lib/swiper-bundle.min.js"></script>
-    <!-- <script src="../../static/js/bottomSheet.js"></script> -->
-    <script src="../../static/js/modalPopup.js"></script>
-    <script src="../../static/js/menu.js"></script>
+    @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
-    <script src="../../static/js/ui.js"></script>
+    <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
 
-    <script>
-        $('button[data-page-id=MYS_CO_04_01_03_M01]').on('click', function() {
+    <script>                      
+
+        $('button[data-page-id=MYS_CO_04_01_03_M01]').on('click',function(){
             modalPopup({
                 title: "휴대폰에 저장된 지문(Face ID) <br>정보가 없습니다.",
                 message: "기기에서 지문(Face ID) 등록 후 다시 <br>시도해 주세요.",
                 type: "alert",
                 textOkButton: "확인",
                 onOk: function() {
-
+                    
                 },
                 onCancel: function() {
-
+                    
                 }
             });
         });
-        $('button[data-page-id=MYS_CO_04_01_03_08]').on('click', function() {
+        $('button[data-page-id=MYS_CO_04_01_03_08]').on('click',function(){
             modalPopup({
                 title: "지문(Face ID)로그인 설정완료",
                 message: "지문(Face ID)로그인 설정되었습니다. <br>로그인 설정은 설정 &gt; 로그인 설정 &gt; <br>지문(Face ID)에서 변경 가능합니다.",
                 type: "alert",
                 textOkButton: "확인",
                 onOk: function() {
-
+                    
                 },
                 onCancel: function() {
-
+                    
                 }
             });
         });
 
-        $('button[data-page-id=MYS_CO_04_04_03_04_M01]').on('click', function() {
+        $('button[data-page-id=MYS_CO_04_04_03_04_M01]').on('click',function(){
             modalPopup({
                 title: "",
                 message: "간편 비밀번호가 등록되었습니다.",
                 type: "alert",
                 textOkButton: "확인",
                 onOk: function() {
-
+                    
                 },
                 onCancel: function() {
-
+                    
                 }
             });
         });
 
-        $('button[data-page-id=MYS_CO_04_04_01_M03]').on('click', function() {
+        $('button[data-page-id=MYS_CO_04_04_01_M03]').on('click',function(){
             modalPopup({
                 title: "",
                 message: "화면잠금 설정된 기기에서만 <br>자동 로그인이 가능합니다. <br>기기 설정 메뉴에서 화면 잠금 후 <br>다시 시도해 주세요.",
                 type: "alert",
                 textOkButton: "확인",
                 onOk: function() {
-
+                    
                 },
                 onCancel: function() {
-
+                    
                 }
             });
         });
 
-        $('button[data-page-id=MYS_CO_04_04_01_M04]').on('click', function() {
+        $('button[data-page-id=MYS_CO_04_04_01_M04]').on('click',function(){
             modalPopup({
                 title: "",
                 message: "간편비밀번호를 재설정 하기 위해 <br>본인인증 화면으로 이동합니다.",
                 type: "alert",
-                textOkButton: "확인",
+                textOkButton: "확인",                
                 onOk: function() {
-
+                    
                 },
                 onCancel: function() {
-
+                    
                 }
             });
         });
 
-        $('button[data-action=moveKBStarBanking]').on('click', function() {
+        $('button[data-action=moveKBStarBanking]').on('click',function(){
             modalPopup({
                 title: "",
                 message: "KB스타뱅킹으로 이동하시겠습니까?",
@@ -242,20 +138,18 @@
                 textOkButton: "확인",
                 textCancelButton: "취소",
                 onOk: function() {
-
+                    
                 },
                 onCancel: function() {
-
+                    
                 }
             });
         });
 
-        $('button[data-action=sendCertificationNumber]').on('click', function() {
+        $('button[data-action=sendCertificationNumber]').on('click',function(){
             var top = $(this).offset().top;
             $('.js-sended-number').removeAttr('style');
-            $(this).parents('.popup').find('.popup_contents').stop().animate({
-                'scrollTop': top
-            }, 10);
+            $(this).parents('.popup').find('.popup_contents').stop().animate({'scrollTop': top}, 10);
         });
 
         //레이어 확인용 스크립트 (개발시 삭제) [s]
@@ -263,15 +157,16 @@
         var urlArr = url.split('#');
         var pageID = urlArr[urlArr.length - 1].toUpperCase();
 
-        $('.layer-call').on('click', 'button', function() {
+        $('.layer-call').on('click','button',function(){
             var newUrl = url.replace(pageID, '');
             window.location.href = urlArr[0] + '#' + $(this).data('page-id');
         });
-
-        if (pageID.indexOf('/HTML/') < 0) $('button[data-page-id=' + pageID + ']').click();
+        
+        if(pageID.indexOf('/HTML/') < 0) $('button[data-page-id=' + pageID + ']').click();
         //레이어 확인용 스크립트 (개발시 삭제) [e]
+        
     </script>
-
+    
 
 </body>
 

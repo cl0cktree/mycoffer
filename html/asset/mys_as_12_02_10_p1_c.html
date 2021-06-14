@@ -1,158 +1,93 @@
 <!DOCTYPE html>
 <html lang="ko">
 <!-- [MYS_AS_12_02_10_P1_C] 작성자: 누리어 시스템 황철민 -->
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>내 차로 만드는 금융전략 | 자산 | KB국민은행 마이데이터</title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
-    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
-    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
-    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
-    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
-    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
-    <link rel="stylesheet" href="../../static/css/ui.css">
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "내 차로 만드는 금융전략 | 자산"
+	})
 </head>
 
 <body>
-    <div class="skip-nav">
-        <a href="#content">본문으로 이동하기</a>
-    </div>
-    <div class="app">
-        <!-- app-header (for MyMoney) //-->
-        <!-- app-header [s] -->
-        <header class="app-header">
-            <strong class="page-tit">Wish Car 플래너</strong>
-            <!-- <button class="btn-close"><span>닫기</span></button> -->
-            <!-- 수정 : layer 팝업 -> 페이지로 전환용 -->
-            <a href="javascript:history.back();" class="btn-close" role="button"><span>뒤로가기</span></a>
-        </header>
-        <!-- app-header [e] -->
-        <!-- // app-header (for MyMoney) -->
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-header-close.html',{
+			'pageTit' :'Wish Car 플래너'
+		}) 
+		<!-- // app-header (for MyMoney) -->
 
-        <!-- app-container //-->
-        <div class="app-container">
+		<!-- app-container //-->
+		<div class="app-container">
 
-            <!-- app-content // -->
-            <main class="app-content">
+			<!-- app-content // -->
+			<main class="app-content">
 
-                <section class="kb-sec wishcar-strategy">
-                    <div class="summary">
-                        <strong>볼보 XC 90</strong> 2.0 터보 LTZ(2016) 구입을 위해
-                        <div class="not enough">약 <span class="need">6,000</span>의 추가자금이 필요합니다.</div>
-                        <!-- <div class="enough">부족한 금액이 없어요!</div> -->
-                    </div>
+				<section class="kb-sec wishcar-strategy">
+					<div class="summary">
+						<strong>볼보 XC 90</strong> 2.0 터보 LTZ(2016) 구입을 위해
+						<div class="not enough">약 <span class="need">6,000</span>의 추가자금이 필요합니다.</div>
+						<!-- <div class="enough">부족한 금액이 없어요!</div> -->
+					</div>
 
-                    <!-- 
+					<!-- 
 						[개발]
 						data-price : Wish Car 시세
 						data-car : My Car 자산	(자산이 없으면: 0)
 						data-asset : My 금융 자산 (자산이 없으면: 0)
 						// 비동기로 값을 바인딩 할 경우 wishCarStrategyInit() 함수 호출
 					-->
-                    <div class="strategy-progress-bar" data-price="6000" data-car="0" data-asset="0">
-                        <div class="car-moving-zone">
-                            <div class="car"><img src="../../static/images/_temp/car02.png" alt=""></div>
-                        </div>
-                        <div class="progress-bar-zone">
-                            <div class="bar-mycar"></div>
-                            <div class="bar-myasset"></div>
-                        </div>
-                    </div>
+					<div class="strategy-progress-bar" data-price="6000" data-car="0" data-asset="0">
+						<div class="car-moving-zone">
+							<div class="car"><img src="@@webRoot/static/images/_temp/car02.png" alt=""></div>
+						</div>
+						<div class="progress-bar-zone">
+							<div class="bar-mycar"></div>
+							<div class="bar-myasset"></div>
+						</div>
+					</div>
 
-                    <dl class="description-list">
-                        <dt>Wish Car 시세</dt>
-                        <dd class="amount"><span class="num price">6,000</span>만원</dd>
-                    </dl>
+					<dl class="description-list">
+						<dt>Wish Car 시세</dt>
+						<dd class="amount"><span class="num price">6,000</span>만원</dd>
+					</dl>
 
-                    <div class="mydata-agree">
-                        <strong>쓸수있는 금융자산이 없습니다.</strong>
-                        <p>마이데이터 제공에 동의하면 다른 금융자산을<br>확인 할 수 있습니다.</p>
-                        <a href="#">마이데이터 제공 동의</a>
-                    </div>
+					<div class="mydata-agree">
+						<strong>쓸수있는 금융자산이 없습니다.</strong>
+						<p>마이데이터 제공에 동의하면 다른 금융자산을<br>확인 할 수 있습니다.</p>
+						<a href="#">마이데이터 제공 동의</a>
+					</div>
 
-                    <p class="info-msg">실제 중고차 시세는 달라질 수 있습니다.</p>
-                </section>
+					<p class="info-msg">실제 중고차 시세는 달라질 수 있습니다.</p>
+				</section>
 
-                <section class="kb-sec sticky-bottom">
-                    <div class="btn-area not enough">
-                        <button type="button" class="btn-solid_sticky lv2" data-call-layered="bsIfYouSave" onclick="ifYouSaveInit()"><span>저축을 한다면?</span></button>
-                        <a href="#" class="btn-solid_sticky"><span>대출을 받는다면?</span></a>
-                    </div>
-                    <!-- <div class="btn-area enough">
+				<section class="kb-sec sticky-bottom">
+					<div class="btn-area not enough">
+						<button type="button" class="btn-solid_sticky lv2" data-call-layered="bsIfYouSave" onclick="ifYouSaveInit()"><span>저축을 한다면?</span></button>
+						<a href="#" class="btn-solid_sticky"><span>대출을 받는다면?</span></a>
+					</div>
+					<!-- <div class="btn-area enough">
 						<a href="#" class="btn-solid_sticky"><span>구해줘 차차차 바로가기</span></a>
 					</div> -->
-                </section>
+				</section>
 
-            </main>
-            <!-- // app-content -->
+			</main>
+			<!-- // app-content -->
 
-        </div>
-        <!-- // app-container -->
+		</div>
+		<!-- // app-container -->
 
-        <!-- Layer (fullpage popup, modal, bottom sheet) // -->
-        <div class="layered">
-            <!-- [MYS_AS_12_02_10_P1] 저축을 한다면? (작성자: 누리어 시스템 황철민) // -->
-            <div class="bottom-sheet full-size my-asset" data-layered-name="bsIfYouSave">
-                <div class="bottom-sheet_header">
-                    <span class="tit">저축을 한다면?</span>
-                </div>
-                <div class="bottom-sheet_contents">
-                    <section class="kb-sec if-you-save">
-                        <div class="kb-form" data-status="">
-                            <label for="myMonthlyIncome">나의 월수입</label>
-                            <div class="kb-form_inner form-text">
-                                <input type="text" inputmode="numeric" id="myMonthlyIncome" placeholder="" maxlength="6" value="0" data-default="0" data-unit="만원" data-action="autoSeperator">
-                                <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                            </div>
-                        </div>
-                        <div class="radio-set">
-                            <strong class="label">모으는 방법</strong>
-                            <ul class="radio-group">
-                                <li><span class="form-radio"><input type="radio" id="saveRadio1" name="saveRadio" value="100" checked=""><label for="saveRadio1">숨만 쉬고 100%</label></span></li>
-                                <li><span class="form-radio"><input type="radio" id="saveRadio2" name="saveRadio" value="75"><label for="saveRadio2">밥은 먹고 다니며 75%</label></span></li>
-                                <li><span class="form-radio"><input type="radio" id="saveRadio3" name="saveRadio" value="50"><label for="saveRadio3">쇼핑도 하면서 50%</label></span></li>
-                                <li><span class="form-radio"><input type="radio" id="saveRadio4" name="saveRadio" value="25"><label for="saveRadio4">여행도 하면서 25%</label></span></li>
-                                <li><span class="form-radio"><input type="radio" id="saveRadio5" name="saveRadio" value="0"><label for="saveRadio5">흥청망청 쓰면서 0%</label></span></li>
-                            </ul>
-                        </div>
-                        <div class="result-text">
-                            <div class="result-case case-a">총 <strong><span class="y"><span class="num">8</span>년</span><span class="m"> <span class="num">6</span>개월</span></strong> 동안 모아야 해요!</div>
-                            <div class="result-case case-b">총 <strong><span class="num">30</span>년 이상</strong> 모아야 해요!</div>
-                            <div class="result-case case-c">내 자동차 마련의 꿈, <strong>꿈으로만</strong> 남겠어요.</div>
-                            <div class="result-case case-d">수입이 없어서 얼마나 걸릴지 <strong>알 수 없어요</strong>.</div>
-                        </div>
-                    </section>
-                </div>
-                <div class="bottom-sheet_buttons">
-                    <button class="btn-solid_sticky" data-action="close"><span>목표설정</span></button>
-                </div>
-                <button class="btn-close" data-action="close"><span>닫기</span></button>
-            </div>
-            <!-- [MYS_AS_12_02_10_P1] 저축을 한다면? // -->
-        </div>
-        <!-- // Layer (fullpage popup, modal, bottom sheet) -->
-    </div>
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+			@@include('@@webRoot/html/asset/layered/mys_as_12_02_10_p1_b.html')
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
 
-    <!-- Script -->
-    <!-- Common Library -->
-    <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
-    <script src="../../static/common/lib/jquery-ui.min.js"></script>
-    <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
-    <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
-    <script src="../../static/common/lib/current-device.min.js"></script>
-    <script src="../../static/common/lib/moment.min.js"></script>
-    <script src="../../static/common/lib/swiper-bundle.min.js"></script>
-    <!-- <script src="../../static/js/bottomSheet.js"></script> -->
-    <script src="../../static/js/modalPopup.js"></script>
-    <script src="../../static/js/menu.js"></script>
-    <!-- Add Library (this page only)-->
-    <script src="../../static/js/ui.js"></script>
-    <!-- Add Script -->
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
 
 </body>
 

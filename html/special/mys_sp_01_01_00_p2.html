@@ -1,135 +1,53 @@
 <!DOCTYPE html>
 <html lang="ko">
 <!-- [MYS_SP_01_01_00_P2] 작성자: 누리어 시스템 황철민 -->
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>개인(신용)정보 수집·이용·제공 동의서(신용관리서비스用) | 신용관리 | KB국민은행 마이데이터</title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
-    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
-    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
-    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
-    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
-    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
-    <link rel="stylesheet" href="../../static/css/ui.css">
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "개인(신용)정보 수집·이용·제공 동의서(신용관리서비스用) | 신용관리"
+	})
 </head>
 
 <body>
-    <div class="skip-nav">
-        <a href="#content">본문으로 이동하기</a>
-    </div>
-    <div class="app">
-        <!-- app-header (for MyMoney) //-->
-        <!-- app-header [s] -->
-        <header class="app-header">
-            <strong class="page-tit">개인(신용)정보 수집·이용·제공 동의서(신용관리서비스用)</strong>
-            <!-- <button class="btn-close"><span>닫기</span></button> -->
-            <!-- 수정 : layer 팝업 -> 페이지로 전환용 -->
-            <a href="javascript:history.back();" class="btn-close" role="button"><span>뒤로가기</span></a>
-        </header>
-        <!-- app-header [e] -->
-        <!-- // app-header (for MyMoney) -->
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-header-close.html',{
+			'pageTit' :'개인(신용)정보 수집·이용·제공 동의서(신용관리서비스用)'
+		}) 
+		<!-- // app-header (for MyMoney) -->
 
-        <!-- app-container //-->
-        <div class="app-container">
+		<!-- app-container //-->
+		<div class="app-container">
 
-            <!-- app-content // -->
-            <main class="app-content">
+			<!-- app-content // -->
+			<main class="app-content">
+				
+				<section class="kb-sec">
+					@@include('@@webRoot/html/_include/agree-collection-use-personal-info-credit.html')
+				</section>	
+				<section class="kb-sec sticky-bottom">
+					<div class="btn-area">
+						<button type="button" class="btn-solid_sticky" data-confirm="true"><span>동의</span></button>
+					</div>
+				</section>
 
-                <section class="kb-sec">
-                    <div class="terms-conditions">
-                        <h2>[필수] 개인(신용)정보 수집·이용·제공 동의서 <span>신용관리서비스用</span></h2>
-                        <h3>[KB국민은행] 귀중</h3>
-                        <p>귀 행과의 신용관리서비스 이용과 관련하여 귀 행이 본인의 개인(신용)정보를 수집·이용하거나 제3자에게 제공하고자 하는 경우에는 「신용정보의 이용 및 보호에 관한 법률」, 「개인정보보호법」 등 관계 법령에 따라 본인의 동의가 필요합니다.</p>
-                        <h4>1. 수집 · 이용에 관한 사항</h4>
-                        <dl>
-                            <dt>수집·이용 목적</dt>
-                            <dd>
-                                본인 신용정보 조회·열람 및 이용·제공사실 통지<br>
-                                신용관리서비스(신용정보 변동알림, 신용점수 올리기) 제공
-                            </dd>
-                            <dt>보유 및 이용기간</dt>
-                            <dd>신용관리서비스 해지 시 또는 회원 탈퇴 시 까지</dd>
-                            <dt>거부 권리 및 불이익</dt>
-                            <dd>귀하는 동의를 거부하실 수 있습니다. 다만, 위 개인(신용)정보 수집·이용에 관한 동의는 “신용관리서비스 이용을 위한” 필수적 사항이므로, 위 사항에 동의하셔야만 “신용관리서비스” 이용이 가능합니다.</dd>
-                            <dt>수집·이용 항목</dt>
-                            <dd>개인(신용)정보 (일반개인정보)<br>- 성명, 생년월일, 성별, 중복가입확인정보(DI), 이메일주소, 휴대전화번호</dd>
-                        </dl>
-                        <h4>2. 제공에 관한 사항</h4>
-                        <dl>
-                            <dt>제공받는 자</dt>
-                            <dd>나이스평가정보(주)</dd>
-                            <dt>제공받는 자의 이용 목적</dt>
-                            <dd>
-                                서비스 제공을 위한 본인확인 및 신용정보 조회·열람, 이용·제공사실 통지<br>
-                                신용관리서비스(신용정보 변동알림, 신용점수 올리기) 제공
-                            </dd>
-                            <dt>보유 및 이용 기간</dt>
-                            <dd>신용관리서비스 해지 시 또는 회원 탈퇴 시 까지</dd>
-                            <dt>거부 권리 및 불이익</dt>
-                            <dd>귀하는 동의를 거부하실 수 있습니다. 다만,위 개인(신용)정보 제공에 관한 동의는 “신용관리서비스 이용을 위한” 필수적 사 항이므로, 위 사항에 동의하셔야만 (금융)거래관계의 설정 및 유지가 가능합니다.</dd>
-                            <dt>제공 항목</dt>
-                            <dd>개인(신용)정보 (일반개인정보)<br>- 성명, 생년월일, 성별, 중복가입확인정보(DI), 이메일주소, 휴대전화번호</dd>
-                        </dl>
-                        <p>※ 본 동의 이후 동일한 목적 또는 이용범위 내에서 개인(신용)정보의 정확성, 최신성을 유지하기 위해 조회·제공하는 경우에는 별도의 추가 동의가 필요하지 않습니다.</p>
-                        <h3>[NICE평가정보] 귀중</h3>
-                        <p>NICE평가정보(주)는 스타뱅킹, 리브, 마이머니 “모바일 어플리케이션”을 통해 신용정보서비스를 제공함에 있어 본인의 개인(신용)정보를 제3자에게 제 공하고자 하는 경우에는 「개인정보 보호법」, 「신용정보의 이용 및 보 호에 관한 법률」에 따라 본인의 동의가 필요합니다. 이에 NICE평가정보(주)가 아래와 같이 본인의 개인(신용)정보를 (주)국민은행에 제공하는 것에 동의합니다.</p>
-                        <h4>제공에 관한 사항</h4>
-                        <dl>
-                            <dt>제공받는 자</dt>
-                            <dd>(주)국민은행</dd>
-                            <dt>제공받는 자의 이용 목적</dt>
-                            <dd>
-                                고객 본인 열람 목적 신용조회서비스 등 제공<br>
-                                신용점수 올리기 서비스 제공
-                            </dd>
-                            <dt>보유·이용 기간</dt>
-                            <dd>
-                                KB국민은행 신용관리 서비스 이용을 위한 제공 동의 시부터, 해당 서비스 해지·취소 시 또는 회원탈퇴 시까지<br>
-                                관련법령에 따라 보존할 필요가 있는 경우는 해당 보존기간
-                            </dd>
-                            <dt>제공 항목</dt>
-                            <dd>개인 신용정보</dd>
-                        </dl>
-                    </div>
-                </section>
-                <section class="kb-sec sticky-bottom">
-                    <div class="btn-area">
-                        <button type="button" class="btn-solid_sticky" data-confirm="true"><span>동의</span></button>
-                    </div>
-                </section>
+			</main>
+			<!-- // app-content -->
 
-            </main>
-            <!-- // app-content -->
+		</div>
+		<!-- // app-container -->
 
-        </div>
-        <!-- // app-container -->
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
 
-        <!-- Layer (fullpage popup, modal, bottom sheet) // -->
-        <div class="layered">
-        </div>
-        <!-- // Layer (fullpage popup, modal, bottom sheet) -->
-    </div>
-
-    <!-- Script -->
-    <!-- Common Library -->
-    <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
-    <script src="../../static/common/lib/jquery-ui.min.js"></script>
-    <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
-    <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
-    <script src="../../static/common/lib/current-device.min.js"></script>
-    <script src="../../static/common/lib/moment.min.js"></script>
-    <script src="../../static/common/lib/swiper-bundle.min.js"></script>
-    <!-- <script src="../../static/js/bottomSheet.js"></script> -->
-    <script src="../../static/js/modalPopup.js"></script>
-    <script src="../../static/js/menu.js"></script>
-    <!-- Add Library (this page only)-->
-    <script src="../../static/js/ui.js"></script>
-    <!-- Add Script -->
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
 
 </body>
 

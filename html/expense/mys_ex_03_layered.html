@@ -1,44 +1,18 @@
 <!DOCTYPE html>
 <html lang="ko">
 <!-- [mys_ex_03] 작성자 : 누리어 시스템 김삼희 -->
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>LAYER | 카드관리 | KB국민은행 마이데이터</title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
-    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
-    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
-    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
-    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
-    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
-    <link rel="stylesheet" href="../../static/css/ui.css">
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "LAYER | 카드관리"
+    })
     <style>
-        .layer-call {
-            max-width: 300px;
-            margin: 0 auto;
-            padding: 40px 0;
-        }
-
-        .layer-call>button {
-            flex-flow: column;
-            margin-top: 10px;
-        }
-
-        .layer-call>button:before {
-            content: attr(data-page-id);
-        }
-
-        .layer-call>button span {
-            display: block;
-        }
+        .layer-call{max-width:300px;margin:0 auto;padding:40px 0;}
+        .layer-call > button{flex-flow:column;margin-top:10px;}
+        .layer-call > button:before{content:attr(data-page-id);}
+        .layer-call > button span{display:block;}
     </style>
 </head>
-
-<body>
+<body>    
     <div class="layer-call">
         <!-- 지출 > 카드관리 //--->
         <h1 class="h2">카드관리</h1>
@@ -48,48 +22,13 @@
 
     <div class="layered">
         <!-- 공통 -->
-
-        <!-- 조회 바텀시트 //-->
-        <div class="bottom-sheet full-size" data-layered-name="bsCalendar">
-            <div class="bottom-sheet_header">
-                <span class="tit">날짜 선택</span>
-            </div>
-            <div class="bottom-sheet_contents">
-                <section class="kb-sec">
-                    <div class="calendar-nav">
-                        <button type="button" class="btn-first"><i class="icon-pagination_first">지난해</i></button>
-                        <button type="button" class="btn-prev"><i class="icon-pagination_prev">지난달</i></button>
-                        <strong></strong>
-                        <button type="button" class="btn-next"><i class="icon-pagination_next">다음달</i></button>
-                        <button type="button" class="btn-last"><i class="icon-pagination_last">다음해</i></button>
-                        <button type="button" class="btn-text"><span>오늘</span></button>
-                    </div>
-                    <div class="calendar-area" id="datepicker"></div>
-                </section>
-            </div>
-            <div class="bottom-sheet_buttons">
-                <button class="btn-solid_sticky lv2" data-action="close"><span>취소</span></button><!-- 수정 : 2021.06.02 -->
-                <button class="btn-solid_sticky" data-action="close"><span>확인</span></button>
-            </div>
-            <button class="btn-close" data-action="close"><span>닫기</span></button>
-        </div>
-        <!-- //조회 바텀시트  -->
+        @@include('@@webRoot/html/_layered/bs-calendar.html')
     </div>
 
     <!-- Script -->
-    <!-- Common Library -->
-    <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
-    <script src="../../static/common/lib/jquery-ui.min.js"></script>
-    <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
-    <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
-    <script src="../../static/common/lib/current-device.min.js"></script>
-    <script src="../../static/common/lib/moment.min.js"></script>
-    <script src="../../static/common/lib/swiper-bundle.min.js"></script>
-    <!-- <script src="../../static/js/bottomSheet.js"></script> -->
-    <script src="../../static/js/modalPopup.js"></script>
-    <script src="../../static/js/menu.js"></script>
+    @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
-    <script src="../../static/js/ui.js"></script>
+    <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
 
     <script>
@@ -98,16 +37,15 @@
         var urlArr = url.split('#');
         var pageID = urlArr[urlArr.length - 1].toUpperCase();
 
-        $('.layer-call').on('click', 'button', function() {
+        $('.layer-call').on('click','button',function(){
             var newUrl = url.replace(pageID, '');
             window.location.href = urlArr[0] + '#' + $(this).data('page-id');
         });
-
-        if (pageID.indexOf('/HTML/') < 0) $('button[data-page-id=' + pageID + ']').click();
+        
+        if(pageID.indexOf('/HTML/') < 0) $('button[data-page-id=' + pageID + ']').click();
         //레이어 확인용 스크립트 (개발시 삭제) [e]
     </script>
-
+    
 
 </body>
-
 </html>

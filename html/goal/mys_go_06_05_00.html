@@ -1,161 +1,31 @@
 <!DOCTYPE html>
 <html lang="ko">
 <!-- [MYS_GO_03_00_00] 목표 > 아낀만큼_진행중_(tab) (작성자: 누리어 시스템 김삼희) -->
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>아낀만큼 | 목표 | KB국민은행 마이데이터</title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
-    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
-    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
-    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
-    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
-    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
-    <link rel="stylesheet" href="../../static/css/ui.css">
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "아낀만큼 | 목표"
+	})
 </head>
 
 <body>
-    <div class="skip-nav">
-        <a href="#content">본문으로 이동하기</a>
-    </div>
-    <div class="app" data-page="submain">
-        <!-- app-header (for MyMoney) //-->
-        <!-- app-header [s] -->
-        <header class="app-header">
-            <a href="javascript:history.back();" class="btn-history-back" role="button"><i class="icon-back">뒤로가기</i></a>
-            <strong class="page-tit">목표챌린지</strong>
-            <button type="button" class="btn-allmenu"><i class="icon-menu">전체메뉴</i></button>
-        </header>
-        <!-- app-header [e] -->
-        <div class="app-menu">
-            <div class="all-menu-top">
-                <div class="util-menu">
-                    <a href="javascript:;" class="" role="button"><i class="icon-setting_24">설정</i></a>
-                    <a href="javascript:;" class="all-menu-notice new" role="button"><i class="icon-bell_24">알림</i></a><!-- 새로운 알림이 있을 때 .new -->
-                    <button type="button" class="btn-close"><span>닫기</span></button>
-                </div>
-                <div><a href="javascript:;" class="user-name"><strong>김국민 님</strong><i class="icon-move"></i></a></div>
-                <ul class="major-menu">
-                    <li><a href="javascript:;"><span><i class="icon-assets_24"></i></span><strong>자산등록</strong></a></li>
-                    <li><a href="javascript:;"><span><i class="icon-graph_24"></i></span><strong>소비 리포트</strong></a></li>
-                    <li><a href="javascript:;"><span><i class="icon-doc_24"></i></span><strong>공지사항</strong></a></li>
-                    <li><a href="javascript:;"><span><i class="icon-gift_24"></i></span><strong>My 혜택</strong></a></li><!-- 수정 : 2021.06.09 -->
-                </ul>
-            </div>
-            <div class="all-menu-list-wrap">
-                <div class="manage-mydata">
-                    <strong class="tit">마이데이터 관리</strong><!-- 수정 : 2021.06.01 -->
-                    <a href="javascript:;"><span>70</span><i class="icon-move"></i></a>
-                </div>
-                <ul class="all-menu-list">
-                    <li class="is-active">
-                        <a href="javascript:;">자산</a>
-                        <ul>
-                            <li><a href="javascript:;">자산통합조회</a></li>
-                            <li><a href="javascript:;">입출금&middot;페이</a></li>
-                            <li><a href="javascript:;">예적금</a></li>
-                            <li><a href="javascript:;">투자</a></li>
-                            <li><a href="javascript:;">보험</a></li>
-                            <li><a href="javascript:;">대출&middot;부채</a></li>
-                            <li><a href="javascript:;">부동산</a></li>
-                            <li><a href="javascript:;">자동차</a></li>
-                            <li><a href="javascript:;">My 금고</a></li><!-- 수정 : 2021.06.01 -->
-                            <li><a href="javascript:;">외화</a></li>
-                            <li><a href="javascript:;">적립포인트</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:;">D플랜</a>
-                        <ul>
-                            <li><a href="javascript:;">월수령액</a></li>
-                            <li><a href="javascript:;">라이프이벤트</a></li>
-                            <li><a href="javascript:;">나의기록</a></li>
-                            <li><a href="javascript:;">D플랜 설정</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:;">지출</a>
-                        <ul>
-                            <li><a href="javascript:;">가계부</a></li>
-                            <li><a href="javascript:;">정기지출</a></li>
-                            <li><a href="javascript:;">카드관리</a></li>
-                            <li><a href="javascript:;">소비리포트</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:;">목표 챌린지</a>
-                        <ul>
-                            <li><a href="javascript:;">아낀만큼</a></li>
-                            <li><a href="javascript:;">쓰는만큼</a></li><!-- 수정 : 2021.06.09 -->
-                            <li><a href="javascript:;">남들만큼</a></li>
-                            <li><a href="javascript:;">저금통</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:;">제휴/특화</a>
-                        <ul>
-                            <li><a href="javascript:;">신용</a></li>
-                            <li><a href="javascript:;">My Fun Data</a></li><!-- 수정 : 2021.06.09 -->
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:;">슬그Money</a><!-- 수정 : 2021.06.09 -->
-                    </li>
-                    <li>
-                        <a href="javascript:;">마이페이지</a>
-                        <ul>
-                            <li><a href="javascript:;">마이데이터 관리</a></li><!-- 수정 : 2021.06.01 -->
-                            <li><a href="javascript:;">내정보</a></li>
-                            <li><a href="javascript:;">My 혜택</a></li><!-- 수정 : 2021.06.09 -->
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:;">고객센터</a>
-                        <ul>
-                            <li><a href="javascript:;">FAQ</a></li>
-                            <li><a href="javascript:;">전화상담</a></li>
-                            <li><a href="javascript:;">약관 및 정책</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- // app-header -->
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app" data-page="submain">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-header.html', {pageTit:'목표챌린지'})
+		<!-- // app-header -->
 
-        <!-- app-container (for MyMoney) //-->
-        <div class="app-container">
+		<!-- app-container (for MyMoney) //-->
+		<div class="app-container">
 
             <!-- app-lnb //-->
             <div class="app-lnb">
                 <!-- 상단 GNB 공통 (메뉴 구성 전 )-->
-                <!-- 수정 : 2021.06.09 1depth 메뉴만 고정 // -->
-                <!-- GNB //-->
-                <div class="app-gnb-wrap">
-                    <div class="app-gnb tab swiper-container">
-                        <ul class="swiper-wrapper">
-                            <!-- 동작(ui.js) / 구성(menu.js) -->
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="app-sub-wrap">
-                    <div class="tab depth2 swiper-container app-sub">
-                        <ul class="swiper-wrapper">
-                            <!-- 선택된 GNB 메뉴에 따라 append (ui.js)-->
-                        </ul>
-                    </div>
-                </div>
-                <!-- // GNB -->
-                <!-- // 수정 : 2021.06.09  1depth 메뉴만 고정 -->
+                @@include('@@webRoot/html/_include/app-gnb.html')
             </div>
-            <!-- app-content // -->
-            <main class="app-content goals-challenge bg-gray-bottom">
-                <!-- 목표 요약 // -->
-                <section class="kb-sec bg-gray goals-summary">
+			<!-- app-content // -->
+			<main class="app-content goals-challenge bg-gray-bottom">
+				<!-- 목표 요약 // -->
+				<section class="kb-sec bg-gray goals-summary">
                     <a href="#none" class="btn-trans">
                         <dl class="summary-piggymoeny content-box shadow">
                             <dt>
@@ -174,8 +44,8 @@
                         <p class="flex-box"><span class="h4">김국민 님은<br><strong>3개의 챌린지를 진행중</strong>이에요.</span></p>
                     </div>
                 </section>
-                <!-- // 목표 요약 -->
-
+				<!-- // 목표 요약 -->
+                
                 <section class="kb-sec bg-gray goals-others">
                     <div class="tab swiper-container depth2">
                         <ul class="swiper-wrapper">
@@ -186,15 +56,14 @@
                     </div>
                     <button type="button" class="btn-compare" data-call-layered="mys_as_07_00_00_p1" data-page-id="MYS_AS_07_00_00_P1"><i class="icon-24"></i></button>
                     <div class="challenge-box">
-                        <div class="list-up">
-                            <div class="swiper-slide content-box shadow">
+                        <div class="list-up">                            
+                            <div class="content-box shadow"> <!-- 2021-06-14 수정-->
                                 <div class="challenge-tit">
                                     <strong class="h3">주유비 줄이기</strong>
                                     <span class="d-day-patch">D-5</span>
-                                </div>
-                                <div class="challenge-info">
-                                    <!--// case별 카드 타입 재정의 필요 //-->
-                                    <span class="period">목표금액까지</span><br>
+                                </div>                                        
+                                <div class="challenge-info"><!--// case별 카드 타입 재정의 필요 //-->                                        
+                                    <span class="period">목표금액까지</span><br> 
                                     <strong><span class="num">50,000</span>원 더 쓸 수 있어요.</strong>
                                     <div class="character-graph goal" data-theme="bb">
                                         <!-- kiki(토끼), ago(악어), bb(곰), lamu(라마), kolly(브로콜리) -->
@@ -207,17 +76,16 @@
                                             <p class="current-txt" style="left:50%;"></p><!-- 현재 텍스트 (style로 텍스트 위치값 제어) -->
                                             <p class="end-txt">목표금액<br><strong><span class="num">15</span>만원</strong></p><!-- 마지막부분 텍스트 -->
                                         </div>
-                                    </div>
+                                    </div>                                    
                                 </div>
-                            </div>
-                            <div class="swiper-slide content-box shadow">
+                            </div>                              
+                            <div class="content-box shadow"> <!-- 2021-06-14 수정-->
                                 <div class="challenge-tit">
                                     <strong class="h3">주유비 줄이기</strong>
                                     <span class="d-day-patch">D-5</span>
-                                </div>
-                                <div class="challenge-info">
-                                    <!--// case별 카드 타입 재정의 필요 //-->
-                                    <span class="period">목표금액까지</span><br>
+                                </div>                                        
+                                <div class="challenge-info"><!--// case별 카드 타입 재정의 필요 //-->                                        
+                                    <span class="period">목표금액까지</span><br> 
                                     <strong><span class="num">50,000</span>원 더 쓸 수 있어요.</strong>
                                     <div class="character-graph goal" data-theme="bb">
                                         <!-- kiki(토끼), ago(악어), bb(곰), lamu(라마), kolly(브로콜리) -->
@@ -230,17 +98,16 @@
                                             <p class="current-txt" style="left:50%;"></p><!-- 현재 텍스트 (style로 텍스트 위치값 제어) -->
                                             <p class="end-txt">목표금액<br><strong><span class="num">15</span>만원</strong></p><!-- 마지막부분 텍스트 -->
                                         </div>
-                                    </div>
+                                    </div>                                    
                                 </div>
-                            </div>
-                            <div class="swiper-slide content-box shadow">
+                            </div>                              
+                            <div class="content-box shadow"> <!-- 2021-06-14 수정-->
                                 <div class="challenge-tit">
                                     <strong class="h3">주유비 줄이기</strong>
                                     <span class="d-day-patch">D-5</span>
-                                </div>
-                                <div class="challenge-info">
-                                    <!--// case별 카드 타입 재정의 필요 //-->
-                                    <span class="period">목표금액까지</span><br>
+                                </div>                                        
+                                <div class="challenge-info"><!--// case별 카드 타입 재정의 필요 //-->                                        
+                                    <span class="period">목표금액까지</span><br> 
                                     <strong><span class="num">50,000</span>원 더 쓸 수 있어요.</strong>
                                     <div class="character-graph goal" data-theme="bb">
                                         <!-- kiki(토끼), ago(악어), bb(곰), lamu(라마), kolly(브로콜리) -->
@@ -253,115 +120,35 @@
                                             <p class="current-txt" style="left:50%;"></p><!-- 현재 텍스트 (style로 텍스트 위치값 제어) -->
                                             <p class="end-txt">목표금액<br><strong><span class="num">15</span>만원</strong></p><!-- 마지막부분 텍스트 -->
                                         </div>
-                                    </div>
+                                    </div>                                    
                                 </div>
-                            </div>
+                            </div>   
                         </div>
                     </div>
                     <div class="btn-area mt32">
                         <button class="btn-text"><span><i class="icon-plus_20"></i>더보기</span></button>
                     </div>
                 </section>
-            </main>
-            <!-- // app-content -->
+			</main>
+			<!-- // app-content -->
 
-        </div>
-        <!-- // app-container -->
+		</div>
+		<!-- // app-container -->
 
-        <!-- Layer (fullpage popup, modal, bottom sheet) // -->
-        <div class="layered">
-            <!-- [MYS_AS_07_00_00_P1] 대상선택 팝업 (작성자: 누리어 시스템 김은경)// -->
-            <!-- 대상선택 팝업// -->
-            <div class="bottom-sheet full-size" data-layered-name="mys_as_07_00_00_p1">
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+            @@include('@@webRoot/html/asset/layered/mys_as_07_00_00_p1.html')
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
 
-                <div class="bottom-sheet_header">
-                    <span class="tit">연령대상 선택</span>
-                </div>
-                <div class="bottom-sheet_contents">
-                    <!-- 항목이 2개일 경우 // -->
-                    <section class="kb-sec">
-                        <div class="select-lists">
-                            <dl>
-                                <dt>연령대</dt>
-                                <dd>
-                                    <ul class="select-list">
-                                        <li><button type="button"><strong class="tit">20세 미만</strong><i class="icon-20"></i></button></li>
-                                        <li><button type="button"><strong class="tit">20~29세</strong><i class="icon-20"></i></button></li>
-                                        <li><button type="button"><strong class="tit">20~29세</strong><i class="icon-20"></i></button></li>
-                                        <li class="is-active"><button type="button"><strong class="tit">40~49세</strong><i class="icon-20"></i></button></li>
-                                        <li><button type="button"><strong class="tit">50~59세</strong><i class="icon-20"></i></button></li>
-                                        <li><button type="button"><strong class="tit">60세 이상</strong><i class="icon-20"></i></button></li>
-                                    </ul>
-                                </dd>
-                            </dl>
-                            <dl>
-                                <dt>월 소득</dt>
-                                <dd>
-                                    <ul class="select-list">
-                                        <li><button type="button"><strong class="tit">100만원 미만</strong><i class="icon-20"></i></button></li>
-                                        <li><button type="button"><strong class="tit">100만원~200만원</strong><i class="icon-20"></i></button></li>
-                                        <li class="is-active"><button type="button"><strong class="tit">200만원~300만원</strong><i class="icon-20"></i></button></li>
-                                        <li><button type="button"><strong class="tit">300만원~400만원</strong><i class="icon-20"></i></button></li>
-                                        <li><button type="button"><strong class="tit">400만원~500만원</strong><i class="icon-20"></i></button></li>
-                                        <li><button type="button"><strong class="tit">500만원~600만원</strong><i class="icon-20"></i></button></li>
-                                        <li><button type="button"><strong class="tit">600만원~700만원</strong><i class="icon-20"></i></button></li>
-                                        <li><button type="button"><strong class="tit">700만원~800만원</strong><i class="icon-20"></i></button></li>
-                                        <li><button type="button"><strong class="tit">800만원~900만원</strong><i class="icon-20"></i></button></li>
-                                        <li><button type="button"><strong class="tit">900만원~1000만원</strong><i class="icon-20"></i></button></li>
-                                        <li><button type="button"><strong class="tit">1000만원 초과</strong><i class="icon-20"></i></button></li>
-                                    </ul>
-                                </dd>
-                            </dl>
-                    </section>
-                    <!-- // 항목이 2개일 경우  -->
-
-                    <!-- 항목이 1개일 경우 // -->
-                    <section class="kb-sec">
-                        <div class="select-lists">
-                            <dl>
-                                <dd>
-                                    <ul class="select-list">
-                                        <li><button type="button"><strong class="tit">20세 미만</strong><i class="icon-20"></i></button></li>
-                                        <li><button type="button"><strong class="tit">20~29세</strong><i class="icon-20"></i></button></li>
-                                        <li><button type="button"><strong class="tit">20~29세</strong><i class="icon-20"></i></button></li>
-                                        <li class="is-active"><button type="button"><strong class="tit">40~49세</strong><i class="icon-20"></i></button></li>
-                                        <li><button type="button"><strong class="tit">50~59세</strong><i class="icon-20"></i></button></li>
-                                        <li><button type="button"><strong class="tit">60세 이상</strong><i class="icon-20"></i></button></li>
-                                    </ul>
-                                </dd>
-                            </dl>
-                    </section>
-                    <!-- // 항목이 1개일 경우  -->
-                </div>
-                <!-- 항목이 1개일 경우 삭제 // -->
-                <div class="bottom-sheet_buttons">
-                    <button class="btn-solid_sticky" data-action="close"><span>확인</span></button>
-                </div>
-                <!-- // 항목이 1개일 경우 삭제 -->
-                <button class="btn-close" data-action="close"><span>닫기</span></button>
-            </div>
-            <!--//대상선택 팝업 -->
-        </div>
-        <!-- // Layer (fullpage popup, modal, bottom sheet) -->
-    </div>
-
-    <!-- Script -->
-    <!-- Common Library -->
-    <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
-    <script src="../../static/common/lib/jquery-ui.min.js"></script>
-    <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
-    <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
-    <script src="../../static/common/lib/current-device.min.js"></script>
-    <script src="../../static/common/lib/moment.min.js"></script>
-    <script src="../../static/common/lib/swiper-bundle.min.js"></script>
-    <!-- <script src="../../static/js/bottomSheet.js"></script> -->
-    <script src="../../static/js/modalPopup.js"></script>
-    <script src="../../static/js/menu.js"></script>
-    <!-- Add Library (this page only)-->
-    <script src="../../static/js/ui.js"></script>
-    <script>
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+    <script>        
         //최초 선택되는 내용을 바꾸고 싶으면... (ui.js)
-        gfn_gnb.select(3, 2);
+        gfn_gnb.select(3,2);
     </script>
 </body>
 

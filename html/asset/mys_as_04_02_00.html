@@ -1,223 +1,155 @@
 <!DOCTYPE html>
 <html lang="ko">
 <!-- [MYS_AS_04_02_00] 작성자: 누리어 시스템 김은경 -->
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My 금고 | 자산 | KB국민은행 마이데이터</title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
-    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
-    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
-    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
-    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
-    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
-    <link rel="stylesheet" href="../../static/css/ui.css">
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "My 금고 | 자산"
+	})
 </head>
 
 <body>
-    <div class="skip-nav">
-        <a href="#content">본문으로 이동하기</a>
-    </div>
-    <div class="app">
-        <!-- app-header (for MyMoney) //-->
-        <!-- app-header [s] -->
-        <header class="app-header">
-            <strong class="page-tit">My 금고</strong>
-            <!-- <button class="btn-close"><span>닫기</span></button> -->
-            <!-- 수정 : layer 팝업 -> 페이지로 전환용 -->
-            <a href="javascript:history.back();" class="btn-close" role="button"><span>뒤로가기</span></a>
-        </header>
-        <!-- app-header [e] -->
-        <!-- // app-header (for MyMoney) -->
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-header-close.html',{
+			'pageTit' :'My 금고'
+		}) 
+		<!-- // app-header (for MyMoney) -->
 
-        <!-- app-container //-->
-        <div class="app-container">
+		<!-- app-container //-->
+		<div class="app-container">
 
-            <!-- app-content // -->
-            <main class="app-content my-asset pop-my-asset">
+			<!-- app-content // -->
+			<main class="app-content my-asset pop-my-asset">
 
-
-                <section class="kb-sec">
-                    <div class="pop-notice">
-                        <span>외화현찰 등록시 KB외환 매매기준율을 적용한 <br>
-                            원화환산금액을 확인할 수 있습니다.</span>
-                        <em>* 표시된 항목은 필수 입력 사항입니다.</em>
-                    </div>
-                </section>
-                <section class="kb-sec cash-registration">
-                    <div class="kb-form  no-transition" data-status="">
-                        <label for="cashType" class="required">통화</label>
-                        <div class="kb-form_inner form-select">
-                            <button type="button" class="selected-option" data-call-layered="mys_as_04_02_00_p1"></button>
-                            <select name="" id="cashType" title="통화 선택">
-                                <option value="">통화 선택</option>
-                                <option value="KRW" selected="">KRW (한국)</option>
-                                <option value="USD">USD (미국 달러)</option>
-                                <option value="JPY">JPY (일본 엔)</option>
-                                <option value="CNY">CNY (중국 위안)</option>
-                                <option value="EUR">EUR (유럽연합 유로)</option>
-                                <option value="GBP">GBP (영국 파운드)</option>
-                                <option value="CAD">CAD (캐나다달러)</option>
-                                <option value="AUD">AUD (호주 달러)</option>
-                                <option value="NZD">NZD (뉴질랜드 달러)</option>
-                                <option value="HKD">HKD (홍콩달러)</option>
-                                <option value="SGD">SGD (싱카폴 달러)</option>
-                                <option value="CHF">CHF (스위스 프랑)</option>
-                                <option value="THB">THB (태국 바트)</option>
-                                <option value="SEK">SEK (스웨덴 크로나)</option>
-                                <option value="DKK">DKK (덴마크 크로네)</option>
-                                <option value="NZK">NZK (노르웨이 크로네)</option>
-                                <option value="TWD">TWD (대만 달러)</option>
-                                <option value="MYR">MYR (말레이시아 링킷)</option>
-                                <option value="VND">VND (베트남 동)</option>
-                                <option value="IDR">IDR (인도네시아 루피아)</option>
-                                <option value="MYR">MYR (말레이시아 링킷)</option>
-                                <option value="PHP">PHP (필리핀 페소)</option>
-                            </select>
-                        </div>
-                    </div>
-                </section>
-                <section class="kb-sec cash-type">
-                    <!--외화//-->
-                    <div class="kb-form cash_2 not-ready no-transition" data-status="">
-                        <label for="kbFormInput31" class="required">보유금액</label>
-                        <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="decimal" id="kbFormInput31" placeholder="금액을 입력해 주세요" value="">
-                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                        </div>
-                        <em class="validation">Message</em>
-                    </div>
-                    <div class="kb-form cash_2 not-ready no-transition" data-status="info">
-                        <label for="kbFormInput32" class="required">원화환산금액</label>
-                        <div class="kb-form_inner form-text">
-                            <input type="text" id="kbFormInput32" value="" placeholder="">
-                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                        </div>
-                        <button class="btn-line"><span>조회</span></button>
-                        <em class="validation">보유금액 입력 후 조회 버튼을 누르시면 원화환산금액이 조회됩니다.</em>
-                        <em class="validation">원화환산금액은 ‘매매기준율’을 적용하기 때문에 실제 매매시 가격과 다를 수 있습니다.<br> (1달러 = 1,000원 / 2021.04.27 14:44:35 2회차 매매기준율)</em>
-                    </div>
-                    <!--//외화-->
-                    <!--현금//-->
-                    <div class="kb-form cash not-ready no-transition" data-status="">
-                        <label for="kbFormInput34" class="required">현금금액</label>
-                        <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" id="kbFormInput34" placeholder="금액을 입력해 주세요" value="" data-unit="원" data-action="autoSeperator">
-                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                        </div>
-                        <em class="validation">Message</em>
-                    </div>
-                    <!--//현금-->
-                </section>
-                <section class="kb-sec nickname">
-                    <div class="kb-form not-ready no-transition" data-status="">
-                        <label for="kbFormInput33">별명</label>
-                        <div class="kb-form_inner form-text">
-                            <input type="text" id="kbFormInput33" value="" placeholder="최대 10자를 입력해주세요">
-                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                        </div>
-                    </div>
-                </section>
-
-
-
-                <section class="kb-sec sticky-bottom">
-                    <div class="btn-area">
-                        <button class="btn-solid_sticky lv2"><span>취소</span></button>
-                        <button class="btn-solid_sticky"><span>다음</span></button>
-                    </div>
-                </section>
-
-            </main>
-            <!-- // app-content -->
-
-        </div>
-        <!-- // app-container -->
-
-        <!-- Layer (fullpage popup, modal, bottom sheet) // -->
-        <div class="layered">
-            <!-- [MYS_AS_04_02_00_P1] 통화선택 (작성자: 누리어 시스템 김은경)// -->
-            <!-- 통화선택// -->
-            <div class="bottom-sheet full-size" data-layered-name="mys_as_04_02_00_p1">
-                <div class="bottom-sheet_header">
-                    <span class="tit">통화선택</span>
-                </div>
-                <div class="bottom-sheet_contents">
-                    <section class="kb-sec tab_contents">
-                        <div class="is-active">
-                            <ul class="grid-list" data-col="3">
-                                <li><button type="button" data-value="KRW" data-action="select"><i class="icon-24"></i><span>KRW<br>(한국)</span></button></li>
-                                <li><button type="button" data-value="USD" data-action="select"><i class="icon-24"></i><span>USD<br>(미국달러)</span></button></li>
-                                <li><button type="button" data-value="JPY" data-action="select"><i class="icon-24"></i><span>JPY<br>(일본 엔)</span></button></li>
-                                <li><button type="button" data-value="CNY" data-action="select"><i class="icon-24"></i><span>CNY<br>(중국 위안)</span></button></li>
-                                <li><button type="button" data-value="EUR" data-action="select"><i class="icon-24"></i><span>EUR<br>(유럽연합 유로)</span></button></li>
-                                <li><button type="button" data-value="GBP" data-action="select"><i class="icon-24"></i><span>GBP<br>(영국 파운드)</span></button></li>
-                                <li><button type="button" data-value="CAD" data-action="select"><i class="icon-24"></i><span>CAD<br>(캐나다달러)</span></button></li>
-                                <li><button type="button" data-value="AUD" data-action="select"><i class="icon-24"></i><span>AUD<br>(호주 달러)</span></button></li>
-                                <li><button type="button" data-value="NZD" data-action="select"><i class="icon-24"></i><span>NZD<br>(뉴질랜드 달러)</span></button></li>
-                                <li><button type="button" data-value="HKD" data-action="select"><i class="icon-24"></i><span>HKD<br>(홍콩달러)</span></button></li>
-                                <li><button type="button" data-value="SGD" data-action="select"><i class="icon-24"></i><span>SGD<br>(싱카폴 달러)</span></button></li>
-                                <li><button type="button" data-value="CHF" data-action="select"><i class="icon-24"></i><span>CHF<br>(스위스 프랑)</span></button></li>
-                                <li><button type="button" data-value="THB" data-action="select"><i class="icon-24"></i><span>THB<br>(태국 바트)</span></button></li>
-                                <li><button type="button" data-value="SEK" data-action="select"><i class="icon-24"></i><span>SEK<br>(스웨덴 크로나)</span></button></li>
-                                <li><button type="button" data-value="DKK" data-action="select"><i class="icon-24"></i><span>DKK<br>(덴마크 크로네)</span></button></li>
-                                <li><button type="button" data-value="NZK" data-action="select"><i class="icon-24"></i><span>NZK<br>(노르웨이 크로네)</span></button></li>
-                                <li><button type="button" data-value="TWD" data-action="select"><i class="icon-24"></i><span>TWD<br>(대만 달러)</span></button></li>
-                                <li><button type="button" data-value="MYR" data-action="select"><i class="icon-24"></i><span>MYR<br>(말레이시아 링킷)</span></button></li>
-                                <li><button type="button" data-value="VND" data-action="select"><i class="icon-24"></i><span>VND<br>(베트남 동)</span></button></li>
-                                <li><button type="button" data-value="IDR" data-action="select"><i class="icon-24"></i><span>IDR<br>(인도네시아 루피아)</span></button></li>
-                                <li><button type="button" data-value="PHP" data-action="select"><i class="icon-24"></i><span>PHP<br>(필리핀 페소)</span></button></li>
-                            </ul>
-                        </div>
-                    </section>
-                </div>
-                <div class="bottom-sheet_buttons">
-                    <button class="btn-solid_sticky" data-action="close"><span>확인</span></button>
-                </div>
-                <button class="btn-close" data-action="close"><span>닫기</span></button>
+				
+        <section class="kb-sec">
+            <div class="pop-notice">
+                <span>외화현찰 등록시 KB외환 매매기준율을 적용한 <br>
+                    원화환산금액을 확인할 수 있습니다.</span>
+                <em>* 표시된 항목은 필수 입력 사항입니다.</em>                
             </div>
-            <!-- //통화선택  -->
-        </div>
-        <!-- // Layer (fullpage popup, modal, bottom sheet) -->
-    </div>
+        </section>
+        <section class="kb-sec cash-registration">        
+            <div class="kb-form  no-transition" data-status="">
+                <label for="cashType" class="required">통화</label>
+                <div class="kb-form_inner form-select">
+                    <button type="button" class="selected-option" data-call-layered="mys_as_04_02_00_p1"></button>
+                    <select name="" id="cashType" title="통화 선택">
+                        <option value="">통화 선택</option>
+                        <option value="KRW" selected="">KRW (한국)</option>
+                        <option value="USD">USD (미국 달러)</option>
+                        <option value="JPY">JPY (일본 엔)</option>
+                        <option value="CNY">CNY (중국 위안)</option>
+                        <option value="EUR">EUR (유럽연합 유로)</option>
+                        <option value="GBP">GBP (영국 파운드)</option>
+                        <option value="CAD">CAD (캐나다달러)</option>
+                        <option value="AUD">AUD (호주 달러)</option>
+                        <option value="NZD">NZD (뉴질랜드 달러)</option>
+                        <option value="HKD">HKD (홍콩달러)</option>
+                        <option value="SGD">SGD (싱카폴 달러)</option>
+                        <option value="CHF">CHF (스위스 프랑)</option>
+                        <option value="THB">THB (태국 바트)</option>
+                        <option value="SEK">SEK (스웨덴 크로나)</option>
+                        <option value="DKK">DKK (덴마크 크로네)</option>
+                        <option value="NZK">NZK (노르웨이 크로네)</option>
+                        <option value="TWD">TWD (대만 달러)</option>
+                        <option value="MYR">MYR (말레이시아 링킷)</option>
+                        <option value="VND">VND (베트남 동)</option>
+                        <option value="IDR">IDR (인도네시아 루피아)</option>
+                        <option value="MYR">MYR (말레이시아 링킷)</option>
+                        <option value="PHP">PHP (필리핀 페소)</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+        <section class="kb-sec cash-type">
+        <!--외화//-->                
+            <div class="kb-form cash_2 not-ready no-transition" data-status="">
+                <label for="kbFormInput31" class="required">보유금액</label>
+                <div class="kb-form_inner form-text">
+                    <input type="text" inputmode="decimal" id="kbFormInput31" placeholder="금액을 입력해 주세요" value="">
+                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                </div>
+                <em class="validation">Message</em>
+            </div>
+            <div class="kb-form cash_2 not-ready no-transition" data-status="info">
+                <label for="kbFormInput32" class="required">원화환산금액</label>
+                <div class="kb-form_inner form-text">
+                    <input type="text" id="kbFormInput32" value="" placeholder="">
+                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                </div>
+                <button class="btn-line"><span>조회</span></button>
+                <em class="validation">보유금액 입력 후 조회 버튼을 누르시면 원화환산금액이 조회됩니다.</em>
+                <em class="validation">원화환산금액은 ‘매매기준율’을 적용하기 때문에 실제 매매시 가격과 다를 수 있습니다.<br> (1달러 = 1,000원 / 2021.04.27 14:44:35 2회차 매매기준율)</em>
+            </div>
+        <!--//외화--> 
+        <!--현금//-->
+            <div class="kb-form cash not-ready no-transition" data-status="">
+                <label for="kbFormInput34" class="required">현금금액</label>
+                <div class="kb-form_inner form-text">
+                    <input type="text" inputmode="numeric" id="kbFormInput34" placeholder="금액을 입력해 주세요" value="" data-unit="원" data-action="autoSeperator">
+                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                </div>
+                <em class="validation">Message</em>
+            </div>
+        <!--//현금--> 
+        </section>
+        <section class="kb-sec nickname">
+            <div class="kb-form not-ready no-transition" data-status="">
+                <label for="kbFormInput33">별명</label>
+                <div class="kb-form_inner form-text">
+                    <input type="text" id="kbFormInput33" value="" placeholder="최대 10자를 입력해주세요">
+                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                </div>
+            </div>
+        </section>
+    
+    
+    
+		<section class="kb-sec sticky-bottom">
+            <div class="btn-area">
+                <button class="btn-solid_sticky lv2"><span>취소</span></button>
+                <button class="btn-solid_sticky"><span>다음</span></button>
+            </div>
+        </section>
 
-    <!-- Script -->
-    <!-- Common Library -->
-    <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
-    <script src="../../static/common/lib/jquery-ui.min.js"></script>
-    <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
-    <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
-    <script src="../../static/common/lib/current-device.min.js"></script>
-    <script src="../../static/common/lib/moment.min.js"></script>
-    <script src="../../static/common/lib/swiper-bundle.min.js"></script>
-    <!-- <script src="../../static/js/bottomSheet.js"></script> -->
-    <script src="../../static/js/modalPopup.js"></script>
-    <script src="../../static/js/menu.js"></script>
-    <!-- Add Library (this page only)-->
-    <script src="../../static/js/ui.js"></script>
-    <!-- Add Script -->
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+            @@include('@@webRoot/html/asset/layered/mys_as_04_02_00_p1.html')
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
     <script>
         //통화선택
         var $cashWrap = $('.cash-type');
-        if ($cashWrap) {
-            $cashWrap.find('.cash').show();
-            $('.bottom-sheet[data-layered-name=mys_as_04_02_00_p1]').on('click', '[data-action=select]', function() {
-                var txt = $('#cashType').find('option:selected').val();
-                switch (txt) {
-                    case 'KRW':
-                        $cashWrap.find('.kb-form').hide();
-                        $cashWrap.find('.cash').show();
-                        break
-                    default:
-                        $cashWrap.find('.kb-form').hide();
-                        $cashWrap.find('.cash_2').show();
-                        break
+        if($cashWrap){ 
+            $cashWrap.find('.cash').show();   
+            $('.bottom-sheet[data-layered-name=mys_as_04_02_00_p1]').on('click','[data-action=select]',function(){
+                var txt =  $('#cashType').find('option:selected').val();
+                switch(txt){
+                case 'KRW': 
+                    $cashWrap.find('.kb-form').hide();
+                    $cashWrap.find('.cash').show();
+                break
+                default:
+                    $cashWrap.find('.kb-form').hide();
+                    $cashWrap.find('.cash_2').show();
+                break
                 }
-            });
+            });         
         }
     </script>
 </body>

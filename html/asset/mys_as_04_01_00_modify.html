@@ -1,316 +1,270 @@
 <!DOCTYPE html>
 <html lang="ko">
 <!-- [MYS_AS_04_01_00_MODIFY] 작성자: 누리어 시스템 김은경 -->
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>금융자산 직접등록 수정 | 자산 | KB국민은행 마이데이터</title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
-    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
-    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
-    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
-    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
-    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
-    <link rel="stylesheet" href="../../static/css/ui.css">
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "금융자산 직접등록 수정 | 자산"
+	})
 </head>
 
 <body>
-    <div class="skip-nav">
-        <a href="#content">본문으로 이동하기</a>
-    </div>
-    <div class="app">
-        <!-- app-header (for MyMoney) //-->
-        <!-- app-header [s] -->
-        <header class="app-header">
-            <strong class="page-tit">금융자산 직접등록 수정</strong>
-            <!-- <button class="btn-close"><span>닫기</span></button> -->
-            <!-- 수정 : layer 팝업 -> 페이지로 전환용 -->
-            <a href="javascript:history.back();" class="btn-close" role="button"><span>뒤로가기</span></a>
-        </header>
-        <!-- app-header [e] -->
-        <!-- // app-header (for MyMoney) -->
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-header-close.html',{
+			'pageTit' :'금융자산 직접등록 수정'
+		}) 
+		<!-- // app-header (for MyMoney) -->
 
-        <!-- app-container //-->
-        <div class="app-container">
+		<!-- app-container //-->
+		<div class="app-container">
 
-            <!-- app-content // -->
-            <main class="app-content my-asset pop-my-asset" data-layered-name="mys_as_04_01_00_modify">
+			<!-- app-content // -->
+			<main class="app-content my-asset pop-my-asset" data-layered-name="mys_as_04_01_00_modify">
 
+				
+        <section class="kb-sec">
+            <div class="pop-notice">
+                <span>아직 등록되지 못한 자산이 있다면 입력해 주세요</span>
+                <em>* 표시된 항목은 필수 입력 사항입니다.</em>                
+            </div>
+        </section>
+        <section class="kb-sec asset-registration"><!-- 2021-06-02 no-transition 삭제 -->
+            <div class="kb-form not-ready" data-status="">
+                <label for="kbFormInput1" class="required">금융기관</label>
+                <div class="kb-form_inner form-select">
+                    <button type="button" class="selected-option" data-call-layered="bsFinancialInstitution"></button>
+                    <select name="" id="kbFormInput1" title="금융권 선택">
+                        <option value="">금융기관을 선택하세요</option>
+                        <option value="bank01">KB국민은행</option>
+                        <option value="bank02">신한은행</option>
+                        <option value="bank03">NH농협은행</option>
+                        <option value="bank04">우리은행</option>
+                        <option value="bank05">IBK기업은행</option>
+                        <option value="bank06">SC제일은행</option>
+                        <option value="bank07">하나은행</option>
+                        <option value="bank08">시티은행</option>
+                        <option value="bank09">우체국</option>
+                        <option value="bank10">수협은행</option>
+                    </select>
+                </div>
+            </div>  
+            <div class="kb-form not-ready" data-status=""><!-- 2021-06-02 no-transition 삭제 -->
+                <label for="assetType" class="required">자산종류</label>
+                <div class="kb-form_inner form-select">
+                    <button type="button" class="selected-option" data-call-layered="bsProductType" id="btnAssetType"></button>
+                    <select name="" id="assetType" title="자산종류 선택">
+                        <option value="">자산종류를 선택하세요</option>
+                        <option value="productType01">입출금</option>
+                        <option value="productType02">예적금</option>
+                        <option value="productType03">신탁</option>
+                        <option value="productType04">펀드</option>
+                        <option value="productType05">증권</option>
+                        <option value="productType06">대출</option>
+                        <option value="productType07">연금</option>
+                        <option value="productType08">보험</option>
+                    </select>
+                </div>
+            </div> 
+        </section>  
+        <section class="kb-sec asset-type">       
+            <!-- 2021-06-02 상품명, 세부항목 추가 // -->
+            <div class="kb-form not-ready no-transition radio-asset pay " data-status="">
+                <div class="radio-group">
+                    <span class="form-radio"><input type="radio" id="radioAssetType01" checked="" name="radioAssetType01"><label for="radioAssetType01">입출금</label></span>
+                    <span class="form-radio"><input type="radio" id="radioAssetType02" name="radioAssetType01"><label for="radioAssetType02">페이</label></span>
+                </div>
+            </div>
+            <div class="kb-form not-ready no-transition radio-asset deposit " data-status="">
+                <div class="radio-group">
+                    <span class="form-radio"><input type="radio" id="radioAssetType03" checked=""><label for="radioAssetType03">예금</label></span>
+                    <span class="form-radio"><input type="radio" id="radioAssetType04"><label for="radioAssetType04">적금</label></span>
+                    <span class="form-radio"><input type="radio" id="radioAssetType05"><label for="radioAssetType05">청약</label></span>
+                </div>
+            </div>
+            <div class="kb-form not-ready no-transition radio-asset annuity " data-status="">
+                <div class="radio-group">
+                    <span class="form-radio"><input type="radio" id="radioAssetType06" checked=""><label for="radioAssetType06">개인연금</label></span>
+                    <span class="form-radio"><input type="radio" id="radioAssetType07"><label for="radioAssetType07">퇴직연금</label></span>
+                    <span class="form-radio"><input type="radio" id="radioAssetType08"><label for="radioAssetType08">국민연금</label></span>
+                </div>
+            </div>
+            <div class="kb-form not-ready no-transition radio-asset insurance " data-status="">
+                <div class="radio-group">
+                    <span class="form-radio"><input type="radio" id="radioAssetType09" checked=""><label for="radioAssetType09">저축성보험</label></span>
+                    <span class="form-radio"><input type="radio" id="radioAssetType10"><label for="radioAssetType10">자동차보험</label></span>
+                    <span class="form-radio"><input type="radio" id="radioAssetType11"><label for="radioAssetType11">보장성보험</label></span>
+                </div>
+            </div>            
+            <div class="kb-form not-ready pay deposit trust fund stock annuity insurance" data-status="">
+                <label for="prodName_1" class="required">상품명</label>
+                <div class="kb-form_inner form-text">
+                    <input type="text" id="prodName_1" value="" placeholder="">
+                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                </div>
+            </div>
+            <div class="kb-form not-ready loan" data-status="">
+                <label for="prodName_2" class="required">대출명</label>
+                <div class="kb-form_inner form-text">
+                    <input type="text" id="prodName_2" value="" placeholder="">
+                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                </div>
+            </div>
+            <!-- // 2021-06-02 상품명, 세부항목 추가 -->
+            <div class="kb-form not-ready pay deposit trust" data-status=""><!-- 2021-06-02 no-transition 삭제 -->
+                <label for="kbFormInput3" class="required">금액</label>
+                <div class="kb-form_inner form-text">
+                    <input type="text" inputmode="numeric" id="kbFormInput3" placeholder="금액을 입력해 주세요" value="" data-unit="원" data-action="autoSeperator">
+                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                </div>
+                <em class="validation">Message</em>
+            </div>
+            <div class="kb-form not-ready deposit" data-status=""><!-- 2021-06-02 no-transition 삭제 -->
+                <label for="kbFormInput10">적용이율</label>
+                <div class="kb-form_inner form-text">
+                    <input type="text" inputmode="decimal" id="kbFormInput10" placeholder="0.00%" value="" data-unit="%">
+                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                </div>
+                <em class="validation">Message</em>
+            </div>
+            <div class="kb-form not-ready fund" data-status=""><!-- 2021-06-02 no-transition 삭제 -->
+                <label for="kbFormInput3-1" class="required">평가총액</label>
+                <div class="kb-form_inner form-text">
+                    <input type="text" inputmode="numeric" id="kbFormInput3-1" placeholder="금액을 입력해 주세요" value="" data-unit="원" data-action="autoSeperator">
+                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                </div>
+                <em class="validation">Message</em>
+            </div>
+            <div class="kb-form not-ready fund-inquiry fund" data-status="info"><!-- 2021-06-02 no-transition 삭제 -->
+                <label for="kbFormInput12" class="required">수익율</label>
+                <div class="kb-form_inner form-text">
+                    <input type="text" id="kbFormInput12" value="" placeholder="">
+                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                </div>
+                <button class="btn-line"><span>조회</span></button>
+                <em class="validation">투자원금과 평가총액을 입력 후, 조회 버튼을 누르시면 수익율이 조회됩니다.</em>
+            </div>
+            <div class="kb-form not-ready fund" data-status=""><!-- 2021-06-02 no-transition 삭제 -->
+                <label for="kbFormInput13" class="required">투자원금</label>
+                <div class="kb-form_inner form-text">
+                    <input type="text" inputmode="numeric" id="kbFormInput13" placeholder="금액을 입력해 주세요" value="" data-unit="원" data-action="autoSeperator">
+                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                </div>
+                <em class="validation">Message</em>
+            </div>
+            <div class="kb-form not-ready stock" data-status=""><!-- 2021-06-02 no-transition 삭제 -->
+                <label for="kbFormInput14" class="required">평가금액</label>
+                <div class="kb-form_inner form-text">
+                    <input type="text" inputmode="numeric" id="kbFormInput14" placeholder="금액을 입력해 주세요" value="" data-unit="원" data-action="autoSeperator">
+                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                </div>
+                <em class="validation">Message</em>
+            </div>
+            <div class="kb-form not-ready stock" data-status=""><!-- 2021-06-02 no-transition 삭제 -->
+                <label for="kbFormInput15">예수금</label>
+                <div class="kb-form_inner form-text">
+                    <input type="text" inputmode="numeric" id="kbFormInput15" placeholder="금액을 입력해 주세요" value="" data-unit="원" data-action="autoSeperator">
+                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                </div>
+                <em class="validation">Message</em>
+            </div>
+            <div class="kb-form not-ready loan" data-status=""><!-- 2021-06-02 no-transition 삭제 -->
+                <label for="kbFormInput16" class="required">대출잔액</label>
+                <div class="kb-form_inner form-text">
+                    <input type="text" inputmode="numeric" id="kbFormInput16" placeholder="금액을 입력해 주세요" value="" data-unit="원" data-action="autoSeperator">
+                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                </div>
+                <em class="validation">Message</em>
+            </div>
+            <div class="kb-form not-ready loan" data-status=""><!-- 2021-06-02 no-transition 삭제 -->
+                <label for="kbFormInput17" class="required">대출원금</label>
+                <div class="kb-form_inner form-text">
+                    <input type="text" inputmode="numeric" id="kbFormInput17" placeholder="금액을 입력해 주세요" value="" data-unit="원" data-action="autoSeperator">
+                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                </div>
+                <em class="validation">Message</em>
+            </div>
+            <div class="kb-form not-ready loan" data-status=""><!-- 2021-06-02 no-transition 삭제 -->
+                <label for="kbFormInput18">대출이율</label>
+                <div class="kb-form_inner form-text">
+                    <input type="text" inputmode="decimal" id="kbFormInput18" placeholder="0.00%" value="" data-unit="%">
+                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                </div>
+                <em class="validation">Message</em>
+            </div>
+            <div class="kb-form not-ready annuity" data-status=""><!-- 2021-06-02 no-transition 삭제 -->
+                <label for="kbFormInput3-2" class="required">평가금액</label>
+                <div class="kb-form_inner form-text">
+                    <input type="text" inputmode="numeric" id="kbFormInput3-2" placeholder="금액을 입력해 주세요" value="" data-unit="원" data-action="autoSeperator">
+                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                </div>
+                <em class="validation">Message</em>
+            </div>
+            <div class="kb-form not-ready annuity" data-status=""><!-- 2021-06-02 no-transition 삭제 -->
+                <label for="kbFormInput19" class="required">월납입금</label>
+                <div class="kb-form_inner form-text">
+                    <input type="text" inputmode="numeric" id="kbFormInput19" placeholder="금액을 입력해 주세요" value="" data-unit="원" data-action="autoSeperator">
+                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                </div>
+                <em class="validation">Message</em>
+            </div>
+            <div class="kb-form not-ready insurance" data-status=""><!-- 2021-06-02 no-transition 삭제 -->
+                <label for="kbFormInput21" class="required">보험료</label>
+                <div class="kb-form_inner form-text">
+                    <input type="text" inputmode="numeric" id="kbFormInput21" placeholder="금액을 입력해 주세요" value="" data-unit="원" data-action="autoSeperator">
+                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                </div>
+                <em class="validation">Message</em>
+            </div>
+            <div class="kb-form datepicker not-ready pay deposit trust fund loan annuity insurance" data-status=""><!-- 2021-06-02 no-transition 삭제 -->
+                <label for="kbFormInput4">신규일</label>
+                <div class="kb-form_inner form-text">
+                    <input type="text" id="kbFormInput4" placeholder="2021.01.01">
+                    <button class="btn-data-clear" data-call-layered="bsCalendar"><i class="icon-data-clear_24">지우기</i></button>
+                </div>
+                <em class="validation">에러 메세지 영역 입니다.</em>
+            </div>
+            <div class="kb-form datepicker not-ready deposit fund loan annuity insurance" data-status=""><!-- 2021-06-02 no-transition 삭제 -->
+                <label for="kbFormInput11">만기일</label>
+                <div class="kb-form_inner form-text">
+                    <input type="text" id="kbFormInput11" placeholder="2021.01.01">
+                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                </div>
+                <em class="validation">에러 메세지 영역 입니다.</em>
+            </div>
+        </section>
+        <section class="kb-sec nickname"><!-- 2021-06-02 no-transition 삭제 -->
+            <div class="kb-form not-ready" data-status="">
+                <label for="kbFormInput5" class="required">별명</label><!-- 2021-06-02 required 추가 -->
+                <div class="kb-form_inner form-text">
+                    <input type="text" id="kbFormInput5" value="" placeholder="최대 10자를 입력해주세요">
+                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                </div>
+                <em class="validation">에러 메세지 영역 입니다.</em>
+            </div>
+        </section>
+        
+        
+    
+				
 
-                <section class="kb-sec">
-                    <div class="pop-notice">
-                        <span>아직 등록되지 못한 자산이 있다면 입력해 주세요</span>
-                        <em>* 표시된 항목은 필수 입력 사항입니다.</em>
-                    </div>
-                </section>
-                <section class="kb-sec asset-registration">
-                    <!-- 2021-06-02 no-transition 삭제 -->
-                    <div class="kb-form not-ready" data-status="">
-                        <label for="kbFormInput1" class="required">금융기관</label>
-                        <div class="kb-form_inner form-select">
-                            <button type="button" class="selected-option" data-call-layered="bsFinancialInstitution"></button>
-                            <select name="" id="kbFormInput1" title="금융권 선택">
-                                <option value="">금융기관을 선택하세요</option>
-                                <option value="bank01">KB국민은행</option>
-                                <option value="bank02">신한은행</option>
-                                <option value="bank03">NH농협은행</option>
-                                <option value="bank04">우리은행</option>
-                                <option value="bank05">IBK기업은행</option>
-                                <option value="bank06">SC제일은행</option>
-                                <option value="bank07">하나은행</option>
-                                <option value="bank08">시티은행</option>
-                                <option value="bank09">우체국</option>
-                                <option value="bank10">수협은행</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="kb-form not-ready" data-status="">
-                        <!-- 2021-06-02 no-transition 삭제 -->
-                        <label for="assetType" class="required">자산종류</label>
-                        <div class="kb-form_inner form-select">
-                            <button type="button" class="selected-option" data-call-layered="bsProductType" id="btnAssetType"></button>
-                            <select name="" id="assetType" title="자산종류 선택">
-                                <option value="">자산종류를 선택하세요</option>
-                                <option value="productType01">입출금</option>
-                                <option value="productType02">예적금</option>
-                                <option value="productType03">신탁</option>
-                                <option value="productType04">펀드</option>
-                                <option value="productType05">증권</option>
-                                <option value="productType06">대출</option>
-                                <option value="productType07">연금</option>
-                                <option value="productType08">보험</option>
-                            </select>
-                        </div>
-                    </div>
-                </section>
-                <section class="kb-sec asset-type">
-                    <!-- 2021-06-02 상품명, 세부항목 추가 // -->
-                    <div class="kb-form not-ready no-transition radio-asset pay " data-status="">
-                        <div class="radio-group">
-                            <span class="form-radio"><input type="radio" id="radioAssetType01" checked="" name="radioAssetType01"><label for="radioAssetType01">입출금</label></span>
-                            <span class="form-radio"><input type="radio" id="radioAssetType02" name="radioAssetType01"><label for="radioAssetType02">페이</label></span>
-                        </div>
-                    </div>
-                    <div class="kb-form not-ready no-transition radio-asset deposit " data-status="">
-                        <div class="radio-group">
-                            <span class="form-radio"><input type="radio" id="radioAssetType03" checked=""><label for="radioAssetType03">예금</label></span>
-                            <span class="form-radio"><input type="radio" id="radioAssetType04"><label for="radioAssetType04">적금</label></span>
-                            <span class="form-radio"><input type="radio" id="radioAssetType05"><label for="radioAssetType05">청약</label></span>
-                        </div>
-                    </div>
-                    <div class="kb-form not-ready no-transition radio-asset annuity " data-status="">
-                        <div class="radio-group">
-                            <span class="form-radio"><input type="radio" id="radioAssetType06" checked=""><label for="radioAssetType06">개인연금</label></span>
-                            <span class="form-radio"><input type="radio" id="radioAssetType07"><label for="radioAssetType07">퇴직연금</label></span>
-                            <span class="form-radio"><input type="radio" id="radioAssetType08"><label for="radioAssetType08">국민연금</label></span>
-                        </div>
-                    </div>
-                    <div class="kb-form not-ready no-transition radio-asset insurance " data-status="">
-                        <div class="radio-group">
-                            <span class="form-radio"><input type="radio" id="radioAssetType09" checked=""><label for="radioAssetType09">저축성보험</label></span>
-                            <span class="form-radio"><input type="radio" id="radioAssetType10"><label for="radioAssetType10">자동차보험</label></span>
-                            <span class="form-radio"><input type="radio" id="radioAssetType11"><label for="radioAssetType11">보장성보험</label></span>
-                        </div>
-                    </div>
-                    <div class="kb-form not-ready pay deposit trust fund stock annuity insurance" data-status="">
-                        <label for="prodName_1" class="required">상품명</label>
-                        <div class="kb-form_inner form-text">
-                            <input type="text" id="prodName_1" value="" placeholder="">
-                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                        </div>
-                    </div>
-                    <div class="kb-form not-ready loan" data-status="">
-                        <label for="prodName_2" class="required">대출명</label>
-                        <div class="kb-form_inner form-text">
-                            <input type="text" id="prodName_2" value="" placeholder="">
-                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                        </div>
-                    </div>
-                    <!-- // 2021-06-02 상품명, 세부항목 추가 -->
-                    <div class="kb-form not-ready pay deposit trust" data-status="">
-                        <!-- 2021-06-02 no-transition 삭제 -->
-                        <label for="kbFormInput3" class="required">금액</label>
-                        <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" id="kbFormInput3" placeholder="금액을 입력해 주세요" value="" data-unit="원" data-action="autoSeperator">
-                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                        </div>
-                        <em class="validation">Message</em>
-                    </div>
-                    <div class="kb-form not-ready deposit" data-status="">
-                        <!-- 2021-06-02 no-transition 삭제 -->
-                        <label for="kbFormInput10">적용이율</label>
-                        <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="decimal" id="kbFormInput10" placeholder="0.00%" value="" data-unit="%">
-                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                        </div>
-                        <em class="validation">Message</em>
-                    </div>
-                    <div class="kb-form not-ready fund" data-status="">
-                        <!-- 2021-06-02 no-transition 삭제 -->
-                        <label for="kbFormInput3-1" class="required">평가총액</label>
-                        <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" id="kbFormInput3-1" placeholder="금액을 입력해 주세요" value="" data-unit="원" data-action="autoSeperator">
-                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                        </div>
-                        <em class="validation">Message</em>
-                    </div>
-                    <div class="kb-form not-ready fund-inquiry fund" data-status="info">
-                        <!-- 2021-06-02 no-transition 삭제 -->
-                        <label for="kbFormInput12" class="required">수익율</label>
-                        <div class="kb-form_inner form-text">
-                            <input type="text" id="kbFormInput12" value="" placeholder="">
-                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                        </div>
-                        <button class="btn-line"><span>조회</span></button>
-                        <em class="validation">투자원금과 평가총액을 입력 후, 조회 버튼을 누르시면 수익율이 조회됩니다.</em>
-                    </div>
-                    <div class="kb-form not-ready fund" data-status="">
-                        <!-- 2021-06-02 no-transition 삭제 -->
-                        <label for="kbFormInput13" class="required">투자원금</label>
-                        <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" id="kbFormInput13" placeholder="금액을 입력해 주세요" value="" data-unit="원" data-action="autoSeperator">
-                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                        </div>
-                        <em class="validation">Message</em>
-                    </div>
-                    <div class="kb-form not-ready stock" data-status="">
-                        <!-- 2021-06-02 no-transition 삭제 -->
-                        <label for="kbFormInput14" class="required">평가금액</label>
-                        <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" id="kbFormInput14" placeholder="금액을 입력해 주세요" value="" data-unit="원" data-action="autoSeperator">
-                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                        </div>
-                        <em class="validation">Message</em>
-                    </div>
-                    <div class="kb-form not-ready stock" data-status="">
-                        <!-- 2021-06-02 no-transition 삭제 -->
-                        <label for="kbFormInput15">예수금</label>
-                        <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" id="kbFormInput15" placeholder="금액을 입력해 주세요" value="" data-unit="원" data-action="autoSeperator">
-                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                        </div>
-                        <em class="validation">Message</em>
-                    </div>
-                    <div class="kb-form not-ready loan" data-status="">
-                        <!-- 2021-06-02 no-transition 삭제 -->
-                        <label for="kbFormInput16" class="required">대출잔액</label>
-                        <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" id="kbFormInput16" placeholder="금액을 입력해 주세요" value="" data-unit="원" data-action="autoSeperator">
-                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                        </div>
-                        <em class="validation">Message</em>
-                    </div>
-                    <div class="kb-form not-ready loan" data-status="">
-                        <!-- 2021-06-02 no-transition 삭제 -->
-                        <label for="kbFormInput17" class="required">대출원금</label>
-                        <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" id="kbFormInput17" placeholder="금액을 입력해 주세요" value="" data-unit="원" data-action="autoSeperator">
-                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                        </div>
-                        <em class="validation">Message</em>
-                    </div>
-                    <div class="kb-form not-ready loan" data-status="">
-                        <!-- 2021-06-02 no-transition 삭제 -->
-                        <label for="kbFormInput18">대출이율</label>
-                        <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="decimal" id="kbFormInput18" placeholder="0.00%" value="" data-unit="%">
-                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                        </div>
-                        <em class="validation">Message</em>
-                    </div>
-                    <div class="kb-form not-ready annuity" data-status="">
-                        <!-- 2021-06-02 no-transition 삭제 -->
-                        <label for="kbFormInput3-2" class="required">평가금액</label>
-                        <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" id="kbFormInput3-2" placeholder="금액을 입력해 주세요" value="" data-unit="원" data-action="autoSeperator">
-                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                        </div>
-                        <em class="validation">Message</em>
-                    </div>
-                    <div class="kb-form not-ready annuity" data-status="">
-                        <!-- 2021-06-02 no-transition 삭제 -->
-                        <label for="kbFormInput19" class="required">월납입금</label>
-                        <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" id="kbFormInput19" placeholder="금액을 입력해 주세요" value="" data-unit="원" data-action="autoSeperator">
-                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                        </div>
-                        <em class="validation">Message</em>
-                    </div>
-                    <div class="kb-form not-ready insurance" data-status="">
-                        <!-- 2021-06-02 no-transition 삭제 -->
-                        <label for="kbFormInput21" class="required">보험료</label>
-                        <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" id="kbFormInput21" placeholder="금액을 입력해 주세요" value="" data-unit="원" data-action="autoSeperator">
-                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                        </div>
-                        <em class="validation">Message</em>
-                    </div>
-                    <div class="kb-form datepicker not-ready pay deposit trust fund loan annuity insurance" data-status="">
-                        <!-- 2021-06-02 no-transition 삭제 -->
-                        <label for="kbFormInput4">신규일</label>
-                        <div class="kb-form_inner form-text">
-                            <input type="text" id="kbFormInput4" placeholder="2021.01.01">
-                            <button class="btn-data-clear" data-call-layered="bsCalendar"><i class="icon-data-clear_24">지우기</i></button>
-                        </div>
-                        <em class="validation">에러 메세지 영역 입니다.</em>
-                    </div>
-                    <div class="kb-form datepicker not-ready deposit fund loan annuity insurance" data-status="">
-                        <!-- 2021-06-02 no-transition 삭제 -->
-                        <label for="kbFormInput11">만기일</label>
-                        <div class="kb-form_inner form-text">
-                            <input type="text" id="kbFormInput11" placeholder="2021.01.01">
-                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                        </div>
-                        <em class="validation">에러 메세지 영역 입니다.</em>
-                    </div>
-                </section>
-                <section class="kb-sec nickname">
-                    <!-- 2021-06-02 no-transition 삭제 -->
-                    <div class="kb-form not-ready" data-status="">
-                        <label for="kbFormInput5" class="required">별명</label><!-- 2021-06-02 required 추가 -->
-                        <div class="kb-form_inner form-text">
-                            <input type="text" id="kbFormInput5" value="" placeholder="최대 10자를 입력해주세요">
-                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                        </div>
-                        <em class="validation">에러 메세지 영역 입니다.</em>
-                    </div>
-                </section>
+			</main>
+			<!-- // app-content -->
 
+		</div>
+		<!-- // app-container -->
 
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
 
-
-
-            </main>
-            <!-- // app-content -->
-
-        </div>
-        <!-- // app-container -->
-
-        <!-- Layer (fullpage popup, modal, bottom sheet) // -->
-        <div class="layered">
-        </div>
-        <!-- // Layer (fullpage popup, modal, bottom sheet) -->
-    </div>
-
-    <!-- Script -->
-    <!-- Common Library -->
-    <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
-    <script src="../../static/common/lib/jquery-ui.min.js"></script>
-    <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
-    <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
-    <script src="../../static/common/lib/current-device.min.js"></script>
-    <script src="../../static/common/lib/moment.min.js"></script>
-    <script src="../../static/common/lib/swiper-bundle.min.js"></script>
-    <!-- <script src="../../static/js/bottomSheet.js"></script> -->
-    <script src="../../static/js/modalPopup.js"></script>
-    <script src="../../static/js/menu.js"></script>
-    <!-- Add Library (this page only)-->
-    <script src="../../static/js/ui.js"></script>
-    <!-- Add Script -->
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
 
 </body>
 

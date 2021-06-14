@@ -1,199 +1,77 @@
 <!DOCTYPE html>
 <html lang="ko">
 <!-- [MYS_SP_01_02_12] 작성자: 누리어 시스템 황철민 -->
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>신용평점 올리기 완료 | 신용관리 | KB국민은행 마이데이터</title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
-    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
-    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
-    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
-    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
-    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
-    <link rel="stylesheet" href="../../static/css/ui.css">
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "신용평점 올리기 완료 | 신용관리"
+	})
 </head>
 
 <body>
-    <div class="skip-nav">
-        <a href="#content">본문으로 이동하기</a>
-    </div>
-    <div class="app">
-        <!-- app-header (for MyMoney) //-->
-        <!-- app-header [s] -->
-        <header class="app-header">
-            <a href="javascript:history.back();" class="btn-history-back" role="button"><i class="icon-back">뒤로가기</i></a>
-            <strong class="page-tit">신용평점 올리기</strong>
-            <button type="button" class="btn-allmenu"><i class="icon-menu">전체메뉴</i></button>
-        </header>
-        <!-- app-header [e] -->
-        <div class="app-menu">
-            <div class="all-menu-top">
-                <div class="util-menu">
-                    <a href="javascript:;" class="" role="button"><i class="icon-setting_24">설정</i></a>
-                    <a href="javascript:;" class="all-menu-notice new" role="button"><i class="icon-bell_24">알림</i></a><!-- 새로운 알림이 있을 때 .new -->
-                    <button type="button" class="btn-close"><span>닫기</span></button>
-                </div>
-                <div><a href="javascript:;" class="user-name"><strong>김국민 님</strong><i class="icon-move"></i></a></div>
-                <ul class="major-menu">
-                    <li><a href="javascript:;"><span><i class="icon-assets_24"></i></span><strong>자산등록</strong></a></li>
-                    <li><a href="javascript:;"><span><i class="icon-graph_24"></i></span><strong>소비 리포트</strong></a></li>
-                    <li><a href="javascript:;"><span><i class="icon-doc_24"></i></span><strong>공지사항</strong></a></li>
-                    <li><a href="javascript:;"><span><i class="icon-gift_24"></i></span><strong>My 혜택</strong></a></li><!-- 수정 : 2021.06.09 -->
-                </ul>
-            </div>
-            <div class="all-menu-list-wrap">
-                <div class="manage-mydata">
-                    <strong class="tit">마이데이터 관리</strong><!-- 수정 : 2021.06.01 -->
-                    <a href="javascript:;"><span>70</span><i class="icon-move"></i></a>
-                </div>
-                <ul class="all-menu-list">
-                    <li class="is-active">
-                        <a href="javascript:;">자산</a>
-                        <ul>
-                            <li><a href="javascript:;">자산통합조회</a></li>
-                            <li><a href="javascript:;">입출금&middot;페이</a></li>
-                            <li><a href="javascript:;">예적금</a></li>
-                            <li><a href="javascript:;">투자</a></li>
-                            <li><a href="javascript:;">보험</a></li>
-                            <li><a href="javascript:;">대출&middot;부채</a></li>
-                            <li><a href="javascript:;">부동산</a></li>
-                            <li><a href="javascript:;">자동차</a></li>
-                            <li><a href="javascript:;">My 금고</a></li><!-- 수정 : 2021.06.01 -->
-                            <li><a href="javascript:;">외화</a></li>
-                            <li><a href="javascript:;">적립포인트</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:;">D플랜</a>
-                        <ul>
-                            <li><a href="javascript:;">월수령액</a></li>
-                            <li><a href="javascript:;">라이프이벤트</a></li>
-                            <li><a href="javascript:;">나의기록</a></li>
-                            <li><a href="javascript:;">D플랜 설정</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:;">지출</a>
-                        <ul>
-                            <li><a href="javascript:;">가계부</a></li>
-                            <li><a href="javascript:;">정기지출</a></li>
-                            <li><a href="javascript:;">카드관리</a></li>
-                            <li><a href="javascript:;">소비리포트</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:;">목표 챌린지</a>
-                        <ul>
-                            <li><a href="javascript:;">아낀만큼</a></li>
-                            <li><a href="javascript:;">쓰는만큼</a></li><!-- 수정 : 2021.06.09 -->
-                            <li><a href="javascript:;">남들만큼</a></li>
-                            <li><a href="javascript:;">저금통</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:;">제휴/특화</a>
-                        <ul>
-                            <li><a href="javascript:;">신용</a></li>
-                            <li><a href="javascript:;">My Fun Data</a></li><!-- 수정 : 2021.06.09 -->
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:;">슬그Money</a><!-- 수정 : 2021.06.09 -->
-                    </li>
-                    <li>
-                        <a href="javascript:;">마이페이지</a>
-                        <ul>
-                            <li><a href="javascript:;">마이데이터 관리</a></li><!-- 수정 : 2021.06.01 -->
-                            <li><a href="javascript:;">내정보</a></li>
-                            <li><a href="javascript:;">My 혜택</a></li><!-- 수정 : 2021.06.09 -->
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:;">고객센터</a>
-                        <ul>
-                            <li><a href="javascript:;">FAQ</a></li>
-                            <li><a href="javascript:;">전화상담</a></li>
-                            <li><a href="javascript:;">약관 및 정책</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- // app-header -->
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-header.html', {'pageTit': '신용평점 올리기'}) 
+		<!-- // app-header -->
 
-        <!-- app-container (for MyMoney) //-->
-        <div class="app-container">
+		<!-- app-container (for MyMoney) //-->
+		<div class="app-container">
 
-            <!-- app-content // -->
-            <main class="app-content">
+			<!-- app-content // -->
+			<main class="app-content">
 
-                <!-- 신용평점 올리기 완료 // -->
-                <section class="kb-sec credit-score-complete">
-                    <div class="flex-layout">
-                        <div class="flex-top">
-                            <div class="complete-msg">
-                                <i class="icon-complete_60"></i>
-                                <strong class="tit">신용평점 올리기 완료</strong>
-                            </div>
-                        </div>
-                        <div class="flex-middle">
-                            <dl class="description-list type2">
-                                <dt>국세청 소득금액증명</dt>
-                                <dd>반영완료</dd>
-                                <dt>건강보험 납부내역</dt>
-                                <dd>반영완료</dd>
-                                <dt>국민연금 납부내역</dt>
-                                <dd>반영완료</dd>
-                                <dt>통신비 납부내역</dt>
-                                <dd>반영완료</dd>
-                            </dl>
-                        </div>
-                        <div class="flex-bottom">
-                            <p class="info-msg">수입·지출에 큰 변화가 없는 상태에서 중복 제출 할 경우 신용평점은 변동되지 않을 수 있습니다.</p>
-                        </div>
-                    </div>
-                    <div class="sticky-bottom">
-                        <div class="btn-area">
-                            <a href="#" class="btn-solid_sticky"><span>신용평점 확인하기</span></a>
-                        </div>
-                    </div>
-                </section>
-                <!-- // 신용평점 올리기 완료 -->
+				<!-- 신용평점 올리기 완료 // -->
+				<section class="kb-sec credit-score-complete">
+					<div class="flex-layout">
+						<div class="flex-top">
+							<div class="complete-msg">
+								<i class="icon-complete_60"></i>
+								<strong class="tit">신용평점 올리기 완료</strong>
+							</div>
+						</div>
+						<div class="flex-middle">
+							<dl class="description-list type2">
+								<dt>국세청 소득금액증명</dt>
+								<dd>반영완료</dd>
+								<dt>건강보험 납부내역</dt>
+								<dd>반영완료</dd>
+								<dt>국민연금 납부내역</dt>
+								<dd>반영완료</dd>
+								<dt>통신비 납부내역</dt>
+								<dd>반영완료</dd>
+							</dl>	
+						</div>
+						<div class="flex-bottom">
+							<p class="info-msg">수입·지출에 큰 변화가 없는 상태에서 중복 제출 할 경우 신용평점은 변동되지 않을 수 있습니다.</p>
+						</div>
+					</div>
+					<div class="sticky-bottom">
+						<div class="btn-area">
+							<a href="#" class="btn-solid_sticky"><span>신용평점 확인하기</span></a>
+						</div>
+					</div>
+				</section>				
+				<!-- // 신용평점 올리기 완료 -->
 
-            </main>
-            <!-- // app-content -->
+			</main>
+			<!-- // app-content -->
 
-        </div>
-        <!-- // app-container -->
+		</div>
+		<!-- // app-container -->
 
-        <!-- Layer (fullpage popup, modal, bottom sheet) // -->
-        <div class="layered">
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
 
-        </div>
-        <!-- // Layer (fullpage popup, modal, bottom sheet) -->
-    </div>
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
 
-    <!-- Script -->
-    <!-- Common Library -->
-    <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
-    <script src="../../static/common/lib/jquery-ui.min.js"></script>
-    <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
-    <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
-    <script src="../../static/common/lib/current-device.min.js"></script>
-    <script src="../../static/common/lib/moment.min.js"></script>
-    <script src="../../static/common/lib/swiper-bundle.min.js"></script>
-    <!-- <script src="../../static/js/bottomSheet.js"></script> -->
-    <script src="../../static/js/modalPopup.js"></script>
-    <script src="../../static/js/menu.js"></script>
-    <!-- Add Library (this page only)-->
-    <script src="../../static/js/ui.js"></script>
-    <!-- Add Script -->
-
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+	
 
 </body>
 

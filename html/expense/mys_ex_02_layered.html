@@ -1,44 +1,18 @@
 <!DOCTYPE html>
 <html lang="ko">
 <!-- [mys_ex_02] 작성자 : 누리어 시스템 김삼희 -->
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>LAYER | 정기지출 | KB국민은행 마이데이터</title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
-    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
-    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
-    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
-    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
-    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
-    <link rel="stylesheet" href="../../static/css/ui.css">
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "LAYER | 정기지출"
+    })
     <style>
-        .layer-call {
-            max-width: 300px;
-            margin: 0 auto;
-            padding: 40px 0;
-        }
-
-        .layer-call>button {
-            flex-flow: column;
-            margin-top: 10px;
-        }
-
-        .layer-call>button:before {
-            content: attr(data-page-id);
-        }
-
-        .layer-call>button span {
-            display: block;
-        }
+        .layer-call{max-width:300px;margin:0 auto;padding:40px 0;}
+        .layer-call > button{flex-flow:column;margin-top:10px;}
+        .layer-call > button:before{content:attr(data-page-id);}
+        .layer-call > button span{display:block;}
     </style>
 </head>
-
-<body>
+<body>    
     <div class="layer-call">
         <!-- 지출 > 정기지출 //--->
         <h1 class="h2">정기지출</h1>
@@ -48,368 +22,22 @@
         <button type="button" class="btn-line" data-call-layered="bsSelectOrganization" data-page-id="MYS_EX_02_02_01_P"><span>기관 선택 팝업</span></button>
         <br>
         <br>
-        <button type="button" class="btn-line" onClick="deleteRegularExpenseList()"><span>오류메시지 : 내역에서 삭제 안내</span></button>
-        <button type="button" class="btn-line" onClick="deleteRegularExpenseListConfirm()"><span>오류메시지 : 내역에서 삭제 확인</span></button>
+        <button type="button" class="btn-line"  onClick="deleteRegularExpenseList()"><span>오류메시지 : 내역에서 삭제 안내</span></button>
+        <button type="button" class="btn-line"  onClick="deleteRegularExpenseListConfirm()"><span>오류메시지 : 내역에서 삭제 확인</span></button>
         <!--// 지출 > 정기지출 --->
     </div>
 
     <div class="layered">
         <!-- Layer // -->
         <!-- 지출 > 정기지출 //-->
-        <!-- [MYS_EX_02_00_00_P01] 지출 > 정기지출 > 정기지출 상세내역 팝업 (작성자: 누리어 시스템 김삼희)// -->
-        <div class="bottom-sheet" data-layered-name="bsRegularExpenseDetailList">
-            <div class="bottom-sheet_header">
-                <span class="tit">정기지출 상세내역</span>
-            </div>
-            <div class="bottom-sheet_contents">
-                <div data-style="list" class="bottom-sheet_desc">정기지출 예정금액은 참고용으로 실제 결제 금액과 차이가 있을 수 있습니다.</div>
-                <div class="credit-list-group">
-                    <div class="group-tit t01">
-                        <strong><em class="num">4</em>월<em class="num">23</em>일</strong>
-                        <span class="total-amount"><em class="num">570,000</em>원 &sol; <em class="num">3</em>건</span>
-                    </div>
-                    <dl class="credit-list t01 line">
-                        <dt>
-                            <strong class="tit">유튜브 프리미엄</strong>
-                            <span class="tag">시티카드</span>
-                        </dt>
-                        <dd>
-                            <strong class="amount">USD<span class="num">320,00</span></strong>
-                            <span class="info" data-state="warning">이용한도부족</span>
-                        </dd>
-                        <dt>
-                            <strong class="tit">유튜브 프리미엄</strong>
-                            <span class="tag">시티카드</span>
-                        </dt>
-                        <dd>
-                            <strong class="amount">USD<span class="num">320,00</span></strong>
-                            <span class="info">잔액여유</span>
-                        </dd>
-                        <dt>
-                            <strong class="tit">유튜브 프리미엄</strong>
-                            <span class="tag">시티카드</span>
-                        </dt>
-                        <dd>
-                            <strong class="amount">USD<span class="num">100,00</span></strong>
-                            <span class="info" data-state="warning">잔액부족</span>
-                        </dd>
-                    </dl>
-                </div>
-            </div>
-            <button class="btn-close" data-action="close"><span>닫기</span></button>
-        </div>
-        <!--// 지출 > 정기지출 > 정기지출 상세내역 팝업 -->
-        <!-- [MYS_EX_01_05_07_P] 지출 > 가계부 > 수기 등록 > 거래수단 선택 팝업 (작성자: 누리어 시스템 김삼희)// -->
-        <div class="bottom-sheet" data-layered-name="userRegisterExpenseFormsMethod">
-            <div class="bottom-sheet_header">
-                <span class="tit">거래수단 선택</span>
-            </div>
-            <div class="bottom-sheet_contents expense-layered">
-                <section class="kb-sec">
-                    <ul class="select-list">
-                        <li class="is-active"><button type="button"><strong class="tit">신용&sol;체크카드</strong><i class="icon-20"></i></button></li>
-                        <li><button type="button"><strong class="tit">현금</strong><i class="icon-20"></i></button></li>
-                        <li><button type="button"><strong class="tit">통신사 소액결제</strong><i class="icon-20"></i></button></li>
-                    </ul>
-                </section>
-            </div>
-            <button class="btn-close" data-action="close"><span>닫기</span></button>
-        </div>
-        <!-- //지출 > 가계부 > 수기 등록 > 거래수단 선택 팝업 -->
-        <!-- [MYS_EX_01_02_00] 지출 > 가계부 > 수기등록 > 카테고리 아이콘 선택 팝업 (작성자: 누리어 시스템 김삼희)// -->
-        <div class="bottom-sheet" data-layered-name="bsShareRegularExpenseList">
-            <div class="bottom-sheet_header">
-                <span class="tit">공유</span>
-            </div>
-            <div class="bottom-sheet_contents">
-                <ul class="grid-list" data-col="3">
-                    <li><button type="button" class=""><i class="icon-20"></i><span>카카오톡</span></button></li>
-                    <li><button type="button" class=""><i class="icon-20"></i><span>리브똑똑</span></button></li>
-                    <li><button type="button" class=""><i class="icon-20"></i><span>SMS전송</span></button></li>
-                </ul>
-            </div>
-            <button class="btn-close" data-action="close"><span>닫기</span></button>
-        </div>
-        <!--// 지출 > 가계부 > 수기등록 > 카테고리 아이콘 선택 팝업 -->
-        <!-- [MYS_EX_02_02_01_P] 지출 > 정기지출 > 기관 선택 팝업 (작성자: 누리어 시스템 김삼희)// -->
-        <div class="bottom-sheet full-size" data-layered-name="bsSelectOrganization">
-            <div class="bottom-sheet_header">
-                <span class="tit">기관 선택</span>
-            </div>
-            <div class="bottom-sheet_contents expense-layered">
-                <div class="tab swiper-container">
-                    <ul class="swiper-wrapper">
-                        <li class="swiper-slide"><a href="#target01">은행</a></li>
-                        <li class="swiper-slide is-active"><a href="#target02">카드</a></li>
-                    </ul>
-                </div>
-                <section class="kb-sec tab_contents user-register-organization">
-                    <!-- // 기관선택 : 은행 -->
-                    <div class="organization-bank">
-                        <dl class="accordian">
-                            <dt class="is-active">
-                                <div>KB국민은행<span>(3)</span></div>
-                                <button type="button"><i></i></button>
-                            </dt>
-                            <dd>
-                                <div class="checkbox-group st_list">
-                                    <span class="form-checkbox_20">
-                                        <input type="radio" id="bsSelectOrganizationCardOption01" name="organization-bank-option">
-                                        <label for="bsSelectOrganizationCardOption01">
-                                            <strong>KB종합통장&ndash;저축예금</strong>
-                                            <em class="num">1234-5678-1234</em>
-                                        </label>
-                                    </span>
-                                    <span class="form-checkbox_20">
-                                        <input type="radio" id="bsSelectOrganizationCardOption02" name="organization-bank-option">
-                                        <label for="bsSelectOrganizationCardOption02">
-                                            <strong>KB우대저축&ndash;저축예금</strong>
-                                            <em class="num">1234-5678-1234</em>
-                                        </label>
-                                    </span>
-                                    <span class="form-checkbox_20">
-                                        <input type="radio" id="bsSelectOrganizationCardOption03" name="organization-bank-option">
-                                        <label for="bsSelectOrganizationCardOption03">
-                                            <strong>KB종합통장&ndash;저축예금</strong>
-                                            <em class="num">1234-5678-1234</em>
-                                        </label>
-                                    </span>
-                                </div>
-                            </dd>
-                        </dl>
-                    </div>
-                    <!-- 기관 : 은행 //-->
-                    <!--// 기관 : 카드 -->
-                    <div class="organization-card is-active">
-                        <dl class="accordian">
-                            <dt class="is-active">
-                                <div>KB국민카드<span>(3)</span></div>
-                                <button type="button"><i></i></button>
-                            </dt>
-                            <dd>
-                                <div class="checkbox-group st_list">
-                                    <span class="form-checkbox_20">
-                                        <input type="radio" id="bsSelectOrganizationCardOption04" name="organization-card-option">
-                                        <label for="bsSelectOrganizationCardOption04">
-                                            <strong>KB카드상품명</strong>
-                                            <em class="num">1234-5678-1234</em>
-                                        </label>
-                                    </span>
-                                    <span class="form-checkbox_20">
-                                        <input type="radio" id="bsSelectOrganizationCardOption05" name="organization-card-option">
-                                        <label for="bsSelectOrganizationCardOption05">
-                                            <strong>KB카드상품명</strong>
-                                            <em class="num">1234-5678-1234</em>
-                                        </label>
-                                    </span>
-                                    <span class="form-checkbox_20">
-                                        <input type="radio" id="bsSelectOrganizationCardOption06" name="organization-card-option">
-                                        <label for="bsSelectOrganizationCardOption06">
-                                            <strong>KB카드상품명</strong>
-                                            <em class="num">1234-5678-1234</em>
-                                        </label>
-                                    </span>
-                                </div>
-                            </dd>
-                            <dt>
-                                <div>신한카드<span>(12)</span></div>
-                                <button type="button"><i></i></button>
-                            </dt>
-                            <dd>
-                                <div class="checkbox-group st_list">
-                                    <span class="form-checkbox_20">
-                                        <input type="radio" id="bsSelectOrganizationCardOption07" name="organization-card-option">
-                                        <label for="bsSelectOrganizationCardOption07">
-                                            <strong>신한카드상품명</strong>
-                                            <em class="num">1234-5678-1234</em>
-                                        </label>
-                                    </span>
-                                </div>
-                            </dd>
-                            <dt>
-                                <div>우리카드<span>(6)</span></div>
-                                <button type="button"><i></i></button>
-                            </dt>
-                            <dd>
-                                <div class="checkbox-group st_list">
-                                    <span class="form-checkbox_20">
-                                        <input type="radio" id="bsSelectOrganizationCardOption08" name="organization-card-option">
-                                        <label for="bsSelectOrganizationCardOption08">
-                                            <strong>우리카드상품명</strong>
-                                            <em class="num">1234-5678-1234</em>
-                                        </label>
-                                    </span>
-                                </div>
-                            </dd>
-                        </dl>
-                    </div>
-                    <!-- 기관 : 카드 //-->
-                </section>
-            </div>
-            <button class="btn-close" data-action="close"><span>닫기</span></button>
-        </div>
-        <!-- //지출 > 가계부 > 수기 등록 > 카테고리 설정 팝업  -->
-        <!-- [MYS_EX_02_01_05_P] 지출 > 정기지출 > 정기지출항목 선택 팝업 (작성자: 누리어 시스템 김삼희)// -->
-        <div class="bottom-sheet" data-layered-name="bsSelectRegularExpenseList01">
-            <div class="bottom-sheet_header">
-                <span class="tit">선택</span>
-            </div>
-            <div class="bottom-sheet_contents expense-layered">
-                <section class="kb-sec">
-                    <ul class="select-list">
-                        <li><button type="button"><strong class="tit">마이데이터관리 &lt; 연동기관 확인하기</strong><i class="icon-20"></i></button></li>
-                        <li class="is-active"><button type="button"><strong class="tit">수기등록하기</strong><i class="icon-20"></i></button></li>
-                    </ul>
-                </section>
-            </div>
-            <button class="btn-close" data-action="close"><span>닫기</span></button>
-        </div>
-        <!-- // 지출 > 정기지출 > 정기지출항목 선택 팝업 -->
-        <!-- [MYS_EX_02_02_01_P] 지출 > 정기지출 > 기관 선택 팝업 (작성자: 누리어 시스템 김삼희)// -->
-        <div class="bottom-sheet full-size" data-layered-name="bsSelectOrganization">
-            <div class="bottom-sheet_header">
-                <span class="tit">기관 선택</span>
-            </div>
-            <div class="bottom-sheet_contents expense-layered">
-                <div class="tab swiper-container">
-                    <ul class="swiper-wrapper">
-                        <li class="swiper-slide"><a href="#target01">은행</a></li>
-                        <li class="swiper-slide is-active"><a href="#target02">카드</a></li>
-                    </ul>
-                </div>
-                <section class="kb-sec tab_contents user-register-organization">
-                    <!-- // 기관선택 : 은행 -->
-                    <div class="organization-bank">
-                        <dl class="accordian">
-                            <dt class="is-active">
-                                <div>KB국민은행<span>(3)</span></div>
-                                <button type="button"><i></i></button>
-                            </dt>
-                            <dd>
-                                <div class="checkbox-group st_list">
-                                    <span class="form-checkbox_20">
-                                        <input type="radio" id="bsSelectOrganizationCardOption01" name="organization-bank-option">
-                                        <label for="bsSelectOrganizationCardOption01">
-                                            <strong>KB종합통장&ndash;저축예금</strong>
-                                            <em class="num">1234-5678-1234</em>
-                                        </label>
-                                    </span>
-                                    <span class="form-checkbox_20">
-                                        <input type="radio" id="bsSelectOrganizationCardOption02" name="organization-bank-option">
-                                        <label for="bsSelectOrganizationCardOption02">
-                                            <strong>KB우대저축&ndash;저축예금</strong>
-                                            <em class="num">1234-5678-1234</em>
-                                        </label>
-                                    </span>
-                                    <span class="form-checkbox_20">
-                                        <input type="radio" id="bsSelectOrganizationCardOption03" name="organization-bank-option">
-                                        <label for="bsSelectOrganizationCardOption03">
-                                            <strong>KB종합통장&ndash;저축예금</strong>
-                                            <em class="num">1234-5678-1234</em>
-                                        </label>
-                                    </span>
-                                </div>
-                            </dd>
-                        </dl>
-                    </div>
-                    <!-- 기관 : 은행 //-->
-                    <!--// 기관 : 카드 -->
-                    <div class="organization-card is-active">
-                        <dl class="accordian">
-                            <dt class="is-active">
-                                <div>KB국민카드<span>(3)</span></div>
-                                <button type="button"><i></i></button>
-                            </dt>
-                            <dd>
-                                <div class="checkbox-group st_list">
-                                    <span class="form-checkbox_20">
-                                        <input type="radio" id="bsSelectOrganizationCardOption04" name="organization-card-option">
-                                        <label for="bsSelectOrganizationCardOption04">
-                                            <strong>KB카드상품명</strong>
-                                            <em class="num">1234-5678-1234</em>
-                                        </label>
-                                    </span>
-                                    <span class="form-checkbox_20">
-                                        <input type="radio" id="bsSelectOrganizationCardOption05" name="organization-card-option">
-                                        <label for="bsSelectOrganizationCardOption05">
-                                            <strong>KB카드상품명</strong>
-                                            <em class="num">1234-5678-1234</em>
-                                        </label>
-                                    </span>
-                                    <span class="form-checkbox_20">
-                                        <input type="radio" id="bsSelectOrganizationCardOption06" name="organization-card-option">
-                                        <label for="bsSelectOrganizationCardOption06">
-                                            <strong>KB카드상품명</strong>
-                                            <em class="num">1234-5678-1234</em>
-                                        </label>
-                                    </span>
-                                </div>
-                            </dd>
-                            <dt>
-                                <div>신한카드<span>(12)</span></div>
-                                <button type="button"><i></i></button>
-                            </dt>
-                            <dd>
-                                <div class="checkbox-group st_list">
-                                    <span class="form-checkbox_20">
-                                        <input type="radio" id="bsSelectOrganizationCardOption07" name="organization-card-option">
-                                        <label for="bsSelectOrganizationCardOption07">
-                                            <strong>신한카드상품명</strong>
-                                            <em class="num">1234-5678-1234</em>
-                                        </label>
-                                    </span>
-                                </div>
-                            </dd>
-                            <dt>
-                                <div>우리카드<span>(6)</span></div>
-                                <button type="button"><i></i></button>
-                            </dt>
-                            <dd>
-                                <div class="checkbox-group st_list">
-                                    <span class="form-checkbox_20">
-                                        <input type="radio" id="bsSelectOrganizationCardOption08" name="organization-card-option">
-                                        <label for="bsSelectOrganizationCardOption08">
-                                            <strong>우리카드상품명</strong>
-                                            <em class="num">1234-5678-1234</em>
-                                        </label>
-                                    </span>
-                                </div>
-                            </dd>
-                        </dl>
-                    </div>
-                    <!-- 기관 : 카드 //-->
-                </section>
-            </div>
-            <button class="btn-close" data-action="close"><span>닫기</span></button>
-        </div>
-        <!-- //지출 > 가계부 > 수기 등록 > 카테고리 설정 팝업  -->
+        @@include('@@webRoot/html/expense/layered/mys_ex_02_00_00_p01.html')
+        @@include('@@webRoot/html/expense/layered/mys_ex_01_05_07_p.html')
+        @@include('@@webRoot/html/expense/layered/mys_ex_02_01_03_p.html')
+        @@include('@@webRoot/html/expense/layered/mys_ex_02_02_01_p.html')
+        @@include('@@webRoot/html/expense/layered/mys_ex_02_01_05_p.html')
+        @@include('@@webRoot/html/expense/layered/mys_ex_02_02_01_p.html')
         <!-- 공통 -->
-
-        <!-- 조회 바텀시트 //-->
-        <div class="bottom-sheet full-size" data-layered-name="bsCalendar">
-            <div class="bottom-sheet_header">
-                <span class="tit">날짜 선택</span>
-            </div>
-            <div class="bottom-sheet_contents">
-                <section class="kb-sec">
-                    <div class="calendar-nav">
-                        <button type="button" class="btn-first"><i class="icon-pagination_first">지난해</i></button>
-                        <button type="button" class="btn-prev"><i class="icon-pagination_prev">지난달</i></button>
-                        <strong></strong>
-                        <button type="button" class="btn-next"><i class="icon-pagination_next">다음달</i></button>
-                        <button type="button" class="btn-last"><i class="icon-pagination_last">다음해</i></button>
-                        <button type="button" class="btn-text"><span>오늘</span></button>
-                    </div>
-                    <div class="calendar-area" id="datepicker"></div>
-                </section>
-            </div>
-            <div class="bottom-sheet_buttons">
-                <button class="btn-solid_sticky lv2" data-action="close"><span>취소</span></button><!-- 수정 : 2021.06.02 -->
-                <button class="btn-solid_sticky" data-action="close"><span>확인</span></button>
-            </div>
-            <button class="btn-close" data-action="close"><span>닫기</span></button>
-        </div>
-        <!-- //조회 바텀시트  -->
+        @@include('@@webRoot/html/_layered/bs-calendar.html')
         <!-- // Layer -->
         <!-- Bottom Sheet // -->
 
@@ -417,23 +45,13 @@
     </div>
 
     <!-- Script -->
-    <!-- Common Library -->
-    <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
-    <script src="../../static/common/lib/jquery-ui.min.js"></script>
-    <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
-    <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
-    <script src="../../static/common/lib/current-device.min.js"></script>
-    <script src="../../static/common/lib/moment.min.js"></script>
-    <script src="../../static/common/lib/swiper-bundle.min.js"></script>
-    <!-- <script src="../../static/js/bottomSheet.js"></script> -->
-    <script src="../../static/js/modalPopup.js"></script>
-    <script src="../../static/js/menu.js"></script>
+    @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
-    <script src="../../static/js/ui.js"></script>
+    <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
 
     <script>
-        function deleteRegularExpenseList() {
+        function deleteRegularExpenseList(){
             modalPopup({
                 title: "내역에서 삭제",
                 message: "{정기지출내역}에서 {정기지출항목}을(를) 삭제하시겠습니까?",
@@ -448,8 +66,7 @@
                 }
             });
         }
-
-        function deleteRegularExpenseListConfirm() {
+        function deleteRegularExpenseListConfirm(){
             modalPopup({
                 title: "내역에서 삭제",
                 message: "{정기지출항목}아(가) 삭제되었습니다.",
@@ -463,16 +80,15 @@
         var urlArr = url.split('#');
         var pageID = urlArr[urlArr.length - 1].toUpperCase();
 
-        $('.layer-call').on('click', 'button', function() {
+        $('.layer-call').on('click','button',function(){
             var newUrl = url.replace(pageID, '');
             window.location.href = urlArr[0] + '#' + $(this).data('page-id');
         });
-
-        if (pageID.indexOf('/HTML/') < 0) $('button[data-page-id=' + pageID + ']').click();
+        
+        if(pageID.indexOf('/HTML/') < 0) $('button[data-page-id=' + pageID + ']').click();
         //레이어 확인용 스크립트 (개발시 삭제) [e]
     </script>
-
+    
 
 </body>
-
 </html>

@@ -2,95 +2,33 @@
 <html lang="ko">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Highcharts | KB국민은행 마이데이터</title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
-    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
-    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
-    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
-    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
-    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
-    <link rel="stylesheet" href="../../static/css/ui.css">
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Highcharts"
+    })
 
     <link rel="stylesheet" href="./resources/guide.css">
     <link rel="stylesheet" href="./resources/jquery-ui.css">
     <link rel="stylesheet" href="./resources/a11y-dark.min.css">
     <script src="./resources/highlight.min.js"></script>
-    <script>
-        hljs.highlightAll();
-    </script>
+    <script>hljs.highlightAll();</script>
     <style>
-        .guide {
-            line-height: 1.8;
-        }
+        .guide{line-height:1.8;}
+        .guide-container{padding-bottom:120px;}
+        .guide h2{font-size:28px;}
+        .guide div + h2{margin-top:80px;}        
+        .guide h2 + div{margin-top:20px;}
+        .guide h2 + div > ol:first-child{font-size:20px;}
+        .guide dt{margin-top:28px;font-size:18px;font-weight:bold;}
+        .guide dd{margin-top:16px;}
 
-        .guide-container {
-            padding-bottom: 120px;
-        }
-
-        .guide h2 {
-            font-size: 28px;
-        }
-
-        .guide div+h2 {
-            margin-top: 80px;
-        }
-
-        .guide h2+div {
-            margin-top: 20px;
-        }
-
-        .guide h2+div>ol:first-child {
-            font-size: 20px;
-        }
-
-        .guide dt {
-            margin-top: 28px;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .guide dd {
-            margin-top: 16px;
-        }
-
-        body.guide .box {
-            border: 0
-        }
-
-        body.guide .flex-dl>dd:not(.guide-description) {
-            position: relative;
-            width: auto;
-            max-width: 500px;
-            padding: 0
-        }
-
+        body.guide .box{border:0}
+        body.guide .flex-dl > dd:not(.guide-description){position:relative;width:auto;max-width:500px;padding:0}
         body.guide .highcharts-box .content-box-info .info-amount dt,
-        body.guide .highcharts-box .content-box-info .info-amount dd {
-            margin-top: 0
-        }
-
-        body.guide .highcharts-box .highcharts-figure .highcharts_column {
-            min-width: 330px
-        }
-
-        .btn-fold {
-            display: block;
-            width: 100%
-        }
-
-        .box.fold .flex-dl>dt {
-            height: 80px;
-            overflow: hidden
-        }
-
-        .box.fold.is-active .flex-dl>dt {
-            height: auto
-        }
+        body.guide .highcharts-box .content-box-info .info-amount dd{margin-top:0}
+        body.guide .highcharts-box .highcharts-figure .highcharts_column{min-width:330px}
+        .btn-fold{display:block;width:100%}
+        .box.fold .flex-dl > dt{height:80px;overflow:hidden}
+        .box.fold.is-active .flex-dl > dt{height:auto}
     </style>
 </head>
 
@@ -107,7 +45,7 @@
     </div>
     <div class="guide-container">
 
-        <h2>Highcharts</h2>
+        <h2>Highcharts</h2>        
         <div>
             <ol>
                 <li>* swiper</li>
@@ -115,9 +53,9 @@
             <dl>
                 <dt>필요한 파일</dt>
                 <dd>
-                    <p>1) <b>highcharts.js</b> : ../../static/common/lib/highcharts/highcharts.js</p>
-                    <p>2) <b>highcharts-setting.js</b> : ../../static/common/lib/highcharts/highcharts-setting.js</p>
-                    <p>3) <b>막대그래프 radius</b> : ../../static/common/lib/highcharts/rounded-corners.js</p>
+                    <p>1) <b>highcharts.js</b> : @@webRoot/static/common/lib/highcharts/highcharts.js</p>
+                    <p>2) <b>highcharts-setting.js</b> : @@webRoot/static/common/lib/highcharts/highcharts-setting.js</p>
+                    <p>3) <b>막대그래프 radius</b> : @@webRoot/static/common/lib/highcharts/rounded-corners.js</p>
                 </dd>
             </dl>
             <dl>
@@ -426,63 +364,43 @@
         <hr>
 
     </div>
-    <!-- Common Library -->
-    <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
-    <script src="../../static/common/lib/jquery-ui.min.js"></script>
-    <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
-    <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
-    <script src="../../static/common/lib/current-device.min.js"></script>
-    <script src="../../static/common/lib/moment.min.js"></script>
-    <script src="../../static/common/lib/swiper-bundle.min.js"></script>
-    <!-- <script src="../../static/js/bottomSheet.js"></script> -->
-    <script src="../../static/js/modalPopup.js"></script>
-    <script src="../../static/js/menu.js"></script>
+    @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
     <script src="./resources/guide.js"></script>
 
-    <script src="../../static/js/ui.js"></script>
-    <script src="../../static/common/lib/swiper.min.js"></script>
-    <script src="../../static/common/lib/highcharts/highcharts.js"></script>
-    <script src="../../static/common/lib/highcharts/highcharts-setting.js"></script>
-    <script src="../../static/common/lib/highcharts/rounded-corners.js"></script>
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <script src="@@webRoot/static/common/lib/swiper.min.js"></script>
+    <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>
+    <script src="@@webRoot/static/common/lib/highcharts/highcharts-setting.js"></script>
+    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
     <script>
         // guide 관련
-        $('.btn-fold').on('click', function() {
+        $('.btn-fold').on('click', function(){
             $(this).closest('.fold').toggleClass('is-active');
         });
 
         // highcharts : COLUMN
         var columnChartCategory = ["1월", "2월", "3월", "4월", "5월", "6월"];
-        var columnChartData01 = [200000, 680000, 350000, 680000, 860000, {
-            y: 975333,
-            color: colorTheme01.point,
-            dataLabels: dataLabels
-        }];
-        var columnChartData02 = [700000, 200000, 350000, 280000, 660000, {
-            y: 975333,
-            dataLabels: dataLabels
-        }];
+        var columnChartData01 = [200000, 680000, 350000, 680000, 860000, {y: 975333, color: colorTheme01.point, dataLabels: dataLabels}];
+        var columnChartData02 = [700000, 200000, 350000, 280000, 660000, {y: 975333, dataLabels: dataLabels}];
         setColumnChart('columnChart01', columnOption, colorTheme01, columnChartCategory, columnChartData01);
         setColumnChart('columnChart02', columnOption, colorTheme02, columnChartCategory, columnChartData02);
-
+        
         // highcharts : COLUMN_AREA
         var columnAreaCategory = ["1", "5", "10", "15", "20", "25", "30"];
         var columnAreaDataBasic = [50, 80, 106, 80, 71, 129, 150];
-        var columnAreaDataMain = [100, 80, 140, 50, 70, {
-            y: 80,
-            dataLabels: dataLabels
-        }, 60];
+        var columnAreaDataMain = [100, 80, 140, 50, 70, {y: 80, dataLabels: dataLabels}, 60];
         setColumnAreaChart('columnAreaChart', columnAreaOption, colorTheme03, columnAreaCategory, columnAreaDataBasic, columnAreaDataMain, '일별지출', '6개월 평균지출');
         setColumnAreaChart('columnAreaChart_test', columnAreaOption, colorTheme01, columnAreaCategory, columnAreaDataBasic, columnAreaDataMain, '일별지출', '6개월 평균지출');
 
         // highcharts : DOUBLE_AREA
         var doubleAreaCategory = ["1", "5", "10", "15", "20", "25", "30"];
-        var doubleAreaData01 = [1436, 2063, 3057, 1900, 1369, 640, 1005, 2618, 5444, 8822, 9914, 9620, 9326, 5113, 4113, 3113, 2000, 1113, 513, 213];
-        var doubleAreaData02 = [0, 426, 660, 869, 1060, 1605, 3089, 4339, 4399, 5538, 6643, 7092, 8478, 9915, 7502, 4900, 4500, 2800, 1500, 500];
+        var doubleAreaData01 = [1436,2063,3057,1900,1369,640,1005,2618,5444,8822,9914,9620,9326,5113,4113,3113,2000,1113,513,213];
+        var doubleAreaData02 = [0,426,660,869,1060,1605,3089,4339,4399,5538,6643,7092,8478,9915,7502,4900,4500,2800,1500,500];
         setDoubleAreaChart('doubleAreaChart', doubleColumnOption, colorTheme03, doubleAreaData01, doubleAreaData02, '일별지출', '6개월 평균지출');
 
         // highcharts : BAR_AREA
-        var barCategory = ["입출금/페이", "예적금", "투자", "보험", "연금(은퇴)", "대출", "부동산", "자동차"];
+        var barCategory = ["입출금/페이","예적금","투자","보험","연금(은퇴)","대출","부동산","자동차"];
         var barData01 = [107, 90, 255, 203, 150, 110, 140, 190];
         var barData02 = [133, 156, 257, 208, 100, 90, 140, 190];
         setBarChart('barChart', barOption, colorTheme04, barCategory, barData01, barData02, '나', '유사군');

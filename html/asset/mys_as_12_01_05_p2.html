@@ -1,140 +1,112 @@
 <!DOCTYPE html>
 <html lang="ko">
 <!-- [MYS_AS_12_01_05_P2] 작성자: 누리어 시스템 황철민 -->
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Car 직접입력 | 자산 | KB국민은행 마이데이터</title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
-    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
-    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
-    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
-    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
-    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
-    <link rel="stylesheet" href="../../static/css/ui.css">
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "My Car 직접입력 | 자산"
+	})
 </head>
 
 <body>
-    <div class="skip-nav">
-        <a href="#content">본문으로 이동하기</a>
-    </div>
-    <div class="app">
-        <!-- app-header (for MyMoney) //-->
-        <!-- app-header [s] -->
-        <header class="app-header">
-            <strong class="page-tit">My Car 직접입력</strong>
-            <!-- <button class="btn-close"><span>닫기</span></button> -->
-            <!-- 수정 : layer 팝업 -> 페이지로 전환용 -->
-            <a href="javascript:history.back();" class="btn-close" role="button"><span>뒤로가기</span></a>
-        </header>
-        <!-- app-header [e] -->
-        <!-- // app-header (for MyMoney) -->
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-header-close.html',{
+			'pageTit' :'My Car 직접입력'
+		}) 
+		<!-- // app-header (for MyMoney) -->
 
-        <!-- app-container //-->
-        <div class="app-container">
+		<!-- app-container //-->
+		<div class="app-container">
 
-            <!-- app-content // -->
-            <main class="app-content pop-my-asset">
+			<!-- app-content // -->
+			<main class="app-content pop-my-asset">
 
-                <section class="kb-sec mycar-add-forms">
-                    <div class="pop-notice">
-                        <span>직접입력하신 자동차는 자산합계에 추가 되지만, 시세 변동을 확인 할 수 없습니다.</span>
-                        <em>* 표시된 항목은 필수 입력 사항입니다.</em>
-                    </div>
-                    <div class="kb-form" data-status="">
-                        <label for="mycarInputRadio1" class="required">자동차 소유 형태</label>
-                        <div class="kb-form_inner form-radio-set">
-                            <ul class="flex-box" data-col="2">
-                                <li><span class="form-radio"><input type="radio" id="mycarInputRadio1" name="carownership" checked=""><label for="mycarInputRadio1">본인소유</label></span></li>
-                                <li><span class="form-radio"><input type="radio" id="mycarInputRadio2" name="carownership"><label for="mycarInputRadio2">리스/장기렌트</label></span></li>
-                            </ul>
-                        </div>
-                        <em class="validation"></em>
-                    </div>
-                    <div class="kb-form" data-status="error">
-                        <label for="mycarInputForm1" class="required">모델명</label>
-                        <div class="kb-form_inner form-text">
-                            <input type="text" id="mycarInputForm1" value="" placeholder="">
-                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                        </div>
-                        <em class="validation">모델명을 입력해주세요.</em>
-                    </div>
-                    <div class="kb-form" data-status="error">
-                        <label for="mycarInputForm2" class="required">가격</label>
-                        <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" id="mycarInputForm2" placeholder="" maxlength="12" value="" data-unit="원" data-action="autoSeperator">
-                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                        </div>
-                        <em class="validation">가격을 입력해주세요.</em>
-                    </div>
-                    <div class="kb-form" data-status="">
-                        <label for="mycarInputForm3">별명</label>
-                        <div class="kb-form_inner form-text">
-                            <input type="text" id="mycarInputForm3" maxlength="10" value="" placeholder="최대 10자">
-                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                        </div>
-                    </div>
-                </section>
+				<section class="kb-sec mycar-add-forms">
+					<div class="pop-notice">
+						<span>직접입력하신 자동차는 자산합계에 추가 되지만, 시세 변동을 확인 할 수 없습니다.</span>
+						<em>* 표시된 항목은 필수 입력 사항입니다.</em>
+					</div>
+					<div class="kb-form" data-status="">
+						<label for="mycarInputRadio1" class="required">자동차 소유 형태</label>
+						<div class="kb-form_inner form-radio-set">
+							<ul class="flex-box" data-col="2">
+								<li><span class="form-radio"><input type="radio" id="mycarInputRadio1" name="carownership" checked=""><label for="mycarInputRadio1">본인소유</label></span></li>
+								<li><span class="form-radio"><input type="radio" id="mycarInputRadio2" name="carownership"><label for="mycarInputRadio2">리스/장기렌트</label></span></li>
+							</ul>
+						</div>
+						<em class="validation"></em>
+					</div>
+					<div class="kb-form" data-status="error">
+						<label for="mycarInputForm1" class="required">모델명</label>
+						<div class="kb-form_inner form-text">
+							<input type="text" id="mycarInputForm1" value="" placeholder="">
+							<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+						</div>
+						<em class="validation">모델명을 입력해주세요.</em>
+					</div>
+					<div class="kb-form" data-status="error">
+						<label for="mycarInputForm2" class="required">가격</label>
+						<div class="kb-form_inner form-text">
+							<input type="text" inputmode="numeric" id="mycarInputForm2" placeholder="" maxlength="12" value="" data-unit="원" data-action="autoSeperator">
+							<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+						</div>
+						<em class="validation">가격을 입력해주세요.</em>
+					</div>
+					<div class="kb-form" data-status="">
+						<label for="mycarInputForm3">별명</label>
+						<div class="kb-form_inner form-text">
+							<input type="text" id="mycarInputForm3" maxlength="10" value="" placeholder="최대 10자">
+							<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+						</div>
+					</div>
+				</section>
 
-                <section class="kb-sec loan-account-selection">
-                    <strong class="tit">My Car 대출</strong>
-                    <ul class="lists">
-                        <li class="form-checkbox">
-                            <input type="checkbox" id="loanAccount1b">
-                            <label for="loanAccount1b">
-                                <span class="name">국민은행 자동차대출</span>
-                                <span class="account num">8169160411122</span>
-                                <span class="amount"><span class="num">13,000,000</span>원</span>
-                            </label>
-                        </li>
-                        <li class="form-checkbox">
-                            <input type="checkbox" id="loanAccount2b">
-                            <label for="loanAccount2b">
-                                <span class="name">신한은행 신용대출</span>
-                                <span class="account num">8169160411122</span>
-                                <span class="amount"><span class="num">13,000,000</span>원</span>
-                            </label>
-                        </li>
-                    </ul>
-                </section>
+				<section class="kb-sec loan-account-selection">
+					<strong class="tit">My Car 대출</strong>
+					<ul class="lists">
+						<li class="form-checkbox">
+							<input type="checkbox" id="loanAccount1b">
+							<label for="loanAccount1b">
+								<span class="name">국민은행 자동차대출</span>
+								<span class="account num">8169160411122</span>
+								<span class="amount"><span class="num">13,000,000</span>원</span>
+							</label>
+						</li>
+						<li class="form-checkbox">
+							<input type="checkbox" id="loanAccount2b">
+							<label for="loanAccount2b">
+								<span class="name">신한은행 신용대출</span>
+								<span class="account num">8169160411122</span>
+								<span class="amount"><span class="num">13,000,000</span>원</span>
+							</label>
+						</li>
+					</ul>
+				</section>
 
-                <section class="kb-sec sticky-bottom">
-                    <div class="btn-area">
-                        <button type="button" class="btn-solid_sticky"><span>등록</span></button>
-                    </div>
-                </section>
+				<section class="kb-sec sticky-bottom">
+					<div class="btn-area">
+						<button type="button" class="btn-solid_sticky"><span>등록</span></button>
+					</div>
+				</section>
 
-            </main>
-            <!-- // app-content -->
+			</main>
+			<!-- // app-content -->
 
-        </div>
-        <!-- // app-container -->
+		</div>
+		<!-- // app-container -->
 
-        <!-- Layer (fullpage popup, modal, bottom sheet) // -->
-        <div class="layered">
-        </div>
-        <!-- // Layer (fullpage popup, modal, bottom sheet) -->
-    </div>
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
 
-    <!-- Script -->
-    <!-- Common Library -->
-    <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
-    <script src="../../static/common/lib/jquery-ui.min.js"></script>
-    <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
-    <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
-    <script src="../../static/common/lib/current-device.min.js"></script>
-    <script src="../../static/common/lib/moment.min.js"></script>
-    <script src="../../static/common/lib/swiper-bundle.min.js"></script>
-    <!-- <script src="../../static/js/bottomSheet.js"></script> -->
-    <script src="../../static/js/modalPopup.js"></script>
-    <script src="../../static/js/menu.js"></script>
-    <!-- Add Library (this page only)-->
-    <script src="../../static/js/ui.js"></script>
-    <!-- Add Script -->
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
 
 </body>
 
