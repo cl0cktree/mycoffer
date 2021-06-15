@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_SP_02_01_01]
+    제휴특화> 펙트체크 > 나의소비유형 > 소비유형선택 > 나의소비유형_스토리텔링 > 나의소비유형_소비분석완료 (작성자: 누리어 시스템 김삼희) -->
+    <head>
+        @@include('@@webRoot/html/_include/app-head.html',{
+            "title": "나의 소비유형 | MY FUN DATA"
+        })
+    </head>
+    
+    <body>
+        @@include('@@webRoot/html/_include/app-a11y.html')
+        <div class="app">
+            <!-- app-header (for MyMoney) //-->
+            @@include('@@webRoot/html/_include/app-header.html', {pageTit:'나의 소비유형'})
+		<!-- // app-header -->
+
+		<!-- app-container (for MyMoney) //-->
+		<div class="app-container">
+
+
+			<!-- app-content // -->
+			<main class="app-content my-fun-data my-expense-type-complete">
+				<!-- img_rich-storytelling-simulation-banner -->
+				<!-- 컨텐츠 상단 배너 영역 //-->
+				<section class="kb-sec full">
+					<div class="summary-tit">
+						<div class="desc flex-box">
+							<span>실제 지출데이터로 분석한 소비유형</span>
+							<button class="share"><i class="icon-share"></i></button>
+						</div>
+						<h2 class="h2 tit">커피샤워형</h2>
+						<div class="mt12">비교군대비 <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                            <!-- Tooltip (With title)-->
+                            <div class="tooltip">
+                                <div class="cont">동일 연령대 &amp; 유사소득 고객과의 비교입니다.</div>
+                                <button class="btn-close"><span>닫기</span></button>
+                            </div>
+							<p>카페&sol;간식의 소비가 <strong class="num">210,350</strong>원 많아요!</p>
+                        </div>
+					</div>
+					<div class="banner-box no-space">
+						<div class="banner-img"><img src="@@webRoot/static/images/special/img_my-expense-type-banner.png" alt=""></div>
+					</div>
+                </section>
+                <!--// 컨텐츠 상단 배너 영역 -->
+				<section class="kb-sec recently-expense">
+					<div class="summary-desc">
+						<h3 class="h3">최근 6개월 나의 소비</h3>
+						<div class="desc mt20">
+							<p>혹시 커피가 김국민님을 마시고 있지는 않나요?
+								<br>목표를 설정하고 커피 섭취를 줄여보세요.</p>
+						</div>
+					</div>
+					<div class="chart-area">
+						<img class="temp" src="../../static/images/_temp/chart_sp0202.png" alt="차트 예시 이미지">
+					</div>
+                    <a href="@@webRoot/html/goal/mys_go_00_00_00.html" role="button" class="btn-solid"><span>목표설정하러가기</span></a>
+					<div class="card-box-desc mt28">
+                        <a href="@@webRoot/html/expense/mys_ex_01_00_00.html" role="button" class="link-box_block desc-tit">지출내역 자세히보기<i class="icon-arrow-right"></i></a>
+                        <p class="annotation mt20" data-style="exclamation">고객님의 실제 지출내역을 분석한 결과입니다.<br>기준 : 2020.11.11-2021.5.10</p>
+                    </div>
+				</section>
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+	
+</body>
+
+</html>

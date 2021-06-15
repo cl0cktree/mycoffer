@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_AS_12_02_04_P1] 작성자: 누리어 시스템 황철민 -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "유지비 상세 | 자산"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-header-close.html',{
+			'pageTit' :'유지비 상세'
+		}) 
+		<!-- // app-header (for MyMoney) -->
+
+		<!-- app-container //-->
+		<div class="app-container">
+
+			<!-- app-content // -->
+			<main class="app-content">
+
+				<section class="kb-sec upkeep-expenses-detail">
+					<div class="chart-title">차량 유지비<span class="range">매월 1일 ~ 말일</span></div>
+					<!-- [Chart Area] // -->
+					<!--
+						차트 디자인 정보
+						Grid 라인 색상 : #ebeef0
+						막대그래프 색상 : #ffd237
+						막대그래프 사이즈 : 48px
+						막대그래프 상단 radius : 24px
+						Tooltip 텍스트 사이즈/컬러 : 14px/#8c949e, #26282c
+						Y축 레이블 텍스트 사이즈/색상 : 14px/#8c949e
+						Legend 사이즈/컬러 : 14px/#26282c
+					-->
+					<div class="chart-area">
+						<img class="temp" src="@@webRoot/static/images/_temp/chart_as1202.png" alt="차트 예시 이미지">
+					</div>
+					<!-- // [Chart Area] -->
+					<p>다른 사람들보다 차량 유지비가 많아요!</p>
+					<div class="btn-area">
+						<a href="javascript:;" class="btn-solid_sticky"><span>주유 할인카드 자세히 보기</span></a>
+					</div>
+					<div class="upkeep-expenses-list" data-action="moreViewList">
+						<div class="category-name">
+							<strong>주유비</strong>
+						</div>
+						<dl class="description-list type3" data-moreview="list">
+							<dt>GS칼텍스</dt>
+							<dd>
+								<span class="amount"><span class="num">50,000</span>원</span>
+								<span class="date">2020.07.12</span>
+							</dd>
+							<dt>현대오일</dt>
+							<dd>
+								<span class="amount"><span class="num">50,000</span>원</span>
+								<span class="date">2020.07.12</span>
+							</dd>
+							<dt>SK엔크린</dt>
+							<dd>
+								<span class="amount"><span class="num">50,000</span>원</span>
+								<span class="date">2020.07.12</span>
+							</dd>
+							<dt>GS칼텍스</dt>
+							<dd>
+								<span class="amount"><span class="num">50,000</span>원</span>
+								<span class="date">2020.07.12</span>
+							</dd>
+							<dt>현대오일</dt>
+							<dd>
+								<span class="amount"><span class="num">50,000</span>원</span>
+								<span class="date">2020.07.12</span>
+							</dd>
+							<dt>SK엔크린</dt>
+							<dd>
+								<span class="amount"><span class="num">50,000</span>원</span>
+								<span class="date">2020.07.12</span>
+							</dd>
+							<dt>GS칼텍스</dt>
+							<dd>
+								<span class="amount"><span class="num">50,000</span>원</span>
+								<span class="date">2020.07.12</span>
+							</dd>
+						</dl>
+						<div class="moreview-button">
+							<button type="button" data-moreview="toggle"><span class="show">더보기</span><span class="hide">닫기</span></button>
+						</div>
+					</div>
+
+					<div class="upkeep-expenses-list" data-action="moreViewList">
+						<div class="category-name">
+							<strong>기타</strong>(수리비ㆍ세차 등)
+						</div>
+						<dl class="description-list type3" data-moreview="list">
+							<dt>GS칼텍스</dt>
+							<dd>
+								<span class="amount"><span class="num">50,000</span>원</span>
+								<span class="date">2020.07.12</span>
+							</dd>
+							<dt>현대오일</dt>
+							<dd>
+								<span class="amount"><span class="num">50,000</span>원</span>
+								<span class="date">2020.07.12</span>
+							</dd>
+							<dt>SK엔크린</dt>
+							<dd>
+								<span class="amount"><span class="num">50,000</span>원</span>
+								<span class="date">2020.07.12</span>
+							</dd>
+							<dt>GS칼텍스</dt>
+							<dd>
+								<span class="amount"><span class="num">50,000</span>원</span>
+								<span class="date">2020.07.12</span>
+							</dd>
+							<dt>현대오일</dt>
+							<dd>
+								<span class="amount"><span class="num">50,000</span>원</span>
+								<span class="date">2020.07.12</span>
+							</dd>
+							<dt>SK엔크린</dt>
+							<dd>
+								<span class="amount"><span class="num">50,000</span>원</span>
+								<span class="date">2020.07.12</span>
+							</dd>
+							<dt>GS칼텍스</dt>
+							<dd>
+								<span class="amount"><span class="num">50,000</span>원</span>
+								<span class="date">2020.07.12</span>
+							</dd>
+						</dl>
+						<div class="moreview-button">
+							<button type="button" data-moreview="toggle"><span class="show">더보기</span><span class="hide">닫기</span></button>
+						</div>
+					</div>
+				</section>
+
+
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+
+</body>
+
+</html>

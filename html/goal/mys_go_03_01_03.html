@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_GO_03_00_00] 목표 > 아낀만큼_진행중_(tab) (작성자: 누리어 시스템 김삼희) -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "챌린지 자세히보기 | 아낀만큼 | 목표"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-header.html', {pageTit:'챌린지 자세히보기'})
+		<!-- // app-header -->
+
+		<!-- app-container (for MyMoney) //-->
+		<div class="app-container">
+			<!-- app-content // -->
+			<main class="app-content goals-challenge bg-gray-bottom">
+                <section class="kb-sec bg-gray goals-noti">
+                    <h2>무지출 Day</h4>
+                    <h3>쓰지 않는 자가 승자!</h4>
+                    <ul data-style="list">
+                        <li>250명이 도전 중이에요.</li>
+                        <li>목표기간 1주</li>
+                    </ul>
+                </section>
+                <section class="kb-sec goals-list add-fix">   
+                    <div class="content-box shadow border">
+                        <!-- [Chart Area] // -->
+                        <!--
+                            [차트 디자인 정보]
+                            * 그래프(원) 크기/색상(컬러별)
+                            - 초록색 :  89*89px / #bad54f;
+                            - 회색 :  107*107px / #e0e4e6
+
+                            텍스트 컬러 : #26282c
+                            이름 텍스트 크기 : 14px
+                            값 텍스트 크기 : 18px/bold
+                        -->
+                        <div class="chart-area">
+                            <p class="sub">나와 같은 연령대&amp;소득군 사람들과 지출이 없었던 날을 비교해보았어요.</p>
+                            <img class="temp" src="@@webRoot/static/images/_temp/chart_go04.png" alt="차트 예시 이미지">
+                        </div>
+                        <!-- // [Chart Area] -->
+                    </div> 
+                    <div class="text-trophy">
+                        <div class="ico">
+                            <i class="icon-trophy"></i>
+                        </div>
+                        <p>지난달(30일) 기준 지출이 없었던 날은 단 3일이에요.</p>
+                        <span>30대 남성 평균보다 <strong>지출한 날이 2일 더 많아요.</strong> 목표관리를 통해 지출일을 줄여보세요.</p>
+                    </div>              
+                </section>
+                
+                <section class="kb-sec bg-gray goals-no-spand">
+                    <p class="tit">무지출 날짜 선택</p>
+                    <ul class="btn-segmented_radio">
+                        <li>
+                            <input type="radio" name="btnradio" id="btnradio1" checked="">
+                            <label for="btnradio1">3일</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="btnradio" id="btnradio2">
+                            <label for="btnradio2">7일</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="btnradio" id="btnradio3">
+                            <label for="btnradio3">10일</label>
+                        </li>
+                    </ul>
+                    <div class="text-trophy">
+                        <div class="ico">
+                            <i class="icon-trophy"></i>
+                        </div>
+                        <p>선택한 기간만큼 지출을 줄이고 목표를 달성해보세요!</p>
+                    </div>   
+                </section> 
+
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid_sticky" data-action="" onclick=""><span>도전하기</span></button>
+                    </div>
+                </div>
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+            @@include('@@webRoot/html/asset/layered/mys_as_07_00_00_p1.html')
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+    <script src="@@webRoot/static/common/lib/swiper.min.js"></script>
+    <script>
+        var $contentSwiper = $('.content-swiper-wrap');
+        if($contentSwiper.length > 0){
+            $contentSwiper.each(function(index){
+                var $contentSwiper = $(this).find('.swiper-container');
+                var index = index+1;
+                $contentSwiper.addClass('content-swiper' + index);
+                var swiper = new Swiper('.content-swiper' + index, {
+                    slidesPerView: 'auto',
+                    centeredSlides: 'true',
+                    spaceBetween: 24,
+                    pagination: {
+                        el: $('.content-swiper' + index).find('.swiper-pagination'),
+                        type: 'bullets',
+                        clickable: 'true',
+                    },
+                    navigation: {
+                        nextEl: $('.content-swiper' + index).find('.swiper-button-next'),
+                        prevEl: $('.content-swiper' + index).find('.swiper-button-prev'),
+                    },
+                });
+            });
+        };
+    </script>
+</body>
+
+</html>
