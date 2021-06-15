@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_AS_13_01_00_P1] 작성자: 누리어 시스템 김은경 -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>외화 상세조회 | 자산 | KB국민은행 마이데이터</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
+    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
+    <link rel="stylesheet" href="../../static/css/ui.css">
+</head>
+
+<body>
+    <div class="skip-nav">
+        <a href="#content">본문으로 이동하기</a>
+    </div>
+    <div class="app">
+        <!-- app-header (for MyMoney) //-->
+        <!-- app-header [s] -->
+        <header class="app-header">
+            <strong class="page-tit">외화 상세조회</strong>
+            <!-- <button class="btn-close"><span>닫기</span></button> -->
+            <!-- 수정 : layer 팝업 -> 페이지로 전환용 -->
+            <a href="javascript:history.back();" class="btn-close" role="button"><span>뒤로가기</span></a>
+        </header>
+        <!-- app-header [e] -->
+        <!-- // app-header (for MyMoney) -->
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content my-asset pop-account-detail">
+
+
+                <section class="kb-sec full foreign">
+                    <!-- 2021-06-09 수정 //-->
+                    <div class="account-top">
+                        <ul>
+                            <!-- 2021-06-09 수정 //-->
+                            <li class="account-wrap">
+                                <div class="icon-con">
+                                    <span><i class="icon-18"></i></span>
+                                </div>
+                                <div class="txt-con">
+                                    <em class="agency">신한은행</em>
+                                    <span class="bank-book">KB wise 외화 입출금</span>
+                                    <span class="num">1234-5678-1234</span>
+                                    <p class="balance">
+                                        <span>원화환산잔액 <b class="amount"><span class="num">3,000,000</span>원</b></span>
+                                    </p>
+                                </div>
+                                <button type="button" class="btn-hide-account" data-call-layered="mys_as_05_00_01_p1"><i class="icon-more_top_24"></i><span>계좌숨기기</span></button>
+                            </li>
+                            <!-- // 2021-06-09 수정 -->
+                            <li class="interest-rate more-view-box">
+                                <dl class="list">
+                                    <dt>외화잔액/적용금리</dt>
+                                    <dd class="rate">
+                                        <ul>
+                                            <!-- 2021-05-27 수정 // -->
+                                            <li class="amount">USD <span class="num"><b>700.00</b></span>/연 <span class="num">0.0%</span>
+                                            </li>
+                                            <li class="amount">JPY <span class="num"><b>700.00</b></span>/연 <span class="num">0.0%</span>
+                                            </li>
+                                            <li class="amount">CNY <span class="num"><b>700.00</b></span>/연 <span class="num">0.0%</span>
+                                            </li>
+                                            <li class="amount">HKD <span class="num"><b>700.00</b></span>/연 <span class="num">0.0%</span>
+                                            </li>
+                                            <!-- // 2021-05-27 수정 -->
+                                        </ul>
+                                    </dd>
+                                </dl>
+                                <div class="creat-date more-view-item" data-view-option="hide">
+                                    <dl class="description-list">
+                                        <!-- 2021-06-01 금리삭제 // -->
+
+                                        <!-- // 2021-06-01 금리삭제 -->
+                                        <dt>신규일</dt>
+                                        <dd class="date">2012.11.30</dd>
+                                    </dl>
+                                </div>
+                                <div class="btn-area center">
+                                    <a href="javascript:;" class="btn-text btn-more-view" role="button">
+                                        <i class="icon-arrow-down"></i>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div class="account-detail">
+                        <!-- 2021-06-09 수정 // -->
+                        <div class="condition-area">
+                            <button class="btn-condition" data-call-layered="mys_as_13_01_02_p1">
+                                <div>
+                                    <div class="sorting-status">
+                                        <span>1개월</span>
+                                        <span>전체</span>
+                                        <span>최신순</span>
+                                    </div>
+                                    <i class="icon-filter_20"></i>
+                                </div>
+                            </button>
+                        </div>
+                        <!-- // 2021-06-09 수정 -->
+                        <div class="line-list-wrap type-time-line">
+                            <!-- 2021-05-27 수정 // -->
+                            <ul class="d-list">
+                                <li class="lately">
+                                    <div class="line-box">
+                                        <div class="date">2020.10.12 10:10</div>
+                                        <div class="price-wrap">
+                                            <div class="type">출금</div>
+                                            <div class="txt-con">
+                                                <dl class="description-list">
+                                                    <dt>출금금액</dt>
+                                                    <dd class="amount">JPY <b class="num minus">567.00</b></dd>
+                                                    <!-- 2021-05-27 수정 // -->
+                                                    <dt>환율</dt>
+                                                    <dd class="exchange"><span class="num">1,032,71</span></dd>
+                                                    <!-- // 2021-05-27 수정 -->
+                                                </dl>
+                                                <span class="memo">김국민</span><!-- 2021-05-27 수정 // -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="line-box">
+                                        <div class="date">2020.10.12 10:10</div>
+                                        <div class="price-wrap">
+                                            <div class="type">입금</div>
+                                            <div class="txt-con">
+                                                <dl class="description-list">
+                                                    <dt>입금금액</dt>
+                                                    <dd class="amount">JPY <b class="num plus">567.00</b></dd>
+                                                    <dt>환율</dt>
+                                                    <dd class="exchange"><span class="num">1,032,71</span></dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="line-box">
+                                        <div class="date">2020.10.12 10:10</div>
+                                        <div class="price-wrap">
+                                            <div class="type">출금</div>
+                                            <div class="txt-con">
+                                                <dl class="description-list">
+                                                    <dt>출금금액</dt>
+                                                    <dd class="amount">JPY <b class="num minus">567.00</b></dd>
+                                                    <dt>환율</dt>
+                                                    <dd class="exchange"><span class="num">1,032,71</span></dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <button class="btn-view-more"><span>+ 더보기</span></button>
+                        </div>
+
+                    </div>
+                </section>
+
+
+
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+        <!-- Layer (fullpage popup, modal, bottom sheet) // -->
+        <div class="layered">
+        </div>
+        <!-- // Layer (fullpage popup, modal, bottom sheet) -->
+    </div>
+
+    <!-- Script -->
+    <!-- Common Library -->
+    <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
+    <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
+    <script src="../../static/common/lib/current-device.min.js"></script>
+    <script src="../../static/common/lib/moment.min.js"></script>
+    <script src="../../static/common/lib/swiper-bundle.min.js"></script>
+    <!-- <script src="../../static/js/bottomSheet.js"></script> -->
+    <script src="../../static/js/modalPopup.js"></script>
+    <script src="../../static/js/menu.js"></script>
+    <!-- Add Library (this page only)-->
+    <script src="../../static/js/ui.js"></script>
+    <!-- Add Script -->
+
+</body>
+
+</html>

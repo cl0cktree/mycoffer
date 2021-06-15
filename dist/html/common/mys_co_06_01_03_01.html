@@ -1,0 +1,134 @@
+<!-- [MYS_CO_06_01_03_01] 타 마이데이터사업자 기관 선택화면> 국민은행 선택 > KB 모바일인증서(보안인증) (작성자: 누리어 시스템 이진우)// -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Last Depth | 1st Depth | KB국민은행 마이데이터</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
+    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
+    <link rel="stylesheet" href="../../static/css/ui.css">
+</head>
+
+<body>
+    <div class="skip-nav">
+        <a href="#content">본문으로 이동하기</a>
+    </div>
+    <div class="app">
+        <!-- app-header [s] -->
+        <header class="app-header">
+            <strong class="page-tit">KB국민은행</strong>
+        </header>
+        <!-- app-header [e] -->
+
+
+        <!-- app-container //-->
+        <div class="app-container">
+            <div class="app-lnb">
+                <div class="tab swiper-container">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide is-active"><a href="javascript:;">모바일 인증서</a></li>
+                        <li class="swiper-slide"><a href="javascript:;">공동인증서</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- app-content // -->
+            <main class="app-content login-certification01">
+                <section class="kb-sec">
+                    <div class="certification-tit">
+                        쉽고 안전한 모든 금융 거래의 시작!<br>
+                        <strong>KB모바일인증서</strong>
+                    </div>
+                    <div class="kb-mobile-certification-msg">
+                        <button class="btn-add-certification"></button>
+                        <p><strong>지문(Face ID) 패턴으로</strong><br>간편하게 인증하세요!</p>
+                    </div>
+                    <ul data-style="list">
+                        <li>인증서 유효기간 없이 계속 이용 가능</li>
+                        <li>영업점 방문없이 국민은행의 금융거래 가능</li>
+                        <li>보안매체가 없어도 KB모바일인증서로 공인인증서 발급</li>
+                        <li>KB 스타뱅킹으로 이동하여 인증을 진행합니다.<br>
+                            KB 스타뱅킹 앱 설치 후 모바일 인증서를 발급해 주세요</li>
+                    </ul>
+                    <p class="app-download-link"><a href="javascript:;" class="btn-text" role="button"><span>KB스타뱅킹 앱 다운로드</span><i class="icon-link_20"></i></a></p>
+                </section>
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid_sticky"><span>확인</span></button>
+                    </div>
+                </div>
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+        <!-- Layer (fullpage popup, modal, bottom sheet) // -->
+        <div class="layered">
+            <!-- 금융인증서 불러오기 // -->
+            <div class="popup" data-layered-name="popupCertificationLoading">
+                <div class="popup_contents">
+                    <section class="kb-sec">
+                        <div class="loading-certification">
+                            <strong class="tit">금융인증서비스 화면을 불러오는 중입니다.</strong>
+                            <div class="loader"><i></i><i></i><i></i><i></i><span>로딩중</span></div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!-- // 금융인증서 불러오기 -->
+
+            <!-- [MYS_CO_04_05_00_P1] 다른 로그인 방법 (작성자: 누리어 시스템 이진우)// -->
+            <!-- 다른 로그인 방법 //-->
+            <div class="bottom-sheet full-size" data-layered-name="bsOtherLogin">
+                <div class="bottom-sheet_header">
+                    <span class="tit">다른 로그인 방법</span>
+                </div>
+                <div class="bottom-sheet_contents">
+                    <section class="kb-sec">
+                        <ul class="select-list">
+                            <li class="is-active"><button type="button"><span class="badge_48"><img src="../../static/images/_temp/hana.png" alt=""></span><strong class="tit">간편비밀번호</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><span class="badge_48"><img src="../../static/images/_temp/hana.png" alt=""></span><strong class="tit">KB모바일 인증서</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><span class="badge_48"><img src="../../static/images/_temp/hana.png" alt=""></span><strong class="tit">공동 인증서</strong><i class="icon-20"></i></button></li>
+                            <li><button type="button"><span class="badge_48"><img src="../../static/images/_temp/hana.png" alt=""></span><strong class="tit">금융 인증서</strong><i class="icon-20"></i></button></li>
+                        </ul>
+                    </section>
+                </div>
+                <!-- <div class="bottom-sheet_buttons">
+        <button class="btn-solid_sticky" data-action="close"><span>확인</span></button>
+    </div> -->
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- // 다른 로그인 방법  -->
+        </div>
+        <!-- // Layer (fullpage popup, modal, bottom sheet) -->
+    </div>
+
+    <!-- Script -->
+    <!-- Common Library -->
+    <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
+    <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
+    <script src="../../static/common/lib/current-device.min.js"></script>
+    <script src="../../static/common/lib/moment.min.js"></script>
+    <script src="../../static/common/lib/swiper-bundle.min.js"></script>
+    <!-- <script src="../../static/js/bottomSheet.js"></script> -->
+    <script src="../../static/js/modalPopup.js"></script>
+    <script src="../../static/js/menu.js"></script>
+    <!-- Add Library (this page only)-->
+    <script src="../../static/js/ui.js"></script>
+    <!-- Add Script -->
+
+</body>
+
+</html>

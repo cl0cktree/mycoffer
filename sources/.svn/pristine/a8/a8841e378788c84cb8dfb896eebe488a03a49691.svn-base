@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+@@include('@@webRoot/html/_include/app-head.html',{
+"title": "Last Depth | 1st Depth"
+})
+<style>
+    .chart-area{height:calc((100vw - 48px) * 321/574)}
+</style>
+</head>
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header //-->
+        t@@include('@@webRoot/html/_include/app-header.html',{
+            'pageTit' :'페이지 타이틀'
+        })
+        <!-- // app-header -->
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content">
+
+                <section class="kb-sec">
+
+                    <div class="designed-img"><img src="@@webRoot/html/__guide/highchart/images/bar-graph01.png" alt=""></div>
+
+                    <!--  그래프 샘플 // -->
+                    <div id="monthlyExpenseGraph" class="chart-area"></div>
+                    <!-- // 그래프 샘플-->
+
+                </section>
+
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+    </div>
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
+    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
+
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+
+    <script>
+        Highcharts.column_type01 = {
+            colors: ["#c7ccd1", "#ffd338"],
+            chart: {
+                type: "column"
+            },
+            title: {
+                text: ""
+            },
+            legend: {
+                enabled: false
+            },
+            xAxis: {
+                labels: {
+                style: {
+                    fontSize: "0.8rem",
+                    fontFamily: "Verdana, sans-serif"
+                }
+                }
+            },
+            yAxis: {
+                enabled: false,
+                gridLineColor: "#dde1e4",
+                labels: {
+                enabled: false //y축 값 삭제
+                },
+                title: {
+                enabled: false //y축 타이틀 삭제
+                }
+            },
+            tooltip: {
+                enabled: false
+            },
+            plotOptions: {
+                series: {
+                borderRadiusTopLeft: "50%",
+                borderRadiusTopRight: "50%"
+                }
+            }
+        };
+
+            
+
+        Highcharts.setOptions(Highcharts.column_type01);
+        Highcharts.chart("monthlyExpenseGraph", {
+            chart: {
+                type: "column"
+            },
+            xAxis: {
+                type: "category",
+                categories: ["1월", "2월", "3월", "4월", "5월", "오늘"]
+            },
+            yAxis: {
+                enabled: false,
+                gridLineColor: "transparant",
+                DashStyleValue: 'Dot',
+                labels: {
+                enabled: false //y축 값 삭제
+                },
+                title: {
+                enabled: false //y축 타이틀 삭제
+                },
+                plotLines: [
+                    {
+                        color: "#c7ccd1",
+                        width: 1,
+                        value: 270000,
+                        zIndex: 0,                        
+                    }
+                ]
+            },
+            series: [
+                {
+                name: "current account",
+                data: [
+                    200000,
+                    680000,
+                    350000,
+                    680000,
+                    860000,
+                    {
+                    y: 665210,
+                    color: Highcharts.getOptions(Highcharts.column_type01).colors[1],
+                    id: "currentBar",
+                    dataLabels: {
+                        enabled: true,
+                        format: "{y}원",
+                        className: "highlight",
+                        padding: 4,
+                        backgroundColor: "#FFF",
+                        shadow: true,
+                        shape: "callout",
+                        x: -40,
+                        style: {
+                        fontWeight: "normal",
+                        fontSize: "15px"
+                        }
+                    }
+                    }
+                ]
+                }
+            ],
+            credits: {
+                enabled: false
+            }
+        });
+    </script>
+
+</body>
+</html>

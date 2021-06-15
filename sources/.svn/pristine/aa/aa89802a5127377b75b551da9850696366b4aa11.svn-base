@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_AS_08_00_00] 자산 > 보험 (작성자: 누리어 시스템 김삼희)// -->
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "보험 | 자산"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app" data-page="submain">
+        <!-- app-header (for MyMoney) //-->
+        @@include('@@webRoot/html/_include/app-header.html',{
+            'pageTit':'보험'
+        })
+        <!-- // app-header -->
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+
+            <!-- app-lnb //-->
+            <div class="app-lnb">
+                @@include('@@webRoot/html/_include/app-gnb.html')          
+            </div>
+            <!-- //app-lnb -->
+
+            <!-- app-content // -->
+            <main class="app-content my-asset asset-insurance">
+                <!-- 컨텐츠 영역 -->
+                <!-- SECTION //-->
+
+                <section class="kb-sec full bg-gray asset-summary">
+                    <div class="highcharts-box charts-type_square no-space">
+                        <div class="swiper-container t01 js-swiper" data-swiper-options="paySummarySwiperOptions">
+                            <script>
+                                var paySummarySwiperOptions = {
+                                    'autoHeight': true,
+                                    "pagination": {
+                                        "el": ".swiper-pagination"
+                                    }
+                                };
+                            </script>
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <!--
+                                            [차트 디자인 정보]
+                                            * 그래프(막대) 색상(컬러별)
+                                            - 노란색 :  #ffd338;
+                                            - 파란색 :  #3f6fd1;
+                                            - 회색 :  #c6cbd0;
+                                            - 보라색 :  #9e6eda;
+                                            - 자주색 : #d575c9;
+
+                                            - 차트 텍스트 컬러/크기 : #26282c/14px
+                                            - X축 텍스트 컬러/크기 : #8c949e/14px
+                                            - data labels 텍스트 컬러/크기 : #26282c/14px
+                                        -->
+                                        <figure class="highcharts-figure content-box">
+                                            <div class="graph-info">
+                                                <h4 class="h4">보험</h4>			
+                                                <div class="graph-msg">
+                                                    <p class="txt">
+                                                        김국민님의
+                                                        월 납입 보험료 총액은 <b><span class="num">100,000</span>원</b> 입니다.
+                                                        지난달과 총액이 똑같아요!
+                                                    </p>
+                                                    <button class="btn-more"><i class="icon-more_24"></i></button>
+                                                </div>
+                                            </div>
+                                            <!-- [chart area] //-->                                            
+                                            <div class="highcharts_column" id="">
+                                                <img class="temp" src="@@webRoot/static/images/_temp/graph_as_08_00_00-01.png" alt="차트 예시 이미지">
+                                            </div>
+                                            <!--// [chart area] -->
+                                        </figure>
+										
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure content-box">
+                                            <div class="graph-info">
+                                                <h4 class="h4">보장성 보험</h4>			
+                                                <div class="graph-msg">
+													<p class="txt">
+                                                        김국민님의 보장성 보험 
+                                                        월 납입액은 <b><span class="num">100,000</span>원</b> 입니다.
+                                                        지난달보다 납입액이 늘었어요!
+													</p>
+                                                    <button class="btn-more"><i class="icon-more_24"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="highcharts_column" id="">
+                                                <img class="temp" src="@@webRoot/static/images/_temp/graph_as_08_00_00-02.png" alt="차트 예시 이미지">
+                                            </div>
+                                            <!--// [chart area] -->
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure content-box">
+                                            <div class="graph-info">
+                                                <h4 class="h4">자동차 보험</h4>	
+                                                <div class="graph-msg">
+													<p class="txt">
+                                                        김국민님의 자동차(운전자) 보험 
+                                                        납입액은 <b><span class="num">300,000</span>원</b>원 입니다.
+                                                        지난달보다 납입액이 늘었어요!
+													</p>
+                                                    <button class="btn-more"><i class="icon-more_24"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="highcharts_column" id="">
+                                                <img class="temp" src="@@webRoot/static/images/_temp/graph_as_08_00_00-03.png" alt="차트 예시 이미지">
+                                            </div>
+                                            <!--// [chart area] -->
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure content-box">
+                                            <div class="graph-info">
+                                                <h4 class="h4">저축성 보험</h4>	
+                                                <div class="graph-msg">
+													<p class="txt">
+                                                        김국민님의 
+                                                        저축성 보험 납입액은 <b><span class="num">300,000</span>원</b>원 입니다.
+                                                        지난달보다 납입액이 늘었어요!
+													</p>
+                                                    <button class="btn-more"><i class="icon-more_24"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="highcharts_column" id="">
+                                                <img class="temp" src="@@webRoot/static/images/_temp/graph_as_08_00_00-04.png" alt="차트 예시 이미지">
+                                            </div>
+                                            <!--// [chart area] -->
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="kb-sec warranty-details">
+                    <h4 class="h4">건강보험 주요 보장내역 분석 <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                        <!-- Tooltip (With title)-->
+                        <div class="tooltip">
+                            <strong class="tit">건강보험 주요 보장내역 분석</strong>
+                            <div class="cont">
+                                신정원에서 제공하는 점수를 근거하여 고객님이 보유한 보험을 평균 담보 현황과 비교한 분석 결과를 제공합니다.
+                            </div>
+                            <button class="btn-close"><span>닫기</span></button>
+                        </div>
+                    </h4>
+                    <button type="button" class="btn-line" data-action="chartShow"><span>보장내역 분석하기</span></button><!-- 클릭시 아래 highcharts_column, btn-warranty-details show-->
+                    <!-- [chart area] //-->                                   
+                    <!--
+                        [차트 디자인 정보]
+                        * 색상(컬러별)
+                        - 노란색 :  #ffd338;
+                        - 파란색 :  #3f6fd1;                        
+                        - 보라색 :  #9e6eda;
+                        - 자주색 : #d575c9;
+
+                        - 차트 텍스트 컬러/크기 : #26282c/14px
+                        - 하단 색상 텍스트 크기 : 14px
+                        - 건수 텍스트 컬러/크기 : #26282c/16px
+                    -->         
+                    <div class="highcharts_column" id="" style="display:none;">
+                        <div><img src="@@webRoot/static/images/_temp/graph_as_08_00_00-06.png" alt=""></div>
+                        <div><img src="@@webRoot/static/images/_temp/graph_as_08_00_00-07.png" alt=""></div>
+                        <div><img src="@@webRoot/static/images/_temp/graph_as_08_00_00-08.png" alt=""></div>
+                    </div>
+                    <a href="./mys_as_08_02_01_p1.html" class="btn-warranty-details" role="button" style="display:none;"><i class="icon-link_24"></i></a>
+                    <!--// [chart area] -->
+                    <p class="annotation-txt">주요 14대 담보 중 <strong>뇌&sol;심장</strong>의 보장이 부족합니다<br>(신정원 내보험다보여 기준)</p>
+                    <dl class="monthly-amount flex-box" data-col="2">
+                        <dt>월 납입 보험금 총액</dt>
+                        <dd><em class="num">350,000</em>원</dd>
+                    </dl>
+                    <div class="p-list product"><!--D:기관별 agency , 상품별 product //-->
+                        <dl class="more-view-box is-show">
+                            <dt>    
+                                <a href="javascript:;" class="btn-more-view" role="button">  
+                                    <em class="type">저축성 보험</em>
+                                    <span class="total">총 금액 <em class="amount"><b class="num">50,000</b>원</em></span>  
+                                    <em class="arrow"><i class="icon-arrow-down">목록열기</i></em>  
+                                </a>                      
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="account-wrap">
+                                        <div class="icon-con">
+                                            <span><i class="icon-24"></i></span>
+                                        </div>
+                                        <div class="txt-con">
+                                            <span class="agency">국민은행</span>
+                                            <span class="p-name">상품명이 노출됩니다 <span class="tag-label" data-state="error">만기</span></span>
+                                            <span class="account num">1234-5678-1234</span>
+                                        </div>
+                                    </div>
+                                    <p class="balance">
+                                        <span class="amount">누적 납입 금액 <b><span class="num">500,000</span>원</b></span>  
+                                    </p>
+                                </div>
+                                <button type="button" class="btn-hide-account" data-call-layered="mys_as_05_00_01_p1"><i class="icon-more_24"></i><span>계좌숨기기</span></button>
+                                <!-- 그래프 // -->
+                                <div class="percentage-graph type2">
+                                    <div class="graph-area">
+                                        <span style="width:50%"></span><!-- style로 그래프 넓이값 제어 -->
+                                    </div>
+                                    <div class="graph-txt">
+                                        <p class="start-txt">신규일 <br> <span class="num">2021.12.03</span></p><!-- 시작부분 텍스트 -->
+                                        <p class="current-txt" style="left:50%;"><span class="num">D-346</span></p><!-- 현재 텍스트 (style로 텍스트 위치값 제어) -->
+                                        <p class="end-txt">만기일 <br> <span class="num">2021.12.03</span></p><!-- 마지막부분 텍스트 -->
+                                    </div>
+                                </div>
+                                <!-- // 그래프 -->
+                            </dd>
+                            <dd>
+                                <div>
+                                    <div class="account-wrap">
+                                        <div class="icon-con">
+                                            <span><i class="icon-24"></i></span>
+                                        </div>
+                                        <div class="txt-con">
+                                            <span class="agency">국민은행</span>
+                                            <span class="p-name">상품명이 노출됩니다</span>
+                                            <span class="account num">1234-5678-1234</span>
+                                        </div>
+                                    </div>
+                                    <p class="balance">
+                                        <span class="amount">누적 납입 금액 USD <b class="num">500,000</b></span>  
+                                        <span class="amount">원화 환산 금액 <b><span class="num">500,000</span>원</b></span>  
+                                    </p>
+                                </div>
+                                <button type="button" class="btn-hide-account" data-call-layered="mys_as_05_00_01_p1"><i class="icon-more_24"></i><span>계좌숨기기</span></button>                                
+                                <!-- 그래프 // -->
+                                <div class="percentage-graph type2">
+                                    <div class="graph-area">
+                                        <span style="width:50%"></span><!-- style로 그래프 넓이값 제어 -->
+                                    </div>
+                                    <div class="graph-txt">
+                                        <p class="start-txt">신규일 <br> <span class="num">2021.12.03</span></p><!-- 시작부분 텍스트 -->
+                                        <p class="current-txt" style="left:50%;"><span class="num">D-346</span></p><!-- 현재 텍스트 (style로 텍스트 위치값 제어) -->
+                                        <p class="end-txt">만기일 <br> <span class="num">2021.12.03</span></p><!-- 마지막부분 텍스트 -->
+                                    </div>
+                                </div>
+                                <!-- // 그래프 -->
+                            </dd>
+                        </dl>
+                        <dl class="more-view-box">
+                            <dt>    
+                                <a href="javascript:;" class="btn-more-view" role="button">  
+                                    <em class="type">자동차(운전자 보험)</em>
+                                    <span class="total">총 금액 <em class="amount"><b class="num">50,000</b>원</em></span>  
+                                    <em class="arrow"><i class="icon-arrow-down">목록열기</i></em>  
+                                </a>                      
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="account-wrap">
+                                        <div class="icon-con">
+                                            <span><i class="icon-24"></i></span>
+                                        </div>
+                                        <div class="txt-con">
+                                            <span class="agency">국민은행</span>
+                                            <span class="p-name">상품명이 노출됩니다 <span class="tag-label" data-state="error">만기</span></span>
+                                            <span class="account num">1234-5678-1234</span>
+                                        </div>
+                                    </div>
+                                    <p class="balance">
+                                        <span class="amount">누적 납입 금액 <b><span class="num">500,000</span>원</b></span>  
+                                    </p>
+                                </div>
+                                <button type="button" class="btn-hide-account" data-call-layered="mys_as_05_00_01_p1"><i class="icon-more_24"></i><span>계좌숨기기</span></button>
+                                <!-- 그래프 // -->
+                                <div class="percentage-graph type2">
+                                    <div class="graph-area">
+                                        <span style="width:50%"></span><!-- style로 그래프 넓이값 제어 -->
+                                    </div>
+                                    <div class="graph-txt">
+                                        <p class="start-txt">신규일 <br> <span class="num">2021.12.03</span></p><!-- 시작부분 텍스트 -->
+                                        <p class="current-txt" style="left:50%;"><span class="num">D-346</span></p><!-- 현재 텍스트 (style로 텍스트 위치값 제어) -->
+                                        <p class="end-txt">만기일 <br> <span class="num">2021.12.03</span></p><!-- 마지막부분 텍스트 -->
+                                    </div>
+                                </div>
+                                <!-- // 그래프 -->
+                            </dd>
+                            <dd>
+                                <div>
+                                    <div class="account-wrap">
+                                        <div class="icon-con">
+                                            <span><i class="icon-24"></i></span>
+                                        </div>
+                                        <div class="txt-con">
+                                            <span class="agency">국민은행</span>
+                                            <span class="p-name">상품명이 노출됩니다</span>
+                                            <span class="account num">1234-5678-1234</span>
+                                        </div>
+                                    </div>
+                                    <p class="balance">
+                                        <span class="amount">누적 납입 금액 USD <b class="num">500,000</b></span>  
+                                        <span class="amount">원화 환산 금액 <b><span class="num">500,000</span>원</b></span>  
+                                    </p>
+                                </div>
+                                <button type="button" class="btn-hide-account" data-call-layered="mys_as_05_00_01_p1"><i class="icon-more_24"></i><span>계좌숨기기</span></button>                                
+                                <!-- 그래프 // -->
+                                <div class="percentage-graph type2">
+                                    <div class="graph-area">
+                                        <span style="width:50%"></span><!-- style로 그래프 넓이값 제어 -->
+                                    </div>
+                                    <div class="graph-txt">
+                                        <p class="start-txt">신규일 <br> <span class="num">2021.12.03</span></p><!-- 시작부분 텍스트 -->
+                                        <p class="current-txt" style="left:50%;"><span class="num">D-346</span></p><!-- 현재 텍스트 (style로 텍스트 위치값 제어) -->
+                                        <p class="end-txt">만기일 <br> <span class="num">2021.12.03</span></p><!-- 마지막부분 텍스트 -->
+                                    </div>
+                                </div>
+                                <!-- // 그래프 -->
+                            </dd>
+                        </dl>
+                        <dl class="more-view-box">
+                            <dt>    
+                                <a href="javascript:;" class="btn-more-view" role="button">  
+                                    <em class="type">보장성 보험</em>
+                                    <span class="total">총 금액 <em class="amount"><b class="num">50,000</b>원</em></span>  
+                                    <em class="arrow"><i class="icon-arrow-down">목록열기</i></em>  
+                                </a>                      
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="account-wrap">
+                                        <div class="icon-con">
+                                            <span><i class="icon-24"></i></span>
+                                        </div>
+                                        <div class="txt-con">
+                                            <span class="agency">국민은행</span>
+                                            <span class="p-name">상품명이 노출됩니다 <span class="tag-label" data-state="error">만기</span></span>
+                                            <span class="account num">1234-5678-1234</span>
+                                        </div>
+                                    </div>
+                                    <p class="balance">
+                                        <span class="amount">누적 납입 금액 <b><span class="num">500,000</span>원</b></span>  
+                                    </p>
+                                </div>
+                                <button type="button" class="btn-hide-account" data-call-layered="mys_as_05_00_01_p1"><i class="icon-more_24"></i><span>계좌숨기기</span></button>
+                                <!-- 그래프 // -->
+                                <div class="percentage-graph type2">
+                                    <div class="graph-area">
+                                        <span style="width:50%"></span><!-- style로 그래프 넓이값 제어 -->
+                                    </div>
+                                    <div class="graph-txt">
+                                        <p class="start-txt">신규일 <br> <span class="num">2021.12.03</span></p><!-- 시작부분 텍스트 -->
+                                        <p class="current-txt" style="left:50%;"><span class="num">D-346</span></p><!-- 현재 텍스트 (style로 텍스트 위치값 제어) -->
+                                        <p class="end-txt">만기일 <br> <span class="num">2021.12.03</span></p><!-- 마지막부분 텍스트 -->
+                                    </div>
+                                </div>
+                                <!-- // 그래프 -->
+                            </dd>
+                            <dd>
+                                <div>
+                                    <div class="account-wrap">
+                                        <div class="icon-con">
+                                            <span><i class="icon-24"></i></span>
+                                        </div>
+                                        <div class="txt-con">
+                                            <span class="agency">국민은행</span>
+                                            <span class="p-name">상품명이 노출됩니다</span>
+                                            <span class="account num">1234-5678-1234</span>
+                                        </div>
+                                    </div>
+                                    <p class="balance">
+                                        <span class="amount">누적 납입 금액 USD <b class="num">500,000</b></span>  
+                                        <span class="amount">원화 환산 금액 <b><span class="num">500,000</span>원</b></span>  
+                                    </p>
+                                </div>
+                                <button type="button" class="btn-hide-account" data-call-layered="mys_as_05_00_01_p1"><i class="icon-more_24"></i><span>계좌숨기기</span></button>                                
+                                <!-- 그래프 // -->
+                                <div class="percentage-graph type2">
+                                    <div class="graph-area">
+                                        <span style="width:50%"></span><!-- style로 그래프 넓이값 제어 -->
+                                    </div>
+                                    <div class="graph-txt">
+                                        <p class="start-txt">신규일 <br> <span class="num">2021.12.03</span></p><!-- 시작부분 텍스트 -->
+                                        <p class="current-txt" style="left:50%;"><span class="num">D-346</span></p><!-- 현재 텍스트 (style로 텍스트 위치값 제어) -->
+                                        <p class="end-txt">만기일 <br> <span class="num">2021.12.03</span></p><!-- 마지막부분 텍스트 -->
+                                    </div>
+                                </div>
+                                <!-- // 그래프 -->
+                            </dd>
+                        </dl>
+                    </div>
+                </section>
+                <!-- 내 보험 납입금액 진단 //-->
+                <section class="kb-sec bg-gray my-insurance-diagnosis">
+                    <div>
+                        <h4 class="h4">내 보험 납입금액 진단 <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                            <!-- Tooltip (With title)-->
+                            <div class="tooltip">
+                                <strong class="tit">내 보험 납입금액 진단?</strong>
+                                <div class="cont">
+                                    나의 납입금액을 유사군의 납입금액으로 나눠 백분율로 나타냅니다.
+                                </div>
+                                <button class="btn-close"><span>닫기</span></button>
+                            </div>
+                        </h4>
+                        <div class="content-box shadow my-insurance-diagnosis-summary">
+                            <p>
+                                비교그룹 대비한<br>
+                                월 평균 납입보험료 비율입니다
+                            </p>
+                            <div class="">
+                                <p><strong><span class="num">20</span>%많이</strong>동일연령대 보다</p>
+                                <p><strong><span class="num">50</span>%적게</strong>유사자산규모 대비</p>
+                            </div>
+                        </div>
+                        <div class="highcharts-box charts-type_square no-space">
+                            <div class="swiper-container t01 js-swiper" data-swiper-options="paySummarySwiperOptions">
+                                <script>
+                                    var paySummarySwiperOptions = {
+                                        'autoHeight': true,
+                                        "pagination": {
+                                            "el": ".swiper-pagination"
+                                        }
+                                    };
+                                </script>
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="graph-area">
+                                            <!--
+                                                [차트 디자인 정보]
+                                                * 그래프(막대) 색상(컬러별)
+                                                - 노란색 :  #ffd338;
+                                                - 회색 :  #c6cbd0;
+    
+                                                - 차트 텍스트 컬러/크기 : #26282c/14px
+                                                - X축 텍스트 컬러/크기 : #8c949e/14px
+                                                - data labels 텍스트 컬러/크기 : #26282c/14px
+                                            -->
+                                            <figure class="highcharts-figure content-box">
+                                                <div class="graph-info">                                                    			
+                                                    비교그룹 보다
+                                                    <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i><span>비교그룹?</span></button>
+                                                    <!-- Tooltip (With title)-->
+                                                    <div class="tooltip">
+                                                        <strong class="tit">비교그룹?</strong>
+                                                        <div class="cont">
+                                                            나와 금융자산 규모가 비슷한 고객
+                                                        </div>
+                                                        <button class="btn-close"><span>닫기</span></button>
+                                                    </div>
+                                                    <br>
+                                                    월 평균 납입보험료가 <span class="c-blue"><em class="num">50</em>%</span> 더 적어요!
+                                                </div>
+                                                <!-- [chart area] //-->                                            
+                                                <div class="highcharts_column" id="">
+                                                    <img class="temp" src="@@webRoot/static/images/_temp/graph_as_08_00_00-05.png" alt="차트 예시 이미지">
+                                                    <!-- 하단 텍스트  : 나 유사자산규모군 -->
+                                                </div>
+                                                <!--// [chart area] -->
+                                            </figure>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="graph-area">
+                                            <figure class="highcharts-figure content-box">
+                                                <div class="graph-info">                                                    			
+                                                    비교그룹 보다
+                                                    <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i><span>비교그룹?</span></button>
+                                                    <!-- Tooltip (With title)-->
+                                                    <div class="tooltip">
+                                                        <strong class="tit">비교그룹?</strong>
+                                                        <div class="cont">
+                                                            나와 동일연령대 고객
+                                                        </div>
+                                                        <button class="btn-close"><span>닫기</span></button>
+                                                    </div>
+                                                    <br>
+                                                    월 평균 납입보험료가 <span class="c-blue"><em class="num">50</em>%</span> 더 적어요!
+                                                </div>
+                                                <!-- [chart area] //-->                                            
+                                                <div class="highcharts_column" id="">
+                                                    <img class="temp" src="@@webRoot/static/images/_temp/graph_as_08_00_00-05.png" alt="차트 예시 이미지">
+                                                    <!-- 하단 텍스트  : 나 동일연령대 -->
+                                                </div>
+                                                <!--// [chart area] -->
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </section>
+                <!-- // 내 보험 납입금액 진단 -->
+
+                <!--  비교 그룹 // -->
+                <section class="kb-sec best-list-con">
+                    <div class="top-area"><button type="button" class="btn-similar" data-call-layered="mys_as_07_00_00_p1"><span>비교그룹 <i class="arrow"></i></span></button><br>사람들의 <b>보험 상품을</b> 확인하세요.</div>
+                    <div class="best-tit-con">
+                        <div class="tit">
+                            <h4 class="h4">인기상품 Best5</h4>
+                            <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i><span>인기상품 기준</span></button>
+                            <!-- Tooltip (With title)-->
+                            <div class="tooltip">
+                                <strong class="tit">인기상품 기준?</strong>
+                                <div class="cont">
+                                    인기상품은 최근 6개월 마이데이터 가입자 기준
+                                </div>
+                                <button class="btn-close"><span>닫기</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab_contents">
+                        <div class="is-active">
+                            <div class="list is-active">
+                                <div class="except_kb">
+                                    <span class="form-checkbox_24"><input type="checkbox" id="checkboxSample01"><label for="checkboxSample01">KB국민은행 제외</label></span>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <div class="flag"><span class="num">1</span></div>
+                                        <button type="button" data-call-layered="bsInsuranceProduct">  
+                                            <div class="account-wrap">
+                                                <div class="icon-con">
+                                                    <span><i class="icon-24"></i></span>
+                                                </div>
+                                                <div class="txt-con">
+                                                    <span class="agency">국민은행</span>
+                                                    <span class="p-name">상품명</span>
+                                                    <div class="user-info">
+                                                        <span class="num">52,111,456</span>명 중 <br><span class="num">1234,567</span>명이 이용중</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <div class="flag"><span class="num">2</span></div>
+                                        <button type="button" data-call-layered="bsInsuranceProduct">  
+                                            <div class="account-wrap">
+                                                <div class="icon-con">
+                                                    <span><i class="icon-24"></i></span>
+                                                </div>
+                                                <div class="txt-con">
+                                                    <span class="agency">국민은행</span>
+                                                    <span class="p-name">상품명</span>
+                                                    <div class="user-info">
+                                                        <span class="num">52,111,456</span>명 중 <br><span class="num">1234,567</span>명이 이용중</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <div class="flag"><span class="num">3</span></div>
+                                        <button type="button" data-call-layered="bsInsuranceProduct">  
+                                            <div class="account-wrap">
+                                                <div class="icon-con">
+                                                    <span><i class="icon-24"></i></span>
+                                                </div>
+                                                <div class="txt-con">
+                                                    <span class="agency">국민은행</span>
+                                                    <span class="p-name">상품명</span>
+                                                    <div class="user-info">
+                                                        <span class="num">52,111,456</span>명 중 <br><span class="num">1234,567</span>명이 이용중</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <div class="flag"><span class="num">4</span></div>
+                                        <button type="button" data-call-layered="bsInsuranceProduct">  
+                                            <div class="account-wrap">
+                                                <div class="icon-con">
+                                                    <span><i class="icon-24"></i></span>
+                                                </div>
+                                                <div class="txt-con">
+                                                    <span class="agency">국민은행</span>
+                                                    <span class="p-name">상품명</span>
+                                                    <div class="user-info">
+                                                        <span class="num">52,111,456</span>명 중 <br><span class="num">1234,567</span>명이 이용중</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <div class="flag"><span class="num">5</span></div>
+                                        <button type="button" data-call-layered="bsInsuranceProduct">  
+                                            <div class="account-wrap">
+                                                <div class="icon-con">
+                                                    <span><i class="icon-24"></i></span>
+                                                </div>
+                                                <div class="txt-con">
+                                                    <span class="agency">국민은행</span>
+                                                    <span class="p-name">상품명</span>
+                                                    <div class="user-info">
+                                                        <span class="num">52,111,456</span>명 중 <br><span class="num">1234,567</span>명이 이용중</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>  
+                        </div>
+                    </div>
+                </section>
+                <!--  // 비교 그룹 -->
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+    </div>
+
+    <div class="layered">
+        @@include('@@webRoot/html/asset/layered/mys_as_05_00_01_p1.html')
+        @@include('@@webRoot/html/asset/layered/mys_as_07_00_00_p1.html')
+        @@include('@@webRoot/html/asset/layered/mys_as_08_00_00_p1.html')
+        @@include('@@webRoot/html/asset/layered/mys_as_08_00_00_p2.html')
+        
+        
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            let $wrap = $('.my-asset');
+            
+            $wrap.find('.p-list dl').each(function(){
+                let chk = $(this).hasClass('is-show');
+                if(chk){
+                    $(this).find('dd').show();
+                    $(this).find('.btn-more-view>em>span').text('목록닫기');
+                }
+            })
+            $wrap.find('.btn-more-view').on('click',function(){
+                let $parent = $(this).closest('.more-view-box');
+                let chk = $parent.hasClass('is-show');
+                if(chk){
+                    $parent.find('dd').hide();
+                    $(this).find('em>span').text('목록열기');
+                }else{
+                    $parent.find('dd').show();
+                    $(this).find('em>span').text('목록닫기');
+                }
+            });
+        });
+
+        $('button[data-action=moveKBStarBanking]').on('click',function(){
+            modalPopup({
+                title: "",
+                message: "KB스타뱅킹으로 이동하시겠습니까?",
+                type: "confirm",
+                textOkButton: "확인",
+                textCancelButton: "취소",
+                onOk: function() {
+                    
+                },
+                onCancel: function() {
+                    
+                }
+            });
+        });
+        $('button[data-action=chartShow]').on('click',function(){
+            gfn_layered.open('bsPersonInfoCollection');
+        });
+
+        var $agreeBS = $('.bottom-sheet[data-layered-name=bsPersonInfoCollection]');
+        $agreeBS.find('button[data-action=agree]').prop('disabled',true);
+        
+        $agreeBS.on('click','button[data-action=agree]',function(){
+            console.log($(this).prop('disabled'))
+            gfn_layered.close('bsPersonInfoCollection');
+            $('button[data-action=chartShow]').hide().next('.highcharts_column').show();
+            $('.btn-warranty-details').show();            
+        });
+
+        $agreeBS.on('change','input:checkbox',function(){
+            var checked = $(this).is(':checked');            
+            if(!checked){
+                $agreeBS.find('button[data-action=agree]').prop('disabled',true)
+            }else{
+                $agreeBS.find('button[data-action=agree]').prop('disabled',false);                
+            }
+        });
+
+        gfn_gnb.select(1,2); 
+    </script>
+</body>
+    
+</html>

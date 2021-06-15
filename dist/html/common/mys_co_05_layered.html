@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_CO_04] 작성자: 누리어 시스템 이진우 -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LAYER | 로그인, 회원가입 | KB국민은행 마이데이터</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
+    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
+    <link rel="stylesheet" href="../../static/css/ui.css">
+    <style>
+        .layer-call {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .layer-call>button {
+            flex-flow: column;
+            margin-top: 10px;
+        }
+
+        .layer-call>button:before {
+            content: attr(data-page-id);
+        }
+
+        .layer-call>button span {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layer-call">
+        <h1 class="h2">레이어 모음</h1>
+        <button type="button" class="btn-line" data-page-id="MYS_CO_05_01_02"><span>인증번호 요청 전</span></button>
+        <button type="button" class="btn-line" data-page-id="MYS_CO_05_01_03"><span>인증번호 요청 후</span></button>
+        <button type="button" class="btn-line" data-page-id="MYS_CO_05_02_01_M01"><span>약관동의(신규동의안내)</span></button>
+        <button type="button" class="btn-line" data-page-id="MYS_CO_05_02_01_M02"><span>약관동의(마케팅동의)</span></button>
+        <button type="button" class="btn-line" data-page-id="MYS_CO_05_02_01_M03"><span>약관동의(마케팅미동의)</span></button>
+        <button type="button" class="btn-line" data-call-layered="popupAgreeTerm" data-page-id="MYS_CO_05_02_01"><span>약관동의</span></button>
+        <a href="../../html/terms/agree-collection-use-personal-infohtml" class="btn-line"><span>약관동의(개인정보 수집,이용 동의)</span></button>
+            <!--2021-06-10 수정-->
+            <button type="button" class="btn-line" data-call-layered="popupJoinComplete" data-page-id="MYS_CO_05_04_00"><span>가입완료</span></button>
+            <button type="button" class="btn-line" data-call-layered="simplePasswordInput03" data-page-id="MYS_CO_05_03_01"><span>로그인PIN 번호 입력</span></button>
+            <button type="button" class="btn-line" data-call-layered="simplePasswordInput04" data-page-id="MYS_CO_05_03_02"><span>로그인PIN 번호 재입력</span></button>
+            <button type="button" class="btn-line" data-call-layered="bsServiceJoinStatus" data-page-id="MYS_CO_05_04_00_BS01"><span>가입완료(마이데이터 서비스 가입현황)</span></button>
+    </div>
+
+    <div class="layered">
+
+    </div>
+
+    <!-- Script -->
+    <!-- Common Library -->
+    <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
+    <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
+    <script src="../../static/common/lib/current-device.min.js"></script>
+    <script src="../../static/common/lib/moment.min.js"></script>
+    <script src="../../static/common/lib/swiper-bundle.min.js"></script>
+    <!-- <script src="../../static/js/bottomSheet.js"></script> -->
+    <script src="../../static/js/modalPopup.js"></script>
+    <script src="../../static/js/menu.js"></script>
+    <!-- Add Library (this page only)-->
+    <script src="../../static/js/ui.js"></script>
+    <!-- Add Script -->
+
+
+    <script>
+        $('button[data-page-id=MYS_CO_05_01_02]').on('click', function() {
+            modalPopup({
+                title: "",
+                message: "진행을 종료하고 처음으로 <br>돌아가시겠습니까?",
+                type: "confirm",
+                onOk: function() {
+
+                },
+                onCancel: function() {
+
+                }
+            });
+        });
+        $('button[data-page-id=MYS_CO_05_01_03]').on('click', function() {
+            modalPopup({
+                title: "약관 동의 안내",
+                message: "KB마이머니 서비스의 전면 개편으로 <br>약관이개정됨에 따라 고객님의 재동의가 <br>필요합니다.",
+                type: "alert",
+                onOk: function() {
+
+                },
+                onCancel: function() {
+
+                }
+            });
+        });
+        $('button[data-page-id=MYS_CO_05_02_01_M01]').on('click', function() {
+            modalPopup({
+                title: "신규 동의 안내",
+                message: "KB마이머니 서비스의 전면 개편으로 <br>동의서가 제정됨에 따라 재동의가 <br>필요합니다.",
+                type: "alert",
+                onOk: function() {
+
+                },
+                onCancel: function() {
+
+                }
+            });
+        });
+        $('button[data-page-id=MYS_CO_05_02_01_M02]').on('click', function() {
+            modalPopup({
+                title: "",
+                message: "2021년 04월07일 <br>KB마이머니 마케팅 수신동의가 <br>완료되었습니다. ",
+                type: "alert",
+                onOk: function() {
+
+                },
+                onCancel: function() {
+
+                }
+            });
+        });
+        $('button[data-page-id=MYS_CO_05_02_01_M03]').on('click', function() {
+            modalPopup({
+                title: "",
+                message: "2021년 04월07일 <br>KB마이머니 마케팅 수신거부가 <br>완료되었습니다. ",
+                type: "alert",
+                onOk: function() {
+
+                },
+                onCancel: function() {
+
+                }
+            });
+        });
+
+
+
+
+        //레이어 확인용 스크립트 (개발시 삭제) [s]
+        var url = window.location.href;
+        var urlArr = url.split('#');
+        var pageID = urlArr[urlArr.length - 1].toUpperCase();
+
+        $('.layer-call').on('click', 'button', function() {
+            var newUrl = url.replace(pageID, '');
+            window.location.href = urlArr[0] + '#' + $(this).data('page-id');
+        });
+
+        if (pageID.indexOf('/HTML/') < 0) $('button[data-page-id=' + pageID + ']').click();
+        //레이어 확인용 스크립트 (개발시 삭제) [e]
+    </script>
+
+
+</body>
+
+</html>

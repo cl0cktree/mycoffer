@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [mys_as_01] 작성자: 누리어 시스템 김은경 -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LAYER | 자산 | KB국민은행 마이데이터</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
+    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
+    <link rel="stylesheet" href="../../static/css/ui.css">
+    <style>
+        .layer-call {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .layer-call>button {
+            flex-flow: column;
+            margin-top: 10px;
+        }
+
+        .layer-call>button:before {
+            content: attr(data-page-id);
+        }
+
+        .layer-call>button span {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layer-call">
+        <h1 class="h2">레이어 모음</h1>
+        <button type="button" class="btn-line" data-call-layered="mys_as_01_00_00_p1" data-page-id="MYS_AS_01_00_00_P1"><span>자산항목편집</span></button>
+    </div>
+
+    <div class="layered">
+        <!-- [MYS_AS_01_00_00_P1] 자산항목편집 (작성자: 누리어 시스템 김은경)// -->
+        <!-- 자산항목편집// -->
+        <!-- Bottom Sheet // -->
+        <div class="bottom-sheet full-size my-asset" data-layered-name="mys_as_01_00_00_p1">
+            <div class="bottom-sheet_header">
+                <span class="tit">자산항목편집</span>
+            </div>
+            <div class="bottom-sheet_contents asset-modify">
+                <!-- 바텀 시트 내용 -->
+                <section class="kb-sec asset-modify-top">
+                    <div class="total">
+                        <em class="tit">자산 총금액</em>
+                        <em class="amount"><span class="num">1</span>억 <span class="num">5,232</span>만원</em>
+                    </div>
+                    <button class="btn-line_table"><span>자산추가등록</span></button>
+                </section>
+                <section class="kb-sec ">
+                    <ul class="ui-sortable" id="sortable">
+                        <li>
+                            <dl class="description-list">
+                                <dt>입출금&middot;Pay</dt>
+                                <dd class="amount"><span class="num">3,000</span>만원</dd>
+                            </dl>
+                            <a href="#none" class="btn-handle"><i class="icon-menu-grey_24"></i><span>handle</span></a>
+                        </li>
+                        <li>
+                            <dl class="description-list">
+                                <dt>예적금</dt>
+                                <dd class="amount"><span class="num">7,000</span>만원</dd>
+                            </dl>
+                            <a href="#none" class="btn-handle"><i class="icon-menu-grey_24"></i><span>handle</span></a>
+                        </li>
+                        <li>
+                            <dl class="description-list">
+                                <dt>투자</dt>
+                                <dd class="amount"><span class="num">3,000</span>만원</dd>
+                            </dl>
+                            <a href="#none" class="btn-handle"><i class="icon-menu-grey_24"></i><span>handle</span></a>
+                        </li>
+                        <li>
+                            <dl class="description-list">
+                                <dt>보험</dt>
+                                <dd class="amount"><span class="num">3,000</span>만원</dd>
+                            </dl>
+                            <a href="#none" class="btn-handle"><i class="icon-menu-grey_24"></i><span>handle</span></a>
+                        </li>
+                        <li>
+                            <dl class="description-list">
+                                <dt>연금(은퇴)</dt>
+                                <dd class="amount"><span class="num">3,000</span>만원</dd>
+                            </dl>
+                            <a href="#none" class="btn-handle"><i class="icon-menu-grey_24"></i><span>handle</span></a>
+                        </li>
+                        <li>
+                            <dl class="description-list">
+                                <dt>부동산임차보증금</dt>
+                                <dd class="amount"><span class="num">3,000</span>만원</dd>
+                            </dl>
+                            <a href="#none" class="btn-handle"><i class="icon-menu-grey_24"></i><span>handle</span></a>
+                        </li>
+                        <li>
+                            <dl class="description-list">
+                                <dt>자동차</dt>
+                                <dd class="amount"><span class="num">3,000</span>만원</dd>
+                            </dl>
+                            <a href="#none" class="btn-handle"><i class="icon-menu-grey_24"></i><span>handle</span></a>
+                        </li>
+                        <li>
+                            <dl class="description-list">
+                                <dt>외화</dt>
+                                <dd class="amount"><span class="num">3,000</span>만원</dd>
+                            </dl>
+                            <a href="#none" class="btn-handle"><i class="icon-menu-grey_24"></i><span>handle</span></a>
+                        </li>
+                        <li>
+                            <dl class="description-list">
+                                <dt>적립포인트</dt>
+                                <dd class="amount"></dd>
+                            </dl>
+                            <a href="#none" class="btn-handle"><i class="icon-menu-grey_24"></i><span>handle</span></a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            <div class="bottom-sheet_buttons">
+                <button class="btn-solid_sticky" data-action="close"><span>확인</span></button>
+            </div>
+            <button class="btn-close" data-action="close"><span>닫기</span></button>
+        </div>
+        <!-- //자산항목편집  -->
+    </div>
+
+    <!-- Script -->
+    <!-- Common Library -->
+    <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
+    <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
+    <script src="../../static/common/lib/current-device.min.js"></script>
+    <script src="../../static/common/lib/moment.min.js"></script>
+    <script src="../../static/common/lib/swiper-bundle.min.js"></script>
+    <!-- <script src="../../static/js/bottomSheet.js"></script> -->
+    <script src="../../static/js/modalPopup.js"></script>
+    <script src="../../static/js/menu.js"></script>
+    <!-- Add Library (this page only)-->
+    <script src="../../static/js/ui.js"></script>
+    <!-- Add Script -->
+
+    <script>
+        //레이어 확인용 스크립트 (개발시 삭제) [s]
+        var url = window.location.href;
+        var urlArr = url.split('#');
+        var pageID = urlArr[urlArr.length - 1].toUpperCase();
+
+        $('.layer-call').on('click', 'button', function() {
+            var newUrl = url.replace(pageID, '');
+            window.location.href = urlArr[0] + '#' + $(this).data('page-id');
+        });
+
+        if (pageID.indexOf('/HTML/') < 0) $('button[data-page-id=' + pageID + ']').click();
+        //레이어 확인용 스크립트 (개발시 삭제) [e]
+
+        //자산항목편집 드래그
+        var $assetModify = $('.asset-modify');
+        if ($assetModify) {
+            $assetModify.find("#sortable").sortable({
+                handle: ".btn-handle",
+                placeholder: "ui-state-highlight"
+            });
+        }
+    </script>
+
+
+</body>
+
+</html>

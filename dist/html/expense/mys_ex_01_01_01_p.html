@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_EX_01_01_01_P] 작성자: 누리어 시스템 김삼희 -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>상세보기 | 지출 | KB국민은행 마이데이터</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
+    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
+    <link rel="stylesheet" href="../../static/css/ui.css">
+</head>
+
+<body>
+    <div class="skip-nav">
+        <a href="#content">본문으로 이동하기</a>
+    </div>
+    <div class="app">
+        <!-- app-header (for MyMoney) //-->
+        <!-- app-header [s] -->
+        <header class="app-header">
+            <strong class="page-tit">상세보기</strong>
+            <!-- <button class="btn-close"><span>닫기</span></button> -->
+            <!-- 수정 : layer 팝업 -> 페이지로 전환용 -->
+            <a href="javascript:history.back();" class="btn-close" role="button"><span>뒤로가기</span></a>
+        </header>
+        <!-- app-header [e] -->
+        <!-- // app-header (for MyMoney) -->
+        <!-- app-container //-->
+        <div class="app-container">
+            <!-- app-content // -->
+            <main class="app-content expense-layered expense-list-detail">
+                <!-- 내역 변경 옵션//-->
+                <section class="kb-sec expense-type-option dividing-line-bottom">
+                    <h4 class="h4">내역 변경</h4>
+                    <div class="radio-group flex-box" data-col="2">
+                        <li><span class="form-radio"><input type="radio" id="expenseListTypeIption01" name="expenseListTypeIption" checked=""><label for="expenseListTypeIption01">지출</label></span>
+                        </li>
+                        <li><span class="form-radio"><input type="radio" id="expenseListTypeIption02" name="expenseListTypeIption"><label for="expenseListTypeIption02">이체</label></span>
+                        </li>
+                    </div>
+                </section>
+                <!-- //내역 변경 옵션 -->
+                <!-- 지출 금액 및 속성//-->
+                <section class="kb-sec expense-detail-amount dividing-line-bottom">
+                    <!-- [D] 수정 21-06-04 : 인풋 타이틀 추가 //-->
+                    <h5 class="detail-item-tit">아웃백</h5>
+                    <div class="kb-form" data-status="" data-type="icon">
+                        <span class="badge_40"><img src="../../static/images/_temp/hana.png" alt="회사명"></span>
+                        <div class="kb-form_inner form-text">
+                            <input type="text" inputmode="numeric" id="formAmountSample04" placeholder="" value="10000" data-unit="원" data-action="autoSeperator">
+                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                        </div>
+                        <em class="validation">Message</em>
+                    </div>
+                    <!--// [D] 수정 21-06-04 : 인풋 타이틀 추가 -->
+                    <div class="expense-category">
+                        <div class="expense-type">
+                            <h5>식비 &gt; 식비 기타</h5>
+                            <button type="button" class="btn-line_icon btn-edit-type" data-call-layered="bsUserRegisterSetCategory"><i class="icon-20"></i><span>변경</span></button>
+                        </div>
+                        <!--[D] 수정 21-06-04 : tag 오류 수정 //-->
+                        <ul class="lsit-view-setting flex-box" data-col="2">
+                            <li><span class="btn-switch"><input type="checkbox" name="radioSwitch" id="IncludeEexpenseSum" checked=""><label for="IncludeEexpenseSum"><span>지출 합계 포함</span></label></span></li>
+                            <li><span class="btn-switch"><input type="checkbox" name="radioSwitch" id="hideExpenseList" data-call-modal="hideList"><label for="hideExpenseList"><span>내역숨기기</span></label></span></li>
+                        </ul>
+                        <!--// [D] 수정 21-06-04 : tag 오류 수정 -->
+                    </div>
+                </section>
+                <!-- //지출 금액 및 속성 -->
+                <!-- 결제 정보 //-->
+                <section class="kb-sec expense-infobottom">
+                    <dl class="description-list type2">
+                        <dt>결제수단</dt>
+                        <dd>신용카드</dd>
+                        <dt>결제일시</dt>
+                        <dd>2021.12.23 14:54</dd>
+                        <dt>승인상태</dt>
+                        <dd>승인</dd>
+                        <dt>결제방법</dt>
+                        <dd>일시불</dd>
+                        <!-- [D] 2차 개발 : 더치페이로 묶기 [s]
+                        <dt>더치페이로 묶기</dt>
+                        <dd><button type="button" class="btn-line_icon btn-control-show" data-control-target="dutch-pay-list"><i class="icon-20"></i><span>묶기</span></button></dd>
+                        [D] 2차 개발 : 더치페이로 묶기 [e]-->
+                    </dl>
+                </section>
+                <!-- //결제 정보-->
+                <!--// [D] 2차 개발 : 더치페이로 묶기 (리스트) [s]
+                <section class="kb-sec control-show-target dividing-space-top" data-target-name="dutch-pay-list">
+                    <dl class="credit-list">
+                        <dt class="form-checkbox_24">
+                            <input type="checkbox" id="dutchPayChk01" checked="">
+                            <label for="dutchPayChk01">
+                                <strong class="tit">내역</strong>
+                                <span class="info">2021.04.23 17:45</span>
+                            </label>
+                        </dt>
+                        <dd>
+                            <strong class="amount">+<span class="num">4,000</span>원</strong>
+                            <span class="info">거래수단</span>
+                        </dd>
+                        <dt class="form-checkbox_24">
+                            <input type="checkbox" id="dutchPayChk02" checked="">
+                            <label for="dutchPayChk02">
+                                <strong class="tit">내역</strong>
+                                <span class="info">2021.04.23 17:45</span>
+                            </label>
+                        </dt>
+                        <dd>
+                            <strong class="amount">+<span class="num">4,000</span>원</strong>
+                            <span class="info">거래수단</span>
+                        </dd>
+                        <dt class="form-checkbox_24">
+                            <input type="checkbox" id="dutchPayChk03">
+                            <label for="dutchPayChk03">
+                                <strong class="tit">내역</strong>
+                                <span class="info">2021.04.23 17:45</span>
+                            </label>
+                        </dt>
+                        <dd>
+                            <strong class="amount">+<span class="num">4,000</span>원</strong>
+                            <span class="info">거래수단</span>
+                        </dd>
+                    </dl>
+                </section>
+                [D] 2차 개발 : 더치페이로 묶기 (리스트) [e] //-->
+                <section class="kb-sec sticky-bottom">
+                    <div class="btn-area">
+                        <button class="btn-solid_sticky lv2"><span>취소</span></button>
+                        <button class="btn-solid_sticky"><span>등록</span></button>
+                    </div>
+                </section>
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+        <!-- Layer (fullpage popup, modal, bottom sheet) // -->
+        <div class="layered">
+            <!-- [MYS_EX_01_05_02_P] 지출 > 가계부 > 수기 등록 > 수입 카테고리 설정 팝업 (작성자: 누리어 시스템 김삼희)// -->
+            <div class="bottom-sheet full-size" data-layered-name="bsUserRegisterSetCategory_import">
+                <div class="bottom-sheet_header">
+                    <span class="tit">수입 카테고리 설정</span><!-- [D] 성격에 따라 카테고리 설정 앞의 이름 변경 {지출, 수입, 이체} -->
+                </div>
+                <div class="bottom-sheet_contents expense-layered">
+                    <section class="kb-sec user-register-category">
+                        <!-- // 카테고리설정 : 수입 -->
+                        <div class="catetory-import add-form-box">
+                            <div class="add-form-target" data-form-name="main-category">
+                                <ul class="category-list">
+                                    <li>
+                                        <div><span class="badge_32"><img src="../../static/images/_temp/hana.png" alt=""></span><button class="btn-text">급여</button></div>
+                                    </li>
+                                    <li>
+                                        <div><span class="badge_32"><img src="../../static/images/_temp/hana.png" alt=""></span><button class="btn-text">용돈</button></div>
+                                    </li>
+                                    <li>
+                                        <div><span class="badge_32"><img src="../../static/images/_temp/hana.png" alt=""></span><button class="btn-text">사업소득</button></div>
+                                    </li>
+                                    <li>
+                                        <div><span class="badge_32"><img src="../../static/images/_temp/hana.png" alt=""></span><button class="btn-text">금융소득</button></div>
+                                    </li>
+                                    <!-- 사용자 등록 카테고리 //-->
+                                    <li>
+                                        <div class="edit-user" data-status="normal" data-type="text">
+                                            <span class="badge_32"><img src="../../static/images/_temp/hana.png" alt=""></span>
+                                            <div class="kb-form">
+                                                <div class="kb-form_inner form-text">
+                                                    <input type="text" id="userRegisterCatetoryName" placeholder="카테고리명(10자)" value="사용자 등록 카테고리" name="사용자 등록 카테고리" maxlength="10" readonly>
+                                                    <button class="btn-edit-cancel"><i class="icon-data-clear_24">지우기</i></button>
+                                                </div>
+                                                <em class="validation">Success Message</em>
+                                            </div>
+                                            <div class="edit-form-buttons">
+                                                <button class="btn-text btn-delete-form" onClick="deleteCategoryNotice01()"><u>삭제</u></button>
+                                                <button class="btn-text btn-edit-form"><u>수정</u></button>
+                                                <button class="btn-solid_form btn-save-form"><span>저장</span></button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- //사용자 등록 카테고리 -->
+                                </ul>
+                            </div>
+                            <div class="btn-more">
+                                <button type="button" class="btn-line_icon btn-add-form" data-form-name="main-category"><i class="icon-plus"></i><span>카테고리추가</span></button>
+                            </div>
+                        </div>
+                        <!--// [D] 카테고리 추가를 위한 template -->
+                        <!--// 카테고리 추가 시 -->
+                        <!-- 메인 -->
+                        <div class="template add-form-item" data-form-name="main-category">
+                            <div class="kb-form add-category" data-status="info" data-type="icon">
+                                <button type="button" class="btn-select-icon" data-call-layered="bsUserRegisterSetCategoryIcon"><i class="icon-plus"></i></button>
+                                <div>
+                                    <div class="kb-form_inner form-text">
+                                        <input type="text" id="eddCategoryForm" placeholder="카테고리명(10자)" name="추가 카테고리" value="">
+                                        <button class="btn-edit-delete"><i class="icon-data-clear_24">지우기</i></button>
+                                        <button class="btn-solid_form btn-save-form"><span>저장</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 카테고리 추가 시//-->
+                        <!-- [D] 카테고리 추가를 위한 template //-->
+                    </section>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- //지출 > 가계부 > 수기 등록 > 카테고리 설정 팝업  -->
+            <!-- [MYS_EX_01_05_02_P] 지출 > 가계부 > 수기 등록 > 지출 카테고리 설정 팝업 (작성자: 누리어 시스템 김삼희)// -->
+            <div class="bottom-sheet full-size" data-layered-name="bsUserRegisterSetCategory_expense">
+                <div class="bottom-sheet_header">
+                    <span class="tit">지출 카테고리 설정</span><!-- [D] 성격에 따라 카테고리 설정 앞의 이름 변경 {지출, 수입, 이체} -->
+                </div>
+                <div class="bottom-sheet_contents expense-layered">
+                    <section class="kb-sec user-register-category">
+                        <!--// 카테고리설정 : 지출 -->
+                        <div class="category-expense add-form-box">
+                            <div class="add-form-target" data-form-name="main-category">
+                                <!-- [D] 21-06-11 수정 :
+                        서브 카테고리 select-list 클래스 추가 및 data-form-name 추가 (선택표시 나타나게 수정) //-->
+                                <dl class="accordian">
+                                    <dt>
+                                        <div><span class="badge_32"><img src="../../static/images/_temp/hana.png" alt=""></span><strong>주거/공과금(7)</strong></div>
+                                        <button type="button"><i></i></button>
+                                    </dt>
+                                    <dd class="add-form-box">
+                                        <div class="add-form-target" data-form-name="sub-category">
+                                            <ul class="sub-category select-list" data-style="list" data-form-name="sub-category01">
+                                                <li><button class="btn-text"><span>이자&sol;대출</span></button></li>
+                                                <li><button class="btn-text"><span>카드대금</span></button></li>
+                                                <li><button class="btn-text"><span>보험료</span></button></li>
+                                                <li><button class="btn-text"><span>보험료</span></button></li>
+                                                <li><button class="btn-text"><span>카드대금</span></button></li>
+                                                <li><button class="btn-text"><span>보험료</span></button></li>
+                                                <li><button class="btn-text"><span>보험료</span></button></li>
+                                                <li><button class="btn-text"><span>보험료</span></button></li>
+                                            </ul>
+                                        </div>
+                                        <a href="javascript:;" class="btn-text btn-add-form btn-add-sub-category" role="button" data-form-name="sub-category"><u>카테고리 추가&plus;</u></a>
+                                    </dd>
+                                    <dt>
+                                        <div><span class="badge_32"><img src="../../static/images/_temp/hana.png" alt=""></span><strong>금융 (4)</strong></div>
+                                        <button type="button"><i></i></button>
+                                    </dt>
+                                    <dd class="add-form-box">
+                                        <div class="add-form-target" data-form-name="sub-category">
+                                            <ul class="sub-category select-list" data-style="list" data-form-name="sub-category02">
+                                                <li><button class="btn-text"><span>이자&sol;대출</span></button></li>
+                                                <li><button class="btn-text"><span>카드대금</span></button></li>
+                                                <li><button class="btn-text"><span>보험료</span></button></li>
+                                                <li><button class="btn-text"><span>보험료</span></button></li>
+                                                <li>
+                                                    <div class="edit-user" data-status="normal" data-type="text">
+                                                        <div class="kb-form not-ready is-active" data-status="edit">
+                                                            <div class="kb-form_inner form-text is-focused">
+                                                                <input type="text" id="userRegisterCatetoryName" value="추가 카테고리" placeholder="카테고리명(10자)" name="추가 카테고리">
+                                                                <button class="btn-edit-cancel"><i class="icon-data-clear_24">지우기</i></button>
+                                                            </div>
+                                                            <em class="validation">Success Message</em>
+                                                        </div>
+                                                        <div class="edit-form-buttons">
+                                                            <button class="btn-text btn-delete-form" onClick="deleteCategoryNotice01()"><u>삭제</u></button>
+                                                            <button class="btn-text btn-edit-form"><u>수정</u></button>
+                                                            <button class="btn-solid_form btn-save-form"><span>저장</span></button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <a href="javascript:;" class="btn-text btn-add-form btn-add-sub-category" role="button" data-form-name="sub-category"><u>카테고리 추가&plus;</u></a>
+                                    </dd>
+                                    <dt>
+                                        <div><span class="badge_32"><img src="../../static/images/_temp/hana.png" alt=""></span><strong>미분류(1)</strong></div>
+                                        <button type="button"><i></i></button>
+                                    </dt>
+                                    <dd class="add-form-box">
+                                        <div class="add-form-target" data-form-name="sub-category">
+                                            <ul class="sub-category select-list" data-style="list" data-form-name="sub-category03">
+                                                <li><button class="btn-text"><span>이자&sol;대출</span></button></li>
+                                            </ul>
+                                        </div>
+                                        <a href="javascript:;" class="btn-text btn-add-form btn-add-sub-category" role="button" data-form-name="sub-category"><u>카테고리 추가&plus;</u></a>
+                                    </dd>
+                                    <dt>
+                                        <div class="edit-user" data-status="normal" data-type="text">
+                                            <span class="badge_32"><img src="../../static/images/_temp/hana.png" alt=""></span>
+                                            <div class="kb-form">
+                                                <div class="kb-form_inner form-text">
+                                                    <input type="text" id="userRegisterCatetoryName" placeholder="카테고리명(10자)" value="사용자 등록 카테고리" name="사용자 등록 카테고리" maxlength="10" readonly>
+                                                    <button class="btn-edit-cancel"><i class="icon-data-clear_24">지우기</i></button>
+                                                </div>
+                                                <em class="validation">Success Message</em>
+                                            </div>
+                                            <div class="edit-form-buttons">
+                                                <button class="btn-text btn-delete-form" onClick="deleteCategoryNotice01()"><u>삭제</u></button>
+                                                <button class="btn-text btn-edit-form"><u>수정</u></button>
+                                                <button class="btn-solid_form btn-save-form"><span>저장</span></button>
+                                            </div>
+                                        </div>
+                                        <button type="button"><i></i></button>
+                                    </dt>
+                                    <dd class="add-form-box">
+                                        <div class="add-form-target" data-form-name="sub-category">
+                                            <ul class="sub-category select-list" data-style="list" data-form-name="sub-category04">
+                                                <li><button class="btn-text"><span>보험료</span></button></li>
+                                                <li><button class="btn-text"><span>보험료</span></button></li>
+                                                <li>
+                                                    <div class="edit-user" data-status="normal" data-type="text">
+                                                        <div class="kb-form not-ready is-active" data-status="edit">
+                                                            <div class="kb-form_inner form-text is-focused">
+                                                                <input type="text" id="userRegisterCatetoryName" value="추가 카테고리" placeholder="카테고리명(10자)" name="추가 카테고리">
+                                                                <button class="btn-edit-cancel"><i class="icon-data-clear_24">지우기</i></button>
+                                                            </div>
+                                                            <em class="validation">Success Message</em>
+                                                        </div>
+                                                        <div class="edit-form-buttons">
+                                                            <button class="btn-text btn-delete-form" onClick="deleteCategoryNotice01()"><u>삭제</u></button>
+                                                            <button class="btn-text btn-edit-form"><u>수정</u></button>
+                                                            <button class="btn-solid_form btn-save-form"><span>저장</span></button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <a href="javascript:;" class="btn-text btn-add-form btn-add-sub-category" role="button" data-form-name="sub-category"><u>카테고리 추가&plus;</u></a>
+                                    </dd>
+                                </dl>
+                                <!--// [D] 21-06-11 수정 :
+                        서브 카테고리 select-list 클래스 추가 및 data-form-name 추가 (선택표시 나타나게 수정) -->
+                            </div>
+                            <div class="btn-more">
+                                <button type="button" class="btn-line_icon btn-add-form" data-form-name="main-category"><i class="icon-plus"></i><span>카테고리 추가</span></button>
+                            </div>
+                        </div>
+                        <!-- 카테고리설정 : 지출 //-->
+                        <!--// [D] 카테고리 추가를 위한 template -->
+                        <!--// 카테고리 추가 시 -->
+                        <!-- 메인 -->
+                        <div class="template add-form-item" data-form-name="main-category">
+                            <div class="kb-form add-category" data-status="info" data-type="icon">
+                                <button type="button" class="btn-select-icon" data-call-layered="bsUserRegisterSetCategoryIcon"><i class="icon-plus"></i></button>
+                                <div>
+                                    <div class="kb-form_inner form-text">
+                                        <input type="text" id="eddCategoryForm" placeholder="카테고리명(10자)" name="추가 카테고리" value="">
+                                        <button class="btn-edit-delete"><i class="icon-data-clear_24">지우기</i></button>
+                                        <button class="btn-solid_form btn-save-form"><span>저장</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 서브 -->
+                        <div class="template add-form-item" data-form-name="sub-category">
+                            <div class="kb-form" data-status="info" data-type="icon">
+                                <div class="add-sub-category">
+                                    <div class="kb-form_inner form-text">
+                                        <input type="text" id="eddCategoryForm" placeholder="카테고리명(10자)" name="추가 카테고리" value="">
+                                        <button class="btn-edit-delete"><i class="icon-data-clear_24">지우기</i></button>
+                                        <button class="btn-solid_form btn-save-form"><span>저장</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 카테고리 추가 시//-->
+                        <!-- [D] 카테고리 추가를 위한 template //-->
+                    </section>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- //지출 > 가계부 > 수기 등록 > 지출 카테고리 설정 팝업  -->
+            <!-- [MYS_EX_01_05_02_P02] 지출 > 가계부 > 수기 등록 > 이체 카테고리 설정 팝업 (작성자: 누리어 시스템 김삼희)// -->
+            <div class="bottom-sheet full-size" data-layered-name="bsUserRegisterSetCategory_transfer">
+                <div class="bottom-sheet_header">
+                    <span class="tit">이체 카테고리 설정</span><!-- [D] 성격에 따라 카테고리 설정 앞의 이름 변경 {지출, 수입, 이체} -->
+                </div>
+                <div class="bottom-sheet_contents expense-layered">
+                    <section class="kb-sec user-register-category">
+                        <!--// 카테고리설정 : 이체 -->
+                        <div class="catetory-transfer add-form-box">
+                            <div class="add-form-target" data-form-name="main-category">
+                                <ul class="category-list">
+                                    <li>
+                                        <div><span class="badge_32"><img src="../../static/images/_temp/hana.png" alt=""></span><button class="btn-text">입금이체</button></div>
+                                    </li>
+                                    <li>
+                                        <div><span class="badge_32"><img src="../../static/images/_temp/hana.png" alt=""></span><button class="btn-text">출금이체</button></div>
+                                    </li>
+                                    <li>
+                                        <div><span class="badge_32"><img src="../../static/images/_temp/hana.png" alt=""></span><button class="btn-text">저축</button></div>
+                                    </li>
+                                    <li>
+                                        <div><span class="badge_32"><img src="../../static/images/_temp/hana.png" alt=""></span><button class="btn-text">투자</button></div>
+                                    </li>
+                                    <li>
+                                        <div class="edit-user" data-status="normal" data-type="text">
+                                            <span class="badge_32"><img src="../../static/images/_temp/hana.png" alt=""></span>
+                                            <div class="kb-form">
+                                                <div class="kb-form_inner form-text">
+                                                    <input type="text" id="userRegisterCatetoryName" placeholder="카테고리명(10자)" value="사용자 등록 카테고리" name="사용자 등록 카테고리" maxlength="10" readonly>
+                                                    <button class="btn-edit-cancel"><i class="icon-data-clear_24">지우기</i></button>
+                                                </div>
+                                                <em class="validation">Success Message</em>
+                                            </div>
+                                            <div class="edit-form-buttons">
+                                                <button class="btn-text btn-delete-form" onClick="deleteCategoryNotice01()"><u>삭제</u></button>
+                                                <button class="btn-text btn-edit-form"><u>수정</u></button>
+                                                <button class="btn-solid_form btn-save-form"><span>저장</span></button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="btn-more">
+                                <button type="button" class="btn-line_icon btn-add-form" data-form-name="main-category"><i class="icon-plus"></i><span>카테고리추가</span></button>
+                            </div>
+                        </div>
+                        <!-- 카테고리설정 : 이체 //-->
+                        <!--// [D] 카테고리 추가를 위한 template -->
+                        <!--// 카테고리 추가 시 -->
+                        <!-- 메인 -->
+                        <div class="template add-form-item" data-form-name="main-category">
+                            <div class="kb-form add-category" data-status="info" data-type="icon">
+                                <button type="button" class="btn-select-icon" data-call-layered="bsUserRegisterSetCategoryIcon"><i class="icon-plus"></i></button>
+                                <div>
+                                    <div class="kb-form_inner form-text">
+                                        <input type="text" id="eddCategoryForm" placeholder="카테고리명(10자)" name="추가 카테고리" value="">
+                                        <button class="btn-edit-delete"><i class="icon-data-clear_24">지우기</i></button>
+                                        <button class="btn-solid_form btn-save-form"><span>저장</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 서브 -->
+                        <div class="template add-form-item" data-form-name="sub-category">
+                            <div class="kb-form" data-status="info" data-type="icon">
+                                <div class="add-sub-category">
+                                    <div class="kb-form_inner form-text">
+                                        <input type="text" id="eddCategoryForm" placeholder="카테고리명(10자)" name="추가 카테고리" value="">
+                                        <button class="btn-edit-delete"><i class="icon-data-clear_24">지우기</i></button>
+                                        <button class="btn-solid_form btn-save-form"><span>저장</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 카테고리 추가 시//-->
+                        <!-- [D] 카테고리 추가를 위한 template //-->
+                    </section>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- //지출 > 가계부 > 수기 등록 > 이체 카테고리 설정 팝업  -->
+
+
+            <div class="modal modal_radioOption" id="hideList">
+                <div class="modal_header">
+                    <strong class="tit">내역에서 숨기기</strong>
+                </div>
+                <div class="modal_contents">
+                    <p>[김국민 통장적요내용출력] {지출 or 이체}을(를) 제외하시겠습니까?</p>
+                    <ul class="radio-group">
+                        <li><span class="form-radio"><input type="radio" id="changeOptionOnce02" name="hideListType" checked=""><label for="changeOptionOnce02">이번만 변경</label></span></li>
+                        <li><span class="form-radio"><input type="radio" id="changeOptionAlways02" name="hideListType"><label for="changeOptionAlways02">항상 변경</label></span></li>
+                    </ul>
+                </div>
+                <div class="modal_buttons btn-area">
+                    <button class="btn-solid_sticky lv2 cancel" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid_sticky ok"><span>확인</span></button>
+                </div>
+            </div>
+        </div>
+        <!-- // Layer (fullpage popup, modal, bottom sheet) -->
+    </div>
+
+    <!-- Script -->
+    <!-- Common Library -->
+    <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
+    <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
+    <script src="../../static/common/lib/current-device.min.js"></script>
+    <script src="../../static/common/lib/moment.min.js"></script>
+    <script src="../../static/common/lib/swiper-bundle.min.js"></script>
+    <!-- <script src="../../static/js/bottomSheet.js"></script> -->
+    <script src="../../static/js/modalPopup.js"></script>
+    <script src="../../static/js/menu.js"></script>
+    <!-- Add Library (this page only)-->
+    <script src="../../static/js/ui.js"></script>
+    <script>
+        $('[data-call-modal]').on('click', function() {
+            var id = $(this).data('call-modal');
+            $('#' + id).modalPopup('open');
+        });
+    </script>
+    <!-- Add Script -->
+
+</body>
+
+</html>

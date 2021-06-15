@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_SP_01_02_16] 작성자: 누리어 시스템 황철민 -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "신용거래 내역-연체 | 신용관리"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-header.html', {'pageTit': '신용거래 내역'})
+		<!-- // app-header -->
+
+		<!-- app-container (for MyMoney) //-->
+		<div class="app-container">
+
+			<!-- app-lnb //-->
+			<div class="app-lnb">
+				<!-- 프로세스 -->
+				<!-- TAB -->
+				<div class="tab swiper-container">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide"><a href="#">카드</a></li>
+						<li class="swiper-slide"><a href="#">대출</a></li>
+						<li class="swiper-slide is-active"><a href="#">연체</a></li>
+						<li class="swiper-slide"><a href="#">보증</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- //app-lnb -->
+
+			<!-- app-content // -->
+			<main class="app-content">
+
+				<!-- 목록 있는 경우 // -->
+				<section class="kb-sec credit-transaction-summary">
+					<div class="summary-header">
+						<span class="tit">
+							연체잔액
+							<button type="button" data-call-layered="modalAbount"><i class="icon-tooltip-que">연체잔액이란?</i></button>
+						</span>
+						<span class="two-values">
+							<span class="amount"><span class="txt">단기</span><span class="num">4,000,000</span>원</span>
+							<span class="amount"><span class="txt">장기</span><span class="num">1,000,000</span>원</span>
+						</span>
+					</div>
+				</section>
+
+				<section class="kb-sec credit-transaction-list">
+					<h3 class="title">금융기관별 연체내역</h3>
+					<dl class="accordian">
+						<dt class="is-active">
+							<span>장기연체<span class="cnt"><span class="num">2</span>건</span></span>
+							<button type="button"><i></i></button>
+						</dt>
+						<dd>
+							<div class="infomation-lists">
+								<ul>
+									<li>
+										<strong class="name">국민은행</strong>
+										<dl class="description-list type2">
+											<dt>최초연체발생일</dt>
+											<dd class="date">2019.09.11</dd>
+											<dt>최초연체금액</dt>
+											<dd class="amount"><span class="num">1,000,000</span>원</dd>
+											<dt>연체잔액</dt>
+											<dd class="amount"><span class="num">1,000,000</span>원</dd>
+										</dl>
+									</li>
+									<li>
+										<strong class="name">신한은행</strong>
+										<dl class="description-list type2">
+											<dt>최초연체발생일</dt>
+											<dd class="date">2019.09.11</dd>
+											<dt>최초연체금액</dt>
+											<dd class="amount"><span class="num">1,000,000</span>원</dd>
+											<dt>연체잔액</dt>
+											<dd class="amount"><span class="num">1,000,000</span>원</dd>
+										</dl>
+									</li>
+								</ul>
+							</div>
+						</dd>
+
+						<dt>
+							<span>단기연체<span class="cnt"><span class="num">1</span>건</span></span>
+							<button type="button"><i></i></button>
+						</dt>
+						<dd>
+							<div class="infomation-lists">
+								<ul>
+									<li>
+										<strong class="name">기업은행</strong>
+										<dl class="description-list type2">
+											<dt>최초연체발생일</dt>
+											<dd class="date">2019.09.11</dd>
+											<dt>최초연체금액</dt>
+											<dd class="amount"><span class="num">1,000,000</span>원</dd>
+											<dt>연체잔액</dt>
+											<dd class="amount"><span class="num">1,000,000</span>원</dd>
+										</dl>
+									</li>
+								</ul>
+							</div>
+						</dd>
+					</dl>
+				</section>
+				<!-- // 목록 있는 경우 -->
+
+				<!-- 목록 없는 경우 // -->
+				<section class="kb-sec credit-transaction-summary">
+					<div class="summary-header">
+						<span class="tit">
+							연체잔액
+							<button type="button" data-call-layered="modalAbount"><i class="icon-tooltip-que"></i></button>
+						</span>
+						<span class="two-values">
+							<span class="amount"><span class="txt">단기</span><span class="num">0</span>원</span>
+							<span class="amount"><span class="txt">장기</span><span class="num">0</span>원</span>
+						</span>
+					</div>
+				</section>
+
+				<section class="kb-sec credit-transaction-list">
+					<div class="no-data">
+						<i class="icon-info_24"></i>
+						<p>연체잔액이 없습니다.</p>
+					</div>
+				</section>
+				<!-- // 목록 없는 경우 -->
+	
+				<section class="kb-sec credit-transaction-message">
+					<p class="info-msg">위 정보는 국내 신용평가사인 NICE평가정보(주)에서 제공하는 데이터로 KB국민은행의 금융정보와 다를 수 있습니다.</p>
+				</section>
+
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+			<!-- 안내팝업 // -->
+			<div class="modal" data-layered-name="modalAbount" id="modalAbount">
+				<div class="modal_header">
+					<strong class="tit">연체잔액이란?</strong>
+				</div>
+				<div class="modal_contents">
+					<ul data-style="list">
+						<li>결제기한 안에 이행하여야 할 채무를 지체하였을 때 밀린 날짜에 따라 더 내는 금액을 가산하여 표시됩니다. 연체는 신용평점을 낮추는 가장 큰 원인이니 주의하시기 바랍니다.</li>
+					</ul>
+				</div>
+				<div class="modal_buttons btn-area">
+					<button class="btn-solid_sticky ok" data-action="close"><span>확인</span></button>
+				</div>
+			</div>
+			<!-- // 안내팝업 -->
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+	
+
+</body>
+
+</html>

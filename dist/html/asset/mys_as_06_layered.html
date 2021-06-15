@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [mys_as_06] 작성자: 누리어 시스템 김은경 -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LAYER | 자산 | KB국민은행 마이데이터</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
+    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
+    <link rel="stylesheet" href="../../static/css/ui.css">
+    <style>
+        .layer-call {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .layer-call>button {
+            flex-flow: column;
+            margin-top: 10px;
+        }
+
+        .layer-call>button:before {
+            content: attr(data-page-id);
+        }
+
+        .layer-call>button span {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layer-call">
+        <h1 class="h2">레이어 모음</h1>
+        <button type="button" class="btn-line" data-call-layered="mys_as_06_00_00_p1" data-page-id="MYS_AS_06_00_00_P1"><span>조회,설정 팝업</span></button>
+        <button type="button" class="btn-line" data-call-layered="mys_as_06_00_00_p2" data-page-id="MYS_AS_06_00_00_P2"><span>상품안내팝업</span></button>
+        <button type="button" class="btn-line" data-call-layered="mys_as_06_02_02_p1" data-page-id="MYS_AS_06_02_02_P1"><span>조회, 설정 팝업</span></button>
+        <button type="button" class="btn-line" data-call-layered="mys_as_06_03_02_p1" data-page-id="MYS_AS_06_03_02_P1"><span>조회, 설정 팝업</span></button>
+
+    </div>
+
+    <div class="layered">
+        <!-- [MYS_AS_06_00_00_P1] 조회,설정 팝업 (작성자: 누리어 시스템 김은경)// -->
+        <!-- 조회,설정 팝업// -->
+        <div class="bottom-sheet" data-layered-name="mys_as_06_00_00_p1">
+            <div class="bottom-sheet_header">
+                <span class="tit">조회 선택</span>
+            </div>
+            <div class="bottom-sheet_contents">
+                <section class="kb-sec tab_contents">
+                    <div class="is-active">
+                        <div class="kb-form" data-status="error">
+                            <strong class="label">조회기간</strong>
+                            <div class="lookup-period">
+                                <ul class="btn-segmented">
+                                    <li><button><span>1개월</span></button></li>
+                                    <li><button><span>3개월</span></button></li>
+                                    <li><button><span>6개월</span></button></li>
+                                    <li><button class="is-selected"><span>직접입력</span></button></li>
+                                </ul>
+                                <div class="period-selector">
+                                    <input type="text" title="시작날짜" value="2021.08.28" readonly="">
+                                    <span>~</span>
+                                    <input type="text" title="종료날짜" value="2021.08.31" readonly="">
+
+                                </div>
+                                <em class="validation">에러 메세지 영역 입니다.</em>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="bottom-sheet_buttons">
+                <button class="btn-solid_sticky lv2" data-action="close"><span>초기화</span></button>
+                <button class="btn-solid_sticky"><span>확인</span></button>
+            </div>
+            <button class="btn-close" data-action="close"><span>닫기</span></button>
+        </div>
+        <!-- //조회,설정 팝업  -->
+        <!-- [MYS_AS_06_00_00_P2] 상품안내팝업 (작성자: 누리어 시스템 김은경)// -->
+        <!-- 상품안내팝업// -->
+        <div class="bottom-sheet full-size" data-layered-name="mys_as_06_00_00_p2">
+            <div class="bottom-sheet_header">
+                <span class="tit">상품안내</span>
+            </div>
+            <div class="bottom-sheet_contents bottom-prod-info">
+                <section class="kb-sec tab_contents">
+                    <div class="account-area">
+                        <span class="prod-kind">입출금</span>
+                        <span class="tit">내 아이를 위한 280일 적금</span>
+                        <span class="s-txt">거래실적에 따른 다양한 혜택</span>
+                    </div>
+                    <div class="account-detail">
+                        <ul>
+                            <li>
+                                <div class="icon-con">
+                                    <span><i class="icon-24"></i></span>
+                                </div>
+                                <div class="txt-con">
+                                    <em class="tit">최고 연 1.8%(12개월)</em>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon-con">
+                                    <span><i class="icon-24"></i></span>
+                                </div>
+                                <div class="txt-con">
+                                    <em class="tit">최대 12개월</em>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+            <div class="bottom-sheet_buttons">
+                <button class="btn-solid_sticky" data-action="moveKBStarBanking"><span>확인</span></button>
+            </div>
+            <button class="btn-close" data-action="close"><span>닫기</span></button>
+        </div>
+        <!-- //상품안내팝업  -->
+
+        <!-- [MYS_AS_06_02_02_P1] 조회, 설정 팝업 (작성자: 누리어 시스템 김은경)// -->
+        <!-- 조회, 설정 팝업// -->
+        <div class="bottom-sheet full-size" data-layered-name="mys_as_06_02_02_p1">
+            <div class="bottom-sheet_header">
+                <span class="tit">조회 선택</span>
+            </div>
+            <div class="bottom-sheet_contents">
+                <section class="kb-sec tab_contents">
+                    <div class="is-active">
+                        <div class="kb-form" data-status="error">
+                            <strong class="label">조회기간</strong>
+                            <div class="lookup-period">
+                                <ul class="btn-segmented">
+                                    <li><button><span>1개월</span></button></li>
+                                    <li><button><span>3개월</span></button></li>
+                                    <li><button><span>6개월</span></button></li>
+                                    <li><button class="is-selected"><span>직접입력</span></button></li>
+                                </ul>
+                                <div class="period-selector">
+                                    <input type="text" title="시작날짜" value="2021.08.28" readonly="">
+                                    <span>~</span>
+                                    <input type="text" title="종료날짜" value="2021.08.31" readonly="">
+
+                                </div>
+                                <em class="validation">에러 메세지 영역 입니다.</em>
+                            </div>
+                        </div>
+                        <div class="kb-form">
+                            <strong class="label">거래유형</strong>
+                            <div class="lookup-period">
+                                <ul class="btn-segmented">
+                                    <li><button><span>전체</span></button></li>
+                                    <!-- 2021-06-09 수정 // -->
+                                    <li><button><span>입금</span></button></li>
+                                    <li><button class="is-selected"><span>출금</span></button></li>
+                                    <!-- // 2021-06-09 수정 -->
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="kb-form">
+                            <strong class="label">결제수단</strong>
+                            <div class="lookup-period">
+                                <ul class="btn-segmented">
+                                    <li><button><span>최신순</span></button></li>
+                                    <li><button class="is-selected"><span>과거순</span></button></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="bottom-sheet_buttons">
+                <button class="btn-solid_sticky lv2" data-action="close"><span>초기화</span></button>
+                <button class="btn-solid_sticky"><span>확인</span></button>
+            </div>
+            <button class="btn-close" data-action="close"><span>닫기</span></button>
+        </div>
+        <!-- //조회, 설정 팝업  -->
+        <!-- [MYS_AS_06_03_02_P1] 조회, 설정 팝업 (작성자: 누리어 시스템 김은경)// -->
+        <!-- 조회, 설정 팝업// -->
+        <div class="bottom-sheet" data-layered-name="mys_as_06_03_02_p1">
+            <div class="bottom-sheet_header">
+                <span class="tit">조회 선택</span>
+            </div>
+            <div class="bottom-sheet_contents">
+                <section class="kb-sec tab_contents">
+                    <div class="is-active">
+                        <div class="kb-form" data-status="error">
+                            <strong class="label">조회기간</strong>
+                            <div class="lookup-period">
+                                <ul class="btn-segmented">
+                                    <li><button><span>1개월</span></button></li>
+                                    <li><button><span>3개월</span></button></li>
+                                    <li><button><span>6개월</span></button></li>
+                                    <li><button class="is-selected"><span>직접입력</span></button></li>
+                                </ul>
+                                <div class="period-selector">
+                                    <input type="text" title="시작날짜" value="2021.08.28" readonly="">
+                                    <span>~</span>
+                                    <input type="text" title="종료날짜" value="2021.08.31" readonly="">
+
+                                </div>
+                                <em class="validation">에러 메세지 영역 입니다.</em>
+                            </div>
+                        </div>
+                        <div class="kb-form">
+                            <strong class="label">거래유형</strong>
+                            <div class="lookup-period">
+                                <ul class="btn-segmented">
+                                    <li><button><span>전체</span></button></li>
+                                    <li><button><span>입금</span></button></li>
+                                    <li><button class="is-selected"><span>출금</span></button></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="kb-form">
+                            <strong class="label">내역정렬</strong>
+                            <div class="lookup-period">
+                                <ul class="btn-segmented">
+                                    <li><button><span>최신순</span></button></li>
+                                    <li><button class="is-selected"><span>과거순</span></button></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="bottom-sheet_buttons">
+                <button class="btn-solid_sticky lv2" data-action="close"><span>초기화</span></button>
+                <button class="btn-solid_sticky"><span>확인</span></button>
+            </div>
+            <button class="btn-close" data-action="close"><span>닫기</span></button>
+        </div>
+        <!-- //조회, 설정 팝업  -->
+
+    </div>
+
+    <!-- Script -->
+    <!-- Common Library -->
+    <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
+    <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
+    <script src="../../static/common/lib/current-device.min.js"></script>
+    <script src="../../static/common/lib/moment.min.js"></script>
+    <script src="../../static/common/lib/swiper-bundle.min.js"></script>
+    <!-- <script src="../../static/js/bottomSheet.js"></script> -->
+    <script src="../../static/js/modalPopup.js"></script>
+    <script src="../../static/js/menu.js"></script>
+    <!-- Add Library (this page only)-->
+    <script src="../../static/js/ui.js"></script>
+    <!-- Add Script -->
+
+    <script>
+        //레이어 확인용 스크립트 (개발시 삭제) [s]
+        var url = window.location.href;
+        var urlArr = url.split('#');
+        var pageID = urlArr[urlArr.length - 1].toUpperCase();
+
+        $('.layer-call').on('click', 'button', function() {
+            var newUrl = url.replace(pageID, '');
+            window.location.href = urlArr[0] + '#' + $(this).data('page-id');
+        });
+
+        if (pageID.indexOf('/HTML/') < 0) $('button[data-page-id=' + pageID + ']').click();
+        //레이어 확인용 스크립트 (개발시 삭제) [e]
+    </script>
+
+    <script>
+        $(function() {
+            $('button[data-action=moveKBStarBanking]').on('click', function() {
+                modalPopup({
+                    title: "",
+                    message: "KB스타뱅킹으로 이동하시겠습니까?",
+                    type: "confirm",
+                    textOkButton: "확인",
+                    textCancelButton: "취소",
+                    onOk: function() {
+
+                    },
+                    onCancel: function() {
+
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

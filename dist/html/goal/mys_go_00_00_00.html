@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_GO_03_00_00] 목표 > 아낀만큼_진행중_(tab) (작성자: 누리어 시스템 김삼희) -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>아낀만큼 | 목표챌린지 | KB국민은행 마이데이터</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
+    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
+    <link rel="stylesheet" href="../../static/css/ui.css">
+</head>
+
+<body>
+    <div class="skip-nav">
+        <a href="#content">본문으로 이동하기</a>
+    </div>
+    <div class="app" data-page="submain">
+        <!-- app-header (for MyMoney) //-->
+        <!-- app-header [s] -->
+        <header class="app-header">
+            <a href="javascript:history.back();" class="btn-history-back" role="button"><i class="icon-back">뒤로가기</i></a>
+            <strong class="page-tit">아낀만큼</strong>
+            <button type="button" class="btn-allmenu"><i class="icon-menu">전체메뉴</i></button>
+        </header>
+        <!-- app-header [e] -->
+
+        <!-- // app-header -->
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+
+            <!-- app-lnb //-->
+            <div class="app-lnb">
+                <!-- 상단 GNB 공통 (메뉴 구성 전 )-->
+                <!-- 수정 : 2021.06.09 1depth 메뉴만 고정 // -->
+                <!-- GNB //-->
+                <div class="app-gnb-wrap">
+                    <div class="app-gnb tab swiper-container">
+                        <ul class="swiper-wrapper">
+                            <!-- 동작(ui.js) / 구성(menu.js) -->
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="app-sub-wrap">
+                    <div class="tab depth2 swiper-container app-sub">
+                        <ul class="swiper-wrapper">
+                            <!-- 선택된 GNB 메뉴에 따라 append (ui.js)-->
+                        </ul>
+                    </div>
+                </div>
+                <!-- // GNB -->
+                <!-- // 수정 : 2021.06.09  1depth 메뉴만 고정 -->
+            </div>
+            <!-- app-content // -->
+            <main class="app-content goals-challenge bg-gray-bottom">
+                <!-- 목표 요약 // -->
+                <section class="kb-sec bg-gray goals-summary">
+                    <a href="#none" class="btn-trans">
+                        <dl class="summary-piggymoeny content-box shadow">
+                            <dt>
+                                <i class="icon-pigbank_23"></i><strong class="h4">저금통</strong><button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                <!-- Tooltip (With title)-->
+                                <div class="tooltip">
+                                    <strong class="tit">저금통이란?</strong>
+                                    <div class="cont">목표 달성 이후 모은 금액과 절약한 금액을 적립하거나 지출할 때마다 지정한 금액만큼 자동으로 저축할 수 있는 나만의 개인금고</div>
+                                    <button class="btn-close"><span>닫기</span></button>
+                                </div>
+                            </dt>
+                            <dd class="amount"><strong class="num">201,320,000</strong>원</dd>
+                        </dl>
+                    </a>
+                    <div class="vertical-blank"></div>
+                </section>
+                <!-- // 목표 요약 -->
+                <!-- 목표 내용// -->
+                <section class="kb-sec bg-gray goals-list">
+                    <div class="tab swiper-container depth2">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide is-active"><a href="#none">아낀만큼</a></li>
+                            <li class="swiper-slide"><a href="#none">쓰는만큼</a></li>
+                            <li class="swiper-slide"><a href="#none">남들만큼</a></li>
+                        </ul>
+                    </div>
+                    <button type="button" class="btn-compare" data-call-layered="mys_as_07_00_00_p1" data-page-id="MYS_AS_07_00_00_P1"><i class="icon-24"></i></button>
+                    <div class="goals-desc t02">김국민 님의 <strong>소비패턴</strong>을 다른 사람들과<br><strong>비교 분석</strong>해서, 딱 맞는 챌린지를 추천해드려요!</div>
+                    <div class="content-box shadow">
+                        <!-- [Chart Area] // -->
+                        <!--
+                            [차트 디자인 정보]
+                            * 그래프(원) 크기/색상(컬러별)
+                            - 노란색 :  122*122px / linear-gradient(to top, #fbc60a, #ffe381);
+                            - 주황색 :  141*141px / linear-gradient(to top, #f8956d, #fbb192);
+                            - 보라색 :  81*81px / linear-gradient(to top, #e69afc, #edb7fd);
+                            - 파랑색 :  58*58px / linear-gradient(to top, #6cb7fa, #89c6fc);
+                            - 하늘색 :  45*45px / linear-gradient(to top, #fbb192, #88dada
+
+                            텍스트 컬러 : #26282c
+                            이름 텍스트 크기 : 14px
+                            값 텍스트 크기 : 18px/bold
+                        -->
+                        <div class="chart-area">
+                            <p class="tit"><strong>김국민 님의 소비패턴</strong></p>
+                            <p class="sub">6개월 지출 내역 분석결과입니다.</p>
+                            <img class="temp" src="../../static/images/_temp/chart_go0305.png" alt="차트 예시 이미지">
+                        </div>
+                        <!-- // [Chart Area] -->
+                    </div>
+                    <strong class="goals-tit h4">김국민 님에게 추천하는<br>챌린지 TOP3</strong>
+                    <div class="challenge-box content-swiper-wrap">
+                        <div class="swiper-container content-swiper t01">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide content-box">
+                                    <div class="challenge-tit">
+                                        <strong class="h3">외식비 줄이기</strong>
+                                        <button type="button" class=""><span><i class="icon-arrow-right"></i></span></button>
+                                    </div>
+                                    <div class="challenge-info">
+                                        <div class="tit flex-box goals-desc">
+                                            <div>
+                                                나와 같은 연령대&amp;소득군<br>사람들 보다 <strong>더 많이 쓰고 있어요.</strong>
+                                                <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                                <div class="tooltip">
+                                                    <strong class="tit">비교그룹</strong>
+                                                    <div class="cont">나와 같은 연령대&amp;소득군의 사람들은?<br><br>연령대: 30대<br>월 소득: 300만원~500만원<br>성별: 남성</div>
+                                                    <button class="btn-close"><span>닫기</span></button>
+                                                </div>
+                                            </div>
+                                            <span><i class="icon-18"></i> 1주일<br><strong>250명</strong></span>
+                                        </div>
+                                        <div class="character-graph type2" data-theme="coffee">
+                                            <!--2021-06-15 수정-->
+                                            <!-- coffee(커피), alcohol(음주), store(편의점), taxi(택시비), delivery(배달음식), shopping(홈쇼핑), oil(주유비), mobile(모바일), fastfood(패스트푸드), eatout(외식비) -->
+                                            <div class="graph-area">
+                                                <span style="width:80%"></span><!-- style로 그래프 넓이값 제어 -->
+                                            </div>
+                                            <div class="graph-txt">
+                                                <p class="start-txt">나는 <strong>150,000원</strong></p>
+                                            </div>
+                                            <div class="graph-area sub">
+                                                <span style="width:75%"></span><!-- style로 그래프 넓이값 제어 -->
+                                            </div>
+                                            <div class="graph-txt">
+                                                <p class="start-txt">비교그룹은 <strong>100,000원</strong></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide content-box">
+                                    <div class="challenge-tit">
+                                        <strong class="h3">홈쇼핑 줄이기</strong>
+                                        <button type="button" class=""><span><i class="icon-arrow-right"></i></span></button>
+                                    </div>
+                                    <div class="challenge-info">
+                                        <div class="tit flex-box goals-desc">
+                                            <p>지난달보다 저축금액이 부족해요.<br><strong>더 저축해보세요.</strong></p>
+                                            <span><i class="icon-18"></i> 1주일 <strong>250명</strong></span>
+                                        </div>
+                                        <div class="character-graph type2" data-theme="shopping">
+                                            <!--2021-06-15 수정-->
+                                            <!-- coffee(커피), alcohol(음주), store(편의점), taxi(택시비), delivery(배달음식), shopping(홈쇼핑), oil(주유비), mobile(모바일), fastfood(패스트푸드), eatout(외식비) -->
+                                            <div class="graph-area">
+                                                <span style="width:85%"></span><!-- style로 그래프 넓이값 제어 -->
+                                            </div>
+                                            <div class="graph-txt">
+                                                <p class="start-txt">나는 <strong>150,000원</strong></p>
+                                            </div>
+                                            <div class="graph-area sub">
+                                                <span style="width:75%"></span><!-- style로 그래프 넓이값 제어 -->
+                                            </div>
+                                            <div class="graph-txt">
+                                                <p class="start-txt">비교그룹은 <strong>100,000원</strong></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide content-box">
+                                    <div class="challenge-tit">
+                                        <strong class="h3">통신비 줄이기</strong>
+                                        <button type="button" class=""><span><i class="icon-arrow-right"></i></span></button>
+                                    </div>
+                                    <div class="challenge-info">
+                                        <div class="tit flex-box goals-desc">
+                                            <p>저축금액이 3개월 동안 변화가 없어요.<br><strong>저축금액을 더 늘려보는 건 어떠세요?</strong></p>
+                                            <span><i class="icon-18"></i> 1주일 <strong>250명</strong></span>
+                                        </div>
+                                        <div class="character-graph type2" data-theme="mobile">
+                                            <!--2021-06-15 수정-->
+                                            <!-- coffee(커피), alcohol(음주), store(편의점), taxi(택시비), delivery(배달음식), shopping(홈쇼핑), oil(주유비), mobile(모바일), fastfood(패스트푸드), eatout(외식비) -->
+                                            <div class="graph-area">
+                                                <span style="width:15%"></span><!-- style로 그래프 넓이값 제어 -->
+                                            </div>
+                                            <div class="graph-txt">
+                                                <p class="start-txt">나는 <strong>150,000원</strong></p>
+                                            </div>
+                                            <div class="graph-area sub">
+                                                <span style="width:30%"></span><!-- style로 그래프 넓이값 제어 -->
+                                            </div>
+                                            <div class="graph-txt">
+                                                <p class="start-txt">비교그룹은 <strong>100,000원</strong></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+
+                </section>
+                <!-- //목표 내용 -->
+                <!-- 챌린지 추천// -->
+                <section class="kb-sec bg-gray goals-recommend-challenge">
+                    <strong class="goals-tit h4">도전자가 많은<br>인기 TOP3</strong>
+                    <div class="challenge-box content-swiper-wrap">
+                        <div class="swiper-container content-swiper t01">
+                            <div class="swiper-wrapper">
+                                <!-- 2021-06-15 수정&추가// -->
+                                <div class="swiper-slide content-box">
+                                    <div class="challenge-tit">
+                                        <strong class="h3">커피 줄이기</strong>
+                                        <button type="button" class=""><span><i class="icon-arrow-right"></i></span></button>
+                                    </div>
+                                    <div class="challenge-info">
+                                        <div class="tit flex-box goals-desc">
+                                            <p><strong>30대</strong><span>가 가장 많이 도전중이에요.</span><br><strong>1250명 도전 중!</strong></p>
+                                            <span><i class="icon-18"></i>1주일</span>
+                                        </div>
+                                        <div class="content">
+                                            <span class="img-character">
+                                                <img class="temp" src="../../static/images/goal/icon_coffee.png" alt="커피">
+                                            </span>
+                                            <span class="txt">도전자가 많은 인기 챌린지에<br>참여해보세요!</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide content-box">
+                                    <div class="challenge-tit">
+                                        <strong class="h3">음주 줄이기</strong>
+                                        <button type="button" class=""><span><i class="icon-arrow-right"></i></span></button>
+                                    </div>
+                                    <div class="challenge-info">
+                                        <div class="tit flex-box goals-desc">
+                                            <p><strong>20~30대</strong><span>가 가장 많이 도전중이에요.</span><br><strong>1250명 도전 중!</strong></p>
+                                            <span><i class="icon-18"></i>1주일</span>
+                                        </div>
+                                        <div class="content">
+                                            <span class="img-character">
+                                                <img class="temp" src="../../static/images/goal/icon_alcohol.png" alt="맥주 2잔">
+                                            </span>
+                                            <span class="txt">도전자가 많은 인기 챌린지에<br>참여해보세요!</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide content-box">
+                                    <div class="challenge-tit">
+                                        <strong class="h3">편의점 줄이기</strong>
+                                        <button type="button" class=""><span><i class="icon-arrow-right"></i></span></button>
+                                    </div>
+                                    <div class="challenge-info">
+                                        <div class="tit flex-box goals-desc">
+                                            <p><strong>20~30대</strong><span>가 가장 많이 도전중이에요.</span><br><strong>1250명 도전 중!</strong></p>
+                                            <span><i class="icon-18"></i>1주일</span>
+                                        </div>
+                                        <div class="content">
+                                            <span class="img-character">
+                                                <img class="temp" src="../../static/images/goal/icon_store.png" alt="맥주 2잔">
+                                            </span>
+                                            <span class="txt">도전자가 많은 인기 챌린지에<br>참여해보세요!</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide content-box">
+                                    <div class="challenge-tit">
+                                        <strong class="h3">택시비 줄이기</strong>
+                                        <button type="button" class=""><span><i class="icon-arrow-right"></i></span></button>
+                                    </div>
+                                    <div class="challenge-info">
+                                        <div class="tit flex-box goals-desc">
+                                            <p><strong>20~30대</strong><span>가 가장 많이 도전중이에요.</span><br><strong>1250명 도전 중!</strong></p>
+                                            <span><i class="icon-18"></i>1주일</span>
+                                        </div>
+                                        <div class="content">
+                                            <span class="img-character">
+                                                <img class="temp" src="../../static/images/goal/icon_taxi.png" alt="택시">
+                                            </span>
+                                            <span class="txt">도전자가 많은 인기 챌린지에<br>참여해보세요!</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide content-box">
+                                    <div class="challenge-tit">
+                                        <strong class="h3">배달음식 줄이기</strong>
+                                        <button type="button" class=""><span><i class="icon-arrow-right"></i></span></button>
+                                    </div>
+                                    <div class="challenge-info">
+                                        <div class="tit flex-box goals-desc">
+                                            <p><strong>20~30대</strong><span>가 가장 많이 도전중이에요.</span><br><strong>1250명 도전 중!</strong></p>
+                                            <span><i class="icon-18"></i>1주일</span>
+                                        </div>
+                                        <div class="content">
+                                            <span class="img-character">
+                                                <img class="temp" src="../../static/images/goal/icon_delivery.png" alt="배달 오토바이">
+                                            </span>
+                                            <span class="txt">도전자가 많은 인기 챌린지에<br>참여해보세요!</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide content-box">
+                                    <div class="challenge-tit">
+                                        <strong class="h3">홈쇼핑 줄이기</strong>
+                                        <button type="button" class=""><span><i class="icon-arrow-right"></i></span></button>
+                                    </div>
+                                    <div class="challenge-info">
+                                        <div class="tit flex-box goals-desc">
+                                            <p><strong>20~30대</strong><span>가 가장 많이 도전중이에요.</span><br><strong>1250명 도전 중!</strong></p>
+                                            <span><i class="icon-18"></i>1주일</span>
+                                        </div>
+                                        <div class="content">
+                                            <span class="img-character">
+                                                <img class="temp" src="../../static/images/goal/icon_shopping.png" alt="집과 쇼핑백">
+                                            </span>
+                                            <span class="txt">도전자가 많은 인기 챌린지에<br>참여해보세요!</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide content-box">
+                                    <div class="challenge-tit">
+                                        <strong class="h3">주유비 줄이기</strong>
+                                        <button type="button" class=""><span><i class="icon-arrow-right"></i></span></button>
+                                    </div>
+                                    <div class="challenge-info">
+                                        <div class="tit flex-box goals-desc">
+                                            <p><strong>20~30대</strong><span>가 가장 많이 도전중이에요.</span><br><strong>1250명 도전 중!</strong></p>
+                                            <span><i class="icon-18"></i>1주일</span>
+                                        </div>
+                                        <div class="content">
+                                            <span class="img-character">
+                                                <img class="temp" src="../../static/images/goal/icon_oil.png" alt="주유기">
+                                            </span>
+                                            <span class="txt">도전자가 많은 인기 챌린지에<br>참여해보세요!</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide content-box">
+                                    <div class="challenge-tit">
+                                        <strong class="h3">통신비 줄이기</strong>
+                                        <button type="button" class=""><span><i class="icon-arrow-right"></i></span></button>
+                                    </div>
+                                    <div class="challenge-info">
+                                        <div class="tit flex-box goals-desc">
+                                            <p><strong>20~30대</strong><span>가 가장 많이 도전중이에요.</span><br><strong>1250명 도전 중!</strong></p>
+                                            <span><i class="icon-18"></i>1주일</span>
+                                        </div>
+                                        <div class="content">
+                                            <span class="img-character">
+                                                <img class="temp" src="../../static/images/goal/icon_mobile.png" alt="휴대전화와 코인">
+                                            </span>
+                                            <span class="txt">도전자가 많은 인기 챌린지에<br>참여해보세요!</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide content-box">
+                                    <div class="challenge-tit">
+                                        <strong class="h3">패스트푸드 줄이기</strong>
+                                        <button type="button" class=""><span><i class="icon-arrow-right"></i></span></button>
+                                    </div>
+                                    <div class="challenge-info">
+                                        <div class="tit flex-box goals-desc">
+                                            <p><strong>20~30대</strong><span>가 가장 많이 도전중이에요.</span><br><strong>1250명 도전 중!</strong></p>
+                                            <span><i class="icon-18"></i>1주일</span>
+                                        </div>
+                                        <div class="content">
+                                            <span class="img-character">
+                                                <img class="temp" src="../../static/images/goal/icon_fastfood.png" alt="햄버거, 감자튀김, 콜라 세트">
+                                            </span>
+                                            <span class="txt">도전자가 많은 인기 챌린지에<br>참여해보세요!</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide content-box">
+                                    <div class="challenge-tit">
+                                        <strong class="h3">외식비 줄이기</strong>
+                                        <button type="button" class=""><span><i class="icon-arrow-right"></i></span></button>
+                                    </div>
+                                    <div class="challenge-info">
+                                        <div class="tit flex-box goals-desc">
+                                            <p><strong>20~30대</strong><span>가 가장 많이 도전중이에요.</span><br><strong>1250명 도전 중!</strong></p>
+                                            <span><i class="icon-18"></i>1주일</span>
+                                        </div>
+                                        <div class="content">
+                                            <span class="img-character">
+                                                <img class="temp" src="../../static/images/goal/icon_eatout.png" alt="음식서빙하는 손">
+                                            </span>
+                                            <span class="txt">도전자가 많은 인기 챌린지에<br>참여해보세요!</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- //2021-06-15 수정/추가 -->
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </section>
+                <!-- //챌린지 추천 -->
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+        <!-- Layer (fullpage popup, modal, bottom sheet) // -->
+        <div class="layered">
+            <!-- [MYS_AS_07_00_00_P1] 대상선택 팝업 (작성자: 누리어 시스템 김은경)// -->
+            <!-- 대상선택 팝업// -->
+            <div class="bottom-sheet full-size" data-layered-name="mys_as_07_00_00_p1">
+
+                <div class="bottom-sheet_header">
+                    <span class="tit">연령대상 선택</span>
+                </div>
+                <div class="bottom-sheet_contents">
+                    <!-- 항목이 2개일 경우 // -->
+                    <section class="kb-sec">
+                        <div class="select-lists">
+                            <dl>
+                                <dt>연령대</dt>
+                                <dd>
+                                    <ul class="select-list">
+                                        <li><button type="button"><strong class="tit">20세 미만</strong><i class="icon-20"></i></button></li>
+                                        <li><button type="button"><strong class="tit">20~29세</strong><i class="icon-20"></i></button></li>
+                                        <li><button type="button"><strong class="tit">20~29세</strong><i class="icon-20"></i></button></li>
+                                        <li class="is-active"><button type="button"><strong class="tit">40~49세</strong><i class="icon-20"></i></button></li>
+                                        <li><button type="button"><strong class="tit">50~59세</strong><i class="icon-20"></i></button></li>
+                                        <li><button type="button"><strong class="tit">60세 이상</strong><i class="icon-20"></i></button></li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>월 소득</dt>
+                                <dd>
+                                    <ul class="select-list">
+                                        <li><button type="button"><strong class="tit">100만원 미만</strong><i class="icon-20"></i></button></li>
+                                        <li><button type="button"><strong class="tit">100만원~200만원</strong><i class="icon-20"></i></button></li>
+                                        <li class="is-active"><button type="button"><strong class="tit">200만원~300만원</strong><i class="icon-20"></i></button></li>
+                                        <li><button type="button"><strong class="tit">300만원~400만원</strong><i class="icon-20"></i></button></li>
+                                        <li><button type="button"><strong class="tit">400만원~500만원</strong><i class="icon-20"></i></button></li>
+                                        <li><button type="button"><strong class="tit">500만원~600만원</strong><i class="icon-20"></i></button></li>
+                                        <li><button type="button"><strong class="tit">600만원~700만원</strong><i class="icon-20"></i></button></li>
+                                        <li><button type="button"><strong class="tit">700만원~800만원</strong><i class="icon-20"></i></button></li>
+                                        <li><button type="button"><strong class="tit">800만원~900만원</strong><i class="icon-20"></i></button></li>
+                                        <li><button type="button"><strong class="tit">900만원~1000만원</strong><i class="icon-20"></i></button></li>
+                                        <li><button type="button"><strong class="tit">1000만원 초과</strong><i class="icon-20"></i></button></li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                    </section>
+                    <!-- // 항목이 2개일 경우  -->
+
+                    <!-- 항목이 1개일 경우 // -->
+                    <section class="kb-sec">
+                        <div class="select-lists">
+                            <dl>
+                                <dd>
+                                    <ul class="select-list">
+                                        <li><button type="button"><strong class="tit">20세 미만</strong><i class="icon-20"></i></button></li>
+                                        <li><button type="button"><strong class="tit">20~29세</strong><i class="icon-20"></i></button></li>
+                                        <li><button type="button"><strong class="tit">20~29세</strong><i class="icon-20"></i></button></li>
+                                        <li class="is-active"><button type="button"><strong class="tit">40~49세</strong><i class="icon-20"></i></button></li>
+                                        <li><button type="button"><strong class="tit">50~59세</strong><i class="icon-20"></i></button></li>
+                                        <li><button type="button"><strong class="tit">60세 이상</strong><i class="icon-20"></i></button></li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                    </section>
+                    <!-- // 항목이 1개일 경우  -->
+                </div>
+                <!-- 항목이 1개일 경우 삭제 // -->
+                <div class="bottom-sheet_buttons">
+                    <button class="btn-solid_sticky" data-action="close"><span>확인</span></button>
+                </div>
+                <!-- // 항목이 1개일 경우 삭제 -->
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!--//대상선택 팝업 -->
+        </div>
+        <!-- // Layer (fullpage popup, modal, bottom sheet) -->
+    </div>
+
+    <!-- Script -->
+    <!-- Common Library -->
+    <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
+    <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
+    <script src="../../static/common/lib/current-device.min.js"></script>
+    <script src="../../static/common/lib/moment.min.js"></script>
+    <script src="../../static/common/lib/swiper-bundle.min.js"></script>
+    <!-- <script src="../../static/js/bottomSheet.js"></script> -->
+    <script src="../../static/js/modalPopup.js"></script>
+    <script src="../../static/js/menu.js"></script>
+    <!-- Add Library (this page only)-->
+    <script src="../../static/js/ui.js"></script>
+    <script src="../../static/common/lib/swiper.min.js"></script>
+    <script>
+        var $contentSwiper = $('.content-swiper-wrap');
+        if ($contentSwiper.length > 0) {
+            $contentSwiper.each(function(index) {
+                var $contentSwiper = $(this).find('.swiper-container');
+                var index = index + 1;
+                $contentSwiper.addClass('content-swiper' + index);
+                var swiper = new Swiper('.content-swiper' + index, {
+                    slidesPerView: 'auto',
+                    centeredSlides: 'true',
+                    spaceBetween: 16,
+                    /*2021-06-14 수정*/
+                    autoHeight: 'true',
+                    /*2021-06-08 추가*/
+                    pagination: {
+                        el: $('.content-swiper' + index).find('.swiper-pagination'),
+                        type: 'bullets',
+                        clickable: 'true',
+                    },
+                    navigation: {
+                        nextEl: $('.content-swiper' + index).find('.swiper-button-next'),
+                        prevEl: $('.content-swiper' + index).find('.swiper-button-prev'),
+                    },
+                });
+            });
+        };
+    </script>
+    <script>
+        //최초 선택되는 내용을 바꾸고 싶으면... (ui.js)
+        gfn_gnb.select(3, 0);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_GO_02_01_02] 작성자: 누리어 시스템 황철민 -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>저금통 규칙 수정하기 | 목표 | KB국민은행 마이데이터</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
+    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
+    <link rel="stylesheet" href="../../static/css/ui.css">
+</head>
+
+<body>
+    <div class="skip-nav">
+        <a href="#content">본문으로 이동하기</a>
+    </div>
+    <div class="app">
+        <!-- app-header (for MyMoney) //-->
+        <!-- app-header [s] -->
+        <header class="app-header">
+            <a href="javascript:history.back();" class="btn-history-back" role="button"><i class="icon-back">뒤로가기</i></a>
+            <strong class="page-tit">저금통 규칙 수정하기</strong>
+        </header>
+        <!-- app-header [e] -->
+        <!-- // app-header -->
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content">
+
+                <!-- 저금통 규칙 수정하기 // -->
+                <section class="kb-sec pgbank-rules">
+                    <div class="main-copy">
+                        저금통 규칙을<br>수정할 수 있어요.
+                    </div>
+                    <p>캐릭터를 추가하거나,<br>함께하는 캐릭터를 제외 할 수 있어요.</p>
+
+
+                    <h4 class="h4">누구와 어떤 저축을 도전할까요?</h4>
+                    <div class="character-selection">
+                        <ul>
+                            <li data-theme="lamu">
+                                <input id="checkCharacter1" type="checkbox" name="checkCharacter">
+                                <label for="checkCharacter1">
+                                    <span class="desc">
+                                        <span class="name">라무</span>
+                                        <span class="text"><span>커피</span> 결제 시<br>자동저축</span>
+                                    </span>
+                                    <i class="icon-complete_60"></i>
+                                </label>
+                            </li>
+                            <li data-theme="kolly">
+                                <input id="checkCharacter2" type="checkbox" name="checkCharacter" checked>
+                                <label for="checkCharacter2">
+                                    <span class="desc">
+                                        <span class="name">콜리</span>
+                                        <span class="text"><span>편의점</span> 결제 시<br>자동저축</span>
+                                    </span>
+                                    <i class="icon-complete_60"></i>
+                                </label>
+                            </li>
+                            <li data-theme="ago">
+                                <input id="checkCharacter3" type="checkbox" name="checkCharacter" checked>
+                                <label for="checkCharacter3">
+                                    <span class="desc">
+                                        <span class="name">아거</span>
+                                        <span class="text"><span>택시</span> 탈 때마다<br>자동저축</span>
+                                    </span>
+                                    <i class="icon-complete_60"></i>
+                                </label>
+                            </li>
+                            <li data-theme="bb">
+                                <input id="checkCharacter4" type="checkbox" name="checkCharacter">
+                                <label for="checkCharacter4">
+                                    <span class="desc">
+                                        <span class="name">비비</span>
+                                        <span class="text"><span>배달</span>음식 결제 시<br>자동저축</span>
+                                    </span>
+                                    <i class="icon-complete_60"></i>
+                                </label>
+                            </li>
+                            <li data-theme="kiki">
+                                <input id="checkCharacter5" type="checkbox" name="checkCharacter">
+                                <label for="checkCharacter5">
+                                    <span class="desc">
+                                        <span class="name">키키</span>
+                                        <span class="text"><span>술집</span>에서 결제 시<br>자동저축</span>
+                                    </span>
+                                    <i class="icon-complete_60"></i>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h4 class="h4">얼마나 저축할까요?</h4>
+                    <div class="kb-form" data-status="">
+                        <label for="selectSavingsAmount">금액 선택</label>
+                        <div class="kb-form_inner form-select">
+                            <button type="button" class="selected-option"></button>
+                            <select name="" id="selectSavingsAmount" title="금액 선택">
+                                <option value="">금액 선택</option>
+                                <option value="">1,000원</option>
+                                <option value="" selected>3,000원</option>
+                                <option value="">5,000원</option>
+                                <option value="">10,000원</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="sticky-bottom">
+                        <div class="btn-area">
+                            <button type="button" class="btn-solid_sticky"><span>변경하기</span></button>
+                        </div>
+                    </div>
+                </section>
+                <!-- // 저금통 규칙 수정하기 -->
+
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+        <!-- Layer (fullpage popup, modal, bottom sheet) // -->
+        <div class="layered">
+
+        </div>
+        <!-- // Layer (fullpage popup, modal, bottom sheet) -->
+    </div>
+
+    <!-- Script -->
+    <!-- Common Library -->
+    <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
+    <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
+    <script src="../../static/common/lib/current-device.min.js"></script>
+    <script src="../../static/common/lib/moment.min.js"></script>
+    <script src="../../static/common/lib/swiper-bundle.min.js"></script>
+    <!-- <script src="../../static/js/bottomSheet.js"></script> -->
+    <script src="../../static/js/modalPopup.js"></script>
+    <script src="../../static/js/menu.js"></script>
+    <!-- Add Library (this page only)-->
+    <script src="../../static/js/ui.js"></script>
+    <!-- Add Script -->
+
+    <script>
+        // '본인은 약관 및 상품설명서를 제공받고....' 체크 여부에 따라 '다음' 버튼 활성/비활성
+        $(".js-disabled-checkbox").on("click.ui", function(e) {
+            $(".js-disabled-button").prop("disabled", !$(this).is(":checked"));
+        });
+    </script>
+
+</body>
+
+</html>

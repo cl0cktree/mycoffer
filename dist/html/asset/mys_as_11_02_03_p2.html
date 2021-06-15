@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_AS_11_02_03_P2] 작성자: 누리어 시스템 김은경 -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wish House 플래너 | 자산 | KB국민은행 마이데이터</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="format-detection" content="telephone=no"><!-- 수정 2021-05-21 (폰에서 전화번호 인식 불가)-->
+    <link href="../../static/common/favicons/favicon_32.png" rel="shortcut icon" type="image/x-icon">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon-precomposed">
+    <link href="../../static/common/favicons/favicon_192.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="../../static/common/lib/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../static/common/lib/swiper.min.css">
+    <link rel="stylesheet" href="../../static/css/ui.css">
+</head>
+
+<body>
+    <div class="skip-nav">
+        <a href="#content">본문으로 이동하기</a>
+    </div>
+    <div class="app">
+        <!-- app-header (for MyMoney) //-->
+        <!-- app-header [s] -->
+        <header class="app-header">
+            <strong class="page-tit">Wish House 플래너</strong>
+            <!-- <button class="btn-close"><span>닫기</span></button> -->
+            <!-- 수정 : layer 팝업 -> 페이지로 전환용 -->
+            <a href="javascript:history.back();" class="btn-close" role="button"><span>뒤로가기</span></a>
+        </header>
+        <!-- app-header [e] -->
+        <!-- // app-header (for MyMoney) -->
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content my-asset wish-house-planer">
+
+
+                <!-- 주소입력 // -->
+                <section class="kb-sec full">
+                    <div class="top-area">
+                        <p class="msg">Wish House 매입을 위해 <br>약 <b><span class="num">5.9</span>억원</b>의 자금이 필요합니다.</p>
+                    </div>
+                </section>
+                <section class="kb-sec planer">
+                    <div class="progress-wrap">
+                        <!-- 자산 + 준비자산 + wish gap + 대출 : 100% -->
+                        <!-- 2021-06-15 수정 // -->
+                        <span class="my-house"></span><!-- width : 자산비율 백분율표시 (스크립트 제어) -->
+                        <span class="my-cash" style="left:20%;"></span><!-- left : 자산 , width : 준비자산비율 백분율표시 (스크립트 제어) -->
+                        <span class="wish-gap" style="left:50%;"></span>
+                        <!-- left : wish-gap left: 자산 + 준비자산, width : 백분율 (스크립트 제어) -->
+                        <span class="my-loan" style="left:70%;"></span>
+                        <!-- left : wish-gap left: 자산 + 준비자산 + wish gap, width : 대출 백분율  (스크립트 제어)-->
+                        <!-- width 값은 하단에 제이쿼리 소스에 넣어주세요. 2021-06-15 추가 -->
+                        <!-- // 2021-06-15 수정 -->
+
+                    </div>
+                    <div class="wish-house-price">
+                        <p class="tit">Wish House KB시세</p>
+                        <p class="price"><span class="num">14.9</span>억원</p>
+                    </div>
+                    <div class="my-money-list">
+                        <ul>
+                            <li class="mine">
+                                <p class="txt">My House 자산</p><!-- 2021-06-15 수정 -->
+                                <p class="amount"><span class="num">5.8</span>억원</p>
+                            </li>
+                            <li class="cash">
+                                <p class="txt">Wish House 준비자산</p><!-- 2021-06-15 수정 -->
+                                <p class="amount"><span class="num">5.6</span>억원</p>
+                            </li>
+                            <li class="loan">
+                                <p class="txt">My House 대출</p><!-- 2021-06-15 수정 -->
+                                <p class="amount"><span class="num">2.4</span>억원</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 2021-06-15 수정 // -->
+                    <div class="smart-loan-banner">
+                        <button type="button" data-action="kbSmartLoan">
+                            <span class="tit">KB스마트 대출</span>
+                            <span class="s-txt">
+                                대출 가능금액을 확인할 수 있습니다.
+                            </span>
+                        </button>
+                    </div>
+                    <!-- // 2021-06-15 수정 -->
+                    <ul data-style="list">
+                        <li>세금 및 부대비용(중개보수, 취득세)이 발생할 수
+                            있습니다.</li>
+                    </ul>
+                </section>
+
+                <section class="kb-sec sticky-bottom">
+                    <!-- 자금필요 // -->
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid_sticky lv2" data-action="close"><span>준비자산 수정하기</span></button>
+                        <button type="button" class="btn-solid_sticky" data-action="close"><span>목표설정 바로가기</span></button>
+                    </div>
+                    <!-- // 자금필요 -->
+                    <!-- 부동산준비자산 등록후 자산초과 // -->
+                    <!--
+			<div class="btn-area">
+				<button type="button" class="btn-solid_sticky lv2" data-action="close"><span>준비자산 수정하기</span></button>
+				<button type="button" class="btn-solid_sticky" data-action="goLiiv"><span>리브부동산에서 매물보기</span></button>
+			</div>
+			-->
+                    <!-- // 부동산준비자산 등록후 자산초과 -->
+                    <!-- 부동산준비자산 등록전 자산초과 // -->
+                    <!--
+			<div class="btn-area">
+				<button type="button" class="btn-solid_sticky" data-action="goLiiv"><span>리브부동산에서 매물보기</span></button>
+			</div>
+			-->
+                    <!-- // 부동산준비자산 등록전 자산초과 -->
+                </section>
+
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+        <!-- Layer (fullpage popup, modal, bottom sheet) // -->
+        <div class="layered">
+        </div>
+        <!-- // Layer (fullpage popup, modal, bottom sheet) -->
+    </div>
+
+    <!-- Script -->
+    <!-- Common Library -->
+    <script src="../../static/common/lib/jquery-3.4.1.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.min.js"></script>
+    <script src="../../static/common/lib/jquery-ui.touch.js"></script><!-- 수정 2021-05-25 (jquery ui use in mobile)-->
+    <!-- <script src="../../static/common/lib/gsap.min.js"></script> -->
+    <script src="../../static/common/lib/current-device.min.js"></script>
+    <script src="../../static/common/lib/moment.min.js"></script>
+    <script src="../../static/common/lib/swiper-bundle.min.js"></script>
+    <!-- <script src="../../static/js/bottomSheet.js"></script> -->
+    <script src="../../static/js/modalPopup.js"></script>
+    <script src="../../static/js/menu.js"></script>
+    <!-- Add Library (this page only)-->
+    <script src="../../static/js/ui.js"></script>
+    <!-- Add Script -->
+    <script>
+        $('button[data-action=kbSmartLoan]').on('click', function() {
+            modalPopup({
+                title: "",
+                message: "상세보기 페이지로 이동하시겠습니까?",
+                type: "confirm",
+                textOkButton: "확인",
+                textCancelButton: "취소",
+                onOk: function() {
+
+                },
+                onCancel: function() {
+
+                }
+            });
+        });
+        $('button[data-action=goLiiv]').on('click', function() {
+            modalPopup({
+                title: "",
+                message: "리브부동산으로 이동하시겠습니까?",
+                type: "confirm",
+                textOkButton: "확인",
+                textCancelButton: "취소",
+                onOk: function() {
+
+                },
+                onCancel: function() {
+
+                }
+            });
+        });
+
+        function maxRegistration() {
+            modalPopup({
+                title: "",
+                message: "부동산 등록은 <br>최대 10개까지만 가능합니다.",
+                type: "alert"
+            });
+        }
+
+        //최초 선택되는 내용을 바꾸고 싶으면... (ui.js)
+        gfn_gnb.select(4, 1);
+
+
+        //2021-06-15 start
+        var transitionEnd = 'transitionend webkitTransitionEnd oTransitionEnd transitionend';
+
+        $('.my-asset.wish-house-planer .progress-wrap .my-house').css({
+            "width": "20%", //my house 자산
+        });
+
+        $('.my-house').one(transitionEnd, function() {
+            $(this).addClass('is-active');
+            $(this).next().css({
+                "width": "30%", // wish house 준비자산
+            })
+        });
+
+        $('.my-cash').one(transitionEnd, function() {
+            $(this).addClass('is-active');
+            $(this).next().css({
+                "width": "20%", // wish gap
+            })
+        });
+
+        $('.wish-gap').one(transitionEnd, function() {
+            $(this).addClass('is-active');
+            $(this).next().css({
+                "width": "30%", // my house 대출
+            })
+        });
+
+        $('.my-loan').one(transitionEnd, function() {
+            $(this).addClass('is-active');
+        });
+        //2021-06-15 end
+    </script>
+</body>
+
+</html>
