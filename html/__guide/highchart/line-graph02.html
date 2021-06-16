@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+@@include('@@webRoot/html/_include/app-head.html',{
+"title": "Last Depth | 1st Depth"
+})
+<style>
+    .chart-area{height:calc((100vw - 48px) * 321/574)}
+</style>
+</head>
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header //-->
+        t@@include('@@webRoot/html/_include/app-header.html',{
+            'pageTit' :'line-graph02'
+        })
+        <!-- // app-header -->
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content">
+
+                <section class="kb-sec">
+
+                    <div class="designed-img"><img src="@@webRoot/html/__guide/highchart/images/line-graph02.png" alt=""></div>
+
+                    <!--  그래프 샘플 // -->
+                    <div class="highcharts_column" id="areaChart"></div>
+                    <!-- // 그래프 샘플-->
+
+                </section>
+
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+    </div>
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
+    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
+
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    <script>
+        // highchart 공통 options
+        Highcharts.setOptions({
+            title: { text: null },
+            subTitle: { text: null },
+            legend: { enabled: false },
+            credits: { enabled: false },
+            tooltip: { enabled: false },
+            label : { fontFamily: 'KBFGText'},
+            credits: { enabled: false },
+            tooltip: { enabled: false },
+            exporting: { enabled: false },
+        });
+        // spline chart 선언
+        var columnChart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'areaChart', // chart 삽입 target ID
+                type: "areaspline",
+                height: (3 / 4 * 100) + '%' // 4:3 비율로 설정
+            },
+            xAxis: {
+                type: "category",
+                categories: ["3월", "4월", "5월", "6월 13일"],
+                labels: {
+                    style: {
+                        color: "#aab0b8",
+                        fontSize: '3.733vw',
+                        fontFamily: 'KBFGText',
+                    }
+                },
+                plotLines: [{
+                    color: '#d575c9',
+                    width: 1,
+                    value: 2,
+                    zIndex: 50,
+                    dashStyle: 'dash'
+                }]
+            },
+            yAxis: {
+                enabled: false,  // 사용 안함
+                labels: { enabled: false },  // 축 lebel 사용 안함
+                title: { enabled: false }, // 축 title 사용 안함
+                tickWidth: 0,  // 그리드 라인 너비
+                gridLineColor: 'transparsnt',  // 그리드 라인 컬러,
+                plotLines: [{
+                    color: '#c7cbd0',
+                    width: 1,
+                    value: 400000,
+                    zIndex: 50,
+                    dashStyle: 'dot'
+                }]
+            },
+            plotOptions: {
+                series: {
+                    color: '#c7ccd1', // 기본색상
+                    lineWidth: 4,
+                    marker: {
+                        enabled: false,
+                    },
+                }
+            },
+            series: [{
+                lineColor: '#d575c9',
+                color: '#f7f7f8',
+                data:
+                    [450000, 520000, 
+                        { // 특정 data값에 대하여 dataLabel을 붙임
+                            y: 555210,
+                            marker: {
+                                symbol: 'circle',
+                                enabled: true,
+                                radius: 4,
+                            },
+                            dataLabels: {
+                                enabled: true,
+                                formatter: function () { 
+                                    return "6월 4일<br>입금 " + gfn_comma3Digit(this.point.y) + "원<br>출금 " + gfn_comma3Digit(this.point.y) + "원" // dataLbael의 형태 설정
+                                    // return gfn_comma3Digit(this.point.y) + "원" // dataLbael의 형태 설정
+                                },
+                                padding: 10,
+                                backgroundColor: "#FFF",
+                                shadow: true,
+                                x: -90,
+                                y: -10,
+                                borderRadius: 2,
+                                verticalAlign: 'bottom',
+                                style: {
+                                    fontWeight: 'normal',
+                                    fontSize: '4vw',
+                                    fontFamily: "KBFGText",
+                                    
+                                },
+                            }
+                        }, 350000
+                    ]
+                }
+            ]
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,485 @@
+<!-- <!DOCTYPE html> -->
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Highcharts"
+    })
+
+    <link rel="stylesheet" href="./resources/guide.css">
+    <link rel="stylesheet" href="./resources/jquery-ui.css">
+    <link rel="stylesheet" href="./resources/a11y-dark.min.css">
+    <script src="./resources/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <style>
+        .guide{line-height:1.8;}
+        .guide-container{padding-bottom:120px;}
+        .guide h2{font-size:28px;}
+        .guide div + h2{margin-top:80px;}        
+        .guide h2 + div{margin-top:20px;}
+        .guide h2 + div > ol:first-child{font-size:20px;}
+        .guide dt{margin-top:28px;font-size:18px;font-weight:bold;}
+        .guide dd{margin-top:16px;}
+
+        body.guide .box{border:0}
+        body.guide .flex-dl > dd:not(.guide-description){position:relative;width:auto;max-width:500px;padding:0}
+        body.guide .highcharts-box .content-box-info .info-amount dt,
+        body.guide .highcharts-box .content-box-info .info-amount dd{margin-top:0}
+        body.guide .highcharts-box .highcharts-figure .highcharts_column{min-width:330px}
+        .btn-fold{display:block;width:100%}
+        .box.fold .flex-dl > dt{height:80px;overflow:hidden}
+        .box.fold.is-active .flex-dl > dt{height:auto}
+
+        .chart-sample{margin-top:30px;}
+        .chart-sample ul{display:flex;flex-wrap:wrap;}
+        .chart-sample li{flex:0 1 320px;margin:10px;padding:10px;text-align:center;border:1px solid #ddd;}
+        .chart-sample li .tit{display:block;font-weight:bold;}
+    </style>
+</head>
+
+<body class="guide">
+    <div class="guide-header">
+        <h1>GUIDE</h1>
+        <ul class="gnb">
+            <li><a href="./atom.html">Atom</a></li>
+            <li><a href="./molecule.html">Molecule</a></li>
+            <li><a href="./organism.html">Organism</a></li>
+            <li><a href="./template.html">Template</a></li>
+            <li class="is-active"><a href="./highcharts-sample.html">Highcharts</a></li>
+        </ul>
+    </div>
+    <div class="guide-container">
+
+        <h2>Highcharts</h2>        
+        <div>
+            <ol>
+                <li>* swiper</li>
+            </ol>
+            <dl>
+                <dt>필요한 파일</dt>
+                <dd>
+                    <p>1) <b>highcharts.js</b> : @@webRoot/static/common/lib/highcharts/highcharts.js</p>
+                    <p>2) <b>highcharts-setting.js</b> : @@webRoot/static/common/lib/highcharts/highcharts-setting.js</p>
+                    <p>3) <b>막대그래프 radius</b> : @@webRoot/static/common/lib/highcharts/rounded-corners.js</p>
+                </dd>
+            </dl>
+            <dl>
+                <dt>차트 영역 유형</dt>
+                <dd>
+                    <p>1) square형 (.charts-type_square)</p>
+                    <p>2) full width형 (.charts-type_full)</p>
+                </dd>
+                <dt>차트 유형</dt>
+                <dd>
+                    <p><a href="">1) <b>Colmun</b> : 세로형 막대그래프</a></p>
+                    <p><a href="">2) <b>Column + Area</b> : 세로형 막대 + 영역그래프</a></p>
+                </dd>
+            </dl>
+        </div>
+
+        <div class="chart-sample">
+            <h2>Chart 타입별 샘플 <span>Click : 샘플페이지(새창)</span></h2>
+            <ul>
+                <li>
+                    <a href="./highchart/bar-graph01.html" target="_blank">
+                        <strong class="tit">바형 그래프 1</strong>
+                        <img src="./highchart/images/bar-graph01.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="./highchart/bar-graph02.html" target="_blank">
+                        <strong class="tit">바형 그래프 2</strong>
+                        <img src="./highchart/images/bar-graph02.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="./highchart/bar-graph03.html" target="_blank">
+                        <strong class="tit">바형 그래프 3</strong>
+                        <img src="./highchart/images/bar-graph03.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="./highchart/bar-graph04.html" target="_blank">
+                        <strong class="tit">바형 그래프 4</strong>
+                        <img src="./highchart/images/bar-graph04.png" alt="">
+                    </a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="./highchart/donut-graph01.html" target="_blank">
+                        <strong class="tit">도넛형 그래프 1</strong>
+                        <img src="./highchart/images/donut-graph01.png" alt="">
+                    </a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="./highchart/line-graph01.html" target="_blank">
+                        <strong class="tit">라인형 그래프 1</strong>
+                        <img src="./highchart/images/line-graph01.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="./highchart/line-graph02.html" target="_blank">
+                        <strong class="tit">라인형 그래프 2</strong>
+                        <img src="./highchart/images/line-graph02.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="./highchart/line-graph03.html" target="_blank">
+                        <strong class="tit">라인형 그래프 3</strong>
+                        <img src="./highchart/images/line-graph03.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="./highchart/line-graph05.html" target="_blank">
+                        <strong class="tit">라인형 그래프 4</strong>
+                        <img src="./highchart/images/line-graph05.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="./highchart/line-graph06.html" target="_blank">
+                        <strong class="tit">라인형 그래프 5</strong>
+                        <img src="./highchart/images/line-graph06.png" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="box mt20">
+            <h2><span>대표 타입</span></h2>
+            <dl class="flex-dl">
+                <dt>
+                    <pre>
+                        <code>
+
+                        </code>
+                    </pre>
+                </dt>
+                <dd>
+                    <div class="highcharts-box no-space">
+                        <div class="graph-area">
+                            <figure class="highcharts-figure content-box">
+                                <div class="content-box-info">
+                                    <div class="content-box-tit flex-box">
+                                        <h4>다가오는 정기지출 <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                            <div class="tooltip">
+                                                <strong class="tit">툴팁타이틀영역</strong>
+                                                <div class="cont">
+                                                    <ul data-style="list">
+                                                        <li>툴립영역으로 기본형과 타이틀형이 있습니다.</li>
+                                                        <li>툴립영역으로 기본형과 타이틀형이 있습니다.</li>
+                                                        <li>툴립영역으로 기본형과 타이틀형이 있습니다.</li>
+                                                    </ul>
+                                                </div>
+                                                <button class="btn-close"><span>닫기</span></button>
+                                            </div>
+                                        </h4>
+                                        <button class="btn-more"><i class="icon-more_24"></i></button>
+                                        <span class="date">21.4.26~5.25</span>
+                                    </div>
+                                    <dl class="info-amount">
+                                        <dt><strong>예정금액</strong></dt>
+                                        <dd><strong><em class="num">3,500,000</em>원</strong><span> &sol; <em class="num">12</em>건</span></dd>
+                                    </dl>
+                                </div>
+                                <!-- [chart area] //-->
+                                <!--
+                                    [차트 디자인 정보]
+                                    * 그래프(원) 색상(컬러별)
+                                    - 노란색 :  #ffd338;
+                                    - 회색 :  #c6cbd0;
+                                    - 주황색 : #ff5858'
+
+                                    - 차트 텍스트 컬러/크기 : #26282c/14px
+                                    - X축 텍스트 컬러/크기 : #8c949e/14px
+                                    - data labels 텍스트 컬러/크기 : #ff5858/14px
+                                -->
+                                <div class="highcharts_column" id="">
+                                    <img class="temp" src="../../static/images/_temp/chart_ex0201.png" alt="차트 예시 이미지">
+                                </div>
+                                <!--// [chart area] -->
+                            </figure>
+                        </div>
+                        <div class="swiper-container t01 mt16">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure content-box">
+                                            <div class="content-box-info">
+                                                <div class="content-box-tit">
+                                                    <h4 class="h4">이번달 정기지출 소비 패턴</h4>
+                                                    <p class="content-box-desc">이번달 <strong>식비</strong>지출이 많았어요</p>
+                                                </div>
+                                            </div>
+                                            <!-- [chart area] //-->
+                                            <!--
+                                                [차트 디자인 정보]
+                                                * 그래프(막대) 색상(컬러별)
+                                                - 노란색 :  #ffd338;
+                                                - 회색 :  #c6cbd0;
+                                                - 주황색 : #ff5858'
+
+                                                - 차트 텍스트 컬러/크기 : #26282c/14px
+                                                - X축 텍스트 컬러/크기 : #8c949e/14px
+                                                - data labels 텍스트 컬러/크기 : #ff5858/14px
+                                            -->
+                                            <div class="highcharts_column" id="">
+                                                <img class="temp" src="../../static/images/_temp/chart_ex0203.png" alt="차트 예시 이미지">
+                                            </div>
+                                            <!--// [chart area] -->
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure content-box">
+                                            <div class="content-box-info">
+                                                <div class="content-box-tit">
+                                                    <h4 class="h4">월간 정기지출 추이</h4>
+                                                    <p class="content-box-desc"><strong>김국민</strong>님 이번달 정기지출이 많네요.<br>조금 줄여보는 건 어떨까요?</p>
+                                                </div>
+                                            </div>
+                                            <!-- [chart area] //-->
+                                            <!--
+                                                [차트 디자인 정보]
+                                                * 그래프(막대) 색상(컬러별)
+                                                - 노란색 :  #ffd338;
+                                                - 회색 :  #c6cbd0;
+                                                - 주황색 : #ff5858'
+
+                                                - 차트 텍스트 컬러/크기 : #26282c/14px
+                                                - X축 텍스트 컬러/크기 : #8c949e/14px
+                                                - data labels 텍스트 컬러/크기 : #ff5858/14px
+                                            -->
+                                            <div class="highcharts_column" id="">
+                                                <img class="temp" src="../../static/images/_temp/chart_ex0202.png" alt="차트 예시 이미지">
+                                            </div>
+                                            <!--// [chart area] -->
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <hr>
+
+        <div class="mt48">* 이름을 클릭하면 source 영역이 펼쳐집니다.</div>
+        <div class="box fold mt20">
+            <h2><button type="button" class="btn-fold"><span>Column</span></button></h2>
+            <dl class="flex-dl">
+                <dt>
+                    <pre>
+                        <code>
+
+                        </code>
+                    </pre>
+                </dt>
+                <dd>
+                    <div class="highcharts-box">
+                        <div class="swiper-container t01">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure content-box">
+                                            <div class="highcharts_column chart_target" id="columnChart01"></div>
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure content-box">
+                                            <div class="highcharts_column chart_target" id="columnChart02"></div>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <hr>
+
+        <div class="mt48">* 이름을 클릭하면 source 영역이 펼쳐집니다.</div>
+        <div class="box fold mt20">
+            <h2><button type="button" class="btn-fold"><span>Column + Area</span></button></h2>
+            <dl class="flex-dl">
+                <dt>
+                    <pre>
+                        <code>
+
+                        </code>
+                    </pre>
+                </dt>
+                <dd>
+                    <div class="highcharts-box charts-type_square">
+                        <div class="swiper-container t01">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure content-box">
+                                            <div class="highcharts_column" id="columnAreaChart"></div>
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure content-box">
+                                            <div class="highcharts_column" id="columnAreaChart_test"></div>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <hr>
+
+        <div class="mt48">* 이름을 클릭하면 source 영역이 펼쳐집니다.</div>
+        <div class="box fold mt20">
+            <h2><button type="button" class="btn-fold"><span>Double Area</span></button></h2>
+            <dl class="flex-dl">
+                <dt>
+                    <pre>
+                        <code>
+
+                        </code>
+                    </pre>
+                </dt>
+                <dd>
+                    <div class="highcharts-box charts-type_square">
+                        <div class="swiper-container t01">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure content-box">
+                                            <div class="highcharts_column" id="doubleAreaChart"></div>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <hr>
+
+        <div class="mt48">* 이름을 클릭하면 source 영역이 펼쳐집니다.</div>
+        <div class="box fold mt20">
+            <h2><button type="button" class="btn-fold"><span>Bar</span></button></h2>
+            <dl class="flex-dl">
+                <dt>
+                    <pre>
+                        <code>
+
+                        </code>
+                    </pre>
+                </dt>
+                <dd>
+                    <div class="highcharts-box auto-ht">
+                        <div class="swiper-container t01">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure content-box">
+                                            <div class="highcharts_column" id="barChart"></div>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <hr>
+
+        <div class="mt48">* 이름을 클릭하면 source 영역이 펼쳐집니다.</div>
+        <div class="box fold mt20">
+            <h2><button type="button" class="btn-fold"><span>Spline + Area</span></button></h2>
+            <dl class="flex-dl">
+                <dt>
+                    <pre>
+                        <code>
+
+                        </code>
+                    </pre>
+                </dt>
+                <dd>
+                    <div class="highcharts-box auto-ht">
+                        <div class="swiper-container t01">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure content-box">
+                                            <div class="highcharts_column" id=""></div>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <hr>
+
+    </div>
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="./resources/guide.js"></script>
+
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <script src="@@webRoot/static/common/lib/swiper.min.js"></script>
+    <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>
+    <script src="@@webRoot/static/common/lib/highcharts/highcharts-setting.js"></script>
+    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
+    <script>
+        // guide 관련
+        $('.btn-fold').on('click', function(){
+            $(this).closest('.fold').toggleClass('is-active');
+        });
+
+        // highcharts : COLUMN
+        var columnChartCategory = ["1월", "2월", "3월", "4월", "5월", "6월"];
+        var columnChartData01 = [200000, 680000, 350000, 680000, 860000, {y: 975333, color: colorTheme01.point, dataLabels: dataLabels}];
+        var columnChartData02 = [700000, 200000, 350000, 280000, 660000, {y: 975333, dataLabels: dataLabels}];
+        setColumnChart('columnChart01', columnOption, colorTheme01, columnChartCategory, columnChartData01);
+        setColumnChart('columnChart02', columnOption, colorTheme02, columnChartCategory, columnChartData02);
+        
+        // highcharts : COLUMN_AREA
+        var columnAreaCategory = ["1", "5", "10", "15", "20", "25", "30"];
+        var columnAreaDataBasic = [50, 80, 106, 80, 71, 129, 150];
+        var columnAreaDataMain = [100, 80, 140, 50, 70, {y: 80, dataLabels: dataLabels}, 60];
+        setColumnAreaChart('columnAreaChart', columnAreaOption, colorTheme03, columnAreaCategory, columnAreaDataBasic, columnAreaDataMain, '일별지출', '6개월 평균지출');
+        setColumnAreaChart('columnAreaChart_test', columnAreaOption, colorTheme01, columnAreaCategory, columnAreaDataBasic, columnAreaDataMain, '일별지출', '6개월 평균지출');
+
+        // highcharts : DOUBLE_AREA
+        var doubleAreaCategory = ["1", "5", "10", "15", "20", "25", "30"];
+        var doubleAreaData01 = [1436,2063,3057,1900,1369,640,1005,2618,5444,8822,9914,9620,9326,5113,4113,3113,2000,1113,513,213];
+        var doubleAreaData02 = [0,426,660,869,1060,1605,3089,4339,4399,5538,6643,7092,8478,9915,7502,4900,4500,2800,1500,500];
+        setDoubleAreaChart('doubleAreaChart', doubleColumnOption, colorTheme03, doubleAreaData01, doubleAreaData02, '일별지출', '6개월 평균지출');
+
+        // highcharts : BAR_AREA
+        var barCategory = ["입출금/페이","예적금","투자","보험","연금(은퇴)","대출","부동산","자동차"];
+        var barData01 = [107, 90, 255, 203, 150, 110, 140, 190];
+        var barData02 = [133, 156, 257, 208, 100, 90, 140, 190];
+        setBarChart('barChart', barOption, colorTheme04, barCategory, barData01, barData02, '나', '유사군');
+    </script>
+</body>
+
+</html>

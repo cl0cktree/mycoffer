@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_AS_11_02_02_P1] 작성자: 누리어 시스템 김은경 -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "My House 상세 | 자산"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-header-close.html',{
+			'pageTit' :'My House 상세'
+		}) 
+		<!-- // app-header (for MyMoney) -->
+
+		<!-- app-container //-->
+		<div class="app-container">
+
+			<!-- app-content // -->
+			<main class="app-content my-asset house-view my">
+
+				
+		<!-- 주소입력 // -->
+		<section class="kb-sec">
+			<div class="top-area">
+				<p class="address">레미안퍼스티지 101동 405호 <br>(47F평/156m )</p>				
+				<p class="nick-name">별명이 있으면 나옴</p>
+			</div>			
+		</section>
+		<section class="kb-sec full house-data-list">
+			<dl class="description-list type2">
+				<dt>현재시세</dt>
+				<dd class="amount"><span class="num">12</span>억원</dd>
+				<dt>매입가</dt>
+				<dd class="amount"><span class="num">9</span>억 <span class="num">1,000</span>만원</dd>
+				<dt>매입일</dt>
+				<dd class="date">2020.01.20</dd>
+				<dt>시세차익</dt>
+				<dd class="amount plus"> <em><span class="num">2,000</span>만원 (<span class="num">44.5%</span>)</em></dd><!-- 2021-06-11 공백 수정 -->
+				<dt>지난달대비</dt>
+				<dd class="amount minus"> <em><span class="num">8,500</span>만원 (<span class="num">44.5%</span>)</em></dd><!-- 2021-06-11 공백 수정 -->
+				<dt>세입자보증금</dt>
+				<dd class="amount"><span class="num">2</span>억 <span class="num">1,000</span>만원</dd>
+				<dt>세입자월세</dt>
+				<dd class="amount"><section class="num">50만원</section></dd>
+			</dl>
+		</section>
+		<section class="kb-sec kb-conditions">
+			<h4 class="h4">KB 시세</h4>
+			<ul class="btn-segmented">
+				<li><button class="is-selected"><span>전체</span></button></li>
+				<li><button><span>5년</span></button></li>
+				<li><button><span>3년</span></button></li>
+			</ul>
+			<!-- [chart area] //-->
+			<!--
+				[차트 디자인 정보]
+				* 그래프(line + scatter) 색상(컬러별)
+				- 노란색 :  #ffd237;
+				- 오렌지색 :  #ff9901;
+				- 노란색 점 : #ffd237 투명도 40%
+				- 오렌지색 점 : #ff9901 투명도 40%
+				- 회색 : #edf0f4
+
+				- 차트 텍스트 컬러/크기 : #26282c/14px
+				- X,Y축 텍스트 컬러/크기 : #8c949e/14px
+				- data labels 텍스트 컬러/크기 : #26282c/14px
+				- 범주 타이틀 : #26282c/14px bold
+				
+			-->
+			<div class="highcharts_column" id="">
+				<img class="temp" src="@@webRoot/static/images/_temp/chart_as1102.png" alt="차트 예시 이미지">
+			</div>
+			<!--// [chart area] -->
+			<!-- 2021-06-11 수정 // -->
+			<div class="conditions-con">
+				<dl>
+					<dt>매매</dt>
+					<dd>
+						<span class="tit kb">KB시세</span>
+						<button type="button" class="btn-line_table">범위보기</button>
+					</dd>
+					<dd>
+						<span class="tit selling">실거래가</span>
+					</dd>
+					<dd>
+						<span class="tit publish">공시가격</span>
+					</dd>
+					<dt>전세</dt>
+					<dd>
+						<span class="tit kb">KB시세</span>
+						<button type="button" class="btn-line_table disabled" >범위보기</button>
+					</dd>
+					<dd>
+						<span class="tit selling">실거래가</span>
+					</dd>
+				</dl>
+
+			</div>
+			<!-- // 2021-06-11 수정 -->
+		</section>
+		<section class="kb-sec my-house-loan">
+			<h4 class="h4">My House 대출</h4>
+			<dl class="description-list">
+				<dt>상품명(3.16%)</dt>
+				<dd class="amount"><span class="num">284,225,000</span>원</dd>
+				<dt>상품명(3.16%)</dt>
+				<dd class="amount"><span class="num">284,225,000</span>원</dd>
+			</dl>
+			<div class="percentage-graph type1">
+				<div class="graph-area">
+					<span style="width:50%"></span><!-- style로 그래프 넓이값 제어 -->
+				</div>
+				<div class="graph-txt">
+					<p class="start-txt">대출 잔액 <span class="num">45.5%</span></p><!-- 시작부분 텍스트 -->
+					<p class="current-txt" style="left:50%;"></p><!-- 현재 텍스트 (style로 텍스트 위치값 제어) -->
+					<p class="end-txt">KB시세 평균가</p><!-- 마지막부분 텍스트 -->
+				</div>
+			</div>
+			<div class="btn-area">
+				<a href="#" class="btn-line"><span>담보대출 상품보기</span></a>
+			</div>
+		</section>
+		<section class="kb-sec other-conditions">
+			<h4 class="h4">주변 시세</h4>
+			<ul class="btn-segmented">
+				<li>
+					<button class="is-selected"><span>서초구</span></button>
+					<div class="average-box">
+						<span>서초구 평당 평균 <em><span class="num">140,665,210</span>원</em> </span>
+					</div>
+				</li>
+				<li>
+					<button><span>방배동</span></button>
+					<div class="average-box">
+						<span>방배동 평당 평균 <em><span class="num">140,665,210</span>원</em> </span>
+					</div>
+				</li>
+			</ul>
+			
+			<div class="graph-area">
+				<h5 class="h5">Top 10단지</h5>
+				<p class="unit-type">단위 : 만원</p>
+				<!-- [chart area] //-->
+				<!--
+					[차트 디자인 정보]
+					* 그래프(막대) 색상(컬러별)
+					- 노란색 :  #ffd237;
+					- 회색점선 : #d3d9dc
+
+					
+					- Y축 텍스트 컬러/크기 : #26282c/14px
+					
+				-->
+				<div class="highcharts_column type1" id="">
+					<img class="temp" src="@@webRoot/static/images/_temp/chart_as1102_2.png" alt="차트 예시 이미지">
+				</div>
+				<div class="highcharts_column type2" id="">
+					<img class="temp" src="@@webRoot/static/images/_temp/chart_as1102_5.png" alt="차트 예시 이미지">
+				</div>
+				<!--// [chart area] -->		
+				<div class="info-box">
+					<i class="icon-bang_20_gray"></i> 전용면적 <span class="num">25.71</span>평 초과~<span class="num">30.85</span>평 이하가 있는
+					단지 중 평당 매매 KB시세 상위 <span class="num">10</span>개 단지입니다.
+				</div>		
+			</div>			
+			<button class="btn-view-more" data-action="moreViewChart"><span><i class="icon-plus_20"></i> <b>더보기</b></span></button>			
+		</section>
+		<section class="kb-sec other-expenses">
+			<h4 class="h4">같은 평형의 관리비</h4>
+			<!-- [chart area] //-->
+			<!--
+				[차트 디자인 정보]
+				* 그래프(막대) 색상(컬러별)
+				- 노란색 :  #ffd237;
+				- 회색점선 : #d3d9dc;
+				- 오렌지색 : #fa7b4e;
+
+				
+				- Y축 텍스트 컬러/크기 : #26282c/14px
+				
+			-->
+			<div class="highcharts_column" id="">
+				<img class="temp" src="@@webRoot/static/images/_temp/chart_as1102_3.png" alt="차트 예시 이미지">
+			</div>
+			<!--// [chart area] -->		
+		</section>
+	
+				
+
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+	<script>
+		$('button[data-action=moreViewChart]').one('click',function(){
+            $(this).prev('.graph-area').addClass('is-active');
+            $(this).hide();
+        });  
+		$('.my-asset .conditions-con .btn-line_table').click(function(){
+			var chk = $(this).hasClass('disabled');
+			if(chk){
+				$(this).removeClass('disabled');
+			}else{
+				$(this).addClass('disabled');
+			}
+		})
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [mys_ex_01] 작성자 : 누리어 시스템 김삼희 -->
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "LAYER | 가계부"
+    })
+    <style>
+        .layer-call{max-width:300px;margin:0 auto;padding:40px 0;}
+        .layer-call > button{flex-flow:column;margin-top:10px;}
+        .layer-call > button:before{content:attr(data-page-id);}
+        .layer-call > button span{display:block;font-size:16px}
+    </style>
+</head>
+<body>    
+    <div class="layer-call">
+        <!-- 지출 > 가계부 //--->
+        <h1 class="h2">가계부</h1>
+        <button type="button" class="btn-line" data-call-layered="bsDailyExpenseGraph" data-page-id="MYS_EX_01_00_00_P01"><span>일 지출액 추이 그래프</span></button>
+        <button type="button" class="btn-line" data-call-layered="bsExpenseAccountBookSetting" data-page-id="MYS_EX_01_06_00"><span>가계부 설정</span></button>
+        <button type="button" class="btn-line" data-call-layered="bsExpenseListFilterSetting" data-page-id="MYS_EX_01_01_02_P"><span>필터 설정 팝업</span></button>
+        <button type="button" class="btn-line" data-call-layered="bsExpenseListSearch" data-page-id="MYS_EX_01_01_03_P"><span>검색 팝업</span></button>
+        <button type="button" class="btn-line" data-call-layered="bsCalendar" data-page-id="MYS_EX_01_05_01_P"><span>날짜 선택 팝업 (지출 공통)</span></button>
+        <button type="button" class="btn-line" data-call-layered="bsUserRegisterSetCategory_import" data-page-id="MYS_EX_01_05_02_P"><span>카테고리 설정 팝업 : 수입</span></button>
+        <button type="button" class="btn-line" data-call-layered="bsUserRegisterSetCategory_expense" data-page-id="MYS_EX_01_05_02_P01"><span>카테고리 설정 팝업 : 지출</span></button>
+        <button type="button" class="btn-line" data-call-layered="bsUserRegisterSetCategory_transfer" data-page-id="MYS_EX_01_05_02_P02"><span>카테고리 설정 팝업 : 이체</span></button>
+        <button type="button" class="btn-line" data-call-layered="bsUserRegisterSetCategoryIcon" data-page-id="MYS_EX_01_05_04_P"><span>카테고리 아이콘 선택 (지출 공통)</span></button>
+        <button type="button" class="btn-line" data-call-layered="bsTime" data-page-id="MYS_EX_01_05_05_P"><span>시간 선택 팝업 (지출 공통)</span></button>
+        <button type="button" class="btn-line" data-call-layered="bsUserRegisterExpenseFormsInstallment" data-page-id="MYS_EX_01_05_06_P"><span>할부 선택 팝업 (지출 공통)</span></button>
+        <button type="button" class="btn-line" data-call-layered="userRegisterExpenseFormsMethod" data-page-id="MYS_EX_01_05_07_P"><span>거래수단 선택 팝업 (지출 공통)</span></button>
+        <button type="button" class="btn-line" data-call-layered="expenseAccountBookSettingDay" data-page-id="MYS_EX_01_06_01_P"><span>월 시작일 설정</span></button>
+        <br>
+        <br>
+        <button type="button" class="btn-line" onClick="addCategoryLimitNumber()"><span>오류메시지 : 카테고리 추가 갯수 제한</span></button>
+        <button type="button" class="btn-line" onClick="deleteCategoryNotice01()"><span>오류메시지 : 카테고리 삭제(안내)</span></button>
+        <button type="button" class="btn-line" onClick="deleteCategoryNotice02()"><span>오류메시지 : 카테고리 삭제</span></button>
+        <button type="button" class="btn-line" data-call-modal="changeCategoryNotice"><span>오류메시지 : 카테고리 변경</span></button>
+        <!--// 지출 > 가계부 --->
+    </div>
+
+    <div class="layered">
+        <!-- Bottom Sheet // -->
+        @@include('@@webRoot/html/expense/layered/mys_ex_01_01_00_p01.html')
+        @@include('@@webRoot/html/expense/layered/mys_ex_01_01_02_p.html')
+        @@include('@@webRoot/html/expense/layered/mys_ex_01_05_02_p.html')
+        @@include('@@webRoot/html/expense/layered/mys_ex_01_05_02_p01.html')
+        @@include('@@webRoot/html/expense/layered/mys_ex_01_05_02_p02.html')
+        @@include('@@webRoot/html/expense/layered/mys_ex_01_01_03_p.html')
+        @@include('@@webRoot/html/expense/layered/mys_ex_01_05_01_p.html')
+        @@include('@@webRoot/html/expense/layered/mys_ex_01_05_04_p.html')
+        @@include('@@webRoot/html/expense/layered/mys_ex_01_05_06_p.html')
+        @@include('@@webRoot/html/expense/layered/mys_ex_01_05_07_p.html')
+        @@include('@@webRoot/html/expense/layered/mys_ex_01_06_00.html')
+        @@include('@@webRoot/html/expense/layered/mys_ex_01_06_01_p.html')
+        <!-- 공통 -->
+        @@include('@@webRoot/html/_layered/bs-time.html')
+        @@include('@@webRoot/html/_layered/bs-calendar.html')
+        <!-- // Bottom Sheet -->
+        <!-- Modal // -->
+        <!--// 상세보기 > 카테고리 변경하기 -->
+        <!-- 상세보기 > 카테고리 변경하기 //-->
+        <div class="modal modal_radioOption" id="changeCategoryNotice">
+            <div class="modal_header">
+                <strong class="tit">카테고리 변경하기</strong>
+            </div>
+            <div class="modal_contents">
+                <p>해당 내역의 [카테고리 분류]를 다른 카테고리로 변경하시겠습니까?</p>
+                <ul class="radio-group">
+                    <li><span class="form-radio"><input type="radio" id="changeOptionOnce01" name="changeCategoryType" checked=""><label for="changeOptionOnce01">이번만 변경</label></span></li>
+                    <li><span class="form-radio"><input type="radio" id="changeOptionAlways01" name="changeCategoryType"><label for="changeOptionAlways01">항상 변경</label></span></li>
+                </ul>
+            </div>
+            <div class="modal_buttons btn-area">
+                <button class="btn-solid_sticky lv2 cancel" data-action="close"><span>취소</span></button>
+                <button class="btn-solid_sticky ok"><span>확인</span></button>
+            </div>
+        </div>
+        <div class="modal modal_radioOption" id="hideList">
+            <div class="modal_header">
+                <strong class="tit">내역에서 숨기기</strong>
+            </div>
+            <div class="modal_contents">
+                <p>[김국민 통장적요내용출력] {지출 or 이체}을(를) 제외하시겠습니까?</p>
+                <ul class="radio-group">
+                    <li><span class="form-radio"><input type="radio" id="changeOptionOnce02" name="hideListType" checked=""><label for="changeOptionOnce02">이번만 변경</label></span></li>
+                    <li><span class="form-radio"><input type="radio" id="changeOptionAlways02" name="hideListType"><label for="changeOptionAlways02">항상 변경</label></span></li>
+                </ul>
+            </div>
+            <div class="modal_buttons btn-area">
+                <button class="btn-solid_sticky lv2 cancel" data-action="close"><span>취소</span></button>
+                <button class="btn-solid_sticky ok"><span>확인</span></button>
+            </div>
+        </div>
+        <!-- // Modal -->
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+
+    <script>
+        function addCategoryLimitNumber() {
+            modalPopup({
+                title: "",
+                message: "카테고리 추가 기능 개수는 최대 20개입니다."
+            });
+        }
+        function deleteCategoryNotice01(){
+            modalPopup({
+                title: "",
+                message: "%선택한상세카테고리명%을 삭제하시면 해당 지출내역들은 모두 %현재카테고리명의 기타%로 변경됩니다. 정말 삭제하시겠습니까?",
+                type: "confirm",
+                textOkButton: "확인",
+                textCancelButton: "취소",
+                onOk: function() {
+                    deleteCategoryConfirmNotice();
+                }
+            });
+        }
+        function deleteCategoryNotice02(){
+            modalPopup({
+                title: "",
+                message: "삭제하시겠습니까?",
+                type: "confirm",
+                textOkButton: "확인",
+                textCancelButton: "취소",
+                onOk: function() {
+                    deleteCategoryConfirmNotice();
+                }
+            });
+        }
+        function deleteCategoryConfirmNotice(){
+            modalPopup({
+                title: "",
+                message: "삭제 되었습니다."
+            });
+        }
+        $('[data-call-modal]').on('click',function(){
+            var id = $(this).data('call-modal');
+            $('#'+id).modalPopup('open');
+        });
+
+        
+        // [D] 2차 개발 : 내역 보이기+감추기 (더치페이로 묶기) [s]
+        $('.btn-control-show').on('click', function(){
+            var controlTargetName = $(this).data('control-target');
+            var $controlTarget = $(this).closest('.expense-layered').find('.control-show-target[data-target-name="'+ controlTargetName +'"]');
+            $controlTarget.toggleClass('is-active');
+            console.log($controlTarget.length);
+        });// [D] 2차 개발 : 내역 보이기+감추기 (더치페이로 묶기) [e]
+        
+        //레이어 확인용 스크립트 (개발시 삭제) [s]
+        var url = window.location.href;
+        var urlArr = url.split('#');
+        var pageID = urlArr[urlArr.length - 1].toUpperCase();
+
+        $('.layer-call').on('click','button',function(){
+            var newUrl = url.replace(pageID, '');
+            window.location.href = urlArr[0] + '#' + $(this).data('page-id');
+        });
+        
+        if(pageID.indexOf('/HTML/') < 0) $('button[data-page-id=' + pageID + ']').click();
+        //레이어 확인용 스크립트 (개발시 삭제) [e]
+    </script>
+    
+
+</body>
+</html>

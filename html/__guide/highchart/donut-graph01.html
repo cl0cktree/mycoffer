@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+@@include('@@webRoot/html/_include/app-head.html',{
+"title": "Last Depth | 1st Depth"
+})
+<style>
+    /* .chart-area{height:calc((100vw - 48px) * 321/574)} */
+    .chart-flex{display:flex;}
+    .chart-flex div{flex:1;}
+    .legend-unit{font-size:15px;color:#696e76;max-width:400px;margin:auto;}
+    .legend-unit ul li{display:inline-block;width:calc(22% - 4px);padding:5px 5px 5px 13px;position:relative;vertical-align:top;line-height:1.4;}
+    .legend-unit ul li:nth-child(4n+1){width:calc(34% - 4px);}
+    .legend-unit ul li:before{content:'';position:absolute;left:0;top:10px;width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:5px;}
+
+    .legend-unit ul li.yellow:before{background-color:#ffd435;}
+    .legend-unit ul li.brown:before{background-color:#978680;}
+    .legend-unit ul li.purple:before{background-color:#d676ca;}
+    .legend-unit ul li.blue:before{background-color:#3d70d2;}
+    .legend-unit ul li.orange:before{background-color:#f7966c;}
+    .legend-unit ul li.sky:before{background-color:#67d4d4;}
+    .legend-unit ul li.pink:before{background-color:#f675cd;}
+    .legend-unit ul li.green:before{background-color:#40b78f;}
+    .legend-unit ul li.lightGreen:before{background-color:#c2d467;}
+    .legend-unit ul li.gray:before{background-color:#eceff0;}
+
+    hr{margin:150px 0;}
+</style>
+</head>
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header //-->
+        t@@include('@@webRoot/html/_include/app-header.html',{
+            'pageTit' :'donut-graph01'
+        })
+        <!-- // app-header -->
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content">
+
+                <section class="kb-sec">
+
+                    <div class="designed-img"><img src="@@webRoot/html/__guide/highchart/images/donut-graph01.png" alt=""></div>
+
+                    <div class="chart-flex">
+                        <div class="highcharts_column" id="donutChart01"></div>
+                        <div class="highcharts_column" id="donutChart02"></div>
+                    </div>
+                    <div class="legend-unit">
+                        <ul>
+                            <li class="yellow">입출금·페이</li>
+                            <li class="brown">예적금</li>
+                            <li class="purple">투자</li>
+                            <li class="blue">보험</li>
+                            <li class="orange">대출·부채</li>
+                            <li class="sky">연금</li>
+                            <li class="pink">외화</li>
+                            <li class="green">My금고</li>
+                            <li class="lightGreen">적립포인트</li>                  
+                        </ul>
+                    </div>
+
+                </section>
+
+                <hr>
+
+                <section class="kb-sec">
+
+                    <div class="designed-img"><img src="@@webRoot/static/images/_temp/chart_ex0403.png" alt=""></div>
+
+                    <div class="chart-flex">
+                        <div class="highcharts_column" id="donutChart03"></div>
+                    </div>
+                    <div class="legend-unit">
+                        <ul>
+                            <li class="yellow">입출금·페이</li>
+                            <li class="brown">예적금</li>
+                            <li class="purple">투자</li>
+                            <li class="blue">보험</li>
+                            <li class="orange">대출·부채</li>
+                            <li class="sky">연금</li>
+                            <li class="pink">외화</li>
+                            <li class="green">My금고</li>
+                            <li class="lightGreen">적립포인트</li>                  
+                        </ul>
+                    </div>
+
+                </section>
+
+                <hr>
+
+                <section class="kb-sec">
+
+                    <div class="designed-img"><img src="@@webRoot/static/images/_temp/chart_as0701.png" alt=""></div>
+
+                    <div class="chart-flex">
+                        <div class="highcharts_column" id="donutChart04"></div>
+                    </div>
+
+                </section>
+
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+    </div>
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>   
+    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script> 
+    <script src="https://code.highcharts.com/modules/variable-pie.js"></script>
+
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    <script>
+        // highchart 공통 options
+        
+        Highcharts.setOptions({
+            title: { text: null },
+            subTitle: { text: null },
+            // legend: { enabled: false },
+            credits: { enabled: false },
+            label : { fontFamily: 'KBFGText'},
+            credits: { enabled: false },
+            tooltip: { enabled: false },
+            exporting: { enabled: false },
+        });
+        
+        // 첫번째 donut chart 선언
+        var donutChart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'donutChart01', // chart 삽입 target ID
+                
+                plotBackgroundColor: null,
+                plotBorderWidth: 0,
+                plotShadow: false,
+                type: 'pie',
+                height: '100%'
+            },
+            title: {
+                text: '나',
+                align: 'center',
+                verticalAlign: 'middle',
+                y: 18,
+                style: {fontSize:'14px'}
+            },
+            tooltip: {
+                pointFormat: '<b>{point.percentage:.1f}</b>%'
+            },
+            accessibility: {
+                point: { valueSuffix: '%' }
+            },
+            plotOptions: {
+                pie: {
+                    
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                        connectorColor: 'red',
+                        // distance: -50,
+                        // style: { fontWeight: 'normal', color: 'white' }
+                    },
+                    // startAngle: 0,
+                    // endAngle: 360,
+                    // center: ['50%', '50%'],
+                    // size: '100%'
+                }
+            },
+            series: [{
+                name: '',
+                innerSize: '70%',
+                borderWidth:0,
+                data: [
+                    {
+                        name: '입출금·페이',
+                        color: "#ffd435",
+                        y: 330,
+                        dataLabels: { enabled: false }
+                    },
+                    {
+                        name: '예적금',
+                        color: "#978680",
+                        y: 200,
+                        dataLabels: {
+                            enabled: false
+                        }
+                    },
+                    {
+                        name: '투자',
+                        color: "#d676ca",
+                        y: 100,
+                        dataLabels: { enabled: false }
+                    },
+                    {
+                        name: '보험',
+                        color: '#3d70d2',
+                        y: 80,
+                        dataLabels: { enabled: false }
+                    },
+                    {
+                        name: '대출·부채',
+                        color: '#f7966c',
+                        y: 60,
+                        dataLabels: { enabled: false }
+                    }
+                ]
+            }]
+        });
+
+        // 두번째 donut chart 선언
+        var donutChart2 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'donutChart02', // chart 삽입 target ID
+                
+                plotBackgroundColor: null,
+                plotBorderWidth: 0,
+                plotShadow: false,
+                type: 'pie',
+                height: '100%'
+            },
+            title: {
+                text: '비교그룹',
+                align: 'center',
+                verticalAlign: 'middle',
+                y: 18,
+                style: {fontSize:'14px'}
+            },
+            tooltip: {
+                pointFormat: '<b>{point.percentage:.1f}</b>%'
+            },
+            accessibility: {
+                point: { valueSuffix: '%' }
+            },
+            plotOptions: {
+                pie: {
+                    dataLabels: {
+                        enabled: true,
+                        distance: -50,
+                        style: { fontWeight: 'normal', color: 'white' }
+                    },
+                    startAngle: 0,
+                    endAngle: 360,
+                    center: ['50%', '50%'],
+                    size: '100%'
+                }
+            },
+            series: [{
+                name: '',
+                innerSize: '70%',
+                borderWidth:0,
+                data: [
+                    {
+                        name: '입출금·페이',
+                        color: "#ffd435",
+                        y: 330,
+                        dataLabels: { enabled: false }
+                    },
+                    {
+                        name: '예적금',
+                        color: "#978680",
+                        y: 200,
+                        dataLabels: { enabled: false }
+                    },
+                    {
+                        name: '투자',
+                        color: "#d676ca",
+                        y: 100,
+                        dataLabels: { enabled: false }
+                    },
+                    {
+                        name: '보험',
+                        color: '#3d70d2',
+                        y: 80,
+                        dataLabels: { enabled: false }
+                    },
+                    {
+                        name: '대출·부채',
+                        color: '#f7966c',
+                        y: 60,
+                        dataLabels: { enabled: false }
+                    },
+                    {
+                        name: '연금',
+                        color: '#67d4d4',
+                        y: 40,
+                        dataLabels: { enabled: false }
+                    },
+                    {
+                        name: '외화',
+                        color: '#f675cd',
+                        y: 30,
+                        dataLabels: { enabled: false }
+                    },
+                    {
+                        name: 'My금고',
+                        color: '#40b78f',
+                        y: 20,
+                        dataLabels: { enabled: false }
+                    },
+                    {
+                        name: '적립포인트',
+                        color: '#c2d467',
+                        y: 10,
+                        dataLabels: { enabled: false }
+                    }
+                ]
+            }]
+        });
+
+        // 세번째 donut chart 선언
+        var donutChart3 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'donutChart03', // chart 삽입 target ID
+                
+                plotBackgroundColor: null,
+                plotBorderWidth: 0,
+                plotShadow: false,
+                type: 'pie',
+                height: '100%'
+            },
+            title: {
+                text: '자산비중',
+                align: 'center',
+                verticalAlign: 'middle',
+                y: 20,
+                style: {fontSize:'16px'}
+            },
+            tooltip: {
+                pointFormat: '<b>{point.percentage:.1f}</b>%'
+            },
+            accessibility: {
+                point: { valueSuffix: '%' }
+            },
+            plotOptions: {
+                pie: {
+                    dataLabels: {
+                        enabled: true,
+                        distance: 10,
+                        format: '{point.percentage:.1f}%',
+                        connectorWidth:1,
+                        alignTo: 'plotEdges',
+                        connectorShape:'straight',
+                        style: { fontWeight: 'normal', color: '#484b51', fontSize:16, }
+                    },           
+                    cursor: 'pointer',
+                    startAngle: 0,
+                    endAngle: 360,
+                    center: ['50%', '50%'],
+                    size: '50%',
+                    // showInLegend: true
+                }
+            },
+            series: [{
+                name: '',
+                innerSize: '70%',
+                borderWidth:0,
+                data: [
+                    {
+                        name: '입출금·페이',
+                        color: "#ffd435",
+                        y: 330,
+                        z: 1100,
+                        dataLabels: { enabled: true,}
+                    },
+                    {
+                        name: '예적금',
+                        color: "#978680",
+                        y: 200,
+                        dataLabels: { enabled: true }
+                    },
+                    {
+                        name: '투자',
+                        color: "#d676ca",
+                        y: 100,
+                        dataLabels: { enabled: true }
+                    },
+                    {
+                        name: '보험',
+                        color: '#3d70d2',
+                        y: 80,
+                        dataLabels: { enabled: true }
+                    },
+                    {
+                        name: '대출·부채',
+                        color: '#f7966c',
+                        y: 60,
+                        dataLabels: { enabled: true }
+                    },
+                    {
+                        name: '연금',
+                        color: '#67d4d4',
+                        y: 40,
+                        dataLabels: { enabled: true }
+                    },
+                    {
+                        name: '외화',
+                        color: '#f675cd',
+                        y: 30,
+                        dataLabels: { enabled: true }
+                    },
+                    {
+                        name: 'My금고',
+                        color: '#40b78f',
+                        y: 20,
+                        dataLabels: { enabled: true }
+                    },
+                    {
+                        name: '적립포인트',
+                        color: '#c2d467',
+                        y: 10,
+                        dataLabels: { enabled: true }
+                    }
+                ]
+            }]
+        });
+    
+        // 네번째 donut chart 선언
+        var donutChart4 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'donutChart04', // chart 삽입 target ID
+                
+                plotBackgroundColor: null,
+                plotBorderWidth: 0,
+                plotShadow: false,
+                type: 'variablepie',
+                height: '100%'
+            },
+            title: {
+                text: '',
+                align: 'center',
+                verticalAlign: 'middle',
+                y: 20,
+                style: {fontSize:'16px'}
+            },
+            tooltip: {
+                pointFormat: '<b>{point.percentage:.1f}</b>%'
+            },
+            accessibility: {
+                point: { valueSuffix: '%' }
+            },
+            plotOptions: {
+                variablepie: {
+                    dataLabels: {
+                        enabled: true,
+                        distance: 10,
+                        format: '{point.name}{point.percentage:.1f}%',
+                        connectorWidth:1,
+                        alignTo: 'plotEdges',
+                        connectorShape:'straight',
+                        style: { fontWeight: 'normal', color: '#484b51', fontSize:15, }
+                    },           
+                    cursor: 'pointer',
+                    startAngle: 0,
+                    endAngle: 360,
+                    center: ['50%', '50%'],
+                    size: '70%',
+                    // showInLegend: true
+                }
+            },
+            series: [{                
+                name: '',
+                innerSize: '50%',
+                borderWidth:0,
+                zMin: 0,
+                minPointSize: 20,
+                data: [
+                    {
+                        name: '국내주식',
+                        color: "#ffd435",
+                        y: 400,
+                        z: 4000,
+                        dataLabels: { 
+                            enabled: true, 
+                            pointFormat: '국내주식 25%<br>선진주식 25%<br>신흥주식 25%<br>해외채권 25%',
+                            padding: 10,
+                            backgroundColor: "#FFF",
+                            connectorColor:'transparent',
+                            shadow: true,
+                            y: -10,
+                            x: 13,
+                            borderRadius: 2,
+                            verticalAlign: 'bottom',
+                            style: {
+                                fontWeight: "bold",
+                                fontSize: '13px',
+                                fontFamily: "KBFGText"
+                            }
+                        }
+                        
+                    },
+                    {
+                        name: '청약',
+                        color: "#f7966c",
+                        y: 300,
+                        z: 100,
+                        dataLabels: { enabled: true }
+                    },
+                    {
+                        name: '예금',
+                        color: "#d676ca",
+                        y: 250,
+                        z: 100,
+                        dataLabels: { enabled: true }
+                    },
+                    {
+                        name: '적금',
+                        color: '#3d70d2',
+                        y: 125,
+                        z: 100,
+                        dataLabels: { enabled: true }
+                    }
+                ]
+            }]
+        });
+    </script>
+
+</body>
+</html>
