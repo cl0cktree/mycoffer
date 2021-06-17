@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_EX_01_02_01] 지출 > 가계부 > 캘린더 상세 보기 (작성자: 누리어 시스템 김삼희)// -->
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "캘린더 보기 상세 | 지출"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header (for MyMoney) //-->
+        @@include('@@webRoot/html/_include/app-header.html',{
+            'pageTit':'상세보기'
+        })
+        <!-- // app-header -->
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+            <!-- app-content // -->
+            <main class="app-content expense-card-management">
+                <!-- 컨텐츠 영역 -->
+                <section class="kb-sec view-calendar-detail">
+                    <!-- calendar-container // -->
+                    <div class="calendar-container">
+                        <!-- calendar-header // -->
+                        <div class="calendar-header">
+                            <div class="summary-date">
+                                <p><span class="this-year">2021</span><strong class="this-month"><em class="number">5.5</em></strong></p>
+                            </div>
+                            <div class="summary income">
+                                <span>수입</span>
+                                <strong><em class="number">12,000,000</em>원</strong>
+                            </div>
+                            <div class="summary expense">
+                                <span>지출</span>
+                                <strong><em class="number">12,000,000</em>원</strong>
+                            </div>
+                            <div class="summary transfer">
+                                <span>이체</span>
+                                <strong><em class="number">4</em>건</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //calendar-header -->
+                    <div class="calendar-detail">
+                    </div>
+                    <!-- // calendar-container -->
+                </section>
+                <!-- SECTION //-->
+            </main>
+            <!-- // app-content -->
+        </div>
+        <!-- // app-container -->
+        <div class="layered">
+            <!-- Layer // -->
+            <!-- // Layer -->
+        </div>
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    
+</body>
+</html>

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_GO_03_00_00] 목표 > 아낀만큼_진행중_(tab) (작성자: 누리어 시스템 김삼희) -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "남들만큼 | 목표"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app" data-page="submain">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-header.html', {pageTit:'목표챌린지'})
+		<!-- // app-header -->
+
+		<!-- app-container (for MyMoney) //-->
+		<div class="app-container">
+
+            <!-- app-lnb //-->
+            <div class="app-lnb">
+                <!-- 상단 GNB 공통 (메뉴 구성 전 )-->
+                @@include('@@webRoot/html/_include/app-gnb.html')
+            </div>
+			<!-- app-content // -->
+			<main class="app-content goals-challenge bg-gray-bottom">
+				<!-- 목표 요약 // -->
+				<section class="kb-sec bg-gray goals-summary">                    
+                    <a href="#none" class="btn-trans">
+                        <dl class="summary-piggymoeny content-box shadow">
+                            <dt>
+                                <i class="icon-pigbank_23"></i><strong class="h4">저금통</strong><button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                <!-- Tooltip (With title)-->
+                                <div class="tooltip">
+                                    <strong class="tit">저금통이란?</strong>
+                                    <div class="cont">목표 달성 이후 모은 금액과 절약한 금액을 적립하거나 지출할 때마다 지정한 금액만큼 자동으로 저축할 수 있는 나만의 개인금고</div>
+                                    <button class="btn-close"><span>닫기</span></button>
+                                </div>
+                            </dt>
+                            <dd class="amount"><strong class="num">201,320,000</strong>원</dd>
+                        </dl>
+                    </a>
+                    <div class="vertical-blank"></div>
+                </section>
+				<!-- // 목표 요약 -->
+                
+                <section class="kb-sec bg-gray goals-others">
+                    <div class="tab swiper-container depth2">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide"><a href="#none">아낀만큼</a></li>
+                            <li class="swiper-slide"><a href="#none">쓰는만큼</a></li>
+                            <li class="swiper-slide is-active"><a href="#none">남들만큼</a></li>
+                        </ul>
+                    </div>
+                    <button type="button" class="btn-compare" data-call-layered="mys_as_07_00_00_p1" data-page-id="MYS_AS_07_00_00_P1"><i class="icon-funnel"></i></button> <!-- 2021-06-17 수정 -->
+                    <div class="goals-desc t02"><strong>김국민 님의 소비패턴을 다른 사람들과 비교분석해서, 딱 맞는 챌린지를 추천해 드려요!</strong></div>
+                    <div class="content-box shadow">
+                        <!-- [Chart Area] // -->
+                        <div class="chart-area dbl-bar">
+                            <p class="txt-gray">나와 같은 연령대&#38;소득군 사람들의 월 평균 납임금액: 700,000원</p>
+                            <p class="txt-yellow">김국민 님의 월 평균 납인금액: 500,000원</p>                            
+                            <!-- 2021-06-17 수정// -->
+                            <div class="highcharts_column" id="columnChart01"></div>
+                            <!-- //2021-06-17 수정 -->
+                        </div>
+                        <!-- // [Chart Area] -->
+                    </div>
+                    
+                    <strong class="goals-tit h4">김국민 님에게 필요한 저축금액을 알려드려요.</strong>
+                    <div class="challenge-box content-swiper-wrap">
+                        <div class="swiper-container content-swiper t01">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide content-box">
+                                    <div class="challenge-tit">
+                                        <strong class="h3">소액저축 챌린지</strong>
+                                        <button type="button" class=""><span><i class="icon-arrow-right"></i></span></button>
+                                    </div>
+                                    <div class="challenge-info">
+                                        <div class="tit flex-box goals-desc">
+                                            <div>
+                                                나와 같은 연령대&amp;소득군 사람들은<br><strong>나보다 저축을 더 많이 하고 있어요.</strong>
+                                                <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                                <div class="tooltip">
+                                                    <strong class="tit">비교그룹</strong>
+                                                    <div class="cont">나와 같은 연령대&amp;소득군의 사람들은?<br><br>연령대: 30대<br>월 소득: 300만원~500만원<br>성별: 남성</div>
+                                                    <button class="btn-close"><span>닫기</span></button>
+                                                </div>  
+                                            </div>                                        
+                                            <span>6개월<br><strong>250명</strong></span>
+                                        </div>
+                                        <!-- [Chart Area] // -->
+                                        <!--
+                                            [차트 디자인 정보]
+                                            * 그래프(원) 크기/색상(컬러별)
+                                            - 초록색 :  89*89px / linear-gradient(to top, #a7c23a, #c5d38d, #a7c23a);
+                                            - 회색 :  100*100px / linear-gradient(to top, #c6cbd0, #e4e7e9);
+
+                                            텍스트 컬러 : #26282c
+                                            이름 텍스트 크기 : 14px
+                                            값 텍스트 크기 : 18px/bold
+                                        -->
+                                        <div class="chart-area dbl-circle">
+                                            <img class="temp" src="@@webRoot/static/images/_temp/chart_go02.png" alt="차트 예시 이미지">
+                                        </div>
+                                        <!-- // [Chart Area] -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
+
+                    <strong class="goals-tit h4">Flex한 목표를 세우고 저축액을 늘려보세요!</strong>
+                    <div class="challenge-box content-swiper-wrap">
+                        <div class="swiper-container content-swiper t01">
+                            <div class="swiper-wrapper">
+                                <!-- 2021-06-15 수정&추가// -->  
+                                <div class="swiper-slide content-box">
+                                    <div class="challenge-tit">
+                                        <strong class="h3">가족여행</strong>
+                                        <button type="button" class=""><span><i class="icon-arrow-right"></i></span></button>
+                                    </div>
+                                    <div class="challenge-info">
+                                        <div class="tit">
+                                            <div class="tit-area">
+                                                <p class="hash"><span>#힐링</span><span>#휴가</span><span>#코로나극복</span></p>
+                                                <p class="tit">제주도 애월<br>바닷가 근처에서 힐링 목표</p>
+                                                <i class="icon-familytrip"></i>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p class="goal-txt">목표금액 <strong><span class="num">150</span>만원</strong></p>
+                                            <p class="goal-txt">목표기간 <strong><span class="num">6</span>개월</strong></p>
+                                        </div>
+                                    </div>
+                                </div>                                
+                                <div class="swiper-slide content-box">
+                                    <div class="challenge-tit">
+                                        <strong class="h3">안마의자</strong>
+                                        <button type="button" class=""><span><i class="icon-arrow-right"></i></span></button>
+                                    </div>
+                                    <div class="challenge-info">
+                                        <div class="tit">
+                                            <div class="tit-area">
+                                                <p class="hash"><span>#힐링</span><span>#휴가</span><span>#코로나극복</span></p>
+                                                <p class="tit">제주도 애월<br>바닷가 근처에서 힐링 목표</p>
+                                                <i class="icon-massage"></i>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p class="goal-txt">목표금액 <strong><span class="num">150</span>만원</strong></p>
+                                            <p class="goal-txt">목표기간 <strong><span class="num">6</span>개월</strong></p>
+                                        </div>
+                                    </div>
+                                </div>                              
+                                <div class="swiper-slide content-box">
+                                    <div class="challenge-tit">
+                                        <strong class="h3">부모님 용돈</strong>
+                                        <button type="button" class=""><span><i class="icon-arrow-right"></i></span></button>
+                                    </div>
+                                    <div class="challenge-info">
+                                        <div class="tit">
+                                            <div class="tit-area">
+                                                <p class="hash"><span>#힐링</span><span>#휴가</span><span>#코로나극복</span></p>
+                                                <p class="tit">제주도 애월<br>바닷가 근처에서 힐링 목표</p>
+                                                <i class="icon-parentsmoney"></i>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p class="goal-txt">목표금액 <strong><span class="num">150</span>만원</strong></p>
+                                            <p class="goal-txt">목표기간 <strong><span class="num">6</span>개월</strong></p>
+                                        </div>
+                                    </div>
+                                </div>                              
+                                <div class="swiper-slide content-box">
+                                    <div class="challenge-tit">
+                                        <strong class="h3">효도여행</strong>
+                                        <button type="button" class=""><span><i class="icon-arrow-right"></i></span></button>
+                                    </div>
+                                    <div class="challenge-info">
+                                        <div class="tit">
+                                            <div class="tit-area">
+                                                <p class="hash"><span>#힐링</span><span>#휴가</span><span>#코로나극복</span></p>
+                                                <p class="tit">제주도 애월<br>바닷가 근처에서 힐링 목표</p>
+                                                <i class="icon-forparents"></i>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p class="goal-txt">목표금액 <strong><span class="num">150</span>만원</strong></p>
+                                            <p class="goal-txt">목표기간 <strong><span class="num">6</span>개월</strong></p>
+                                        </div>
+                                    </div>
+                                </div>                             
+                                <div class="swiper-slide content-box">
+                                    <div class="challenge-tit">
+                                        <strong class="h3">배낭여행</strong>
+                                        <button type="button" class=""><span><i class="icon-arrow-right"></i></span></button>
+                                    </div>
+                                    <div class="challenge-info">
+                                        <div class="tit">
+                                            <div class="tit-area">
+                                                <p class="hash"><span>#힐링</span><span>#휴가</span><span>#코로나극복</span></p>
+                                                <p class="tit">제주도 애월<br>바닷가 근처에서 힐링 목표</p>
+                                                <i class="icon-bag_trip"></i>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p class="goal-txt">목표금액 <strong><span class="num">150</span>만원</strong></p>
+                                            <p class="goal-txt">목표기간 <strong><span class="num">6</span>개월</strong></p>
+                                        </div>
+                                    </div>
+                                </div>                            
+                                <div class="swiper-slide content-box">
+                                    <div class="challenge-tit">
+                                        <strong class="h3">어학연수</strong>
+                                        <button type="button" class=""><span><i class="icon-arrow-right"></i></span></button>
+                                    </div>
+                                    <div class="challenge-info">
+                                        <div class="tit">
+                                            <div class="tit-area">
+                                                <p class="hash"><span>#힐링</span><span>#휴가</span><span>#코로나극복</span></p>
+                                                <p class="tit">제주도 애월<br>바닷가 근처에서 힐링 목표</p>
+                                                <i class="icon-lang_trip"></i>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p class="goal-txt">목표금액 <strong><span class="num">150</span>만원</strong></p>
+                                            <p class="goal-txt">목표기간 <strong><span class="num">6</span>개월</strong></p>
+                                        </div>
+                                    </div>
+                                </div>                           
+                                <div class="swiper-slide content-box">
+                                    <div class="challenge-tit">
+                                        <strong class="h3">자녀선물</strong>
+                                        <button type="button" class=""><span><i class="icon-arrow-right"></i></span></button>
+                                    </div>
+                                    <div class="challenge-info">
+                                        <div class="tit">
+                                            <div class="tit-area">
+                                                <p class="hash"><span>#힐링</span><span>#휴가</span><span>#코로나극복</span></p>
+                                                <p class="tit">제주도 애월<br>바닷가 근처에서 힐링 목표</p>
+                                                <i class="icon-forkids"></i>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p class="goal-txt">목표금액 <strong><span class="num">150</span>만원</strong></p>
+                                            <p class="goal-txt">목표기간 <strong><span class="num">6</span>개월</strong></p>
+                                        </div>
+                                    </div>
+                                </div>                          
+                                <div class="swiper-slide content-box">
+                                    <div class="challenge-tit">
+                                        <strong class="h3">자녀 교육비</strong>
+                                        <button type="button" class=""><span><i class="icon-arrow-right"></i></span></button>
+                                    </div>
+                                    <div class="challenge-info">
+                                        <div class="tit">
+                                            <div class="tit-area">
+                                                <p class="hash"><span>#힐링</span><span>#휴가</span><span>#코로나극복</span></p>
+                                                <p class="tit">제주도 애월<br>바닷가 근처에서 힐링 목표</p>
+                                                <i class="icon-educate"></i>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p class="goal-txt">목표금액 <strong><span class="num">150</span>만원</strong></p>
+                                            <p class="goal-txt">목표기간 <strong><span class="num">6</span>개월</strong></p>
+                                        </div>
+                                    </div>
+                                </div>                        
+                                <div class="swiper-slide content-box">
+                                    <div class="challenge-tit">
+                                        <strong class="h3">명품시계</strong>
+                                        <button type="button" class=""><span><i class="icon-arrow-right"></i></span></button>
+                                    </div>
+                                    <div class="challenge-info">
+                                        <div class="tit">
+                                            <div class="tit-area">
+                                                <p class="hash"><span>#힐링</span><span>#휴가</span><span>#코로나극복</span></p>
+                                                <p class="tit">제주도 애월<br>바닷가 근처에서 힐링 목표</p>
+                                                <i class="icon-overwatch"></i>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p class="goal-txt">목표금액 <strong><span class="num">150</span>만원</strong></p>
+                                            <p class="goal-txt">목표기간 <strong><span class="num">6</span>개월</strong></p>
+                                        </div>
+                                    </div>
+                                </div>                      
+                                <div class="swiper-slide content-box">
+                                    <div class="challenge-tit">
+                                        <strong class="h3">명품가방</strong>
+                                        <button type="button" class=""><span><i class="icon-arrow-right"></i></span></button>
+                                    </div>
+                                    <div class="challenge-info">
+                                        <div class="tit">
+                                            <div class="tit-area">
+                                                <p class="hash"><span>#힐링</span><span>#휴가</span><span>#코로나극복</span></p>
+                                                <p class="tit">제주도 애월<br>바닷가 근처에서 힐링 목표</p>
+                                                <i class="icon-overbag"></i>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p class="goal-txt">목표금액 <strong><span class="num">150</span>만원</strong></p>
+                                            <p class="goal-txt">목표기간 <strong><span class="num">6</span>개월</strong></p>
+                                        </div>
+                                    </div>
+                                </div>                     
+                                <div class="swiper-slide content-box">
+                                    <div class="challenge-tit">
+                                        <strong class="h3">호캉스</strong>
+                                        <button type="button" class=""><span><i class="icon-arrow-right"></i></span></button>
+                                    </div>
+                                    <div class="challenge-info">
+                                        <div class="tit">
+                                            <div class="tit-area">
+                                                <p class="hash"><span>#힐링</span><span>#휴가</span><span>#코로나극복</span></p>
+                                                <p class="tit">제주도 애월<br>바닷가 근처에서 힐링 목표</p>
+                                                <i class="icon-hocance"></i>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p class="goal-txt">목표금액 <strong><span class="num">150</span>만원</strong></p>
+                                            <p class="goal-txt">목표기간 <strong><span class="num">6</span>개월</strong></p>
+                                        </div>
+                                    </div>
+                                </div>                    
+                                <div class="swiper-slide content-box">
+                                    <div class="challenge-tit">
+                                        <strong class="h3">휴대폰 바꾸기</strong>
+                                        <button type="button" class=""><span><i class="icon-arrow-right"></i></span></button>
+                                    </div>
+                                    <div class="challenge-info">
+                                        <div class="tit">
+                                            <div class="tit-area">
+                                                <p class="hash"><span>#힐링</span><span>#휴가</span><span>#코로나극복</span></p>
+                                                <p class="tit">제주도 애월<br>바닷가 근처에서 힐링 목표</p>
+                                                <i class="icon-mobile_change"></i>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p class="goal-txt">목표금액 <strong><span class="num">150</span>만원</strong></p>
+                                            <p class="goal-txt">목표기간 <strong><span class="num">6</span>개월</strong></p>
+                                        </div>
+                                    </div>
+                                </div>                   
+                                <div class="swiper-slide content-box">
+                                    <div class="challenge-tit">
+                                        <strong class="h3">해외여행</strong>
+                                        <button type="button" class=""><span><i class="icon-arrow-right"></i></span></button>
+                                    </div>
+                                    <div class="challenge-info">
+                                        <div class="tit">
+                                            <div class="tit-area">
+                                                <p class="hash"><span>#힐링</span><span>#휴가</span><span>#코로나극복</span></p>
+                                                <p class="tit">제주도 애월<br>바닷가 근처에서 힐링 목표</p>
+                                                <i class="icon-overseas"></i>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p class="goal-txt">목표금액 <strong><span class="num">150</span>만원</strong></p>
+                                            <p class="goal-txt">목표기간 <strong><span class="num">6</span>개월</strong></p>
+                                        </div>
+                                    </div>
+                                </div>                   
+                                <div class="swiper-slide content-box">
+                                    <div class="challenge-tit">
+                                        <strong class="h3">국내여행</strong>
+                                        <button type="button" class=""><span><i class="icon-arrow-right"></i></span></button>
+                                    </div>
+                                    <div class="challenge-info">
+                                        <div class="tit">
+                                            <div class="tit-area">
+                                                <p class="hash"><span>#힐링</span><span>#휴가</span><span>#코로나극복</span></p>
+                                                <p class="tit">제주도 애월<br>바닷가 근처에서 힐링 목표</p>
+                                                <i class="icon-diver"></i>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p class="goal-txt">목표금액 <strong><span class="num">150</span>만원</strong></p>
+                                            <p class="goal-txt">목표기간 <strong><span class="num">6</span>개월</strong></p>
+                                        </div>
+                                    </div>
+                                </div>                  
+                                <div class="swiper-slide content-box">
+                                    <div class="challenge-tit">
+                                        <strong class="h3">세계일주</strong>
+                                        <button type="button" class=""><span><i class="icon-arrow-right"></i></span></button>
+                                    </div>
+                                    <div class="challenge-info">
+                                        <div class="tit">
+                                            <div class="tit-area">
+                                                <p class="hash"><span>#힐링</span><span>#휴가</span><span>#코로나극복</span></p>
+                                                <p class="tit">제주도 애월<br>바닷가 근처에서 힐링 목표</p>
+                                                <i class="icon-worldtrip"></i>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p class="goal-txt">목표금액 <strong><span class="num">150</span>만원</strong></p>
+                                            <p class="goal-txt">목표기간 <strong><span class="num">6</span>개월</strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- //2021-06-15 수정&추가 -->  
+
+                                <div class="swiper-slide content-box add-card">                                    
+                                    <button type="button" class=""><span><i class="icon-add_68"></i>나만의<br>버킷리스트 만들기</span></button>
+                                    
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </section>
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+            @@include('@@webRoot/html/asset/layered/mys_as_07_00_00_p1.html')
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+    <script src="@@webRoot/static/common/lib/swiper.min.js"></script>
+    <script>
+        var $contentSwiper = $('.content-swiper-wrap');
+        if($contentSwiper.length > 0){
+            $contentSwiper.each(function(index){
+                var $contentSwiper = $(this).find('.swiper-container');
+                var index = index+1;
+                $contentSwiper.addClass('content-swiper' + index);
+                var swiper = new Swiper('.content-swiper' + index, {
+                    slidesPerView: 'auto',
+                    centeredSlides: 'true',
+                    spaceBetween: 16, /*2021-06-14 수정*/                  
+                    autoHeight : 'true', /*2021-06-08 추가*/
+                    pagination: {
+                        el: $('.content-swiper' + index).find('.swiper-pagination'),
+                        type: 'bullets',
+                        clickable: 'true',
+                    },
+                    navigation: {
+                        nextEl: $('.content-swiper' + index).find('.swiper-button-next'),
+                        prevEl: $('.content-swiper' + index).find('.swiper-button-prev'),
+                    },
+                });
+            });
+        };
+    </script>
+    <script>        
+        //최초 선택되는 내용을 바꾸고 싶으면... (ui.js)
+        gfn_gnb.select(3,2);
+    </script>
+    
+    <!-- 2021-06-17 추가// -->
+    <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
+    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
+
+    <!-- Add Script -->
+    <script>
+        // highchart 공통 options
+        Highcharts.setOptions({
+            title: { text: null },
+            subTitle: { text: null },
+            credits: { enabled: false },
+            tooltip: { enabled: false },
+            label : { fontFamily: 'KBFGText'},
+            credits: { enabled: false },
+            exporting: { enabled: false }
+        });
+
+
+        //chart 선언
+        var doubleColumnChart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'columnChart01', // chart 삽입 target ID
+                type: "column",
+                height: (3 / 4 * 100) + '%' // 4:3 비율로 설정
+            },
+            legend: { enabled: false },
+            xAxis: {
+                type: "category",
+                max: 5,
+                categories: ["1월", "2월", "3월", "4월", "5월", "6.13"],
+                labels: {
+                    style: {
+                        color: "#aab0b8",
+                        fontSize: "3.733vw",
+                        fontFamily: 'KBFGText',
+                    }
+                }
+            },
+            yAxis: {
+                enabled: false,  // 사용 안함
+                labels: { enabled: false },  // 축 lebel 사용 안함
+                title: { enabled: false }, // 축 title 사용 안함
+                tickWidth: 0,  // 그리드 라인 너비
+                gridLineColor: null,  // 그리드 라인 컬러
+                plotLines: [
+                    {
+                        color: "#c7ccd1",
+                        width: 1,
+                        value: 3,
+                        zIndex: 50,
+                        dashStyle: 'dash'
+                    },
+                ],
+            },
+            plotOptions: {
+                series: {
+                    grouping: false,
+                    borderWidth: 0,
+                    pointWidth: 16,  // 막대그래프 너비
+                    borderRadiusTopLeft: "50%",  // radius 값
+                    borderRadiusTopRight: "50%" // radius 값
+                }
+            },
+            series: [
+                {
+                    id: "outMoney",
+                    name: "출금",
+                    color: "#c6cbd0",
+                    pointPlacement: -0.2,
+                    data: [3, 3, 3, 3, 3, 10]
+                },
+                {
+                    id: "inMoney",
+                    name: "입금",
+                    color: '#ffd338',
+                    data: [1, 2, 3, 4, 5, 6]
+                }
+            ],
+        });
+    </script>
+    <!-- //2021-06-17 추가 -->
+</body>
+
+</html>

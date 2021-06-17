@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "TEST PAGE | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header //-->
+        @@include('@@webRoot/html/_include/app-header.html',{
+            'pageTit' : '타이틀 영역'
+        })
+        <!-- // app-header -->
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-lnb //-->
+            <div class="app-lnb">
+                <div class="process-step">
+                    <div class="process-step-inner">
+                        <strong class="tit">프로세스 이름</strong>
+                        <div class="process-step-num"><strong class="current">1</strong>/<span class="total">4</span></div>
+                    </div>
+                </div>
+                <div class="tab swiper-container">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide is-active"><a href="#target01">홈</a></li>
+                        <li class="swiper-slide"><a href="#target02">메뉴명2</a></li>
+                        <li class="swiper-slide"><a href="#target03">메뉴명3</a></li>
+                        <li class="swiper-slide"><a href="#target04">메뉴명4</a></li>
+                        <li class="swiper-slide"><a href="#target05">메뉴명5</a></li>
+                        <li class="swiper-slide"><a href="#target06">메뉴명6</a></li>
+                        <li class="swiper-slide"><a href="#target07">메뉴명7</a></li>
+                    </ul>
+                </div>
+                <div class="tab_button">
+                    <button class="is-active"><span>메뉴명1</span></button>
+                    <button><span>메뉴명2</span></button>
+                </div>
+            </div>
+            <!-- //app-lnb -->
+
+            <!-- app-content // -->
+            <main class="app-content">
+
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="10" cy="3" r="2" fill="#AAB0B8"/>
+                    <circle cx="10" cy="10" r="2" fill="#AAB0B8"/>
+                    <circle cx="10" cy="17" r="2" fill="#AAB0B8"/>
+                    </svg>
+
+                컨텐츠 영역
+                <section class="kb-sec">
+                    <div class="checkbox-group">
+						<span class="form-checkbox_20"><input type="checkbox" id="checkboxSample21"><label for="checkboxSample21" data-call-layered="bsLookUp">메뉴 01</label></span>
+						<span class="form-checkbox_20"><input type="checkbox" id="checkboxSample22"><label for="checkboxSample22">메뉴 02</label></span>
+						<span class="form-checkbox_20"><input type="checkbox" id="checkboxSample23" checked><label for="checkboxSample23">메뉴 03</label></span>
+						<span class="form-checkbox_20"><input type="checkbox" id="checkboxSample24" checked disabled><label for="checkboxSample24">메뉴 04</label></span>
+					</div>
+                </section>
+                <section class="kb-sec">
+                    <div class="kb-form datepicker" data-status="">
+						<label for="formTextSample08">날짜</label>
+						<div class="kb-form_inner form-text">
+							<input type="text" id="formTextSample08" readonly>
+						</div>
+						<em class="validation">에러 메세지 영역 입니다.</em>
+					</div>
+                    <div class="period-selector">
+                        <input type="text" title="시작날짜" value="2021.08.31" readonly>
+                        <span>~</span>
+                        <input type="text" title="종료날짜" value="2021.09.21" readonly>
+                    </div>
+                    <br>
+                    <div class="date-time-selector">
+                        <input type="text" title="날짜" value="2021.08.31" readonly>
+                        <input type="text" title="시간" value="02:00~03:00" readonly>
+                    </div>
+                    <br>
+                    <div class="date-time-selector is-disabled">
+                        <input type="text" title="날짜" value="2021.08.31" readonly>
+                        <input type="text" title="시간" value="02:00~03:00" readonly>
+                    </div>
+                </section>
+                <section class="kb-sec">
+                    <div class="kb-form" data-status="">
+                        <label for="formTextSample01111">팝업 호출하는 폼</label>
+                        <div class="kb-form_inner form-text">
+                            <input type="text" id="formTextSample01111" placeholder="팝업 호출하는 폼" data-call-layered="popupSample">
+                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                        </div>
+                        <em class="validation">Success Message</em>
+                    </div>
+                    <div class="kb-form" data-status="">
+                        <label for="formTextSample0222">바텀시트 호출하는 폼</label>
+                        <div class="kb-form_inner form-text">
+                            <input type="text" id="formTextSample0222" placeholder="바텀시트 호출하는 폼" data-call-layered="bsSample">
+                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                        </div>
+                        <em class="validation">Success Message</em>
+                    </div>
+                    <div class="kb-form" data-status="">
+                        <label for="formTextSample0333">모달 호출하는 폼</label>
+                        <div class="kb-form_inner form-text">
+                            <input type="text" id="formTextSample0333" placeholder="모달 호출하는 폼" data-call-layered="modalSample">
+                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                        </div>
+                        <em class="validation">Success Message</em>
+                    </div>
+                    <div class="kb-form">
+                        <label for="formMultiEmail02">팝업 호출하는 셀렉트</label>
+                        <div class="kb-form_inner form-select">
+                            <button type="button" class="selected-option" data-call-layered="popupSample"></button>
+                            <select name="" id="formMultiEmail02" title="통신사 선택">
+                                <option value=""></option>
+                                <option value="0">직접입력</option>
+                                <option value="">naver.com</option>
+                                <option value="">nate.com</option>
+                                <option value="">yahoo.com</option>
+                                <option value="">gmail.com</option>
+                                <option value="">hanmail.net</option>
+                                <option value="">daum.net</option>
+                            </select>
+                        </div>
+                        <em class="validation">Success Message</em>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="kb-form_multi kb-form_email" data-status="">
+                        <strong class="tit">이메일</strong>
+                        <div class="kb-form">
+                            <label for="formMultiEmail">이메일ID</label>
+                            <div class="kb-form_inner form-text">                                
+                                <input type="text" id="formMultiEmail" placeholder="" value="acorn22">
+                                <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                            </div>
+                        </div>
+						<span class="between">@</span>
+                        <div class="kb-form">
+                            <label for="formMultiEmail02">이메일서비스명</label>
+                            <div class="kb-form_inner form-select">
+                                <button type="button" class="selected-option"></button>
+                                <select name="" id="formMultiEmail02" title="통신사 선택">
+									<option value=""></option>
+                                    <option value="writingemail" selected>직접입력</option>
+                                    <option value="">naver.com</option>
+                                    <option value="">nate.com</option>
+                                    <option value="">yahoo.com</option>
+                                    <option value="">gmail.com</option>
+                                    <option value="">hanmail.net</option>
+                                    <option value="">daum.net</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="kb-form add-email-input">
+                            <label for="formMultiEmail03"></label>
+                            <div class="kb-form_inner form-text">
+                                <input type="text" id="formMultiEmail03" placeholder="">
+                                <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                            </div>                            
+                        </div>
+						<em class="validation">에러 메세지 영역 입니다.</em>
+						<p><span class="form-checkbox_24"><input type="checkbox" id="noEmail"><label for="noEmail">이메일 없음</label></span></p>
+                    </div>
+                    <br>
+                    <br>
+                    <strong>싱글폼</strong>
+                    <div class="kb-form" data-status="">
+                        <label for="formSelectSample07">선택 타이틀</label>
+                        <div class="kb-form_inner form-select">
+                            <button type="button" class="selected-option"></button>
+                            <select name="" id="formSelectSample07" title="타이틀">
+                                <option value="" selected>최초 메세지</option>
+                                <option value="">첫번째 셀렉트 01</option>
+                                <option value="">첫번째 셀렉트 02</option>
+                                <option value="">첫번째 셀렉트 03</option>
+                                <option value="">첫번째 셀렉트 04</option>
+                            </select>
+                        </div>
+                        <em class="validation">에러 메세지 영역 입니다.</em>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <strong>멀티폼</strong>
+                    <div class="kb-form_multi">
+                        <strong class="tit">멀티폼 타이틀</strong>
+                        <div class="kb-form" data-status="">
+                            <label for="formMultiSample01">선택 타이틀</label>
+                            <div class="kb-form_inner form-select">
+                                <button type="button" class="selected-option"></button>
+                                <select name="" id="formMultiSample01" title="타이틀">
+                                    <option value="">최초 메세지</option>
+                                    <option value="">선택 option 1</option>
+                                    <option value="">선택 option 2</option>
+                                    <option value="">선택 option 3</option>
+                                    <option value="">선택 option 4</option>
+                                </select>
+                            </div>
+                            <em class="validation">에러 메세지 영역 입니다.</em>
+                        </div>
+                        <div class="kb-form" data-status="">
+                            <label for="formMultiSample02">선택 타이틀</label>
+                            <div class="kb-form_inner form-select">
+                                <button type="button" class="selected-option"></button>
+                                <select name="" id="formMultiSample02" title="타이틀">
+                                    <option value="">최초 메세지</option>
+                                    <option value="">선택 option 1</option>
+                                    <option value="">선택 option 2</option>
+                                    <option value="">선택 option 3</option>
+                                    <option value="">선택 option 4</option>
+                                </select>
+                            </div>
+                            <em class="validation">에러 메세지 영역 입니다.</em>
+                        </div>
+                        <div class="kb-form" data-status="">
+                            <label for="formMultiSample03">금액</label>
+                            <div class="kb-form_inner form-text">
+                                <input type="text" inputmode="numeric" id="formMultiSample03" placeholder="" value="" data-unit="원" data-action="autoSeperator">
+                                <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                            </div>
+                            <em class="validation">에러 메세지 영역 입니다.</em>
+                        </div>
+                        <div class="kb-form" data-status="">
+                            <label for="formMultiSample04">금액</label>
+                            <div class="kb-form_inner form-text">
+                                <input type="text" inputmode="numeric" id="formMultiSample04" placeholder="" value="" data-unit="원" data-action="autoSeperator">
+                                <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                            </div>
+                            <em class="validation">에러 메세지 영역 입니다.</em>
+                        </div>
+                        <div class="kb-form" data-status="">
+                            <label for="formMultiSample05">이름</label>
+                            <div class="kb-form_inner form-text">
+                                <input type="text" id="formMultiSample05">
+                                <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                            </div>
+                            <em class="validation">Success Message</em>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="kb-sec">
+                    <div class="kb-form" data-status="">
+                        <label for="testddddd">나의 월수입</label>
+                        <div class="kb-form_inner form-text">
+                            <input type="text" inputmode="numeric" id="testddddd" placeholder="" maxlength="6" value="" data-default="0" data-unit="만원" data-action="autoSeperator">
+                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                        </div>
+                    </div>
+                    <div class="kb-form" data-status="">
+                        <label for="testcccc">별명</label>
+                        <div class="kb-form_inner form-text">
+                            <input type="text" id="testcccc" placeholder="" value="" data-default="나는">
+                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                        </div>
+                    </div>
+                </section>
+                <br>
+                <br>
+                <br>
+                <section class="kb-sec">
+                    <button type="button" class="btn-line" data-call-layered="popupSample"><span>팝업 호출</span></button>
+                </section>
+                <br>
+                <section class="kb-sec">
+                    <button type="button" class="btn-line" data-call-layered="bsSample"><span>바텀시트 호출</span></button>
+                    <button type="button" class="btn-line" data-call-layered="bsLookUp"><span>조회</span></button>
+                </section>
+                <br>
+                <section class="kb-sec">
+                    <button type="button" class="btn-line" data-call-layered="modalSample"><span>모달 호출</span></button>
+                    <button type="button" class="btn-line" data-call-layered="modalAlert"><span>모달 호출</span></button>
+                </section>
+
+
+
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button class="btn-solid_sticky"><span>테스트</span></button>
+                    </div>
+                </div>
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+        <div class="layered">
+            <!-- Layer // -->
+            @@include('@@webRoot/html/_layered/_popup-sample.html')
+            <!-- // Layer -->
+    
+            <!-- Bottom Sheet // -->
+            @@include('@@webRoot/html/_layered/_bottom-sheet-sample.html')
+            @@include('@@webRoot/html/_layered/bs-select.html')
+            @@include('@@webRoot/html/_layered/bs-lookup.html')
+            @@include('@@webRoot/html/_layered/bs-calendar.html')
+            @@include('@@webRoot/html/_layered/bs-time.html')
+            @@include('@@webRoot/html/_layered/bs-financial-institution.html')
+            @@include('@@webRoot/html/_layered/bs-other-login.html')
+            @@include('@@webRoot/html/_layered/bs-age-asset.html')
+            @@include('@@webRoot/html/_layered/bs-product-type.html')
+            @@include('@@webRoot/html/_layered/bs-set-category.html')
+            <!-- // Bottom Sheet -->
+    
+            <!-- Modal // -->
+            @@include('@@webRoot/html/_layered/_modal-sample.html')
+            @@include('@@webRoot/html/_layered/modal-alert.html')
+            @@include('@@webRoot/html/_layered/modal-confirm.html')
+            <!-- // Modal -->
+        </div>
+
+    </div>
+
+    
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+@@include('@@webRoot/html/_include/app-head.html',{
+"title": "Last Depth | 1st Depth"
+})
+<style>
+    .chart-area{height:calc((100vw - 48px) * 321/574)}
+</style>
+</head>
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header //-->
+        t@@include('@@webRoot/html/_include/app-header.html',{
+            'pageTit' :'line-graph02'
+        })
+        <!-- // app-header -->
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content">
+
+                <section class="kb-sec">
+
+                    <div class="designed-img"><img src="@@webRoot/html/__guide/highchart/images/line-graph02.png" alt=""></div>
+
+                    <!--  그래프 샘플 // -->
+                    <div class="highcharts_column" id="areaSplineChart"></div>
+                    <!-- // 그래프 샘플-->
+
+                </section>
+
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+    </div>
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
+    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
+
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    <script>
+        // highchart 공통 options
+        Highcharts.setOptions({
+            title: { text: null },
+            subTitle: { text: null },
+            credits: { enabled: false },
+            label : { fontFamily: 'KBFGText'},
+            credits: { enabled: false },
+            exporting: { enabled: false },
+            legend: { enabled: false }
+        });
+        // spline chart 선언
+        var columnChart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'areaSplineChart', // chart 삽입 target ID
+                type: "areaspline",
+                height: (3 / 4 * 100) + '%' // 4:3 비율로 설정
+            },
+            tooltip: {
+                formatter: function () { 
+                    return '잔액 ' + gfn_comma3Digit(this.y) + "원"
+                },
+                padding: 10,
+                backgroundColor: "#FFF",
+                shadow: true,
+                borderRadius: 4,
+                verticalAlign: 'bottom',
+                borderColor: '#f3f3f3',
+                style: {
+                    fontWeight: 'bold',
+                    fontSize: '4vw',
+                    fontFamily: "KBFGText",
+                },
+                crosshairs: true,
+            },
+            xAxis: {
+                type: "category",
+                categories: ["3월", "4월", "5월", "6.13"],
+                labels: {
+                    style: {
+                        color: "#aab0b8",
+                        fontSize: '3.733vw',
+                        fontFamily: 'KBFGText',
+                    }
+                },
+            },
+            yAxis: {
+                enabled: false,  // 사용 안함
+                labels: { enabled: false },  // 축 lebel 사용 안함
+                title: { enabled: false }, // 축 title 사용 안함
+                tickWidth: 0,  // 그리드 라인 너비
+                gridLineColor: 'transparsnt',  // 그리드 라인 컬러,
+                plotLines: [{
+                    color: '#c7cbd0',
+                    width: 1,
+                    value: 300000,
+                    zIndex: 50,
+                    dashStyle: 'dot'
+                }]
+            },
+            plotOptions: {
+                series: {
+                    color: '#c7ccd1', // 기본색상
+                    lineWidth: 4,
+                    marker: {
+                    symbol: 'circle',
+                        enabled: true,
+                        radius: 4,
+                        fillColor: '#d575c9',
+                    },
+                },
+            },
+            series: [{
+                lineColor: '#d575c9',
+                color: '#f7f7f8',
+                data: [450000, 230000, 185210, 350000],
+            }]
+        });
+    </script>
+
+</body>
+</html>
