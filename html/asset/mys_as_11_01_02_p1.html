@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_AS_11_01_02_P1] 작성자: 누리어 시스템 김은경 -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "Wish House 등록 | 자산"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-header-close.html',{
+			'pageTit' :'Wish House 등록'
+		}) 
+		<!-- // app-header (for MyMoney) -->
+
+		<!-- app-container //-->
+		<div class="app-container">
+
+			<!-- app-content // -->
+			<main class="app-content my-asset">
+
+				
+		<!-- 주소입력 // -->
+		<section class="kb-sec">
+			<div class="pop-notice">
+				<span>부동산 정보를 입력하시면 시세를 확인하실 수 있습니다. </span>
+			</div>			
+		</section>
+		
+		<section class="kb-sec address-search">
+			<ul class="btn-segmented">
+				<li><button class="is-selected"><span>아파트</span></button></li>
+				<li><button><span>오피스텔</span></button></li>
+			</ul>
+			<div class="kb-form not-ready no-transition" data-status="info">
+				<div class="kb-form_inner form-text">
+					<input type="text" id="formTextSample0555" value="" placeholder="검색어를 입력해주세요">
+					<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+					<button type="button" class="btn-icon_form btn-search"><i class="icon-search"></i></button>
+				</div>
+			</div>
+			<!-- no-data // -->
+			<!--
+			<div class="no-data">
+				<i class="icon-info_24"></i>
+				<p>검색 결과가 없습니다.</p>
+			</div>
+			-->
+			<!-- // no-data -->
+			<ul class="search-result">
+				<li>
+					<a href="javascript:;">
+						<span class="h-category">아파트</span>
+						<span class="keyword">(영등포구 <b>여의도동</b>)</span>
+						<span class="address">롯데캐슬엠파이어롯데캐슬엠파이어롯데캐슬엠파이어</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<span class="h-category">오피스텔</span>
+						<span class="keyword">(영등포구 <b>여의도동</b>)</span>
+						<span class="address">롯데캐슬엠파이어롯데캐슬엠파이어롯데캐슬엠파이어</span>
+					</a>
+				</li>
+			</ul>
+			<button class="btn-view-more"><span>+ 더보기</span></button>
+		</section>
+
+		<!-- // 주소입력 -->
+		
+
+	
+				
+
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+
+</body>
+
+</html>

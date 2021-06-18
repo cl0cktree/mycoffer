@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_AS_17_01_00_P1] My금고 > 메인화면 - 자산등록 전  (작성자: 유플리트 이현섭)// -->
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "자산 | My금고 메인"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app" data-page="submain">
+        <!-- app-header (for MyMoney) //-->
+        @@include('@@webRoot/html/_include/app-header.html',{
+            'pageTit':' My금고 메인'
+        })
+        <!-- // app-header -->
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+
+            <!-- app-lnb //-->
+            <div class="app-lnb">
+                @@include('@@webRoot/html/_include/app-gnb.html')
+            </div>
+            <!-- //app-lnb -->
+
+            <!-- app-content // -->
+            <main class="app-content expense-finance-report bg-gray-bottom">
+                
+                <div class="sticky-bottom">
+                    <button class="btn-solid_sticky"><span>자산 추가하기</span></button>
+                    <!-- <a href="javascript:;" class="btn-solid_sticky" role="button"><span>자산 추가하기</span></a> -->
+                </div>
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <script>       
+        //최초 선택되는 내용을 바꾸고 싶으면... (ui.js)
+        gfn_gnb.select(6);
+    </script>
+    <!-- Add Script -->
+    
+</body>
+
+</html>

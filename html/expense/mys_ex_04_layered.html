@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [mys_ex_04] 작성자 : 누리어 시스템 김삼희 -->
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "LAYER | 소비리포트"
+    })
+    <style>
+        .layer-call{max-width:300px;margin:0 auto;padding:40px 0;}
+        .layer-call > button{flex-flow:column;margin-top:10px;}
+        .layer-call > button:before{content:attr(data-page-id);}
+        .layer-call > button span{display:block;}
+    </style>
+</head>
+<body>    
+    <div class="layer-call">
+        <!-- 지출 > 소비리포트 //--->
+        <h1 class="h2">소비리포트</h1>
+        <button type="button" class="btn-line" data-call-layered="bsExpenseReportSelectMonthly" data-page-id="MYS_EX_04_01_01_P"><span>월간 리포트 선택 팝업</span></button>
+        <button type="button" class="btn-line" data-call-layered="bsExpenseReportSelectWeekly" data-page-id="MYS_EX_04_03_01_P"><span>주간 리포트 선택 팝업</span></button>
+        <button type="button" class="btn-line" data-call-layered="bsYear" data-page-id="MYS_EX_04_00_00_P01"><span>연도 선택 팝업</span></button>
+        <!--// 지출 > 소비리포트 --->
+    </div>
+
+    <div class="layered">
+        @@include('@@webRoot/html/expense/layered/mys_ex_04_00_00_p01.html')
+        @@include('@@webRoot/html/expense/layered/mys_ex_04_01_01_p.html')
+        @@include('@@webRoot/html/expense/layered/mys_ex_04_03_01_p.html')
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+
+    <script>
+        //레이어 확인용 스크립트 (개발시 삭제) [s]
+        var url = window.location.href;
+        var urlArr = url.split('#');
+        var pageID = urlArr[urlArr.length - 1].toUpperCase();
+
+        $('.layer-call').on('click','button',function(){
+            var newUrl = url.replace(pageID, '');
+            window.location.href = urlArr[0] + '#' + $(this).data('page-id');
+        });
+        
+        if(pageID.indexOf('/HTML/') < 0) $('button[data-page-id=' + pageID + ']').click();
+        //레이어 확인용 스크립트 (개발시 삭제) [e]
+    </script>
+    
+
+</body>
+</html>
