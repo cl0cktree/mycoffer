@@ -1,0 +1,155 @@
+<!-- [MYS_MN_06_01_01] 전체메뉴 > 플러스존(My 혜택) > 리워드 (작성자: 누리어 시스템 이진우)// -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Last Depth | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header (for MyMoney) //-->
+        @@include('@@webRoot/html/_include/app-header.html',{
+            'pageTit':'My 혜택<!-- 수정 : 2021.06.09 -->'
+        })
+        <!-- // app-header -->
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+            <div class="app-lnb">
+                <div class="tab swiper-container">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide is-active"><a href="javscript:;">리워드</a></li>
+                        <li class="swiper-slide"><a href="javscript:;">리워드 혜택</a></li>
+                        <li class="swiper-slide"><a href="javscript:;">친구추천</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- app-content // -->
+            <main class="app-content reward-coupon">
+                <section class="kb-sec">
+                    <div class="tab_button">
+                        <a href="javascript:;" class="is-active"><span>쿠폰</span></a>
+                        <a href="javascript:;"><span>포인트리</span></a>
+                    </div>                    
+                </section>
+
+                <section class="kb-sec">
+                    <div class="condition-area">
+                        <button class="btn-condition" data-call-layered="mys_mn_06_01_01_search">
+                            <strong class="tit">총 <span class="num">17</span>개</strong>
+                            <div>
+                                <div class="sorting-status">
+                                    <span>전체</span>
+                                </div>                            
+                                <i class="icon-filter_20"></i>
+                            </div>
+                        </button>
+                    </div>
+
+                    <ul class="coupon-list">
+                        <li class="is-new">
+                            <a href="javascript:;">
+                                <div class="coupon-info">
+                                    <strong class="tit">네이버페이 3천원 쿠폰</strong>
+                                    <p class="desc">신규회원가입자에게 드리는 <br>네이버페이 쿠폰</p>
+                                    <span class="due-date">2021.06.28</span>
+                                </div>
+                                <div class="use-status">
+                                    <span>사용하기</span>
+                                    <p class="d-day">D-<span class="num">30</span></p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="coupon-info">
+                                    <strong class="tit">네이버페이 3천원 쿠폰</strong>
+                                    <p class="desc">신규회원가입자에게 드리는 <br>네이버페이 쿠폰</p>
+                                    <span class="due-date">2021.06.28</span>
+                                </div>
+                                <div class="use-status">
+                                    <span>사용하기</span>
+                                    <p class="d-day">D-<span class="num">30</span></p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="is-expired">
+                            <a href="javascript:;">
+                                <div class="coupon-info">
+                                    <strong class="tit">네이버페이 3천원 쿠폰</strong>
+                                    <p class="desc">신규회원가입자에게 드리는 <br>네이버페이 쿠폰</p>
+                                    <span class="due-date">2021.06.28</span>
+                                </div>
+                                <div class="use-status">
+                                    <span>사용완료</span>
+                                    <button type="button" class="btn-text"><u>삭제</u></button>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="is-expired">
+                            <a href="javascript:;">
+                                <div class="coupon-info">
+                                    <strong class="tit">네이버페이 3천원 쿠폰</strong>
+                                    <p class="desc">신규회원가입자에게 드리는 <br>네이버페이 쿠폰</p>
+                                    <span class="due-date">2021.06.28</span>
+                                </div>
+                                <div class="use-status">
+                                    <span>기간만료</span>
+                                    <button type="button" class="btn-text"><u>삭제</u></button>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>      
+                    
+                    <!-- 보유 쿠폰이 없을 때 // -->
+                    <div class="no-data">
+                        <i class="icon-info_24"></i>
+                        <p>보유한 쿠폰이 없습니다.</p>
+                    </div>
+                    <!-- // 보유 쿠폰이 없을 때 -->
+
+                </section>
+
+            </main>
+            <!-- // app-content -->
+
+        <!-- // app-container -->
+    </div>
+
+    <div class="layered">
+
+        <!-- 조회 조건 검색 // -->
+        <div class="bottom-sheet full-size" data-layered-name="mys_mn_06_01_01_search">
+            <div class="bottom-sheet_header">
+                <span class="tit">조회 조건 선택</span>
+            </div>
+            <div class="bottom-sheet_contents">
+                <section class="kb-sec tab_contents">
+                    <ul class="select-list">
+                        <li><button type="button"><strong class="tit">전체</strong><i class="icon-20"></i></button></li>
+                        <li><button type="button"><strong class="tit">추천순</strong><i class="icon-20"></i></button></li>
+                        <li><button type="button"><strong class="tit">최신순</strong><i class="icon-20"></i></button></li>
+                        <li><button type="button"><strong class="tit">마감일순</strong><i class="icon-20"></i></button></li>
+                    </ul>
+                </section>
+            </div>
+            <button class="btn-close" data-action="close"><span>닫기</span></button>
+        </div>
+        <!-- // 조회 조건 검색 -->
+
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+
+</body>
+
+</html>

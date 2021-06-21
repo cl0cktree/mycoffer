@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_EX_01_00_00] 지출 > 가계부 (작성자: 누리어 시스템 김삼희)// -->
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "가계부 | 지출"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header (for MyMoney) //-->
+        @@include('@@webRoot/html/_include/app-header.html',{
+            'pageTit':'가계부'
+        })
+        <!-- // app-header -->
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+
+            <!-- app-lnb //-->
+            <div class="app-lnb">
+                @@include('@@webRoot/html/_include/app-gnb.html')
+            </div>
+            <!-- //app-lnb -->
+
+            <!-- app-content // -->
+            <main class="app-content expense-account-book-total">
+                <!-- 지출 가계부 그래프 요약 영역 //-->
+                <section class="kb-sec full bg-gray expense-guide">
+                    <div>
+                        <div class="content-box shadow">
+                            <div class="content-box-info">
+                                <div class="content-box-tit flex-box">
+                                    <h4 class="h4">
+                                        <button><i class="icon-arrow-left">이전달</i></button><strong>5월</strong><button><i class="icon-arrow-right">다음달</i></button> <span class="tit">지출가이드</span><button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                        <div class="tooltip">
+                                            <div class="cont">&#8251; 최근 과거 5개월간 사용한 지출 금액을 기준으로 월 평균 추천지출액 및 일별 평균 추천지출액을 제시해드립니다. 매월 평균 추철 지출액은 사용한 지출액에 따라 변동됩니다.</div>
+                                            <button class="btn-close"><span>닫기</span></button>
+                                        </div>
+                                    </h4>
+                                    <a href="@@webRoot/html/common/mys_co_08_01_00_p1.html" role="button" class="btn-more"><i class="icon-more_24"></i></a>
+                                    <span class="date">04.26~05.25</span>
+                                </div>
+                                <div class="total-summary"><span class="color_blue"><strong class="emphasis">평소보다 아껴쓰고 있어요.</strong> 이대로 직진!</span></div>
+                                <a href="javascript:;" role="button" class="link-box_block compare-amount" data-call-layered="bsDailyExpenseGraph">
+                                    <p>
+                                        <span>실지출액</span>
+                                        <strong><em class="num">3,200,000</em>원</strong>
+                                    </p>
+                                    <em class="strict-inequality" data-compare-value="lt"></em>
+                                    <p>
+                                        <span>목표지출액</span>
+                                        <strong><em class="num">3,500,000</em>원</strong>
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="highcharts-box no-space">
+                        <div class="swiper-container t01 mt16 js-swiper" data-swiper-options="highchartSwiperOptions">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure content-box">
+                                            <div class="content-box-info">
+                                                <a href="mys_ex_04_01_00.html" role="button" class="link-box_block">
+                                                    <div class="content-box-tit t01 flex-box">
+                                                        <h4 class="h4">월간 지출 추이</h4>
+                                                        <button type="button" class=""><i class="icon-arrow-right"></i></button>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <!-- [chart area] //-->
+                                            <!--
+                                                [차트 디자인 정보]
+                                                * 그래프(막대) 색상(컬러별)
+                                                - 노란색 :  #ffd338;
+                                                - 회색 :  #c6cbd0;
+                                                - 주황색 : #ff5858'
+
+                                                - 차트 텍스트 컬러/크기 : #26282c/14px
+                                                - X축 텍스트 컬러/크기 : #8c949e/14px
+                                                - data labels 텍스트 컬러/크기 : #ff5858/14px
+                                            -->
+                                            <div class="highcharts_column" id="">
+                                                <img class="temp" src="../../static/images/_temp/chart_ex0103.png" alt="차트 예시 이미지">
+                                            </div>
+                                            <!--// [chart area] -->
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure content-box">
+                                            <div class="content-box-info">
+                                                <div class="content-box-tit">
+                                                    <h4 class="h4">이번달 지출 소비 패턴</h4>
+                                                    <p class="content-box-desc">이번달 <strong>식비</strong>지출이 많았어요</p>
+                                                </div>
+                                            </div>
+                                            <!-- [Chart Area] // -->
+                                            <!--
+                                                [차트 디자인 정보]
+                                                * 그래프(원) 크기/색상(컬러별)
+                                                - 노란색 :  122*122px / linear-gradient(to top, #fbc60a, #ffe381);
+                                                - 주황색 :  141*141px / linear-gradient(to top, #f8956d, #fbb192);
+                                                - 보라색 :  81*81px / linear-gradient(to top, #e69afc, #edb7fd);
+                                                - 파랑색 :  58*58px / linear-gradient(to top, #6cb7fa, #89c6fc);
+                                                - 하늘색 :  45*45px / linear-gradient(to top, #fbb192, #88dada
+
+                                                텍스트 컬러 : #26282c
+                                                이름 텍스트 크기 : 14px
+                                                값 텍스트 크기 : 18px/bold
+                                            -->
+                                            <div class="highcharts_column" id="">
+                                                <img class="temp" src="../../static/images/_temp/chart_ex0203.png" alt="차트 예시 이미지">
+                                            </div>
+                                            <!--// [chart area] -->
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </section>
+                <!--// 지출 가계부 그래프 요약 영역 -->
+                <!-- 지출 가계부 상세 내역 //-->
+                <section class="kb-sec full expense-account-book-list">
+                    <!-- 타입 설정 -->
+                    <div class="list-view-type">
+                        <a href="mys_ex_01_02_00.html" class="btn-line_form" role="button"><i class="icon-calendar_20_bk"></i><span>캘린더 보기</span></a>
+                        <a href="javascript:;" class="btn-line_form is-active" role="button"><i class="icon-list_20"></i><span>일자별 보기</span></a>
+                    </div>
+                    <!-- 필터 영역 -->
+                    <div class="filter-area">
+                        <button class="btn-filter" data-call-layered="bsExpenseListFilterSetting"><i class="icon-filter_24"><span>필터 설정</span></i></button>
+                        <ul>
+                            <li><button class="btn-filter-search" data-call-layered="bsExpenseListSearch"><i class="icon-search_24_gray"><span>검색</span></i></button></li>
+                            <li><button class="btn-filter-register" data-call-layered="popupUserRegisterList"><i class="icon-plus_24"><span>사용자 등록</span></i></button></li>
+                            <li><button class="btn-filter-setting" data-call-layered="bsExpenseAccountBookSetting"><i class="icon-more_24"><span>가계부 설정</span></i></button></li>
+                        </ul>
+                    </div>
+                    <!-- 리스트 영역 -->
+                    <!-- 검색 결과 없음 -->
+                    <div class="no-data">
+                        <i class="icon-info_24"></i>
+                        <p>내역이 없습니다.</p>
+                    </div>
+                </section>
+                <!--// 지출 가계부 상세 내역 -->
+                <!-- 가맹점 연계 정보 //-->
+                <section class="kb-sec full bg-gray expense-monthly-place">
+                    <div class="highcharts-box no-space">
+                        <div class="graph-area">
+                            <figure class="highcharts-figure content-box">
+                                <div class="content-box-info">
+                                    <a href="mys_ex_04_01_00.html" role="button" class="link-box_block">
+                                        <div class="content-box-tit t01 flex-box">
+                                            <h4 class="h4">이번달 많이 찾은 곳</h4>
+                                            <button type="button" class=""><i class="icon-arrow-right"></i></button>
+                                        </div>
+                                    </a>
+                                    <p class="total-summary">
+                                        <span class="date">04.26~05.25</span>
+                                        <strong class="emphasis">스타벅스에 23회</strong>로 가장 많이 방문하고, <br>
+                                        <strong class="emphasis">애플스토어</strong>에서 <strong class="emphasis color_blue">5,100,000원</strong>으로<br>가장 많이 지출했어요.
+                                    </p>
+                                </div>
+                                <!-- [chart area] //-->
+                                <!--
+                                    [차트 디자인 정보]
+                                    * 그래프(워드클라우드) 색상(컬러별)
+                                    - 파란색 :  #287eff;
+                                    - 검정색 :  #26282c;
+                                    - 회색 : #666d75;
+                                -->
+                                <div class="highcharts_column" id="">
+                                    <img class="temp" src="../../static/images/_temp/chart_ex0102.png" alt="차트 예시 이미지">
+                                </div>
+                                <!--// [chart area] -->
+                            </figure>
+                        </div>
+                    </div>
+                </section>
+                <!--// 가맹점 연계 정보 -->
+                <section class="kb-sec full bg-gray expense-management-goal">
+                    <div class="content-tit"><strong class="h4">목표관리가 필요한 지출</strong></div>
+                    <div class="highcharts-box no-space">
+                        <div class="graph-area">
+                            <figure class="highcharts-figure content-box"></figure>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+        <div class="layered">
+            <!-- Bottom Sheet // -->
+            @@include('@@webRoot/html/expense/layered/mys_ex_01_01_00_p01.html')
+            @@include('@@webRoot/html/expense/layered/mys_ex_01_01_02_p.html')
+            @@include('@@webRoot/html/expense/layered/mys_ex_01_01_03_p.html')
+            @@include('@@webRoot/html/expense/layered/mys_ex_01_05_01_p.html')
+            @@include('@@webRoot/html/expense/layered/mys_ex_01_05_04_p.html')
+            @@include('@@webRoot/html/expense/layered/mys_ex_01_05_06_p.html')
+            @@include('@@webRoot/html/expense/layered/mys_ex_01_05_07_p.html')
+            @@include('@@webRoot/html/expense/layered/mys_ex_01_06_00.html')
+            @@include('@@webRoot/html/expense/layered/mys_ex_01_06_01_p.html')
+            <!-- 공통 -->
+            @@include('@@webRoot/html/_layered/bs-time.html')
+            @@include('@@webRoot/html/_layered/bs-calendar.html')
+        </div>
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <script>
+        gfn_gnb.select(1,2);
+        var highchartSwiperOptions = {
+            "pagination": {
+                "el": ".swiper-pagination"
+            }
+        };
+    </script>
+    <!-- Add Script -->
+    
+</body>
+
+</html>
