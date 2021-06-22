@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_SP_01_02_12] 작성자: 누리어 시스템 황철민 -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "신용평점 올리기 완료 | 신용관리"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-header.html', {'pageTit': '신용평점 올리기'}) 
+		<!-- // app-header -->
+
+		<!-- app-container (for MyMoney) //-->
+		<div class="app-container">
+
+			<!-- app-content // -->
+			<main class="app-content">
+
+				<!-- 신용평점 올리기 완료 // -->
+				<section class="kb-sec credit-score-complete">
+					<div class="flex-layout">
+						<div class="flex-top">
+							<div class="complete-msg">
+								<i class="icon-complete_60"></i>
+								<strong class="tit">신용평점 올리기 완료</strong>
+							</div>
+						</div>
+						<div class="flex-middle">
+							<dl class="description-list type2">
+								<dt>국세청 소득금액증명</dt>
+								<dd>반영완료</dd>
+								<dt>건강보험 납부내역</dt>
+								<dd>반영완료</dd>
+								<dt>국민연금 납부내역</dt>
+								<dd>반영완료</dd>
+								<dt>통신비 납부내역</dt>
+								<dd>반영완료</dd>
+							</dl>	
+						</div>
+						<div class="flex-bottom">
+							<p class="info-msg">수입·지출에 큰 변화가 없는 상태에서 중복 제출 할 경우 신용평점은 변동되지 않을 수 있습니다.</p>
+						</div>
+					</div>
+					<div class="sticky-bottom">
+						<div class="btn-area">
+							<a href="#" class="btn-solid_sticky"><span>신용평점 확인하기</span></a>
+						</div>
+					</div>
+				</section>				
+				<!-- // 신용평점 올리기 완료 -->
+
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+	
+
+</body>
+
+</html>

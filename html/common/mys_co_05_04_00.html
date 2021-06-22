@@ -1,0 +1,78 @@
+<!-- [MYS_CO_05_04_00] 가입완료 작성자: 누리어 시스템 이진우 -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Last Depth | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content join-complete">     
+                <div class="page-header"></div>           
+                <section class="kb-sec">
+                    <h1 class="h1">건강한 자산관리의 시작! <br>KB마이머니에 오신 것을 환영합니다.</h1>
+                    <p class="service-join-status-msg">아래 &lsquo;자산 등록하기&rsquo; 버튼을 눌러 흩어져 있는<br>소중한 자산을 한눈에 관리해보세요!</p>
+                    <p class="service-join-status-msg02">
+                        <strong>마이데이터 서비스 가입현황</strong>
+                        고객님께서 가입하신 마이데이터 서비스 기관을 안내해드립니다.
+                    </p>
+                    <ul data-style="list">
+                        <li>KB국민은행</li>
+                        <li>신한은행</li>
+                    </ul>
+                </section>
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid_sticky lv2"><span>메인</span></button>
+                        <button type="button" class="btn-solid_sticky"><span>자산 등록하기</span></button>
+                    </div>
+                </div>
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+        <!-- Layer (fullpage popup, modal, bottom sheet) // -->
+        <div class="layered">            
+            @@include('@@webRoot/html/_layered/_popup-sample.html')
+            @@include('@@webRoot/html/_layered/_bottom-sheet-sample.html')
+            @@include('@@webRoot/html/_layered/_modal-sample.html')
+        </div>
+        <!-- // Layer (fullpage popup, modal, bottom sheet) -->
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+
+</body>
+
+</html>
+<!-- 가입완료 //-->
+<div class="popup" data-layered-name="popupJoinComplete">
+    <div class="popup_header">
+        
+    </div>
+    <div class="popup_contents">
+        
+    </div>
+    <div class="popup_buttons sticky-bottom">
+        <div class="btn-area">
+            <a href="javascript:;" class="btn-solid_sticky" role="button"><span>자산 등록하기</span></a>
+        </div>
+    </div>
+    <button class="btn-close" data-action="close"><span>닫기</span></button>
+</div>
+<!-- // 가입완료 -->

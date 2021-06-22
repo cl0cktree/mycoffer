@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_AS_17_01_00_P1] My금고 > 메인화면 - 자산등록 전  (작성자: 유플리트 이현섭)// -->
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "자산 | My금고"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app" data-page="submain">
+        <!-- app-header (for MyMoney) //-->
+        @@include('@@webRoot/html/_include/app-header.html',{
+            'pageTit':' My금고'
+        })
+        <!-- // app-header -->
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+
+            <!-- app-lnb //-->
+            <div class="app-lnb">
+                @@include('@@webRoot/html/_include/app-gnb.html')
+            </div>
+            <!-- //app-lnb -->
+            
+            <!-- app-content // -->
+            <main class="app-content my-safe bg-gray-bottom">
+                <section class="kb-sec bg-gray asset-my-safe">
+                    <div class="content-box shadow">
+						<div class="top-area">
+							<div class="name-wrap">
+                                <span class="ctm-name">김국민</span> 님
+                            </div>
+                            <p class="my-safe-msg">
+								금고에 나의 자산을 보관하고 
+                                가치를 모아 보세요!
+							</p>
+						</div>
+                        <div class="bottom-area mt20">
+                            <div class="my-safe-status-empty align-c">
+                                My금고가 비어 있습니다.
+                            </div>
+                        </div>
+                        <div class="index-visual mt20">
+                            <img src="../../static/images/asset/bg_realty_1.png" alt="">
+                        </div>
+					</div>
+
+                    <dl class="my-safe-asset-box content-box shadow mt16">
+                        <dt>
+                            <i class="icon-20"></i><strong class="h4">현금 (원화/외화)</strong>                     
+                        </dt>
+                        <dd class="amount"></dd>
+                    </dl>
+                    <dl class="my-safe-asset-box content-box shadow mt16">
+                        <dt>
+                            <i class="icon-20"></i><strong class="h4">금 (GOLD)</strong>                     
+                        </dt>
+                        <dd class="amount"></dd>
+                    </dl>
+                    <dl class="my-safe-asset-box content-box shadow mt16">
+                        <dt>
+                            <i class="icon-20"></i><strong class="h4">휴대폰</strong>                     
+                        </dt>
+                        <dd class="amount"></dd>
+                    </dl>
+                    <dl class="my-safe-asset-box content-box shadow mt16">
+                        <dt>
+                            <i class="icon-20"></i><strong class="h4">기타자산</strong>                     
+                        </dt>
+                        <dd class="amount"></dd>
+                    </dl>                  
+                </section>
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button class="btn-solid_sticky"><span>자산 추가하기</span></button>
+                        <!-- <a href="javascript:;" class="btn-solid_sticky" role="button"><span>자산 추가하기</span></a> -->
+                    </div>                    
+                </div>
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <script>       
+        //최초 선택되는 내용을 바꾸고 싶으면... (ui.js)
+        gfn_gnb.select(6);
+    </script>
+    <!-- Add Script -->
+    
+</body>
+
+</html>

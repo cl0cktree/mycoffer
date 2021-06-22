@@ -1,0 +1,155 @@
+<!-- [MYS_CO_06_01_01_06] 전송요구방법 > 통합인증 > 기관선택 > 전송 요구 항목 설정 > 공동인증서 선택 > 인증서 비밀번호 입력 > 자산 선택 (작성자: 누리어 시스템 이진우)// -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Last Depth | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header //-->
+        @@include('@@webRoot/html/_include/app-header-back.html',{
+            'pageTit' : ''
+        })
+        <!-- // app-header -->
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content select-assets">
+                <!--// SECTION -->
+                <section class="kb-sec">
+                    <h1 class="h2">6개 기관에서 <br>자산 정보를 연동했습니다.</h1>
+                    <p>연동된 기관의 계좌/상품을 선택해 주세요.</p>
+
+                    <h2 class="h4">은행<span class="num">3</span></h2>
+
+                    <dl class="accordian js-checkbox-selector">
+                        <dt>
+                            <span class="form-checkbox"><input type="checkbox" id="bank01"><label for="bank01">우체국</label></span>
+                            <button type="button"><i></i></button>
+                        </dt>
+                        <dd>
+                            <ul class="checkbox-group">
+                                <li><span class="form-checkbox_20"><input type="checkbox" id="bank0101"><label for="bank0101">상품명 <em class="num">1234-5678-1234</em></label></span></li>
+                                <li><span class="form-checkbox_20"><input type="checkbox" id="bank0102"><label for="bank0102">상품명 <em class="num">1234-5678-1234</em></label></span></li>
+                                <li><span class="form-checkbox_20"><input type="checkbox" id="bank0103"><label for="bank0103">상품명 <em class="num">1234-5678-1234</em></label></span></li>
+                            </ul>
+                        </dd>
+                        <dt>
+                            <span class="form-checkbox"><input type="checkbox" id="bank02"><label for="bank02">신한은행</label></span>
+                            <button type="button"><i></i></button>
+                        </dt>
+                        <dd>
+                            <ul class="checkbox-group">
+                                <li><span class="form-checkbox_20"><input type="checkbox" id="bank0201"><label for="bank0201">상품명 <em class="num">1234-5678-1234</em></label></span></li>
+                                <li><span class="form-checkbox_20"><input type="checkbox" id="bank0202"><label for="bank0202">상품명 <em class="num">1234-5678-1234</em></label></span></li>
+                                <li><span class="form-checkbox_20"><input type="checkbox" id="bank0202"><label for="bank0202">상품명 <em class="num">1234-5678-1234</em></label></span></li>
+                            </ul>
+                        </dd>
+                        <dt>
+                            <span class="form-checkbox"><input type="checkbox" id="bank03"><label for="bank03">NH농협은행</label></span>
+                            <button type="button"><i></i></button>
+                        </dt>
+                        <dd>
+                            <ul class="checkbox-group">
+                                <li><span class="form-checkbox_20"><input type="checkbox" id="bank0301"><label for="bank0301">상품명 <em class="num">1234-5678-1234</em></label></span></li>
+                                <li><span class="form-checkbox_20"><input type="checkbox" id="bank0302"><label for="bank0302">상품명 <em class="num">1234-5678-1234</em></label></span></li>
+                                <li><span class="form-checkbox_20"><input type="checkbox" id="bank0302"><label for="bank0302">상품명 <em class="num">1234-5678-1234</em></label></span></li>
+                            </ul>
+                        </dd>
+                    </dl>
+
+                    <h2 class="h4">카드<span class="num">1</span></h2>
+
+                    <dl class="accordian js-checkbox-selector">
+                        <dt>
+                            <span class="form-checkbox"><input type="checkbox" id="card01"><label for="card01">KB국민카드</label></span>
+                            <button type="button"><i></i></button>
+                        </dt>
+                        <dd>
+                            <ul class="checkbox-group">
+                                <li><span class="form-checkbox_20"><input type="checkbox" id="card0101"><label for="card0101">상품명 <em class="num">1234-5678-1234</em></label></span></li>
+                                <li><span class="form-checkbox_20"><input type="checkbox" id="card0102"><label for="card0102">상품명 <em class="num">1234-5678-1234</em></label></span></li>
+                                <li><span class="form-checkbox_20"><input type="checkbox" id="card0102"><label for="card0102">상품명 <em class="num">1234-5678-1234</em></label></span></li>
+                            </ul>
+                        </dd>
+                    </dl>
+
+                    <h2 class="h4">보험<span class="num">1</span></h2>
+
+                    <dl class="accordian js-checkbox-selector">
+                        <dt>
+                            <span class="form-checkbox"><input type="checkbox" id="insurance01"><label for="insurance01">KB생명</label></span>
+                            <button type="button"><i></i></button>
+                        </dt>
+                        <dd>
+                            <ul class="checkbox-group">
+                                <li><span class="form-checkbox_20"><input type="checkbox" id="insurance0101"><label for="insurance0101">상품명 <em class="num">1234-5678-1234</em></label></span></li>
+                                <li><span class="form-checkbox_20"><input type="checkbox" id="insurance0102"><label for="insurance0102">상품명 <em class="num">1234-5678-1234</em></label></span></li>
+                                <li><span class="form-checkbox_20"><input type="checkbox" id="insurance0102"><label for="insurance0102">상품명 <em class="num">1234-5678-1234</em></label></span></li>
+                            </ul>
+                        </dd>
+                    </dl>
+
+
+                    <div class="kb-form agree-integrated-authentication" data-status="">
+                        <div class="kb-form_inner">
+                            <span class="form-checkbox"><input type="checkbox" id="agreeCheck1b">
+                                <label for="agreeCheck1b">통합인증 이용 동의</label>                                    
+                            </span>
+                            <!-- 수정 : 2021.06.10 // -->
+                            <!-- <button type="button" class="link" data-call-layered="popupAgreeToUseIntegratedCertification"><i class="icon-link_24">전문보기</i></button> -->
+                            <a href="./mys_co_06_01_01_07_p1.html" class="link" role="button"><i class="icon-link_24">전문보기</i></a>
+                            <!-- // 수정 : 2021.06.10 -->
+                        </div>
+                        <em class="validation">통합 인증 이용에 동의해 주세요.</em>
+                    </div>
+                    
+                </section>
+                <!-- SECTION //-->
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid_sticky" disabled><span>확인</span></button>
+                    </div>
+                </div>
+
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+        <!-- Layer (fullpage popup, modal, bottom sheet) // -->
+        <div class="layered">
+            
+        </div>
+        <!-- // Layer (fullpage popup, modal, bottom sheet) -->
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    <script>
+        $('.agree-integrated-authentication').on('change','input:checkbox',function(){
+            var tf = $(this).prop('checked');
+            if(tf){
+                $('.select-assets .sticky-bottom button').prop('disabled', false);
+            }else{
+                $('.select-assets .sticky-bottom button').prop('disabled', true);
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
+<!-- // [MYS_CO_06_01_01_09] 전송요구방법 > 통합인증 > 기관선택 > 검색결과 -->
