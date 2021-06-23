@@ -1,0 +1,121 @@
+<!-- [MYS_MN_01_01_02_01] 전체메뉴 > My Data 관리 > 데이터 상세 (작성자: 누리어 시스템 이진우)// -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Last Depth | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header (for MyMoney) //-->
+        @@include('@@webRoot/html/_include/app-header.html',{
+            'pageTit':'마이데이터 관리<!-- 수정 : 2021.06.01 -->'
+        })
+        <!-- // app-header -->
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content mydata-kbinfo-detail">
+
+                <!-- 수정 : 2021.06.10 // -->
+                <section class="kb-sec full">
+                    <div class="mydata-kbinfo-detail-summary">
+                        <strong class="tit">처브라이프생명보험</strong>
+                        <span class="expiraton is-active">만료 <strong><em class="num">30</em>일 남음</strong></span><!-- 30일 이하 is-active-->
+                    </div>
+                </section>
+                
+
+                <section class="kb-sec">
+                    <h2 class="h4">정보 제공 요청일</h2>
+                    <div class="table">
+                        <table class="tbl-v01">
+                            <caption>정보 제공 요청일 테이블</caption>
+                            <tbody>
+                            <tr>
+                                <th>제공요청일</th>
+                                <td><span class="num">2021.08.04</span></td>
+                            </tr>
+                            <tr>
+                                <th>만료일</th>
+                                <td><span class="num">2022.08.03</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h2 class="h4">전송요구 항목</h2>
+                    <div class="table">
+                        <table class="tbl-v01">
+                            <caption>기관별 전송요구 항목</caption>
+                            <tbody>
+                            <tr>
+                                <th>정기전송 여부</th>
+                                <td>정기전송 신청/정기전송 미신청</td>
+                            </tr>
+                            <tr>
+                                <th>정보 요청 기간</th>
+                                <td><span class="num">12</span>개월</td>
+                            </tr>
+                            <tr>
+                                <th>정보 제공 요청 목적</th>
+                                <td>통합조회</td>
+                            </tr>
+                            <tr>
+                                <th>개인신용정보 보유기간</th>
+                                <td><span class="num">5</span>년</td>
+                            </tr>
+                            <tr>
+                                <th>정보항목(상품/계좌)</th>
+                                <td><u><span class="num">00</span>개</u></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- // 수정 : 2021.06.10 -->
+
+                    <p><button type="button" class="btn-text" data-call-layered="MYS_MN_01_01_02_04"><span>정보 전송 요청 해지</span><i class="icon-link_20"></i></button></p>
+                </section>
+
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid_sticky lv2"><span>변경</span></button>
+                        <button type="button" class="btn-solid_sticky" data-action="extendedPeriod"><span>연장</span></button><!-- 임시 data-action="extendedPeriod"-->
+                    </div>
+                </div>
+
+            </main>
+            <!-- // app-content -->
+
+        <!-- // app-container -->
+    </div>
+
+    <div class="layered">
+
+        @@include('@@webRoot/html/menu/layered/mys_mn_01_01_02_04.html')
+
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+
+    <script>
+        $('button[data-action=extendedPeriod]').on('click',function(){
+            modalPopup({
+                title: '',
+                message: "마이데이터 서비스의 계속적인 이용을 위해 선택하신 기관의 정보제공기간을 1년 더 연장하시겠습니까?"
+            });
+        });
+    </script>
+</body>
+
+</html>

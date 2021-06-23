@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_GO_05_00_01] 목표챌린지 > 남들만큼 > 버킷리스트 만들기 (작성자: 누리어 시스템 김삼희) -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "버킷리스트 만들기 | 목표"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-header.html', {pageTit:'나만의 버킷리스트 만들기'})
+		<!-- // app-header -->
+
+		<!-- app-container (for MyMoney) //-->
+		<div class="app-container">
+			<!-- app-content // -->
+			<main class="app-content">
+                <section class="kb-sec my-bucket-ist">
+                    <strong class="h4 required">나만의 버킷 이름을 입력해주세요.</strong>
+                    <div class="kb-form" data-status="info">
+                        <div class="kb-form_inner form-text">
+                            <input type="text" id="bucketList" value="" title="나만의 버킷리스트" placeholder="예)친구 축의금 모으기">
+                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                        </div>
+                        <em class="validation">필수 입력 항목입니다.</em>
+                        <em class="validation">최대 $$자까지 입력할 수 있습니다.</em>
+                        <em class="validation">특수문자는 입력할 수 없습니다.</em>
+                    </div>
+                    <strong class="h4 required">목표금액을 입력해 주세요.</strong>
+                    <div class="kb-form no-transition" data-status="info">
+                        <div class="kb-form_inner form-text">
+                            <input type="text" inputmode="numeric" id="formAmountSample01111" placeholder="금액을 입력해주세요" value="" data-unit="원" data-action="autoSeperator" title="목표금액">
+                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                        </div>
+                        <em class="validation">목표금액은 최대 $$원까지 설정할 수 있습니다.</em>
+                    </div>
+                    <strong class="h4 required">목표 기간을 선택해주세요.</strong> 
+                    <div class="kb-form" data-status="info">
+                        <ul class="btn-segmented_radio">
+                            <li>
+                                <input type="radio" name="btnradio" id="btnradio1" checked="">
+                                <label for="btnradio1">1개월</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="btnradio" id="btnradio2">
+                                <label for="btnradio2">3개월</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="btnradio" id="btnradio3">
+                                <label for="btnradio3">6개월</label>
+                            </li>
+                        </ul>
+                        <em class="validation">목표기간은 적금계좌를 연결한 날부터 시작됩니다.</em>
+                    </div>
+                    <strong class="h4">이미지를 선택해 주세요.</strong>
+                    <div class="kb-form" data-status="info">
+                        <div class="input-img-box">
+                            <!-- 2021-06-18 수정 // -->
+                            <div class="checkbox-group icon-sel">
+                                <span class="form-checkbox_20 icon-type">
+                                    <input type="radio" name="checkboxIconSel" id="checkboxIconSel01">
+                                    <label for="checkboxIconSel01"><i class="icon-worldtrip_tiny"></i></label>
+                                </span>
+                                <span class="form-checkbox_20 icon-type">
+                                    <input type="radio" name="checkboxIconSel" id="checkboxIconSel02">
+                                    <label for="checkboxIconSel02"><i class="icon-overseas_tiny"></i></label>
+                                </span>
+                                <span class="form-checkbox_20 icon-type">
+                                    <input type="radio" name="checkboxIconSel" id="checkboxIconSel03">
+                                    <label for="checkboxIconSel03"><i class="icon-mobile_change_tiny"></i></label>
+                                </span>
+                                <span class="form-checkbox_20 icon-type">
+                                    <input type="radio" name="checkboxIconSel" id="checkboxIconSel04">
+                                    <label for="checkboxIconSel04"><i class="icon-overbag_tiny"></i></label>
+                                </span>
+                                <span class="form-checkbox_20 icon-type">
+                                    <input type="radio" name="checkboxIconSel" id="checkboxIconSel05">
+                                    <label for="checkboxIconSel05"><i class="icon-forkids_tiny"></i></label>
+                                </span>
+                                <span class="form-checkbox_20 icon-type">
+                                    <input type="radio" name="checkboxIconSel" id="checkboxIconSel06">
+                                    <label for="checkboxIconSel06"><i class="icon-parentsmoney_tiny"></i></label>
+                                </span>
+                            </div>
+                            <!-- // 2021-06-18 수정 -->
+                        </div>
+                        <em class="validation">선택하지 않으면 기본 이미지로 설정됩니다.</em>
+                    </div>
+                    <strong class="h4">추가 문구를 입력해 주세요.</strong>
+                    <div class="kb-form" data-status="info">
+                        <div class="kb-form_inner form-text">
+                            <input type="text" id="bucketList" value="" title="나만의 버킷리스트" placeholder="예)#축의금 #축하금모으기">
+                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                        </div>
+                        <em class="validation">메모는 최대 $$자까지 입력할 수 있습니다.</em>
+                        <em class="validation">특수문자는 입력할 수 없습니다.</em>
+                    </div>
+                </section>
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <a href="mys_go_05_02_01.html" role="button" class="btn-solid_sticky btn-link"><span>완료</span></a>
+                    </div>
+                </div>
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+    <script src="@@webRoot/static/common/lib/swiper.min.js"></script>
+</body>
+
+</html>
