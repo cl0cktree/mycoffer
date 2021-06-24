@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+@@include('@@webRoot/html/_include/app-head.html',{
+"title": "Last Depth | 1st Depth"
+})
+<style>
+    
+
+    hr{margin:150px 0;}
+</style>
+</head>
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header //-->
+        t@@include('@@webRoot/html/_include/app-header.html',{
+            'pageTit' :'bubble-graph01'
+        })
+        <!-- // app-header -->
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content">
+
+                <section class="kb-sec">
+
+                    <div class="designed-img"><img src="@@webRoot/html/__guide/highchart/images/bubble-graph01.png" alt=""></div>
+
+                    <div class="chart-flex">                        
+                        <div class="highcharts_column" id="bubbleChart01"></div>
+                    </div>
+                </section>
+
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+    </div>
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script> 
+    <script src="@@webRoot/static/common/lib/highcharts/highcharts-more.js"></script>
+    <script src="@@webRoot/static/js/ui.js"></script>
+    
+    
+    <script>
+        // highchart 공통 options        
+        Highcharts.setOptions({
+            title: { text: null },
+            subTitle: { text: null },
+            legend: { enabled: false },
+            credits: { enabled: false },
+            label : { fontFamily: 'KBFGText'},
+            credits: { enabled: false },
+            exporting: { enabled: false }
+        });
+                
+        var bubbleChart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'bubbleChart01', // chart 삽입 target ID                
+                plotBackgroundColor: null,
+                plotBorderWidth: 0,
+                plotShadow: false,
+                type: 'packedbubble',
+                height: (3 / 4 * 100) + '%' // 4:3 비율로 설정
+            },            
+            tooltip: { enabled: false },
+            plotOptions: {
+                packedbubble: {
+                    minSize: '30%',
+                    maxSize: '175%',
+                    zMin: 0,
+                    zMax: 100,                       
+                    layoutAlgorithm: {
+                        splitSeries: false,
+                        gravitationalConstant: 0.005
+                    },
+                    dataLabels: {
+                        enabled: true,
+                        // format: '{point.name}<br>'+'<span style="font-size:5vw;fontFamily: Roboto;"><b>{point.value}</b></span>%',
+                        formatter: function () { 
+                            return this.point.name + "<br> <span style='font-size:5vw;font-family:Roboto;'><b style='font-size:6vw'>" + gfn_comma3Digit(this.point.value) + "</b>원"
+                        },              
+                        style: {
+                            color: '#26282c',
+                            textOutline: 'none',
+                            fontWeight: 'normal',
+                            textAlign:'center',    
+                            fontSize: '3.5vw',           
+                            fontFamily: "KBFGText"                            
+                        }
+                    }
+                }  
+            },
+            series: [{
+                name: null,
+                data: [{
+                    name: '식비',
+                    value: 56,
+                    color: {
+                        radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
+                        stops: [ [0, '#ffe381'], [1, '#fbc60a'] ]
+                    }
+                },{
+                    name: '여행',
+                    color: '#f8956d',
+                    value: 25,
+                    color: {
+                        radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
+                        stops: [ [0, '#fbb192'], [1, '#f8956d'] ]
+                    }
+                },{
+                    name: '통신비',
+                    color: '#edb7fd',
+                    value: 12,
+                    color: {
+                        radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
+                        stops: [ [0, '#edb7fd'], [1, '#e69afc'] ]
+                    }
+                },{
+                    name: '편의점',
+                    color: '#6cb7fa',
+                    value: 5,
+                    color: {
+                        radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
+                        stops: [ [0, '#89c6fc'], [1, '#6cb7fa'] ]
+                    }
+                },{
+                    name: '음주',
+                    color: '#88dada',
+                    value: 3,
+                    color: {
+                        radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
+                        stops: [ [0, '#9ef6f6'], [1, '#88dada'] ]
+                    }
+                }]
+            
+            }]
+        });
+    </script>
+
+</body>
+</html>
