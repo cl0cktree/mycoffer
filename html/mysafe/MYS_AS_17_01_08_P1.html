@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_AS_17_01_08_P1] 작성자: 유플리트 이현섭 -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "자산 | My금고"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-header-close.html',{
+			'pageTit' :'금(GOLD)'
+		})
+		<!-- // app-header (for MyMoney) -->
+
+		<!-- app-container //-->
+		<div class="app-container">
+
+			<!-- app-content // -->
+			<main class="app-content my-safe-pop-gold my-asset pop-my-asset">
+
+                <section class="kb-sec">
+                    <div class="pop-notice">
+                        <span>
+                            <strong class="h2">
+                                금 시세를 반영한 원화환산금액을 <br/>표시합니다.
+                            </strong>
+                        </span>
+                        <em>* 표시된 항목은 필수 입력 사항입니다.</em>
+                    </div>
+                </section>
+                <section class="kb-sec asset-registration"><!-- 2021-06-02 no-transition 삭제 -->
+
+                    <div class="kb-form">
+                        <label for="goldUnitInput">보유</label>
+                        <div class="kb-form_inner form-text">
+                            <input type="text" class="gold-unit-title" id="goldUnitInput" placeholder="0" value="">
+                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                        </div>
+                    </div>
+                    <div class="kb-form not-ready gold-unit-form" data-status=""><!-- 2021-06-02 no-transition 삭제 -->
+                        <label for="GoldUnit" class="gold-unit-title"></label>
+                        <div class="kb-form_inner form-select">
+                            <button type="button" class="selected-option" data-call-layered="MYS_AS_17_01_08_BS2" id="btnGoldUnit"></button>
+                            <select name="" id="GoldUnit" title="금 단위선택">
+                                <option value="">선택</option>
+                                <option value="goldUnit01" selected>그램</option>
+                                <option value="goldUnit02">돈</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+                <section class="kb-sec sticky-bottom">
+                    <div class="btn-area">
+                        <button class="btn-solid_sticky lv2"><span>취소</span></button>
+                        <button class="btn-solid_sticky"><span>다음</span></button>
+                    </div>
+                </section>
+
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+            @@include('@@webRoot/html/mysafe/layered/MYS_AS_17_01_08_BS2.html')
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+    <script>
+
+    </script>
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+@charset "utf-8";
+
+// html{
+// 	-ms-content-zooming: none;
+// 	-ms-touch-action: pan-x pan-y;
+// }
+
+button:focus,//{outline:1px solid #000;}
+textarea:focus{outline:none;}
+
+/* IE FF remove Click Action*/ 
+button:active span,
+button:active i,
+button:focus span,
+button:focus i{position:relative;top:0;left:0;}
+label:before{box-sizing:border-box;}
+input[readonly]{pointer-events:auto;}
+a, input, select, textarea, button {font-size:inherit;font-weight:inherit;color:inherit;}
+textarea{resize:none;}
+:-ms-input-placeholder{color:$kb-ui07 !important;}/* Internet Explorer 10-11 */
+::-ms-input-placeholder{color:$kb-ui07 !important;}/* Microsoft Edge */
+::placeholder{color:$kb-ui07;opacity:1;text-align:left;}/* Chrome, Firefox, Opera, Safari 10.1+ */
+textarea:-ms-input-placeholder{font-size:inherit;color:$kb-ui07 !important;}/* Internet Explorer 10-11 */
+textarea::-ms-input-placeholder{font-size:inherit;color:$kb-ui07 !important;}/* Microsoft Edge */
+textarea::placeholder{font-size:inherit;color:$kb-ui07;opacity:1;}/* Chrome, Firefox, Opera, Safari 10.1+ */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {-webkit-appearance: none;margin: 0;}
+/* Firefox */
+input[type=number] {-moz-appearance: textfield;}
+
+/* COMMON */
+.c-red{color:$color-red;}
+.c-blue{color:$color-blue;}
+.c-black{color:$kb-ui02;}
+.is-hidden{@include hidden;}
+.is-disabled,
+input:read-only,
+input:disabled,
+button:disabled{cursor:default;}
+.full{width:100%;}
+.bold{font-weight:bold;}
+.normal{font-weight:normal;}
+.align-l{text-align:left;}
+.align-c{text-align:center;}
+.align-r{text-align:right;}
+.mt4{margin-top:4px;}
+.mt8{margin-top:8px;}
+.mt12{margin-top:12px;}
+.mt16{margin-top:16px;}
+.mt20{margin-top:20px;}
+.mt24{margin-top:24px;}
+.mt28{margin-top:28px;}
+.mt32{margin-top:32px;}
+.mt36{margin-top:36px;}
+.mt40{margin-top:40px;}
+.mt48{margin-top:48px;}
+.mt60{margin-top:60px;}
+.mb4{margin-bottom:4px;}
+.mb8{margin-bottom:8px;}
+.mb12{margin-bottom:12px;}
+.mb16{margin-bottom:16px;}
+.mb20{margin-bottom:20px;}
+.mb24{margin-bottom:24px;}
+.mb28{margin-bottom:28px;}
+.mb32{margin-bottom:32px;}
+.mb36{margin-bottom:36px;}
+.mb40{margin-bottom:40px;}
+.mb48{margin-bottom:48px;}
+.pb20{padding-bottom:20px;}
+
+/* Default */
+html,body{height:100%;}
+body{min-width:320px;font-family:'KBFGText',sans-serif;font-size:16px;line-height:1;color:$kb-ui02;letter-spacing:-0.02em;word-break:keep-all;word-wrap:break-word;}
+body.is-hold{overflow:hidden;}
+.dim{position:fixed;top:0;left:0;bottom:0;right:0;background-color:$dim-color;z-index:$level70;}
+
+input[type=text],
+input[type=password]{@include text($size : 22px, $weight : bold, $line-height: 31px);letter-spacing:inherit;}
+input[type=tel],
+input[type=number],
+input[inputmode=numeric]{@include number($size: 24px, $weight : bold, $line-height: 31px);letter-spacing:inherit;}
+input[type=tel]::placeholder,
+input[type=number]::placeholder,
+input[inputmode=numeric]::placeholder{@include text($size : 22px, $weight : bold, $line-height: 31px);font-family:'KBFGText';color:$kb-ui07;}
+textarea{width:100%;padding:16px;font-size:16px;}
+
+
+/*  Web Accessibility */
+.skip-nav{position:fixed;top:-60px;left:0;width:100%;height:60px;}
+.skip-nav a{position:absolute;top:0;left:0;width:100%;height:60px;line-height:60px;font-weight:500;background-color:#000;color:#fff;text-align:center;  }
+.skip-nav a:focus{top:60px;}
+
+//layout
+.app{display:flex;flex-flow:column;}
+
+.app-container{flex:1;}
+
+/* Section */
+.kb-sec{padding-left:$space;padding-right:$space;}
+.kb-sec:first-child{padding-top:20px;}
+.kb-sec.full{width:100%;padding-left:0;padding-right:0;}
+.kb-sec.full > div{padding-left:$space;padding-right:$space;}
+.kb-sec.full > div.no-space{padding-left:0;padding-right:0;}
+.kb-sec.bg-gray:first-child{background: linear-gradient(180deg, rgba(255,255,255,0) 0, rgba(255,255,255,0) 40px, rgba(247,247,248,1) 40px, rgba(247,247,248,1) 100%);}
+.kb-sec.bg-white:first-child{background: linear-gradient(180deg, rgba(255,255,255,0) 0, rgba(255,255,255,0) 40px, rgba(255,255,255,1) 40px, rgba(255,255,255,1) 100%);}
+.app[data-page=submain] .kb-sec:not(:first-child).bg-gray,
+.popup_contents .kb-sec.bg-gray,
+.kb-sec.bg-gray{background-color:$kb-ui10;}
+.app[data-page=submain] .kb-sec:not(:first-child){background-color:$kb-ui11;}
+
+
+.iphone {
+	input[type=text]:focus,
+	input[type=password]:focus,
+	input[type=tel]:focus,
+	input[type=email]:focus,
+	input[type=number]:focus {outline:none;}
+}
+
+body {
+	--sticky-button-height: 52px;
+}
+.ios.homebar body {
+	--sticky-button-height: 86px;
+}
