@@ -76,7 +76,7 @@
                         <div class="kb-form gold-input-shape flex100 display-none">
                             <!-- <label for="goldUnitInput"></label> -->
                             <div class="kb-form_inner form-text">
-                                <input type="text" class="gold-shape-input" id="goldMemoInput" placeholder="최대 10자를 입력해 주세요" value="" maxlength="10">
+                                <input type="text" class="gold-shape-input" id="goldShapeInput" placeholder="최대 10자를 입력해 주세요" value="" maxlength="10">
                                 <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                             </div>
                         </div>
@@ -112,14 +112,26 @@
 	</div>
 
 	<!-- Script -->
-    <script>
-
-    </script>
 	@@include('@@webRoot/html/_include/common-js.html')
 	<!-- Add Library (this page only)-->
 	<script src="@@webRoot/static/js/ui.js"></script>
 	<!-- Add Script -->
+    <script>
+        $('input[type=text]').focusin(function(){
+            if (($('input[type=text]').val() !== '')||($('input[type=text]').val() !== null)){
+                $(this).parent().parent().prev('.tit').removeClass('empty-gold-unit-info');
+                $(this).parent().parent().prev('.tit').prev('.tit').removeClass('empty-gold-unit-info');
+            }
+        });
+        $('input[type=text]').focusout(function(){
+            if(($('input[type=text]').val() === '')||($('input[type=text]').val() === null)){
+                console.log($(this).val());
+                $(this).parent().parent().prev('.tit').addClass('empty-gold-unit-info');
+                $(this).parent().parent().prev('.tit').prev('.tit').addClass('empty-gold-unit-info');
+            }
+        });
 
+    </script>
 </body>
 
 </html>
