@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_AS_11_01_02_P2] 작성자: 누리어 시스템 김은경 -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "Wish House 등록 | 자산"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-header-close.html',{
+			'pageTit' :'Wish House 등록'
+		}) 
+		<!-- // app-header (for MyMoney) -->
+
+		<!-- app-container //-->
+		<div class="app-container">
+
+			<!-- app-content // -->
+			<main class="app-content my-asset">
+
+						
+		<section class="kb-sec selected-address">
+			<div class="my-address-box">
+				<p class="tit">공작</p>
+				<p class="address">서울특별시 영등포구 여의도동</p>
+			</div>
+			<p class="require-txt">* 표시된 항목은 필수 입력 사항입니다.</p>
+		</section>
+		<section class="kb-sec my-house">
+			<div class="selected">
+				<div class="kb-form_multi" data-status="">
+					<strong class="tit">동호수</strong>
+					<div class="kb-form not-ready">
+						<label for="aptNumber">동호수</label>
+						<div class="kb-form_inner form-select">
+							<button type="button" class="selected-option">동</button>
+							<select name="" id="aptNumber" title="동 선택">
+								<option value="">동</option>
+								<option value="">1</option>
+								<option value="">2</option>
+								<option value="">3</option>
+								<option value="">4</option>
+							</select>
+						</div>
+						<em class="validation">에러 메세지 영역 입니다.</em>
+					</div>
+					<div class="kb-form not-ready">
+						<div class="kb-form_inner form-select">
+							<button type="button" class="selected-option">호수</button>
+							<select name="" id="aptNumber_2" title="호수 선택">
+								<option value="">호수</option>
+								<option value="">1</option>
+								<option value="">2</option>
+								<option value="">3</option>
+								<option value="">4</option>
+							</select>
+						</div>
+						<em class="validation">에러 메세지 영역 입니다.</em>
+					</div>
+				</div>
+				<!-- 2021-06-22 수정 // -->
+				<div class="kb-form no-transition" data-status="">
+					<label for="formSelectSample02" class="required">면적</label>
+					<div class="kb-form_inner form-select">
+						<button type="button" class="selected-option">선택 option 1</button>
+						<select name="" id="formSelectSample02" title="면적">
+							<option value="">면적</option>
+							<option value="" selected="">46.28㎡ 방1개, 욕실1개</option>
+							<option value="">46.28㎡ 방1개, 욕실1개</option>
+							<option value="">46.28㎡ 방1개, 욕실1개</option>
+							<option value="">46.28㎡ 방1개, 욕실1개</option>
+						</select>
+					</div>
+					<em class="validation">Message</em>
+				</div>
+				<!-- // 2021-06-22 수정 -->
+			</div>
+			<div class="kb-form not-ready" data-status="">
+				<label for="nickName">별명</label>
+				<div class="kb-form_inner form-text">
+					<input type="text" id="nickName" maxlength="10" value="" placeholder="최대 10자">
+					<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+				</div>
+			</div>
+		</section>
+		<section class="kb-sec select-account">
+			<h4 class="h4">준비계좌 선택</h4>
+			<ul class="list">
+				<li>
+					<span class="form-checkbox_24"><input type="checkbox" id="wishAccount_1" name="radioSample02"><label for="wishAccount_1">KB국민은행 주택청약종합저축</label></span><!-- 2021-06-22 수정 -->
+					<dl class="description-list">
+						<dt>
+							<span class="account">81691604111122</span>
+						</dt>
+						<dd><strong class="amount"><span class="num">13,000,000</span>원</strong></dd>
+					</dl>
+				</li>
+				<li>
+					<span class="form-checkbox_24"><input type="checkbox" id="wishAccount_2" name="radioSample02"><label for="wishAccount_2">신한은행 리츠 부동산 종류형 투자신탁
+						(재간접형)-AE</label></span>
+					<dl class="description-list">
+						<dt>
+							<span class="account">81691604111122</span>
+						</dt>
+						<dd><strong class="amount"><span class="num">13,000,000</span>원</strong></dd>
+					</dl>
+				</li>
+			</ul>
+		</section>
+		<section class="kb-sec sticky-bottom">
+			<div class="btn-area">
+				<button class="btn-solid_sticky lv2"><span>이전</span></button>
+				<button type="button" class="btn-solid_sticky" data-action="close"><span>등록</span></button>
+			</div>
+		</section>
+	
+				
+
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!-- [MYS_MN_06_01_06] 전체메뉴 > >마이데이터 선물함 > 추천이력 (작성자: 누리어 시스템 이진우)// -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Last Depth | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app"><!-- 수정 2021.06.25 : Liiv, Starbanking  앱 안에서  동작할 경우 data-page="submain" -->
+        <!-- app-header (for MyMoney) //-->
+        @@include('@@webRoot/html/_include/app-header.html',{
+            'pageTit':'마이데이터 선물함<!-- 수정 : 2021.06.23 -->'
+        })
+        <!-- // app-header -->
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+            <div class="app-lnb">
+                <div class="tab swiper-container">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide"><a href="javscript:;">선물</a></li><!-- 수정 : 2021.06.25 -->
+                        <li class="swiper-slide"><a href="javscript:;">실시간 이벤트</a></li><!-- 수정 : 2021.06.25 -->
+                        <li class="swiper-slide is-active"><a href="javscript:;">친구추천</a></li><!-- 수정 : 2021.06.25 -->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- app-content // -->
+            <main class="app-content recommend-to-friend"><!-- 수정 : 2021.06.25 -->
+                <section class="kb-sec bg-white"><!-- 수정 : 2021.06.25 -->
+                    <div class="tab_button">
+                        <a href="javascript:;"><span>친구추천</span></a>
+                        <a href="javascript:;" class="is-active"><span>추천이력</span></a>
+                    </div>                    
+                </section>
+
+                <section class="kb-sec recommend-history">
+                    <div class="img"><img src="" alt="이벤트 이미지"></div>
+                    <div class="join-count">참여건수<strong><span class="num">11</span>명</strong></div>
+                    <ul class="recommend-history-list">
+                        <li>
+                            <span class="name">김국민</span>
+                            <div>
+                                <b class="c-blue">마이데이터 전송동의</b><!-- 동의(파란색: c-blue)/미동의 (붉은색 :c-red)-->
+                                <span class="date">2021.05.07 08:54</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="name">김국민</span>
+                            <div>
+                                <b class="c-blue">마이데이터 전송동의</b>
+                                <span class="date">2021.05.07 08:54</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="name">김국민</span>
+                            <div>
+                                <b class="c-blue">마이데이터 전송동의</b>
+                                <span class="date">2021.05.07 08:54</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="name">김국민</span>
+                            <div>
+                                <b class="c-red">미동의</b>
+                                <span class="date">2021.05.07 08:54</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- 친구 추천 이력 없을 때 // -->
+                    <div class="no-data">
+                        <i class="icon-info_24"></i>
+                        <p>최근 3개월간 추천이력이 없습니다.</p>
+                    </div>
+                    <!-- // 친구 추천 이력 없을 때 -->
+                </section>
+
+            </main>
+            <!-- // app-content -->
+
+        <!-- // app-container -->
+    </div>
+
+    <div class="layered">
+
+        @@include('@@webRoot/html/menu/layered/mys_mn_01_02_03.html')
+
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    <script>
+        gfn_gnb.select(10,2); //수정 2021.06.25 : liiv, starbanking  용
+    </script>
+
+</body>
+
+</html>

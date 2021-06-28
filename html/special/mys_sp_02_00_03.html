@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<!-- [MYS_SP_02_00_03] MY FUN DATA > 부자스토리텔링 > 시뮬레이션 (작성자: 누리어 시스템 김삼희) -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "부자 스토리텔링 시뮬레이션 | MY FUN DATA"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-header.html', {pageTit:'어느 날 나에게 50억이 생긴다면?'})
+		<!-- // app-header -->
+
+		<!-- app-container (for MyMoney) //-->
+		<div class="app-container">
+
+			<!-- app-content // -->
+			<main class="app-content my-fun-data rich-storytelling-simulation">
+
+				<!-- 컨텐츠 상단 배너 영역 // -->
+				<section class="kb-sec full">
+                    <div class="banner-box">
+                        <h3 class="h3">
+                            <em class="num">50</em>억 사용 계획을 세워보세요
+                            <p class="simulate-amount"><strong><span><em class="num">47</em>억</spa></strong></p>
+                            <div class="banner-img"><img src="@@webRoot/static/images/special/img_myfundata_item02.png" alt=""></div>
+                        </h3>
+                    </div>
+                </section>
+                <!--// 컨텐츠 상단 배너 영역 -->
+                <section class="kb-sec simulate-list">
+                    <!-- [D] 21-06-11 수정 : 순서 및 관련 이미지 오류 수정 //-->
+                    <ul>
+                        <li>
+                            <div class="info-box">
+                                <p class="list-name"><span>나만 볼래</span><strong>금고</strong></p>
+                                <p class="img-icon"><img src="@@webRoot/static/images/special/img_rich-storytelling-icon01.png" alt=""></p>
+                            </div>
+                            <div class="kb-form select-bs" data-status="">
+                                <div class="kb-form_inner form-text">
+                                    <input type="text" id="simulationOption01" value="3억" role="button" data-call-layered="bsRichStorytellingSimulationOption" readonly="">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="info-box">
+                                <p class="list-name"><span>안전이 최고</span><strong>은행</strong></p>
+                                <p class="img-icon"><img src="@@webRoot/static/images/special/img_rich-storytelling-icon04.png" alt=""></p>
+                            </div>
+                            <div class="kb-form select-bs" data-status="">
+                                <div class="kb-form_inner form-text">
+                                    <input type="text" id="simulationOption03" value="3억" role="button" data-call-layered="bsRichStorytellingSimulationOption" readonly="">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="info-box">
+                                <p class="list-name"><span>일단 질러</span><strong>주식</strong></p>
+                                <p class="img-icon"><img src="@@webRoot/static/images/special/img_rich-storytelling-icon02.png" alt=""></p>
+                            </div>
+                            <div class="kb-form select-bs" data-status="">
+                                <div class="kb-form_inner form-text">
+                                    <input type="text" id="simulationOption02" value="3억" role="button" data-call-layered="bsRichStorytellingSimulationOption" readonly="">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="info-box">
+                                <p class="list-name"><span>혹시 몰라</span><strong>보험/연금</strong></p>
+                                <p class="img-icon"><img src="@@webRoot/static/images/special/img_rich-storytelling-icon03.png" alt=""></p>
+                            </div>
+                            <div class="kb-form select-bs" data-status="">
+                                <div class="kb-form_inner form-text">
+                                    <input type="text" id="simulationOption04" value="3억" role="button" data-call-layered="bsRichStorytellingSimulationOption" readonly="">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="info-box">
+                                <p class="list-name"><span>내집 마련</span><strong>부동산</strong></p>
+                                <p class="img-icon"><img src="@@webRoot/static/images/special/img_rich-storytelling-icon06.png" alt=""></p>
+                            </div>
+                            <div class="kb-form select-bs" data-status="">
+                                <div class="kb-form_inner form-text">
+                                    <input type="text" id="simulationOption06" value="3억" role="button" data-call-layered="bsRichStorytellingSimulationOption" readonly="">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="info-box">
+                                <p class="list-name"><span>덕질 뿜뿜</span><strong>예술/교양</strong></p>
+                                <p class="img-icon"><img src="@@webRoot/static/images/special/img_rich-storytelling-icon05.png" alt=""></p>
+                            </div>
+                            <div class="kb-form select-bs" data-status="">
+                                <div class="kb-form_inner form-text">
+                                    <input type="text" id="simulationOption05" value="3억" role="button" data-call-layered="bsRichStorytellingSimulationOption" readonly="">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!--// [D] 21-06-11 수정 : 순서 및 관련 이미지 오류 수정 -->
+                    <div class="btn-area mt24">
+                        <button type="button" class="btn-solid_sticky"><span>계획서 제출하기</span></button>
+                    </div>
+                </section>
+
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+            @@include('@@webRoot/html/special/layered/mys_sp_02_02_03_p1.html')
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+	
+</body>
+
+</html>
