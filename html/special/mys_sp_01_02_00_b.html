@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_SP_01_02_00] 작성자: 누리어 시스템 황철민 -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "신용관리 | 신용"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app" data-page="submain"><!-- submain일때 (BG + GNB )-->
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-header.html', {'pageTit': '신용관리'})
+		<!-- // app-header -->
+
+		<!-- app-container (for MyMoney) //-->
+		<div class="app-container">
+
+			<!-- app-lnb //-->
+			<div class="app-lnb">
+				<!-- 상단 GNB 공통 (메뉴 구성 전 )-->
+				@@include('@@webRoot/html/_include/app-gnb.html')
+			</div>
+			<!-- //app-lnb -->
+			
+			<!-- app-content // -->
+			<main class="app-content credit-management">
+				<!-- 수정 2021-06-02 // -->
+				<section class="kb-sec bg-gray credit-history">
+					<div class="content-box shadow">
+						<a href="#" class="alarm-message">
+							<!-- 수정 2021-06-24 // -->
+							<i class="icon-bell2_24"></i>
+							<p>신용정보 변동내역이 있습니다!<i class="icon-link_24"></i></p>
+							<!-- // 수정 2021-06-24 -->
+						</a>
+						<div class="summary">
+							<span class="name">김국민</span>님의 <strong>신용평점은 <span class="num">859</span>점</strong>
+							<span class="point num down">(-5점)</span><br>
+							<strong>상위 <span class="num">21%</span></strong>에 속합니다.
+						</div>
+						<!-- [Chart Area] // -->
+						<!--
+							[차트 디자인 정보]
+							Grid 라인 색상 : #ebeef0
+							꺽은선, 점선 색상 : (5개월 전 대비) 증가 : #fa7b4e, 감소 : #1dcfc1, 동일 : #ff9901
+							area 색상 : #f7f7f8
+							Tooltip 텍스트 사이즈/색상 : 14px/#26282c
+							X축 레이블 텍스트 사이즈/색상 : 14px/#8c949e
+						-->
+						<div class="chart-area">
+							<img class="temp" src="@@webRoot/static/images/_temp/chart_sp0105.png" alt="차트 예시 이미지">
+						</div>
+						<!-- // [Chart Area] -->
+						<div class="button-area">
+							<a href="javascript:;" class="btn-line">신용평점 분석 리포트</a>
+						</div>
+						<div class="links">
+							<a class="link" href="javascript:;">조회내역 <span class="num">13</span><i></i></a>
+							<a class="link" href="javascript:;">변동내역 <span class="num">3</span><i></i></a>
+						</div>
+					</div>
+				</section>
+				<!-- // 수정 2021-06-02 -->
+
+				<section class="kb-sec credit-point">
+					<div class="summary">
+						<!-- 수정 2021-06-23 // -->
+						<span class="name">김국민</span>님의 신용평점은 <span class="num">30</span>대 평균 대비<br>
+						<strong><span class="num">135</span>점 높습니다.</strong>
+						<!-- // 수정 2021-06-23 -->
+					</div>
+					<!--
+						[개발]
+						나, 평균 중 큰 쪽의 .bar 는 100% , 다른 쪽은  %계산하여 width 지정
+						ex) 나 945 , 평균 810 : 나 : width: 100% , 평균 : width: {(810 / 945) * 100}%
+
+						5달전 대비 오늘이 증가했으면 increase 클래스 지정
+						5달전 대비 오늘이 감소했으면 decrease 클래스 지정
+						5달전 대비 오늘이 동일하면 increase, decrease 클래스 삭제
+					-->
+					<div class="compare-bar2-area decrease">
+						<div class="row me">
+							<div class="text">나</div>
+							<div class="bar-zone">
+								<span class="bar" style="width: 100%;">
+									<span class="value"><span class="num">945</span></span>
+								</span>
+							</div>
+						</div>
+						<div class="row avg">
+							<div class="text">30대 평균</div>
+							<div class="bar-zone">
+								<span class="bar" style="width: 85.7%;">
+									<span class="value"><span class="num">810</span></span>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="button-area">
+						<a href="javascript:;" class="btn-line">신용 비교분석 리포트</a><!-- 수정 2021-06-23 -->
+					</div>
+				</section>
+
+				<section class="kb-sec my-credit-mng">
+					<h4 class="h4">My 신용평점 관리</h4>
+					<ul class="icon-text-links">
+						<li><a class="link" href="javascript:;"><i class="icon-star-arrow_24"></i>신용평점 올리기<i></i></a></li><!-- 수정 2021-06-24 -->
+						<li><a class="link" href="javascript:;"><i class="icon-tip_24"></i>신용관리 꿀팁 보기<i></i></a></li><!-- 수정 2021-06-24 -->
+						<li><a class="link" href="javascript:;"><i class="icon-detail-view_24"></i>신용 거래내역 보기<i></i></a></li><!-- 수정 2021-06-24 -->
+					</ul>
+					<!-- 수정 2021-06-22 // -->
+					<div class="button-area mt24">
+						<a href="javascript:;" class="btn-solid"><span>나만의 대출상품 확인하기</span></a>
+					</div>
+					<!-- // 수정 2021-06-22 -->
+				</section>
+
+				<!-- 알려드립니다. // -->
+				<section class="kb-sec toggle-notice">
+					<div class="header">
+						<button type="button" class=""><span class="tit"><i class="icon-bang_24_bk"></i>알려드립니다.</span><i></i></button>
+					</div>
+					<div class="notice-list">
+						<ul data-style="list">
+							<li>위 정보는 국내 신용평가사인 NICE평가정보(주)에서 제공하는 데이터로 KB국민은행에서 제공되는 금융정보와 다를 수 있습니다. </li>
+							<li>신용평점은 매월 15일과 말일에 정기적으로 산출되며, 내 신용정보를 조회하는 시점에 실시간으로 산출됩니다.</li>
+							<li>NICE평가정보(주)에 등록된 이메일주소와 문자수신여부를 수정할 수 있습니다.<br><a href="mys_sp_01_02_00_p1.html">정보수정</a></li><!-- 수정 2021-06-10 -->
+							<li>서비스를 원하지 않으면 해지할 수 있습니다.<br><button type="button" onclick="termination()">서비스 이용해지</button></li>
+						</ul>
+					</div>
+				</section>
+				<!-- // 알려드립니다. -->
+
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+		
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+	<script>
+		// 신용관리
+		gfn_gnb.select(7);
+	</script>
+	<script>
+		function termination() {
+			modalPopup({
+				title: "서비스 이용해지",
+				message: "서비스를 이용해지 하시겠습니까?<br>신용관리 서비스를 다시 이용하시려면 서비스 이용 동의 후 사용 가능합니다.",
+				type: "confirm",
+				onOk: function() {
+					console.log('서비스 이용해지 [확인] 클릭');
+				}
+			});
+		}
+	</script>
+
+</body>
+
+</html>
