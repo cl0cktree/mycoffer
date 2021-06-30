@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_AS_11_01_03_P3] 작성자: 누리어 시스템 김은경 -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "등록완료 | 부동산"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		<!-- @@include('@@webRoot/html/_include/app-header.html') -->
+		<!-- // app-header -->
+
+		<!-- app-container (for MyMoney) //-->
+		<div class="app-container">
+
+			<!-- app-lnb //-->
+			<div class="app-lnb">
+				<!-- 프로세스 -->
+				<!-- TAB -->                
+			</div>
+			<!-- //app-lnb -->
+
+			<!-- app-content // -->
+			<main class="app-content my-asset">
+
+				<section class="kb-sec house-add-complete">
+					<div class="complete-msg">
+						<i class="icon-complete_60"></i>
+						<strong class="tit">부동산이 등록되었습니다.</strong><!-- 2021-06-09 수정 -->
+					</div>
+					<!-- My house 등록 완료인 경우 //-->
+					<div class="house-btns">
+						<button class="btn-line_icon" data-action="btnAddHouse"><i class="icon-plus_20"></i><span>My house 추가 등록</span></button><!-- 2021-06-22 수정 -->
+						<button class="btn-line_icon"><i class="icon-plus_20"></i><span>Wish house 등록</span></button>
+					</div>
+					<!--  // My house 등록 완료인 경우 -->
+					<!-- Wish house 등록 완료인 경우 // -->
+					<!--
+					<div class="btns">
+						<button class="btn-line_icon"><i class="icon-plus_20"></i><span>My house 등록</span></button>
+						<button class="btn-line_icon"><i class="icon-plus_20"></i><span>Wish house 추가 등록</span></button>
+					</div>
+					-->
+					<!--  // Wish house 등록 완료인 경우 -->
+					<div class="sticky-bottom">
+						<div class="btn-area">
+							<button type="button" class="btn-solid_sticky" data-action="close"><span>확인</span></button>
+						</div>
+					</div>
+				</section>
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+        <!-- Layer (fullpage popup, modal, bottom sheet) // -->
+        <div class="layered">
+
+        </div>
+        <!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+	<script>
+		//2021-06-22
+		$('button[data-action=btnAddHouse]').on('click',function(){
+            modalPopup({
+                title: "",
+                message: "부동산은 최대 10채까지 등록할 수 있습니다.<br>(부동산 삭제 시 추가 등록 가능)",
+                type: "alert"
+            });
+        });
+		//2021-06-22
+	</script>
+
+</body>
+
+</html>
