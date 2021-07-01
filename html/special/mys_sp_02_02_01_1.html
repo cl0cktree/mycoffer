@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<!-- [MYS_SP_02_02_01-01]
+		MY FUN DATA > 숨은내돈찾기 데이터분석완료 : 내용없음 (작성자: 누리어 시스템 김삼희) -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "숨은 내 돈 찾기 | MY FUN DATA"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-header-back.html', {pageTit:'숨은 내 돈 찾기'})
+		<!-- // app-header -->
+
+		<!-- app-container (for MyMoney) //-->
+		<div class="app-container">
+
+			<!-- app-content // -->
+			<main class="app-content my-fun-data find-my-finance-complete">
+
+				<!-- top summary area //-->
+				<section class="kb-sec full summary-area">
+                    <div class="summary-tit"><h3 class="h3 tit">숨어 있던 내 자산을 찾았어요!</h3></div>
+                    <div class="summary-desc">
+                        <dl>
+                            <dt>카드포인트</dt>
+                            <dd><em class="num">0</em>건</dd>
+                            <dt>비활동 예적금</dt>
+                            <dd><em class="num">0</em>건</dd>
+                            <dt>실효&sol;만기 보험</dt>
+                            <dd><em class="num">0</em>건</dd>
+                        </dl>
+                    </div>
+                </section>
+                <!--// top summary area -->
+                
+                <!-- 카드 포인트 //-->
+                <section class="kb-sec find-finance-list">
+                    <dl class="content-tit">
+                        <dt><i class="icon-point"><span>POINT</span></i>카드 포인트</dt>
+                        <dd><em class="num">0</em>건</dd>
+                    </dl>
+                    <div class="no-data">
+                        <i class="icon-info_24"></i>
+                        <p>조회 내역이 없습니다.</p>
+                    </div>
+                </section>
+                <!--// 카드 포인트 -->
+                <!-- 비활동 예적금 //-->
+                <section class="kb-sec find-finance-list">
+                    <dl class="content-tit">
+                        <dt><i class="icon-coin-won"><span>POINT</span></i>비활동 예적금</dt>
+                        <dd><em class="num">0</em>건</dd>
+                    </dl>
+                    <div class="no-data">
+                        <i class="icon-info_24"></i>
+                        <p>조회 내역이 없습니다.</p>
+                    </div>
+                </section>
+                <!--// 비활동 예적금 -->
+                <!-- 실효/만기 보험 //-->
+                <section class="kb-sec find-finance-list">
+                    <dl class="content-tit">
+                        <dt><i class="icon-shield"><span>보험</span></i>실효&sol;만기 보험</dt>
+                        <dd><em class="num">0</em>건</dd>
+                    </dl>
+                    <div class="no-data">
+                        <i class="icon-info_24"></i>
+                        <p>조회 내역이 없습니다.</p>
+                    </div>
+                    <a href="@@webRoot/html/asset/mys_as_00_00_00.html" type="button" class="btn-solid"><span>자산관리 바로가기</span></a>
+                </section>
+                <!--// 실효/만기 보험 -->
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+    <script src="@@webRoot/static/common/lib/swiper.min.js"></script>
+    <script>
+        var $contentSwiper = $('.rich-storytelling .content-swiper');
+        if($contentSwiper.length > 0){
+            var swiper = new Swiper($contentSwiper, {
+                slidesPerView: 'auto',
+                centeredSlides: 'true',
+                pagination: {
+                    el: $contentSwiper.find('.swiper-pagination'),
+                    type: 'bullets',
+                    clickable: 'true',
+                },
+                navigation: {
+                    nextEl: $contentSwiper.find('.swiper-button-next'),
+                    prevEl: $contentSwiper.find('.swiper-button-prev'),
+                },
+            });
+        };
+    </script>
+	<!-- Add Script -->
+	
+</body>
+
+</html>

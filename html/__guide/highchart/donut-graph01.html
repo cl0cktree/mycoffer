@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+@@include('@@webRoot/html/_include/app-head.html',{
+"title": "Last Depth | 1st Depth"
+})
+<style>
+    
+
+    hr{margin:150px 0;}
+</style>
+</head>
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header //-->
+        t@@include('@@webRoot/html/_include/app-header.html',{
+            'pageTit' :'donut-graph01'
+        })
+        <!-- // app-header -->
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content">
+
+                <section class="kb-sec">
+
+                    <div class="designed-img"><img src="@@webRoot/html/__guide/highchart/images/donut-graph01.png" alt=""></div>
+
+                    <div class="chart-flex">
+                        <div class="highcharts_column" id="donutChart01"></div>
+                        <div class="highcharts_column" id="donutChart02"></div>
+                    </div>
+                    <div class="legend-unit">
+                        <ul>
+                            <li class="yellow">입출금·페이</li>
+                            <li class="brown">예적금</li>
+                            <li class="magenta">투자</li>
+                            <li class="blue">보험</li>
+                            <li class="orange">대출·부채</li>
+                            <li class="sky">연금</li>
+                            <li class="pink">외화</li>
+                            <li class="green">My금고</li>
+                            <li class="lightGreen">적립포인트</li>   
+                            <li class="purple not-finance">부동산</li>
+                            <li class="coral not-finance">자동차</li>               
+                        </ul>
+                    </div>
+                </section>
+
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+    </div>
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script> 
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    <script>
+        // highchart 공통 options
+        
+        Highcharts.setOptions({
+            title: { text: null },
+            subTitle: { text: null },
+            legend: { enabled: false },
+            credits: { enabled: false },
+            label : { fontFamily: 'KBFGText'},
+            credits: { enabled: false },
+            // tooltip: { enabled: false },
+            exporting: { enabled: false }
+        });
+        
+        // 첫번째 donut chart 선언
+        var donutChart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'donutChart01',
+                type: 'pie',
+                height: '100%',
+            },
+            title: {
+                text: '나',
+                align: 'center',
+                verticalAlign: 'middle',
+                style: {fontSize:'4vw',fontFamily: "KBFGText"}
+            },
+            tooltip: {
+                 formatter: function () { 
+                    return gfn_comma3Digit(this.y) + "만원"
+                },
+                padding: 10,
+                backgroundColor: "#FFF",
+                shadow: true,
+                borderRadius: 4,
+                verticalAlign: 'bottom',
+                borderColor: '#f3f3f3',
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '4vw',
+                    fontFamily: "KBFGText",
+                },
+                crosshairs: true
+            },
+            plotOptions: {
+                pie: {                    
+                    allowPointSelect: true,
+                    dataLabels: {
+                        enabled: false
+                    }
+                }
+            },
+            series: [{
+                innerSize: '70%',
+                borderWidth:0,
+                data: [{
+                    name: '입출금·페이',
+                    color: "#ffd435",
+                    y: 330
+                },{
+                    name: '예적금',
+                    color: "#978680",
+                    y: 200
+                },{
+                    name: '투자',
+                    color: "#d676ca",
+                    y: 100
+                },{
+                    name: '보험',
+                    color: '#3d70d2',
+                    y: 80
+                },{
+                    name: '대출·부채',
+                    color: '#f7966c',
+                    y: 60
+                }]
+            }]
+        });
+
+        // 두번째 donut chart 선언
+        var donutChart2 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'donutChart02', // chart 삽입 target ID
+                type: 'pie',
+                height: '100%',
+            },
+            title: {
+                text: '비교그룹',
+                align: 'center',
+                verticalAlign: 'middle',
+                style: {fontSize:'4vw', fontFamily: "KBFGText"}
+            },
+            tooltip: {
+                 formatter: function () { 
+                    return gfn_comma3Digit(this.y) + "만원"
+                },
+                padding: 10,
+                backgroundColor: "#FFF",
+                shadow: true,
+                borderRadius: 4,
+                verticalAlign: 'bottom',
+                borderColor: '#f3f3f3',
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '4vw',
+                    fontFamily: "KBFGText",
+                },
+                crosshairs: true
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    dataLabels: { enabled: false }
+                }
+            },
+            series: [{
+                innerSize: '70%',
+                borderWidth: 0,
+                data: [{
+                    name: '입출금·페이',
+                    color: "#ffd435",
+                    y: 330
+                },{
+                    name: '예적금',
+                    color: "#978680",
+                    y: 200
+                },{
+                    name: '투자',
+                    color: "#d676ca",
+                    y: 100
+                },{
+                    name: '보험',
+                    color: '#3d70d2',
+                    y: 80
+                },{
+                    name: '대출·부채',
+                    color: '#f7966c',
+                    y: 60
+                },{
+                    name: '연금',
+                    color: '#67d4d4',
+                    y: 40
+                },{
+                    name: '외화',
+                    color: '#f675cd',
+                    y: 30
+                },{
+                    name: 'My금고',
+                    color: '#40b78f',
+                    y: 20
+                },{
+                    name: '적립포인트',
+                    color: '#c2d467',
+                    y: 10
+                }]
+            }]
+        });
+
+    </script>
+
+</body>
+</html>

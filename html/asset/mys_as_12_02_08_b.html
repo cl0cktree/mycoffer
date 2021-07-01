@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_AS_12_02_08] 작성자: 누리어 시스템 황철민 -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "자동차 관리 | 자동차"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app" data-page="submain"><!-- submain일때 (BG + GNB )-->
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-header.html', {pageTit: '자동차 관리'})
+		<!-- // app-header -->
+
+		<!-- app-container (for MyMoney) //-->
+		<div class="app-container">
+
+			<!-- app-lnb //-->
+			<div class="app-lnb">
+				<!-- 상단 GNB 공통 (메뉴 구성 전 )-->
+				@@include('@@webRoot/html/_include/app-gnb.html')
+			</div>
+			<!-- //app-lnb -->
+
+			<!-- app-content // -->
+			<main class="app-content mycar-content">
+
+				<!-- Wish Car 차량목록 (등록된 차가 없을 때) // -->
+				<section class="kb-sec mycar-lists bg-white is-no-data">
+					<div class="no-data">
+						<div class="index-visual">
+							<img src="@@webRoot/static/images/asset/car_img.png" alt="">
+						</div>
+						<p>갖고 싶은 자동차를 등록하여<br>시세를 한눈에 확인해 보세요.</p>
+					</div>
+				</section>
+				<!-- // Wish Car 차량목록 (등록된 차가 없을 때) // -->
+
+				<!-- Wish Car 등록하기 버튼 // -->
+				<section class="kb-sec mycar-buttons">
+					<div class="btn-area">
+						<a href="#" class="btn-solid"><span>Wish Car 등록하기</span></a>
+					</div>
+				</section>
+				<!-- // Wish Car 등록하기 버튼 -->
+
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+	<script>
+		// 자동차 - My Car 차고 GNB
+		gfn_gnb.select(5,1);
+
+		// 자동차 하위 메뉴 텍스트 전환 : 추가 2021-06-24
+		$(window).on('load', function() {
+			// My Car 차고 대 수
+			appendText($(".app-sub-wrap li:eq(0) a"), " (1대)");
+			// Wish Car 차고 대 수
+			//appendText($(".app-sub-wrap li:eq(1) a"), " (2대)");
+
+			function appendText(elem, txt) {
+				var t = elem.text();
+				elem.text(t + txt);
+			}
+		});
+	</script>
+
+</body>
+
+</html>

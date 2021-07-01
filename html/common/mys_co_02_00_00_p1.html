@@ -1,0 +1,88 @@
+<!-- [mys_co_02_00_00_P1] 접근 권한 허용 (작성자: 누리어 시스템 이진우)// -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "접근 권한 허용"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content auth-access">
+                <section class="kb-sec">
+                    <h2>KB마이머니 앱 이용을 위해<br>접근 권한을 허용해 주세요</h2>             
+                    <ul class="auth-access-list">
+                        <li>
+                            <i class="icon-phone"></i>
+                            <strong>전화(필수)</strong>
+                            <p>휴대폰 상태 확인, 다중 로그인 방지<br>고객센터 전화 연결</p>
+                        </li>
+                        <li>
+                            <i class="icon-folder"></i><strong>저장공간(필수)</strong>
+                            <p>인증서 로그인</p>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="kb-sec sticky-bottom-menu">
+                    <ul data-style="list">
+                        <li>선택적 권한은 허용하지 않으셔도 앱 이용이 가능하거나, 일부 기능 사용에 제한이 있을 수 있습니다.</li>
+                        <li>휴대폰 설정 &gt; 애플리케이션 관리 &gt; KB마이머니에서도 설정 변경 할 수 있습니다.</li>
+                    </ul>                    
+                </section>
+
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <a href="javascript:;" class="btn-solid_sticky" role="button"><span>확인</span></a>
+                    </div>
+                </div>
+            </main>
+            <!-- // app-content -->
+
+        <!-- // app-container -->
+    </div>
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    <script>
+        var $tutorial = $('.tutorial');
+        var tutorialSize = $tutorial.find('.swiper-slide').length;
+        var $tutorialPagination = $tutorial.find('.pagination');
+        $tutorialPagination.empty();
+        for(i=0;i<tutorialSize;i++){
+            $tutorialPagination.append("<span></span>");
+        }
+        $tutorialPagination.find('span:first-child').addClass('is-active');
+        
+        var tutorialSwiper = new Swiper('.swiper-container',{                        
+            on: {
+                slideChangeTransitionEnd : function(swiper){
+                    var step = swiper.activeIndex + 1;                    
+                    $('.pagination span').removeClass('is-active');
+                    $('.pagination span:lt(' + step + ')').addClass('is-active');
+
+                    if(step != tutorialSize){
+                        $tutorial.removeClass('is-complete');
+                    }else{
+                        $tutorial.addClass('is-complete');
+                    }
+
+                },
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
