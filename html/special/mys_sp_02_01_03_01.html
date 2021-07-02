@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<!-- [MYS_SP_02_01_03]
+		MY FUN DATA > 나의 소비유형 > 소비유형선택 > 소비유형스토리텔링 (작성자: 누리어 시스템 김삼희) -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "소비유형스토리텔링 | MY FUN DATA"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-header.html', {pageTit:'나의 소비유형'})
+		<!-- // app-header -->
+
+		<!-- app-container (for MyMoney) //-->
+		<div class="app-container">
+
+			<!-- app-content // -->
+			<main class="app-content my-fun-data">
+
+				<!-- 스토리텔링 컨텐츠 // -->
+				<!-- [D] 21-06-30 수정 : 디자인 변경 현행화로 인한 마크업 수정 및 이미지 교체 //-->
+				<section class="kb-sec storytelling-wrap">
+                    <div class="storytelling-content">
+						<div class="item-box delivery">
+							<div class="item">
+								<div class="motocycle"><img src="@@webRoot/static/images/special/img_motion_item_bike.png" alt=""></div>
+								<div class="food food01"><img src="@@webRoot/static/images/special/img_motion_item_burger.png" alt=""></div>
+								<div class="food food02"><img src="@@webRoot/static/images/special/img_motion_item_chip.png" alt=""></div>
+								<div class="food food03"><img src="@@webRoot/static/images/special/img_motion_item_chicken.png" alt=""></div>
+							</div>
+						</div>
+                        <h3 class="h3">외식이좋아형</h3>
+						<p><!-- [D] 21-07-02 수정 : 문구 변경 -->
+                            나는 한 달 평균 외식비로 얼마나 쓸까?
+                            <br>“마이데이터 동의”하고 나의 외식 소비금액
+                            <br>확인해 보세요!
+                        </p>
+                    </div>
+                </section>
+                <div class="sticky-bottom t01">
+                    <div class="btn-area">
+                        <a href="mys_sp_02_01_01.html" role="button" class="btn-solid_sticky"><span>실제 내 소비내역 확인하기</span></a>
+                    </div>
+                </div>
+				<!--// [D] 21-06-30 수정 : 디자인 변경 현행화로 인한 마크업 수정 및 이미지 교체 -->
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+	
+</body>
+
+</html>

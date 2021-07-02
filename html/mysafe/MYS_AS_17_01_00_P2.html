@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_AS_17_01_00_P1] My금고 > 메인화면 - 자산등록 전  (작성자: 유플리트 이현섭)// -->
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "자산 | My금고"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app" data-page="submain">
+        <!-- app-header (for MyMoney) //-->
+        @@include('@@webRoot/html/_include/app-header.html',{
+            'pageTit':' My금고'
+        })
+        <!-- // app-header -->
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+
+            <!-- app-lnb //-->
+            <div class="app-lnb">
+                @@include('@@webRoot/html/_include/app-gnb.html')
+            </div>
+            <!-- //app-lnb -->
+            
+            <!-- app-content // -->
+            <main class="app-content my-safe bg-gray-bottom">
+                <section class="kb-sec bg-gray asset-my-safe">
+                    <div class="content-box shadow">
+						<div class="top-area">
+							<div class="name-wrap">
+                                <span class="ctm-name">김국민</span>님
+                            </div>
+						</div>
+                        <!-- 사용자 데이터 입력 후 -->
+                        <div class="bottom-area en-data">
+                            <div class="my-safe-status align-c">
+                                <p class="my-safe-msg">
+                                    나의 금고 자산은
+                                </p>
+                                <div class="my-total-value mt16 amount">
+                                    <span class="num">41,750,000원</span> 이에요.
+                                </div>
+                                <p class="mt16">
+                                    어제보다 <span class="num safe-plus safe-content-plus">1,209,000</span>원 증가했습니다.
+                                </p>
+                             </div>
+                            <div class="index-visual index-visual-01 safe-display-none">
+                                <img src="../../static/images/mysafe/main_img_01.png" alt="">
+                            </div>
+                            <div class="index-visual index-visual-02 mt20">
+                                <img src="../../static/images/mysafe/main_img_02.png" alt="">
+                            </div>
+                        </div>
+                        <!-- ------------------- -->
+					</div>
+                </section>
+                <section class="kb-sec bg-gray safe-asset-list safe-asset-list-data data-bottom-fill">
+                    <ul class="my-safe-asset-box content-box shadow">
+                        <li>
+                            <a href="javascript:;" role="button">
+                                <i class="icon-my-safe icon-my-safe-01"></i><strong class="h4">현금(원화/외화) 등록하기</strong>
+                                <i class="icon-arrow-right my-safe-right-icon"></i>
+                            </a>
+                        </li>
+                        <li class="total-my-safe-value">
+                            <dl>
+                                <dt>
+                                    총액
+                                </dt>
+                                <dd>
+                                    <span class="num">1,847,000</span>원
+                                </dd>
+                            </dl>
+                        </li>
+                        <li class="my-variance-value amount">
+                            <dl class="description-list type2">
+                                <dt>
+                                    <strong>어제보다</strong>
+                                </dt>
+                                <dd>
+                                    <span class="num safe-minus safe-content-minus">1,209,000원</span>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <ul>
+                                <li>
+                                    <dl class="description-list type2">
+                                        <dt class="color-gray">
+                                            비상금
+                                        </dt>
+                                        <dd>
+                                            <span class="num">10,847,000원</span>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl class="description-list type2">
+                                        <dt class="color-gray">
+                                            용돈
+                                        </dt>
+                                        <dd>
+                                            <span class="num">10,847,000원</span>
+                                        </dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="my-safe-asset-box content-box shadow mt16">
+                        <li>
+                            <a href="javascript:;" role="button">
+                                <i class="icon-my-safe icon-my-safe-02"></i><strong class="h4">금(Gold) 등록하기</strong>
+                                <i class="icon-arrow-right my-safe-right-icon"></i>
+                            </a>
+                        </li>
+                        <li class="total-my-safe-value">
+                            <dl>
+                                <dt>
+                                    총액
+                                </dt>
+                                <dd>
+                                    <span class="num">1,847,000원</span>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li class="my-variance-value amount">
+                            <dl class="description-list type2">
+                                <dt>
+                                    <strong>어제보다</strong>
+                                </dt>
+                                <dd>
+                                    <span class="num safe-plus safe-content-plus">1,209,000원</span>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <ul>
+                                <li>
+                                    <dl class="description-list type2">
+                                        <dt class="color-gray">
+                                            돌반지
+                                        </dt>
+                                        <dd>
+                                            <span class="num">3돈</span>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl class="description-list type2">
+                                        <dt class="color-gray">
+                                            골드바
+                                        </dt>
+                                        <dd>
+                                            <span class="num">5.67g</span>
+                                        </dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="my-safe-asset-box content-box shadow mt16">
+                        <li>
+                            <a href="javascript:;" role="button">
+                                <i class="icon-my-safe icon-my-safe-04"></i><strong class="h4">기타자산 등록하기</strong>
+                                <i class="icon-arrow-right my-safe-right-icon"></i>
+                            </a>
+                        </li>
+                        <li class="total-my-safe-value">
+                            <dl>
+                                <dt>
+                                    총액
+                                </dt>
+                                <dd>
+                                    <span class="num">1,847,000원</span>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <ul>
+                                <li>
+                                    <dl class="description-list type2">
+                                        <dt class="color-gray">
+                                            애장품
+                                        </dt>
+                                        <dd>
+                                            <span class="num">한정판 운동화</span>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl class="description-list type2">
+                                        <dt class="color-gray">
+                                            내 생애 첫 폰
+                                        </dt>
+                                        <dd>
+                                            <span class="num">iPhone X</span>
+                                        </dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button class="btn-solid_sticky"><span>자산 추가하기</span></button>
+                        <!-- <a href="javascript:;" class="btn-solid_sticky" role="button"><span>자산 추가하기</span></a> -->
+                    </div>
+                </div>
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <script>
+        //최초 선택되는 내용을 바꾸고 싶으면... (ui.js)
+        gfn_gnb.select(6);
+    </script>
+    <!-- Add Script -->
+
+</body>
+
+</html>

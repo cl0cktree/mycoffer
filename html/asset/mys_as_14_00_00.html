@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Last Depth | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app" data-page="submain">
+        <!-- app-header (for MyMoney) //-->
+        @@include('@@webRoot/html/_include/app-header.html',{
+            'pageTit':'적립포인트'
+        })
+        <!-- // app-header -->
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+
+            <!-- app-lnb //-->
+            <div class="app-lnb">
+                <!-- 상단 GNB 공통 (메뉴 구성 전 )-->
+                @@include('@@webRoot/html/_include/app-gnb.html')                          
+            </div>
+            <!-- //app-lnb -->
+
+            <!-- app-content // -->
+            <main class="app-content my-asset point">
+                <!-- 컨텐츠 영역 -->
+                <!-- SECTION //-->
+                <!-- 2021-06-10 수정 // -->
+                <section class="kb-sec full bg-gray asset-summary">
+                    <div class="highcharts-box charts-type_square no-space">
+                        <div class="swiper-container t01 js-swiper" data-swiper-options="paySummarySwiperOptions">
+                            <script>
+                                var paySummarySwiperOptions = {
+                                    "pagination": {
+                                        "el": ".swiper-pagination"
+                                    },
+                                    "autoHeight" : true
+                                };
+                            </script>
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure content-box">
+                                            <div class="graph-info">
+                                                <h4 class="h4">카드사 포인트명포인트명포인
+                                                    트명명명명 <button class="btn-more"><i class="icon-setting_menu_24"></i></button></h4>			
+                                                <div class="graph-msg">
+													<p class="txt">
+                                                        김국민님이 가장 많이 모은 포인트는 <b>KB포인트리</b> 입니다.<br>지난달에도 <span class="num">7,000</span>P 보유하고 있었어요!
+													</p>
+                                                </div>
+                                            </div>
+                                            <!-- [chart area] //-->
+                                            <!--
+                                                [차트 디자인 정보]
+                                                * 그래프(막대) 색상(컬러별)
+                                                - 노란색 :  #ffd338;
+                                                - 회색 :  #c6cbd0;
+
+                                                - 차트 텍스트 컬러/크기 : #26282c/14px
+                                                - X축 텍스트 컬러/크기 : #8c949e/14px
+												- data labels 텍스트 컬러/크기 : #26282c/14px
+                                            -->
+                                            <div class="highcharts_column" id="">
+                                                <img class="temp" src="@@webRoot/static/images/_temp/chart_as1400_1.png" alt="차트 예시 이미지">
+                                            </div>
+                                            <!--// [chart area] -->
+                                            <!--
+											<div class="my-average">
+												<em>평균 <span class="num">4,665,210</span>P</em> 
+											</div>
+                                            -->
+                                        </figure>
+										
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure content-box">
+                                            <div class="graph-info">
+                                                <h4 class="h4">카드사 포인트명포인트명포인
+                                                    트명명명명 <button class="btn-more"><i class="icon-setting_menu_24"></i></button></h4>			
+                                                <div class="graph-msg">
+													<p class="txt">
+                                                        김국민님이 가장 많이 모은 포인트는 <b>KB포인트리</b> 입니다.<br>지난달에도 <span class="num">7,000</span>P 보유하고 있었어요!
+													</p>
+                                                </div>
+                                            </div>
+                                            <!-- [chart area] //-->
+                                            <!--
+                                                [차트 디자인 정보]
+                                                * 그래프(막대) 색상(컬러별)
+                                                - 주황색 :  #f7956c;
+                                                - 회색 :  #c6cbd0;
+
+                                                - 차트 텍스트 컬러/크기 : #26282c/14px
+                                                - X축 텍스트 컬러/크기 : #8c949e/14px
+												- data labels 텍스트 컬러/크기 : #26282c/14px
+                                            -->
+                                            <div class="highcharts_column" id="">
+                                                <img class="temp" src="@@webRoot/static/images/_temp/chart_as1400_2.png" alt="차트 예시 이미지">
+                                            </div>
+                                            <!--// [chart area] -->
+                                            <!--
+											<div class="my-average">
+												<em>평균 <span class="num">4,665,210</span>P</em> 
+											</div>
+                                            -->
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure content-box">
+                                            <div class="graph-info">
+                                                <h4 class="h4">카드사 포인트명포인트명포인
+                                                    트명명명명 <button class="btn-more"><i class="icon-setting_menu_24"></i></button></h4>			
+                                                <div class="graph-msg">
+													<p class="txt">
+                                                        김국민님이 가장 많이 모은 포인트는 <b>KB포인트리</b> 입니다.<br>지난달에도 <span class="num">7,000</span>P 보유하고 있었어요!
+													</p>
+                                                </div>
+                                            </div>
+                                            <!-- [chart area] //-->
+                                            <!--
+                                                [차트 디자인 정보]              
+                                                * 그래프(막대) 색상(컬러별)
+                                                - 보라색 :  #d575c9;
+                                                - 회색 :  #c6cbd0;
+
+                                                - 차트 텍스트 컬러/크기 : #26282c/14px
+                                                - X축 텍스트 컬러/크기 : #8c949e/14px
+												- data labels 텍스트 컬러/크기 : #26282c/14px
+                                            -->
+                                            <div class="highcharts_column" id="">
+                                                <img class="temp" src="@@webRoot/static/images/_temp/chart_as1400_3.png" alt="차트 예시 이미지">
+                                            </div>
+                                            <!--// [chart area] -->
+                                            <!--
+											<div class="my-average">
+												<em>평균 <span class="num">4,665,210</span>P</em> 
+											</div>
+                                            -->
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>  
+                </section>
+                <section class="kb-sec search-area">
+                <div class="condition-area bg-white">
+                    <button class="btn-condition" data-call-layered="mys_as_14_00_00_p1">
+                        <div>
+                            <div class="sorting-status">
+                                <span>높은순</span>
+                            </div>
+                            <i class="icon-filter_20"></i>
+                        </div>
+                    </button>
+                </div>
+                </section>
+                 <!-- // 2021-06-10 수정 -->
+                <section class="kb-sec point-con">
+                    <ul class="point-list">
+                        <!-- 2021-06-02 계좌숨기기 버튼 위치변경 // -->
+                        <li>
+                            <div class="line-box">
+                                <div class="account-wrap">
+                                    <div class="icon-con">
+                                        <span><img src="@@webRoot/static/images/ci/a1aae0000.png" alt="은행별 아이콘"></span><!-- 2021-06-25 공통 수정 -->
+                                    </div>
+                                    <div class="txt-con">
+                                        <span class="agency">국민은행</span>
+                                    </div>
+                                    <button type="button" class="btn-hide-account" data-call-layered="mys_as_05_00_01_p1"><i class="icon-more_24"></i><span>계좌숨기기</span></button>
+                                </div>
+                                <ul class="description-list-variable">
+                                    <li>
+                                        <p>KB포인트리</p>
+                                        <p>
+                                            <span><em class="c-point"><b class="num">112,000</b></em></span>
+                                            <span class="point-info amount"><span class="num">2021.06</span> 소멸예정 <span class="num">72</span>P</span>
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>                        
+                        <li>
+                            <div class="line-box">
+                                <div class="account-wrap">
+                                    <div class="icon-con">
+                                        <span><img src="@@webRoot/static/images/ci/a1aae0000.png" alt="은행별 아이콘"></span><!-- 2021-06-25 공통 수정 -->
+                                    </div>
+                                    <div class="txt-con">
+                                        <span class="agency">우체국 체크카드</span>
+                                    </div>
+                                    <button type="button" class="btn-hide-account" data-call-layered="mys_as_05_00_01_p1"><i class="icon-more_24"></i><span>계좌숨기기</span></button>
+                                </div>
+                                <ul class="description-list-variable">
+                                    <li>
+                                        <p>포인트명</p>
+                                        <p>
+                                            <span><em class="c-point"><b class="num">112,000</b></em></span>
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="line-box">
+                                <div class="account-wrap">
+                                    <div class="icon-con">
+                                        <span><img src="@@webRoot/static/images/ci/a1aae0000.png" alt="은행별 아이콘"></span><!-- 2021-06-25 공통 수정 -->
+                                    </div>
+                                    <div class="txt-con">
+                                        <span class="agency">하나카드</span>
+                                    </div>
+                                    <button type="button" class="btn-hide-account" data-call-layered="popSelectPoint"><i class="icon-more_24"></i><span>계좌숨기기</span></button><!-- 포인트가 여러개일 경우 선택 팝업 호출 -->
+                                </div>
+                                <ul class="description-list-variable">
+                                    <li>
+                                        <p>하나머니</p>
+                                        <p>
+                                            <span><em class="c-point"><b class="num">112,000</b></em></span>
+                                            <span class="point-info amount"><span class="num">2021.06</span> 소멸예정 <span class="num">72</span>P</span>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>크로스마일</p>
+                                        <p>
+                                            <span><em class="c-point"><b class="num">112,000</b></em></span>
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- // 2021-06-02 계좌숨기기 버튼 위치변경 -->
+                    </ul>
+                    <div class="btn-area">
+                        <a href="javascript:;" class="btn-line" role="button" target="_blank"><span>카드포인트 계좌 입금</span></a>
+                    </div>
+                    <ul data-style="list">
+                        <li>입금이 불가능한 카드포인트가 있을 수 있습니다.</li>
+                        <li>카드포인트를 계좌로 입금하려면 여신금융협회로
+                            이동합니다.</li>
+                    </ul>
+                </section>
+                <!--  // SECTION -->
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+    </div>
+
+    <div class="layered">
+        @@include('@@webRoot/html/asset/layered/mys_as_14_00_00_p1.html')
+        @@include('@@webRoot/html/asset/layered/mys_as_05_00_01_p1.html')
+        <!-- 적립포인트 > 포인트선택 팝업 // -->
+        <div class="bottom-sheet" data-layered-name="popSelectPoint">
+            <div class="bottom-sheet_header">
+                <span class="tit">포인트 선택</span>
+            </div>
+            <div class="bottom-sheet_contents">
+                <section class="kb-sec">
+                    <ul class="select-list">
+                        <li class="is-active"><button type="button" data-call-layered="mys_as_05_00_01_p1" data-action="close"><strong class="tit">하나머니</strong><i class="icon-20"></i></button></li>
+                        <li><button type="button" data-call-layered="mys_as_05_00_01_p1"  data-action="close"><strong class="tit">크로스마일</strong><i class="icon-20"></i></button></li>
+                    </ul>            
+                </section>
+            </div>
+            <button class="btn-close" data-action="close"><span>닫기</span></button>
+        </div>
+        <!-- // 적립포인트 > 포인트선택 팝업 -->
+                
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    <script>
+        
+        gfn_gnb.select(1,8);
+
+    </script>
+</body>
+
+</html>
