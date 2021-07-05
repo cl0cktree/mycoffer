@@ -1,0 +1,77 @@
+@charset 'utf-8';
+
+body.guide{padding:20px !important;}
+body.guide code{overflow-x:auto;display:block;width:100%;font-family:'Nanum Gothic Coding';font-size:13px;line-height:1.5;}
+
+body.guide .guide-list li{margin-top:15px;font-size:20px;}
+body.guide .box{padding:20px;border:1px solid #ddd;}
+body.guide .box:last-of-type{margin-bottom:100px;}
+body.guide .guide-icon{background-color:#aaa;}
+body.guide .icon-list{display:flex;flex-wrap:wrap;}
+body.guide .icon-list li{width:25%;padding:10px 5px;}
+body.guide .icon-list li pre{display:block;margin-bottom:10px;}
+body.guide .box + h2{margin-top:30px;}
+body.guide .flex-dl{display:flex;flex-wrap:wrap;justify-content:space-evenly;width:100%;}
+body.guide .flex-dl > dt{position:relative;width:100%;}
+body.guide .flex-dl > dt .btn-view-source{position:absolute;right:0;top:-25px;}
+body.guide .flex-dl > dt .btn-view-source span:before{content:'View Source'}
+body.guide .flex-dl > dt .btn-view-source.is-active span:before{content:'Hide Source'}
+body.guide .box:not(.fold) .flex-dl > dt pre{display:none;}
+body.guide .box:not(.fold) .flex-dl > dt .btn-view-source.is-active + pre{display:block;}
+body.guide .flex-dl > dd:not(.guide-description){position:relative;width:377px;max-width:100%;margin-top:50px;padding:15px;border:1px solid #ddd;}
+body.guide .flex-dl > dd:before{content:attr(data-description);position:absolute;bottom:calc(100% + 5px);left:0;font-weight:bold;}
+body.guide .flex-dl > dd.guide-description{flex:0 0 100%;margin-top:15px;padding:15px;border:1px solid #ddd;line-height:1.8;}
+body.guide .flex-dl > dd.no-space{padding:0;}
+body.guide .flex-dl > dd iframe{width:100%;}
+body.guide .flex-dl .guide-device{max-width:377px;height:667px;padding:0;}
+body.guide .flex-dl .guide-device iframe{width:100%;height:100%;}
+body.guide .guide-header{display:flex;justify-content:space-between;position:fixed;top:0;left:0;z-index:10;width:100%;padding:20px 20px 20px 20px;background-color:#fff;border-bottom:1px solid #ddd;}
+body.guide .guide-header h1{line-height:43px;font-size:40px;}
+body.guide .guide-header .gnb{display:flex;margin-top:10px;}
+body.guide .guide-header .gnb li + li{margin-left:40px;}
+body.guide .guide-header .gnb li.is-active a{position:relative;}
+body.guide .guide-header .gnb li.is-active a:after{content:'';position:absolute;bottom:-5px;left:0;right:0;height:2px;background-color:#aaa;}
+body.guide .guide-header + .guide-container{padding-top:104px;}
+@media screen and (max-width:720px){
+    body.guide{padding:10px !important}
+    body.guide .guide-header{flex-direction:column;width:100vw;padding-top:10px;padding-bottom:10px;}
+    body.guide .guide-header h1{font-size:20px;line-height:1;}
+    body.guide .guide-header .gnb{justify-content:space-between;font-size:4vw;}
+    body.guide .guide-header .gnb li + li{margin-left:0;}
+    body.guide .box{padding-left:5px;padding-right:5px;}
+    body.guide .flex-dl > dd:not(.guide-description){padding-left:5px;padding-right:5px;}
+}
+body.guide .guide-input dt,
+body.guide .guide-select dt{margin-bottom:30px;}
+body.guide .guide-input dd,
+body.guide .guide-select dd{margin-bottom:30px;padding-right:20px;}
+body.guide .guide-btn-area dd{width:100%;padding-right:20px;}
+body.guide .guide-tab dd,
+body.guide .guide-typeselector dd{width:100%;}
+body.guide .guide-slider dd{padding-right:20px;}
+body.guide .guide-layer{display:flex;flex-wrap:wrap;}
+body.guide .guide-layer .btn{margin:0 10px 10px 0;}
+body.guide .guide-tooltip dd{display:flex;flex-wrap:wrap;width:100%;}
+body.guide .guide-tooltip dd > p{margin:20px;}
+body.guide .guide-tooltip dd:last-child{width:100%;}
+body.guide hr{border:none;}
+body.guide .guide-back{display:inline-block;width:30px;height:15px;background-color:red;}
+body.guide .guide-back i{display:inline-block;overflow:hidden;width:100%;text-indent:100%;white-space:nowrap;}
+body.guide .guide-template-list{display:flex;justify-content:space-evenly;}
+body.guide .guide-template-list > li{width:375px;}
+body.guide .guide-template-list > li a:after{content:' 샘플 >'}
+body.guide .guide-template-list > li p{padding:20px 24px;border:1px solid #ddd;}
+body.guide .guide-template-list iframe{display:block;width:100%;margin-top:10px;}
+
+.box table.options {width: auto;border-collapse: collapse;margin: 0 15px;margin-bottom: 10px;}
+.box table.options th,
+.box table.options td {padding: 3px;font-size: 12px;}
+.box table.options th {text-align: left;border-bottom: 1px solid #000;}
+.box table.options td {border-bottom: 1px solid #ccc;}
+.box > p {padding: 15px;font-size: 14px;}
+.box > p code,
+.box table code {display: inline;font-size: 12px;color: #d63384;padding: 3px;}
+.box .code {margin: 20px 0;}
+.box .code strong {display: block;margin-bottom: 5px;font-size: 14px;font-weight: bold;}
+.box .ex {margin-top: 20px;}
+.box small {font-size: .7em;}

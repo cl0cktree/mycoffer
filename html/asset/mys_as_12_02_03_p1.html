@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_AS_12_02_03_P1] 작성자: 누리어 시스템 황철민 -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "My Car 상세 | 자산"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-header-close.html',{
+			'pageTit' :'My Car 상세'
+		}) 
+		<!-- // app-header (for MyMoney) -->
+
+		<!-- app-container //-->
+		<div class="app-container">
+
+			<!-- app-content // -->
+			<main class="app-content mycar-content mycar-detail">
+
+				<!-- My Car 차량정보 // -->
+				<section class="kb-sec mycar-information">
+					<a class="link-modify" href="#">수정</a>
+					<div class="infobox">
+						<span class="model">쉐보레 말리브</span>
+						<span class="subtxt">2.0터보 LTZ(2016), 한국GM</span>
+						<span class="nickname">내차별명</span>
+						<span class="photo">
+							<img src="@@webRoot/static/images/_temp/car01.png" alt="한국GM 쉐보레 말리브">
+						</span>
+					</div>					
+					<div class="infolist">
+						<dl class="description-list type2">
+							<dt>차량번호</dt>
+							<dd>63더 1234</dd>
+							<dt>주행거리</dt>
+							<dd><span class="num">50,000Km</span></dd>
+						</dl>
+					</div>					
+				</section>
+				<!-- // My Car 차량정보 -->
+
+				<!-- My Car 시세 // -->
+				<section class="kb-sec mycar-quotes">
+					<div class="summary">
+						<div class="title">My Car 시세</div>
+						<!-- 수정 2021-07-02 // -->
+						<div class="result">
+							<div class="amount"><span class="num">1,370</span>만원</div>
+							지난달보다 <span class="up"><span class="num">5</span>만원</span> 증가<!-- 수정 2021-06-24 -->
+						</div>
+						<!-- // 수정 2021-07-02 -->
+					</div>
+					<!-- 차트 디자인 수정 2021-06-11 // -->
+					<!-- [Chart Area] // -->
+					<!--
+						[차트 디자인 정보]
+						Grid 라인 색상 : #ebeef0
+						꺽은선 색상 : #ffd338
+						꺽은선 Area 색상 : #f7f7f8
+						X축, Y축 레이블 텍스트 크기/색상 : 14px / #696e76
+						tooltip 텍스트 크기/색상 : 14px / #26282c
+					-->
+					<div class="chart-area">
+						<img class="temp" src="@@webRoot/static/images/_temp/chart_as1201.png" alt="차트 예시 이미지">
+					</div>
+					<!-- // [Chart Area] -->
+					<!-- // 차트 디자인 수정 2021-06-11 -->
+					<dl class="description-list type2">
+						<dt>시세정보</dt>
+						<dd>KB차차차</dd>
+						<dt>신차가격</dt>
+						<dd class="amount"><span class="num">1,370</span>만원</dd>
+						<dt>잔존가치</dt>
+						<dd class="amount"><span class="num">32.9</span>%</dd>
+					</dl>
+					<div class="btn-area">
+						<a href="#" class="btn-line"><span>비싸게 팔러 가기</span></a><!-- 수정 2021-07-01 -->
+					</div>
+				</section>
+				<!-- // My Car 시세 -->
+
+				<!-- My Car 유지비 관리 // -->
+				<section class="kb-sec mycar-maintain">
+					<div class="summary">
+						<div class="title">유지비 관리<span>(2월)</span></div><!-- 수정 2021-06-16 -->
+						<!-- 수정 2021-07-02 // -->
+						<div class="result">
+							<div class="amount"><span class="num">370</span>만원</div>
+							지난달보다 <span class="up"><span class="num">5</span>만원</span> 증가<!-- 수정 2021-06-24 -->
+						</div>
+						<!-- // 수정 2021-07-02 -->
+					</div>
+					<dl class="description-list type2">
+						<dt>주유비</dt>
+						<dd class="amount"><span class="num">300,000</span>원</dd>
+						<dt>기타</dt>
+						<dd class="amount"><span class="num">70,000</span>원</dd>
+					</dl>
+					<div class="btn-area">
+						<a href="#" class="btn-line"><span>유지비 자세히 보기</span></a><!-- 수정 2021-07-01 -->
+					</div>
+				</section>
+				<!-- // My Car 유지비 관리 -->
+
+				<!-- My Car 대출 관리 // -->
+				<section class="kb-sec mycar-loan">
+					<div class="summary">
+						<div class="title">대출 관리</div>
+					</div>
+					<dl class="description-list type2">
+						<dt>상품명</dt>
+						<dd>국민은행 신용대출</dd>
+						<dt>신규일</dt>
+						<dd class="date">2020.10.23</dd>
+						<dt>만기일</dt>
+						<dd class="date">2023.09.23</dd>
+						<dt>금리</dt>
+						<dd class="num">연 2.3%</dd><!-- 수정 2021-06-24 -->
+						<dt>대출잔액</dt>
+						<dd class="amount"><span class="num">1,700,000</span>원</dd>
+					</dl>
+					<dl class="description-list type2">
+						<dt>상품명</dt>
+						<dd>애니카자동차 대출</dd>
+						<dt>신규일</dt>
+						<dd class="date">2020.10.23</dd>
+						<dt>만기일</dt>
+						<dd class="date">2023.09.23</dd>
+						<dt>금리</dt>
+						<dd class="num">연 2.5%</dd><!-- 수정 2021-06-24 -->
+						<dt>대출잔액</dt>
+						<dd class="amount"><span class="num">700,000</span>원</dd>
+					</dl>
+					<div class="btn-area">
+						<a href="#" class="btn-line"><span>대출이 부담되시나요?</span></a><!-- 수정 2021-07-01 -->
+					</div>
+				</section>
+				<!-- // My Car 대출 관리 -->
+
+				<!-- My Car 보험 관리 // -->
+				<section class="kb-sec mycar-insurance">
+					<div class="summary">
+						<div class="title">보험 관리</div>
+					</div>
+					<dl class="description-list type2">
+						<dt>상품명</dt>
+						<dd>현대해상 자동차보험<span class="status normal">정상</span></dd><!-- 수정 2021-06-01 -->
+						<dt>신규일</dt>
+						<dd class="date">2020.10.23</dd>
+						<dt>만기일</dt>
+						<dd class="date"><span class="dday">(30일 남음)</span>2023.09.23</dd><!-- 수정 2021-06-24 -->
+					</dl>
+					<dl class="description-list type2">
+						<dt>상품명</dt>
+						<dd>애니카 운전자보험<span class="status effective">실효</span></dd><!-- 수정 2021-06-01 -->
+						<dt>신규일</dt>
+						<dd class="date">2020.10.23</dd>
+						<dt>만기일</dt>
+						<dd class="date"><span class="dday">(30일 남음)</span>2023.09.23</dd><!-- 수정 2021-06-24 -->
+					</dl>
+					<div class="btn-area">
+						<a href="#" class="btn-line"><span>다음 보험료 확인하러 가기</span></a><!-- 수정 2021-07-01 -->
+					</div>
+				</section>
+				<!-- // My Car 보험 관리 -->
+
+				<!-- My Car 등록하기 버튼 // -->
+				<section class="kb-sec mycar-buttons">
+					<div class="btn-area">
+						<a href="#" class="btn-solid"><span>My Car 등록하기</span></a>
+					</div>
+				</section>
+				<!-- // My Car 등록하기 버튼 -->
+
+
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+
+</body>
+
+</html>
