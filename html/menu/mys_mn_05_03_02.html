@@ -1,0 +1,93 @@
+<!-- [MYS_MN_05_03_02] 전체메뉴 > 공동인증서 관리 (작성자: 누리어 시스템 이진우)// -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Last Depth | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header (for MyMoney) //-->
+        @@include('@@webRoot/html/_include/app-header.html',{
+            'pageTit':'공동인증서 관리'
+        })
+        <!-- // app-header -->
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content mm-manage-certificate">
+                <!-- 공동 인증서 없을 때 // -->
+                <section class="kb-sec">
+                    <p>교체할 공동인증서를 선택해 주세요.</p>
+                    <div class="available-certificate">
+                        <h2 class="h3">사용중인 인증서로 교체하기</h2>
+                        <ul class="joint-certificate-list">
+                            <li>
+                                <a href="javascript:;">
+                                    <i class="icon-certificate-active"></i><!-- 인증서 활성화 icon -->
+                                    <strong class="name">김민국</strong>
+                                    <p class="cetificate-number">0020004563215654548321565</p>
+                                    <p><span>은행개인</span><strong>yessign</strong></p>
+                                    <p><span>만료일</span><strong class="num">2022.04.14</strong></p>
+                                    <p class="certificate-usage">메리츠화재해상보험</p>
+                                    <!-- 수정 : 2021.06.25 <i class="icon-link_20"></i>-->
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <i class="icon-certificate-expire"></i><!-- 인증서 만료 icon -->
+                                    <strong class="name">김민국</strong>
+                                    <p><span>은행개인</span><strong>yessign</strong></p>
+                                    <p><span>만료일</span><strong class="num">2022.04.14</strong></p>
+                                    <p class="certificate-usage">국민은행, 신한은행, 우리은행, IBK기업은행, 현대카드, 삼성카드, 현금영수증</p>
+                                    <!-- 수정 : 2021.06.25 <i class="icon-link_20"></i>-->
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="new-certificate">
+                        <h2 class="h3">새로운 인증서로 교체하기</h2>
+                        <ul class="joint-certificate-list">
+                            <li>
+                                <a href="javascript:;">
+                                    <i class="icon-certificate-active"></i><!-- 인증서 활성화 icon -->
+                                    <strong class="name">김민국</strong>
+                                    <p class="cetificate-number">0020004563215654548321565</p>
+                                    <p><span>은행개인</span><strong>yessign</strong></p>
+                                    <p><span>만료일</span><strong class="num c-black">2022.04.14</strong></p>                                    
+                                    <!-- 수정 : 2021.06.25 <i class="icon-link_20"></i>-->
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </section>   
+                <!-- // 공동 인증서 없을 때 -->
+
+            </main>
+            <!-- // app-content -->
+
+        <!-- // app-container -->
+    </div>
+
+    <div class="layered">
+
+        <!-- @@include('@@webRoot/html/_layered/popup-notice-setting.html') -->
+
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+
+</body>
+
+</html>

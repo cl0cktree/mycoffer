@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_CO_04] 작성자: 누리어 시스템 이진우 -->
+
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "LAYER | 목표"
+	})
+	<style>
+		.layer-call{max-width:300px;margin:0 auto;padding:40px 0;}
+		.layer-call > button{flex-flow:column;margin-top:10px;}
+		.layer-call > button:before{content:attr(data-page-id);}
+		.layer-call > button span{display:block;}
+	</style>
+</head>
+
+<body>    
+	<div class="layer-call">
+		<h1 class="h2">레이어 모음</h1>
+
+		<button type="button" class="btn-line" data-call-layered="bsCreateChallenge1" data-page-id="MYS_GO_05_01_00_P1"><span>챌린지만들기 팝업</span></button>
+		<button type="button" class="btn-line" data-call-layered="bsCreateChallenge2" data-page-id="MYS_GO_05_01_00_P2"><span>남들만큼 계좌연결 확인 팝업</span></button>
+		<button type="button" class="btn-line" data-call-layered="bsPiggyBankMessage" data-page-id="MYS_GO_02_01_03_P2"><span>저금통 가입 안내 팝업</span></button>
+		<button type="button" class="btn-line" data-call-layered="bsPiggyBankMng" data-page-id="MYS_GO_02_01_03_P3"><span>저금통 관리 팝업</span></button>
+		<button type="button" class="btn-line" data-call-layered="bsGoalMessage1" data-page-id="MYS_GO_01_01_01_P2"><span>입출금통장이 없는 경우 안내 팝업</span></button>
+		<button type="button" class="btn-line" data-call-layered="bsGoalMessage2" data-page-id="MYS_GO_01_01_01_P3"><span>이미 가입한 경우 안내 팝업</span></button>
+		<button type="button" class="btn-line" data-call-layered="bsAccountSelect" data-page-id="MYS_GO_01_01_02_P1"><span>계좌 선택 팝업</span></button>
+
+	</div>
+
+	<div class="layered">        
+		@@include('@@webRoot/html/goal/layered/mys_go_05_01_00_p1.html')
+		@@include('@@webRoot/html/goal/layered/mys_go_05_01_00_p2.html')
+		@@include('@@webRoot/html/goal/layered/mys_go_02_01_03_p2.html')
+		@@include('@@webRoot/html/goal/layered/mys_go_02_01_03_p3.html')
+		@@include('@@webRoot/html/goal/layered/mys_go_01_01_01_p2.html')
+		@@include('@@webRoot/html/goal/layered/mys_go_01_01_01_p3.html')
+		@@include('@@webRoot/html/goal/layered/mys_go_01_01_02_p1.html')
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+
+	
+	<script>
+		//레이어 확인용 스크립트 (개발시 삭제) [s]
+		var url = window.location.href;
+		var urlArr = url.split('#');
+		var pageID = urlArr[urlArr.length - 1].toUpperCase();
+
+		$('.layer-call').on('click','button',function(){
+			var newUrl = url.replace(pageID, '');
+			window.location.href = urlArr[0] + '#' + $(this).data('page-id');
+		});
+		
+		if(pageID.indexOf('/HTML/') < 0) $('button[data-page-id=' + pageID + ']').click();
+		//레이어 확인용 스크립트 (개발시 삭제) [e]		
+	</script>
+	
+
+</body>
+
+</html>

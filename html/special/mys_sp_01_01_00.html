@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_SP_01_01_00] 작성자: 누리어 시스템 황철민 -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "약관동의 | 신용관리"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-header.html', {pageTit:'약관동의'})
+		<!-- // app-header -->
+
+		<!-- app-container (for MyMoney) //-->
+		<div class="app-container">
+
+			<!-- app-content // -->
+			<main class="app-content">
+
+				<!-- 신용관리 약관동의 // -->
+				<section class="kb-sec credit-management-agree">
+					<div class="descriptions">
+						<!-- 수정 : 2021-07-02 // -->
+						<p>"신용관리서비스"는 국내 신용평가사 "NICE평가정보(주)"의 신용정보를 바탕으로 서비스를 제공하며, 원활한 신용관리서비스 이용을 위해 고객님의 동의가 필요합니다.</p>
+						<p>서비스를 신청하는 휴대폰이 본인명의이고 KB국민은행에 등록된 정보와 일치하는 경우 신용관리서비스에 가입할 수 있습니다.</p>
+						<!-- // 수정 : 2021-07-02 -->
+					</div>
+					<div class="agreement-to-terms expansion-mode">
+						<div class="header">
+							<span class="form-checkbox"><input type="checkbox" id="agreeAllCheck" onchange="allCheckChange(this)"><label for="agreeAllCheck">전체동의</label><a class="alink" href="@@webRoot/html/special/mys_sp_01_01_00_p4.html"><span>전문보기</span></a></span>
+						</div>
+						<div class="checkbox-group st_list">
+							<span class="form-checkbox_20"><input type="checkbox" id="agreeCheck1"><label for="agreeCheck1">[필수]신용관리서비스 이용약관</label><a class="alink" href="@@webRoot/html/special/mys_sp_01_01_00_p1.html"><span>전문보기</span></a></span>
+							<span class="form-checkbox_20"><input type="checkbox" id="agreeCheck2"><label for="agreeCheck2">[필수]개인(신용)정보 수집·이용·제공 동의서(신용관리서비스용)</label><a class="alink" href="@@webRoot/html/special/mys_sp_01_01_00_p2.html"><span>전문보기</span></a></span><!-- 수정 : 2021.06.29 -->
+							<span class="form-checkbox_20"><input type="checkbox" id="agreeCheck3"><label for="agreeCheck3">[필수]NICE신용관리서비스 이용약관</label><a class="alink" href="@@webRoot/html/special/mys_sp_01_01_00_p3.html"><span>전문보기</span></a></span>
+						</div>
+					</div>
+					<p class="info-msg">본인은 위 항목에 대한 내용을 충분히 이해하고 확인하였습니다.</p>
+					<div class="sticky-bottom">
+						<div class="btn-area">
+							<button class="btn-solid_sticky" disabled><span>확인</span></button>
+						</div>
+					</div>
+					<script>
+						function allCheckChange(elem) {
+							var button = document.querySelector(".credit-management-agree .btn-solid_sticky");
+							if (elem.checked) {
+								button.removeAttribute("disabled");
+							} else {
+								button.setAttribute("disabled", true);
+							}
+						}
+					</script>
+				</section>
+				<!-- // 신용관리 약관동의 -->
+
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+	
+</body>
+
+</html>

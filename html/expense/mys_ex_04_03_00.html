@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_EX_04_04_00] 지출 > 주간 소비 리포트  (작성자: 누리어 시스템 김삼희)// -->
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "주간 소비 리포트 | 지출"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app" data-page="submain">
+        <!-- app-header (for MyMoney) //-->
+        @@include('@@webRoot/html/_include/app-header.html',{
+            'pageTit':'타이틀영역'
+        })
+        <!-- // app-header -->
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+
+            <!-- app-lnb //-->
+            <div class="app-lnb">
+                @@include('@@webRoot/html/_include/app-gnb.html')
+            </div>
+            <!-- //app-lnb -->
+
+            <!-- app-content // -->
+            <main class="app-content weekly-expense-report bg-gray-bottom">
+                <!-- 주간 소비 리포트 요약 //-->
+                <section class="kb-sec full bg-gray weekly-expense-summary">
+                    <div>
+                        <a href="javascript:;" role="button" class="content-box shadow compare-summary link-box_block" data-call-layered="bsExpenseReportSelectWeekly">
+                            <div class="content-box-info">
+                                <div class="content-box-tit flex-box">
+                                    <h4 class="h4">5월 3주차 주간 소비리포트</h4>
+                                </div>
+                                <div class="total-summary"><strong class="emphasis">평소보다 아껴쓰고 있어요.</strong> 이대로 직진!</div>
+                                <div href="javascript:;" role="button" class="compare-amount" data-call-layered="bsDailyExpenseGraph">
+                                    <dl>
+                                        <dt>지출금액</dt><!-- [D] 21-07-02 수정 : 문구 변경 -->
+                                        <dd><em class="num">3,200,000</em>원</dd>
+                                    </dl>
+                                    <em class="strict-inequality" data-compare-value="lt"></em>
+                                    <dl>
+                                        <dt>목표지출금액</dt><!-- [D] 21-07-02 수정 : 문구 변경 -->
+                                        <dd><em class="num">3,500,000</em>원</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <p class="date-info">발행일 21.5.25 : 기준일 21.4.26~5.25</p>
+                        </a>
+                    </div>
+                </section>
+                <!--// 주간 소비 리포트 요약 -->
+                <!-- 주간 정기지출 목록 //-->
+                <section class="kb-sec full weekly-regular-expense-list">
+                    <div class="more-view-box credit-list-group no-space">
+                        <div class="group-tit t02">
+                            <strong class="h3">이번주 정기지출</strong>
+                            <span class="amount expense">총 <em class="num">340,000</em>원</span>
+                            <span class="info">정기지출 <em class="num">4</em>건</span>
+                        </div>
+                        <ul class="credit-list_link-type">
+                            <li class="more-view-item" data-view-option="show">
+                                <a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" role="button" class="link-box_block">
+                                    <dl class="credit-list t01">
+                                        <dt>
+                                            <span class="info date daycount">05.20</span>
+                                            <strong class="tit">유튜브 프리미엄</strong>
+                                            <span class="tag">시티카드</span>
+                                        </dt>
+                                        <dd>
+                                            <strong class="amount"><em class="num">230,000</em>원</strong>
+                                            <span class="info" data-state="warning">이용한도부족</span>
+                                        </dd>
+                                    </dl>
+                                </a>
+                            </li>
+                            <li class="more-view-item" data-view-option="show">
+                                <a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" role="button" class="link-box_block">
+                                    <dl class="credit-list t01">
+                                        <dt>
+                                            <span class="info date daycount">05.20</span>
+                                            <strong class="tit">넷플릭스</strong>
+                                            <span class="tag">국민은행</span>
+                                        </dt>
+                                        <dd>
+                                            <strong class="amount">USD<em class="num">10,200.00</em>원</strong>
+                                            <span class="info">잔액 <em class="num">1,000,000</em>원</span>
+                                            <span class="info"> 잔액여유</span>
+                                        </dd>
+                                    </dl>
+                                </a>
+                            </li>
+                            <li class="more-view-item" data-view-option="show">
+                                <a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" role="button" class="link-box_block">
+                                    <dl class="credit-list t01">
+                                        <dt>
+                                            <span class="info date daycount">05.20</span>
+                                            <strong class="tit">정기지출항목</strong>
+                                            <span class="tag">신한은행</span>
+                                        </dt>
+                                        <dd>
+                                            <strong class="amount"><em class="num">70,000</em>원</strong>
+                                            <span class="info">잔액 -<em class="num">30,000</em>원</span>
+                                            <span class="info" data-state="warning">잔액부족</span>
+                                        </dd>
+                                    </dl>
+                                </a>
+                            </li>
+                            <li class="more-view-item" data-view-option="hide">
+                                <a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" role="button" class="link-box_block">
+                                    <dl class="credit-list t01">
+                                        <dt>
+                                            <span class="info date daycount">05.20</span>
+                                            <strong class="tit">유튜브 프리미엄</strong>
+                                            <span class="tag">시티카드</span>
+                                        </dt>
+                                        <dd>
+                                            <strong class="amount"><em class="num">230,000</em>원</strong>
+                                            <span class="info" data-state="warning">이용한도부족</span>
+                                        </dd>
+                                    </dl>
+                                </a>
+                            </li>
+                            <li class="more-view-item" data-view-option="hide">
+                                <a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" role="button" class="link-box_block">
+                                    <dl class="credit-list t01">
+                                        <dt>
+                                            <span class="info date daycount">05.20</span>
+                                            <strong class="tit">넷플릭스</strong>
+                                            <span class="tag">국민은행</span>
+                                        </dt>
+                                        <dd>
+                                            <strong class="amount">USD<em class="num">10,200.00</em>원</strong>
+                                            <span class="info">잔액 <em class="num">1,000,000</em>원</span>
+                                            <span class="info"> 잔액여유</span>
+                                        </dd>
+                                    </dl>
+                                </a>
+                            </li>
+                            <li class="more-view-item" data-view-option="hide">
+                                <a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" role="button" class="link-box_block">
+                                    <dl class="credit-list t01">
+                                        <dt>
+                                            <span class="info date daycount">05.20</span>
+                                            <strong class="tit">정기지출항목</strong>
+                                            <span class="tag">신한은행</span>
+                                        </dt>
+                                        <dd>
+                                            <strong class="amount"><em class="num">70,000</em>원</strong>
+                                            <span class="info">잔액 -<em class="num">30,000</em>원</span>
+                                            <span class="info" data-state="warning">잔액부족</span>
+                                        </dd>
+                                    </dl>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="btn-area center mt16">
+                            <button class="btn-more-view"><i class="icon-plus_20"></i><span> 전체보기</span></button>
+                        </div>
+                    </div>
+                </section>
+                <!--// 주간 정기지출 목록 -->
+                <!-- 주간 총 지출액 분석 //-->
+                <section class="kb-sec full bg-gray weekly-total-expense content-groups-type">
+                    <div>
+                        <div class="content-box shadow">
+                            <div class="h3 content-box-tit">
+                                <strong >이번주 총 지출액</strong><!-- [D] 21-07-02 수정 : 문구 변경 -->
+                                <span class="amount expense">총 <em class="num">1,135,994</em>원</span>
+                            </div>
+                            <div class="more-view-box credit-list-group">
+                                <dl class="credit-list t01">
+                                    <dt>6주 평균</dt>
+                                    <dd><strong class="amount"><em class="num">1,084,119</em>원</strong></dd>
+                                    <dt>절약</dt>
+                                    <dd><strong class="amount"><em class="num">584,119</em>원</strong></dd>
+                                </dl>
+                            </div>
+                            <div class="highcharts-box no-space">
+                                <div class="graph-area">
+                                    <figure class="highcharts-figure">
+                                        <div class="content-box-info">
+                                            <div class="content-box-tit">
+                                                <h4 class="h4">지출금액 분석 <span>최근 6주</span></h4>
+                                            </div>
+                                        </div>
+                                        <!-- [chart area] //-->
+                                        <!--
+                                            [차트 디자인 정보]
+                                            * 그래프(막대) 색상(컬러별)
+                                            - 노랑 : #ffd338;
+                                            - 회색 : #c6cbd0;
+        
+                                            - 차트 텍스트 컬러/크기 : #8c949e/16px
+                                            - legend 텍스트 컬러/크기 : #26282c/14px
+                                            - dataLabel 텍스트 컬러/크기 : #26282c/14px
+                                        -->
+                                        <div class="highcharts_column" id="">
+                                            <img class="temp" src="../../static/images/_temp/chart_ex0402.png" alt="차트 예시 이미지">
+                                        </div>
+                                        <div class="legend-unit"><span class="basic" data-type="dash">지출평균금액 <em class="num">1,000,210</em>원</span></div>
+                                        <!--// [chart area] -->
+                                    </figure>
+                                </div>
+                                <div class="graph-area">
+                                    <figure class="highcharts-figure">
+                                        <div class="content-box-info">
+                                            <div class="content-box-tit">
+                                                <h4 class="h4">이번주 카테고리 유형별 지출 분석</h4>
+                                                <p class="content-box-desc">5월3주차 5.17~23</p>
+                                            </div>
+                                        </div>
+                                        <!-- [chart area] //-->
+                                        <!--
+                                            [차트 디자인 정보]
+                                            * 그래프(도넛) 색상(컬러별)
+                                            - 노랑 : #ffd338;
+                                            - 파랑 : #3f6fd1;
+                                            - 갈색 : #96857f;
+                                            - 분홍 : #d575c9;
+                                            - 주황 : #f78657;
+                                            (6위부터는 #dde1e4)
+        
+                                            - 차트 텍스트 컬러/크기 : #26282c/16px
+                                            - legend 텍스트 컬러/크기 : #26282c/14px
+
+                                            
+                                        -->
+                                        <div class="highcharts_column" id="">
+                                            <img class="temp" src="../../static/images/_temp/chart_ex0401.png" alt="차트 예시 이미지">
+                                        </div>
+                                        <!-- [D] 21-07-02 수정 : 차트 legend 추가 //-->
+                                        <div class="legend-unit">
+                                            <dl>
+                                                <dt class="yellow"><span>1위</span>식비</dt>
+                                                <dd>
+                                                    <span class="amount"><em class="num">1,000,000</em>원</span> &sol;
+                                                    <span><em class="num">24</em>건</span>
+                                                </dd>
+                                                <dt class="orange"><span>2위</span>여행</dt>
+                                                <dd>
+                                                    <span class="amount"><em class="num">600,000</em>원</span> &sol; 
+                                                    <span><em class="num">3</em>건</span>
+                                                </dd>
+                                                <dt class="purple"><span>3위</span>술&sol;유흥</dt>
+                                                <dd>
+                                                    <span class="amount"><em class="num">250,000</em>원</span> &sol; 
+                                                    <span><em class="num">5</em>건</span>
+                                                </dd>
+                                                <dt class="brown"><span>4위</span>반려동물</dt>
+                                                <dd>
+                                                    <span class="amount"><em class="num">120,000</em>원</span> &sol; 
+                                                    <span><em class="num">3</em>건</span>
+                                                </dd>
+                                                <dt class="blue"><span>5위</span>뷰티</dt>
+                                                <dd>
+                                                    <span class="amount"><em class="num">19,000</em>원</span> &sol; 
+                                                    <span><em class="num">1</em>건</span>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                        <!--// [D] 21-07-02 수정 : 차트 legend 추가 -->
+                                        <!--// [chart area] -->
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="btn-area center">
+                                <button class="btn-more-view"><i class="icon-plus_20"></i><span>카테고리별 전체보기</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--// 주간 총 지출액 분석 -->
+                <!-- 주간 카드별 이용 현황 //-->
+                <section class="kb-sec full bg-gray weekly-card-credit-list">
+                    <div>
+                        <div class="content-box shadow">
+                            <div class="h3 content-box-tit">
+                                <strong >이번주 카드별 이용 현황</strong><!-- [D] 21-07-02 수정 : 문구 변경 -->
+                            </div>
+                            <div class="flex-box">
+                                <p class="content-info-desc">아직 기준 실적을 충족하지 못한 카드가<br>2개 있어요.</p>
+                                <h2>기준실적 <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                    <div class="tooltip">
+                                        <strong class="tit">&#8251; 기준실적이란?</strong>
+                                        <div class="cont">마이머이네서 제공하는 '기준실적'의 기준과 금액은 단순 참고용으로 실제와는 다를 수 있습니다.<br>정확한 기준실적과 충족여부는 각 카드사에서 확인하여 주시기 바랍니다.</div>
+                                        <button class="btn-close"><span>닫기</span></button>
+                                    </div>
+                                </h2>
+                            </div>
+                            <div class="more-view-box">
+                                <dl class="credit-list t01">
+                                    <dt class="more-view-item" data-view-option="show">
+                                        <strong class="tit">시티카드</strong>
+                                        <span class="info">이용금액</span>
+                                        <strong class="info">기준실젹<span class="tag" data-state="warning">부족</span></strong>
+                                    </dt>
+                                    <dd class="more-view-item" data-view-option="show">
+                                        <strong class="amount"><em class="num">230,000</em>원</strong>
+                                        <span class="info"><em class="num">300,000</em>원</span>
+                                    </dd>
+                                    <dt class="more-view-item" data-view-option="show">
+                                        <strong class="tit">국민카드</strong>
+                                        <span class="info">이용금액</span>
+                                        <strong class="info">기준실젹<span class="tag" data-state="warning">부족</span></strong>
+                                    </dt>
+                                    <dd class="more-view-item" data-view-option="show">
+                                        <strong class="amount"><em class="num">230,000</em>원</strong>
+                                        <span class="info"><em class="num">300,000</em>원</span>
+                                    </dd>
+                                    <dt class="more-view-item" data-view-option="show">
+                                        <strong class="tit">신한카드</strong>
+                                        <span class="info">이용금액</span>
+                                        <strong class="info">기준실젹<span class="tag" data-state="safety">충족</span></strong>
+                                    </dt>
+                                    <dd class="more-view-item" data-view-option="show">
+                                        <strong class="amount"><em class="num">230,000</em>원</strong>
+                                        <span class="info"><em class="num">300,000</em>원</span>
+                                    </dd>
+                                </dl>
+                                <div class="btn-area center mt16">
+                                    <button class="btn-more-view"><i class="icon-plus_20"></i><span> 전체보기</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--// 주간 카드별 이용 현황 -->
+                <!-- 목표관리가 필요한 지출 //-->
+                <section class="kb-sec full bg-gray management-expense-goal">
+                    <div>
+                        <strong class="content-group-tit">목표관리가 필요한 지출</strong>
+                        <div class="content-box mt24 mb24 pb20 align-c">커피 줄이기 챌린지 영역</div>
+                        <a href="mys_ex_04_00_00.html" class="link-box_block content-box shadow">
+                            <i class="icon-chart-card"></i>
+                            <dl>
+                                <dt>금융리포트</dt>
+                                <dd>나도 모르는 나의 지출 패턴을 분석한 주간, 월간, 연간 금융리포트도 지금 확인하세요.</dd>
+                            </dl>
+                        </a>
+                        <p class="annotation">최신 정보가 반영된 리포트를 원하시면 하단의 ‘리포트 새로고침’을 눌러주세요</p>
+                    </div>
+                </section>
+                <!-- //목표관리가 필요한 지출 -->
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <a href="mys_ex_04_00_00.html" role="button" class="btn-solid_sticky lv2"><span>닫기</span></a>
+                        <button type="button" class="btn-solid_sticky" data-call-modal="refreshReport"><span>리포트 새로고침</span></button>
+                    </div>
+                </div>
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+        <div class="layered">
+            <!-- Layer // -->
+            <div class="modal" id="refreshReport">
+                <div class="modal_contents">
+                    리포트 새로 고침을 하시겠습니까?<br>
+                    시간이 다소 소요될 수 있습니다.
+                </div>
+                <div class="modal_buttons btn-area">
+                    <button class="btn-solid_sticky lv2 cancel"><span>취소</span></button>
+                    <button class="btn-solid_sticky ok"><span>확인</span></button>
+                </div>
+            </div>
+            @@include('@@webRoot/html/expense/layered/mys_ex_04_03_01_p.html')
+            <!-- // Layer -->
+        </div>
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <script>
+        gfn_gnb.select(2,3);
+        $("#refreshReport").modalPopup({
+            onOk: function() {
+                console.log('DEMO 1 ok');
+            },
+            onCancel: function() {
+                console.log('DEMO 1 cancel');
+            }
+        });
+    </script>
+    <!-- Add Script -->
+    
+</body>
+
+</html>
