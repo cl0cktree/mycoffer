@@ -1,0 +1,132 @@
+<!-- [MYS_MN_01_01_02] 전체메뉴 > My Data 관리 > KB국민은행 자산 추가하기 (작성자: 누리어 시스템 이진우)// -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Last Depth | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app"><!-- 수정 2021.06.25 : Liiv, Starbanking  앱 안에서  동작할 경우 data-page="submain" -->
+        <!-- app-header (for MyMoney) //-->
+        @@include('@@webRoot/html/_include/app-header.html',{
+            'pageTit':'마이데이터 관리<!-- 수정 : 2021.06.01 -->'
+        })
+        <!-- // app-header -->
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+
+            <!-- app-lnb //-->
+            <div class="app-lnb">
+                <div class="tab swiper-container">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide"><a href="javascript:;">다른 기관 관리</a></li>
+                        <li class="swiper-slide is-active"><a href="javascript:;">KB국민은행</a></li>
+                        <li class="swiper-slide"><a href="javascript:;">이력정보</a></li>
+                    </ul>
+                </div>         
+            </div>
+            <!-- //app-lnb -->
+
+            <!-- app-content // -->
+            <main class="app-content mydata-kbinfo">
+
+                <section class="kb-sec bg-white"><!-- 수정 : 2021.06.25-->
+                    <h2 class="h2">연결할 자산을 선택해 주세요.</h2>
+
+                    <dl class="mydata-kbinfo-asset js-checkbox-selector">
+                        <dt><span class="form-checkbox"><input type="checkbox" id="allSelect"><label for="allSelect">전체선택</label></span></dt>
+                        <dd>
+                            <ul class="checkbox-group">
+                                <li>
+                                    <span class="form-checkbox_20">
+                                        <input type="checkbox" id="assetInfo01">
+                                        <label for="assetInfo01">
+                                            <strong class="asset-name">KB종합통장-저축예금</strong>
+                                            <span class="account-number">1234-5678-1234</span>
+                                        </label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="form-checkbox_20">
+                                        <input type="checkbox" id="assetInfo02">
+                                        <label for="assetInfo02">
+                                            <strong class="asset-name">KB종합통장-저축예금</strong>
+                                            <span class="account-number">1234-5678-1234</span>
+                                        </label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="form-checkbox_20">
+                                        <input type="checkbox" id="assetInfo03">
+                                        <label for="assetInfo03">
+                                            <strong class="asset-name">KB종합통장-저축예금</strong>
+                                            <span class="account-number">1234-5678-1234</span>
+                                        </label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="form-checkbox_20">
+                                        <input type="checkbox" id="assetInfo04">
+                                        <label for="assetInfo04">
+                                            <strong class="asset-name">KB종합통장-저축예금</strong>
+                                            <span class="account-number">1234-5678-1234</span>
+                                        </label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="form-checkbox_20">
+                                        <input type="checkbox" id="assetInfo05">
+                                        <label for="assetInfo05">
+                                            <strong class="asset-name">KB종합통장-저축예금</strong>
+                                            <span class="account-number">1234-5678-1234</span>
+                                        </label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="form-checkbox_20">
+                                        <input type="checkbox" id="assetInfo06">
+                                        <label for="assetInfo06">
+                                            <strong class="asset-name">KB종합통장-저축예금</strong>
+                                            <span class="account-number">1234-5678-1234</span>
+                                        </label>
+                                    </span>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </section>
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid_sticky"><span>변경하기</span></button>
+                    </div>
+                </div>
+
+
+            </main>
+            <!-- // app-content -->
+            
+        <!-- // app-container -->
+    </div>
+
+    <div class="layered">
+
+        
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    <script>
+        gfn_gnb.select(11,1); //수정 2021.06.25 : liiv, starbanking  용
+    </script>
+   
+</body>
+
+</html>
