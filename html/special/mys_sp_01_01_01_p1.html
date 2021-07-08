@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_SP_01_01_01_P1] 작성자: 누리어 시스템 황철민 -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "휴대폰본인인증 | 신용관리"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-header-close.html',{
+			'pageTit' :'휴대폰본인인증'
+		}) 
+		<!-- // app-header (for MyMoney) -->
+
+		<!-- app-container //-->
+		<div class="app-container">
+
+			<!-- app-content // -->
+			<main class="app-content">
+
+				<!-- 휴대폰본인인증 // -->
+				<section class="kb-sec phone-auth-agree">
+					<!-- 동의하기(전체동의) // -->
+					<div class="agreement-to-terms"><!-- 수정 2021-06-29 -->
+						<div class="header">
+							<span class="form-checkbox"><input type="checkbox" id="agreeAllCheck"><label for="agreeAllCheck">전체동의</label></span><!-- 수정 2021-06-29 -->
+						</div>					
+						<div class="checkbox-group st_list">
+							<span class="form-checkbox_20"><input type="checkbox" id="agreeCheck1"><label for="agreeCheck1">[필수]고유식별정보 처리 동의</label><a class="alink" href="@@webRoot/html/terms/agree-unique-id-info.html"><span>전문보기</span></a></span>
+							<span class="form-checkbox_20"><input type="checkbox" id="agreeCheck2"><label for="agreeCheck2">[필수]통신사 이용약관 동의</label><a class="alink" href="@@webRoot/html/terms/agree-terms-of-use-of-telecommunications-company.html"><span>전문보기</span></a></span>
+							<span class="form-checkbox_20"><input type="checkbox" id="agreeCheck3"><label for="agreeCheck3">[필수]휴대폰본인확인 개인정보 수집이용동의</label><a class="alink" href="@@webRoot/html/terms/agree-mobile-id-personal-info-collection.html"><span>전문보기</span></a></span>
+							<span class="form-checkbox_20"><input type="checkbox" id="agreeCheck4"><label for="agreeCheck4">[필수]휴대폰본인확인 서비스 이용약관 동의</label><a class="alink" href="@@webRoot/html/terms/agree-mobile-id-personal-info-service.html"><span>전문보기</span></a></span>
+						</div>
+					</div>
+					<!-- // 동의하기(전체동의) -->
+				</section>
+				<!-- // 휴대폰본인인증 -->
+
+				<!-- 휴대폰 본인인증 폼 // -->
+				<section class="kb-sec phone-auth-form">
+					<div class="kb-form is-readonly" data-status="">
+						<label for="kbFormInput1">이름</label>
+						<div class="kb-form_inner form-text">
+							<input type="text" id="kbFormInput1" value="김국민">
+							<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+						</div>
+					</div>
+
+					<div class="kb-form is-readonly" data-status="">
+						<label for="kbFormInput2">생년월일</label>
+						<div class="kb-form_inner form-text">
+							<input type="text" inputmode="numeric" id="kbFormInput2" value="900101-1******">
+							<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+						</div>
+					</div>
+
+					<div class="kb-form_multi kb-form_email" data-status="error">
+						<strong class="tit">이메일 주소(NICE평가정보(주) 제공용)</strong>
+						<div class="kb-form">
+							<label for="formMultiEmail">이메일ID</label>
+							<div class="kb-form_inner form-text">
+								<input type="text" id="formMultiEmail" placeholder="아이디" value="acorn22"><!-- 수정 : 2021-07-02 -->
+								<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+							</div>
+						</div>
+						<span class="between">@</span>
+						<div class="kb-form">
+							<label for="formMultiEmail02">이메일서비스명</label>
+							<div class="kb-form_inner form-select">
+								<button type="button" class="selected-option"></button>
+								<select name="" id="formMultiEmail02" title="도메인 선택">
+									<option value=""></option>
+									<option value="writingemail" selected="">직접입력</option>
+									<option value="">naver.com</option>
+									<option value="">nate.com</option>
+									<option value="">yahoo.com</option>
+									<option value="">gmail.com</option>
+									<option value="">hanmail.net</option>
+									<option value="">daum.net</option>
+								</select>
+							</div>
+						</div>
+						<div class="kb-form add-email-input">
+							<label for="formMultiEmail03"></label>
+							<div class="kb-form_inner form-text">
+								<input type="text" id="formMultiEmail03" placeholder="" value="upleat.com">
+								<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+							</div>
+						</div>
+						<em class="validation">이메일 주소를 정확히 입력해 주세요.</em><!-- 수정 2021-06-24 -->
+					</div>
+
+					<div class="kb-form" data-status="">
+						<label for="kbFormInput5">통신사</label>
+						<div class="kb-form_inner form-select">
+							<button type="button" class="selected-option"></button>
+							<select name="" id="kbFormInput5" title="통신사 선택">
+								<option value="">최초 메세지</option>
+								<option value="" selected="">KT</option>
+								<option value="">SKT</option>
+								<option value="">LG U+</option>
+								<option value="">KT 알뜰폰</option>
+								<option value="">SKT 알뜰폰</option>								
+								<option value="">LG U+ 알뜰폰</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="kb-form is-readonly" data-status="">
+						<label for="kbFormInput6">은행에 등록된 휴대폰번호</label>
+						<div class="kb-form_inner form-text">
+							<input type="text" inputmode="numeric" id="kbFormInput6" value="01012**34**">
+							<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+						</div>
+					</div>
+
+					<div class="btn-area">
+						<button class="btn-solid btn-phone-check"><span>휴대폰 명의확인</span></button><!-- 수정 : 2021-07-02 -->
+					</div>
+
+					<!-- 인증번호 입력 // -->
+					<div class="authcode-input">
+						<div class="btn-area">
+							<button class="btn-solid"><span>인증번호 발송</span></button>
+						</div>
+						<div class="kb-form no-transition" data-status="">
+							<label for="kbFormInput9">인증번호</label>
+							<div class="kb-form_inner form-text">
+								<input type="text" inputmode="numeric" id="kbFormInput9" maxlength="6" value="" placeholder="숫자 6자리"><!-- 수정 : 2021-07-02 -->
+								<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+							</div>
+						</div>
+						<div class="time-limit">잔여시간 : <strong class="num">2:59</strong></div>
+					</div>
+					<!-- // 인증번호 입력 -->
+					<script>
+						// [개발 참고용] 휴대폰명의확인 클릭시 인증번호 입력 보여주기
+						var phoneCheck = document.querySelector('.btn-phone-check');
+						var authcodeInput = document.querySelector('.authcode-input');
+						phoneCheck.addEventListener('click', function() {
+							phoneCheck.style.display = "none";
+							authcodeInput.classList.add('is-active');
+						});
+					</script>
+
+					<p class="info-msg">서비스를 신청하는 휴대폰이 본인명의이고 KB국민은행에 등록된 정보와 일치하는 경우 신용관리서비스에 가입할 수 있습니다.</p><!-- 수정 : 2021-07-02 -->
+					<!-- 수정 2021-06-02 // -->
+					<div class="push-check">
+						<span class="form-checkbox_24"><input type="checkbox" id="creditPushCheck"><label for="creditPushCheck">신용관리 서비스이용 문자 수신여부</label></span>
+					</div>
+					<!-- // 수정 2021-06-02 -->
+				</section>
+				<!-- // 휴대폰 본인인증 폼 -->
+
+				<section class="kb-sec sticky-bottom">
+					<div class="btn-area">
+						<button type="button" class="btn-solid_sticky"><span>확인</span></button>
+					</div>
+				</section>
+
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+
+</body>
+
+</html>

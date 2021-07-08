@@ -1,0 +1,94 @@
+<!-- [MYS_CO_04_01_01] 로그인 > 공동인증서 > 공동인증서 목록 (작성자: 누리어 시스템 이진우)// -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Last Depth | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header (for MyMoney) //-->
+        @@include('@@webRoot/html/_include/app-header-title.html',{
+            'pageTit':'KB국민은행<!-- 수정 : 2021.06.25 -->'
+        })
+        <!-- // app-header -->
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+            <div class="app-lnb">
+                <div class="tab swiper-container">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide"><a href="#target01">KB모바일인증서</a></li><!-- 수정 : 2021.06.25 -->
+                        <li class="swiper-slide is-active"><a href="#target02">공동인증서</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- app-content // -->
+            <main class="app-content joint-certificate">
+                <section class="kb-sec">
+                    <ul class="joint-certificate-list">
+                        <li>
+                            <a href="javascript:;">
+                                <i class="icon-certificate-active"></i><!-- 인증서 활성화 icon -->
+                                <strong class="name">김민국</strong>
+                                <p><span>은행개인</span><strong>yessign</strong></p>
+                                <p><span>만료일</span><strong class="num">2022.04.14</strong></p>
+                                <!-- 수정 : 2021.06.25 <i class="icon-link_20"></i>-->
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <i class="icon-certificate-expire"></i><!-- 인증서 만료 icon -->
+                                <strong class="name">김민국</strong>
+                                <p><span>은행개인</span><strong>yessign</strong></p>
+                                <p><span>만료일</span><strong class="num">2022.04.14</strong></p>
+                                <!-- 수정 : 2021.06.25 <i class="icon-link_20"></i>-->
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <i class="icon-certificate-expire"></i><!-- 인증서 만료 icon -->
+                                <strong class="name">김민국</strong>
+                                <p><span>은행개인</span><strong>yessign</strong></p>
+                                <p><span>만료일</span><strong class="num">2022.04.14</strong></p>
+                                <!-- 수정 : 2021.06.25 <i class="icon-link_20"></i>-->
+                            </a>
+                        </li>
+                        <!-- 유효한 공인인증서가 없을 경우 // -->
+                        <li>
+                            <a href="javascript:;">
+                                <i class="icon-certificate-none"></i><!-- 인증서 없음 icon -->
+                                <strong class="name">사용할 수 있는 공동인증서가 없습니다.</strong><!-- 수정 : 2021.06.25 -->
+                                <p>KB스타뱅킹 인증센터에서 인증서 등록 후 이용해주세요.</p><!-- 수정 : 2021.06.25 -->
+                                <!-- 수정 : 2021.06.25 <i class="icon-link_20"></i>-->
+                            </a>
+                        </li>
+                        <!-- // 유효한 공인인증서가 없을 경우 -->
+                    </ul>
+                </section>
+            </main>
+            <!-- // app-content -->
+
+        <!-- // app-container -->
+    </div>
+
+    <div class="layered">
+
+        @@include('@@webRoot/html/_layered/bs-other-login.html')
+
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+
+</body>
+
+</html>

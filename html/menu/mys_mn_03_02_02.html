@@ -1,0 +1,91 @@
+<!-- [MYS_MN_03_02_02] 전체메뉴 > 전화상담 (작성자: 누리어 시스템 이진우)// -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Last Depth | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header (for MyMoney) //-->
+        @@include('@@webRoot/html/_include/app-header.html',{
+            'pageTit':'전화상담'
+        })
+        <!-- // app-header -->
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content mydata-call-center">
+                <section class="kb-sec">
+                    <h1 class="h3">아래 버튼을 터치하여 <br>전화 연결하실 수 있습니다.</h1>
+
+                    <div class="operation-time">
+                        <span>전화 상담 시간</span>
+                        <p><i class="icon-clock"></i>평일 <span class="num">09:00 ~ 18:00</span></p><!-- 수정 : 2021.06.25 -->
+                    </div>
+
+                    <ul class="connect-call-center">
+                        <li>
+                            <a href="tel:1644-0000">
+                                <span class="icon-circle"><i class="icon-domestic"></i></span><!-- 수정 : 2021.06.25 -->
+                                <p>
+                                    <strong class="tit">국내</strong>
+                                    <span class="num">1644-0000, 1599-9999</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tel:+82-2-6300-9999">
+                                <span class="icon-circle"><i class="icon-earth"></i></span><!-- 수정 : 2021.06.25 -->
+                                <p>
+                                    <strong class="tit">해외</strong>
+                                    <span class="num">+82-2-6300-9999</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tel:1644-0000">
+                                <span class="icon-circle"><i class="icon-call"></i></span><!-- 수정 : 2021.06.25 -->
+                                <p>
+                                    <strong class="tit">상담전용</strong>
+                                    <span class="num">1800-9999</span> <span>(분실 및 사고 신고 제외)</span>
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul data-style="list">
+                        <li>KB국민은행 대표번호 ARS 연결시 일반 휴대전화 통화요금이 부가됩니다.</li>                        
+                        <li>휴대전화가 아닐 경우 자동전화 연결되지 않습니다.</li>
+                        <li>해외에서 상담 연결시 휴대전화 국외통화 요금이 부과 됩니다.</li>
+                    </ul>
+                </section>
+                
+
+            </main>
+            <!-- // app-content -->
+
+        <!-- // app-container -->
+    </div>
+
+    <div class="layered">
+
+        @@include('@@webRoot/html/menu/layered/mys_mn_01_02_03.html')
+
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+
+</body>
+
+</html>

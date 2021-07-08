@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [mys_ex_02] 작성자 : 누리어 시스템 김삼희 -->
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "LAYER | 정기지출"
+    })
+    <style>
+        .layer-call{max-width:300px;margin:0 auto;padding:40px 0;}
+        .layer-call > button{flex-flow:column;margin-top:10px;}
+        .layer-call > button:before{content:attr(data-page-id);}
+        .layer-call > button span{display:block;}
+    </style>
+</head>
+<body>    
+    <div class="layer-call">
+        <!-- 지출 > 정기지출 //--->
+        <h1 class="h2">정기지출</h1>
+        <button type="button" class="btn-line" data-call-layered="bsRegularExpenseDetailList" data-page-id="MYS_EX_02_00_00_P01"><span>정기지출 상세내역 팝업</span></button>
+        <button type="button" class="btn-line" data-call-layered="bsShareRegularExpenseList" data-page-id="MYS_EX_02_01_03_P"><span>SNS 공유 팝업</span></button>
+        <button type="button" class="btn-line" data-call-layered="bsSelectRegularExpenseList01" data-page-id="MYS_EX_02_01_05_P"><span>정기지출항목 선택 팝업</span></button>
+        <button type="button" class="btn-line" data-call-layered="bsSelectOrganization" data-page-id="MYS_EX_02_02_01_P"><span>기관 선택 팝업</span></button>
+        <button type="button" class="btn-line" data-call-layered="bsNoticeCardService" data-page-id="MYS_EX_02_01_06_P"><span>카드관리 서비스 이용 안내</span></button>
+        <br>
+        <br>
+        <button type="button" class="btn-line"  onClick="deleteRegularExpenseList()"><span>오류메시지 : 내역에서 삭제 안내</span></button>
+        <button type="button" class="btn-line"  onClick="deleteRegularExpenseListConfirm()"><span>오류메시지 : 내역에서 삭제 확인</span></button>
+        <!--// 지출 > 정기지출 --->
+    </div>
+
+    <div class="layered">
+        <!-- Layer // -->
+        <!-- 지출 > 정기지출 //-->
+        @@include('@@webRoot/html/expense/layered/mys_ex_02_00_00_p01.html')
+        @@include('@@webRoot/html/expense/layered/mys_ex_01_05_07_p.html')
+        @@include('@@webRoot/html/expense/layered/mys_ex_02_01_03_p.html')
+        @@include('@@webRoot/html/expense/layered/mys_ex_02_02_01_p.html')
+        @@include('@@webRoot/html/expense/layered/mys_ex_02_01_05_p.html')
+        @@include('@@webRoot/html/expense/layered/mys_ex_02_02_01_p.html')
+        @@include('@@webRoot/html/expense/layered/mys_ex_02_01_06_p.html')
+        <!-- 공통 -->
+        @@include('@@webRoot/html/_layered/bs-calendar.html')
+        <!-- // Layer -->
+        <!-- Bottom Sheet // -->
+
+        <!-- //Bottom Sheet -->
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+
+    <script>
+        function deleteRegularExpenseList(){
+            modalPopup({
+                title: "내역에서 삭제",
+                message: "{정기지출내역}에서 {정기지출항목}을(를) 삭제하시겠습니까?",
+                type: "confirm",
+                textOkButton: "확인",
+                textCancelButton: "취소",
+                onOk: function() {
+                    deleteRegularExpenseListConfirm();
+                },
+                onCancel: function() {
+                    console.log('DEMO 3 cancel');
+                }
+            });
+        }
+        function deleteRegularExpenseListConfirm(){
+            modalPopup({
+                title: "내역에서 삭제",
+                message: "{정기지출항목}아(가) 삭제되었습니다.",
+                type: "confirm",
+                textOkButton: "확인"
+            });
+        }
+
+        //레이어 확인용 스크립트 (개발시 삭제) [s]
+        var url = window.location.href;
+        var urlArr = url.split('#');
+        var pageID = urlArr[urlArr.length - 1].toUpperCase();
+
+        $('.layer-call').on('click','button',function(){
+            var newUrl = url.replace(pageID, '');
+            window.location.href = urlArr[0] + '#' + $(this).data('page-id');
+        });
+        
+        if(pageID.indexOf('/HTML/') < 0) $('button[data-page-id=' + pageID + ']').click();
+        //레이어 확인용 스크립트 (개발시 삭제) [e]
+    </script>
+    
+
+</body>
+</html>

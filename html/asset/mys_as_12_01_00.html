@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_AS_12_01_00] 작성자: 누리어 시스템 황철민 -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "자동차 | 자산"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app" data-page="submain"><!-- 수정 2021-07-01 -->
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-header.html', { 'pageTit': '자동차'}) 
+		<!-- // app-header -->
+
+		<!-- app-container (for MyMoney) //-->
+		<div class="app-container">
+			<!-- 수정 2021-07-01 // -->
+            <!-- app-lnb //-->
+            <div class="app-lnb">
+                @@include('@@webRoot/html/_include/app-gnb.html')
+            </div>
+            <!-- //app-lnb -->
+			<!-- // 수정 2021-07-01 -->
+
+			<!-- app-content // -->
+			<main class="app-content">
+
+				<!-- 자동차 등록전 // -->
+				<section class="kb-sec car-index">
+					<!-- 수정 2021-06-09 // -->
+					<div class="index-visual">						
+						<img src="@@webRoot/static/images/asset/car_img.png" alt="">
+					</div>
+					<!-- 수정 2021-07-01 // -->
+					<div class="link-area_arrow">
+						<a href="#" class="link-area">
+							<i class="icon-car_24"></i>
+							<span class="txt-area">
+								<strong class="title">My Car 차고 만들기</strong>
+								<span class="desc">차량번호/직접입력</span>
+							</span>
+							<i class="icon-go_detail_24"></i>
+						</a>
+						<a href="#" class="link-area">
+							<i class="icon-car_24"></i>
+							<span class="txt-area">
+								<strong class="title">Wish Car 차고 만들기</strong>
+								<span class="desc">신차/중고차</span>
+							</span>
+							<i class="icon-go_detail_24"></i>
+						</a>
+					</div>
+					<!-- // 수정 2021-07-01 -->
+					<!-- // 수정 2021-06-09 -->
+				</section>
+				<!-- // 자동차 등록전 -->
+				
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+        <!-- Layer (fullpage popup, modal, bottom sheet) // -->
+        <div class="layered">
+
+        </div>
+        <!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+
+	<script>
+		//최초 선택되는 내용을 바꾸고 싶으면... (ui.js)
+        gfn_gnb.select(5,0,false);	// 수정 2021-07-01
+	</script>
+</body>
+
+</html>

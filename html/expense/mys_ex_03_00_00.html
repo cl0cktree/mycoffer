@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_EX_03_00_00] 지출 > 카드 관리  (작성자: 누리어 시스템 김삼희)// -->
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "카드 관리 | 지출"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app" data-page="submain">
+        <!-- app-header (for MyMoney) //-->
+        @@include('@@webRoot/html/_include/app-header.html',{
+            'pageTit':'타이틀영역'
+        })
+        <!-- // app-header -->
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+
+            <!-- app-lnb //-->
+            <div class="app-lnb">
+                @@include('@@webRoot/html/_include/app-gnb.html')
+            </div>
+            <!-- //app-lnb -->
+
+            <!-- [D] 21-07-05 수정 : 디자인 변경으로 인한 마크업 수정 및 텍스트 수정 //-->
+            <!-- app-content // -->
+            <main class="app-content card-management-total">
+                <!-- 카드 결제 예정 금액 // -->
+                <section class="kb-sec full bg-gray estimated-payment-amount">
+                    <div>
+                        <div class="content-box shadow">
+                            <div class="content-box-info">
+                                <div class="content-box-tit flex-box">
+                                    <!-- 21-07-08 수정 : 마크업 수정 - 툴팁 추가 //-->
+                                    <h4 class="h4">
+                                        <button> <i class="icon-arrow-left">이전달</i></button><strong>5월</strong><button><i class="icon-arrow-right">다음달</i></button>
+                                        <span class="tit">결제예정금액</span>
+                                        <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                        <!-- Tooltip (With title)-->
+                                        <div class="tooltip">
+                                            <div class="cont">가장 가까운 예정 날짜에 출금 예정인 카드 대금입니다. 결제일 전에 미리 납부한 대금은 반영되지 않을 수 있습니다.</div>
+                                            <button class="btn-close"><span>닫기</span></button>
+                                        </div>
+                                    </h4>
+                                    <!--// 21-07-08 수정 : 마크업 수정 - 툴팁 추가 -->
+                                    <a href="@@webRoot/html/common/mys_co_08_01_00_p1.html" role="button" class="btn-more"><i class="icon-more_24"></i></a>
+                                    <span class="date">04.26~05.25</span>
+                                </div>
+                                <!-- // 마크업 수정 -->
+                            </div>
+                            <ul class="card-list">
+                                <li>
+                                    <div class="card-img">
+                                        <span class="img-resize_24"><img src="@@webRoot/static/images/ci/A1AAER0000.png" alt="" class="신한은행"></span>
+                                        <strong>신한</strong>
+                                    </div>
+                                    <div class="card-info">
+                                        <strong class="list-tit">신한카드 The More(더모아)</strong>
+                                        <dl class="description-list">
+                                            <dt>결제일</dt>
+                                            <dd class="date"><em class="num">4</em>월 <em class="num">25</em>일</dd>
+                                            <dt>결제예정금액</dt>
+                                            <dd><strong><em class="num">180,000</em>원</strong></dd>
+                                        </dl>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="card-img">
+                                        <span class="img-resize_24"><img src="@@webRoot/static/images/ci/C1AAKN0000.png" alt="" class="하나은행"></span>
+                                        <strong>하나</strong>
+                                    </div>
+                                    <div class="card-info">
+                                        <strong class="list-tit">하나카드 랄랄라</strong>
+                                        <dl class="description-list">
+                                            <dt>결제일</dt>
+                                            <dd class="date"><em class="num">4</em>월 <em class="num">25</em>일</dd>
+                                            <dt>결제예정금액</dt>
+                                            <dd><strong><em class="num">180,000</em>원</strong></dd>
+                                        </dl>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="card-img">
+                                        <span class="img-resize_24"><img src="@@webRoot/static/images/ci/a1aae0000.png" alt="" class="국민은행"></span>
+                                        <strong>국민</strong>
+                                    </div>
+                                    <div class="card-info">
+                                        <strong class="list-tit">Easy all 티타늄카드</strong>
+                                        <dl class="description-list">
+                                            <dt>결제일</dt>
+                                            <dd class="date"><em class="num">4</em>월 <em class="num">25</em>일</dd>
+                                            <dt>결제예정금액</dt>
+                                            <dd><strong><em class="num">180,000</em>원</strong></dd>
+                                        </dl>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <!--// 카드 결제 예정 금액 -->
+                <!-- 보유카드 // -->
+                <section class="kb-sec full bg-gray my-card-list">
+                    <div>
+                        <div class="content-box shadow more-view-box">
+                            <div class="content-box-info">
+                                <div class="content-box-tit flex-box">
+                                    <h4 class="h3">보유카드</h4>
+                                    <div class="tooltip-box"><span class="tit">기준실적</span> <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                        <!-- Tooltip (With title)-->
+                                        <div class="tooltip">
+                                            <strong class="tit">기준실적이란?</strong>
+                                            <div class="cont">마이머니에서 제공하는 '기준실적'의 기준과 금액은 단순 참고용으로 실제와는 다를 수 있습니다.<br>정확한 기준실적과 충족여부는 각 카드사에서 확인하여 주시기 바랍니다.</div>
+                                            <button class="btn-close"><span>닫기</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="card-list t01">
+                                <li>
+                                    <div class="card-img">
+                                        <span class="img-resize_24"><img src="@@webRoot/static/images/ci/A1AABG0000.png" alt="" class="농협"></span>
+                                        <strong>농협</strong>
+                                    </div>
+                                    <div class="card-info">
+                                        <strong class="list-tit">농협카드 랄랄라</strong>
+                                        <div class="tag-list">
+                                            <span class="tag-label" data-state="normal">전가맹적립</span>
+                                            <span class="tag-label" data-state="normal">더블적립</span>
+                                            <span class="tag-label" data-state="normal">10%추가적립</span>
+                                        </div>
+                                    </div>
+                                    <!--그래프영역//-->
+                                    <div class="percentage-graph type2" data-state="safety">
+                                        <div class="graph-area">
+                                            <span style="width:86%"></span><!-- style로 그래프 넓이값 제어 -->
+                                        </div>
+                                        <div class="graph-txt">
+                                            <dl class="description-list">
+                                                <dt>이용금액</dt>
+                                                <dd><em class="num">180,000</em>원</dd>
+                                                <dt>기준실적</dt>
+                                                <dd><button class="btn-record-edit"><em class="num">300,000</em>원</button></dd>
+                                            </dl>
+                                            <p class="current-txt" style="left:80%;">기준실적충족</p><!-- 현재 텍스트 (style로 텍스트 위치값 제어) -->
+                                        </div>
+                                    </div> 
+                                    <!--//그래프영역-->
+                                    <!-- edit info //-->
+                                    <div class="kb-form edit-user" data-status="info" data-form-name="record-edit">
+                                        <div class="radio-group">
+                                            <span class="form-radio"><input type="radio" id="radioSample01" name="radioSample" checked=""><label for="radioSample01">1구간</label></span>
+                                            <span class="form-radio"><input type="radio" id="radioSample02" name="radioSample"><label for="radioSample02">2구간</label></span>
+                                            <span class="form-radio"><input type="radio" id="radioSample03" name="radioSample"><label for="radioSample03">3구간</label></span>
+                                        </div>
+                                        <div class="kb-form_inner form-text">
+                                            <input type="text" inputmode="numeric" id="formAmountSample04" placeholder="300,000원" value="" data-action="autoSeperator">
+                                            <button class="btn-solid_form btn-save-form"><span>확인</span></button>
+                                        </div>
+                                    </div>
+                                    <!--// edit info -->
+                                </li>
+                                <li>
+                                    <div class="card-img">
+                                        <span class="img-resize_24"><img src="@@webRoot/static/images/ci/A1AABG0000.png" alt="" class="농협"></span>
+                                        <strong>농협</strong>
+                                    </div>
+                                    <div class="card-info">
+                                        <strong class="list-tit">현대카드 X BOOST</strong>
+                                        <div class="tag-list">
+                                            <span class="tag-label" data-state="normal">커피</span>
+                                            <span class="tag-label" data-state="normal">여행&sol;마일리지</span>
+                                            <span class="tag-label" data-state="normal">백화점</span>
+                                        </div>
+                                    </div>
+                                    <!--그래프영역//-->
+                                    <div class="percentage-graph type2" data-state="warning">
+                                        <div class="graph-area">
+                                            <span style="width:18%"></span><!-- style로 그래프 넓이값 제어 -->
+                                        </div>
+                                        <div class="graph-txt">
+                                            <dl class="description-list">
+                                                <dt>이용금액</dt>
+                                                <dd><em class="num">180,000</em>원</dd>
+                                                <dt>기준실적</dt>
+                                                <dd><button class="btn-record-edit"><em class="num">300,000</em>원</button></dd>
+                                            </dl>
+                                            <p class="current-txt" style="left:10%;"><em class="num">28</em>만원 부족</p><!-- 현재 텍스트 (style로 텍스트 위치값 제어) -->
+                                        </div>
+                                    </div> 
+                                    <!--//그래프영역-->
+                                    <!-- edit info //-->
+                                    <div class="kb-form edit-user" data-status="info" data-form-name="record-edit">
+                                        <div class="radio-group">
+                                            <span class="form-radio"><input type="radio" id="radioSample04" name="radioSample" checked=""><label for="radioSample04">1구간</label></span>
+                                            <span class="form-radio"><input type="radio" id="radioSample05" name="radioSample"><label for="radioSample05">2구간</label></span>
+                                            <span class="form-radio"><input type="radio" id="radioSample06" name="radioSample"><label for="radioSample06">3구간</label></span>
+                                        </div>
+                                        <div class="kb-form_inner form-text">
+                                            <input type="text" inputmode="numeric" id="formAmountSample04" placeholder="300,000원" value="" data-action="autoSeperator">
+                                            <button class="btn-solid_form btn-save-form"><span>확인</span></button>
+                                        </div>
+                                    </div>
+                                    <!--// edit info -->
+                                </li>
+                                <li>
+                                    <div class="card-img">
+                                        <span class="img-resize_24"><img src="@@webRoot/static/images/ci/C1AAKN0000.png" alt="" class="하나은행"></span>
+                                        <strong>하나</strong>
+                                    </div>
+                                    <div class="card-info">
+                                        <strong class="list-tit">탄탄대로 올쇼핑 티타늄카드</strong>
+                                        <div class="tag-list">
+                                            <span class="tag-label" data-state="normal">커피</span>
+                                            <span class="tag-label" data-state="normal">대형할인마트</span>
+                                            <span class="tag-label" data-state="normal">도시가스</span>
+                                        </div>
+                                    </div>
+                                    <!--그래프영역//-->
+                                    <div class="percentage-graph type2" data-state="">
+                                        <div class="graph-area">
+                                            <span style="width:0%"></span><!-- style로 그래프 넓이값 제어 -->
+                                        </div>
+                                        <div class="graph-txt">
+                                            <dl class="description-list">
+                                                <dt>이용금액</dt>
+                                                <dd><em class="num">0</em>원</dd>
+                                                <dt>기준실적</dt>
+                                                <dd><button class="btn-record-edit"><em class="num">300,000</em>원</button></dd>
+                                            </dl>
+                                        </div>
+                                    </div> 
+                                    <!--//그래프영역-->
+                                    <!-- edit info //-->
+                                    <div class="kb-form edit-user" data-status="info" data-form-name="record-edit">
+                                        <div class="radio-group">
+                                            <span class="form-radio"><input type="radio" id="radioSample07" name="radioSample" checked=""><label for="radioSample07">1구간</label></span>
+                                            <span class="form-radio"><input type="radio" id="radioSample08" name="radioSample"><label for="radioSample08">2구간</label></span>
+                                            <span class="form-radio"><input type="radio" id="radioSample09" name="radioSample"><label for="radioSample09">3구간</label></span>
+                                        </div>
+                                        <div class="kb-form_inner form-text">
+                                            <input type="text" inputmode="numeric" id="formAmountSample04" placeholder="300,000원" value="" data-action="autoSeperator">
+                                            <button class="btn-solid_form btn-save-form"><span>확인</span></button>
+                                        </div>
+                                    </div>
+                                    <!--// edit info -->
+                                </li>
+                            </ul>
+                            <div class="btn-area center">
+                                <button class="btn-more-view"><i class="icon-plus_20"></i><span> 전체보기</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--// 보유카드 -->
+                <!-- 맞춤카드 //-->
+                <section class="kb-sec full customized-card-list">
+                    <div class="trend-card">
+                        <div class="content-tit">
+                            <strong class="h3"><span class="emphasis color-blue">온라인쇼핑, 커피/음료, 백화점/아울렛</span>지출이 많은<br>인기&sol;추천 카드</strong>
+                        </div>
+                        <div class="content-tit flex-box">
+                            <strong class="h4">인기카드 Top<em class="num">3</em></strong>
+                            <div class="tooltip-box"><span class="tit">인기카드기준</span> <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                <!-- Tooltip (With title)-->
+                                <div class="tooltip">
+                                    <strong class="tit">인기카드란?</strong>
+                                    <div class="cont">고객님과 비슷한 소비패턴을 가지고 있는 사람들이 가장 많이 사용하고 있는 카드 1위~3위까지 순위입니다. 매 월 1일, 지난달 지출 통계 기준으로 순위는 업데이트됩니다.</div>
+                                    <button class="btn-close"><span>닫기</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="rank-list t01">
+                            <li class="rank">
+                                <a href="" class="link-box_block">
+                                    <strong>KB국민 심플라이트 카드</strong>
+                                    <p class="tags"><span>#추천사유</span><span>#추천사유</span></p>
+                                    <i class="icon-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="rank">
+                                <a href="" class="link-box_block">
+                                    <strong>KB국민 심플라이트 카드</strong>
+                                    <p class="tags"><span>#추천사유</span><span>#추천사유</span></p>
+                                    <i class="icon-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <strong>하나카드</strong>
+                                <p class="tags"><span>#추천사유</span><span>#추천사유</span></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="recommend-card mt24">
+                        <div class="content-tit flex-box">
+                                <strong class="h4">KB추천카드 Top<em class="num">3</em></strong>
+                                <div class="tooltip-box"><span class="tit">KB추천카드기준</span> <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                    <!-- Tooltip (With title)-->
+                                    <div class="tooltip">
+                                        <strong class="tit">KB추천카드란?</strong>
+                                        <div class="cont">고객님의 지출 소비 패턴과 선호 브랜드르 분석해 가장 적합한 KB추천카드 1위~3위까지 순위입니다. 매 월 1일, 지난달 지출 통계 기준으로 순위는 업데이트욉니다.</div>
+                                        <button class="btn-close"><span>닫기</span></button>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="tab swiper-container">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide is-active"><a href="#target01">지출소비패턴별</a></li>
+                                <li class="swiper-slide"><a href="#target02">선호브랜드별</a></li>
+                            </ul>
+                        </div>
+                        <div class="tab_contents">
+                            <div class="is-active">
+                                <ul class="rank-list t01">
+                                    <li class="rank">
+                                        <a href="" class="link-box_block">
+                                            <strong>KB국민 심플라이트 카드</strong>
+                                            <p class="tags"><span>#추천사유</span><span>#추천사유</span></p>
+                                            <i class="icon-arrow-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="rank">
+                                        <a href="" class="link-box_block">
+                                            <strong>KB국민 심플라이트 카드</strong>
+                                            <p class="tags"><span>#추천사유</span><span>#추천사유</span></p>
+                                            <i class="icon-arrow-right"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="link-box_block">
+                                            <strong>KB국민 심플라이트 카드</strong>
+                                            <p class="tags"><span>#추천사유</span><span>#추천사유</span></p>
+                                            <i class="icon-arrow-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul class="rank-list t01">
+                                <li class="rank">
+                                    <a href="" class="link-box_block">
+                                        <strong>KB국민 선호브랜드별 카드</strong>
+                                        <p class="tags"><span>#추천사유</span><span>#추천사유</span></p>
+                                        <i class="icon-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="rank">
+                                    <a href="" class="link-box_block">
+                                        <strong>KB국민 선호브랜드별 카드</strong>
+                                        <p class="tags"><span>#추천사유</span><span>#추천사유</span></p>
+                                        <i class="icon-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" class="link-box_block">
+                                        <strong>KB국민 선호브랜드별 카드</strong>
+                                        <p class="tags"><span>#추천사유</span><span>#추천사유</span></p>
+                                        <i class="icon-arrow-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="recommend-card">
+                        <div class="content-tit flex-box">
+                            <strong class="h4">스마트한 카드 생활</strong>
+                            <a href="mys_ex_03_01_00.html" role="button" class="btn-text"><u>더보기</u></a>
+                        </div>
+                        <ul class="thumb-list-group t01">
+                            <li>
+                                <a href="mys_ex_03_01_01.html">
+                                    <p class="thumb"><img src="" alt=""></p>
+                                    <strong class="tit">[hot 재테크]카드쓰면서 주식투자 하는 방법 카드쓰면서 주식투자 하는 방법</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mys_ex_03_01_01.html">
+                                    <p class="thumb"><img src="" alt=""></p>
+                                    <strong class="tit">[hot 재테크]카드쓰면서 주식투자 하는 방법 카드쓰면서 주식투자 하는 방법</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mys_ex_03_01_01.html">
+                                    <p class="thumb"><img src="" alt=""></p>
+                                    <strong class="tit">[hot 재테크]카드쓰면서 주식투자 하는 방법 카드쓰면서 주식투자 하는 방법</strong>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <!--// 맞춤카드 -->
+            </main>
+            <!-- // app-content -->
+            <!--// [D] 21-07-05 수정 : 디자인 변경으로 인한 마크업 수정 및 텍스트 수정 -->
+        </div>
+        <!-- // app-container -->
+        <div class="layered">
+            <!-- Layer // -->
+            <!-- // Layer -->
+        </div>
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <script>
+        gfn_gnb.select(2,2);
+
+        // 기준 실적 편집
+        $('.card-list .btn-record-edit').on('click', function(){
+            $(this).closest('li').attr('data-state', 'edit');
+        });
+    </script>
+    <!-- Add Script -->
+</body>
+
+</html>
