@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Bottom Sheet 모음 | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header //-->
+        @@include('@@webRoot/html/_include/app-header.html')
+        <!-- // app-header -->
+
+        <!-- app-container //-->
+        <div class="app-container">            
+
+            <!-- app-content // -->
+            <main class="app-content">
+                <section class="kb-sec">
+                    바텀시트 모음
+                    <br>
+                    <br>
+                    <div class="kb-form" data-status="">
+                        <label for="accountBookSetting">가계부 설정</label>
+                        <div class="kb-form_inner form-select">
+                            <button type="button" class="selected-option"></button>
+                            <select name="" id="accountBookSetting" title="가계부 설정">
+                                <option value="">최초 메세지</option>
+                                <option value="" selected>카테고리 설정</option>
+                                <option value="">월 시작일 설정</option>
+                                <option value="">계좌설정</option>
+                                <option value="">숨긴지출관리</option>
+                            </select>
+                        </div>
+                        <em class="validation">Message</em>
+                    </div>
+                    <br>
+                    <br>
+                    <button type="button" class="btn-line" data-call-layered="bsLookUp"><span>조회(샘플)</span></button>
+                    <button type="button" class="btn-line" data-call-layered="bsCalendar"><span>달력</span></button>
+                    <button type="button" class="btn-line" data-call-layered="bsTime"><span>시간</span></button>
+                    <button type="button" class="btn-line" data-call-layered="bsFinancialInstitution"><span>금융기관(Grid)</span></button>
+                    <button type="button" class="btn-line" data-call-layered="bsOtherLogin"><span>다른 로그인 방법(Badge)</span></button>
+                    <button type="button" class="btn-line" data-call-layered="bsSetCategory"><span>카테고리설정(Badge, Accodian)</span></button>
+                    <button type="button" class="btn-line" data-call-layered="bsAgeAsset"><span>대상 선택(2 select-list)</span></button>
+                    <button type="button" class="btn-line" data-call-layered="bsProductType"><span>상품유형(Grid)</span></button>
+                    <button type="button" class="btn-line" data-call-layered=""><span>기타</span></button>
+                </section>
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+        <!-- app-footer //-->
+        @@include('@@webRoot/html/_include/app-footer.html')
+        <!-- // app-footer -->
+    </div>
+
+    <div class="layered">
+        <!-- Layer // -->
+        @@include('@@webRoot/html/_layered/_popup-sample.html')
+        <!-- // Layer -->
+
+        <!-- Bottom Sheet // -->
+        @@include('@@webRoot/html/_layered/_bottom-sheet-sample.html')
+        @@include('@@webRoot/html/_layered/bs-select.html')
+        @@include('@@webRoot/html/_layered/bs-lookup.html')
+        @@include('@@webRoot/html/_layered/bs-calendar.html')
+        @@include('@@webRoot/html/_layered/bs-time.html')
+        @@include('@@webRoot/html/_layered/bs-financial-institution.html')
+        @@include('@@webRoot/html/_layered/bs-other-login.html')
+        @@include('@@webRoot/html/_layered/bs-age-asset.html')
+        @@include('@@webRoot/html/_layered/bs-product-type.html')
+        @@include('@@webRoot/html/_layered/bs-set-category.html')
+        @@include('@@webRoot/html/_layered/bs-filter-setting.html')
+        
+        <!-- // Bottom Sheet -->
+
+        <!-- Modal // -->
+        @@include('@@webRoot/html/_layered/_modal-sample.html')
+        @@include('@@webRoot/html/_layered/modal-alert.html')
+        @@include('@@webRoot/html/_layered/modal-confirm.html')
+        <!-- // Modal -->
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    
+
+</body>
+
+</html>

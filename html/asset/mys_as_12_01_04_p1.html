@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_AS_12_01_04_P1] 작성자: 누리어 시스템 황철민 -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "My Car 등록 | 자산"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-header-close.html',{
+			'pageTit' :'My Car 등록'
+		}) 
+		<!-- // app-header (for MyMoney) -->
+
+		<!-- app-container //-->
+		<div class="app-container">
+
+			<!-- app-content // -->
+			<main class="app-content pop-my-asset">
+
+				<section class="kb-sec mycar-add-forms">
+					<div class="pop-notice">
+						<span>보유하신 자동차 정보를 등록하면 시세를 확인할 수 있습니다. 공동명의 차량은 대표 소유자 이름으로 등록할 수 있습니다.</span><!-- 수정 2021-07-02 -->
+						<em>* 표시된 항목은 필수 입력 사항입니다.</em>
+					</div>
+					<div class="agreement-to-terms expansion-mode">
+						<div class="checkbox-group st_list">
+							<span class="form-checkbox"><input type="checkbox" id="myCarAgreeCheck1"><label for="myCarAgreeCheck1">[선택]개인(신용)정보 수집·이용·제공 동의서</label><a class="alink" href="@@webRoot/html/asset/mys_as_12_01_04_p2.html"><span>전문보기</span></a></span>
+						</div>
+					</div> 
+					<div class="kb-form" data-status="error">
+						<label for="mycarAddForm1" class="required">차량번호</label>
+						<div class="kb-form_inner form-text">
+							<input type="text" id="mycarAddForm1" value="12가1234" placeholder="00가0000">
+							<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+						</div>
+						<em class="validation">차량번호가 바르지 않습니다.</em><!-- 수정 2021-07-02 -->
+					</div>
+					<div class="kb-form" data-status="">
+						<label for="mycarAddForm2">주행거리(km)</label>
+						<div class="kb-form_inner form-text">
+							<input type="text" inputmode="numeric" id="mycarAddForm2" placeholder="" maxlength="7" value="" data-unit="km" data-action="autoSeperator">
+							<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+						</div>
+					</div>
+					<div class="kb-form" data-status="">
+						<label for="mycarAddForm3">별명</label>
+						<div class="kb-form_inner form-text">
+							<input type="text" id="mycarAddForm3" maxlength="10" value="" placeholder="최대 10자">
+							<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+						</div>
+					</div>
+				</section>
+
+				<section class="kb-sec loan-account-selection">
+					<strong class="tit">My Car 대출계좌 선택</strong><!-- 수정 2021-07-02 -->
+					<ul class="lists">
+						<li class="form-checkbox">
+							<input type="checkbox" id="loanAccount1">
+							<label for="loanAccount1">
+								<span class="name">국민은행 자동차대출</span>
+								<span class="account num">8169160411122</span>
+								<span class="amount"><span class="num">13,000,000</span>원</span>
+							</label>
+						</li>
+						<li class="form-checkbox">
+							<input type="checkbox" id="loanAccount2">
+							<label for="loanAccount2">
+								<span class="name">신한은행 신용대출</span>
+								<span class="account num">8169160411122</span>
+								<span class="amount"><span class="num">13,000,000</span>원</span>
+							</label>
+						</li>
+					</ul>
+				</section>
+
+				<section class="kb-sec bottom-simple-link">
+					<a href="#">내 차 직접등록하기<i></i></a>
+					<p>조회가 불가능한 경우 직접 입력하여 등록가능합니다.</p>
+				</section>
+
+				<section class="kb-sec sticky-bottom">
+					<div class="btn-area">
+						<button type="button" class="btn-solid_sticky"><span>확인</span></button>
+					</div>
+				</section>
+
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+
+</body>
+
+</html>
