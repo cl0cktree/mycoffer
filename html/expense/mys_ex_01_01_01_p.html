@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_EX_01_01_01_P] 작성자: 누리어 시스템 김삼희 -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "상세보기 | 지출"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-header-close.html',{
+			'pageTit' :'상세보기'
+		}) 
+		<!-- // app-header (for MyMoney) -->
+		<!-- app-container //-->
+		<div class="app-container">
+			<!-- app-content // -->
+			<main class="app-content expense-layered expense-list-detail">
+                <!-- 내역 변경 옵션//-->
+                <section class="kb-sec expense-type-option dividing-line-bottom">
+                    <h4 class="h4">내역 변경</h4>
+                    <div class="radio-group flex-box" data-col="2">
+                        <li><span class="form-radio"><input type="radio" id="expenseListTypeIption01" name="expenseListTypeIption" checked=""><label for="expenseListTypeIption01">지출</label></span>
+                        </li><li><span class="form-radio"><input type="radio" id="expenseListTypeIption02" name="expenseListTypeIption"><label for="expenseListTypeIption02">이체</label></span>
+                    </li></div>
+                </section>
+                <!-- //내역 변경 옵션 -->
+                <!-- 지출 금액 및 속성//-->
+                <section class="kb-sec expense-detail-amount dividing-line-bottom">
+                    <!-- [D] 수정 21-06-04 : 인풋 타이틀 추가 //-->
+                    <h5 class="detail-item-tit">아웃백</h5>
+                    <div class="kb-form" data-status="" data-type="icon">
+                        <i class="icon-expense-food"></i><!-- [D] 수정 21-06-28 : 아이콘 교체 //-->
+                        <div class="kb-form_inner form-text">
+                            <input type="text" inputmode="numeric" id="formAmountSample04" placeholder="" value="10000" data-unit="원" data-action="autoSeperator">
+                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                        </div>
+                        <em class="validation">Message</em>
+                    </div>
+                    <!--// [D] 수정 21-06-04 : 인풋 타이틀 추가 -->
+                    <div class="expense-category">
+                        <div class="expense-type">
+                            <h5>식비 &gt; 식비 기타</h5>
+                            <button type="button" class="btn-line_icon btn-edit-type" data-call-layered="bsUserRegisterSetCategory"><i class="icon-eraser"></i><span>변경</span></button><!-- [D] 수정 21-06-28 : 아이콘 교체 //-->
+                        </div>
+                        <!--[D] 수정 21-06-04 : tag 오류 수정 //-->
+                        <ul class="lsit-view-setting flex-box" data-col="2">
+                            <li><span class="btn-switch"><input type="checkbox" name="radioSwitch" id="IncludeEexpenseSum" checked=""><label for="IncludeEexpenseSum"><span>지출 합계 포함</span></label></span></li>
+                            <li><span class="btn-switch"><input type="checkbox" name="radioSwitch" id="hideExpenseList" data-call-modal="hideList"><label for="hideExpenseList"><span>내역숨기기</span></label></span></li>
+                        </ul>
+                        <!--// [D] 수정 21-06-04 : tag 오류 수정 -->
+                    </div>
+                </section>
+                <!-- //지출 금액 및 속성 -->
+                <!-- 결제 정보 //-->
+                <section class="kb-sec expense-infobottom">
+                    <dl class="description-list type2">
+                        <dt>결제수단</dt>
+                        <dd>신용카드</dd>
+                        <dt>결제일시</dt>
+                        <dd>2021.12.23 14:54</dd>
+                        <dt>승인상태</dt>
+                        <dd>승인</dd>
+                        <dt>결제방법</dt>
+                        <dd>일시불</dd>
+                        <!-- [D] 2차 개발 : 더치페이로 묶기 [s]
+                        <dt>더치페이로 묶기</dt>
+                        <dd><button type="button" class="btn-line_icon btn-control-show" data-control-target="dutch-pay-list"><i class="icon-tie"></i><span>묶기</span></button></dd>
+                        [D] 2차 개발 : 더치페이로 묶기 [e]-->
+                    </dl>
+                </section>
+                <!-- //결제 정보-->
+                <!--// [D] 2차 개발 : 더치페이로 묶기 (리스트) [s]
+                <section class="kb-sec control-show-target dividing-space-top" data-target-name="dutch-pay-list">
+                    <dl class="credit-list">
+                        <dt class="form-checkbox_24">
+                            <input type="checkbox" id="dutchPayChk01" checked="">
+                            <label for="dutchPayChk01">
+                                <strong class="tit">내역</strong>
+                                <span class="info">2021.04.23 17:45</span>
+                            </label>
+                        </dt>
+                        <dd>
+                            <strong class="amount">+<span class="num">4,000</span>원</strong>
+                            <span class="info">거래수단</span>
+                        </dd>
+                        <dt class="form-checkbox_24">
+                            <input type="checkbox" id="dutchPayChk02" checked="">
+                            <label for="dutchPayChk02">
+                                <strong class="tit">내역</strong>
+                                <span class="info">2021.04.23 17:45</span>
+                            </label>
+                        </dt>
+                        <dd>
+                            <strong class="amount">+<span class="num">4,000</span>원</strong>
+                            <span class="info">거래수단</span>
+                        </dd>
+                        <dt class="form-checkbox_24">
+                            <input type="checkbox" id="dutchPayChk03">
+                            <label for="dutchPayChk03">
+                                <strong class="tit">내역</strong>
+                                <span class="info">2021.04.23 17:45</span>
+                            </label>
+                        </dt>
+                        <dd>
+                            <strong class="amount">+<span class="num">4,000</span>원</strong>
+                            <span class="info">거래수단</span>
+                        </dd>
+                    </dl>
+                </section>
+                [D] 2차 개발 : 더치페이로 묶기 (리스트) [e] //-->
+				<section class="kb-sec sticky-bottom">
+                    <div class="btn-area">
+                        <button class="btn-solid_sticky lv2"><span>취소</span></button>
+                        <button class="btn-solid_sticky"><span>등록</span></button>
+                    </div>
+                </section>
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+            @@include('@@webRoot/html/expense/layered/mys_ex_01_05_02_p.html')
+            @@include('@@webRoot/html/expense/layered/mys_ex_01_05_02_p01.html')
+            @@include('@@webRoot/html/expense/layered/mys_ex_01_05_02_p02.html')
+
+            
+            <div class="modal modal_radioOption" id="hideList">
+                <div class="modal_header">
+                    <strong class="tit">내역에서 숨기기</strong>
+                </div>
+                <div class="modal_contents">
+                    <p>[김국민 통장적요내용출력] {지출 or 이체}을(를) 제외하시겠습니까?</p>
+                    <ul class="radio-group">
+                        <li><span class="form-radio"><input type="radio" id="changeOptionOnce02" name="hideListType" checked=""><label for="changeOptionOnce02">이번만 변경</label></span></li>
+                        <li><span class="form-radio"><input type="radio" id="changeOptionAlways02" name="hideListType"><label for="changeOptionAlways02">항상 변경</label></span></li>
+                    </ul>
+                </div>
+                <div class="modal_buttons btn-area">
+                    <button class="btn-solid_sticky lv2 cancel" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid_sticky ok"><span>확인</span></button>
+                </div>
+            </div>
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+    <script>
+        $('[data-call-modal]').on('click',function(){
+            var id = $(this).data('call-modal');
+            $('#'+id).modalPopup('open');
+        });
+    </script>
+	<!-- Add Script -->
+
+</body>
+
+</html>

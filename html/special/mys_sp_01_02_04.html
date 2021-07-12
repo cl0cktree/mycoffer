@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_SP_01_02_00] 작성자: 누리어 시스템 황철민 -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "신용 비교분석 상세 | 신용관리"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-header.html', {'pageTit': '신용 비교분석 상세'})
+		<!-- // app-header -->
+
+		<!-- app-container (for MyMoney) //-->
+		<div class="app-container">
+
+			<!-- app-lnb //-->
+			<div class="app-lnb">
+				<!-- 프로세스 -->
+				<!-- TAB -->
+			</div>
+			<!-- //app-lnb -->
+
+			<!-- app-content // -->
+			<main class="app-content credit-compare-details">
+
+				<section class="kb-sec my-credit-power">
+					<h4 class="h4">김국민 님 신용구매력(소득)</h4><!-- 수정 : 2021-07-02 -->
+					<!-- [Chart Area] // -->
+					<!--
+						[차트 디자인 정보]
+						Grid 라인 색상 : #ebeef0
+						곡선 색상 : #f7956c
+						곡선 굵기 : 2px
+						X축 레이블 텍스트 사이즈/색상 : 14px/#8c949e
+						Tooltip 텍스트 사이즈/색상 : 15px/#26282c/Bold
+						Tooltip '상위21%' 사이즈/색상 : 14px/#8c949e
+					-->
+					<div class="chart-area">
+						<img class="temp" src="@@webRoot/static/images/_temp/chart_sp0104.png" alt="차트 예시 이미지">
+					</div>
+					<!-- // [Chart Area] -->
+					<dl>
+						<dt>비슷한 소득군 수</dt><!-- 수정 2021-06-23 -->
+						<dd class="amount"><span class="num">1,400,100</span>명</dd>
+					</dl>
+				</section>
+
+				<section class="kb-sec compare-bar-container">
+					<h4 class="h4">카드 이용금액 비교</h4>
+					<!--
+						[개발]
+						나, 연령평균, 전연령대 중 큰 쪽의 .bar 는 100% , 다른 쪽은  %계산하여 width 지정
+					-->
+					<div class="compare-bar-area has-suffix">
+						<div class="row me">
+							<div class="text">나</div>
+							<div class="bar-zone">
+								<span class="bar" style="width: 31.6%;">
+									<span class="value"><span class="num">140</span>만원</span>
+								</span>
+							</div>
+						</div>
+						<div class="row avg">
+							<div class="text"><span class="num">30</span>대</div><!-- 수정 2021-06-23 -->
+							<div class="bar-zone">
+								<span class="bar" style="width: 100%;">
+									<span class="value"><span class="num">442</span>만원</span>
+								</span>
+							</div>
+						</div>
+						<div class="row all">
+							<div class="text">전연령대</div>
+							<div class="bar-zone">
+								<span class="bar" style="width: 93.4%;">
+									<span class="value"><span class="num">413</span>만원</span>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="compare-summary">
+						<strong>김국민</strong> 님의 카드이용금액은 <span class="num">30</span>대(비슷한 소득군) 평균보다 약 <strong><span class="num">302</span>만원</strong> 적습니다. <!-- 수정 2021-07-02 -->
+					</div>
+				</section>
+
+				<section class="kb-sec compare-bar-container">
+					<h4 class="h4">대출잔액 비교</h4>
+					<!--
+						[개발]
+						나, 연령평균, 전연령대 중 큰 쪽의 .bar 는 100% , 다른 쪽은  %계산하여 width 지정
+					-->
+					<div class="compare-bar-area has-suffix">
+						<div class="row me">
+							<div class="text">나</div>
+							<div class="bar-zone">
+								<span class="bar" style="width: 25.4%;">
+									<span class="value"><span class="num">1,400</span>만원</span>
+								</span>
+							</div>
+						</div>
+						<div class="row avg">
+							<div class="text"><span class="num">30</span>대</div><!-- 수정 2021-06-23 -->
+							<div class="bar-zone">
+								<span class="bar" style="width: 60%;">
+									<span class="value"><span class="num">3,300</span>만원</span>
+								</span>
+							</div>
+						</div>
+						<div class="row all">
+							<div class="text">전연령대</div>
+							<div class="bar-zone">
+								<span class="bar" style="width: 100%;">
+									<span class="value"><span class="num">5,500</span>만원</span>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="compare-summary">
+						<strong>김국민</strong> 님의 대출금액은 <span class="num">30</span>대(비슷한 소득군) 평균보다 약 <strong><span class="num">1,900</span>만원</strong> 적습니다. <!-- 수정 2021-07-02 -->
+					</div>
+				</section>
+				
+				<section class="kb-sec">
+					<!-- 수정 2021-06-22 // -->
+					<!-- <div class="button-area">
+						<a href="javascript:;" class="btn-solid"><span>나만의 대출상품 확인하기</span></a>
+					</div> -->
+					<!-- 수정 2021-06-22 // -->
+					<p class="info-msg">위 정보는 국내 신용평가사인 NICE평가정보(주)에서 제공하는 데이터로, 문의사항은 NICE지키미 고객센터(1588-2486)로 연락해 주세요.</p><!-- 수정 : 2021-07-02 -->
+				</section>
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+	
+
+</body>
+
+</html>

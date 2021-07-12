@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_SP_01_02_14] 작성자: 누리어 시스템 황철민 -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "신용거래 내역-카드 | 신용관리"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-header.html', {'pageTit': '신용거래 내역'})
+		<!-- // app-header -->
+
+		<!-- app-container (for MyMoney) //-->
+		<div class="app-container">
+
+			<!-- app-lnb //-->
+			<div class="app-lnb">
+				<!-- 프로세스 -->
+				<!-- TAB -->
+				<div class="tab swiper-container">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide is-active"><a href="#">카드</a></li>
+						<li class="swiper-slide"><a href="#">대출</a></li>
+						<li class="swiper-slide"><a href="#">연체</a></li>
+						<li class="swiper-slide"><a href="#">보증</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- //app-lnb -->
+
+			<!-- app-content // -->
+			<main class="app-content">
+				
+				<!-- 목록 있는 경우 // -->
+				<section class="kb-sec credit-transaction-summary">
+					<div class="summary-header">
+						<span class="tit">
+							2월 카드 이용금액
+							<button type="button" data-call-layered="modalAbount"><i class="icon-tooltip-que">카드사용금액이란?</i></button>
+						</span>
+						<span class="amount"><span class="num">1,601,000</span>원</span>
+					</div>
+					<div class="summary-body">
+						<dl class="description-list type2">
+							<dt>신용카드</dt>
+							<dd class="amount"><span class="num">138,000</span>원</dd>
+							<dt>체크카드</dt>
+							<dd class="amount"><span class="num">1,463,000</span>원</dd>
+						</dl>
+					</div>
+				</section>
+
+				<section class="kb-sec credit-transaction-graph">
+					<h3 class="title">신용한도 사용률</h3>
+					<strong class="per num">1.0%</strong><!-- 추가 2021-06-24 -->
+					<div class="bar-wrapper">
+						<!-- [개발] (2월 총 이용 / 신용 총 한도 * 100) 결과 값을 아래 width에 %로 설정 -->
+						<div class="bar" style="width:25%;"></div>
+					</div>
+					<div class="values">
+						<div class="left">2월 총 이용 <span class="amount"><span class="num">3,625,000</span>원</span></div>
+						<div class="right">신용 총 한도 <span class="amount"><span class="num">14,500,000</span>원</span></div>
+					</div>
+				</section>
+
+				<section class="kb-sec credit-transaction-list">
+					<h3 class="title">금융기관별 카드 이용금액</h3>
+					<dl class="accordian">
+						<dt class="is-active">
+							<div class="text">
+								KB국민카드<small>신용</small>
+								<span class="amount"><span class="num">7,000</span>원</span>
+							</div>
+							<button type="button"><i></i></button>
+						</dt>
+						<dd>
+							<dl class="description-list type2">
+								<dt>개설일</dt>
+								<dd class="date">2012.11.30</dd>
+								<dt>일시불 이용금액</dt><!-- 수정 2021-07-01 -->
+								<dd class="amount"><span class="num">7,000</span>원</dd>
+								<dt>할부 이용금액</dt><!-- 수정 2021-07-01 -->
+								<dd class="amount"><span class="num">0</span>원</dd>
+								<dt>체크카드 이용금액</dt><!-- 수정 2021-07-01 -->
+								<dd class="amount"><span class="num">0</span>원</dd>
+								<dt>현금서비스 이용금액</dt><!-- 수정 2021-07-01 -->
+								<dd class="amount"><span class="num">0</span>원</dd>
+								<dt>연체금액</dt>
+								<dd class="amount"><span class="num">0</span>원</dd>
+								<dt>총 한도</dt>
+								<dd class="amount"><span class="num">0</span>원</dd>
+								<dt>현금서비스 한도</dt>
+								<dd class="amount"><span class="num">0</span>원</dd>
+							</dl>
+						</dd>
+
+						<dt>
+							<div class="text">
+								우리카드<small>체크</small>
+								<span class="amount"><span class="num">610,000</span>원</span>
+							</div>
+							<button type="button"><i></i></button>
+						</dt>
+						<dd>
+							<dl class="description-list type2">
+								<dt>개설일</dt>
+								<dd class="date">2012.11.30</dd>
+								<dt>일시불 이용금액</dt><!-- 수정 2021-07-01 -->
+								<dd class="amount"><span class="num">7,000</span>원</dd>
+								<dt>할부 이용금액</dt><!-- 수정 2021-07-01 -->
+								<dd class="amount"><span class="num">0</span>원</dd>
+								<dt>체크카드 이용금액</dt><!-- 수정 2021-07-01 -->
+								<dd class="amount"><span class="num">0</span>원</dd>
+								<dt>현금서비스 이용금액</dt><!-- 수정 2021-07-01 -->
+								<dd class="amount"><span class="num">0</span>원</dd>
+								<dt>연체금액</dt>
+								<dd class="amount"><span class="num">0</span>원</dd>
+								<dt>총 한도</dt>
+								<dd class="amount"><span class="num">0</span>원</dd>
+								<dt>현금서비스 한도</dt>
+								<dd class="amount"><span class="num">0</span>원</dd>
+							</dl>
+						</dd>
+	
+						<dt>
+							<div class="text">
+								신한카드<small>체크</small>
+								<span class="amount"><span class="num">135,000</span>원</span>
+							</div>
+							<button type="button"><i></i></button>
+						</dt>
+						<dd>
+							<dl class="description-list type2">
+								<dt>개설일</dt>
+								<dd>2012.11.30</dd>
+								<dt>일시불 이용금액</dt><!-- 수정 2021-07-01 -->
+								<dd class="amount"><span class="num">7,000</span>원</dd>
+								<dt>할부 이용금액</dt><!-- 수정 2021-07-01 -->
+								<dd class="amount"><span class="num">0</span>원</dd>
+								<dt>체크카드 이용금액</dt><!-- 수정 2021-07-01 -->
+								<dd class="amount"><span class="num">0</span>원</dd>
+								<dt>현금서비스 이용금액</dt><!-- 수정 2021-07-01 -->
+								<dd class="amount"><span class="num">0</span>원</dd>
+								<dt>연체금액</dt>
+								<dd class="amount"><span class="num">0</span>원</dd>
+								<dt>총 한도</dt>
+								<dd class="amount"><span class="num">0</span>원</dd>
+								<dt>현금서비스 한도</dt>
+								<dd class="amount"><span class="num">0</span>원</dd>
+							</dl>
+						</dd>
+					</dl>
+				</section>
+				<!-- // 목록 있는 경우 -->
+
+				<!-- 목록 없는 경우 // -->
+				<section class="kb-sec credit-transaction-summary">
+					<div class="summary-header">
+						<span class="tit">
+							2월 카드 이용금액
+							<button type="button" data-call-layered="modalAbount"><i class="icon-tooltip-que">카드사용금액이란?</i></button>
+						</span>
+						<span class="amount"><span class="num">0</span>원</span>
+					</div>
+				</section>
+
+				<section class="kb-sec credit-transaction-list">
+					<div class="no-data">
+						<i class="icon-info_24"></i>
+						<p>카드이용금액이 없습니다.</p>
+					</div>
+				</section>
+				<!-- // 목록 없는 경우 -->
+
+				<section class="kb-sec credit-transaction-message">
+					<!-- 수정 2021-07-02 // -->
+					<p class="info-msg">위 정보는 국내 신용평가사인 NICE평가정보(주)에서 제공하는 데이터로, KB국민은행의 "지출"내 금액과 정보가 다를 수 있습니다.</p>
+					<p class="info-msg">카드 개설 및 해지 정보의 경우 기준기간 차이로 인해 실시간 정보와 다를 수 있습니다.</p>
+					<!-- // 수정 2021-07-02 -->
+				</section>
+
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+			<!-- 안내팝업 // -->
+			<div class="modal" data-layered-name="modalAbount" id="modalAbount">
+				<div class="modal_header">
+					<strong class="tit">카드이용금액이란?</strong><!-- 수정 : 2021-07-02 -->
+				</div>
+				<div class="modal_contents">
+					<ul data-style="list">
+						<!-- 수정 2021-07-01 // -->
+						<li>조회일 1~14일 : 2달 전 1일부터 말일까지 카드이용금액</li>
+						<li>조회일 15~말일 : 1달 전 1일부터 말일까지 카드이용금액</li>
+						<!-- // 수정 2021-07-01 -->
+					</ul>
+				</div>
+				<div class="modal_buttons btn-area">
+					<button class="btn-solid_sticky ok" data-action="close"><span>확인</span></button>
+				</div>
+			</div>
+			<!-- // 안내팝업 -->
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+	
+
+</body>
+
+</html>
