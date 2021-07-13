@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<!-- [MYS_SP_02_02_02]
+		MY FUN DATA > 숨은내돈찾기_스토리텔링 (작성자: 누리어 시스템 김삼희) -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "숨은 내 돈 찾기 | MY FUN DATA"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'숨은 내 돈 찾기',
+            'type':'back'
+        })
+		<!-- // app-header -->
+
+		<!-- app-container (for MyMoney) //-->
+		<div class="app-container">
+
+			<!-- app-content // -->
+			<main class="app-content my-fun-data">
+
+				<!-- 스토리텔링 컨텐츠 // -->
+				<section class="kb-sec find-hidden-money">
+                    <div class="swiper-container t02 js-swiper motion-swiper" data-swiper-options="findMyMoneySwiperOptions">
+                        <!-- // swiper option -->
+                        <script>
+                            var findMyMoneySwiperOptions = {
+                                "pagination": {
+                                    "el": ".swiper-pagination"
+                                }
+                            };
+                        </script>
+                        <!-- swiper option //-->
+                        <!-- [D] 21-07-08 수정 : 슬라이드 순서 변경 //-->
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide storytelling-wrap find-point">
+                                <div class="storytelling-content">
+                                    <div class="item-box">
+                                        <div class="item face"><img src="@@webRoot/static/images/special/img_motion_item_face01.png" alt="얼굴"></div>
+                                        <div class="item magnifying">
+                                            <p class="glass"><img src="@@webRoot/static/images/special/img_motion_item_magnifying-glass.png" alt="돋보기"></p>
+                                            <p class="eye"><img src="@@webRoot/static/images/special/img_motion_item_eye.png" alt="눈"></p>
+                                        </div>
+                                        <div class="item point"><img src="@@webRoot/static/images/special/img_motion_item_cardpoint.png" alt="카드&포인트"></div>
+                                    </div>
+                                    <span class="h2">여기저기 쌓여 있는<br><strong>카드 포인트</strong></span>
+                                </div>
+                            </div>
+                            <div class="swiper-slide storytelling-wrap alarm-pig">
+                                <div class="storytelling-content">
+                                    <div class="item-box">
+                                        <div class="item bankbook"><img src="@@webRoot/static/images/special/img_motion_item_bankbook.png" alt="통장"></div>
+                                        <div class="item pig">
+                                            <p class="body"><img src="@@webRoot/static/images/special/img_motion_item_pig.png" alt="돼지"></p>
+                                            <p class="hand">
+                                                <span><img src="@@webRoot/static/images/special/img_motion_item_minutehand.png" alt="분침"></span>
+                                                <span><img src="@@webRoot/static/images/special/img_motion_item_hourhand.png" alt="시침"></span>
+                                            </p>
+                                        </div>
+                                        <div class="item coins"><img src="@@webRoot/static/images/special/img_motion_item_coins-won01.png" alt="동전들"></div>
+                                        <div class="item drop-coin">
+                                            <p><img src="@@webRoot/static/images/special/img_motion_item_coin.png" alt="동전"></p>
+                                            <p><img src="@@webRoot/static/images/special/img_motion_item_coin.png" alt="동전"></p>
+                                        </div>
+                                    </div>
+                                    <span class="h2"><strong>깜빡한 예·적금과 보험까지!</strong></span>
+                                </div>
+                            </div>
+                            <div class="swiper-slide storytelling-wrap shine-light">
+                                <div class="storytelling-content">
+                                    <div class="item-box">
+                                        <div class="item flashlight">
+                                            <p class="body"><img src="@@webRoot/static/images/special/img_motion_item_flashlight.png" alt="손전등"></p>
+                                            <p class="light"><img src="@@webRoot/static/images/special/img_motion_item_light.png" alt="손전등 붍빛"></p>
+                                        </div>
+                                        <div class="item find-coins">
+                                            <p class="dark"><img src="@@webRoot/static/images/special/img_motion_item_coins-dark.png" alt="어두운 동전들"></p>
+                                            <p class="bright"><img src="@@webRoot/static/images/special/img_motion_item_coins-bright.png" alt="밝은 동전들"></p>
+                                        </div>
+                                    </div>
+                                    <span class="h2">마이데이터 동의하고<br><strong>지금 바로 숨은 내 돈</strong><br>찾아보세요</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--// [D] 21-07-08 수정 : 슬라이드 순서 변경 -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </section>
+                <div class="sticky-bottom t01">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid_sticky"><span>숨은 내 돈 찾으러 가기</span></button>
+                    </div>
+                </div>
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+    <script src="@@webRoot/static/common/lib/swiper.min.js"></script>
+    <script>
+        var $contentSwiper = $('.rich-storytelling .content-swiper');
+        if($contentSwiper.length > 0){
+            var swiper = new Swiper($contentSwiper, {
+                slidesPerView: 'auto',
+                centeredSlides: 'true',
+                pagination: {
+                    el: $contentSwiper.find('.swiper-pagination'),
+                    type: 'bullets',
+                    clickable: 'true',
+                },
+                navigation: {
+                    nextEl: $contentSwiper.find('.swiper-button-next'),
+                    prevEl: $contentSwiper.find('.swiper-button-prev'),
+                },
+            });
+        };
+    </script>
+	<!-- Add Script -->
+	
+</body>
+
+</html>

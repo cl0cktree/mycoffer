@@ -1,0 +1,96 @@
+<!-- [MYS_MN_03_03_01_01] 전체메뉴 > 고객센터 > 이용약관 및 이용동의 (작성자: 누리어 시스템 이진우)// -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Last Depth | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- 수정 : app-header (Type 구분) //-->
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'이용약관 및 이용동의',
+            'type':''
+        })
+        <!-- // 수정 : app-header (Type 구분)-->
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content mn-agreements">
+                <!-- 필수 항목 // -->
+                <section class="kb-sec">
+                    <h2 class="h4">필수항목</h2>
+                    <ul class="mn-agreements-list">
+                        <li><a href="@@webRoot/html/terms/my-money-term.html"><span>[필수] KB마이머니 서비스 이용약관</span><i class="icon-link_24"></i></a></li> <!-- 2021-06-10 수정 -->
+                        <li><a href="@@webRoot/html/terms/my-money-manual.html"><span>[필수] KB마이머니 서비스 설명서</span><i class="icon-link_24"></i></a></li> <!-- 2021-06-10 수정 -->
+                        <!-- <li><button type="button" data-call-layered=""><span>[필수] 금융거래 정보 조회・위임 동의서</span><i class="icon-link_24"></i></button></li> --><!-- 수정 : 2021.06.29 -->
+                        <!-- <li><button type="button" data-call-layered=""><span>[필수] 개인(신용)정보 수집・이용 동의서</span><i class="icon-link_24"></i></button></li> --><!-- 2021.06.29 수정 -->
+                        <li><a href="@@webRoot/html/terms/agree-collection-use-personal-info02.html"><span>[필수] 개인(신용)정보 수집・이용 동의서</span><i class="icon-link_24"></i></a></li><!-- 2021.06.29 수정 -->
+                        <li><a href="@@webRoot/html/special/mys_sp_01_01_00_p1.html"><span>[필수] 신용관리서비스 이용약관</span><i class="icon-link_24"></i></a></li><!-- 2021.06.29 수정 -->
+                        <li><a href="@@webRoot/html/special/mys_sp_01_01_00_p2.html"><span>[필수] 개인(신용)정보 수집&middot;이용&middot;제공동의서 (신용관리서비스용)</span><i class="icon-link_24"></i></a></li><!-- 2021.06.29 수정 -->
+                        <li><a href="@@webRoot/html/special/mys_sp_01_01_00_p3.html"><span>[필수] NICE신용관리서비스 이용약관</span><i class="icon-link_24"></i></a></li><!-- 2021.06.29 수정 -->
+                    </ul>
+                </section>
+                <!-- // 필수 항목 -->
+
+                <!-- 선택 항목 // -->
+                <section class="kb-sec">
+                    <h2 class="h4">선택항목</h2>
+                    <ul class="mn-agreements-list">
+                        <!-- <li><button type="button" data-call-layered=""><span>[선택] 개인(신용)정보 수집・이용・제공동의서 (자동차관리서비스용)</span><i class="icon-link_24"></i></button></li> --><!-- 수정 : 2021.06.29 -->
+                        <li><a href="@@webRoot/html/asset/mys_as_12_01_04_p2.html"><span>[선택] 개인(신용)정보 수집・이용・제공동의서 (자동차관리서비스용)</span><i class="icon-link_24"></i></a></li><!-- 수정 : 2021.06.29 -->
+                    </ul>
+                    <div class="mn-agreements-list02">
+                        <p><span class="form-checkbox js-checkbox-selector-trigger" data-target="serviceSelector"><input type="checkbox" id="agreeDefault"><label for="agreeDefault">개인(신용)정보 수집&middot;이용 동의(선택)</label></span></p>
+                        <dl class="js-checkbox-selector" data-target="serviceSelector">
+                            <dt><span class="form-checkbox_24"><input type="checkbox" id="agreeAll" disabled><label for="agreeAll">상품서비스 안내 수단 전체 선택</label></span></dt>
+                            <dd>
+                                <ul class="checkbox-group">
+                                    <li><span class="form-checkbox_20"><input type="checkbox" id="agree01" disabled><label for="agree01">문자</label></span></li>
+                                    <li><span class="form-checkbox_20"><input type="checkbox" id="agree02" disabled><label for="agree02">전화</label></span></li>
+                                    <li><span class="form-checkbox_20"><input type="checkbox" id="agree03" disabled><label for="agree03">이메일</label></span></li>
+                                    <li><span class="form-checkbox_20"><input type="checkbox" id="agree04" disabled><label for="agree04">DM</label></span></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
+                    <!-- 수정: 2021.06.29 // -->
+                    <div class="checkbox-group st_list">
+                        <span class="form-checkbox_20"><input type="checkbox" id="agreeCheck7"><label for="agreeCheck7">[선택]개인(신용)정보 수집이용·제공
+                            동의서(상품서비스 안내 등)[계열사정보 제공용]</label><a href="@@webRoot/html/terms/agree-collection-use-personal-info.html" class="link"><i class="icon-link_24"></i></a></span><!-- 수정 : 2021.06.25  -->
+                    </div>
+                    <!-- <p class="info-msg">
+                        KB 국민은행은 상품서비스 안내 등 수집&middot;이용 목적을 달성하기 위하여 위의 동의한 안내수단으로 고객님께 연락할 수 있습니다.
+                    </p> -->
+                    <!-- // 수정: 2021.06.29 -->
+                </section>
+                <!-- // 선택 항목 -->
+
+
+            </main>
+            <!-- // app-content -->
+
+        <!-- // app-container -->
+    </div>
+
+    <div class="layered">
+        <!-- @@include('@@webRoot/html/_layered/popup-my-money-term.html')
+        @@include('@@webRoot/html/_layered/popup-my-money-manual.html') -->
+
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+
+</body>
+
+</html>
