@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_CO_06_02_01_02] My NOW (작성자: 누리어 시스템 황철민)// -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "My NOW | 1st Depth"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app" data-page="submain" data-theme=""><!-- submain일때 (BG + GNB ) theme에 다라 이미지 변경-->
+
+		<!-- 수정 : app-header (Type 구분) //-->
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'<i class="icon-logo_mymoney">KB마이머니</i>',
+            'type':'notice'
+        })
+        <!-- // 수정 : app-header (Type 구분)-->
+
+		<!-- app-container (for MyMoney) //-->
+		<div class="app-container">
+
+			<!-- app-lnb //-->
+			<div class="app-lnb">
+				@@include('@@webRoot/html/_include/app-gnb.html')
+			</div>
+			<!-- //app-lnb -->
+
+			<!-- app-content // -->
+			<main class="app-content">
+
+				<!-- My Now : 대시보드 // -->
+				<section class="kb-sec dashboard">
+					<!-- 수정 2021-07-13 삭제 (header로 이동) // -->
+					<!-- <a href="#" class="link-bell">
+						<span class="message"><span>오늘 만기되는 예금이 있어요</span></span>
+						<i class="icon-bell3_24">알림함으로 이동</i>
+					</a> -->
+					<!-- // 수정 2021-07-13 삭제 (header로 이동) -->
+
+					<!-- 자산 // -->
+					<div class="dashboard-section dashboard-asset">
+						<a href="#" class="sec-title">
+							나의<br>순자산<i class="icon-link_w_24"></i>
+							<span class="sec-amount"><span class="num">136,100,136</span>원</span>
+						</a>						
+						<div class="sub-text">전일보다 <span class="num">1,600,000</span>원 증가</div>
+						<div class="info-text">
+							총자산 <span class="num">2,400,000,000</span>원<br>
+							부채 <span class="num">780,500,000</span>원
+						</div>
+						<div class="object">
+							<span class="coin-1"></span>
+							<span class="coin-2"></span>
+							<span class="card"></span>
+						</div>
+					</div>
+					<!-- // 자산 -->
+
+					<!-- 지출 // -->
+					<div class="dashboard-section dashboard-expense">
+						<a href="#" class="sec-title">
+							<span class="num">6</span>월<br>지출금액<i class="icon-link_w_24"></i>
+							<span class="sec-amount"><span class="num">1,806,400</span>원</span>
+						</a>
+						<div class="sub-text">목표액 보다 <span class="num">526,000</span>원 더 사용했어요.</div>
+						<a href="#" class="link-text">
+							예정지출 <span class="num">3</span>건 <span class="num">126,000</span>원<br>
+						</a>
+					</div>
+					<!-- // 지출 -->
+
+					<!-- 목표 // -->
+					<div class="dashboard-section dashboard-goal">
+
+						<div class="swiper-container t02 js-swiper" data-swiper-options="dashboardGoalSwiperOptions">
+							<script>
+								var dashboardGoalSwiperOptions = {
+									"parallax": true,
+									"pagination": {
+										"el": ".swiper-pagination"
+									}
+								};
+							</script>
+							<div class="swiper-wrapper">
+								<!-- 아낀만큼 : 커피 줄이기 // -->
+								<div class="swiper-slide goal-slide">
+									<a href="#" class="sec-title">커피<br>줄이기<i class="icon-link_b_24"></i></a>
+									<span class="dday" data-swiper-parallax="-200"><span>D</span>7</span>
+									<div class="challenge-info">
+										<span class="period">목표금액까지</span><br>
+										<strong><span class="num">50,000</span>원 더 쓸 수 있어요.</strong>
+										<div class="character-graph goal icon" data-theme="coffee">
+											<!-- coffee(커피), alcohol(음주), store(편의점), taxi(택시비), delivery(배달음식), shopping(홈쇼핑), oil(주유비), mobile(통신비), fastfood(패스트푸드), eatout(외식비) -->
+											<div class="graph-area">
+												<span data-goal="50"><i></i></span><!-- data-goal로 그래프 넓이값(%) 제어 -->
+												<div class="flag"><i class="icon-flag-dashboard"></i></div>
+											</div>
+											<div class="graph-txt">
+												<p class="start-txt">현재지출금액<br><strong><span class="num">10</span>만원</strong></p><!-- 시작부분 텍스트 -->
+												<p class="end-txt">목표금액<br><strong><span class="num">15</span>만원</strong></p><!-- 마지막부분 텍스트 -->
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- // 아낀만큼 : 커피 줄이기 -->
+								<!-- 쓰는만큼 : 커피 결제 시 자동저축 // -->
+								<div class="swiper-slide goal-slide">
+									<a href="#" class="sec-title">커피<br>벌칙형<br>챌린지<i class="icon-link_b_24"></i></a>
+									<div class="challenge-info">
+										<span class="period">21.05.15~도전중</span><br>
+										<strong>커피 마실 때마다 4,000원 자동 저축중</strong>
+										<div class="character-graph" data-theme="lamu">
+											<!-- kiki(술집), ago(택시), bb(배달음식), lamu(커피), kolly(편의점) -->
+											<div class="graph-area">
+												<span data-goal="50"><i></i></span><!-- data-goal로 그래프 넓이값(%) 제어 -->
+											</div>
+											<div class="graph-txt">
+												<p class="start-txt">커피 <strong>총 5회, 20,000원</strong> 모았어요.</p><!-- 시작부분 텍스트 -->
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- // 쓰는만큼 : 커피 결제 시 자동저축 -->
+								<!-- 남들만큼 -->
+								<div class="swiper-slide goal-slide">
+									<a href="#" class="sec-title">입력은 최대 열두자까지<i class="icon-link_b_24"></i></a>
+									<span class="dday" data-swiper-parallax="-200"><span>D</span>530</span>
+									<div class="challenge-info">
+										<span class="period">2022.04.01</span><br>
+										<strong>제주도 애월 바닷가 근처에서 힐링하기</strong>
+										<div class="character-graph goal icon" data-theme="coin">
+											<div class="graph-area">
+												<span data-goal="50"><i></i></span><!-- data-goal로 그래프 넓이값(%) 제어 -->
+												<div class="flag"><i class="icon-flag-dashboard"></i></div>
+											</div>
+											<div class="graph-txt">
+												<p class="start-txt">모은금액<br><strong><span class="num">85</span>만원</strong></p><!-- 시작부분 텍스트 -->
+												<p class="end-txt">목표금액<br><strong><span class="num">300</span>만원</strong></p><!-- 마지막부분 텍스트 -->
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- // 남들만큼 -->
+							</div>
+							<div class="swiper-pagination"></div>
+						</div>
+					</div>
+					<!-- // 목표 -->
+
+					<!-- 내 자산 한눈에 관리하기 // -->
+					<div class="dashboard-section dashboard-items">
+						<div class="sec-title">내 자산<br>한눈에 관리하기</div>
+						<ul class="items">
+							<!-- 신용점수 : Data 연동 되었을 경우 // -->
+							<li class="item item-credit">
+								<a href="#">
+									<span class="tit">신용점수</span>
+									<span class="value"><span class="num">909</span>점</span>
+									<span class="desc">지난달보다 20점 상승</span>
+								</a>
+							</li>
+							<!-- // 신용점수 : Data 연동 되었을 경우 -->
+							<!-- 신용점수 : Data 연동 안되었을 경우 // -->
+							<li class="item item-credit">
+								<a href="#">
+									<span class="tit">신용점수</span>
+									<span class="desc">내 신용점수를 알아보고, 신용관리를 시작해보세요.</span>
+								</a>
+							</li>
+							<!-- // 신용점수 : Data 연동 안되었을 경우 -->
+
+							<!-- My 금고 : Data 연동 되었을 경우 // 삭제 : 2021-07-01
+							<li class="item item-mysafe">
+								<a href="#">
+									<span class="tit">My 금고</span>
+									<span class="value"><span class="num">1,806,000</span>원</span>
+									<span class="desc">지난달보다 806,400원 하락</span>
+								</a>
+							</li>
+							<!-- // My 금고 : Data 연동 되었을 경우 -->
+							<!-- My 금고 : Data 연동 안되었을 경우 // 삭제 : 2021-07-01
+							<li class="item item-mysafe">
+								<a href="#">
+									<span class="tit">My 금고</span>
+									<span class="desc">보유중인 외화/한화 현금을 등록하여 관리해 보세요.</span>
+								</a>
+							</li>
+							<!-- // My 금고 : Data 연동 안되었을 경우 -->
+
+							<!-- My Car : Data 연동 되었을 경우 // -->
+							<li class="item item-mycar">
+								<a href="#">
+									<span class="tit">My Car 차량유지비</span>
+									<span class="value"><span class="num">806,000</span>원</span>
+									<span class="desc">지난달보다 50,000원 상승</span>
+								</a>
+							</li>
+							<li class="item item-mycar">
+								<a href="#">
+									<span class="tit">Wish Car<span class="vbar">볼보 XC90</span></span>
+									<span class="value"><span class="num">81,800,000</span>원</span>
+									<span class="desc">등록일보다 100만원 하락</span>
+								</a>
+							</li>
+							<!-- // My Car : Data 연동 되었을 경우 -->
+							<!-- My Car : Data 연동 안되었을 경우 // -->
+							<li class="item item-mycar">
+								<a href="#">
+									<span class="tit">My Car</span>
+									<span class="desc">보유중인 자동차 정보를 입력하고 차량유지비등 내 자동차 지출을 관리해 보세요.</span>
+								</a>
+							</li>
+							<!-- // My Car : Data 연동 안되었을 경우 -->
+
+							<!-- My House : Data 연동 되었을 경우 // -->
+							<li class="item item-myhouse">
+								<a href="#">
+									<span class="tit">My House</span>
+									<span class="value"><span class="num">1,220,000,000</span>원</span>
+									<span class="desc">매입가보다 1,000만원 하락<br>지난달보다 100만원 하락</span>
+								</a>
+							</li>
+							<li class="item item-myhouse">
+								<a href="#">
+									<span class="tit">Wish House<span class="vbar">대치오피스텔</span></span>
+									<span class="value"><span class="num">1,020,000,000</span>원</span>
+									<span class="desc">등록일보다 100만원 하락</span>
+								</a>
+							</li>
+							<!-- // My House : Data 연동 되었을 경우 -->
+							<!-- My House : Data 연동 안되었을 경우 // -->
+							<li class="item item-myhouse">
+								<a href="#">
+									<span class="tit">My House</span>
+									<span class="desc">보유중인 부동산 정보를 입력하고<br>시세를 확인해보세요.</span>
+								</a>
+							</li>
+							<!-- // My House : Data 연동 안되었을 경우 -->
+						</ul>
+						<div class="last-update">
+							<span class="datetime">2021.07.06 21:08</span>기준
+						</div>
+					</div>
+					<!-- // 내 자산 한눈에 관리하기 -->
+
+					<div class="dashboard-section sticky-bottom">
+						<div class="btn-area">
+							<button type="button" class="btn-solid_sticky"><span>내 자산 추가하기</span></button>
+						</div>
+					</div>
+				</section>
+
+				
+				<!-- // My Now : 대시보드 -->
+
+			</main>
+			<!-- // app-content -->
+
+		<!-- // app-container -->
+	</div>
+
+	<div class="layered">
+
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+    
+	<script>        
+		//최초 선택되는 내용을 바꾸고 싶으면... (ui.js)
+		gfn_gnb.select(0);
+	</script>
+</body>
+
+</html>

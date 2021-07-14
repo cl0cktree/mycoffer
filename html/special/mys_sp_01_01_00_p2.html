@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_SP_01_01_00_P2] 작성자: 누리어 시스템 황철민 -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "개인(신용)정보 수집·이용·제공 동의서(신용관리서비스용) | 신용관리"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-integrated-header.html',{
+			'pageTit' :'개인(신용)정보 수집·이용·제공 동의서(신용관리서비스용)',
+			'type': 'close'
+		}) 
+		<!-- // app-header (for MyMoney) -->
+
+		<!-- app-container //-->
+		<div class="app-container">
+
+			<!-- app-content // -->
+			<main class="app-content">
+				
+				<section class="kb-sec">
+					@@include('@@webRoot/html/_include/agree-collection-use-personal-info-credit.html')
+				</section>	
+				<section class="kb-sec sticky-bottom">
+					<div class="btn-area">
+						<button type="button" class="btn-solid_sticky" data-confirm="true"><span>동의</span></button>
+					</div>
+				</section>
+
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+
+</body>
+
+</html>

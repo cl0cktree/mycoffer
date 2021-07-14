@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_EX_04_00_00] 지출 > 주간 소비 리포트 : 금융 리포트 목록 (작성자: 누리어 시스템 김삼희)// -->
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "금융 리포트 | 지출"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header (for MyMoney) //-->
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'금융 리포트',
+            'type':''
+        })
+        <!-- // app-header -->
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+            <!-- app-content // -->
+            <main class="app-content">
+                <section class="kb-sec finance-report-list more-view-box">
+                    <div class="kb-form select-bs t01" data-status="">
+                        <div class="kb-form_inner form-text">
+                            <input type="text" id="simulationOption01" value="2021년" role="button" data-call-layered="bsYear" readonly="">
+                        </div>
+                    </div>
+                    <div class="line-list-wrap type-time-line">
+                        <ul>
+                            <li class="lately" class="more-view-item" data-view-option="show">
+                                <a href="mys_ex_04_03_00.html" class="link-box_block line-box">
+                                    <div class="date">2021.08.09</div>
+                                    <div class="price-wrap">
+                                        <div class="tit">0000년 연간 금융리포트</div>
+                                        <div class="txt-con">
+                                            <span class="memo">지난해 나의 금융생활을 확인해보세요.</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="more-view-item" data-view-option="show">
+                                <a href="mys_ex_04_01_00.html" class="link-box_block line-box">
+                                    <div class="date">2021.08.09</div>
+                                    <div class="price-wrap">
+                                        <div class="tit">12월 월간 금융리포트</div>
+                                        <div class="txt-con">
+                                            <span class="memo">지난달 나의 금융생활을 확인해보세요.</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="more-view-item" data-view-option="show">
+                                <a href="javascript:;" class="link-box_block line-box" data-state="wait">
+                                    <div class="date">2021.08.09</div>
+                                    <div class="price-wrap">
+                                        <div class="tit">N월N주차 주간 소비리포트[새로고침 중]</div>
+                                        <div class="txt-con">
+                                            <span class="memo">지난주 나의 소비생활을 점검하고,
+                                                다가오는 예정 지출도 확인해보세요.</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="more-view-item" data-view-option="show">
+                                <a href="mys_ex_04_03_00.html" class="link-box_block line-box">
+                                    <div class="date">2021.08.09</div>
+                                    <div class="price-wrap">
+                                        <div class="tit">N월N주차 주간 소비리포트</div>
+                                        <div class="txt-con">
+                                            <span class="memo">지난주 나의 소비생활을 점검하고,
+                                                다가오는 예정 지출도 확인해보세요.</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="more-view-item" data-view-option="hide">
+                                <a href="mys_ex_04_03_00.html" class="link-box_block line-box">
+                                    <div class="date">2021.08.09</div>
+                                    <div class="price-wrap">
+                                        <div class="tit">N월N주차 주간 소비리포트</div>
+                                        <div class="txt-con">
+                                            <span class="memo">지난주 나의 소비생활을 점검하고,
+                                                다가오는 예정 지출도 확인해보세요.</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="more-view-item" data-view-option="hide">
+                                <a href="mys_ex_04_03_00.html" class="link-box_block line-box">
+                                    <div class="date">2021.08.09</div>
+                                    <div class="price-wrap">
+                                        <div class="tit">N월N주차 주간 소비리포트</div>
+                                        <div class="txt-con">
+                                            <span class="memo">지난주 나의 소비생활을 점검하고,
+                                                다가오는 예정 지출도 확인해보세요.</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="btn-area mt24">
+                        <button class="btn-more-view"><i class="icon-plus_20"></i><span> 더보기</span></button>
+                    </div>
+                </section>
+            </main>
+            <!--// app-content -->
+        </div>
+        <!-- // app-container -->
+        <div class="layered">
+            <!-- Layer // -->
+            @@include('@@webRoot/html/expense/layered/mys_ex_04_00_00_p01.html')
+            <!-- // Layer -->
+        </div>
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    
+</body>
+
+</html>

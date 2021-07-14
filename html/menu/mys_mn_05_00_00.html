@@ -1,0 +1,81 @@
+<!-- [MYS_MN_05_00_00] 전체메뉴 > 앱설정 상세 (작성자: 누리어 시스템 이진우)// -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Last Depth | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- 수정 : app-header (Type 구분) //-->
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'설정',
+            'type':''
+        })
+        <!-- // 수정 : app-header (Type 구분)-->
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content mm-setting">
+                <section class="kb-sec">                    
+                    <h2 class="h3">로그인설정</h2>
+                    <div class="simple-password-setting">
+                        <strong class="tit">간편비밀번호</strong>
+                        <span class="btn-switch"><input type="checkbox" id="toggleBtn1A"><label for="toggleBtn1A"></label></span>
+                    </div>
+                    <p class="simple-message">6자리 숫자로 간편하게 로그인 하실 수 있습니다.</p>
+                    <p class="simple-message">인증서 기간 만료 또는 폐기 시 재설정 하셔야 합니다.<br>인증서 유효기간을 확인해 주세요.</p>
+                    <p class="bottom-btn-text"><a href="javascript:;" class="btn-text" role="button"><span>간편비밀번호 변경하기</span><i class="icon-link_20"></i></a></p>
+                </section>   
+
+                <section class="kb-sec">
+                    <h2 class="h3">인증서 관리</h2>
+                    <ul class="manage-certificate">
+                        <li><a href="javascript:;"><strong class="tit">공동인증서 관리</strong><i class="icon-link_24"></i></a></li>
+                        <li><a href="javascript:;">Push 알림 설정 <i class="icon-link_24"></i></a></li><!-- 수정: 2021.06.02-->
+                        <li><a href="javascript:;">자산/지출 숨김 설정 <i class="icon-link_24"></i></a></li>
+                    </ul>
+                    <!-- // 수정 : 2021.06.04 -->
+                    <div class="my-now-mode">
+                        <h2 class="h2">My NOW 모드 설정</h2>
+                        <ul data-style="list">
+                            <li>
+                                <strong class="tit">Young 모드</strong>
+                                <span class="btn-switch"><input type="checkbox" id="myNowMode01" checked><label for="myNowMode01"></label></span>
+                            </li>
+                            <li>
+                                <strong class="tit">큰글씨 모드</strong>
+                                <span class="btn-switch"><input type="checkbox" id="myNowMode02" checked><label for="myNowMode02"></label></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 수정 : 2021.06.04 // -->
+                    <p class="bottom-btn-text02"><a href="javascript:;" class="btn-text" role="button"><u>로그아웃</u></a></p>
+                </section>   
+
+            </main>
+            <!-- // app-content -->
+
+        <!-- // app-container -->
+    </div>
+
+    <div class="layered">
+
+        @@include('@@webRoot/html/menu/layered/mys_mn_01_02_03.html')
+
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+
+</body>
+
+</html>
