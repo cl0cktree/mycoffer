@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_MN_01] 작성자 : 누리어 시스템 이진우 -->
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "LAYER | 전체메뉴"
+    })
+    <style>
+        .layer-call{max-width:300px;margin:0 auto;padding:40px 0;}
+        .layer-call > button{flex-flow:column;margin-top:10px;}
+        .layer-call > button:before{content:attr(data-page-id);}
+        .layer-call > button span{display:block;}
+    </style>
+</head>
+<body>    
+    <div class="layer-call">
+        <!-- 지출 > 소비리포트 //--->
+        <h1 class="h2">소비리포트</h1>
+        <button type="button" class="btn-line" data-call-layered="mys_mn_01_01_02_06_search" data-page-id="MYS_MN_01_01_02_06_BS01"><span>이력정보 조회</span></button>
+        <button type="button" class="btn-line" data-call-layered="MYS_MN_01_02_03" data-page-id="MYS_MN_01_02_03"><span>마이데이터 탈퇴</span></button>
+        <button type="button" class="btn-line" data-call-layered="MYS_MN_01_01_02_04" data-page-id="MYS_MN_01_01_02_04"><span>전송요구해지</span></button>
+        <button type="button" class="btn-line" data-call-layered="MYS_MN_01_01_02_05" data-page-id="MYS_MN_01_01_02_05"><span>개인신용정보 삭제</span></button>
+        <!--// 지출 > 소비리포트 --->
+    </div>
+
+    <div class="layered">
+        @@include('@@webRoot/html/menu/layered/mys_mn_01_01_02_06_bs01.html')
+        @@include('@@webRoot/html/menu/layered/mys_mn_01_01_02_04.html')
+        @@include('@@webRoot/html/menu/layered/mys_mn_01_01_02_05.html')
+        @@include('@@webRoot/html/menu/layered/MYS_MN_01_02_03.html')
+    </div>
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+
+    <script>
+        //레이어 확인용 스크립트 (개발시 삭제) [s]
+        var url = window.location.href;
+        var urlArr = url.split('#');
+        var pageID = urlArr[urlArr.length - 1].toUpperCase();
+
+        $('.layer-call').on('click','button',function(){
+            var newUrl = url.replace(pageID, '');
+            window.location.href = urlArr[0] + '#' + $(this).data('page-id');
+        });
+        
+        if(pageID.indexOf('/HTML/') < 0) $('button[data-page-id=' + pageID + ']').click();
+        //레이어 확인용 스크립트 (개발시 삭제) [e]
+    </script>
+    
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_GO_05_01_01] 목표 > 저금통생성 > 연결계좌선택 (작성자: 누리어 시스템 김삼희) -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "저금통 생성 | 목표"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		<!-- 2021-07-13 수정 // -->        
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{'pageTit':'챌린지 계좌 연결하기','type':''})
+        <!-- // 2021-07-13 수정 -->
+		<!-- // app-header -->
+
+		<!-- app-container (for MyMoney) //-->
+		<div class="app-container">
+
+			<!-- app-content // -->
+			<main class="app-content pgbank-join-content">
+				<!-- 연결 계좌 선택 // -->
+				<section class="kb-sec pgbank-join">
+					<div class="gbox">챌린지명에 연결할 계좌를 선택해주세요.</div> <!-- 2021-06-30 수정 -->
+					<div class="account-link">
+                        <strong class="h4">연결계좌</strong>
+						<div class="kb-form mt24" data-status="info">
+							<label for="">출금계좌번호</label>
+							<div class="kb-form_inner form-select">
+								<button type="button" class="selected-option" data-call-layered="bsAccountSelect"></button>
+								<select name="" id="" title="계좌 선택">
+									<option value="">최초 메세지</option>
+									<option value="bank01" selected>010101-01-010101 : 월급통장</option>
+									<option value="bank02">111111-00-000000 : 용돈통장</option>
+								</select>
+							</div>
+							<em class="validation">적금계좌만 연결할 수 있습니다.</em> <!-- 2021-06-30 수정 -->
+						</div>
+					</div>
+				</section>
+				<!-- 연결 계좌 선택 // -->			
+
+				<section class="kb-sec sticky-bottom">
+					<div class="btn-area">
+						<button type="button" class="btn-solid_sticky lv2"><span>취소</span></button>
+						<button type="button" class="btn-solid_sticky"><span>연결하기</span></button>
+					</div>
+				</section>
+
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+			@@include('@@webRoot/html/goal/layered/mys_go_01_01_02_p1.html')
+			<!-- @@include('@@webRoot/html/_layered/popup-employee-search.html')
+			@@include('@@webRoot/html/_layered/popup-employee-search02.html') -->
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+
+	<script>
+		// 비밀번호 입력 신규 설정을 선택한 경우 비밀번호 입력 폼 보여줌
+		$(".js-pw-radio").on("click.ui", newPasswordCheck);
+		function newPasswordCheck() {
+			if ($(".js-pw-new").is(":checked")) {
+				$(".js-pw-forms").show();
+			} else {
+				$(".js-pw-forms").hide();
+			}
+		}
+	</script>
+	
+</body>
+
+</html>
