@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_EX_02_00_00] 지출 > 정기지출 (작성자: 누리어 시스템 김삼희)// -->
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "정기지출 | 지출"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app" data-page="submain">
+        <!-- app-header (for MyMoney) //-->
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'타이틀영역',
+            'type':''
+        })
+        <!-- // app-header -->
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+            <!-- app-lnb //-->
+            <div class="app-lnb">
+                @@include('@@webRoot/html/_include/app-gnb.html')
+            </div>
+            <!-- //app-lnb -->
+
+            <!-- app-content // -->
+            <main class="app-content regular-expense-total">
+                <!-- 정기지출 summary 차트 //-->
+                <section class="kb-sec full bg-gray regular-expense-summary">
+                    <div class="highcharts-box no-space">
+                        <div class="graph-area">
+                            <figure class="highcharts-figure content-box">
+                                <div class="content-box-info">
+                                    <div class="content-box-tit flex-box">
+                                        <h4><a href="@@webRoot/html/expense/mys_ex_04_03_01.html" role="button" class="btn-txt">다가오는 정기지출</a> <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                            <div class="tooltip">
+                                                <div class="cont">&#8251; 정기지출은 매 월 정기적으로 지출되는 각종 공과금, 월세나 통신비 등을 말합니다.
+                                                    <ul data-style="list">
+                                                        <li>매 월 총지출 금액에서 정기지출금액이 적정한지 분석하고 관리가 필요한 정기지출 항목은 없는지 분석해드립니다.</li>
+                                                    </ul>
+                                                </div>
+                                                <button class="btn-close"><span>닫기</span></button>
+                                            </div>
+                                        </h4>
+                                        <a href="@@webRoot/html/expense/mys_ex_02_01_01_p.html" role="button" class="btn-more"><i class="icon-more_24"></i></a>
+                                        <span class="date">21.04.26~05.25</span><!-- [D] 21-07-05 수정 : 날짜 표기 수정 -->
+                                    </div>
+                                    <dl class="info-amount">
+                                        <dt><strong>예정금액</strong></dt>
+                                        <dd><strong><em class="num">3,500,000</em>원</strong><span> &sol; <em class="num">12</em>건</span></dd>
+                                    </dl>
+                                </div>
+                                <div class="markup-chart lollipop">
+                                    <ul>
+                                        <li>
+                                            <strong class="notice"><span>잔액부족</span></strong>
+                                            <p>
+                                                <strong class="data" data-value="30"><em class="num">30</em>건</strong>
+                                                <span class="label">10일</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                <strong class="data" data-value="10"><em class="num">10</em>건</strong>
+                                                <span class="label">20일</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                <strong class="data" data-value="20"><em class="num">20</em>건</strong>
+                                                <span class="label">25일</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                <strong class="data" data-value="5"><em class="num">5</em>건</strong>
+                                                <span class="label">30일</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                <strong class="data" data-value="1"><em class="num">1</em>건</strong>
+                                                <span class="label">3일</span>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </figure>
+                        </div>
+                        <div class="swiper-container t01 mt16 js-swiper" data-swiper-options="highchartSwiperOptions">
+                            <!-- // swiper option -->
+                            <script>
+                                var highchartSwiperOptions = {
+                                    "pagination": {
+                                        "el": ".swiper-pagination"
+                                    }
+                                };
+                            </script>
+                            <!-- swiper option //-->
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure content-box">
+                                            <div class="content-box-info">
+                                                <div class="content-box-tit">
+                                                    <h4 class="h4">월간 정기지출 추이</h4>
+                                                    <p class="content-box-desc"><strong>김국민</strong>님 이번달 정기지출이 많네요.<br>조금 줄여보는 건 어떨까요?</p>
+                                                </div>
+                                            </div>
+                                            <!-- [chart area] //-->
+                                            <!--
+                                                [차트 디자인 정보]
+                                                * 그래프(막대) 색상(컬러별)
+                                                - 노란색 :  #ffd338;
+                                                - 회색 :  #c6cbd0;
+                                                - 주황색 : #ff5858'
+
+                                                - 차트 텍스트 컬러/크기 : #26282c/14px
+                                                - X축 텍스트 컬러/크기 : #8c949e/14px
+                                                - data labels 텍스트 컬러/크기 : #ff5858/14px
+                                            -->
+                                            <div class="highcharts_column" id="">
+                                                <img class="temp" src="../../static/images/_temp/chart_ex0202.png" alt="차트 예시 이미지">
+                                            </div>
+                                            <!--// [chart area] -->
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure content-box">
+                                            <div class="content-box-info">
+                                                <div class="content-box-tit">
+                                                    <h4 class="h4">이번달 정기지출 소비 패턴</h4>
+                                                    <p class="content-box-desc">6개월 지출 내역 분석 결과입니다.</p>
+                                                </div>
+                                            </div>
+                                            <!-- [chart area] //-->
+                                            <!--
+                                                [차트 디자인 정보]
+                                                * 그래프(막대) 색상(컬러별)
+                                                - 노란색 :  #ffd338;
+                                                - 회색 :  #c6cbd0;
+                                                - 주황색 : #ff5858'
+
+                                                - 차트 텍스트 컬러/크기 : #26282c/14px
+                                                - X축 텍스트 컬러/크기 : #8c949e/14px
+                                                - data labels 텍스트 컬러/크기 : #ff5858/14px
+                                            -->
+                                            <div class="highcharts_column" id="">
+                                                <img class="temp" src="../../static/images/_temp/chart_ex0203.png" alt="차트 예시 이미지">
+                                            </div>
+                                            <!--// [chart area] -->
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </section>
+                <!--// 정기지출 summary 차트 -->
+                <!-- [D] 21-06-28 수정 : 각 항목 링크 연결 수정 및 아이콘 교체 //-->
+                <!-- 정기지출 목록 상세 //-->
+                <section class="kb-sec full regular-expense-list dividing-space-bottom">
+                    <div class="credit-list-group no-space">
+                        <div class="group-tit t01 expense">
+                            <strong>생활 서비스</strong>
+                            <span class="amount">총 <em class="num">570,000</em>원</span>
+                        </div>
+                        <ul class="credit-list_link-type">
+                            <li>
+                                <a href="@@webRoot//html/expense/mys_ex_02_01_04_p.html" role="button" class="link-box_block">
+                                    <dl class="credit-list t01">
+                                        <dt>
+                                            <i class="icon-expense-tell"></i>
+                                            <span class="info date daycount">오늘</span>
+                                            <strong class="tit">통신요금</strong>
+                                            <span class="tag">시티카드</span>
+                                        </dt>
+                                        <dd>
+                                            <strong class="amount"><span class="num">100,000</span>원</strong>
+                                            <span class="info">1개월</span>
+                                        </dd>
+                                    </dl>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="@@webRoot//html/expense/mys_ex_02_01_04_p.html" role="button" class="link-box_block">
+                                    <dl class="credit-list t01">
+                                        <dt>
+                                            <i class="icon-expense-maintenance-fees"></i>
+                                            <span class="info date daycount">D-2</span>
+                                            <strong class="tit">관리비</strong>
+                                            <span class="tag">국민은행</span>
+                                        </dt>
+                                        <dd>
+                                            <strong class="amount"><span class="num">470,000</span>원</strong>
+                                            <span class="info">3개월</span>
+                                        </dd>
+                                    </dl>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="more-view-box credit-list-group no-space">
+                        <div class="group-tit t01">
+                            <strong>구독 서비스</strong>
+                            <span class="amount expense">총 <em class="num">340,000</em>원</span>
+                        </div>
+                        <ul class="credit-list_link-type">
+                            <li class="more-view-item" data-view-option="show">
+                                <a href="@@webRoot//html/expense/mys_ex_02_01_04_p.html" role="button" class="link-box_block">
+                                    <dl class="credit-list t01">
+                                        <dt>
+                                            <i class="icon-expense-vod"></i>
+                                            <span class="info date daycount">D-5</span>
+                                            <strong class="tit">유튜브 프리미엄</strong>
+                                            <span class="tag">신한카드</span>
+                                        </dt>
+                                        <dd>
+                                            <strong class="amount"><span class="num">230,000</span>원</strong>
+                                            <span class="info">1개월</span>
+                                        </dd>
+                                    </dl>
+                                </a>
+                            </li>
+                            <li class="more-view-item" data-view-option="show">
+                                <a href="@@webRoot//html/expense/mys_ex_02_01_04_p.html" role="button" class="link-box_block">
+                                    <dl class="credit-list t01">
+                                        <dt>
+                                            <i class="icon-expense-vod"></i>
+                                            <span class="info date daycount">05.12</span>
+                                            <strong class="tit">스포티파이</strong>
+                                            <span class="tag">국민카드</span>
+                                        </dt>
+                                        <dd>
+                                            <strong class="amount"><span class="num">350,000</span>원</strong>
+                                            <span class="info">3개월</span>
+                                        </dd>
+                                    </dl>
+                                </a>
+                            </li>
+                            <li class="more-view-item" data-view-option="show">
+                                <a href="@@webRoot//html/expense/mys_ex_02_01_04_p.html" role="button" class="link-box_block">
+                                    <dl class="credit-list t01">
+                                        <dt>
+                                            <i class="icon-expense-vod"></i>
+                                            <span class="info date daycount">D-2</span>
+                                            <strong class="tit">넷플릭스</strong>
+                                            <span class="tag">하나카드</span>
+                                        </dt>
+                                        <dd>
+                                            <strong class="amount"><span class="num">40,000</span>원</strong>
+                                            <span class="info">3개월</span>
+                                        </dd>
+                                    </dl>
+                                </a>
+                            </li>
+                            <li class="more-view-item" data-view-option="hide">
+                                <a href="@@webRoot//html/expense/mys_ex_02_01_04_p.html" role="button" class="link-box_block">
+                                    <dl class="credit-list t01">
+                                        <dt>
+                                            <i class="icon-expense-vod"></i>
+                                            <span class="info date daycount">05.12</span>
+                                            <strong class="tit">스포티파이</strong>
+                                            <span class="tag">국민카드</span>
+                                        </dt>
+                                        <dd>
+                                            <strong class="amount"><span class="num">350,000</span>원</strong>
+                                            <span class="info">3개월</span>
+                                        </dd>
+                                    </dl>
+                                </a>
+                            </li>
+                            <li class="more-view-item" data-view-option="hide">
+                                <a href="@@webRoot//html/expense/mys_ex_02_01_04_p.html" role="button" class="link-box_block">
+                                    <dl class="credit-list t01">
+                                        <dt>
+                                            <i class="icon-expense-vod"></i>
+                                            <span class="info date daycount">D-2</span>
+                                            <strong class="tit">넷플릭스</strong>
+                                            <span class="tag">하나카드</span>
+                                        </dt>
+                                        <dd>
+                                            <strong class="amount"><span class="num">40,000</span>원</strong>
+                                            <span class="info">3개월</span>
+                                        </dd>
+                                    </dl>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="btn-area center mt16">
+                            <button class="btn-more-view"><i class="icon-plus_20"></i><span>더보기</span></button>
+                        </div>
+                    </div>
+                </section>
+                <!--// 정기지출 목록 상세 -->
+                <!--// [D] 21-06-28 수정 : 각 항목 링크 연결 수정 및 아이콘 교체 -->
+                <!--정기지출 트랜드 //-->
+                <section class="kb-sec full regular-expense-trend">
+                    <div class="tab swiper-container">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide is-active"><a href="#target01">인기</a></li>
+                            <li class="swiper-slide"><a href="#target02">요즘뜨는</a></li>
+                            <li class="swiper-slide"><a href="#target03">급상승</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab_contents">
+                        <div class="is-active">
+                            <div class="highcharts-box full-type no-space">
+                                <div class="graph-area">
+                                    <figure class="highcharts-figure">
+                                        <div class="content-box-info">
+                                            <div class="content-box-tit">가장 많이 이용하는 인기구독 서비스는? <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                                <!-- Tooltip (With title)-->
+                                                <div class="tooltip">
+                                                    <div class="cont">&#8251; 같은 연령대&sol;성별을 기준으로 사용자 수가 가장 많은 구독 서비스는 1위~3위 입니다.</div>
+                                                    <button class="btn-close"><span>닫기</span></button>
+                                                </div>
+                                            </div>
+                                            <div class="kb-form select-bs t01" data-status="">
+                                                <div class="kb-form_inner form-text">
+                                                    <input type="text" id="simulationOption01" value="35~39세 여성" role="button" data-call-layered="bsRichStorytellingSimulationOption" readonly="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- [chart area] //-->
+                                        <!--
+                                            [차트 디자인 정보]
+                                            * 그래프(막대) 색상(컬러별)
+                                            - 노란색 :  #ffd338;
+                                            - 회색 :  #c6cbd0;
+        
+                                            - X축 텍스트 컬러/크기 : #8c949e/14px
+                                        -->
+                                        <div class="highcharts_column" id="">
+                                            <img class="temp" src="@@webRoot/static/images/_temp/chart_ex0204.png" alt="차트 예시 이미지">
+                                        </div>
+                                        <!--// [chart area] -->
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>요즘 뜨는 구독 서비스는? <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                <!-- Tooltip (With title)-->
+                                <div class="tooltip">
+                                    <div class="cont">&#8251; 필요한 상품이나 서비스를 정기적으로 제공받는 구독 서비스 중 아이디어로 무장한 새로운 상품 영역의 구독 서비스를 순위에 상관없이 소개해드립니다.</div>
+                                    <button class="btn-close"><span>닫기</span></button>
+                                </div>
+                            </div>
+                            <div class="trendy-service content-box border">
+                                <!-- [D] 21-06-28 수정 : 로고 이미지 교체 (해당 경로에 로고 이미지 모음 있음) //-->
+                                <p class="icon-box_circle">
+                                    <span class="img-resize_48"><img src="@@webRoot/static/images/expense/expense-logo-sooldamhwa.png" alt=""></span>
+                                </p>
+                                <!--// [D] 21-06-28 수정 : 로고 이미지 교체 (해당 경로에 로고 이미지 모음 있음)-->
+                                <strong class="tit">술담화</strong>
+                                <span class="comment">찾아오는 인생술 술담화</span>
+                                <p class="desc">소믈리에가 추천하는 다양한 술을 경험할 수 있는 국내최초 천통주 술 정기 구독 서비스</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>인기 급상승중인 구독 서비스는? <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                <!-- Tooltip (With title)-->
+                                <div class="tooltip">
+                                    <div class="cont">&#8251; 필요한 상품이나 서비스를 정기적으로 제공받는 구독 서비스 중 아이디어로 무장한 새로운 상품 영역의 구독 서비스를 순위에 상관없이 소개해드립니다.</div>
+                                    <button class="btn-close"><span>닫기</span></button>
+                                </div>
+                            </div>
+                            <dl class="rising-service content-box border">
+                                <dl class="rank-list">
+                                    <dt class="rank">
+                                        <strong>한국어린이난치병협회</strong>
+                                        <span><em class="num">1,211,456</em>명 이용중</span>
+                                    </dt>
+                                    <dd><span>20위 상승</span></dd>
+                                    <dt class="rank">
+                                        <strong>한국어린이난치병협회</strong>
+                                        <span><em class="num">1,211,456</em>명 이용중</span>
+                                    </dt>
+                                    <dd><span>2위 상승</span></dd>
+                                    <dt>
+                                        <strong>한국어린이난치병협회</strong>
+                                        <span><em class="num">1,211,456</em>명 이용중</span>
+                                    </dt>
+                                    <dd><span>14위 상승</span></dd>
+                                </dl>
+                            </dl>
+                        </div>
+                    </div>
+                </section>
+                <!--// 정기지출 트랜드 -->
+                <!-- 정기지출 관리 //-->
+                <section class="kb-sec full bg-gray regular-expense-management">
+                    <div class="highcharts-box no-space">
+                        <div class="graph-area">
+                            <figure class="highcharts-figure content-box">
+                                <!-- [D] 21-07-05 수정 : 위치 및 마크업 수정 -->
+                                <div class="content-box-info">
+                                    <div class="content-box-tit t01 flex-box"><strong class="h3">관리가 필요한 정기지출</strong><span class="info">최근 3개월</span></div>
+                                    <div class="total-summary mb20">
+                                        <p>정기지출항목 중 <span class="color_red emphasis">정비지출항목1</span> 지출이<br>가장 많아요.</p>
+                                    </div>
+                                </div>
+                                <!-- [chart area] //-->
+                                <div class="markup-chart">
+                                    <ul>
+                                        <li class="emphasis">
+                                            <p>
+                                                <strong><em class="num">530,000</em>원</strong>
+                                                <span>현재</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                <strong><em class="num">230,000</em>원</strong>
+                                                <span>과거</span>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--// [chart area] -->
+                            </figure>
+                        </div>
+                </section>
+                <!--// 정기지출 관리 -->
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+        <div class="layered">
+            <!-- Layer // -->
+            <!-- // Layer -->
+        </div>
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <script>
+        gfn_gnb.select(2,1);
+        
+        // lollipop chart
+        $lollipop = $('.lollipop');
+        if($lollipop){
+            var chartHt = function(){
+                var targets = [];
+                // var max;
+                // var step;
+                var total = $lollipop.find('ul').height();
+                $lollipop.find('.data').each( function(){
+                    // find max
+                    var $this = $(this);
+                    var number = Number($this.data('value'));
+                    targets.push(number);
+                    var max = Math.max.apply(null, targets);
+                    // control size
+                    if(number > 9) $this.attr('data-positional-number', 2);
+                    // add padding
+                    var step = Math.floor(total/max);
+                    var rst = (number*step) - $this.height() - 57;
+                    if(rst > 0) $this.css('margin-bottom', rst + 'px');
+                });
+            }
+            chartHt();
+            $(window).resize( function(){
+                chartHt();
+            });
+        }
+    </script>
+    <!-- Add Script -->
+    
+</body>
+
+</html>

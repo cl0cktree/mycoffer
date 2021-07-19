@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<!-- [MYS_SP_01_01_00]
+		MY FUN DATA > 부자데이터 > 부자스토리텔링 > 시뮬레이션 > 시뷸레이션분석완료 > 마이데이터동의완료 > 부자데이터분석완료
+		(작성자: 누리어 시스템 김삼희) -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "부자 데이터 | MY FUN DATA"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-integrated-header.html',{
+			'pageTit':'어느 날 나에게 50억이 생긴다면?',
+			'type':''
+		})
+		<!-- // app-header -->
+
+		<!-- app-container (for MyMoney) //-->
+		<div class="app-container">
+
+			<!-- app-content // -->
+			<main class="app-content my-fun-data">
+
+				<!-- [D] 21-07-01 수정 : 문구 수정, 디자인 변경 현행화로 인한 마크업 수정 및 이미지 교체 //-->
+				<section class="kb-sec rich-comparison-graphs">
+					<div class="chart-area content-box more-view-item">
+						<!-- [Chart Area] // -->
+								<!--
+									[차트 디자인 정보]
+									* 그래프(column) 색상(컬러별)
+									- 회색 : #c6cbd0;
+									- 민트 : #21d0c4;
+
+									X축 텍스트 컬러/크기 : #8c949e /14px
+									legend 텍스트 컬러/크기 : #26282c /14px
+								-->
+						<img class="temp" src="../../static/images/_temp/chart_sp0203.png" alt="차트 예시 이미지">
+					</div>
+					<a href="@@webRoot/html/asset/mys_as_00_00_00.html" role="button" class="btn-solid"><span>자산관리 바로가기</span></a>
+					<button class="btn-line mt12" data-call-layered="mys_as_04_00_00_p1"><span>나의 자산 추가등록</span></button>
+					<div class="summary-desc t01">고객님이 보유한 모든 자산을 등록하면 더 정확한 결과를 확인할 수 있습니다.</div>
+				</section>
+				<!-- // 부자vs나 비교 그래프 -->
+				<!-- 비교 데이터 상세 노출 // -->
+				<section class="kb-sec rich-finance-compare mt24">
+					<div>
+						<div class="comparison-list">
+							<!-- [D] 21-06-30 수정 : 디자인 변경 현행화로 인한 마크업 수정 //-->
+							<ul>
+								<li>
+									<strong class="h4 data-tit"><i class="icon-myfundata-safebox"></i> 내 집안의 금고</strong>
+									<div class="data">
+										<p>
+											<span class="name">나</span>
+											<span class="amount percent"><em class="num">3.8%</em></span>
+											<span class="amount"><em class="num">1</em>억 <em class="num">6,500</em>만원</span>
+										</p>
+										<i class="unit">VS</i>
+										<p>
+											<span class="name">부자</span>
+											<span class="amount percent"><em class="num">1.2%</em></span>
+											<span class="amount"><em class="num">13</em>억 <em class="num">6,500</em>만원</span>
+										</p>
+									</div>
+								</li>
+								<li>
+									<strong class="h4 data-tit"><i class="icon-myfundata-safebank"></i> 안전이 최고 은행</strong>
+									<div class="data">
+										<p>
+											<span class="name">나</span>
+											<span class="amount percent"><em class="num">3.8%</em></span>
+											<span class="amount"><em class="num">1</em>억</span>
+										</p>
+										<i class="unit">VS</i>
+										<p>
+											<span class="name">부자</span>
+											<span class="amount percent"><em class="num">1.2%</em></span>
+											<span class="amount"><em class="num">3</em>억 <em class="num">6,500</em>만원</span>
+										</p>
+									</div>
+								</li>
+								<li>
+									<strong class="h4 data-tit"><i class="icon-myfundata-stock"></i> 일단 질러 주식(투자)</strong>
+									<div class="data">
+										<p>
+											<span class="name">나</span>
+											<span class="amount percent"><em class="num">3.8%</em></span>
+											<span class="amount"><em class="num">1</em>억</span>
+										</p>
+										<i class="unit">VS</i>
+										<p>
+											<span class="name">부자</span>
+											<span class="amount percent"><em class="num">1.2%</em></span>
+											<span class="amount"><em class="num">3</em>억 <em class="num">6,500</em>만원</span>
+										</p>
+									</div>
+								<li>
+									<strong class="h4 data-tit"><i class="icon-myfundata-future"></i> 미래도 든든 보험&sol;연금</strong>
+									<div class="data">
+										<p>
+											<span class="name">나</span>
+											<span class="amount percent"><em class="num">3.8%</em></span>
+											<span class="amount"><em class="num">1</em>억</span>
+										</p>
+										<i class="unit">VS</i>
+										<p>
+											<span class="name">부자</span>
+											<span class="amount percent"><em class="num">1.2%</em></span>
+											<span class="amount"><em class="num">3</em>억 <em class="num">6,500</em>만원</span>
+										</p>
+									</div>
+								</li>
+								<li>
+									<strong class="h4 data-tit"><i class="icon-myfundata-house"></i> 내 집 마련 부동산</strong><!-- [D] 21-07-02 수정 : 문구 변경 -->
+									<div class="data">
+										<p>
+											<span class="name">나</span>
+											<span class="amount percent"><em class="num">3.8%</em></span>
+											<span class="amount"><em class="num">1</em>억</span>
+										</p>
+										<i class="unit">VS</i>
+										<p>
+											<span class="name">부자</span>
+											<span class="amount percent"><em class="num">1.2%</em></span>
+											<span class="amount"><em class="num">3</em>억 <em class="num">6,500</em>만원</span>
+										</p>
+									</div>
+								<li>
+									<strong class="h4 data-tit"><i class="icon-myfundata-culture"></i> 교양 뿜뿜 예술품&sol;기타금융</strong>
+									<div class="data">
+										<p>
+											<span class="name">나</span>
+											<span class="amount percent"><em class="num">3.8%</em></span>
+											<span class="amount"><em class="num">1</em>억</span>
+										</p>
+										<i class="unit">VS</i>
+										<p>
+											<span class="name">부자</span>
+											<span class="amount percent"><em class="num">1.2%</em></span>
+											<span class="amount"><em class="num">3</em>억 <em class="num">6,500</em>만원</span>
+										</p>
+									</div>
+								</li>
+							</ul>
+							<!--// [D] 21-06-30 수정 : 디자인 변경 현행화로 인한 마크업 수정 -->
+							<p class="annotation" data-style="exclamation">위 시뮬레이션은 KB경영연구소 ‘2020 한국 부자보고서’를 바탕으로 분석한 결과입니다 .</p>
+						</div>
+					</div>
+				</section>
+				<!--// [D] 21-07-01 수정 : 문구 수정, 디자인 변경 현행화로 인한 마크업 수정 및 이미지 교체 -->
+
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+			@@include('@@webRoot/html/asset/layered/mys_as_04_00_00_p1.html')
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+	
+</body>
+
+</html>
