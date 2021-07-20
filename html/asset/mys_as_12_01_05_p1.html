@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_AS_12_01_05_P1] 작성자: 누리어 시스템 황철민 -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "Wish Car 등록 | 자산"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-integrated-header.html',{
+			'pageTit' :'Wish Car 등록',
+			'type': 'close'
+		}) 
+		<!-- // app-header (for MyMoney) -->
+
+		<!-- app-container //-->
+		<div class="app-container">
+
+			<!-- app-content // -->
+			<main class="app-content pop-my-asset">
+
+				<section class="kb-sec wishcar-add-forms">
+					<div class="pop-notice">
+						<span>사고 싶은 자동차 정보를 등록하면 시세를 확인할 수 있습니다.</span><!-- 수정 2021-07-02 -->
+						<em>* 표시된 항목은 필수 입력 사항입니다.</em>                
+					</div>
+					<!-- 추가 2021-05-31 // -->
+					<div class="kb-form" data-status="">
+						<label for="wishcarAddRadio1" class="required">자동차 상태 선택</label>
+						<div class="kb-form_inner form-radio-set">
+							<ul class="flex-box" data-col="2">
+								<li><span class="form-radio"><input type="radio" id="wishcarAddRadio1" name="wishcarAddRadio" checked="" onchange="carTypeChange()"><label for="wishcarAddRadio1">중고차</label></span></li>
+								<li><span class="form-radio"><input type="radio" id="wishcarAddRadio2" name="wishcarAddRadio" onchange="carTypeChange()"><label for="wishcarAddRadio2">신차</label></span></li>
+							</ul>
+						</div>
+						<em class="validation"></em>
+					</div>
+					<!-- 추가 2021-05-31 // -->
+					<div class="kb-form" data-status="">
+						<label for="wishcarAddForm1" class="required">제조사</label>
+						<div class="kb-form_inner form-select">
+							<button type="button" class="selected-option"></button>
+							<select name="" id="wishcarAddForm1" title="제조사명 선택"><!-- 수정 2021-05-24 -->
+								<option value="">제조사명</option>
+								<option value="">현대</option>
+								<option value="">제네시스</option>
+								<option value="">기아</option>
+								<option value="">한국GM</option>
+								<option value="">르노삼성</option>
+								<option value="">쌍용</option>
+								<option value="">기타</option>
+							</select>
+						</div>
+						<em class="validation">Message</em>
+					</div>
+					<div class="kb-form" data-status="">
+						<label for="wishcarAddForm2" class="required">모델명</label>
+						<div class="kb-form_inner form-select">
+							<button type="button" class="selected-option"></button>
+							<select name="" id="wishcarAddForm2" title="모델명 선택"><!-- 수정 2021-05-24 -->
+								<option value="">모델명</option>
+								<option value="">i30</option>
+								<option value="">i40</option>
+								<option value="">갤로퍼</option>
+								<option value="">그랜저</option>
+							</select>
+						</div>
+						<em class="validation">Message</em>
+					</div>
+					<div class="kb-form" data-status="">
+						<label for="wishcarAddForm3" class="required">세부모델명</label>
+						<div class="kb-form_inner form-select">
+							<button type="button" class="selected-option"></button>
+							<select name="" id="wishcarAddForm3" title="세부모델명 선택"><!-- 수정 2021-05-24 -->
+								<option value="">세부모델명</option>
+								<option value="">i30 (PD)</option>
+								<option value="">더 뉴 i30</option>
+								<option value="">i30 (신형)</option>
+								<option value="">i30</option>
+							</select>
+						</div>
+						<em class="validation">Message</em>
+					</div>
+					<div class="kb-form" data-status="">
+						<label for="wishcarAddForm4" class="required">등급</label>
+						<div class="kb-form_inner form-select">
+							<button type="button" class="selected-option"></button>
+							<select name="" id="wishcarAddForm4" title="등급 선택"><!-- 수정 2021-05-24 -->
+								<option value="">등급</option>
+							<option value="">1.4 터보 튜너 패키지 (2016~현재)</option>
+								<option value="">1.4 터보 스마트 (2016~현재)</option>
+								<option value="">1.4 터보 모던 (2016~현재)</option>
+								<option value="">1.4 터보 프리미엄 (2016~현재)</option>
+							</select>
+						</div>
+						<em class="validation">Message</em>
+					</div>
+					<!-- 수정 2021-05-31 // -->
+					<div class="kb-form" data-status="">
+						<label for="wishcarAddForm5" class="required">연식</label>
+						<div class="kb-form_inner form-select">
+							<button type="button" class="selected-option"></button>
+							<select name="" id="wishcarAddForm5" title="연식 선택"><!-- 수정 2021-05-24 -->
+								<option value="">연식</option>
+								<option value="">2016</option>
+								<option value="">2017</option>
+								<option value="">2018</option>
+							</select>
+						</div>
+						<em class="validation">Message</em>
+					</div>
+					<!-- // 수정 2021-05-31 -->
+					<div class="kb-form" data-status="">
+						<label for="wishcarAddForm6">주행거리(km)</label>
+						<div class="kb-form_inner form-text">
+							<input type="text" inputmode="numeric" id="wishcarAddForm6" placeholder="" maxlength="7" value="" data-unit="km" data-action="autoSeperator">
+							<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+						</div>
+					</div>
+					<div class="kb-form" data-status="">
+						<label for="wishcarAddForm7">별명</label>
+						<div class="kb-form_inner form-text">
+							<input type="text" id="wishcarAddForm7" maxlength="10" value="" placeholder="최대 10자">
+							<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+						</div>
+					</div>
+					<!-- 수정 2021-05-31 // -->
+					<script>
+						// 자동차 상태 선택 = 신차 선택시 주행거리 비활성
+						function carTypeChange() {
+							var _target = document.querySelector("#wishcarAddForm6");
+							var _targetKbForm = _target.parentElement.parentElement;
+							if (document.querySelector("#wishcarAddRadio2").checked) {
+								_target.disabled = true;
+								_targetKbForm.classList.add("is-disabled");
+							} else {
+								_target.disabled = false;
+								_targetKbForm.classList.remove("is-disabled");
+							}
+						}
+					</script>
+					<!-- // 수정 2021-05-31 -->
+				</section>
+
+				<section class="kb-sec car-quotes">
+					<!-- 수정 2021.06.28 // -->
+					<p class="info-msg">시세<br>[조회하기]를 누르면 KB차차차 자동차 시세가 조회됩니다.</p>
+					<p class="info-msg">실제 중고차 시세와 다를 수 있습니다.</p>
+					<!-- // 수정 2021.06.28 -->
+					<div class="btn-area">
+						<button type="button" class="btn-line"><span>조회하기</span></button>
+					</div>
+					<div class="amount"><span class="num">13,000,000</span>원</div>
+				</section>
+
+				<section class="kb-sec sticky-bottom">
+					<div class="btn-area">
+						<button type="button" class="btn-solid_sticky"><span>등록</span></button>
+					</div>
+				</section>
+
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+
+</body>
+
+</html>

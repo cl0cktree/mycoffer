@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Modal 모음 | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header //-->
+        @@include('@@webRoot/html/_include/app-header.html')
+        <!-- // app-header -->
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content">
+                <section class="kb-sec">
+                    기본 모달
+                    <br>
+                    <br>
+                    <button type="button" class="btn-line" onclick="modalDemo1()"><span>Alert</span></button>
+                    <button type="button" class="btn-line" onclick="modalDemo2()"><span>Confirm</span></button>
+                    <button type="button" class="btn-line" onclick="modalDemo3()"><span>Confirm (버튼수정)</span></button>
+                    <button type="button" class="btn-line" onclick="modalDemo4()"><span>Confirm (버튼 Callback)</span></button>
+                </section>
+                <br>
+                    <br>
+                <section class="kb-sec">
+                    기타 모달형 안내
+                    <br>
+                    <br>
+                    <button type="button" class="btn-line" data-call-modal="modalExtendLoginStatus"><span>로그인 연장</span></button>
+                </section>
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+        <!-- app-footer //-->
+        @@include('@@webRoot/html/_include/app-footer.html')
+        <!-- // app-footer -->
+    </div>
+    <div class="layered">
+        <!-- Layer // -->
+        @@include('@@webRoot/html/_layered/_popup-sample.html')
+        <!-- // Layer -->
+
+        <!-- Bottom Sheet // -->
+        @@include('@@webRoot/html/_layered/_bottom-sheet-sample.html')
+        @@include('@@webRoot/html/_layered/bs-select.html')
+        @@include('@@webRoot/html/_layered/bs-lookup.html')
+        @@include('@@webRoot/html/_layered/bs-calendar.html')
+        @@include('@@webRoot/html/_layered/bs-financial-institution.html')
+        @@include('@@webRoot/html/_layered/bs-other-login.html')
+        @@include('@@webRoot/html/_layered/bs-age-asset.html')
+        
+        <!-- // Bottom Sheet -->
+
+        <!-- Modal // -->
+        @@include('@@webRoot/html/_layered/_modal-sample.html')
+        @@include('@@webRoot/html/_layered/modal-alert.html')
+        @@include('@@webRoot/html/_layered/modal-confirm.html')
+        @@include('@@webRoot/html/_layered/modal-extend-login-status.html')
+        <!-- // Modal -->
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    
+    <script>
+        function modalDemo1() {
+            modalPopup({
+                title: "",
+                message: "Alert 메시지"
+            });
+        }
+        function modalDemo2() {
+            modalPopup({
+                title: "",
+                message: "Confirm 메시지",
+                type: "confirm"
+            });
+        }
+        function modalDemo3() {
+            modalPopup({
+                title: "타이틀 변경",
+                message: "Confirm 메시지",
+                type: "confirm",
+                textOkButton: "버튼1",
+                textCancelButton: "버튼2",
+            });
+        }
+        function modalDemo4() {
+            modalPopup({
+                message: "Confirm 메시지",
+                type: "confirm",
+                onOk: function() {
+                    alert('OK 버튼 클릭');
+                },
+                onCancel: function() {
+                    alert('Cancel 버튼 클릭');
+                }
+            });
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!-- [MYS_MN_06_01_04] 전체메뉴 > >마이데이터 선물함 > 리워드 혜택 (작성자: 누리어 시스템 이진우)// -->
+<!-- 
+    /html/event/floating-banner-sample.html 참조 
+-->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Last Depth | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- 수정 : app-header (Type 구분) //-->
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'임시 바닥페이지',
+            'type':''
+        })
+        <!-- // 수정 : app-header (Type 구분)-->
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+            </div>
+
+            <!-- app-content // -->
+            <main class="app-content">
+
+            </main>
+            <!-- // app-content -->
+
+        <!-- // app-container -->
+    </div>
+
+    <div class="layered">        
+        @@include('@@webRoot/html/menu/layered/mys_mn_06_01_04_p02.html')
+        
+        <!-- 이벤트 용 스티커 -->        
+        <button type="button" class="event-sticker" data-position="1"><img src="@@webRoot/static/images/_temp/event-sticker.png" alt="즉석룰렛 CLICK" style="width:111px;"></button>
+        <button type="button" class="event-sticker" data-position="2"><img src="@@webRoot/static/images/_temp/event-sticker.png" alt="즉석룰렛 CLICK" style="width:111px;"></button>
+        <button type="button" class="event-sticker" data-position="3"><img src="@@webRoot/static/images/_temp/event-sticker.png" alt="즉석룰렛 CLICK" style="width:111px;"></button>
+        <button type="button" class="event-sticker" data-position="4"><img src="@@webRoot/static/images/_temp/event-sticker.png" alt="즉석룰렛 CLICK" style="width:111px;"></button>
+        <button type="button" class="event-sticker" data-position="5"><img src="@@webRoot/static/images/_temp/event-sticker.png" alt="즉석룰렛 CLICK" style="width:111px;"></button>
+        <button type="button" class="event-sticker" data-position="6"><img src="@@webRoot/static/images/_temp/event-sticker.png" alt="즉석룰렛 CLICK" style="width:111px;"></button>
+        <button type="button" class="event-sticker" data-position="7"><img src="@@webRoot/static/images/_temp/event-sticker.png" alt="즉석룰렛 CLICK" style="width:111px;"></button>
+        <button type="button" class="event-sticker" data-position="8"><img src="@@webRoot/static/images/_temp/event-sticker.png" alt="즉석룰렛 CLICK" style="width:111px;"></button>
+        <button type="button" class="event-sticker" data-position="9"><img src="@@webRoot/static/images/_temp/event-sticker.png" alt="즉석룰렛 CLICK" style="width:111px;"></button>
+    </div>
+
+
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <script>
+        //스티커 클릭하면 나오기 
+        $('.event-sticker').on('click',function(){
+            gfn_layered.open('bsRewardPromotion');
+        });
+
+        //쿠키로 제어
+        var openLayer = getCookie('promotionBanner');
+        if(!openLayer) gfn_layered.open('bsRewardPromotion');
+        
+    </script>
+
+</body>
+
+</html>

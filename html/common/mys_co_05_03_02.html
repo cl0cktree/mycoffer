@@ -1,0 +1,64 @@
+<!-- [mys_co_05_03_02] 로그인PIN 번호 재입력 (작성자: 누리어 시스템 이진우)// -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Last Depth | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- 수정 : app-header (Type 구분) //-->
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'',
+            'type':'close'
+        })
+        <!-- // 수정 : app-header (Type 구분)-->
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content simple-password-input04">
+                <!-- 수정 : page-header 제거 -->
+                <!-- <div class="page-header">
+                    <strong class="tit"></strong>
+                    <button class="btn-close"><span>닫기</span></button>
+                </div> -->
+
+                <section class="kb-sec">
+                    <strong class="h2">간편비밀번호를 <br>다시 한번 입력해주세요.</strong>
+                    <p>간편비밀번호가 일치하지 않습니다. <br>다시 입력해주세요.</p>
+                    <div class="pw-dots">
+                        <span class="pw-dot is-active"></span>
+                        <span class="pw-dot"></span>
+                        <span class="pw-dot"></span>
+                        <span class="pw-dot"></span>
+                        <span class="pw-dot"></span>
+                        <span class="pw-dot"></span>
+                    </div>
+                </section>
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+        <!-- Layer (fullpage popup, modal, bottom sheet) // -->
+        <div class="layered">
+        </div>
+        <!-- // Layer (fullpage popup, modal, bottom sheet) -->
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+
+</body>
+
+</html>

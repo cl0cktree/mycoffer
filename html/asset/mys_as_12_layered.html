@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_AS_01] 작성자: 누리어 시스템 황철민 -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "LAYER | 자동차"
+	})
+	<style>
+		.layer-call{max-width:300px;margin:0 auto;padding:40px 0;}
+		.layer-call > button{flex-flow:column;margin-top:10px;height:auto;}
+		.layer-call > button:before{content:attr(data-page-id);}
+		.layer-call > button span{display:block;}
+	</style>
+</head>
+
+<body>    
+	<div class="layer-call">
+		<h1 class="h2">레이어 모음</h1>
+		<button type="button" class="btn-line" data-call-layered="bsIfYouSave" data-page-id="MYS_AS_12_02_10_P1_B"><span>저축을 한다면?</span></button>
+	</div>
+
+	<div class="layered">
+		@@include('@@webRoot/html/asset/layered/mys_as_12_02_10_p1_b.html')
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+
+	<script>
+		//레이어 확인용 스크립트 (개발시 삭제) [s]
+        var url = window.location.href;
+        var urlArr = url.split('#');
+        var pageID = urlArr[urlArr.length - 1].toUpperCase();
+
+        $('.layer-call').on('click','button',function(){
+            var newUrl = url.replace(pageID, '');
+            window.location.href = urlArr[0] + '#' + $(this).data('page-id');
+        });
+        
+        if(pageID.indexOf('/HTML/') < 0) $('button[data-page-id=' + pageID + ']').click();
+        //레이어 확인용 스크립트 (개발시 삭제) [e]
+	</script>
+	
+
+</body>
+
+</html>
