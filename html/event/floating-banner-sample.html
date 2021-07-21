@@ -1,0 +1,129 @@
+<!-- [MYS_MN_06_01_04] 전체메뉴 > >마이데이터 선물함 > 리워드 혜택 (작성자: 누리어 시스템 이진우)// -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Last Depth | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header (for MyMoney) //-->
+        @@include('@@webRoot/html/_include/app-header.html',{
+            'pageTit':'임시 바닥페이지'
+        })
+        <!-- // app-header -->
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+            </div>
+
+            <!-- app-content // -->
+            <main class="app-content">
+
+            </main>
+            <!-- // app-content -->
+
+        <!-- // app-container -->
+    </div>
+
+    <div class="layered">
+        <!-- @@include('@@webRoot/html/event/layered/floating-banner.html') -->
+
+        <!-- 이벤트 용 스티커 -->
+        <!-- <div class="event-sticker" data-position="1">
+            <img src="@@webRoot/static/images/_temp/event-sticker.png" alt="즉석룰렛 CLICK" style="width:111px;">
+            <button class="btn-close"><span>닫기</span></button>
+        </div>
+        <div class="event-sticker" data-position="2">
+            <img src="@@webRoot/static/images/_temp/event-sticker.png" alt="즉석룰렛 CLICK" style="width:111px;">
+            <button class="btn-close"><span>닫기</span></button>
+        </div>
+        <div class="event-sticker" data-position="3">
+            <img src="@@webRoot/static/images/_temp/event-sticker.png" alt="즉석룰렛 CLICK" style="width:111px;">
+            <button class="btn-close"><span>닫기</span></button>
+        </div>
+        <div class="event-sticker" data-position="4">
+            <img src="@@webRoot/static/images/_temp/event-sticker.png" alt="즉석룰렛 CLICK" style="width:111px;">
+            <button class="btn-close"><span>닫기</span></button>
+        </div>
+        <div class="event-sticker" data-position="5">
+            <img src="@@webRoot/static/images/_temp/event-sticker.png" alt="즉석룰렛 CLICK" style="width:111px;">
+            <button class="btn-close"><span>닫기</span></button>
+        </div>
+        <div class="event-sticker" data-position="6">
+            <img src="@@webRoot/static/images/_temp/event-sticker.png" alt="즉석룰렛 CLICK" style="width:111px;">
+            <button class="btn-close"><span>닫기</span></button>
+        </div>
+        <div class="event-sticker" data-position="7">
+            <img src="@@webRoot/static/images/_temp/event-sticker.png" alt="즉석룰렛 CLICK" style="width:111px;">
+            <button class="btn-close"><span>닫기</span></button>
+        </div>
+        <div class="event-sticker" data-position="8">
+            <img src="@@webRoot/static/images/_temp/event-sticker.png" alt="즉석룰렛 CLICK" style="width:111px;">
+            <button class="btn-close"><span>닫기</span></button>
+        </div>
+        <div class="event-sticker" data-position="9">
+            <img src="@@webRoot/static/images/_temp/event-sticker.png" alt="즉석룰렛 CLICK" style="width:111px;">
+            <button class="btn-close"><span>닫기</span></button>
+        </div> -->
+    </div>
+
+
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <script src="@@webRoot/static/js/floatingBanner.js"></script>
+
+    <script>
+        $('.layered').fb({
+            fbName: "fbBanner01",     //호출할 Bottom Sheet 이름
+            fbType: "fbOneQuarter",     //bottomsheet 타입
+            fbAnimation: "fbLeftRight",     //나타나는 애니메이션 (fbBottomUp, fbLeftRight, fbRightLeft, fbFadeIn)
+            fbTitle: "타이틀 영역입니다",           //타이틀
+            fbMsg: "마이데이터 테스트 통합인증, 전체동의 하시고 100% 당첨 행운의 룰렛을 돌려보세요!",   //메세지
+            fbLink: 'naver.com',    //링크
+            fbLinkMsg: '바d로가기', //링크 메세지
+            fbImgSrc: "/static/images/_temp/event-sticker.png",   //이미지
+            fbCheckboxId: "notToday",   //checkbox ID
+            fbCheckboxName: "promotionBanner",  //checkbox Name
+            fbCheckboxChecked: 'checked',   //check 여부
+            fbExpireDay: "7",   //쿠키
+            fbCheckboxMsg: "일주일간 보지 않기",    //쿠키 메세지
+            fbShow: true,    //바로보여주기
+        });
+
+        //esPosition(위치 : 화면 기준)
+        //  1 2 3
+        //  4 5 6
+        //  7 8 9
+        $('.layered').sticker({
+            esPosition: "1",
+            esAnimation: 'esFadeIn',//나타나는 애니메이션 (esBottomUp, esUpBottom, esLeftRight, esRightLeft, esFadeIn)
+            esCallLayered: 'fbBanner01',
+            esImgSrc: '/static/images/_temp/event-sticker02.png', // 이미지 주소
+            esImgAlt: '대체텍스트', //이미지 대체 텍스트
+            esClose: true  //닫기버튼 여부
+        });
+
+        //스티커 클릭하면 나오기
+
+
+        //쿠키로 제어
+        var openLayer = getCookie('promotionBanner');
+        //if(!openLayer) gfn_layered.open('floatingBannerOneFifth');
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

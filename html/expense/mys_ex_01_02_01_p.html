@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_EX_01_02_01] 지출 > 가계부 > 캘린더 상세 보기 (작성자: 누리어 시스템 김삼희)// -->
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "캘린더 보기 상세 | 지출"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header (for MyMoney) //-->
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'캘린더 상세보기',
+            'type':''
+        })
+        <!-- // app-header -->
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+            <!-- app-content // -->
+            <main class="app-content expense-card-management">
+                <!-- 컨텐츠 영역 -->
+                
+                <!-- [D] 21-06-28 수정 : 내역명 변경 및 아이콘 교체 //-->
+                <section class="kb-sec view-calendar-detail calendar-container">
+                    <!-- calendar-header // -->
+                    <div class="calendar-header">
+                        <div class="summary-date">
+                            <p><span class="this-year">2021</span><strong class="this-month"><em class="number">5.5</em></strong></p>
+                        </div>
+                        <div class="summary income">
+                            <span><i class="icon-income_15"></i>수입</span>
+                            <strong><em class="number">12,000,000</em>원</strong>
+                        </div>
+                        <div class="summary expense">
+                            <span><i class="icon-expense_15"></i>지출</span>
+                            <strong><em class="number">12,000,000</em>원</strong>
+                        </div>
+                        <div class="summary transfer">
+                            <span><i class="icon-transfer_15"></i>이체</span>
+                            <strong><em class="number">4</em>건</strong>
+                        </div>
+                    </div>
+                    <!-- calendar-detail //-->
+                    <div class="calendar-detail more-view-box">
+                        <ul class="credit-list_link-type">
+                            <li class="more-view-item" data-view-option="show">
+                                <a href="@@webRoot/html/expense/mys_ex_01_01_01_p.html" role="button" class="link-box_block">
+                                    <dl class="credit-list t01">
+                                        <dt>
+                                            <i class="icon-expense-salary"></i>
+                                            <span class="info"><em class="date">17:45</em></span>
+                                            <strong class="tit">급여</strong>
+                                            <span class="tag">국민은행<em>수입</em></span>
+                                        </dt>
+                                        <dd>
+                                            <strong class="amount">+<span class="num">4,400,000</span>원</strong>
+                                        </dd>
+                                    </dl>
+                                </a>
+                            </li>
+                            <li class="more-view-item" data-view-option="show">
+                                <a href="@@webRoot/html/expense/mys_ex_01_01_01_p.html" role="button" class="link-box_block">
+                                    <dl class="credit-list t01">
+                                        <dt>
+                                            <i class="icon-expense-deposit"></i>
+                                            <span class="info"><em class="date">17:45</em></span>
+                                            <strong class="tit">KB머니 충전</strong>
+                                            <span class="tag">국민은행<em>수입</em></span>
+                                        </dt>
+                                        <dd>
+                                            <strong class="amount">+<span class="num">470,000</span>원</strong>
+                                        </dd>
+                                    </dl>
+                                </a>
+                            </li>
+                            <li class="more-view-item" data-view-option="show">
+                                <a href="@@webRoot/html/expense/mys_ex_01_01_01_p.html" role="button" class="link-box_block">
+                                    <dl class="credit-list t01">
+                                        <dt>
+                                            <i class="icon-expense-culture"></i>
+                                            <span class="info"><em class="date">17:45</em></span>
+                                            <strong class="tit">유튜브 프리미엄</strong>
+                                            <span class="tag">국민은행<em>수입</em></span>
+                                            
+                                        </dt>
+                                        <dd>
+                                            <strong class="amount">-<span class="num">120,000</span>원</strong>
+                                            <span class="info">할부(<em class="num">1/3</em>)</span>
+                                        </dd>
+                                    </dl>
+                                </a>
+                            </li>
+                            <li class="more-view-item" data-view-option="hide">
+                                <a href="@@webRoot/html/expense/mys_ex_01_01_01_p.html" role="button" class="link-box_block">
+                                    <dl class="credit-list t01">
+                                        <dt>
+                                            <i class="icon-expense-etc"></i>
+                                            <span class="info"><em class="date">2021.04.23 17:45</em></span>
+                                            <strong class="tit">내역</strong>
+                                            <span class="tag">국민은행 <em>| 수입</em></span>
+                                        </dt>
+                                        <dd>
+                                            <strong class="amount">+<span class="num">4,400,000</span>원</strong>
+                                        </dd>
+                                    </dl>
+                                </a>
+                            </li>
+                            <li class="more-view-item" data-view-option="hide">
+                                <a href="@@webRoot/html/expense/mys_ex_01_01_01_p.html" role="button" class="link-box_block">
+                                    <dl class="credit-list t01">
+                                        <dt>
+                                            <i class="icon-expense-etc"></i>
+                                            <span class="info"><em class="date">2021.04.23 17:45</em></span>
+                                            <strong class="tit">내역</strong>
+                                            <span class="tag">국민은행 <em>| 수입</em></span>
+                                        </dt>
+                                        <dd>
+                                            <strong class="amount">+<span class="num">470,000</span>원</strong>
+                                        </dd>
+                                    </dl>
+                                </a>
+                            </li>
+                            <li class="more-view-item" data-view-option="hide">
+                                <a href="@@webRoot/html/expense/mys_ex_01_01_01_p.html" role="button" class="link-box_block">
+                                    <dl class="credit-list t01">
+                                        <dt>
+                                            <i class="icon-expense-etc"></i>
+                                            <span class="info"><em class="date">2021.04.23 17:45</em></span>
+                                            <strong class="tit">내역</strong>
+                                            <span class="tag">국민은행 <em>| 수입</em></span>
+                                        </dt>
+                                        <dd>
+                                            <strong class="amount">-<span class="num">120,000</span>원</strong>
+                                            <span class="info">할부(<em class="num">1/3</em>)</span>
+                                        </dd>
+                                    </dl>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="btn-area center mt16">
+                            <button class="btn-more-view"><i class="icon-plus_20"></i><span>더보기</span></button>
+                        </div>
+                    </div>
+                    <!-- // calendar-detail -->
+                    <!-- [D] 예정 지출건이 없는 경우 미노출 //-->
+                    <!-- calendar-detail //-->
+                    <div class="calendar-detail more-view-box">
+                        <h4 class="h4 credit-list-tit">카드결제예정일 및 정기지출예정건</h4>
+                        <ul class="credit-list_link-type">
+                            <li class="more-view-item" data-view-option="show">
+                                <a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" role="button" class="link-box_block">
+                                    <dl class="credit-list t01">
+                                        <dt><i class="icon-expense-donation"></i>
+                                            <strong class="tit">정기지출항목</strong>
+                                            <span class="tag">국민카드</span>
+                                        </dt>
+                                        <dd>
+                                            <strong class="amount">USD<span class="num">320.00</span></strong>
+                                            <span class="info">1개월</span>
+                                        </dd>
+                                    </dl>
+                                </a>
+                            </li>
+                            <li class="more-view-item" data-view-option="show">
+                                <a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" role="button" class="link-box_block">
+                                    <dl class="credit-list t01">
+                                        <dt><i class="icon-expense-delivery"></i>
+                                            <strong class="tit">정기지출항목</strong>
+                                            <span class="tag">국민은행<em>수입</em></span>
+                                        </dt>
+                                        <dd>
+                                            <strong class="amount"><span class="num">12,000</span>원</strong>
+                                            <span class="info">1개월</span>
+                                        </dd>
+                                    </dl>
+                                </a>
+                            </li>
+                            <li class="more-view-item" data-view-option="hide">
+                                <a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" role="button" class="link-box_block">
+                                    <dl class="credit-list t01">
+                                        <dt><i class="icon-expense-etc"></i>
+                                            <strong class="tit">정기지출항목</strong>
+                                            <span class="tag">국민카드</span>
+                                        </dt>
+                                        <dd>
+                                            <strong class="amount">USD<span class="num">320.00</span></strong>
+                                            <span class="info">1개월</span>
+                                        </dd>
+                                    </dl>
+                                </a>
+                            </li>
+                            <li class="more-view-item" data-view-option="hide">
+                                <a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" role="button" class="link-box_block">
+                                    <dl class="credit-list t01">
+                                        <dt><i class="icon-expense-etc"></i>
+                                            <strong class="tit">정기지출항목</strong>
+                                            <span class="tag">국민은행<em>수입</em></span>
+                                        </dt>
+                                        <dd>
+                                            <strong class="amount"><span class="num">12,000</span>원</strong>
+                                            <span class="info">1개월</span>
+                                        </dd>
+                                    </dl>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="btn-area center mt16">
+                            <button class="btn-more-view"><i class="icon-plus_20"></i><span>더보기</span></button>
+                        </div>
+                    </div>
+                    <!-- // calendar-detail -->
+                    <a href="javascript:;" role="button" class="btn-link btn-register" data-call-layered="popupUserRegisterList"><i class="icon-plus_20"><span>직접 등록 버튼</span></i></a>
+                    <!-- // [D] 예정 지출건이 없는 경우 미노출 -->
+                </section>
+                <!--// [D] 21-06-28 수정 : 내역명 변경 및 아이콘 교체 -->
+            </main>
+            <!-- // app-content -->
+        </div>
+        <!-- // app-container -->
+        <div class="layered">
+            <!-- Layer // -->
+            <!-- // Layer -->
+        </div>
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    
+</body>
+</html>
