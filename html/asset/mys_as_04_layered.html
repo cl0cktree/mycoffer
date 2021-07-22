@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [mys_as_04] 작성자: 누리어 시스템 김은경 -->
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "LAYER | 자산"
+    })
+    <style>
+        .layer-call{max-width:300px;margin:0 auto;padding:40px 0;}
+        .layer-call > button{flex-flow:column;margin-top:10px;}
+        .layer-call > button:before{content:attr(data-page-id);}
+        .layer-call > button span{display:block;}
+    </style>
+</head>
+
+<body>    
+    <div class="layer-call">
+        <h1 class="h2">레이어 모음</h1>
+        <button type="button" class="btn-line" data-call-layered="mys_as_04_00_00_p1" data-page-id="MYS_AS_04_00_00_P1"><span>자산등록(직접등록)</span></button>
+        
+        
+        <button type="button" class="btn-line" data-call-layered="assetFinancialInstitution" data-page-id="MYS_AS_04_01_00_P1"><span>금융기관 선택</span></button>
+        <button type="button" class="btn-line" data-call-layered="bsProductType" data-page-id="MYS_AS_04_01_00_P2"><span>상품유형 선택</span></button>
+        <button type="button" class="btn-line" data-call-layered="bsCalendar" data-page-id="MYS_AS_04_01_00_P3"><span>날짜 선택</span></button>
+        
+        <button type="button" class="btn-line" data-call-layered="mys_as_04_02_00_p1" data-page-id="MYS_AS_04_02_00_P1"><span>통화선택</span></button>
+    </div>
+
+    <div class="layered">
+        @@include('@@webRoot/html/asset/layered/mys_as_04_00_00_p1.html')
+        @@include('@@webRoot/html/asset/layered/mys_as_04_01_00_p1.html')
+        @@include('@@webRoot/html/asset/layered/mys_as_04_02_00_p1.html')
+        @@include('@@webRoot/html/asset/layered/mys_as_04_01_00_p2.html')
+        @@include('@@webRoot/html/_layered/bs-calendar.html')
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+
+    <script>
+        //레이어 확인용 스크립트 (개발시 삭제) [s]
+        var url = window.location.href;
+        var urlArr = url.split('#');
+        var pageID = urlArr[urlArr.length - 1].toUpperCase();
+
+        $('.layer-call').on('click','button',function(){
+            var newUrl = url.replace(pageID, '');
+            window.location.href = urlArr[0] + '#' + $(this).data('page-id');
+        });
+        
+        if(pageID.indexOf('/HTML/') < 0) $('button[data-page-id=' + pageID + ']').click();
+        //레이어 확인용 스크립트 (개발시 삭제) [e]
+
+        
+        
+
+        //자산항목선택
+        var $assetWrap = $('.asset-type');
+        if($assetWrap){            
+            $assetWrap.find('.pay').not( '.radio-asset' ).show(); //2021-06-02 수정
+            $('.bottom-sheet[data-layered-name=bsProductType]').on('click','[data-action=select]',function(){
+                var txt =  $('#assetType').find('option:selected').val();
+                switch(txt){
+                case 'produtType01': 
+                    $assetWrap.find('.kb-form').hide();
+                    $assetWrap.find('.pay').show();
+                break
+                case 'productType02':
+                    $assetWrap.find('.kb-form').hide();
+                    $assetWrap.find('.deposit').show();
+                break
+                case 'productType03':
+                    $assetWrap.find('.kb-form').hide();
+                    $assetWrap.find('.trust').show();
+                break
+                case 'productType04':
+                    $assetWrap.find('.kb-form').hide();
+                    $assetWrap.find('.fund').show();
+                break
+                case 'productType05':
+                    $assetWrap.find('.kb-form').hide();
+                    $assetWrap.find('.stock').show();
+                break
+                case 'productType06':
+                    $assetWrap.find('.kb-form').hide();
+                    $assetWrap.find('.loan').show();
+                break
+                case 'productType07':
+                    $assetWrap.find('.kb-form').hide();
+                    $assetWrap.find('.annuity').show();
+                break 
+                case 'productType08':
+                    $assetWrap.find('.kb-form').hide();
+                    $assetWrap.find('.insurance').show();
+                break            
+                default:
+                    $assetWrap.find('.kb-form').hide();
+                    $assetWrap.find('.pay').show();
+                break
+            }
+            });                           
+        
+    }    
+    
+        
+
+
+    </script>
+    
+
+</body>
+
+</html>
