@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "입출금&middot;Pay | 자산"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app" data-page="submain">
+        <!-- app-header (for MyMoney) //-->
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'입출금&middot;Pay',
+            'type':''
+            
+        })
+        <!-- // app-header -->
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+
+            <!-- app-lnb //-->
+            <div class="app-lnb">
+                <!-- 상단 GNB 공통 (메뉴 구성 전 )-->
+                @@include('@@webRoot/html/_include/app-gnb.html')                             
+            </div>
+            <!-- //app-lnb -->
+
+            <!-- app-content // -->
+            <main class="app-content my-asset pay">
+                <!-- 컨텐츠 영역 -->
+                <!-- SECTION //-->
+                <section class="kb-sec full bg-gray asset-summary">
+                    <div class="highcharts-box charts-type_square no-space">
+                        <div class="swiper-container t01 js-swiper" data-swiper-options="paySummarySwiperOptions">
+                            <script>
+                                var paySummarySwiperOptions = {
+                                    "pagination": {
+                                        "el": ".swiper-pagination"
+                                    },
+                                    "autoHeight" : true
+                                };
+                            </script>
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure content-box">
+                                            <div class="graph-info">
+                                                <h4 class="h4">입출금 <button class="btn-more"><i class="icon-setting_menu_24"></i></button></h4>			
+                                                <div class="graph-msg">
+													<p class="txt">
+                                                        김국민님의
+                                                        현재 입출금 계좌잔액은 <b><span class="num">300,000</span>원</b> 입니다.
+                                                        여유자금을 저축해보는 여유는 어떠세요?
+													</p>
+                                                </div>
+                                            </div>
+                                            <!-- [chart area] //-->
+                                            <!--
+                                                [차트 디자인 정보]
+                                                * 그래프(막대) 색상(컬러별)
+                                                - 노란색 :  #ffd338;
+                                                - 회색 :  #c6cbd0;
+
+                                                - 차트 텍스트 컬러/크기 : #26282c/14px
+                                                - X축 텍스트 컬러/크기 : #8c949e/14px
+												- data labels 텍스트 컬러/크기 : #26282c/14px
+                                            -->
+                                            <div class="highcharts_column" id="">
+                                                <img class="temp" src="@@webRoot/static/images/_temp/chart_as0500_1.png" alt="차트 예시 이미지">
+                                            </div>
+                                            <!--// [chart area] -->
+                                            <!--
+											<div class="my-average">
+												<em>내 평균 <span class="num">4,665,210</span>원</em> 
+											</div>
+                                            -->
+                                        </figure>
+										
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure content-box">
+                                            <div class="graph-info">
+                                                <h4 class="h4">페이 <button class="btn-more"><i class="icon-setting_menu_24"></i></button></h4>			
+                                                <div class="graph-msg">
+													<p class="txt">
+                                                        김국민님의 현재 페이 계좌잔액은 <b><span class="num">300,000</span>원</b> 입니다.페이를 다양하게 활용하시는군요.
+													</p>
+                                                </div>
+                                            </div>
+                                            <!-- [chart area] //-->
+                                            <!--
+                                                [차트 디자인 정보]
+                                                * 그래프(막대) 색상(컬러별)
+                                                - 주황색 :  #f7956c;
+                                                - 회색 :  #c6cbd0;
+
+                                                - 차트 텍스트 컬러/크기 : #26282c/14px
+                                                - X축 텍스트 컬러/크기 : #8c949e/14px
+												- data labels 텍스트 컬러/크기 : #26282c/14px
+                                            -->
+                                            <div class="highcharts_column" id="">
+                                                <img class="temp" src="@@webRoot/static/images/_temp/chart_as0500_2.png" alt="차트 예시 이미지">
+                                            </div>
+                                            <!--// [chart area] -->
+                                            <!--
+											<div class="my-average">
+												<em>내 평균 <span class="num">4,665,210</span>원</em> 
+											</div>
+                                            -->
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure content-box">
+                                            <div class="graph-info">
+                                                <h4 class="h4">입출금&middot;페이 잔액 <button class="btn-more"><i class="icon-setting_menu_24"></i></button></h4>	
+                                                <div class="graph-msg">
+													<p class="txt">김국민님의 최근 <b><span class="num">3</span></b>개월간 대비
+                                                        잔액변동금액은 <b><span class="num">300,000</span>원</b>입니다.
+                                                        내 입출금·페이 통장의 변화를 
+                                                        눈으로 확인해보세요
+													</p>
+                                                    
+                                                </div>
+                                            </div>
+                                            <!-- [chart area] //-->
+                                            <!--
+                                                
+                                                 [차트 디자인 정보]
+                                                * 그래프(라인) 색상(컬러별)
+                                                Grid 라인 색상 : #ebeef0
+                                                곡선 색상 : #d575c9
+                                                Tooltip 텍스트 사이즈/색상 : 14px/#26282c
+                                                X축 레이블 텍스트 사이즈/색상 : 14px/#8c949e
+                                                평균 라인 색상 : #c6cbd0
+                                                평균 텍스트 색상 : 14px/#26282c
+
+                                            -->
+                                            <div class="highcharts_column" id="">
+                                                <img class="temp" src="@@webRoot/static/images/_temp/chart_as0500_3.png" alt="차트 예시 이미지">
+                                            </div>
+                                            <!--// [chart area] -->
+                                            <!--
+											<div class="my-average">
+												<em>내 평균 <span class="num">4,665,210</span>원</em> 
+											</div>
+                                            -->
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="kb-sec sort-area">
+                    <button class="btn-line_form type-product is-active"><i class="icon-type_product_20"></i><span>상품별</span></button><!-- 2021-06-25 수정 -->
+                    <button class="btn-line_form type-agency"><i class="icon-type_agency_20"></i><span>금융사별</span></button><!-- 2021-06-25 수정 -->
+                </section>
+                <section class="kb-sec list-area">
+                    <div class="no-data">
+                        <i class="icon-info_24"></i>
+                        <p>조회내역이 없습니다.</p>
+                    </div>
+                    <div class="p-list product"><!--D:금융사별 agency , 상품별 product //-->
+                        <dl class="more-view-box is-show">
+                            <dt>    
+                                <a href="javascript:;" class="btn-more-view" role="button">  
+                                    <em class="type">입출금</em>
+                                    <span class="total">총잔액 : <em class="amount"><b class="num">400,000</b>원</em></span>  
+                                    <em class="arrow"><i class="icon-arrow-down"></i><span>목록열기</span></em>  
+                                </a>                      
+                            </dt>
+                            <dd>
+                                <a href="@@webRoot/html/asset/mys_as_05_02_00_p1.html" class="btn-account-detail"><!-- 2021-06-11 a태그 수정 -->
+                                    <div class="account-wrap">
+                                        <div class="icon-con">
+                                            <span><img src="@@webRoot/static/images/ci/a1aae0000.png" alt="은행별 아이콘"></span><!-- 2021-06-25 공통 수정 -->
+                                        </div>
+                                        <div class="txt-con">
+                                            <span class="agency">국민은행</span>
+                                            <span class="p-name">상품명 <span class="tag-label t02" data-state="inprogress"><!-- 2021-06-11 t02추가 -->직접등록</span></span>
+                                            <span class="account num">1234-5678-1234</span>
+                                        </div>
+                                    </div>
+                                    <span class="balance amount">잔액 <b class="num">3,000,000</b>원</span>  
+                                </a>
+                                <button type="button" class="btn-hide-account" data-call-layered="mys_as_05_00_01_p1"><i class="icon-more_24"></i><span>계좌숨기기</span></button>
+                            </dd>
+                            <dd>
+                                <a href="@@webRoot/html/asset/mys_as_05_01_00_p1.html" class="btn-account-detail"><!-- 2021-06-11 a태그 수정 -->
+                                    <div class="account-wrap">
+                                        <div class="icon-con">
+                                            <span><img src="@@webRoot/static/images/ci/a1aae0000.png" alt="은행별 아이콘"></span>
+                                        </div>
+                                        <div class="txt-con">
+                                            <span class="agency">국민은행</span>
+                                            <span class="p-name">상품명 <span class="tag-label t02" data-state="inprogress"><!-- 2021-06-11 t02추가 -->오픈뱅킹</span></span></span>
+                                            <span class="account num">1234-5678-1234</span>
+                                        </div>
+                                    </div>
+                                    <span class="balance amount">잔액 <b class="num">3,000,000</b>원</span>  
+                                </a>
+                                <button type="button" class="btn-hide-account"><i class="icon-more_24"></i><span>계좌숨기기</span></button>
+                            </dd>
+                            <dd>
+                                <a href="@@webRoot/html/asset/mys_as_05_01_00_p1.html" class="btn-account-detail"><!-- 2021-06-11 a태그 수정 -->
+                                    <div class="account-wrap">
+                                        <div class="icon-con">
+                                            <span><img src="@@webRoot/static/images/ci/a1aae0000.png" alt="은행별 아이콘"></span><!-- 2021-06-25 공통 수정 -->
+                                        </div>
+                                        <div class="txt-con">
+                                            <span class="agency">국민은행</span>
+                                            <span class="p-name">상품명</span>
+                                            <span class="account num">1234-5678-1234</span>
+                                        </div>
+                                    </div>
+                                    <span class="balance amount">USD <b class="num">1,800.00</b></span>
+                                </a>
+                                <button type="button" class="btn-hide-account"><i class="icon-more_24"></i><span>계좌숨기기</span></button>
+                            </dd>
+                        </dl>
+                        <dl class="more-view-box">
+                            <dt> 
+                                <a href="javascript:;" class="btn-more-view" role="button">  
+                                    <em class="type">Pay</em>
+                                    <span class="total">총잔액 : <em class="amount"><b class="num">400,000</b>원</em></span>  
+                                    <em class="arrow"><i class="icon-arrow-down"></i><span>목록열기</span></em>  
+                                </a>                       
+                            </dt>
+                            <dd>
+                                <a href="@@webRoot/html/asset/mys_as_05_01_00_p1.html" class="btn-account-detail"><!-- 2021-06-11 a태그 수정 -->
+                                    <div class="account-wrap">
+                                        <div class="icon-con">
+                                            <span><img src="@@webRoot/static/images/ci/a1aae0000.png" alt="은행별 아이콘"></span>
+                                        </div>
+                                        <div class="txt-con">
+                                            <span class="agency">기관명</span>
+                                            <span class="p-name">네이버페이</span>
+                                            <span class="pay-txt">asmikky@</span>
+                                        </div>
+                                    </div>
+                                    <span class="balance amount">잔액 <b class="num">3,000,000</b>원</span>  
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="@@webRoot/html/asset/mys_as_05_01_00_p1.html" class="btn-account-detail"><!-- 2021-06-11 a태그 수정 -->
+                                    <div class="account-wrap">
+                                        <div class="icon-con">
+                                            <span><img src="@@webRoot/static/images/ci/a1aae0000.png" alt="은행별 아이콘"></span>
+                                        </div>
+                                        <div class="txt-con">
+                                            <span class="agency">기관명</span>
+                                            <span class="p-name">카카오</span>
+                                            <span class="pay-txt">asmikky@</span>
+                                        </div>
+                                    </div>
+                                    <span class="balance amount">잔액 <b class="num">3,000,000</b>원</span>  
+                                </a>
+                            </dd>
+                        </dl>
+                    </div>
+                </section>
+                <section class="kb-sec list-area tab_contents">
+                    <!--금융사별 보기//-->
+                    <div class="p-list agency"><!--D:기관별 agency , 상품별 product //-->
+                        <dl class="more-view-box is-show">
+                            <dt>
+                                <a href="javascript:;" class="btn-more-view" role="button">  
+                                    <em class="type">국민은행</em>
+                                    <span class="total">총잔액 : <em class="amount"><b class="num">400,000</b>원</em></span> 
+                                    <em class="arrow"><i class="icon-arrow-down"></i><span>목록열기</span></em>  
+                                </a>                             
+                            </dt>
+                            <dd>
+                                <a href="@@webRoot/html/asset/mys_as_05_01_00_p1.html" class="btn-account-detail"><!-- 2021-06-11 a태그 수정 -->
+                                    <div class="account-wrap">
+                                        <div class="txt-con">
+            <!-- 2021-07-02 수정
+                - 중첩클래스 
+                    입출금, 페이 :deposit-withdrawal
+                    펀드 : fund
+                    예적금,예금,적금,청약 : deposit-savings
+                    채권, 대출(신용대출,담보대출,전세대출,기타대출) : loan                
+                    보험(보장성,저축성,자동차) : insurance
+                    외화 : foreign-currency
+                    주식 : stock
+                    신탁,ISA : trust
+                    퇴직연금(연금,IRP) : retirement-pension
+                    파생상품 : derivatives
+                    기타 : etc
+                
+             -->
+                                            <span class="prod-kind deposit-withdrawal">입출금</span><!-- 2021-06-28 -->
+                                            <span class="p-name">상품명</span>
+                                            <span class="account num">1234-5678-1234</span>
+                                        </div>
+                                    </div>
+                                    <span class="balance amount">잔액 <b class="num">3,000,000</b>원</span>  
+                                </a>
+                                <button type="button" class="btn-hide-account"><i class="icon-more_24"></i><span>계좌숨기기</span></button>
+                            </dd>
+                            <dd>
+                                <a href="@@webRoot/html/asset/mys_as_05_01_00_p1.html" class="btn-account-detail"><!-- 2021-06-11 a태그 수정 -->
+                                    <div class="account-wrap">
+                                        <div class="txt-con">
+                                            <span class="prod-kind deposit-withdrawal">입출금</span><!-- 2021-06-28 -->
+                                            <span class="p-name">상품명</span>
+                                            <span class="account num">1234-5678-1234</span>
+                                        </div>
+                                    </div>
+                                    <span class="balance amount">잔액 <b class="num">3,000,000</b>원</span>  
+                                </a>                            
+                                <button type="button" class="btn-hide-account"><i class="icon-more_24"></i><span>계좌숨기기</span></button>
+                            </dd>
+                        </dl>
+                        <dl class="more-view-box">
+                            <dt>
+                                <a href="javascript:;" class="btn-more-view" role="button">  
+                                    <em class="type">네이버</em>
+                                    <span class="total">총잔액 : <em class="amount"><b class="num">400,000</b>원</em></span> 
+                                    <em class="arrow"><i class="icon-arrow-down"></i><span>목록열기</span></em>  
+                                </a>                               
+                            </dt>
+                            <dd>
+                                <a href="@@webRoot/html/asset/mys_as_05_01_00_p1.html" class="btn-account-detail"><!-- 2021-06-11 a태그 수정 -->
+                                    <div class="account-wrap">
+                                        <div class="txt-con">
+                                            <span class="prod-kind deposit-withdrawal">페이</span><!-- 2021-07-02 -->
+                                            <span class="p-name">네이버</span>
+                                            <span class="pay-txt">asmikky@</span>
+                                        </div>
+                                    </div>
+                                    <span class="balance amount">잔액 <b class="num">3,000,000</b>원</span>  
+                                </a>
+                            </dd>
+                        </dl>
+                    </div>
+                    <!--//금융사별 보기-->
+                </section>
+                <section class="kb-sec bg-gray compare-con">
+                    <h4 class="h4">내 입출금 통장 잔액 진단 <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                        <div class="tooltip">
+                            <strong class="tit">내 입출금 통장 잔액 진단</strong>
+                            <div class="cont">
+                                <p class="tit">비교그룹과 나의 자산항목별 비중(%) 비교 안내</p>
+                                <ul data-style="list">
+                                    <li>- 기준일 : 오늘 기준</li>
+                                    <li>- 평균잔액 비교 : 1개월 평균잔액 &amp; 3개월 평균잔액</li>
+                                </ul>
+                            </div>
+                            <button class="btn-close"><span>닫기</span></button>
+                        </div>
+                    </h4>
+                    <div class="content-box shadow">
+                        <p class="msg">입출금 통장 잔액이 평소보다 늘었어요.<br><!-- 2021-06-22 수정 -->
+                            돈이 놀지않게 관리해보세요.</p>
+                        <div class="compare-box">
+                            <div class="tit">평균잔액 비교</div>
+                            <ul>
+                                <li class="mine">
+                                    <p class="type">1개월</p>
+                                    <p class="amount"><span class="num">19,000,000</span>원</p>
+                                    
+                                </li><li class="other">
+                                    <p class="type">3개월</p>
+                                    <p class="amount"><span class="num">15,000,000</span>원</p>
+                                </li>
+                            </ul>
+                            <div class="compare gt">
+                                <!-- 내 수령액이 평균보다 클때 gt, 작을때 lt 추가 -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-box shadow">
+                            <div class="tit">비교그룹 보다 <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                <div class="tooltip">
+                                    <strong class="tit">비교그룹?</strong>
+                                    <div class="cont">
+                                        나와 금융자산 규모가 비슷한 고객
+                                    </div>
+                                    <button class="btn-close"><span>닫기</span></button>
+                                </div>
+                            </div>
+                            <div class="msg">
+                                <b>최근 3개월 평균보다</b><!-- 2021-06-22 수정 -->
+                                입출금통장에 <b class="plus"><span class="num">100,000</span>원</b> 더 있어요.<!-- 2021-06-22 수정 -->
+                            </div>
+                            <!-- [chart area] //-->
+                            <!--
+                                [차트 디자인 정보]
+                                * 그래프(막대) 색상(컬러별)
+                                - 나 : #ffd338 ;
+                                - 비교그룹 : #c6cbd0 ;
+                                - 차이 : #f7f7f8 ; 
+
+                                x축 텍스트 : 14px / #26282c
+                            -->
+                            <div class="highcharts_column" id="">
+                                <img class="temp" src="@@webRoot/static/images/_temp/chart_as0500_4.png" alt="차트 예시 이미지">
+                            </div>
+                            <!--// [chart area] -->
+                    </div>                    
+                </section>
+                <section class="kb-sec recommend-prod">
+                    <h4 class="h4">추천상품</h4>
+                    <!-- 2021-06-22 수정 // -->
+                    <div class="tit">
+                        매달 남는 여유 자금으로<br>
+                        조금 더 목돈을 마련해 보세요.
+                    </div>
+                    <!-- // 2021-06-22 수정 -->
+                    <ul class="list">
+                        <li>
+                            <button type="button" data-call-layered="mys_as_05_00_01_p2" >
+                                <span class="info">맑은하늘을 만들고 금리고 UP</span>
+                                <em class="tit">KB내맘대로 적금</em>
+                                <p class="rate">                                        
+                                    <span>최고 연3.1%</span>
+                                    <span>최대 3.6%</span>
+                                </p>
+                                <div class="hash-tag">
+                                    <span>#내맘대로</span>
+                                    <span>#금리</span>
+                                    <span>#사회초년생</span>
+                                </div>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" data-call-layered="mys_as_05_00_01_p2" >
+                                <span class="info">맑은하늘을 만들고 금리고 UP</span>
+                                <em class="tit">KB내맘대로 적금</em>
+                                <p class="rate">                                        
+                                    <span>최고 연3.1%</span>
+                                    <span>최대 3.6%</span>
+                                </p>
+                                <div class="hash-tag">
+                                    <span>#내맘대로</span>
+                                    <span>#금리</span>
+                                    <span>#사회초년생</span>
+                                </div>
+                            </button>
+                        </li>
+                        <!-- 2021-06-25 수정 // -->
+                        <li>
+                            <div class="smart-loan-banner">
+                                <button type="button">
+                                    <span class="tit">신용대출</span>
+                                    <span class="s-txt">
+                                        내 신용만으로 쉽고 빠르게 <br>
+                                        꼭! 맞는 대출을 찾아보세요.
+                                    </span>
+                                </button>
+                            </div>
+                        </li>
+                        <!-- // 2021-06-25 수정  -->
+                    </ul>
+                </section>
+                <section class="kb-sec best-list-con">
+                    <div class="top-area">
+                        <button type="button" class="btn-similar" data-call-layered="mys_as_07_00_00_p1"><b>40세~44세<i class="arrow"></i></b></button><br>사람들의 <b>입출금 상품</b>을 확인하세요.<!-- 2021-07-22 수정 -->
+                    </div>
+                    <div class="best-tit-con">
+                        <div class="tit">
+                            <h4 class="h4">인기상품 Best5</h4>
+                            <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i><span>인기상품이란?</span></button>
+                            <!-- Tooltip (With title)-->
+							<div class="tooltip">
+								<strong class="tit">인기상품이란?</strong>
+								<div class="cont">
+                                    최근 6개월 이내 마이데이터에 가입한 고객님이 가장 많이 선택한 상품입니다.
+								</div>
+								<button class="btn-close"><span>닫기</span></button>
+							</div>
+                        </div>
+                        <div class="except_kb">
+                            <span class="form-checkbox_24"><input type="checkbox" id="checkboxSample01"><label for="checkboxSample01">KB국민은행 제외</label></span>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <li>
+                                <div class="flag"><span class="num">1</span></div>
+                                <button type="button" data-call-layered="mys_as_05_00_01_p2">  
+                                    <div class="account-wrap">
+                                        <div class="icon-con">
+                                            <span><img src="@@webRoot/static/images/ci/a1aae0000.png" alt="은행별 아이콘"></span><!-- 2021-06-25 공통 수정 -->
+                                        </div>
+                                        <div class="txt-con">
+                                            <span class="agency">국민은행</span>
+                                            <span class="p-name">상품명</span>
+                                            <div class="user-info">
+                                                <span class="num">52,111,456</span>명 중 <br><em><span class="num">1234,567</span>명이 이용 중</span></em><!-- 2021-06-22 수정 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                            </li>
+                            <li>
+                                <div class="flag"><span class="num">2</span></div>
+                                <button type="button" data-call-layered="mys_as_05_00_01_p2">  
+                                    <div class="account-wrap">
+                                        <div class="icon-con">
+                                            <span><img src="@@webRoot/static/images/ci/a1aae0000.png" alt="은행별 아이콘"></span>
+                                        </div>
+                                        <div class="txt-con">
+                                            <span class="agency">국민은행</span>
+                                            <span class="p-name">상품명</span>
+                                            <div class="user-info">
+                                                <span class="num">52,111,456</span>명 중 <br><em><span class="num">1234,567</span>명이 이용 중</span></em><!-- 2021-06-22 수정 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                            </li>
+                            <li>
+                                <div class="flag"><span class="num">3</span></div>
+                                <button type="button" data-call-layered="mys_as_05_00_01_p2">  
+                                    <div class="account-wrap">
+                                        <div class="icon-con">
+                                            <span><img src="@@webRoot/static/images/ci/a1aae0000.png" alt="은행별 아이콘"></span>
+                                        </div>
+                                        <div class="txt-con">
+                                            <span class="agency">국민은행</span>
+                                            <span class="p-name">상품명</span>
+                                            <div class="user-info">
+                                                <span class="num">52,111,456</span>명 중 <br><em><span class="num">1234,567</span>명이 이용 중</span></em><!-- 2021-06-22 수정 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                            </li>
+                            <li>
+                                <div class="flag"><span class="num">4</span></div>
+                                <button type="button" data-call-layered="mys_as_05_00_01_p2">  
+                                    <div class="account-wrap">
+                                        <div class="icon-con">
+                                            <span><img src="@@webRoot/static/images/ci/a1aae0000.png" alt="은행별 아이콘"></span>
+                                        </div>
+                                        <div class="txt-con">
+                                            <span class="agency">국민은행</span>
+                                            <span class="p-name">상품명</span>
+                                            <div class="user-info">
+                                                <span class="num">52,111,456</span>명 중 <br><em><span class="num">1234,567</span>명이 이용 중</span></em><!-- 2021-06-22 수정 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                            </li>
+                            <li>
+                                <div class="flag"><span class="num">5</span></div>
+                                <button type="button" data-call-layered="mys_as_05_00_01_p2">  
+                                    <div class="account-wrap">
+                                        <div class="icon-con">
+                                            <span><img src="@@webRoot/static/images/ci/a1aae0000.png" alt="은행별 아이콘"></span>
+                                        </div>
+                                        <div class="txt-con">
+                                            <span class="agency">국민은행</span>
+                                            <span class="p-name">상품명</span>
+                                            <div class="user-info">
+                                                <span class="num">52,111,456</span>명 중 <br><em><span class="num">1234,567</span>명이 이용 중</span></em><!-- 2021-06-22 수정 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <!--  // SECTION -->
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+    </div>
+
+    <div class="layered">
+        @@include('@@webRoot/html/asset/layered/mys_as_05_00_01_p2.html')
+        @@include('@@webRoot/html/asset/layered/mys_as_05_00_01_p1.html')
+        @@include('@@webRoot/html/asset/layered/mys_as_05_01_02_p1.html')
+        @@include('@@webRoot/html/asset/layered/mys_as_07_00_00_p1.html')
+        @@include('@@webRoot/html/_layered/bs-calendar.html')
+        @@include('@@webRoot/html/_layered/bs-age-asset.html')
+        
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    <script>
+        $(document).ready(function(){
+            let $wrap = $('.my-asset');
+            $wrap.find('.sort-area .type-product').on('click',function(){
+                $(this).addClass('is-active');
+                $('.sort-area .type-agency').removeClass('is-active');
+                if($('.my-asset .p-list')){                
+                    $('.p-list.product').show();
+                    $('.p-list.agency').hide();
+                }
+            })
+            $wrap.find('.sort-area .type-agency').on('click',function(){
+                $(this).addClass('is-active');
+                $('.sort-area .type-product').removeClass('is-active');
+                if($('.my-asset .p-list')){
+                    $('.p-list.product').hide();
+                    $('.p-list.agency').show();
+                }
+            })
+            $wrap.find('.p-list dl').each(function(){
+                let chk = $(this).hasClass('is-show');
+                if(chk){
+                    $(this).find('dd').show();
+                    $(this).find('.btn-more-view>em>span').text('목록닫기');
+                }
+            })
+            $wrap.find('.btn-more-view').on('click',function(){
+                let $parent = $(this).closest('.more-view-box');
+                let chk = $parent.hasClass('is-show');
+                if(chk){
+                    $parent.find('dd').hide();
+                    $(this).find('em>span').text('목록열기');
+                }else{
+                    $parent.find('dd').show();
+                    $(this).find('em>span').text('목록닫기');
+                }
+            })
+            
+        })
+        
+        //최초 선택되는 내용을 바꾸고 싶으면... (ui.js)
+        gfn_gnb.select(1,1);
+    </script>
+</body>
+
+</html>
