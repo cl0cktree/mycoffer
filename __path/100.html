@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<title>전체보기 | Path | KB국민은행 MYDATA</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/jquery-ui.min.css">
+	<link rel="stylesheet" href="./css/path.css">
+    <style>
+        .effection{position:fixed;bottom:0;right:0;background-color:#fff;font-size:22px;}
+    </style>
+</head>
+
+<body>
+	<div id="wrap">
+		<div class="header">
+			<p class="filter-input"><input id="filter" placeholder="Search" /></p>
+			<p class="url-input"><input id="url" type="text" placeholder="URL : ex) /admin/...." /></p>
+		</div>
+		<div id="container">
+			<div id="treeArea">
+				<ul id="root_tree"></ul>
+			</div>
+            <!-- Mobie View Area[s] -->
+			<div id="viewArea">                
+                <div class="device-group">
+                    <select name="" id=""></select>
+				</div>
+				<div class="view-area">
+					<iframe src="javascript:;" frameborder="0" tabindex="0"></iframe>
+					<span class="x">360</span>
+					<span class="y">640</span>
+				</div>								
+			</div>
+            <!-- Mobie View Area[e] -->
+		</div>        
+	</div>
+    <!--임시-->
+    <!-- <div id="temp" style="display:none;"></div>
+    <div id="temp02" style="display:none;"></div>
+    <div id="temp03" style="display:none;"></div>
+    <div id="temp04" style="display:none;"></div>
+    <div id="temp05" style="display:none;"></div> -->
+    <!--임시-->
+	<script type="text/javascript" src="./js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="./js/current-device.min.js"></script>
+	<script type="text/javascript" src="./js/TreeListFilter.js"></script>
+	<script type="text/javascript" src="./js/path.js"></script>
+    <script>
+
+        var loadPath = function(id, target){
+            $('<div id="' + id + '" style="display:none;"></div>').appendTo('body').load(target,function(){
+                $('#root_tree').append($('#'+id).html());
+                //$('#'+id).remove();
+            });
+        };
+        loadPath('temp','./101.html #root_tree > li');
+        loadPath('temp02','./102.html #root_tree > li');
+        loadPath('temp03','./103.html #root_tree > li');
+        loadPath('temp04','./104.html #root_tree > li');
+        loadPath('temp05','./105.html #root_tree > li');
+        //loadPath('temp06','./106.html #root_tree > li');
+
+        setTimeout(function(){            
+            $('#root_tree a').each(function () {
+                var $this = $(this);
+                var url = $this.attr('href');
+                var date = $(this).parent('li').data('date');
+                var status = $(this).parent('li').attr('class');
+
+                if(url != '' && url.indexOf('javascript') < 0 && url != '#'){
+                    if(url.indexOf('_layered.html#') >= 0){
+                        var address = url.split('#');			
+                        var pageID = address[address.length - 1];
+                    }else{
+                        var address = url.split('/');			
+                        var pageID = address[address.length - 1].replace('.html','');				
+                    }
+                    $(this).append(' [' + pageID.toUpperCase() + ']');
+                    if(date != undefined && date != '' && (status == 'dev' || status == 'modified')) $(this).prepend('(' + date + ') ');			
+                    $(this).attr('target','_blank');
+                }	
+                
+                if ($this.next('ul').length) {		
+                    if (url == 'javascript:;' || url == '') {
+                        $this.addClass('close');
+                        $this.on('click', function () {
+                            var $list = $this.next('ul');
+                            if (!$list.is(':visible')) {
+                                $list.slideDown();
+                                $this.removeClass('open').addClass('close');
+                            } else {
+                                $list.slideUp();
+                                $this.removeClass('close').addClass('open');
+                            }
+                        });
+                    } else {
+                        $this.attr('title', 'Ctrl + Click : New Window');
+                    }
+                }
+
+
+            });
+
+            var lv0 = 0;
+            var lv1 = 0;
+            var lv2 = 0;
+            var lv3 = 0;
+            $('#root_tree li').each(function(){
+                var level = String($(this).data('level'));
+                if(level == undefined) return;
+                switch (level){
+                    case '0':
+                        lv0 ++;
+                        break;
+                    case '1':
+                        lv1 ++;
+                        break;
+                    case '2':
+                        lv2 ++;
+                        break;
+                    case '3':
+                        lv3 ++;
+                        break;
+                    default:
+                        break;
+                }
+                
+
+            });
+            $('#wrap').append('<div class="effection"><span>lv0:'+ lv0 +'</span> / <span>lv1:'+ lv1 +'</span> / <span>lv2:'+ lv2 +'</span> / <span>lv3:'+ lv3 +'</span></div>')
+
+        },200);
+    </script>
+	
+</body>
+
+</html>

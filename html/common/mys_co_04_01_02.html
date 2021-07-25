@@ -1,0 +1,67 @@
+<!-- [MYS_CO_04_01_02] 로그인 > 공동인증서 > 공동인증서 비밀번호 (작성자: 누리어 시스템 이진우)// -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Last Depth | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- 수정 : app-header (Type 구분) //-->
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'공동인증서 비밀번호',
+            'type':'title'
+        })
+        <!-- // 수정 : app-header (Type 구분)-->
+        
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content">
+                <!-- 수정 : page-header 제거 -->
+                <!-- <div class="page-header">
+                    <strong class="tit">공동인증서 비밀번호</strong>
+                </div> -->
+
+                <section class="kb-sec joint-certificate-password">
+                    <div class="kb-form" data-status="error">
+                        <!-- <label for="jointCertificatePassword"></label> -->
+                        <div class="kb-form_inner form-text">
+                            <input type="text" id="jointCertificatePassword" value="" placeholder="인증서 비밀번호" inputmode="numeric">
+                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                        </div>
+                        <em class="validation">인증서 비밀번호를 입력해주세요.</em>
+                    </div>
+                </section>
+
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid_sticky lv2"><span>취소</span></button>
+                        <button type="button" class="btn-solid_sticky"><span>확인</span></button>
+                    </div>
+                </div>
+            </main>
+            <!-- // app-content -->
+
+        <!-- // app-container -->
+    </div>
+
+    <div class="layered">
+
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+
+</body>
+
+</html>

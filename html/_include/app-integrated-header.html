@@ -1,0 +1,18 @@
+<!-- app-header [s] -->
+<!-- data-type 
+    타이틀이 없을 경우 빈값(<strong class="page-tit"></strong>) - 마크업은 반드시 존재해야함
+    '' : 뒤로가기 + 타이틀 + 전체메뉴
+    'close': 타이틀 + 닫기버튼만
+    'title' : 타이틀만
+    'back' : 타이틀 + back버튼만
+    'notice' : 알림 + 타이틀 + 전체메뉴    
+-->
+<header class="app-header" data-type="@@type">
+    <a href="javascript:;" class="btn-notice-box" role="button"><i class="icon-bell2_24">알림함으로 이동</i></a>    
+    <a href="javascript:history.back();" class="btn-history-back" role="button"><i class="icon-back">뒤로가기</i></a>
+    <strong class="page-tit">@@pageTit</strong>
+    <button type="button" class="btn-allmenu"><i class="icon-menu">전체메뉴</i></button>
+    <a href="javascript:history.back();" class="btn-close" role="button"><span>뒤로가기</span></a>
+</header>
+<!-- app-header [e] -->
+@@include('./app-menu.html')
