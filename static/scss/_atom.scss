@@ -1,5 +1,5 @@
 
-/* HEADING */
+//HEADING
 .h1{@include heading($size: $heading01)}
 .h2{@include heading($size: $heading02)}
 .h3{@include heading($size: $heading03)}
@@ -8,7 +8,6 @@
 .h2 .num{@include heading($size: $heading02 + 0.1rem)}
 .h3 .num{@include heading($size: $heading03 + 0.1rem)}
 .h4 .num{@include heading($size: $heading04 + 0.1rem)}
-
 
 .num{font-family:'Roboto';font-size:1.7rem;}
 .num[data-unit-after]:after{content:attr(data-unit-after);@include text($size: 15px);}
@@ -36,6 +35,7 @@ button[class*=btn-solid].lv2{background-color:$kb-ui09;}
 .btn-line_icon{@include btnLine($width: auto, $st: icon);}
 
 //버튼 텍스트
+.btn-text{display:inline-flex;align-items:center;}
 .btn-text span,
 .btn-text u{display:inline-block;@include text($size: $text02);line-height:2rem;}
 .btn-text i[class*=icon-]{max-width:2rem;max-height:2rem;vertical-align:middle;}

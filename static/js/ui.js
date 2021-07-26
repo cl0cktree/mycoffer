@@ -176,8 +176,10 @@ $('body').on('click','[data-action=close]',function(){
     var duration = $(this).data('call-layered') != undefined ? 0 : undefined;
     gfn_layered.close(name, duration);
 
-    var cookieChecker = $(this).closest('.floating-banner').find('.cookie-hidden');
-    if(cookieChecker.length){
+    //Cookie[s]
+    //Checkbox 형태일때
+    var cookieChecker = $(this).closest('.floating-banner').find('.cookie-hidden');    
+    if(cookieChecker.length && cookieChecker.is(':checkbox')){
         var cookieValue = cookieChecker.prop('checked');
         var cookieName = cookieChecker.attr('name');
         var cookieDay = cookieChecker.data('expire-day');
@@ -187,6 +189,16 @@ $('body').on('click','[data-action=close]',function(){
             cookie.set(cookieName, cookieValue, cookieDay);
         }        
     }
+
+    //button 형태일 때
+    var $buttonWithCookie = $(this);
+    if($buttonWithCookie.hasClass('cookie-hidden')){
+        var buttonWithCookieName = $buttonWithCookie.attr('name');
+        var buttonWithCookieDay = $buttonWithCookie.data('expire-day');
+        cookie.set(buttonWithCookieName, true, buttonWithCookieDay);
+    }
+    //Cookie[e]
+
 });
 
 //modal 호출(data-call-modal 이름과 modal의 ID가 같아야함)
@@ -1408,9 +1420,13 @@ var cookie = {
 
 
 //이벤트 스티커
-$('body').on('click','.event-sticker .btn-close',function(){
+$('body')
+.on('click','.event-sticker .btn-close',function(){
     $(this).parents('.event-sticker').remove();
 });
+// .on('click','.event-sticker a[data-call-layered]',function(){
+//     $(this).parents('.event-sticker').remove();
+// });
 
 //Promotion (Global)
 (function($) {
@@ -1421,30 +1437,40 @@ $('body').on('click','.event-sticker .btn-close',function(){
             // 옵션의 기본 값입니다.
             fbName: "bsFloatingBannerOneQuarter",
             fbType: "",
-            fbAnimation: "",
+            fbAnimation: "fbBottomUp",
             fbTitle: "",
-            fbMsg: "",
-            fbLink: 'javascript:;',
+            //fbMsg: "",
             fbLinkMsg: '바로가기',
+            fbLink: 'javascript:;',
+            fbCallLayered: '',
+            fbFunction: '',
             fbImgSrc: "",
-            fbCheckboxId: "notToday",
-            fbCheckboxName: "promotionBanner",
-            fbCheckboxChecked:'',
+            fbFormId: "notToday",
+            fbFormName: "promotionBanner",
+            fbFormChecked:'',
             fbExpireDay: "1",
-            fbCheckboxMsg: "오늘 하루 보지 않기",
+            fbFormMsg: "오늘 하루 보지 않기",
             fbShow: false
         }, options );
+
+        if(settings.fbCallLayered.length > 0 && settings.fbLink.indexOf('/') > 0){
+            alert('링크, 바텀시트 호출 중 하나만 입력하세요');
+            return false;
+        }
 
         
         var floatingBannerHTML = '<div class=\"floating-banner\" data-type=\"' + settings.fbType + '\" data-animation=\"' + settings.fbAnimation + '\" data-layered-name=\"' + settings.fbName + '\">';            
             floatingBannerHTML += '<div class=\"floating-banner_contents\">';
             floatingBannerHTML += '<section class=\"kb-sec\">';
-            floatingBannerHTML += '<p class=\"not-today\"><span class=\"form-checkbox_24\"><input type=\"checkbox\" class=\"cookie-hidden\" data-expire-day=\"' + settings.fbExpireDay + '\" id=\"' + settings.fbCheckboxId + '\" name=\"' + settings.fbCheckboxName + '\" ' + settings.fbCheckboxChecked + '><label for=\"' + settings.fbCheckboxId + '\">' + settings.fbCheckboxMsg + '</label></span></p>';
-            floatingBannerHTML += '<div class=\"fb-msg\">';
-            if(settings.fbTitle.length > 0) floatingBannerHTML += '<strong class=\"tit\">' + settings.fbTitle + '</strong>';
+            floatingBannerHTML += '<p class=\"not-today\"><button type=\"button\" class=\"cookie-hidden\" data-action=\"close\" data-expire-day=\"' + settings.fbExpireDay + '\"' + settings.fbFormName + '><span>' + settings.fbFormMsg + '</span></button></p>';
+            //floatingBannerHTML += '<p class=\"not-today\"><span class=\"form-checkbox_24\"><input type=\"checkbox\" class=\"cookie-hidden\" data-expire-day=\"' + settings.fbExpireDay + '\" id=\"' + settings.fbFormId + '\" name=\"' + settings.fbCookieName + '\" ' + settings.fbCheckboxChecked + '><label for=\"' + settings.fbCheckboxId + '\">' + settings.fbCheckboxMsg + '</label></span></p>';
+            floatingBannerHTML += '<div class=\"fb-content\">';            
+            floatingBannerHTML += '<div class=\"fb-msg\">';            
             floatingBannerHTML += '<p>' + settings.fbMsg + '</p>';
-            floatingBannerHTML += '<a href=\"' + settings.fbLink + '\" class=\"link\"><span>' + settings.fbLinkMsg + '</span></a>';
-            floatingBannerHTML += '<div class=\"img\"><img src=\"' + settings.fbImgSrc + '\" alt=""></div>';
+            if(settings.fbLink.indexOf('/') > 0) floatingBannerHTML += '<a href=\"' + settings.fbLink + '\" class=\"link\"><span>' + settings.fbLinkMsg + '</span></a>';
+            if(settings.fbCallLayered != '') floatingBannerHTML += '<button class=\"link\" data-action="close" data-call-layered=\"' + settings.fbCallLayered + '\" onclick=\"' + settings.fbFunction + '\;\"><span>' + settings.fbLinkMsg + '</span></button>';
+            floatingBannerHTML += '</div>';            
+            floatingBannerHTML += '<div class=\"fb-img\"><img src=\"' + settings.fbImgSrc + '\" alt=""></div>';
             floatingBannerHTML += '</div>';            
             floatingBannerHTML += '</section>';
             floatingBannerHTML += '</div>';
@@ -1486,10 +1512,10 @@ $('body').on('click','.event-sticker .btn-close',function(){
         //     settings.esImgSize = (settings.esImgSize / 10);//rem 으로 변환            
         // }
         
-        if(settings.esCallLayered.length > 0 && settings.esLink.length > 0){
+        if(settings.esCallLayered.length > 0 && settings.esLink.indexOf('/') > 0){
             alert('링크, 바텀시트 호출 중 하나만 입력하세요');
             return false;
-        }else if(settings.esCallLayered.length == false && settings.esLink.length == false){
+        }else if(settings.esCallLayered.length == false && settings.esLink.indexOf('/') < 0){
             alert('링크, 바텀시트 호출 중 하나를 입력하세요');
             return false;
         }
@@ -1498,8 +1524,8 @@ $('body').on('click','.event-sticker .btn-close',function(){
             if(settings.esLink != '') eventStickerHTML += '<a href=\"' + settings.esLink + '\">';
             if(settings.esCallLayered != '') eventStickerHTML += '<a href=\"javascript:;\" role=\"button\" data-call-layered=\"'  + settings.esCallLayered +  '\">';
             //eventStickerHTML += '<img src="' + settings.esImgSrc + '" alt="' + settings.esImgAlt + '" style="width:' + settings.esImgSize + 'rem;">';
-            eventStickerHTML += '<img src="' + settings.esImgSrc + '" alt="' + settings.esImgAlt + 'rem;">';
-            if(settings.esLink != '') eventStickerHTML += '</a>';
+            eventStickerHTML += '<img src="' + settings.esImgSrc + '" alt="' + settings.esImgAlt + '">';
+            if(settings.esLink.indexOf('/') > 0) eventStickerHTML += '</a>';
             if(settings.esCallLayered != '') eventStickerHTML += '</a>';
             if(settings.esClose) eventStickerHTML += '<button class="btn-close"><i class=\"icon-sticker-close_20\">닫기</i></button>';
             eventStickerHTML += '</div>';

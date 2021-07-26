@@ -28,6 +28,10 @@
             <button type="button" class="btn-line btn-event-random"><span>랜덤뽑기 이벤트</span></button>
             <button type="button" class="btn-line btn-event-scratch"><span>스크래치 이벤트</span></button>
             <button type="button" class="btn-line btn-event-scratch02"><span>경품 선택 후 스크래치 이벤트</span></button>
+            <button type="button" class="btn-line btn-event-attendance"><span>출석체크 이벤트</span></button>
+            <button type="button" class="btn-line btn-event-word"><span>낱말찾기 이벤트</span></button>
+            <button type="button" class="btn-line btn-event-initial"><span>초성퀴즈 이벤트</span></button>
+            <button type="button" class="btn-line btn-event-dice"><span>주사위</span></button>
         </section>
 
       </main>
@@ -41,7 +45,9 @@
       @@include('@@webRoot/html/event/layered/roullete.html')
       @@include('@@webRoot/html/event/layered/random.html')
       @@include('@@webRoot/html/event/layered/lottery.html')
-      @@include('@@webRoot/html/event/layered/lottery-giveaway.html')
+      @@include('@@webRoot/html/event/layered/attendance.html')
+      @@include('@@webRoot/html/event/layered/find-word.html')
+      @@include('@@webRoot/html/event/layered/initial-quiz.html')
     </div>
     <!-- // Layer (fullpage popup, modal, bottom sheet) -->
 
@@ -115,6 +121,27 @@
     $('.btn-event-scratch02').on('click',function(){        
         gfn_layered.open('eventScratch02');
         fnScratchEvent02();
+    });
+
+    //출석체크
+    $('.btn-event-attendance').on('click',function(){        
+        gfn_layered.open('eventAttendance');
+    });
+
+    //낱말찾기
+    $('.btn-event-word').on('click',function(){        
+        gfn_layered.open('eventFindWord');
+    });
+
+    //초성퀴즈
+    $('.btn-event-initial').on('click',function(){        
+        gfn_layered.open('eventInitialQuiz');
+    });
+      
+    //주사위
+    $('.btn-event-dice').on('click',function(){        
+        gfn_layered.open('eventRollDice');
+        fnRollDice();
     });
       
   </script>

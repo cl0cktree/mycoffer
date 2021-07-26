@@ -1,0 +1,72 @@
+<!-- <!DOCTYPE html> -->
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Atom"
+    })
+
+    <link rel="stylesheet" href="./resources/guide.css">
+    <link rel="stylesheet" href="./resources/jquery-ui.css">
+    <link rel="stylesheet" href="./resources/a11y-dark.min.css">
+    <script src="./resources/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <style>
+        [class*=btn-]:not(.btn-switch){margin-bottom:8px;}
+    </style>
+</head>
+
+<body class="guide">
+    <div class="guide-header">
+        <h1><a href="./index.html">GUIDE</a></h1>
+        <div class="guide_select">
+            <input type="checkbox" id="guide_menu"><label for="guide_menu"></label>
+            <ul class="gnb">
+                <li class="index"><a href="./index.html">Index</a></li>
+                <li class="is-active"><a href="./log.html">Log</a></li>
+                <li><a href="./atom.html">Atom</a></li>
+                <li><a href="./molecule.html">Molecule</a></li>
+                <li><a href="./organism.html">Organism</a></li>
+                <li><a href="./template.html">Template</a></li>
+                <li><a href="./highcharts-sample.html">Highcharts</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="guide-container">
+        <div class="guide-history">
+            <dl data-month="7">
+                <dt data-writer="이진우">2021.07.26</dt>
+                <dd>
+                    <b>Checkbox</b>
+                    <ul data-style="list">
+                        <li>background 이미지 제거, CSS로 수정</li>
+                        <li>checkbox 기본 사이즈 28px에서 24px로 수정</li>
+                        <li>.form-checkbox / .form-checkbox_24 (모두 24 사이즈로 출력)</li>
+                        <li>중앙 정렬 기본 -&gt; 상단 정렬 기본으로 재수정</li>
+                    </ul>                    
+                </dd>
+                <dd>
+                    <b>Checkbox, Radio</b>
+                    <ul data-style="list">
+                        <li>background 이미지 제거, CSS로 수정</li>
+                    </ul>                    
+                </dd>
+                <dt data-writer="이진우">2021.07.25</dt>
+                <dd>
+                    <b>샘플 타이틀</b>
+                    <ul data-style="list">
+                        <li>내용 1</li>
+                        <li>내용 2</li>
+                        <li>내용 3</li>
+                    </ul>                    
+                </dd>
+            </dl>
+        </div>
+    </div>
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="./resources/guide.js"></script>
+    <script src="@@webRoot/static/js/ui.js"></script>
+</body>
+
+</html>

@@ -19,13 +19,18 @@
 <body class="guide">
     <div class="guide-header">
         <h1><a href="./index.html">GUIDE</a></h1>
-        <ul class="gnb">
-            <li class="is-active"><a href="./atom.html">Atom</a></li>
-            <li><a href="./molecule.html">Molecule</a></li>
-            <li><a href="./organism.html">Organism</a></li>
-            <li><a href="./template.html">Template</a></li>
-            <li><a href="./highcharts-sample.html">Highcharts</a></li>
-        </ul>
+        <div class="guide_select">
+            <input type="checkbox" id="guide_menu"><label for="guide_menu"></label>
+            <ul class="gnb">
+                <li class="index"><a href="./index.html">Index</a></li>
+                <li><a href="./log.html">Log</a></li>
+                <li class="is-active"><a href="./atom.html">Atom</a></li>
+                <li><a href="./molecule.html">Molecule</a></li>
+                <li><a href="./organism.html">Organism</a></li>
+                <li><a href="./template.html">Template</a></li>
+                <li><a href="./highcharts-sample.html">Highcharts</a></li>
+            </ul>
+        </div>
     </div>
     <div class="guide-container">
 
@@ -262,7 +267,7 @@
                         </code>
                     </pre>
                 </dt>
-                <dd data-description=".form-checkbox : 체크박스 기본(28px)">
+                <dd data-description=".form-checkbox : 체크박스 기본(28px) -> 24로 수정">
                     <!-- Size 28px -->
                     <span class="form-checkbox"><input type="checkbox" id="checkboxSample01"><label for="checkboxSample01">Default</label></span>
                     <hr>
@@ -282,6 +287,16 @@
                     <hr>
                     <span class="form-checkbox_24"><input type="checkbox" id="checkboxSample14" checked disabled><label for="checkboxSample14">Selected(Disabled)</label></span>
                 </dd>
+                <dd data-description=".form-checkbox.align-mid : 상하중앙정렬">
+                    <!-- Size 24px -->
+                    <span class="form-checkbox align-mid"><input type="checkbox" id="checkboxSample15"><label for="checkboxSample15">Default<br>2nd Line</label></span>
+                    <hr>
+                    <span class="form-checkbox align-mid"><input type="checkbox" id="checkboxSample16"><label for="checkboxSample16">Default(Disabled)<br>2nd Line</label></span>
+                    <hr>
+                    <span class="form-checkbox align-mid"><input type="checkbox" id="checkboxSample17" checked><label for="checkboxSample17">Selected<br>2nd Line</label></span>
+                    <hr>
+                    <span class="form-checkbox align-mid"><input type="checkbox" id="checkboxSample18" checked disabled><label for="checkboxSample18">Selected(Disabled)<br>2nd Line</label></span>
+                </dd>
                 <dd data-description=".form-checkbox_20 : 체크박스 (20px)">
                     <!-- Size 20px : no text-->
                     <span class="form-checkbox_20"><input type="checkbox" id="checkboxSample21"><label for="checkboxSample21">Default</label></span>
@@ -291,6 +306,16 @@
                     <span class="form-checkbox_20"><input type="checkbox" id="checkboxSample23" checked><label for="checkboxSample23">Selected</label></span>
                     <hr>
                     <span class="form-checkbox_20"><input type="checkbox" id="checkboxSample24" checked disabled><label for="checkboxSample24">Selected(Disabled)</label></span>
+                </dd>
+                <dd data-description=".form-checkbox_20.align-mid : 상하중앙정렬)">
+                    <!-- Size 20px : no text-->
+                    <span class="form-checkbox_20 align-mid"><input type="checkbox" id="checkboxSample21"><label for="checkboxSample21">Default<br>2nd Line</label></span>
+                    <hr>
+                    <span class="form-checkbox_20 align-mid"><input type="checkbox" id="checkboxSample22"><label for="checkboxSample22">Default(Disabled)<br>2nd Line</label></span>
+                    <hr>
+                    <span class="form-checkbox_20 align-mid"><input type="checkbox" id="checkboxSample23" checked><label for="checkboxSample23">Selected<br>2nd Line</label></span>
+                    <hr>
+                    <span class="form-checkbox_20 align-mid"><input type="checkbox" id="checkboxSample24" checked disabled><label for="checkboxSample24">Selected(Disabled)<br>2nd Line</label></span>
                 </dd>
             </dl>
         </div>

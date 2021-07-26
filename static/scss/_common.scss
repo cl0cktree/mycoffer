@@ -551,17 +551,22 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .reward-benefit .search-bar{margin-top:32px;}
 .reward-benefit .no-data{margin-top:100px;}
 .reward-benefit .reward-benefit-list{margin-top:32px;}
-.reward-benefit .reward-benefit-list li > a{position:relative;overflow:hidden;display:flex;flex-flow:column;justify-content:center;height:calc((100vw - 48px) * 0.41);padding-left:25px;padding-right:34%;border-radius:2px;}
-.reward-benefit .reward-benefit-list li + li{margin-top:24px;}
-.reward-benefit .reward-benefit-list li .img{position:absolute;left:0;top:0;right:0;bottom:0;}
+//.reward-benefit .reward-benefit-list li > a{position:relative;overflow:hidden;display:flex;flex-flow:column;justify-content:center;height:calc((100vw - 48px) * 0.41);padding-left:25px;padding-right:34%;border-radius:2px;}
+.reward-benefit .reward-benefit-list li{padding-bottom:20px;border-bottom:1px solid $kb-ui09;}
+.reward-benefit .reward-benefit-list li + li{margin-top:20px;}
+.reward-benefit .reward-benefit-list li > a{position:relative;border-radius:2px;}
+//.reward-benefit .reward-benefit-list li .img{position:absolute;left:0;top:0;right:0;bottom:0;}
+.reward-benefit .reward-benefit-list li .img,
 .reward-benefit .reward-benefit-list li .img img{width:100%;}
 .reward-benefit .reward-benefit-list li .tit,
 .reward-benefit .reward-benefit-list li .date,
 .reward-benefit .reward-benefit-list li .application-available-number{position:relative;}
-.reward-benefit .reward-benefit-list li .tit{@include ellipsisMulti($size: 18px, $line : 2, $lh: 25px);font-weight:bold;}
-.reward-benefit .reward-benefit-list li .date{@include number($size: 15px);display:block;margin-top:4px;line-height:1;color:$kb-ui03;}
-.reward-benefit .reward-benefit-list li .application-available-number{margin-top:8px;font-size:14px;color:$color-red;font-weight:bold;}
+.reward-benefit .reward-benefit-list li .tit{@include ellipsisMulti($size: 18px, $line : 2, $lh: 25px, $fixH : false);margin-top:17px;font-weight:bold;}
+//.reward-benefit .reward-benefit-list li .date{@include number($size: 15px);display:block;margin-top:4px;line-height:1;color:$kb-ui03;}
+.reward-benefit .reward-benefit-list li .date{@include number($size: 15px, $line-height:1);display:block;margin-top:12px;color:$kb-ui04;}
+.reward-benefit .reward-benefit-list li .application-available-number{margin-top:18px;font-size:14px;color:$color-red;font-weight:bold;}
 .reward-benefit .reward-benefit-list li .application-available-number .num{font-size:15px;}
+.reward-benefit .btn-more-events{padding:35px 0;text-align:center;}
 .reward-benefit-detail .kb-sec:first-child{margin-top:32px;}
 
 //마이데이터 서비스 소개
