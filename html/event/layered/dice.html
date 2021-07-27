@@ -3,21 +3,20 @@
         <strong class="tit">이벤트</strong>
     </div>
     <div class="popup_contents">
-        <section class="kb-sec event-area event-scratch">
-            <strong class="event-tit">계좌 추가하면 <br>즉석복권 Dream</strong>
-            <div class="scratch">
-                <div class="question">두근두근 나의 결과는?</div>
-                <div class="scratch-area" id="js-container">                    
-                    <div class="canvas" id="canvas">
-                        <!-- <div class="msg">지금 바로 긁어보세요.</div> -->
-                        <canvas id="js-canvas"></canvas>
-                    </div>
-                    <div class="result"></div>
-                </div>                
+        <section class="kb-sec event-area event-dice">
+            <strong class="event-tit">KB마이데이터 <br>주사위 게임 이벤트</strong>
+            <div class="dice">
+                <div class="items">
+                    <span class="dice1"></span>
+                    <span class="dice3"></span>
+                    <span class="dice5"></span>
+                    <span class="dice6"></span>
+                </div>
             </div>
-            <span class="scratch-character"></span>
         </section>
-
+        <div class="btn-area">
+            <a href="javascript:;" role="button" class="btn-solid_sticky"><span>주사위 굴리기</span></a>
+        </div>
         <section class="kb-sec">
             <dl class="event-desc">
                 <dt>기간</dt>
@@ -69,26 +68,69 @@
 </div>
 
 <script>
-    var fnRollDice = function(){        
-        var getOddsOfWinning = function(chance1,chance2,chance3,chance4,chance5,chance6) {
-            var cummprob = [chance1,chance2,chance3,chance4,chance5,chance6];        
-            var x = Math.random();
-            var y = 0;
-            for (y = 0; y < cummprob.length; y++) {
-                if (cummprob[y] >= x) break;
-            }
-            return y;
-        };  
-
+    var promotionData = [
+        {
+            "title" : '신세계이마트 상품권',
+            "prizeAmount" : '30,000',
+            "prizeUnit" : '원',
+            "thumb" : '@@webRoot/static/images/event/img-voucher.png',
+        },
+        {
+            "title" : 'KB 포인트리',
+            "prizeAmount" : '500',
+            "prizeUnit" : 'P',
+            "thumb" : '@@webRoot/static/images/event/img-pointre.png',
+        },
+        {
+            "title" : '스타벅스 디저트 세트',
+            "prizeAmount" : '1',
+            "prizeUnit" : '매',
+            "thumb" : '@@webRoot/static/images/event/img-coffee.png',
+        },
+        {
+            "title" : 'KB 포인트리',
+            "prizeAmount" : '1,000',
+            "prizeUnit" : 'P',
+            "thumb" : '@@webRoot/static/images/event/img-pointre.png',
+        },
+        {
+            "title" : 'KB 포인트리',
+            "prizeAmount" : '1,200',
+            "prizeUnit" : 'P',
+            "thumb" : '@@webRoot/static/images/event/img-pointre.png',
+        },
+        {
+            "title" : 'KB 포인트리',
+            "prizeAmount" : '1,500',
+            "prizeUnit" : 'P',
+            "thumb" : '@@webRoot/static/images/event/img-pointre.png',
+        },
+    ];
+    var diceNum = [];
+    var winningNum = 1; //임의의 수 [조건이 없음]
+    var fnRollDice = function(){   
         var $this = $('.promotion[data-layered-name=eventRollDice]');
         var eventName = $this.find('.event-tit').text();
-        var winningNum = Number(getOddsOfWinning(0,0,0,1));
-        var scratch = {
-            init: function(){
-                var prizeTxt = promotionData[winningNum].title + promotionData[winningNum].prizeAmount + promotionData[winningNum].prizeUnit;
-                $this.find('.scratch-area').find('.result').text(prizeTxt);                
+        var testRollDice = {
+            init : function(){
+                testRollDice.bind(); 
+            },
+            run : function(diceIdx){
+                var len = diceIdx.length;
+
+                for(i=0;i<len;i++){   
+                    (function(x){
+                        setTimeout(function(){
+                        $('.dice span').eq(x).stop().delay(200).removeClass().addClass('dice'+ diceIdx[x]);
+                        }, 100*x);
+                    })(i);                    
+                }
+                setTimeout(function(){
+                testRollDice.result('diceNewEvent01');
+                }, 400);
             },
             result : function(id, delay){
+                $('.bottom-sheet[data-layered-name="' + id + '"]').remove();
                 var resultHTML = '<div class=\"bottom-sheet\" data-layered-name=\"' + id + '\">';
                     resultHTML += '<div class=\"bottom-sheet_header\">';
                     resultHTML += '<span class=\"tit\">' + eventName + '</span>';
@@ -97,7 +139,7 @@
                     resultHTML += '<section class=\"kb-sec event-result\">';
                     resultHTML += '<img src=\"' + promotionData[winningNum].thumb + '\" alt=\"' + promotionData[winningNum].prizeAmount + promotionData[winningNum].prizeUnit + '\">';
                     resultHTML += '<dl>';
-                    resultHTML += '<dt>' + promotionData[winningNum].title + '<span class=\"num\" data-unit-after=\"' + promotionData[winningNum].prizeUnit + '\">' + promotionData[winningNum].prizeAmount + '</span>' + '</dt>';
+                    resultHTML += '<dt>' + promotionData[winningNum].title + ' <span class=\"num\" data-unit-after=\"' + promotionData[winningNum].prizeUnit + '\">' + promotionData[winningNum].prizeAmount + '</span>' + '</dt>';
                     resultHTML += '<dd>';
                     resultHTML += '참여해 주셔서 감사합니다.<br>자세한 사항은 마이데이터 선물함에서 확인하세요.';
                     resultHTML += '</dd>';
@@ -111,162 +153,45 @@
                     resultHTML += '</div>';
 
                     delay = delay == undefined ? 200 : delay ;
-
+                    //console.log(delay)
                 $('.layered').append(resultHTML);
-
                 //show result
                 setTimeout(function () {
                     gfn_layered.open(id);
                 }, delay);
 
+            },
+            bind : function(){
+                $this.find('.btn-solid_sticky').on('click', function () {                    
+                    
+                    $('.dice span').each(function(idx){
+                        diceNum[idx] = rand(1, 7);
+                        $('.dice span').eq(idx).removeClass().addClass('diceRolling'+idx);  
+                        
+                    })
+                    setTimeout(function() {
+                        testRollDice.run(diceNum);
+                    }, 2000);
+                    
+                });
+            }            
+        }
+        testRollDice.init();
+
+        var getOddsOfWinning = function(chance1,chance2,chance3,chance4,chance5,chance6) {
+            var cummprob = [chance1,chance2,chance3,chance4,chance5,chance6];        
+            var x = Math.random();
+            var y = 0;
+            for (y = 0; y < cummprob.length; y++) {
+                if (cummprob[y] >= x) break;
             }
+            return y;
         };
-        scratch.init();
-
-        var isDrawing, lastPoint;
-        var canvas = document.getElementById('js-canvas');
-        var canvasWrapper = document.getElementById('canvas');
-        var canvasWidth = Math.ceil(canvasWrapper.offsetWidth) + 2;
-        var canvasHeight = Math.ceil(canvasWrapper.offsetHeight) + 2;
-        var ctx = canvas.getContext('2d');
-        var imageObj = new Image();
-        var brush = new Image();			
-        
-        imageObj.src ="@@webRoot/static/images/event/scratch.png";
-        imageObj.onload = function () {	
-            var imgWidth = imageObj.naturalWidth;
-            var imgHeight = imageObj.naturalHeight;				
-            var screenWidth  = canvasWidth;
-            var screenHeight = canvasHeight;				
-            
-            var scaleX = 1;
-            if (imgWidth > screenWidth)
-                scaleX = screenWidth/imgWidth;
-            
-            var scaleY = 1;
-            if (imgHeight > screenHeight)
-                scaleY = screenHeight/imgHeight;
-            var scale = scaleY;
-            if(scaleX < scaleY)
-                scale = scaleX;
-            if(scale < 1){
-                imgHeight = imgHeight*scale;
-                imgWidth = imgWidth*scale;          
-            }
-
-            ctx.canvas.height = imgHeight;
-            ctx.canvas.width = imgWidth;
-            
-            ctx.drawImage(imageObj, 0, 0, imageObj.naturalWidth, imageObj.naturalHeight, 0,0, imgWidth, imgHeight);
-            // Show the form when Image is loaded.
-            document.querySelectorAll('.scratch-area')[0].style.visibility = 'visible';				
-        };
-        
-        brush.src = '@@webRoot/static/images/event/scarchimagetrans.png';
-
-        canvas.addEventListener('mousedown', handleMouseDown, false);
-        canvas.addEventListener('touchstart', handleMouseDown, false);
-        canvas.addEventListener('mousemove', handleMouseMove, false);
-        canvas.addEventListener('touchmove', handleMouseMove, false);
-        canvas.addEventListener('mouseup', handleMouseUp, false);
-        canvas.addEventListener('touchend', handleMouseUp, false);
-
-        function distanceBetween(point1, point2) {
-            return Math.sqrt(Math.pow(point2.x - point1.x, 2) + Math.pow(point2.y - point1.y, 2));
+        function rand(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
         }
 
-        function angleBetween(point1, point2) {
-            return Math.atan2(point2.x - point1.x, point2.y - point1.y);
-        }
-
-        // Only test every `stride` pixel. `stride`x faster,
-        // but might lead to inaccuracy
-        function getFilledInPixels(stride) {
-            if (!stride || stride < 1) {
-                stride = 1;
-            }
-
-            var pixels = ctx.getImageData(0, 0, canvasWidth, canvasHeight),
-                pdata = pixels.data,
-                l = pdata.length,
-                total = (l / stride),
-                count = 0;
-
-            // Iterate over all pixels
-            for (var i = count = 0; i < l; i += stride) {
-                if (parseInt(pdata[i]) === 0) {
-                    count++;
-                }
-            }
-
-            return Math.round((count / total) * 100);
-        }
-
-        function getMouse(e, canvas) {
-            var offsetX = 0,
-                offsetY = 0,
-                mx, my;
-
-            if (canvas.offsetParent !== undefined) {
-                do {
-                    offsetX += canvas.offsetLeft;
-                    offsetY += canvas.offsetTop;
-                } while ((canvas = canvas.offsetParent));
-            }
-
-            mx = (e.pageX || e.touches[0].clientX) - offsetX;
-            my = (e.pageY || e.touches[0].clientY) - offsetY;
-
-            return {
-                x: mx,
-                y: my
-            };
-        }
-
-        function handlePercentage(filledInPixels) {
-            filledInPixels = filledInPixels || 0;
-            //console.log(filledInPixels + '%');            
-            if (filledInPixels > 55) {
-                // action
-                $this.find('.scratch-area .canvas').hide();
-                if (!$this.find('.scratch-area .canvas').hasClass('activated')) {
-                    scratch.result('bsScratch01')
-                    $this.find('.scratch-area .canvas').addClass('activated');
-                }
-            }
-        }
-
-        function handleMouseDown(e) {
-            isDrawing = true;
-            lastPoint = getMouse(e, canvas);
-        }
-
-        function handleMouseMove(e) {
-            if (!isDrawing) {
-                return;
-            }
-
-            e.preventDefault();
-
-            var currentPoint = getMouse(e, canvas),
-                dist = distanceBetween(lastPoint, currentPoint),
-                angle = angleBetween(lastPoint, currentPoint),
-                x, y;
-
-            for (var i = 0; i < dist; i++) {
-                x = lastPoint.x + (Math.sin(angle) * i) - 25;
-                y = lastPoint.y + (Math.cos(angle) * i) - 25;
-                ctx.globalCompositeOperation = 'destination-out';
-                ctx.drawImage(brush, x, y);
-            }
-
-            lastPoint = currentPoint;
-            handlePercentage(getFilledInPixels(32));
-        }
-
-        function handleMouseUp(e) {
-            isDrawing = false;
-        } 
+   
     }
     
 </script>

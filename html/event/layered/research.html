@@ -1,47 +1,48 @@
-<div class="popup promotion" data-layered-name="eventInitialQuiz">
+<div class="popup promotion" data-layered-name="eventResearch">
     <div class="popup_header">
         <strong class="tit">이벤트</strong>
     </div>
     <div class="popup_contents">
-        <section class="kb-sec event-area event-word">
-            <strong class="event-tit">KB마이데이터 <br>오픈기념 낱말찾기</strong>
-            <div class="img"><img src="@@webRoot/static/images/event/img-starfriends01.png" alt=""></div>
-            <div class="word-box">
-                <div>
-                    <div class="info">
-                        ‘KB OOOO’ App은 여러 금융기관의 흩어진 자산을 쉽게 관리할 수 있는 서비스입니다. <br>OOOO에 들어갈 말은?
-                        <div class="hint-box form-checkbox">
-                            <input type="checkbox" name="" id="showHint">
-                            <label for="showHint">
-                                <strong><u>힌트보기</u></strong>
-                                <span class="hint">KB은행의 자산관리 App 서비스 </span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="list">
-                        <strong>초성</strong>
-                        <ul>
-                            <li><span>ㅁ</span></li>
-                            <li><span>ㅇ</span></li>
-                            <li><span>ㅁ</span></li>
-                            <li><span>ㄴ</span></li>
-                        </ul>
-                    </div>
-                </div>
+        <section class="kb-sec event-area event-research">
+            <strong class="event-tit">KB마이데이터 오픈 <br>100일기념 설문조사 이벤트</strong>
+            <div class="img"><img src="@@webRoot/static/images/event/img-starfriends02.png" alt=""></div>
+            <div class="research-list">
+                <strong class="h3">Q1. 설문조사 1번 항목</strong>
+                <ul class="radio-group">
+                    <li><span class="form-radio"><input type="radio" id="researchList_a1" name="researchList_a" checked=""><label for="researchList_a1">선택항목 1</label></span></li>
+                    <li><span class="form-radio"><input type="radio" id="researchList_a2" name="researchList_a"><label for="researchList_a2">선택항목 2</label></span></li>
+                </ul>
+                <strong class="h3">Q2. 설문조사 2번 항목</strong>
+                <ul class="radio-group">
+                    <li><span class="form-radio"><input type="radio" id="researchList_b1" name="researchList_b" checked=""><label for="researchList_b1">선택항목 1</label></span></li>
+                    <li><span class="form-radio"><input type="radio" id="researchList_b2" name="researchList_b"><label for="researchList_b2">선택항목 2</label></span></li>
+                </ul>
+                <strong class="h3">Q3. 설문조사 3번 항목</strong>
+                <ul class="radio-group">
+                    <li><span class="form-radio"><input type="radio" id="researchList_c1" name="researchList_c" checked=""><label for="researchList_c1">선택항목 1</label></span></li>
+                    <li><span class="form-radio"><input type="radio" id="researchList_c2" name="researchList_c"><label for="researchList_c2">선택항목 2</label></span></li>
+                </ul>
+                <strong class="h3">Q4. 설문조사 4번 항목</strong>
+                <ul class="radio-group">
+                    <li><span class="form-radio"><input type="radio" id="researchList_d1" name="researchList_d" checked=""><label for="researchList_d1">선택항목 1</label></span></li>
+                    <li><span class="form-radio"><input type="radio" id="researchList_d2" name="researchList_d"><label for="researchList_d2">선택항목 2</label></span></li>
+                </ul>
+                <strong class="h3">Q5. 설문조사 5번 항목</strong>
+                <ul class="radio-group">
+                    <li><span class="form-radio"><input type="radio" id="researchList_e1" name="researchList_e" checked=""><label for="researchList_e1">선택항목 1</label></span></li>
+                    <li><span class="form-radio"><input type="radio" id="researchList_e2" name="researchList_e"><label for="researchList_e2">선택항목 2</label></span></li>
+                </ul>
+                <strong class="h3">Q6. 설문조사 6번 항목</strong>
+                <ul class="radio-group">
+                    <li><span class="form-radio"><input type="radio" id="researchList_f1" name="researchList_f" checked=""><label for="researchList_f1">선택항목 1</label></span></li>
+                    <li><span class="form-radio"><input type="radio" id="researchList_f2" name="researchList_f"><label for="researchList_f2">선택항목 2</label></span></li>
+                </ul>
             </div>
-            <div class="answer">
-                <div class="kb-form" data-status="info">
-                    <label for="formTextAnswer">정답</label>
-                    <div class="kb-form_inner form-text">
-                        <input type="text" id="formTextAnswer" value="마이머니">
-                        <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                    </div>
-                </div>
-                <div class="btn-area">
-                    <a href="javascript:openBsInitialQuiz('bsEventInitialQuiz');" role="button" class="btn-solid_sticky"><span>정답 제출</span></a>
-                </div>
+            <div class="btn-area">
+                <a href="javascript:openBsEventResearch('bsEventResearch');" role="button" class="btn-solid_sticky"><span>제출</span></a>
             </div>
         </section>
+
         <section class="kb-sec">
             <dl class="event-desc">
                 <dt>기간</dt>
@@ -93,13 +94,13 @@
 </div>
 
 <script>
-    function openBsInitialQuiz(id){
+    function openBsEventResearch(id){
         $('.bottom-sheet[data-layered-name="' + id + '"]').remove();
-        var $this = $('.promotion[data-layered-name=eventInitialQuiz]');
+        var $this = $('.promotion[data-layered-name=eventResearch]');
         var eventName = $this.find('.event-tit').text();
         var promotionData = {
             "title" : '포인트리',
-            "prizeAmount" : '1',
+            "prizeAmount" : '60',
             "prizeUnit" : 'P',
             "thumb" : '@@webRoot/static/images/event/img-pointre.png',
         }
