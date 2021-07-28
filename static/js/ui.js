@@ -1439,7 +1439,7 @@ $('body')
             fbType: "",
             fbAnimation: "fbBottomUp",
             fbTitle: "",
-            //fbMsg: "",
+            fbMsg: "",
             fbLinkMsg: '바로가기',
             fbLink: 'javascript:;',
             fbCallLayered: '',
@@ -1468,9 +1468,12 @@ $('body')
             floatingBannerHTML += '<div class=\"fb-msg\">';            
             floatingBannerHTML += '<p>' + settings.fbMsg + '</p>';
             if(settings.fbLink.indexOf('/') > 0) floatingBannerHTML += '<a href=\"' + settings.fbLink + '\" class=\"link\"><span>' + settings.fbLinkMsg + '</span></a>';
-            if(settings.fbCallLayered != '') floatingBannerHTML += '<button class=\"link\" data-action="close" data-call-layered=\"' + settings.fbCallLayered + '\" onclick=\"' + settings.fbFunction + '\;\"><span>' + settings.fbLinkMsg + '</span></button>';
+            //if(settings.fbCallLayered != '') floatingBannerHTML += '<button class="link" data-action="close" data-call-layered="' + settings.fbCallLayered + '" onclick="' + settings.fbFunction + '\;"><span>' + settings.fbLinkMsg + '</span></button>';           
+            if(settings.fbCallLayered != '') floatingBannerHTML += '<button class="link" data-action="close" data-call-layered="' + settings.fbCallLayered + '"';
+            if(settings.fbFunction != '') floatingBannerHTML += ' onclick="' + settings.fbFunction + '\;"';
+            if(settings.fbCallLayered != '' && settings.fbLinkMsg != '') floatingBannerHTML += '><span>' + settings.fbLinkMsg + '</span></button>';
             floatingBannerHTML += '</div>';            
-            floatingBannerHTML += '<div class=\"fb-img\"><img src=\"' + settings.fbImgSrc + '\" alt=""></div>';
+            if(settings.fbImgSrc != '') floatingBannerHTML += '<div class=\"fb-img\"><img src=\"' + settings.fbImgSrc + '\" alt=""></div>';
             floatingBannerHTML += '</div>';            
             floatingBannerHTML += '</section>';
             floatingBannerHTML += '</div>';
