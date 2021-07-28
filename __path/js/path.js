@@ -257,3 +257,9 @@ $(function(){
         }
     });
 });
+
+document.addEventListener('keydown',function(event){
+    if(event.ctrlKey){
+        if(event.keyCode == 123) $('.mobile-view').trigger('click');
+    }
+});

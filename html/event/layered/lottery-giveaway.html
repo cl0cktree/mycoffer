@@ -120,8 +120,9 @@
             var winningNum = selectedGiveaway;
             var scratch = {
                 init: function(){
-                    prizeTxt = Math.random() < 0.001 ? promotionData02[winningNum].title : '꽝! 다음 기회에~';
-                    
+                    prizeTxt = Math.random() < 0.001 ? promotionData02[winningNum].title : '꽝! 다음 기회에~';  //시연용
+
+                    //prizeTxt = '복권 뒤에 나타나는 텍스트';                    
                     $this.find('.result').text(prizeTxt);
                 },
                 result : function(id, delay){
@@ -207,11 +208,6 @@
             canvas.addEventListener('touchmove', handleMouseMove, false);
             canvas.addEventListener('mouseup', handleMouseUp, false);
             canvas.addEventListener('touchend', handleMouseUp, false);
-
-            // canvasContainer.addEventListener('mousedown', scrollLock, false);
-            // canvasContainer.addEventListener('touchstart', scrollLock, false);
-            // canvasContainer.addEventListener('mouseup', scrollUnlock, false);
-            // canvasContainer.addEventListener('touchend', scrollUnlock, false);
 
             function distanceBetween(point1, point2) {
                 return Math.sqrt(Math.pow(point2.x - point1.x, 2) + Math.pow(point2.y - point1.y, 2));

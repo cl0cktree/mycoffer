@@ -103,6 +103,16 @@
         },
     ];
 
+    var getOddsOfWinning = function(chance1,chance2,chance3,chance4,chance5,chance6) {
+        var cummprob = [chance1,chance2,chance3,chance4,chance5,chance6];        
+        var x = Math.random();
+        var y = 0;
+        for (y = 0; y < cummprob.length; y++) {
+            if (cummprob[y] >= x) break;
+        }
+        return y;
+    }; 
+
     //룰렛
     $('.btn-event-roullete').on('click',function(){
         var size = $(this).data('roullete-size');

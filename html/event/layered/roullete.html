@@ -188,24 +188,13 @@
             },
             bind : function(){
                 $this.find('.btn-run-wheel').on('click', function () {                    
-                    winningNum = Number(getOddsOfWinning(0.02,0.2,0.5,1));
+                    winningNum = Number(getOddsOfWinning(0.02,0.2,0.5,1));  //시연용
+                    //winningNum = 0; //당첨되는 내용(선택)
                     roullete.run(winningNum);
                 });
             }
         }
         roullete.init();
-
-        //확률(시연용)
-		var getOddsOfWinning = function(chance1,chance2,chance3,chance4,chance5,chance6) {
-			var cummprob = [chance1,chance2,chance3,chance4,chance5,chance6];
-            cummprob.length = Number(chance);
-			var x = Math.random();
-			var y = 0;
-			for (y = 0; y < cummprob.length; y++) {
-				if (cummprob[y] >= x) break;
-			}
-			return y;
-		};        
     };
        
 </script>

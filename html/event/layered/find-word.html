@@ -88,40 +88,46 @@
 </div>
 <script>
     function openBsFindWord(id){
-        $('.bottom-sheet[data-layered-name="' + id + '"]').remove();
-        var $this = $('.promotion[data-layered-name=eventFindWord]');
-        var eventName = $this.find('.event-tit').text();
-        var promotionData = {
-            "title" : '포인트리',
-            "prizeAmount" : '1',
-            "prizeUnit" : 'P',
-            "thumb" : '@@webRoot/static/images/event/img-pointre.png',
-        }
-        var resultHTML = '<div class=\"bottom-sheet\" data-layered-name=\"' + id + '\">';
-            resultHTML += '<div class=\"bottom-sheet_header\">';
-            resultHTML += '<span class=\"tit\">' + eventName + '</span>';
-            resultHTML += '</div>';
-            resultHTML += '<div class=\"bottom-sheet_contents\">';
-            resultHTML += '<section class=\"kb-sec event-result\">';
-            resultHTML += '<img src=\"' + promotionData.thumb + '\" alt=\"' + promotionData.prizeAmount + promotionData.prizeUnit + '\">';
-            resultHTML += '<dl>';
-            resultHTML += '<dt>' + promotionData.title + ' <span class=\"num\" data-unit-after=\"' + promotionData.prizeUnit + '\">' + promotionData.prizeAmount + '</span>' + '</dt>';
-            resultHTML += '<dd>';
-            resultHTML += '참여해 주셔서 감사합니다.<br>자세한 사항은 마이데이터 선물함에서 확인하세요.';
-            resultHTML += '</dd>';
-            resultHTML += '</dl>';
-            resultHTML += '</section>';
-            resultHTML += '</div>';
-            resultHTML += '<div class=\"bottom-sheet_buttons\">';
-            resultHTML += '<a href=\"javascript:;\" class=\"btn-solid_sticky\" role=\"button\"><span>마이데이터 선물함</span></a>';
-            resultHTML += '</div>';
-            resultHTML += '<button class=\"btn-close\" data-action=\"close\"><span>닫기</span></button>';
-            resultHTML += '</div>';
+        var correctAnswer = '마이머니';
+        
+        if($('#formTextWordAnswer').val() != correctAnswer){
+            modalPopup({
+                title: "",
+                message: "정답이 아닙니다.",
+                type: "alert"
+            });
+        }else{        
+            $('.bottom-sheet[data-layered-name="' + id + '"]').remove();
+            var $this = $('.promotion[data-layered-name=eventFindWord]');
+            var eventName = $this.find('.event-tit').text();
+            var winningNum = 0; //당첨되는 내용(선택)
 
-        $('.layered').append(resultHTML);
-        //show result
-        setTimeout(function () {
-            gfn_layered.open(id);
-        });
+            var resultHTML = '<div class=\"bottom-sheet\" data-layered-name=\"' + id + '\">';
+                resultHTML += '<div class=\"bottom-sheet_header\">';
+                resultHTML += '<span class=\"tit\">' + eventName + '</span>';
+                resultHTML += '</div>';
+                resultHTML += '<div class=\"bottom-sheet_contents\">';
+                resultHTML += '<section class=\"kb-sec event-result\">';
+                resultHTML += '<img src=\"' + promotionData[winningNum].thumb + '\" alt=\"' + promotionData[winningNum].prizeAmount + promotionData[winningNum].prizeUnit + '\">';
+                resultHTML += '<dl>';
+                resultHTML += '<dt>' + promotionData[winningNum].title + ' <span class=\"num\" data-unit-after=\"' + promotionData[winningNum].prizeUnit + '\">' + promotionData[winningNum].prizeAmount + '</span>' + '</dt>';
+                resultHTML += '<dd>';
+                resultHTML += '참여해 주셔서 감사합니다.<br>자세한 사항은 마이데이터 선물함에서 확인하세요.';
+                resultHTML += '</dd>';
+                resultHTML += '</dl>';
+                resultHTML += '</section>';
+                resultHTML += '</div>';
+                resultHTML += '<div class=\"bottom-sheet_buttons\">';
+                resultHTML += '<a href=\"javascript:;\" class=\"btn-solid_sticky\" role=\"button\"><span>마이데이터 선물함</span></a>';
+                resultHTML += '</div>';
+                resultHTML += '<button class=\"btn-close\" data-action=\"close\"><span>닫기</span></button>';
+                resultHTML += '</div>';
+
+            $('.layered').append(resultHTML);
+            //show result
+            setTimeout(function () {
+                gfn_layered.open(id);
+            });
+        }
     }
 </script>

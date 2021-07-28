@@ -111,32 +111,25 @@
 
                 //버튼을 누르면 손잡이가 돌아감
                 $this.find('.random-machine-trigger').on('click',function(){        
-                    winningNum = Number(getOddsOfWinning(0,0,0,1));
+                    winningNum = Number(getOddsOfWinning(0,0,0,1)); //시연용
+                    //winningNum = 0; //당첨되는 내용(선택)
                     $this.find('.random-machine-handle').addClass('is-animating');
-                });
 
-                //손잡이가 돌아가는 애니메이션이 끝나면 공이 나옴
-                $this.find('.random-machine-handle').one('animationend',function(){        
-                    $this.find('.random-ball').addClass('is-animating');
-                });
+                    //손잡이가 돌아가는 애니메이션이 끝나면 공이 나옴
+                    $this.find('.random-machine-handle').one('animationend',function(){        
+                        $this.find('.random-ball').addClass('is-animating');
+                    });
 
-                //공이 나오는 애니메이션이 끝나면 추첨하여 바텀 시트 노출
-                $this.find('.random-ball').one('animationend',function(){                
-                    random.result('bsRandom01',500);                
+                    //공이 나오는 애니메이션이 끝나면 추첨하여 바텀 시트 노출
+                    $this.find('.random-ball').one('animationend',function(){                
+                        random.result('bsRandom01',500);                
+                    });
                 });
             }
         }
         random.init();
 
-        var getOddsOfWinning = function(chance1,chance2,chance3,chance4,chance5,chance6) {
-            var cummprob = [chance1,chance2,chance3,chance4,chance5,chance6];        
-            var x = Math.random();
-            var y = 0;
-            for (y = 0; y < cummprob.length; y++) {
-                if (cummprob[y] >= x) break;
-            }
-            return y;
-        };  
+         
     }
     
 </script>

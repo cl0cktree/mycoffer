@@ -67,131 +67,82 @@
     <button class="btn-close" data-action="close"><span>닫기</span></button>
 </div>
 
-<script>
-    var promotionData = [
-        {
-            "title" : '신세계이마트 상품권',
-            "prizeAmount" : '30,000',
-            "prizeUnit" : '원',
-            "thumb" : '@@webRoot/static/images/event/img-voucher.png',
-        },
-        {
-            "title" : 'KB 포인트리',
-            "prizeAmount" : '500',
-            "prizeUnit" : 'P',
-            "thumb" : '@@webRoot/static/images/event/img-pointre.png',
-        },
-        {
-            "title" : '스타벅스 디저트 세트',
-            "prizeAmount" : '1',
-            "prizeUnit" : '매',
-            "thumb" : '@@webRoot/static/images/event/img-coffee.png',
-        },
-        {
-            "title" : 'KB 포인트리',
-            "prizeAmount" : '1,000',
-            "prizeUnit" : 'P',
-            "thumb" : '@@webRoot/static/images/event/img-pointre.png',
-        },
-        {
-            "title" : 'KB 포인트리',
-            "prizeAmount" : '1,200',
-            "prizeUnit" : 'P',
-            "thumb" : '@@webRoot/static/images/event/img-pointre.png',
-        },
-        {
-            "title" : 'KB 포인트리',
-            "prizeAmount" : '1,500',
-            "prizeUnit" : 'P',
-            "thumb" : '@@webRoot/static/images/event/img-pointre.png',
-        },
-    ];
-    var diceNum = [];
-    var winningNum = 1; //임의의 수 [조건이 없음]
-    var fnRollDice = function(){   
+<script>    
+
+    var fnRollDice = function(){    
+        var $eachDice = $('.dice span');
         var $this = $('.promotion[data-layered-name=eventRollDice]');
         var eventName = $this.find('.event-tit').text();
+        var diceNum = [2,6,6,4];    //나타낼 주사위 숫자
+        var winningNum = 0; //상품 팝업 선택
         var testRollDice = {
             init : function(){
                 testRollDice.bind(); 
             },
             run : function(diceIdx){
-                var len = diceIdx.length;
-
-                for(i=0;i<len;i++){   
-                    (function(x){
-                        setTimeout(function(){
-                        $('.dice span').eq(x).stop().delay(200).removeClass().addClass('dice'+ diceIdx[x]);
-                        }, 100*x);
-                    })(i);                    
-                }
+                $eachDice.each(function(idx){
+                    $(this).removeClass().addClass('dice'+ diceIdx[idx]);
+                });                
                 setTimeout(function(){
-                testRollDice.result('diceNewEvent01');
+                    testRollDice.result('diceNewEvent01');
                 }, 400);
             },
             result : function(id, delay){
-                $('.bottom-sheet[data-layered-name="' + id + '"]').remove();
-                var resultHTML = '<div class=\"bottom-sheet\" data-layered-name=\"' + id + '\">';
-                    resultHTML += '<div class=\"bottom-sheet_header\">';
-                    resultHTML += '<span class=\"tit\">' + eventName + '</span>';
-                    resultHTML += '</div>';
-                    resultHTML += '<div class=\"bottom-sheet_contents\">';
-                    resultHTML += '<section class=\"kb-sec event-result\">';
-                    resultHTML += '<img src=\"' + promotionData[winningNum].thumb + '\" alt=\"' + promotionData[winningNum].prizeAmount + promotionData[winningNum].prizeUnit + '\">';
-                    resultHTML += '<dl>';
-                    resultHTML += '<dt>' + promotionData[winningNum].title + ' <span class=\"num\" data-unit-after=\"' + promotionData[winningNum].prizeUnit + '\">' + promotionData[winningNum].prizeAmount + '</span>' + '</dt>';
-                    resultHTML += '<dd>';
-                    resultHTML += '참여해 주셔서 감사합니다.<br>자세한 사항은 마이데이터 선물함에서 확인하세요.';
-                    resultHTML += '</dd>';
-                    resultHTML += '</dl>';
-                    resultHTML += '</section>';
-                    resultHTML += '</div>';
-                    resultHTML += '<div class=\"bottom-sheet_buttons\">';
-                    resultHTML += '<a href=\"javascript:;\" class=\"btn-solid_sticky\" role=\"button\"><span>마이데이터 선물함</span></a>';
-                    resultHTML += '</div>';
-                    resultHTML += '<button class=\"btn-close\" data-action=\"close\"><span>닫기</span></button>';
-                    resultHTML += '</div>';
 
-                    delay = delay == undefined ? 200 : delay ;
-                    //console.log(delay)
-                $('.layered').append(resultHTML);
-                //show result
-                setTimeout(function () {
-                    gfn_layered.open(id);
-                }, delay);
+                var result = diceNum.reduce(function add(sum, currValue) {
+                    return sum + currValue;
+                }, 0);
 
+                if(result % 6 != 0){
+                    modalPopup({
+                        title: "",
+                        message: "6의 배수가 아닙니다.",
+                        type: "alert"
+                    });                    
+                }else{
+                    $('.bottom-sheet[data-layered-name="' + id + '"]').remove();
+                    var resultHTML = '<div class=\"bottom-sheet\" data-layered-name=\"' + id + '\">';
+                        resultHTML += '<div class=\"bottom-sheet_header\">';
+                        resultHTML += '<span class=\"tit\">' + eventName + '</span>';
+                        resultHTML += '</div>';
+                        resultHTML += '<div class=\"bottom-sheet_contents\">';
+                        resultHTML += '<section class=\"kb-sec event-result\">';
+                        resultHTML += '<img src=\"' + promotionData[winningNum].thumb + '\" alt=\"' + promotionData[winningNum].prizeAmount + promotionData[winningNum].prizeUnit + '\">';
+                        resultHTML += '<dl>';
+                        resultHTML += '<dt>' + promotionData[winningNum].title + ' <span class=\"num\" data-unit-after=\"' + promotionData[winningNum].prizeUnit + '\">' + promotionData[winningNum].prizeAmount + '</span>' + '</dt>';
+                        resultHTML += '<dd>';
+                        resultHTML += '참여해 주셔서 감사합니다.<br>자세한 사항은 마이데이터 선물함에서 확인하세요.';
+                        resultHTML += '</dd>';
+                        resultHTML += '</dl>';
+                        resultHTML += '</section>';
+                        resultHTML += '</div>';
+                        resultHTML += '<div class=\"bottom-sheet_buttons\">';
+                        resultHTML += '<a href=\"javascript:;\" class=\"btn-solid_sticky\" role=\"button\"><span>마이데이터 선물함</span></a>';
+                        resultHTML += '</div>';
+                        resultHTML += '<button class=\"btn-close\" data-action=\"close\"><span>닫기</span></button>';
+                        resultHTML += '</div>';
+
+                        delay = delay == undefined ? 200 : delay ;
+                        //console.log(delay)
+                    $('.layered').append(resultHTML);
+                    //show result
+                    setTimeout(function () {
+                        gfn_layered.open(id);
+                    }, delay);
+                }
             },
             bind : function(){
-                $this.find('.btn-solid_sticky').on('click', function () {                    
-                    
-                    $('.dice span').each(function(idx){
-                        diceNum[idx] = rand(1, 7);
-                        $('.dice span').eq(idx).removeClass().addClass('diceRolling'+idx);  
-                        
-                    })
-                    setTimeout(function() {
-                        testRollDice.run(diceNum);
-                    }, 2000);
-                    
-                });
+                $this.find('.btn-solid_sticky').on('click', function () {
+                    $eachDice.removeClass().addClass('diceRolling');
+                    $eachDice.each(function(){
+                        $(this).one('animationend',function(){
+                            testRollDice.run(diceNum);
+                        });
+                    });
+                });                
             }            
         }
-        testRollDice.init();
-
-        var getOddsOfWinning = function(chance1,chance2,chance3,chance4,chance5,chance6) {
-            var cummprob = [chance1,chance2,chance3,chance4,chance5,chance6];        
-            var x = Math.random();
-            var y = 0;
-            for (y = 0; y < cummprob.length; y++) {
-                if (cummprob[y] >= x) break;
-            }
-            return y;
-        };
-        function rand(min, max) {
-            return Math.floor(Math.random() * (max - min)) + min;
-        }
-
-   
+        testRollDice.init();   
     }
     
 </script>

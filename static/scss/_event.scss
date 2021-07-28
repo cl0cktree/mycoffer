@@ -336,16 +336,17 @@
 .event-dice .dice::after{right:2.4rem;width:6.2rem;height:5.2em;background-position:-63px -332px}
 .event-dice .dice .items{display:flex;flex-wrap:wrap;justify-content:space-between;width:23.2rem;margin:0 auto}
 .event-dice .dice span{display:block;width:10.3rem;height:9.7rem;background-image:url(../images/event/dice-result.png);background-repeat:no-repeat;background-size:auto 9.7rem;background-position-y:center;}
-.event-dice .dice span.dice1{background-position:0 0}
-.event-dice .dice span.dice2{background-position:-100px 0}
-.event-dice .dice span.dice3{background-position:-200px 0}
-.event-dice .dice span.dice4{background-position:-300px 0}
-.event-dice .dice span.dice5{background-position:-400px 0}
-.event-dice .dice span.dice6{background-position:-500px 0}
-.event-dice .dice span.diceRolling0{background-image:url(../images/event/dice-rolling.png);animation:diceRolling 0.9s steps(9) infinite}
-.event-dice .dice span.diceRolling1{background-image:url(../images/event/dice-rolling.png);animation:diceRolling 0.5s steps(9) infinite}
-.event-dice .dice span.diceRolling2{background-image:url(../images/event/dice-rolling.png);animation:diceRolling 0.7s steps(9) infinite}
-.event-dice .dice span.diceRolling3{background-image:url(../images/event/dice-rolling.png);animation:diceRolling 0.6s steps(9) infinite}
+.event-dice .dice span.dice1{background-position:0 0;transform:rotate(15deg);}
+.event-dice .dice span.dice2{background-position:-100px 0;transform:rotate(-10deg);}
+.event-dice .dice span.dice3{background-position:-200px 0;transform:rotate(5deg);}
+.event-dice .dice span.dice4{background-position:-300px 0;transform:rotate(-15deg);}
+.event-dice .dice span.dice5{background-position:-400px 0;transform:rotate(10deg);}
+.event-dice .dice span.dice6{background-position:-500px 0;}
+.event-dice .dice span.diceRolling:nth-child(1){animation-delay: 0.1s;}
+.event-dice .dice span.diceRolling:nth-child(2){animation-delay: 0.0s;}
+.event-dice .dice span.diceRolling:nth-child(3){animation-delay: 0.2s;}
+.event-dice .dice span.diceRolling:nth-child(4){animation-delay: 0.1s;}
+.event-dice .dice span.diceRolling{background-image:url(../images/event/dice-rolling.png);animation:diceRolling 2s steps(9) forwards;}
 @keyframes diceRolling {
     from{background-position:0 0;margin-left:10px;}
     to{background-position:-1017px 0;margin-left:0;}

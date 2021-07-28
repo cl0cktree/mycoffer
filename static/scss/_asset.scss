@@ -79,8 +79,12 @@
 .my-asset .content-box .compare-box .compare{@include iconBullet($direction : 'up', $width: 24px, $height: 13px, $color: $kb-ui05);position:absolute;left:50%;bottom:25px;margin-left:-10px;}
 .my-asset .content-box .compare-box dd.mine{margin-right:20px;}
 .my-asset .content-box .compare-box dd.other{margin-left:20px;}
-.my-asset .content-box .compare-box .compare.gt{transform:rotate(90deg);content:'보다 큽니다.';}
-.my-asset .content-box .compare-box .compare.lt{transform:rotate(270deg);content:'보다 적습니다.'}
+.my-asset .content-box .compare-box .compare.gt{transform:rotate(90deg);}
+.my-asset .content-box .compare-box .compare.gt:before{content:'보다 큽니다.';color:transparent;overflow:hidden;}
+.my-asset .content-box .compare-box .compare.lt{transform:rotate(270deg);}
+.my-asset .content-box .compare-box .compare.lt:before{content:'보다 적습니다.';color:transparent;overflow:hidden;}
+.my-asset .content-box .compare-box .compare.eq:before{content:'같습니다.';transform:translate(0, 0) scale(1, 1) rotate(0deg);color:transparent;overflow:hidden;background:url(../images/asset/ico_equal.png) no-repeat 0 0;background-size:2rem auto;width:2rem;height:2rem;top:0;left:0;margin-top:0;}
+.my-asset .content-box .compare-box .compare.eq:before{border:0;}
 .my-asset .compare-con{padding-top:24px;padding-bottom:30px;}
 .my-asset .compare-con > .h4{margin-bottom:12px;}
 .my-asset .compare-con .content-box > .msg{margin-bottom:10px;line-height:1.4;}

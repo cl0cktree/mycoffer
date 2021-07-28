@@ -69,20 +69,12 @@
 </div>
 
 <script>
-    var fnScratchEvent = function(){        
-        var getOddsOfWinning = function(chance1,chance2,chance3,chance4,chance5,chance6) {
-            var cummprob = [chance1,chance2,chance3,chance4,chance5,chance6];        
-            var x = Math.random();
-            var y = 0;
-            for (y = 0; y < cummprob.length; y++) {
-                if (cummprob[y] >= x) break;
-            }
-            return y;
-        };  
+    var fnScratchEvent = function(){
 
         var $this = $('.promotion[data-layered-name=eventScratch]');
         var eventName = $this.find('.event-tit').text();
-        var winningNum = Number(getOddsOfWinning(0,0,0,1));
+        var winningNum = Number(getOddsOfWinning(0,0,0,1)); //시연용
+        //var   winningNum = 0; //당첨되는 내용(선택)
         var scratch = {
             init: function(){
                 var prizeTxt = promotionData[winningNum].title + promotionData[winningNum].prizeAmount + promotionData[winningNum].prizeUnit;
