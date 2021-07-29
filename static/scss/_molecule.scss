@@ -157,11 +157,10 @@ ul.radio-group > li + li{margin-top:16px;}
 .form-radio{@include radio;}
 @include smallDevice{
 	.form-radio{@include radio($size: 22px);}
-
 }
 
-.kb-form > label{@include text($size: 16px, $weight: bold);display:block;position:relative;top:0;width:100%;height:24px;padding:8px 2px 0 2px;color:$kb-ui04;line-height: 1;background-color:$kb-ui11;white-space:nowrap;transition:font-size .1s, top .1s;font-weight:normal;}
-.kb-form_inner{display:flex;align-items:center;position:relative;width:100%;padding-top:6px;padding-left:2px;padding-right:2px;padding-bottom:8px;border-bottom:2px solid $kb-ui09;}
+.kb-form > label{@include text($size: 16px);display:block;position:relative;top:0;width:100%;min-height:26px;padding:8px 2px 0 2px;color:$kb-ui04;background-color:$kb-ui11;white-space:nowrap;transition:font-size .1s, top .1s;}
+.kb-form_inner{display:flex;align-items:center;position:relative;width:100%;padding-top:4px;padding-left:2px;padding-right:2px;padding-bottom:5px;border-bottom:2px solid $kb-ui09;}
 .kb-form_inner.is-focused{border-bottom-color:$kb-ui02;}
 .kb-form .validation,
 .kb-form_multi .validation{width:100%;min-height:2rem;margin-top:0.8rem;line-height:2rem;}
@@ -183,8 +182,8 @@ ul.radio-group > li + li{margin-top:16px;}
 .kb-form.is-readonly .kb-form_inner{border-bottom-color:$kb-ui09;background-color:$kb-ui10;}
 .kb-form.is-disabled .kb-form_inner .btn-data-clear,
 .kb-form.is-readonly .kb-form_inner .btn-data-clear{display:none;}
-.kb-form.not-ready:not(.is-active):not(.multi-form):not(.no-transition) label{@include text($size:22px, $line-height:24px, $weight: bold);height:24px;top:36px;z-index:1;padding-top:0;padding-bottom:0;color:$kb-ui07;}
-.kb-form.not-ready:not(.is-active):not(.multi-form):not(.no-transition) label:after{content:'';position:absolute;left:0;bottom:-2px;width:100%;height:2px;background-color:inherit;}
+//.kb-form.not-ready:not(.is-active):not(.multi-form):not(.no-transition) label{@include text($size:22px, $line-height:24px, $weight: bold);height:24px;top:36px;z-index:1;padding-top:0;padding-bottom:0;color:$kb-ui07;}
+//.kb-form.not-ready:not(.is-active):not(.multi-form):not(.no-transition) label:after{content:'';position:absolute;left:0;bottom:-2px;width:100%;height:2px;background-color:inherit;}
 .kb-form.not-ready .unit{display:none;}
 .kb-form .remain-time{margin-top:4px;}
 .kb-form + .kb-form,
@@ -231,7 +230,8 @@ ul.radio-group > li + li{margin-top:16px;}
 .form-radio-set .form-radio label {color: $kb-ui02; }
 
 .form-select .selected-option{@include text($size:22px, $line-height:24px, $weight: bold);@include ellipsis;position:relative;display:block;width:100%;height:32px;padding-right:30px;text-align:left;border:none;}
-.form-select .selected-option:after{content:'';position:absolute;right:4px;top:7px;z-index:1;width:10px;height:10px;border-style:solid;border-color:$kb-ui05;border-width:0 2px 2px 0;transform:rotate(45deg)}
+//.form-select .selected-option:after{content:'';position:absolute;right:4px;top:7px;z-index:1;width:10px;height:10px;border-style:solid;border-color:$kb-ui05;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.form-select .selected-option:after{display: inline-block;position: absolute;right: .8rem;top: 50%;z-index: 1;content: '';width: .9rem;height: .9rem;margin-top: -.8rem;border-left: 1px solid #8c949e;border-bottom: 1px solid #8c949e;transform: rotate(-45deg);}
 .form-select select{display:none;}
 .not-ready .form-select .selected-option{color:$kb-ui07}
 

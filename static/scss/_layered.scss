@@ -12,7 +12,7 @@
 .popup_header{flex:0 0 48px;padding:12px 48px 11px 24px;text-align:center;}
 .popup_header .tit{@include text($size: $text01);display:inline-block;}
 .popup_contents{overflow:auto;flex:1;padding-bottom:24px;}
-.popup_contents.is-hold{overflow:hidden;height:calc(100vh - 48px)};
+.popup_contents.is-hold{overflow:hidden;height:calc(var(--vh, 1vh) * 100 - 48px)};
 .with-button .popup_contents{padding-bottom:60px;}
 .popup > .tit{display:block;padding:2px 0 15px 0;font-size:24px;font-weight:bold;white-space:nowrap;}
 .popup .btn-close {
@@ -48,7 +48,7 @@
 .modal.is-active{display:block;}
 .modal_header{min-height:28px;padding:0 24px;}
 .modal_header .tit{@include heading($size: 20px);display:inline-block;padding:0 2px;}
-.modal_contents{@include text($size: $text02);overflow:auto;max-height:calc(100vh - 252px);margin-top:16px;margin-bottom:32px;padding:0 24px;color:$kb-ui03;}
+.modal_contents{@include text($size: $text02);overflow:auto;max-height:calc(var(--vh, 1vh) * 100 - 252px);margin-top:16px;margin-bottom:32px;padding:0 24px;color:$kb-ui03;}
 .modal-not-today{padding:32px 24px}
 .modal_contents ul[data-style=list] li{color:$kb-ui03;}
 .modal_buttons {position: relative; top: 1px;}
@@ -109,7 +109,7 @@
 [data-page-name^=employeeSearch].is-employee-search .branch-search-list{display:none;}
 .bottopage[data-le-name=bsCalendar] .bottom-sheet_contents{padding-bottom:36px;}
 
-.modal[data-layered-name^=modalNotice] .modal_contents{max-height:calc(100vh - 340px);margin-bottom:0;padding-bottom:32px;}
+.modal[data-layered-name^=modalNotice] .modal_contents{max-height:calc(var(--vh, 1vh) * 100 - 340px);margin-bottom:0;padding-bottom:32px;}
 
 
 .bottom-sheet[data-layered-name=bsOtherLogin] .select-list li i:first-child{margin-right:10px;}

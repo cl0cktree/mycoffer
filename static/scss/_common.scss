@@ -195,7 +195,7 @@
 .info-distributer-asset .info-distributer-asset-tit{@include text($size: 24px, $weight: bold);margin-top:20px;}
 .info-distributer-asset .info-distributer-asset-tit .num{font-size:25px;}
 .info-distributer-asset .info-distributer-asset-tit + p{margin-top:20px;color:$kb-ui04;}
-.info-distributer-asset .info-distributer-asset-selector{margin-top:48px;overflow:auto;max-height:calc(100vh - 292px);padding-bottom:20px;}
+.info-distributer-asset .info-distributer-asset-selector{margin-top:48px;overflow:auto;max-height:calc(var(--vh, 1vh) * 100 - 292px);padding-bottom:20px;}
 .info-distributer-asset .info-distributer-asset-list{margin-top:20px;padding-top:4px;padding-bottom:24px;border-top:1px solid $kb-ui03;border-bottom:1px solid $kb-ui08;}
 .info-distributer-asset .info-distributer-asset-list li{padding-top:20px;}
 .info-distributer-asset .info-distributer-asset-list li + li{margin-top:20px;border-top:1px solid $kb-ui09;}
@@ -418,6 +418,8 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .mn-agreements .mn-agreements-list a{@include text;position:relative;display:block;padding-right:32px;}
 .mn-agreements .mn-agreements-list > li + li{margin-top:10px;}
 .mn-agreements .mn-agreements-list02{padding:20px 0;}
+.mn-agreements .mn-agreements-list02 p{position:relative;}
+
 .mn-agreements .mn-agreements-list02 p label{font-weight:bold;}
 .mn-agreements .mn-agreements-list02 dl{margin-top:20px;margin-left:38px;}
 .mn-agreements .mn-agreements-list02 .checkbox-group{flex-flow:row;flex-wrap:wrap;}
@@ -444,7 +446,8 @@ h1 + .joint-certificate-list{margin-top:28px;}
     border-right: 1px solid #8c949e;
 }
 .mn-agreements button{position:relative;width:100%;padding:5px 32px 5px 0;text-align:left;line-height:1.4;}
-.mn-agreements li .icon-link_24{position:absolute;right:0;top:calc(50% - 12px);}
+.mn-agreements li .icon-link_24,
+.mn-agreements .mn-agreements-list02 p .icon-link_24 {position:absolute;right:0;top:calc(50% - 12px);}
 
 .mm-manage-certificate p{@include text}
 .mm-manage-certificate p + p{margin-top:12px;}

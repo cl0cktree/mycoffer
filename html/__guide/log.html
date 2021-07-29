@@ -3,7 +3,7 @@
 
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
-        "title": "Atom"
+        "title": "Log"
     })
 
     <link rel="stylesheet" href="./resources/guide.css">
@@ -35,6 +35,39 @@
     <div class="guide-container">
         <div class="guide-history">
             <dl data-month="7">
+                <dt data-writer="이진우">2021.07.29</dt>
+                <dd>
+                    <b>.tab.depth2</b>
+                    <ul data-style="list">
+                        <li>.tab.depth2 border-bottom 삭제</li>
+                    </ul>                    
+                </dd>
+                <dd>
+                    <b>.tab WAI-ARIA 추가(navigation.js)</b>
+                    <ul data-style="list">
+                        <li>.tab[role="tab-list"]</li>
+                        <li>.tab buton, .tab a[role="tab"]</li>
+                    </ul>                    
+                </dd>
+                <dd>
+                    <b>.form-select 우측 화살표 수정</b>
+                    <ul data-style="list">
+                        <li>.form-select 우측 화살표 CSS 수정</li>
+                    </ul>                    
+                </dd>
+                <dd>
+                    <b>100vh 사용시 브라우저 하단바 포함한 높이로 계산되는 문제</b>
+                    <ul data-style="list">
+                        <li>100vh 사용시 calc(var(--vh, 1vh) * 100)로 계산</li>
+                        <li>navigation.js 에 vh = window.innerHeight * 0.01; 로 지정하였음</li>
+                    </ul>                    
+                </dd>
+                <dd>
+                    <b>.kb-form 의 label 움직임 제거</b>
+                    <ul data-style="list">
+                        <li>.kb-form의 label이 고정으로 수정</li>
+                    </ul>                    
+                </dd>
                 <dt data-writer="이진우">2021.07.26</dt>
                 <dd>
                     <b>Checkbox</b>
@@ -49,15 +82,6 @@
                     <b>Checkbox, Radio</b>
                     <ul data-style="list">
                         <li>background 이미지 제거, CSS로 수정</li>
-                    </ul>                    
-                </dd>
-                <dt data-writer="이진우">2021.07.25</dt>
-                <dd>
-                    <b>샘플 타이틀</b>
-                    <ul data-style="list">
-                        <li>내용 1</li>
-                        <li>내용 2</li>
-                        <li>내용 3</li>
                     </ul>                    
                 </dd>
             </dl>
