@@ -9,6 +9,8 @@ var escapeHtml = function(string) {
 //Code Change
 $('.box .flex-dl > dd').not('.guide-description')
 .each(function(){
+    var desc = $(this).data('description');
+    $(this).prepend('<p class="g-desc">' + desc + '</p>');
     var $iframe = $(this).find('iframe');
     var $code = $(this).siblings('dt').find('code');            
     if(!$iframe.length){                

@@ -84,6 +84,7 @@ $.fn.modalPopup = function(parameters) {
 
 			open: function() {
 				$body.addClass("is-hold");
+				$wrap.addClass("is-active");
 				$dimm.fadeIn(settings.duration);
 				$wrap.fadeIn(settings.duration);				
 			},
@@ -91,11 +92,18 @@ $.fn.modalPopup = function(parameters) {
 			close: function() {
 				$body.removeClass("is-hold");
 				$dimm.fadeOut(settings.duration);
-				$wrap.fadeOut(settings.duration, function() {
-					if (settings.autoDestroy) {
+                $wrap.addClass('modal-out');
+                $wrap.on('animationend',function(){
+                    if($wrap.hasClass('modal-out')) $wrap.removeClass('is-active is-expanded modal-out').removeAttr('style');
+                    if (settings.autoDestroy) {
 						module.destroy();
 					}
-				});
+                });
+				// $wrap.fadeOut(settings.duration, function() {
+				// 	if (settings.autoDestroy) {
+				// 		module.destroy();
+				// 	}
+				// });
 			},
 
 			invoke: function(query, passedArguments, context) {

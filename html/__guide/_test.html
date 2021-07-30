@@ -276,7 +276,7 @@
                 <br>
                 <section class="kb-sec">
                     <button type="button" class="btn-line" data-call-layered="modalSample"><span>모달 호출</span></button>
-                    <button type="button" class="btn-line" data-call-layered="modalAlert"><span>모달 호출</span></button>
+                    <button type="button" class="btn-line" data-action="callModal"><span>모달(스크립트) 호출</span></button>
                 </section>
 
 
@@ -316,7 +316,6 @@
             @@include('@@webRoot/html/_layered/modal-confirm.html')
             <!-- // Modal -->
         </div>
-
     </div>
 
     
@@ -326,6 +325,23 @@
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
+    <script>
+        $('button[data-action=callModal]').on('click',function(){
+            modalPopup({
+                title: "스크립트 모달",
+                message: "스크립트를 통한 모달 오픈 샘플 입니다.",
+                type: "confirm",
+                textOkButton: "변경",
+                textCancelButton: "닫기",
+                onOk: function() {
+                    console.log('DEMO 3 ok');
+                },
+                onCancel: function() {
+                    console.log('DEMO 3 cancel');
+                }
+            });
+        });
+    </script>
 
 </body>
 

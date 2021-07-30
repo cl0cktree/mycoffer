@@ -93,8 +93,11 @@ var gfn_dim = {
     hide : function($target, duration){
         var $dim = $(".dim");
         duration = duration != undefined ? duration : '200';
-        $target = !$target.is('.dim') ? $dim : $target;
-        //console.log($target)
+        if($target != undefined){
+            $target = !$target.is('.dim') ? $dim : $target;
+        }else{
+            $target = $dim;
+        }
         $target.fadeOut(duration,function(){
             $(this).remove();
         });
@@ -155,7 +158,15 @@ var gfn_layered = {
             var $selectedLayer = $layered.children('div[data-layered-name=' + name + ']');
             gfn_body.hold(false);
             gfn_dim.hide($selectedLayer.prev('.dim'), duration);
-            $selectedLayer.removeClass('is-active is-expanded').removeAttr('style');
+            //$selectedLayer.removeClass('is-active is-expanded').removeAttr('style');
+            if(!$selectedLayer.hasClass('modal')){
+                $selectedLayer.removeClass('is-active is-expanded').removeAttr('style');
+            }else{
+                $selectedLayer.addClass('modal-out');
+                $selectedLayer.on('animationend',function(){
+                    if($selectedLayer.hasClass('modal-out')) $selectedLayer.removeClass('is-active is-expanded modal-out').removeAttr('style');
+                });
+            }
         }else{
             gfn_dim.hide();
             $layered.children('div').removeClass('is-active is-expanded').removeAttr('style');
@@ -641,6 +652,7 @@ $('.tab.swiper-container').each(function(idx) {
     var isContentsTab = $tab.next('.tab_contents');
     var isContentsSwiper = $tab.parent().hasClass('tab-swiper-wrap');
 
+    //WAI-ARIA 
     $tab.attr('role','tablist');
     $tab.find('li > button, li > a').attr('role','tab');
 

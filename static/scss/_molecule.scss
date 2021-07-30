@@ -20,20 +20,14 @@
 
 .btn-amount.t01{flex-wrap:wrap}
 .btn-amount.t01 > button{width:33.3%;border-radius:0;height:44px;line-height:44px;border-bottom:0;border-color:$kb-ui02}
-.btn-amount.t01 > button span{font-size:16px;color:$kb-ui02}
+.btn-amount.t01 > button span,
+.btn-amount.t01 > button em{color:$kb-ui02}
+.btn-amount.t01 > button em{font-size:17px;}
+.btn-amount.t01 > button span{font-size:16px;}
 .btn-amount.t01 > button + button{margin:0}
 .btn-amount.t01 > button + button:not(:nth-child(4n)){border-left:0}
 .btn-amount.t01 > button:nth-last-child(4n) ~ button{border-bottom:1px solid $kb-ui02}
 .btn-amount.t01 + .kb-form{margin-top:24px}
-
-//예, 아니오 (선택)
-.btn-select{display:flex;}
-.btn-select > button,
-.btn-select > a{@include btnLine;border-color:$kb-ui08;}
-.btn-select > button:not(:first-child),
-.btn-select > a:not(:first-child){margin-left:4px;}
-.btn-select > button.is-selected,
-.btn-select > a.is-selected{border-color:$kb-ui02;}
 
 .btn-divide{display:flex;}
 .btn-divide li{flex:1;text-align:center;}

@@ -21,7 +21,7 @@
 }
 
 /* Bottom Sheet */
-.bottom-sheet {position:fixed;left:0;right:0;bottom:-16px;z-index:$level90;max-height:calc(100% - 48px);padding-top:30px;border-top-left-radius: 12px;border-top-right-radius: 12px;background-color: $kb-ui11;transform:translateY(100%);transition:transform .2s, max-height .2s;box-shadow: 0px -6px 8px rgba(0, 0, 0, 0.08);}
+.bottom-sheet {position:fixed;left:0;right:0;bottom:-16px;z-index:$level90;max-height:calc(100% - 48px);padding-top:30px;border-top-left-radius: 12px;border-top-right-radius: 12px;background-color: $kb-ui11;transform:translateY(100%);transition:transform .3s cubic-bezier(0.165, 0.84, 0.44, 1);box-shadow: 0px -6px 8px rgba(0, 0, 0, 0.08);}
 // .bottom-sheet.is-expanded,
 // .bottom-sheet.full-size{max-height:90%}
 .bottom-sheet.is-active{display:flex;flex-flow:column;transform:translateY(-16px);}
@@ -44,8 +44,9 @@
 .ios.homebar .bottom-sheet_buttons .btn-solid_sticky{height:86px;}
 .ios.homebar .bottom-sheet_buttons .btn-solid_sticky span{height:86px;line-height:66px;}
 
-.modal{display:none;position:fixed;left:50%;top:50%;z-index:$level100;transform:translate(-50%,-50%);width:calc(100vw - 48px);max-width:340px;max-height:calc(100% - 100px);padding-top:24px;background-color:$kb-ui11;border-radius:2px;}
-.modal.is-active{display:block;}
+.modal{display:none;position:fixed;left:50%;top:50%;z-index:$level100;width:calc(100vw - 48px);max-width:340px;max-height:calc(100% - 100px);padding-top:24px;background-color:$kb-ui11;border-radius:2px;}
+.modal.is-active{display:block;animation: modalIn .2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;}
+.modal.modal-out{animation: modalOut .2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;}
 .modal_header{min-height:28px;padding:0 24px;}
 .modal_header .tit{@include heading($size: 20px);display:inline-block;padding:0 2px;}
 .modal_contents{@include text($size: $text02);overflow:auto;max-height:calc(var(--vh, 1vh) * 100 - 252px);margin-top:16px;margin-bottom:32px;padding:0 24px;color:$kb-ui03;}
@@ -53,6 +54,15 @@
 .modal_contents ul[data-style=list] li{color:$kb-ui03;}
 .modal_buttons {position: relative; top: 1px;}
 // .modal_contents ul[data-style=list] li:before{top:0.5em;width:3px;height:3px;border-radius:0;background-color:$kb-ui04}
+
+@keyframes modalIn {
+    0%{transform:translate(-50%,-50%) scale(0.8);opacity:0.8;}
+    100%{transform:translate(-50%,-50%) scale(1);opacity:1;}    
+}
+@keyframes modalOut {
+    0%{transform:translate(-50%,-50%) scale(1);opacity:1;}    
+    100%{transform:translate(-50%,-50%) scale(0.8);opacity:0;}
+}
 
 .bottom-sheet .btn-close,
 .modal .btn-close {
