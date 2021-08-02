@@ -1,0 +1,139 @@
+<div class="popup promotion" data-layered-name="eventInitialQuiz">
+    <div class="popup_header">
+        <strong class="tit">이벤트</strong>
+    </div>
+    <div class="popup_contents">
+        <section class="kb-sec event-area event-word">
+            <strong class="event-tit">KB마이데이터 <br>오픈기념 낱말찾기</strong>
+            <div class="img"><img src="@@webRoot/static/images/event/img-starfriends01.png" alt=""></div>
+            <div class="word-box">
+                <div>
+                    <div class="info">
+                        ‘KB OOOO’ App은 여러 금융기관의 흩어진 자산을 쉽게 관리할 수 있는 서비스입니다. <br>OOOO에 들어갈 말은?
+                        <div class="hint-box form-checkbox">
+                            <input type="checkbox" name="" id="showHint">
+                            <label for="showHint">
+                                <strong><u>힌트보기</u></strong>
+                                <span class="hint">KB은행의 자산관리 App 서비스 </span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <strong>초성</strong>
+                        <ul>
+                            <li><span>ㅁ</span></li>
+                            <li><span>ㅇ</span></li>
+                            <li><span>ㅁ</span></li>
+                            <li><span>ㄴ</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="answer">
+                <div class="kb-form" data-status="info">
+                    <label for="formTextAnswer">정답</label>
+                    <div class="kb-form_inner form-text">
+                        <input type="text" id="formTextAnswer" value="마이머니">
+                        <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                    </div>
+                </div>
+                <div class="btn-area">
+                    <a href="javascript:openBsInitialQuiz('bsEventInitialQuiz');" role="button" class="btn-solid_sticky"><span>정답 제출</span></a>
+                </div>
+            </div>
+        </section>
+        <section class="kb-sec">
+            <dl class="event-desc">
+                <dt>기간</dt>
+                <dd>2021.10.04(월) ~ 2021.10.29(금)</dd>
+                <dt>대상</dt>
+                <dd>
+                    KB마이데이터 최초동의 고객 중 통합인증 및 전체동의 완료 고객
+                </dd>
+                <dt>참여방법</dt>
+                <dd>
+                    - 미완료 고객<br>
+                    ① 상단 ‘동의하러 가기’ 버튼 클릭<br>
+                    ② 통합인증 및 전체동의 완료<br>
+                    ③ 즉석룰렛 스티커 클릭<br>
+                    ④ 룰렛 이벤트의 ‘START’ 버튼 클릭<br>
+                    ⑤ 실시간 당첨 리워드 확인가능<br>
+                    <br>
+                    - 완료 고객<br>
+                    ① 마이데이터 선물함 메뉴의 실시간 이벤트에서<br>
+                    ‘룰렛이벤트 배너’ 클릭<br>
+                    ② 룰렛 이벤트의 ‘START’ 버튼 클릭<br>
+                    ③ 실시간 당첨 리워드 확인가능
+                </dd>
+                <dt>당첨자 발표</dt>
+                <dd>
+                    100% 경품 당첨 실시간 확인 가능
+                </dd>
+                <dt>경품</dt>
+                <dd>
+                    신세계이마트 상품권 3만원 (1,000명)<br>
+                    스타벅스 부드러운 디저트 세트 1매 (5,000명)<br>
+                    스타벅스 아이스 아메리카노 Tall 1매 (10,000명)<br>
+                    포인트리 500P (420,000명)
+                </dd>
+            </dl>
+            <dl class="event-caution">
+                <dt>유의사항</dt>
+                <dd>
+                    - 본 이벤트는 KB국민은행의 이벤트로 사정에 따라 변경 또는 중단될 수 있습니다.<br>
+                    - 참여고객 대상 지급되는 경품은 참여 즉시 지급되며 마이데이터 선물함 &gt; 선물에서 확인 가능합니다.<br>
+                    - 기타 자세한 이벤트 내용은 KB마이데이터 담당자 (02-2073-0000, 평일 9~18시 / 주말 및 공휴일 휴무)에게 문의바랍니다.<br>
+                    <br>
+                    본 광고물에 대한 유효기간 2021.10.31까지 준법감시인 심의필 제2021-0000호(2021.09.27)
+                </dd>
+            </dl>
+        </section>
+    </div>
+    <button class="btn-close" data-action="close"><span>닫기</span></button>
+</div>
+
+<script>
+    function openBsInitialQuiz(id){
+        var correctAnswer = '마이머니';
+        
+        if($('#formTextAnswer').val() != correctAnswer){
+            modalPopup({
+                title: "",
+                message: "정답이 아닙니다.",
+                type: "alert"
+            });
+        }else{
+            $('.bottom-sheet[data-layered-name="' + id + '"]').remove();
+            var $this = $('.promotion[data-layered-name=eventInitialQuiz]');
+            var eventName = $this.find('.event-tit').text();
+            var winningNum = 0; //당첨되는 내용(선택)
+
+            var resultHTML = '<div class=\"bottom-sheet\" data-layered-name=\"' + id + '\">';
+                resultHTML += '<div class=\"bottom-sheet_header\">';
+                resultHTML += '<span class=\"tit\">' + eventName + '</span>';
+                resultHTML += '</div>';
+                resultHTML += '<div class=\"bottom-sheet_contents\">';
+                resultHTML += '<section class=\"kb-sec event-result\">';
+                resultHTML += '<img src=\"' + promotionData[winningNum].thumb + '\" alt=\"' + promotionData[winningNum].prizeAmount + promotionData[winningNum].prizeUnit + '\">';
+                resultHTML += '<dl>';
+                resultHTML += '<dt>' + promotionData[winningNum].title + ' <span class=\"num\" data-unit-after=\"' + promotionData[winningNum].prizeUnit + '\">' + promotionData[winningNum].prizeAmount + '</span>' + '</dt>';
+                resultHTML += '<dd>';
+                resultHTML += '참여해 주셔서 감사합니다.<br>자세한 사항은 마이데이터 선물함에서 확인하세요.';
+                resultHTML += '</dd>';
+                resultHTML += '</dl>';
+                resultHTML += '</section>';
+                resultHTML += '</div>';
+                resultHTML += '<div class=\"bottom-sheet_buttons\">';
+                resultHTML += '<a href=\"javascript:;\" class=\"btn-solid_sticky\" role=\"button\"><span>마이데이터 선물함</span></a>';
+                resultHTML += '</div>';
+                resultHTML += '<button class=\"btn-close\" data-action=\"close\"><span>닫기</span></button>';
+                resultHTML += '</div>';
+
+            $('.layered').append(resultHTML);
+            //show result
+            setTimeout(function () {
+                gfn_layered.open(id);
+            });
+        }
+    }
+</script>

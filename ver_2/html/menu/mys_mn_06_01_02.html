@@ -1,0 +1,89 @@
+<!-- [MYS_MN_06_01_01] 전체메뉴 > 마이데이터 선물함 > 리워드함 > 쿠폰 상세 (작성자: 누리어 시스템 이진우)// -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Last Depth | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- 수정 : app-header (Type 구분) //-->
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'쿠폰상세',
+            'type':'close'
+        })
+        <!-- // 수정 : app-header (Type 구분)-->
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content coupon-detail">
+
+                <section class="kb-sec coupon-detail-summary">
+                    <div class="img"><img src="" alt="쿠폰 이미지 영역"></div>
+                    <span class="tit-label">가정의달특집</span>
+                    <strong class="company-name">롯데월드</strong>
+                    <p class="tit">어드벤처 종합이용권 50% 할인 쿠폰</p>
+                    <span class="date">2021.05.07 ~ 2021.05.20</span>
+                    <div class="bar-code"><img src="" alt="바코드 이미지"></div>
+                    <button type="button" class="btn-solid"><span>사용 완료하기</span></button>
+                </section>
+
+                <section class="kb-sec">
+                    <p class="caution-msg">
+                        일부 쿠폰은 실제 사용된 이후에도 앱 내에서 자동으로 사용 완료 처리되지 않을 수 있습니다. 본 쿠폰 사용을 완료하신 경우 [사용 완료하기] 버튼을 선택하여 완료 처리하실 수 있습니다.
+                    </p>
+                    <dl class="accordian">
+                        <dt class="is-active">
+                            <strong>쿠폰정보</strong>
+                            <button type="button"><i></i></button>
+                        </dt>
+                        <dd>
+                            <dl class="description-list type2">
+                                <dt>발급일</dt>
+                                <dd class="date">2021.05.07 09:53</dd>
+                                <dt>유효기간</dt>
+                                <dd class="date">2020.01.30</dd>
+                                <dt>주문번호</dt>
+                                <dd class="date">20210507000022507163</dd>
+                                <dt>사용처</dt>
+                                <dd>롯데월드</dd>
+                                <dt>결제금액</dt>
+                                <dd class="amount"><span class="num">0</span>P</dd>
+                            </dl>
+                        </dd>                       
+                        <dt>
+                            <strong>사용안내</strong>
+                            <button type="button"><i></i></button>
+                        </dt>
+                        <dd>
+                            사용안내 내용
+                        </dd>                       
+                    </dl>
+                </section>
+
+            </main>
+            <!-- // app-content -->
+
+        <!-- // app-container -->
+    </div>
+
+    <div class="layered">
+
+        @@include('@@webRoot/html/menu/layered/mys_mn_01_02_03.html')
+
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+
+</body>
+
+</html>

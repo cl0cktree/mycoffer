@@ -1,0 +1,398 @@
+<!-- <!DOCTYPE html> -->
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Highcharts"
+    })
+
+    <link rel="stylesheet" href="./resources/guide.css">
+    <link rel="stylesheet" href="./resources/jquery-ui.css">
+    <link rel="stylesheet" href="./resources/a11y-dark.min.css">
+    <script src="./resources/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <style>
+        .guide{line-height:1.8;}
+        .guide-container{padding-bottom:120px;}
+        .guide h2{font-size:28px;}
+        .guide div + h2{margin-top:80px;}        
+        .guide h2 + div{margin-top:20px;}
+        .guide h2 + div > ol:first-child{font-size:20px;}
+        .guide dt{margin-top:28px;font-size:18px;font-weight:bold;}
+        .guide dd{margin-top:16px;}
+
+        body.guide .box{border:0}
+        body.guide .flex-dl > dd:not(.guide-description){position:relative;width:auto;max-width:500px;padding:0}
+        body.guide .highcharts-box .content-box-info .info-amount dt,
+        body.guide .highcharts-box .content-box-info .info-amount dd{margin-top:0}
+        body.guide .highcharts-box .highcharts-figure .highcharts_column{min-width:330px}
+
+        .chart-sample{margin-top:30px;}
+        .chart-sample ul{display:flex;flex-wrap:wrap;}
+        .chart-sample li{flex:0 1 320px;margin:10px;padding:10px;text-align:center;border:1px solid #ddd;background-color:#fff;}
+        .chart-sample li .tit{display:block;font-weight:bold;}
+    </style>
+</head>
+
+<body class="guide">
+    <div class="guide-header">
+        <h1><a href="./index.html">GUIDE</a></h1>
+        <div class="guide_select">
+            <input type="checkbox" id="guide_menu"><label for="guide_menu"></label>
+            <ul class="gnb">
+                <li class="index"><a href="./index.html">Index</a></li>
+                <li><a href="./log.html">Log</a></li>
+                <li><a href="./atom.html">Atom</a></li>
+                <li><a href="./molecule.html">Molecule</a></li>
+                <li><a href="./organism.html">Organism</a></li>
+                <li><a href="./template.html">Template</a></li>
+                <li class="is-active"><a href="./highcharts-sample.html">Highcharts</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="guide-container">
+
+        <h2>Highcharts</h2>        
+        <div class="box guide-chart">
+            <ol>
+                <li>* swiper</li>
+            </ol>
+            <dl>
+                <dt>필요한 파일</dt>
+                <dd>
+                    <p>1) <b>highcharts.js</b> : @@webRoot/static/common/lib/highcharts/highcharts.js</p>
+                    <p>2) <b>highcharts-setting.js</b> : @@webRoot/static/common/lib/highcharts/highcharts-setting.js</p>
+                    <p>3) <b>막대그래프 radius</b> : @@webRoot/static/common/lib/highcharts/rounded-corners.js</p>
+                </dd>
+            </dl>
+            <dl>
+                <dt>차트 영역 유형</dt>
+                <dd>
+                    <p>1) square형 (.charts-type_square)</p>
+                    <p>2) full width형 (.charts-type_full)</p>
+                </dd>
+                <dt>차트 유형</dt>
+                <dd>
+                    <p><a href="">1) <b>Colmun</b> : 세로형 막대그래프</a></p>
+                    <p><a href="">2) <b>Column + Area</b> : 세로형 막대 + 영역그래프</a></p>
+                </dd>
+            </dl>
+        </div>
+
+        <div class="chart-sample">
+            <h2>Chart 타입별 샘플 <span>Click : 샘플페이지(새창)</span></h2>
+            <ul>
+                <li>
+                    <a href="./highchart/bar-graph01.html" target="_blank">
+                        <strong class="tit">바형 그래프 1</strong>
+                        <img src="./highchart/images/bar-graph01.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="./highchart/bar-graph02.html" target="_blank">
+                        <strong class="tit">바형 그래프 2</strong>
+                        <img src="./highchart/images/bar-graph02.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="./highchart/bar-graph03.html" target="_blank">
+                        <strong class="tit">바형 그래프 3</strong>
+                        <img src="./highchart/images/bar-graph03.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="./highchart/bar-graph04.html" target="_blank">
+                        <strong class="tit">바형 그래프 4</strong>
+                        <img src="./highchart/images/bar-graph04.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="./highchart/bar-graph05.html" target="_blank">
+                        <strong class="tit">바형 그래프 5</strong>
+                        <img src="./highchart/images/bar-graph05.png" alt="">
+                    </a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="./highchart/donut-graph01.html" target="_blank">
+                        <strong class="tit">도넛형 그래프 1</strong>
+                        <img src="./highchart/images/donut-graph01.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="./highchart/donut-graph02.html" target="_blank">
+                        <strong class="tit">도넛형 그래프 2</strong>
+                        <img src="./highchart/images/donut-graph02.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="./highchart/donut-graph03.html" target="_blank">
+                        <strong class="tit">도넛형 그래프 3</strong>
+                        <img src="./highchart/images/donut-graph03.png" alt="">
+                    </a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="./highchart/bubble-graph01.html" target="_blank">
+                        <strong class="tit">버블형 그래프 1</strong>
+                        <img src="./highchart/images/bubble-graph01.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="./highchart/bubble-graph02.html" target="_blank">
+                        <strong class="tit">버블형 그래프 2</strong>
+                        <img src="./highchart/images/bubble-graph02.png" alt="">
+                    </a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="./highchart/line-graph01.html" target="_blank">
+                        <strong class="tit">라인형 그래프 1</strong>
+                        <img src="./highchart/images/line-graph01.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="./highchart/line-graph02.html" target="_blank">
+                        <strong class="tit">라인형 그래프 2</strong>
+                        <img src="./highchart/images/line-graph02.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="./highchart/line-graph03.html" target="_blank">
+                        <strong class="tit">라인형 그래프 3</strong>
+                        <img src="./highchart/images/line-graph03.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="./highchart/line-graph04.html" target="_blank">
+                        <strong class="tit">라인형 그래프 4</strong>
+                        <img src="./highchart/images/line-graph04.png" alt="">
+                    </a>
+                </li>
+                <!-- <li> [개발자가 작업 필요 없다고 하여 삭제]
+                    <a href="./highchart/line-graph05.html" target="_blank">
+                        <strong class="tit">라인형 그래프 5</strong>
+                        <img src="./highchart/images/line-graph05.png" alt="">
+                    </a>
+                </li> -->
+            </ul>
+        </div>
+        <hr>
+
+        <div class="box fold mt20">
+            <h2><button type="button" class="btn-fold"><span>Swiper Chart Sample</span></button></h2>
+            <dl class="flex-dl">
+                <dt>
+                    <pre>
+                        <code>
+
+                        </code>
+                    </pre>
+                </dt>
+                <dd>
+                    <div class="highcharts-box">
+                        <div class="swiper-container t01 mt16 js-swiper" data-swiper-options="highchartSwiperOptions">
+                            <!-- // swiper option -->
+                            <script>
+                                var highchartSwiperOptions = {
+                                    "pagination": {
+                                        "el": ".swiper-pagination"
+                                    }
+                                };
+                            </script>
+                            <!-- swiper option //-->
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure content-box">
+                                            <div class="highcharts_column" id="columnChart01"></div>
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure content-box">
+                                            <div class="highcharts_column" id="columnChart02"></div>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <hr>
+
+    </div>
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="./resources/guide.js"></script>
+
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- <script src="@@webRoot/static/common/lib/swiper.min.js"></script> -->
+    <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>
+    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
+    <script>
+        // highchart 공통 options
+        Highcharts.setOptions({
+            title: { text: null },
+            subTitle: { text: null },
+            legend: { enabled: false },
+            credits: { enabled: false },
+            label : { fontFamily: 'KBFGText'},
+            credits: { enabled: false },
+            exporting: { enabled: false },
+        });
+        // 첫번째 column chart 선언
+        var columnChart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'columnChart01', // chart 삽입 target ID
+                type: "column",
+                height: (3 / 4 * 100) + '%' // 4:3 비율로 설정
+            },
+            tooltip: {
+                formatter: function () { 
+                    return gfn_comma3Digit(this.y) + "원"
+                },
+                padding: 10,
+                backgroundColor: "#FFF",
+                shadow: true,
+                borderRadius: 4,
+                verticalAlign: 'bottom',
+                borderColor: '#f3f3f3',
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '14px',
+                    fontFamily: "KBFGText",
+                }
+            },
+            xAxis: {
+                type: "category",
+                categories: ["1월", "2월", "3월", "4월", "5월", "6월 13일"],
+                labels: {
+                    style: {
+                        color: "#aab0b8",
+                        fontSize: '14px',
+                        fontFamily: 'KBFGText',
+                    }
+                }
+            },
+            yAxis: {
+                enabled: false,  // 사용 안함
+                labels: { enabled: false },  // 축 lebel 사용 안함
+                title: { enabled: false }, // 축 title 사용 안함
+                tickWidth: 0,  // 그리드 라인 너비
+                gridLineColor: 'transparsnt',  // 그리드 라인 컬러
+                plotLines: [
+                    {
+                        color: "#c7ccd1",
+                        width: 1,
+                        value: 500000,
+                        // zIndex: 50,
+                        dashStyle: 'dash'
+                        // 라인에 텍스트 있을 경우
+                        // label: {
+                        //     text: "<span>평균지출금액 </span><b>1,000,000원</b>",
+                        //     align: "justify",
+                        //     y: -10,
+                        //     x: -5
+                        // }
+                    }
+                ]
+            },
+            plotOptions: {
+                series: {
+                    color: '#c7ccd1', // 기본색상
+                    pointWidth: 16,  // 막대그래프 너비
+                    borderRadiusTopLeft: "50%",  // radius 값
+                    borderRadiusTopRight: "50%" // radius 값
+                }
+            },
+            series: [
+                {data:
+                    [200000, 680000, 350000, 680000, 860000,
+                        { // 특정 data값에 대하여 dataLabel을 붙임
+                            y: 665210,
+                            color: '#ffd338', // 강조할 data의 색상
+                        }
+                    ]
+                }
+            ]
+        });
+        // 두번째 column chart 선언
+        var columnChart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'columnChart02', // chart 삽입 target ID
+                type: "column",
+                height: (3 / 4 * 100) + '%' // 4:3 비율로 설정
+            },
+            tooltip: {
+                formatter: function () { 
+                    return gfn_comma3Digit(this.y) + "원"
+                },
+                padding: 10,
+                backgroundColor: "#FFF",
+                shadow: true,
+                borderRadius: 4,
+                verticalAlign: 'bottom',
+                borderColor: '#f3f3f3',
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '14px',
+                    fontFamily: "KBFGText",
+                }
+            },
+            xAxis: {
+                type: "category",
+                categories: ["1월", "2월", "3월", "4월", "5월", "6월 13일"],
+                labels: {
+                    style: {
+                        color: "#c7ccd1",
+                        fontSize: '14px',
+                        fontFamily: 'KBFGText',
+                    }
+                }
+            },
+            yAxis: {
+                enabled: false,  // 사용 안함
+                labels: { enabled: false },  // 축 lebel 사용 안함
+                title: { enabled: false }, // 축 title 사용 안함
+                tickWidth: 0,  // 그리드 라인 너비
+                gridLineColor: 'transparsnt',  // 그리드 라인 컬러
+                plotLines: [
+                    {
+                        color: "#c7ccd1",
+                        width: 1,
+                        value: 500000,
+                        dashStyle: 'dash'
+                    }
+                ]
+            },
+            plotOptions: {
+                series: {
+                    color: '#ffd338',
+                    pointWidth: 16,
+                    borderRadiusTopLeft: "50%",
+                    borderRadiusTopRight: "50%"
+                }
+            },
+            series: [
+                {data:
+                    [200000, 680000, 350000, 680000, 860000,
+                        {
+                            y: 665210,
+                            color: '#ff9a00',
+                        }
+                    ]
+                }
+            ]
+        });
+    </script>
+</body>
+
+</html>

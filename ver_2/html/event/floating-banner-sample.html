@@ -1,0 +1,339 @@
+<!-- [MYS_MN_06_01_04] 전체메뉴 > >마이데이터 선물함 > 리워드 혜택 (작성자: 누리어 시스템 이진우)// -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Last Depth | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header (for MyMoney) //-->
+        @@include('@@webRoot/html/_include/app-header.html',{
+            'pageTit':'임시 바닥페이지'
+        })
+        <!-- // app-header -->
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">            
+
+            <!-- app-content // -->
+            <main class="app-content">
+                <section class="kb-sec">                    
+                    <button type="button" class="btn-line btn-view-sticker"><span>스티커 보기</span></button>
+                    <button type="button" class="btn-line btn-hide-sticker"><span>스티커 숨기기</span></button>
+                    <button type="button" class="btn-line" data-call-layered="fbBirthday"><span>생일 배너</span></button>
+                    <button type="button" class="btn-line" data-call-layered="fbBanner01"><span>룰렛 배너</span></button>
+                    <button type="button" class="btn-line" data-call-layered="fbBanner02"><span>복권 배너</span></button>
+                    <button type="button" class="btn-line" data-call-layered="fbBanner03"><span>랜덤뽑기 배너</span></button>
+                    <button type="button" class="btn-line" data-call-layered="fbBanner04"><span>경품 복권 배너</span></button>
+                    <button type="button" class="btn-line" data-call-layered="fbBanner05"><span>설문조사 배너(긴텍스트)</span></button>
+                    <button type="button" class="btn-line" data-call-layered="fbBanner06"><span>초성퀴즈 배너</span></button>
+                    <button type="button" class="btn-line" data-call-layered="fbBanner07"><span>낱말찾기 배너</span></button>
+                    <button type="button" class="btn-line" data-call-layered="fbBanner08"><span>출석체크 배너</span></button>
+                    <button type="button" class="btn-line" data-call-layered="fbBanner09"><span>사다리 배너</span></button>
+                    <button type="button" class="btn-line" data-call-layered="fbBanner10"><span>주사위 배너</span></button>
+                </section>
+                
+
+            </main>
+            <!-- // app-content -->
+        </div>
+        <!-- // app-container -->
+    </div>
+
+    <div class="layered">
+        @@include('@@webRoot/html/event/layered/roullete.html')
+		@@include('@@webRoot/html/event/layered/random.html')
+		@@include('@@webRoot/html/event/layered/lottery.html')
+		@@include('@@webRoot/html/event/layered/attendance.html')
+		@@include('@@webRoot/html/event/layered/find-word.html')
+		@@include('@@webRoot/html/event/layered/initial-quiz.html')
+        @@include('@@webRoot/html/event/layered/research.html')
+        @@include('@@webRoot/html/event/layered/dice.html')
+		@@include('@@webRoot/html/event/layered/ladder.html')
+    </div>
+
+
+
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <script src="@@webRoot/static/js/floatingBanner.js"></script>
+
+    <script>
+        /*
+            $('.layered').fb(options); :삽입될 위치
+            // options 설명
+            fbName: "bsFloatingBannerOneQuarter",   // 배너 이름 data-layered-name 에 들어감
+            fbAnimation: "fbBottomUp",  //나타나는 애니메이션 (fbBottomUp, fbLeftRight, fbRightLeft, fbFadeIn)
+            fbMsg: "",  //출력되는 문구
+            fbLinkMsg: '바로가기',  //링크 문구 (기본 "바로 가기")
+            fbLink: 'javascript:;', //링크일 경우 경로
+            fbCallLayered: '',  //호출되는 레이어 이름
+            fbFunction: '', //레이어호출될때 실행해야하는 function 이름
+            fbImgSrc: "",   //배너 우측 이미지 경로
+            fbFormId: "notToday",   //쿠키 제어 id
+            fbFormName: "promotionBanner",   //쿠키 제어 name
+            fbExpireDay: "1",   //보지 않는 날짜
+            fbFormMsg: "오늘 하루 보지 않기",   //메세지
+            fbShow: false   //바로 보기(쿠키여부에 따라 안나올수 있음)
+
+            기타
+            - 오늘하루, 일주일간 보지 않기 등의 제어는 개발파트에서 공통으로 사용하는 부분을 사용할 것을 권장
+            - 링크 와 레이어호출 둘중 1개만 사용가능
+        */
+
+        $('.layered').fb({
+            fbName: "fbBirthday",
+            fbAnimation: "fbBottomUp",
+            fbMsg: "홍길동 고객님! <br>생일을 축하드립니다.",
+            fbImgSrc: "@@webRoot/static/images/_temp/fb-img10.png",
+            fbFormName: "birthdayBanner",
+            fbExpireDay: "1",
+            fbFormMsg: "오늘 하루 보지 않기",
+            fbShow: false,
+        });
+
+        $('.layered').fb({
+            fbName: "fbBanner01",
+            fbAnimation: "fbBottomUp",
+            fbMsg: "마이데이터 (최초)계좌 추가할 때마다<br> 즉석룰렛을 돌리고 돌리고! v(*_*)v",
+            fbCallLayered: 'eventRoullete',
+            fbFunction: 'fnEventRoullete(4)',   //4 ~ 6
+            fbImgSrc: "@@webRoot/static/images/_temp/fb-img01.png",
+            fbFormName: "promotionBanner",
+            fbExpireDay: "7",
+            fbFormMsg: "일주일간 보지 않기",
+            fbShow: false,
+        });
+
+        $('.layered').fb({
+            fbName: "fbBanner02",
+            fbAnimation: "fbRightLeft",
+            fbMsg: "마이데이터 (최초)계좌 추가할 때마다<br>꽝 없는 복권 증정 v(*_*)v",
+            fbCallLayered: 'eventScratch',
+            fbFunction: 'fnScratchEvent()',
+            fbImgSrc: "@@webRoot/static/images/_temp/fb-img02.png",
+            fbFormName: "promotionBanner02",
+            fbExpireDay: "1",
+            fbFormMsg: "하루동안 보지 않기",
+            fbShow: false,
+        });
+
+
+        $('.layered').fb({
+            fbName: "fbBanner03",
+            fbAnimation: "fbBottomUp",
+            fbMsg: "김국민 고객님, <br>마이데이터 통합인증, 전체동의 하시고 랜덤뽑기를 해보세요!",
+            fbCallLayered: 'eventRandom',
+            fbFunction: 'fnRandomEvent()',
+            fbImgSrc: "@@webRoot/static/images/_temp/fb-img03.png",
+            fbFormName: "promotionBanner03",
+            fbExpireDay: "1",
+            fbFormMsg: "하루동안 보지 않기",
+            fbShow: false,
+        });
+
+        $('.layered').fb({
+            fbName: "fbBanner04",
+            fbAnimation: "fbLeftRight",
+            fbMsg: "김국민 고객님, <br>마이데이터 통합인증, 전체동의 하시고 행운의 복권을 긁어보세요!",
+            fbCallLayered: 'eventScratch02',
+            fbFunction: 'fnScratchEvent02()',
+            fbImgSrc: "@@webRoot/static/images/_temp/fb-img02.png",
+            fbFormName: "promotionBanner04",
+            fbExpireDay: "1",
+            fbFormMsg: "하루동안 보지 않기",
+            fbShow: false,
+        });
+
+        $('.layered').fb({
+            fbName: "fbBanner05",
+            fbAnimation: "fbLeftRight",
+            fbMsg: "KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요! KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요! KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요! KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요! KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요! KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요! KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요! KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요! KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요! KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!KB마이데이터 오픈 100일 기념 설문조사 이벤트를 참여해 보세요!",
+            fbCallLayered: 'eventResearch',
+            fbImgSrc: "@@webRoot/static/images/_temp/fb-img04.png",
+            fbFormName: "promotionBanner05",
+            fbExpireDay: "1",
+            fbFormMsg: "하루동안 보지 않기",
+            fbShow: false,
+        });
+
+        $('.layered').fb({
+            fbName: "fbBanner06",
+            fbAnimation: "fbLeftRight",
+            fbMsg: "김국민 고객님, <br>마이데이터 통합인증, 전체동의 하시고 <br>행운의 초성퀴즈에 참여해 보세요!",
+            fbCallLayered: 'eventInitialQuiz',
+            fbImgSrc: "@@webRoot/static/images/_temp/fb-img05.png",
+            fbFormName: "promotionBanner06",
+            fbExpireDay: "1",
+            fbFormMsg: "하루동안 보지 않기",
+            fbShow: false,
+        });
+
+        $('.layered').fb({
+            fbName: "fbBanner07",
+            fbAnimation: "fbBottomUp",
+            fbMsg: "김국민 고객님, <br>KB마이데이터 오픈기념 <br>낱말찾기에 참여해 보세요!",
+            fbCallLayered: 'eventFindWord',
+            fbImgSrc: "@@webRoot/static/images/_temp/fb-img06.png",
+            fbFormName: "promotionBanner07",
+            fbExpireDay: "1",
+            fbFormMsg: "하루동안 보지 않기",
+            fbShow: false,
+        });
+
+        $('.layered').fb({
+            fbName: "fbBanner08",
+            fbAnimation: "fbBottomUp",
+            fbMsg: "KB마이데이터 8월 출석체크 이벤트를 <br>참여해 보세요.",
+            fbCallLayered: 'eventAttendance',
+            fbImgSrc: "@@webRoot/static/images/_temp/fb-img07.png",
+            fbFormName: "promotionBanner08",
+            fbExpireDay: "1",
+            fbFormMsg: "하루동안 보지 않기",
+            fbShow: false,
+        });
+
+        $('.layered').fb({
+            fbName: "fbBanner09",
+            fbAnimation: "fbBottomUp",
+            fbMsg: "김국민 고객님, <br>마이데이터 통합인증, 전체동의 하시고 <br>행운의 사다리타기를 참여해 보세요!",
+            fbCallLayered: 'eventLadder',
+            fbFunction: 'fnEventLadder()',
+            fbImgSrc: "@@webRoot/static/images/_temp/fb-img08.png",
+            fbFormName: "promotionBanner09",
+            fbExpireDay: "1",
+            fbFormMsg: "하루동안 보지 않기",
+            fbShow: false,
+        });
+
+        $('.layered').fb({
+            fbName: "fbBanner10",
+            fbAnimation: "fbBottomUp",
+            fbMsg: "마이데이터 통합인증, 전체동의 하시고 <br>주사위 게임에 참여해 보세요!",
+            fbCallLayered: 'eventRollDice',
+            fbFunction: 'fnRollDice()',
+            fbImgSrc: "@@webRoot/static/images/_temp/fb-img09.png",
+            fbFormName: "promotionBanner10",
+            fbExpireDay: "1",
+            fbFormMsg: "하루동안 보지 않기",
+            fbShow: false,
+        });
+
+        //시연용 버튼 click (내부만 사용)
+        $('.btn-view-sticker').on('click',function(){
+        
+            /*
+                $('.layered').sticker(options); :삽입될 위치
+                // options 설명
+                esPosition: "1", : 위치
+                //esPosition(위치 : 화면 기준)
+                //  1 2 3
+                //  4 5 6
+                //  7 8 9
+                esLink: '', : 링크로 연결될 경우
+                esCallLayered: '',  : 호출할 레이어 이름 (data-layered-name)
+                esAnimation: '',    : //나타나는 애니메이션 (esBottomUp, esUpBottom, esLeftRight, esRightLeft, esFadeIn)
+                esImgSrc: '',   // 이미지 경로 (높이 75px 고정)
+                esImgAlt: '',   // 이미지 경로 대체 텍스트
+                esClose: true   //닫기 버튼 노출 여부
+
+                기타 : 링크나 레이어 호출 둘중 하나만 사용가능
+            */
+            $('.layered').sticker({
+                esPosition: "1",
+                esAnimation: 'esLeftRight',
+                esCallLayered: 'fbBanner01',
+                esImgSrc: '/static/images/_temp/event-sticker01.png',
+                esImgAlt: '룰렛 이벤트 이미지',
+                esClose: true
+            });
+
+            $('.layered').sticker({
+                esPosition: "2",
+                esAnimation: 'esBottomUp',
+                esCallLayered: 'fbBanner02',
+                esImgSrc: '/static/images/_temp/event-sticker02.png',
+                esImgAlt: '',
+                esClose: true
+            });
+
+            $('.layered').sticker({
+                esPosition: "3",
+                esAnimation: 'esUpBottom',
+                esCallLayered: 'fbBanner03',
+                esImgSrc: '/static/images/_temp/event-sticker03.png',
+                esImgAlt: '',
+                esClose: true
+            });
+
+            $('.layered').sticker({
+                esPosition: "4",
+                esAnimation: 'esFadeIn',
+                esCallLayered: 'fbBanner04',
+                esImgSrc: '/static/images/_temp/event-sticker04.png',
+                esImgAlt: '',
+                esClose: true
+            });
+
+            $('.layered').sticker({
+                esPosition: "5",
+                esAnimation: 'esLeftRight',
+                esCallLayered: 'fbBanner05',
+                esImgSrc: '/static/images/_temp/event-sticker05.png',
+                esImgAlt: '',
+                esClose: true
+            });
+
+            $('.layered').sticker({
+                esPosition: "6",
+                esAnimation: 'esRightLeft',
+                esCallLayered: 'fbBanner06',
+                esImgSrc: '/static/images/_temp/event-sticker06.png',
+                esImgAlt: '',
+                esClose: true
+            });
+
+            $('.layered').sticker({
+                esPosition: "7",
+                esAnimation: 'esFadeIn',
+                esCallLayered: 'fbBanner07',
+                esImgSrc: '/static/images/_temp/event-sticker07.png',
+                esImgAlt: '',
+                esClose: true
+            });
+
+            $('.layered').sticker({
+                esPosition: "8",
+                esAnimation: 'esBottomUp',
+                esCallLayered: 'fbBanner08',
+                esImgSrc: '/static/images/_temp/event-sticker08.png',
+                esImgAlt: '',
+                esClose: true
+            });
+
+            $('.layered').sticker({
+                esPosition: "9",
+                esAnimation: 'esLeftRight',
+                esCallLayered: 'fbBanner09',
+                esImgSrc: '/static/images/_temp/event-sticker09.png',
+                esImgAlt: '',
+                esClose: true
+            });
+
+        });
+        $('.btn-hide-sticker').on('click',function(){
+            $('.layered').find('.event-sticker').remove();
+        });
+
+
+    </script>
+</body>
+</html>

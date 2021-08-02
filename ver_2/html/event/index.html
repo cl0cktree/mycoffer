@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  @@include('@@webRoot/html/_include/app-head.html',{
+  "title": "Last Depth | 1st Depth"
+  })
+</head>
+
+<body>    
+  @@include('@@webRoot/html/_include/app-a11y.html')
+  <div class="app">
+    <!-- app-header //-->
+    @@include('@@webRoot/html/_include/app-header.html',{
+    'pageTit' :'이벤트 레이어 모음'
+    })
+    <!-- // app-header -->
+
+    <!-- app-container //-->
+    <div class="app-container">
+
+      <!-- app-content // -->
+        <main class="app-content">
+            <section class="kb-sec">
+                <button type="button" class="btn-line btn-event-roullete" data-roullete-size="4"><span>룰렛 이벤트 (4칸)</span></button>            
+                <button type="button" class="btn-line btn-event-roullete" data-roullete-size="5"><span>룰렛 이벤트 (5칸)</span></button>            
+                <button type="button" class="btn-line btn-event-roullete" data-roullete-size="6"><span>룰렛 이벤트 (6칸)</span></button>
+                <button type="button" class="btn-line btn-event-random"><span>랜덤뽑기 이벤트</span></button>
+                <button type="button" class="btn-line btn-event-scratch"><span>스크래치 이벤트</span></button>
+                <button type="button" class="btn-line btn-event-scratch02"><span>경품 선택 후 스크래치 이벤트</span></button>
+                <button type="button" class="btn-line btn-event-attendance"><span>출석체크 이벤트</span></button>
+                <button type="button" class="btn-line btn-event-word"><span>낱말찾기 이벤트</span></button>
+                <button type="button" class="btn-line btn-event-initial"><span>초성퀴즈 이벤트</span></button>
+                <button type="button" class="btn-line btn-event-dice"><span>주사위</span></button>
+                <button type="button" class="btn-line btn-event-research"><span>설문조사 이벤트</span></button>
+                <button type="button" class="btn-line btn-event-ladder"><span>사다리 이벤트</span></button>
+            </section>
+
+        </main> 
+        <!-- // app-content -->
+
+    </div>
+    <!-- // app-container -->
+
+    <!-- Layer (fullpage popup, modal, bottom sheet) // -->
+    <div class="layered">
+		@@include('@@webRoot/html/event/layered/roullete.html')
+		@@include('@@webRoot/html/event/layered/random.html')
+		@@include('@@webRoot/html/event/layered/lottery.html')
+		@@include('@@webRoot/html/event/layered/attendance.html')
+		@@include('@@webRoot/html/event/layered/find-word.html')
+		@@include('@@webRoot/html/event/layered/initial-quiz.html')
+        @@include('@@webRoot/html/event/layered/research.html')
+        @@include('@@webRoot/html/event/layered/dice.html')
+		@@include('@@webRoot/html/event/layered/ladder.html')
+    </div>
+    <!-- // Layer (fullpage popup, modal, bottom sheet) -->
+
+    </div>
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <script src="@@webRoot/static/js/floatingBanner.js"></script>
+    <!-- Add Script -->
+
+    <script>
+    var promotionData = [
+        {
+            "title" : '신세계이마트 상품권',
+            "prizeAmount" : '30,000',
+            "prizeUnit" : '원',
+            "thumb" : '@@webRoot/static/images/event/img-voucher.png',
+        },
+        {
+            "title" : 'KB 포인트리',
+            "prizeAmount" : '500',
+            "prizeUnit" : 'P',
+            "thumb" : '@@webRoot/static/images/event/img-pointre.png',
+        },
+        {
+            "title" : '스타벅스 디저트 세트',
+            "prizeAmount" : '1',
+            "prizeUnit" : '매',
+            "thumb" : '@@webRoot/static/images/event/img-coffee.png',
+        },
+        {
+            "title" : 'KB 포인트리',
+            "prizeAmount" : '1,000',
+            "prizeUnit" : 'P',
+            "thumb" : '@@webRoot/static/images/event/img-pointre.png',
+        },
+        {
+            "title" : 'KB 포인트리',
+            "prizeAmount" : '1,200',
+            "prizeUnit" : 'P',
+            "thumb" : '@@webRoot/static/images/event/img-pointre.png',
+        },
+        {
+            "title" : 'KB 포인트리',
+            "prizeAmount" : '1,500',
+            "prizeUnit" : 'P',
+            "thumb" : '@@webRoot/static/images/event/img-pointre.png',
+        },
+    ];
+
+    var getOddsOfWinning = function(chance1,chance2,chance3,chance4,chance5,chance6) {
+        var cummprob = [chance1,chance2,chance3,chance4,chance5,chance6];        
+        var x = Math.random();
+        var y = 0;
+        for (y = 0; y < cummprob.length; y++) {
+            if (cummprob[y] >= x) break;
+        }
+        return y;
+    }; 
+
+    //룰렛
+    $('.btn-event-roullete').on('click',function(){
+        var size = $(this).data('roullete-size');
+        gfn_layered.open('eventRoullete');
+        fnEventRoullete(size);
+    });
+
+    //랜덤 뽑기
+    $('.btn-event-random').on('click',function(){        
+        gfn_layered.open('eventRandom');
+        fnRandomEvent();
+    });
+
+    //스크래치
+    $('.btn-event-scratch').on('click',function(){        
+        gfn_layered.open('eventScratch');
+        fnScratchEvent();
+    });
+
+    //경품 선택 후 스크래치
+    $('.btn-event-scratch02').on('click',function(){        
+        gfn_layered.open('eventScratch02');
+        fnScratchEvent02();
+    });
+
+    //출석체크
+    $('.btn-event-attendance').on('click',function(){        
+        gfn_layered.open('eventAttendance');
+    });
+
+    //낱말찾기
+    $('.btn-event-word').on('click',function(){        
+        gfn_layered.open('eventFindWord');
+    });
+
+    //초성퀴즈
+    $('.btn-event-initial').on('click',function(){        
+        gfn_layered.open('eventInitialQuiz');
+    });
+
+    //주사위
+    $('.btn-event-dice').on('click',function(){        
+        gfn_layered.open('eventRollDice');
+        fnRollDice();
+    });
+
+    //설문조사
+    $('.btn-event-research').on('click',function(){        
+        gfn_layered.open('eventResearch');
+    });
+
+    //사다리
+    $('.btn-event-ladder').on('click',function(){        
+        gfn_layered.open('eventLadder');
+        fnEventLadder();
+    });
+      
+  </script>
+
+
+</body>
+
+</html>
