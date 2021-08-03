@@ -28,12 +28,13 @@
 .page-header + .kb-sec{margin-top:68px;}
 .page-header + .kb-sec .h1{padding-top:12px;}
 
-.app-pagination{display:flex;justify-content:center;align-items:center;margin-top:20px;}
+.app-pagination{display:flex;justify-content:center;align-items:center;margin-top:20px;margin-bottom:20px;}
 .app-pagination > .btn-prev{margin-left:12px;}
 .app-pagination > .btn-next{margin-right:12px;}
-.app-pagination .page-number{margin-left:20px;margin-right:20px;font-size:0;}
+.app-pagination > a{width:24px;height:24px;padding:2px;}
+.app-pagination .page-number{margin-left:20px;margin-right:20px;font-size:0;letter-spacing:-0.34px}
 .app-pagination .page-number span,
-.app-pagination .page-number strong{@include number($size:17px, $line-height:20px);display:inline-block;}
+.app-pagination .page-number strong{@include number($size:17px, $line-height:24px);display:inline-block;}
 .app-pagination .page-number strong{color:$kb-ui03;}
 .app-pagination .page-number span{margin-left:5px;color:$kb-ui05;}
 .app-pagination .page-number span:before{content:'/';display:inline-block;margin-right:5px;}
@@ -74,8 +75,6 @@
 .calendar-area .ui-widget-content .ui-state-disabled .ui-state-default, 
 .calendar-area .ui-widget-header .ui-state-disabled .ui-state-default{color:$kb-ui07;}
 
-
-
 .calendar-area .ui-widget-content .ui-state-active{border:none;background-color:$color-yellow;border-radius:50%;}
 .calendar-area .ui-widget-content .ui-datepicker-today .ui-state-highlight{position:relative;}
 .calendar-area .ui-widget-content .ui-datepicker-today .ui-state-highlight:after{content:'';position:absolute;top:0;left:calc(50% - 2px);width:4px;height:4px;border-radius:50%;background-color:$color-yellow}
@@ -84,3 +83,8 @@
 .pdf-viewer .pdf-area{flex:1;}
 .pdf-viewer .sticky-bottom.sticky-bottom:not(.popup_buttons){padding-top:0;height:52px;}
 .ios.homebar .pdf-viewer > section + .sticky-bottom.sticky-bottom:not(.popup_buttons){height:86px;}
+
+//page 공통
+.kb-sec:first-child .h1:first-child{padding-top:32px;}
+.kb-sec:first-child .h4:first-child{padding-top:16px;}
+.kb-sec:first-child .tab:first-child{padding-top:16px;}

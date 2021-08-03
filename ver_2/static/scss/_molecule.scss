@@ -35,13 +35,13 @@
 .btn-divide .btn-text i[class*=icon-]:first-child{margin-right:10px;vertical-align:top;}
 
 //버튼 바닥 고정
-.sticky-bottom.sticky-bottom:not(.popup_buttons){width:100%;height:112px;padding-top:60px;}
+.sticky-bottom:not(.popup_buttons){width:100%;height:112px;padding-top:60px;}
 .app-content.bg-gray-bottom .sticky-bottom{background-color:$kb-ui10;}
 .sticky-bottom:not(.popup_buttons) .btn-area,
 .app-content .sticky-bottom .btn-area{position:fixed;bottom:0;left:0;z-index:$level60;width:100%;}
 .sticky-bottom button,
 .sticky-bottom a{border-radius:0;}
-.ios.homebar .sticky-bottom{height:86px;}
+.ios.homebar .sticky-bottom{height:9.6rem;}
 
 //바닥 고정 메뉴
 .other-login{position:fixed;bottom:0;left:0;z-index:$level40;width:100%;padding-bottom:12px;text-align:center;background-color:$kb-ui11;}
@@ -203,7 +203,7 @@ ul.radio-group > li + li{margin-top:16px;}
 .form-text input[type=tel],
 .form-text input[type=number]{width:100%;min-width:20px;height:32px;border:none;}
 .form-text input[type=text],
-.form-text input[type=password]{@include text($size:22px, $line-height: 32px, $weight: bold);}
+.form-text input[type=password]{@include text($size:18px, $line-height: 32px, $weight: bold);}
 .form-text input[data-action=autoSeperator]{@include number($size:24px, $line-height:24px, $weight: bold);text-align:right;}
 .form-text input[data-action=autoSeperator]::placeholder{text-align:right;}
 .form-text .unit{@include text($size:22px, $weight: bold);margin-top:2px;margin-left:4px;}/*position:absolute;left:4px;top:3px;max-width:calc(100% - 54px);*/
@@ -211,6 +211,7 @@ ul.radio-group > li + li{margin-top:16px;}
 .form-text .btn-solid_form,
 .form-text .btn-line_form,
 .form-text .btn-icon_form{position:relative;z-index:1;margin-left:4px;}
+.form-text .btn-icon_form.btn-search{margin-left:15px;}//닫기버튼 여백 1px 뺌
 .form-text .measurement{@include number(24px);position:absolute;top:-9999px;opacity:0;max-width:calc(100% - 54px)}
 .form-text input:focus ~ .btn-data-clear{display:block;}
 .form-text.is-focused .btn-data-clear{display:block;}
@@ -223,7 +224,7 @@ ul.radio-group > li + li{margin-top:16px;}
 .form-radio-set .form-radio {margin: 5px 0;}
 .form-radio-set .form-radio label {color: $kb-ui02; }
 
-.form-select .selected-option{@include text($size:22px, $line-height:24px, $weight: bold);@include ellipsis;position:relative;display:block;width:100%;height:32px;padding-right:30px;text-align:left;border:none;}
+.form-select .selected-option{@include text($size:18px, $line-height:24px, $weight: bold);@include ellipsis;position:relative;display:block;width:100%;height:32px;padding-right:30px;text-align:left;border:none;}
 //.form-select .selected-option:after{content:'';position:absolute;right:4px;top:7px;z-index:1;width:10px;height:10px;border-style:solid;border-color:$kb-ui05;border-width:0 2px 2px 0;transform:rotate(45deg)}
 .form-select .selected-option:after{display: inline-block;position: absolute;right: .8rem;top: 50%;z-index: 1;content: '';width: .9rem;height: .9rem;margin-top: -.8rem;border-left: 1px solid #8c949e;border-bottom: 1px solid #8c949e;transform: rotate(-45deg);}
 .form-select select{display:none;}
@@ -397,7 +398,7 @@ ul.radio-group > li + li{margin-top:16px;}
 .complete-msg i[class*=icon]{display:block;margin:0 auto;}
 .complete-msg p,
 .no-data p{font-size:16px;line-height:24px;margin-top:12px;}
-.complete-msg .tit{display:block;margin-top:23px;font-size:24px;line-height:33px;font-weight:bold;color:$kb-ui02}
+.complete-msg .tit{display:block;margin-top:22px;font-size:24px;line-height:33px;font-weight:bold;color:$kb-ui02}
 .complete-msg .tit + p{margin-top:16px;color:$kb-ui04;}
 
 // 전체동의
@@ -407,10 +408,10 @@ ul.radio-group > li + li{margin-top:16px;}
 .agreement-to-terms .form-checkbox_20 label {margin-left: 7px; padding-right: 30px; @include text($size:$text02);}
 .agreement-to-terms .form-checkbox_20 input + label:before {left: 7px;}
 .agreement-to-terms .form-checkbox label {padding-right: 30px;}
-.agreement-to-terms .link {position: absolute; right: 0; top: 0; width: 24px; height: 24px; padding: 4px 6px 4px 9px;}
-.agreement-to-terms .link span {font-size: 0; @include iconBullet('right', 9px, 16px, 1px, $kb-ui05)}
+.agreement-to-terms .link {position: absolute; right: 0; top: 50%; transform:translateY(-50%); width: 24px; height: 24px; padding: 4px 6px 4px 9px;}
+.agreement-to-terms .link span {font-size: 0; @include iconBullet('right', 9px, 18px, 1px, $kb-ui05)}
 .agreement-to-terms .alink {position: absolute; right: 0; top: 50%; width: 24px; height: 24px; padding: 4px 6px 4px 9px; transform: translateY(-50%);}
-.agreement-to-terms .alink span {font-size: 0; @include iconBullet('right', 9px, 16px, 1px, $kb-ui05);}
+.agreement-to-terms .alink span {font-size: 0; @include iconBullet('right', 9px, 18px, 1px, $kb-ui05);}
 .agreement-to-terms.expansion-mode .alink {left: 0; right: 0; top: 0; bottom: 0; width: auto; height: auto; padding: 0; transform: translateY(0);}
 .agreement-to-terms.expansion-mode .alink span {position: absolute; right: 6px; top: 50%; transform: translateY(-50%);}
 .agreement-to-terms.expansion-mode .header .alink span {display: none;}

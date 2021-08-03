@@ -44,12 +44,13 @@
 .ios.homebar .bottom-sheet_buttons .btn-solid_sticky{height:86px;}
 .ios.homebar .bottom-sheet_buttons .btn-solid_sticky span{height:86px;line-height:66px;}
 
-.modal{display:none;position:fixed;left:50%;top:50%;z-index:$level100;width:calc(100vw - 48px);max-width:340px;max-height:calc(100% - 100px);padding-top:24px;background-color:$kb-ui11;border-radius:2px;}
+.modal{display:none;position:fixed;left:50%;top:50%;z-index:$level100;width:calc(100vw - 48px);max-width:340px;max-height:calc(100% - 100px);padding-top:26px;background-color:$kb-ui11;border-radius:2px;}
 .modal.is-active{display:block;animation: modalIn .2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;}
 .modal.modal-out{animation: modalOut .2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;}
 .modal_header{min-height:28px;padding:0 24px;}
 .modal_header .tit{@include heading($size: 20px);display:inline-block;padding:0 2px;}
-.modal_contents{@include text($size: $text02);overflow:auto;max-height:calc(var(--vh, 1vh) * 100 - 252px);margin-top:16px;margin-bottom:32px;padding:0 24px;color:$kb-ui03;}
+.modal_header  + .modal_contents{margin-top:15px;}
+.modal_contents{@include text($size: $text02);overflow:auto;max-height:calc(var(--vh, 1vh) * 100 - 252px);margin-top:3px;margin-bottom:26px;padding:0 24px;color:$kb-ui03;}
 .modal-not-today{padding:32px 24px}
 .modal_contents ul[data-style=list] li{color:$kb-ui03;}
 .modal_buttons {position: relative; top: 1px;}
