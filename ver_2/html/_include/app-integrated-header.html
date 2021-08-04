@@ -7,7 +7,13 @@
     'back' : 타이틀 + back버튼만
     'notice' : 알림 + 타이틀 + 전체메뉴    
 -->
+
+@@if (context.type === '' || context.type === undefined){
+<header class="app-header" data-type="">    
+}
+@@if (context.type !== '' && context.type !== undefined){
 <header class="app-header" data-type="@@type">
+}
     <a href="javascript:;" class="btn-notice-box" role="button"><i class="icon-bell2_24">알림함으로 이동</i></a>    
     <a href="javascript:history.back();" class="btn-history-back" role="button"><i class="icon-back">뒤로가기</i></a>
     <strong class="page-tit">@@pageTit</strong>
