@@ -59,7 +59,7 @@
 .accordian .infomation-lists li {border: 0;}
 .accordian .infomation-lists li {margin: 30px 0; padding: 0;}
 
-.credit-transaction-message {margin-bottom: 60px;}
+.credit-transaction-message {margin-top: 20px; margin-bottom: 60px;}
 
 // 휴대폰본인인증
 .phone-auth-agree .agreement-to-terms {border-bottom: 0;}
@@ -245,6 +245,7 @@
 .my-credit-mng .h4 {margin-bottom: 23px;}
 .my-credit-mng .h4 {margin-bottom: 23px;}
 .my-credit-mng .button-area {margin-top: 24px;}
+.my-credit-mng + .kb-sec:not(.toggle-notice) {padding-top: 24px;}
 
 .icon-text-links {padding: 12px 2px; border-top: 1px solid $kb-ui03; border-bottom: 1px solid $kb-ui08;}
 .icon-text-links li .link {position: relative; display: block; padding: 12px 0;@include text($text02, normal); color: $kb-ui02;}
@@ -286,12 +287,22 @@
 .credit-compare-details .info-msg {margin-top: 20px;}
 
 .my-credit-power {padding-top: 8px;}
-.my-credit-power:first-child {padding-top: 40px;}
+// .my-credit-power:first-child {padding-top: 40px;}
 .my-credit-power dl {margin-top: 20px; padding: 8px 12px; border: 1px solid $kb-ui08; border-radius: 2px; @include text($text02, normal);}
 .my-credit-power dl::after {content: ''; clear: both; display: block;}
 .my-credit-power dt {float: left; color: $kb-ui04;}
 .my-credit-power dd {float: right; color: $kb-ui03;}
 .my-credit-power .chart-area {margin-top: 24px;}
+.my-credit-power .graph-area,
+.my-credit-power .chart-area {position: relative; padding-bottom: 24px;}
+.my-credit-power .graph-area::before,
+.my-credit-power .chart-area::before,
+.my-credit-power .graph-area::after,
+.my-credit-power .chart-area::after {position: absolute; bottom: 0; font-size: 14px; color: #26282c;}
+.my-credit-power .graph-area::before,
+.my-credit-power .chart-area::before {content: '← 저소득'; left: 2px;}
+.my-credit-power .graph-area::after,
+.my-credit-power .chart-area::after {content: '고소득 →'; right: 2px;}
 
 .compare-bar-container .compare-bar-area {margin-top: 20px; margin-bottom: 24px;}
 .compare-bar-container .compare-summary {padding: 15px; border: 1px solid $kb-ui08; @include text($text02, normal); color: $kb-ui03; border-radius: 2px;}

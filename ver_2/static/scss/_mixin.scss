@@ -193,16 +193,15 @@
 }
 
 //화살표 모양
-@mixin iconBullet($direction: 'up', $width: 50px, $height : 25px, $thick : 2px, $color : #000, $display: inline-block, $position: relative){
+@mixin iconBullet($direction: 'up', $width: 50px, $height : 25px, $thick : 2px, $color : #000, $display: inline-block, $position: relative){    
     position: $position;
     display: $display;
-    width: $width;
-    height: $height;
+    width: $width;    
 
     @if ($direction == 'up' or $direction == 'down'){
-        $size: floor( $width / $sqrt_2 - 2 * $thick);        
-        $rate: 2 * $height / $width;
-        $margin-top: round( $rate * $size / ( 2 * $sqrt_2 ));
+        height: $width / 2;
+        $size: floor( $width / $sqrt_2 );        
+        $margin-top: round( $size / ( 2 * $sqrt_2 ));
 
         &:before{
             content:'';
@@ -211,27 +210,24 @@
             left:50%;
             width: $size;
             height: $size;
-
-            @if ($rate == 1){
-                transform: translate(-50%, -50%) rotate(45deg);
-            }@else{
-                transform:translate(-50%, -50%) scale(1, $rate) rotate(45deg);
-            }
+            transform: translate(-50%, -50%) rotate(45deg);
 
             @if ($direction == 'up'){
                 margin-top: $margin-top;
                 border-top: $thick solid $color;
                 border-left: $thick solid $color;
+                border-top-left-radius:$thick;
             }@else if($direction == 'down'){
                 margin-top: - $margin-top;
                 border-right: $thick solid $color;
                 border-bottom: $thick solid $color;
+                border-bottom-right-radius:$thick;
             }
         }
     }@else if($direction == 'left' or $direction == 'right'){
-        $size: floor( $height / $sqrt_2 - 2 * $thick);
-        $rate: 2 * $width / $height;
-        $margin-left: round( $rate * $size / ( 2 * $sqrt_2 ) );
+        height: $width * 2;
+        $size: floor( $width * 2 / $sqrt_2);
+        $margin-left: round( $size / ( 2 * $sqrt_2 ) );
 
         &:before{
             content:'';
@@ -240,21 +236,19 @@
             left:50%;
             width: $size;
             height:$size;
-
-            @if($rate == 1){
-                transform:translate(-50%, -50%) rotate(45deg);
-            }@else{
-                transform:translate(-50%, -50%) scale($rate, 1) rotate(45deg);
-            }
+            transform:translate(-50%, -50%) rotate(45deg);
 
             @if($direction == 'left'){
                 margin-left: $margin-left;
                 border-left: $thick solid $color;
                 border-bottom: $thick solid $color;
+                border-bottom-left-radius: $thick;
+                
             }@else if($direction == 'right'){
                 margin-left: - $margin-left;
                 border-top: $thick solid $color;
                 border-right: $thick solid $color;
+                border-top-right-radius: $thick;
             }
 
         }
@@ -262,11 +256,12 @@
 }
 
 //더하기 모양
-@mixin iconPlus( $width: 12px, $height : 12px, $thick : 2px, $background-color : #484b51, $display: inline-block, $position: relative){
+@mixin iconPlus( $width: 12px, $height : 12px, $thick : 2px, $padding: 0px, $background-color : #484b51, $display: inline-block, $position: relative){    
     position: $position;
     display: $display;
-    width: $width;
-    height: $height;
+    box-sizing:border-box;
+    width: $width + (2 * $padding);
+    height: $height + (2 * $padding);
 
     &:before,
     &:after{
@@ -274,13 +269,13 @@
         content:'';
         display:block;
         background-color:$background-color;
-        border-radius:50%;
+        border-radius:$thick;
     }
     &:before{
-        width:100%;height:$thick;top:50%;left:0;transform:translateY(-50%);
+        width:$width;height:$thick;top:50%;left:50%;transform:translate(-50%, -50%);
     }
     &:after{
-        width:$thick;height:100%;top:0;left:50%;transform:translateX(-50%);
+        width:$thick;height:$height;top:50%;left:50%;transform:translate(-50%, -50%);
     }
 }
 

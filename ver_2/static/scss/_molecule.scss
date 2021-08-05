@@ -389,17 +389,16 @@ ul.radio-group > li + li{margin-top:16px;}
 
 .no-data{text-align:center;}
 .no-data .icon-info_24{display:block;margin:0 auto;}
-.no-data p{font-size:16px;line-height:24px;margin-top:12px;}
-.no-data .no-data-tit{display:block;font-size:24px;margin-top:27px;font-weight:bold}
-.no-data .no-data-tit + p{color:$kb-ui04}
 .no-data,
 .complete-msg{text-align:center;}
 .no-data [class*=icon],
 .complete-msg i[class*=icon]{display:block;margin:0 auto;}
 .complete-msg p,
-.no-data p{font-size:16px;line-height:24px;margin-top:12px;}
-.complete-msg .tit{display:block;margin-top:22px;font-size:24px;line-height:33px;font-weight:bold;color:$kb-ui02}
-.complete-msg .tit + p{margin-top:16px;color:$kb-ui04;}
+.no-data p{@include text($size: $text02);margin-top:12px;}
+.complete-msg .tit,
+.no-data .no-data-tit{@include heading($size: $heading02);display:block;margin-top:23px;}
+.complete-msg .tit + p,
+.no-data .no-data-tit + p{margin-top:11px;color:$kb-ui04;}
 
 // 전체동의
 .agreement-to-terms {border-bottom: 1px solid $kb-ui09;}
@@ -705,17 +704,17 @@ ul.radio-group > li + li{margin-top:16px;}
 
 .condition-area{margin-left:(-2.4rem);margin-right:(-2.4rem);background-color:$kb-ui10;padding-left:2.4rem;padding-right:2.4rem;}
 .condition-area.bg-white{background-color:$kb-ui11;}
-.btn-condition{@include clfix;display:block;width:100%;padding-top:12px;padding-bottom:12px;}
-.btn-condition > .tit{float:left;font-weight:bold;}
+.btn-condition{@include clfix;display:block;width:100%;padding-top:18px;padding-bottom:18px;}
+.btn-condition > .tit{float:right;font-weight:bold;}
 .btn-condition > .tit .num{line-height:1;}
-.btn-condition > div{float:right;}
+.btn-condition > div{float:left;}
 .btn-condition > div .sorting-status,
 .btn-condition > div .sorting-status > span,
 .btn-condition > div .icon-filter_20{float:left;}
-.btn-condition > div .sorting-status{margin-top:2px;}
-.btn-condition > div .sorting-status > span{line-height:20px;color:$kb-ui04}
+.btn-condition > div .sorting-status > span{font-size:$text03;line-height:20px;color:$kb-ui02;font-weight:bold;}
+.btn-condition > div .sorting-status .num{font-size:$num03}
 .btn-condition > div .sorting-status > span + span:before{content:'\00B7';display:inline-block;margin-left:4px;margin-right:5px;}
-.btn-condition > div .icon-filter_20{margin-left:12px;}
+.btn-condition > div .arrow{@include iconBullet($direction: 'down', $width: 14px, $thick : 2px, $color : $kb-ui02);float:left;margin-top:0.4em;margin-left:8px;}
 
 //rank list
 .rank-list{display:grid;grid-template-columns:1fr auto;counter-reset:ranking 0;align-items:flex-end}
@@ -743,3 +742,17 @@ ul.radio-group > li + li{margin-top:16px;}
 .rank-list.t01 li .icon-arrow-right{position:absolute;top:50%;right:0;transform:translateY(-50%)}
 .rank-list.t01 .tags{color:$kb-ui04}
 .rank-list.t01 .tags span{display:inline-block;margin-right:1.2rem;color:$kb-ui04}
+
+.kb-card{padding:20px;border-radius: 8px;box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.07);border: solid 1px $kb-ui08;}
+
+.badge + .account-card{margin-top:10px;}
+.account-card > .name,
+.account-card > .number,
+.account-card > .nickname{display:block;}
+.account-card > .nickname{color:$kb-ui04;}
+.account-card .amount{text-align:right;}
+.account-card .amount .num{font-size:$num01;}
+.account-card .amount .num:after{font-size:$text01;}
+.account-card .name + .number{margin-top:10px;}
+.account-card .number + .nickname{margin-top:20px;}
+

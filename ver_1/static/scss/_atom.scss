@@ -74,12 +74,14 @@
 .validation{display:none;}
 [data-status=info] .validation,
 [data-status=error] .validation,
+[data-status=has-error] .validation,
 [data-status=success] .validation,
 .info-msg,
 .error-msg,
 .success-msg{position:relative;display:block;padding-left:2.4rem;font-size:$text03;line-height:2rem;}
 [data-status=info] .validation:before,
 [data-status=error] .validation:before,
+[data-status=has-error] .validation:before,
 [data-status=success] .validation:before,
 .info-msg:before,
 .error-msg:before,
@@ -87,6 +89,7 @@
 [data-status=info] .validation,
 .info-msg{color:$kb-ui04;}
 [data-status=error] .validation,
+[data-status=has-error] .validation,
 .error-msg{color:$color-red;}
 [data-status=success] .validation,
 .success-msg{display:block;color:$color-blue;}
@@ -94,6 +97,7 @@
 [data-status=info] .validation:before{background-position: -6.6rem -11.8rem;}
 .error-msg:before,
 [data-status=error] .validation:before{background-position: -8.8rem -11.8rem;}
+[data-status=has-error] .validation:before{background-position: -8.8rem -11.8rem;}
 .success-msg:before,
 [data-status=success] .validation:before{background-position: -9rem -14rem;}
 

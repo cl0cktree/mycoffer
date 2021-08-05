@@ -693,6 +693,8 @@ $('.tab.swiper-container').each(function(idx) {
                 $content.find('.swiper-container').each(function(){
                     var swiperClass = 'swiper-container-'+idx+'-'+i;
                     $(this).addClass(swiperClass);
+                    // slide 가 하나 이하인 경우 swiper 적용 안함
+                    if ($(this).find(".swiper-slide").length <= 1) return;
                     var options = {};
                     if ($(this).find(".swiper-pagination").length) {
                         options.pagination = {};

@@ -10,8 +10,8 @@
 .h4 .num{@include heading($size: $heading04 + 0.1rem)}
 
 .num{font-family:'Roboto';font-size:1.7rem;}
-.num[data-unit-after]:after{content:attr(data-unit-after);@include text($size: 15px);}
-.num[data-unit-before]:before{content:attr(data-unit-after);@include text($size: 15px);}
+.num[data-unit-after]:after{content:attr(data-unit-after);@include text($size: 15px);margin-left:0.1em;}
+.num[data-unit-before]:before{content:attr(data-unit-before);@include text($size: 15px);margin-right:0.1em;}
 .label{display:block;margin-bottom:0.8rem;font-size:1.6rem;line-height:2rem;color:$kb-ui04;}
 .required:before{content:'*'}
 
@@ -75,12 +75,14 @@
 .validation{display:none;}
 [data-status=info] .validation,
 [data-status=error] .validation,
+[data-status=has-error] .validation,
 [data-status=success] .validation,
 .info-msg,
 .error-msg,
 .success-msg{position:relative;display:block;padding-left:2.4rem;font-size:$text03;line-height:2rem;}
 [data-status=info] .validation:before,
 [data-status=error] .validation:before,
+[data-status=has-error] .validation:before,
 [data-status=success] .validation:before,
 .info-msg:before,
 .error-msg:before,
@@ -88,6 +90,7 @@
 [data-status=info] .validation,
 .info-msg{color:$kb-ui04;}
 [data-status=error] .validation,
+[data-status=has-error] .validation,
 .error-msg{color:$color-red;}
 [data-status=success] .validation,
 .success-msg{display:block;color:$color-blue;}
@@ -95,6 +98,7 @@
 [data-status=info] .validation:before{background-position: -6.6rem -11.8rem;}
 .error-msg:before,
 [data-status=error] .validation:before{background-position: -8.8rem -11.8rem;}
+[data-status=has-error] .validation:before{background-position: -8.8rem -11.8rem;}
 .success-msg:before,
 [data-status=success] .validation:before{background-position: -9rem -14rem;}
 
@@ -116,7 +120,9 @@ ul[data-style=list] li > ul{margin-top:10px;}
 
 .icon-arrow-right{@include iconBullet($direction: 'right', $width: 9px, $height: 16px, $thick: 1px, $color: $kb-ui05);}
 .icon-arrow-left{@include iconBullet($direction: 'left', $width: 9px, $height: 16px, $thick: 1px, $color: $kb-ui05);}
-.icon-plus{@include iconPlus($width: 12px, $height: 12px)}
+.icon-arrow-up{@include iconBullet($direction: 'up', $width: 16px, $height: 9px, $thick: 2px, $color: $kb-ui05);}
+.icon-arrow-down{@include iconBullet($direction: 'down', $width: 16px, $height: 9px, $thick: 2px, $color: $kb-ui05);}
+.icon-plus{@include iconPlus($width: 12px, $height: 12px, $thick: 2px, $padding: 4px)}
 
 .btn-data-clear{display:inline-block;width:24px;height:24px;}
 .btn-switch{@include btnSwitchB}

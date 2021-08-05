@@ -854,6 +854,50 @@
 						<p><span class="form-checkbox_24"><input type="checkbox" id="noEmail02"><label for="noEmail02">이메일 없음</label></span></p>
                     </div>
                 </dd>
+				<dd data-description="멀티폼: 이메일(.kb-form 각각 빨간줄)">
+					<!-- 
+						.kb-form_multi 에서 내부에 일부 .kb-form에만 error 표시가 필요할 경우
+						.kb-form_multi 에는 data-status="has-error" 
+						.kb-form 에는 data-status="error"
+						로 지정
+					-->
+                    <div class="kb-form_multi kb-form_email" data-status="has-error">
+                        <strong class="tit">이메일</strong>
+                        <div class="kb-form" data-status="error">
+                            <label for="formMultiEmail0b">이메일ID</label>
+                            <div class="kb-form_inner form-text">                                
+                                <input type="text" id="formMultiEmail0b" placeholder="" value="">
+                                <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                            </div>
+                        </div>
+						<span class="between">@</span>
+                        <div class="kb-form">
+                            <label for="formMultiEmail002b">이메일서비스명</label>
+                            <div class="kb-form_inner form-select">
+                                <button type="button" class="selected-option"></button>
+                                <select name="" id="formMultiEmail002b" title="이메일 선택">
+                                    <option value="">선택</option>
+                                    <option value="writingemail" selected>직접입력</option>
+                                    <option value="">naver.com</option>
+                                    <option value="">nate.com</option>
+                                    <option value="">yahoo.com</option>
+                                    <option value="">gmail.com</option>
+                                    <option value="">hanmail.net</option>
+                                    <option value="">daum.net</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="kb-form add-email-input">
+                            <label for="formMultiEmail003b"></label>
+                            <div class="kb-form_inner form-text">
+                                <input type="text" id="formMultiEmail003b" placeholder="" value="abc.com">
+                                <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                            </div>                            
+                        </div>
+						<em class="validation">에러 메세지 영역 입니다.</em>
+						<p><span class="form-checkbox_24"><input type="checkbox" id="noEmail02"><label for="noEmail02">이메일 없음</label></span></p>
+                    </div>
+                </dd>
 			</dl>
 		</div>
 		<hr>
