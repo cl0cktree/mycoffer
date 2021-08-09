@@ -1210,7 +1210,7 @@ var today = now.format('yyyy.MM.DD');
 $('.calendar-nav').on('click','button',function(){
     var cls = $(this).attr('class');
     if(cls == 'btn-text'){
-        $('#datepicker').datepicker('setDate', today);
+        now = moment();
     }else if(cls == 'btn-prev'){
         now = now.subtract(1, 'M');
     }else if(cls == 'btn-next'){
