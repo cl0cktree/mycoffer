@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "입출금&middot;페이 | 자산"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app" data-page="submain">
+        <!-- app-header (for MyMoney) //-->
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'입출금&middot;페이',
+            'type':''
+        })
+        <!-- // app-header -->
+
+        <!-- app-container (for MyMoney) //-->
+        <div class="app-container">
+
+            <!-- app-lnb //-->
+            <div class="app-lnb">
+                <!-- 상단 GNB 공통 (메뉴 구성 전 )-->
+                @@include('@@webRoot/html/_include/app-gnb.html')                 
+            </div>
+            <!-- //app-lnb -->
+
+            <!-- app-content // -->
+            <!-- 2021-06-10 수정 // -->
+            <main class="app-content my-asset cash bg-gray-bottom">
+                <!-- 컨텐츠 영역 -->
+                <!-- SECTION //-->
+                <section class="kb-sec bg-gray asset-summary">
+                    <div class="content-box shadow">
+						<div class="top-area">
+							<p class="msg">
+								NNN님 <br>자산 등록하고 <br>나의 자산 현황을 한눈에 살펴보세요.
+							</p>
+                            <a href="javascript:;" class="btn-text" role="button"><span>바로가기</span><i class="icon-pagination_next"></i></a>
+						</div>
+						<div class="graph-area">	
+							<div class="highcharts_column" id="">
+								<img class="temp" src="@@webRoot/static/images/asset/chart_nodata.png" alt="차트 데이터 없음">
+							</div>
+						</div>
+					</div>
+                </section>    
+                <section class="kb-sec list-area">
+                        <div class="no-data">
+                            <i class="icon-info_24"></i>
+                            <p>조회내역이 없습니다.</p>
+                        </div>
+                </section>
+                <!-- 인기상품 영역 // -->
+                <section class="kb-sec best-list-con">
+                    <div class="top-area">
+                        <button type="button" class="btn-similar" data-call-layered="mys_as_07_00_00_p1"><b>40세~44세<i class="arrow"></i></b></button><br>사람들의 <b>입출금 상품</b>을 확인하세요.<!-- 2021-07-22 수정 -->
+                    </div>
+                    <div class="best-tit-con">
+                        <div class="tit">
+                            <h4 class="h4">인기상품 Best5</h4>
+                            <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i><span>인기상품이란?</span></button>
+                            <!-- Tooltip (With title)-->
+							<div class="tooltip">
+								<strong class="tit">인기상품이란?</strong>
+								<div class="cont">
+                                    최근 6개월 이내 마이데이터에 가입한 고객님이 가장 많이 선택한 상품입니다.
+								</div>
+								<button class="btn-close"><span>닫기</span></button>
+							</div>
+                        </div>
+                        <div class="except_kb">
+                            <span class="form-checkbox_24"><input type="checkbox" id="checkboxSample01"><label for="checkboxSample01">KB국민은행 제외</label></span>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <li>
+                                <div class="flag"><span class="num">1</span></div>
+                                <button type="button" data-call-layered="mys_as_05_00_01_p2">  
+                                    <div class="account-wrap">
+                                        <div class="icon-con">
+                                            <span><img src="@@webRoot/static/images/ci/A1AAEO0000.png" alt="은행별 아이콘"></span><!-- 2021-06-25 공통 수정 -->
+                                        </div>
+                                        <div class="txt-con">
+                                            <span class="agency">국민은행</span>
+                                            <span class="p-name">상품명</span>
+                                            <div class="user-info">
+                                                <span class="num">52,111,456</span>명 중 <br><em><span class="num">1234,567</span>명이 이용 중</span></em><!-- 2021-06-22 수정 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                            </li>
+                            <li>
+                                <div class="flag"><span class="num">2</span></div>
+                                <button type="button" data-call-layered="mys_as_05_00_01_p2">  
+                                    <div class="account-wrap">
+                                        <div class="icon-con">
+                                            <span><img src="@@webRoot/static/images/ci/A1AAEO0000.png" alt="은행별 아이콘"></span>
+                                        </div>
+                                        <div class="txt-con">
+                                            <span class="agency">국민은행</span>
+                                            <span class="p-name">상품명</span>
+                                            <div class="user-info">
+                                                <span class="num">52,111,456</span>명 중 <br><em><span class="num">1234,567</span>명이 이용 중</span></em><!-- 2021-06-22 수정 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                            </li>
+                            <li>
+                                <div class="flag"><span class="num">3</span></div>
+                                <button type="button" data-call-layered="mys_as_05_00_01_p2">  
+                                    <div class="account-wrap">
+                                        <div class="icon-con">
+                                            <span><img src="@@webRoot/static/images/ci/A1AAEO0000.png" alt="은행별 아이콘"></span>
+                                        </div>
+                                        <div class="txt-con">
+                                            <span class="agency">국민은행</span>
+                                            <span class="p-name">상품명</span>
+                                            <div class="user-info">
+                                                <span class="num">52,111,456</span>명 중 <br><em><span class="num">1234,567</span>명이 이용 중</span></em><!-- 2021-06-22 수정 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                            </li>
+                            <li>
+                                <div class="flag"><span class="num">4</span></div>
+                                <button type="button" data-call-layered="mys_as_05_00_01_p2">  
+                                    <div class="account-wrap">
+                                        <div class="icon-con">
+                                            <span><img src="@@webRoot/static/images/ci/A1AAEO0000.png" alt="은행별 아이콘"></span>
+                                        </div>
+                                        <div class="txt-con">
+                                            <span class="agency">국민은행</span>
+                                            <span class="p-name">상품명</span>
+                                            <div class="user-info">
+                                                <span class="num">52,111,456</span>명 중 <br><em><span class="num">1234,567</span>명이 이용 중</span></em><!-- 2021-06-22 수정 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                            </li>
+                            <li>
+                                <div class="flag"><span class="num">5</span></div>
+                                <button type="button" data-call-layered="mys_as_05_00_01_p2">  
+                                    <div class="account-wrap">
+                                        <div class="icon-con">
+                                            <span><img src="@@webRoot/static/images/ci/A1AAEO0000.png" alt="은행별 아이콘"></span>
+                                        </div>
+                                        <div class="txt-con">
+                                            <span class="agency">국민은행</span>
+                                            <span class="p-name">상품명</span>
+                                            <div class="user-info">
+                                                <span class="num">52,111,456</span>명 중 <br><em><span class="num">1234,567</span>명이 이용 중</span></em><!-- 2021-06-22 수정 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- // 인기상품 영역 -->
+                <!--  // SECTION -->
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+    </div>
+
+    <div class="layered">
+        @@include('@@webRoot/html/asset/layered/mys_as_05_00_01_p2.html')
+        @@include('@@webRoot/html/asset/layered/mys_as_07_00_00_p1.html')
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    <script>
+        
+        
+        gfn_gnb.select(1,1); //2021-07-13 수정
+    </script>
+</body>
+
+</html>

@@ -39,6 +39,11 @@
                                     "pagination": {
                                         "el": ".swiper-pagination"
                                     },
+                                    // 2021-08-10
+                                    "autoplay": {
+                                        "delay": 5000,
+                                    },
+                                    // 2021-08-10
                                     "autoHeight" : true
                                 };
                             </script>
@@ -60,9 +65,9 @@
                                                     <button class="btn-more"><i class="icon-setting_menu_24"></i></button>
                                                 </h4>			
                                                 <div class="graph-msg">
-													<p class="txt">
+													<div class="txt">
                                                         김국민님의 대출잔액은 <b><span class="num">300,000,000</span>원</b> 입니다. 지난달과 대출잔액이 똑같아요! 이달은 줄여보세요.                      
-													</p>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <!-- [chart area] //-->
@@ -105,9 +110,9 @@
                                                     
                                                     <button class="btn-more"><i class="icon-setting_menu_24"></i></button></h4>			
                                                 <div class="graph-msg">
-													<p class="txt">
+													<div class="txt">
                                                         김국민님의 지난달 이자 납입금액은 <b><span class="num">1,000,000</span>원</b> 입니다. 이달의 예상 이자는 <b><span class="num">1,000,000</span>원</b> 입니다.
-													</p>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <!-- [chart area] //-->
@@ -139,9 +144,9 @@
                                             <div class="graph-info">
                                                 <h4 class="h4">카드대금<button class="btn-more"><i class="icon-setting_menu_24"></i></button></h4>	
                                                 <div class="graph-msg">
-													<p class="txt">
+													<div class="txt">
                                                         김국민님의 카드대금은 <b><span class="num">300,000</span>원</b> 입니다. 지난달과 카드대금이 똑같아요! 이달은 줄여보세요.                        
-													</p>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <!-- [chart area] //-->
@@ -379,7 +384,7 @@
                     </div>                    
                 </section>
                 <section class="kb-sec credit-score">
-                    <!-- 2021-08-05 데이터연동 실패 // -->
+					<!-- 2021-08-05 데이터연동 실패 // -->
 					<div class="error">
                         <h4 class="h4">신용평점</h4>                    
                         <div class="box-area">
@@ -407,21 +412,32 @@
                     <!-- 신용평점 조회 후 // -->
                 </section>
                 <section class="kb-sec loan-interest-rate">
-                    <h4 class="h4">대출금리</h4>
-                    
+                    <!-- 2021-08-10 수정 // -->
+                    <h4 class="h4">대출금리<button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                        <div class="tooltip">
+                            <strong class="tit">대출금리는?</strong>
+                            <div class="cont">
+                               보험 대출과 리스의 금리는 가중평균금리에 미포함입니다.
+                            </div>
+                            <button class="btn-close"><span>닫기</span></button>
+                        </div>
+                    </h4>
+                    <!-- // 2021-08-10 수정 -->
                     <div class="rate-cut-box">
                         <div class="tit">가중평균금리 4.3% <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
                             <div class="tooltip">
-                                <strong class="tit">가중평균금리?</strong>
+                                <!-- 2021-08-10 수정 // -->
+                                <strong class="tit">가중평균금리란?</strong>
                                 <div class="cont">
-                                    금액 가중치를 반영한 고객 전체 금리에 대한 평균이율 계산
+                                    금융사에서 취급하는 금융상품의 금리를 사용빈도나 금액의 비중으로 가중치를 두어 평균이율을 계산한 금리입니다.
                                 </div>
                                 <button class="btn-close"><span>닫기</span></button>
+                                <!--// 2021-08-10 수정 -->
                             </div>
                         </div>
                         <div class="info amount">예상 월 이자&nbsp;<span class="num">000,000</span>원</div>
                     </div>
-                    <div class="down-wrap" style="display:none;"><!-- 2021-08-04 수정 //-->
+					<div class="down-wrap" style="display:none;"><!-- 2021-08-04 수정 //-->
 						<a href="#" class="btn-text">금리인하요구권을 확인하세요.<i class="icon-pagination_next"></i></a>
 						<p data-style="list">심사 후 금리인하요구권 신청이 거절될 수 있습니다.</p>
 					</div><!-- // 2021-08-04 수정 -->
