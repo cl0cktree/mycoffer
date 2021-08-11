@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-channel="ch_dplan"><!-- default(마이머니), ch_star(스타뱅킹), ch_liiv(리브), ch_dplan(D플랜임시)-->
 
 <head>
 	@@include('@@webRoot/html/_include/app-head-dplan.html',{
 		"title": "Last Depth | 1st Depth"
 	})
+	<link rel="stylesheet" href="http://localhost:3000/static/css/style.css" id="dplan-css">
 </head>
 
 <body>
@@ -41,6 +42,9 @@
 
 	<!-- Add Script -->
 	<script>
+		$(".app-gnb-wrap").hide();
+		$(".app-header").hide();
+
 		function dplanLink(url) {
 			// $.ajax({
 			// 	url: url
@@ -116,6 +120,13 @@
 		}
 	</script>
 
+    <!-- 공통 Loader // -->
+    <div class="common-loader" style="display: none;">
+        <strong class="tit">(메세지가 필요한 경우에 넣음)</strong>
+        <div class="loader"><i></i><i></i><i></i><i></i><span>로딩중</span></div>
+    </div>
+    <!-- // 공통 Loader -->
+	
 </body>
 
 </html>

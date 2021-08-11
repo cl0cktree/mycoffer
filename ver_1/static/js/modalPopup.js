@@ -27,6 +27,10 @@ $.fn.modalPopup = function(parameters) {
 		var $body = $("body");
 		var $dimm;
 		var $wrap = $module;
+        
+        if($wrap.find('[data-action=close]').length){
+            $wrap.find('[data-action=close]').addClass('cancel').removeAttr('data-action');
+        }
 		var $btnOk = $module.find(selector.buttonOk);
 		var $btnCancel = $module.find(selector.buttonCancel);
 
@@ -38,7 +42,7 @@ $.fn.modalPopup = function(parameters) {
 		module = {
 			initialize: function() {
 				$module.before('<div class="dim" style="z-index:399;display:none;"></div>');
-				$dimm = $module.prev();
+				$dimm = $module.prev();                
 				module.bind.events();
 				module.instantiate();
 			},
@@ -86,14 +90,14 @@ $.fn.modalPopup = function(parameters) {
 				$body.addClass("is-hold");
 				$wrap.addClass("is-active");
 				$dimm.fadeIn(settings.duration);
-				$wrap.fadeIn(settings.duration);				
+				$wrap.fadeIn(settings.duration);
 			},
 
 			close: function() {
 				$body.removeClass("is-hold");
 				$dimm.fadeOut(settings.duration);
                 $wrap.addClass('modal-out');
-                $wrap.on('animationend',function(){
+                $wrap.one('animationend',function(){
                     if($wrap.hasClass('modal-out')) $wrap.removeClass('is-active is-expanded modal-out').removeAttr('style');
                     if (settings.autoDestroy) {
 						module.destroy();
@@ -241,7 +245,7 @@ function modalPopup(parameters) {
 	html += `		</div>`;
 	html += `	</div>`;
 
-	$(".layered").append(html);
+	$(".app").append(html);
 
 	var $id = $("#"+id);
 	var opts = {};

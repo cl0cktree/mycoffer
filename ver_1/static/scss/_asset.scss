@@ -1,7 +1,7 @@
 /* 공통 */
 .percentage-graph { position: relative; }
 .percentage-graph .graph-area { position: relative; width: 100%; height: 20px; border-radius: 20px; background-color: #ebeef0;overflow:hidden;}
-.percentage-graph .graph-area > span { position: absolute; left: 0; width: 0; height: 100%; border-radius: 20px; background-color: #8c949e; transform: width .2s; overflow:hidden;;color:transparent;text-indent:-9999px;}
+.percentage-graph .graph-area > span { position: absolute; left: 0;top:0; width: 0; height: 100%; border-radius: 20px; background-color: #8c949e; transform: width .2s; overflow:hidden;;color:transparent;text-indent:-9999px;}
 .percentage-graph .graph-txt {@include text($size:14px);color:$kb-ui04;display: block; position: relative; margin-top: 5px;}
 .percentage-graph .graph-txt .num{@include number($size:15px);color:$kb-ui02;}
 .percentage-graph .graph-txt:after { content: ''; display: block; clear: both; }
@@ -9,9 +9,9 @@
 .percentage-graph .graph-txt .end-txt { float: right; margin-right: 5px; text-align: right; }
 .percentage-graph .graph-txt .current-txt { position: absolute;text-overflow:ellipsis;white-space:nowrap;}
 .percentage-graph.type1 .graph-area > span{background-color:#96857f;}
-.percentage-graph.mint div.graph-area > span{background-color:#67d3d3;} 
-.percentage-graph.cobalt div.graph-area > span{background-color:#4dabff;} 
-.percentage-graph.orange div.graph-area > span{background-color:#fa7b4e;}  
+div.percentage-graph.mint .graph-area > span{background-color:#67d3d3;} 
+div.percentage-graph.cobalt .graph-area > span{background-color:#4dabff;} 
+div.percentage-graph.orange .graph-area > span{background-color:#fa7b4e;}  
 .percentage-graph.type2 .graph-area > span{background-color:$color-yellow;}
 .percentage-graph.type2 .graph-txt .num{color:$kb-ui04;}
 .percentage-graph.type2  .graph-txt .current-txt{top:-52px;margin-left:-35px;background-color:$kb-ui03;padding:2px 11px;;border-radius:22px;color:#fff;}
@@ -847,7 +847,12 @@
 .my-asset.solution .solution-list .blind{@include hidden;}
 .my-asset.solution .solution-list thead th{padding-bottom:15px;line-height:1.5;}
 .my-asset.solution .solution-list thead th .btn-similar{margin-bottom:0;}
-.my-asset.solution .solution-list tbody td{padding:5px;}
+.my-asset.solution .solution-list tbody td{padding:0.8rem;}
+.my-asset.solution .solution-list .percentage-graph .percent-txt{@include text($size:14px);position:absolute;bottom:9px;left:0;text-align:center;background-color:#fff;box-shadow: 0px 1px 5px 0 rgba(0, 0, 0, 0.2);border-radius:3px;line-height:1.2;padding:0.4rem 0.7rem;text-overflow: ellipsis;
+    white-space: nowrap;}
+.my-asset.solution .solution-list .percentage-graph .percent-txt:after{position:absolute;bottom:-5px;left:50%;margin-left:-6px;content:'';display:block;width:12px;height:5px;background:url(../../static/images/asset/bg_d_day.png) no-repeat 0 0;background-size:contain;}
+.my-asset.solution .solution-list .percentage-graph .percent-txt .num{@include number($size:15px);line-height:1.2;}
+.my-asset.solution .solution-list tbody td:nth-child(3) .percentage-graph .percent-txt{left:auto;right:0;} 
 .my-asset.solution .top-area .h4{margin-bottom:20px;}
 
 .my-asset.solution .asset-summary{padding-bottom:24px;}

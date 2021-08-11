@@ -163,7 +163,7 @@ var gfn_layered = {
                 $selectedLayer.removeClass('is-active is-expanded').removeAttr('style');
             }else{
                 $selectedLayer.addClass('modal-out');
-                $selectedLayer.on('animationend',function(){
+                $selectedLayer.one('animationend',function(){
                     if($selectedLayer.hasClass('modal-out')) $selectedLayer.removeClass('is-active is-expanded modal-out').removeAttr('style');
                 });
             }

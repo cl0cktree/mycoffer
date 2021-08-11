@@ -248,7 +248,7 @@ $(window).on('scroll',function(){
     //scrollDirection(st);
 
     //gnb fixed
-    if($gnb.length) {
+    if($gnb.length && $gnb.is(":visible")) {
         if(st >= fixedTop){
             $('.app-lnb').addClass('is-fixed');
         }else{
