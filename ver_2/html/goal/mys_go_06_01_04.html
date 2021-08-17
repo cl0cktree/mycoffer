@@ -11,9 +11,7 @@
 	@@include('@@webRoot/html/_include/app-a11y.html')
 	<div class="app">
 		<!-- app-header (for MyMoney) //-->
-        <!-- 2021-07-13 수정 // -->        
         @@include('@@webRoot/html/_include/app-integrated-header.html',{'pageTit':'상세내역','type':''})
-        <!-- // 2021-07-13 수정 -->
 		<!-- // app-header -->
 
 		<!-- app-container (for MyMoney) //-->
@@ -40,8 +38,7 @@
 
                 <section class="kb-sec goals-detail-list">
                     <div class="challenge-box content-swiper-wrap">
-                        <div class="swiper-container content-swiper t01 js-swiper" data-swiper-options="goalGraphSwiperOptions"> <!-- 2021-07-15 수정 -->
-                            <!-- 2021-07-15 수정 // -->
+                        <div class="swiper-container content-swiper t01 js-swiper" data-swiper-options="goalGraphSwiperOptions">
                             <script>
                                 var goalGraphSwiperOptions = {
                                     "pagination": {
@@ -51,7 +48,6 @@
                                     "autoHeight": "true"                                        
                                 };
                             </script>
-                            <!-- // 2021-07-15 수정 -->
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide content-box shadow">
                                     <div class="challenge-tit">
@@ -60,17 +56,17 @@
                                     <div class="challenge-info">
                                         <div class="txt-goal-success">
                                             <p class="tit">목표달성에 성공했어요!!</p>
-                                            <p>6개월 평균 소비금액보다 아낀 <span class="num">50,000</span>원을 투자하거나 저금통에 입금해보세요.</p> <!-- 2021-06-30 수정 -->
+                                            <p>6개월 평균 소비금액보다 아낀 <span class="num">50,000</span>원을 투자하거나 저금통에 입금해보세요.</p>
                                         </div>
                                         
-                                        <div class="character-graph goal success" data-theme="coin"> <!-- 2021-06-17 수정 -->
+                                        <div class="character-graph goal success" data-theme="coin">
                                             <div class="graph-area">
-                                                <span data-goal="50"><i></i></span><!-- 2021-07-08 수정 -->                                      
-                                                <div class="flag"><i class="icon-flag-goal"></i></div> <!-- 2021-06-30 수정 -->  
+                                                <span data-goal="50"><i></i></span>
+                                                <div class="flag"><i class="icon-flag-goal"></i></div>
                                             </div>
                                             <div class="graph-txt">
-                                                <p class="start-txt">시작일<br><strong><span class="num">2021.12.05</span></strong></p> <!-- 2021-06-29 수정 -->
-                                                <p class="end-txt">완료일<br><strong><span class="num">2021.12.05</span>만원</strong></p> <!-- 2021-06-29 수정 -->
+                                                <p class="start-txt">시작일<br><strong><span class="num">2021.12.05</span></strong></p>
+                                                <p class="end-txt">완료일<br><strong><span class="num">2021.12.05</span>만원</strong></p>
                                             </div>
                                         </div>                                    
                                     </div>
@@ -88,9 +84,7 @@
                                             <li>지난주</li>
                                             <li class="current">현재</li>
                                         </ul>
-                                        <!-- 2021-06-17 수정// -->
-                                        <div class="highcharts_column type-ratio" id="columnChart01"></div> <!-- 2021-06-25 수정 -->
-                                        <!-- //2021-06-17 수정 -->
+                                        <div class="highcharts_column type-ratio" id="columnChart01"></div>
                                     </div>
                                 </div>
                             </div>
@@ -100,7 +94,7 @@
                     <div class="trophy-gray mt20">
                         <div class="text-trophy type2">
                             <div class="ico">
-                                <i class="icon-half_pig_27"></i> <!-- 2021-06-30 수정 -->
+                                <i class="icon-half_pig_27"></i>
                             </div>
                             <p>잠깐!<br>아낀 금액만큼 저금통에 추가로 저금할 수 있어요.</p>
                         </div>
@@ -152,8 +146,8 @@
 
                 <div class="sticky-bottom">
                     <div class="btn-area">
-                        <button type="button" class="btn-solid_sticky lv2"><span>추가 저금</span></button> <!-- 2021-07-19 수정 -->
-                        <button type="button" class="btn-solid_sticky" data-call-layered="bsSavingMyAccount"><span>다시 도전</span></button> <!-- 2021-07-22 수정 -->
+                        <button type="button" class="btn-solid_sticky lv2"><span>추가 저금</span></button>
+                        <button type="button" class="btn-solid_sticky" data-call-layered="bsSavingMyAccount"><span>다시 도전</span></button>
                     </div>
                 </div>
 			</main>
@@ -173,38 +167,9 @@
 	@@include('@@webRoot/html/_include/common-js.html')
 	<!-- Add Library (this page only)-->
 	<script src="@@webRoot/static/js/ui.js"></script>
-    <!-- <script src="@@webRoot/static/common/lib/swiper.min.js"></script> 2021-07-14 삭제-->
+
+    <!-- Add Script -->	   
     
-    <!-- 2021-07-15 삭제 //
-    <script>
-        var $contentSwiper = $('.content-swiper-wrap');
-        if($contentSwiper.length > 0){
-            $contentSwiper.each(function(index){
-                var $contentSwiper = $(this).find('.swiper-container');
-                var index = index+1;
-                $contentSwiper.addClass('content-swiper' + index);
-                var swiper = new Swiper('.content-swiper' + index, {
-                    slidesPerView: 'auto',
-                    centeredSlides: 'true',
-                    spaceBetween: 16, /*2021-06-14 수정*/                  
-                    autoHeight : 'true',
-                    pagination: {
-                        el: $('.content-swiper' + index).find('.swiper-pagination'),
-                        type: 'bullets',
-                        clickable: 'true',
-                    },
-                    navigation: {
-                        nextEl: $('.content-swiper' + index).find('.swiper-button-next'),
-                        prevEl: $('.content-swiper' + index).find('.swiper-button-prev'),
-                    },
-                });
-            });
-        };
-    </script>
-    // 2021-07-15 삭제 -->
-	<!-- Add Script -->	   
-    
-    <!-- 2021-06-17 추가// -->
     <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
     <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
 
@@ -227,10 +192,9 @@
             chart: {
                 renderTo: 'columnChart01', // chart 삽입 target ID
                 type: "column",
-                //height: (3 / 4 * 100) + '%', // 4:3 비율로 설정
-                marginLeft: 0, // 2021-06-25 수정
-                marginRight: 0, // 2021-06-25 수정
-                marginTop:0 // 2021-06-25 수정
+                marginLeft: 0,
+                marginRight: 0,
+                marginTop:0
             },
             legend: { enabled: false },
             xAxis: {
@@ -246,7 +210,7 @@
                 }
             },
             yAxis: {
-                endOnTick: false, // 2021-06-25 수정
+                endOnTick: false,
                 enabled: false,  // 사용 안함
                 labels: { enabled: false },  // 축 lebel 사용 안함
                 title: { enabled: false }, // 축 title 사용 안함
@@ -288,7 +252,6 @@
             ],
         });
     </script>
-    <!-- //2021-06-17 추가 -->
 </body>
 
 </html>

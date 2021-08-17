@@ -11,9 +11,7 @@
 	@@include('@@webRoot/html/_include/app-a11y.html')
 	<div class="app">
 		<!-- app-header (for MyMoney) //-->
-        <!-- 2021-07-13 수정 // -->
         @@include('@@webRoot/html/_include/app-integrated-header.html',{'pageTit':'챌린지 자세히보기','type':''})
-        <!-- // 2021-07-13 수정 -->        
 		<!-- // app-header -->
 
 		<!-- app-container (for MyMoney) //-->
@@ -25,14 +23,13 @@
                     <h3>카페인 샤워는 이제 그만</h4>
                     <ul data-style="list">
                         <li>250명이 도전 중이에요.</li>
-                        <li>6개월 평균 목표금액 <span class="num">10,000</span>원</li> <!-- 2021-06-30 수정 -->
+                        <li>6개월 평균 목표금액 <span class="num">10,000</span>원</li>
                         <li>목표기간 1주</li>
                     </ul>
                 </section>
                 <section class="kb-sec goals-list">   
                     <div class="challenge-box content-swiper-wrap">
-                        <div class="swiper-container content-swiper t01 js-swiper" data-swiper-options="goalGraphSwiperOptions"> <!-- 2021-07-15 수정 -->
-                            <!-- 2021-07-15 수정 // -->
+                        <div class="swiper-container content-swiper t01 js-swiper" data-swiper-options="goalGraphSwiperOptions">
                             <script>
                                 var goalGraphSwiperOptions = {
                                     "pagination": {
@@ -43,16 +40,15 @@
                                     "autoHeight": "true"                                    
                                 };
                             </script>
-                            <!-- // 2021-07-15 수정 -->
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide content-box shadow">
                                     <div class="challenge-info non-tit">
                                         <div class="tit flex-box goals-desc type2">
-                                            <div>비교그룹과 평균 커피 업종 소비금액을 비교했어요.</div> <!-- 2021-07-19 수정 -->
+                                            <div>비교그룹과 평균 커피 업종 소비금액을 비교했어요.</div>
                                         </div>
-                                        <div class="character-graph type2" data-theme="pay"> <!-- 2021-07-13 수정 -->
+                                        <div class="character-graph type2" data-theme="pay">
                                             <div class="graph-area">
-                                                <span data-goal="50"><i><img src="@@webRoot/static/images/_temp/@progress_coffee.png" alt="커피"></i></span> <!--2021-07-13 수정-->
+                                                <span data-goal="50"><i><img src="@@webRoot/static/images/_temp/@progress_coffee.png" alt="커피"></i></span>
                                             </div>
                                             <div class="graph-txt">
                                                 <p class="start-txt">나 <strong>150,000원</strong></p>
@@ -67,20 +63,16 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide content-box shadow">
-                                    <!-- 2021-06-30 수정 // -->
                                     <div class="challenge-info non-tit">
                                         <div class="tit flex-box goals-desc type2">
-                                            <div>비교그룹과 월별 커피 업종 소비그액을 비교했어요.</div>   <!-- 2021-07-19 수정 -->
+                                            <div>비교그룹과 월별 커피 업종 소비그액을 비교했어요.</div>
                                         </div>
-                                        <div class="chart-area dbl-bar">  
-                                            <!-- [Chart Area] 2021-06-21 수정// -->
-                                            <div class="highcharts_column type-ratio" id="splineChart"></div> <!-- 2021-06-25 수정 -->
-                                            <!-- // [Chart Area] 2021-06-21 수정 -->                                                                                           
-                                            <span class="txt-gray">비교그룹</span> <!-- 2021-07-19 수정 -->
+                                        <div class="chart-area dbl-bar">
+                                            <div class="highcharts_column type-ratio" id="splineChart"></div>                                                                  
+                                            <span class="txt-gray">비교그룹</span>
                                             <span class="txt-yellow type2">나</span>
                                         </div>
                                     </div>
-                                        <!-- // 2021-06-30 수정 -->
                                 </div>
                             </div>
                             <div class="swiper-pagination"></div>
@@ -90,7 +82,7 @@
                 
                 <section class="kb-sec goals-use-best">
                     <div class="ranking-list content-box border">
-                        <p class="ranking-tit"><strong>커피 업종 소비 Top 3</strong></p> <!-- 2021-07-19 수정 -->
+                        <p class="ranking-tit"><strong>커피 업종 소비 Top 3</strong></p>
                         <ul class="ranking-list">
                             <li class="rank">할리스 전경련회관점 <span class="num">55,000</span>원</li>
                             <li class="rank">제주스 전경련회관점 <span class="num">35,000</span>원</li>
@@ -101,7 +93,7 @@
 
                 <section class="kb-sec bg-gray goals-setting">
                     <h2>목표금액 설정</h2>
-                    <p>평소 지출금액보다 <strong><span class="num">50,000</span>원 더 절약</strong>할 수 있어요.</p> <!-- 2021-07-19 수정 -->
+                    <p>평소 지출금액보다 <strong><span class="num">50,000</span>원 더 절약</strong>할 수 있어요.</p>
                     <div class="character-graph js-slider">
                         <div class="graph-area" data-default="50"><span class="handle ui-slider-handle"><i class="icon-star"></i><em class="value" data-unit="원"></em></span></div>
                         <div class="graph-txt">
@@ -113,7 +105,7 @@
 
                 <div class="sticky-bottom">
                     <div class="btn-area">
-                        <button type="button" class="btn-solid_sticky" data-action="" onclick=""><span>도전</span></button> <!-- 2021-07-19 수정 -->
+                        <button type="button" class="btn-solid_sticky" data-action="" onclick=""><span>도전</span></button>
                     </div>
                 </div>
 			</main>
@@ -133,37 +125,6 @@
 	@@include('@@webRoot/html/_include/common-js.html')
 	<!-- Add Library (this page only)-->
 	<script src="@@webRoot/static/js/ui.js"></script>
-    <!-- <script src="@@webRoot/static/common/lib/swiper.min.js"></script> 2021-07-14 삭제-->
-
-    <!-- 2021-07-15 삭제 //
-    <script>
-        var $contentSwiper = $('.content-swiper-wrap');
-        if($contentSwiper.length > 0){
-            $contentSwiper.each(function(index){
-                var $contentSwiper = $(this).find('.swiper-container');
-                var index = index+1;
-                $contentSwiper.addClass('content-swiper' + index);
-                var swiper = new Swiper('.content-swiper' + index, {
-                    slidesPerView: 'auto',
-                    centeredSlides: 'true',
-                    spaceBetween: 16, /*2021-06-14 수정*/           
-                    autoHeight : 'true', /*2021-06-08 추가*/
-                    pagination: {
-                        el: $('.content-swiper' + index).find('.swiper-pagination'),
-                        type: 'bullets',
-                        clickable: 'true',
-                    },
-                    navigation: {
-                        nextEl: $('.content-swiper' + index).find('.swiper-button-next'),
-                        prevEl: $('.content-swiper' + index).find('.swiper-button-prev'),
-                    },
-                });
-            });
-        };
-    </script> 
-    // 2021-07-15 삭제 -->
-    
-    <!-- 2021-06-18 추가 // -->
     <script>
        var bar = document.querySelectorAll(".graph-area > span");
        for(i=0; i<bar.length; i++){ 
@@ -173,10 +134,8 @@
                 item.classList.add('min-size'); 
            }
         }
-    </script>    
-    <!-- // 2021-06-18 추가 -->
-
-    <!-- 2021-06-22 추가 // -->
+    </script>
+    
     <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
     <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
 
@@ -196,10 +155,9 @@
             chart: {
                 renderTo: 'splineChart', // chart 삽입 target ID
                 type: "spline",
-                //height: (3 / 4 * 100) + '%', // 4:3 비율로 설정
-                marginLeft: 0, // 2021-06-25 수정
-                marginRight: 0, // 2021-06-25 수정
-                marginTop:0 // 2021-06-25 수정
+                marginLeft: 0,
+                marginRight: 0,
+                marginTop:0
             },
             xAxis: {
                 type: "category",
@@ -214,8 +172,8 @@
                 },
             },
             yAxis: {
-                top:0, // 2021-07-14 수정
-                endOnTick: false, // 2021-06-25 수정
+                top:0,
+                endOnTick: false,
                 enabled: false,  // 사용 안함
                 labels: { enabled: false },  // 축 lebel 사용 안함
                 title: { enabled: false }, // 축 title 사용 안함
@@ -224,12 +182,11 @@
             },
             tooltip: {
                 formatter: function () {
-                    // The first returned item is the header, subsequent items are the
                     // points
                     return [''].concat(
                         this.points ?
                             this.points.map(function (point) {
-                                return gfn_comma3Digit(point.y) + '원'; // 2021-06-25 수정
+                                return gfn_comma3Digit(point.y) + '원';
                             }) : []
                     );
                 },
@@ -268,7 +225,6 @@
             ]
         });
     </script>
-    <!-- // 2021-06-22 추가 -->
 </body>
 
 </html>

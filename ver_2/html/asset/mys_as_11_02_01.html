@@ -32,22 +32,20 @@
 							</p>
 						</div>
 						<div class="graph-area">
-							
-							
-							  <!-- [chart area] //-->
-									<!--
-										[차트 디자인 정보]
-										* 그래프(라인) 색상(컬러별)
-										- 노랑색 : #ffd33;
-										- 보라색 : #d575c9;
-										- 회색배경 : #f7f7f8;
+							<!-- [chart area] //-->
+							<!--
+								[차트 디자인 정보]
+								* 그래프(라인) 색상(컬러별)
+								- 노랑색 : #ffd33;
+								- 보라색 : #d575c9;
+								- 회색배경 : #f7f7f8;
 
 
-										- label 텍스트 컬러/크기 : #26282c/15px/bold
-										- label 매입일 텍스트 컬러/크기 : #696e76/14px
-										- x축 텍스트 컬러/크기 : #8c949e/14px
-																		
-									-->
+								- label 텍스트 컬러/크기 : #26282c/15px/bold
+								- label 매입일 텍스트 컬러/크기 : #696e76/14px
+								- x축 텍스트 컬러/크기 : #8c949e/14px
+																
+							-->
 							<div class="highcharts_column" id="">
 								<img class="temp" src="@@webRoot/static/images/_temp/chart_as1102_6.png" alt="차트 예시 이미지">
 							</div>
@@ -56,13 +54,13 @@
 						<div class="variance-box">
 							<ul class="description-list-variable">
 								<li>
-									<p class="tit">매입가보다</p><!-- 2021-07-02 수정 -->
+									<p class="tit">매입가보다</p>
 									<p class="amount">
 										<span class="num">5,500</span>만원<em class="plus">(5.3%)</em><b> 증가</b>
 									</p>
 								</li>
 								<li>
-									<p class="tit">지난달보다</p><!-- 2021-07-02 수정 -->
+									<p class="tit">지난달보다</p>
 									<p class="amount">
 										<span class="num">1,500</span>만원<em class="minus">(1.3%)</em><b> 감소</b>
 									</p>
@@ -94,11 +92,11 @@
                         <dd class="date">2020.01.20</dd>
                         <dt>시세차익</dt>
                         <dd class="amount plus"> <em><span class="num">2,000</span>만원 (<span class="num">44.5%</span>)</em></dd>
-                        <dt>지난달 대비</dt><!-- 2021-06-22 수정 -->
+                        <dt>지난달 대비</dt>
                         <dd class="amount minus"> <em><span class="num">8,500</span>만원 (<span class="num">44.5%</span>)</em></dd>
-                        <dt>세입자 보증금</dt><!-- 2021-06-22 수정 -->
+                        <dt>세입자 보증금</dt>
                         <dd class="amount"><span class="num">2</span>억 <span class="num">1,000</span>만원</dd>
-                        <dt>세입자 월세</dt><!-- 2021-06-22 수정 -->
+                        <dt>세입자 월세</dt>
                         <dd class="amount"><span class="num">50만원</span></dd>
                     </dl>
 					<div class="house-data-tit">
@@ -159,7 +157,7 @@
                         <img src="../../static/images/asset/bg_realty_2.png" alt="">
                         <p class="info_type1">
                             보유한 부동산을 등록하고<br>내 자산을 한눈에 확인해 보세요
-                        </p><!-- 2021-07-01 수정 -->
+                        </p>
                     </div>
                     <div class="btn-area">
                         <button class="btn-solid_sticky" data-action="btnAddHouse"><span>My  House 등록하기</span></button>
@@ -185,8 +183,7 @@
 	<script>
 		//최초 선택되는 내용을 바꾸고 싶으면... (ui.js)
         gfn_gnb.select(4,0);
-
-		//2021-06-22
+		
 		$('button[data-action=btnAddHouse]').on('click',function(){
             modalPopup({
                 title: "",
@@ -194,10 +191,9 @@
                 type: "alert"
             });
         });
-		//2021-06-22
 
 
-		// 부동산 하위 메뉴 텍스트 전환 : 추가 2021-06-25
+		// 부동산 하위 메뉴 텍스트 전환
 		$(window).on('load', function() {
 			// My House
 			appendText($(".app-sub-wrap li:eq(0) a"), " (1채)");

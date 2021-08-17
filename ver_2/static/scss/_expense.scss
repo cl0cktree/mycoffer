@@ -58,53 +58,39 @@
 .expense-management-goal .content-tit{text-align:center;padding:24px 0}
 // 가계부 > 캘린더로 보기
 // common
-.view-calendar{padding-left:0;padding-right:0}
 .calendar-container{width:100%;background:$kb-ui11}
-.calendar-container .summary span i{margin-right:4px;vertical-align:middle}
-.calendar-container .summary.income{color:$color-blue}
-.calendar-container .summary.expense{color:$color-red}
-.calendar-container .summary.income span{color:$color-blue}
-.calendar-container .summary.expense span{color:$color-red}
-.calendar-container .summary.transfer{color:$kb-ui03}
-.calendar-container .summary.transfer span{color:$kb-ui03}
-.calendar-container .summary.transfer span{font-weight:bold}
+.calendar-container .summary-amount{margin-top:1.5rem;border-top:1px solid $kb-ui09;border-bottom:1px solid $kb-ui09}
+.calendar-container .summary-amount dt{margin:0.6rem 0}
+.calendar-container .summary-amount .amount span{font-weight:bold}
+.calendar-container .summary-amount .income .num{color:$color-blue}
+.calendar-container .summary-amount .expense .num{color:$color-red}
+.calendar-container .summary-amount .transfer .num{color:$kb-ui03}
 .calendar-container .summary span::before{display:inline-block;width:15px;height:15px;margin-right:4px;border-radius:50%;border-radius:50%;border:1px solid;line-height:14px;text-align:center;vertical-align:middle}
 .calendar-container .number{font-weight:bold}
 //header
-.calendar-header{@include flexBetween;width:100%;margin-bottom:22px;padding:0 26px;background-color:$kb-ui11}
-.calendar-header .this-year{display:block;margin-bottom:6px;font-size:11px;color:$kb-ui04}
-.calendar-header .this-month{display:block;font-size:16px;color:$kb-ui02;font-weight:bold}
-.calendar-header .summary-date{display:flex;min-width:65px;text-align:center}
-.calendar-header .summary-date button:first-child{margin-right:15px}
-.calendar-header .summary-date button:last-child{margin-left:15px}
+.calendar-header{width:100%;margin-bottom:2.5rem}
+.calendar-header .summary-date{display:flex;justify-content:center;text-align:center}
+.calendar-header .summary-date p{display:inline-block;margin:0 2.4rem;font-size:1.9rem}
 .calendar-header .summary{font-size:10px}
+.calendar-header .summary:first-of-type{border-top:1px solid $kb-ui09}
+.calendar-header .summary:last-of-type{border-bottom:1px solid $kb-ui09}
 .calendar-header .summary span{display:block;margin-bottom:7px}
 .calendar-header .summary span{font-weight:bold}
-.calendar-header.is-fixed{position:fixed;top:48px;left:0;z-index:$level20;padding-top:20px;padding-bottom:20px}
+// .calendar-header.is-fixed{position:fixed;top:48px;left:0;z-index:$level20;padding-top:20px;padding-bottom:20px}
 //calendar
-.calendar-header.is-fixed + .calendar{padding-top:55px}
+// .calendar-header.is-fixed + .calendar{padding-top:55px}
 .calendar{position:relative}
-.calendar .calendar-info{@include flexBetween;margin-bottom:22px;padding:0 26px}
-.calendar .calendar-info .period{font-size:11px;color:$kb-ui07}
-.calendar .calendar-info .point{font-size:10px;color:$kb-ui05}
-.calendar .calendar-info .point::before{content:'';display:inline-block;width:12px;height:12px;margin-right:4px;border-radius:50%;background-color:$color-yellow-positive;vertical-align:middle}
 .tbl-calender{border-bottom:1px solid $kb-ui09}
-.tbl-calender .day-name{padding:10px 0;text-align:center;font-size:10px;color:$kb-ui03;background-color:#fff9e3}
-.tbl-calender .weekly-summary{@include flexBetween;padding:0 13px;font-size:10px;background-color:$kb-ui10;border-top:1px solid $kb-ui09;border-bottom:1px solid $kb-ui09}
-.tbl-calender .weekly-summary .tit{display:block;color:$kb-ui04;font-weight:bold}
-.tbl-calender .weekly-summary .summary-list li{display:inline-block;margin-left:8px;padding:10px 0}
-.tbl-calender .weekly-summary .summary-list .summary span::before{display:inline;width:auto;height:auto;border:0}
-.tbl-calender .weekly-summary .summary-list .income::before{content:'\002B'}
-.tbl-calender .weekly-summary .summary-list .expense::before{content:'\2013'}
-.tbl-calender .weekly-summary .summary-list .transfer em{color:$kb-ui02;font-weight:bold}
-.tbl-calender .day{height:80px;text-align:center;font-family:'roboto';font-size:11px;color:$kb-ui04;border-right:1px solid $kb-ui09}
-.tbl-calender .day .link-box_block{height:100%;padding:11px}
-.tbl-calender .day:last-child{border-right:0}
-.tbl-calender .day strong{display:inline-block;width:16px;height:16px;margin-bottom:7px;border-radius:50%;line-height:16px;text-align:center}
-.tbl-calender .day-disabled strong{color:$kb-ui06}
-.tbl-calender .today strong{background-color:$color-yellow-positive}
+.tbl-calender .day-name{padding-bottom:1.2rem;text-align:center;font-size:1.4rem;color:$kb-ui04}
+.tbl-calender .day{height:80px;text-align:center}
+.tbl-calender .day .link-box_block{height:100%}
+.tbl-calender .day strong{display:inline-block;width:3.6rem;height:3.6rem;border-radius:50%;font-size:1.7rem;line-height:3.6rem;font-weight:bold;font-family:'roboto';color:$kb-ui02;text-align:center}
+.tbl-calender .day.is-list strong{background-color:$kb-ui09}
+.tbl-calender .day.today strong{background-color:$color-yellow-positive}
+.tbl-calender .day-list{margin-top:0.8rem}
 .tbl-calender .day-list li{font-size:10px;line-height:1.4}
-.tbl-calender .day-list .summary span::before{width:10px;height:10px;line-height:8px}
+.tbl-calender .day-list li.income{color:$color-blue}
+.tbl-calender .day-list li.expense{color:$color-red}
 // 가계부 > 캘린더로 보기 상세
 .view-calendar-detail .calendar-header{padding-left:0}
 .view-calendar-detail .calendar-detail .credit-list{border-top:1px solid $kb-ui02}

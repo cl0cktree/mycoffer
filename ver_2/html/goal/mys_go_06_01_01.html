@@ -11,9 +11,7 @@
 	@@include('@@webRoot/html/_include/app-a11y.html')
 	<div class="app">
 		<!-- app-header (for MyMoney) //-->
-        <!-- 2021-07-13 수정 // -->        
         @@include('@@webRoot/html/_include/app-integrated-header.html',{'pageTit':'상세 내역','type':''})
-        <!-- // 2021-07-13 수정 -->
 		<!-- // app-header -->
 
 		<!-- app-container (for MyMoney) //-->
@@ -22,8 +20,7 @@
 			<main class="app-content goals-challenge">
                 <section class="kb-sec goals-detail-list">
                     <div class="challenge-box content-swiper-wrap">
-                        <div class="swiper-container content-swiper t01 js-swiper" data-swiper-options="goalGraphSwiperOptions"> <!-- 2021-07-15 수정 -->
-                            <!-- 2021-07-15 수정 // -->
+                        <div class="swiper-container content-swiper t01 js-swiper" data-swiper-options="goalGraphSwiperOptions">
                             <script>
                                 var goalGraphSwiperOptions = {
                                     "pagination": {
@@ -34,7 +31,6 @@
                                     "autoHeight": "true"                                    
                                 };
                             </script>
-                            <!-- // 2021-07-15 수정 -->
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide content-box shadow">
                                     <div class="challenge-tit">
@@ -46,23 +42,23 @@
                                     </div>
                                     <div class="challenge-info">
                                         <ul class="term-list">
-                                            <li><span>목표기간</span> <em class="num">2021.04.01~2021.04.06</em></li> <!-- 2021-06-29 수정 -->
-                                            <li><span>6개월 평균 소비금액</span> <em class="num">150,000</em>원</li> <!-- 2021-06-30 수정 -->
-                                            <li><span>목표금액</span> <em class="num">150,000</em>원 (1주일)</li> <!-- 2021-06-29 수정 -->
+                                            <li><span>목표기간</span> <em class="num">2021.04.01~2021.04.06</em></li>
+                                            <li><span>6개월 평균 소비금액</span> <em class="num">150,000</em>원</li>
+                                            <li><span>목표금액</span> <em class="num">150,000</em>원 (1주일)</li>
                                         </ul>
                                         <div class="txt-goal-stat">
-                                            <p>현재까지 <strong class="num">70,000</strong>원 사용했고,</p> <!-- 2021-06-30 수정 -->
-                                            <p>목표까지 <strong class="num">80,000</strong>원 남았어요.</p> <!-- 2021-06-30 수정 -->
+                                            <p>현재까지 <strong class="num">70,000</strong>원 사용했고,</p>
+                                            <p>목표까지 <strong class="num">80,000</strong>원 남았어요.</p>
                                         </div>
                                         
-                                        <div class="character-graph goal" data-theme="pay"> <!--2021-07-13 수정-->
+                                        <div class="character-graph goal" data-theme="pay">
                                             <div class="graph-area">
-                                                <span data-goal="50"><i><img src="@@webRoot/static/images/_temp/@progress_coffee.png" alt="커피"></i></span> <!--2021-07-13 수정-->
+                                                <span data-goal="50"><i><img src="@@webRoot/static/images/_temp/@progress_coffee.png" alt="커피"></i></span>
                                                 <div class="flag"><i class="icon-flag-goal"></i></div>
                                             </div>
                                             <div class="graph-txt">
-                                                <p class="start-txt">현재소비금액<br><strong><span class="num">100,000</span>원</strong></p> <!-- 2021-06-30 수정 -->
-                                                <p class="end-txt">목표금액<br><strong><span class="num">150,000</span>원</strong></p> <!-- 2021-06-30 수정 -->
+                                                <p class="start-txt">현재소비금액<br><strong><span class="num">100,000</span>원</strong></p>
+                                                <p class="end-txt">목표금액<br><strong><span class="num">150,000</span>원</strong></p>
                                             </div>
                                         </div>                                    
                                     </div>
@@ -77,17 +73,14 @@
                                     </div>
                                     <div class="challenge-info">
                                         <ul class="term-list">
-                                            <li><span>목표기간</span> <em class="num">2021.04.01~2021.04.06</em></li> <!-- 2021-06-29 수정 -->
-                                            <li><span>6개월 평균 소비금액</span> <em class="num">150,000</em>원</li> <!-- 2021-06-30 수정 -->
-                                            <li><span>목표금액</span> <em class="num">150,000</em>원 (1주일)</li> <!-- 2021-06-29 수정 -->
+                                            <li><span>목표기간</span> <em class="num">2021.04.01~2021.04.06</em></li>
+                                            <li><span>6개월 평균 소비금액</span> <em class="num">150,000</em>원</li>
+                                            <li><span>목표금액</span> <em class="num">150,000</em>원 (1주일)</li>
                                         </ul>
                                         <ul class="legend-dot">
-                                            <!-- <li>지난주</li> 2021-07-19 삭제 -->
                                             <li class="current">현재</li>
-                                        </ul>                                                                
-                                        <!-- 2021-06-17 수정// -->
-                                        <div class="highcharts_column type-ratio no-mt" id="columnChart01"></div> <!-- 2021-06-30 수정 -->
-                                        <!-- //2021-06-17 수정 -->
+                                        </ul>
+                                        <div class="highcharts_column type-ratio no-mt" id="columnChart01"></div>
                                     </div>
                                 </div>
                             </div>
@@ -155,37 +148,7 @@
 	@@include('@@webRoot/html/_include/common-js.html')
 	<!-- Add Library (this page only)-->
 	<script src="@@webRoot/static/js/ui.js"></script>
-    <!-- <script src="@@webRoot/static/common/lib/swiper.min.js"></script> 2021-07-14 삭제-->
 
-    <!-- 2021-07-15 삭제 //
-    <script>
-        var $contentSwiper = $('.content-swiper-wrap');
-        if($contentSwiper.length > 0){
-            $contentSwiper.each(function(index){
-                var $contentSwiper = $(this).find('.swiper-container');
-                var index = index+1;
-                $contentSwiper.addClass('content-swiper' + index);
-                var swiper = new Swiper('.content-swiper' + index, {
-                    slidesPerView: 'auto',
-                    centeredSlides: 'true',
-                    spaceBetween: 16, /*2021-06-14 수정*/               
-                    autoHeight : 'true', /*2021-06-08 추가*/
-                    pagination: {
-                        el: $('.content-swiper' + index).find('.swiper-pagination'),
-                        type: 'bullets',
-                        clickable: 'true',
-                    },
-                    navigation: {
-                        nextEl: $('.content-swiper' + index).find('.swiper-button-next'),
-                        prevEl: $('.content-swiper' + index).find('.swiper-button-prev'),
-                    },
-                });
-            });
-        };
-    </script>    
-    // 2021-07-15 삭제 -->
-    
-    <!-- 2021-06-17 추가// -->
     <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
     <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
 
@@ -208,17 +171,14 @@
             chart: {
                 renderTo: 'columnChart01', // chart 삽입 target ID
                 type: "column",
-                //height: (3 / 4 * 100) + '%', // 4:3 비율로 설정
-                marginLeft: 0, // 2021-06-25 수정
-                marginRight: 0, // 2021-06-25 수정
-                marginTop:0 // 2021-06-25 수정
+                marginLeft: 0,
+                marginRight: 0,
+                marginTop:0
             },
             legend: { enabled: false },
-            // legend: { enabled: true, floating:true, layout:'horizontal', align:'left', x:-20, symbolPadding: 10, verticalAlign: 'top', itemDistance:30, itemStyle:{color:'#26282c', fontSize:'3.733vw', fontWeight:'normal', fontFamily: 'KBFGText'} },
             xAxis: {
                 type: "category",
-                // max: 5, //2021-07-19 삭제
-                categories: ["7월12일", "7월13일", "7월14일", "7월15일"], //2021-07-19 수정
+                categories: ["7월12일", "7월13일", "7월14일", "7월15일"],
                 labels: {
                     style: {
                         color: "#aab0b8",
@@ -228,7 +188,7 @@
                 }
             },
             yAxis: {
-                endOnTick: false, // 2021-06-25 수정
+                endOnTick: false,
                 enabled: false,  // 사용 안함
                 labels: { enabled: false },  // 축 lebel 사용 안함
                 title: { enabled: false }, // 축 title 사용 안함
@@ -254,25 +214,15 @@
                 }
             },
             series: [
-                /* 2021-07-19 삭제 //
-                {
-                    id: "outMoney",
-                    name: "지난주", // 2021-07-08 수정
-                    color: "#c6cbd0",
-                    pointPlacement: -0.2,
-                    data: [3, 3, 3, 3]
-                },
-                // 2021-07-19 삭제 */
                 {
                     id: "inMoney",
-                    name: "현재", // 2021-07-08 수정
+                    name: "현재",
                     color: '#ffd338',
                     data: [1, 2, 3, 4]
                 }
             ],
         });
     </script>
-    <!-- //2021-06-17 추가 --> 
 </body>
 
 </html>

@@ -12,7 +12,7 @@
     <div class="app">
         <!-- app-header (for MyMoney) //-->
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
-            'pageTit':'캘린더 보기',
+            'pageTit':'달력 보기',
             'type':''
         })
         <!-- // app-header -->
@@ -29,29 +29,21 @@
                         <div class="calendar-header">
                             <div class="summary-date">
                                 <button><i class="icon-arrow-left">이전달</i></button>
-                                <p><span class="this-year">2021</span><strong class="this-month"><em class="number">5</em>월</strong></p>
+                                <p class="date"><em class="number">2021.05</em></p>
                                 <button><i class="icon-arrow-right">다음달</i></button>
                             </div>
-                            <div class="summary income">
-                                <span><i class="icon-income_15"></i>수입</span>
-                                <strong><em class="number">12,000,000</em>원</strong>
-                            </div>
-                            <div class="summary expense">
-                                <span><i class="icon-expense_15"></i>지출</span>
-                                <strong><em class="number">12,000,000</em>원</strong>
-                            </div>
-                            <div class="summary transfer">
-                                <span><i class="icon-transfer_15"></i>이체</span>
-                                <strong><em class="number">4</em>건</strong>
-                            </div>
+                            <dl class="description-list type2 summary-amount">
+                                <dt>월 수입 총액</dt>
+                                <dd class="amount income"><span class="num">8,230,000</span>원</dd>
+                                <dt>월 지출 총액</dt>
+                                <dd class="amount expense"><span class="num">71,000</span>원</dd>
+                                <dt>월 이체 총건수</dt>
+                                <dd class="amount transfer"><span class="num">7</span>건</dd>
+                            </dl>
                         </div>
                         <!-- //calendar-header -->
                         <!-- calendar // -->
                         <div class="calendar">
-                            <div class="calendar-info">
-                                <span class="period">05.01 ~ 05.31</span>
-                                <span class="point">카드결제예정일&sol;정기지출예정일</span>
-                            </div>
                             <!-- tbl-calender // -->
                             <table class="tbl-calender">
                                 <colgroup>
@@ -65,302 +57,136 @@
                                 </colgroup>
                                 <tbody>
                                     <tr>
+                                        <td class="day-name">일</td>
                                         <td class="day-name">월</td>
                                         <td class="day-name">화</td>
                                         <td class="day-name">수</td>
                                         <td class="day-name">목</td>
                                         <td class="day-name">금</td>
                                         <td class="day-name">토</td>
-                                        <td class="day-name">일</td>
                                     </tr>
                                     <tr>
-                                        <td colspan="7">
-                                            <div class="weekly-summary">
-                                                <strong class="tit">주간</strong>
-                                                <ul class="summary-list">
-                                                    <li class="summary income"><span><em class="number">35,000</em>원</span></li>
-                                                    <li class="summary expense"><span><em class="number">35,000</em>원</span></li>
-                                                    <li class="summary transfer"><span><em class="number">4</em>건</spa></li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="day day-disabled">
-                                            <a href="javascript:;" class="btn-link link-box_block">
-                                                <strong>28</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
-                                        </td>
-                                        <td class="day day-disabled">
-                                            <a href="javascript:;" class="btn-link link-box_block">
-                                                <strong>29</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
-                                        </td>
-                                        <td class="day day-disabled">
-                                            <a href="javascript:;" class="btn-link link-box_block">
-                                                <strong>30</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
+                                        <td class="day"></td>
+                                        <td class="day">
+                                            <a href="javascript:;" class="btn-link link-box_block"><strong>1</strong></a>
                                         </td>
                                         <td class="day">
-                                            <a href="javascript:;" class="btn-link link-box_block">
-                                                <strong>1</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
+                                            <a href="javascript:;" class="btn-link link-box_block"><strong>2</strong></a>
                                         </td>
                                         <td class="day">
-                                            <a href="javascript:;" class="btn-link link-box_block">
-                                                <strong>2</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
+                                            <a href="javascript:;" class="btn-link link-box_block"><strong>3</strong></a>
                                         </td>
-                                        <td class="day">
-                                            <a href="javascript:;" class="btn-link link-box_block">
-                                                <strong>3</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
-                                        </td>
-                                        <td class="day">
+                                        <td class="day is-list">
                                             <a href="javascript:;" class="btn-link link-box_block">
                                                 <strong>4</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="7">
-                                            <div class="weekly-summary">
-                                                <strong class="tit">주간</strong>
-                                                <ul class="summary-list">
-                                                    <li class="summary income"><span><em class="number">35,000</em>원</span></li>
-                                                    <li class="summary expense"><span><em class="number">35,000</em>원</span></li>
-                                                    <li class="summary transfer"><span><em class="number">4</em>건</spa></li>
+                                                <ul class="day-list">
+                                                    <li class="income"><em class="number">3</em></li>
                                                 </ul>
-                                            </div>
+                                            </a>
+                                        </td>
+                                        <td class="day">
+                                            <a href="javascript:;" class="btn-link link-box_block"><strong>5</strong></a>
+                                        </td>
+                                        <td class="day">
+                                            <a href="javascript:;" class="btn-link link-box_block"><strong>6</strong></a>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="day">
+                                            <a href="javascript:;" class="btn-link link-box_block"><strong>7</strong></a>
+                                        </td>
+                                        <td class="day">
+                                            <a href="javascript:;" class="btn-link link-box_block"><strong>8</strong></a>
+                                        </td>
+                                        <td class="day">
+                                            <a href="javascript:;" class="btn-link link-box_block"><strong>9</a>
+                                        </td>
+                                        <td class="day">
+                                            <a href="javascript:;" class="btn-link link-box_block">10<strong></a>
+                                        </td>
+                                        <td class="day is-list">
                                             <a href="javascript:;" class="btn-link link-box_block">
-                                                <strong>5</strong>
-                                                <ul class="day-list"></ul>
+                                                <strong>11</strong>
+                                                <ul class="day-list">
+                                                    <li class="income"><em class="number">3</em></li>
+                                                    <li class="expense"><em class="number">8</em></li>
+                                                    <li class="transfer"><em class="number">12</em></li>
+                                                </ul>
                                             </a>
                                         </td>
                                         <td class="day">
-                                            <a href="javascript:;" class="btn-link link-box_block">
-                                                <strong>6</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
+                                            <a href="javascript:;" class="btn-link link-box_block"><strong>12</strong></a>
                                         </td>
                                         <td class="day">
-                                            <a href="javascript:;" class="btn-link link-box_block">
-                                                <strong>7</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
+                                            <a href="javascript:;" class="btn-link link-box_block"><strong>13</strong></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="day">
+                                            <a href="javascript:;" class="btn-link link-box_block"><strong>14</strong></a>
                                         </td>
                                         <td class="day">
-                                            <a href="javascript:;" class="btn-link link-box_block">
-                                                <strong>8</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
+                                            <a href="javascript:;" class="btn-link link-box_block"><strong>15</strong></a>
                                         </td>
                                         <td class="day today">
                                             <a href="javascript:;" class="btn-link link-box_block">
-                                                <strong>9</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
-                                        </td>
-                                        <td class="day">
-                                            <a href="javascript:;" class="btn-link link-box_block">
-                                                <strong>10</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
-                                        </td>
-                                        <td class="day">
-                                            <a href="javascript:;" class="btn-link link-box_block">
-                                                <strong>11</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="7">
-                                            <div class="weekly-summary">
-                                                <strong class="tit">주간</strong>
-                                                <ul class="summary-list">
-                                                    <li class="summary income"><span><em class="number">35,000</em>원</span></li>
-                                                    <li class="summary expense"><span><em class="number">35,000</em>원</span></li>
-                                                    <li class="summary transfer"><span><em class="number">4</em>건</spa></li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="day">
-                                            <a href="mys_ex_01_02_01_p.html" class="btn-link link-box_block">
-                                                <strong>12</strong>
-                                                <ul class="day-list">
-                                                    <li class="summary income"><span><i class="icon-income_10"></i><em class="number">9</em>건</span></li>
-                                                </ul>
-                                            </a>
-                                        </td>
-                                        <td class="day">
-                                            <a href="javascript:;" class="btn-link link-box_block">
-                                                <strong>13</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
-                                        </td>
-                                        <td class="day">
-                                            <a href="javascript:;" class="btn-link link-box_block">
-                                                <strong>14</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
-                                        </td>
-                                        <td class="day">
-                                            <a href="javascript:;" class="btn-link link-box_block">
-                                                <strong>15</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
-                                        </td>
-                                        <td class="day">
-                                            <a href="javascript:;" class="btn-link link-box_block">
                                                 <strong>16</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
-                                        </td>
-                                        <td class="day">
-                                            <a href="javascript:;" class="btn-link link-box_block">
-                                                <strong>17</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
-                                        </td>
-                                        <td class="day">
-                                            <a href="javascript:;" class="btn-link link-box_block">
-                                                <strong>18</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="7">
-                                            <div class="weekly-summary">
-                                                <strong class="tit">주간</strong>
-                                                <ul class="summary-list">
-                                                    <li class="summary income"><span><em class="number">35,000</em>원</span></li>
-                                                    <li class="summary expense"><span><em class="number">35,000</em>원</span></li>
-                                                    <li class="summary transfer"><span><em class="number">4</em>건</spa></li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="day">
-                                            <a href="mys_ex_01_02_01_p.html" class="btn-link link-box_block">
-                                                <strong>19</strong>
                                                 <ul class="day-list">
-                                                    <li class="summary income"><span><i class="icon-income_10"></i><em class="number">9</em>건</span></li>
-                                                    <li class="summary expense"><span><i class="icon-expense_10"></i><em class="number">9</em>건</span></li>
+                                                    <li class="income"><em class="number">1</em></li>
+                                                    <li class="expense"><em class="number">13</em></li>
                                                 </ul>
                                             </a>
                                         </td>
                                         <td class="day">
-                                            <a href="javascript:;" class="btn-link link-box_block">
-                                                <strong>20</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
+                                            <a href="javascript:;" class="btn-link link-box_block"><strong>17</strong></a>
                                         </td>
                                         <td class="day">
-                                            <a href="javascript:;" class="btn-link link-box_block">
-                                                <strong>21</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
+                                            <a href="javascript:;" class="btn-link link-box_block"><strong>18</strong></a>
                                         </td>
                                         <td class="day">
-                                            <a href="javascript:;" class="btn-link link-box_block">
-                                                <strong>22</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
+                                            <a href="javascript:;" class="btn-link link-box_block"><strong>19</strong></a>
                                         </td>
                                         <td class="day">
-                                            <a href="javascript:;" class="btn-link link-box_block">
-                                                <strong>23</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
-                                        </td>
-                                        <td class="day">
-                                            <a href="javascript:;" class="btn-link link-box_block">
-                                                <strong>24</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
-                                        </td>
-                                        <td class="day">
-                                            <a href="javascript:;" class="btn-link link-box_block">
-                                                <strong>25</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="7">
-                                            <div class="weekly-summary">
-                                                <strong class="tit">주간</strong>
-                                                <ul class="summary-list">
-                                                    <li class="summary income"><span><em class="number">35,000</em>원</span></li>
-                                                    <li class="summary expense"><span><em class="number">35,000</em>원</span></li>
-                                                    <li class="summary transfer"><span><em class="number">4</em>건</spa></li>
-                                                </ul>
-                                            </div>
+                                            <a href="javascript:;" class="btn-link link-box_block"><strong>20</strong></a>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="day">
-                                            <a href="mys_ex_01_02_01_p.html" class="btn-link link-box_block">
-                                                <strong>26</strong>
-                                                <ul class="day-list">
-                                                    <li class="summary income"><span><i class="icon-income_10"></i><em class="number">9</em>건</span></li>
-                                                    <li class="summary expense"><span><i class="icon-expense_10"></i><em class="number">9</em>건</span></li>
-                                                    <li class="summary transfer"><span><i class="icon-transfer_10"></i><em class="number">5</em>건</span></li>
-                                                </ul>
-                                            </a>
+                                            <a href="javascript:;" class="btn-link link-box_block"><strong>21</strong></a>
                                         </td>
                                         <td class="day">
-                                            <a href="javascript:;" class="btn-link link-box_block">
-                                                <strong>27</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
+                                            <a href="javascript:;" class="btn-link link-box_block"><strong>22</strong></a>
                                         </td>
                                         <td class="day">
-                                            <a href="javascript:;" class="btn-link link-box_block">
-                                                <strong>28</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
+                                            <a href="javascript:;" class="btn-link link-box_block"><strong>22</strong></a>
                                         </td>
                                         <td class="day">
-                                            <a href="javascript:;" class="btn-link link-box_block">
-                                                <strong>29</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
+                                            <a href="javascript:;" class="btn-link link-box_block"><strong>24</strong></a>
                                         </td>
                                         <td class="day">
-                                            <a href="javascript:;" class="btn-link link-box_block">
-                                                <strong>30</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
+                                            <a href="javascript:;" class="btn-link link-box_block"><strong>25</strong></a>
                                         </td>
                                         <td class="day">
-                                            <a href="javascript:;" class="btn-link link-box_block">
-                                                <strong>31</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
+                                            <a href="javascript:;" class="btn-link link-box_block"><strong>26</strong></a>
                                         </td>
-                                        <td class="day day-disabled">
-                                            <a href="javascript:;" class="btn-link link-box_block">
-                                                <strong>1</strong>
-                                                <ul class="day-list"></ul>
-                                            </a>
+                                        <td class="day">
+                                            <a href="javascript:;" class="btn-link link-box_block"><strong>27</strong></a>
                                         </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="day">
+                                            <a href="javascript:;" class="btn-link link-box_block"><strong>28</strong></a>
+                                        </td>
+                                        <td class="day">
+                                            <a href="javascript:;" class="btn-link link-box_block"><strong>29</strong></a>
+                                        </td>
+                                        <td class="day">
+                                            <a href="javascript:;" class="btn-link link-box_block"><strong>30</strong></a>
+                                        </td>
+                                        <td class="day"></td>
+                                        <td class="day"></td>
+                                        <td class="day"></td>
+                                        <td class="day"></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -387,17 +213,17 @@
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
     <script>
-        var $calendarHeader = $('.calendar-header');
-        $(window).on('scroll',function(){
-            st = $(this).scrollTop();
-            if($calendarHeader){
-                if(st > 0){
-                    $calendarHeader.addClass('is-fixed');
-                }else{
-                    $calendarHeader.removeClass('is-fixed');
-                }
-            }
-        });
+        // var $calendarHeader = $('.calendar-header');
+        // $(window).on('scroll',function(){
+        //     st = $(this).scrollTop();
+        //     if($calendarHeader){
+        //         if(st > 0){
+        //             $calendarHeader.addClass('is-fixed');
+        //         }else{
+        //             $calendarHeader.removeClass('is-fixed');
+        //         }
+        //     }
+        // });
     </script>
     <!-- Add Script -->
 </body>

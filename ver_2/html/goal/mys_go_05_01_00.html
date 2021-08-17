@@ -11,9 +11,7 @@
 	@@include('@@webRoot/html/_include/app-a11y.html')
 	<div class="app">
 		<!-- app-header (for MyMoney) //-->
-        <!-- 2021-07-13 수정 // -->        
         @@include('@@webRoot/html/_include/app-integrated-header.html',{'pageTit':'챌린지 자세히보기','type':''})
-        <!-- // 2021-07-13 수정 -->
 		<!-- // app-header -->
 
 		<!-- app-container (for MyMoney) //-->
@@ -29,11 +27,9 @@
                     </ul>
                 </section>
                 <section class="kb-sec goals-list mt20"> 
-                    <p class="flex-box"><span class="h4 light">김국민 님은<br><strong>월 <span class="num">500,000</span>원</strong> 저축중이에요.</span></p> <!-- 2021-06-30 수정 -->   
-                    <!-- 2021-06-30 수정 // -->                 
+                    <p class="flex-box"><span class="h4 light">김국민 님은<br><strong>월 <span class="num">500,000</span>원</strong> 저축중이에요.</span></p>
                     <div class="challenge-box content-swiper-wrap">
-                        <div class="swiper-container content-swiper t01 js-swiper" data-swiper-options="goalGraphSwiperOptions"> <!-- 2021-07-15 수정 -->
-                            <!-- 2021-07-15 수정 // -->
+                        <div class="swiper-container content-swiper t01 js-swiper" data-swiper-options="goalGraphSwiperOptions">
                             <script>
                                 var goalGraphSwiperOptions = {
                                     "pagination": {
@@ -43,12 +39,11 @@
                                     "autoHeight": "true"                                        
                                 };
                             </script>
-                            <!-- // 2021-07-15 수정 -->
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide content-box shadow">
                                     <!-- [Chart Area] // -->
                                     <div class="chart-area">
-                                        <p class="sub">비교그룹보다 저축이 200,000원 적어요. 부족한 200,000원 더 저축해보세요!</p> <!-- 2021-07-19 수정 -->
+                                        <p class="sub">비교그룹보다 저축이 200,000원 적어요. 부족한 200,000원 더 저축해보세요!</p>
                                         <div class="highcharts_column type-ratio" id="bubbleChart01"></div>
                                     </div>
                                     <!-- // [Chart Area] -->
@@ -56,13 +51,13 @@
                                 <div class="swiper-slide content-box shadow">
                                     <div class="challenge-info non-tit">
                                         <div class="tit flex-box goals-desc type2">
-                                            <div>비교그룹과 월별 커피업종 소비금액을 비교했어요.</div> <!-- 2021-07-19 수정 -->
+                                            <div>비교그룹과 월별 커피업종 소비금액을 비교했어요.</div>
                                         </div>
                                         <div class="chart-area dbl-bar">  
-                                            <!-- [Chart Area] 2021-06-21 수정// -->
+                                            <!-- [Chart Area] -->
                                             <div class="highcharts_column type-ratio" id="splineChart"></div>
-                                            <!-- // [Chart Area] 2021-06-21 수정 -->                                                                                           
-                                            <span class="txt-gray">비교그룹</span> <!-- 2021-07-19 수정 -->
+                                            <!-- // [Chart Area] -->                                                                                           
+                                            <span class="txt-gray">비교그룹</span>
                                             <span class="txt-yellow type2">나</span>
                                         </div>
                                     </div>
@@ -71,15 +66,14 @@
                             <div class="swiper-pagination"></div>
                         </div>
                     </div> 
-                    <!-- // 2021-06-30 수정 -->
-                    <div class="btn-area mt36"> <!-- 2021-06-30 수정 -->
+                    <div class="btn-area mt36">
                         <button class="btn-text align-r"><span>챌린지만 미리 만들기<i class="icon-link_20"></i></span></button>
                     </div>                 
                 </section>
 
                 <div class="sticky-bottom">
                     <div class="btn-area">
-                        <button type="button" class="btn-solid_sticky" data-action="" onclick=""><span>적금 계좌 연결</span></button> <!-- 2021-07-19 수정 -->
+                        <button type="button" class="btn-solid_sticky" data-action="" onclick=""><span>적금 계좌 연결</span></button>
                     </div>
                 </div>
 			</main>
@@ -99,43 +93,10 @@
 	@@include('@@webRoot/html/_include/common-js.html')
 	<!-- Add Library (this page only)-->
 	<script src="@@webRoot/static/js/ui.js"></script>
-    <!-- <script src="@@webRoot/static/common/lib/swiper.min.js"></script>  2021-07-15 삭제 -->
-
-    <!-- 2021-06-24 수정 // -->
+    
     <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script> 
     <script src="@@webRoot/static/common/lib/highcharts/highcharts-more.js"></script>
-    <!-- // 2021-06-24 수정 -->
 
-    <!-- 2021-07-15 삭제 //
-    <script>
-        var $contentSwiper = $('.content-swiper-wrap');
-        if($contentSwiper.length > 0){
-            $contentSwiper.each(function(index){
-                var $contentSwiper = $(this).find('.swiper-container');
-                var index = index+1;
-                $contentSwiper.addClass('content-swiper' + index);
-                var swiper = new Swiper('.content-swiper' + index, {
-                    slidesPerView: 'auto',
-                    centeredSlides: 'true',
-                    autoHeight: 'true', // 2021-06-30 추가
-                    spaceBetween: 24,
-                    pagination: {
-                        el: $('.content-swiper' + index).find('.swiper-pagination'),
-                        type: 'bullets',
-                        clickable: 'true',
-                    },
-                    navigation: {
-                        nextEl: $('.content-swiper' + index).find('.swiper-button-next'),
-                        prevEl: $('.content-swiper' + index).find('.swiper-button-prev'),
-                    },
-                });
-            });
-        };
-    </script>
-    // 2021-07-15 삭제 -->
-
-    <!-- 2021-06-24 수정 // -->
-    
     <script>
         // highchart 공통 options        
         Highcharts.setOptions({
@@ -155,17 +116,15 @@
                 plotBorderWidth: 0,
                 plotShadow: false,
                 type: 'packedbubble',
-                //height: (3 / 4 * 100) + '%', // 4:3 비율로 설정                
-                margin:0, // 2021-06-25 수정
-                marginBottom:20 // 2021-06-25 수정
+                margin:0,
+                marginBottom:20
             },            
             tooltip: { enabled: false },
             plotOptions: {
                 packedbubble: {
-                    minSize: '80%', //2021-07-19 수정
-                    maxSize: '120%', //2021-07-19 수정
+                    minSize: '80%',
+                    maxSize: '120%',
                     zMin: 0,
-                    // zMax: 100,                       
                     layoutAlgorithm: {
                         splitSeries: false,
                         gravitationalConstant: 0.005
@@ -190,14 +149,14 @@
             series: [{
                 name: null,
                 data: [{
-                    name: '<tspan dy="-15">나</tspan>', //2021-06-30 수정
+                    name: '<tspan dy="-15">나</tspan>',
                     value: 350000, 
                     color: {
                         radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
                         stops: [ [0, '#c5d38d'], [1, '#a7c23a'] ]
                     }
                 },{
-                    name: '<tspan dy="-15">비교그룹</tspan>', //2021-06-30 수정
+                    name: '<tspan dy="-15">비교그룹</tspan>',
                     color: '#f8956d',
                     value: 150000, 
                     color: {
@@ -208,9 +167,7 @@
             }]
         });
     </script>
-    <!-- // 2021-06-24 수정 -->
-
-    <!-- 2021-06-30 추가 // -->
+    
     <script>
         // highchart 공통 options
         Highcharts.setOptions({
@@ -227,10 +184,9 @@
             chart: {
                 renderTo: 'splineChart', // chart 삽입 target ID
                 type: "spline",
-                //height: (3 / 4 * 100) + '%', // 4:3 비율로 설정
-                marginLeft: 0, // 2021-06-25 수정
-                marginRight: 0, // 2021-06-25 수정
-                marginTop:0 // 2021-06-25 수정
+                marginLeft: 0,
+                marginRight: 0,
+                marginTop:0
             },
             xAxis: {
                 type: "category",
@@ -245,8 +201,8 @@
                 },
             },
             yAxis: {
-                top:0, // 2021-07-14 수정
-                endOnTick: false, // 2021-06-25 수정
+                top:0,
+                endOnTick: false,
                 enabled: false,  // 사용 안함
                 labels: { enabled: false },  // 축 lebel 사용 안함
                 title: { enabled: false }, // 축 title 사용 안함
@@ -260,7 +216,7 @@
                     return [''].concat(
                         this.points ?
                             this.points.map(function (point) {
-                                return gfn_comma3Digit(point.y) + '원'; // 2021-06-25 수정
+                                return gfn_comma3Digit(point.y) + '원';
                             }) : []
                     );
                 },
@@ -289,17 +245,16 @@
             series: [
                 {
                     linkedTo: "main",
-                    data: [0, 680000, 665210] //2021-07-19 수정
+                    data: [0, 680000, 665210]
                 },
                 {
                     id: 'main',
                     color: '#ffd435',
-                    data: [300000, 420000, 0] //2021-07-19 수정
+                    data: [300000, 420000, 0]
                 }
             ]
         });
     </script>
-    <!-- // 2021-06-30 추가 -->
 </body>
 
 </html>
