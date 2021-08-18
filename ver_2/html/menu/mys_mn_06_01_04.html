@@ -11,12 +11,12 @@
 <body>
     @@include('@@webRoot/html/_include/app-a11y.html')
     <div class="app"><!-- 수정 2021.06.25 : Liiv, Starbanking  앱 안에서  동작할 경우 data-page="submain" -->
-        <!-- 수정 : app-header (Type 구분) //-->
+        
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
             'pageTit':'마이데이터 선물함',
             'type':''
         })
-        <!-- // 수정 : app-header (Type 구분)-->
+        
         <!-- app-container (for MyMoney) //-->
         <div class="app-container">
             <div class="app-lnb">
@@ -31,19 +31,22 @@
 
             <!-- app-content // -->
             <main class="app-content reward-benefit">
+                <h2 class="is-hidden">실시간 이벤트 리스트</h2><!-- 수정 2021-08-18 -->
 
                 <section class="kb-sec bg-white">
-                    <div class="condition-area">
+                    <!-- 수정 2021-08-18 // -->
+                    <div class="condition-area type-total">
 						<button class="btn-condition" data-call-layered="mys_mn_06_01_04_search">
-							<strong class="tit">총 <span class="num">17</span>개</strong>
-							<div>
-								<div class="sorting-status">									
-									<span>전체</span>
-								</div>                            
-								<i class="icon-filter_20"></i>
-							</div>
+                            <div>
+                                <div class="sorting-status">
+                                    <span>전체</span>
+                                </div>                            
+                                <i class="arrow"></i>
+                            </div>
 						</button>
+                        <strong class="tit">총 <span class="num">17</span>개</strong>
 					</div>
+                    <!-- // 수정 2021-08-18 -->
 
                     <ul class="reward-benefit-list">
                         <li>
@@ -131,12 +134,14 @@
                         <button class="btn-text"><i class="icon-plus_20"></i><span>더보기</span></button>
                     </div>
                     
-                    <!-- 리워드 혜택이 없을 때 // -->
+                    <!-- 데이타가 없을 때 // -->
+                    <!-- 수정 2021-08-18 // -->
                     <div class="no-data">
-                        <i class="icon-info_24"></i>
-                        <p>응모 가능한 리워드혜택이 없습니다.</p>
+                        <i class="icon-bang_60_gray"></i>
+                        <p>응모 가능한 실시간이벤트가 없습니다.</p>
                     </div>
-                    <!-- // 리워드 혜택이 없을 때 -->
+                    <!-- // 수정 2021-08-18 -->
+                    <!-- // 데이타가 없을 때 -->
 
                 </section>
 

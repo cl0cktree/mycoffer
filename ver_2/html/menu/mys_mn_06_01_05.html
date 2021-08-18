@@ -11,12 +11,12 @@
 <body>
     @@include('@@webRoot/html/_include/app-a11y.html')
     <div class="app"><!-- 수정 2021.06.25 : Liiv, Starbanking  앱 안에서  동작할 경우 data-page="submain" -->
-        <!-- 수정 : app-header (Type 구분) //-->
+        
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
             'pageTit':'마이데이터 선물함',
             'type':''
         })
-        <!-- // 수정 : app-header (Type 구분)-->
+        
         <!-- app-container (for MyMoney) //-->
         <div class="app-container">
             <div class="app-lnb">
@@ -31,6 +31,8 @@
 
             <!-- app-content // -->
             <main class="app-content recommend-to-friend">
+                <h2 class="is-hidden">친구추천 자세히 보기</h2><!-- 수정 2021-08-18 -->    
+                
                 <section class="kb-sec bg-white"><!-- 수정 : 2021.06.25 -->
                     <div class="tab_button">
                         <a href="javascript:;" class="is-active"><span>친구추천</span></a>
@@ -39,8 +41,13 @@
                 </section>
 
                 <section class="kb-sec">
+                    <!-- 수정 2021-08-18 // -->    
+                    <div class="event-img">
+                        <img src="@@webRoot/static/images/_temp/img_temp_legacy.png" alt="이벤트 이미지">
+                    </div>
                     <div class="rtf-code">추천인 코드 : <b>KBstar1</b></div>
-                    <div class="event-img"><img src="" alt="이벤트 이미지"></div>
+                    <!-- // 수정 2021-08-18 -->
+
                     <!-- 수정 : 2021.06.23 // -->
                     <div class="sns-group">
                         <button><i class="icon-kakao">KAKAO</i></button>
@@ -82,6 +89,15 @@
                         <li>문의 : Liiv Mate 고객센터(<span class="num">1644-9311</span>)</li>
                         <li>준법감시인 심의필 제 <span class="num">201231-04358-</span>HMW(<span class="num">2020.12.31 ~ 2021.06.30</span>)</li>
                     </ul>
+
+                    <!-- 수정 2021-08-18 // -->    
+                    <!-- 데이타가 없을 때 // -->
+                    <div class="no-data">
+                        <i class="icon-bang_60_gray"></i>
+                        <p>이벤트 기간이 아닙니다.</p>
+                    </div>
+                    <!-- // 데이타가 없을 때 -->
+                    <!-- // 수정 2021-08-18 -->    
                 </section>
 
             </main>

@@ -159,7 +159,7 @@
 .goal-ama-others-detail .account-detail .d-list .price-wrap .txt-con .memo{display:block;margin-top:6px;}
 .goal-ama-others-detail .account-detail .description-list dd.amount .num {bottom: 0;}
 .goal-ama-others-detail .msg{@include text($size: $text01, $weight:bold);margin-top:12px;text-align:center;}
-.goal-ama-others-detail .msg p{margin-top:12px;}
+.goal-ama-others-detail .msg .icon-tit{margin-top:12px;}
 .goal-ama-others-detail .msg i > img{width:9.5rem;}
 
 .goal-ama-others-detail .success-tit .sub-tit{margin-top:13px;font-weight:bold;}
@@ -177,13 +177,16 @@
 .goals-challenge .goals-desc.t02{padding:32px 0 0;@include text($size:$text02);}
 .goals-challenge .goals-desc.t03{padding:32px 0 0;@include text($size:$text01);}
 .goals-challenge .goals-desc.no-pad{padding-top:0;}
+.goals-challenge .goals-desc .spend-desc{@include text($size:$text03,$weight:normal);display:inline;}
+.goals-challenge .goals-desc .card-tit{@include text($size:$text01,$weight:normal);margin-bottom:3.2rem;}
 .goals-challenge .flex-box .btn-text span{@include text($size:$text03);color:$kb-ui05;}
 .goals-challenge .chart-area.t01{margin-top:-23px;}
 //목표 요약
 .goals-summary{padding-bottom:5px;}
 .goals-summary .summary-piggymoeny{@include flexBetween;padding:25px 20px;}
 .goals-summary .summary-piggymoeny dt>[class^="icon-"]{margin-right:10px;}
-.goals-summary .summary-piggymoeny dt .h4{margin-right:6px;}
+.goals-summary .summary-piggymoeny dt .pig-tit{@include heading($size: $heading04);margin-right:6px;display:inline-block;}
+.goals-summary .summary-piggymoeny dt .h4{margin-right:6px;display:inline-block;}
 .goals-summary .summary-piggymoeny dd,
 .goals-summary .summary-piggymoeny dd strong{@include text($size:$text01,$weight:bold);}
 .goals-summary .summary-challenge{@include text($size:$text02);}
@@ -223,6 +226,7 @@
 .challenge-box .challenge-info .txt{position:relative;display:inline-block;width:calc(100% - 98px);height:auto;margin-left:10px;padding:16px 16px 16px 14px;font-size:14px;color:$kb-ui04;background-color:$kb-ui10;}
 .challenge-box .challenge-info .txt::before{position:absolute;top:50%;left:-5px;content:'';display:block;width:0;height:0;margin-top:-3px;border-top:5px solid transparent;border-bottom:5px solid transparent;border-right:5px solid $kb-ui10;}
 .challenge-box .challenge-info .goals-desc > span > i{margin-right:4px;}
+.challenge-box .challenge-info .info-desc{@include text($weight:normal);}
 
 .challenge-box .challenge-info.non-tit{padding-top:0;}
 .challenge-box .challenge-info.non-tit .goals-desc{@include text($size:$text03);}
@@ -230,7 +234,7 @@
 
 .challenge-box .challenge-empty{text-align:center;}
 .challenge-box .challenge-empty img{margin-top:6.4rem;width:4.1rem}
-.challenge-box .challenge-empty p{margin-bottom:6.4rem;margin-top:2.8rem;@include text($size:$text01);}
+.challenge-box .challenge-empty .icon-tit{margin-bottom:6.4rem;margin-top:2.8rem;@include text($size:$text01);}
 
 .challenge-box .add-card{height:246px;text-align:center;}
 .challenge-box .add-card button{@include text($size:$text02,$weight:bold);color:$kb-ui06;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);}
@@ -242,9 +246,9 @@
 //목표 내용
 .goals-list{position:relative;}
 .goals-list .goals-filter{text-align:right;}
-.goals-list .chart-area p.tit strong{font-size:18px;font-weight:bold;color:$kb-ui02;}
-.goals-list .chart-area p.tit + p.sub{margin-top:14px;}
-.goals-list .chart-area p.sub{@include text($size:$text02);margin:0;color:$kb-ui02;}
+.goals-list .chart-area .tit strong{font-size:18px;font-weight:bold;color:$kb-ui02;}
+.goals-list .chart-area .tit + .sub{margin-top:14px;}
+.goals-list .chart-area .sub{@include text($size:$text02);margin:0;color:$kb-ui02;}
 .goals-list > .content-box{margin:20px -8px 30px;}
 .goals-list.add-fix{margin-bottom:194px;}
 .goals-list .h4.light{font-weight:normal;}
@@ -280,6 +284,7 @@
 .goals-state li .stamp.type2:after{content:'';width:24px;height:24px;display:block;background:url(../images/goal/go_detail_24.png) no-repeat;background-size:contain;position:absolute;right:-30px;top:12px;}
 .goals-state .goals-desc button.btn-text u{font-size:14px;color:$kb-ui04;}
 .goals-state li a.btn-trans{position:absolute;width:100%;height:100%;top:0;left:0;z-index:1;}
+.goals-state .goals-desc .info-desc{@include text($size:$text03,$weight:normal);}
 
 //목표챌린지 > 남들만큼 > 버킷리스트 만들기
 .my-bucket-ist .h4{display:block;margin-bottom:24px;}
@@ -367,8 +372,8 @@
 
 .goals-setting{padding-top:24px;position:fixed;bottom:52px;width:100%;z-index:1;}
 .goals-setting h2{@include text($text01,$weight:bold)}
-.goals-setting h2 + p{@include text($text02);margin-top:10px;}
-.goals-setting h2 + p strong{@include text($weight:bold)}
+.goals-setting h2 + h3{@include text($text02);margin-top:10px;}
+.goals-setting h2 + h3 strong{@include text($weight:bold)}
 .goals-setting .character-graph{margin-top:42px;}
 .goals-setting .character-graph .graph-txt > p{font-size:14px;font-weight:bold;}
 .goals-setting .character-graph .ui-slider .handle .value{font-size:14px;font-weight:bold;background:#f7f7f8;padding:1px 5px;}
@@ -378,26 +383,30 @@
 .text-trophy{padding-left:33px;position:relative;@include text($text02);}
 .text-trophy.type2{padding-left:48px;}
 .text-trophy .ico{display:block;position:absolute;left:0;top:50%;transform:translateY(-50%);}
-.text-trophy p{@include text($weight:bold)}
+.text-trophy p{@include text($weight:bold);}
+.text-trophy h2{@include text($weight:bold);}
 .text-trophy p + span{margin-top:13px;}
+.text-trophy h2 + h3{margin-top:13px;@include text($weight:normal);}
 .text-trophy span{display:block;}
 .text-trophy strong{font-weight:bold;}
 
 .goals-no-spand{padding-top:24px;position:fixed;bottom:52px;width:100%;z-index:1;}
-.goals-no-spand .tit{margin-bottom:10px;}
+.goals-no-spand .tit{@include text($weight:normal);margin-bottom:10px;}
 .goals-no-spand .text-trophy{margin-top:30px;}
 
 // .goals-detail-list .challenge-tit{border-bottom:none;padding-bottom:0}
 .goals-detail-list .challenge-tit strong > span{display:block;@include text($text02);}
+.goals-detail-list .challenge-tit .h3 > span{display:block;@include text($text02);}
 .goals-detail-list .challenge-tit > span{display:block;font-size:15px;background:$color-yellow;padding:9px 10px;}
 .goals-detail-list .challenge-info{padding-top:10px;padding-bottom:0;}
 .goals-detail-list .challenge-info .term-list li{@include text($text02);}
 .goals-detail-list .challenge-info .term-list li + li{margin-top:6px;}
 .goals-detail-list .challenge-info .term-list li > span{display:inline-block;font-size:12px;background:#f7f7f8;border:1px solid #aab0b8;min-width:63px;height:20px;line-height:20px;text-align:center;border-radius:2px;margin-right:6px;padding:0 10px;}
 .goals-detail-list .challenge-info .txt-goal-stat{@include text($text02);margin-top:35px;}
+.goals-detail-list .challenge-info .txt-goal-stat h3{@include text($weight:normal);}
 // .goals-detail-list .challenge-info .txt-goal-stat + .character-graph{padding-top:100px;}
-.goals-detail-list .challenge-info .txt-goal-success{margin-top:-10px;}
-.goals-detail-list .challenge-info .txt-goal-success .tit{font-weight:bold;margin-bottom:10px;}
+.goals-detail-list .challenge-info .txt-goal-stat{margin-top:-10px;}
+.goals-detail-list .challenge-info .txt-goal-stat .tit{font-weight:bold;margin-bottom:10px;}
 .goals-detail-list .challenge-info .legend-dot{margin-top:24px;}
 .goals-detail-list .challenge-info .legend-dot li{@include text($text03);display:inline-block;}
 .goals-detail-list .challenge-info .legend-dot li + li{margin-left:25px;}
@@ -427,6 +436,8 @@
 .goal-fin-challenge .btn-group{margin-top:10px;text-align:right;}
 .goal-fin-challenge .goals-summary{padding-bottom:20px;}
 .goal-fin-challenge .fin-chall .flex-box{padding-top:48px;padding-bottom:32px;@include text($text01);}
+.goal-fin-challenge .fin-chall .flex-box .h2{@include text($size: $text01, $weight:normal);}
+.goal-fin-challenge .fin-chall .flex-box .h2 strong{font-weight:bold;}
 
 .cicle-badge{width:6.9rem;height:auto;}
 

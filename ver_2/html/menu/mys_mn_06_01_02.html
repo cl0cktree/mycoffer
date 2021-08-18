@@ -11,20 +11,21 @@
 <body>
     @@include('@@webRoot/html/_include/app-a11y.html')
     <div class="app">
-        <!-- 수정 : app-header (Type 구분) //-->
+        
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
             'pageTit':'쿠폰상세',
             'type':'close'
         })
-        <!-- // 수정 : app-header (Type 구분)-->
+        
         <!-- app-container (for MyMoney) //-->
         <div class="app-container">
 
             <!-- app-content // -->
             <main class="app-content coupon-detail">
+                <h2 class="is-hidden">쿠폰정보 및 사용안내</h2><!-- 수정 2021-08-18 -->
 
                 <section class="kb-sec coupon-detail-summary">
-                    <div class="img"><img src="" alt="쿠폰 이미지 영역"></div>
+                    <div class="img"><img src="@@webRoot/static/images/_temp/img_temp_legacy.png" alt="쿠폰 이미지 영역"></div>
                     <span class="tit-label">가정의달특집</span>
                     <strong class="company-name">롯데월드</strong>
                     <p class="tit">어드벤처 종합이용권 50% 할인 쿠폰</p>

@@ -68,19 +68,23 @@
                         </code>
                     </pre>
                 </dt>
-                <dd data-description=".btn-solid : 일반 솔리드 버튼">
-                    
-                    <button class="btn-solid"><span>솔리드 버튼 lv1(default)</span></button>
-                    <button class="btn-solid lv2"><span>솔리드 버튼 lv2</span></button>
-                    <button class="btn-solid sm"><span>솔리드 버튼 sm</span></button>
+                <dd data-description=".btn-solid : 일반 솔리드 버튼(height:52px)">                    
+                    <button class="btn-solid"><span>[Default]솔리드 버튼</span></button>                    
+                    <button class="btn-solid gray"><span>솔리드 버튼 gray</span></button>
                     <button class="btn-solid" disabled><span>솔리드 버튼(disabled)</span></button>
-
                     <hr>
-                    
-                    <a href="javascript:;" class="btn-solid" role="button"><span>솔리드 링크 lv1(default)</span></a>
-                    <a href="javascript:;" class="btn-solid lv2" role="button"><span>솔리드 링크 lv2</span></a>
-                    <a href="javascript:;" class="btn-solid sm" role="button"><span>솔리드 링크 sm</span></a>
+                    <a href="javascript:;" class="btn-solid" role="button"><span>[Default]솔리드 링크버튼(height:52px)</span></a>
+                    <a href="javascript:;" class="btn-solid gray" role="button"><span>솔리드 링크 gray</span></a>                    
                     <a href="javascript:;" class="btn-solid is-disabled" role="button"><span>솔리드 링크(disabled)</span></a>
+                </dd>
+                <dd data-description=".btn-solid : 일반 솔리드 버튼 sm(height:40px)">                    
+                    <button class="btn-solid sm"><span>[Default]솔리드 버튼</span></button>                    
+                    <button class="btn-solid sm gray"><span>솔리드 버튼 gray</span></button>
+                    <button class="btn-solid sm" disabled><span>솔리드 버튼(disabled)</span></button>
+                    <hr>
+                    <a href="javascript:;" class="btn-solid sm" role="button"><span>[Default]솔리드 링크버튼(height:52px)</span></a>
+                    <a href="javascript:;" class="btn-solid sm gray" role="button"><span>솔리드 링크 gray</span></a>                    
+                    <a href="javascript:;" class="btn-solid sm is-disabled" role="button"><span>솔리드 링크(disabled)</span></a>
                 </dd>
                 <dd data-description=".btn-solid_form, .btn-solid.form : form 안에서 사용">
 
@@ -90,23 +94,21 @@
                     <button class="btn-solid_form" disabled><span>폼요소에 사용되는 버튼(disabled)</span></button>
 
                     <hr>
-                    <!--input  +link-->
+                    <!--input +link-->
                     <a href="javascript:;" class="btn-solid_form" role="button"><span>폼요소에 사용되는 링크</span></a>
                     <a href="javascript:;" class="btn-solid form" role="button"><span>폼요소에 사용되는 링크</span></a>
                     <a href="javascript:;" class="btn-solid_form is-disabled" role="button"><span>폼요소에 사용되는 링크(disabled)</span></a>
                 </dd>
-                <dd data-description="btn-solid_sticky, btn-solid.sticky : 하단고정 버튼">
+                <!-- <dd data-description="btn-solid_sticky, btn-solid.sticky : 하단고정 버튼">
 
-                    <!--input + button-->
                     <button class="btn-solid_sticky"><span>폼요소에 사용되는 버튼</span></button>
                     <button class="btn-solid sticky"><span>폼요소에 사용되는 버튼</span></button>
                     <button class="btn-solid_sticky" disabled><span>폼요소에 사용되는 버튼(disabled)</span></button>
 
                     <hr>
-                    <!--input  +link-->
                     <a href="javascript:;" class="btn-solid_sticky" role="button"><span>폼요소에 사용되는 링크</span></a>
                     <a href="javascript:;" class="btn-solid_sticky is-disabled" role="button"><span>폼요소에 사용되는 링크(disabled)</span></a>
-                </dd>
+                </dd> -->
             </dl>
         </div>
         <hr>
@@ -200,6 +202,16 @@
                     <hr>
                     <a href="javascript:;" class="btn-text" role="button"></i><span>텍스트버튼</span><i class="icon-"></i></a>
                 </dd>
+                <dd data-description=".btn-text.icon-arrow > span + i : 텍스트 버튼 &gt;">
+                    <button class="btn-text icon-arrow"><span>텍스트버튼</span><i></i></button>
+                    <hr>
+                    <a href="javascript:;" class="btn-text icon-arrow" role="button"><span>텍스트버튼</span><i></i></a>
+                </dd>
+                <dd data-description=".btn-text.sm.icon-arrow > span + i : 텍스트 버튼 &gt;">
+                    <button class="btn-text sm icon-arrow"><span>텍스트버튼</span><i></i></button>
+                    <hr>
+                    <a href="javascript:;" class="btn-text sm icon-arrow" role="button"><span>텍스트버튼</span><i></i></a>
+                </dd>
             </dl>
         </div>
         <hr>
@@ -214,10 +226,6 @@
                         </code>
                     </pre>
                 </dt>
-                <dd data-description=".btn-allmenu : 전체 메뉴 버튼">
-                    <button type="button" class="btn-allmenu"><i>전체메뉴</i></button>
-                </dd>
-
                 <dd data-description=".btn-switch : 토글버튼">
                     <span class="btn-switch"><input type="checkbox" id="toggleBtn1A"><label for="toggleBtn1A"></label></span>
                     <hr>
@@ -365,12 +373,12 @@
                         </code>
                     </pre>
                 </dt>
-                <dd data-description=".form-radio : 라디오 기본">
-                    <p class="info-msg">안내 메세지 입니다.</p>
+                <dd>
+                    <p class="info-msg">.info-msg : 안내 메세지 입니다.</p>
                     <hr>
-                    <p class="error-msg">에러 메세지 입니다.</p>
+                    <p class="error-msg">.error-msg : 에러 메세지 입니다.</p>
                     <hr>
-                    <p class="success-msg">성공 메세지 입니다.</p>
+                    <p class="success-msg">.success-msg : 성공 메세지 입니다.</p>
                 </dd>
             </dl>
         </div>

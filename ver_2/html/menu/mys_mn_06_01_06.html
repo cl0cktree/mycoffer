@@ -11,12 +11,12 @@
 <body>
     @@include('@@webRoot/html/_include/app-a11y.html')
     <div class="app"><!-- 수정 2021.06.25 : Liiv, Starbanking  앱 안에서  동작할 경우 data-page="submain" -->
-        <!-- 수정 : app-header (Type 구분) //-->
+        
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
             'pageTit':'마이데이터 선물함',
             'type':''
         })
-        <!-- // 수정 : app-header (Type 구분)-->
+        
         <!-- app-container (for MyMoney) //-->
         <div class="app-container">
             <div class="app-lnb">
@@ -31,6 +31,8 @@
 
             <!-- app-content // -->
             <main class="app-content recommend-to-friend"><!-- 수정 : 2021.06.25 -->
+                <h2 class="is-hidden">친구 추천이력 리스트</h2><!-- 수정 2021-08-18 -->
+
                 <section class="kb-sec bg-white"><!-- 수정 : 2021.06.25 -->
                     <div class="tab_button">
                         <a href="javascript:;"><span>친구추천</span></a>
@@ -39,8 +41,13 @@
                 </section>
 
                 <section class="kb-sec recommend-history">
-                    <div class="img"><img src="" alt="이벤트 이미지"></div>
+                    <!-- 수정 2021-08-18 // -->    
+                    <div class="event-img">
+                        <img src="@@webRoot/static/images/_temp/img_temp_legacy.png" alt="이벤트 이미지">
+                    </div>
                     <div class="join-count">참여건수<strong><span class="num">11</span>명</strong></div>
+                    <!-- // 수정 2021-08-18 -->
+
                     <ul class="recommend-history-list">
                         <li>
                             <span class="name">김국민</span>
@@ -71,11 +78,18 @@
                             </div>
                         </li>
                     </ul>
+                    <!-- 수정 2021-08-18 -->
+                    <div class="btn-more-events">
+                        <button class="btn-text"><i class="icon-plus_20"></i><span>더보기</span></button>
+                    </div>
+                    <!-- // 수정 2021-08-18 -->
 
                     <!-- 친구 추천 이력 없을 때 // -->
                     <div class="no-data">
-                        <i class="icon-info_24"></i>
-                        <p>최근 3개월간 추천이력이 없습니다.</p>
+                        <!-- 수정 2021-08-18 -->
+                        <i class="icon-bang_60_gray"></i>
+                        <p>최근 3개월 동안 추천이력이 없습니다.</p>
+                        <!-- // 수정 2021-08-18 -->
                     </div>
                     <!-- // 친구 추천 이력 없을 때 -->
                 </section>

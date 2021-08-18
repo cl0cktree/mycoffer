@@ -142,7 +142,7 @@ ul.checkbox-group_right > li + li{margin-top:16px;}
 .radio-group:not(ul) span[class*=form-radio]{margin-top:16px;margin-right:20px;}
 .radio-group.st_list span[class*=form-radio]{width:100%;}
 ul.radio-group{display:flex;flex-direction:column;flex-wrap:wrap;}
-ul.radio-group > li + li{margin-top:16px;}
+ul.radio-group > li + li{margin-top:20px;}
 
 //form
 .form-checkbox{@include checkbox(24px);}
@@ -184,10 +184,13 @@ ul.radio-group > li + li{margin-top:16px;}
 .kb-form + .kb-form_multi,
 .kb-form_multi + .kb-form {margin-top:20px;}
 
+.datepicker .kb-form_inner{border:1px solid $kb-ui09;}
 .datepicker .form-text:after{content:'';position:absolute;right:2px;top:calc(50% - 14px);z-index:1;}
 .datepicker .form-text:after,
-.datepicker .form-text .btn-datepicker{flex:0 0 20px;margin-left:4px}
+.datepicker .form-text .btn-datepicker{flex:0 0 20px;margin-left:4px;margin-right: 10px;}
 .datepicker .form-text .btn-data-clear{flex:0 0 24px;margin-left:4px}
+.datepicker .form-text input[inputmode=numeric] {padding-left: 16px; font-size: 17px; text-align: left;}
+.datepicker .form-text input[inputmode=numeric]::placeholder {font-size: 17px;}
 .datepicker.is-active .form-text:after{content:none;}
 
 //open bs select form
@@ -201,12 +204,14 @@ ul.radio-group > li + li{margin-top:16px;}
 .form-text input[type=text],
 .form-text input[type=password],
 .form-text input[type=tel],
-.form-text input[type=number]{width:100%;min-width:20px;height:32px;border:none;}
+.form-text input[type=number]{width:100%;min-width:20px;height:32px;border:none;
+	&::placeholder {font-size: 19px;color:$kb-ui07;}
+}
 .form-text input[type=text],
-.form-text input[type=password]{@include text($size:18px, $line-height: 32px, $weight: bold);}
-.form-text input[data-action=autoSeperator]{@include number($size:24px, $line-height:24px, $weight: bold);text-align:right;}
-.form-text input[data-action=autoSeperator]::placeholder{text-align:right;}
-.form-text .unit{@include text($size:22px, $weight: bold);margin-top:2px;margin-left:4px;}/*position:absolute;left:4px;top:3px;max-width:calc(100% - 54px);*/
+.form-text input[type=password]{@include text($size:19px, $line-height: 32px, $weight: bold);}
+.form-text input[inputmode=numeric]{@include number($size:21px, $line-height:32px, $weight: bold);text-align:right;}
+.form-text input[inputmode=numeric]::placeholder{text-align:right;}
+.form-text .unit{@include text($size:20px, $weight: bold);margin-top:2px;margin-left:4px;}/*position:absolute;left:4px;top:3px;max-width:calc(100% - 54px);*/
 .form-text .btn-data-clear{display:none;margin-left:auto;}
 .form-text .btn-solid_form,
 .form-text .btn-line_form,
@@ -224,7 +229,7 @@ ul.radio-group > li + li{margin-top:16px;}
 .form-radio-set .form-radio {margin: 5px 0;}
 .form-radio-set .form-radio label {color: $kb-ui02; }
 
-.form-select .selected-option{@include text($size:18px, $line-height:24px, $weight: bold);@include ellipsis;position:relative;display:block;width:100%;height:32px;padding-right:30px;text-align:left;border:none;}
+.form-select .selected-option{@include text($size:19px, $line-height:24px, $weight: bold);@include ellipsis;position:relative;display:block;width:100%;height:32px;padding-right:30px;text-align:left;border:none;}
 //.form-select .selected-option:after{content:'';position:absolute;right:4px;top:7px;z-index:1;width:10px;height:10px;border-style:solid;border-color:$kb-ui05;border-width:0 2px 2px 0;transform:rotate(45deg)}
 .form-select .selected-option:after{display: inline-block;position: absolute;right: .8rem;top: 50%;z-index: 1;content: '';width: .9rem;height: .9rem;margin-top: -.8rem;border-left: 1px solid #8c949e;border-bottom: 1px solid #8c949e;transform: rotate(-45deg);}
 .form-select select{display:none;}
@@ -308,8 +313,6 @@ ul.radio-group > li + li{margin-top:16px;}
 
 }
 
-
-
 .kb-sec .tab{padding-left:0;padding-right:0;}
 .bottom-sheet .tab{padding-left:24px;}
 
@@ -341,15 +344,20 @@ ul.radio-group > li + li{margin-top:16px;}
 .table table{border-bottom:1px solid $kb-ui09;}
 .table table th,
 .table table td{@include text($size: $text03);height:40px;padding:12px;vertical-align:middle;border-top:1px solid $kb-ui09;}
+.table table th.border-top,
+.table table td.border-top{border-top:1px solid $kb-ui09;}
 .table table th .num,
 .table table td .num{font-size:15px;}
 .table table th{background-color:$kb-ui10;color:$kb-ui03}
 .table table thead th{background-color:$kb-ui10;}
 .table table thead tr:first-child th{border-top:1px solid $kb-ui05;}
 .table table tbody td{background-color:$kb-ui11;}
-.table table th + th,
-.table table td + td,
-.table table th + td{border-left:1px solid $kb-ui09;}
+.table table th,
+.table table td,
+.table table th.border-right,
+.table table td.border-right{border-right:1px solid $kb-ui09;}
+.table table th:last-child,
+.table table td:last-child{border-right:none;}
 .table table ul[data-style=list] > li,
 .table table [data-style=list]:not(ul){color:$kb-ui02;}
 .table table ul[data-style=list] > li li,
@@ -363,7 +371,7 @@ ul.radio-group > li + li{margin-top:16px;}
 .tbl-m01 thead tr:first-child th{border-top:1px solid $kb-ui05;}
 
 .accordian{border-bottom:1px solid $kb-ui09;}
-.accordian > dt{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-top:1px solid $kb-ui09;@include text($text01, normal);}
+.accordian > dt{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;padding:20px 0 20px 2px;border-top:1px solid $kb-ui09;@include text($text02, normal);}
 .accordian > dt > button{position:relative;flex:0 0 24px;width:24px;height:24px;margin-left:12px;}
 .accordian > dt > button i{display:inline-block;width:16px;height:9px;background:url(../images/common/common.png) no-repeat -116px -8px;background-size:162px;}
 .accordian > dt.is-active > button i{background-position:-116px -32px;}
@@ -759,3 +767,15 @@ ul.radio-group > li + li{margin-top:16px;}
 //이벤트 더보기
 .btn-more-events button{width:100%;justify-content:center;padding:20px 0;}
 ul + .btn-more-events{padding:15px 0;text-align:center;}
+
+// 이미지 포함 라디오
+.form-image-radio {display: block;}
+.form-image-radio input[type=radio] {position: absolute;left: -10000px;visibility: hidden;}
+.form-image-radio label {position: relative; display: block; padding: 20px; background-color: $kb-ui10; border: 1px solid $kb-ui08; border-radius: 2px; text-align: center;}
+.form-image-radio label > span {position: relative; z-index: 2; display: block; margin-top: 10px; font-size: 15px; color: $kb-ui03;}
+.form-image-radio input:checked + label {background-color: $kb-ui11; box-shadow: 0px 8px 10px 0 rgba(0, 0, 0, 0.1);}
+.form-image-radio input:checked + label::after {content: ''; position: absolute; z-index: 1; left: -1px; right: -1px; top: -1px; bottom: -1px; border: 3px solid $color-yellow-negative; border-radius: 2px;}
+
+.image-radio-group.grid-list[data-col="2"] > li:nth-child(n + 3) {margin-top: 12px;}
+.image-radio-group.grid-list[data-col="2"] > li:nth-child(2n + 1) {padding-right: 6px;}
+.image-radio-group.grid-list[data-col="2"] > li:nth-child(2n) {padding-left: 6px;}

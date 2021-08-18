@@ -71,9 +71,33 @@ $(function(){
 				var address = url.split('/');			
 				var pageID = address[address.length - 1].replace('.html','');				
 			}
-			$(this).append(' [' + pageID.toUpperCase() + ']');
-			if(date != undefined && date != '' && (status == 'dev' || status == 'modified')) $(this).prepend('(' + date + ') ');			
+			$(this).append(' [' + pageID.toUpperCase() + ']');						
 			$(this).attr('target','_blank');
+
+            var tag;
+            switch (status){
+                case 'working':
+                    tag = '작업중';
+                    break;
+                case 'complete':
+                    tag = '완료';
+                    break;
+                case 'dev':
+                    tag = '개발전달';
+                    break;
+                case 'modified':
+                    tag = '재수정';
+                    break;
+                default : 
+                    tag = false;
+            }
+
+            if(date != undefined && date != '' && (status == 'dev' || status == 'modified')){
+                $(this).prepend('<span class="status">(' + tag + ' : ' + date + ')</span>');
+                
+            }else if(tag){
+                $(this).prepend('<span class="status">(' + tag + ')</span>');
+            }
 		}	
 		
 		if ($this.next('ul').length) {		

@@ -4,10 +4,10 @@
 .h2{@include heading($size: $heading02)}
 .h3{@include heading($size: $heading03)}
 .h4{@include heading($size: $heading04)}
-.h1 .num{@include heading($size: $heading01 + 0.1rem)}
-.h2 .num{@include heading($size: $heading02 + 0.1rem)}
-.h3 .num{@include heading($size: $heading03 + 0.1rem)}
-.h4 .num{@include heading($size: $heading04 + 0.1rem)}
+.h1 .num{@include heading($size: $heading01 + 1px)}
+.h2 .num{@include heading($size: $heading02 + 1px)}
+.h3 .num{@include heading($size: $heading03 + 1px)}
+.h4 .num{@include heading($size: $heading04 + 1px)}
 
 .num{font-family:'Roboto';font-size:1.7rem;}
 .num[data-unit-after]:after{content:attr(data-unit-after);@include text($size: 15px);margin-left:0.1em;}
@@ -25,16 +25,16 @@
 [class*=btn-solid].is-disabled{background-color:$kb-ui08;color:$kb-ui06;}
 [class*=btn-solid].lv2,
 [class*=btn-solid].gray{background-color:$kb-ui09;}
-.btn-solid.sm{height:4.4rem;}
+.btn-solid.sm{height:4rem;}
 .btn-solid_form,
 .btn-solid.form{width:auto;height:3rem;padding:0 1.8rem;border-radius:3rem;background-color:$kb-ui04;font-size:$text03;color:$kb-ui11;}
-.btn-solid_sticky,
-.btn-solid.sticky{height:5.2rem;font-size:$heading04;}
+// .btn-solid_sticky,
+// .btn-solid.sticky{height:5.2rem;font-size:$heading04;}
 //Apple Homebar
-.ios.homebar .btn-solid_sticky,
-.ios.homebar .btn-solid.sticky{height:9.6rem;padding-top:1rem;}
-.ios.homebar .btn-solid_sticky > span,
-.ios.homebar .btn-solid.sticky > span{height:9.6rem;line-height:5.2rem;}
+.ios.homebar .sticky-bottom .btn-solid_sticky,
+.ios.homebar .sticky-bottom .btn-solid.sticky{height:9.6rem;padding-top:1rem;}
+.ios.homebar .sticky-bottom .btn-solid_sticky > span,
+.ios.homebar .sticky-bottom .btn-solid.sticky > span{height:9.6rem;line-height:5.2rem;}
 
 
 //버튼 LineType (amount:금액선택, table, form, segemented button : 탭형태)
@@ -58,6 +58,10 @@
 .btn-text span,
 .btn-text u{display:inline-block;@include text($size: $text02);line-height:2rem;}
 .btn-text i[class*=icon-]{max-width:2rem;max-height:2rem;vertical-align:middle;}
+.btn-text.sm span,
+.btn-text.sm u{font-size:14px;color:$kb-ui04;}
+.btn-text.icon-arrow i {top:-1px;margin-left: 10px;@include iconBullet($direction: 'right', $width: 7px, $thick: 2px, $color: $kb-ui03);}
+.btn-text.sm.icon-arrow i{@include iconBullet($direction: 'right', $width: 7px, $thick: 2px, $color: $kb-ui05);}
 
 .btn-datepicker{@include ir;width:2rem;height:2rem;background:url(../images/common/calendar_20@2x.png) no-repeat 100% 50%;background-size:2rem;}
 
@@ -113,6 +117,10 @@ ul[data-style=list] li:before,
 [data-style=list]:not(ul):before{left:2px;top:0.7em;transform:translateY(-100%);width:3px;height:3px;}
 ul[data-style=list] > li > ul > li:before{left:2px;top:0.5em;width:4px;height:1px;border-radius:50%;}
 ul[data-style=list] li > ul{margin-top:10px;}
+//Size
+ul[data-style=list].sm li,
+[data-style=list].sm:not(ul){font-size:15px;line-height:22px;}
+
 .annotation{position:relative;padding-left:17px;font-size:14px;line-height:22px;color:$kb-ui03}
 .annotation::before{content:'\002A';position:absolute;top:0.3rem;left:0}
 .annotation[data-style=exclamation]{padding-left:22px;color:$kb-ui04;}

@@ -44,16 +44,16 @@ if($appMenu.length){
             $appHeader.find('.page-tit').siblings().remove();
             $appMenu.remove();
             break;
-        case 'notice':
+        case 'submain':
             $appHeader.find('.btn-notice-box, .btn-allmenu').show()
-            $appHeader.find('.btn-history-back, .btn-close').remove();
+            $appHeader.find('.btn-history-back, .btn-home ,.btn-close').remove();
             break;
-        case '':
-            $appHeader.find('.btn-history-back, .btn-allmenu').show()
+        case 'home':
+            $appHeader.find('.btn-history-back, .btn-home, .btn-allmenu').show()
             $appHeader.find('.btn-notice-box, .btn-close').remove();
             break;
         default:
-            $appHeader.find('.btn-history-back, .btn-allmenu').show()
+            $appHeader.find('.btn-history-back, .btn-home, .btn-allmenu').show()
             $appHeader.find('.btn-notice-box, .btn-close').remove();
             console.log('There is no Type ' + headerType);
     }
@@ -83,12 +83,12 @@ var nav = '<div class="app-gnb-wrap">';
     nav += '</ul>';
     nav += '</div>';
     nav += '</div>';
-    nav += '<div class="app-sub-wrap">';
-    nav += '<div class="tab depth2 swiper-container app-sub">';
-    nav += '<ul class="swiper-wrapper">';
-    nav += '</ul>';
-    nav += '</div>';
-    nav += '</div>';
+    // nav += '<div class="app-sub-wrap">';
+    // nav += '<div class="tab depth2 swiper-container app-sub">';
+    // nav += '<ul class="swiper-wrapper">';
+    // nav += '</ul>';
+    // nav += '</div>';
+    // nav += '</div>';
 
 if($('.app').data('page') == 'submain'){
     if(!$('.app-lnb').length) $('.app-container').prepend('<div class="app-lnb"></div>');
@@ -118,19 +118,19 @@ $('.app-lnb').find('.tab.swiper-container').each(function(){
     }
 
     //GNB SUB
-    if($tab.hasClass('app-sub')){
-        subMenuSwiper = new Swiper('.app-sub',{
-            slidesPerView: 'auto',
-            //spaceBetween: 34,
-            watchOverflow: true,
-            on: {
-                click : function(swiper, event){
-                    //swiper.slideTo(swiper.clickedIndex);
-                    $(swiper.clickedSlide).addClass('is-active').siblings('.swiper-slide').removeClass('is-active');
-                },
-            }
-        });
-    }    
+    // if($tab.hasClass('app-sub')){
+    //     subMenuSwiper = new Swiper('.app-sub',{
+    //         slidesPerView: 'auto',
+    //         //spaceBetween: 34,
+    //         watchOverflow: true,
+    //         on: {
+    //             click : function(swiper, event){
+    //                 //swiper.slideTo(swiper.clickedIndex);
+    //                 $(swiper.clickedSlide).addClass('is-active').siblings('.swiper-slide').removeClass('is-active');
+    //             },
+    //         }
+    //     });
+    // }    
 });
 
 //GNB
@@ -152,8 +152,8 @@ var gfn_gnb = {
     },
     select: function(gnb, sub, subExposure){
         depth1 = gnb;
-        depth2 = sub;
-        subShow = subExposure;
+        // depth2 = sub;
+        // subShow = subExposure;
     },
     //메뉴 선택
     choose: function(gnbIdx, subIdx){
@@ -163,27 +163,27 @@ var gfn_gnb = {
             if(subShow == undefined) subShow = true;
 
             if(isNumeric(gnbIdx)){//숫자로 입력
-                var sub = $gnb.find('.swiper-slide[data-index="' + gnbIdx + '"]').find('a').data('sub');
-                if(sub == '' || !sub || !subShow){
-                    $subMenu.hide();
-                    $('.app-lnb').removeClass('app-sub-active');
-                }else{
-                    $subMenu.show();
-                    subMenuList = [];
-                    $.each(subMenu[0][sub], function(index, item){
-                        subMenuList[index] = '<li class="swiper-slide" data-index="' + item.number+ '"><a href="' + item.link + '">' + item.name + '</a></li>';
-                    });
-                    subMenuSwiper.removeAllSlides();
-                    subMenuSwiper.appendSlide(subMenuList);
-                    subMenuSwiper.updateSize();
+                // var sub = $gnb.find('.swiper-slide[data-index="' + gnbIdx + '"]').find('a').data('sub');
+                // if(sub == '' || !sub || !subShow){
+                //     $subMenu.hide();
+                //     $('.app-lnb').removeClass('app-sub-active');
+                // }else{
+                //     $subMenu.show();
+                //     subMenuList = [];
+                //     $.each(subMenu[0][sub], function(index, item){
+                //         subMenuList[index] = '<li class="swiper-slide" data-index="' + item.number+ '"><a href="' + item.link + '">' + item.name + '</a></li>';
+                //     });
+                //     subMenuSwiper.removeAllSlides();
+                //     subMenuSwiper.appendSlide(subMenuList);
+                //     subMenuSwiper.updateSize();
 
-                    //2depth activation
-                    if(!subIdx) subIdx = 0;
-                    $subMenu.find('.swiper-slide[data-index="' + subIdx + '"]').addClass('is-active').siblings('li').removeClass('is-active');
-                    $('.app-lnb').addClass('app-sub-active');
-                    subMenuSwiper.slideTo(subIdx)
-                    //if(depth2 >= 2) subMenuSwiper.slideTo(depth2 - 2)
-                }
+                //     //2depth activation
+                //     if(!subIdx) subIdx = 0;
+                //     $subMenu.find('.swiper-slide[data-index="' + subIdx + '"]').addClass('is-active').siblings('li').removeClass('is-active');
+                //     $('.app-lnb').addClass('app-sub-active');
+                //     subMenuSwiper.slideTo(subIdx)
+                //     //if(depth2 >= 2) subMenuSwiper.slideTo(depth2 - 2)
+                // }
             }else{//문자 입력(에러)
                 alert('index 번호를 입력하세요');
             }
@@ -193,7 +193,7 @@ var gfn_gnb = {
             gnbMenuSwiper.slideTo(gnbIdx);
 
             depth1 = gnbIdx;
-            depth2 = subIdx;
+            //depth2 = subIdx;
         }
     }
 };
@@ -212,7 +212,7 @@ $(window)
 .on('resize',function(){
     if($gnb.length){
         gnbMenuSwiper.update();
-        subMenuSwiper.update();
+        //subMenuSwiper.update();
         //console.log('resized')
     }
 });

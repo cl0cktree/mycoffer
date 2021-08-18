@@ -9,15 +9,16 @@
 -->
 
 @@if (context.type === '' || context.type === undefined){
-<header class="app-header" data-type="">    
+<header class="app-header" data-type="home">    
 }
 @@if (context.type !== '' && context.type !== undefined){
 <header class="app-header" data-type="@@type">
 }
-    <a href="javascript:;" class="btn-notice-box" role="button"><i class="icon-bell2_24">알림함으로 이동</i></a>    
     <a href="javascript:history.back();" class="btn-history-back" role="button"><i class="icon-back">뒤로가기</i></a>
-    <strong class="page-tit">@@pageTit</strong>
+    <h1 class="page-tit">@@pageTit</h1>
     <button type="button" class="btn-allmenu"><i class="icon-menu">전체메뉴</i></button>
+    <a href="javascript:;" class="btn-notice-box" role="button"><i class="icon-bell2_24">알림함으로 이동</i></a>    
+    <a href="javascript:;" class="btn-home" role="button"><i class="icon-home_24">홈으로 이동</i></a>    
     <a href="javascript:history.back();" class="btn-close" role="button"><span>뒤로가기</span></a>
 </header>
 <!-- app-header [e] -->

@@ -475,10 +475,15 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .reward-coupon .no-data{margin-top:100px;}
 .coupon-list li{position:relative;overflow:hidden;}
 .coupon-list li + li{margin-top:24px;}
-.coupon-list li > a{display:flex;width:100%;height:148px;border:1px solid $kb-ui09;border-radius:2px;}
+.coupon-list li > a,
+.coupon-list li > div{display:flex;width:100%;height:148px;border:1px solid $kb-ui09;border-radius:2px;}
 .coupon-list li > a:before,
-.coupon-list li > a:after{content:'';position:absolute;z-index:1;right:calc(82px - 8px);width:16px;height:16px;border-radius:50%;border:1px solid $kb-ui09;background-color:$kb-ui11}
+.coupon-list li > a:after,
+.coupon-list li > div:before,
+.coupon-list li > div:after{content:'';position:absolute;z-index:1;right:calc(82px - 8px);width:16px;height:16px;border-radius:50%;border:1px solid $kb-ui09;background-color:$kb-ui11}
+.coupon-list li > div:before,
 .coupon-list li > a:before{top:-8px;}
+.coupon-list li > div:after,
 .coupon-list li > a:after{bottom:-8px;}
 .coupon-list li .coupon-info{display:flex;flex-flow:column;justify-content:center;flex:1;padding:0 24px;}
 .coupon-list li .coupon-info .tit{@include text($weight:bold);}

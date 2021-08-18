@@ -100,11 +100,11 @@
     font-size: px-to-rem($size);
     font-weight: $weight;    
 
-    @if (remove-units($size) == remove-units($text01)){
+    @if (remove-units($size) >= remove-units($text01)){
         line-height: 2.5rem;
-    }@else if (remove-units($size) == remove-units($text02)){
+    }@else if (remove-units($size) >= remove-units($text02)){
         line-height:2.3rem;
-    }@else if (remove-units($size) == remove-units($text03)){
+    }@else if (remove-units($size) >= remove-units($text03)){
         line-height:2.0rem;
         letter-spacing: -0.01em;
     }@else{
@@ -763,7 +763,7 @@
     min-height:$size;
 
     input{@include hidden;}
-    label{display:inline-block;min-height:24px;color:$kb-ui04;padding-top:2px;padding-left:32px;font-size:$text02;line-height:1.4;}
+    label{display:inline-block;min-height:24px;color:$kb-ui02;padding-top:2px;padding-left:32px;font-size:$text02;line-height:1.4;}
     label:before,
     label:after{position:absolute;border-radius:50%;}
     label:before{content:'';top:0;left:0;width:$size;height:$size;background-color:#fff;border:2px solid $kb-ui07;}

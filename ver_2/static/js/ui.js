@@ -138,6 +138,8 @@ var gfn_layered = {
         duration = duration == undefined ? 200 : duration;
         if(name != '' && name != undefined){
             var $selectedLayer = $layered.children('div[data-layered-name=' + name + ']');
+
+            focusTrap($selectedLayer);
             if ($selectedLayer.length === 0) return;
 
             if(dim){
@@ -167,6 +169,8 @@ var gfn_layered = {
                     if($selectedLayer.hasClass('modal-out')) $selectedLayer.removeClass('is-active is-expanded modal-out').removeAttr('style');
                 });
             }
+            //$('[data-call-layered="' + name +'"]').focus(); (수정 : loop 문제)
+            
         }else{
             gfn_dim.hide();
             $layered.children('div').removeClass('is-active is-expanded').removeAttr('style');
@@ -1418,6 +1422,41 @@ function currentTxtPosition(obj){
         }
     })
 }
+
+
+//Foucs Trap (for WA)
+var focusTrap = function($target) {    
+    var tabbable = $target.find('select, input, textarea, button, a').filter(':visible');
+
+    var firstTabbable = tabbable.first();
+    var lastTabbable = tabbable.last();
+
+    /*set focus on first input*/
+    firstTabbable.focus();
+
+    /*redirect last tab to first input*/
+    lastTabbable.on('keydown', function (e) {
+       if ((e.which === 9 && !e.shiftKey)) {
+           e.preventDefault();
+           firstTabbable.focus();
+       }
+    });
+
+    /*redirect first shift+tab to last input*/
+    firstTabbable.on('keydown', function (e) {
+        if ((e.which === 9 && e.shiftKey)) {
+            e.preventDefault();
+            lastTabbable.focus();
+        }
+    });
+    
+    /* allow escape key to close insiders div */
+    $target.on('keyup', function(e){
+      if (e.keyCode === 27 ) {
+        $target.hide();
+      };
+    });
+};
 
 
 
