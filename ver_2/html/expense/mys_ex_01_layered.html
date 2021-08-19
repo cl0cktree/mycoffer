@@ -31,9 +31,9 @@
         <button type="button" class="btn-line" data-call-layered="expenseAccountBookSettingDay" data-page-id="MYS_EX_01_06_01_P"><span>월 시작일 설정</span></button>
         <br>
         <br>
-        <button type="button" class="btn-line" onClick="addCategoryLimitNumber()"><span>오류메시지 : 카테고리 추가 갯수 제한</span></button>
-        <button type="button" class="btn-line" onClick="deleteCategoryNotice01()"><span>오류메시지 : 카테고리 삭제(안내)</span></button>
-        <button type="button" class="btn-line" onClick="deleteCategoryNotice02()"><span>오류메시지 : 카테고리 삭제</span></button>
+        <button type="button" class="btn-line" onClick="addCategoryLimitNumber();"><span>오류메시지 : 카테고리 추가 갯수 제한</span></button>
+        <button type="button" class="btn-line" onClick="deleteCategory();"><span>오류메시지 : 카테고리 삭제(안내)</span></button>
+        <button type="button" class="btn-line" onClick="deleteConfirm();"><span>오류메시지 : 삭제 확인</span></button>
         <button type="button" class="btn-line" data-call-modal="changeCategoryNotice"><span>오류메시지 : 카테고리 변경</span></button>
         <!--// 지출 > 가계부 --->
     </div>
@@ -71,8 +71,8 @@
                 </ul>
             </div>
             <div class="modal_buttons btn-area">
-                <button class="btn-solid_sticky lv2 cancel" data-action="close"><span>취소</span></button>
-                <button class="btn-solid_sticky ok"><span>확인</span></button>
+                <button class="btn-solid gray cancel" data-action="close"><span>취소</span></button>
+                <button class="btn-solid ok"><span>확인</span></button>
             </div>
         </div>
         <div class="modal modal_radioOption" id="hideList">
@@ -87,8 +87,8 @@
                 </ul>
             </div>
             <div class="modal_buttons btn-area">
-                <button class="btn-solid_sticky lv2 cancel" data-action="close"><span>취소</span></button>
-                <button class="btn-solid_sticky ok"><span>확인</span></button>
+                <button class="btn-solid gray cancel" data-action="close"><span>취소</span></button>
+                <button class="btn-solid ok"><span>확인</span></button>
             </div>
         </div>
         <!-- // Modal -->
@@ -101,25 +101,20 @@
     <!-- Add Script -->
 
     <script>
+        //카테고리추가 팝업
         function addCategoryLimitNumber() {
             modalPopup({
                 title: "",
                 message: "카테고리 추가 기능 개수는 최대 20개입니다."
             });
         }
-        function deleteCategoryNotice01(){
+        function deleteConfirm(){
             modalPopup({
                 title: "",
-                message: "%선택한상세카테고리명%을 삭제하시면 해당 지출내역들은 모두 %현재카테고리명의 기타%로 변경됩니다. 정말 삭제하시겠습니까?",
-                type: "confirm",
-                textOkButton: "확인",
-                textCancelButton: "취소",
-                onOk: function() {
-                    deleteCategoryConfirmNotice();
-                }
+                message: "삭제 되었습니다."
             });
         }
-        function deleteCategoryNotice02(){
+        function deleteCategory(){
             modalPopup({
                 title: "",
                 message: "삭제하시겠습니까?",
@@ -127,29 +122,27 @@
                 textOkButton: "확인",
                 textCancelButton: "취소",
                 onOk: function() {
-                    deleteCategoryConfirmNotice();
+                    deleteConfirm();
                 }
             });
         }
-        function deleteCategoryConfirmNotice(){
+        function deleteHistory(){
             modalPopup({
                 title: "",
-                message: "삭제 되었습니다."
+                message: "[김국민 통장적요내용출력] {지출 or 이체}을(를) 삭제하시겠습니까?",
+                type: "confirm",
+                textOkButton: "확인",
+                textCancelButton: "취소",
+                onOk: function() {
+                    deleteConfirm();
+                }
             });
         }
+
         $('[data-call-modal]').on('click',function(){
             var id = $(this).data('call-modal');
             $('#'+id).modalPopup('open');
         });
-
-        
-        // [D] 2차 개발 : 내역 보이기+감추기 (더치페이로 묶기) [s]
-        $('.btn-control-show').on('click', function(){
-            var controlTargetName = $(this).data('control-target');
-            var $controlTarget = $(this).closest('.expense-layered').find('.control-show-target[data-target-name="'+ controlTargetName +'"]');
-            $controlTarget.toggleClass('is-active');
-            console.log($controlTarget.length);
-        });// [D] 2차 개발 : 내역 보이기+감추기 (더치페이로 묶기) [e]
         
         //레이어 확인용 스크립트 (개발시 삭제) [s]
         var url = window.location.href;

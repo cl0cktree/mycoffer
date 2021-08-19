@@ -35,9 +35,68 @@
     <div class="guide-container">
         <div class="guide-history">
             <dl data-month="8">
+                <dt data-writer="이진우">2021.08.19</dt>
+                <dd>
+                    <b>path 새창 제거</b>
+                </dd>
+                <dd>
+                    <b>path 세분화 (1depth 기준)</b>
+                </dd>
+                <dd>
+                    <b>.search-con -> .condition-area로 통일</b>
+                </dd>
+                <dd>
+                    <b>의미가 없는 아이콘(혹은 BG)이 아닐때 텍스트를 넣기(웹접근성)</b>
+                    <ul data-style="list">
+                        <li>예) &lt;i class="icon-search"&gt;검색&lt;/i&gt;</li>
+                        <li>예) &lt;i class="icon-arrow"&gt;조회조건 선택&lt;/i&gt;</li>
+                        <li>.icon- 은 기본으로 텍스트 사라짐, 나머지는 mixin hidden, ir 등을 사용</li>
+                    </ul>
+                </dd>
+                <dd>
+                    <b>.kb-form data-status=info 삭제</b>
+                    <ul data-style="list">
+                        <li>.kb-form data-status=success (성공 메세지)</li>
+                        <li>.kb-form data-status=error (에러 메세지)</li>
+                        <li>안내 내용은 p.info-msg 로 구성(.kb-form 맨 마지막요소)</li>
+                    </ul>
+                </dd>
+                <dd>
+                    <b>.kb-form no-transition 삭제 (Transition 애니메이션 없어짐)</b>
+                </dd>
+                <dd>
+                    <b>.kb-form not-ready 삭제 (Markup에 필요없음 : 스크립트에서 처리)</b>
+                </dd>
                 <dt data-writer="이진우">2021.08.18</dt>
                 <dd>
-                    <b>.btn-solid_sticky 제거 btn-solid 로 사용</b>
+                    <b>불필요한 include 파일 삭제</b>
+                    <ul data-style="list">
+                        <li>/_include/open-api.html</li>
+                        <li>/_include/my-money-term.html</li>
+                        <li>/_include/my-money-manual.html</li>
+                        <li>/_include/app-footer.html</li>
+                        <li>/_include/app-gnb.html</li>
+                        <li>/_include/app-gnb.html</li>
+                        <li>/_layered/bs-select.html</li>
+                        <li>/_layered/bs-calendar.html.bak.html</li>
+                    </ul>
+                </dd>
+                <dd>
+                    <b>일괄수정</b>
+                    <ul data-style="list">
+                        <li>form-checkbox_24 -> form-checkbox</li>
+                        <li>btn-solid_sticky -> btn-solid</li>
+                        <li>btn-solid_form  -> btn-solid form </li>
+                        <li>btn-line_form -> btn-line form</li>
+                        <li>btn-line_table -> btn-line table</li>
+                        <li>btn-line_icon -> btn-line icon</li>
+                        <li>btn-icon_form 삭제</li>
+                        <li>form-checkbox, form-radio 위치 ... 기본 상하 중앙으로 변경</li>                        
+                        <li>form-checkbox.align-top, form-radio.align-top ... align:top 정렬이 필요한 경우</li>
+                    </ul>
+                </dd>
+                <dd>
+                    <b>.btn-solid 제거 btn-solid 로 사용</b>
                     <ul data-style="list">
                         <li>.sticky-bottom .btn-solid 는 ios homebar 여부에 따라 높이가 달라짐</li>
                     </ul>
@@ -179,7 +238,7 @@
                     <b>homebar 있을때 sticky button 높이 86->96px</b>
                     <ul data-style="list">
                         <li>.sticky_bottom : 9.6rem</li>
-                        <li>.btn-solid_sticky : 9.6rem / padding-top:10px 등</li>
+                        <li>.btn-solid : 9.6rem / padding-top:10px 등</li>
                     </ul>                    
                 </dd>
                 <dd>
@@ -269,7 +328,7 @@
                     <ul data-style="list">
                         <li>background 이미지 제거, CSS로 수정</li>
                         <li>checkbox 기본 사이즈 28px에서 24px로 수정</li>
-                        <li>.form-checkbox / .form-checkbox_24 (모두 24 사이즈로 출력)</li>
+                        <li>.form-checkbox / .form-checkbox (모두 24 사이즈로 출력)</li>
                         <li>중앙 정렬 기본 -&gt; 상단 정렬 기본으로 재수정</li>
                     </ul>                    
                 </dd>

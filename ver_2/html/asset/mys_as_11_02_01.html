@@ -9,28 +9,33 @@
 
 <body>
 	@@include('@@webRoot/html/_include/app-a11y.html')
-	<div class="app" data-page="submain">
+	<div class="app">
 		<!-- app-header (for MyMoney) //-->
-		@@include('@@webRoot/html/_include/app-integrated-header.html', {'pageTit': '부동산 관리','type':''})
+		@@include('@@webRoot/html/_include/app-integrated-header.html', {
+			'pageTit': '부동산 관리',
+			'type':'close'
+		})
 		<!-- // app-header -->
 
 		<!-- app-container (for MyMoney) //-->
 		<div class="app-container">
 			 <!-- app-lnb //-->
-			 <div class="app-lnb">
-                <!-- 상단 GNB 공통 (메뉴 구성 전 )-->
-                @@include('@@webRoot/html/_include/app-gnb.html')        
-            </div>
+			<!-- <div class="app-lnb">                                       
+            </div> -->
             <!-- //app-lnb -->
 			<!-- app-content // -->
-			<main class="app-content my-asset house bg-gray-bottom">
-                <section class="kb-sec bg-gray asset-summary">
-                    <div class="content-box shadow">
-						<div class="top-area">
-							<h2 class="msg">
-								<b>김국민</b> 님의 부동산 총자산은 <br><b><span class="num">2</span>억 <span class="num">2,859</span>만원</b>입니다.
-							</h2>
-						</div>
+			<main class="app-content my-asset house">
+                <section class="kb-sec asset-summary">	
+					<div class="tab_button">
+                        <button class="is-active"><span>My House (3채)</span></button>
+                        <button><span>Wish House</span></button>
+                    </div>
+					<div class="top-area">
+						<h2 class="msg">
+							<b>김국민</b> 님의 부동산 총자산은 <br><b><span class="num">2</span>억 <span class="num">2,859</span>만원</b>입니다.
+						</h2>
+					</div>
+                    <div class="kb-card">
 						<div class="graph-area">
 							<!-- [chart area] //-->
 							<!--
@@ -54,76 +59,67 @@
 						<div class="variance-box">
 							<ul class="description-list-variable">
 								<li>
-									<p class="tit">매입가보다</p>
-									<p class="amount">
-										<span class="num">5,500</span>만원<em class="plus">(5.3%)</em><b> 증가</b>
-									</p>
+									<p class="tit">매입가보다 <span class="num c-red">5,500</span> 만원 (<em class="c-red">▲<em class="num">5.3</em>%</em>)</p>
 								</li>
 								<li>
-									<p class="tit">지난달보다</p>
-									<p class="amount">
-										<span class="num">1,500</span>만원<em class="minus">(1.3%)</em><b> 감소</b>
-									</p>
+									<p class="tit">지난달보다 <span class="num c-blue">1,500</span> 만원 (<em class="c-blue">▼<em class="num">1.3</em>%</em>)</p>
 								</li>
 							</ul>
 						</div>
 					</div>
                 </section>
+				  
 				<section class="kb-sec full house-data-list">
+					<hr class="line-gray">
 					<h2 class="is-hidden">상세정보</h2>
 					<div class="house-data-tit">
-						<a href="#" class="address"><span>레미안퍼스티지 101동 405호
-							(47F평/156m )</span> <i class="icon-go_detail_24"></i></a>
-
 						<div class="nick-name-area">
 							<div class="txt">
-								<span>별명이 있으면 나옴</span>
-								<span class="tag-label" data-state="normal">자가</span>
-								<span class="tag-label" data-state="normal">임대</span>
+								<span class="tag-label t01">자가</span>
+								<span class="tag-label t01">임대</span>
 							</div>
 							<a href="javascript:;" class="btn-text" role="button"><u>수정</u></a>
 						</div>
+						<p class="nick">별명이 있으면 나옴</p>
+						<a href="#" class="address"><span>레미안퍼스티지 101동 405호(47평/156㎡)</span><i class="icon-link_20"></i></a>						
 					</div>
                     <dl class="description-list type2">
                         <dt>현재시세</dt>
                         <dd class="amount"><span class="num">12</span>억원</dd>
                         <dt>매입가</dt>
                         <dd class="amount"><span class="num">9</span>억 <span class="num">1,000</span>만원</dd>
-                        <dt>매입일</dt>
-                        <dd class="date">2020.01.20</dd>
                         <dt>시세차익</dt>
-                        <dd class="amount plus"> <em><span class="num">2,000</span>만원 (<span class="num">44.5%</span>)</em></dd>
+                        <dd class="amount plus"> <em><span class="num">2,000</span><span class="c-black">만원 (</span><span class="num">44.5</span><span class="c-black">%)</span></em></dd>
                         <dt>지난달 대비</dt>
-                        <dd class="amount minus"> <em><span class="num">8,500</span>만원 (<span class="num">44.5%</span>)</em></dd>
+                        <dd class="amount minus"> <em><span class="num">8,500</span><span class="c-black">만원 (</span><span class="num">44.5</span><span class="c-black">%)</span></em></dd>
                         <dt>세입자 보증금</dt>
                         <dd class="amount"><span class="num">2</span>억 <span class="num">1,000</span>만원</dd>
                         <dt>세입자 월세</dt>
                         <dd class="amount"><span class="num">50만원</span></dd>
                     </dl>
-					<div class="house-data-tit">
-						<a href="#" class="address"><span>여의도</span> <i class="icon-go_detail_24"></i></a>
 
+					<div class="house-data-tit">
 						<div class="nick-name-area">
 							<div class="txt">
-								<span class="tag-label" data-state="normal">자가</span>
+								<span class="tag-label t01">자가</span>
 							</div>
 							<a href="javascript:;" class="btn-text" role="button"><u>수정</u></a>
 						</div>
+						<a href="#" class="address"><span>여의도</span><i class="icon-link_20"></i></a>
 					</div>
 					<dl class="description-list type2">
                         <dt>매입가</dt>
                         <dd class="amount"><span class="num">9</span>억 <span class="num">1,000</span>만원</dd>
 					</dl>
-					<div class="house-data-tit">
-						<a href="#" class="address"><span>서울특별시 영등포구 여의도동 123
-							-4 길면</span> <i class="icon-go_detail_24"></i></a>
 
+					<div class="house-data-tit">
 						<div class="nick-name-area">
 							<div class="txt">
-								<span class="tag-label" data-state="normal">전월세</span>
+								<span class="tag-label t01">자가</span>
 							</div>
 							<a href="javascript:;" class="btn-text" role="button"><u>수정</u></a>
 						</div>
+						<a href="#" class="address"><span>서울특별시 영등포구 여의도동 123-4 길면</span><i class="icon-link_20"></i></a>
 					</div>
 					<dl class="description-list type2">
                         <dt>나의 보증금</dt>
@@ -150,9 +146,12 @@
                         <dt>기타</dt>
                         <dd class="amount"><span class="num">1,700,000</span>원</dd>
                     </dl>
-					<div class="btn-area">
-						<a href="#" class="btn-line"><span>자세히 보기</span></a>
-					</div>
+					<div class="btn-area mt28">
+                        <button class="align-r"><span>자세히보기<i class="icon-link_20"></i></span></button>
+                    </div>
+                    <div class="btn-area mt28">
+                        <button class="btn-solid" data-action="btnAddHouse"><span>My House 등록</span></button>
+                    </div>
                 </section>
 				<section class="kb-sec realty-index">
                     <div class="index-visual">
@@ -162,7 +161,7 @@
 						</h2>
                     </div>
                     <div class="btn-area">
-                        <button class="btn-solid_sticky" data-action="btnAddHouse"><span>My  House 등록하기</span></button>
+                        <button class="btn-solid" data-action=""><span>My House 등록</span></button>
                     </div>
                 </section>		
 			</main>
@@ -171,10 +170,10 @@
 		</div>
 		<!-- // app-container -->
 		
-		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<!-- Layer (modal, bottom sheet) // -->
 		<div class="layered">
 		</div>
-		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+		<!-- // Layer (modal, bottom sheet) -->
 	</div>
 
 	<!-- Script -->

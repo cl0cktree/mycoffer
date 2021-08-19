@@ -248,13 +248,13 @@ $(window).on('scroll',function(){
     //scrollDirection(st);
 
     //gnb fixed
-    if($gnb.length) {
-        if(st >= fixedTop){
-            $('.app-lnb').addClass('is-fixed');
-        }else{
-            $('.app-lnb').removeClass('is-fixed');
-        }
-    }
+    // if($gnb.length) {
+    //     if(st >= fixedTop){
+    //         $('.app-lnb').addClass('is-fixed');
+    //     }else{
+    //         $('.app-lnb').removeClass('is-fixed');
+    //     }
+    // }
 
     //Process
     // if(st > 0){

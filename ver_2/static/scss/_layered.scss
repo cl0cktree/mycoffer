@@ -25,7 +25,7 @@
 // .bottom-sheet.is-expanded,
 // .bottom-sheet.full-size{max-height:90%}
 .bottom-sheet.is-active{display:flex;flex-flow:column;transform:translateY(-16px);}
-.bottom-sheet .bottom-sheet_header {flex:0 0 24px;padding:0 48px 0 24px;margin-bottom:24px;}
+.bottom-sheet .bottom-sheet_header {flex:0 0 24px;padding:0 48px 0 24px;margin-bottom:26px;}
 .bottom-sheet .bottom-sheet_header .tit {font-size:20px;font-weight: bold;line-height: 24px;}
 .bottom-sheet_contents{@include text;flex:1;overflow:auto;padding-bottom:24px;transition:all .1s;}
 .with-button .bottom-sheet_contents{padding-bottom:40px;}//버튼이 있는 경우(ui.js)
@@ -41,8 +41,8 @@
 .bottom-sheet_select{overflow:auto;max-height:100%;margin:0 24px;}
 .bottom-sheet_select li button{width:100%;padding:5px 25px 5px 0;text-align:left;font-size:16px;line-height:24px;}
 .bottom-sheet_select li.is-selected button{background:url(../images/common/checkbox_20_on@2x.png) no-repeat right 0 top 50%;background-size:20px;}
-.ios.homebar .bottom-sheet_buttons .btn-solid_sticky{height:86px;}
-.ios.homebar .bottom-sheet_buttons .btn-solid_sticky span{height:86px;line-height:66px;}
+.ios.homebar .bottom-sheet_buttons .btn-solid{height:9.6rem;padding-top:1rem;}
+.ios.homebar .bottom-sheet_buttons .btn-solid > span{height:9.6rem;line-height:5.2rem;}
 
 .modal{display:none;position:fixed;left:50%;top:50%;z-index:$level100;width:calc(100vw - 48px);max-width:340px;max-height:calc(100% - 100px);padding-top:26px;background-color:$kb-ui11;border-radius:2px;}
 .modal.is-active{display:block;animation: modalIn .2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;}
@@ -50,7 +50,7 @@
 .modal_header{min-height:28px;padding:0 24px;}
 .modal_header .tit{@include heading($size: 20px);display:inline-block;padding:0 2px;}
 .modal_header  + .modal_contents{margin-top:15px;}
-.modal_contents{@include text($size: $text02);overflow:auto;max-height:calc(var(--vh, 1vh) * 100 - 252px);margin-top:3px;margin-bottom:26px;padding:0 24px;color:$kb-ui03;}
+.modal_contents{@include text($size: $text02);overflow:auto;max-height:calc(var(--vh, 1vh) * 100 - 252px);margin-top:3px;margin-bottom:32px;padding:0 24px;color:$kb-ui03;}
 .modal-not-today{padding:32px 24px}
 .modal_contents ul[data-style=list] li{color:$kb-ui03;}
 .modal_buttons {position: relative; top: 1px;}

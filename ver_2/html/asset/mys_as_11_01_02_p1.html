@@ -23,37 +23,34 @@
 			<!-- app-content // -->
 			<main class="app-content my-asset">				
 				<!-- 주소입력 // -->
-				<section class="kb-sec">
-					<h2 class="is-hidden">주소입력</h2>
-					<div class="pop-notice">
-						<span>부동산 정보를 등록하면 시세를 확인할 수 있습니다. </span>
-					</div>			
+				<section class="kb-sec bg-gray">
+					<ul class="sm" data-style="list">
+                        <li>부동산 정보를 등록하면 시세를 확인할 수 있습니다.</li>
+                    </ul>		
 				</section>
-				
+
 				<section class="kb-sec address-search">
-					<h2 class="is-hidden">정보입력</h2>
-					<ul class="btn-segmented">
-						<li><button class="is-selected"><span>아파트</span></button></li>
-						<li><button><span>오피스텔</span></button></li>
-					</ul>
-					<div class="kb-form not-ready no-transition" data-status="info">
+					<h2 class="is-hidden">검색</h2>
+					<ul class="btn-segmented_radio type2">
+                        <li>
+                            <input type="radio" name="btnradioHouse" id="btnradioHouse1" checked="">
+                            <label for="btnradioHouse1">아파트</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="btnradioHouse" id="btnradioHouse2">
+                            <label for="btnradioHouse2">오피스텔</label>
+                        </li>
+                    </ul>
+					<div class="kb-form" data-status="">
 						<div class="kb-form_inner form-text">
 							<input type="text" id="formTextSample0555" value="" title="검색어" placeholder="검색어를 입력해주세요">
 							<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-							<button type="button" class="btn-icon_form btn-search"><i class="icon-search"></i></button>
+							<button type="button" class="btn-search" data-action="btnAddHouse"><i class="icon-search">검색</i></button>
 						</div>
 					</div>
-					<!-- no-data // -->
-					<!--
-					<div class="no-data">
-						<i class="icon-info_24"></i>
-						<p>검색 결과가 없습니다.</p>
-					</div>
-					-->
-					<!-- // no-data -->
 					<ul class="search-result">
 						<li>
-							<a href="javascript:;">
+							<a href="javascript:;" data-action="">
 								<span class="h-category">아파트</span>
 								<span class="keyword">(영등포구 <b>여의도동</b>)</span>
 								<span class="address">롯데캐슬엠파이어롯데캐슬엠파이어롯데캐슬엠파이어</span>
@@ -67,7 +64,13 @@
 							</a>
 						</li>
 					</ul>
-					<button class="btn-view-more"><span>+ 더보기</span></button>
+					<button class="btn-view-more"><i class="icon-plus_20"></i><span> 더보기</span></button>
+					<!-- no-data // -->					
+					<div class="no-data mt48">
+						<i class="icon-info_24"></i>
+						<p>검색 결과가 없습니다.</p>
+					</div>				
+					<!-- // no-data -->
 				</section>
 				<!-- // 주소입력 -->
 			</main>
@@ -76,10 +79,10 @@
 		</div>
 		<!-- // app-container -->
 
-		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<!-- Layer (modal, bottom sheet) // -->
 		<div class="layered">
 		</div>
-		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+		<!-- // Layer (modal, bottom sheet) -->
 	</div>
 
 	<!-- Script -->
@@ -87,6 +90,16 @@
 	<!-- Add Library (this page only)-->
 	<script src="@@webRoot/static/js/ui.js"></script>
 	<!-- Add Script -->
+	<script>
+		//alert		
+		$('button[data-action=btnAddHouse]').on('click',function(){
+            modalPopup({
+                title: "",
+                message: "부동산은 최대 10채까지 등록할 수 있습니다.<br>(부동산 삭제 시 추가 등록 가능)",
+                type: "alert"
+            });
+        });
+	</script>
 
 </body>
 

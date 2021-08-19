@@ -239,9 +239,9 @@
         html += `		</div>`;
         html += `		<div class="modal_buttons btn-area">`;
         if (settings.type === "confirm") {
-            html += `					<button class="btn-solid_sticky lv2 cancel"><span>${settings.textCancelButton}</span></button>`;
+            html += `					<button class="btn-solid gray cancel"><span>${settings.textCancelButton}</span></button>`;
         }
-        html += `			<button class="btn-solid_sticky ok"><span>${settings.textOkButton}</span></button>`;
+        html += `			<button class="btn-solid ok"><span>${settings.textOkButton}</span></button>`;
         html += `		</div>`;
         html += `	</div>`;
     

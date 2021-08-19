@@ -11,10 +11,13 @@
 	@@include('@@webRoot/html/_include/app-a11y.html')
 	<div class="app">
 		<!-- app-header (for MyMoney) //-->
-		<!-- @@include('@@webRoot/html/_include/app-integrated-header.html') -->
-		<!-- // app-header -->
+		@@include('@@webRoot/html/_include/app-integrated-header.html',{
+			'pageTit' :'부동산관리',
+			'type':'close'
+		}) 
+		<!-- // app-header (for MyMoney) -->
 
-		<!-- app-container (for MyMoney) //-->
+		<!-- app-container //-->
 		<div class="app-container">
 
 			<!-- app-lnb //-->
@@ -30,26 +33,26 @@
 					<h2 class="is-hidden">등록완료</h2>
 					<div class="complete-msg">
 						<i class="icon-complete_60"></i>
-						<strong class="tit">부동산이 등록되었습니다.</strong>
+						<strong class="tit">부동산이 등록<br>되었습니다.</strong>
 					</div>
 					<!-- My house 등록 완료인 경우 //-->
 					<div class="btn-area mt48">
-						<button class="btn-line" data-action="btnAddHouse"><span>My house 추가 등록</span></button>
-                        <button class="btn-line"><span>Wish house 등록</span></button>
+						<button class="btn-line" data-action="btnAddHouse"><span>My House 추가 등록</span></button>
+                        <button class="btn-line"><span>Wish House 등록</span></button>
                     </div>
 					<!--  // My house 등록 완료인 경우 -->
-					<!-- Wish house 등록 완료인 경우 // -->
-					<!-- 
+					<!-- Wish house 등록 완료인 경우 // -->		
+					<!--
 					<div class="btn-area mt48">
-						<button class="btn-line" data-action="btnAddHouse"><span>My house 등록</span></button>
-						<button class="btn-line"><span>Wish house 추가 등록</span></button>
-					</div> 
+						<button class="btn-line" data-action="btnAddHouse"><span>My House 등록</span></button>
+						<button class="btn-line"><span>Wish House 추가 등록</span></button>
+					</div>
 					-->
 					<!--  // Wish house 등록 완료인 경우 -->
 				</section>
 				<div class="sticky-bottom">
 					<div class="btn-area">
-						<button type="button" class="btn-solid_sticky" data-action="close"><span>확인</span></button>
+						<button type="button" class="btn-solid" data-action="close"><span>확인</span></button>
 					</div>
 				</div>
 			</main>
@@ -58,11 +61,11 @@
 		</div>
 		<!-- // app-container -->
 
-        <!-- Layer (fullpage popup, modal, bottom sheet) // -->
+        <!-- Layer (modal, bottom sheet) // -->
         <div class="layered">
 
         </div>
-        <!-- // Layer (fullpage popup, modal, bottom sheet) -->
+        <!-- // Layer (modal, bottom sheet) -->
 	</div>
 
 	<!-- Script -->

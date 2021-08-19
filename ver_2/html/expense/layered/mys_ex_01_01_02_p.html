@@ -1,17 +1,11 @@
-<!-- [MYS_EX_01_01_02_P] 지출 > 가계부 > 수기 등록 > 필터 설정 팝업 (작성자: 누리어 시스템 김삼희)// -->
+<!-- [MYS_EX_01_01_02_P] 지출 > 가계부 > 수기 등록 > 조회 기간 설정 (작성자: 누리어 시스템 김삼희)// -->
 <div class="bottom-sheet" data-layered-name="bsExpenseListFilterSetting">
     <div class="bottom-sheet_header">
-        <span class="tit">조회 조건 선택</span><!-- [D] 21-07-05 수정 : 텍스트 수정 -->
+        <span class="tit">조회 기간 설정</span>
     </div>
     <div class="bottom-sheet_contents expense-layered">
-        <div class="tab swiper-container">
-            <ul class="swiper-wrapper">
-                <li class="swiper-slide is-active"><a href="#target01">기간/유형</a></li>
-                <li class="swiper-slide"><a href="#target02">카테고리</a></li>
-            </ul>
-        </div>
-        <section class="kb-sec tab_contents">
-            <div class="filter-period-setting is-active">
+        <section class="kb-sec more-view-box">
+            <div class="filter-period-setting more-view-item" data-status="" data-view-option="show">
                 <div class="kb-form">
                     <strong class="label">조회기간</strong>
                     <div class="lookup-period">
@@ -39,16 +33,20 @@
                         <!-- [D] 수정 2021-06-04 : 단순 탭을 체크박스 기능으로 변경 //-->
                         <ul class="btn-segmented_check">
                             <li>
-                                <input type="checkbox" name="btncheckbox" id="btncheckbox1" checked="">
-                                <label for="btncheckbox1">수입</label>
+                                <input type="radio" name="typeChkbox" id="typeRadio01">
+                                <label for="typeRadio01">전체</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="btncheckbox" id="btncheckbox2">
-                                <label for="btncheckbox2">지출</label>
+                                <input type="radio" name="typeChkbox" id="typeRadio02">
+                                <label for="typeRadio02">수입</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="btncheckbox" id="btncheckbox3">
-                                <label for="btncheckbox3">이체</label>
+                                <input type="radio" name="typeChkbox" id="typeRadio03" checked="">
+                                <label for="typeRadio03">지출</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="typeChkbox" id="typeRadio04">
+                                <label for="typeRadio04">이체</label>
                             </li>
                         </ul>
                         <!-- [D] 수정 2021-06-03 : 단순 탭을 체크박스 기능으로 변경 //-->
@@ -68,58 +66,73 @@
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div class="filter-category-setting">
-                <dl class="accordian js-checkbox-selector">
-                    <dt>
-                        <span class="form-checkbox"><input type="checkbox" id="incomeCategoryAll"><label for="incomeCategoryAll">수입 카테고리</label></span>
-                        <button type="button"><i></i></button>
-                    </dt>
-                    <dd>
-                        <ul class="checkbox-group st-list">
-                            <li><span class="form-checkbox_20"><input type="checkbox" id="incomeCategory01"><label for="incomeCategory01">급여</label></span></li>
-                            <li><span class="form-checkbox_20"><input type="checkbox" id="incomeCategory02"><label for="incomeCategory02">용돈</label></span></li>
-                            <li><span class="form-checkbox_20"><input type="checkbox" id="incomeCategory03"><label for="incomeCategory03">사업소득</label></span></li>
-                            <li><span class="form-checkbox_20"><input type="checkbox" id="incomeCategory04"><label for="incomeCategory04">금융소득</label></span></li>
-                            <li><span class="form-checkbox_20"><input type="checkbox" id="incomeCategory05"><label for="incomeCategory05">임대소득</label></span></li>
-                            <li><span class="form-checkbox_20"><input type="checkbox" id="incomeCategory06"><label for="incomeCategory06">기타소득</label></span></li>
+                <div class="btn-area right">
+                    <a href="javascript:;" class="btn-text btn-more-view" role="button">
+                        <span class="hide-status">상세검색</span><span class="show-status">상세검색</span><i class="icon-arrow-down"></i>
+                    </a>
+                </div>
+                <div class="filter-category-setting more-view-item" data-status="" data-view-option="hide">
+                    <!-- 카테고리선택 //-->
+                    <strong class="label-tit">카테고리선택</strong>
+                    <div>
+                        <ul class="btn-segmented_check">
+                            <li>
+                                <input type="radio" name="categoryRadio" id="categoryRadio01">
+                                <label for="categoryRadio01">전체</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="categoryRadio" id="categoryRadio02">
+                                <label for="categoryRadio02">수입</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="categoryRadio" id="categoryRadio03">
+                                <label for="categoryRadio03">지출</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="categoryRadio" id="categoryRadio04" checked="">
+                                <label for="categoryRadio04">이체</label>
+                            </li>
                         </ul>
-                    </dd>
-                    <dt>
-                        <span class="form-checkbox"><input type="checkbox" id="outcomeCategoryAll"><label for="outcomeCategoryAll">지출 카테고리</label></span>
-                        <button type="button"><i></i></button>
-                    </dt>
-                    <dd>
-                        <ul class="checkbox-group st-list">
-                            <li><span class="form-checkbox_20"><input type="checkbox" id="outcomeCategory01"><label for="outcomeCategory01">급여</label></span></li>
-                            <li><span class="form-checkbox_20"><input type="checkbox" id="outcomeCategory02"><label for="outcomeCategory02">용돈</label></span></li>
-                            <li><span class="form-checkbox_20"><input type="checkbox" id="outcomeCategory03"><label for="outcomeCategory03">사업소득</label></span></li>
-                            <li><span class="form-checkbox_20"><input type="checkbox" id="outcomeCategory04"><label for="outcomeCategory04">금융소득</label></span></li>
-                            <li><span class="form-checkbox_20"><input type="checkbox" id="outcomeCategory05"><label for="outcomeCategory05">임대소득</label></span></li>
-                            <li><span class="form-checkbox_20"><input type="checkbox" id="outcomeCategory06"><label for="outcomeCategory06">기타소득</label></span></li>
-                        </ul>
-                    </dd>
-                    <dt>
-                        <span class="form-checkbox"><input type="checkbox" id="transferCategoryAll"><label for="transferCategoryAll">이체 카테고리</label></span>
-                        <button type="button"><i></i></button>
-                    </dt>
-                    <dd>
-                        <ul class="checkbox-group st-list">
-                            <li><span class="form-checkbox_20"><input type="checkbox" id="transferCategory01"><label for="transferCategory01">급여</label></span></li>
-                            <li><span class="form-checkbox_20"><input type="checkbox" id="transferCategory02"><label for="transferCategory02">용돈</label></span></li>
-                            <li><span class="form-checkbox_20"><input type="checkbox" id="transferCategory03"><label for="transferCategory03">사업소득</label></span></li>
-                            <li><span class="form-checkbox_20"><input type="checkbox" id="transferCategory04"><label for="transferCategory04">금융소득</label></span></li>
-                            <li><span class="form-checkbox_20"><input type="checkbox" id="transferCategory05"><label for="transferCategory05">임대소득</label></span></li>
-                            <li><span class="form-checkbox_20"><input type="checkbox" id="transferCategory06"><label for="transferCategory06">기타소득</label></span></li>
-                        </ul>
-                    </dd>
-                </dl>
+                    </div>
+                    <div class="checkbox-group flex-box" data-col="2">
+                        <li><span class="form-checkbox_20"><input type="checkbox" id="expenseFillterCategory01" checked><label for="expenseFillterCategory01">입금이체</label></span></li>
+                        <li><span class="form-checkbox_20"><input type="checkbox" id="expenseFillterCategory02"><label for="expenseFillterCategory02">출금이체</label></span></li>
+                        <li><span class="form-checkbox_20"><input type="checkbox" id="expenseFillterCategory03" checked><label for="expenseFillterCategory03">저축</label></span></li>
+                        <li><span class="form-checkbox_20"><input type="checkbox" id="expenseFillterCategory04"><label for="expenseFillterCategory04">투자</label></span></li>
+                    </div>
+                    <!--// 카테고리선택 -->
+                    <!-- 조회금액 //-->
+                    <div class="kb-form arrange-amount" data-status="error">
+                        <strong class="label">조회금액</strong>
+                        <div class="kb-form_inner form-text">
+                            <input type="text" inputmode="numeric" id="minAmount" placeholder="최소" value="" data-unit="원" data-action="autoSeperator">
+                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                        </div>
+                        <span class="between">&ndash;</span>
+                        <div class="kb-form_inner form-text">
+                            <input type="text" inputmode="numeric" id="maxAmount" placeholder="최대" value="" data-unit="원" data-action="autoSeperator">
+                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                        </div>
+                        <em class="validation">최소금액이 최대금액보다 적게 입력해주세요.</em>
+                    </div>
+                    <!--// 조회금액 -->
+                    <!-- 가맹점명/받는분 //-->
+                    <div class="kb-form" data-status="">
+                        <strong class="label">가맹점명&sol;받는분 검색</strong>
+                        <div class="kb-form_inner form-text">
+                            <input type="text" id="nameSearch" placeholder="직접입력" name="nameSearch">
+                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                        </div>
+                        <p class="info-msg">가맹점명&sol;받는분 입력 시 한글 <span class="c-red">또는</span> 영문 2자 이상 입력해주세요.</p>
+                    </div>
+                    <!--// 가맹점명/받는분 -->
+                </div>
             </div>
         </section>
     </div>
     <div class="bottom-sheet_buttons">
-        <button class="btn-solid_sticky lv2" data-action="close"><span>초기화</span></button>
-        <button class="btn-solid_sticky"><span>확인</span></button>
+        <button class="btn-solid gray" data-action="close"><span>초기화</span></button>
+        <button class="btn-solid"><span>확인</span></button>
     </div>
     <button class="btn-close" data-action="close"><span>닫기</span></button>
 </div>

@@ -4,9 +4,15 @@
 
 /***** 지출 공통 *****/
 .expense-layered .h3 p{margin-top:20px;font-size:16px;color:$kb-ui03;font-weight:normal}
+.expense-layered .arrange-amount{@include flexBetween;flex-wrap:wrap}
+.expense-layered .arrange-amount .label,
+.expense-layered .arrange-amount .validation{width:100%}
+.expense-layered .arrange-amount .kb-form_inner{flex:1}
+.expense-layered .arrange-amount .between{display:inline-block;margin:0 1rem}
+.label-tit{display:block;margin-bottom:1rem;font-size:1.6rem;color:$kb-ui04}
 .control-show-target{display:none}
 .control-show-target.is-active{display:block}
-.btn-register{position:fixed;right:24px;bottom:34px;width:40px;height:40px;line-height:36px;text-align:center;border-radius:50%;background-color:$color-yellow;box-shadow: 2.6px 3px 6px 0 rgba(0, 0, 0, 0.17)}
+.btn-register{position:fixed;right:24px;bottom:34px;z-index:$level10;width:40px;height:40px;line-height:36px;text-align:center;border-radius:50%;background-color:$color-yellow;box-shadow: 2.6px 3px 6px 0 rgba(0, 0, 0, 0.17)}
 .btn-register i{vertical-align:middle}
 .compare-summary{padding-bottom:40px}
 .compare-summary .total-summary{margin-top:10px;margin-bottom:20px;color:$color-blue}
@@ -14,13 +20,19 @@
 .content-tit .emphasis{display:block}
 .content-tit .emphasis.color-blue{color:$color-blue}
 /* 지출 공통 : 상세보기 */
-.expense-detail-amount.dividing-line-bottom{margin-bottom:20px}
-.expense-detail-amount .expense-type{@include flexBetween;margin-top:20px}
-.expense-detail-amount .expense-type h5{@include heading($size:16px, $line-height:1.4, $weight:600)}
-.expense-detail-amount .expense-type .btn-edit-type i{margin-right:5px}
-.expense-detail-amount .lsit-view-setting{margin-top:25px}
-.expense-detail-amount .detail-item-tit{margin-bottom:8px}
-.expense-type-option .h4 + .radio-group{margin-top:0}
+.expense-list-detail .detail-info > h4{margin-bottom:2rem}
+.expense-list-detail .detail-info > h4 i{margin-right:1.2rem}
+.expense-list-detail .detail-info dl{margin-top:1.8rem}
+.expense-list-detail .detail-edit .btn-segmented_radio + .kb-form{margin-top:3.5rem}
+.expense-list-detail .detail-edit .edit-option{margin-top:2.7rem}
+.expense-list-detail .detail-edit .edit-option li{margin-bottom:3rem}
+.expense-list-detail .detail-edit .edit-option li,
+.expense-list-detail .detail-edit .edit-option label span{font-size:1.6rem;color:$kb-ui04}
+.expense-list-detail .detail-edit .edit-option .btn-switch,
+.expense-list-detail .detail-edit .edit-option label{width:100%}
+.expense-list-detail .detail-edit .edit-option label span{font-size:1.6rem;color:$kb-ui04}
+.expense-list-detail .detail-edit .edit-option .delete{@include flexBetween}
+.expense-list-detail .detail-edit .edit-option .delete button{width:auto;padding:0 2.8rem}
 //라디오 옵션이 있는 모달
 .modal_radioOption .modal_contents .radio-group{margin-top:20px}
 
@@ -58,29 +70,27 @@
 .expense-management-goal .content-tit{text-align:center;padding:24px 0}
 // 가계부 > 캘린더로 보기
 // common
+.view-expense-calendar .summary-amount{padding:0.5rem 0;border-top:1px solid $kb-ui09;border-bottom:1px solid $kb-ui09}
+.view-expense-calendar .summary-amount dt{margin:0.6rem 0}
+.view-expense-calendar .summary-amount .amount span{font-size:1.9rem;font-weight:bold}
+.view-expense-calendar .summary-amount .income .num{color:$color-blue}
+.view-expense-calendar .summary-amount .expense .num{color:$color-red}
+.view-expense-calendar .summary-amount .transfer .num{color:$kb-ui03}
 .calendar-container{width:100%;background:$kb-ui11}
-.calendar-container .summary-amount{margin-top:1.5rem;border-top:1px solid $kb-ui09;border-bottom:1px solid $kb-ui09}
-.calendar-container .summary-amount dt{margin:0.6rem 0}
-.calendar-container .summary-amount .amount span{font-weight:bold}
-.calendar-container .summary-amount .income .num{color:$color-blue}
-.calendar-container .summary-amount .expense .num{color:$color-red}
-.calendar-container .summary-amount .transfer .num{color:$kb-ui03}
-.calendar-container .summary span::before{display:inline-block;width:15px;height:15px;margin-right:4px;border-radius:50%;border-radius:50%;border:1px solid;line-height:14px;text-align:center;vertical-align:middle}
-.calendar-container .number{font-weight:bold}
+.calendar-container .summary-amount{margin-top:2.5rem}
+.calendar-container .summary span::before{display:inline-block;width:1.5rem;height:1.5rem;margin-right:4px;border-radius:50%;border-radius:50%;border:1px solid;line-height:14px;text-align:center;vertical-align:middle}
 //header
 .calendar-header{width:100%;margin-bottom:2.5rem}
 .calendar-header .summary-date{display:flex;justify-content:center;text-align:center}
-.calendar-header .summary-date p{display:inline-block;margin:0 2.4rem;font-size:1.9rem}
+.calendar-header .summary-date p{display:inline-block;margin:0 2.4rem}
+.calendar-header .summary-date p .num{font-size:1.9rem;font-weight:normal}
 .calendar-header .summary{font-size:10px}
 .calendar-header .summary:first-of-type{border-top:1px solid $kb-ui09}
 .calendar-header .summary:last-of-type{border-bottom:1px solid $kb-ui09}
 .calendar-header .summary span{display:block;margin-bottom:7px}
 .calendar-header .summary span{font-weight:bold}
-// .calendar-header.is-fixed{position:fixed;top:48px;left:0;z-index:$level20;padding-top:20px;padding-bottom:20px}
 //calendar
-// .calendar-header.is-fixed + .calendar{padding-top:55px}
 .calendar{position:relative}
-.tbl-calender{border-bottom:1px solid $kb-ui09}
 .tbl-calender .day-name{padding-bottom:1.2rem;text-align:center;font-size:1.4rem;color:$kb-ui04}
 .tbl-calender .day{height:80px;text-align:center}
 .tbl-calender .day .link-box_block{height:100%}
@@ -88,22 +98,44 @@
 .tbl-calender .day.is-list strong{background-color:$kb-ui09}
 .tbl-calender .day.today strong{background-color:$color-yellow-positive}
 .tbl-calender .day-list{margin-top:0.8rem}
-.tbl-calender .day-list li{font-size:10px;line-height:1.4}
+.tbl-calender .day-list li{font-size:1rem;line-height:1.4;font-family:'roboto'}
 .tbl-calender .day-list li.income{color:$color-blue}
 .tbl-calender .day-list li.expense{color:$color-red}
-// 가계부 > 캘린더로 보기 상세
-.view-calendar-detail .calendar-header{padding-left:0}
-.view-calendar-detail .calendar-detail .credit-list{border-top:1px solid $kb-ui02}
-.view-calendar-detail .calendar-detail + .calendar-detail{margin-top:48px}
-.view-calendar-detail .credit-list-tit{margin-bottom:20px}
-.view-calendar-detail .credit-list-tit{margin-bottom:20px}
-.view-calendar-detail .credit-list_link-type li{padding-left:0;padding-right:0}
-.view-calendar-detail .credit-list_link-type li:not(:first-of-type) .credit-list{border-top:0}
+.tbl-calender-label{display:flex;justify-content:flex-end;width:100%}
+.tbl-calender-label li+li{margin-left:1.5rem}
+.tbl-calender-label li span{font-size:1.2rem}
+.tbl-calender-label li span::before{content:'';display:inline-block;width:0.8rem;height:0.8rem;margin-right:0.8rem;border-radius:50%}
+.tbl-calender-label li .income::before{background-color:$color-blue}
+.tbl-calender-label li .expense::before{background-color:$color-red}
+.tbl-calender-label li .transfer::before{background-color:$kb-ui02}
+.tbl-calender-label li .pay::before{background-color:$color-yellow}
+.day-detail-list{display:none}
+.day-detail-list .h4{display:block;margin-bottom:1.5rem}
+.day-detail-list .day-list + .day-list{margin-top:4.8rem}
+.day-detail-list .summary-amount{padding-top:1rem;border-top-color:$kb-ui04}
+.day-detail-list .credit-list{display:block}
+.day-detail-list .credit-list > dt{padding-bottom:0;border-bottom:0}
+.day-detail-list .credit-list > dd{padding-top:1.5rem;padding-bottom:2rem}
+.day-detail-list .credit-list .info{color:$kb-ui03}
+.day-detail-list .credit-list dt{position:relative;padding-left:4rem}
+.day-detail-list .credit-list dt i[class^="icon-"]{position:absolute;top:50%;left:0;width:3.2rem;height:3.2rem;background-color:blue}
+.day-detail-list .credit-list dt .info .num{font-size:1.5rem}
+.day-detail-list .credit-list dt .info .num+em{display:inline-block;margin-left:0.8rem;padding-left:0.8rem;font-size:1.4rem;border-left:1px solid $kb-ui08}
+.day-detail-list .credit-list dt .tit{margin-top:1.4rem}
+.day-detail-list .credit-list dt .tag{margin-top:1.1rem;font-size:1.3rem;color:$kb-ui05}
+.day-detail-list .credit-list dd .amount{color:$kb-ui02}
+.day-detail-list .credit-list dd .amount .num{display:inline-block;margin-right:0.5rem;font-size:1.7rem;font-weight:bold}
+.day-detail-list .credit-list dd .expense .num{color:$color-red}
+.day-detail-list .credit-list dd .income .num{color:$color-blue}
+.day-detail-list .credit-list dd .info{font-size:1.3rem;color:$kb-ui04}
+.day-detail-list .credit-list dd .info .num{font-size:1.4rem;color:$kb-ui04}
+.day-detail-list .btn-view-more{width:100%;text-align:center;margin-top:2.5rem;padding:1rem 0}
 // 가계부 > 수기등록
 .user-register-list > .tab{margin-bottom:32px}
 .user-register-list .user-register-forms .kb-form + .kb-form{margin-top:20px}
 .user-register-list .user-register-forms .btn-area.center{margin-top:20px}
 // 가계부 > 카테고리 설정
+.bottom-sheet_header .bs_subtit{margin-top:2.5rem;font-size:1.6rem}
 .user-register-category .btn-text + .btn-text{margin-left:12px}
 .user-register-category .btn-edit-form u,
 .user-register-category .btn-edit-form span{font-weight:normal}
@@ -111,35 +143,41 @@
 .user-register-category .btn-add-form .icon-plus + span{margin-left:5px}
 .user-register-category .category-list{border-bottom:1px solid $kb-ui09;}
 .user-register-category .category-list > li{@include text($text02, normal);position:relative;z-index:1;padding:20px 0;border-top:1px solid $kb-ui09;}
-.user-register-category .category-list > li > div{display:flex}
+.user-register-category .category-list > li > div{display:flex;flex-wrap:wrap}
 .user-register-category .category-list > li > div .btn-text{flex:1;text-align:left}
 .user-register-category .category-list > li > div .btn-text i{@include iconBullet($direction: 'down', $width: 16px, $height : 9px, $thick : 1px, $color : $kb-ui05)}
 .user-register-category .category-list li span[class*=badge_],
 .user-register-category .category-list li i[class*='icon-']{margin-right:8px;}
-.user-register-category .edit-user{position:relative;display:flex;align-items:center;justify-content:flex-start;width:100%}
-.user-register-category .edit-user .kb-form{padding-right:12px}
+.user-register-category .edit-user{position:relative;display:flex;align-items:center;justify-content:flex-start;flex-wrap:wrap;width:100%}
+.user-register-category .edit-user > label{display:none;width:100%}
+.user-register-category .edit-user .kb-form{width:calc(100% - 3.4rem)}
 .user-register-category .edit-user .form-text input[type="text"]{font-weight:normal}
+.user-register-category .edit-user .edit-form-buttons{position:absolute;top:50%;right:0;transform:translateY(-50%)}
 .user-register-category .edit-user .edit-form-buttons button:first-child{margin-left:0}
 .user-register-category .edit-user .edit-form-buttons .btn-text{@include btnText($underline: true);width:auto}
 .user-register-category .edit-user .edit-form-buttons .btn-text > u{font-size:14px;color:$kb-ui04}
 .user-register-category .sub-category > li > .btn-text{width:100%;text-align:left}
 .user-register-category .accordian dt i[class*=icon-]{margin-right:8px}
 .template{display:none}
-.edit-user[data-status="normal"] .kb-form .kb-form_inner{width:auto;padding-bottom:0;border:0}
-.edit-user[data-status="normal"] .kb-form .form-text input[type="text"]{max-width:16ch;border:0;font-size:16px;color:$kb-ui02}
-.accordian  .edit-user[data-status="normal"] .kb-form .form-text input[type="text"]{font-size:18px}
-.edit-user[data-status="normal"] .btn-save-form{display:none}
-.edit-user[data-status="edit"] .kb-form{flex:1;padding-right:6px}
+.edit-user .edit-form-buttons button{display:inline-block}
+.edit-user[data-status="normal"] .kb-form{padding-right:8rem}
+.edit-user[data-status="normal"] .kb-form .kb-form_inner{padding-bottom:0;border:0}
+.edit-user[data-status="normal"] .kb-form .form-text input[type="text"]{border:0;font-size:16px;color:$kb-ui02}
+.edit-user[data-status="normal"] .btn-save-form,
+.edit-user[data-status="normal"] .btn-edit-cancel{display:none}
+.edit-user[data-status="edit"] > label{display:block;padding-left:3.6rem}
+.edit-user[data-status="edit"] .kb-form input[type="text"]{padding-right:12rem}
+.edit-user[data-status="edit"] .edit-form-buttons{top:auto;bottom:0.8rem;transform:none}
 .edit-user[data-status="edit"] .edit-form-buttons .btn-delete-form,
 .edit-user[data-status="edit"] .edit-form-buttons .btn-edit-form{display:none}
-.edit-user .btn-edit-cancel{display:inline-block;width:24px;height:24px}
 .user-register-category .select-list.sub-category > li .edit-user .btn-save-form::after{display:none}
 .user-register-category .select-list.sub-category > li .btn-edit-cancel i{display:inline-block}
 // 가계부 > 수기등록 > 카테고리
 .user-register-category .category-expense ul[data-style=list] li:before{top:calc(50% - 2px)}
 .user-register-category .category-expense li[data-add-type="added-user"] .btn-edit-cancel{margin-left:8px}
-.user-register-category .add-category{margin-top:32px;padding-top:24px}
-.user-register-category .add-sub-category{margin-top:32px}
+.user-register-category .add-category{flex-wrap:wrap;margin-top:2rem;padding-top:2.4rem}
+.user-register-category .add-category > label{padding-left:4.5rem}
+// .user-register-category .add-sub-category{margin-top:2rem}
 .user-register-category .edit-user[data-status="normal"] .form-text .btn-edit-cancel{display:none}
 // 가계부 > 카테고리 추가 (대분류)
 .bottom-sheet[data-layered-name="bsUserRegisterSetCategory"]{padding-bottom:70px}
@@ -147,7 +185,8 @@
 .kb-form[data-type="icon"] > button,
 .kb-form[data-type="icon"] > span,
 .kb-form[data-type="icon"] > i[class*='icon-']{margin-right:8px}
-.kb-form[data-type="icon"] .btn-select-icon{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background-color:$kb-ui09}
+.kb-form[data-type="icon"] .btn-select-icon{position:relative;width:3.6rem;height:3.6rem}
+.kb-form[data-type="icon"] .btn-select-icon .icon-plus_20{position:absolute;bottom:0;right:0;display:inline-flex;align-items:center;justify-content:center;width:1.6rem;height:1.6rem;border-radius:50%;background-color:$kb-ui09}
 .select-icon-list li button{width:100%;height:2.4rem;text-align:center}
 .select-icon-list li button img{width:auto;height:100%}
 .select-icon-list li span{display:none}
@@ -156,14 +195,17 @@
 .accordian > dt .edit-user .btn-edit-cancel i::before{display:none}
 .accordian > dt .edit-user .btn-save-form{width:auto;height:32px}
 // 가계부 > 카테고리 추가 (소분류)
+.user-register-category .sub-category + .kb-form{margin-top:2rem}
 .user-register-category .sub-category .add-form-item{padding-left:0}
 .user-register-category .sub-category .add-form-item::before{display:none}
 .user-register-category .sub-category .edit-user[data-status="normal"] .kb-form_inner{padding:0}
-.user-register-category .sub-category .edit-user[data-status="normal"] .kb-form .form-text input[type="text"]{font-size:16px;color:#484b51;;font-weight:normal}
-.user-register-category .sub-category .edit-user[data-status="edit"]{margin-top:45px;padding-left:0}
+.user-register-category .sub-category .edit-user[data-status="normal"] .kb-form .form-text input[type="text"]{height:auto;font-size:16px;color:#484b51;;font-weight:normal}
+.user-register-category .sub-category .edit-user[data-status="edit"]{margin-top:2rem;padding-left:0}
 .user-register-category .sub-category .edit-user[data-status="edit"]::before{display:none}
-.user-register-category .sub-category .edit-user[data-status="edit"] .kb-form{width:100%}
-.user-register-category .btn-add-sub-category{display:block;margin-top:32px;margin-left:15px;font-size:1.4px;color:$kb-ui04}
+.user-register-category .sub-category .edit-user[data-status="edit"] .kb-form{width:calc(100% - 13rem)}
+.user-register-category .sub-category .edit-user[data-status="edit"] > label{padding-left:0}
+.user-register-category .btn-add-sub-category{display:block;margin-top:32px;margin-left:15px;font-size:1.4px;color:$kb-ui02}
+.user-register-category .btn-add-sub-category span{vertical-align:middle}
 // 지출 내역
 .expense-account-book .expense-list-area .filter-controls{@include flexBetween;padding:10px 0}
 .expense-account-book .expense-list-area .filter-utils{@include clfix}
@@ -173,6 +215,8 @@
 .expense-account-book .expense-list-area .filter-selected-options li+li{margin-left:20px}
 // 필터설정 > 기간/유형
 .filter-period-setting .checkbox-group{margin-top:4px}
+.filter-category-setting .arrange-amount{margin-top:2rem}
+.filter-category-setting .arrange-amount + div{margin-top:2.7rem}
 .filter-category-setting .st-list .form-checkbox_20 label{font-size:16px}
 .filter-category-setting .accordian dt.is-active .form-checkbox input + label{font-weight:bold}
 // 숨긴 지출 보기
@@ -188,8 +232,8 @@
 .tit-area_icon-bg .form-text{margin-top:60px}
 .tit-area_icon-bg .form-text input{background-color:transparent}
 .tit-area_icon-bg .icon-box_circle{display:inline-flex;margin-right:10px;margin-bottom:12px;background-color:$kb-ui11}
-.tit-area_icon-bg .btn-line_icon{vertical-align:middle}
-.tit-area_icon-bg .btn-line_icon + .btn-line_icon{margin-left:10px}
+.tit-area_icon-bg .btn-line{vertical-align:middle}
+.tit-area_icon-bg .btn-line + .btn-line{margin-left:10px}
 // Main
 .regular-expense-total{padding-bottom:0}
 .regular-expense-list{margin-bottom:0;padding-bottom:0}
@@ -431,3 +475,7 @@
 .regular-expense-management .markup-chart li strong,
 .regular-expense-management .markup-chart li .num{font-size:18px;font-weight:bold}
 .regular-expense-management .markup-chart li span{display:block;margin-top:8px;font-size:14px}
+
+
+/* 임시 아이콘 */
+.icon-expense-28{width:2.8rem;height:2.8rem;background-color:aqua}

@@ -7,12 +7,12 @@ var gnbArr,
 channel = $('html').data('channel');
 
 gnbArr = [
-    // {
-    //     "number" : "0",
-    //     "name": "My NOW",
-    //     "link": "#mynowlink",
-    //     "sub": ""
-    // },
+    {
+        "number" : "0",
+        "name": "My NOW",
+        "link": "#mynowlink",
+        "sub": ""
+    },
     {
         "number" : "1",
         "name": "자산",
@@ -57,7 +57,7 @@ gnbArr = [
     },
     {
         "number" : "10",
-        "name": "마이데이터 선물함",
+        "name": "머니크루",
         "link": "#link",
         "sub": "mydataGift"
     },

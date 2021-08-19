@@ -701,26 +701,12 @@
     input + label:after{
         content:'';
         position:absolute;
-        // top:50%;
-        // transform:translateY(-50%);
-        // width: px-to-rem($size);
-        // height: px-to-rem($size);
-        // background-image:url(../images/common/common.png);
-        // background-repeat:no-repeat;
-        // background-size:px-to-rem(162px);
+        top:50%;transform:translateY(-50%) rotate(-45deg);
     }
-
-    // @if (remove-units($size) == 28 or remove-units($size) == 2.8){
-    //     label{padding-top:0.2rem;padding-left:px-to-rem(38px);font-size:px-to-rem($text01);}
-    //     input + label:before{width:2.4rem;border:2px solid $kb-ui07;}
-    //     input:checked + label:before{background-position:px-to-rem(-30px) px-to-rem(-160px);}
-    //     input:disabled + label:before{background-position:px-to-rem(-60px) px-to-rem(-160px);}
-    //     input:disabled:checked + label:before{background-position:px-to-rem(-90px) px-to-rem(-160px);}
-    // }
     @if (remove-units($size) == 24 or remove-units($size) == 2.4){
-        label{padding-top:0.2rem;padding-left:34px;font-size:$text02;}
-        input + label:before{left:0;top:0;width:2.4rem;height:2.4rem;border:2px solid $kb-ui07;border-radius:50%;}
-        input + label:after{left:0.6rem;top:0.9rem;z-index: 1;width: 1.2rem;height: .8rem;margin-top: -0.2rem;transform: rotate(-45deg);          
+        label{padding-top:0.1rem;padding-left:34px;font-size:$text02;}
+        input + label:before{left:0;width:2.4rem;height:2.4rem;border:2px solid $kb-ui07;border-radius:50%;}
+        input + label:after{left:0.6rem;z-index: 1;width: 1.2rem;height: .8rem;margin-top: -0.2rem;
             border-left: 3px solid $kb-ui07;
             border-bottom: 3px solid $kb-ui07;
             border-top-left-radius: 1px;
@@ -732,9 +718,15 @@
         input:disabled + label:after{border-color:$kb-ui09;}
         input:disabled:checked + label:before{background-color:$kb-ui09;}
         input:disabled:checked + label:after{border-color:$kb-ui11;}
+
+        &.align-top input + label:before,
+        &.align-top input + label:after{top:0;transform:translateY(0) rotate(-45deg);}
+        &.align-top input + label:after{top:0.9rem;transform:rotate(-45deg);}
+        
     }@else if (remove-units($size) == 20 or remove-units($size) == 2){
         label{min-height:20px;padding-right:3rem;line-height:px-to-rem($size);font-size:px-to-rem($text02);}
-        input + label:before{left: .4rem;top: .6rem;width: 1.5rem;height: .8rem;transform: rotate(-45deg);
+        input + label:after{content:none;}
+        input + label:before{left: .4rem;top:calc(50% - 6px);width: 1.5rem;height: .8rem;transform:rotate(-45deg);
             border-left: 2px solid #aab0b8;
             border-bottom: 2px solid #aab0b8;
             border-bottom-left-radius: 3px;
@@ -750,10 +742,12 @@
             input + label:before{left:auto;right:0;}
 
         }
+
+        &.align-top input + label:before{top:4px;transform:translateY(0) rotate(-45deg);}        
+        
     }
 
-    &.align-mid input + label:before,
-    &.align-mid input + label:after{top:50%;transform:translateY(-50%) rotate(-45deg);}
+    
 }
 
 //Radio
@@ -765,16 +759,18 @@
     input{@include hidden;}
     label{display:inline-block;min-height:24px;color:$kb-ui02;padding-top:2px;padding-left:32px;font-size:$text02;line-height:1.4;}
     label:before,
-    label:after{position:absolute;border-radius:50%;}
-    label:before{content:'';top:0;left:0;width:$size;height:$size;background-color:#fff;border:2px solid $kb-ui07;}
-    label:after{left:$size * 0.25;top:$size * 0.25;width: $size * 0.5;height: $size * 0.5;background-color:$color-yellow;}
+    label:after{position:absolute;top:50%;transform:translateY(-50%);border-radius:50%;}
+    label:before{content:'';left:0;width:$size;height:$size;background-color:#fff;border:2px solid $kb-ui07;}
+    label:after{left:$size * 0.25;width: $size * 0.5;height: $size * 0.5;background-color:$color-yellow;}
     input:checked + label:before{border-color: $color-yellow;}
     input:checked + label:after{content:'';}
     input:disabled + label:before{border-color: $color-disable;}
     input:disabled:checked + label:after{background-color:$color-disable;}
     input:disabled + label{color:$color-disable;}
 
-    &.align-mid input + label:before,
-    &.align-mid input + label:after{top:50%;transform:translateY(-50%);}
+    &.align-top input + label:before,
+    &.align-top input + label:after{transform:translateY(0)}
+    &.align-top input + label:before{top:0;}
+    &.align-top input + label:after{top:$size * 0.25;}
 
 }

@@ -21,25 +21,22 @@
 		<div class="app-container">
 
 			<!-- app-content // -->
-            <style>
-                .asset-registration .kb-form {margin: 1em 0;}
-            </style>
-			<main class="app-content my-asset pop-my-asset">
+			<main class="app-content my-asset">
 
-                <section class="kb-sec">
-                    <ul data-style="list">
-                        <li>아직 확인되지 못한 자산이 있다면 입력해 주세요.</li>
-                        <li>* 표시된 항목은 필수 입력 사항입니다.</li>
-                    </ul>
-                </section>
+                <section class="kb-sec bg-gray">
+					<ul class="sm" data-style="list">
+						<li>아직 확인되지 못한 자산이 있다면 입력해 주세요.</li>
+						<li><span class="required">표시된 항목은 필수 입력 사항입니다.</span></li>
+					</ul>
+				</section>
 
                 <section class="kb-sec asset-registration">
                     <div class="kb-form" data-status="">
-                        <label for="kkkbFormInput1" class="required">금융기관</label>
+                        <label for="kbFormInput1" class="required">금융기관</label>
                         <div class="kb-form_inner form-select">
                             <button type="button" class="selected-option" data-call-layered="assetFinancialInstitution"></button>
                             <!-- <button type="button" class="selected-option" data-call-layered="bsFinancialInstitution"></button> -->
-                            <select name="" id="kkkbFormInput1" title="금융권 선택">
+                            <select name="" id="kbFormInput1" title="금융권 선택">
                                 <option value="">금융기관 선택</option>
                                 <option value="bank01" selected>KB국민은행</option>
                                 <option value="bank02">하나은행</option>
@@ -54,7 +51,7 @@
                         <div class="kb-form_inner form-select">
                             <button type="button" class="selected-option" data-call-layered="bsProductType" id="btnAssetType"></button>
                             <select name="" id="assetType" class="js-asset-type-selector" title="자산종류 선택">
-                                <option value="">자산 선택</option>
+                                <option value="">자산선택</option>
                                 <option value="productType01" data-asset-type="1">입출금</option>
                                 <option value="productType02" data-asset-type="2">예적금</option>
                                 <option value="productType03" data-asset-type="3">증권</option>
@@ -68,10 +65,10 @@
                     </div>
 
                     <div class="kb-form" data-status="" data-asset-types="2">
-                        <label for="kkkbFormInput2" class="required">세부항목</label>
+                        <label for="kbFormInput2" class="required">세부항목</label>
                         <div class="kb-form_inner form-select">
                             <button type="button" class="selected-option"></button>
-                            <select name="" id="kkkbFormInput2" title="예적금 세부항목">
+                            <select name="" id="kbFormInput2" title="예적금 세부항목">
                                 <option value="">세부항목 선택</option>
                                 <option value="">정기예금</option>
                                 <option value="">적금</option>
@@ -79,14 +76,13 @@
                                 <option value="">기타</option>
                             </select>
                         </div>
-                        <em class="validation"></em>
                     </div>
 
                     <div class="kb-form" data-status="" data-asset-types="6">
-                        <label for="kkkbFormInput3" class="required">세부항목</label>
+                        <label for="kbFormInput3" class="required">세부항목</label>
                         <div class="kb-form_inner form-select">
                             <button type="button" class="selected-option"></button>
-                            <select name="" id="kkkbFormInput3" title="대출 세부항목">
+                            <select name="" id="kbFormInput3" title="대출 세부항목">
                                 <option value="">세부항목 선택</option>
                                 <option value="">신용대출</option>
                                 <option value="">전세대출</option>
@@ -94,172 +90,155 @@
                                 <option value="">기타</option>
                             </select>
                         </div>
-                        <em class="validation"></em>
                     </div>
 
                     <div class="kb-form" data-status="" data-asset-types="7">
-                        <label for="kkkbFormInput4" class="required">세부항목</label>
+                        <label for="kbFormInput4" class="required">세부항목</label>
                         <div class="kb-form_inner form-select">
                             <button type="button" class="selected-option"></button>
-                            <select name="" id="kkkbFormInput4" title="보험 세부항목">
+                            <select name="" id="kbFormInput4" title="보험 세부항목">
                                 <option value="">세부항목 선택</option>
                                 <option value="">저축성보험</option>
                                 <option value="">자동차보험</option>
                                 <option value="">보장성보험</option>
                             </select>
                         </div>
-                        <em class="validation"></em>
                     </div>
 
                     <div class="kb-form" data-status="">
-                        <label for="kkkbFormInput5" class="required">상품명</label>
+                        <label for="kbFormInput5" class="required">상품명</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" id="kkkbFormInput5" value="" placeholder="상품명">
+                            <input type="text" id="kbFormInput5" value="" placeholder="상품명">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
-                        <em class="validation"></em>
                     </div>
 
                     <div class="kb-form" data-status="" data-asset-types="1,2,5,8">
-                        <label for="kkkbFormInput6" class="required">잔액</label>
+                        <label for="kbFormInput6" class="required">잔액</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" id="kkkbFormInput6" placeholder="잔액" value="" data-unit="원" data-action="autoSeperator">
+                            <input type="text" inputmode="numeric" id="kbFormInput6" placeholder="숫자만 입력" value="" data-unit="원" data-action="autoSeperator">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
-                        <em class="validation"></em>
                     </div>
 
                     <div class="kb-form" data-status="" data-asset-types="2">
-                        <label for="kkkbFormInput7">적용금리</label>
+                        <label for="kbFormInput7">적용금리</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="decimal" id="kkkbFormInput7" placeholder="0.00%" value="" data-unit="%">
+                            <input type="text" inputmode="decimal" id="kbFormInput7" placeholder="0.00%" value="" data-unit="%">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
-                        <em class="validation"></em>
                     </div>
 
                     <div class="kb-form" data-status="" data-asset-types="3">
-                        <label for="kkkbFormInput8" class="required">평가금액</label>
+                        <label for="kbFormInput8" class="required">평가금액</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" id="kkkbFormInput8" placeholder="평가금액" value="" data-unit="원" data-action="autoSeperator">
+                            <input type="text" inputmode="numeric" id="kbFormInput8" placeholder="평가금액" value="" data-unit="원" data-action="autoSeperator">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
-                        <em class="validation"></em>
                     </div>
 
                     <div class="kb-form" data-status="" data-asset-types="3">
-                        <label for="kkkbFormInput9">예수금</label>
+                        <label for="kbFormInput9">예수금</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" id="kkkbFormInput9" placeholder="예수금" value="" data-unit="원" data-action="autoSeperator">
+                            <input type="text" inputmode="numeric" id="kbFormInput9" placeholder="예수금" value="" data-unit="원" data-action="autoSeperator">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
-                        <em class="validation"></em>
                     </div>
                     
                     <div class="kb-form" data-status="" data-asset-types="4">
-                        <label for="kkkbFormInput10" class="required">투자원금</label>
+                        <label for="kbFormInput10" class="required">투자원금</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" id="kkkbFormInput10" placeholder="투자원금" value="" data-unit="원" data-action="autoSeperator">
+                            <input type="text" inputmode="numeric" id="kbFormInput10" placeholder="투자원금" value="" data-unit="원" data-action="autoSeperator">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
-                        <em class="validation"></em>
                     </div>
 
                     <div class="kb-form" data-status="" data-asset-types="4">
-                        <label for="kkkbFormInput11" class="required">평가금액</label>
+                        <label for="kbFormInput11" class="required">평가금액</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" id="kkkbFormInput11" placeholder="평가금액" value="" data-unit="원" data-action="autoSeperator">
+                            <input type="text" inputmode="numeric" id="kbFormInput11" placeholder="평가금액" value="" data-unit="원" data-action="autoSeperator">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
-                        <em class="validation"></em>
                     </div>
 
-                    <div class="kb-form" data-status="info" data-asset-types="4">
-                        <label for="kkkbFormInput12" class="required">수익률</label>
+                    <div class="kb-form" data-status="" data-asset-types="4">
+                        <label for="kbFormInput12" class="required">수익률</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="decimal" id="kkkbFormInput12" placeholder="0.00%" value="" data-unit="%" disabled>
+                            <input type="text" inputmode="decimal" id="kbFormInput12" placeholder="0.00%" value="" data-unit="%" disabled>
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
-                        <em class="validation">투자원금과 평가총액을 입력 후, 조회 버튼을 누르시면 수익률이 조회됩니다.</em>
+                        <p class="info-msg">투자원금과 평가총액을 입력 후, 조회 버튼을 누르시면 수익률이 조회됩니다.</p>
 
                         <button class="btn-solid"><span>조회</span></button>
                     </div>
 
                     <div class="kb-form" data-status="" data-asset-types="6">
-                        <label for="kkkbFormInput13" class="required">대출잔액</label>
+                        <label for="kbFormInput13" class="required">대출잔액</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" id="kkkbFormInput13" placeholder="대출잔액" value="" data-unit="원" data-action="autoSeperator">
+                            <input type="text" inputmode="numeric" id="kbFormInput13" placeholder="대출잔액" value="" data-unit="원" data-action="autoSeperator">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
-                        <em class="validation"></em>
                     </div>
 
                     <div class="kb-form" data-status="" data-asset-types="6">
-                        <label for="kkkbFormInput14" class="required">대출원금</label>
+                        <label for="kbFormInput14" class="required">대출원금</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" id="kkkbFormInput14" placeholder="대출원금" value="" data-unit="원" data-action="autoSeperator">
+                            <input type="text" inputmode="numeric" id="kbFormInput14" placeholder="대출원금" value="" data-unit="원" data-action="autoSeperator">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
-                        <em class="validation"></em>
                     </div>
 
                     <div class="kb-form" data-status="" data-asset-types="6">
-                        <label for="kkkbFormInput15">대출이율</label>
+                        <label for="kbFormInput15">대출이율</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="decimal" id="kkkbFormInput15" placeholder="0.00%" value="" data-unit="%">
+                            <input type="text" inputmode="decimal" id="kbFormInput15" placeholder="0.00%" value="" data-unit="%">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
-                        <em class="validation"></em>
                     </div>
 
                     <div class="kb-form" data-status="" data-asset-types="7">
-                        <label for="kkkbFormInput16" class="required">잔액</label>
+                        <label for="kbFormInput16" class="required">잔액</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" id="kkkbFormInput16" placeholder="잔액" value="" data-unit="원" data-action="autoSeperator">
+                            <input type="text" inputmode="numeric" id="kbFormInput16" placeholder="잔액" value="" data-unit="원" data-action="autoSeperator">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
-                        <em class="validation"></em>
                     </div>
 
                     <div class="kb-form" data-status="" data-asset-types="7">
-                        <label for="kkkbFormInput17" class="required">보험료</label>
+                        <label for="kbFormInput17" class="required">보험료</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" id="kkkbFormInput17" placeholder="보험료" value="" data-unit="원" data-action="autoSeperator">
+                            <input type="text" inputmode="numeric" id="kbFormInput17" placeholder="보험료" value="" data-unit="원" data-action="autoSeperator">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
-                        <em class="validation"></em>
                     </div>
 
                     <div class="kb-form datepicker" data-status="" data-asset-types="1,2,4,5,6,7,8">
-                        <label for="kkkbFormInput18">신규일</label>
+                        <label for="kbFormInput18">신규일</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" id="kkkbFormInput18" placeholder="2021.01.01">
+                            <input type="text" id="kbFormInput18" placeholder="2021.01.01">
                         </div>
-                        <em class="validation">에러 메세지 영역 입니다.</em>
                     </div>
 
                     <div class="kb-form datepicker" data-status="" data-asset-types="2,4,5,6,7">
-                        <label for="kkkbFormInput19">만기일</label>
+                        <label for="kbFormInput19">만기일</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" id="kkkbFormInput19" placeholder="2021.01.01">
+                            <input type="text" id="kbFormInput19" placeholder="2021.01.01">
                         </div>
-                        <em class="validation"></em>
                     </div>
 
                     <div class="kb-form" data-status="">
-                        <label for="kkkbFormInput20">별명</label>
+                        <label for="kbFormInput20">별명</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" id="kkkbFormInput20" value="" placeholder="최대 10자를 입력해주세요">
+                            <input type="text" id="kbFormInput20" value="" placeholder="최대 10자를 입력 가능">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
-                        <em class="validation"></em>
                     </div>
                 </section>
 
                 <div class="sticky-bottom">
                     <div class="btn-area">
-                        <button class="btn-solid_sticky lv2"><span>취소</span></button>
-                        <button class="btn-solid_sticky"><span>확인</span></button>
+                        <button class="btn-solid gray"><span>취소</span></button>
+                        <button class="btn-solid"><span>확인</span></button>
                     </div>
                 </div>
 
@@ -269,14 +248,14 @@
 		</div>
 		<!-- // app-container -->
 
-		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<!-- Layer (modal, bottom sheet) // -->
 		<div class="layered">
             @@include('@@webRoot/html/asset/layered/mys_as_04_01_00_p1.html')
             @@include('@@webRoot/html/asset/layered/mys_as_04_02_00_p1.html')
             @@include('@@webRoot/html/asset/layered/mys_as_04_01_00_p2.html')
             @@include('@@webRoot/html/_layered/bs-calendar.html')
 		</div>
-		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+		<!-- // Layer (modal, bottom sheet) -->
 	</div>
 
 	<!-- Script -->

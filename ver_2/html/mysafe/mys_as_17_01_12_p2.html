@@ -36,7 +36,7 @@
                 <section class="kb-sec etc-input-form mt28">
                     <!-- <div class="mt28 etc-input-form"> -->
                         <!-- <em class="tit etc-value-titlte empty-etc-unit-info mt28">*기타자산</em> -->
-                        <div class="kb-form not-ready no-transition etc-kind-form safe-flex100 mt28" data-status="">
+                        <div class="kb-form etc-kind-form safe-flex100 mt28" data-status="">
                             <label for="mysafe_10" class="etc-unit-title required">기타자산</label>
                             <div class="kb-form_inner form-select mt4">
                                 <button type="button" class="selected-option" data-call-layered="MYS_AS_17_01_12_BS1" id="mysafe_09"></button>
@@ -50,7 +50,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="kb-form not-ready no-transition etc-input-kind safe-flex100 safe-display-none">
+                        <div class="kb-form etc-input-kind safe-flex100 safe-display-none">
                             <!-- <label for="mysafe_11"></label> -->
                             <div class="kb-form_inner form-text">
                                 <input type="text" class="etc-kind-input" id="mysafe_11" onkeydown="all_on_fun()" placeholder="최대 10자를 입력해주세요." value="" maxlength="10">
@@ -61,16 +61,16 @@
                 </section>
                 <section class="kb-sec mt28">
                     <!-- <em class="tit etc-trans-titlte empty-etc-unit-info mt28">*금액</em> -->
-                    <div class="kb-form not-ready no-transition etc-input-value safe-flex100" data-status="info">
+                    <div class="kb-form etc-input-value safe-flex100" data-status="">
                         <label for="mysafe_12" class="required">금액</label>
                         <div class="kb-form_inner form-text">
                             <input type="text" inputmode="numeric" class="etc-value-input" id="mysafe_12" placeholder="값을 입력 하세요." value="10000000" data-unit="" data-action="autoSeperator"><span class="unit" style="left: 75.7031px;">원</span>
-                        <!-- <p class="my-etc-value-info info-msg">숫자만 입력 가능합니다.</p> -->
-                    </div>
+                        </div>
+                        <em class="validation">숫자만 입력 가능합니다.</em>
                 </section>
                 <section class="kb-sec mt28">
                     <!-- <em class="tit etc-memo-titlte empty-etc-unit-info mt28">메모</em> -->
-                    <div class="kb-form not-ready no-transition etc-input-memo safe-flex100">
+                    <div class="kb-form etc-input-memo safe-flex100">
                         <label for="mysafe_13">메모</label>
                         <div class="kb-form_inner form-text">
                             <input type="text" class="etc-memo-input" id="mysafe_13" placeholder="최대 10자를 입력해주세요." value="지드래곤 운동화" maxlength="10">
@@ -80,8 +80,8 @@
                 </section>
                 <section class="kb-sec sticky-bottom">
                     <div class="btn-area">
-                        <button class="btn-solid_sticky lv2"><span>취소</span></button>
-                        <button class="btn-solid_sticky my-etc-enrollment"><span>저장</span></button>
+                        <button class="btn-solid gray"><span>취소</span></button>
+                        <button class="btn-solid my-etc-enrollment"><span>저장</span></button>
                     </div>
                 </section>
 
@@ -91,11 +91,11 @@
 		</div>
 		<!-- // app-container -->
 
-		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<!-- Layer (modal, bottom sheet) // -->
 		<div class="layered">
             @@include('@@webRoot/html/mysafe/layered/MYS_AS_17_01_12_BS1.html')
 		</div>
-		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+		<!-- // Layer (modal, bottom sheet) -->
 	</div>
 
 	<!-- Script -->

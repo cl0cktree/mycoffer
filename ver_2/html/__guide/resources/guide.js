@@ -31,7 +31,7 @@ $('.box').on('click','.btn-view-source',function(){
     $(this).toggleClass('is-active');
 });
 
-$('.box:not(.fold)').find('.flex-dl > dt').prepend('<button class="btn-solid_form btn-view-source"><span></span></button>');
+$('.box:not(.fold)').find('.flex-dl > dt').prepend('<button class="btn-solid form btn-view-source"><span></span></button>');
 
 // LEFT NAV
 var $container = $('.guide-container');

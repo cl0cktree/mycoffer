@@ -61,7 +61,7 @@ $('body')
                 floatingBannerHTML += '<div class=\"floating-banner_contents\">';
                 floatingBannerHTML += '<section class=\"kb-sec\">';
                 floatingBannerHTML += '<p class=\"not-today\"><button type=\"button\" class=\"cookie-hidden\" data-action=\"close\" data-expire-day=\"' + settings.fbExpireDay + '\"' + settings.fbFormName + '><span>' + settings.fbFormMsg + '</span></button></p>';
-                //floatingBannerHTML += '<p class=\"not-today\"><span class=\"form-checkbox_24\"><input type=\"checkbox\" class=\"cookie-hidden\" data-expire-day=\"' + settings.fbExpireDay + '\" id=\"' + settings.fbFormId + '\" name=\"' + settings.fbCookieName + '\" ' + settings.fbCheckboxChecked + '><label for=\"' + settings.fbCheckboxId + '\">' + settings.fbCheckboxMsg + '</label></span></p>';
+                //floatingBannerHTML += '<p class=\"not-today\"><span class=\"form-checkbox\"><input type=\"checkbox\" class=\"cookie-hidden\" data-expire-day=\"' + settings.fbExpireDay + '\" id=\"' + settings.fbFormId + '\" name=\"' + settings.fbCookieName + '\" ' + settings.fbCheckboxChecked + '><label for=\"' + settings.fbCheckboxId + '\">' + settings.fbCheckboxMsg + '</label></span></p>';
                 floatingBannerHTML += '<div class=\"fb-content\">';            
                 floatingBannerHTML += '<div class=\"fb-msg\">';            
                 if(settings.fbImgSrc != '') floatingBannerHTML += '<img class=\"fb-img\" src=\"' + settings.fbImgSrc + '\" alt="">';
@@ -80,7 +80,7 @@ $('body')
             //     floatingBannerHTML += '<div class=\"floating-banner_contents\">';
             //     floatingBannerHTML += '<section class=\"kb-sec\">';
             //     floatingBannerHTML += '<p class=\"not-today\"><button type=\"button\" class=\"cookie-hidden\" data-action=\"close\" data-expire-day=\"' + settings.fbExpireDay + '\"' + settings.fbFormName + '><span>' + settings.fbFormMsg + '</span></button></p>';
-            //     //floatingBannerHTML += '<p class=\"not-today\"><span class=\"form-checkbox_24\"><input type=\"checkbox\" class=\"cookie-hidden\" data-expire-day=\"' + settings.fbExpireDay + '\" id=\"' + settings.fbFormId + '\" name=\"' + settings.fbCookieName + '\" ' + settings.fbCheckboxChecked + '><label for=\"' + settings.fbCheckboxId + '\">' + settings.fbCheckboxMsg + '</label></span></p>';
+            //     //floatingBannerHTML += '<p class=\"not-today\"><span class=\"form-checkbox\"><input type=\"checkbox\" class=\"cookie-hidden\" data-expire-day=\"' + settings.fbExpireDay + '\" id=\"' + settings.fbFormId + '\" name=\"' + settings.fbCookieName + '\" ' + settings.fbCheckboxChecked + '><label for=\"' + settings.fbCheckboxId + '\">' + settings.fbCheckboxMsg + '</label></span></p>';
             //     floatingBannerHTML += '<div class=\"fb-content\">';            
             //     floatingBannerHTML += '<div class=\"fb-msg\">';            
             //     floatingBannerHTML += '<div>' + settings.fbMsg + '</div>';

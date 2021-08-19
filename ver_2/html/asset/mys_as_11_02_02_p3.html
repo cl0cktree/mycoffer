@@ -34,7 +34,7 @@
 					<h2 class="is-hidden">기본정보</h2>
 					<!-- 자가 // -->
 					<div class="possession">
-						<div class="kb-form my-purchase-price not-ready" data-status="">
+						<div class="kb-form my-purchase-price" data-status="">
 							<label for="purchasePrice2" class="required">나의 매입가</label>
 							<div class="kb-form_inner form-text">
 								<input type="text" inputmode="numeric" id="purchasePrice2" placeholder="만원" value="100000" data-unit="만원" data-action="autoSeperator" maxlength="9">
@@ -42,21 +42,21 @@
 							</div>
 							<em class="validation">나의 매입가를 입력해 주세요.</em>
 						</div>
-						<div class="kb-form datepicker not-ready" data-status="">
+						<div class="kb-form datepicker" data-status="">
 							<label for="purchaseDate2">매입일</label>
 							<div class="kb-form_inner form-text">
 								<input type="text" id="purchaseDate2" readonly="" value="2021.05.05">
 							</div>
 							<em class="validation">매입일을 정확하게 입력해 주세요</em>
 						</div>
-						<div class="kb-form not-ready" data-status="">
+						<div class="kb-form" data-status="">
 							<label for="depositPrice2">세입자 보증금</label>
 							<div class="kb-form_inner form-text">
 								<input type="text" inputmode="numeric" id="depositPrice2" placeholder="만원" value="50000" data-unit="만원" data-action="autoSeperator" maxlength="9">
 								<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
 							</div>
 						</div>
-						<div class="kb-form not-ready" data-status="">
+						<div class="kb-form" data-status="">
 							<label for="monthlyPrice2">세입자 월세</label>
 							<div class="kb-form_inner form-text">
 								<input type="text" inputmode="numeric" id="monthlyPrice2" placeholder="만원" value="100" data-unit="만원" data-action="autoSeperator" maxlength="9">
@@ -67,7 +67,7 @@
 					<!-- // 자가 -->
 					<!-- (전세/월세) // -->
 					<div class="rental" style="display:block;">
-						<div class="kb-form not-ready" data-status="">
+						<div class="kb-form" data-status="">
 							<label for="myDepositPrice2" class="required">나의 보증금</label>
 							<div class="kb-form_inner form-text">
 								<input type="text" inputmode="numeric" id="myDepositPrice2" placeholder="만원" value="50000" data-unit="만원" data-action="autoSeperator" maxlength="9">
@@ -75,14 +75,14 @@
 							</div>
 							<em class="validation">나의 보증금을 입력해 주세요.</em>
 						</div>
-						<div class="kb-form not-ready" data-status="">
+						<div class="kb-form" data-status="">
 							<label for="myMonthlyPrice2">나의 월세</label>
 							<div class="kb-form_inner form-text">
 								<input type="text" inputmode="numeric" id="myMonthlyPrice2" placeholder="만원" value="150" data-unit="만원" data-action="autoSeperator" maxlength="9">
 								<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
 							</div>
 						</div>
-						<div class="kb-form datepicker not-ready" data-status="">
+						<div class="kb-form datepicker" data-status="">
 							<label for="contractDate2">계약일</label>
 							<div class="kb-form_inner form-text">
 								<input type="text" id="contractDate2" readonly="" value="2020.05.05">
@@ -90,7 +90,7 @@
 							<em class="validation">계약일을 입력해 주세요</em>
 							<em class="validation">계약일을 정확하게 입력해 주세요</em>
 						</div>
-						<div class="kb-form datepicker not-ready" data-status="">
+						<div class="kb-form datepicker" data-status="">
 							<label for="maturityDate2">만기일</label>
 							<div class="kb-form_inner form-text">
 								<input type="text" id="maturityDate2" readonly="" value="2022.05.04">
@@ -107,7 +107,7 @@
 					<h2 class="h4">대출계좌 선택</h2>
 					<ul class="list">
 						<li>
-							<span class="form-checkbox_24"><input type="checkbox" id="loanAccount_12" name="radioSample022" checked=""><label for="loanAccount_12">KB국민은행 자동차대출</label></span>
+							<span class="form-checkbox"><input type="checkbox" id="loanAccount_12" name="radioSample022" checked=""><label for="loanAccount_12">KB국민은행 자동차대출</label></span>
 							<dl class="description-list">
 								<dt>
 									<span class="account">81691604111122</span>
@@ -116,7 +116,7 @@
 							</dl>
 						</li>
 						<li>
-							<span class="form-checkbox_24"><input type="checkbox" id="loanAccount_22" name="radioSample022"><label for="loanAccount_22">신한은행 신용대출</label></span>
+							<span class="form-checkbox"><input type="checkbox" id="loanAccount_22" name="radioSample022"><label for="loanAccount_22">신한은행 신용대출</label></span>
 							<dl class="description-list">
 								<dt>
 									<span class="account">81691604111122</span>
@@ -134,7 +134,7 @@
 				</section>
 				<section class="kb-sec">
 					<h2 class="is-hidden">별병</h2>
-					<div class="kb-form not-ready" data-status="">
+					<div class="kb-form" data-status="">
 						<label for="nickname2">별명</label>
 						<div class="kb-form_inner form-text">
 							<input type="text" id="nickname2" maxlength="10" value="내집마련" placeholder="최대 10자">
@@ -153,8 +153,8 @@
 			
 				<div class="sticky-bottom">
 					<div class="btn-area">
-						<button class="btn-solid_sticky lv2" data-action="myHouseDelete"><span>삭제</span></button>
-						<button type="button" class="btn-solid_sticky"><span>저장</span></button>
+						<button class="btn-solid gray" data-action="myHouseDelete"><span>삭제</span></button>
+						<button type="button" class="btn-solid"><span>저장</span></button>
 					</div>
 				</div>
 			</main>
@@ -163,11 +163,11 @@
 		</div>
 		<!-- // app-container -->
 
-		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<!-- Layer (modal, bottom sheet) // -->
 		<div class="layered">
 			@@include('@@webRoot/html/_layered/bs-calendar.html')
 		</div>
-		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+		<!-- // Layer (modal, bottom sheet) -->
 	</div>
 
 	<!-- Script -->

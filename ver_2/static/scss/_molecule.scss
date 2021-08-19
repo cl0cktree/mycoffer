@@ -8,8 +8,10 @@
 .btn-area a:last-child,
 .btn-area button:last-child{border-top-right-radius: 2px; border-bottom-right-radius: 2px;}
 .btn-area .lv2{flex:0 0 40%;}
+.btn-area .gray{flex:0 0 40%;}
 .btn-area.equal .lv2{flex:0 0 50%;}
 .btn-area.center{align-items:center;text-align:center;}
+.btn-area.right{align-items:right;text-align:right;}
 .btn-area a[class*=btn-line]:not(:first-child),
 .btn-area button[class*=btn-line]:not(:first-child){margin-left:4px;}
 
@@ -47,7 +49,7 @@
 .other-login{position:fixed;bottom:0;left:0;z-index:$level40;width:100%;padding-bottom:12px;text-align:center;background-color:$kb-ui11;}
 .other-login .btn-text span{@include text($size:$text03,$weight:bold);}
 .other-login .btn-text i{@include iconBullet($direction: 'up', $width: 13px, $height: 7px, $thick: 2px, $color: #52565d);top:-3px;margin-left:10px;}
-.certificate-center{position:fixed;bottom:45px;left:0;z-index:$level40;width:100%;padding:12px 0;text-align:center;background-color:$kb-ui11;}
+.certificate-center{position:fixed;bottom:45px;left:0;z-index:$level40;width:100%;padding:12px 0 32px 0;text-align:center;background-color:$kb-ui11;}//20210818bhs수정
 .certificate-center .btn-text span{@include text($size:$text03,$line-height:1);color:$kb-ui03;}
 
 //사용시 sticky-bottom-menu 높이 + 48px 만큼 app-content에 padding-bottom을 줘야함
@@ -146,7 +148,6 @@ ul.radio-group > li + li{margin-top:20px;}
 
 //form
 .form-checkbox{@include checkbox(24px);}
-.form-checkbox_24{@include checkbox(24px)}
 .form-checkbox_20{@include checkbox(20px)}
 .form-radio{@include radio;}
 @include smallDevice{
@@ -209,20 +210,20 @@ ul.radio-group > li + li{margin-top:20px;}
 }
 .form-text input[type=text],
 .form-text input[type=password]{@include text($size:19px, $line-height: 32px, $weight: bold);}
-.form-text input[inputmode=numeric]{@include number($size:21px, $line-height:32px, $weight: bold);text-align:right;}
+.form-text input[inputmode=numeric]{@include number($size:21px, $line-height:32px, $weight: bold);text-align:left;}
 .form-text input[inputmode=numeric]::placeholder{text-align:right;}
 .form-text .unit{@include text($size:20px, $weight: bold);margin-top:2px;margin-left:4px;}/*position:absolute;left:4px;top:3px;max-width:calc(100% - 54px);*/
 .form-text .btn-data-clear{display:none;margin-left:auto;}
-.form-text .btn-solid_form,
-.form-text .btn-line_form,
-.form-text .btn-icon_form{position:relative;z-index:1;margin-left:4px;}
-.form-text .btn-icon_form.btn-search{margin-left:15px;}//닫기버튼 여백 1px 뺌
+.form-text .btn-solid.form,
+.form-text .btn-line.form,
+.form-text .btn-search{position:relative;z-index:1;margin-left:4px;}
+.form-text .btn-search{width:24px;height:24px;padding:1px;margin-left:15px;}//닫기버튼 여백 1px 뺌
 .form-text .measurement{@include number(24px);position:absolute;top:-9999px;opacity:0;max-width:calc(100% - 54px)}
 .form-text input:focus ~ .btn-data-clear{display:block;}
 .form-text.is-focused .btn-data-clear{display:block;}
 .is-disabled .form-text .unit{color:$kb-ui06;}
-.is-disabled .form-text .btn-solid_form,
-.is-disabled .form-text .btn-line_form{display:none;}
+.is-disabled .form-text .btn-solid.form,
+.is-disabled .form-text .btn-line.form{display:none;}
 .is-readonly .form-text .unit{color:$kb-ui02;}
 
 .form-radio-set {display: block; border-bottom: 0;}
@@ -404,7 +405,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .complete-msg p,
 .no-data p{@include text($size: $text02);margin-top:12px;}
 .complete-msg .tit,
-.no-data .no-data-tit{@include heading($size: $heading02);display:block;margin-top:23px;}
+.no-data .no-data-tit{@include heading($size: $heading02);display:block;margin-top:32px;}
 .complete-msg .tit + p,
 .no-data .no-data-tit + p{margin-top:11px;color:$kb-ui04;}
 

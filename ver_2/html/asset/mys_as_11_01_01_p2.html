@@ -23,29 +23,36 @@
 			<!-- app-content // -->
 			<main class="app-content my-asset">						
 				<section class="kb-sec selected-address">
-					<div class="my-address-box">
-						<h2 class="tit">공작</h2>
-						<p class="address">서울특별시 영등포구 여의도동</p>
+					<div class="require-txt">						
+						<p class="simple-message">표시된 항목은 필수 입력 사항입니다.</p>
 					</div>
-					<p class="require-txt">* 표시된 항목은 필수 입력 사항입니다.</p>
+					<div class="my-address-box">
+						<h2 class="tit">송도 더샵센트럴 시티 1단지</h2>
+						<p class="address">인천 연수구 송도국제대로 261</p>
+					</div>
 				</section>
 				<section class="kb-sec my-house">
 					<h2 class="is-hidden">기본정보</h2>
 					<div class="kb-form" data-status="">
 						<label for="housingTypeRadio1" class="required">주거 형태</label>
 						<div class="kb-form_inner form-radio-set">
-							<ul class="flex-box" data-col="2">
-								<li><span class="form-radio"><input type="radio" id="housingTypeRadio1" name="housingType" checked="" value="자가"><label for="housingTypeRadio1">자가</label></span></li>
-								<li><span class="form-radio"><input type="radio" id="housingTypeRadio2" name="housingType" value="전세/월세"><label for="housingTypeRadio2">전세/월세</label></span></li>
+							<ul class="btn-segmented_radio">
+								<li>
+									<input type="radio" name="btnradioHouseType" id="btnradioHouseType1" checked="">
+									<label for="btnradioHouseType1">자가</label>
+								</li>
+								<li>
+									<input type="radio" name="btnradioHouseType" id="btnradioHouseType2">
+									<label for="btnradioHouseType2">전세/월세</label>
+								</li>
 							</ul>
 						</div>
-						<em class="validation"></em>
 					</div>
 					<div class="selected">
 						<div class="kb-form_multi" data-status="">
-							<strong class="tit">동호수</strong>
-							<div class="kb-form not-ready">
-								<label for="aptNumber">동호수</label>
+							<strong class="tit">동호</strong>
+							<div class="kb-form">
+								<label for="aptNumber">동호</label>
 								<div class="kb-form_inner form-select">
 									<button type="button" class="selected-option">동</button>
 									<select name="" id="aptNumber" title="동 선택">
@@ -56,23 +63,21 @@
 										<option value="">4</option>
 									</select>
 								</div>
-								<em class="validation">에러 메세지 영역 입니다.</em>
 							</div>
-							<div class="kb-form not-ready">
+							<div class="kb-form">
 								<div class="kb-form_inner form-select">
-									<button type="button" class="selected-option">호수</button>
-									<select name="" id="aptNumber_2" title="호수 선택">
-										<option value="">호수</option>
+									<button type="button" class="selected-option">호</button>
+									<select name="" id="aptNumber_2" title="호 선택">
+										<option value="">호</option>
 										<option value="">1</option>
 										<option value="">2</option>
 										<option value="">3</option>
 										<option value="">4</option>
 									</select>
 								</div>
-								<em class="validation">에러 메세지 영역 입니다.</em>
 							</div>
 						</div>
-						<div class="kb-form no-transition" data-status="">
+						<div class="kb-form" data-status="">
 							<label for="formSelectSample02" class="required">면적</label>
 							<div class="kb-form_inner form-select">
 								<button type="button" class="selected-option">선택 option 1</button>
@@ -84,33 +89,32 @@
 									<option value="">46.28㎡ 방1개, 욕실1개</option>
 								</select>
 							</div>
-							<em class="validation">Message</em>
 						</div>
 					</div>
 					<div class="possession">
-						<div class="kb-form my-purchase-price not-ready" data-status="">
+						<div class="kb-form my-purchase-price" data-status="error">
 							<label for="purchasePrice" class="required">나의 매입가</label>
 							<div class="kb-form_inner form-text">
 								<input type="text" inputmode="numeric" id="purchasePrice" placeholder="만원" maxlength="9" value="" data-unit="만원" data-action="autoSeperator">
 								<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-							</div>
-							<em class="info-msg">시세(KB부동산 평균가 2021.04.30 기준) <br>12억 1,000만원</em>
+							</div>							
 							<em class="validation">나의 매입가를 입력해 주세요.</em>
+							<p class="info-msg">시세(KB부동산 평균가 2021.04.30 기준)<br><span class="c-blue">12억 1,000만원</span></p>
 						</div>
-						<div class="kb-form datepicker not-ready" data-status="">
+						<div class="kb-form datepicker" data-status="">
 							<label for="purchaseDate">매입일</label>
 							<div class="kb-form_inner form-text">
 								<input type="text" id="purchaseDate" readonly="">
 							</div>
 						</div>
-						<div class="kb-form not-ready" data-status="">
+						<div class="kb-form" data-status="">
 							<label for="depositPrice">세입자 보증금</label>
 							<div class="kb-form_inner form-text">
 								<input type="text" inputmode="numeric" id="depositPrice" placeholder="만원" maxlength="9" value="" data-unit="만원" data-action="autoSeperator">
 								<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
 							</div>
 						</div>
-						<div class="kb-form not-ready" data-status="">
+						<div class="kb-form" data-status="">
 							<label for="monthlyPrice">세입자 월세</label>
 							<div class="kb-form_inner form-text">
 								<input type="text" inputmode="numeric" id="monthlyPrice" placeholder="만원" maxlength="9" value="" data-unit="만원" data-action="autoSeperator">
@@ -119,7 +123,7 @@
 						</div>
 					</div>
 					<div class="rental">
-						<div class="kb-form not-ready" data-status="">
+						<div class="kb-form" data-status="error">
 							<label for="myDepositPrice" class="required">나의 보증금</label>
 							<div class="kb-form_inner form-text">
 								<input type="text" inputmode="numeric" id="myDepositPrice" placeholder="만원" value="" data-unit="만원" data-action="autoSeperator">
@@ -127,14 +131,14 @@
 							</div>
 							<em class="validation">나의 보증금을 입력해 주세요.</em>
 						</div>
-						<div class="kb-form not-ready" data-status="">
+						<div class="kb-form" data-status="">
 							<label for="myMonthlyPrice">나의 월세</label>
 							<div class="kb-form_inner form-text">
 								<input type="text" inputmode="numeric" id="myMonthlyPrice" placeholder="만원" maxlength="9" value="" data-unit="만원" data-action="autoSeperator">
 								<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
 							</div>
 						</div>
-						<div class="kb-form datepicker not-ready" data-status="">
+						<div class="kb-form datepicker" data-status="error">
 							<label for="contractDate">계약일</label>
 							<div class="kb-form_inner form-text">
 								<input type="text" id="contractDate" readonly="">
@@ -142,7 +146,7 @@
 							<em class="validation">계약일을 입력해 주세요</em>
 							<em class="validation">계약일을 정확하게 입력해 주세요</em>
 						</div>
-						<div class="kb-form datepicker not-ready" data-status="">
+						<div class="kb-form datepicker" data-status="error">
 							<label for="maturityDate">만기일</label>
 							<div class="kb-form_inner form-text">
 								<input type="text" id="maturityDate" readonly="">
@@ -157,19 +161,19 @@
 					<h2 class="h4">대출계좌 선택</h2>
 					<ul class="list">
 						<li>
-							<span class="form-checkbox_24"><input type="checkbox" id="loanAccount_1" name="radioSample02"><label for="loanAccount_1">KB국민은행 자동차대출</label></span>
+							<span class="form-checkbox"><input type="checkbox" id="loanAccount_1" name="radioSample02"><label for="loanAccount_1">KB국민은행 자동차대출</label></span>
 							<dl class="description-list">
 								<dt>
-									<span class="account">81691604111122</span>
+									<strong class="account num">81691604111122</strong>
 								</dt>
 								<dd><strong class="amount"><span class="num">13,000,000</span>원</strong></dd>
 							</dl>
 						</li>
 						<li>
-							<span class="form-checkbox_24"><input type="checkbox" id="loanAccount_2" name="radioSample02"><label for="loanAccount_2">신한은행 신용대출</label></span>
+							<span class="form-checkbox"><input type="checkbox" id="loanAccount_2" name="radioSample02"><label for="loanAccount_2">신한은행 신용대출</label></span>
 							<dl class="description-list">
 								<dt>
-									<span class="account">81691604111122</span>
+									<strong class="account num">81691604111122</strong>
 								</dt>
 								<dd><strong class="amount"><span class="num">13,000,000</span>원</strong></dd>
 							</dl>
@@ -178,7 +182,7 @@
 				</section>
 				<section class="kb-sec">
 					<h2 class="is-hidden">별명</h2>
-					<div class="kb-form not-ready" data-status="">
+					<div class="kb-form" data-status="">
 						<label for="nickname">별명</label>
 						<div class="kb-form_inner form-text">
 							<input type="text" id="nickname" maxlength="10" value="" placeholder="최대 10자">
@@ -196,8 +200,8 @@
 				</section>
 				<div class="sticky-bottom">
 					<div class="btn-area">
-						<button class="btn-solid_sticky lv2"><span>이전</span></button>
-						<button type="button" class="btn-solid_sticky" data-action="close"><span>등록</span></button>
+						<button class="btn-solid gray"><span>이전</span></button>
+						<button type="button" class="btn-solid" data-action="btnApply"><span>등록</span></button>
 					</div>
 				</div>
 			</main>
@@ -206,11 +210,11 @@
 		</div>
 		<!-- // app-container -->
 
-		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<!-- Layer (modal, bottom sheet) // -->
 		<div class="layered">
 			@@include('@@webRoot/html/_layered/bs-calendar.html')
 		</div>
-		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+		<!-- // Layer (modal, bottom sheet) -->
 	</div>
 
 	<!-- Script -->
@@ -236,6 +240,16 @@
                 }
             });  
         }
+
+		
+		//alert
+		$('button[data-action=btnApply]').on('click',function(){
+            modalPopup({
+                title: "",
+                message: "나의 보증금을 입력해 주세요.<br>계약일을 입력해 주세요.<br>오늘까지만 입력할 수 있습니다.<br>계약일을 정확화게 입력해 주세요.<br>만기일을 입력해 주세요.<br>만기일을 정확하게 입력해 주세요.<br>만기일이 계약일보다 빠릅니다.",
+                type: "alert"
+            });
+        });
 	</script>
 </body>
 

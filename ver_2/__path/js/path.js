@@ -287,3 +287,21 @@ document.addEventListener('keydown',function(event){
         if(event.keyCode == 123) $('.mobile-view').trigger('click');
     }
 });
+
+$(document).ready(function() {
+    $("body").append("<div class='follow-memo' style='display: none;'></div>");
+    var $memo = $(".follow-memo");
+    $(window).on("mousemove", function(e) {
+        $memo.css({
+            "transform": "translate(" + (e.pageX + 15) + "px," + (e.pageY - 10) + "px)"
+        })
+    });
+    $("#root_tree a").on("mouseover", function() {
+        if ($(this).data("memo")) {
+            $memo.text($(this).data("memo")).show();
+        }
+    })
+    $("#root_tree a").on("mouseleave", function() {
+        $memo.text("").hide();
+    })
+});

@@ -133,9 +133,15 @@
 				<section class="kb-sec">
 					<h2 class="is-hidden">저금통 거래내역 목록</h2>
                     <div class="account-detail">
-                        <div class="search-con">
-                            <span>2021.01.01~2021.01.01</span>
-                            <button type="button" class="btn-search" data-call-layered="bsGoalHistorySearch" ><i class="icon-search_24">search</i></button>
+                        <div class="condition-area">
+                            <button class="btn-condition" data-call-layered="bsGoalHistorySearch">
+                                <div>
+                                    <div class="sorting-status">
+                                        <span>2021.01.01~2021.01.01</span>
+                                    </div>                                    
+                                    <i class="arrow">조회조건 선택</i>
+                                </div>
+                            </button>
                         </div>
                         <div class="line-list-wrap type-time-line">
                             <ul class="d-list">
@@ -199,13 +205,13 @@
 		</div>
 		<!-- // app-container -->
 
-		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<!-- Layer (modal, bottom sheet) // -->
 		<div class="layered">
 			@@include('@@webRoot/html/goal/layered/mys_go_02_01_03_p3.html')
 			@@include('@@webRoot/html/goal/layered/mys_go_02_01_00_p1.html')
 			@@include('@@webRoot/html/_layered/bs-calendar.html')
 		</div>
-		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+		<!-- // Layer (modal, bottom sheet) -->
 	</div>
 
 	<!-- Script -->
