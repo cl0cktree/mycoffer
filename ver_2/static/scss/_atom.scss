@@ -25,7 +25,7 @@
 [class*=btn-solid].is-disabled{background-color:$kb-ui08;color:$kb-ui06;}
 [class*=btn-solid].lv2,
 [class*=btn-solid].gray{background-color:$kb-ui09;}
-.btn-solid.sm{height:4rem;}
+.btn-solid.sm{height:4rem;font-size:1.5rem;font-weight:normal;}
 .btn-solid.form{width:auto;height:3rem;padding:0 1.8rem;border-radius:3rem;background-color:$kb-ui04;font-size:$text03;color:$kb-ui11;}
 
 //Apple Homebar
@@ -89,12 +89,11 @@
 .error-msg{color:$color-red;}
 [data-status=success] .validation,
 .success-msg{display:block;color:$color-blue;}
-.info-msg:before{background-position: -6.6rem -11.8rem;}
 .error-msg:before,
-[data-status=error] .validation:before{background-position: -8.8rem -11.8rem;}
-[data-status=has-error] .validation:before{background-position: -8.8rem -11.8rem;}
+[data-status=error] .validation:before,
+[data-status=has-error] .validation:before{background-position: -2rem 0;}
 .success-msg:before,
-[data-status=success] .validation:before{background-position: -9rem -14rem;}
+[data-status=success] .validation:before{background-position: -4rem 0;}
 
 
 
@@ -116,11 +115,12 @@ ul[data-style=list].sm li,
 .annotation[data-style=exclamation]{padding-left:22px;color:$kb-ui04;}
 .annotation[data-style=exclamation]::before{content:'';width:2rem;height:2rem;top:0.1rem;background-image:url(../images/common/common.png);background-repeat:no-repeat;background-size:16.2rem;background-position: -6.6rem -11.8rem;}
 
-.icon-arrow-right{@include iconBullet($direction: 'right', $width: 9px, $height: 16px, $thick: 1px, $color: $kb-ui05);}
-.icon-arrow-left{@include iconBullet($direction: 'left', $width: 9px, $height: 16px, $thick: 1px, $color: $kb-ui05);}
-.icon-arrow-up{@include iconBullet($direction: 'up', $width: 16px, $height: 9px, $thick: 2px, $color: $kb-ui05);}
-.icon-arrow-down{@include iconBullet($direction: 'down', $width: 16px, $height: 9px, $thick: 2px, $color: $kb-ui05);}
-.icon-plus{@include iconPlus($width: 12px, $height: 12px, $thick: 2px, $padding: 4px)}
+.icon-arrow-right{@include iconBullet($direction: 'right', $width: 9px, $thick: 1px, $color: $kb-ui05);}
+.icon-arrow-left{@include iconBullet($direction: 'left', $width: 9px, $thick: 1px, $color: $kb-ui05);}
+.icon-arrow-up{@include iconBullet($direction: 'up', $width: 16px, $thick: 2px, $color: $kb-ui05);}
+.icon-arrow-down{@include iconBullet($direction: 'down', $width: 16px, $thick: 2px, $color: $kb-ui05);}
+.icon-plus{@include iconPlus($width: 12px, $thick: 2px, $padding: 4px)}
+.btn-text .icon-plus{position: relative;top:-1px;}//폰트때문에 아래로 쳐져보이는 현상 방지
 
 .btn-data-clear{display:inline-block;width:24px;height:24px;}
 .btn-switch{@include btnSwitchB}
@@ -224,7 +224,23 @@ textarea:focus + .byte .current{color:$kb-ui02;}
 .terms-conditions > ol > li > ol > li:nth-child(15)::before {content: '15.';}
 
 p.simple-message {position: relative;margin-top: 2rem; padding-left: 2.2rem; color: $kb-ui04; @include text($text03, normal);}
-p.simple-message::before {content: '*';position: absolute;left: 0.4rem;top: 0.4rem; font-size: 2rem;}
+p.simple-message::before {content:'';position: absolute;left:0;top:0;width:20px;height:20px;background:url(../images/common/common.png) no-repeat -24px -20px;background-size:160px;}
+
+.agree-grade-graph {display: flex;}
+.agree-grade-graph .grade {flex: 1; text-align: center; font-size: 14px; color: $kb-ui04;}
+.agree-grade-graph .grade::before {content: ''; display: block; margin-right: 1px; margin-bottom: 5px; height: 12px; background-color: #d8dde0;}
+.agree-grade-graph .grade-1::before {border-top-left-radius: 12px; border-bottom-left-radius: 12px;}
+.agree-grade-graph .grade-5::before {border-top-right-radius: 12px; border-bottom-right-radius: 12px;}
+.agree-grade-graph.is-grade-1 .grade-1,
+.agree-grade-graph.is-grade-2 .grade-2,
+.agree-grade-graph.is-grade-3 .grade-3,
+.agree-grade-graph.is-grade-4 .grade-4,
+.agree-grade-graph.is-grade-5 .grade-5 {color: $kb-ui02;}
+.agree-grade-graph.is-grade-1 .grade-1::before {background-color: #009fde;}
+.agree-grade-graph.is-grade-2 .grade-2::before {background-color: #237fff;}
+.agree-grade-graph.is-grade-3 .grade-3::before {background-color: #00a697;}
+.agree-grade-graph.is-grade-4 .grade-4::before {background-color: #ff5583;}
+.agree-grade-graph.is-grade-5 .grade-5::before {background-color: #ff5757;}
 
 
 //잔여시간

@@ -21,9 +21,40 @@
 		<div class="app-container">
 
 			<!-- app-content // -->
-			<main class="app-content pop-my-asset">
+			<main class="app-content">
+
+				<section class="kb-sec bg-gray">
+					<p class="required">표시된 항목은 필수 입력 사항입니다.</p>
+				</section>
 
 				<section class="kb-sec mycar-add-forms">
+					<h2 class="is-hidden">My Car 수정 입력폼</h2>
+
+					<div class="kb-form" data-status="">
+						<label for="mycarModifyForm4" class="required">등급</label>
+						<div class="kb-form_inner form-select">
+							<button type="button" class="selected-option"></button>
+							<select name="" id="mycarModifyForm4" title="등급 선택">
+								<option value="">등급</option>
+								<option value="">1.4 터보 튜너 패키지 (2016~현재)</option>
+								<option value="">1.4 터보 스마트 (2016~현재)</option>
+								<option value="" selected="">1.4 터보 모던 (2016~현재)</option>
+								<option value="">1.4 터보 프리미엄 (2016~현재)</option>
+							</select>
+						</div>
+					</div>
+					<div class="kb-form" data-status="">
+						<label for="mycarModifyForm5" class="required">연식</label>
+						<div class="kb-form_inner form-select">
+							<button type="button" class="selected-option"></button>
+							<select name="" id="mycarModifyForm5" title="연식 선택">
+								<option value="">연식</option>
+								<option value="" selected="">2016</option>
+								<option value="">2017</option>
+								<option value="">2018</option>
+							</select>
+						</div>
+					</div>
 					<div class="kb-form" data-status="">
 						<label for="mycarModifyForm2">주행거리(Km)</label>
 						<div class="kb-form_inner form-text">
@@ -41,9 +72,9 @@
 				</section>
 
 				<section class="kb-sec loan-account-selection">
-					<strong class="tit">My Car 대출계좌 선택</strong><!-- 수정 2021-06-24 -->
+					<h2 class="tit">My Car 대출계좌 선택</h2>
 					<ul class="lists">
-						<li class="form-checkbox">
+						<li class="form-checkbox align-top">
 							<input type="checkbox" id="loanAccount1c">
 							<label for="loanAccount1c">
 								<span class="name">국민은행 자동차대출</span>
@@ -51,7 +82,7 @@
 								<span class="amount"><span class="num">13,000,000</span>원</span>
 							</label>
 						</li>
-						<li class="form-checkbox">
+						<li class="form-checkbox align-top">
 							<input type="checkbox" id="loanAccount2c">
 							<label for="loanAccount2c">
 								<span class="name">신한은행 신용대출</span>
@@ -62,12 +93,12 @@
 					</ul>
 				</section>
 
-				<section class="kb-sec sticky-bottom">
+				<div class="sticky-bottom">
 					<div class="btn-area">
 						<button type="button" class="btn-solid gray"><span>삭제</span></button>
-						<button type="button" class="btn-solid" data-action="close"><span>저장</span></button>
+						<button type="button" class="btn-solid"><span>수정</span></button>
 					</div>
-				</section>
+				</div>
 
 			</main>
 			<!-- // app-content -->

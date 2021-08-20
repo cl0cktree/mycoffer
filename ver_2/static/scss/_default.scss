@@ -77,6 +77,7 @@ button:disabled{cursor:default;}
 .mb48{margin-bottom:4.8rem;}
 .pb20{padding-bottom:2.0rem;}
 .pl2{padding-left: 0.2rem;}
+
 //Default
 html,body{height:100%;}
 body{min-width:320px;font-family:'KBFGText',sans-serif;font-size:1.6rem;line-height:1;color:$kb-ui02;letter-spacing:-0.02em;word-break:keep-all;word-wrap:break-word;}
@@ -132,6 +133,7 @@ textarea{width:100%;padding:1.6rem;font-size:1.6rem;}
 .app[data-page=submain] .kb-sec:not(:first-child).bg-gray,
 .popup_contents .kb-sec.bg-gray,
 .kb-sec.bg-gray{background-color:$kb-ui10;}
+.kb-sec.bg-gray > .required {@include text($text03); color: $kb-ui04;}
 .app[data-page=submain] .kb-sec:not(:first-child){background-color:$kb-ui11;}
 
 .iphone {
@@ -171,7 +173,3 @@ body {
 	}
 }
 
-//NEW STARBANKIKNG
-[data-channel=ch_star] .app[data-page=submain] .app-header{display:none;}
-[data-channel=ch_star] .app[data-page=submain]:before,
-[data-channel=ch_star] .app[data-page=submain] .app-lnb.is-fixed .app-gnb-wrap{background-color:$kb-ui11;}

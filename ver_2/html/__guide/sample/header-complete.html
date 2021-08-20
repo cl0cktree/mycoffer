@@ -13,7 +13,7 @@
         
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
             'pageTit':'타이틀영역',
-            'type':'back'
+            'type':'complete'
         })
         
 
@@ -46,21 +46,7 @@
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
     <script>
-        $('button[data-action=callModal]').on('click',function(){
-            modalPopup({
-                title: "스크립트 모달",
-                message: "스크립트를 통한 모달 오픈 샘플 입니다.",
-                type: "confirm",
-                textOkButton: "변경",
-                textCancelButton: "닫기",
-                onOk: function() {
-                    console.log('DEMO 3 ok');
-                },
-                onCancel: function() {
-                    console.log('DEMO 3 cancel');
-                }
-            });
-        });
+        if($('#headerComplete', parent.document).hasClass('starbanking')) $('html').attr('data-channel','ch_star');
     </script>
 
 </body>

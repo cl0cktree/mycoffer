@@ -21,22 +21,32 @@
 		<div class="app-container">
 
 			<!-- app-content // -->
-			<main class="app-content pop-my-asset">
+			<main class="app-content">
+
+				<section class="kb-sec bg-gray">
+					<ul class="sm" data-style="list">
+						<li>직접 입력한 자동차 정보는 자동차 총 자산금액에 추가되지만, 시세 변동을 확인할 수 없습니다.</li>
+						<li><span class="required">표시된 항목은 필수 입력 사항입니다.</span></li>
+					</ul>
+				</section>
 
 				<section class="kb-sec mycar-add-forms">
-					<div class="pop-notice">
-						<span>직접 입력한 자동차 정보는 자동차 총 자산금액에 추가되지만, 시세 변동을 확인할 수 없습니다.</span><!-- 수정 2021-06-24 -->
-						<em>* 표시된 항목은 필수 입력 사항입니다.</em>
-					</div>
+					<h2 class="is-hidden">My Car 직접입력 입력폼</h2>
+					
 					<div class="kb-form" data-status="">
 						<label for="mycarInputRadio1" class="required">자동차 소유 형태</label>
 						<div class="kb-form_inner form-radio-set">
-							<ul class="flex-box" data-col="2">
-								<li><span class="form-radio"><input type="radio" id="mycarInputRadio1" name="carownership" checked=""><label for="mycarInputRadio1">본인소유</label></span></li>
-								<li><span class="form-radio"><input type="radio" id="mycarInputRadio2" name="carownership"><label for="mycarInputRadio2">리스/장기렌트</label></span></li>
+							<ul class="btn-segmented_radio">
+								<li>
+									<input type="radio" name="carownership" id="mycarInputRadio1" checked="">
+									<label for="mycarInputRadio1">본인소유</label>
+								</li>
+								<li>
+									<input type="radio" name="carownership" id="mycarInputRadio2">
+									<label for="mycarInputRadio2">리스/장기렌트</label>
+								</li>
 							</ul>
 						</div>
-						<em class="validation"></em>
 					</div>
 					<div class="kb-form" data-status="error">
 						<label for="mycarInputForm1" class="required">모델명</label>
@@ -64,9 +74,9 @@
 				</section>
 
 				<section class="kb-sec loan-account-selection">
-					<strong class="tit">My Car 대출계좌 선택</strong><!-- 수정 2021-06-24 -->
+					<h2 class="tit">My Car 대출계좌 선택</h2>
 					<ul class="lists">
-						<li class="form-checkbox">
+						<li class="form-checkbox align-top">
 							<input type="checkbox" id="loanAccount1b">
 							<label for="loanAccount1b">
 								<span class="name">국민은행 자동차대출</span>
@@ -74,7 +84,7 @@
 								<span class="amount"><span class="num">13,000,000</span>원</span>
 							</label>
 						</li>
-						<li class="form-checkbox">
+						<li class="form-checkbox align-top">
 							<input type="checkbox" id="loanAccount2b">
 							<label for="loanAccount2b">
 								<span class="name">신한은행 신용대출</span>
@@ -85,11 +95,11 @@
 					</ul>
 				</section>
 
-				<section class="kb-sec sticky-bottom">
+				<div class="sticky-bottom">
 					<div class="btn-area">
 						<button type="button" class="btn-solid"><span>등록</span></button>
 					</div>
-				</section>
+				</div>
 
 			</main>
 			<!-- // app-content -->

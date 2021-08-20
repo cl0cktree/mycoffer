@@ -11,13 +11,12 @@
 <body>
 	@@include('@@webRoot/html/_include/app-a11y.html')
 	<div class="app">
-		<!-- app-header (for MyMoney) //-->
-        <!-- [D] 21-07-05 수정 : 텍스트 수정 -->
-		@@include('@@webRoot/html/_include/app-integrated-header.html',{
-			'pageTit' :'직접 등록',
-            'type':'close'
-		}) 
-		<!-- // app-header (for MyMoney) -->
+        <!-- app-header (for MyMoney) //-->
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'직접 등록',
+            'type':''
+        })
+        <!-- // app-header -->
 
 		<!-- app-container //-->
 		<div class="app-container">
@@ -47,19 +46,31 @@
                 <section class="kb-sec user-register-forms more-view-box">
                     <!-- 날짜 및 시간//-->
                     <div class="kb-form more-view-item" data-status="error" data-view-option="show">
+                        <strong class="label-tit">날짜 및 시간</strong>
                         <!-- [D] 수정 21-06-04 : 캘린더 열리게 추가 //-->
                         <div class="date-time-selector">
                             <input type="text" title="날짜" value="2021.08.31" readonly="" data-call-layered="bsCalendar">
-                            <input type="text" title="시간" value="02:00~03:00" readonly="" data-call-layered="bsTime">
+                        </div>
+                        <div class="kb-form" data-status="">
+                            <div class="kb-form_inner form-select">
+                                <button type="button" class="selected-option"></button>
+                                <select name="" id="formSelectSample01" title="타이틀">
+                                    <option value="">최초 메세지</option>
+                                    <option value="">선택 option 1</option>
+                                    <option value="">선택 option 2</option>
+                                    <option value="">선택 option 3</option>
+                                    <option value="">선택 option 4</option>
+                                </select>
+                            </div>
+                            <em class="validation">오늘을 포함한 과거 날짜만 입력해주세요.</em><!-- [D] 21-07-05 수정 : 텍스트 수정 -->
                         </div>
                         <!--// [D] 수정 21-06-04 : 캘린더 열리게 추가 -->
-                        <em class="validation">오늘을 포함한 과거 날짜만 입력해주세요.</em><!-- [D] 21-07-05 수정 : 텍스트 수정 -->
                     </div>
                     <!-- 금액//-->
                     <div class="kb-form more-view-item" data-status="error" data-view-option="show">
                         <label for="userRegisterExpenseFormsAccount">금액</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" id="userRegisterExpenseFormsAccount" placeholder="숫자만 입력해 주세요" value="" data-unit="원" data-action="autoSeperator">
+                            <input type="text" inputmode="numeric" id="userRegisterExpenseFormsAccount" placeholder="금액입력(할부인 경우 총 금액 입력)" value="" data-unit="원" data-action="autoSeperator">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
                         <em class="validation">{필수입력항목}을 입력해 주세요.</em>
@@ -68,8 +79,8 @@
                     <!-- 카테고리//-->
                     <div class="kb-form more-view-item" data-status="" data-view-option="show">
                         <label for="userRegisterExpenseFormsCategory">카테고리</label>
-                        <div class="kb-form_inner form-text">
-                            <input type="text" id="userRegisterExpenseFormsCategory" value="" role="button" placeholder="카테고리를 선택해 주세요" data-call-layered="bsUserRegisterSetCategory_transfer" readonly="">
+                        <div class="kb-form_inner form-text" data-role="popup">
+                            <input type="text" id="userRegisterExpenseFormsCategory" value="" role="button" placeholder="카테고리 선택" data-call-layered="bsUserRegisterSetCategory_transfer" readonly="">
                         </div>
                     </div>
                     <!-- 내역//-->
@@ -85,29 +96,29 @@
                     <div class="kb-form more-view-item" data-status="" data-view-option="hide">
                         <label for="userRegisterExpenseFormsInstallment">할부개월수</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" id="userRegisterExpenseFormsInstallment" value="" role="button" placeholder="일시불" data-call-layered="bsUserRegisterExpenseFormsInstallment" readonly="">
+                            <input type="text" inputmode="numeric" placeholder="" value="1" data-unit="개월" data-numeric-type="number" id="userRegisterExpenseFormsInstallment" value="" role="button" placeholder="일시불">
                         </div>
                     </div>
                     <!-- 거래수단//-->
                     <div class="kb-form more-view-item" data-status="" data-view-option="hide">
                         <label for="userRegisterExpenseFormsMethod">거래수단</label>
-                        <div class="kb-form_inner form-text">
-                            <input type="text" id="userRegisterExpenseFormsMethod" value="" role="button" placeholder="거래수단을 선택해주세요" data-call-layered="userRegisterExpenseFormsMethod" readonly="">
+                        <div class="kb-form_inner form-text" data-role="popup">
+                            <input type="text" id="userRegisterExpenseFormsMethod" value="" role="button" placeholder="거래수단 선택" data-call-layered="userRegisterExpenseFormsMethod" readonly="">
                         </div>
                     </div>
                     <!-- 메모//-->
                     <div class="kb-form more-view-item" data-status="" data-view-option="hide">
                         <label for="userRegisterExpenseFormsMemo">메모</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" id="userRegisterExpenseFormsMemo" value="" placeholder="메모를 입력해 주세요"><!-- [D] 21-07-05 수정 : 텍스트 수정 -->
+                            <input type="text" id="userRegisterExpenseFormsMemo" value="" placeholder="메모를 입력해주세요">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
                         <em class="validation">Success Message</em>
                     </div>
                     <!-- 더보기버튼//-->
-                    <div class="btn-area center">
+                    <div class="btn-area right">
                         <a href="javascript:;" class="btn-text btn-more-view" role="button">
-                            <span class="hide-status">상세 입력</span><span class="show-status">닫기</span><i class="icon-arrow-down"></i><!-- [D] 21-08-08 수정 : 화살표 아이콘 수정 -->
+                            <span class="hide-status">상세 입력</span><span class="show-status">닫기</span><i class="icon-arrow-down"></i>
                         </a>
                     </div>
                 </section>
@@ -131,7 +142,6 @@
             @@include('@@webRoot/html/expense/layered/mys_ex_01_05_02_p.html')
             @@include('@@webRoot/html/expense/layered/mys_ex_01_05_02_p01.html')
             @@include('@@webRoot/html/expense/layered/mys_ex_01_05_02_p02.html')
-            @@include('@@webRoot/html/expense/layered/mys_ex_01_05_06_p.html')
             @@include('@@webRoot/html/expense/layered/mys_ex_01_05_07_p.html')
 
             @@include('@@webRoot/html/_layered/bs-time.html')

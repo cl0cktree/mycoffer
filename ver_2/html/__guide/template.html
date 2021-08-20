@@ -32,29 +32,76 @@
     <div class="guide-container">
         <div class="box">
 			<h2>App Header</h2>
+            <div class="guide-desc">
+                * 타이틀이 없을 경우에도 .page-tit 반드시 존재해야함<br>
+                <b class="c-blue">submain</b> : CI + 알림 + 햄버거<br>
+                <b class="c-blue">home or ''</b> : (default) 뒤로가기 + 타이틀 + 홈 + 햄버거<br>
+                <b class="c-blue">'close'</b>  : 타이틀 + 닫기버튼만 (팝업에서 사용)<br>
+                <b class="c-blue">'title'</b> : 타이틀만<br><br>
+
+                (예외)단계별<br>
+                <b class="c-blue">'process'</b> : 뒤로가기 + 닫기버튼(텍스트로 노출)<br>
+                <b class="c-blue">'complete'</b> : 타이틀(빈값) + 홈 + 햄버거
+            </div>
             <div class="iframe-view-group">
                 <div class="iframe-view">
                     <strong class="tit">서브메인(type: submain)</strong>
                     <iframe src="./sample/header-submain.html" frameborder="0"></iframe>
                 </div>
                 <div class="iframe-view">
-                    <strong class="tit">2Depth(type: )</strong>
+                    <strong class="tit">2Depth(type: '' or home)</strong>
                     <iframe src="./sample/header-2depth.html" frameborder="0"></iframe>
-                </div>
-                <div class="iframe-view">
-                    <strong class="tit">상세페이지(type: back)</strong>
-                    <iframe src="./sample/header-detail.html" frameborder="0"></iframe>
                 </div>
                 <div class="iframe-view">
                     <strong class="tit">팝업페이지(type: close)</strong>
                     <iframe src="./sample/header-popup.html" frameborder="0"></iframe>
-                </div>
+                </div>                
                 <div class="iframe-view">
-                    <strong class="tit">타이틀 only(type: title)</strong>
+                    <strong class="tit">로그인 등 타이틀 only(type: title)</strong>
                     <iframe src="./sample/header-title.html" frameborder="0"></iframe>
                 </div>
+                <div class="iframe-view">
+                    <strong class="tit">단계(진행중)(type: process)</strong>
+                    <iframe src="./sample/header-process.html" frameborder="0"></iframe>
+                </div>
+                <div class="iframe-view">
+                    <strong class="tit">단계(완료)(type: complete)</strong>
+                    <iframe src="./sample/header-complete.html" frameborder="0"></iframe>
+                </div>                
             </div>
-            
+            <div class="iframe-view-group">
+                <div class="iframe-view">
+                    <strong class="tit">[스타뱅킹] 서브메인(type: submain)</strong>
+                    <div class="native-bar">마이자산관리 <button type="button" class="btn-close">닫기</button></div>
+                    <iframe src="./sample/header-submain.html" frameborder="0" onload="$(this).contents().find('html').attr('data-channel','ch_star');"></iframe>
+                </div>
+                <div class="iframe-view">
+                    <strong class="tit">[스타뱅킹] 2Depth(type: '' or home)</strong>
+                    <div class="native-bar">마이자산관리 <button type="button" class="btn-close">닫기</button></div>
+                    <iframe src="./sample/header-2depth.html" frameborder="0" onload="$(this).contents().find('html').attr('data-channel','ch_star');"></iframe>
+                </div>
+                <div class="iframe-view">
+                    <strong class="tit">[스타뱅킹] 팝업페이지(type: close)</strong>
+                    <div class="native-bar">마이자산관리 <button type="button" class="btn-close">닫기</button></div>
+                    <iframe src="./sample/header-popup.html" frameborder="0" onload="$(this).contents().find('html').attr('data-channel','ch_star');"></iframe>
+                </div>                
+                <div class="iframe-view">
+                    <strong class="tit">[스타뱅킹] 로그인 등 타이틀 only(type: title)</strong>
+                    <div class="native-bar">마이자산관리 <button type="button" class="btn-close">닫기</button></div>
+                    <iframe src="./sample/header-title.html" frameborder="0" onload="$(this).contents().find('html').attr('data-channel','ch_star');"></iframe>
+                </div>
+                <div class="iframe-view">
+                    <strong class="tit">[스타뱅킹] 단계(진행중)(type: process)</strong>
+                    <div class="native-bar">마이자산관리 <button type="button" class="btn-close">닫기</button></div>
+                    <iframe src="./sample/header-process.html" frameborder="0" onload="$(this).contents().find('html').attr('data-channel','ch_star');"></iframe>
+                </div>
+                <div class="iframe-view">
+                    <strong class="tit">[스타뱅킹] 단계(완료)(type: complete)</strong>
+                    <div class="native-bar">마이자산관리 <button type="button" class="btn-close">닫기</button></div>
+                    <iframe src="./sample/header-complete.html" frameborder="0" onload="$(this).contents().find('html').attr('data-channel','ch_star');"></iframe>
+                </div>   
+            </div>
+
 		</div>
 		<hr>
         <div class="box">
@@ -85,7 +132,7 @@
                     <iframe src="./sample/layout-top-tab-all.html" frameborder="0"></iframe>
                 </div>
             </div>
-            
+
 		</div>
 		<hr>
         <!-- SECTION 구분 -->
@@ -101,7 +148,7 @@
                 </dt>
                 <dd class="guide-description">
                     <p>.app-content 아래 section<span class="c-blue">.kb-sec 으로 컨텐츠를 구분</span> <span class="c-red"><u>().kb-sec 을 div 등으로 감싸면 안됨)</u></span></p>
-                    
+
                     <p>회색 배경이 있는 경우 .kb-sec<span class="c-blue">.bg-gray</span>를 추가</p>
                     <p>.kb-sec.bg-gray:first-child 의 배경은 상단 40px부터 시작됨(추후 일괄수정될수 있음)</p>
                     <p>.kb-sec.bg-gray 사용할 경우 여백은 padding을 사용하여야함 (margin을 사용할 경우 body 배경색이 나옴)</p>
@@ -324,7 +371,7 @@
                         <td></td>
                         <td></td>
                     </tr>
-                    
+
                     </tbody>
                 </table>
             </div>

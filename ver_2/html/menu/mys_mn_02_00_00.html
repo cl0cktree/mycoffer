@@ -16,7 +16,10 @@
             'pageTit':'알림',
             'type':''
         })
-        
+        <!-- !!!!!!!!!!!! -->
+        <!-- 추후 수정 2021-08-20 : back + setting + home, back + home  -->
+
+
         <!-- app-container (for MyMoney) //-->
         <div class="app-container">
 
@@ -31,993 +34,134 @@
             <main class="app-content menu-push">
                 <!-- 컨텐츠 영역 -->
                 <!-- SECTION //-->
-                <!-- no data // -->
-                
+
+                <!-- 수정 2021-08-23 // -->
                 <section class="kb-sec top-info">
-                    <p class="txt">알림 설정하고 유용한 소식을 받아보세요!</p>  
-                    <a href="javascript:;" class="btn-text" role="button"><u>알림 설정하기</u></a>     
-                    <div class="no-data">
-                        <i class="icon-info_24"></i>
-                        <p>알림 내역이 없습니다.</p>
-                    </div>             
+                    <div class="push-setting">
+                        <h2 class="h4">Push 알림</h2>
+                        <span class="btn-switch label-front"><input type="checkbox" id="toggleBtn1B" checked=""><label for="toggleBtn1B"><span class="is-hidden">Push 알림 설정하기</span></label></span>
+                    </div>    
+                    <p class="txt">Push를 OFF 하실 경우, KB마이머니에서 제공되는 알림을 받으실 수 없습니다.</p>  
                 </section>
                 
-                <!-- // no data -->
+                <!-- 알림이 없을 때 // -->
+                <section class="kb-sec top-info">
+                    <div class="no-data">
+                        <i class="icon-bang_60_gray"></i>
+                        <p>받은 알림이 없습니다.</p>
+                    </div>
+                </section>
+                <!-- // 알림이 없을 때 -->             
+                
                 <section class="kb-sec push-list">
+                    <h2 class="is-hidden">Push 알림 내역 조회하기</h2>
                     <div class="condition-area">
                         <button class="btn-condition" data-call-layered="mys_mn_02_00_00_search">
                             <div>
                                 <div class="sorting-status">
-                                    <span>1개월</span>
                                     <span>전체</span>
                                 </div>                                    
                                 <i class="arrow">조회조건 선택</i>
                             </div>
                         </button>
                     </div>
-                    <!-- 수정 2021-06-01 // -->
-                    <div class="line-list-wrap type-time-line">
-                        <ul class="d-list">
-                            <li class="lately">
-                                <div class="line-box">
-                                    <div class="date">2020.10.12 10:10</div>
-                                    <div class="price-wrap">
-                                        <div class="type">만기도래 안내</div>
-                                        <p class="info-txt">고객님의 KB국민은행 예적금 만기가 돌아오고 있습니다.</p>
-                                        <div class="txt-con">
-                                            <p class="p-name">상품명</p>
-                                            <ul class="description-list-variable">
-                                                <li>
-                                                    <p class="tit">계좌번호</p>
-                                                    <p>
-                                                        <span class="num">123400-00-000000</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">신규일</p>
-                                                    <p>
-                                                        <span class="date">2020.08.01</span>
-                                                    </p>
-                                                </li>
+                    <div class="push-time-line">
+                        <ul class="list">
+                            <li class="list-item">
+                                <h3 class="col date"><span class="num">2021.08.31</span> 화요일</h3>
+
+                                <!-- loop // -->
+                                <h4 class="col tit"><i class="icon-push"></i><span class="txt">BIZ-002 만기 예정상품 안내</span><span class="time">오후 <span class="num">12:00</span></span></h4>
+                                <div class="col desc">
+                                    <p class="txt">김국민님을 위한 {기관명} 예적금 만기가 다가오고 있어요.</p>
+                                    <dl class="expiry-date">
+                                        <dt class="dt">상품만기일</dt>
+                                        <dd class="dd"><span class="num">YYYY.MM.DD</span></dd>
+                                    </dl>
+                                    <dl class="product-info">
+                                        <dt class="dt">상품명:{상품명}</dt>
+                                        <dd class="dd">
+                                            <ul data-style="list">
+                                                <li>신규일:<span class="num">YYYY.MM.DD</span></li>
+                                                <li>납입원금:<span class="num">000000</span>원</li>
                                             </ul>
-                                            <p class="notice">KB My P.L.U.S와 함께 새로운 계획을 세워보세요.</p>                                            
-                                        </div>
-                                        <a href="javascript:;" class="btn-text" role="button"><u>상세내용 확인하기</u></a>  
-                                    </div>
+                                        </dd>
+                                        <dd class="dd">상품 만기를 축하드립니다.</dd>
+                                    </dl>
+                                    <a href="javascript:;" class="btn-solid gray" role="button"><span>상세내용 확인하기</span></a>
                                 </div>
-                            </li>
-                            <li>
-                                <div class="line-box">
-                                    <div class="date">2020.10.12 10:10</div>
-                                    <div class="price-wrap">
-                                        <div class="type">이상거래 탐지</div>
-                                        <p class="info-txt">평소보다 카페/간식 카테고리 지출금액이 2배 이상 높아요.</p>
-                                        <div class="txt-con">
-                                            <p class="p-name">상품명</p>
-                                            <ul class="description-list-variable">
-                                                <li>
-                                                    <p class="tit">스타벅스코리아</p>
-                                                    <p>
-                                                        <span><em class="num">123,000</em>원</span>
-                                                        <span class="date">2020.08.16</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">최근 3개월 평균</p>
-                                                    <p>
-                                                        <span><em class="num">123,000</em>원</span>
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                        </div>                                        
-                                        <a href="javascript:;" class="btn-text" role="button"><u>금융리포트 확인하기</u></a>    
-                                    </div>
+                                <!-- // loop -->
+                            </li>    
+                            <li class="list-item">
+                                <h3 class="col date"><span class="num">2021.08.15</span> 일요일</h3>
+                                
+                                <!-- loop // -->
+                                <h4 class="col tit"><i class="icon-push"></i><span class="txt">BIZ-010 금융리포트 발행</span><span class="time">오후 <span class="num">12:00</span></span></h4>
+                                <div class="col desc">
+                                    <p class="txt">김국민님을 위한 {0월} 월간 금융리포트입니다. 지난달의 나의 금융생활을 확인해보세요.</p>
+                                    <a href="javascript:;" class="btn-solid gray" role="button"><span>상세내용 확인하기</span></a>
                                 </div>
-                            </li>
-                            <li>
-                                <div class="line-box">
-                                    <div class="date">2020.10.12 10:10</div>
-                                    <div class="price-wrap">
-                                        <div class="type">금융리포트 발행</div>
-                                        <p class="info-txt">김국민님을 위한 2021년 금융리포트가 도착했어요. 지난해 나의 금융생활을 확인해 보세요.</p>                                        
-                                        <a href="javascript:;" class="btn-text" role="button"><u>금융리포트 확인하기</u></a>    
-                                    </div>
+                                <!-- // loop -->
+                                
+                                <!-- loop // -->
+                                <h4 class="col tit"><i class="icon-push"></i><span class="txt">BIZ-010 금융리포트 발행</span><span class="time">오후 <span class="num">12:00</span></span></h4>
+                                <div class="col desc">
+                                    <p class="txt">김국민님을 위한 {0월} 월간 금융리포트입니다. 지난주 지출 현황을 확인하고, 나의 소비생활을 점검해 보세요.</p>
+                                    <a href="javascript:;" class="btn-solid gray" role="button"><span>상세내용 확인하기</span></a>
                                 </div>
-                            </li>
-                            <li>
-                                <div class="line-box">
-                                    <div class="date">2020.10.12 10:10</div>
-                                    <div class="price-wrap">
-                                        <div class="type">포인트 소멸예정 알림</div>
-                                        <p class="info-txt">소멸예정포인트를 안내드립니다. <br>소멸되기 전 포인트를 이용하시거나 현금으로 전환해 보세요.</p>
-                                        <div class="txt-con">
-                                            <ul class="description-list-variable point-info"><!-- 굵은 글씨-->
-                                                <li>
-                                                    <p class="tit">소멸예정 포인트</p>
-                                                    <p>
-                                                        <span class="c-red"><em class="num">700</em>P</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">소멸예정일</p>
-                                                    <p>
-                                                        <span class="date">2021.08.30</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">포인트정보</p>
-                                                    <p>
-                                                        <span><em class="num">1700</em>P</span>
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                            <ul class="description-list-variable">
-                                                <li>
-                                                    <p class="tit">기관명</p>
-                                                    <p>
-                                                        <span>국민카드</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">포인트명</p>
-                                                    <p>
-                                                        <span>KB포인트리</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">잔여포인트</p>
-                                                    <p>
-                                                        <span><em class="num">136,130</em>P</span>
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                        </div>     
-                                        
-                                        <a href="javascript:;" class="btn-text" role="button"><u>금융리포트 확인하기</u></a>    
-                                    </div>
-                                </div>
-                            </li>
+                                <!-- // loop -->
+                            </li>    
                             <!-- 알림함 -->
-                            <!-- 자산 > 입출금&middot;페이 -->
-                            <li class="lately"><!-- 가장 최근 표시 -->
-                                <div class="line-box">
-                                    <div class="date">2020.10.12 10:10</div>
-                                    <div class="price-wrap">
-                                        <div class="type">입출금통장 잔액 안내</div>
-                                        <p class="info-txt">최근 고객님의 입출금통장 잔액이 많이 늘었어요.</p>
-                                        <div class="txt-con">
-                                            <ul class="description-list-variable">
-                                                <li>
-                                                    <p class="tit">최근 1개월 평균잔액</p>
-                                                    <p>
-                                                        <span class="num">9,534,000</span>원
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">최근 3개월 평균잔액</p>
-                                                    <p>
-                                                        <span class="num">3,250,000</span>원
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                                 
-                                        </div>
-                                        <a href="javascript:;" class="btn-text" role="button"><u>상세내용 확인하기</u></a>  
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="line-box">
-                                    <div class="price-wrap">
-                                        <div class="type">보유 충전금액 안내</div>
-                                        <p class="info-txt">고객님의 최근 3개월 동안 출금이 없는 Pay잔액 안내입니다.</p>
-                                        <div class="txt-con">
-                                            <p class="p-name">충전금액 정보</p>
-                                            <ul class="description-list-variable">
-                                                <li>
-                                                    <p class="tit">기관명</p>
-                                                    <p>
-                                                        <span>카카오페이</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">충전금액 종류</p>
-                                                    <p>
-                                                        <span>권면명</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">총 잔액</p>
-                                                    <p>
-                                                        <span class="num">3,250,000</span>원
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">소멸예정</p>
-                                                    <p>
-                                                        <span class="num">1,250,000</span>원
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                                 
-                                        </div>
-                                        <a href="javascript:;" class="btn-text" role="button"><u>상세내역 확인하기</u></a>  
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- 자산 > 예적금 -->
-                            <li>
-                                <div class="line-box">
-                                    <div class="price-wrap">
-                                        <div class="type">만기 예정상품 안내</div>
-                                        <p class="info-txt">고객님의 국민은행 예적금 만기가 다가오고 있어요.</p>
-                                        <div class="txt-con">
-                                            <p class="p-name">상품정보</p>
-                                            <ul class="description-list-variable">
-                                                <li>
-                                                    <p class="tit">상품명</p>
-                                                    <p>
-                                                        <span>상품명</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">신규일</p>
-                                                    <p>
-                                                        <span class="date">2020.08.01</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">만기일</p>
-                                                    <p>
-                                                        <span class="date">2022.08.01</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">납입원금</p>
-                                                    <p>
-                                                        <span class="num">9,999,999</span>원
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                            <p class="notice">상품 만기를 축하드립니다.</p>    
-                                        </div>
-                                        <a href="javascript:;" class="btn-text" role="button"><u>상세내용 확인하기</u></a>  
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- 자산 > 보험 -->
-                            <li>
-                                <div class="line-box">
-                                    <div class="date">2020.10.12 10:10</div>
-                                    <div class="price-wrap">
-                                        <div class="type">만기 예정상품 안내</div>
-                                        <p class="info-txt">고객님의 기관명 보험 만기가 다가오고 있어요.</p>
-                                        <div class="txt-con">
-                                            <p class="p-name">상품정보</p>
-                                            <ul class="description-list-variable">
-                                                <li>
-                                                    <p class="tit">상품명</p>
-                                                    <p>
-                                                        <span>상품명</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">신규일</p>
-                                                    <p>
-                                                        <span class="date">2020.08.01</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">만기일</p>
-                                                    <p>
-                                                        <span class="date">2022.08.01</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">납입원금</p>
-                                                    <p>
-                                                        <span class="num">9,999,999</span>원
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                            <p class="notice">오랜기간 잘 유지하셨습니다.</p>    
-                                        </div>
-                                        <a href="javascript:;" class="btn-text" role="button"><u>상세내용 확인하기</u></a>  
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- 자산 > 대출 -->
-                            <li>
-                                <div class="line-box">
-                                    <div class="date">2020.10.12 10:10</div>
-                                    <div class="price-wrap">
-                                        <div class="type">대출 만기일 알림</div>
-                                        <p class="info-txt">고객님의 기관명 대출 만기가 200일 남았어요.</p>
-                                        <div class="txt-con">
-                                            <p class="p-name">상품정보</p>
-                                            <ul class="description-list-variable">
-                                                <li>
-                                                    <p class="tit">상품명</p>
-                                                    <p>
-                                                        <span>상품명</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">신규일</p>
-                                                    <p>
-                                                        <span class="date">2020.08.01</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">만기일</p>
-                                                    <p>
-                                                        <span class="date">2020.08.01</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">약정금액</p>
-                                                    <p>
-                                                        <span><em class="num">136,130</em>원</span>
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                        </div>   
-                                        <a href="javascript:;" class="btn-text" role="button"><u>상세내용 확인하기</u></a>    
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- 자산 > 포인트 -->
-                            <li>
-                                <div class="line-box">
-                                    <div class="date">2020.10.12 10:10</div>
-                                    <div class="price-wrap">
-                                        <div class="type">포인트 소멸예정 알림</div>
-                                        <p class="info-txt">고객님이 모은 포인트가 소멸예정 입니다.</p>
-                                        <div class="txt-con">
-                                            <ul class="description-list-variable point-info"><!-- 굵은 글씨-->
-                                                <li>
-                                                    <p class="tit">소멸예정 포인트</p>
-                                                    <p>
-                                                        <span class="c-red"><em class="num">700</em>P</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">소멸예정일</p>
-                                                    <p>
-                                                        <span class="date">2021.08.30</span>
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                            <p class="p-name">포인트정보</p>
-                                            <ul class="description-list-variable">
-                                                <li>
-                                                    <p class="tit">기관명</p>
-                                                    <p>
-                                                        <span>국민카드</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">포인트명</p>
-                                                    <p>
-                                                        <span>KB포인트리</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">현재포인트</p>
-                                                    <p>
-                                                        <span><em class="num">136,130</em>P</span>
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                        </div>     
-                                        
-                                        <a href="javascript:;" class="btn-text" role="button"><u>상세내용 확인하기</u></a>    
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="line-box">
-                                    <div class="date">2020.10.12 10:10</div>
-                                    <div class="price-wrap">
-                                        <div class="type">카드 포인트 안내</div>
-                                        <p class="info-txt">고객님이 보유한 카드 포인트입니다.<br>카드사별 기준에 따라 현금으로 전환할 수 있어요.</p>
-                                        <div class="txt-con">
-                                            <p class="p-name">포인트정보</p>
-                                            <ul class="description-list-variable">
-                                                <li>
-                                                    <p class="tit">기관명</p>
-                                                    <p>
-                                                        <span>국민카드</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">포인트명</p>
-                                                    <p>
-                                                        <span>KB포인트리</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">잔여포인트</p>
-                                                    <p>
-                                                        <span><em class="num">136,130</em>P</span>
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                        </div>     
-                                        
-                                        <a href="javascript:;" class="btn-text" role="button"><u>상세내용 확인하기</u></a>    
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- 지출 > 가계부 -->
-                            <li>
-                                <div class="line-box">
-                                    <div class="date">2020.10.12 10:10</div>
-                                    <div class="price-wrap">
-                                        <div class="type">이상거래 탐지</div>
-                                        <p class="info-txt">평소보다 ㅇㅇㅇ 업종 지출금액이 2배 이상 높아요.</p>
-                                        <div class="txt-con">
-                                            <ul class="description-list-variable">
-                                                <li>
-                                                    <p class="tit">2022.08.02</p>
-                                                    <p>
-                                                        <span class="num">1,200,000</span>원 / 가맹점명
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">최근 3개월 평균지출</p>
-                                                    <p>
-                                                        <span class="num">1,200,000</span>원
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                        </div>     
-                                        
-                                        <a href="javascript:;" class="btn-text" role="button"><u>상세내역 확인하기</u></a>    
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- 지출 > 소비리포트 -->
-                            <li>
-                                <div class="line-box">
-                                    <div class="date">2020.10.12 10:10</div>
-                                    <div class="price-wrap">
-                                        <div class="type">소비리포트 발행</div>
-                                        <p class="info-txt">홍길동님을 위한 8월 2주차 소비리포트입니다.<br>지난주 지출 현황을 확인하고, 나의 소비생활을 점검해보세요.</p>
-                                        
-                                        <a href="javascript:;" class="btn-text" role="button"><u>상세내역 확인하기</u></a>    
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- 지출 > 금융리포트 -->
-                            <li>
-                                <div class="line-box">
-                                    <div class="price-wrap">
-                                        <div class="type">금융리포트 발행</div>
-                                        <p class="info-txt">홍길동님을 위한 8월 월간 금융리포트입니다.<br>지난달 나의 금융생활을 확인해보세요.</p>
-                                        
-                                        <a href="javascript:;" class="btn-text" role="button"><u>상세내역 확인하기</u></a>    
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="line-box">
-                                    <div class="price-wrap">
-                                        <div class="type">금융리포트 발행</div>
-                                        <p class="info-txt">홍길동님을 위한 2020년 월간 금융리포트입니다.<br>지난해 나의 금융생활을 확인해보세요.</p>
-                                        
-                                        <a href="javascript:;" class="btn-text" role="button"><u>상세내역 확인하기</u></a>    
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- 목표 > 목표챌린지 -->
-                            <li>
-                                <div class="line-box">
-                                    <div class="date">2020.10.12 10:10</div>
-                                    <div class="price-wrap">
-                                        <div class="type">목표 챌린지 안내</div>
-                                        <p class="info-txt">목표 챌린지를 시작하셨네요. 시작이 반이에요. 고객님의 목표달성을 응원할게요.</p>
-                                        <div class="txt-con">
-                                            <p class="p-name">목표챌린지</p>
-                                            <ul class="description-list-variable">
-                                                <li>
-                                                    <p class="tit">챌린지명</p>
-                                                    <p>
-                                                        <span>커피 줄이기</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">목표기간</p>
-                                                    <p>
-                                                        <span class="date">2021.05.30 - 2021.08.30</span>
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                        </div>     
-                                        
-                                        <a href="javascript:;" class="btn-text" role="button"><u>상세내역 확인하기</u></a>    
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="line-box">
-                                    <div class="date">2020.10.12 10:10</div>
-                                    <div class="price-wrap">
-                                        <div class="type">목표 챌린지 안내</div>
-                                        <p class="info-txt">목표 챌린지 종료일이 3일 남았어요. <br>고객님의 목표달성을 응원할게요.</p>
-                                        <div class="txt-con">
-                                            <p class="p-name">목표챌린지</p>
-                                            <ul class="description-list-variable">
-                                                <li>
-                                                    <p class="tit">챌린지명</p>
-                                                    <p>
-                                                        <span>커피 줄이기</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">목표기간</p>
-                                                    <p>
-                                                        <span class="date">2021.05.30 - 2021.08.30</span>
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                        </div>     
-                                        
-                                        <a href="javascript:;" class="btn-text" role="button"><u>상세내역 확인하기</u></a>    
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="line-box">
-                                    <div class="price-wrap">
-                                        <div class="type">목표 챌린지 안내</div>
-                                        <p class="info-txt">목표 챌린지 시작한지 벌써 절반이 지났습니다.<br>고객님의 목표달성을 응원할게요.</p>
-                                        <div class="txt-con">
-                                            <p class="p-name">목표챌린지</p>
-                                            <ul class="description-list-variable">
-                                                <li>
-                                                    <p class="tit">챌린지명</p>
-                                                    <p>
-                                                        <span>배달음식 줄이기</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">목표기간</p>
-                                                    <p>
-                                                        <span class="date">2021.05.30 - 2021.08.30</span>
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                        </div>     
-                                        
-                                        <a href="javascript:;" class="btn-text" role="button"><u>상세내역 확인하기</u></a>    
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- 목표 > 저금통 -->
-                            <li>
-                                <div class="line-box">
-                                    <div class="price-wrap">
-                                        <div class="type">저금통 안내</div>
-                                        <p class="info-txt">저금통(한도:300만원)이 가득 찼어요. 축하드려요.<br>저금통을 비우려면 하단의 '저금통 바로가기'를 눌러주세요.</p>
-                                        <a href="javascript:;" class="btn-text" role="button"><u>상세내역 확인하기</u></a>    
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="line-box">
-                                    <div class="price-wrap">
-                                        <div class="type">자동저축 알림</div>
-                                        <p class="info-txt">홍길동님, 2021년 08월 02일 편의점 자동저축 규칙에 의해 총 3,000원이 저금통에 자동저축되었습니다. 상세내용을 확인해보세요.</p>
-                                        <a href="javascript:;" class="btn-text" role="button"><u>상세내역 확인하기</u></a>    
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- 신용관리 서비스 -->
-                            <li>
-                                <div class="line-box">
-                                    <div class="date">2020.10.12 10:10</div>
-                                    <div class="price-wrap">
-                                        <div class="type">신용조회 발생 안내</div>
-                                        <p class="info-txt">신용조회내역이 발생하여 안내드립니다.</p>
-                                        <div class="txt-con">
-                                            <ul class="description-list-variable">
-                                                <li>
-                                                    <p class="tit">발생일자</p>
-                                                    <p>
-                                                        <span class="date">2021.08.30</span>
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                        </div>     
-                                        
-                                        <a href="javascript:;" class="btn-text" role="button"><u>상세내역 확인하기</u></a>    
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="line-box">
-                                    <div class="date">2020.10.12 10:10</div>
-                                    <div class="price-wrap">
-                                        <div class="type">신용정보 변동 안내</div>
-                                        <p class="info-txt">신용변동내역이 발생하여 안내드립니다.</p>
-                                        <div class="txt-con">
-                                            <ul class="description-list-variable">
-                                                <li>
-                                                    <p class="tit">발생일자</p>
-                                                    <p>
-                                                        <span class="date">2021.08.30</span>
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                        </div>     
-                                        
-                                        <a href="javascript:;" class="btn-text" role="button"><u>상세내역 확인하기</u></a>    
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- 자산 > 자동차 -->
-                            <li>
-                                <div class="line-box">
-                                    <div class="date">2020.10.12 10:10</div>
-                                    <div class="price-wrap">
-                                        <div class="type">자동차 시세 변동 안내</div>
-                                        <p class="info-txt">자동차의 시세 변동내역이 발생하여 안내드립니다.</p>
-                                        <div class="txt-con">
-                                            <ul class="description-list-variable">
-                                                <li>
-                                                    <p class="tit">자동차명</p>
-                                                    <p>
-                                                        <span>그랜저</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">변동내역</p>
-                                                    <p>
-                                                        <span class="num">3,000,000</span>원 하락
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                        </div>     
-                                        
-                                        <a href="javascript:;" class="btn-text" role="button"><u>상세내역 확인하기</u></a>    
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="line-box">
-                                    <div class="price-wrap">
-                                        <div class="type">자동차 보험 만기일 도래 사전안내</div>
-                                        <p class="info-txt">자동차보험 만기일이 30일 앞으로 다가와 사전 안내드립니다.</p>
-                                        <div class="txt-con">
-                                            <ul class="description-list-variable">
-                                                <li>
-                                                    <p class="tit">자동차명</p>
-                                                    <p>
-                                                        <span>그랜저</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">보험사명</p>
-                                                    <p>
-                                                        <span>삼성화재</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">보험만기일</p>
-                                                    <p>
-                                                        <span class="date">2021.08.02</span>
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                        </div>     
-                                        
-                                        <a href="javascript:;" class="btn-text" role="button"><u>상세내역 확인하기</u></a>    
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- 자산 > 부동산 -->
-                            <li>
-                                <div class="line-box">
-                                    <div class="date">2020.10.12 10:10</div>
-                                    <div class="price-wrap">
-                                        <div class="type">부동산 시세변동 안내</div>
-                                        <p class="info-txt">부동산 시세변동 내역이 발생하여 안내드립니다.</p>
-                                        <div class="txt-con">
-                                            <ul class="description-list-variable">
-                                                <li>
-                                                    <p class="tit">부동산명</p>
-                                                    <p>
-                                                        <span>래미안퍼스티지</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">변동내역</p>
-                                                    <p>
-                                                        <span class="num">2,000,000</span>원 상승/하락
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                        </div>     
-                                        
-                                        <a href="javascript:;" class="btn-text" role="button"><u>상세내역 확인하기</u></a>    
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- 연말정산관리서비스 -->
-                            <li>
-                                <div class="line-box">
-                                    <div class="date">2020.10.12 10:10</div>
-                                    <div class="price-wrap">
-                                        <div class="type">연말정산 소득공제 Tip 안내</div>
-                                        <p class="info-txt">신용카드 사용액이 연말정산 공제문턱에서 도달하였습니다. 이제부터 소득공제율이 높은 체크카드와 현금영수증 사용을 늘리면 연말정산시 더 많은 절세가 가능합니다.</p>
-                                        <div class="txt-con">
-                                            <ul class="description-list-variable">
-                                                <li>
-                                                    <p class="tit">총(예상)급여액</p>
-                                                    <p>
-                                                        <span class="num">2,000,000</span>원
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">신용카드 사용액</p>
-                                                    <p>
-                                                        <span class="num">2,000,000</span>원
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                        </div>     
-                                        
-                                        <a href="javascript:;" class="btn-text" role="button"><u>상세내역 확인하기</u></a>    
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="line-box">
-                                    <div class="price-wrap">
-                                        <div class="type">연말정산 잔여공제한도 안내</div>
-                                        <p class="info-txt">연금계좌 연말정산 세액공제한도가 2,000,000원 남아 있습니다.</p>
-                                        <div class="txt-con">
-                                            <ul class="description-list-variable">
-                                                <li>
-                                                    <p class="tit">세액공제한도</p>
-                                                    <p>
-                                                        <span class="num">2,000,000</span>원
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">누적납입금액</p>
-                                                    <p>
-                                                        <span class="num">1,000,000</span>원
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">잔여공제한도</p>
-                                                    <p>
-                                                        <span class="num">1,000,000</span>원
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                        </div>     
-                                        
-                                        <a href="javascript:;" class="btn-text" role="button"><u>상세내역 확인하기</u></a>    
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- 전송요구내역변경하기 -->
-                            <li>
-                                <div class="line-box">
-                                    <div class="date">2020.10.12 10:10</div>
-                                    <div class="price-wrap">
-                                        <div class="type">마이데이터서비스 정보 요청기간 만료 도래 안내</div>
-                                        <p class="info-txt">마이데이터 서비스 이용을 위한 정보 요청기간이 50일 남았습니다. 계속적인 서비스 이용을 위해서는 요청기간 연장이 필요합니다.</p>
-                                        <div class="txt-con">
-                                            <ul class="description-list-variable">
-                                                <li>
-                                                    <p class="tit">정보제공요청일</p>
-                                                    <p>
-                                                        <span class="date">2021.08.02</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">정보제공요청기간</p>
-                                                    <p>
-                                                        <span class="num">20</span>개월
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">만료예정일</p>
-                                                    <p>
-                                                        <span class="date">2021.08.02</span>
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                        </div>     
-                                        
-                                        <a href="javascript:;" class="btn-text" role="button"><u>상세내역 확인하기</u></a>    
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- 마이데이터관리 -->
-                            <li>
-                                <div class="line-box">
-                                    <div class="date">2020.10.12 10:10</div>
-                                    <div class="price-wrap">
-                                        <div class="type">마이데이터서비스 개인신용정보 수신내역 안내</div>
-                                        <p class="info-txt">마이데이터 서비스 이용과 관련하여 20개 기관에서 개인신용정보를 제공받고 있습니다.</p>
-                                        <div class="txt-con">
-                                            <ul class="description-list-variable ">
-                                                <li>
-                                                    <p class="tit">서비스이용시작일</p>
-                                                    <p>
-                                                        <span class="date">2021.08.02</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">정보제공기관수</p>
-                                                    <p>
-                                                        <span class="num">20</span>개
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">정보제공항목수</p>
-                                                    <p>
-                                                        <span class="num">100</span>개
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">정기전송 여부 및 주기</p>
-                                                    <p>
-                                                        <span>예(주1회)/아니오</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">전송요구 종료시점</p>
-                                                    <p>
-                                                        <span class="date">2021.08.02</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">전송을 요구하는 목적</p>
-                                                    <p>
-                                                        <span>통합조회 서비스 이용</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">개인신용정보 보유기간</p>
-                                                    <p>
-                                                        <span>서비스 이용 종료 시 또는 삭제 요청 시까지</span>
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                        </div>     
-                                        
-                                        <a href="javascript:;" class="btn-text" role="button"><u>상세내역 확인하기</u></a>    
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- 개인신용정보 전송지연 안내 -->
-                            <li>
-                                <div class="line-box">
-                                    <div class="date">2020.10.12 10:10</div>
-                                    <div class="price-wrap">
-                                        <div class="type">개인신용정보 전송지연 안내</div>
-                                        <p class="info-txt">상대기관명을 통한 개인신용정보 요청건을 불가사유로 인해 처리할 수 없습니다. 전송요구사항 등을 다시 한 번 확인 부탁드립니다.</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- 개인신용정보 전송완료 안내 -->
-                            <li>
-                                <div class="line-box">
-                                    <div class="price-wrap">
-                                        <div class="type">개인신용정보 전송완료 안내</div>
-                                        <p class="info-txt">상대기관명을 통해 요청하신 개인신용정보 전송처리가 완료되었습니다.</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- 개인신용정보 전송불가 안내 -->
-                            <li>
-                                <div class="line-box">
-                                    <div class="price-wrap">
-                                        <div class="type">개인신용정보 전송불가 안내</div>
-                                        <p class="info-txt">상대기관명을 통한 개인신용정보 요청건을 불가사유로 인해 처리할 수 없습니다. 전송요구사항 등을 다시 한 번 확인 부탁드립니다.</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- 기관별 자산목록조회 완료 안내 -->
-                            <li>
-                                <div class="line-box">
-                                    <div class="date">2020.10.12 10:10</div>
-                                    <div class="price-wrap">
-                                        <div class="type">기관별 자산목록조회 완료 안내</div>
-                                        <p class="info-txt">홍길동고객님께서 요청하신 각 기관별 자산목록조회가 완료되었습니다. 계속해서 다음 단계 진행 부탁드립니다.</p>
-                                    </div>
-                                </div>
-                            </li>
-                             <!-- 기관별 자산조회 완료 안내 -->
-                             <li>
-                                <div class="line-box">
-                                    <div class="price-wrap">
-                                        <div class="type">기관별 자산조회 완료 안내</div>
-                                        <p class="info-txt">홍길동고객님께서 요청하신 각 기관별 자산정보조회가 완료되었습니다. KB국민은행 마이데이터 서비스를 지금 바로 이용해보세요.</p>
-                                    </div> 
-                                </div>
-                            </li>
-                            <!-- 머니크루 알림 -->
-                            <li>
-                                <div class="line-box">
-                                    <div class="date">2020.10.12 10:10</div>
-                                    <div class="price-wrap">
-                                        <div class="type">머니크루 알림</div>
-                                        <p class="info-txt">나의 포트폴리오에 닉네임님이 새로운 댓글을 등록했습니다.</p>
-                                        
-                                        <a href="javascript:;" class="btn-text" role="button"><u>상세내용 확인하기</u></a>  
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="line-box">
-                                    <div class="price-wrap">
-                                        <div class="type">머니크루 알림</div>
-                                        <p class="info-txt">나의 포트폴리오를 닉네임님이 좋아합니다.</p>
-                                        
-                                        <a href="javascript:;" class="btn-text" role="button"><u>상세내용 확인하기</u></a>  
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="line-box">
-                                    <div class="price-wrap">
-                                        <div class="type">머니크루 알림</div>
-                                        <p class="info-txt">닉네임님이 <span class="date">2021.08.10</span>일에 요청한 제안서가 등록 되었습니다.</p>
-                                        
-                                        <a href="javascript:;" class="btn-text" role="button"><u>상세내용 확인하기</u></a>  
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="line-box">
-                                    <div class="price-wrap">
-                                        <div class="type">머니크루 알림</div>
-                                        <p class="info-txt">닉네임님이 <span class="date">2021.08.10</span>일에 받은 제안서에 댓글이 등록되었습니다.</p>
-                                        
-                                        <a href="javascript:;" class="btn-text" role="button"><u>상세내용 확인하기</u></a>  
-                                    </div>
-                                </div>
-                            </li>
                         </ul>
-                        <button class="btn-view-more"><i class="icon-plus_20"></i><span>더보기</span></button>
                     </div>                    
-                    <!-- // 수정 2021-06-01 -->
                 </section>
+                <!-- // 수정 2021-08-23 -->
+
                 <!--  // SECTION -->
                 
             </div>
-            </main>
+        </main>
             <!-- // app-content -->
             
-        <!-- // app-container -->
-    </div>
-
-    <div class="layered">
-       
-<!-- 조회 바텀시트 //-->
-<div class="bottom-sheet full-size" data-layered-name="mys_mn_02_00_00_search">
-    <div class="bottom-sheet_header">
-        <span class="tit">조회 선택</span>
-    </div>
-    <div class="bottom-sheet_contents">
-        <section class="kb-sec tab_contents">
-            <div class="kb-form" data-status="error">
+            <!-- // app-container -->
+        </div>
+        
+        <div class="layered">
+            
+            <!-- 조회 바텀시트 //-->
+            <div class="bottom-sheet full-size" data-layered-name="mys_mn_02_00_00_search">
+                <div class="bottom-sheet_header">
+                    <span class="tit">조회 선택</span>
+                </div>
+                <div class="bottom-sheet_contents">
+                    <section class="kb-sec tab_contents">
+                        <div class="kb-form" data-status="error">
                 <strong class="label">조회기간</strong>
                 <div class="lookup-period">
-                    <ul class="btn-segmented">
-                        <li><button><span>1개월</span></button></li>
-                        <li><button><span>3개월</span></button></li>
-                        <li><button><span>6개월</span></button></li>
-                        <li><button><span>1년</span></button></li>
-                        <li><button class="is-selected"><span>직접입력</span></button></li>
-                    </ul>
+                    <!-- 수정 2021-08-23 // -->
+                    <ul class="btn-segmented_radio">
+                        <li>
+                            <input type="radio" name="btnradio" id="btnradio1">
+							<label for="btnradio1">1개월</label>
+						</li>
+						<li>
+							<input type="radio" name="btnradio" id="btnradio2">
+							<label for="btnradio2">3개월</label>
+						</li>
+						<li>
+							<input type="radio" name="btnradio" id="btnradio3">
+							<label for="btnradio3">6개월</label>
+						</li>
+						<li>
+							<input type="radio" name="btnradio" id="btnradio4">
+							<label for="btnradio3">1년</label>
+						</li>
+						<li>
+							<input type="radio" name="btnradio" id="btnradio5" checked>
+							<label for="btnradio3">직접입력</label>
+						</li>
+					</ul>
+                    <!-- // 수정 2021-08-23 -->
                     <div class="period-selector">
                         <input type="text" title="시작날짜" value="2021.08.28">
                         <span>~</span>
@@ -1027,6 +171,7 @@
                 <em class="validation">시작일이 종료일보다 큽니다.</em>
                 <em class="validation">최대 조회 가능 기간은 5년입니다.</em>
             </div>
+            <!-- 
             <div class="kb-form">
                 <strong class="label">유형</strong>
                 <div class="lookup-period">
@@ -1038,8 +183,8 @@
                         <li><span class="form-radio"><input type="radio" id="pushType_5" name="push-type"><label for="pushType_5">이벤트/마케팅</label></span></li>
                     </ul>
                 </div>
-            </div>
-            
+            </div> 
+            -->
             
         </section>
     </div>

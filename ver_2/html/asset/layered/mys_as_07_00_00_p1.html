@@ -3,62 +3,109 @@
 <div class="bottom-sheet full-size" data-layered-name="mys_as_07_00_00_p1">
     
     <div class="bottom-sheet_header">
-        <span class="tit">연령/금융자산 선택</span><!-- 2021-06-22 예적금, 보험 -->
-        <!--<span class="tit">연령선택</span>--><!-- 2021-06-22 입출금, 대출 -->
+        <span class="tit">연령/금융자산 선택</span>
     </div>
     <div class="bottom-sheet_contents">
-        <!-- 수정 : 2021-07-22  (연령대 구성 수정) // -->
-        <!-- 항목이 2개일 경우 // -->
         <section class="kb-sec">
-            <div class="select-lists">
-                <dl>
-                    <dt>연령대</dt>
-                    <dd>
-                        <ul class="select-list">
-                            <li class="is-active"><button type="button"><strong class="tit">20세~24세</strong></button></li>
-                            <li><button type="button"><strong class="tit">25세~29세</strong></button></li>
-                            <li><button type="button"><strong class="tit">30세~34세</strong></button></li>
-                            <li><button type="button"><strong class="tit">35세~39세</strong></button></li>
-                            <li><button type="button"><strong class="tit">40세~44세</strong></button></li>
-                            <li><button type="button"><strong class="tit">45세~49세</strong></button></li>
-                            <li><button type="button"><strong class="tit">50세~54세</strong></button></li>
-                            <li><button type="button"><strong class="tit">55세~59세</strong></button></li>
-                            <li><button type="button"><strong class="tit">60세 이상</strong></button></li>
-                        </ul>
-                    </dd>
-                </dl>
-                <dl>
-                    <dt>금융자산</dt>
-                    <dd>
-                        <ul class="select-list">
-                            <li><button type="button"><strong class="tit">1,000만원 미만</strong></button></li>
-                            <li><button type="button"><strong class="tit">1,000만원~3,000만원</strong></button></li>
-                            <li class="is-active"><button type="button"><strong class="tit">3,000만원~5,000만원</strong></button></li>
-                            <li><button type="button"><strong class="tit">5,000만원~7,000만원</strong></button></li>
-                            <li><button type="button"><strong class="tit">7,000만원~1억원</strong></button></li>
-                            <li><button type="button"><strong class="tit">1억원~3억원</strong></button></li>
-                        </ul>
-                    </dd>
-                </dl>
+            <div class="kb-form">
+                <strong class="label">연령대</strong>
+                <div class="age_grade">
+                    <ul class="btn-segmented_check" data-grid="3">
+                        <li>
+                            <input type="radio" name="ageGrade" id="ageGrade1" >
+                            <label for="ageGrade1">20세 미만</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="ageGrade" id="ageGrade2">
+                            <label for="ageGrade2">20세~29세</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="ageGrade" id="ageGrade3">
+                            <label for="ageGrade3">30세~39세</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="ageGrade" id="ageGrade4">
+                            <label for="ageGrade4">40세~49세</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="ageGrade" id="ageGrade5" >
+                            <label for="ageGrade5">50세~59세</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="ageGrade" id="ageGrade6" checked>
+                            <label for="ageGrade6">60세 이상</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </section>
-        <!-- // 항목이 2개일 경우  -->
-
-        <!-- 항목이 1개일 경우 // -->
         <section class="kb-sec">
-            <ul class="select-list align-c">
-                <li class="is-active"><button type="button"><strong class="tit">20세~24세</strong></button></li>
-                <li><button type="button"><strong class="tit">25세~29세</strong></button></li>
-                <li><button type="button"><strong class="tit">30세~34세</strong></button></li>
-                <li><button type="button"><strong class="tit">35세~39세</strong></button></li>
-                <li><button type="button"><strong class="tit">40세~44세</strong></button></li>
-                <li><button type="button"><strong class="tit">45세~49세</strong></button></li>
-                <li><button type="button"><strong class="tit">50세~54세</strong></button></li>
-                <li><button type="button"><strong class="tit">55세~59세</strong></button></li>
-                <li><button type="button"><strong class="tit">60세 이상</strong></button></li>
-            </ul>
+            <div class="kb-form">
+                <strong class="label">금융자산</strong>
+                <div class="financial-assets">
+                    <ul class="btn-segmented_check" data-grid="3">
+                        <li>
+                            <input type="radio" name="financialAssets" id="financialAssets1" >
+                            <label for="financialAssets1">1천만원 미만</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="financialAssets" id="financialAssets2" checked>
+                            <label for="financialAssets2">1천~3천만원</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="financialAssets" id="financialAssets3">
+                            <label for="financialAssets3">3천~5천만원</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="financialAssets" id="financialAssets4">
+                            <label for="financialAssets4">5천~7천만원</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="financialAssets" id="financialAssets5" >
+                            <label for="financialAssets5">7천~1억원</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="financialAssets" id="financialAssets6" >
+                            <label for="financialAssets6">1억~3억원</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </section>
-        <!-- //  항목이 1개일 경우  -->
-        <!-- // 수정 : 2021-07-22  (연령대 구성 수정) -->
+        <section class="kb-sec">
+            <div class="kb-form">
+                <strong class="label">월소득</strong>
+                <div class="monthly-income">
+                    <ul class="btn-segmented_check" data-grid="3">
+                        <li>
+                            <input type="radio" name="monthlyIncome" id="monthlyIncome1" checked>
+                            <label for="monthlyIncome1">100만원 미만</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="monthlyIncome" id="monthlyIncome2">
+                            <label for="monthlyIncome2">100~200만원</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="monthlyIncome" id="monthlyIncome3">
+                            <label for="monthlyIncome3">200~300만원</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="monthlyIncome" id="monthlyIncome4">
+                            <label for="monthlyIncome4">300~400만원</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="monthlyIncome" id="monthlyIncome5" >
+                            <label for="monthlyIncome5">400~500만원</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="monthlyIncome" id="monthlyIncome6" >
+                            <label for="monthlyIncome6">500만원 이상</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+            
     </div>
     <!-- 항목이 1개일 경우 삭제 // -->
     <div class="bottom-sheet_buttons">

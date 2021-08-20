@@ -25,10 +25,10 @@
 // .bottom-sheet.is-expanded,
 // .bottom-sheet.full-size{max-height:90%}
 .bottom-sheet.is-active{display:flex;flex-flow:column;transform:translateY(-16px);}
-.bottom-sheet .bottom-sheet_header {flex:0 0 24px;padding:0 48px 0 24px;margin-bottom:26px;}
+.bottom-sheet .bottom-sheet_header {flex:0 0 24px;padding:0 48px 0 24px;margin-bottom:24px;}
 .bottom-sheet .bottom-sheet_header .tit {font-size:20px;font-weight: bold;line-height: 24px;}
-.bottom-sheet_contents{@include text;flex:1;overflow:auto;padding-bottom:24px;transition:all .1s;}
-.with-button .bottom-sheet_contents{padding-bottom:40px;}//버튼이 있는 경우(ui.js)
+.bottom-sheet_contents{@include text;flex:1;overflow:auto;padding-bottom:24px;}
+.with-button .bottom-sheet_contents{padding-bottom:60px;}//버튼이 있는 경우(with-button 클래스 : ui.js)
 // .bottom-sheet_contents.is-extended{max-height:80vh;}
 .bottom-sheet_contents .kb-sec:first-child{padding-top:0;}
 .bottom-sheet_buttons{display:flex;}
@@ -118,9 +118,18 @@
 [data-page-name^=employeeSearch].is-branch-search .employee{display:none;}
 [data-page-name^=employeeSearch].is-employee-search .branch,
 [data-page-name^=employeeSearch].is-employee-search .branch-search-list{display:none;}
-.bottopage[data-le-name=bsCalendar] .bottom-sheet_contents{padding-bottom:36px;}
+.bottom-sheet[data-layered-name=bsCalendar] .bottom-sheet_contents{padding-bottom:36px;}
 
 .modal[data-layered-name^=modalNotice] .modal_contents{max-height:calc(var(--vh, 1vh) * 100 - 340px);margin-bottom:0;padding-bottom:32px;}
-
-
 .bottom-sheet[data-layered-name=bsOtherLogin] .select-list li i:first-child{margin-right:10px;}
+
+//조회 조건의 상세보기
+.lookup-detail{margin-top:20px;}
+.lookup-detail .kb-form{display:none;}
+.lookup-detail .btn-text:first-child{float:right}
+.lookup-detail .btn-text:first-child i{@include ir;@include iconBullet($direction: 'down', $width: 14px, $thick: 2px, $color: $kb-ui02);margin-left:8px;}
+.lookup-detail .btn-text:first-child + .kb-form{clear:both;}
+.lookup-detail .btn-text:first-child.is-active ~ .kb-form{display:block;}
+.lookup-detail .btn-text:first-child.is-active i{transform:translateY(-2px) rotate(180deg)}
+.lookup-detail .btn-text:first-child i:after{content:'보기'}
+.lookup-detail .btn-text:first-child.is-active i{content:'숨기기'}

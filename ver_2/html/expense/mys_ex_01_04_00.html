@@ -22,131 +22,97 @@
             <!-- app-content // -->
             <main class="app-content">
                 <!-- 차트 요약 영역 -->
-                <section class="kb-sec view-hidden-expense">
-                    <p class="page-desc">내역에서 숨기기를 해제 한 후 확인 버튼을 선택하시면, 가계부 내역에서 확인하실 수 있습니다. 숨기기 내역은 복원 후 [기타 소득] 수입 카테고리 [기타] 지출 카테고리로 분류됩니다</p><!-- [D] 21-07-05 수정 : 텍스트 수정 -->
-                    <div class="list-controls">
-                        <span class="btn-switch label-front js-checkbox-selector" data-target="hideListSelector">
-                            <input type="checkbox" id="selectAll">
-                            <label for="selectAll"><span>숨기기</span></label>
-                        </span>
-                    </div>
-                    <div class="credit-list-group">
-                        <strong class="group-tit"><em class="num">4</em>월 <em class="num">25</em>일(월)</strong><!-- [D] 21-07-06 수정 : 날짜 표기 방식 수정 -->
-                        <dl class="credit-list t01" data-target="hideListSelector">
-                            <dt>
-                                <span class="info"><em class="date">17:45</em></span>
-                                <strong class="tit">급여</strong>
-                                <span class="tag">국민은행<em>수입</em></span>
-                            </dt>
-                            <dd>
-                                <span class="btn-switch label-front">
-                                    <input type="checkbox" id="toggleBtn1">
-                                    <label for="toggleBtn1">
-                                        <strong class="amount">+<span class="num">4,400,000</span>원</strong>
-                                    </label>
-                                </span>
-                            </dd>
-                            <dt>
-                                <span class="info"><em class="date">17:45</em></span>
-                                <strong class="tit">KB머니 충전</strong>
-                                <span class="tag">국민은행<em>이체</em></span>
-                            </dt>
-                            <dd>
-                                <span class="btn-switch label-front">
-                                    <input type="checkbox" id="toggleBtn2">
-                                    <label for="toggleBtn2">
-                                        <strong class="amount">+<span class="num">470,000</span>원</strong>
-                                    </label>
-                                </span>
-                            </dd>
-                            <dt>
-                                <span class="info"><em class="date">17:45</em></span>
-                                <strong class="tit">유튜브 프리미엄</strong>
-                                <span class="tag">국민은행<em>지출</em></span>
-                                
-                            </dt>
-                            <dd>
-                                <span class="btn-switch label-front">
-                                    <input type="checkbox" id="toggleBtn3">
-                                    <label for="toggleBtn3">
-                                        <strong class="amount">-<span class="num">120,000</span>원</strong>
-                                        <span class="info">할부(<em class="num">1/3</em>)</span>
-                                    </label>
-                                </span>
-                            </dd>
-                        </dl>
-                    </div>
-                    <div class="credit-list-group more-view-box">
-                        <strong class="group-tit"><em class="num">4</em>월 <em class="num">24</em>일(일)</strong><!-- [D] 21-07-06 수정 : 날짜 표기 방식 수정 -->
-                        <dl class="credit-list t01" data-target="hideListSelector">
-                            <dt class="more-view-item" data-view-option="show">
-                                <span class="info"><em class="date">17:45</em></span>
-                                <strong class="tit">스포티파이</strong>
-                                <span class="tag">국민은행</span>
-                            </dt>
-                            <dd class="more-view-item" data-view-option="show">
-                                <span class="btn-switch label-front">
-                                    <input type="checkbox" id="toggleBtn5">
-                                    <label for="toggleBtn2">
-                                        <strong class="amount">+<span class="num">470,000</span>원</strong>
-                                        <span class="info">할부(<em class="num">1/3</em>)</span>
-                                    </label>
-                                </span>
-                            </dd>
-                            <dt class="more-view-item" data-view-option="show">
-                                <span class="info"><em class="date">17:45</em></span>
-                                <strong class="tit">스타벅스</strong>
-                                <span class="tag">하나카드</span>
-                            </dt>
-                            <dd class="more-view-item" data-view-option="show" data-state="cancel">
-                                <span class="btn-switch label-front">
-                                    <input type="checkbox" id="toggleBtn6">
-                                    <label for="toggleBtn3">
-                                        <strong class="amount">-<span class="num">120,000</span>원</strong>
-                                        <span class="info">승인취소</span>
-                                    </label>
-                                </span>
-                            </dd>
-                            <dt class="more-view-item" data-view-option="hide">
-                                <span class="info"><em class="date">17:45</em></span>
-                                <strong class="tit">스포티파이</strong>
-                                <span class="tag">국민은행</span>
-                            </dt>
-                            <dd class="more-view-item" data-view-option="hide">
-                                <span class="btn-switch label-front">
-                                    <input type="checkbox" id="toggleBtn7">
-                                    <label for="toggleBtn2">
-                                        <strong class="amount">-USD<span class="num">120,000</span></strong>
-                                    </label>
-                                </span>
-                            </dd>
-                            <dt class="more-view-item" data-view-option="hide">
-                                <span class="info"><em class="date">17:45</em></span>
-                                <strong class="tit">스타벅스</strong>
-                                <span class="tag">하나카드</span>
-                            </dt>
-                            <dd class="more-view-item" data-view-option="hide" data-state="cancel">
-                                <span class="btn-switch label-front">
-                                    <input type="checkbox" id="toggleBtn8">
-                                    <label for="toggleBtn3">
-                                        <strong class="amount">-USD<span class="num">120,000</span></strong>
-                                        <span class="info">승인취소</span>
-                                    </label>
-                                </span>
-                            </dd>
-                        </dl>
-                        <div class="btn-area center mt16">
-                            <button class="btn-more-view"><i class="icon-plus_20"></i><span>더보기</span></button>
-                        </div>
-                    </div>
+                <section class="kb-sec page-info bg-gray">
+                    <ul class="select-list" data-style="list">
+                        <li><span>내역에서 숨기기를 해제 한 후 확인 버튼을 선택하시면, 가계부 내역에서 확인하실 수 있습니다.</span></li>
+                        <li><span>‘항상 수입·지출 내역에서 <em class="c-red">숨기기’</em> 내역은 복원 후 <em class="c-red">[기타소득] 수입 카테고리 [기타] 지출</em> 카테고리로 분류됩니다.</span></li>
+                    </ul>
                 </section>
-                <!-- [D] 수정 2021-06-03 : sticky-bottom을 section 바깥으로 //-->
+                <section class="kb-sec view-hidden-expense">
+                    <div class="list-controls">
+                        <span class="form-checkbox js-checkbox-selector" data-target="hideListSelector"><input type="checkbox" id="selectAll" checked=""><label for="selectAll">전체 숨기기 해제</label></span>
+                    </div>
+                    <strong class="h4 credit-list-tit"><em class="num">7</em>월 <em class="num">15</em>일 (목)</strong>
+                    <dl class="credit-list" data-target="hideListSelector">
+                        <dt class="form-checkbox">
+                            <input type="checkbox" id="viewHideList01">
+                            <label for="viewHideList01">
+                                <span class="info"><em class="num">17:45</em><em>수입</em></span>
+                                <strong class="tit">급여</strong>
+                                <span class="tag">국민은행</span>
+                            </label>
+                        </dt>
+                        <dd>
+							<strong class="amount income"><span class="num">200,000</span>원</strong>
+                        </dd>
+                        <dt class="form-checkbox">
+                            <input type="checkbox" id="viewHideList02">
+                            <label for="viewHideList02">
+                                <span class="info"><em class="num">17:45</em><em>이체</em></span>
+                                <strong class="tit">카카오 페이 머니 충전</strong>
+                                <span class="tag">카카오페이</span>
+                            </label>
+                        </dt>
+                        <dd>
+							<strong class="amount"><span class="num">73,500</span>원</strong>
+                        </dd>
+                        <dt class="form-checkbox">
+                            <input type="checkbox" id="viewHideList03">
+                            <label for="viewHideList03">
+                                <span class="info"><em class="num">17:45</em><em>지출</em></span>
+                                <strong class="tit">국민병원</strong>
+                                <span class="tag">국민은행</span>
+                            </label>
+                        </dt>
+                        <dd>
+							<strong class="amount expense"><span class="num">200,000</span>원</strong>
+							<span class="info">할부(<em class="num">1&sol;6</em>)</span>
+                        </dd>
+                    </dl>
+                    <strong class="h4 credit-list-tit"><em class="num">7</em>월 <em class="num">14</em>일 (수)</strong>
+                    <dl class="credit-list" data-target="hideListSelector">
+                        <dt class="form-checkbox">
+                            <input type="checkbox" id="viewHideList01">
+                            <label for="viewHideList01">
+                                <span class="info"><em class="num">17:45</em><em>수입</em></span>
+                                <strong class="tit">급여</strong>
+                                <span class="tag">국민은행</span>
+                            </label>
+                        </dt>
+                        <dd>
+							<strong class="amount income"><span class="num">200,000</span>원</strong>
+                        </dd>
+                        <dt class="form-checkbox">
+                            <input type="checkbox" id="viewHideList02">
+                            <label for="viewHideList02">
+                                <span class="info"><em class="num">17:45</em><em>이체</em></span>
+                                <strong class="tit">카카오 페이 머니 충전</strong>
+                                <span class="tag">카카오페이</span>
+                            </label>
+                        </dt>
+                        <dd>
+							<strong class="amount"><span class="num">73,500</span>원</strong>
+                        </dd>
+                        <dt class="form-checkbox">
+                            <input type="checkbox" id="viewHideList03">
+                            <label for="viewHideList03">
+                                <span class="info"><em class="num">17:45</em><em>지출</em></span>
+                                <strong class="tit">국민병원</strong>
+                                <span class="tag">국민은행</span>
+                            </label>
+                        </dt>
+                        <dd>
+							<strong class="amount expense"><span class="num">200,000</span>원</strong>
+							<span class="info">할부(<em class="num">1&sol;6</em>)</span>
+                        </dd>
+                    </dl>
+                    <button class="btn-view-more"><span>+ 더보기</span></button>
+                </section>
                 <div class="sticky-bottom">
                     <div class="btn-area">
-                        <button type="button" class="btn-solid"><span>확인 (<em class="num">0</em>)</span></button>
+                        <button type="button" class="btn-solid"><span>숨기기 해체(<em class="num">n</em>)</span></button>
                     </div>
                 </div>
-                <!-- // [D] 수정 2021-06-03 : sticky-bottom을 section 바깥으로 -->
                 <!-- // 차트 요약 영역 -->
                 
             </main>
@@ -162,7 +128,7 @@
     <!-- Script -->
     @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
-    <script src="@@webRoot/static/js/ui.js"></script>t>
+    <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
 </body>
 </html>

@@ -26,7 +26,6 @@ body.guide .box:not(.fold) .flex-dl > dt pre{display:none;}
 body.guide .box:not(.fold) .flex-dl > dt .btn-view-source.is-active + pre{display:block;}
 body.guide .flex-dl > dd:not(.guide-description){position:relative;width:377px;max-width:100%;margin-top:50px;padding:15px;border:1px solid #ddd;border-radius:2px;}
 body.guide .flex-dl > dd .g-desc{position:absolute;bottom:calc(100% + 5px);left:0;font-weight:bold;color:#fff;}
-
 body.guide .flex-dl > dd.guide-description{flex:0 0 100%;margin-top:15px;padding:15px;border:1px solid #ddd;line-height:1.8;}
 body.guide .flex-dl > dd.no-space{padding:0;}
 body.guide .flex-dl > dd iframe{width:100%;}
@@ -127,9 +126,15 @@ body.guide .guide-template-list iframe{display:block;width:100%;margin-top:10px;
 
 .guide-layout{width:100%;}
 .iframe-view-group{display:flex;flex-wrap:wrap;justify-content:flex-start;}
-.iframe-view{width:360px;height:666px;margin:10px;}
+.iframe-view{width:360px;height:466px;margin:10px;}
 
 .iframe-view iframe{width:100%;height:calc(100% - 26px);background-color:#fff;}
+.iframe-view .native-bar + iframe{height:calc(100% - 74px);}
 .iframe-view .tit{display:block;font-size:16px;margin-bottom:10px;color:#fff;}
 h2 + .iframe-view{margin-top:10px;}
 h2 + .iframe-view-group{margin-top:20px;}
+
+.box h2 + .guide-desc{margin:10px 0;padding:10px;background-color:#fff;line-height:1.4;}
+
+.native-bar{display:flex;justify-content:space-between;align-items:center;height:48px;background-color:rgb(42, 198, 245);padding:12px 24px;font-weight:bold;}
+.native-bar .btn-close{overflow:hidden;white-space:nowrap;text-indent:100%;width:24px;height:24px;background:url(../resources/images/icon-close.png) no-repeat;background-size:cover;}

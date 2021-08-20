@@ -5,8 +5,6 @@
 .icon-cloud-download{background:url(../images/etc/cloud-download@2x.png) no-repeat;background-size:cover;}
 .icon-kb-certificate-download{background:url(../images/etc/kb-certificate-download@2x.png) no-repeat;background-size:cover;}
 
-
-
 //FACE ID(mys_co_04_01_03_01)
 .face-id .kb-sec + .kb-sec{margin-top:48px;}
 .face-id ul[data-style=list]{margin-top:20px;}
@@ -20,7 +18,7 @@
 .app-content[class*=login-certification] .kb-mobile-certification-msg + ul{margin-top:156px;margin-bottom:24px;}
 .app-content[class*=login-certification] .starbank-automove{margin-top:32px;margin-bottom:72px; text-align: center;}
 .app-content[class*=login-certification] .other-login .btn-text span{@include text($size:$text03,$weight:bold); }
-.app-content[class*=login-certification] .other-login .btn-text i{@include iconBullet($direction: 'up', $width: 13px, $height: 7px, $thick: 2px, $color: #52565d);top:0px;margin-left:10px;}
+.app-content[class*=login-certification] .other-login .btn-text i{@include iconBullet($direction: 'up', $width: 13px, $thick: 2px, $color: #52565d);top:0px;margin-left:10px;}
 .app-content[class*=login-certification] .certification-issued{margin-top:32px;text-align:center;}
 .popup[data-layered-name=popupCertificationLoading] .loading-certification .tit{display:block;text-align:center;font-weight:bold;color:$kb-ui02;}
 .popup[data-layered-name=popupCertificationLoading] .loading-certification .loader{margin-top:40px;}
@@ -324,7 +322,9 @@ h1 + .joint-certificate-list{margin-top:28px;}
 //공지사항
 .mydata-notie .msg{margin-top:24px;color:$kb-ui03;}
 .mydata-notie .notice-list{border-top:1px solid $kb-ui09;}
-.mydata-notie .notice-view{margin-top:12px;}
+.mydata-notie .notice-list li>a{padding:1.6rem 0;}
+.mydata-notie .notice-list li>a span{display:block;margin-top:0.9rem;color:$kb-ui05;}
+// .mydata-notie .notice-view{margin-top:12px;}
 .notice-list{border-top:1px solid $kb-ui09;}
 .notice-list > li{border-bottom:1px solid $kb-ui09;}
 .notice-list > li > a{display:block;padding:20px 0;}
@@ -332,8 +332,8 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .notice-list > li p{@include text}
 .notice-list > li .date{@include number($size: 15px);color:$kb-ui05;margin-top:16px;}
 .notice-view dt .tit{@include text($size: $text01, $weight:bold);display:block;}
-.notice-view dt .date{@include number($size: 15px);display:block;margin-top:12px;line-height:1;color:$kb-ui05}
-.notice-view dt + dd{@include text;color:$kb-ui03;margin-top:24px;padding-top:32px;border-top:1px solid $kb-ui09;}
+.notice-view dt .date{@include number($size: 15px);display:block;margin-top:1.6rem;line-height:1;color:$kb-ui05}
+.notice-view dt + dd{@include text;color:$kb-ui02;margin-top:24px;padding-top:32px;border-top:1px solid $kb-ui09;}
 
 
 //FAQ
@@ -348,26 +348,32 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .mydata-faq .accordian dd:before{top:31px}
 
 //전화상담
-.mydata-call-center .operation-time{margin-top:28px;}
-.mydata-call-center .operation-time > span{color:$kb-ui04;}
-.mydata-call-center .operation-time p{@include text($size: $text02, $weight:bold, $line-height:1);margin-top:12px;}
-.mydata-call-center .operation-time p i{margin-right:8px;}
-.mydata-call-center .operation-time p .num{@include number($size: 17px, $weight:bold, $line-height:1);}
-.mydata-call-center .connect-call-center{margin-top:52px;margin-bottom:48px;}
-.mydata-call-center .connect-call-center li{border:1px solid $kb-ui09;border-radius:2px;}
-.mydata-call-center .connect-call-center li + li{margin-top:20px;}
-.mydata-call-center .connect-call-center li > a{display:flex;padding:20px;}
-.mydata-call-center .connect-call-center li .icon-circle{position:relative;width:40px;height:40px;border-radius:50%;background-color:$kb-ui10;}
-.mydata-call-center .connect-call-center li .icon-circle i{@include absCenter;}
-.mydata-call-center .connect-call-center li p{margin-left:10px;}
-.mydata-call-center .connect-call-center li .tit{@include text($size: $text02, $line-height:1, $weight:bold);display:block;margin-bottom:8px;}
-.mydata-call-center .connect-call-center li .num{@include text($size: 17px, $line-height:1, $weight:bold);}
-.mydata-call-center .connect-call-center li .num + span{@include text($size: $text03, $line-height:1);color:$kb-ui06;}
+.mydata-call-center .kb-sec.bg-gray .info-text{@include text($size: 15px);$color:$kb-ui03;padding:0.4rem 0;}
+.mydata-call-center .operation-time{margin:4.1rem 0;}
+.mydata-call-center .operation-time .h4{}
+.mydata-call-center .operation-time p[data-style=list]{margin-top:2rem;font-size:1.6rem;color:$kb-ui02;}
+.mydata-call-center .operation-time p .num{font-size:1.6rem;}
+.mydata-call-center .connect-call-center{margin-top:5rem;margin-bottom:4.5rem;}
+.mydata-call-center .connect-call-center li{border-bottom:0.1rem solid $kb-ui09;}
+.mydata-call-center .connect-call-center li:first-child{border-top:0.1rem solid $kb-ui09;}
+.mydata-call-center .connect-call-center li > a{display:flex;justify-content:space-between;padding:2rem 0;}
+.mydata-call-center .connect-call-center li .text-wrap{flex:1 0 auto;align-self:center;}
+.mydata-call-center .connect-call-center li [class^=icon]:last-child{align-self:center;}
+.mydata-call-center .connect-call-center li .tit{@include text($size: $text01, $line-height:1, $weight:bold);display:block;margin-bottom:1rem;}
+.mydata-call-center .connect-call-center li .num{@include text($size: $text03, $line-height:1);color:$kb-ui03;}
+.mydata-call-center [data-style=list]{color:$kb-ui01;}
+.mydata-call-center [data-style=list] li ~ li{margin-top:1.2rem;}
+
+// temp
+.icon-temp{position: relative;width:40px;height:40px;background:lightGray;margin-right:1.6rem;}
+.icon-temp::after{content:'temp';position:absolute;top:0;left:0;}
+
+
 
 //약관 및 정책
 .term-lists{margin-top:40px;}
 .term-lists > li{border-bottom:1px solid $kb-ui09;}
-.term-lists > li > a{position:relative;display:block;padding:24px 0;}
+.term-lists > li > a{position:relative;display:block;padding:1.9rem 0;}
 .term-lists .tit{@include text($size: $text01, $weight:bold, $line-height:1);}
 .term-lists .icon-link_24{position:absolute;right:-2px;top:50%;transform:translateY(-50%)}
 
@@ -414,16 +420,16 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .mm-alarm-setting .mm-alarm-setting-detail li .btn-switch{float:right;}
 
 //이용동의
-.mn-agreements .kb-sec + .kb-sec{margin-top:48px;}
-.mn-agreements h2{padding-bottom:20px;line-height:1;border-bottom:1px solid $kb-ui02;}
+.mn-agreements .kb-sec + .kb-sec{padding-top:4.8rem;margin-top:4.8rem;border-top:1rem solid $kb-ui10;}
+.mn-agreements h2{padding-bottom:1.65rem;line-height:1;border-bottom:1px solid $kb-ui02;}
 .mn-agreements .mn-agreements-list{padding:20px 0;border-bottom:1px solid $kb-ui09;}
 .mn-agreements .mn-agreements-list a{@include text;position:relative;display:block;padding-right:32px;}
-.mn-agreements .mn-agreements-list > li + li{margin-top:10px;}
+.mn-agreements .mn-agreements-list > li + li{margin-top:1.75rem;}
 .mn-agreements .mn-agreements-list02{padding:20px 0;}
 .mn-agreements .mn-agreements-list02 p{position:relative;}
 
-.mn-agreements .mn-agreements-list02 p label{font-weight:bold;}
-.mn-agreements .mn-agreements-list02 dl{margin-top:20px;margin-left:38px;}
+.mn-agreements .mn-agreements-list02 label{font-weight:bold;}
+.mn-agreements .mn-agreements-list02 dl{padding:1.8rem 0;margin-top:2rem;margin-left:3.6rem;border:0.1rem solid $kb-ui08;border-width:1px 0;}
 .mn-agreements .mn-agreements-list02 .checkbox-group{flex-flow:row;flex-wrap:wrap;}
 .mn-agreements .mn-agreements-list02 .checkbox-group li{width:50%;}
 .mn-agreements .mn-agreements-list02 .checkbox-group li + li{margin-top:0;}
@@ -450,6 +456,9 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .mn-agreements button{position:relative;width:100%;padding:5px 32px 5px 0;text-align:left;line-height:1.4;}
 .mn-agreements li .icon-link_24,
 .mn-agreements .mn-agreements-list02 p .icon-link_24 {position:absolute;right:0;top:calc(50% - 12px);}
+.mn-agreements .kb-sec + .kb-sec .mn-agreements-list > li ~ li{margin-top:2rem;border-top:1px solid #26282c;padding-top:2rem}
+.mn-agreements .mn-agreements-list02 + .checkbox-group.st_list{padding-bottom:2rem;border-bottom:0.1rem solid $kb-ui08;}
+.mn-agreements .mn-agreements-list02 + .checkbox-group.st_list label{font-weight:bold;}
 
 .mm-manage-certificate p{@include text}
 .mm-manage-certificate p + p{margin-top:12px;}
@@ -494,7 +503,7 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .coupon-list li .use-status > span{display:block;position:absolute;left:50%;top:50%;width:8rem;height:8rem;border-radius:50%;transform:translate(-50%, -50%);font-size:1.6rem;letter-spacing:-0.032rem;text-align:center;line-height:8rem;font-weight:bold;color:#f7f7f8;background-color:#26282c;z-index:1;}
 .coupon-list li .use-status .btn-text{position:absolute;right:1.15rem;bottom:1.35rem;padding:10px;letter-spacing:-0.032rem;color:#fff;z-index:1;}
 
-.coupon-detail .kb-sec:first-of-type{border-bottom:1rem solid $kb-ui09}
+.coupon-detail .kb-sec:first-of-type{border-bottom:1rem solid $kb-ui09;}
 .coupon-detail .kb-sec + .kb-sec{margin-top:4.8rem;}
 .coupon-detail .accordian{margin-top:3.2rem;}
 .coupon-detail .caution-msg{font-size:1.6rem;letter-spacing:-0.032rem;line-height:1.44;color:$kb-ui02;}
@@ -548,7 +557,7 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .recommend-to-friend .no-data{margin-top:10rem;}
 
 //친구 추천 이력(mys_mn_06_01_06)
-.recommend-history{margin-top:-1rem;}
+.recommend-history{margin-top:-1rem;background-color:#fff;}
 .recommend-history .event-img{margin:0 -2.4rem;text-align:center;}
 .recommend-history .join-count{padding:2.9rem;margin:3.2rem 0 4.8rem;text-align:center;color:$kb-ui02;background-color:$kb-ui10;}
 .recommend-history .join-count strong{display:block;margin-top:8px;font-size:2.4rem;font-weight:bold;line-height:1;color:$kb-ui02}
@@ -603,3 +612,5 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .mydata-service-specialty dt{@include text($size: $text02, $weight:bold);}
 .mydata-service-specialty dd{@include text($size: $text03);color:$kb-ui04;margin-top:12px;}
 .mydata-service-specialty .desc{margin-top:28px;}
+
+

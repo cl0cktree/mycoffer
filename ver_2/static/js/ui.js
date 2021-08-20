@@ -170,7 +170,7 @@ var gfn_layered = {
                 });
             }
             //$('[data-call-layered="' + name +'"]').focus(); (수정 : loop 문제)
-            
+
         }else{
             gfn_dim.hide();
             $layered.children('div').removeClass('is-active is-expanded').removeAttr('style');
@@ -196,7 +196,7 @@ $('body').on('click','[data-action=close]',function(){
 
     //Cookie[s]
     //Checkbox 형태일때
-    var cookieChecker = $(this).closest('.floating-banner').find('.cookie-hidden');    
+    var cookieChecker = $(this).closest('.floating-banner').find('.cookie-hidden');
     if(cookieChecker.length && cookieChecker.is(':checkbox')){
         var cookieValue = cookieChecker.prop('checked');
         var cookieName = cookieChecker.attr('name');
@@ -205,7 +205,7 @@ $('body').on('click','[data-action=close]',function(){
             cookie.delete(cookieName);
         }else{
             cookie.set(cookieName, cookieValue, cookieDay);
-        }        
+        }
     }
 
     //button 형태일 때
@@ -218,6 +218,11 @@ $('body').on('click','[data-action=close]',function(){
     //Cookie[e]
 
 });
+// .on('click','[data-action=initialize]',function(){
+//     //bottom 시트 초기화
+//     var thisFormID = $(this).closest('form').attr('id');
+//     $('#' + thisFormID)[0].reset();
+// });
 
 //modal 호출(data-call-modal 이름과 modal의 ID가 같아야함)
 $('body').on('click','button[data-call-modal]',function(){
@@ -485,15 +490,28 @@ if($('.bottom-sheet').length){
 }
 
 //datepicker 입력
-$('body').on('keyup','.datepicker input, .period-selector input, .date-time-selector input:first-child',function(){
+$('body').on('keyup','.datepicker input, .period-selector input', function(){
     var val = $(this).val();
     var date = gfn_dateFormatter(val);
     $(this).val(date);
 })
 .on('click','.btn-datepicker',function(e){
     e.preventDefault();
-    if(!$(this).closest('.is-disabled').length) gfn_layered.open('bsCalendar');
+    //if(!$(this).closest('.is-disabled').length) gfn_layered.open('bsCalendar');
+    gfn_layered.open('bsCalendar');
 });
+
+//datapicker 버튼 삽입후 필요시 binding
+var btnDatepicker = {
+    "on" : function(){
+        $('.btn-datepicker').on('click',function(){
+            gfn_layered.open('bsCalendar');
+        });
+    },
+    "off" : function(){
+        $('.btn-datepicker').off('click');
+    }
+}
 
 //날짜 선택
 $('.datepicker').each(function(){
@@ -503,37 +521,20 @@ $('.datepicker').each(function(){
         $(this).find('input').prop('readonly',false);
     }
     $(this).find('input').attr('inputmode','numeric');
-    $(this).find('input').after('<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button><button class="btn-datepicker"><span>날짜선택</span></button>');
+    $(this).find('input').after('<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button><button class="btn-datepicker" type="button"><span>날짜선택</span></button>');
+    btnDatepicker.on();
 });
 
 //기간 선택
 $('.period-selector').each(function(){
     if($(this).hasClass('is-disabled')){
-        $(this).find('input').prop('readonly',true);
+        $(this).find('input').prop({'readonly': true});        
     }else{
-        $(this).find('input').prop('readonly',false);
+        $(this).find('input').prop({'readonly': false});
     }
     $(this).find('input').attr('inputmode','numeric');
-    $(this).find('input').after('<button class="btn-datepicker"><span>날짜선택</span></button>');
-});
-
-//날짜 시간 선택
-$('.date-time-selector')
-.on('focus','input',function(){
-    if(!$(this).parent('.date-time-selector').hasClass('is-disabled')){
-        //$(this).index() != 0 ? gfn_layered.open('bsTime') : gfn_layered.open('bsCalendar');
-        if($(this).is(':last-child')) gfn_layered.open('bsTime');
-    }
-})
-.each(function(){
-    $(this).find('input:first-child').attr('inputmode','numeric');
-    $(this).find('input:first-child').after('<button class="btn-datepicker"><span>날짜선택</span></button>');
-    if($(this).hasClass('is-disabled')){
-        $(this).find('input').prop('readonly',true);
-    }else{
-        $(this).find('input:first-child').prop('readonly',false);   //날짜
-        $(this).find('input:last-child').prop('readonly',true);     //시간
-    }
+    $(this).find('input').after('<button class="btn-datepicker" type="button"><span>날짜선택</span></button>');
+    btnDatepicker.on();
 });
 
 if($('.form-select').length){
@@ -656,7 +657,7 @@ $('.tab.swiper-container').each(function(idx) {
     var isContentsTab = $tab.next('.tab_contents');
     var isContentsSwiper = $tab.parent().hasClass('tab-swiper-wrap');
 
-    //WAI-ARIA 
+    //WAI-ARIA
     $tab.attr('role','tablist');
     $tab.find('li > button, li > a').attr('role','tab');
 
@@ -799,7 +800,7 @@ if($('.add-form-box').length){
         //btn-edit-form
         if($edit){
             $editBox.addClass('is-edit').attr('data-status', 'edit');
-            $editBox.find('input[type="text"]').val('').removeAttr('readonly');
+            $editBox.find('input[type="text"]').val(resetVal).removeAttr('readonly');
         }
         //btn-save-form
         if($save){
@@ -1231,7 +1232,7 @@ $('.calendar-nav').on('click','button',function(){
 });
 
 function calendarDateSet(date){
-    $('.calendar-nav').find('strong').text($.datepicker.formatDate("yyyy", date) + '년 ' + $.datepicker.formatDate("MM", date) + '월');
+    $('.calendar-nav').find('strong').text($.datepicker.formatDate("yyyy", date) + '.' + $.datepicker.formatDate("MM", date));
     //console.log($.datepicker.formatDate("yyyy", date) + '년 ' + $.datepicker.formatDate("MM", date) + '월')
 }
 
@@ -1425,7 +1426,7 @@ function currentTxtPosition(obj){
 
 
 //Foucs Trap (for WA)
-var focusTrap = function($target) {    
+var focusTrap = function($target) {
     var tabbable = $target.find('select, input, textarea, button, a').filter(':visible');
 
     var firstTabbable = tabbable.first();
@@ -1449,7 +1450,7 @@ var focusTrap = function($target) {
             lastTabbable.focus();
         }
     });
-    
+
     /* allow escape key to close insiders div */
     $target.on('keyup', function(e){
       if (e.keyCode === 27 ) {
@@ -1459,6 +1460,20 @@ var focusTrap = function($target) {
 };
 
 
+//BS 조건 선택
+$('.select-period').on('change','input:radio',function(){
+    if($(this).parent('li').is(':last-child') && $(this).val()){
+        $('.select-period').find('.period-selector').removeClass('is-disabled').find('input').prop({'readonly': false});
+    }else{
+        $('.select-period').find('.period-selector').addClass('is-disabled').find('input').prop({'readonly': true});
+    }
+});
+
+//class만 toggle로 넣고 싶을때
+$('body').on('click','button[data-toggle-class]',function(){
+    var toggleName = $(this).data('toggle-class');
+    $(this).toggleClass(toggleName);
+})
 
 
 

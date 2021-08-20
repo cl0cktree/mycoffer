@@ -26,7 +26,7 @@
                     <div class="kb-form" data-status="">
                         <label for="forExpenseAmount">금액</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" id="forExpenseAmount" placeholder="" value="20000" data-unit="만원" data-action="autoSeperator">
+                            <input type="text" inputmode="numeric" id="forExpenseAmount" placeholder="" value="20000" data-unit="원" data-action="autoSeperator">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
                         <em class="validation">Message</em>
@@ -64,8 +64,8 @@
                             <button type="button" class="btn-solid form btn-edit-type" data-call-layered="bsUserRegisterSetCategory_expense"><span>변경</span></button>
                         </div>
                         <ul class="edit-option">
-                            <li><span class="btn-switch label-front"><input type="radio" name="radioSwitch2" id="toggleBtnOption01" checked=""><label for="toggleBtnOption01"><span>식비 합계 포함</span></label></span></li>
-                            <li><span class="btn-switch label-front"><input type="radio" name="radioSwitch2" id="hideExpenseList" data-call-modal="hideList"><label for="hideExpenseList"><span>내역 숨기기</span></label></span></li>
+                            <li><span class="btn-switch label-front"><input type="checkbox" name="radioSwitch1" id="includeSum" checked=""><label for="includeSum"><span>지출 합계 포함</span></label></span></li>
+                            <li><span class="btn-switch label-front"><input type="checkbox" name="radioSwitch2" id="hideExpenseList" data-call-modal="hideList"><label for="hideExpenseList"><span>내역 숨기기</span></label></span></li>
                             <li class="delete"><span>내역삭제</span><button class="btn-line btn-delete" onClick="deleteHistory();"><span>삭제</span></button></li>
                         </ul>
                     </div>
@@ -156,6 +156,11 @@
                 }
             });
         }
+
+        $('#hideList').on('click', '.btn-solid.cancel', function(){
+            $('#hideExpenseList').prop('checked', false);
+            console.log('click');
+        });
     </script>
 	<!-- Add Script -->
 

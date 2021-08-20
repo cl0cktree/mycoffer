@@ -31,11 +31,7 @@ if($appMenu.length){
 
     if(headerType != undefined) headerType = headerType.toLowerCase();
     
-    switch (headerType){
-        case 'back':
-            $appHeader.find('.btn-history-back').show().siblings().not('.page-tit').remove();
-            $appMenu.remove();
-            break;
+    switch (headerType){        
         case 'close':
             $appHeader.find('.btn-close').show().siblings().not('.page-tit').remove();
             $appMenu.remove();
@@ -45,15 +41,19 @@ if($appMenu.length){
             $appMenu.remove();
             break;
         case 'submain':
-            $appHeader.find('.btn-notice-box, .btn-allmenu').show()
             $appHeader.find('.btn-history-back, .btn-home ,.btn-close').remove();
             break;
+        case 'process':
+            $appHeader.find('.btn-home, .btn-notice-box, .btn-allmenu').remove();            
+            $appMenu.remove();
+            break;
+        case 'complete':            
+            $appHeader.find('.btn-history-back, .btn-notice-box, .btn-close').remove();                        
+            break;
         case 'home':
-            $appHeader.find('.btn-history-back, .btn-home, .btn-allmenu').show()
             $appHeader.find('.btn-notice-box, .btn-close').remove();
             break;
         default:
-            $appHeader.find('.btn-history-back, .btn-home, .btn-allmenu').show()
             $appHeader.find('.btn-notice-box, .btn-close').remove();
             console.log('There is no Type ' + headerType);
     }

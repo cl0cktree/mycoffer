@@ -69,14 +69,6 @@
 .expense-monthly-place .total-summary .date{display:block;margin-bottom:10px}
 .expense-management-goal .content-tit{text-align:center;padding:24px 0}
 // 가계부 > 캘린더로 보기
-// common
-.view-expense-calendar .summary-amount{padding:0.5rem 0;border-top:1px solid $kb-ui09;border-bottom:1px solid $kb-ui09}
-.view-expense-calendar .summary-amount dt{margin:0.6rem 0}
-.view-expense-calendar .summary-amount .amount span{font-size:1.9rem;font-weight:bold}
-.view-expense-calendar .summary-amount .income .num{color:$color-blue}
-.view-expense-calendar .summary-amount .expense .num{color:$color-red}
-.view-expense-calendar .summary-amount .transfer .num{color:$kb-ui03}
-.calendar-container{width:100%;background:$kb-ui11}
 .calendar-container .summary-amount{margin-top:2.5rem}
 .calendar-container .summary span::before{display:inline-block;width:1.5rem;height:1.5rem;margin-right:4px;border-radius:50%;border-radius:50%;border:1px solid;line-height:14px;text-align:center;vertical-align:middle}
 //header
@@ -89,6 +81,7 @@
 .calendar-header .summary:last-of-type{border-bottom:1px solid $kb-ui09}
 .calendar-header .summary span{display:block;margin-bottom:7px}
 .calendar-header .summary span{font-weight:bold}
+.calendar-header .credit-list-amount{margin-top:2.2rem}
 //calendar
 .calendar{position:relative}
 .tbl-calender .day-name{padding-bottom:1.2rem;text-align:center;font-size:1.4rem;color:$kb-ui04}
@@ -110,30 +103,18 @@
 .tbl-calender-label li .transfer::before{background-color:$kb-ui02}
 .tbl-calender-label li .pay::before{background-color:$color-yellow}
 .day-detail-list{display:none}
-.day-detail-list .h4{display:block;margin-bottom:1.5rem}
-.day-detail-list .day-list + .day-list{margin-top:4.8rem}
-.day-detail-list .summary-amount{padding-top:1rem;border-top-color:$kb-ui04}
-.day-detail-list .credit-list{display:block}
-.day-detail-list .credit-list > dt{padding-bottom:0;border-bottom:0}
-.day-detail-list .credit-list > dd{padding-top:1.5rem;padding-bottom:2rem}
-.day-detail-list .credit-list .info{color:$kb-ui03}
-.day-detail-list .credit-list dt{position:relative;padding-left:4rem}
-.day-detail-list .credit-list dt i[class^="icon-"]{position:absolute;top:50%;left:0;width:3.2rem;height:3.2rem;background-color:blue}
-.day-detail-list .credit-list dt .info .num{font-size:1.5rem}
-.day-detail-list .credit-list dt .info .num+em{display:inline-block;margin-left:0.8rem;padding-left:0.8rem;font-size:1.4rem;border-left:1px solid $kb-ui08}
-.day-detail-list .credit-list dt .tit{margin-top:1.4rem}
-.day-detail-list .credit-list dt .tag{margin-top:1.1rem;font-size:1.3rem;color:$kb-ui05}
-.day-detail-list .credit-list dd .amount{color:$kb-ui02}
-.day-detail-list .credit-list dd .amount .num{display:inline-block;margin-right:0.5rem;font-size:1.7rem;font-weight:bold}
-.day-detail-list .credit-list dd .expense .num{color:$color-red}
-.day-detail-list .credit-list dd .income .num{color:$color-blue}
-.day-detail-list .credit-list dd .info{font-size:1.3rem;color:$kb-ui04}
-.day-detail-list .credit-list dd .info .num{font-size:1.4rem;color:$kb-ui04}
-.day-detail-list .btn-view-more{width:100%;text-align:center;margin-top:2.5rem;padding:1rem 0}
+.day-detail-list .day-list{display:none}
+.day-detail-list .day-list.is-active{display:block}
+.day-detail-list .credit-list dt i[class^="icon-"]{background-color:blue}
+.btn-view-more.center,
+.credit-list + .btn-view-more,
+.credit-list_link-type + .btn-view-more{width:100%;text-align:center;margin-top:2.5rem;padding:1rem 0}
 // 가계부 > 수기등록
 .user-register-list > .tab{margin-bottom:32px}
 .user-register-list .user-register-forms .kb-form + .kb-form{margin-top:20px}
+.user-register-list [data-role="popup"]:after{position:absolute;right:0;top:0.6rem;z-index:1;content: '';width:2rem;height:2rem;background:url(../images/common/common.png) no-repeat -4.4rem -2rem;background-size:16rem}
 .user-register-list .user-register-forms .btn-area.center{margin-top:20px}
+.user-register-list input[data-numeric-type="number"]{text-align:left}
 // 가계부 > 카테고리 설정
 .bottom-sheet_header .bs_subtit{margin-top:2.5rem;font-size:1.6rem}
 .user-register-category .btn-text + .btn-text{margin-left:12px}
@@ -145,7 +126,7 @@
 .user-register-category .category-list > li{@include text($text02, normal);position:relative;z-index:1;padding:20px 0;border-top:1px solid $kb-ui09;}
 .user-register-category .category-list > li > div{display:flex;flex-wrap:wrap}
 .user-register-category .category-list > li > div .btn-text{flex:1;text-align:left}
-.user-register-category .category-list > li > div .btn-text i{@include iconBullet($direction: 'down', $width: 16px, $height : 9px, $thick : 1px, $color : $kb-ui05)}
+.user-register-category .category-list > li > div .btn-text i{@include iconBullet($direction: 'down', $width: 16px, $thick : 1px, $color : $kb-ui05)}
 .user-register-category .category-list li span[class*=badge_],
 .user-register-category .category-list li i[class*='icon-']{margin-right:8px;}
 .user-register-category .edit-user{position:relative;display:flex;align-items:center;justify-content:flex-start;flex-wrap:wrap;width:100%}
@@ -187,7 +168,7 @@
 .kb-form[data-type="icon"] > i[class*='icon-']{margin-right:8px}
 .kb-form[data-type="icon"] .btn-select-icon{position:relative;width:3.6rem;height:3.6rem}
 .kb-form[data-type="icon"] .btn-select-icon .icon-plus_20{position:absolute;bottom:0;right:0;display:inline-flex;align-items:center;justify-content:center;width:1.6rem;height:1.6rem;border-radius:50%;background-color:$kb-ui09}
-.select-icon-list li button{width:100%;height:2.4rem;text-align:center}
+.select-icon-list li button{width:100%;height:3.2rem;text-align:center}
 .select-icon-list li button img{width:auto;height:100%}
 .select-icon-list li span{display:none}
 .accordian > dt .edit-user button{flex:none}
@@ -220,9 +201,8 @@
 .filter-category-setting .st-list .form-checkbox_20 label{font-size:16px}
 .filter-category-setting .accordian dt.is-active .form-checkbox input + label{font-weight:bold}
 // 숨긴 지출 보기
-.view-hidden-expense{padding-left:0;padding-right:0}
-.view-hidden-expense .page-desc{padding:0 24px;font-size:16px;line-height:23px}
-.view-hidden-expense .list-controls{margin-top:40px;margin-bottom:20px;padding:0 24px;text-align:right}
+.page-info{margin-top:2rem}
+.view-hidden-expense .list-controls{margin-top:4rem;margin-bottom:2rem}
 
 /***** 지출 > 정기지출  *****/
 .tit-area_icon-bg{padding-top:32px;padding-bottom:32px;margin-bottom:32px;background-color:$kb-ui10}
@@ -238,7 +218,7 @@
 .regular-expense-total{padding-bottom:0}
 .regular-expense-list{margin-bottom:0;padding-bottom:0}
 .regular-expense-list .credit-list_link-type li:last-child dl{border-bottom:0}
-.regular-expense-list .credit-list-group .group-tit.t01{background-color:$kb-ui11}
+.regular-expense-list .credit-list-group .group-tit{background-color:$kb-ui11}
 .regular-expense-list .credit-list-group + .credit-list-group .group-tit{border-top:1px solid $kb-ui09}
 .regular-expense-trend{padding-bottom:48px}
 .regular-expense-trend .tab{padding-top:24px}

@@ -10,7 +10,7 @@ var escapeHtml = function(string) {
 $('.box .flex-dl > dd').not('.guide-description')
 .each(function(){
     var desc = $(this).data('description');
-    if(desc) $(this).prepend('<p class="g-desc">' + desc + '</p>');
+    
     var $iframe = $(this).find('iframe');
     var $code = $(this).siblings('dt').find('code');            
     if(!$iframe.length){                
@@ -21,6 +21,7 @@ $('.box .flex-dl > dd').not('.guide-description')
         var link = '<a href="' + src + '" target="_blank">소스 바로 가기</a>';
         $code.append(link);
     }
+    if(desc) $(this).prepend('<p class="g-desc">' + desc + '</p>');
 })
 .resizable({
     maxWidth: 768, //galaxy fold open

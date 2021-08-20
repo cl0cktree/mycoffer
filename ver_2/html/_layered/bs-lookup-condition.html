@@ -1,0 +1,132 @@
+
+<!-- 조회 바텀시트 //-->
+<div class="bottom-sheet" data-layered-name="bsLookUpCondition">    
+    <div class="bottom-sheet_header">
+        <span class="tit">조회 조건 선택</span>
+    </div>    
+    <div class="bottom-sheet_contents">
+        <section class="kb-sec">
+            <div class="kb-form">
+                <strong class="label">조회기간</strong>
+                <div class="lookup-period select-period">
+                    <ul class="btn-segmented_check">
+                        <li>
+                            <input type="radio" name="searchPeriod0" id="searchPeriod01" checked>
+                            <label for="searchPeriod01">1개월</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="searchPeriod0" id="searchPeriod02">
+                            <label for="searchPeriod02">3개월</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="searchPeriod0" id="searchPeriod03">
+                            <label for="searchPeriod03">6개월</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="searchPeriod0" id="searchPeriod04"><!-- last-child check 하단 period-selector 활성화-->
+                            <label for="searchPeriod04">직접입력</label>
+                        </li>
+                    </ul>
+                    <div class="period-selector is-disabled">
+                        <input type="text" title="시작날짜" value="2021.08.28" disabled>
+                        <span>~</span>
+                        <input type="text" title="종료날짜" value="2021.08.31" disabled>
+                    </div>
+                    <p class="error-msg">조회기간은 최대 60개월 입니다.</p>
+                </div>
+            </div>
+            <div class="kb-form">
+                <strong class="label">거래유형</strong>
+                <div class="lookup-period">
+                    <ul class="btn-segmented_check">
+                        <li>
+                            <input type="radio" name="transmissionType0" id="transmissionType01" checked>
+                            <label for="transmissionType01">수입</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="transmissionType0" id="transmissionType02">
+                            <label for="transmissionType02">지출</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="transmissionType0" id="transmissionType03">
+                            <label for="transmissionType03">이체</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="kb-form">
+                <strong class="label">내역정렬</strong>
+                <div class="lookup-period">
+                    <ul class="btn-segmented_check">
+                        <li>
+                            <input type="radio" name="sortingOrder0" id="sortingOrder01" checked>
+                            <label for="sortingOrder01">최신</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="sortingOrder0" id="sortingOrder02">
+                            <label for="sortingOrder02">과거</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 상세 검색 영역 // -->
+            <div class="lookup-detail">
+                <button type="button" class="btn-text" data-toggle-class="is-active"><span>상세검색</span><i></i></button>
+                <!-- 버튼 is-active ~ .kb-form  -> display: block -->
+                <div class="kb-form">
+                    <strong class="label">상세 조건 내용</strong>
+                    <div class="lookup-period">
+                        <ul class="btn-segmented_check">
+                            <li>
+                                <input type="radio" name="detailSearch0" id="detailSearch01" checked>
+                                <label for="detailSearch01">조건1</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="detailSearch0" id="detailSearch02">
+                                <label for="detailSearch02">조건2</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="detailSearch0" id="detailSearch03">
+                                <label for="detailSearch03">조건3</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="detailSearch0" id="detailSearch04">
+                                <label for="detailSearch04">조건4</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="kb-form">
+                    <strong class="label">상세 조건 내용</strong>
+                    <div class="lookup-period">
+                        <ul class="btn-segmented_check">
+                            <li>
+                                <input type="radio" name="detailSearch0" id="detailSearch011" checked>
+                                <label for="detailSearch011">조건1</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="detailSearch01" id="detailSearch012">
+                                <label for="detailSearch012">조건2</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="detailSearch01" id="detailSearch013">
+                                <label for="detailSearch013">조건3</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="detailSearch01" id="detailSearch014">
+                                <label for="detailSearch014">조건4</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- // 상세 검색 영역 -->
+        </section>
+    </div>
+    <div class="bottom-sheet_buttons">
+        <button class="btn-solid gray"><span>초기화</span></button>
+        <button class="btn-solid" data-action="close"><span>확인</span></button>
+    </div>
+    <button class="btn-close" data-action="close"><span>닫기</span></button>    
+</div>
+<!-- //조회 바텀시트  -->
