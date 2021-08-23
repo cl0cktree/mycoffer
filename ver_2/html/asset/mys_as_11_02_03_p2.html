@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-channel="ch_star">
 <!-- [MYS_AS_11_02_03_P2] 작성자: 누리어 시스템 김은경 -->
 <head>
 	@@include('@@webRoot/html/_include/app-head.html',{
@@ -13,7 +13,7 @@
 		<!-- app-header (for MyMoney) //-->
 		@@include('@@webRoot/html/_include/app-integrated-header.html',{
 			'pageTit' :'Wish House 플래너',
-			'type':'close'
+			'type':''
 		}) 
 		<!-- // app-header (for MyMoney) -->
 
@@ -25,7 +25,7 @@
 				<!-- 주소입력 // -->
 				<section class="kb-sec full">
 					<div class="top-area">
-						<h2 class="msg">Wish House 매입을 위해 <br>약 <b><span class="num">5</span>억 9</span>천만원</b>의 자금이 필요합니다.</h2>
+						<h2 class="msg">Wish House 매입을 위해 <br>약 <b><span class="num">5</span>억 <span class="num">9</span>천만원</b>의 자금이 필요합니다.</h2>
 					</div>			
 				</section>
 				<section class="kb-sec planer">
@@ -74,15 +74,15 @@
 							<span class="loan-desc">복잡한 우대금리·중도상환수수료 NO</span>
 							<span class="loan-amount">최대 <strong class="c-blue"><span class="num">3</span>억원</strong></span>
 						</button>
-						<button type="button" data-call-layered="mys_as_11_00_00_p1">
+						<button type="button" data-call-layered="mys_as_11_00_00_p2">
 							<span class="loan-tit">KB Star 주택구입자금대출</span>
 							<span class="loan-desc">내 집 구입을 계획하신다면</span>
-							<span class="loan-amount"><strong class="c-blue"><span class="num">500</span>만원~<span class="num">3</span>억원</strong></span>
+							<span class="loan-amount"><strong class="c-blue"><span class="num">5</span>백만~<span class="num">5</span>억원</strong></span>
 						</button>						
-						<button type="button" data-call-layered="mys_as_11_00_00_p1">
+						<button type="button" data-call-layered="mys_as_11_00_00_p3">
 							<span class="loan-tit">KB Star 전월세보증금대출</span>
-							<span class="loan-desc">KB Star 전월세보증금대출</span>
-							<span class="loan-amount">최대 <strong class="c-blue"><span class="num">2</span>억 <span class="num">2</span>천~<span class="num">2</span>억 <span class="num">2</span>백원</strong></span>
+							<span class="loan-desc">전월세 고민 빠르게 해결</span>
+							<span class="loan-amount">최대 <strong class="c-blue"><span class="num">2</span>억 <span class="num">2</span>천 <span class="num">2</span>백만원</strong></span>
 						</button>
 					</div>
 					<p class="simple-message">세금 및 부대비용(중개보수, 취득세)이 발생할 수 있습니다.</p>
@@ -91,8 +91,8 @@
 				<div class="sticky-bottom">
 					<!-- 자금필요 // -->
 					<div class="btn-area">
-						<button type="button" class="btn-solid gray" data-action="close"><span>준비자산 수정하기</span></button>
-						<button type="button" class="btn-solid" data-action="close"><span>목표설정 바로가기</span></button>
+						<!-- <button type="button" class="btn-solid gray" data-action="close"><span>준비자산 수정하기</span></button> -->
+						<button type="button" class="btn-solid" data-action="close"><span>준비자산 수정</span></button>
 					</div>
 					<!-- // 자금필요 -->
 					<!-- 부동산준비자산 등록후 자산초과 // -->
@@ -119,7 +119,9 @@
 
 		<!-- Layer (modal, bottom sheet) // -->
 		<div class="layered">			
-			@@include('@@webRoot/html/asset/layered/mys_as_11_00_00_p1.html')
+			@@include('@@webRoot/html/asset/layered/mys_as_11_00_00_p1.html')			
+			@@include('@@webRoot/html/asset/layered/mys_as_11_00_00_p2.html')			
+			@@include('@@webRoot/html/asset/layered/mys_as_11_00_00_p3.html')
 		</div>
 		<!-- // Layer (modal, bottom sheet) -->
 	</div>

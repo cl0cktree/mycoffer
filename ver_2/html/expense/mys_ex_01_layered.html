@@ -30,10 +30,11 @@
         <button type="button" class="btn-line" data-call-layered="expenseAccountBookSettingDay" data-page-id="MYS_EX_01_06_01_P"><span>월 시작일 설정</span></button>
         <br>
         <br>
-        <button type="button" class="btn-line" onClick="addCategoryLimitNumber();"><span>오류메시지 : 카테고리 추가 갯수 제한</span></button>
-        <button type="button" class="btn-line" onClick="deleteCategory();"><span>오류메시지 : 카테고리 삭제(안내)</span></button>
-        <button type="button" class="btn-line" onClick="deleteConfirm();"><span>오류메시지 : 삭제 확인</span></button>
+        <button type="button" class="btn-line" data-call-modal="addCategoryLimitNumber"><span>오류메시지 : 카테고리 추가 갯수 제한</span></button>
         <button type="button" class="btn-line" data-call-modal="changeCategoryNotice"><span>오류메시지 : 카테고리 변경</span></button>
+        <button type="button" class="btn-line" data-call-modal="hideList"><span>오류메시지 : 내역에서 숨기기</span></button>
+        <button type="button" class="btn-line" data-call-modal="deleteHistory"><span>오류메시지 : 내역에서 삭제</span></button>
+        <button type="button" class="btn-line" data-call-modal="deleteConfirm"><span>오류메시지 : 삭제 확인</span></button>
         <!--// 지출 > 가계부 --->
     </div>
 
@@ -54,17 +55,16 @@
         @@include('@@webRoot/html/_layered/bs-calendar.html')
         <!-- // Bottom Sheet -->
         <!-- Modal // -->
-        <!--// 상세보기 > 카테고리 변경하기 -->
-        <!-- 상세보기 > 카테고리 변경하기 //-->
+        <!-- 카테고리 변경하기 -->
         <div class="modal modal_radioOption" id="changeCategoryNotice">
             <div class="modal_header">
                 <strong class="tit">카테고리 변경하기</strong>
             </div>
             <div class="modal_contents">
-                <p>해당 내역의 [카테고리 분류]를 다른 카테고리로 변경하시겠습니까?</p>
+                <p>{해당 적요 or 가맹점명}을 {카테고리 분류}에서 {변경선택한 카테고리}로 변경하시겠습니까?</p>
                 <ul class="radio-group">
-                    <li><span class="form-radio"><input type="radio" id="changeOptionOnce01" name="changeCategoryType" checked=""><label for="changeOptionOnce01">이번만 변경</label></span></li>
-                    <li><span class="form-radio"><input type="radio" id="changeOptionAlways01" name="changeCategoryType"><label for="changeOptionAlways01">항상 변경</label></span></li>
+                    <li><span class="form-radio"><input type="radio" id="changeOptionOnce" name="changeCategoryType" checked=""><label for="changeOptionOnce">이번만 변경</label></span></li>
+                    <li><span class="form-radio"><input type="radio" id="changeOptionAlways" name="changeCategoryType"><label for="changeOptionAlways">항상 변경</label></span></li>
                 </ul>
             </div>
             <div class="modal_buttons btn-area">
@@ -72,15 +72,18 @@
                 <button class="btn-solid ok"><span>확인</span></button>
             </div>
         </div>
+
+        <!-- 내역에서 숨기기 -->
         <div class="modal modal_radioOption" id="hideList">
             <div class="modal_header">
                 <strong class="tit">내역에서 숨기기</strong>
             </div>
             <div class="modal_contents">
                 <p>[김국민 통장적요내용출력] {지출 or 이체}을(를) 제외하시겠습니까?</p>
+                <p class="simple-message">지출&gt;가계부&gt;숨긴 지출 보기 화면에서 조회 및 복원할 수 있습니다.</p>
                 <ul class="radio-group">
-                    <li><span class="form-radio"><input type="radio" id="changeOptionOnce02" name="hideListType" checked=""><label for="changeOptionOnce02">이번만 변경</label></span></li>
-                    <li><span class="form-radio"><input type="radio" id="changeOptionAlways02" name="hideListType"><label for="changeOptionAlways02">항상 변경</label></span></li>
+                    <li><span class="form-radio"><input type="radio" id="hideOptionOnce" name="hideListType" checked=""><label for="hideOptionOnce">이번만 변경</label></span></li>
+                    <li><span class="form-radio"><input type="radio" id="hideOptionAlways" name="hideListType"><label for="hideOptionAlways">항상 변경</label></span></li>
                 </ul>
             </div>
             <div class="modal_buttons btn-area">
@@ -88,6 +91,45 @@
                 <button class="btn-solid ok"><span>확인</span></button>
             </div>
         </div>
+
+        <!-- 내역 삭제 -->
+        <div class="modal modal_radioOption" id="deleteHistory">
+            <div class="modal_header">
+                <strong class="tit">내역에서 삭제</strong>
+            </div>
+            <div class="modal_contents">
+                <p>[김국민 통장적요내용출력] {지출 or 이체}을(를) 삭제하시겠습니까?</p>
+                <ul class="radio-group">
+                    <li><span class="form-radio"><input type="radio" id="deleteOptionOnce" name="deleteListType" checked=""><label for="deleteOptionOnce">이번만 변경</label></span></li>
+                    <li><span class="form-radio"><input type="radio" id="deleteOptionAlways" name="deleteListType"><label for="deleteOptionAlways">항상 변경</label></span></li>
+                </ul>
+            </div>
+            <div class="modal_buttons btn-area">
+                <button class="btn-solid gray cancel" data-action="close"><span>취소</span></button>
+                <button class="btn-solid ok"><span>확인</span></button>
+            </div>
+        </div>
+
+        <!-- 카테고리 추가 개수 제한 안내 -->
+        <div class="modal" id="addCategoryLimitNumber">
+            <div class="modal_contents">
+                <p>카테고리 추가 기능 개수는 최대 20개입니다.</p>
+            </div>
+            <div class="modal_buttons btn-area">
+                <button class="btn-solid ok"><span>확인</span></button>
+            </div>
+        </div>
+
+        <!-- 삭제 확인 -->
+        <div class="modal" id="deleteConfirm">
+            <div class="modal_contents">
+                <p>삭제 되었습니다.</p>
+            </div>
+            <div class="modal_buttons btn-area">
+                <button class="btn-solid ok"><span>확인</span></button>
+            </div>
+        </div>
+
         <!-- // Modal -->
     </div>
 
@@ -98,47 +140,20 @@
     <!-- Add Script -->
 
     <script>
-        //카테고리추가 팝업
-        function addCategoryLimitNumber() {
-            modalPopup({
-                title: "",
-                message: "카테고리 추가 기능 개수는 최대 20개입니다."
-            });
-        }
-        function deleteConfirm(){
-            modalPopup({
-                title: "",
-                message: "삭제 되었습니다."
-            });
-        }
-        function deleteCategory(){
-            modalPopup({
-                title: "",
-                message: "삭제하시겠습니까?",
-                type: "confirm",
-                textOkButton: "확인",
-                textCancelButton: "취소",
-                onOk: function() {
-                    deleteConfirm();
-                }
-            });
-        }
-        function deleteHistory(){
-            modalPopup({
-                title: "",
-                message: "[김국민 통장적요내용출력] {지출 or 이체}을(를) 삭제하시겠습니까?",
-                type: "confirm",
-                textOkButton: "확인",
-                textCancelButton: "취소",
-                onOk: function() {
-                    deleteConfirm();
-                }
-            });
-        }
-
         $('[data-call-modal]').on('click',function(){
             var id = $(this).data('call-modal');
             $('#'+id).modalPopup('open');
+        });
+
+        $("#deleteHistory").modalPopup({
+            onOk: function() {
+                $('#deleteConfirm').modalPopup('open');
+            },
+            onCancel: function() {}
+        });
+
+        $('#hideList').on('click', '.btn-solid.cancel', function(){
+            $('#hideExpenseList').prop('checked', false);
         });
         
         //레이어 확인용 스크립트 (개발시 삭제) [s]

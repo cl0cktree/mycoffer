@@ -35,9 +35,71 @@
     <div class="guide-container">
         <div class="guide-history">
             <dl data-month="8">
+                <dt data-writer="이진우">2021.08.23</dt>
+                <dd>
+                    <b>마이머니 : GNB</b>
+                    <ul data-style="list">
+                        <li>My Now / 자산 / 지출 / 목표 챌린지 / 부동산 / 자동차 / My 금고 / 신용 / 머니크루 / D플랜</li>
+                        <li>위 10종의 첫페이지에 .app[data-page="submain"] 쓰기 (지출 제외)</li>
+                        <li>.app[data-page="submain"] 가 있으면 navigation.js에서 삽입</li>
+                        <li>지출은 .app[data-page="bridge"] + .app-lnb에 스타뱅킹용 GNB 하드코딩</li>
+                    </ul>
+                </dd>
+                <dd>
+                    <b>뉴스뱅 : GNB</b>
+                    <ul data-style="list">
+                        <li>자산 / 투자 / 지출 / 세테크 / 연금(은퇴) / 금융플러스 / Fun테크 / 전문가 상담</li>                                                
+                        <li>지출, 금융플러스 이 2가지 메뉴만 마이데이터서비스 메뉴</li>
+                        <li>지출, 금융플러스은 .app[data-page="bridge"] + .app-lnb에 스타뱅킹용 GNB 하드코딩</li>
+                        <li>금융플러스 브릿지 연결 메뉴: 금융플러스홈 / 부동산관리 / 자동차관리 / 신용관리 / My금고 / 머니크루 / 마이데이터선물함</li>
+                    </ul>
+                </dd>
+                <dd>
+                    <b>data-page=submain, data-page=bridge</b>
+                    <ul data-style="list">
+                        <li>data-page=bridge (스타뱅킹 : 지출, 금융플러스 서브메인용 : 스타뱅킹 GNB)</li>
+                        <li>data-page=submain (스타뱅킹/마이머니 : 마이머니 GNB에 있는 첫페이지)</li>
+                    </ul>
+                </dd>
+                <dd>
+                    <b>날짜 선택 폼 정리</b>
+                    <ul data-style="list">
+                        <li>기간선택, 날짜 및 시간 : 박스형 디자인<br> 그룹으로 묶여있는 기간선택은 박스형</li>
+                        <li>기타 : 하단 라인형 디자인</li>
+                    </ul>
+                </dd>
+                <dd>
+                    <b><a href="./molecule.html#inputPicker">date-time-picker로 수정 (구성 수정)</a></b>
+                    <ul data-style="list">
+                        <li>timepicker 추가</li>
+                        <li>바텀시트 bsTime 생성</li>
+                    </ul>
+                </dd>
+                <dd>
+                    <b>date-time-picker 디자인 재수정</b>
+                    <b>app-lnb 비어있으면 지우도록 설정</b>
+                </dd>
+                <dd>
+                    <b><a href="./atom.html#linkArrow">링크 우측 화살표</a></b>
+                    <ul data-style="list">
+                        <li>.link-arrow 링크 표시</li>
+                        <li>.link-arrow-after 뒤에 표시(:after)</li>
+                        <li>ul.link-arrow-after li뒤에 표시(:after)</li>
+                        <li>(더보기 버튼은 btn-text 확인)</li>
+                    </ul>
+                </dd>
                 <dt data-writer="이진우">2021.08.20</dt>
                 <dd>
-                    <b>datapicker input영역 readonly 제거</b>
+                    <b>accordian 웹접근성 관련 수정</b>
+                    <b>bottom-sheet "full-size" 제거</b>
+                </dd>
+                <dd>
+                    <b>date-time-picker 를 multi-form으로 수정</b>
+                    <b>bsTime 사용하지 않음</b>
+                    <b>simple-message 앞 별표 이미지로 변경</b>
+                </dd>
+                <dd>
+                    <b>datepicker input영역 readonly 제거</b>
                     <b>bs 공통, bsCalendar 여백 수정</b>
                     <b>pagination bg, markup 수정</b>
                     <b>form-select bg 수정</b>

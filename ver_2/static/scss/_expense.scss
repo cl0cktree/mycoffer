@@ -12,14 +12,14 @@
 .label-tit{display:block;margin-bottom:1rem;font-size:1.6rem;color:$kb-ui04}
 .control-show-target{display:none}
 .control-show-target.is-active{display:block}
-.btn-register{position:fixed;right:24px;bottom:34px;z-index:$level10;width:40px;height:40px;line-height:36px;text-align:center;border-radius:50%;background-color:$color-yellow;box-shadow: 2.6px 3px 6px 0 rgba(0, 0, 0, 0.17)}
+.btn-register{position:fixed;right:24px;bottom:34px;z-index:$level10;width:40px;height:40px;line-height:36px;text-align:center;border-radius:50%;background-color:$color-yellow;box-shadow:2.6px 3px 6px 0 rgba(0, 0, 0, 0.17)}
 .btn-register i{vertical-align:middle}
-.compare-summary{padding-bottom:40px}
-.compare-summary .total-summary{margin-top:10px;margin-bottom:20px;color:$color-blue}
+.compare-summary .total-summary{margin-top:1.4rem;color:$color-blue;text-align:center}
+.compare-summary .content-box-tit{text-align:center}
 .content-tit.flex-box{display:flex;justify-content:space-between}
 .content-tit .emphasis{display:block}
 .content-tit .emphasis.color-blue{color:$color-blue}
-/* 지출 공통 : 상세보기 */
+/* 지출 공통 :상세보기 */
 .expense-list-detail .detail-info > h4{margin-bottom:2rem}
 .expense-list-detail .detail-info > h4 i{margin-right:1.2rem}
 .expense-list-detail .detail-info dl{margin-top:1.8rem}
@@ -39,34 +39,41 @@
 /***** 지출 > 가계부 *****/
 // main
 .expense-account-book-total{padding-bottom:0}
-.content-box-tit + .compare-amount{margin-top:20px}
-.compare-amount{display:flex;align-items:center;justify-content:space-around;padding:18px 5px 14px;background-color:#fdf8e4;border-radius:2px}
-.compare-amount dl{text-align:center;line-height:1}
-.compare-amount dt{display:block;font-size:14px;margin-bottom:10px;}
-.compare-amount dd{display:block;padding-bottom:2px}
-.compare-amount dd,
-.compare-amount .num{font-size:20px;font-weight:bold}
-.compare-amount .strict-inequality{display:inline-block;margin:0 16px}
-.compare-amount .strict-inequality::before{content:'';display:block;width:18px;height:18px;transform:rotate(45deg);border-radius:2px;border:2px solid $kb-ui05}
-.compare-amount .strict-inequality[data-compare-value="lt"]::before{margin-left:-9px;border-left:0;border-bottom:0}
-.compare-amount .strict-inequality[data-compare-value="gt"]::before{margin-right:-9px;border-right:0;border-top:0}
-.compare-amount .strict-inequality[data-compare-value="equals"]::before{height:10px;border-left:0;border-right:0;transform:rotate(0deg);}
-.list-view-type{padding:24px 0 34px;text-align:center}
-.list-view-type a{border-color:$kb-ui08;color:$kb-ui04}
-.list-view-type a i{opacity:0.5}
-.list-view-type a.is-active{border-color:$kb-ui02;color:$kb-ui03}
-.list-view-type a.is-active i{opacity:1}
-.list-view-type a+a{margin-left:12px}
-.filter-area{@include flexBetween;padding:15px 20px;border-top:1px solid $kb-ui08}
-.filter-area li,
-.expense-account-book-list .group-tit li{display:inline-block;vertical-align:middle}
-.filter-area li+li{margin-left:18px}
-.expense-account-book-list .group-tit li+li{margin-left:16px}
-.expense-account-book-list .group-tit li button{padding:5px}
+.expense-account-book-total .date-month strong{margin:0 0.9rem;font-size:1.8rem;font-weight:bold}
+.expense-account-book-total .date-month .date{display:block;margin:1.2rem 0 1.5rem;font-size:1.5rem;color:$kb-ui05}
+.content-box-tit + .compare-amount{margin-top:1rem}
+.compare-amount{display:grid;grid-template-columns:1fr 1fr;background-color:$kb-ui10;border-radius:2px;}
+.compare-amount dl{position:relative;flex:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;height:6.7rem;padding:0 1.4rem}
+.compare-amount dt{margin-bottom:0.4rem;font-size:1.2rem;color:$kb-ui05}
+.compare-amount dd{font-size:1.4rem}
+.compare-amount dd .num{font-size:1.5rem}
+.compare-amount[data-compare-value="left"] dl:first-child,
+.compare-amount[data-compare-value="right"] dl:last-child{background-color:$color-yellow}
+.compare-amount[data-compare-value="left"] dl:last-child{padding-left:3rem}
+.compare-amount[data-compare-value="left"] dl:first-child dt,
+.compare-amount[data-compare-value="right"] dl:last-child dt{margin-bottom:0.8rem;font-size:1.4rem;color:$kb-ui02}
+.compare-amount[data-compare-value="left"] dl:first-child dd,
+.compare-amount[data-compare-value="right"] dl:last-child dd{font-size:1.8rem;font-weight:bold}
+.compare-amount[data-compare-value="left"] dl:first-child dd .num,
+.compare-amount[data-compare-value="right"] dl:last-child dd .num{font-size:1.9rem;font-weight:bold}
+.compare-amount[data-compare-value] dl::before{position:absolute;top:0;content:'';width:0;height:0}
+.compare-amount[data-compare-value="left"] dl:first-child::before{right:-2rem;display:block;border-top:3.4rem solid transparent;border-left:2rem solid $color-yellow;border-bottom:3.4rem solid transparent}
+.compare-amount[data-compare-value="right"] dl:last-child::before{left:-2rem;display:block;border-top:3.4rem solid transparent;border-right:2rem solid $color-yellow;border-bottom:3.4rem solid transparent}
+.filter-area{@include flexBetween;flex-wrap:wrap;padding:15px 20px;border-top:1px solid $kb-ui08;background-color:$kb-ui10}
+.filter-area .btn-filter i{margin-left:0.3rem;vertical-align:middle}
+.filter-area .btn-filter span{font-size:1.4rem;font-weight:bold}
+.filter-area .btn-filter span .num{font-size:1.5rem}
+.filter-area .btn-view-calendar{vertical-align:middle}
+.filter-area .btn-view-calendar span{font-size:1.4rem}
+.filter-area ul{width:100%;margin-top:2rem;padding-top:1.5rem;border-top:1px solid $kb-ui08}
+.filter-area ul li{font-size:1.4rem}
+.filter-area ul li+li{margin-top:1rem}
+.expense-account-book-list .filter-area{margin-bottom:3.2rem}
 .expense-account-book-list .no-data{padding-bottom:40px}
-.expense-monthly-place{padding-top:24px}
-.expense-monthly-place .total-summary{margin-bottom:20px}
-.expense-monthly-place .total-summary .date{display:block;margin-bottom:10px}
+.expense-account-book-list .filter-area + div ~ div{margin-top:4.8rem}
+.expense-monthly-place .highcharts-figure{padding-top:0}
+.expense-monthly-place .h4 .date{display:inline-block;margin-left:0.8rem;font-size:1.5rem;color:$kb-ui05;font-weight:normal;vertical-align:middle}
+.expense-monthly-place .total-summary{margin-top:1.6rem;margin-bottom:1.5rem;font-size:1.6rem}
 .expense-management-goal .content-tit{text-align:center;padding:24px 0}
 // 가계부 > 캘린더로 보기
 .calendar-container .summary-amount{margin-top:2.5rem}
@@ -111,8 +118,10 @@
 .credit-list_link-type + .btn-view-more{width:100%;text-align:center;margin-top:2.5rem;padding:1rem 0}
 // 가계부 > 수기등록
 .user-register-list > .tab{margin-bottom:32px}
-.user-register-list .user-register-forms .kb-form + .kb-form{margin-top:20px}
-.user-register-list [data-role="popup"]:after{position:absolute;right:0;top:0.6rem;z-index:1;content: '';width:2rem;height:2rem;background:url(../images/common/common.png) no-repeat -4.4rem -2rem;background-size:16rem}
+.user-register-list .user-register-forms .kb-form_multi .tit{margin-bottom:1.2rem}
+.user-register-list .user-register-forms .form-tit{@include text($size: 16px);flex:0 0 100%;display:block;position:relative;width:100%;min-height:26px;padding:8px 2px 0px 2px;color:$kb-ui04}
+.user-register-list .user-register-forms > .kb-form + .kb-form{margin-top:2rem}
+.user-register-list [data-role="popup"]:after{position:absolute;right:0;top:0.6rem;z-index:1;content:'';width:2rem;height:2rem;background:url(../images/common/common.png) no-repeat -4.4rem -2rem;background-size:16rem}
 .user-register-list .user-register-forms .btn-area.center{margin-top:20px}
 .user-register-list input[data-numeric-type="number"]{text-align:left}
 // 가계부 > 카테고리 설정
@@ -120,25 +129,27 @@
 .user-register-category .btn-text + .btn-text{margin-left:12px}
 .user-register-category .btn-edit-form u,
 .user-register-category .btn-edit-form span{font-weight:normal}
-.user-register-category .btn-add-form .icon-plus{@include iconPlus($width: 12px, $height: 12px)}
+.user-register-category .btn-add-form .icon-plus{@include iconPlus($width:12px, $height:12px)}
 .user-register-category .btn-add-form .icon-plus + span{margin-left:5px}
 .user-register-category .category-list{border-bottom:1px solid $kb-ui09;}
 .user-register-category .category-list > li{@include text($text02, normal);position:relative;z-index:1;padding:20px 0;border-top:1px solid $kb-ui09;}
 .user-register-category .category-list > li > div{display:flex;flex-wrap:wrap}
 .user-register-category .category-list > li > div .btn-text{flex:1;text-align:left}
-.user-register-category .category-list > li > div .btn-text i{@include iconBullet($direction: 'down', $width: 16px, $thick : 1px, $color : $kb-ui05)}
+.user-register-category .category-list > li > div .btn-text i{@include iconBullet($direction:'down', $width:16px, $thick :1px, $color :$kb-ui05)}
 .user-register-category .category-list li span[class*=badge_],
 .user-register-category .category-list li i[class*='icon-']{margin-right:8px;}
 .user-register-category .edit-user{position:relative;display:flex;align-items:center;justify-content:flex-start;flex-wrap:wrap;width:100%}
 .user-register-category .edit-user > label{display:none;width:100%}
-.user-register-category .edit-user .kb-form{width:calc(100% - 3.4rem)}
+.user-register-category .edit-user .user-icon{position:relative;display:inline-block;width:3.8rem;height:3.8rem}
+.user-register-category .edit-user .user-icon .icon-plus_20{position:absolute;bottom:0;right:0.4rem;width:1.6rem;height:1.6rem;margin:0;border-radius:50%;background-color:$kb-ui09}
+.user-register-category .edit-user .kb-form{width:calc(100% - 3.8rem)}
 .user-register-category .edit-user .form-text input[type="text"]{font-weight:normal}
 .user-register-category .edit-user .edit-form-buttons{position:absolute;top:50%;right:0;transform:translateY(-50%)}
 .user-register-category .edit-user .edit-form-buttons button:first-child{margin-left:0}
-.user-register-category .edit-user .edit-form-buttons .btn-text{@include btnText($underline: true);width:auto}
+.user-register-category .edit-user .edit-form-buttons .btn-text{@include btnText($underline:true);width:auto}
 .user-register-category .edit-user .edit-form-buttons .btn-text > u{font-size:14px;color:$kb-ui04}
 .user-register-category .sub-category > li > .btn-text{width:100%;text-align:left}
-.user-register-category .accordian dt i[class*=icon-]{margin-right:8px}
+.user-register-category .accordian dt i[class*=icon-]{margin-right:8px;vertical-align:middle}
 .template{display:none}
 .edit-user .edit-form-buttons button{display:inline-block}
 .edit-user[data-status="normal"] .kb-form{padding-right:8rem}
@@ -146,7 +157,9 @@
 .edit-user[data-status="normal"] .kb-form .form-text input[type="text"]{border:0;font-size:16px;color:$kb-ui02}
 .edit-user[data-status="normal"] .btn-save-form,
 .edit-user[data-status="normal"] .btn-edit-cancel{display:none}
-.edit-user[data-status="edit"] > label{display:block;padding-left:3.6rem}
+.edit-user[data-status="normal"] .user-icon .icon-plus_20{visibility:hidden}
+.edit-user[data-status="edit"] > label{display:block;padding-left:4rem}
+.edit-user[data-status="edit"] .user-icon .icon-plus_20{visibility:visible}
 .edit-user[data-status="edit"] .kb-form input[type="text"]{padding-right:12rem}
 .edit-user[data-status="edit"] .edit-form-buttons{top:auto;bottom:0.8rem;transform:none}
 .edit-user[data-status="edit"] .edit-form-buttons .btn-delete-form,
@@ -157,7 +170,7 @@
 .user-register-category .category-expense ul[data-style=list] li:before{top:calc(50% - 2px)}
 .user-register-category .category-expense li[data-add-type="added-user"] .btn-edit-cancel{margin-left:8px}
 .user-register-category .add-category{flex-wrap:wrap;margin-top:2rem;padding-top:2.4rem}
-.user-register-category .add-category > label{padding-left:4.5rem}
+.user-register-category .add-category > label{padding-left:4rem}
 // .user-register-category .add-sub-category{margin-top:2rem}
 .user-register-category .edit-user[data-status="normal"] .form-text .btn-edit-cancel{display:none}
 // 가계부 > 카테고리 추가 (대분류)
@@ -166,8 +179,7 @@
 .kb-form[data-type="icon"] > button,
 .kb-form[data-type="icon"] > span,
 .kb-form[data-type="icon"] > i[class*='icon-']{margin-right:8px}
-.kb-form[data-type="icon"] .btn-select-icon{position:relative;width:3.6rem;height:3.6rem}
-.kb-form[data-type="icon"] .btn-select-icon .icon-plus_20{position:absolute;bottom:0;right:0;display:inline-flex;align-items:center;justify-content:center;width:1.6rem;height:1.6rem;border-radius:50%;background-color:$kb-ui09}
+.kb-form[data-type="icon"] .btn-select-icon{display:inline-flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:3.2rem;height:3.2rem;border-radius:50%;background-color:#ebeef0}
 .select-icon-list li button{width:100%;height:3.2rem;text-align:center}
 .select-icon-list li button img{width:auto;height:100%}
 .select-icon-list li span{display:none}

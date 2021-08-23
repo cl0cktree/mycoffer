@@ -11,18 +11,17 @@
 	@@include('@@webRoot/html/_include/app-a11y.html')
 	<div class="app">
 		<!-- app-header (for MyMoney) //-->
-        @@include('@@webRoot/html/_include/app-integrated-header.html',{'pageTit':'완료 챌린지','type':''})
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{'pageTit':'완료 챌린지','type':'title'})
 		<!-- // app-header -->
 
 		<!-- app-container (for MyMoney) //-->
 		<div class="app-container">
 			<!-- app-content // -->
 			<main class="app-content goal-fin-challenge">                				
-				<section class="kb-sec bg-gray goals-summary">
+				<section class="kb-sec goals-summary gray-line">
                     <a href="#none" class="btn-trans">
-                        <dl class="summary-piggymoeny content-box shadow">
+                        <dl class="summary-piggymoeny">
                             <dt>
-                                <i class="icon-pigbank_23"></i>
                                 <h2 class="pig-tit">저금통</h2>
                                 <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
                                 <!-- Tooltip (With title)-->
@@ -35,8 +34,10 @@
                             <dd class="amount"><strong class="num">201,320,000</strong>원</dd>
                         </dl>
                     </a>
-                    
-                    <div class="challenge-box content-swiper-wrap">
+                    <div class="btn-area compare">
+                        <button class="align-r" data-call-layered="mys_as_07_00_00_p1"><u>비교그룹</u></button>
+                    </div>                    
+                    <div class="challenge-box content-swiper-wrap badge_swiper">
                         <h2 class="is-hidden">완료 뱃지 리스트</h2>
                         <div class="swiper-container content-swiper t01 js-swiper" data-swiper-options="goalMedalSwiperOptions">
                             <script>
@@ -49,7 +50,7 @@
                                     "autoHeight": "true"                                        
                                 };
                             </script>
-                            <div class="swiper-wrapper">
+                            <div class="swiper-wrapper badge_swiper">
                                 <div class="swiper-slide cicle-badge">
                                     <img src="@@webRoot/static/images/_temp/@badge_fill.png" alt="채움 뱃지">
                                 </div> 
@@ -91,18 +92,18 @@
                     </div>
                 </section>
                 <section class="kb-sec goals-state">
-                    <h2 class="is-hidden">완료한 챌린지 검색</h2>
+                    <h2 class="is-hidden">챌린지 조회</h2>
                     <div class="condition-area">
                         <button class="btn-condition" data-call-layered="bsGoalChallengeSearch">
-                            <h3 class="tit">챌린지 조회</h3>
+                            <h3 class="is-hidden">챌린지 조회</h3>
                             <div>
                                 <div class="sorting-status">
-                                    <span>1개월</span>
+                                    <span><em class="num">1</em>개월</span>
                                     <span>전체</span>
                                     <span>최신순</span>
                                 </div>
-                                <i class="arrow">조회조건 선택</i>
                             </div>
+                            <div class="icon-zoom"><i class="icon-search_24"></i></div>
                         </button>
                     </div>
                     <ul>
@@ -135,7 +136,7 @@
                         </li>
                     </ul>
                     <div class="btn-area mt32">
-                        <button type="button"><span><i class="icon-plus_20"></i>더보기</span></button>
+                        <button type="button"><span><i class="icon-plus"></i>더보기</span></button>
                     </div>
                 </section>
 			</main>

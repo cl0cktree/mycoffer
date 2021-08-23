@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-channel="ch_star">
 <!-- [MYS_AS_11_02_02_P1] 작성자: 누리어 시스템 김은경 -->
 <head>
 	@@include('@@webRoot/html/_include/app-head.html',{
@@ -13,7 +13,7 @@
 		<!-- app-header (for MyMoney) //-->
 		@@include('@@webRoot/html/_include/app-integrated-header.html',{
 			'pageTit' :'My House 상세',
-			'type':'close'
+			'type':''
 		}) 
 		<!-- // app-header (for MyMoney) -->
 
@@ -44,7 +44,7 @@
                         <dt>세입자 보증금</dt>
                         <dd class="amount"><span class="num">2</span>억 <span class="num">1,000</span>만원</dd>
                         <dt>세입자 월세</dt>
-                        <dd class="amount"><span class="num">50만원</span></dd>
+                        <dd class="amount"><span class="num">50</span>만원</dd>
                     </dl>
                 </section>
 				
@@ -71,10 +71,10 @@
 						* 그래프(line + scatter) 색상(컬러별)
 						- 핑크색 :  #ff8a71;
 						- 오렌지색 :  #ffba53;
-						- 핑크 점 : #ffa894
-						- 오렌지 점 : #ffd799
-						- 매매 범위보기 컬러 : #ffe7c2
-						- 전세 범위보기 컬러 : #ffe9e4
+						- 핑크 점 : #ff8a71, opacity 0.6
+						- 오렌지 점 : #ffba53, opacity 0.6
+						- 매매 범위보기 컬러 : #ffba53, opacity 0.2
+						- 전세 범위보기 컬러 : #ff8a71, opacity 0.2
 
 						- x축 : #26282c/14px
 						- Y축: #8c949e/14px
@@ -89,7 +89,7 @@
 							<dt>매매</dt>
 							<dd>
 								<span class="tit kb">KB시세</span>
-								<button type="button" class="btn-line table">범위보기</button>
+								<button type="button" class="btn-line table disabled">범위보기</button>
 							</dd>
 							<dd>
 								<span class="tit selling">실거래가</span>
@@ -100,7 +100,7 @@
 							<dt>전세</dt>
 							<dd>
 								<span class="tit kb lent">KB시세</span>
-								<button type="button" class="btn-line table disabled" >범위보기</button>
+								<button type="button" class="btn-line table disabled">범위보기</button>
 							</dd>
 							<dd>
 								<span class="tit selling lent">실거래가</span>
@@ -123,7 +123,7 @@
 								<dt>상품명</dt>
 								<dd class="amount"><span class="ellipsis">대출상품명대출상품명대출상품명대출상품명대출상품명대출상품명대출상품명</span></dd>
 								<dt>금리</dt>
-								<dd class="amount"><span class="num">3.16</span>%</dd>
+								<dd class="amount">연 <span class="num not-cash">3.16</span>%</dd>
 								<dt>대출잔액</dt>
 								<dd class="amount"><span class="num">284,225,000</span>원</dd>
 							</dl>
@@ -133,7 +133,7 @@
 								<dt>상품명</dt>
 								<dd class="amount"><span class="ellipsis">대출상품명대출상품명대출상품명대출상품명대출상품명대출상품명대출상품명</span></dd>
 								<dt>금리</dt>
-								<dd class="amount"><span class="num">3.16</span>%</dd>
+								<dd class="amount">연 <span class="num not-cash">3.16</span>%</dd>
 								<dt>대출잔액</dt>
 								<dd class="amount"><span class="num">284,225,000</span>원</dd>
 							</dl>
@@ -150,13 +150,13 @@
 						<li>
 							<button class="is-selected"><span>서초구</span></button>
 							<div class="average-box">
-								<span>서초구 평당 평균 <span class="num">140,665,210</span>원 입니다.</span>
+								<span>서초구 평당 평균 <span class="num">4,908</span>만원입니다.</span>
 							</div>
 						</li>
 						<li>
 							<button><span>방배동</span></button>
 							<div class="average-box">
-								<span>방배동 평당 평균 <span class="num">140,665,210</span>원 입니다.</span>
+								<span>방배동 평당 평균 <span class="num">4,908</span>만원입니다.</span>
 							</div>
 						</li>
 					</ul>

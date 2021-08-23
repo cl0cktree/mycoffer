@@ -230,14 +230,14 @@ subMenu = [{
 
 
 //채널별 메뉴 구성 조정
-if(channel == 'ch_star'){        
+// if(channel == 'ch_star'){        
     
-}else if(channel == 'ch_liiv'){        
-    gnbArr.splice(0,2);
-    gnbArr.splice(1,4);
-    gnbArr.splice(4,2);
+// }else if(channel == 'ch_liiv'){        
+//     gnbArr.splice(0,2);
+//     gnbArr.splice(1,4);
+//     gnbArr.splice(4,2);
     
-}else{  // 마이머니
-    gnbArr.splice(8,2);
-}
+// }else{  // 마이머니
+//     gnbArr.splice(8,2);
+// }
 

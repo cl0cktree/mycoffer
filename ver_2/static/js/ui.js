@@ -26,6 +26,20 @@ function gfn_dateFormatter(ydm){
     }
     return dateVal;
 }
+function gfn_timeFormatter(time){
+    var timeVal;
+    time = time.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+    if(time !== undefined && String(time) !== ''){
+        var regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi;
+        var tmp = String(time).replace(/(^\s*)|(\s*$)/gi, '').replace(regExp, ''); // 공백 및 특수문자 제거
+        if(tmp.length <= 2){
+            timeVal = tmp;
+        }else{
+            timeVal = tmp.substr(0, 2) + ':' + tmp.substr(2, 2);
+        }
+    }
+    return timeVal;
+}
 
 function gfn_fnChkByte($target, maxByte){
     maxByte = maxByte.replace(/[\D\s\._\-]+/g, "");
@@ -490,10 +504,16 @@ if($('.bottom-sheet').length){
 }
 
 //datepicker 입력
-$('body').on('keyup','.datepicker input, .period-selector input', function(){
+$('body')
+.on('keyup','.datepicker input, .period-selector input', function(){
     var val = $(this).val();
     var date = gfn_dateFormatter(val);
     $(this).val(date);
+})
+.on('keyup','.timepicker input', function(){
+    var val = $(this).val();
+    var time = gfn_timeFormatter(val);
+    $(this).val(time);
 })
 .on('click','.btn-datepicker',function(e){
     e.preventDefault();
@@ -504,8 +524,20 @@ $('body').on('keyup','.datepicker input, .period-selector input', function(){
 //datapicker 버튼 삽입후 필요시 binding
 var btnDatepicker = {
     "on" : function(){
+        btnDatepicker.off();
         $('.btn-datepicker').on('click',function(){
             gfn_layered.open('bsCalendar');
+        });
+    },
+    "off" : function(){
+        $('.btn-datepicker').off('click');
+    }
+}
+var btnTimepicker = {
+    "on" : function(){
+        btnTimepicker.off();
+        $('.btn-timepicker').on('click',function(){
+            gfn_layered.open('bsTime');
         });
     },
     "off" : function(){
@@ -520,9 +552,24 @@ $('.datepicker').each(function(){
     }else{
         $(this).find('input').prop('readonly',false);
     }
+    //init
     $(this).find('input').attr('inputmode','numeric');
+    $(this).find('.btn-data-clear, .btn-datepicker').remove();
     $(this).find('input').after('<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button><button class="btn-datepicker" type="button"><span>날짜선택</span></button>');
     btnDatepicker.on();
+});
+
+//날짜 선택
+$('.timepicker').each(function(){
+    if($(this).hasClass('is-disabled')){
+        $(this).find('input').prop('readonly',true);
+    }else{
+        $(this).find('input').prop('readonly',false);
+    }
+    $(this).find('input').attr('inputmode','numeric');
+    $(this).find('.btn-data-clear, .btn-timepicker').remove();
+    $(this).find('input').after('<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button><button class="btn-timepicker" type="button"><span>시간선택</span></button>');
+    btnTimepicker.on();
 });
 
 //기간 선택
@@ -752,13 +799,30 @@ if($('.js-slider').length){
 
 //accordian
 if($('.accordian').length){
+    $('.accordian').each(function(i){
+        var accordianNum = i;
+        $(this).children().each(function(i){
+            var accordianEach = i;
+            var tagName = this.tagName.toLowerCase();
+            var $trigger = $(this).find('.accordian-trigger');
+            if(tagName == 'dt'){
+                $trigger.attr('id','accordian' + accordianNum + accordianEach);
+                !$(this).hasClass('is-active') ? $trigger.attr('aria-expanded', false) : $trigger.attr('aria-expanded',true)
+            }else if(tagName == 'dd'){
+                $(this).attr('aria-labelledby','accordian' + accordianNum + accordianEach);
+            }
+        });
+    })
     $('.accordian')
-    .on('click','button',function(e){
+    .on('click','.accordian-trigger',function(e){
         e.stopPropagation();
+        var $btn = $(this);
         var $dt = $(this).parent('dt');
         if(!$dt.hasClass('is-active')){
-            $dt.addClass('is-active').siblings('dt').removeClass('is-active');
+            $btn.attr('aria-expanded',true);
+            $dt.addClass('is-active').siblings('dt').removeClass('is-active').find('.accordian-trigger').attr('aria-expanded','false');
         }else{
+            $btn.attr('aria-expanded',false);
             $dt.removeClass('is-active');
         }
     })
@@ -767,8 +831,8 @@ if($('.accordian').length){
     })
     .on('click','dt',function(e){
         e.stopPropagation();
-        $(this).find('button').trigger('click');
-        if(e.target.nodeName.lowerCase == 'label') return;
+        $(this).find('.accordian-trigger').trigger('click');        
+        if(e.target.nodeName.toLowerCase() == 'label') return;
     });
 }
 
@@ -794,16 +858,17 @@ if($('.add-form-box').length){
         var $editBox = $this.parents('.edit-user');
         var resetVal = $editBox.find('input[type="text"]').attr('name');
         var valChk = $editBox.find('input[type="text"]').val();
-        var $edit = $this.hasClass('btn-edit-form');
-        var $save = $this.hasClass('btn-save-form');
-        var $cancel = $this.hasClass('btn-edit-cancel');
+        var valEdit = $this.hasClass('btn-edit-form');
+        var valSave = $this.hasClass('btn-save-form');
+        var valCancel = $this.hasClass('btn-edit-cancel');
+        var chkModal = $this.is('[data-call-layered]');
         //btn-edit-form
-        if($edit){
+        if(valEdit){
             $editBox.addClass('is-edit').attr('data-status', 'edit');
             $editBox.find('input[type="text"]').val(resetVal).removeAttr('readonly');
         }
         //btn-save-form
-        if($save){
+        if(valSave){
             $editBox.removeClass('is-edit').attr('data-status', 'normal');
             $editBox.find('input[type="text"]').attr('readonly');
             if(valChk == ''){
@@ -811,9 +876,15 @@ if($('.add-form-box').length){
             }
         }
         //btn-edit-cancel
-        if($cancel){
+        if(valCancel){
             $editBox.removeClass('is-edit').attr('data-status', 'normal');
             $editBox.find('input[type="text"]').val(resetVal).attr('readonly');
+        }
+        //modal
+        if(chkModal && $editBox.hasClass('is-edit')){
+            var name = $(this).data('call-layered');
+            gfn_layered.open(name);
+            console.log('test');
         }
     });
     $('.btn-add-form').on('click', function(){

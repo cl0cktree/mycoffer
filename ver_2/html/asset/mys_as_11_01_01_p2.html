@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-channel="ch_star">
 <!-- [MYS_AS_11_01_01_P2] 작성자: 누리어 시스템 김은경 -->
 <head>
 	@@include('@@webRoot/html/_include/app-head.html',{
@@ -13,7 +13,7 @@
 		<!-- app-header (for MyMoney) //-->
 		@@include('@@webRoot/html/_include/app-integrated-header.html',{
 			'pageTit' :'My House 등록',
-			'type':'close'
+			'type':''
 		}) 
 		<!-- // app-header (for MyMoney) -->
 
@@ -101,11 +101,12 @@
 							<em class="validation">나의 매입가를 입력해 주세요.</em>
 							<p class="info-msg">시세(KB부동산 평균가 2021.04.30 기준)<br><span class="c-blue">12억 1,000만원</span></p>
 						</div>
-						<div class="kb-form datepicker" data-status="">
+						<div class="kb-form datepicker" data-status="error">
 							<label for="purchaseDate">매입일</label>
 							<div class="kb-form_inner form-text">
 								<input type="text" id="purchaseDate" readonly="">
-							</div>
+							</div>						
+							<em class="validation">매입일을 정확하게 입력해 주세요.</em>
 						</div>
 						<div class="kb-form" data-status="">
 							<label for="depositPrice">세입자 보증금</label>

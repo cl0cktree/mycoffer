@@ -66,7 +66,7 @@
                         <ul class="edit-option">
                             <li><span class="btn-switch label-front"><input type="checkbox" name="radioSwitch1" id="includeSum" checked=""><label for="includeSum"><span>지출 합계 포함</span></label></span></li>
                             <li><span class="btn-switch label-front"><input type="checkbox" name="radioSwitch2" id="hideExpenseList" data-call-modal="hideList"><label for="hideExpenseList"><span>내역 숨기기</span></label></span></li>
-                            <li class="delete"><span>내역삭제</span><button class="btn-line btn-delete" onClick="deleteHistory();"><span>삭제</span></button></li>
+                            <li class="delete"><span>내역삭제</span><button class="btn-line btn-delete" data-call-modal="deleteHistory"><span>삭제</span></button></li>
                         </ul>
                     </div>
                 </section>
@@ -89,16 +89,17 @@
             @@include('@@webRoot/html/expense/layered/mys_ex_01_05_02_p01.html')
             @@include('@@webRoot/html/expense/layered/mys_ex_01_05_02_p02.html')
 
-            <div class="modal modal_radioOption" id="hideList">
+            <!-- Modal // -->
+            <!-- 카테고리 변경하기 -->
+            <div class="modal modal_radioOption" id="changeCategoryNotice">
                 <div class="modal_header">
-                    <strong class="tit">내역에서 숨기기</strong>
+                    <strong class="tit">카테고리 변경하기</strong>
                 </div>
                 <div class="modal_contents">
-                    <p>[김국민 통장적요내용출력] {지출 or 이체}을(를) 내역에서 숨기기하시겠습니까?</p>
-                    <p class="simple-message">지출&gt;가계부&gt;숨긴 지출 보기 화면에서 조회 및 복원할 수 있습니다.</p>
+                    <p>{해당 적요 or 가맹점명}을 {카테고리 분류}에서 {변경선택한 카테고리}로 변경하시겠습니까?</p>
                     <ul class="radio-group">
-                        <li><span class="form-radio"><input type="radio" id="changeOptionOnce02" name="hideListType" checked=""><label for="changeOptionOnce02">이번만 변경</label></span></li>
-                        <li><span class="form-radio"><input type="radio" id="changeOptionAlways02" name="hideListType"><label for="changeOptionAlways02">항상 변경</label></span></li>
+                        <li><span class="form-radio"><input type="radio" id="changeOptionOnce" name="changeCategoryType" checked=""><label for="changeOptionOnce">이번만 변경</label></span></li>
+                        <li><span class="form-radio"><input type="radio" id="changeOptionAlways" name="changeCategoryType"><label for="changeOptionAlways">항상 변경</label></span></li>
                     </ul>
                 </div>
                 <div class="modal_buttons btn-area">
@@ -106,6 +107,65 @@
                     <button class="btn-solid ok"><span>확인</span></button>
                 </div>
             </div>
+
+            <!-- 내역에서 숨기기 -->
+            <div class="modal modal_radioOption" id="hideList">
+                <div class="modal_header">
+                    <strong class="tit">내역에서 숨기기</strong>
+                </div>
+                <div class="modal_contents">
+                    <p>[김국민 통장적요내용출력] {지출 or 이체}을(를) 제외하시겠습니까?</p>
+                    <p class="simple-message">지출&gt;가계부&gt;숨긴 지출 보기 화면에서 조회 및 복원할 수 있습니다.</p>
+                    <ul class="radio-group">
+                        <li><span class="form-radio"><input type="radio" id="hideOptionOnce" name="hideListType" checked=""><label for="hideOptionOnce">이번만 변경</label></span></li>
+                        <li><span class="form-radio"><input type="radio" id="hideOptionAlways" name="hideListType"><label for="hideOptionAlways">항상 변경</label></span></li>
+                    </ul>
+                </div>
+                <div class="modal_buttons btn-area">
+                    <button class="btn-solid gray cancel" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid ok"><span>확인</span></button>
+                </div>
+            </div>
+
+            <!-- 내역 삭제 -->
+            <div class="modal modal_radioOption" id="deleteHistory">
+                <div class="modal_header">
+                    <strong class="tit">내역에서 삭제</strong>
+                </div>
+                <div class="modal_contents">
+                    <p>[김국민 통장적요내용출력] {지출 or 이체}을(를) 삭제하시겠습니까?</p>
+                    <ul class="radio-group">
+                        <li><span class="form-radio"><input type="radio" id="deleteOptionOnce" name="deleteListType" checked=""><label for="deleteOptionOnce">이번만 변경</label></span></li>
+                        <li><span class="form-radio"><input type="radio" id="deleteOptionAlways" name="deleteListType"><label for="deleteOptionAlways">항상 변경</label></span></li>
+                    </ul>
+                </div>
+                <div class="modal_buttons btn-area">
+                    <button class="btn-solid gray cancel" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid ok"><span>확인</span></button>
+                </div>
+            </div>
+
+            <!-- 카테고리 추가 개수 제한 안내 -->
+            <div class="modal" id="addCategoryLimitNumber">
+                <div class="modal_contents">
+                    <p>카테고리 추가 기능 개수는 최대 20개입니다.</p>
+                </div>
+                <div class="modal_buttons btn-area">
+                    <button class="btn-solid ok"><span>확인</span></button>
+                </div>
+            </div>
+
+            <!-- 삭제 확인 -->
+            <div class="modal" id="deleteConfirm">
+                <div class="modal_contents">
+                    <p>삭제 되었습니다.</p>
+                </div>
+                <div class="modal_buttons btn-area">
+                    <button class="btn-solid ok"><span>확인</span></button>
+                </div>
+            </div>
+
+            <!-- // Modal -->
 		</div>
 		<!-- // Layer (modal, bottom sheet) -->
 	</div>
@@ -119,47 +179,16 @@
             var id = $(this).data('call-modal');
             $('#'+id).modalPopup('open');
         });
-        //카테고리추가 팝업
-        function addCategoryLimitNumber() {
-            modalPopup({
-                title: "",
-                message: "카테고리 추가 기능 개수는 최대 20개입니다."
-            });
-        }
-        function deleteConfirm(){
-            modalPopup({
-                title: "",
-                message: "삭제 되었습니다."
-            });
-        }
-        function deleteCategory(){
-            modalPopup({
-                title: "",
-                message: "삭제하시겠습니까?",
-                type: "confirm",
-                textOkButton: "확인",
-                textCancelButton: "취소",
-                onOk: function() {
-                    deleteConfirm();
-                }
-            });
-        }
-        function deleteHistory(){
-            modalPopup({
-                title: "",
-                message: "[김국민 통장적요내용출력] {지출 or 이체}을(를) 삭제하시겠습니까?",
-                type: "confirm",
-                textOkButton: "확인",
-                textCancelButton: "취소",
-                onOk: function() {
-                    deleteConfirm();
-                }
-            });
-        }
+
+        $("#deleteHistory").modalPopup({
+            onOk: function() {
+                $('#deleteConfirm').modalPopup('open');
+            },
+            onCancel: function() {}
+        });
 
         $('#hideList').on('click', '.btn-solid.cancel', function(){
             $('#hideExpenseList').prop('checked', false);
-            console.log('click');
         });
     </script>
 	<!-- Add Script -->

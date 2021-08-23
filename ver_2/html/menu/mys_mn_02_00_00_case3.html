@@ -1,0 +1,86 @@
+<!-- [MYS_MN_02_00_00] 전체메뉴 > 알림함 (작성자: 누리어 시스템 김은경)// -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Last Depth | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'알림',
+            'type':''
+        })
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-lnb //-->
+            <div class="app-lnb">
+            </div>
+            <!-- //app-lnb -->
+
+            <!-- app-content // -->
+            <main class="app-content menu-push"> 
+                <!-- 컨텐츠 영역 -->
+                <!-- SECTION //-->
+                <!-- 수정 2021-08-23 // -->
+
+                <!-- 알림 설정하기 // -->
+                <!--
+                <section class="kb-sec top-info">
+                    <div class="push-setting">
+                        <h2 class="h4">Push 알림</h2>
+                        <span class="btn-switch label-front"><input type="checkbox" id="toggleBtn1B" checked=""><label for="toggleBtn1B"><span class="is-hidden">Push 알림 설정하기</span></label></span>
+                    </div>    
+                    <p class="txt">Push를 OFF 하실 경우, KB마이머니에서 제공되는 알림을 받으실 수 없습니다.</p>  
+                </section>
+                -->
+                <!-- // 알림 설정하기 -->
+                
+                <!-- 알림이 없을 때 // -->
+                <section class="kb-sec top-info">
+                    <div class="no-data">
+                        <i class="icon-bang_60_gray"></i>
+                        <p>받은 알림이 없습니다.</p>
+                    </div>
+                    <button class="btn-line"><span>Push 알림 설정하기</span></button>
+                </section>
+                <!-- // 알림이 없을 때 -->             
+                
+                <!-- // 수정 2021-08-23 -->
+                <!--  // SECTION -->
+                
+            </main>
+            <!-- // app-content -->
+                
+        </div>
+        <!-- // app-container -->
+        
+        <div class="layered">
+            
+        </div>
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    <script>
+        function modalAlert() {
+            modalPopup({
+                title: "",
+                message: "숨기기 설정을 변경하시겠습니까? <br>설정하신 내용은 자산/지출 내역에 동일하게 적용됩니다.",
+                type: "confirm"
+            });
+        }
+    </script>
+</body>
+
+</html>

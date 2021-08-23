@@ -41,20 +41,24 @@ if($appMenu.length){
             $appMenu.remove();
             break;
         case 'submain':
-            $appHeader.find('.btn-history-back, .btn-home ,.btn-close').remove();
+            $appHeader.find('.btn-history-back, .btn-home ,.btn-close, .btn-cancel').remove();
             break;
-        case 'process':
+        case 'step01':
+            $appHeader.find('.btn-history-back, .btn-home, .btn-notice-box, .btn-allmenu').remove();            
+            $appMenu.remove();
+            break;
+        case 'step':
             $appHeader.find('.btn-home, .btn-notice-box, .btn-allmenu').remove();            
             $appMenu.remove();
             break;
         case 'complete':            
-            $appHeader.find('.btn-history-back, .btn-notice-box, .btn-close').remove();                        
+            $appHeader.find('.btn-history-back, .btn-notice-box, .btn-close, .btn-cancel').remove();                        
             break;
         case 'home':
-            $appHeader.find('.btn-notice-box, .btn-close').remove();
+            $appHeader.find('.btn-notice-box, .btn-close, .btn-cancel').remove();
             break;
         default:
-            $appHeader.find('.btn-notice-box, .btn-close').remove();
+            $appHeader.find('.btn-notice-box, .btn-close, .btn-cancel').remove();
             console.log('There is no Type ' + headerType);
     }
 
@@ -90,7 +94,11 @@ var nav = '<div class="app-gnb-wrap">';
     // nav += '</div>';
     // nav += '</div>';
 
-if($('.app').data('page') == 'submain'){
+//LNB가 비어있으면 지우기
+if($('.app-lnb').is(':empty')) $('.app-lnb').remove();
+
+//Bridge, Submain 페이지(Starbanking 채널 아닐때) 
+if(($('.app').data('page') == 'submain' || $('.app').data('page') == 'bridge') && channel!="ch_star"){
     if(!$('.app-lnb').length) $('.app-container').prepend('<div class="app-lnb"></div>');
     $('.app-lnb').empty().html(nav);
 }
@@ -109,6 +117,10 @@ $('.app-lnb').find('.tab.swiper-container').each(function(){
             //spaceBetween: 32,
             watchOverflow: true,
             on: {
+                init: function(swiper, event){
+                    var idx = $tab.find('.is-active').index();
+                    swiper.slideTo(idx);
+                },
                 click : function(swiper, event){
                     //swiper.slideTo(swiper.clickedIndex);
                     $(swiper.clickedSlide).addClass('is-active').siblings('.swiper-slide').removeClass('is-active');

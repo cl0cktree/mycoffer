@@ -9,7 +9,8 @@
 
 <body>
     @@include('@@webRoot/html/_include/app-a11y.html')
-    <div class="app" data-page="submain">
+    <div class="app">
+    <!-- <div class="app" data-page="submain"> -->
         <!-- app-header (for MyMoney) //-->
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
             'pageTit':'가계부',
@@ -19,50 +20,42 @@
 
         <!-- app-container (for MyMoney) //-->
         <div class="app-container">
-            <!-- app-lnb //-->
-            <div class="app-lnb">
-                
-                
-            </div>
-            <!-- //app-lnb -->
-
             <!-- app-content // -->
             <main class="app-content expense-account-book-total">
                 <!-- 지출 가계부 그래프 요약 영역 //-->
-                <section class="kb-sec full bg-gray expense-guide">
-                    <div>
-                        <div class="content-box shadow compare-summary">
-                            <div class="content-box-info">
-                                <div class="content-box-tit flex-box">
-                                    <h4 class="h4">
-                                        <button><i class="icon-arrow-left">이전달</i></button><strong>5월</strong><button><i class="icon-arrow-right">다음달</i></button> <span class="tit">지출가이드</span><button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
-                                        <div class="tooltip">
-                                            <div class="cont">&#8251; 최근 과거 5개월간 사용한 지출 금액을 기준으로 월 평균 추천지출액 및 일별 평균 추천지출액을 제시해드립니다. 매월 평균 추철 지출액은 사용한 지출액에 따라 변동됩니다.</div>
-                                            <button class="btn-close"><span>닫기</span></button>
-                                        </div>
-                                    </h4>
-                                    <a href="@@webRoot/html/common/mys_co_08_01_00_p1.html" role="button" class="btn-more"><i class="icon-more_24"></i></a>
-                                    <span class="date">04.26~05.25</span>
-                                </div>
-                                <div class="total-summary"><strong class="emphasis">평소보다 아껴쓰고 있어요.</strong> 이대로 직진!</div>
-                                <!-- [D] 21-06-07 : 마크업 수정 //-->
-                                <a href="javascript:;" role="button" class="link-box_block compare-amount" data-call-layered="bsDailyExpenseGraph">
-                                    <dl>
-                                        <dt>지출금액</dt><!-- [D] 21-07-05 수정 : 텍스트 수정 -->
-                                        <dd><em class="num">3,200,000</em>원</dd>
-                                    </dl>
-                                    <em class="strict-inequality" data-compare-value="lt"></em>
-                                    <dl>
-                                        <dt>목표지출금액</dt><!-- [D] 21-07-05 수정 : 텍스트 수정 -->
-                                        <dd><em class="num">3,500,000</em>원</dd>
-                                    </dl>
-                                </a>
-                                <!-- // 마크업 수정 -->
+                <section class="kb-sec expense-guide">
+                    <div class="date-month">
+                        <button><i class="icon-arrow-left">이전달</i></button>
+                        <strong>5월</strong>
+                        <button><i class="icon-arrow-right">다음달</i></button>
+                        <span class="date num">04.26~05.25</sp>
+                    </div>
+                    <div class="content-box shadow compare-summary">
+                        <div class="content-box-info">
+                            <div class="content-box-tit">
+                                <h4 class="h4">
+                                    <span class="tit">지출가이드</span><button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                    <div class="tooltip">
+                                        <div class="cont">&#8251; 최근 과거 5개월간 사용한 지출 금액을 기준으로 월 평균 추천지출액 및 일별 평균 추천지출액을 제시해드립니다. 매월 평균 추철 지출액은 사용한 지출액에 따라 변동됩니다.</div>
+                                        <button class="btn-close"><span>닫기</span></button>
+                                    </div>
+                                </h4>
                             </div>
+                            <a href="javascript:;" role="button" class="link-box_block compare-amount" data-call-layered="bsDailyExpenseGraph" data-compare-value="right">
+                                <dl>
+                                    <dt>지출금액</dt>
+                                    <dd><em class="num">1,000,000</em>원</dd>
+                                </dl>
+                                <dl>
+                                    <dt>목표지출금액</dt>
+                                    <dd><em class="num">1,743,200</em>원</dd>
+                                </dl>
+                            </a>
+                            <div class="total-summary"><strong class="emphasis">평소보다 아껴쓰고 있어요.</strong> 이대로 직진!</div>
                         </div>
                     </div>
                     <div class="highcharts-box no-space">
-                        <div class="swiper-container t01 mt16 js-swiper" data-swiper-options="highchartSwiperOptions">
+                        <div class="swiper-container t02 mt16 js-swiper" data-swiper-options="highchartSwiperOptions">
                             <!-- // swiper option -->
                             <script>
                                 var highchartSwiperOptions = {
@@ -75,15 +68,8 @@
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <div class="graph-area">
-                                        <figure class="highcharts-figure content-box">
-                                            <div class="content-box-info">
-                                                <a href="mys_ex_04_01_00.html" role="button" class="link-box_block">
-                                                    <div class="content-box-tit t01 flex-box">
-                                                        <h4 class="h4">월간 지출 추이</h4>
-                                                        <button type="button" class=""><i class="icon-arrow-right"></i></button>
-                                                    </div>
-                                                </a>
-                                            </div>
+                                        <figure class="highcharts-figure">
+                                            <h4 class="h4">월간 지출 추이</h4>
                                             <!-- [chart area] //-->
                                             <!--
                                                 [차트 디자인 정보]
@@ -105,7 +91,7 @@
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="graph-area">
-                                        <figure class="highcharts-figure content-box">
+                                        <figure class="highcharts-figure">
                                             <div class="content-box-info">
                                                 <div class="content-box-tit">
                                                     <h4 class="h4">이번달 지출 소비 패턴</h4>
@@ -141,19 +127,17 @@
                 </section>
                 <!--// 지출 가계부 그래프 요약 영역 -->
                 <!-- 지출 가계부 상세 내역 //-->
-                <section class="kb-sec full expense-account-book-list more-view-box">
-                    <!-- 타입 설정 -->
-                    <div class="list-view-type">
-                        <a href="mys_ex_01_02_00.html" class="btn-line form" role="button"><i class="icon-calendar_20_bk"></i><span>캘린더 보기</span></a>
-                        <a href="javascript:;" class="btn-line form is-active" role="button"><i class="icon-list_20"></i><span>일자별 보기</span></a>
-                    </div>
+                <section class="kb-sec full expense-account-book-list more-view-box dividing-space-bottom">
                     <!-- 필터 영역 -->
                     <div class="filter-area">
-                        <button class="btn-filter" data-call-layered="bsExpenseListFilterSetting"><i class="icon-filter_24"><span>필터 설정</span></i></button>
+                        <button class="btn-filter" data-call-layered="bsExpenseListFilterSetting"><span><em class="num">3</em>개월</span> ・ <span>전체</span> ・ <span>최신순</span><i class="icon-arrow-down"></i></button>
+                        <div class="filter-setting">
+                            <a href="mys_ex_01_02_00.html" class="btn-text btn-view-calendar" role="button"><i class="icon-calendar_20_bk"></i><span>달력 보기</span></a>
+                            <button class="btn-filter-setting" data-call-layered="bsExpenseAccountBookSetting"><i class="icon-more_24"><span>가계부 설정</span></i></button>
+                        </div>
                         <ul>
-                            <li><button class="btn-filter-search" data-call-layered="bsExpenseListSearch"><i class="icon-search_24_gray"><span>검색</span></i></button></li>
-                            <li><a href="@@webRoot/html/expense/mys_ex_01_05_00.html" role="button" class="btn-filter-register"><i class="icon-plus_24"><span>사용자 등록</span></i></a></li>
-                            <li><button class="btn-filter-setting" data-call-layered="bsExpenseAccountBookSetting"><i class="icon-more_24"><span>가계부 설정</span></i></button></li>
+                            <li>#검색결과_1</li>
+                            <li>#검색결과_2</li>
                         </ul>
                     </div>
                     <!-- 리스트 영역 -->
@@ -192,7 +176,7 @@
                                         </dt>
                                         <dd>
                                             <strong class="amount expense"><span class="num">10,000</span>원</strong>
-                                            <span class="info">할부(<em class="num">1/3</em>)</span>
+                                            <span class="info">일시불</span>
                                         </dd>
                                     </dl>
                                 </a>
@@ -230,23 +214,15 @@
                 </section>
                 <!--// 지출 가계부 상세 내역 -->
                 <!-- 가맹점 연계 정보 //-->
-                <section class="kb-sec full bg-gray expense-monthly-place">
-                    <div class="highcharts-box no-space">
+                <section class="kb-sec expense-monthly-place">
+                    <div class="highcharts-box">
                         <div class="graph-area">
-                            <figure class="highcharts-figure content-box">
-                                <div class="content-box-info">
-                                    <a href="mys_ex_04_01_00.html" role="button" class="link-box_block">
-                                        <div class="content-box-tit t01 flex-box">
-                                            <h4 class="h4">이번달 자주 찾은 곳</h4><!-- [D] 21-07-05 수정 : 텍스트 수정 -->
-                                            <button type="button" class=""><i class="icon-arrow-right"></i></button>
-                                        </div>
-                                    </a>
-                                    <p class="total-summary">
-                                        <span class="date">04.26~05.25</span>
-                                        <strong class="emphasis">스타벅스에 23회</strong>로 가장 자주 방문하고, <br>
-                                        <strong class="emphasis">애플스토어</strong>에서 <strong class="emphasis color_blue">5,100,000원</strong>으로<br>가장 크게 지출했어요.
-                                    </p>
-                                </div>
+                            <figure class="highcharts-figure">
+                                <h4 class="h4">이번달 자주 찾은 곳<span class="date num">04.26~05.25</span></h4>
+                                <p class="total-summary">
+                                    <strong class="emphasis">스타벅스에 23회</strong>로 가장 자주 방문하고, <br>
+                                    <strong class="emphasis">애플스토어</strong>에서 <strong class="emphasis color_blue">5,100,000원</strong>으로<br>가장 크게 지출했어요.
+                                </p>
                                 <!-- [chart area] //-->
                                 <!--
                                     [차트 디자인 정보]
@@ -260,15 +236,6 @@
                                 </div>
                                 <!--// [chart area] -->
                             </figure>
-                        </div>
-                    </div>
-                </section>
-                <!--// 가맹점 연계 정보 -->
-                <section class="kb-sec full bg-gray expense-management-goal">
-                    <div class="content-tit"><strong class="h4">목표관리가 필요한 지출</strong></div>
-                    <div class="highcharts-box no-space">
-                        <div class="graph-area">
-                            <figure class="highcharts-figure content-box"></figure>
                         </div>
                     </div>
                 </section>
@@ -299,9 +266,9 @@
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
     
-    <script>
+    <!-- <script>
         gfn_gnb.select(2,0);
-    </script>
+    </script> -->
     
 </body>
 

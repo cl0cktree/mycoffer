@@ -1,5 +1,5 @@
 <!-- [MYS_EX_01_05_02_P] 지출 > 가계부 > 수기 등록 > 지출 카테고리 설정 팝업 (작성자: 누리어 시스템 김삼희)// -->
-<div class="bottom-sheet full-size" data-layered-name="bsUserRegisterSetCategory_expense">
+<div class="bottom-sheet" data-layered-name="bsUserRegisterSetCategory_expense">
     <div class="bottom-sheet_header">
         <span class="tit">지출 카테고리 설정</span><!-- [D] 성격에 따라 카테고리 설정 앞의 이름 변경 {지출, 수입, 이체} -->
         <p class="bs_subtit">카테고리는 최대 20개까지 추가할 수 있습니다.</p>
@@ -14,8 +14,8 @@
                     <!-- [D] 21-06-28 수정 : 아이콘 교체 //-->
                     <dl class="accordian">
                         <dt>
-                            <div><i class="icon-expense-utility-bill"></i><strong>주거/공과금(7)</strong></div>
-                            <button type="button"><i></i></button>
+                            <div><i class="icon-expense-finance"></i><strong>주거/공과금(7)</strong></div>
+                            <button type="button" class="accordian-trigger"></button>
                         </dt>
                         <dd class="add-form-box">
                             <div class="add-form-target" data-form-name="sub-category">
@@ -34,7 +34,7 @@
                         </dd> 
                         <dt>
                             <div><i class="icon-expense-finance"></i><strong>금융 (4)</strong></div>
-                            <button type="button"><i></i></button>
+                            <button type="button" class="accordian-trigger"></button>
                         </dt>
                         <dd class="add-form-box">
                             <div class="add-form-target" data-form-name="sub-category">
@@ -64,8 +64,8 @@
                             <a href="javascript:;" class="btn-text btn-add-form btn-add-sub-category" role="button" data-form-name="sub-category"><i class="icon-plus_20"></i><span>카테고리추가</span></a>
                         </dd>
                         <dt>
-                            <div><i class="icon-expense-aso"></i><strong>미분류(1)</strong></div>                        
-                            <button type="button"><i></i></button>
+                            <div><i class="icon-expense-finance"></i><strong>미분류(1)</strong></div>                        
+                            <button type="button" class="accordian-trigger"></button>
                         </dt>
                         <dd class="add-form-box">
                             <div class="add-form-target" data-form-name="sub-category">
@@ -79,7 +79,9 @@
                             <!-- 사용자 등록 카테고리 //-->
                             <div class="edit-user" data-status="normal" data-type="text">
                                 <label for="userRegisterCatetoryName">카테고리명</label>
-                                <i class="icon-expense-finance"></i>
+                                <button type="button" class="btn-select-icon user-icon" data-call-layered="bsUserRegisterSetCategoryIcon">
+                                    <i class="icon-expense-finance"></i><i class="icon-plus_20"></i>
+                                </button>
                                 <div class="kb-form">
                                     <div class="kb-form_inner form-text">
                                         <input type="text" id="userRegisterCatetoryName" placeholder="카테고리명(8자)" value="사용자 등록 카테고리" name="사용자 등록 카테고리" maxlength="10" readonly>
@@ -135,10 +137,10 @@
             <div class="template add-form-item" data-form-name="main-category">
                 <div class="kb-form add-category" data-status="" data-type="icon">
                     <label for="eddCategoryForm">카테고리명</label>
-                    <button type="button" class="btn-select-icon" data-call-layered="bsUserRegisterSetCategoryIcon"><i class="icon-expense-finance"></i><i class="icon-plus_20"></i></button>
+                    <button type="button" class="btn-select-icon" data-call-layered="bsUserRegisterSetCategoryIcon"><i class="icon-plus"></i></button>
                     <div>
                         <div class="kb-form_inner form-text">
-                            <input type="text" id="eddCategoryForm" placeholder="카테고리명(8자)" name="추가 카테고리" value="">
+                            <input type="text" id="eddCategoryFormMainExpense" placeholder="카테고리명(8자)" name="추가 카테고리" value="">
                             <button class="btn-solid form btn-edit-cancel"><span>취소</span></button>
                             <button class="btn-solid form btn-save-form"><span>저장</span></button>
                         </div>
@@ -151,7 +153,7 @@
                     <label for="eddCategoryForm">카테고리명</label>
                     <div class="add-sub-category">
                         <div class="kb-form_inner form-text">
-                            <input type="text" id="eddCategoryForm" placeholder="카테고리명(8자)" name="추가 카테고리" value="">
+                            <input type="text" id="eddCategoryFormSubExpense" placeholder="카테고리명(8자)" name="추가 카테고리" value="">
                             <button class="btn-solid form btn-edit-cancel"><span>취소</span></button>
                             <button class="btn-solid form btn-save-form"><span>저장</span></button>
                         </div>

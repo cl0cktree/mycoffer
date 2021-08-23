@@ -154,7 +154,8 @@ ul.radio-group > li + li{margin-top:20px;}
 	.form-radio{@include radio($size: 22px);}
 }
 
-.kb-form > label{@include text($size: 16px);display:block;position:relative;top:0;width:100%;min-height:26px;padding:8px 2px 0 2px;color:$kb-ui04;background-color:$kb-ui11;white-space:nowrap;transition:font-size .1s, top .1s;}
+.kb-form > label{@include text($size: 16px);display:block;position:relative;top:0;width:100%;min-height:26px;padding:8px 2px 0 2px;color:$kb-ui04;background-color:$kb-ui11;white-space:nowrap;}
+
 .kb-form_inner{display:flex;align-items:center;position:relative;width:100%;padding-top:4px;padding-left:2px;padding-right:2px;padding-bottom:5px;border-bottom:2px solid $kb-ui09;}
 .kb-form_inner.is-focused{border-bottom-color:$kb-ui02;}
 .kb-form .info-msg,
@@ -194,15 +195,6 @@ ul.radio-group > li + li{margin-top:20px;}
 .kb-form + .kb-form_multi,
 .kb-form_multi + .kb-form {margin-top:20px;}
 
-.datepicker .kb-form_inner{border:1px solid $kb-ui09;}
-.datepicker .form-text:after{content:'';position:absolute;right:2px;top:calc(50% - 14px);z-index:1;}
-.datepicker .form-text:after,
-.datepicker .form-text .btn-datepicker{flex:0 0 20px;margin-left:4px;margin-right: 10px;}
-.datepicker .form-text .btn-data-clear{flex:0 0 24px;margin-left:4px}
-.datepicker .form-text input[inputmode=numeric] {padding-left: 16px; font-size: 17px; text-align: left;}
-.datepicker .form-text input[inputmode=numeric]::placeholder {font-size: 17px;}
-.datepicker.is-active .form-text:after{content:none;}
-
 //open bs select form
 .kb-form.select-bs .kb-form_inner{display:inline-flex;width:auto}
 .kb-form.select-bs .kb-form_inner::after{content:'';width:10px;height:10px;border-style:solid;border-color:#8c949e;border-width:0 2px 2px 0;transform:rotate(45deg)}
@@ -240,13 +232,13 @@ ul.radio-group > li + li{margin-top:20px;}
 .form-radio-set .form-radio {margin: 5px 0;}
 .form-radio-set .form-radio label {color: $kb-ui02; }
 
-.form-select .selected-option{@include text($size:19px, $line-height:24px, $weight: bold);@include ellipsis;position:relative;display:block;width:100%;height:32px;padding-right:30px;text-align:left;border:none;}
+.form-select .selected-option{@include text($size:17px, $line-height:24px, $weight: bold);@include ellipsis;position:relative;display:block;width:100%;height:32px;padding-right:30px;text-align:left;border:none;}
 .form-select .selected-option:after{position: absolute;right:0;top: 6px;z-index: 1;content: '';width:2rem;height:2rem;background:url(../images/common/common.png) no-repeat -44px -20px;background-size:160px;}
 .form-select select{display:none;}
 .not-ready .form-select .selected-option{color:$kb-ui07}
 
 .kb-form_multi .kb-form label{@include hidden;}
-.kb-form_multi > .tit{@include text($size: 16px);flex:0 0 100%;display:block;position:relative;width:100%;height:30px;padding:8px 2px 6px 2px;color:$kb-ui04;line-height: 1;}
+.kb-form_multi > .tit{@include text($size: 16px);flex:0 0 100%;display:block;position:relative;width:100%;min-height:26px;padding:8px 2px 0px 2px;color:$kb-ui04;}
 .kb-form_multi .kb-form + .kb-form{margin-top:28px;}
 
 .kb-form_email{display:flex;flex-wrap:wrap;}
@@ -255,6 +247,28 @@ ul.radio-group > li + li{margin-top:20px;}
 .kb-form_email .between{margin:0 16px;font-size:22px;font-weight:bold;line-height:42px;}
 .kb-form_email .add-email-input{display:none;}
 .kb-form_email p:last-of-type{flex:0 0 100%;margin-top:12px;}
+
+// //Datepicker
+// .date-time-selector .kb-form_inner,
+// .datepicker .kb-form_inner{border:1px solid $kb-ui09;border-radius:2px;}
+// .datepicker .form-text:after{content:'';position:absolute;right:2px;top:calc(50% - 14px);z-index:1;}
+// .datepicker .form-text:after,
+
+// .datepicker .form-text .btn-data-clear{flex:0 0 24px;margin-left:4px}
+
+// .datepicker.is-active .form-text:after{content:none;}
+.datepicker .form-text .btn-datepicker{flex:0 0 20px;margin-left:4px;margin-right: 16px;}
+.datepicker .form-text input[inputmode=numeric] {padding-left: 14px; font-size: 17px; text-align: left;}
+.datepicker .form-text input[inputmode=numeric]::placeholder {font-size: 17px;}
+
+.timepicker .form-text .btn-timepicker{flex:0 0 20px;margin-left:4px;margin-right: 16px;}
+.timepicker .form-text input[inputmode=numeric] {padding-left: 14px; font-size: 17px; text-align: left;}
+.timepicker .form-text input[inputmode=numeric]::placeholder {font-size: 17px;}
+
+.date-time-picker .kb-form + .kb-form{margin-top:8px;}
+.date-time-picker .kb-form_inner{border:1px solid $kb-ui09;border-radius:2px;}
+.date-time-picker[data-status=error] .kb-form_inner,
+.date-time-picker [data-status=error] .kb-form_inner{border-bottom-width:2px;}
 
 //셀렉트 역할 ul
 .select-lists{display:flex;overflow:hidden;}
@@ -291,17 +305,18 @@ ul.radio-group > li + li{margin-top:20px;}
 
 
 //기간선택
-.period-selector{@include number($size: 17px);display:flex;align-items:center;border:1px solid $kb-ui08;}
+.period-selector{@include number($size: 17px);display:flex;align-items:center;border:1px solid $kb-ui08;border-radius:2px;}
 .period-selector > span{flex:0 0 12px;text-align:center;}
 .period-selector input{flex:1;min-width:40px;height:46px;padding:0 16px;font-size:17px;border:none;}
-.period-selector input + .btn-datepicker{flex:0 0 20px;margin-right:10px;}
+.period-selector input + .btn-datepicker{flex:0 0 20px;margin-right:16px;}
 .period-selector.is-disabled{position:relative;background-color:$kb-ui10;}
 .period-selector.is-disabled:after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;}
 .period-selector.is-disabled input,
 .period-selector.is-disabled span{color:$kb-ui04;background-color:$kb-ui10;}
+.period-selector + .error-msg{margin-top:8px;}
 
 //임시(개발요청)
-.period-selector_manual{@include number($size: 17px);display:flex;align-items:center;border:1px solid $kb-ui08;}
+.period-selector_manual{@include number($size: 17px);display:flex;align-items:center;border:1px solid $kb-ui08;border-radius:2px;}
 .period-selector_manual > span{flex:0 0 12px;text-align:center;}
 .period-selector_manual input{flex:1;min-width:40px;height:46px;padding:0 20px;font-size:17px;border:none;}
 .period-selector_manual input + .btn-datepicker{flex:0 0 20px;margin-right:10px;}
@@ -309,14 +324,8 @@ ul.radio-group > li + li{margin-top:20px;}
 .period-selector_manual.is-disabled input,
 .period-selector_manual.is-disabled span{color:$kb-ui04;background-color:$kb-ui10;}
 
-.date-time-selector{display:flex;flex-wrap:wrap;}
-
-.date-time-selector .kb-form{flex:1;}
-.date-time-selector .kb-form + .kb-form{margin-top:0;margin-left:20px;}
-.date-time-selector .datepicker .btn-data-clear{display:none;}
 
 @include smallDevice{
-	// .date-time-selector input,
 	.period-selector input{padding:0 10px;font-size:15px;}
 
 }
@@ -379,10 +388,12 @@ ul.radio-group > li + li{margin-top:20px;}
 .tbl-m01 thead tr:first-child th{border-top:1px solid $kb-ui05;}
 
 .accordian{border-bottom:1px solid $kb-ui09;}
-.accordian > dt{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;padding:20px 0 20px 2px;border-top:1px solid $kb-ui09;@include text($text02, normal);}
-.accordian > dt > button{position:relative;flex:0 0 24px;width:24px;height:24px;margin-left:12px;}
-.accordian > dt > button i{@include iconBullet($direction: 'down', $width: 13px, $thick : 2px, $color : $kb-ui04)}
-.accordian > dt.is-active > button i{transform:translateY(-3px) rotate(180deg)}
+.accordian > dt{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;padding:18px 0 18px 2px;border-top:1px solid $kb-ui09;@include text($text02, normal);}
+.accordian > dt .accordian-trigger{@include ir;position:relative;flex:0 0 20px;margin-left:8px;width:2rem;height:2rem;background:url(../images/common/common.png) no-repeat -44px -20px;background-size:160px;}
+.accordian > dt .accordian-trigger[aria-expanded=true]{transform:rotate(180deg)}
+.accordian > dt .accordian-trigger[aria-expanded=false]{transform:rotate(0)}
+.accordian > dt .accordian-trigger[aria-expanded=true]:before{content:'열림';}
+.accordian > dt .accordian-trigger[aria-expanded=false]:after{content:'닫힘';}
 .accordian > dd{position:relative;z-index:1;display:none;margin-bottom:-1px;padding:32px 0 48px 0;border-top:1px solid $kb-ui09;border-bottom:1px solid $kb-ui09;@include text($text02, normal);}
 .accordian > dt.is-active{z-index:2;border-top-color:$kb-ui03;font-weight:bold;}
 .accordian > dt.is-active > strong,
@@ -667,9 +678,10 @@ ul.radio-group > li + li{margin-top:20px;}
 // .goal-bar-graph .text-zone .end {float: right; padding-right: 5px;}
 
 // content-box
-.content-box{margin-left:-8px;margin-right:-8px;padding:20px;border-radius:12px;background-color:$kb-ui11}
-.content-box.shadow{box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.11)}
-.content-box.border{border:1px solid $kb-ui08}
+.content-box{margin-left:-8px;margin-right:-8px;padding:20px;border-radius:12px;background-color:$kb-ui11;box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.11);border:1px solid $kb-ui08}
+.content-box.no-shadow{box-shadow:none;}
+.content-box.no-border{border:none;}
+
 // content-box-info
 .content-box .date{display:block;width:100%;margin-top:12px;font-size:14px;color:$kb-ui05;font-family:'Roboto'}
 .content-box .content-box-tit{font-size:18px}
@@ -693,12 +705,12 @@ ul.radio-group > li + li{margin-top:20px;}
 .content-box .info-amount dd strong{font-size:16px}
 .content-box .info-amount dd strong + span{color:$kb-ui03}
 
-.content-box .total-summary{font-size:16px;line-height:24px}
-.content-box .total-summary .info{text-align:right;color:$kb-ui05}
-.content-box .total-summary .emphasis{font-weight:bold}
-.content-box .total-summary .color_red{color:$color-red}
-.content-box .total-summary .color_blue{color:$color-blue}
-.content-box .total-summary .color_blue{color:$color-blue}
+.total-summary{font-size:16px;line-height:24px}
+.total-summary .info{text-align:right;color:$kb-ui05}
+.total-summary .emphasis{font-weight:bold}
+.total-summary .color_red{color:$color-red}
+.total-summary .color_blue{color:$color-blue}
+.total-summary .color_blue{color:$color-blue}
 
 // swiper pagination
 .content-swiper{padding-bottom:40px}
@@ -709,10 +721,9 @@ ul.radio-group > li + li{margin-top:20px;}
 .swiper-container.t01 .swiper-pagination .swiper-pagination-bullet:last-child{border-top-right-radius:3px;border-bottom-right-radius:3px}
 .swiper-container.t01 .swiper-pagination .swiper-pagination-bullet-active{border-radius:3px;background-color:$kb-ui02}
 
-.swiper-container.t02{padding-bottom:30px}
 .swiper-container.t02 .swiper-pagination{bottom:0}
-.swiper-container.t02 .swiper-pagination .swiper-pagination-bullet{position:relative;margin:0 4px;width:8px;height:8px;background:$kb-ui02;border-radius:8px;opacity:1;background-color:$kb-ui08}
-.swiper-container.t02 .swiper-pagination .swiper-pagination-bullet-active{background-color:$kb-ui02}
+.swiper-container.t02 .swiper-pagination .swiper-pagination-bullet{position:relative;margin:0 4px;width:6px;height:6px;background:$kb-ui02;border-radius:8px;opacity:1;background-color:$kb-ui08}
+.swiper-container.t02 .swiper-pagination .swiper-pagination-bullet-active{background-color:$kb-ui05}
 
 .condition-area{margin-left:(-2.4rem);margin-right:(-2.4rem);background-color:$kb-ui10;padding-left:2.4rem;padding-right:2.4rem;}
 .condition-area.bg-white{background-color:$kb-ui11;}
@@ -755,7 +766,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .rank-list.t01 .tags{color:$kb-ui04}
 .rank-list.t01 .tags span{display:inline-block;margin-right:1.2rem;color:$kb-ui04}
 
-.kb-card{padding:20px;border-radius: 8px;box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.07);border: solid 1px $kb-ui08;}
+.kb-card{padding:18px 20px 16px;border-radius: 8px;box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.07);border: solid 1px $kb-ui08;}
 
 .badge + .account-card{margin-top:10px;}
 .account-card > .name,

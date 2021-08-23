@@ -40,7 +40,8 @@
                 <b class="c-blue">'title'</b> : 타이틀만<br><br>
 
                 (예외)단계별<br>
-                <b class="c-blue">'process'</b> : 뒤로가기 + 닫기버튼(텍스트로 노출)<br>
+                <b class="c-blue">'step'</b> : 뒤로가기 + 취소버튼<br>
+                <b class="c-blue">'step01'</b> : 취소 버튼<br>
                 <b class="c-blue">'complete'</b> : 타이틀(빈값) + 홈 + 햄버거
             </div>
             <div class="iframe-view-group">
@@ -61,7 +62,11 @@
                     <iframe src="./sample/header-title.html" frameborder="0"></iframe>
                 </div>
                 <div class="iframe-view">
-                    <strong class="tit">단계(진행중)(type: process)</strong>
+                    <strong class="tit">단계(1단계 : 뒤로가기 없음)(type: ste01)</strong>
+                    <iframe src="./sample/header-step01.html" frameborder="0"></iframe>
+                </div>
+                <div class="iframe-view">
+                    <strong class="tit">단계(진행중)(type: step)</strong>
                     <iframe src="./sample/header-process.html" frameborder="0"></iframe>
                 </div>
                 <div class="iframe-view">
@@ -71,9 +76,14 @@
             </div>
             <div class="iframe-view-group">
                 <div class="iframe-view">
-                    <strong class="tit">[스타뱅킹] 서브메인(type: submain)</strong>
+                    <strong class="tit">[스타뱅킹] Bridge Page - 스뱅 GNB</strong>
                     <div class="native-bar">마이자산관리 <button type="button" class="btn-close">닫기</button></div>
-                    <iframe src="./sample/header-submain.html" frameborder="0" onload="$(this).contents().find('html').attr('data-channel','ch_star');"></iframe>
+                    <iframe src="./sample/header-bridge.html" frameborder="0" onload="$(this).contents().find('html').attr('data-channel','ch_star');"></iframe>
+                </div>
+                <div class="iframe-view">
+                    <strong class="tit">[스타뱅킹] Bridge 외 서브메인 : 1depth 노출 없음</strong>
+                    <div class="native-bar">마이자산관리 <button type="button" class="btn-close">닫기</button></div>
+                    <iframe src="./sample/header-submain-starbanking.html" frameborder="0"></iframe>
                 </div>
                 <div class="iframe-view">
                     <strong class="tit">[스타뱅킹] 2Depth(type: '' or home)</strong>
@@ -89,6 +99,10 @@
                     <strong class="tit">[스타뱅킹] 로그인 등 타이틀 only(type: title)</strong>
                     <div class="native-bar">마이자산관리 <button type="button" class="btn-close">닫기</button></div>
                     <iframe src="./sample/header-title.html" frameborder="0" onload="$(this).contents().find('html').attr('data-channel','ch_star');"></iframe>
+                </div>
+                <div class="iframe-view">
+                    <strong class="tit">[스타뱅킹] 단계(1단계 : 뒤로가기 없음)(type: ste01)</strong>
+                    <iframe src="./sample/header-step01.html" frameborder="0" onload="$(this).contents().find('html').attr('data-channel','ch_star');"></iframe>
                 </div>
                 <div class="iframe-view">
                     <strong class="tit">[스타뱅킹] 단계(진행중)(type: process)</strong>

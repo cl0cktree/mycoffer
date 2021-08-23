@@ -320,9 +320,9 @@
 			</dl>
 		</div>
 		<hr>
-		<!-- form (Input) -->
+		<!-- input:text(문자) -->
 		<div class="box">
-			<h2>Input[text](문자)</h2>
+			<h2>input:text(문자)</h2>
 			<dl class="flex-dl">
 				<dt>
 					<pre>
@@ -344,7 +344,7 @@
 				</dd>
 				<dd data-description=".kbform : 기본">
 					<div class="kb-form" data-status="">
-						<label for="formTextSample02">이름</label>
+						<label for="formTextSample02" class="required">이름</label>
 						<div class="kb-form_inner form-text">
 							<input type="text" id="formTextSample02" value="김국민">
 							<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
@@ -418,10 +418,24 @@
 						<em class="validation">Error Message</em><!-- 성공/에러 메세지 -->
                         <p class="info-msg">(필요하면) 안내 메세지</p><!-- 안내 메세지 -->
 					</div>
-				</dd>
+				</dd>				
+			</dl>
+		</div>
+		<hr>
+		<!-- input:text(날짜) -->
+		<div class="box" id="inputPicker">
+			<h2>input:text(날짜)</h2>
+			<dl class="flex-dl">
+				<dt>
+					<pre>
+						<code>
+
+						</code>
+					</pre>
+				</dt>
 				<dd data-description="datepicker">
 					<div class="kb-form datepicker" data-status="">
-						<label for="formTextSample08">날짜</label>
+						<label for="formTextSample08" class="required">날짜</label>
 						<div class="kb-form_inner form-text">
 							<input type="text" id="formTextSample08">
 						</div>
@@ -434,6 +448,26 @@
 						<label for="formTextSample09">날짜</label>
 						<div class="kb-form_inner form-text">
 							<input type="text" id="formTextSample09">
+						</div>
+						<em class="validation">Success / Error Message</em><!-- 성공/에러 메세지 -->
+                        <p class="info-msg">(필요하면) 안내 메세지</p><!-- 안내 메세지 -->
+					</div>
+				</dd>
+				<dd data-description="timepicker">
+					<div class="kb-form timepicker" data-status="">
+						<label for="timepicker08" class="required">시간</label>
+						<div class="kb-form_inner form-text">
+							<input type="text" id="timepicker08">
+						</div>
+						<em class="validation">Success / Error Message</em><!-- 성공/에러 메세지 -->
+                        <p class="info-msg">(필요하면) 안내 메세지</p><!-- 안내 메세지 -->
+					</div>
+				</dd>
+				<dd data-description="timepicker.is-disabled">
+					<div class="kb-form timepicker is-disabled" data-status="">
+						<label for="timepicker09">시간</label>
+						<div class="kb-form_inner form-text">
+							<input type="text" id="timepicker09">
 						</div>
 						<em class="validation">Success / Error Message</em><!-- 성공/에러 메세지 -->
                         <p class="info-msg">(필요하면) 안내 메세지</p><!-- 안내 메세지 -->
@@ -452,100 +486,51 @@
 						<span>~</span>
 						<input type="text" title="종료날짜" value="2021.09.21" readonly>
 					</div>
+                    <p class="error-msg">기간입력 에러 메세지</p>
 				</dd>
-				<dd data-description=".date-time-selector : 날짜 시간 선택">
-                    <div class="kb-form_multi date-time-selector">
-                        <strong class="tit">날짜 및 시간</strong>
+				<dd data-description=".date-time-picker : 날짜 시간 선택">
+                    <div class="kb-form_multi date-time-picker">
+                        <strong class="tit required">날짜 및 시간</strong>
                         <div class="kb-form datepicker">
                             <div class="kb-form_inner form-text">
-                                <input type="text" id="dataTimeSelectorSample" title="날짜선택">
+                                <input type="text" id="dateSelectorSample" title="날짜선택">
                             </div>
+                            <em class="validation">오늘을 포함한 날짜만 선택해주세요.</em><!-- 성공/에러 메세지 -->                            
                         </div>
-                        <div class="kb-form" data-status="">
-                            <div class="kb-form_inner form-select">
-                                <button type="button" class="selected-option"></button>
-                                <select name="" id="dataTimeSelectorSample02" title="시간 선택">
-                                    <option value="">시간 선택</option>
-                                    <option value="" selected>00:00</option>
-                                    <option value="">01:00</option>
-                                    <option value="">02:00</option>
-                                    <option value="">03:00</option>
-                                    <option value="">04:00</option>
-                                    <option value="">05:00</option>
-                                    <option value="">06:00</option>
-                                    <option value="">07:00</option>
-                                    <option value="">08:00</option>
-                                    <option value="">09:00</option>
-                                    <option value="">10:00</option>
-                                    <option value="">11:00</option>
-                                    <option value="">12:00</option>
-                                    <option value="">13:00</option>
-                                    <option value="">14:00</option>
-                                    <option value="">15:00</option>
-                                    <option value="">16:00</option>
-                                    <option value="">17:00</option>
-                                    <option value="">18:00</option>
-                                    <option value="">19:00</option>
-                                    <option value="">20:00</option>
-                                    <option value="">21:00</option>
-                                    <option value="">22:00</option>
-                                    <option value="">23:00</option>
-                                </select>
+                        <div class="kb-form timepicker" data-status="error">
+                            <div class="kb-form_inner form-text">
+                                <input type="text" id="timeSelectorSample" title="시간선택">
                             </div>
+                            <em class="validation">숫자 4자리로 입력해주세요.</em><!-- 성공/에러 메세지 -->
+                            <em class="validation">2400보다 큰 숫자를 입력 할 수 없습니다.</em><!-- 성공/에러 메세지 -->
                         </div>
-                        <em class="validation">오늘을 포함한 날짜만 선택해주세요.</em><!-- 성공/에러 메세지 -->
-                        <p class="info-msg">(필요하면) 안내 메세지</p><!-- 안내 메세지 -->
+                        
                     </div>
-				</dd>
-				<dd data-description=".date-time-selector : 날짜 시간대 선택">
-                    <div class="kb-form_multi date-time-selector" data-status="has-error">
-                        <strong class="tit">날짜 및 시간</strong>
+				</dd>						
+				<dd data-description=".date-time-picker : 날짜 시간 선택">
+                    <div class="kb-form_multi date-time-picker">
+                        <strong class="tit required">날짜 및 시간</strong>
                         <div class="kb-form datepicker" data-status="error">
                             <div class="kb-form_inner form-text">
-                                <input type="text" id="dataTimeSelectorSample1" title="날짜선택">
+                                <input type="text" id="dateSelectorSample" title="날짜선택">
                             </div>
+                            <em class="validation">오늘을 포함한 날짜만 선택해주세요.</em><!-- 성공/에러 메세지 -->                            
                         </div>
-                        <div class="kb-form" data-status="">
-                            <div class="kb-form_inner form-select">
-                                <button type="button" class="selected-option"></button>
-                                <select name="" id="dataTimeSelectorSample12" title="시간 선택">
-                                    <option value="">시간 선택</option>
-                                    <option value="" selected>00:00 ~ 01:00</option>
-                                    <option value="">01:00 ~ 02:00</option>
-                                    <option value="">02:00 ~ 03:00</option>
-                                    <option value="">03:00 ~ 04:00</option>
-                                    <option value="">04:00 ~ 05:00</option>
-                                    <option value="">05:00 ~ 06:00</option>
-                                    <option value="">06:00 ~ 07:00</option>
-                                    <option value="">07:00 ~ 08:00</option>
-                                    <option value="">08:00 ~ 09:00</option>
-                                    <option value="">09:00 ~ 10:00</option>
-                                    <option value="">10:00 ~ 11:00</option>
-                                    <option value="">11:00 ~ 12:00</option>
-                                    <option value="">12:00 ~ 13:00</option>
-                                    <option value="">13:00 ~ 14:00</option>
-                                    <option value="">14:00 ~ 15:00</option>
-                                    <option value="">15:00 ~ 16:00</option>
-                                    <option value="">16:00 ~ 17:00</option>
-                                    <option value="">17:00 ~ 18:00</option>
-                                    <option value="">18:00 ~ 19:00</option>
-                                    <option value="">19:00 ~ 20:00</option>
-                                    <option value="">20:00 ~ 21:00</option>
-                                    <option value="">21:00 ~ 22:00</option>
-                                    <option value="">22:00 ~ 23:00</option>
-                                    <option value="">23:00 ~ 24:00</option>
-                                </select>
+                        <div class="kb-form timepicker" data-status="error">
+                            <div class="kb-form_inner form-text">
+                                <input type="text" id="timeSelectorSample" title="시간선택">
                             </div>
+                            <em class="validation">숫자 4자리도 입력해주세요.</em><!-- 성공/에러 메세지 -->
+                            <em class="validation">2400보다 큰 숫자를 입력 할 수 없습니다.</em><!-- 성공/에러 메세지 -->
                         </div>
-                        <em class="validation">오늘을 포함한 날짜만 선택해주세요.</em><!-- 성공/에러 메세지 -->
                     </div>
-				</dd>
+				</dd>						
 			</dl>
 		</div>
 		<hr>
-		<!-- form (Input) -->
+		<!-- input:text(숫자) -->
 		<div class="box">
-			<h2>Input[type=text][inputmode=numeric] (숫자)</h2>
+			<h2>input:text(숫자)</h2>
 			<dl class="flex-dl">
 				<dt>
 					<pre>
@@ -633,9 +618,9 @@
 			</dl>
 		</div>
 		<hr>
-		<!-- form (Input) default -->
-		<div class="box">
-			<h2>Input[type=text][data-default] 기본값 지정</h2>
+		<!-- input:text 공통 기능 -->
+		<div class="box" id="inputFnc">
+			<h2>input:text 공통 기능</h2>
 			<dl class="flex-dl">
 				<dt>
 					<pre>
@@ -644,31 +629,77 @@
 						</code>
 					</pre>
 				</dt>
-				<dd data-description="숫자 default 값 지정 data-default='0'">
+				<dd data-description="data-unit=단위 : 단위 넣기(뒷쪽)">
                     <div class="kb-form" data-status="">
-                        <label for="defaultTest1">나의 월수입</label>
+                        <label for="addedFnc01">총 개수</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" id="defaultTest1" placeholder="" maxlength="6" value="" data-default="0" data-unit="만원" data-action="autoSeperator">
+                            <input type="text" inputmode="numeric" id="addedFnc01" placeholder="" maxlength="6" value="" data-default="0" data-unit="개">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
                     </div>
-
 				</dd>
-				<dd data-description="문자 default 값 지정 data-default='여의도점'">
-					<div class="kb-form" data-status="">
-                        <label for="defaultTest2">지점명</label>
+				<dd data-description="data-action=autoSeperator: 3자리수 콤마">
+                    <div class="kb-form" data-status="">
+                        <label for="addedFnc02">월수입</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" id="defaultTest2" placeholder="" value="" data-default="여의도점">
+                            <input type="text" inputmode="numeric" id="addedFnc02" placeholder="" maxlength="6" value="" data-default="0" data-unit="만원" data-action="autoSeperator">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
+                    </div>
+				</dd>
+				<dd data-description="data-default='숫자': default 값">
+                    <div class="kb-form" data-status="">
+                        <label for="addedFnc03">나의 월수입</label>
+                        <div class="kb-form_inner form-text">
+                            <input type="text" inputmode="numeric" id="addedFnc03" placeholder="" maxlength="6" value="" data-default="0" data-unit="만원" data-action="autoSeperator">
+                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                        </div>
+                    </div>
+				</dd>
+				<dd data-description="data-default='문자' :  default 값 지정">
+					<div class="kb-form" data-status="">
+                        <label for="addedFnc04">지점명</label>
+                        <div class="kb-form_inner form-text">
+                            <input type="text" id="addedFnc04" placeholder="" value="" data-default="여의도점">
+                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                        </div>
+                    </div>
+				</dd>
+				<dd data-description="data-call-layered=data-layered-name : 바텀시트 호출">
+					<div class="kb-form" data-status="">
+                        <label for="addedFnc05">조건</label>
+                        <div class="kb-form_inner form-text">
+                            <input type="text" id="addedFnc05" placeholder="" value="" data-call-layered="bsLookUpCondition">
+                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                        </div>
+                    </div>
+				</dd>
+				<dd data-description="data-status : Validation(Error)">
+					<div class="kb-form" data-status="error">
+                        <label for="addedFnc05">조건</label>
+                        <div class="kb-form_inner form-text">
+                            <input type="text" id="addedFnc05" placeholder="" value="">
+                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                        </div>
+                        <em class="validation">에러 메세지</em>
+                    </div>
+				</dd>
+				<dd data-description="data-status : Validation(Success)">
+					<div class="kb-form" data-status="success">
+                        <label for="addedFnc06">조건</label>
+                        <div class="kb-form_inner form-text">
+                            <input type="text" id="addedFnc06" placeholder="" value="">
+                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                        </div>
+                        <em class="validation">성공 메세지</em>
                     </div>
 				</dd>
 			</dl>
 		</div>
 		<hr>
-		<!-- Select -->
+		<!-- Select(Dropdown) -->
 		<div class="box">
-			<h2>Dropdown(Select)</h2>
+			<h2>Select(Dropdown)</h2>
 			<dl class="flex-dl">
 				<dt>
 					<pre>
@@ -1531,6 +1562,71 @@
 			</dl>
 		</div>
 		<hr>
+        <!-- Accordian -->
+        <div class="box">
+            <h2 class="h2">Accordian</h2>
+            <dl class="flex-dl">
+                <dt>
+                    <pre>
+                        <code>
+
+
+                        </code>
+                    </pre>
+                </dt>
+                <dd data-description=".accordian : 일반">
+                    <dl class="accordian">
+                        <dt>
+                            <div>타이틀</div>
+                            <button type="button" class="accordian-trigger"></button>
+                        </dt>
+                        <dd>
+                            내용
+                        </dd>                       
+                        <dt>
+                            <strong>타이틀</strong>
+                            <button type="button" class="accordian-trigger"></button>
+                        </dt>
+                        <dd>
+                            내용
+                        </dd>                       
+                        <dt>
+                            <span>타이틀</span>
+                            <button type="button" class="accordian-trigger"></button>
+                        </dt>
+                        <dd>
+                            내용
+                        </dd>                       
+                    </dl>
+                </dd>
+                <dd data-description=".accordian : checkbox">
+                    <dl class="accordian">
+                        <dt>
+                            <span class="form-checkbox"><input type="checkbox" id="accrdianCheck01"><label for="accrdianCheck01">아코디언 체크</label></span>
+                            <button type="button" class="accordian-trigger"></button>
+                        </dt>
+                        <dd>
+                            내용
+                        </dd>                       
+                        <dt>
+                            <span class="form-checkbox"><input type="checkbox" id="accrdianCheck02"><label for="accrdianCheck02">아코디언 체크</label></span>
+                            <button type="button" class="accordian-trigger"></button>
+                        </dt>
+                        <dd>
+                            내용
+                        </dd>                       
+                        <dt>
+                            <span class="form-checkbox"><input type="checkbox" id="accrdianCheck03"><label for="accrdianCheck03">아코디언 체크</label></span>
+                            <button type="button" class="accordian-trigger"></button>
+                        </dt>
+                        <dd>
+                            내용
+                        </dd>                       
+                    </dl>
+                </dd>
+            </dl>
+        </div>
+        <hr>
 		<!-- More View -->
 		<div class="box">
 			<h2>More View</h2>
@@ -2395,19 +2491,9 @@
 
 
     <div class="layered">
-		<!-- 약관동의 테스트 용 // -->
-        <!-- @@include('@@webRoot/html/_layered/popup-agree-unique-id-info.html')
-        @@include('@@webRoot/html/_layered/popup-agree-mobile-id-personal-info-collection.html')
-        @@include('@@webRoot/html/_layered/popup-agree-terms-of-use-of-telecommunications-company.html')
-        @@include('@@webRoot/html/_layered/popup-agree-mobile-id-personal-info-service.html') -->
-
-		<!-- @@include('@@webRoot/html/special/layered/mys_sp_01_01_00_p1.html')
-		@@include('@@webRoot/html/special/layered/mys_sp_01_01_00_p2.html')
-		@@include('@@webRoot/html/special/layered/mys_sp_01_01_00_p3.html')
-		@@include('@@webRoot/html/special/layered/mys_sp_01_01_00_p4.html') -->
-		<!-- // 약관동의 테스트 용 -->
-		<!-- 결제내역 리스트 링크 연결 테스트 용 // -->
-		<!-- // 결제내역 리스트 링크 연결 테스트 용 -->
+		@@include('@@webRoot/html/_layered/bs-lookup-condition.html')
+        @@include('@@webRoot/html/_layered/bs-calendar.html')
+        @@include('@@webRoot/html/_layered/bs-time.html')
     </div>
 
 

@@ -13,7 +13,8 @@
 .num[data-unit-after]:after{content:attr(data-unit-after);@include text($size: 15px);margin-left:0.1em;}
 .num[data-unit-before]:before{content:attr(data-unit-before);@include text($size: 15px);margin-right:0.1em;}
 .label{display:block;margin-bottom:0.8rem;font-size:1.6rem;line-height:2rem;color:$kb-ui04;}
-.required:before{content:'*'}
+.label.required{padding-left:26px;}
+.required:before{content:'';display:inline-block;width:20px;height:20px;background:url(../images/common/common.png) no-repeat -24px -20px;background-size:160px;vertical-align:top;}
 
 //오류코드
 .error-code{color:$color-red;font-size:$text03;font-weight:bold;}
@@ -57,7 +58,8 @@
 .btn-text.icon-arrow i {top:-1px;margin-left: 10px;@include iconBullet($direction: 'right', $width: 7px, $thick: 2px, $color: $kb-ui03);}
 .btn-text.sm.icon-arrow i{@include iconBullet($direction: 'right', $width: 7px, $thick: 2px, $color: $kb-ui05);}
 
-.btn-datepicker{@include ir;width:2rem;height:2rem;background:url(../images/common/calendar_20@2x.png) no-repeat 100% 50%;background-size:2rem;}
+.btn-datepicker{@include ir;width:2rem;height:2rem;background:url(../images/common/common.png) no-repeat -130px -20px;background-size:160px;}
+.btn-timepicker{@include ir;width:2rem;height:2rem;background:url(../images/common/common.png) no-repeat -110px -20px;background-size:160px;}
 
 //버튼 내 아이콘 간격
 [class*=btn-solid] i[class*=icon-]:first-child,
@@ -94,8 +96,6 @@
 [data-status=has-error] .validation:before{background-position: -2rem 0;}
 .success-msg:before,
 [data-status=success] .validation:before{background-position: -4rem 0;}
-
-
 
 ul[data-style=list] li,
 [data-style=list]:not(ul){position:relative;padding-left:1.5rem;line-height:1.4;color:$kb-ui03;}
@@ -223,7 +223,7 @@ textarea:focus + .byte .current{color:$kb-ui02;}
 .terms-conditions > ol > li > ol > li:nth-child(14)::before {content: '14.';}
 .terms-conditions > ol > li > ol > li:nth-child(15)::before {content: '15.';}
 
-p.simple-message {position: relative;margin-top: 2rem; padding-left: 2.2rem; color: $kb-ui04; @include text($text03, normal);}
+p.simple-message {position: relative;margin-top: 2rem; padding-left: 2.4rem; color: $kb-ui04; @include text($text03, normal);}
 p.simple-message::before {content:'';position: absolute;left:0;top:0;width:20px;height:20px;background:url(../images/common/common.png) no-repeat -24px -20px;background-size:160px;}
 
 .agree-grade-graph {display: flex;}
@@ -326,3 +326,12 @@ p.simple-message::before {content:'';position: absolute;left:0;top:0;width:20px;
 .img-resize_24 > img,
 .img-resize_32 > img{@include absCenter;width:100%;height:100%;}
 .img-resize_48 > img{@include absCenter;width:100%;height:auto;}
+
+ul.link-arrow-after li,
+.link-arrow-after{position:relative;padding-right:30px;}
+.link-arrow-after:not(ul):after,
+ul.link-arrow-after li:after{content:'';position:absolute;right:0;top:calc(50% - 10px);}
+ul.link-arrow-after li:after,
+.link-arrow-after:after,
+.link-arrow{@include ir;display:inline-block;width:20px;height:20px;background:url(../images/common/common.png) no-repeat -90px -20px;background-size:160px;}
+
