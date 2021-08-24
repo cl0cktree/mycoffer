@@ -5,8 +5,7 @@
 	<meta charset="utf-8">
 	<title>마이금고 | Path  | KB국민은행 MYDATA</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../static/css/set-nav.css">
     <link rel="stylesheet" href="./css/jquery-ui.min.css">
 	<link rel="stylesheet" href="./css/path.css">
 </head>
@@ -15,7 +14,7 @@
 	<div id="wrap">
 		<div class="header">
             <a href="./index.html" class="home">HOME</a>
-			<p class="filter-input"><input id="filter" placeholder="Search" /></p>
+			<p class="filter-input"><input type="text" id="filter" placeholder="Search" /></p>
 			<p class="url-input"><input id="url" type="text" placeholder="URL : ex) /admin/...." /></p>
 		</div>
 		<div id="container">
@@ -24,8 +23,9 @@
 					<li><a href="javascript:;">범례</a>
 						<ul>
 							<li class="working">작업 중</li>
-							<li class="complete">컨펌완료</li>
-							<li class="dev">개발 중</li>
+							<li class="complete">작업완료(→ 기획컨펌 요청)</li>
+							<li class="confirmed">기획컨펌완료 (→ GUI리뷰 요청)</li>
+							<li class="gui">GUI리뷰완료 (→ 개발팀에 전달)</li>
 							<li class="modified">수정 중</li>
 							<!-- <li class="working"><a href="../html/mysafe/icon_sample.html">스플라이트 이미지 모음</a></li> -->
 						</ul>
@@ -39,28 +39,28 @@
 								</ul>
 							</li>
 							-->
-							<li class="complete" data-date="06/00"><a href="../html/mysafe/mys_as_17_01_00_p1.html">메인화면(자산등록 전)</a></li>
-							<li class="complete" data-date="06/00"><a href="../html/mysafe/mys_as_17_01_00_p2.html">메인화면(자산등록 후)</a></li>
-							<li class="complete" data-date="06/00"><a href="../html/mysafe/mys_as_17_01_02_p1.html">My자산 등록</a></li>
-							<li class="complete" data-date="06/09">
+							<li class="gui" data-date="06/00"><a href="../html/mysafe/mys_as_17_01_00_p1.html">메인화면(자산등록 전)</a></li>
+							<li class="gui" data-date="06/00"><a href="../html/mysafe/mys_as_17_01_00_p2.html">메인화면(자산등록 후)</a></li>
+							<li class="gui" data-date="06/00"><a href="../html/mysafe/mys_as_17_01_02_p1.html">My자산 등록</a></li>
+							<li class="gui" data-date="06/09">
 								<a href="javascript:;">현금(원화/외화) 관리</a>
 								<ul>
-									<li class="complete" data-date="06/08"><a href="../html/mysafe/mys_as_17_01_03_p1.html">현금(원화/외화) 목록</a></li>
-									<li class="complete" data-date="06/08"><a href="../html/mysafe/mys_as_17_01_04_p2.html">현금(원화/외화) 수정</a></li>
+									<li class="gui" data-date="06/08"><a href="../html/mysafe/mys_as_17_01_03_p1.html">현금(원화/외화) 목록</a></li>
+									<li class="gui" data-date="06/08"><a href="../html/mysafe/mys_as_17_01_04_p2.html">현금(원화/외화) 수정</a></li>
 								</ul>
 							</li>
-							<li class="complete" data-date="06/09">
+							<li class="gui" data-date="06/09">
 								<a href="javascript:;">금 관리</a>
 								<ul>
-									<li class="complete" data-date="06/08"><a href="../html/mysafe/mys_as_17_01_07_p1.html">금 목록</a></li>
-									<li class="complete" data-date="06/08">
+									<li class="gui" data-date="06/08"><a href="../html/mysafe/mys_as_17_01_07_p1.html">금 목록</a></li>
+									<li class="gui" data-date="06/08">
 										<a href="../html/mysafe/mys_as_17_01_08_p1.html">금 등록</a>
 										<ul>
-											<li class="complete" data-date="06/08"><a href="../html/asset/mys_as_17_layered.html#mys_as_17_01_08_BS1">금 형태선택(바텀시트)</a></li>
-											<li class="complete" data-date="06/08"><a href="../html/asset/mys_as_17_layered.html#mys_as_17_01_08_BS2">금 단위선택(바텀시트)</a></li>
+											<li class="gui" data-date="06/08"><a href="../html/asset/mys_as_17_layered.html#mys_as_17_01_08_BS1">금 형태선택(바텀시트)</a></li>
+											<li class="gui" data-date="06/08"><a href="../html/asset/mys_as_17_layered.html#mys_as_17_01_08_BS2">금 단위선택(바텀시트)</a></li>
 										</ul>
 									</li>
-									<li class="complete" data-date="06/08"><a href="../html/mysafe/mys_as_17_01_08_p2.html">금 조회 및 수정/삭제</a></li>
+									<li class="gui" data-date="06/08"><a href="../html/mysafe/mys_as_17_01_08_p2.html">금 조회 및 수정/삭제</a></li>
 								</ul>
 							</li>
 							<!--
@@ -97,20 +97,20 @@
 								</ul>
 							</li>
 							-->
-							<li class="complete" data-date="06/09">
+							<li class="gui" data-date="06/09">
 								<a href="javascript:;">기타자산 관리</a>
 								<ul>
-									<li class="complete" data-date="06/08"><a href="../html/mysafe/mys_as_17_01_11_p1.html">기타자산 목록</a></li>
-									<li class="complete" data-date="06/08">
+									<li class="gui" data-date="06/08"><a href="../html/mysafe/mys_as_17_01_11_p1.html">기타자산 목록</a></li>
+									<li class="gui" data-date="06/08">
 										<a href="../html/mysafe/mys_as_17_01_12_p1.html">기타자산 등록</a>
 										<ul>
-											<li class="complete" data-date="06/08"><a href="../html/asset/mys_as_17_layered.html#MYS_AS_17_01_12_BS1">기타자산 종류(바텀시트)</a></li>
+											<li class="gui" data-date="06/08"><a href="../html/asset/mys_as_17_layered.html#MYS_AS_17_01_12_BS1">기타자산 종류(바텀시트)</a></li>
 										</ul>
 									</li>
-									<li class="complete" data-date="06/08"><a href="../html/mysafe/mys_as_17_01_12_p2.html">기타자산 조회 및 수정</a></li>
+									<li class="gui" data-date="06/08"><a href="../html/mysafe/mys_as_17_01_12_p2.html">기타자산 조회 및 수정</a></li>
 								</ul>
 							</li>
-							<li class="complete" data-date="06/08"><a href="../html/mysafe/mys_as_17_01_13_p1.html">자산등록완료</a></li>
+							<li class="gui" data-date="06/08"><a href="../html/mysafe/mys_as_17_01_13_p1.html">자산등록완료</a></li>
 						</ul>
 					</li>
 				</ul>

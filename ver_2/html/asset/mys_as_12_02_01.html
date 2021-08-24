@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html lang="ko">
 <!-- [MYS_AS_12_02_01] 작성자: 누리어 시스템 황철민 -->
+<!DOCTYPE html>
+<html lang="ko" data-channel="ch_star">
 <head>
 	@@include('@@webRoot/html/_include/app-head.html',{
 		"title": "자동차 관리 | 자동차"
@@ -9,15 +9,23 @@
 
 <body>
 	@@include('@@webRoot/html/_include/app-a11y.html')
-	<div class="app" data-page="submain"><!-- submain일때 (BG + GNB )-->
-		<!-- app-header (for MyMoney) //-->
+	<div class="app" data-page="submain">
+		<!-- app-header //-->
 		@@include('@@webRoot/html/_include/app-integrated-header.html', {
 			'pageTit': '자동차 관리',
 			'type': ''
 		})
 		<!-- // app-header -->
 
-		<!-- app-container (for MyMoney) //-->
+        <script>
+            //chnannel 별 header 타입이 다름
+            if($('html').data('channel') != 'ch_star'){
+                $('.app-header').attr('data-type','submain');
+            }else{
+                $('.app-header').attr('data-type','');
+            }
+        </script>
+		<!-- app-container //-->
 		<div class="app-container">
 
 			<!-- app-lnb //-->
@@ -32,12 +40,12 @@
 
 				<!-- My Car 차고 최상단 메시지 // -->
 				<section class="kb-sec bg-white mycar-top-message">
-					<!-- 수정 2021-07-02 // -->
+					
 					<div class="content-box shadow">
 						<strong class="name">김국민</strong> 님의 자동차 총 자산은 <span class="amount"><span class="num">859</span>만원</span>이에요.<br>
-						지난달보다 <span class="amount down"><span class="num">159</span>만원</span> 감소했습니다.<!-- 수정 2021-06-24 -->
+						지난달보다 <span class="amount down"><span class="num">159</span>만원</span> 감소했습니다.
 					</div>
-					<!-- // 수정 2021-07-02 -->
+					
 				</section>
 				<!-- // My Car 차고 최상단 메시지 -->
 
@@ -71,14 +79,14 @@
 				<section class="kb-sec mycar-quotes">
 					<div class="summary">
 						<div class="title">My Car 시세</div>
-						<!-- 수정 2021-07-02 // -->
+						
 						<div class="result">
 							<div class="amount"><span class="num">1,370</span>만원</div>
-							지난달보다 <span class="up"><span class="num">5</span>만원</span> 증가<!-- 수정 2021-06-24 -->
+							지난달보다 <span class="up"><span class="num">5</span>만원</span> 증가
 						</div>
-						<!-- // 수정 2021-07-02 -->
+						
 					</div>
-					<!-- 차트 디자인 수정 2021-06-11 // -->
+					<!-- 차트 디자인 수정  // -->
 					<!-- [Chart Area] // -->
 					<!--
 						[차트 디자인 정보]
@@ -92,7 +100,7 @@
 						<img class="temp" src="@@webRoot/static/images/_temp/chart_as1201.png" alt="차트 예시 이미지">
 					</div>
 					<!-- // [Chart Area] -->
-					<!-- // 차트 디자인 수정 2021-06-11 -->
+					<!-- // 차트 디자인  -->
 					<dl class="description-list type2">
 						<dt>시세정보</dt>
 						<dd>KB차차차</dd>
@@ -102,7 +110,7 @@
 						<dd class="amount"><span class="num">32.9</span>%</dd>
 					</dl>
 					<div class="btn-area bline">
-						<a href="#" class="btn-line"><span>비싸게 팔러 가기</span></a><!-- 수정 2021-07-01 -->
+						<a href="#" class="btn-line"><span>비싸게 팔러 가기</span></a>
 					</div>
 				</section>
 				<!-- // My Car 시세 -->
@@ -111,12 +119,12 @@
 				<section class="kb-sec mycar-maintain">
 					<div class="summary">
 						<div class="title">유지비 관리<span>(2월)</span></div><!-- 수정 2021-06-16 -->
-						<!-- 수정 2021-07-02 // -->
+						
 						<div class="result">
 							<div class="amount"><span class="num">370</span>만원</div>
-							지난달보다 <span class="up"><span class="num">5</span>만원</span> 증가<!-- 수정 2021-06-24 -->
+							지난달보다 <span class="up"><span class="num">5</span>만원</span> 증가
 						</div>
-						<!-- // 수정 2021-07-02 -->
+						
 					</div>
 					<dl class="description-list type2">
 						<dt>주유비</dt>
@@ -125,7 +133,7 @@
 						<dd class="amount"><span class="num">70,000</span>원</dd>
 					</dl>
 					<div class="btn-area">
-						<a href="#" class="btn-line"><span>유지비 자세히 보기</span></a><!-- 수정 2021-07-01 -->
+						<a href="#" class="btn-line"><span>유지비 자세히 보기</span></a>
 					</div>
 				</section>
 				<!-- // My Car 유지비 관리 -->
@@ -143,7 +151,7 @@
 						<dt>만기일</dt>
 						<dd class="date">2023.09.23</dd>
 						<dt>금리</dt>
-						<dd class="num">연 2.3%</dd><!-- 수정 2021-06-24 -->
+						<dd class="num">연 2.3%</dd>
 						<dt>대출잔액</dt>
 						<dd class="amount"><span class="num">1,700,000</span>원</dd>
 					</dl>
@@ -155,12 +163,12 @@
 						<dt>만기일</dt>
 						<dd class="date">2023.09.23</dd>
 						<dt>금리</dt>
-						<dd class="num">연 2.5%</dd><!-- 수정 2021-06-24 -->
+						<dd class="num">연 2.5%</dd>
 						<dt>대출잔액</dt>
 						<dd class="amount"><span class="num">700,000</span>원</dd>
 					</dl>
 					<div class="btn-area">
-						<a href="#" class="btn-line"><span>대출이 부담되시나요?</span></a><!-- 수정 2021-07-01 -->
+						<a href="#" class="btn-line"><span>대출이 부담되시나요?</span></a>
 					</div>
 				</section>
 				<!-- // My Car 대출 관리 -->
@@ -176,7 +184,7 @@
 						<dt>신규일</dt>
 						<dd class="date">2020.10.23</dd>
 						<dt>만기일</dt>
-						<dd class="date"><span class="dday">(30일 남음)</span>2023.09.23</dd><!-- 수정 2021-06-24 -->
+						<dd class="date"><span class="dday">(30일 남음)</span>2023.09.23</dd>
 					</dl>
 					<dl class="description-list type2">
 						<dt>상품명</dt>
@@ -184,10 +192,10 @@
 						<dt>신규일</dt>
 						<dd class="date">2020.10.23</dd>
 						<dt>만기일</dt>
-						<dd class="date"><span class="dday">(30일 남음)</span>2023.09.23</dd><!-- 수정 2021-06-24 -->
+						<dd class="date"><span class="dday">(30일 남음)</span>2023.09.23</dd>
 					</dl>
 					<div class="btn-area">
-						<a href="#" class="btn-line"><span>다음 보험료 확인하러 가기</span></a><!-- 수정 2021-07-01 -->
+						<a href="#" class="btn-line"><span>다음 보험료 확인하러 가기</span></a>
 					</div>
 				</section>
 				<!-- // My Car 보험 관리 -->

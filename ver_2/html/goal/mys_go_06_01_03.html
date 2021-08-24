@@ -1,6 +1,6 @@
+<!-- [MYS_GO_06_01_03] 작성자: 누리어 시스템 김홍범 -->
 <!DOCTYPE html>
 <html lang="ko">
-<!-- [MYS_GO_06_03_01] 작성자: 바로 투자하기 (통장없음) 누리어 시스템 이진우 -->
 <head>
 	@@include('@@webRoot/html/_include/app-head.html',{
 		"title": "아낀만큼완료상세 실패 | 완료 챌린지 목록 | 목표"
@@ -10,58 +10,82 @@
 <body>
 	@@include('@@webRoot/html/_include/app-a11y.html')
 	<div class="app">
-		<!-- app-header (for MyMoney) //-->
+		<!-- app-header //-->
         @@include('@@webRoot/html/_include/app-integrated-header.html',{'pageTit':'상세내역','type':''})
 		<!-- // app-header -->
 
-		<!-- app-container (for MyMoney) //-->
+		<!-- app-container //-->
 		<div class="app-container">
 
 			<!-- app-content // -->
 			<main class="app-content goal-ama-others-detail">
 
-                <section class="kb-sec bg-gray">
+                <section class="kb-sec bottom-bg">
                     <div class="success-tit">
-                        <h2 class="h3">커피 줄이기</h2>
+                        <h2 class="h3">
+                            <span>커피 줄이기</span>
+                            <i class="badge fail">실패</i>
+                        </h2>
                         <h3 class="sub-tit">카페인 중독! 더는 위험해요ㅠㅠ</h3>
                     </div>
                     <div class="challenge-info">
-                        <ul class="term-list type2">
-                            <li><span>목표기간</span><br><em class="num">2021.04.01~2021.04.06</em></li>
-                            <li><span>6개월 평균 소비금액</span><br><strong><em class="num">200.000</em>원</strong></li>
-                            <li><span>목표금액</span><br><strong><em class="num">1,500,000</em>원(일주일)</strong></li>
-                        </ul>
+                        <ul class="term-list">
+                            <li>
+                                <span>목표기간</span>
+                                <strong><em class="num">2021.04.01~2021.04.06</em></strong>
+                            </li>
+                            <li>
+                                <span>6개월 평균 소비금액</span>
+                                <strong><em class="num">200.000</em></strong>원
+                            </li>
+                            <li>
+                                <span>목표금액</span>
+                                <strong><em class="num">1,500,000</em></strong>원 (일주일)
+                            </li>
+                        </ul>       
+                        <!-- <i class="icon-stamp-suc-big"></i> //성공 -->      
                         <i class="icon-stamp-fail-big"></i>
                     </div>
                 </section>
 
                 <section class="kb-sec goals-detail-list">
-                    <div class="challenge-box">
-                        <div class="content-box">
-                            <div class="challenge-tit">
-                                <h2 class="h3">다시 도전해보세요!!</h2>
-                            </div>
-                            <div class="challenge-info">
-                                <div class="txt-goal-stat">
-                                    <h3 class="tit">목표달성에 실패 했어요!</h3>
-                                    <p>목표금액보다 <span class="num">30,000</span>원 더 썼어요.<br>다시 한번 도전해보세요!</p>
+                    <div class="challenge-box content-swiper-wrap">
+                        <div class="swiper-container content-swiper t01 js-swiper" data-swiper-options="goalGraphSwiperOptions">
+                            <script>
+                                var goalGraphSwiperOptions = {
+                                    "pagination": {
+                                        "el": ".swiper-pagination"
+                                    },
+                                    "spaceBetween": 16,
+                                    "autoHeight": "true"                                        
+                                };
+                            </script>
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide content-box shadow">
+                                    <div class="challenge-info">
+                                        <div class="txt-goal-stat">
+                                            <p>목표금액보다 <span class="num">30,000</span>원 더 썻어요.<br>다시 한 번 도전해 보세요!</p>
+                                        </div>
+                                        
+                                        <div class="character-graph goal success" data-theme="coffee">
+                                            <div class="graph-area">
+                                                <span data-goal="50"><i></i></span>
+                                                <div class="flag"><i class="icon-flag-goal"></i></div>
+                                            </div>
+                                            <div class="graph-txt">
+                                                <p class="start-txt">현재지출금액<br><span class="num">100,000</span>원</p>
+                                                <p class="end-txt">목표금액<br><strong><span class="num">150,000</span>원</strong></p>
+                                            </div>
+                                        </div>                                    
+                                    </div>
                                 </div>
-                                
-                                <div class="character-graph goal fail" data-theme="">
-                                    <div class="ico-area">
-                                        <img src="@@webRoot/static/images/goal/progress_kiki2.png" alt="좌절하고 있는 키키">
-                                    </div>
-                                    <div class="graph-txt">
-                                        <p class="start-txt">현재 소비금액<br><strong><span class="num">100,000</span>원</strong></p>
-                                        <p class="end-txt">목표금액<br><strong><span class="num">150,000</span>원</strong></p>
-                                    </div>
-                                </div>                                    
                             </div>
+                            <!-- <div class="swiper-pagination"></div> -->
                         </div>
                     </div> 
                 </section>
 
-                <section class="kb-sec goals-pay-list">
+                <section class="kb-sec goals-pay-list mt16">
                     <dl class="accordian">
                         <dt>
                             <h2>지출내역 확인하기</h2>
@@ -88,27 +112,25 @@
                                             <strong class="amount"><span class="num">9,800</span>원</strong>
                                         </span>
                                     </dd>
+                                    <dt>
+                                        <strong class="tit">합계</strong>
+                                    </dt>
+                                    <dd class="total">
+                                        <span class="btn-switch label-front">
+                                            <strong class="amount"><span class="num">15,000</span>원</strong>
+                                        </span>
+                                    </dd>
                                 </dl>
                             </div>
                         </dd>
                     </dl>
-                    <dl class="credit-list t01">
-                        <dt>
-                            <strong class="tit">합계</strong>
-                        </dt>
-                        <dd>
-                            <span class="btn-switch label-front">
-                                <strong class="amount"><span class="num">9,800</span>원</strong>
-                            </span>
-                        </dd>
-                    </dl>
-                </section>
+                </section>          
 
-                <div class="sticky-bottom">
+                <div class="sticky-bottom">           
                     <div class="btn-area">
                         <button type="button" class="btn-solid"><span>다시 도전</span></button>
                     </div>
-                </div>
+                </div>  
 			</main>
 			<!-- // app-content -->
 
@@ -117,7 +139,6 @@
 
 		<!-- Layer (modal, bottom sheet) // -->
 		<div class="layered">
-			@@include('@@webRoot/html/goal/layered/mys_go_02_01_03_p1.html')
 		</div>
 		<!-- // Layer (modal, bottom sheet) -->
 	</div>
@@ -127,29 +148,6 @@
 	<!-- Add Library (this page only)-->
 	<script src="@@webRoot/static/js/ui.js"></script>
     <script>
-        var $contentSwiper = $('.content-swiper-wrap');
-        if($contentSwiper.length > 0){
-            $contentSwiper.each(function(index){
-                var $contentSwiper = $(this).find('.swiper-container');
-                var index = index+1;
-                $contentSwiper.addClass('content-swiper' + index);
-                var swiper = new Swiper('.content-swiper' + index, {
-                    slidesPerView: 'auto',
-                    centeredSlides: 'true',
-                    spaceBetween: 24,                  
-                    autoHeight : 'true',
-                    pagination: {
-                        el: $('.content-swiper' + index).find('.swiper-pagination'),
-                        type: 'bullets',
-                        clickable: 'true',
-                    },
-                    navigation: {
-                        nextEl: $('.content-swiper' + index).find('.swiper-button-next'),
-                        prevEl: $('.content-swiper' + index).find('.swiper-button-prev'),
-                    },
-                });
-            });
-        };
     </script>
 	<!-- Add Script -->
 	

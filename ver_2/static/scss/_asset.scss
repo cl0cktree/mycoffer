@@ -118,8 +118,8 @@ div.percentage-graph.yellow .graph-area > span{background-color:#ffcc00;border:1
 .my-asset .asset-summary .highcharts-box .graph-info>.h4>.btn-more{position:absolute;top:0;right:0;margin-top:0;}
 .my-asset .asset-summary .highcharts-box .graph-info .graph-msg{display:flex;justify-content:space-between;align-items:flex-start;}
 .my-asset .asset-summary .highcharts-box .graph-info .graph-msg .btn-more{margin-top:0;}
-.my-asset .asset-summary .highcharts-box .highcharts_column{height:calc((100vw - 56px) * 0.58);}
-.my-asset .asset-summary .highcharts-box .highcharts_column img{width:100%;}
+.my-asset .asset-summary .highcharts-box .chart-area{height:calc((100vw - 56px) * 0.58);}
+.my-asset .asset-summary .highcharts-box .chart-area img{width:100%;}
 .my-asset .asset-summary .highcharts-box .graph-info .txt{@include text;}/*margin-bottom:28px; 그래프 여백 때문에 임시 제거*/
 .my-asset .asset-summary .highcharts-box .graph-info .txt em{color:$color-red;@include text($weight:bold);}
 .my-asset .asset-summary .highcharts-box .graph-info .txt .plus {color:$color-red;}
@@ -335,7 +335,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:#ffcc00;border:1
 .my-asset .exchange-Rate .swiper-slide button.is-active{border-color:$kb-ui02;}
 .my-asset .exchange-Rate .swiper-slide .tit{font-weight:bold;}
 .my-asset .exchange-Rate .swiper-slide .num{color:$kb-ui04;}
-.my-asset .exchange-Rate .highcharts_column{margin-right:24px;}
+.my-asset .exchange-Rate .chart-area{margin-right:24px;}
 .my-asset.foreign-currency .recommend-prod{border-bottom:none;}
 .my-asset .exchange-Rate .icon-con img{width:24px;height:24px;}
 .my-asset .exchange-Rate .graph-notice{@include text($size:14px);color:$kb-ui04;text-align:right;margin-top:1rem;padding-right: 2.4rem;}
@@ -475,7 +475,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:#ffcc00;border:1
 .my-asset .asset-modify .ui-sortable::before {content:'';position:absolute;z-index:10;left:0;right:0;top:0;height:1px;background-color:$kb-ui07;}
 
 /* 입출금 관리 */
-.my-asset.pay .asset-summary .highcharts-box .highcharts_column{height:53.3vw;}
+.my-asset.pay .asset-summary .highcharts-box .chart-area{height:53.3vw;}
 .my-asset.pay .smart-loan-banner{margin-top:0;}
 .my-asset.pay .recommend-prod .list  .smart-loan-banner button{border:none;background:url(../../static/images/asset/banner_smart_loan2.png) no-repeat right center $kb-ui10;background-size:106px auto;}
 .my-asset .smart-fund-banner button{display:block;width:100%;text-align:left;background:url(../../static/images/asset/banner_smart_loan.png) no-repeat right center $kb-ui10;background-size:75px auto;padding:20px 26px;}
@@ -489,7 +489,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:#ffcc00;border:1
 
 
 /* 투자 관리 */
-.my-asset.investment .asset-summary .highcharts-box .highcharts_column{height:51vw;}
+.my-asset.investment .asset-summary .highcharts-box .chart-area{height:51vw;}
 .my-asset.investment .recommend-prod{border-bottom:none;}
 /* 보험 */
 
@@ -728,8 +728,10 @@ div.percentage-graph.yellow .graph-area > span{background-color:#ffcc00;border:1
 .my-asset .house-data-list.expens{border-bottom:none;}
 .my-asset .house-data-list.wish{border-bottom:none;}
 .my-asset .house-data-list .house-data-tit{padding:2.4rem 0 0;margin:0 24px;}
-.my-asset .house-data-list .house-data-tit .address{@include text($size:18px,$weight:bold);display:block;position:relative;margin-bottom:10px;padding-right:30px;}
-.my-asset .house-data-list .house-data-tit .address .link-arrow{/*position:absolute;top:50%;right:0;margin-top:-12px;*/vertical-align:text-top;margin-left:.4rem;}
+.my-asset .house-data-list .house-data-tit .address{@include text($size:18px,$weight:bold);display:block;position:relative;margin-bottom:1rem;}
+// .my-asset .house-data-list .house-data-tit .address > span:not(.link-arrow){@include ellipsis;display:inline-block;}
+.my-asset .house-data-list .house-data-tit .address > span.type2:not(.link-arrow){@include ellipsis;display:inline-block;max-width:calc(100% - 2.4rem);}
+.my-asset .house-data-list .house-data-tit .address .link-arrow{/*position:absolute;top:50%;right:0;margin-top:-12px;*/vertical-align:text-top;margin-left:.4rem;display:inline-block;margin-top:-.5rem;}
 .my-asset .house-data-list.expens .house-data-tit .data-wrap{display:flex;justify-content:space-between;align-items:center;}
 .my-asset .house-data-list.expens .house-data-tit .tit{@include text($size:$text01,$weight:bold);}
 .my-asset .house-data-list.expens .house-data-tit .amount{@include text($size:$text01,$weight:bold);}
@@ -738,7 +740,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:#ffcc00;border:1
 .my-asset .house-data-list .nick-name-area.type2{margin-bottom:1rem;}
 .my-asset .house-data-list .nick-name-area .txt{color:$kb-ui03;}
 .my-asset .house-data-list .nick-name-area > a u{font-size:$text03;color:$kb-ui04;}
-.my-asset .house-data-list .nick{color:$kb-ui02;margin-bottom:.8rem;}
+.my-asset .house-data-list .nick{color:$kb-ui02;}
 .my-asset .house-data-list .house-data-tit + .description-list{margin-bottom:0;}
 .my-asset .house-data-list.wish .house-data-tit + .description-list{border-bottom:none;}
 .my-asset .house-data-list .description-list dt{text-overflow:ellipsis;white-space:nowrap;}
@@ -775,9 +777,9 @@ div.percentage-graph.yellow .graph-area > span{background-color:#ffcc00;border:1
 .my-asset.house-view .other-conditions .graph-area .unit-type{@include text($size:14px);color:$kb-ui04;text-align:right;margin:10px 0;}
 .my-asset.house-view .other-conditions .info-box{display:none;@include text($size:14px);color:$kb-ui04;border-top:1px solid $kb-ui09;margin-top:2rem;}
 .my-asset.house-view .other-conditions .info-box .num{@include number($size:15px);}
-.my-asset.house-view .other-conditions .graph-area .highcharts_column.type2{display:none;}
-.my-asset.house-view .other-conditions .graph-area.is-active .highcharts_column.type1{display:none;}
-.my-asset.house-view .other-conditions .graph-area.is-active .highcharts_column.type2{display:block;}
+.my-asset.house-view .other-conditions .graph-area .chart-area.type2{display:none;}
+.my-asset.house-view .other-conditions .graph-area.is-active .chart-area.type1{display:none;}
+.my-asset.house-view .other-conditions .graph-area.is-active .chart-area.type2{display:block;}
 .my-asset.house-view .other-conditions .btn-view-more{display:block;text-align:center;width:100%;padding:3.6rem 0 0;margin-top:2rem;border-top:1px solid $kb-ui09;}
 .my-asset.house-view .other-expenses{padding-top:2.4rem;padding-bottom:3.8rem;}
 .my-asset.house-view .other-expenses .h4{margin-bottom:12px;}
@@ -861,7 +863,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:#ffcc00;border:1
 .bottom-sheet[data-layered-name=mys_mn_02_00_00_search] .btn-segmented button{height:100%;padding:10px 0;}
 .bottom-sheet[data-layered-name=mys_mn_02_00_00_search] .btn-segmented button span{line-height:1.4;}
 
-.menu-my-info .top-info{text-align:center;margin-top:12px;}
+.menu-my-info .kb-sec.bg-gray:first-of-type{margin-top:12px;}
 .menu-my-info .my-info{margin-top:40px;}
 .menu-my-info .my-info .h4{margin-bottom:24px;}
 

@@ -24,7 +24,7 @@ input{border:1px solid #aaa;}
 html,body{width:100%;height:100%;}
 button,input{outline:none;}
 
-body{font-family: 'Noto Sans KR', sans-serif;font-size:14px;}
+body{font-family:'KBFGText',sans-serif;font-size:14px;}
 #wrap{position:relative;width:100%;height:100%;overflow:hidden;background-color:#333;}
 #container{width:100%;padding-top:52px;height:100%;box-sizing:border-box;}
 #container:after{content:'';display:block;clear:both;visibility:hidden;height:0;}
@@ -36,11 +36,11 @@ body{font-family: 'Noto Sans KR', sans-serif;font-size:14px;}
 .view-area .y{position:absolute;color:#fff;}
 .view-area .x{top:-30px;left:50%;transform:translateX(-50%);}
 .view-area .y{right:-50px;top:50%;transform:translateY(-50%)}
-.device-group select{width:200px;height:34px;}
+.device-group select{width:200px;height:34px;padding:0 10px;}
 .device-group ~ .annotation{display:none;color:#fff;margin-top:30px;}
 .header{position:absolute;top:0;left:0;width:100%;padding:10px;background-color:#333;}
 .header:after{content:'';display:block;clear:both;visibility:hidden;height:0;}
-.header input{line-height:30px;font-family: 'Noto Sans KR', sans-serif;font-size:14px;padding:0 10px;box-sizing:border-box;}
+.header input{line-height:30px;font-family:'KBFGText',sans-serif;font-size:14px;padding:0 10px;box-sizing:border-box;}
 /* .filter-input{float:left;width:40%;padding-right:20px;box-sizing: border-box;} */
 .header{display:flex;}
 .header .home{overflow:hidden;text-indent:100%;white-space:nowrap;width:32px;height:32px;margin-right:20px;background:url(../images/home.png) no-repeat;background-size:cover;}
@@ -78,21 +78,28 @@ body.is-mobile-view #viewArea{overflow:auto;display:flex;align-items:center;flex
 #root_tree li + li{margin-top:5px;}
 #root_tree > li{padding:0 10px 10px 10px;}
 #root_tree > li > a:before{content:none;}
-#root_tree > li > a{display:block;margin-bottom:10px;padding:5px 10px;border-radius:5px;background:#000;color:#fff;}		
+#root_tree > li > a{position:relative;display:block;margin-bottom:10px;padding:5px 10px;border-radius:5px;background:#000;color:#fff;}		
+#root_tree > li > a.close:after,
+#root_tree > li > a.open:after,
+#root_tree > li > a.open:before{content:'';position:absolute;top:16px;right:10px;width:14px;height:2px;background-color:#fff;transition:transform .3s}
+#root_tree > li > a.open:after{transform:rotate(-360deg)}
+#root_tree > li > a.open:before{transform:rotate(-450deg)}
+
 #root_tree li strong{font-weight:400;line-height:1.5;}
 #root_tree li.is-current > a{position:relative;display:block;}
 #root_tree li.is-current > a:after{content:'';position:absolute;left:-2px;right:-2px;bottom:-2px;top:-2px;background-color:rgb(255, 88, 88, 0.2);}
 #root_tree li .status{display:inline-block;margin-right:2px;}
 
-.close:before{content:'';position:absolute;top:3px;left:0;width:16px;height:16px;background:url(../images/ico-minus.png) no-repeat;background-size:cover;}
-.open:before{content:'';position:absolute;top:3px;left:0;width:16px;height:16px;background:url(../images/ico-plus.png) no-repeat;background-size:cover;}
+#root_tree li li .close:before{content:'';position:absolute;top:3px;left:0;width:16px;height:16px;background:url(../images/ico-minus.png) no-repeat;background-size:cover;}
+#root_tree li li .open:before{content:'';position:absolute;top:3px;left:0;width:16px;height:16px;background:url(../images/ico-plus.png) no-repeat;background-size:cover;}
 /* .working:before{content:'';position:absolute;top:3px;left:0;width:16px;height:16px;background:url(../images/ico-working.png) no-repeat;background-size:cover;}
 .complete:before{content:'';position:absolute;top:3px;left:0;width:16px;height:16px;background:url(../images/ico-complete.png) no-repeat;background-size:cover;}
 .dev:before{content:'';position:absolute;top:3px;left:0;width:16px;height:16px;background:url(../images/ico-dev.png) no-repeat;background-size:cover;}
 .modified:before{content:'';position:absolute;top:3px;left:0;width:16px;height:16px;background:url(../images/ico-modified.png) no-repeat;background-size:cover;} */
 .working > a > .status{color:#99744a}
 .complete > a > .status{color:#ffbc00}
-.dev > a > .status{color:#287eff}
+.confirmed > a > .status{color:#6fbcff}
+.gui > a > .status{color:#6cf368}
 .modified > a > .status{color:#ff5858}
 
 .follow-memo {position: fixed; z-index: 100; left: 0; top: 0; padding: .3em; color: #000; background-color: #fff;}

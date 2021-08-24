@@ -59,6 +59,7 @@ if($appMenu.length){
             break;
         default:
             $appHeader.find('.btn-notice-box, .btn-close, .btn-cancel').remove();
+            $appHeader.attr('data-type','home');
             console.log('There is no Type ' + headerType);
     }
 

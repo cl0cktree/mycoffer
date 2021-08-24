@@ -130,18 +130,19 @@
 .goal-ama-others-detail .goal-ama-others-detail-summary li strong{font-weight:bold;}
 .goal-ama-others-detail .goal-ama-others-detail-summary[data-status=notReady]{opacity:0.6}
 
-.goal-ama-others-detail .challenge-info{margin-top:22px;padding-bottom:20px;position:relative;}
-.goal-ama-others-detail .challenge-info .term-list li{font-size:1.7rem;}
-.goal-ama-others-detail .challenge-info .term-list li + li{margin-top:5px;}
+.goal-ama-others-detail .challenge-info{margin-top:2rem;padding-bottom:3.6rem;position:relative;}
+.goal-ama-others-detail .challenge-info .term-list li{font-size:1.4rem;line-height:1.4;padding-left:1.2rem;}
+.goal-ama-others-detail .challenge-info .term-list li > span{display:inline-block;font-size:$text03;color:$kb-ui04;position:relative;}
+.goal-ama-others-detail .challenge-info .term-list li + li{margin-top:1.4rem;}
 .goal-ama-others-detail .challenge-info .term-list li strong{font-weight:bold;}
-.goal-ama-others-detail .challenge-info .term-list li strong .num{font-weight:bold;}
+.goal-ama-others-detail .challenge-info .term-list li strong .num{font-weight:bold;font-size:$text03;}
 // .goal-ama-others-detail .challenge-info .term-list li > span{display:inline-block;font-size:12px;background:#f7f7f8;border:1px solid #8c949e;min-width:63px;padding:0 10px;height:20px;line-height:20px;text-align:center;border-radius:2px;margin-right:6px;}
-.goal-ama-others-detail .challenge-info .term-list li > span{display:block;font-size:$text03;color:$kb-ui04;position:relative;}
 .goal-ama-others-detail .challenge-info .term-list li > span:before{content:'';position:absolute;width:.35rem;height:.35rem;background:$kb-ui03;border-radius:50%;top:.5rem;left:-1.2rem;}
 .goal-ama-others-detail .challenge-info > i{position:absolute;right:0;bottom:20px;}
+.goal-ama-others-detail .challenge-info .term-list + i{bottom:auto;top:-8rem;}
+.goal-ama-others-detail .challenge-info .term-list.type2 li > span{display:block;}
 .goal-ama-others-detail .challenge-info .term-list.type2 li{line-height:1.4;padding-left:1.2rem;}
 .goal-ama-others-detail .challenge-info .term-list.type2 li + li{margin-top:15px;}
-.goal-ama-others-detail .challenge-info .term-list.type2 + i{bottom:auto;top:-50px;}
 
 .goal-ama-others-detail .character-graph .graph-txt .tit{font-size:$text03;}
 .goal-ama-others-detail .character-graph .graph-txt .date{@include number($size: 15px, $weight:bold, $line-height:1);display:block;margin-top:4px;}
@@ -162,7 +163,12 @@
 .goal-ama-others-detail .msg .icon-tit{margin-top:12px;}
 .goal-ama-others-detail .msg i > img{width:9.5rem;}
 
-.goal-ama-others-detail .success-tit .sub-tit{margin-top:13px;font-weight:bold;}
+.goal-ama-others-detail .success-tit{position:relative;}
+.goal-ama-others-detail .success-tit h2 span{vertical-align:middle;}
+.goal-ama-others-detail .success-tit .badge{font-size:1.3rem;color:#fff;vertical-align:middle;display:inline-block;font-weight:normal;line-height:1;margin-left:.8rem;padding:.5rem 1.2rem;font-style:normal;border-radius:5rem;}
+.goal-ama-others-detail .success-tit .badge.sucess{background:$color-blue;}
+.goal-ama-others-detail .success-tit .badge.fail{background:$kb-ui05;}
+.goal-ama-others-detail .success-tit .sub-tit{margin-top:.8rem;font-weight:bold;}
 
 
 /* 목표 메인 */
@@ -185,10 +191,10 @@
 .goals-summary{padding-bottom:5px;}
 .goals-summary .summary-piggymoeny{@include flexBetween;padding:25px 20px;background:#6349a5;color:#fff;border-radius:.8rem;margin-top:1.2rem;}
 .goals-summary .summary-piggymoeny dt>[class^="icon-"]{margin-right:10px;}
-.goals-summary .summary-piggymoeny dt .pig-tit{@include heading($size: $heading04);margin-right:6px;display:inline-block;}
+.goals-summary .summary-piggymoeny dt .pig-tit{@include heading($size: $heading04);margin-right:6px;display:inline-block;vertical-align:middle;}
 .goals-summary .summary-piggymoeny dt .h4{margin-right:6px;display:inline-block;}
 .goals-summary .summary-piggymoeny dd{font-size:1.8rem;font-weight:bold;}
-.goals-summary .summary-piggymoeny dd strong{font-size:2.8rem;margin-right:.8rem;}
+.goals-summary .summary-piggymoeny dd strong{font-size:2.8rem;vertical-align:text-bottom;}
 .goals-summary a.btn-trans + .compare{margin:1.6rem 0;}
 .goals-summary .summary-challenge{@include text($size:$text02);}
 .goals-summary .summary-challenge .flex-box{justify-content:space-between;margin-top:1rem;}
@@ -207,7 +213,7 @@
 .challenge-box .content-box.swiper-slide{margin-left:0;margin-right:0;}
 .challenge-box .challenge-tit{@include flexBetween;position:relative;} 
 .challenge-box .challenge-tit i{margin-right:10px;}
-.challenge-box .d-day-patch{position:absolute;display:block;top:-2px;right:0;padding:9px 10px;background:$color-yellow;@include text($size:15px);line-height:1;border-radius:2px;}
+.challenge-box .d-day-patch{position:absolute;display:block;top:-2px;right:0;padding:9px 10px;background:$color-yellow;@include text($size:15px);line-height:1;border-radius:2px;font-family:'Roboto'}
 .challenge-box .challenge-info{padding-top:3.2rem;@include text($size:$text02);}
 .challenge-box .challenge-info .tit .tit-area{position:relative;}
 .challenge-box .challenge-info .tit .tit-area .hash{@include text($size:$text03);}
@@ -347,7 +353,7 @@
 
 .goals-use-best{margin-top:34px;margin-bottom:196px;}
 
-.chart-area.dbl-bar > .highcharts_column.type-ratio{margin-top:2rem;margin-bottom:10px;}
+.chart-area.dbl-bar > .chart-area.type-ratio{margin-top:2rem;margin-bottom:10px;}
 .chart-area .txt-gray{@include text($size:$text03);padding-left:16px;position:relative;}
 .chart-area .txt-gray:before{content:'';width:9px;height:9px;position:absolute;display:block;border-radius:50%;top:5px;left:0;background:$kb-ui07;}
 .chart-area .txt-yellow{@include text($size:$text03);padding-left:16px;position:relative;}
@@ -382,7 +388,6 @@
 
 
 .text-trophy{padding-left:33px;position:relative;@include text($text02);}
-.text-trophy.type2{padding-left:48px;}
 .text-trophy .ico{display:block;position:absolute;left:0;top:50%;transform:translateY(-50%);}
 .text-trophy p{@include text($weight:bold);}
 .text-trophy h2{@include text($weight:bold);}
@@ -390,6 +395,10 @@
 .text-trophy h2 + h3{margin-top:13px;@include text($weight:normal);}
 .text-trophy span{display:block;}
 .text-trophy strong{font-weight:bold;}
+.text-trophy.type2{padding-left:48px;}
+.text-trophy.type3{padding-left:0;text-align:right;}
+.text-trophy.type3 p{display:block;text-align:left;position:absolute;left:0;top:50%;transform:translateY(-50%);width:calc(100% - 10rem);}
+.text-trophy.type3 .img-area{width:8rem;height:8rem;display:inline-block;}
 
 .goals-no-spand{padding-top:24px;position:fixed;bottom:52px;width:100%;z-index:1;}
 .goals-no-spand .tit{@include text($weight:normal);margin-bottom:10px;}
@@ -399,14 +408,13 @@
 .goals-detail-list .challenge-tit strong > span{display:block;@include text($text02);}
 .goals-detail-list .challenge-tit .h3 > span{display:block;@include text($text02);}
 .goals-detail-list .challenge-tit > span{display:block;font-size:15px;background:$color-yellow;padding:9px 10px;}
-.goals-detail-list .challenge-info{padding-top:10px;padding-bottom:0;}
+.goals-detail-list .challenge-info{padding-top:0;padding-bottom:0;margin-top:0}
 .goals-detail-list .challenge-info .term-list li{@include text($text02);}
 .goals-detail-list .challenge-info .term-list li + li{margin-top:6px;}
 .goals-detail-list .challenge-info .term-list li > span{display:inline-block;font-size:12px;background:#f7f7f8;border:1px solid #aab0b8;min-width:63px;height:20px;line-height:20px;text-align:center;border-radius:2px;margin-right:6px;padding:0 10px;}
-.goals-detail-list .challenge-info .txt-goal-stat{@include text($text02);margin-top:35px;}
+.goals-detail-list .challenge-info .txt-goal-stat{@include text($text02);font-weight:bold;}
 .goals-detail-list .challenge-info .txt-goal-stat h3{@include text($weight:normal);}
 // .goals-detail-list .challenge-info .txt-goal-stat + .character-graph{padding-top:100px;}
-.goals-detail-list .challenge-info .txt-goal-stat{margin-top:-10px;}
 .goals-detail-list .challenge-info .txt-goal-stat .tit{font-weight:bold;margin-bottom:10px;}
 .goals-detail-list .challenge-info .legend-dot{margin-top:24px;}
 .goals-detail-list .challenge-info .legend-dot li{@include text($text03);display:inline-block;}
@@ -414,24 +422,27 @@
 .goals-detail-list .challenge-info .legend-dot li:before{content:'';width:9px;height:9px;display:inline-block;margin-right:10px;background:$kb-ui07;border-radius:50%;}
 .goals-detail-list .challenge-info .legend-dot li.current:before{background:$color-yellow;}
 
-.goals-detail-list + .goals-pay-list{margin-top:35px;} 
+.goals-detail-list + .goals-pay-list{margin-top:0;} 
 
 .goals-detail-list .trophy-gray{padding:20px;background:$kb-ui10;}
-
-.goals-pay-list .accordian > dt{border-top:none;font-size:22px;font-weight:bold;}
+.goals-pay-list .accordian > dt{border-top:none;font-size:$text01;font-weight:bold;}
+.goals-pay-list .accordian > dt.is-active + dd{border-bottom:none;}
 .goals-pay-list .accordian > dd{@include text($text01);padding:0;}
 .goals-pay-list .credit-list{padding:0;}
-.goals-pay-list .credit-list dt,
-.goals-pay-list .credit-list dd{padding:20px 0 0;}
-.goals-pay-list .credit-list dt:last-of-type,
-.goals-pay-list .credit-list dd:last-of-type{margin-bottom:-36px;border:none;}
+.goals-pay-list .credit-list dt{padding:2rem 0 0;}
+.goals-pay-list .credit-list dd{padding:0 0 2rem;}
+// .goals-pay-list .credit-list dt:last-of-type,
+// .goals-pay-list .credit-list dd:last-of-type{margin-bottom:-36px;border:none;}
 .goals-pay-list > .credit-list dt,
 .goals-pay-list > .credit-list dd{margin-bottom:-36px;border-bottom:none;}
-.goals-pay-list .credit-list dt .info{font-size:14px;background:$kb-ui10;padding:0 8px;width:125px;text-align:center;top:15px;}
-.goals-pay-list .credit-list dt .tit{margin-top:0;margin-bottom:20px;}
+.goals-pay-list .credit-list dt .info{font-size:1.5rem;top:15px;line-height:1;margin-bottom:1.4rem;}
+.goals-pay-list .credit-list dt .tit{margin-top:0;margin-bottom:1.8rem;line-height:1;}
 .goals-pay-list .credit-list dd .label-front{margin-bottom:0;}
-.goals-pay-list .credit-list dd .amount{@include text($text01);}
-.goals-pay-list .credit-list dd .amount .num{font-size:19px;}
+.goals-pay-list .credit-list dd .amount{@include text($text02);font-weight:bold;}
+.goals-pay-list .credit-list dd .amount .num{color:$color-red;}
+.goals-pay-list .credit-list dd.total{margin-top:-4rem;border-bottom:none;}
+.goals-pay-list .credit-list dd.total .amount{@include text($text01);font-weight:bold;}
+.goals-pay-list .credit-list dd.total .amount .num{color:$kb-ui02;font-size:$text01}
 
 .goal-fin-challenge .kb-sec.bg-gray{background:$kb-ui10;}
 .goal-fin-challenge .btn-group{margin-top:10px;text-align:right;}
@@ -443,6 +454,7 @@
 // .badge_swiper + .swiper-pagination{margin-bottom:3rem;}
 .cicle-badge{width:6.9rem;height:auto;}
 
+section.kb-sec.bottom-bg{border-bottom:1rem solid $kb-ui10;}
 section.gray-line + section{border-top:1rem solid $kb-ui10;}
 .btn-condition > div + .icon-zoom{position:absolute;right:2.4rem;}
 
@@ -453,7 +465,7 @@ section.gray-line + section{border-top:1rem solid $kb-ui10;}
 .character-graph:not(.js-slider) .graph-txt strong{font-weight:bold;}
 .character-graph:not(.js-slider) .graph-txt .start-txt{margin-left:0;line-height:1.4;}
 .character-graph:not(.js-slider) .graph-txt .end-txt{margin-right:0;line-height:1.4;}
-.character-graph:not(.js-slider) .graph-area > span{background-color:$color-yellow;}
+.character-graph:not(.js-slider) .graph-area > span{background-color:#ffcc00;border:1px solid #ffbc00;}
 .character-graph:not(.js-slider) .graph-area > span i{display:block;position:absolute;bottom:5px;right:8px;background-size:contain;z-index:1;}
 .character-graph:not(.js-slider) .graph-area .flag{position:absolute;right:-10px;bottom:10px;}
 .character-graph.goal{padding-top:10.4rem;}
@@ -469,20 +481,15 @@ section.gray-line + section{border-top:1rem solid $kb-ui10;}
 .character-graph[data-theme=character]{padding-top:8rem}
 .character-graph[data-theme=character] .graph-area > span.green{background-color:#c6d65e;}
 .character-graph[data-theme=character] .graph-area > span i{width:5.7rem;height:auto;}
-.character-graph[data-theme=bb]{padding-top:76px;}
-.character-graph[data-theme=bb] .graph-area > span{background-color:$color-yellow;}
+.character-graph[data-theme=bb]{padding-top:9.3rem;}
 .character-graph[data-theme=bb] .graph-area > span i{background-image:url(../images/goal/progress_bb.png);width:61px;height:61px;right:8px;}
-.character-graph[data-theme=kiki]{padding-top:76px;}
-.character-graph[data-theme=kiki] .graph-area > span{background-color:$color-yellow;}
+.character-graph[data-theme=kiki]{padding-top:9.3rem;}
 .character-graph[data-theme=kiki] .graph-area > span i{background-image:url(../images/goal/progress_kiki.png);width:44px;height:79px;right:8px;}
-.character-graph[data-theme=ago]{padding-top:76px;}
-.character-graph[data-theme=ago] .graph-area > span{background-color:#c6d65e;}
+.character-graph[data-theme=ago]{padding-top:9.3rem;}
 .character-graph[data-theme=ago] .graph-area > span i{background-image:url(../images/goal/progress_ago.png);width:76px;height:58px;right:8px;}
-.character-graph[data-theme=lamu]{padding-top:76px;}
-.character-graph[data-theme=lamu] .graph-area > span{background-color:$color-yellow;}
+.character-graph[data-theme=lamu]{padding-top:9.3rem;}
 .character-graph[data-theme=lamu] .graph-area > span i{background-image:url(../images/goal/progress_lamu.png);width:41px;height:78px;right:8px;}
-.character-graph[data-theme=kolly]{padding-top:76px;}
-.character-graph[data-theme=kolly] .graph-area > span{background-color:#c6d65e;}
+.character-graph[data-theme=kolly]{padding-top:9.3rem;}
 .character-graph[data-theme=kolly] .graph-area > span i{background-image:url(../images/goal/progress_kolly.png);width:62px;height:73px;right:8px;}
 
 //깃발 캐릭터
@@ -510,13 +517,14 @@ section.gray-line + section{border-top:1rem solid $kb-ui10;}
 .character-graph[data-theme=eatout] .graph-area > span i{background-image:url(../images/goal/progress_eatout.png);width:39px;height:39px;}
 
 //남들만큼 아이콘
+.character-graph[data-theme=coin]{padding-top:8.4rem;}
 .character-graph[data-theme=coin] .graph-area > span i{background-image:url(../images/goal/progress_coin.png);width:36px;height:29px;}
 
 // 비교
 .character-graph.type2{padding-top:64px;}
 .character-graph.type2 .graph-area{background:none;}
 .character-graph.type2 .graph-area > span{height:24px;border-radius:0 12px 12px 0;background-color:$color-yellow;}
-.character-graph.type2 .graph-area.sub > span{background-color:#e0e4e6;}
+.character-graph.type2 .graph-area.sub > span{background-color:#e0e4e6;border:1px solid #e0e4e6;}
 .character-graph.type2 .graph-txt + .graph-area.sub{margin-top:16px}
 
 //최소사이즈 
@@ -525,6 +533,6 @@ section.gray-line + section{border-top:1rem solid $kb-ui10;}
 
 
 /*차트 비율*/
-.highcharts_column.type-ratio{height:calc(75vw - 88px);margin-top:28px;margin-bottom:-20px;}
-.highcharts_column.type-ratio.no-mt{margin-top:0;}
+.chart-area.type-ratio{height:calc(75vw - 88px);margin-top:28px;margin-bottom:-20px;}
+.chart-area.type-ratio.no-mt{margin-top:0;}
 // .goals-detail-list .challenge-info .type-ratio{margin-bottom:-20px;}

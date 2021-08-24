@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html lang="ko">
 <!-- [MYS_AS_12_02_01] 작성자: 누리어 시스템 황철민 -->
+<!DOCTYPE html>
+<html lang="ko" data-channel="ch_star">
 <head>
 	@@include('@@webRoot/html/_include/app-head.html',{
 		"title": "자동차 관리 | 자동차"
@@ -9,15 +9,23 @@
 
 <body>
 	@@include('@@webRoot/html/_include/app-a11y.html')
-	<div class="app">
-		<!-- app-header (for MyMoney) //-->
+	<div class="app" data-page="submain">
+		<!-- app-header //-->
 		@@include('@@webRoot/html/_include/app-integrated-header.html', {
 			'pageTit': '자동차 관리',
 			'type': ''
 		})
 		<!-- // app-header -->
 
-		<!-- app-container (for MyMoney) //-->
+        <script>
+            //chnannel 별 header 타입이 다름
+            if($('html').data('channel') != 'ch_star'){
+                $('.app-header').attr('data-type','submain');
+            }else{
+                $('.app-header').attr('data-type','');
+            }
+        </script>
+		<!-- app-container //-->
 		<div class="app-container">
 
 			<!-- app-lnb //-->
@@ -32,12 +40,12 @@
 
 				<!-- My Car 차고 최상단 메시지 // -->
 				<section class="kb-sec bg-white mycar-top-message">
-					<!-- 수정 2021-07-02 // -->
+					
 					<div class="content-box shadow">
 						<strong class="name">김국민</strong> 님의 자동차 총 자산은 <span class="amount"><span class="num">859</span>만원</span>이에요.<br>
-						지난달보다 <span class="amount down"><span class="num">159</span>만원</span> 감소했습니다.<!-- 수정 2021-06-24 -->
+						지난달보다 <span class="amount down"><span class="num">159</span>만원</span> 감소했습니다.
 					</div>
-					<!-- // 수정 2021-07-02 -->
+					
 				</section>
 				<!-- // My Car 차고 최상단 메시지 -->
 
@@ -71,14 +79,14 @@
 				<section class="kb-sec mycar-quotes">
 					<div class="summary">
 						<div class="title">My Car 시세</div>
-						<!-- 수정 2021-07-02 // -->
+						
 						<div class="result">
 							<div class="amount"><span class="num">1,370</span>만원</div>
-							지난달보다 <span class="up"><span class="num">5</span>만원</span> 증가<!-- 수정 2021-06-24 -->
+							지난달보다 <span class="up"><span class="num">5</span>만원</span> 증가
 						</div>
-						<!-- // 수정 2021-07-02 -->
+						
 					</div>
-					<!-- 차트 디자인 수정 2021-06-11 // -->
+					<!-- 차트 디자인 수정  // -->
 					<!-- [Chart Area] // -->
 					<!--
 						[차트 디자인 정보]
@@ -92,7 +100,7 @@
 						<img class="temp" src="@@webRoot/static/images/_temp/chart_as1201.png" alt="차트 예시 이미지">
 					</div>
 					<!-- // [Chart Area] -->
-					<!-- // 차트 디자인 수정 2021-06-11 -->
+					<!-- // 차트 디자인  -->
 					<dl class="description-list type2">
 						<dt>시세정보</dt>
 						<dd>KB차차차</dd>
@@ -102,19 +110,19 @@
 						<dd class="amount"><span class="num">32.9</span>%</dd>
 					</dl>
 					<div class="btn-area bline">
-						<a href="#" class="btn-line"><span>비싸게 팔러 가기</span></a><!-- 수정 2021-07-01 -->
+						<a href="#" class="btn-line"><span>비싸게 팔러 가기</span></a>
 					</div>
 				</section>
 				<!-- // My Car 시세 -->
 
 				<!-- My Car 마이데이터 동의 링크 // -->
 				<section class="kb-sec mycar-agree-link">
-					<!-- 수정 2021-07-02 // -->
+					
 					<p>마이데이터를 연결하면 My Car(자동차 유지비, 할부금 대출, 보험 정보)를 알 수 있습니다.</p>
 					<div class="btn-area">
 						<a href="#" class="btn-line"><span>마이데이터 연결하기</span></a>
 					</div>
-					<!-- // 수정 2021-07-02 -->
+					
 				</section>
 				<!-- // My Car 마이데이터 동의 링크 -->
 

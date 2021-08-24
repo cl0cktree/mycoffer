@@ -39,9 +39,11 @@ i[class*='icon-']{overflow:hidden;display:inline-block;white-space:nowrap;text-i
 .app-header[data-type=submain] .btn-history-back,
 .app-header[data-type=submain] .btn-notice-box,
 .app-header[data-type=submain] .btn-allmenu{display:inline-block;}
+.app-header[data-type^=step] .btn-cancel,
+.app-header[data-type^=step] .btn-history-back{display:inline-block;}
+.app-header[data-type=step01] .btn-cancel,
+.app-header[data-type=step01] .btn-history-back{display:none;}
 .app-header[data-type=step01] .btn-cancel{display:inline-block;}
-.app-header[data-type=step] .btn-cancel,
-.app-header[data-type=step] .btn-history-back{display:inline-block;}
 .app-header[data-type=complete] .page-tit,
 .app-header[data-type=complete] .btn-home,
 .app-header[data-type=complete] .btn-allmenu{display:inline-block;}
@@ -51,11 +53,8 @@ i[class*='icon-']{overflow:hidden;display:inline-block;white-space:nowrap;text-i
 .app-header[data-type=home] .btn-history-back{display:inline-block;}
 
 
-
 //NEW STARBANKIKNG
-[data-channel=ch_star] .app[data-page=submain] .app-header ~ .app-container,
 [data-channel=ch_star] .app[data-page=bridge] .app-header ~ .app-container{padding-top:0;}
-[data-channel=ch_star] .app[data-page=submain] .app-header,
 [data-channel=ch_star] .app[data-page=bridge] .app-header{display:none;}
 [data-channel=ch_star] .app-header[data-type=close]{padding-left:5rem;}
 [data-channel=ch_star] .app-header[data-type=close] .btn-close{@include ir;position:absolute;left:24px;top:12px;width:24px;height:24px;background:url(../images/common/common.png) no-repeat 0 -20px;background-size:160px;}
@@ -64,9 +63,6 @@ i[class*='icon-']{overflow:hidden;display:inline-block;white-space:nowrap;text-i
 [data-channel=ch_star] .app-header .btn-home,
 [data-channel=ch_star] .app-header .btn-allmenu,
 [data-channel=ch_star] .app-header .app-menu{display:none !important;}
-
-
-
 
 //SUBMAIN
 //.app[data-page=submain]{display:block;background:#fff url(../images/theme/bg_purple.png) no-repeat fixed;background-size:100%;}

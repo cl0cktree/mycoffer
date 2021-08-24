@@ -1,6 +1,6 @@
+<!-- [MYS_AS_11_02_03] 작성자: 누리어 시스템 김홍범 -->
 <!DOCTYPE html>
 <html lang="ko" data-channel="ch_star">
-<!-- [MYS_AS_11_02_01] 작성자: 누리어 시스템 김은경 -->
 <head>
 	@@include('@@webRoot/html/_include/app-head.html',{
 		"title": "자산 | 부동산"
@@ -10,11 +10,19 @@
 <body>
 	@@include('@@webRoot/html/_include/app-a11y.html')
 	<div class="app">
-		<!-- app-header (for MyMoney) //-->
+		<!-- app-header //-->
 		@@include('@@webRoot/html/_include/app-integrated-header.html', {'pageTit': '부동산 관리','type':''})
 		<!-- // app-header -->
 
-		<!-- app-container (for MyMoney) //-->
+        <script>
+            //chnannel 별 header 타입이 다름
+            if($('html').data('channel') != 'ch_star'){
+                $('.app-header').attr('data-type','submain');
+            }else{
+                $('.app-header').attr('data-type','');
+            }
+        </script>
+		<!-- app-container //-->
 		<div class="app-container">
 			 <!-- app-lnb //-->
 			<!-- <div class="app-lnb">                        
@@ -42,7 +50,7 @@
 							<p class="nick">별명이 있으면 나옴</p>
 							<a href="javascript:;" class="btn-text" role="button"><u>수정</u></a>
 						</div>
-						<a href="#" class="address"><span>레미안퍼스티지 101동 405호(47평/156㎡)</span><span class="link-arrow">바로가기</span></a>		
+						<a href="#" class="address"><span class="type2">레미안퍼스티지 101동 405호(47평/156㎡)</span><span class="link-arrow">바로가기</span></a>		
 					</div>                    
                     <dl class="description-list type2">
                         <dt>현재시세</dt>
@@ -61,7 +69,7 @@
 							<p class="nick"></p>
 							<a href="javascript:;" class="btn-text" role="button"><u>수정</u></a>
 						</div>
-						<a href="#" class="address"><span>레미안 대치 팰리스 1단지 (100평/88.15㎡)</span><span class="link-arrow">바로가기</span></a>		
+						<a href="#" class="address"><span class="type2">레미안 대치 팰리스 1단지</span><span class="link-arrow">바로가기</span></a>		
 					</div>                    
                     <dl class="description-list type2">
                         <dt>현재시세</dt>

@@ -1,6 +1,28 @@
 .kb-form[data-type="icon"]{display:flex}
 .kb-form[data-type="icon"] > span{display:block;margin-right:8px}
 .kb-form[data-type="icon"] > div{flex:1}
+// chart
+.legend-unit.t01{width:100%;max-width:100%;padding-top:1.8rem;margin-left:0;margin-right:0;border-top:1px solid $kb-ui09}
+.legend-unit dl{display:grid;grid-template-columns:1fr 1fr;font-size:14px}
+.legend-unit dt,
+.legend-unit dd{padding:7px 0}
+.legend-unit dt{color:$kb-ui02}
+.legend-unit dt span{display:inline-block;margin-right:1.3rem;color:$kb-ui02;font-weight:bold}
+.legend-unit dt span em{font-size:1.5rem}
+.legend-unit dt:before{content:'';display:inline-block;width:1rem;height:1rem;border-radius:50%;margin-right:0.6rem}
+.legend-unit dt.yellow:before{background-color:#ffba53;}
+.legend-unit dt.apricot:before{background-color:#ff8a71;}
+.legend-unit dt.pink:before{background-color:#ff6391;}
+.legend-unit dt.cherryred:before{background-color:#ff445a;}
+.legend-unit dt.purple:before{background-color:#d090ee;}
+.legend-unit dd{text-align:right;color:$kb-ui02}
+.legend-unit dd .num{font-size:1.5rem}
+.legend-unit .basic{display:block;margin-top:20px;font-size:14px;text-align:center}
+.legend-unit .basic .num{font-size:15px;font-weight:bold}
+.legend-unit .basic[data-type="dash"]::before{content:'';display:inline-block;width:20px;height:1px;margin-right:12px;border-bottom:2px dotted $kb-ui07;vertical-align:middle}
+.legend-unit.align-c li:first-child{width:auto;margin-right:1rem}
+.chart-tit .desc.info{margin-top:0.7rem;color:$kb-ui05}
+.chart-tit + .chart-area{margin-top:2.8rem}
 
 /***** 지출 공통 *****/
 .expense-layered .h3 p{margin-top:20px;font-size:16px;color:$kb-ui03;font-weight:normal}
@@ -9,6 +31,7 @@
 .expense-layered .arrange-amount .validation{width:100%}
 .expense-layered .arrange-amount .kb-form_inner{flex:1}
 .expense-layered .arrange-amount .between{display:inline-block;margin:0 1rem}
+.expense-layered .chart-area + .legend-unit{margin-top:2rem}
 .label-tit{display:block;margin-bottom:1rem;font-size:1.6rem;color:$kb-ui04}
 .control-show-target{display:none}
 .control-show-target.is-active{display:block}
@@ -17,6 +40,10 @@
 .compare-summary .total-summary{margin-top:1.4rem;color:$color-blue;text-align:center}
 .compare-summary .content-box-tit{text-align:center}
 .content-tit.flex-box{display:flex;justify-content:space-between}
+.content-tit.border-tit{padding-bottom:1.6rem;border-bottom:2px solid $kb-ui07;align-items:center}
+.content-tit .h1{font-weight:normal}
+.content-tit .h1 + p{margin-top:1.2rem}
+.content-tit .tooltip-box > .tit{font-size:14px;color:$kb-ui05;font-weight:normal}
 .content-tit .emphasis{display:block}
 .content-tit .emphasis.color-blue{color:$color-blue}
 /* 지출 공통 :상세보기 */
@@ -39,35 +66,33 @@
 /***** 지출 > 가계부 *****/
 // main
 .expense-account-book-total{padding-bottom:0}
-.expense-account-book-total .date-month strong{margin:0 0.9rem;font-size:1.8rem;font-weight:bold}
-.expense-account-book-total .date-month .date{display:block;margin:1.2rem 0 1.5rem;font-size:1.5rem;color:$kb-ui05}
+.expense-account-book-total .graph-area .chart-tit{min-height:6.3rem;margin-bottom:2.7rem}
+.expense-guide .date-month strong{margin:0 0.9rem;font-size:1.8rem;font-weight:bold}
+.expense-guide .date-month .date{display:block;margin:1.2rem 0 1.5rem;font-size:1.5rem;color:$kb-ui05}
 .content-box-tit + .compare-amount{margin-top:1rem}
 .compare-amount{display:grid;grid-template-columns:1fr 1fr;background-color:$kb-ui10;border-radius:2px;}
 .compare-amount dl{position:relative;flex:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;height:6.7rem;padding:0 1.4rem}
 .compare-amount dt{margin-bottom:0.4rem;font-size:1.2rem;color:$kb-ui05}
 .compare-amount dd{font-size:1.4rem}
 .compare-amount dd .num{font-size:1.5rem}
+.compare-amount[data-compare-value="equal"] dl,
 .compare-amount[data-compare-value="left"] dl:first-child,
 .compare-amount[data-compare-value="right"] dl:last-child{background-color:$color-yellow}
 .compare-amount[data-compare-value="left"] dl:last-child{padding-left:3rem}
+.compare-amount[data-compare-value="equal"] dl dt,
 .compare-amount[data-compare-value="left"] dl:first-child dt,
 .compare-amount[data-compare-value="right"] dl:last-child dt{margin-bottom:0.8rem;font-size:1.4rem;color:$kb-ui02}
+.compare-amount[data-compare-value="equal"] dl dd,
 .compare-amount[data-compare-value="left"] dl:first-child dd,
 .compare-amount[data-compare-value="right"] dl:last-child dd{font-size:1.8rem;font-weight:bold}
+.compare-amount[data-compare-value="equal"] dl dd .num,
 .compare-amount[data-compare-value="left"] dl:first-child dd .num,
 .compare-amount[data-compare-value="right"] dl:last-child dd .num{font-size:1.9rem;font-weight:bold}
 .compare-amount[data-compare-value] dl::before{position:absolute;top:0;content:'';width:0;height:0}
+.compare-amount[data-compare-value="equal"] dl:last-child::before{left:0;top:calc(50% - 1.6rem);width:1px;height:3.2rem;background-color:#daba4a}
 .compare-amount[data-compare-value="left"] dl:first-child::before{right:-2rem;display:block;border-top:3.4rem solid transparent;border-left:2rem solid $color-yellow;border-bottom:3.4rem solid transparent}
 .compare-amount[data-compare-value="right"] dl:last-child::before{left:-2rem;display:block;border-top:3.4rem solid transparent;border-right:2rem solid $color-yellow;border-bottom:3.4rem solid transparent}
-.filter-area{@include flexBetween;flex-wrap:wrap;padding:15px 20px;border-top:1px solid $kb-ui08;background-color:$kb-ui10}
-.filter-area .btn-filter i{margin-left:0.3rem;vertical-align:middle}
-.filter-area .btn-filter span{font-size:1.4rem;font-weight:bold}
-.filter-area .btn-filter span .num{font-size:1.5rem}
-.filter-area .btn-view-calendar{vertical-align:middle}
-.filter-area .btn-view-calendar span{font-size:1.4rem}
-.filter-area ul{width:100%;margin-top:2rem;padding-top:1.5rem;border-top:1px solid $kb-ui08}
-.filter-area ul li{font-size:1.4rem}
-.filter-area ul li+li{margin-top:1rem}
+
 .expense-account-book-list .filter-area{margin-bottom:3.2rem}
 .expense-account-book-list .no-data{padding-bottom:40px}
 .expense-account-book-list .filter-area + div ~ div{margin-top:4.8rem}
@@ -115,11 +140,11 @@
 .day-detail-list .credit-list dt i[class^="icon-"]{background-color:blue}
 .btn-view-more.center,
 .credit-list + .btn-view-more,
-.credit-list_link-type + .btn-view-more{width:100%;text-align:center;margin-top:2.5rem;padding:1rem 0}
+.credit-list_link-type + .btn-view-more{width:100%;text-align:center;justify-content:center;margin-top:2.5rem;padding:1rem 0}
 // 가계부 > 수기등록
 .user-register-list > .tab{margin-bottom:32px}
 .user-register-list .user-register-forms .kb-form_multi .tit{margin-bottom:1.2rem}
-.user-register-list .user-register-forms .form-tit{@include text($size: 16px);flex:0 0 100%;display:block;position:relative;width:100%;min-height:26px;padding:8px 2px 0px 2px;color:$kb-ui04}
+.user-register-list .user-register-forms .form-tit{@include text($size:16px);flex:0 0 100%;display:block;position:relative;width:100%;min-height:26px;padding:8px 2px 0px 2px;color:$kb-ui04}
 .user-register-list .user-register-forms > .kb-form + .kb-form{margin-top:2rem}
 .user-register-list [data-role="popup"]:after{position:absolute;right:0;top:0.6rem;z-index:1;content:'';width:2rem;height:2rem;background:url(../images/common/common.png) no-repeat -4.4rem -2rem;background-size:16rem}
 .user-register-list .user-register-forms .btn-area.center{margin-top:20px}
@@ -274,57 +299,63 @@
 /***** 지출 > 카드관리 *****/
 //Main
 .card-management-total{padding-bottom:0}
-.card-management-total .kb-sec.bg-gray{padding-bottom:34px}
-.card-management-total .tooltip-box > .tit{font-size:14px;color:$kb-ui05;font-weight:normal}
-.card-management-total .content-box{padding-bottom:0}
-.card-management-total .content-box .tooltip .tit{margin-left:0}
-.card-management-total .content-box-tit .tit{margin-right:0}
+.card-management-total .border-tit + .card-list li:first-child{border-top:0}
+.card-management-total .estimated-payment-amount .content-box-tit{text-align:center}
+.card-management-total .estimated-payment-amount .description-list dd:not(.date) .num{font-weight:bold;color:$color-blue;font-size:1.5rem}
+.card-management-total .estimated-payment-amount .description-list dt{font-size:1.4rem;color:$kb-ui05}
+.card-management-total .my-card-list .content-box{align-items:center}
 .card-management-total .my-card-list .content-box .btn-area{padding:1.6rem}
 .card-management-total .my-card-list .content-box.is-show .btn-area{border-top:0}
 .card-management-total .my-card-list .content-box.is-show .btn-area{border-top:0}
 .card-management-total .my-card-list .description-list dd,
-.card-management-total .my-card-list .description-list dd .num{font-weight:bold;color:$kb-ui02}
-.card-management-total .card-list{width:100%;margin-top:20px;}
+.card-management-total .my-card-list .description-list dd .num{font-size:1.7rem;color:$kb-ui02}
+.card-management-total .card-list{width:100%}
 .card-management-total .card-list li{display:flex;align-items:center;padding:20px 0;border-top:1px solid $kb-ui09}
-.card-management-total .card-list .card-img{width:4.5rem;min-height:6rem;margin-right:1.5rem;padding:0.8rem 0.5rem;border:0.1rem solid $kb-ui09;overflow:hidden;border-radius:0.2rem;text-align:center}
-.card-management-total .card-list .card-img strong{display:block;margin-top:1.5rem;font-size:1.2rem;color:$kb-ui04}
 .card-management-total .card-list .card-info{flex:1}
-.card-management-total .card-list .list-tit{display:block;margin-bottom:8px;font-size:14px;font-weight:bold;color:$kb-ui02}
-.card-management-total .card-list .description-list dt{margin:0;font-size:14px;color:$kb-ui05}
+.card-management-total .card-list .list-tit{display:block;margin-bottom:1rem;font-weight:bold;color:$kb-ui02}
+.card-management-total .card-list .list-tit .img-resize_24{margin-right:0.8rem;vertical-align:middle}
+.card-management-total .card-list .list-tit + dl li:first-child{border-top:0}
+.card-management-total .card-list .description-list dt{margin:0}
 .card-management-total .card-list .description-list .date,
 .card-management-total .card-list .description-list .date .num{font-weight:bold;color:$kb-ui02}
 .card-management-total .card-list .description-list .date{margin:0}
 .card-management-total .card-list .description-list .date .num{font-size:15px}
-.card-management-total .card-list .tag-list{margin-top:10px}
-.card-management-total .card-list .tag-list .tag-label{margin-right:0.4rem;padding:0.4rem 0.8rem;font-size:1.2rem;font-weight:bold;border-radius:0.2rem}
+.card-management-total .card-list .tag-list{margin-top:10px;padding-left:3.2rem}
+.card-management-total .card-list .tag-list .tag-label{margin-right:0.4rem;font-size:1.4rem;color:$kb-ui04;border-radius:0}
+.card-management-total .card-list .tag-list .tag-label + .tag-label{padding-left:0.7rem;border-left:1px solid $kb-ui08}
 .card-management-total .card-list.t01 li{flex-wrap:wrap}
 .card-management-total .card-list.t01 .percentage-graph{width:100%;margin-top:2.6rem;padding-top:2.2rem}
-.card-management-total .card-list.t01 .percentage-graph .graph-area{height:10px}
+.card-management-total .card-list.t01 .percentage-graph .graph-area{height:1.2rem;border:1px solid $kb-ui08;background-color:#f6f7f8}
 .card-management-total .card-list .edit-user{display:none;justify-content:space-between;flex-wrap:wrap;width:100%;margin-top:30px}
-.card-management-total .card-list .edit-user.kb-form .radio-group{margin-bottom:30px}
+.card-management-total .card-list .edit-user.kb-form .radio-group{width:100%;margin-bottom:2.7rem}
+.card-management-total .card-list .edit-user.kb-form .radio-group span{flex:1;margin-right:0}
 .card-management-total .card-list .edit-user.kb-form .radio-group input[type="radio"] + label{font-size:16px;font-weight:normal;color:$kb-ui02}
 .card-management-total .card-list .edit-user.kb-form .radio-group input[type="radio"] + label::after{display:none;bottom:auto;left:6px;width:12px;height:12px;background-color:$color-yellow}
 .card-management-total .card-list .edit-user.kb-form .radio-group input[type="radio"]:checked + label:after{display:block}
-.card-management-total .card-list .btn-record-edit{text-align:right;text-decoration:underline}
-.card-management-total .card-list li[data-state="edit"] .edit-user{display:flex}
-.card-management-total .card-list li[data-state="edit"] .btn-record-edit,
-.card-management-total .card-list li[data-state="edit"] .btn-record-edit .num{color:$kb-ui05}
+.card-management-total .card-list .btn-record-edit{font-size:1.6rem;text-align:right}
+.card-management-total .card-list .btn-record-edit::after{content:'';display:inline-block;width:0.9rem;height:0.9rem;margin-left:0.9rem;transform:translateY(-0.2rem) rotate(45deg);border-right:0.2rem solid #26282c;border-bottom:0.2rem solid #26282c;border-bottom-right-radius:0.2rem;}
+.card-management-total .card-list .btn-record-edit .num{font-weight:bold}
+.card-management-total .card-list li[data-state="edit"] .edit-user{display:flex;padding:1.5rem 0 3.4rem;border-top:1px solid $kb-ui09;border-bottom:1px solid $kb-ui09}
+.card-management-total .card-list li[data-state="edit"] .btn-record-edit::after{transform:translateY(0.2rem) rotate(225deg)}
+.customized-card-list{padding-bottom:4.8rem}
 .customized-card-list .trend-card .rank-list{margin-top:20px}
+.customized-card-list .trend-card .content-tit + .content-tit{margin-top:4rem}
 .card-management-total .recommend-card .content-tit .btn-text u{color:$kb-ui04;font-size:14px}
 .card-management-total .recommend-card .rank-list li{padding-top:2.7rem}
 .card-management-total .recommend-card .rank-list li:first-child{border-top:0}
 .card-management-total .recommend-card .tab{margin-top:22px}
-.customized-card-list{padding-top:2.6rem}
-.customized-card-list .content-tit.flex-box{margin-top:4.8rem}
 .customized-card-list > div ~ div{margin-top:34px}
 .customized-card-list > div ~ div .content-box{margin-top:0}
 .percentage-graph.type2[data-state="safety"] .graph-area > span{background-color:#4dabff}
 .percentage-graph.type2[data-state="warning"] .graph-area > span{background-color:$color-yellow}
 .percentage-graph.type2 .graph-txt .description-list{margin-top:10px}
+.percentage-graph.type2 .graph-txt .description-list dt ~ dt,
+.percentage-graph.type2 .graph-txt .description-list dd ~ dd{padding-top:1.8rem}
 .percentage-graph.type2 .graph-txt .description-list dd .amount,
 .percentage-graph.type2 .graph-txt .description-list dd .amount em{font-size:17px;font-weight:bold;color:$kb-ui02}
 //라이프컨텐츠 - 목록
 .thumb-list-group{padding-top:20px}
+.thumb-list-group li:first-child{padding-top:24px;border-top:1px solid $kb-ui09}
 .thumb-list-group li{margin-bottom:24px;padding-bottom:26px;border-bottom:1px solid $kb-ui09}
 .thumb-list-group li > a{display:flex}
 .thumb-list-group li .thumb{width:100px;height:100%;min-height:83px;margin-right:12px;background-color:$kb-ui02}
@@ -344,24 +375,6 @@
 .expense-card-management-detail .sticky-bottom{position:fixed;bottom:0;left:0}
 
 /***** 지출 > 소비리포트  *****/
-// chart
-.legend-unit dl{display:grid;grid-template-columns:1fr 1fr;font-size:14px}
-.legend-unit dt,
-.legend-unit dd{padding:7px 0}
-.legend-unit dt{color:$kb-ui02}
-.legend-unit dt span{display:inline-block;margin-right:8px;color:$kb-ui04}
-.legend-unit dt:before{content:'';display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:9px}
-.legend-unit dt.yellow:before{background-color:#ffd435;}
-.legend-unit dt.brown:before{background-color:#978680;}
-.legend-unit dt.blue:before{background-color:#3d70d2;}
-.legend-unit dt.orange:before{background-color:#f7966c;}
-.legend-unit dt.purple:before{background-color:#9e6eda;}
-.legend-unit dd{text-align:right;color:$kb-ui02}
-.legend-unit dd .amount,
-.legend-unit dd .amount .num{font-weight:bold}
-.legend-unit .basic{display:block;margin-top:20px;font-size:14px;text-align:center}
-.legend-unit .basic .num{font-size:15px;font-weight:bold}
-.legend-unit .basic[data-type="dash"]::before{content:'';display:inline-block;width:20px;height:1px;margin-right:12px;border-bottom:2px dotted $kb-ui07;vertical-align:middle}
 .monthly-asset-summary .legend-unit,
 .weekly-expense-report .legend-unit{margin-top:20px}
 // Main
@@ -378,31 +391,23 @@
 .content-groups-type .content-box:not(.tit-box) .content-box-tit{padding-top:34px}
 .content-groups-type .content-box-tit{font-size:20px}
 .content-groups-type .content-box-tit .amount{display:block;text-align:right;font-size:18px;color:$color-red}
-.content-groups-type .content-box-tit .h4 span{display:inline-block;margin-left:8px;font-size:14px;font-weight:normal}
+.content-groups-type .content-box-tit .h4 span{display:inline-block;margin-left:8px;font-size:14px;font-weight:normal;color:$kb-ui05}
 .content-groups-type .highcharts-box.no-space{padding-bottom:0}
-.content-groups-type .highcharts-box .graph-area{padding:0}
-.content-groups-type .highcharts-box .content-box-info{margin-bottom:27px;text-align:center;border-top:1px solid $kb-ui08}
-.content-groups-type .highcharts-figure{box-shadow:none}
+.content-groups-type .highcharts-box .content-box-info{margin-bottom:2rem}
 .content-groups-type .graph-area + .credit-list-group .credit-list{margin-top:0;padding-top:20px;border-top:1px solid $kb-ui08}
-.content-groups-type .btn-area{padding-top:20px;border-top:1px solid $kb-ui09}
+.content-groups-type .btn-area{border-top:1px solid $kb-ui09}
 .content-group-tit{display:block;font-size:18px;text-align:center;font-weight:bold}
 .weekly-expense-report .content-box .btn-area{padding-bottom:0}
 .weekly-expense-summary{padding-bottom:40px}
-.weekly-expense-summary .date-info{margin-top:10px;font-size:14px;color:$kb-ui05;text-align:right}
-.weekly-regular-expense-list .credit-list{align-items:flex-start}
-.weekly-regular-expense-list .credit-list dd > strong{margin-top:26px}
-.weekly-total-expense{padding-top:24px;padding-bottom:16px}
+.weekly-expense-summary .date-month .date{margin-top:0.6rem}
+.weekly-expense-summary .content-box-tit .date{margin-top:0;font-size:1.4rem;font-weight:normal}
+.weekly-expense-summary .content-box-tit .date .num{font-size:1.5rem;font-weight:normal}
+.weekly-total-expense{padding-top:0}
 .weekly-card-credit-list{padding-bottom:16px}
-.weekly-card-credit-list .content-box .flex-box{margin-top:18px;align-items:flex-start;justify-content:space-between}
-.weekly-card-credit-list .content-box .flex-box h2{min-width:80px;font-size:14px;color:$kb-ui05;font-weight:normal}
-.weekly-card-credit-list .content-box .flex-box h2 .btn-question{display:inline-block}
-.weekly-card-credit-list .content-box-tit{display:flex;align-items:flex-start}
-.weekly-card-credit-list .content-info-desc{padding-right:30px;line-height:24px}
-.weekly-card-credit-list .credit-list_link-type li{padding-left:0;padding-right:0}
-.weekly-card-credit-list .credit-list .tit{margin-bottom:18px;font-size:14px}
-.weekly-card-credit-list .credit-list .info{font-size:14px}
-.weekly-card-credit-list .credit-list dt:first-of-type,
-.weekly-card-credit-list .credit-list dd:first-of-type{margin-top:19px;border-top:1px solid #ebeef0}
+.description-list-group li{margin-top:1.9rem}
+.description-list-group li .list-tit{display:block;font-weight:bold}
+.description-list-group li dl.type3{margin-top:1.4rem;padding-bottom:1.8rem;border-top:0;grid-row-gap:0}
+.description-list-group li dl.type3 dt{color:$kb-ui04}
 .management-expense-goal{padding-top:16px;}
 .management-expense-goal .content-box{display:grid;grid-template-columns:1fr auto;padding:24px 30px}
 .management-expense-goal .content-box i{margin-right:20px}

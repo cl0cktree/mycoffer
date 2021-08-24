@@ -1,6 +1,6 @@
+<!-- [MYS_AS_11_02_01] 작성자: 누리어 시스템 김홍범 -->
 <!DOCTYPE html>
 <html lang="ko" data-channel="ch_star">
-<!-- [MYS_AS_11_02_01] 작성자: 누리어 시스템 김은경 -->
 <head>
 	@@include('@@webRoot/html/_include/app-head.html',{
 		"title": "자산 | 부동산"
@@ -10,14 +10,22 @@
 <body>
 	@@include('@@webRoot/html/_include/app-a11y.html')
 	<div class="app">
-		<!-- app-header (for MyMoney) //-->
+		<!-- app-header //-->
 		@@include('@@webRoot/html/_include/app-integrated-header.html', {
 			'pageTit': '부동산 관리',
 			'type':''
 		})
 		<!-- // app-header -->
-
-		<!-- app-container (for MyMoney) //-->
+        
+        <script>
+            //chnannel 별 header 타입이 다름
+            if($('html').data('channel') != 'ch_star'){
+                $('.app-header').attr('data-type','submain');
+            }else{
+                $('.app-header').attr('data-type','');
+            }
+        </script>
+		<!-- app-container //-->
 		<div class="app-container">
 			 <!-- app-lnb //-->
 			<!-- <div class="app-lnb">                                       
@@ -57,7 +65,7 @@
 								Y축 레이블 텍스트 사이즈/색상 : 14px/#8c949e
 								Legend 사이즈/컬러 : 14px/#26282c
 							-->
-							<div class="highcharts_column" id="">
+							<div class="chart-area" id="">
 								<img class="temp" src="@@webRoot/static/images/_temp/chart_as1102_4.png" alt="차트 예시 이미지">
 							</div>
 							<!-- // [chart area] -->
@@ -86,8 +94,10 @@
 							</div>
 							<a href="javascript:;" class="btn-text" role="button"><u>수정</u></a>
 						</div>
-						<p class="nick">별명이 있으면 나옴</p>
-						<a href="#" class="address"><span>레미안퍼스티지 101동 405호(47평/156㎡)</span><span class="link-arrow">바로가기</span></a>						
+						<div class="nick-name-area type2">
+							<p class="nick">별명이 있으면 나옴</p>
+						</div>
+						<a href="#" class="address"><span class="type2">레미안퍼스티지 101동 405호(47평/156㎡) 레미안퍼스티지 101동 405호(47평/156㎡)</span><span class="link-arrow">바로가기</span></a>						
 					</div>
                     <dl class="description-list type2">
                         <dt>현재시세</dt>
@@ -111,7 +121,7 @@
 							</div>
 							<a href="javascript:;" class="btn-text" role="button"><u>수정</u></a>
 						</div>
-						<a href="#" class="address"><span>여의도</span><span class="link-arrow">바로가기</span></a>
+						<a href="#" class="address"><span class="type2">여의도</span><span class="link-arrow">바로가기</span></a>
 					</div>
 					<dl class="description-list type2">
                         <dt>매입가</dt>
@@ -125,7 +135,7 @@
 							</div>
 							<a href="javascript:;" class="btn-text" role="button"><u>수정</u></a>
 						</div>
-						<a href="#" class="address"><span>서울특별시 영등포구 여의도동 123-4 길면</span><span class="link-arrow">바로가기</span></a>
+						<a href="#" class="address"><span class="type2">서울특별시 영등포구 여의도동 123-4 길면</span><span class="link-arrow">바로가기</span></a>
 					</div>
 					<dl class="description-list type2">
                         <dt>나의 보증금</dt>

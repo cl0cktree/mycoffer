@@ -14,7 +14,7 @@
         
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
             'pageTit':'',
-            'type':'close'
+            'type':''
         })
         
 
@@ -27,22 +27,32 @@
                 <section class="kb-sec">
                     <!-- 동의하기(전체동의) // -->
                     <h1 class="h1">서비스 약관에 동의해 주세요.</h1>
+                    <div class="caution-txt">
+                        <p>
+                            <span>주의</span>
+                            무분별한 마이데이터 서비스 가입은 소중한 내 정보의 과도한 전송을 초래할 수 있습니다.<br>
+                            마이데이터 종합포털 홈페이지에서 고객님의<br>마이데이터 서비스 이용 현황을 확인하신 후 가입을
+                            진행해 주세요.                        
+                        </p>  
+                        <a href="https://www.mydatacenter.or.kr" class="btn-text icon-arrow" role="button"><span>마이데이터 종합포털 홈페이지 바로가기</span><i></i></a>
+                    </div>                                                      
                     <!-- 수정 : 2021.06.25  // -->
                     <div class="agreement-to-terms">
                         <div class="header">
                             <span class="form-checkbox"><input type="checkbox" id="agreeAllCheck"><label for="agreeAllCheck">전체동의</label></span>
                         </div>
                         <div class="checkbox-group st_list">
-                            <span class="form-checkbox_20"><input type="checkbox" id="agreeCheck1"><label for="agreeCheck1">[필수]KB마이머니서비스 이용약관</label><a href="@@webRoot/html/terms/my-money-term.html" class="link"><span>전문보기</span></a></span>
-                            <span class="form-checkbox_20"><input type="checkbox" id="agreeCheck2"><label for="agreeCheck2">[필수]KB마이머니서비스 설명서</label><a href="@@webRoot/html/terms/my-money-manual.html" class="link"><span>전문보기</span></a></span>
-                            <span class="form-checkbox_20"><input type="checkbox" id="agreeCheck4"><label for="agreeCheck4">[필수]개인(신용)정보 수집&middot;이용 동의</label><a href="@@webRoot/html/terms/agree-collection-use-personal-info02.html" class="link"><span>전문보기</span></a></span><!-- 수정 : 2021.06.29 -->
-                            <span class="form-checkbox_20"><input type="checkbox" id="agreeCheck5"><label for="agreeCheck5">[필수]개인(신용)정보 제공 동의</label><a href="@@webRoot/html/terms/agree-use-personal-info.html" class="link"><span>전문보기</span></a></span><!-- 수정 : 2021.06.29 -->
-                            <span class="form-checkbox_20"><input type="checkbox" id="agreeCheck3"><label for="agreeCheck3">[선택]제3자 정보제공 동의</label><a href="@@webRoot/html/terms/agree-provide-info.html" class="link"><span>전문보기</span></a></span>                            
-                            <span class="form-checkbox_20 js-checkbox-selector-trigger" data-target="serviceSelector"><input type="checkbox" id="agreeCheck6"><label for="agreeCheck6">[선택]개인(신용)정보 수집·이용 동의<br>(상품서비스 안내 등)</label><a href="@@webRoot/html/terms/agree-collection-use-personal-info.html" class="link"><span>전문보기</span></a></span><!-- 수정 : 2021.06.25  -->
+                            <span class="form-checkbox_20 link-arrow-after"><input type="checkbox" id="agreeCheck1"><label for="agreeCheck1">KB마이데이터 서비스 이용약관 [필수]</label><a href="@@webRoot/html/terms/my-money-term.html" class="link"></a></span>
+                            <span class="form-checkbox_20 link-arrow-after"><input type="checkbox" id="agreeCheck2"><label for="agreeCheck2">KB마이데이터 서비스 설명서 [필수]</label><a href="@@webRoot/html/terms/my-money-manual.html" class="link"></a></span>
+                            <span class="form-checkbox_20 link-arrow-after"><input type="checkbox" id="agreeCheck4"><label for="agreeCheck4">개인(신용)정보 수집&middot;이용 동의 [필수]</label><a href="@@webRoot/html/terms/agree-collection-use-personal-info02.html" class="link"></a></span>
+                            <span class="form-checkbox_20 link-arrow-after"><input type="checkbox" id="agreeCheck7"><label for="agreeCheck7">개인정보 수집&middot;이용 동의 [필수]</label><a href="@@webRoot/html/terms/agree-collection-use-personal-info03.html" class="link"></a></span>
+                            <span class="form-checkbox_20 link-arrow-after"><input type="checkbox" id="agreeCheck5"><label for="agreeCheck5">개인(신용)정보 제공 동의 [필수]</label><a href="@@webRoot/html/terms/agree-use-personal-info.html" class="link"></a></span>
+                            <span class="form-checkbox_20 link-arrow-after"><input type="checkbox" id="agreeCheck3"><label for="agreeCheck3">제3자 정보제공 동의 [선택]</label><a href="@@webRoot/html/terms/agree-provide-info.html" class="link"></a></span>                            
+                            <span class="form-checkbox_20 link-arrow-after js-checkbox-selector-trigger" data-target="serviceSelector"><input type="checkbox" id="agreeCheck6"><label for="agreeCheck6">개인(신용)정보 수집·이용 동의<br>(상품서비스 안내 등) [선택]</label><a href="@@webRoot/html/terms/agree-collection-use-personal-info.html" class="link"></a></span><!-- 수정 : 2021.06.25  -->
                         </div>
                         <!-- 수정 2021-05-28 // -->
                         <dl class="agreement-service-choice js-checkbox-selector" data-target="serviceSelector">
-                            <dt><span class="form-checkbox"><input type="checkbox" id="agreeCheck5All" disabled><label for="agreeCheck5All">상품서비스 안내수단 전체 선택</label></span></dt>
+                            <dt><span class="form-checkbox_20"><input type="checkbox" id="agreeCheck5All" disabled><label for="agreeCheck5All">전체동의</label></span></dt>
                             <dd>
                                 <ul class="checkbox-group">
                                     <li><span class="form-checkbox_20"><input type="checkbox" id="agreeCheck51" disabled><label for="agreeCheck51">문자</label></span></li>
@@ -54,8 +64,8 @@
                         </dl>
                         <!-- // 수정 2021-05-28 -->
                         <div class="checkbox-group st_list">
-                            <span class="form-checkbox_20"><input type="checkbox" id="agreeCheck7"><label for="agreeCheck7">[선택]개인(신용)정보 수집이용·제공
-                                동의서(상품서비스 안내 등)[계열사정보 제공용]</label><a href="@@webRoot/html/terms/agree-collection-use-personal-info.html" class="link"><span>전문보기</span></a></span><!-- 수정 : 2021.06.25  -->
+                            <span class="form-checkbox_20 link-arrow-after"><input type="checkbox" id="agreeCheck7"><label for="agreeCheck7">개인(신용)정보 수집이용·제공
+                                동의서(상품서비스 안내 등)[계열사정보 제공용] [선택]</label><a href="@@webRoot/html/terms/agree-collection-use-personal-info.html" class="link"></a></span><!-- 수정 : 2021.06.25  -->
                         </div>
 
                     </div>
@@ -63,7 +73,7 @@
                     <!-- // 동의하기(전체동의) -->
                     <!-- <p class="simple-message">KB 국민은행은 상품서비스 안내 등 수집·이용 목적을 달성하기 위하여 위의 동의한 안내수단으로 고객님께 연락할 수 있습니다.</p> --><!-- 수정 : 2021.06.10 -->
                     <div class="kb-form_multi kb-form_email" data-status="error">
-                        <strong class="tit">이메일 주소</strong>
+                        <strong class="tit required">이메일 주소</strong>
                         <div class="kb-form">
                             <label for="formMultiEmail">이메일ID</label>
                             <div class="kb-form_inner form-text">
@@ -109,16 +119,16 @@
                     <!-- // 삭제 2021-05-28 -->
                     <!-- 수정 : 2021.06.10 // -->
                     <div class="go-service-info">
-                        <a href="javascript:;" class="btn-text"><span>마이데이터 서비스 안내</span><i class="icon-link_20"></i></a><br>
-                        <a href="javascript:;" class="btn-text"><span>개인정보 처리방침</span><i class="icon-link_20"></i></a>
+                        <a href="javascript:;" class="btn-text"><span>마이데이터서비스</span><i class="icon-link_24"></i></a><br>
+                        <a href="javascript:;" class="btn-text"><span>개인정보 처리방침</span><i class="icon-link_24"></i></a>
                     </div>
                     <!-- // 수정 : 2021.06.10 -->
                 </section>
-                <div class="sticky-bottom">
+                <!-- <div class="sticky-bottom">
                     <div class="btn-area">
                         <a href="javascript:;" class="btn-solid" role="button"><span>확인</span></a>
                     </div>
-                </div>
+                </div> -->
             </main>
             <!-- // app-content -->
 

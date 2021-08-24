@@ -1,6 +1,6 @@
+<!-- [MYS_AS_11_02_02_P1] 작성자: 누리어 시스템 김홍범 -->
 <!DOCTYPE html>
 <html lang="ko" data-channel="ch_star">
-<!-- [MYS_AS_11_02_02_P1] 작성자: 누리어 시스템 김은경 -->
 <head>
 	@@include('@@webRoot/html/_include/app-head.html',{
 		"title": "My House 상세 | 자산"
@@ -10,12 +10,12 @@
 <body>
 	@@include('@@webRoot/html/_include/app-a11y.html')
 	<div class="app">
-		<!-- app-header (for MyMoney) //-->
+		<!-- app-header //-->
 		@@include('@@webRoot/html/_include/app-integrated-header.html',{
 			'pageTit' :'My House 상세',
 			'type':''
 		}) 
-		<!-- // app-header (for MyMoney) -->
+		<!-- // app-header -->
 
 		<!-- app-container //-->
 		<div class="app-container">
@@ -27,7 +27,9 @@
 					<hr class="line-gray">
 					<h2 class="is-hidden">상세정보</h2>
 					<div class="house-data-tit">
-						<p class="nick">별명이 있으면 나옴</p>
+						<div class="nick-name-area type2">
+							<p class="nick">별명이 있으면 나옴</p>
+						</div>
 						<p class="address"><span>레미안퍼스티지 101동 405호(47평/156㎡)</p>
 					</div>
                     <dl class="description-list type2">
@@ -80,7 +82,7 @@
 						- Y축: #8c949e/14px
 						
 					-->
-					<div class="highcharts_column" id="">
+					<div class="chart-area" id="">
 						<img class="temp" src="@@webRoot/static/images/_temp/chart_as1102.png" alt="차트 예시 이미지">
 					</div>
 					<!--// [chart area] -->
@@ -277,7 +279,7 @@
 							</li>
 						</ul>
 					</div>			
-					<button class="btn-view-more" data-action="moreViewChart"><span><i class="icon-plus_20"></i> <b>더보기</b></span></button>
+					<button class="btn-view-more" data-action="moreViewChart"><i class="icon-plus"></i><span>더보기</span></button>
 				</section>
 
 				<section class="kb-sec other-expenses">

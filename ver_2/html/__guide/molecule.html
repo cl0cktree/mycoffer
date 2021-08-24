@@ -512,13 +512,13 @@
                         <strong class="tit required">날짜 및 시간</strong>
                         <div class="kb-form datepicker" data-status="error">
                             <div class="kb-form_inner form-text">
-                                <input type="text" id="dateSelectorSample" title="날짜선택">
+                                <input type="text" id="dateSelectorSample02" title="날짜선택">
                             </div>
                             <em class="validation">오늘을 포함한 날짜만 선택해주세요.</em><!-- 성공/에러 메세지 -->                            
                         </div>
                         <div class="kb-form timepicker" data-status="error">
                             <div class="kb-form_inner form-text">
-                                <input type="text" id="timeSelectorSample" title="시간선택">
+                                <input type="text" id="timeSelectorSample02" title="시간선택">
                             </div>
                             <em class="validation">숫자 4자리도 입력해주세요.</em><!-- 성공/에러 메세지 -->
                             <em class="validation">2400보다 큰 숫자를 입력 할 수 없습니다.</em><!-- 성공/에러 메세지 -->
@@ -676,9 +676,9 @@
 				</dd>
 				<dd data-description="data-status : Validation(Error)">
 					<div class="kb-form" data-status="error">
-                        <label for="addedFnc05">조건</label>
+                        <label for="addedFnc07">조건</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" id="addedFnc05" placeholder="" value="">
+                            <input type="text" id="addedFnc07" placeholder="" value="">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
                         <em class="validation">에러 메세지</em>
@@ -839,7 +839,7 @@
 		</div>
 		<hr>
 		<!-- Multi Form -->
-		<div class="box">
+		<div class="box" id="multiForm">
 			<h2>Multi Form</h2>
 			<dl class="flex-dl">
 				<dt>
@@ -961,7 +961,7 @@
 						<p><span class="form-checkbox"><input type="checkbox" id="noEmail02"><label for="noEmail02">이메일 없음</label></span></p>
                     </div>
                 </dd>
-				<dd data-description="멀티폼: 이메일(.kb-form 각각 빨간줄)">
+                <dd data-description="멀티폼: 이메일(.kb-form 각각 빨간줄)">
 					<!--
 						.kb-form_multi 에서 내부에 일부 .kb-form에만 error 표시가 필요할 경우
 						.kb-form_multi 에는 data-status="has-error"
@@ -1005,6 +1005,27 @@
 						<p><span class="form-checkbox"><input type="checkbox" id="noEmail02"><label for="noEmail02">이메일 없음</label></span></p>
                     </div>
                 </dd>
+				<dd data-description="주민등록번호">
+                    <div class="kb-form_multi kb-form_citizen" data-status="has-error">
+                        <strong class="tit">주민등록번호</strong>
+                        <div class="kb-form" data-status="">
+                            <label for="citizenCode">주민등록번호 앞자리</label>
+                            <div class="kb-form_inner form-text">
+                                <input type="text" id="citizenCode" maxlength='6' placeholder="199901" value="" inputmode="numeric">
+                                <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                            </div>
+                        </div>
+						<span class="between"> - </span>
+                        <div class="kb-form">
+                            <label for="citizenCode02">주민등록번호 뒷자리의 첫번째 자리</label>
+                            <div class="kb-form_inner form-text">
+                                <input type="text" id="citizenCode02" maxlength="1" placeholder="" value="" inputmode="numeric">
+                            </div>
+                        </div>                        
+                        <p class="info-msg">(필요하면) 안내 메세지</p><!-- 안내 메세지 -->
+                    </div>
+                </dd>
+				
 			</dl>
 		</div>
 		<hr>
@@ -2407,7 +2428,65 @@
 			</dl>
 		</div>
 		<hr>
-		<!-- 조건 검색 영역 -->
+		<!-- Filter + 조건 검색 영역 -->
+		<div class="box" id="filterArea">
+			<h2>Filter + 조건 검색 영역</h2>
+			<dl class="flex-dl">
+				<dt>
+					<pre>
+						<code>
+
+						</code>
+					</pre>
+				</dt>
+				<dd data-description=".filter-area" style="padding:24px;">
+                    <div class="filter-area">
+                        <div class="condition-area">
+                            <button class="btn-condition" data-call-layered="">
+                                <div>
+                                    <div class="sorting-status">
+                                        <span><em class="num">1</em>개월</span>
+                                        <span>전체</span>
+                                        <span>최신순</span>
+                                    </div>
+                                    <i class="arrow">조회조건 선택</i>
+                                </div>
+                            </button>
+                        </div>
+                        <ul class="filter-result">
+                            <li><button type="button"><span>#검색결과_1</span></button></li>
+                            <li><button type="button"><span>#검색결과_2</span></button></li>
+                        </ul>
+                    </div>
+				</dd>
+				<dd data-description=".filter-area (달력, 설정 버튼이 있는 경우)" style="padding:24px;">
+                    <div class="filter-area">
+                        <div class="condition-area">
+                            <button class="btn-condition" data-call-layered="">
+                                <div>
+                                    <div class="sorting-status">
+                                        <span><em class="num">1</em>개월</span>
+                                        <span>전체</span>
+                                        <span>최신순</span>
+                                    </div>
+                                    <i class="arrow">조회조건 선택</i>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="filter-setting"><!-- optional -->
+                            <a href="javascript:;" class="btn-text sm" role="button"><i class="icon-calendar_20"></i><span>달력보기</span></a>
+                            <button class="btn-more-dot" data-call-layered=""><span>설정</span></button>
+                        </div>
+                        <ul class="filter-result">
+                            <li><button type="button"><span>#검색결과_1</span></button></li>
+                            <li><button type="button"><span>#검색결과_2</span></button></li>
+                        </ul>
+                    </div>
+				</dd>
+			</dl>
+		</div>
+		<hr>
+		<!-- 순위가 있는 목록 -->
 		<div class="box">
 			<h2>순위가 있는 목록</h2>
 			<dl class="flex-dl">

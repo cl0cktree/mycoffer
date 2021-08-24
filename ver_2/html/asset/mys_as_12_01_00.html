@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html lang="ko">
 <!-- [MYS_AS_12_01_00] 작성자: 누리어 시스템 황철민 -->
+<!DOCTYPE html>
+<html lang="ko" data-channel="ch_star">
 <head>
 	@@include('@@webRoot/html/_include/app-head.html',{
 		"title": "자동차 | 자산"
@@ -9,15 +9,24 @@
 
 <body>
 	@@include('@@webRoot/html/_include/app-a11y.html')
-	<div class="app">
-		<!-- app-header (for MyMoney) //-->
+	<div class="app" data-page="submain">
+		<!-- app-header //-->
 		@@include('@@webRoot/html/_include/app-integrated-header.html', { 
 			'pageTit': '자동차',
 			'type': ''
 		}) 
 		<!-- // app-header -->
 
-		<!-- app-container (for MyMoney) //-->
+        <script>
+            //chnannel 별 header 타입이 다름
+            if($('html').data('channel') != 'ch_star'){
+                $('.app-header').attr('data-type','submain');
+            }else{
+                $('.app-header').attr('data-type','');
+            }
+        </script>
+
+		<!-- app-container //-->
 		<div class="app-container">
 			<!-- 수정 2021-07-01 // -->
             <!-- app-lnb //-->

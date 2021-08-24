@@ -35,12 +35,53 @@
     <div class="guide-container">
         <div class="guide-history">
             <dl data-month="8">
+                <dt data-writer="이진우">2021.08.24</dt>
+                <dd>
+                    <b><a href="./molecule.html#multiForm">주민등록번호 multi-form</a></b>
+                    <b><a href="./molecule.html#filterArea">Filter 영역</a></b>
+                </dd>
+                <dd>
+                    <b>Path 수정</b>
+                    <ul data-style="list">
+                        <li>모바일에서 검수하는 기획자의 편의를 위해서 아래 내용이 바뀌었음</li>
+                        <li>gulpfile.js 수정 : html에도 hash가 생성됨</li>
+                        <li>새창열림 &RightArrow; 페이지 이동</li>
+                    </ul>
+                </dd>
+                <dd>
+                    <b>Path 순서 변경</b>
+                    <ul>
+                        <li>1) working : 작업중</li>
+                        <li>2) complete : 작업완료 (&RightArrow; 기획컨펌 요청)</li>
+                        <li>3) confirmed : 기획컨펌완료 (&RightArrow; GUI리뷰 요청)</li>
+                        <li>4) gui : GUI리뷰완료 (&RightArrow; 개발팀에 전달)</li>
+                        <li>* modified : 이후 수정</li>
+                    </ul>
+                </dd>
+                <dd>
+                    <b>리마인드</b>
+                    <ul data-style="list">
+                        <li>v1.0대비 없어진 혹은 불필요한 파일은 삭제해주세요.</li>
+                        <li>
+                            "[page-id] 작성자 : 누리어 시스템 홍길동"<br>
+                            바뀐 담당자 이름으로 교체해주세요.<br>
+                            html 문서 첫줄 (doctype 전에)에 써주세요
+                        </li>
+                        <li>불필요한 주석을 지워주세요</li>
+                        <li>.app-lnb에 내용이 없으면 지워주세요</li>
+                        <li>
+                            차트가 들어갈 영역은 .chart-area 입니다.<br>
+                            기존 highcharts-column은 chart-area로 변경하였습니다.<br>
+                            높이값은 차트 일부분이 가려지는 현상이 있어서 개발 적용후 수정 예정입니다.
+                        </li>
+                    </ul>
+                </dd>
                 <dt data-writer="이진우">2021.08.23</dt>
                 <dd>
                     <b>마이머니 : GNB</b>
                     <ul data-style="list">
                         <li>My Now / 자산 / 지출 / 목표 챌린지 / 부동산 / 자동차 / My 금고 / 신용 / 머니크루 / D플랜</li>
-                        <li>위 10종의 첫페이지에 .app[data-page="submain"] 쓰기 (지출 제외)</li>
+                        <li class="line">위 10종의 첫페이지에 .app[data-page="submain"] 쓰기 (지출 제외)</li>
                         <li>.app[data-page="submain"] 가 있으면 navigation.js에서 삽입</li>
                         <li>지출은 .app[data-page="bridge"] + .app-lnb에 스타뱅킹용 GNB 하드코딩</li>
                     </ul>

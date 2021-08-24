@@ -4,22 +4,22 @@ $(function(){
     var windowW = $window.outerWidth();
     var breakpoint = 900;
 
-	$('#root_tree').on('click', 'a', function (e) {      
+	$('#root_tree').on('click', 'a', function (e) {
         if(!$body.hasClass('is-mobile') && $body.hasClass('is-mobile-view')){
             if (!e.ctrlKey) { //ctrlKey
                 e.preventDefault();
                 var href = $(this).attr('href');
                 if (href != 'javascript:;') {
                     if(href.indexOf('layered.html') > 0){
-                        $('#viewArea').find('iframe').removeAttr('src');                        
+                        $('#viewArea').find('iframe').removeAttr('src');
                         setTimeout(function(){
-                            $('#viewArea').find('iframe').attr('src', href);                            
+                            $('#viewArea').find('iframe').attr('src', href);
                         },10)
                     }else{
                         $('#viewArea').find('iframe').attr('src', href);
                     }
-                    
-                    
+
+
                     //$('#url').val(href);
                 }
             }
@@ -29,7 +29,7 @@ $(function(){
             $(this).parent('li').addClass('is-current');
         }
 	});
-	
+
 	//filter
 	$('#filter').treeListFilter('#root_tree', 200);
 
@@ -43,7 +43,7 @@ $(function(){
 	// 			}
 	// 		});
 	// 	}
-	// });    
+	// });
 
 	// $('#root_tree li').each(function () {
 	// 	// var comment = $(this).children('dl').find('dd').length;
@@ -65,42 +65,48 @@ $(function(){
 
 		if(url != '' && url.indexOf('javascript') < 0 && url != '#'){
 			if(url.indexOf('_layered.html#') >= 0){
-				var address = url.split('#');			
+				var address = url.split('#');
 				var pageID = address[address.length - 1];
 			}else{
-				var address = url.split('/');			
-				var pageID = address[address.length - 1].replace('.html','');				
+				var address = url.split('/');
+				var pageID = address[address.length - 1].replace('.html','');
 			}
-			$(this).append(' [' + pageID.toUpperCase() + ']');						
-			$(this).attr('target','_blank');
+
+            pageID = pageID.split('?')[0];
+
+			$(this).append(' [' + pageID.toUpperCase() + ']');
+			//$(this).attr('target','_blank');
 
             var tag;
             switch (status){
                 case 'working':
-                    tag = '작업중';
+                    tag = '작업中';
                     break;
                 case 'complete':
-                    tag = '완료';
+                    tag = '작업完';
                     break;
-                case 'dev':
-                    tag = '개발전달';
+                case 'confirmed':
+                    tag = '기획컨펌完';
+                    break;
+                case 'gui':
+                    tag = 'GUI리뷰完';
                     break;
                 case 'modified':
-                    tag = '재수정';
+                    tag = '재수정完';
                     break;
-                default : 
+                default :
                     tag = false;
             }
 
             if(date != undefined && date != '' && (status == 'dev' || status == 'modified')){
                 $(this).prepend('<span class="status">(' + tag + ' : ' + date + ')</span>');
-                
+
             }else if(tag){
                 $(this).prepend('<span class="status">(' + tag + ')</span>');
             }
-		}	
-		
-		if ($this.next('ul').length) {		
+		}
+
+		if ($this.next('ul').length) {
 			if (url == 'javascript:;' || url == '') {
 				$this.addClass('close');
 				$this.on('click', function () {
@@ -123,10 +129,10 @@ $(function(){
         minWidth: 320,
         maxWidth: windowW * 3 / 4,
         handles: "w",
-        resize: function( event, ui ){                    
+        resize: function( event, ui ){
             $('#viewArea').css('left','0');
             $('.header, #treeArea').css('width', windowW - ui.size.width + 'px');
-            
+
         }
     });
 
@@ -216,18 +222,18 @@ $(function(){
 		$viewArea.find('span').remove();
         if(!$selected.hasClass('responsive')){
             $viewArea.css({'width':realWidth+'px','height':realHeight+'px'}).append('<span class="x">' + width + '</span><span class="y">' + height + '</span>');
-            if($viewArea.hasClass('is-resizable')) $viewArea.removeClass('is-resizable').resizable( "destroy" );                        
-        }else{            
-            // console.log(width,height)            
+            if($viewArea.hasClass('is-resizable')) $viewArea.removeClass('is-resizable').resizable( "destroy" );
+        }else{
+            // console.log(width,height)
             $viewArea.resizable({
                 minWidth: 320,
                 minHeight: 640,
-                create: function( event, ui ){                    
+                create: function( event, ui ){
                     width = $viewArea.width();
                     height = $viewArea.height();
                     $viewArea.addClass('is-resizable');
                 },
-                resize: function( event, ui ){                    
+                resize: function( event, ui ){
                     width = ui.size.width;
                     height = ui.size.height;
                     $viewArea.find('.x').text(width);
@@ -238,7 +244,7 @@ $(function(){
             $viewArea.css({'width':realWidth+'px','height':realHeight+'px'}).append('<span class="x">' + width + '</span><span class="y">' + height + '</span>');
         }
         annotation(width);
-		
+
 	});
 
     function mobileView(winW){
@@ -254,14 +260,14 @@ $(function(){
         }
     }
     mobileView(windowW);
-    
+
     $(window).on('resize',function(){
         windowW = $(this).outerWidth();
-        mobileView(windowW);        
+        mobileView(windowW);
     });
 
     //Mobile 보기 버튼
-    $body.append('<button class=\"mobile-view\">모바일 보기</button>');    
+    $body.append('<button class=\"mobile-view\">모바일 보기</button>');
 
     if(sessionStorage.getItem('mobileView') == 'active' && !$body.hasClass('is-mobile')){
         $('button.mobile-view').addClass('is-active');

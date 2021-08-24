@@ -24,8 +24,14 @@
             <!-- app-content // -->
             <main class="app-content select-organization">
                 <!--// SECTION -->
+                <div class="app-step">
+                    <div class="step-number">
+                        <strong class="current">2</strong>
+                        <span class="total">7</span>
+                    </div>
+                </div>
                 <section class="kb-sec">
-                    <strong class="h2">데이터를 연결할 기관을 선택해주세요.</strong><!-- 수정 : 2021.06.25 -->
+                    <strong class="h2">연결할 기관을 <br>모두 선택해주세요.</strong><!-- 수정 : 2021.06.25 -->
                     <div class="kb-form mt12" data-status="">
                         <label for="formTextSample0555">기관명</label>
                         <div class="kb-form_inner form-text">
@@ -38,9 +44,12 @@
                 <!-- SECTION //-->
                 <!--// SECTION -->
                 <section class="kb-sec mt48 dividing-line-bottom">
-                    <strong class="h4">추천 기관</strong>
-                    <dl class="js-checkbox-selector mt24">
-                        <dt><span class="form-checkbox"><input type="checkbox" id="selectAll"><label for="selectAll">전체</label></span></dt>
+                    <strong class="h4">추천기관</strong>                    
+                    <dl class="accordian js-checkbox-selector mt24">
+                        <dt class="is-active">
+                            <span class="form-checkbox"><input type="checkbox" id="accrdianCheck01"><label for="accrdianCheck01">전체</label></span>
+                            <button type="button" class="accordian-trigger"></button>
+                        </dt>
                         <dd>
                             <ul class="checkbox-group_icon">
                                 <li>
@@ -99,7 +108,7 @@
                                 </li>
                             </ul>
                         </dd>
-                    </dl>
+                    </dl>                    
                 </section>
                 <!-- SECTION //-->
                 <!--// SECTION -->
