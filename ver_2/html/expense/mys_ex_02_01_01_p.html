@@ -1,28 +1,29 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-channel="ch_star" >
 <!-- [MYS_EX_02_01_01_P] 작성자: 누리어 시스템 김삼희 -->
+
 <head>
-	@@include('@@webRoot/html/_include/app-head.html',{
-		"title": "정기지출 항목 설정 | 지출"
-	})
+    @@include('@@webRoot/html/_include/app-head.html',{
+    "title": "정기지출항목설정 | 지출"
+    })
 </head>
 
 <body>
-	@@include('@@webRoot/html/_include/app-a11y.html')
-	<div class="app">
-		<!-- app-header //-->
-		@@include('@@webRoot/html/_include/app-integrated-header.html',{
-			'pageTit' :'정기지출 항목 설정',
-            'type':'close'
-		}) 
-		<!-- // app-header -->
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header //-->
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+        'pageTit' :'정기지출항목 설정',
+        'type':'home or'
+        })
+        <!-- // app-header -->
 
-		<!-- app-container //-->
-		<div class="app-container">
+        <!-- app-container //-->
+        <div class="app-container">
 
-			<!-- app-content // -->
-			<main class="app-content regulaer-expense-layered">
-				
+            <!-- app-content // -->
+            <main class="app-content regulaer-expense-layered">
+
                 <!-- 타이틀//-->
                 <section class="kb-sec">
                     <h3 class="h3"><span>12</span>개 생활서비스와<br><span>5</span>개 구독서비스를<br>관리 중 입니다. </h3>
@@ -33,65 +34,79 @@
                     <h4 class="h4">관리 중인 서비스</h4>
                     <div class="services-management-list">
                         <div>
-                            <span class="icon-box_circle"><i class="icon-20"></i></span>
+                            <span><i class="icon-expense-living"></i></span>
                             <dl>
                                 <dt><strong>생활서비스</strong></dt>
                                 <dd>
-                                    <ul>
-                                        <li><a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" role="button"><span class="tag-label t01">통신요금</span></a></li>
-                                        <li><a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" role="button"><span class="tag-label t01">아파트 관리비</span></a></li>
-                                        <li><a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" role="button"><span class="tag-label t01">도시가스</span></a></li>
-                                        <li><a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" role="button"><span class="tag-label t01">월세</span></a></li>
-                                        <li><a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" role="button"><span class="tag-label t01">항목항목1</span></a></li>
-                                        <li><a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" role="button"><span class="tag-label t01">항목항목2</span></a></li>
-                                        <li><a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" role="button"><span class="tag-label t01">항목3</span></a></li>
-                                    </ul>
+                                    <div class="tag-list">
+                                        <a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" class="tag-label t02"
+                                            data-state="normal">통신요금</a>
+                                        <a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" class="tag-label t02"
+                                            data-state="normal">아파트 관리비</a>
+                                        <a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" class="tag-label t02"
+                                            data-state="normal">도시가스</a>
+                                    </div>
                                 </dd>
                             </dl>
                         </div>
                         <div>
-                            <span class="icon-box_circle"><i class="icon-20"></i></span>
+                            <span><i class="icon-expense-living"></i></span>
                             <dl>
                                 <dt><strong>구독 서비스</strong></dt>
                                 <dd>
-                                    <ul>
-                                        <li><a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" role="button"><span class="tag-label t01">통신요금</span></a></li>
-                                        <li><a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" role="button"><span class="tag-label t01">아파트 관리비</span></a></li>
-                                        <li><a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" role="button"><span class="tag-label t01">도시가스</span></a></li>
-                                        <li><a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" role="button"><span class="tag-label t01">월세</span></a></li>
-                                    </ul>
+                                    <div class="tag-list">
+                                        <a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" class="tag-label t02"
+                                            data-state="normal">월세</a>
+                                        <a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" class="tag-label t02"
+                                            data-state="normal">VOD/음원</a>
+                                        <a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" class="tag-label t02"
+                                            data-state="normal">렌탈</a>
+                                    </div>
                                 </dd>
                             </dl>
                         </div>
                     </div>
-                    <!-- [D] 내역이 없을 때 //-->
-                    <!--<div class="no-data">
-                        <i class="icon-info_24"></i>
+                </section>
+                <!-- [D] 내역이 없을 때 //-->
+                <section class="kb-sec">
+                    <h3 class="h3">관리중인 항목이 없습니다.</h3>
+                    <p>매 월, 정기적으로 나가는 지출을 관리해보세요.</p>
+                </section>
+                <section class="kb-sec services-management">
+                    <div class="no-data">
+                        <i class="icon-add_type2"></i>
                         <p>내역이 존재하지 않습니다.</p>
-                    </div>-->
-                    <!--// [D] 내역이 없을 때 -->
-                    <div class="btn-area">
-                        <button type="button" class="btn-line" data-call-layered="bsSelectRegularExpenseList"><span>정기지출 항목 추가</span></button>
                     </div>
                 </section>
-			</main>
-			<!-- // app-content -->
+                <!--// [D] 내역이 없을 때 -->
 
-		</div>
-		<!-- // app-container -->
+                <!-- 관리 중인 서비스//-->
+                <section class="kb-sec services-management mt48">
 
-		<!-- Layer (modal, bottom sheet) // -->
-		<div class="layered">
+                    <div class="btn-area">
+                        <button type="button" class="btn-line" data-call-layered="bsSelectRegularExpenseList"><span>정기지출
+                                항목 추가</span></button>
+                    </div>
+                </section>
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+        <!-- Layer (modal, bottom sheet) // -->
+        <div class="layered">
             @@include('@@webRoot/html/expense/layered/mys_ex_02_01_01_p01.html')
-		</div>
-		<!-- // Layer (modal, bottom sheet) -->
-	</div>
+            @@include('@@webRoot/html/expense/layered/mys_ex_02_01_02_p.html')
+        </div>
+        <!-- // Layer (modal, bottom sheet) -->
+    </div>
 
-	<!-- Script -->
-	@@include('@@webRoot/html/_include/common-js.html')
-	<!-- Add Library (this page only)-->
-	<script src="@@webRoot/static/js/ui.js"></script>
-	<!-- Add Script -->
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
 
 </body>
 

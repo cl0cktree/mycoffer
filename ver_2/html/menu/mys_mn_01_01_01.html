@@ -1,4 +1,4 @@
-<!-- [MYS_MN_01_01_01] 전체메뉴 > My Data 관리 > KB국민은행 자산 목록 (작성자: 누리어 시스템 이진우)// -->
+<!-- [MYS_MN_01_01_01] 전체메뉴 > My Data 관리 > KB국민은행 자산 목록 (작성자: 누리어 시스템 최선화)// -->
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -10,7 +10,7 @@
 
 <body>
     @@include('@@webRoot/html/_include/app-a11y.html')
-    <div class="app"><!-- 수정 2021.06.25 : Liiv, Starbanking  앱 안에서  동작할 경우 data-page="submain" -->
+    <div class="app"><!-- Liiv, Starbanking  앱 안에서  동작할 경우 data-page="submain" -->
         
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
             'pageTit':'마이데이터 관리',
@@ -22,10 +22,10 @@
         <div class="app-container">
 
             <!-- app-lnb //-->
-            <div class="app-lnb"><!-- 수정 2021.06.24 : 스타뱅킹app에서는 menu.js 를 통해 gnb가 삽입됨 -->
+            <div class="app-lnb"><!-- 스타뱅킹app에서는 menu.js 를 통해 gnb가 삽입됨 -->
                 <div class="tab swiper-container">
                     <ul class="swiper-wrapper">
-                        <li class="swiper-slide"><a href="javascript:;">다른 기관 관리</a></li>
+                        <li class="swiper-slide"><a href="javascript:;">다른기관</a></li>
                         <li class="swiper-slide is-active"><a href="javascript:;">KB국민은행</a></li>
                         <li class="swiper-slide"><a href="javascript:;">이력정보</a></li>
                     </ul>
@@ -36,123 +36,79 @@
             <!-- app-content // -->
             <main class="app-content mydata-kbinfo">                
                 
-                <section class="kb-sec bg-white"><!-- 수정 2021.06.25 -->
+                <section class="kb-sec bg-gray">
+                    <h2 class="is-hidden">KB국민은행 연동 데이터 목록</h2>
+                    <p class="inner-text-bg">KB국민은행 보유 자산 <span class="c-red">전부 / 일부(<span class="num">15</span>개 중 <span class="num">8</span>개)</span>를 마이데이터 서비스와  연결하고 있습니다.</p>
+                </section>    
 
-                    <p class="mydata-kbinfo-msg">
-                        KB국민은행 보유 자산 <span class="c-red">전부 / 일부(<span class="num">15</span>개 중 <span class="num">8</span>개)</span>를
-                        마이데이터 서비스와  연결하고 있습니다.
-                    </p>
+                <section class="kb-sec mydata-list-wrap">
                     <dl class="js-checkbox-selector">
                         <dt><span class="form-checkbox"><input type="checkbox" id="selectAll"><label for="selectAll">전체선택</label></span></dt>
                         <dd>
                             <ul class="mydata-kbinfo-list">
                                 <li>
-                                    <span class="form-checkbox_20">
+                                    <span class="form-checkbox_20 align-top">
                                         <input type="checkbox" id="account01">
                                         <label for="account01">
                                             <strong class="asset-name">KB종합통장-저축예금</strong>
                                             <span class="asset-number">1234-5678-1234</span>                                    
                                             <span class="asset-owner">홍길동</span>
-                                            <span class="asset-amount">1,000,000,000</span>
+                                            <span class="asset-amount"><span class="num">1,000,000,000</span>원</span>
                                         </label>
                                     </span>
                                 </li>
                                 <li>
-                                    <span class="form-checkbox_20">
+                                    <span class="form-checkbox_20 align-top">
                                         <input type="checkbox" id="account02">
                                         <label for="account02">
                                             <strong class="asset-name">KB종합통장-저축예금</strong>
                                             <span class="asset-number">1234-5678-1234</span>                                    
                                             <span class="asset-owner">홍길동</span>
-                                            <span class="asset-amount">1,000,000,000</span>
+                                            <span class="asset-amount"><span class="num">1,000,000,000</span>원</span>
                                         </label>
                                     </span>
                                 </li>
                                 <li>
-                                    <span class="form-checkbox_20">
+                                    <span class="form-checkbox_20 align-top">
                                         <input type="checkbox" id="account03">
                                         <label for="account03">
                                             <strong class="asset-name">KB종합통장-저축예금</strong>
                                             <span class="asset-number">1234-5678-1234</span>                                    
                                             <span class="asset-owner">홍길동</span>
-                                            <span class="asset-amount">1,000,000,000</span>
+                                            <span class="asset-amount"><span class="num">1,000,000,000</span>원</span>
                                         </label>
                                     </span>
                                 </li>
                                 <li>
-                                    <span class="form-checkbox_20">
+                                    <span class="form-checkbox_20 align-top">
                                         <input type="checkbox" id="account04">
                                         <label for="account04">
                                             <strong class="asset-name">KB종합통장-저축예금</strong>
                                             <span class="asset-number">1234-5678-1234</span>                                    
                                             <span class="asset-owner">홍길동</span>
-                                            <span class="asset-amount">1,000,000,000</span>
+                                            <span class="asset-amount"><span class="num">1,000,000,000</span>원</span>
                                         </label>
                                     </span>
                                 </li>
                                 <li>
-                                    <span class="form-checkbox_20">
+                                    <span class="form-checkbox_20 align-top">
                                         <input type="checkbox" id="account05">
                                         <label for="account05">
                                             <strong class="asset-name">KB종합통장-저축예금</strong>
                                             <span class="asset-number">1234-5678-1234</span>                                    
                                             <span class="asset-owner">홍길동</span>
-                                            <span class="asset-amount">1,000,000,000</span>
+                                            <span class="asset-amount"><span class="num">1,000,000,000</span>원</span>
                                         </label>
                                     </span>
                                 </li>
                                 <li>
-                                    <span class="form-checkbox_20">
+                                    <span class="form-checkbox_20 align-top">
                                         <input type="checkbox" id="account06">
                                         <label for="account06">
                                             <strong class="asset-name">KB종합통장-저축예금</strong>
                                             <span class="asset-number">1234-5678-1234</span>                                    
                                             <span class="asset-owner">홍길동</span>
-                                            <span class="asset-amount">1,000,000,000</span>
-                                        </label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="form-checkbox_20">
-                                        <input type="checkbox" id="account07">
-                                        <label for="account07">
-                                            <strong class="asset-name">KB종합통장-저축예금</strong>
-                                            <span class="asset-number">1234-5678-1234</span>                                    
-                                            <span class="asset-owner">홍길동</span>
-                                            <span class="asset-amount">1,000,000,000</span>
-                                        </label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="form-checkbox_20">
-                                        <input type="checkbox" id="account08">
-                                        <label for="account08">
-                                            <strong class="asset-name">KB종합통장-저축예금</strong>
-                                            <span class="asset-number">1234-5678-1234</span>                                    
-                                            <span class="asset-owner">홍길동</span>
-                                            <span class="asset-amount">1,000,000,000</span>
-                                        </label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="form-checkbox_20">
-                                        <input type="checkbox" id="account09">
-                                        <label for="account09">
-                                            <strong class="asset-name">KB종합통장-저축예금</strong>
-                                            <span class="asset-number">1234-5678-1234</span>                                    
-                                            <span class="asset-owner">홍길동</span>
-                                            <span class="asset-amount">1,000,000,000</span>
-                                        </label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="form-checkbox_20">
-                                        <input type="checkbox" id="account10">
-                                        <label for="account10">
-                                            <strong class="asset-name">KB종합통장-저축예금</strong>
-                                            <span class="asset-number">1234-5678-1234</span>                                    
-                                            <span class="asset-owner">홍길동</span>
-                                            <span class="asset-amount">1,000,000,000</span>
+                                            <span class="asset-amount"><span class="num">1,000,000,000</span>원</span>
                                         </label>
                                     </span>
                                 </li>
@@ -161,30 +117,25 @@
                     </dl>
                 </section>
 
-                <!-- 수정 : 2021.06.24  section 안으로 이동 // -->
                 <!-- 데이터가 없을때 // -->
                 <section class="kb-sec">
                     <div class="no-data">
-                        <i class="icon-info_24"></i>
+                        <i class="icon-bang_60_gray"></i>
                         <p>KB국민은행 데이터가 없습니다.</p>
                     </div>
                 </section>
                 <!-- // 데이터가 없을때 -->
-                <!-- // 수정 : 2021.06.24  section 안으로 이동 -->
 
                 <div class="sticky-bottom">
                     <div class="btn-area">
-                        <button type="button" class="btn-solid"><span>변경하기</span></button>
+                        <button type="button" class="btn-solid"><span>변경</span></button>
                     </div>
                 </div>
-
-
-                
-
 
             </main>
             <!-- // app-content -->
             
+        </div>    
         <!-- // app-container -->
     </div>
 
@@ -245,9 +196,6 @@
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->    
-   <script>
-       gfn_gnb.select(11,1); //수정 2021.06.25 : liiv, starbanking  용
-   </script>
 </body>
 
 </html>

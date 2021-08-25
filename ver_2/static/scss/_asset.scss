@@ -418,12 +418,21 @@ div.percentage-graph.yellow .graph-area > span{background-color:#ffcc00;border:1
 .bottom-prod-info .account-detail{margin-top:10px;}
 .bottom-prod-info .account-detail li{display:table;padding:20px 0;width:100%;box-sizing:border-box;}
 .bottom-prod-info .account-detail li:last-child{padding-bottom:0;}
-.bottom-prod-info .account-detail li+li{border-top:1px solid $kb-ui08;}
-.bottom-prod-info .account-detail .icon-con{display:table-cell;width:56px;}
-.bottom-prod-info .account-detail .icon-con span{display:block;width:48px;height:48px;border-radius:24px;padding:12px 8px;/*background-color:$kb-ui10;*/}
+.bottom-prod-info .account-detail li+li{border-top:1px solid $kb-ui09;}
+.bottom-prod-info .account-detail .icon-con{display:table-cell;width:48px;}
+.bottom-prod-info .account-detail .icon-con span{display:block;width:32px;height:32px;border-radius:24px;/*background-color:$kb-ui10;*/}
 .bottom-prod-info .account-detail .icon-con span > i{display:inline-block}
 .bottom-prod-info .account-detail .txt-con{display:table-cell;vertical-align:middle;}
-
+.bottom-prod-info .account-detail .fund-care{display:flex;padding-top:1rem;margin:0 -4px;align-items:stretch;justify-content:space-between;align-content:center;}
+.bottom-prod-info .account-detail .fund-care li{float:left;width:50%;padding:0 4px;border-top:0;}
+.bottom-prod-info .account-detail .fund-care li .content-box{margin:0;height:100%;height:100px;}
+.bottom-prod-info .account-detail .fund-care li .tit{font-size:14px;color:$kb-ui03;}
+.bottom-prod-info .account-detail .fund-care li .grade{display:block;font-size:20px;color:$color-red;text-align:center;font-weight:bold;margin-top:10px;margin-top:1rem;}
+.bottom-prod-info .account-detail .fund-care li .high{color:$color-red;}
+.bottom-prod-info .account-detail .fund-care li .middle{color:#00a596}
+.bottom-prod-info .account-detail .fund-care li .low{color:$color-blue;}
+.bottom-prod-info .account-detail .fund-care li .amount{display:block;text-align:right;font-size:28px;margin-top:1rem;}
+.bottom-prod-info .account-detail .fund-care li .amount .num{font-size:29px;font-weight:bold;}
 /* 자산직접등록 */
 .pop-my-asset .tit{@include text($size: 18px,$weight : bold);}
 .pop-my-asset .pop-notice{@include text;color:$kb-ui02;}
@@ -661,7 +670,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:#ffcc00;border:1
 /* wish house 플래너 */
 .my-asset.wish-house-planer .top-area .msg{@include text($size:$text01,$weight:bold);}
 .my-asset.wish-house-planer .top-area .msg b{color:$color-blue;}
-.my-asset.wish-house-planer .top-area .msg .num{@include number($size:21px,$weight:bold);margin-right:.4rem;}
+.my-asset.wish-house-planer .top-area .msg .num{@include number($size:21px,$weight:bold);}
 .my-asset.wish-house-planer .planer{padding-top:24px;}
 .my-asset.wish-house-planer .progress-wrap{position:relative;padding-top:7.3rem;}
 .my-asset.wish-house-planer .progress-wrap .animation{background-color:#fff;width:0;z-index:5;right:0;left:auto;transition: all 1.8s ease-out;transition-delay:.5s;opacity:1;}
@@ -676,7 +685,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:#ffcc00;border:1
 .my-asset.wish-house-planer .progress-wrap span.stop{width:0 !important;}
 // .my-asset.wish-house-planer .progress-wrap .my-cash{background-color:#ff8a71;z-index:4}
 // .my-asset.wish-house-planer .progress-wrap .my-cash:after{content:'';width:20px;height:20px;background:url(../../static/images/asset/ico_my_cash.png) no-repeat 0 0;background-size:cover;margin-top:-2.8rem;}
-.my-asset.wish-house-planer .progress-wrap .wish-gap{background-color:#7fa2ed;z-index:3;}
+.my-asset.wish-house-planer .progress-wrap .wish-gap{background-color:#7fa2ed;z-index:0;}
 .my-asset.wish-house-planer .progress-wrap .wish-gap:after{content:'';width:2.5rem;height:2.7rem;background:url(../../static/images/asset/ico_wish_house.png) no-repeat 0 0;background-size:cover;margin-left:-20px;margin-top:-3.5rem;}
 .my-asset.wish-house-planer .progress-wrap .my-cash{background-color:#ff8a71;z-index:4}
 .my-asset.wish-house-planer .progress-wrap .my-cash:after{content:'';width:2.9rem;height:2.4rem;background:url(../../static/images/asset/ico_my_cash.png) no-repeat 0 0;background-size:cover;margin-top:-3.2rem;}
@@ -686,15 +695,19 @@ div.percentage-graph.yellow .graph-area > span{background-color:#ffcc00;border:1
 .my-asset.wish-house-planer .progress-wrap .wish-house:after{content:'';width:23px;height:30px;background:url(../../static/images/asset/ico_wish_house.png) no-repeat 0 0;background-size:cover;margin-left:-20px;}
 .my-asset.wish-house-planer .progress-wrap .wish-house.is-active:after{margin-left:0;}
 .my-asset.wish-house-planer .wish-house-price{@include text($size:18px,$weight:bold);display:flex;justify-content:space-between;align-items:center;margin-top:4.8rem;padding-bottom:1.6rem;border-bottom:1px solid $kb-ui07;}
-.my-asset.wish-house-planer .wish-house-price .num{@include number($size:21px);margin-right:.4rem;}
+.my-asset.wish-house-planer .wish-house-price .num{@include number($size:2.1rem);}
 .my-asset.wish-house-planer .my-money-list{padding:12px 0;border-bottom:1px solid $kb-ui09;}
 .my-asset.wish-house-planer .my-money-list > ul > li{display:flex;justify-content:space-between;align-items:center;}
 .my-asset.wish-house-planer .my-money-list > ul > li .txt{background-repeat:no-repeat;background-position:0 center;background-size:2rem 2rem;padding:1.2rem 0 1.2rem 2.9rem;color:$kb-ui04;}
 .my-asset.wish-house-planer .my-money-list > ul > li.mine .txt{background-image:url(../images/asset/i_wish_house_planer_1.png);}
 .my-asset.wish-house-planer .my-money-list > ul > li.cash .txt{background-image:url(../images/asset/i_wish_house_planer_2.png);}
 .my-asset.wish-house-planer .my-money-list > ul > li.loan .txt{background-image:url(../images/asset/i_wish_house_planer_3.png);}
+.my-asset.wish-house-planer .my-money-list > ul > li.save .txt{background-image:url(../images/asset/i_wish_house_planer_4.png);}
+.my-asset.wish-house-planer .my-money-list > ul > li.save.yellow .txt{background-image:url(../images/asset/i_wish_house_planer_6.png);}
+.my-asset.wish-house-planer .my-money-list > ul > li.minus .txt{background-image:url(../images/asset/i_wish_house_planer_5.png);}
+.my-asset.wish-house-planer .my-money-list > ul > li.minus.type2 .txt{background-image:url(../images/asset/i_wish_house_planer_7.png);}
 .my-asset.wish-house-planer .my-money-list > ul > li.mine .amount{color:$kb-ui03;}
-.my-asset.wish-house-planer .my-money-list > ul > li .amount .num{margin-right:.2rem;}
+.my-asset.wish-house-planer .my-money-list > ul > li .amount .num{margin-right:0;}
 .my-asset.wish-house-planer ul[data-style=list]{color:$kb-ui03;margin-top:20px;}
 .my-asset.wish-house-planer ul[data-style=list] .btn-text u{@include text($size:14px);}
 .my-asset.wish-house-planer .btn-solid > span{@include text($size:18px,$weight:bold);}
@@ -816,13 +829,14 @@ div.percentage-graph.yellow .graph-area > span{background-color:#ffcc00;border:1
 .push-time-line .list-item{display:flex;flex-direction:column;margin-top:2rem;}
 .push-time-line .list-item:first-child{margin-top:2.8rem;}
 .push-time-line .list-item .col.date{@include text($size:14px);display:inline-block;padding:0 2rem;margin-bottom:0.1rem;border-radius:1.5rem;align-self:center;text-align:center;line-height:3rem;$color:$kb-ui03;background-color:$kb-ui09;}
-.push-time-line .list-item .col.date .num{@include text($size:14px,$line-height:1);$color:$kb-ui03;}
-.push-time-line .list-item .col.tit{position:relative;display:flex;justify-content:space-between;align-items:flex-start;margin-top:2.2rem;}
-.push-time-line .list-item .col.tit i:first-child{margin-right:1.1rem;}
+.push-time-line .list-item .col.date .num{font-size:1.5rem;$color:$kb-ui03;}
+.push-time-line .list-item .col.tit{position:relative;display:flex;justify-content:space-between;align-items:flex-start;margin-left:1rem;margin-top:2.2rem;}
+.push-time-line .list-item .col.tit.new::before{content:'';position:absolute;top:-0.5rem;left:-0.8rem;width:0.6rem;height:0.6rem;border-radius:50%;background-color:$color-red;}
+.push-time-line .list-item .col.tit i:first-child{position:relative;margin-right:1.1rem;}
 .push-time-line .list-item .col.tit .txt{@include text($size:14px,$weight:bold);line-height:1.6rem;flex:1 0 auto;}
 .push-time-line .list-item .col.tit .time{@include text($size:12px,$line-height:16px);color:$kb-ui05;}
-.push-time-line .list-item .col.tit .num{font-size:1.3rem;font-weight:normal;}
-.push-time-line .list-item .col.desc{padding:2rem 2.1rem 2.2rem;margin:0.8rem -0.6rem 0;border:1px solid $kb-ui08;border-radius:0.8rem;}
+.push-time-line .list-item .col.tit .num{display:inline-block;line-height:16px;font-size:1.3rem;font-weight:normal;}
+.push-time-line .list-item .col.desc{padding:1.8rem 2rem 2rem;margin:0.8rem -0.6rem 0;border:1px solid $kb-ui08;border-radius:0.8rem;}
 .push-time-line .list-item .col.desc .txt{@include text;}
 .push-time-line .list-item .expiry-date{margin-top:2rem;text-align:center;}
 .push-time-line .list-item .expiry-date .dt{@include text($size:14px,$weight:bold);margin-bottom:1rem;}
@@ -833,7 +847,8 @@ div.percentage-graph.yellow .graph-area > span{background-color:#ffcc00;border:1
 .push-time-line .list-item .product-info [data-style=list] li{@include text($size:14px);margin-top:0;color:$kb-ui03}
 .push-time-line .list-item .product-info [data-style=list] li::before{width:0.6rem;height:0.1rem;left:0;background-color:$kb-ui04;}
 .push-time-line .list-item .product-info [data-style=list] .num{@include text($size:14px);}
-.push-time-line .list-item .btn-solid{height:3.6rem;margin-top:2rem;font-size:1.4rem;font-weight:normal;}
+// .push-time-line .list-item .btn-solid{height:3.6rem;margin-top:2rem;font-size:1.4rem;font-weight:normal;}
+.push-time-line .list-item .btn-solid{margin-top:2rem;}
 
 .menu-push .top-info .btn-text{display:inline-block;margin-top:7px;}
 .menu-push .top-info .no-data{margin-top:100px;margin-bottom:4.5rem;}
@@ -985,7 +1000,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:#ffcc00;border:1
 .my-asset .loan-card-list button .loan-desc{display:block;margin-top:1.6rem;color:$kb-ui04;font-size:$text03;line-height:1;}
 .my-asset .loan-card-list button .loan-amount{display:block;margin-top:2.8rem;text-align:right;font-size:$text03;line-height:1;}
 .my-asset .loan-card-list button .loan-amount > strong{font-size:$text01;font-weight:bold;}
-.my-asset .loan-card-list button .loan-amount > strong .num{font-size:1.9rem;font-weight:bold;margin-right:.2rem;}
+.my-asset .loan-card-list button .loan-amount > strong .num{font-size:1.9rem;font-weight:bold;}
 .my-asset .loan-card-list button + button{margin-top:2rem;}
 .btn-area.type-right .btn-text{justify-content:flex-end;}
 .description-list dd.amount .num.not-cash{right:0}

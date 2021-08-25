@@ -1,6 +1,7 @@
 .kb-form[data-type="icon"]{display:flex}
 .kb-form[data-type="icon"] > span{display:block;margin-right:8px}
 .kb-form[data-type="icon"] > div{flex:1}
+.kb-form_inner[data-role="popup"]:after{position:absolute;right:0;top:0.6rem;z-index:1;content:'';width:2rem;height:2rem;background:url(../images/common/common.png) no-repeat -4.4rem -2rem;background-size:16rem}
 // chart
 .legend-unit.t01{width:100%;max-width:100%;padding-top:1.8rem;margin-left:0;margin-right:0;border-top:1px solid $kb-ui09}
 .legend-unit dl{display:grid;grid-template-columns:1fr 1fr;font-size:14px}
@@ -23,6 +24,7 @@
 .legend-unit.align-c li:first-child{width:auto;margin-right:1rem}
 .chart-tit .desc.info{margin-top:0.7rem;color:$kb-ui05}
 .chart-tit + .chart-area{margin-top:2.8rem}
+.graph-area .total-summary{margin-top:1.6rem;margin-bottom:1.5rem;font-size:1.6rem}
 
 /***** 지출 공통 *****/
 .expense-layered .h3 p{margin-top:20px;font-size:16px;color:$kb-ui03;font-weight:normal}
@@ -49,6 +51,8 @@
 /* 지출 공통 :상세보기 */
 .expense-list-detail .detail-info > h4{margin-bottom:2rem}
 .expense-list-detail .detail-info > h4 i{margin-right:1.2rem}
+.expense-list-detail .detail-info > h4 strong {font-weight:bold}
+.expense-list-detail .detail-info > h4 strong span{display:block;margin-top:0.5rem;font-size:1.4rem;color:$kb-ui04;font-weight:normal}
 .expense-list-detail .detail-info dl{margin-top:1.8rem}
 .expense-list-detail .detail-edit .btn-segmented_radio + .kb-form{margin-top:3.5rem}
 .expense-list-detail .detail-edit .edit-option{margin-top:2.7rem}
@@ -62,6 +66,57 @@
 .expense-list-detail .detail-edit .edit-option .delete button{width:auto;padding:0 2.8rem}
 //라디오 옵션이 있는 모달
 .modal_radioOption .modal_contents .radio-group{margin-top:20px}
+
+
+/*------------- 지출 > 홈 -------------*/
+.expense-home .monthly-expense-guide .chart-tit{color:$kb-ui11;text-align:center}
+.expense-home .monthly-expense-guide .chart-tit .h4{font-weight:normal}
+.expense-home .monthly-expense-guide .chart-tit strong{font-weight:bold}
+.expense-home .monthly-expense-guide .chart-tit .date{margin-top:0.5rem;color:$kb-ui11;font-weight:normal}
+.expense-home .monthly-expense-guide .content-box{background-color:#6349a5}
+.expense-home .monthly-expense-guide .highcharts-figure{background-color:transparent}
+.expense-home .monthly-expense-guide .highcharts-figure .legend-unit .basic{color:$kb-ui11}
+.expense-home .notice-group .notice-item + .notice-item{margin-top:0.8rem}
+.expense-home .notice-group .notice-item{padding:2rem;background-color:$kb-ui10;border-radius:0.8rem}
+.expense-home .notice-group .notice-item .h4 .tag-label.round{margin-left:0.8rem}
+.expense-home .notice-group .notice-item .desc{margin-top:1.2rem;line-height:2rem}
+.expense-home .notice-group .notice-item .desc strong{display:block;font-size:1.4rem;font-weight:bold}
+.expense-home .notice-group .notice-item .desc strong em{font-size:1.5rem;font-weight:bold}
+.expense-home .notice-group .notice-item .desc .date{display:block;margin-bottom:0.3rem}
+.expense-home .notice-group .notice-item .desc .info .num{font-weight:bold}
+.expense-home .notice-group .notice-item .desc .info[data-state="less"] .num{color:$color-red}
+.expense-home .notice-group .notice-item .amount{margin-top:2.3rem;text-align:right}
+.expense-home .notice-group .notice-item .amount span{display:block;margin-bottom:0.5rem;font-size:1.4rem}
+.expense-home .notice-group .notice-item .amount strong{font-size:2rem;font-weight:bold;color:$color-red}
+.expense-home .notice-group .notice-item .amount strong .num{font-size:2.8rem;font-weight:bold}
+.expense-home .notice-group .notice-item .amount[data-value] strong::before{display:inline-block;margin-right:0.8rem;font-size:1.2rem;color:$color-red}
+.expense-home .notice-group .notice-item .amount[data-value="up"] strong::before{content:'\25B2'}
+.expense-home .notice-group .notice-item .amount[data-value="down"] strong::before{content:'\25BC'}
+.expense-home .notice-group.flex-box .notice-item{flex:1}
+.expense-home .notice-group.flex-box .notice-item + .notice-item{margin-left:0.8rem;margin-top:0}
+.expense-home .notice-group.flex-box .notice-item .desc{margin-top:0.3rem}
+.expense-home .swiper-card-list{overflow:visible}
+.expense-home .swiper-card-list .swiper-container{margin-top:1.5rem;}
+.expense-home .swiper-card-list .swiper-pagination{padding-left:2.4rem;padding-right:2.4rem;text-align:left}
+.expense-home .swiper-card-list .card-item{padding:2rem;border:1px solid $kb-ui08;border-radius:0.8rem}
+.expense-home .swiper-card-list .card-item .tag-label{margin-left:4rem}
+.expense-home .swiper-card-list .card-item .card-tit{display:block;font-size:1.6rem;font-weight:bold}
+.expense-home .swiper-card-list .card-item .card-tit i{margin-right:0.8rem;vertical-align:middle}
+.expense-home .swiper-card-list .card-item dl{@include flexBetween;margin-top:1.6rem;font-size:1.4rem}
+.expense-home .swiper-card-list .card-item dt{color:$kb-ui04}
+.expense-home .swiper-card-list .card-item dd .num{font-size:1.5rem}
+.expense-home .link-to-agree button{text-align:left}
+.expense-home .link-to-agree i{margin-right:1.2rem;vertical-align:middle}
+
+/* 제3자정보제공동의 */
+.agree-group + .agree-group{margin-top:1.5rem}
+.agree-group .h4{display:block;padding-bottom:1.5rem;border-bottom:1px solid $kb-ui03}
+.agree-group .h4:first-child{border-top:0}
+.agree-group ul{padding:2.2rem 0;border-bottom:1px solid $kb-ui08}
+.agree-group li{padding:0.8rem 0}
+.agree-group .link-arrow-after{margin-top:2.2rem;padding-bottom:2rem;line-height:2.5rem;border-bottom:1px solid $kb-ui08}
+.agree-group .link-arrow-after::after{top:0}
+.agree-group .link-arrow-after + .simple-message{margin-top:1.5rem}
 
 /***** 지출 > 가계부 *****/
 // main
@@ -98,7 +153,6 @@
 .expense-account-book-list .filter-area + div ~ div{margin-top:4.8rem}
 .expense-monthly-place .highcharts-figure{padding-top:0}
 .expense-monthly-place .h4 .date{display:inline-block;margin-left:0.8rem;font-size:1.5rem;color:$kb-ui05;font-weight:normal;vertical-align:middle}
-.expense-monthly-place .total-summary{margin-top:1.6rem;margin-bottom:1.5rem;font-size:1.6rem}
 .expense-management-goal .content-tit{text-align:center;padding:24px 0}
 // 가계부 > 캘린더로 보기
 .calendar-container .summary-amount{margin-top:2.5rem}
@@ -146,7 +200,6 @@
 .user-register-list .user-register-forms .kb-form_multi .tit{margin-bottom:1.2rem}
 .user-register-list .user-register-forms .form-tit{@include text($size:16px);flex:0 0 100%;display:block;position:relative;width:100%;min-height:26px;padding:8px 2px 0px 2px;color:$kb-ui04}
 .user-register-list .user-register-forms > .kb-form + .kb-form{margin-top:2rem}
-.user-register-list [data-role="popup"]:after{position:absolute;right:0;top:0.6rem;z-index:1;content:'';width:2rem;height:2rem;background:url(../images/common/common.png) no-repeat -4.4rem -2rem;background-size:16rem}
 .user-register-list .user-register-forms .btn-area.center{margin-top:20px}
 .user-register-list input[data-numeric-type="number"]{text-align:left}
 // 가계부 > 카테고리 설정
@@ -242,57 +295,131 @@
 .view-hidden-expense .list-controls{margin-top:4rem;margin-bottom:2rem}
 
 /***** 지출 > 정기지출  *****/
-.tit-area_icon-bg{padding-top:32px;padding-bottom:32px;margin-bottom:32px;background-color:$kb-ui10}
+.regulaer-expense-layered .h3{font-weight:normal;}
+.regulaer-expense-layered .tit-area_icon-bg{padding-bottom:40px;}
 .icon-box_circle{@include flexCenter;width:48px;height:48px;border-radius:50%;background-color:$kb-ui10}
 .icon-box_circle_32{@include flexCenter;width:32px;height:32px;border-radius:50%;background-color:$kb-ui10}
 .icon-box_circle_line{@include flexCenter;width:40px;height:40px;border-radius:50%;background-color:$kb-ui11;border:1px solid $kb-ui09}
-.tit-area_icon-bg .form-text{margin-top:60px}
+.tit-area_icon-bg em{display:inline-block;margin-left:5px;font-size:16px;font-weight:bold;color:$kb-ui02;}
+.tit-area_icon-bg .btn-wrap{margin-left:42px;margin-top:4px;}
+.tit-area_icon-bg .btn-wrap .btn-text{font-size:14px;color:$kb-ui04;}
+.tit-area_icon-bg .btn-wrap .btn-text + .btn-text{margin-left:12px;}
+.tit-area_icon-bg .form-text{margin-top:46px}
 .tit-area_icon-bg .form-text input{background-color:transparent}
 .tit-area_icon-bg .icon-box_circle{display:inline-flex;margin-right:10px;margin-bottom:12px;background-color:$kb-ui11}
 .tit-area_icon-bg .btn-line{vertical-align:middle}
 .tit-area_icon-bg .btn-line + .btn-line{margin-left:10px}
+.regulaer-expense-layered .dividing-line-bottom{padding-bottom:10px;margin-bottom:44px;}
+.regulaer-expense-layered .dividing-line-bottom h4{padding-bottom:12px;text-indent:2px;border-bottom:1px solid $kb-ui07;}
+.regulaer-expense-layered .dividing-line-bottom:after{height:1px;}
+.regulaer-expense-layered .dividing-line-bottom .h4 + dl{margin-top:8px;}
+.regulaer-expense-layered .dividing-line-bottom .description-list dt{margin:5px 0}
 // Main
+.regular-expense-summary .btn-more{margin-top:0}
+.regular-expense-summary .date-month .date{margin-top:0;margin-bottom:1rem}
+.regular-expense-summary .content-box{text-align:center}
+.regular-expense-summary .content-box .tit{display:block;margin-bottom:1rem}
+.regular-expense-summary .content-box strong{font-size:2.4rem;font-weight:bold;vertical-align:middle}
+.regular-expense-summary .content-box strong .num{font-size:2.5rem;font-weight:bold}
+.regular-expense-summary .content-box strong + span{display:inline-block;width:3.5rem;height:3.5rem;margin-left:0.6rem;font-size:1.3rem;line-height:3.5rem;border-radius:50%;color:$kb-ui11;background-color:$color-blue;vertical-align:middle}
+.regular-expense-summary .content-box strong + span .num{font-size:1.5rem}
+.regular-expense-summary .highcharts-figure{background:transparent}
 .regular-expense-total{padding-bottom:0}
-.regular-expense-list{margin-bottom:0;padding-bottom:0}
-.regular-expense-list .credit-list_link-type li:last-child dl{border-bottom:0}
-.regular-expense-list .credit-list-group .group-tit{background-color:$kb-ui11}
-.regular-expense-list .credit-list-group + .credit-list-group .group-tit{border-top:1px solid $kb-ui09}
-.regular-expense-trend{padding-bottom:48px}
-.regular-expense-trend .tab{padding-top:24px}
+.regular-expense-list .more-view-item + .more-view-item{margin-top:4.8rem}
+.regular-expense-list .credit-list .tag-label.round{margin-bottom:1rem}
 .regular-expense-trend .tab_contents > div{padding-top:32px}
+.regular-expense-trend .tab_contents > div h4{margin-bottom:1.5rem}
 .regular-expense-trend .kb-form.select-bs{margin-top:14px}
 .regular-expense-trend div + .content-box{margin-top:26px}
 .trendy-service{text-align:center;padding:0}
 .rising-service{padding-top:0;padding-bottom:0;border-radius:0.2rem}
-.regular-expense-management{padding-top:2rem}
-.regular-expense-management .content-box-tit{align-items:center}
-.regular-expense-management .content-box-info .info{text-align:right;color:$kb-ui05;font-size:1.3rem}
-.regular-expense-management .total-summary{margin-top:2rem}
+//Lollipop
+.regular-expense-summary .highcharts-box{margin-top:3.2rem;padding:0}
+.regular-expense-summary .highcharts-figure{padding:0}
+.regular-expense-summary .markup-chart ul{display:flex;align-items:flex-end;justify-content:space-between;width:100%;height:36.5333vw}
+.regular-expense-summary .markup-chart li{flex:1;position:relative;text-align:center}
+.regular-expense-summary .markup-chart li:first-child .data{color:$kb-ui11;background-color:#ffba53}
+.regular-expense-summary .markup-chart li p{position:relative;width:100%;height:100%}
+.regular-expense-summary .markup-chart li p::before{position:absolute;top:0;left:50%;content:'';display:block;width:1px;height:calc(100% - 3.5rem);border-right:1px dashed #c6cbd0;border-color:#c6cbd0;}
+.regular-expense-summary .markup-chart li .label{display:block;margin:0;padding-top:1.5rem;font-size:1.2rem;border-top:1px solid $kb-ui07;color:$kb-ui02}
+.regular-expense-summary .markup-chart li .label .num{font-size:1.3rem}
+.regular-expense-summary .markup-chart li .data{position:relative;display:inline-block;width:43px;height:43px;margin-bottom:7px;border-radius:50%;line-height:43px;text-align:center;font-size:14px;font-weight:bold;background-color:$kb-ui07}
+.regular-expense-summary .markup-chart li .data .num{font-size:1.5rem;font-weight:bold}
+.regular-expense-summary .markup-chart li .data[data-positional-number="2"]{width:58px;height:58px;line-height:60px}
+//관리가 필요한 정기지출
+.regular-expense-management .markup-chart ul{display:grid;grid-template-columns:1fr 1fr;}
+.regular-expense-management .markup-chart li{height:100%;text-align:center}
+.regular-expense-management .markup-chart dl{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;width:18vw;height:18vw;margin:1.1rem;border-radius:50%;;text-align:center;background:#ff8a71}
+.regular-expense-management .markup-chart li.emphasis dl{width:22.5vw;height:22.5vw;margin:0;background:#ffba53}
+.regular-expense-management .markup-chart dl{color:$kb-ui11;font-size:1.4rem}
+.regular-expense-management .markup-chart dl dt{margin-bottom:0.8rem}
+.regular-expense-management .markup-chart dl dd .num{font-size:1.5rem;font-weight:bold}
+.regular-expense-management .total-summary .h4{margin-bottom:1.2rem}
+.regular-expense-management .total-summary .info{padding-left:0.8rem;font-size:1.4rem}
+.regular-expense-management .markup-chart .data-name{display:block;margin-top:1.3rem;text-align:center}
 // 항목별 상세보기
 .regulaer-expense-layered .h4.type-icon{@include flexBetween}
 .regulaer-expense-layered .h4 strong{font-weight:bold}
 .regulaer-expense-layered .h4 span{font-weight:normal}
 .regulaer-expense-layered .h4+dl{margin-top:16px}
-.pay-use-list{padding:35px 0}
-.pay-use-list li{@include flexBetween;padding:13px 14px;background-color:$kb-ui11;border:1px solid $kb-ui08;border-radius:4px}
+.pay-use-list{padding:17px 0}
+.pay-use-list li{@include flexBetween;padding:1.8rem 2rem;background-color:$kb-ui11;border:1px solid $kb-ui08;border-radius:8px;box-shadow:0px 2px 3px 0 rgba(0, 0, 0, 0.07);margin-left:-0.8rem;margin-right:-0.8rem;}
 .pay-use-list li p > *{display:block}
-.pay-use-list li p strong{margin-top:12px;font-weight:bold;font-size:18px}
+.pay-use-list li p strong{margin-top:1rem;font-weight:bold;font-size:18px}
 .pay-use-list li .num{font-size:18px}
-.pay-use-list li+li{margin-top:20px}
+.pay-use-list li+li{margin-top:16px}
+.pay-use-list li .tag-label.round{height:2.4rem;line-height:2.4rem;border-radius:1.2rem}
+.regulaer-expense-layered .h4 span{color:$kb-ui05;font-size:14px;}
+//직접등록
+.regulaer-expense-layered .h4 + .kb-form{margin-top:15px;}
 // 기관선택
-.user-register-organization .checkbox-group label strong{display:block;margin-bottom:5px;font-weight:bold}
-.user-register-organization .checkbox-group label em{color:$kb-ui04}
+.user-register-organization .checkbox-group label strong{display:block;margin-bottom:5px;}
+.user-register-organization .accordian{border-bottom:0;}
+.user-register-organization .accordian > dt{border:0;background:$kb-ui10;margin-left:-2.4rem;margin-right:-2.4rem;padding-left:2.4rem;padding-right:2.4rem;margin-top:10px;}
+.user-register-organization .accordian > dt:first-child{margin-top:0;}
+.user-register-organization .accordian > dd{border:0;padding:0;}
+.user-register-organization .accordian > dd .st_list li{padding:20px 0;border-bottom:1px solid $kb-ui09;}
+.user-register-organization .accordian > dd .st_list li:last-child{margin-bottom:40px;}
+.user-register-organization .accordian > dd .st_list li strong{display:block;}
+.user-register-organization .accordian > dd .st_list li em{display:block;margin-top:5px;}
+.user-register-organization .accordian > dd .st_list li button{display:block;width:100%;text-align:left;}
+
+//정기지출항목 추가하기
+.add-regular-expense-list {margin-top:32px;}
+.credit-list.dividing-line-top{margin-top:12px;padding-top:0;border-top:1px solid $kb-ui07;}
+.credit-list.dividing-line-top li{padding:16px 0;border-bottom:1px solid $kb-ui09;}
+.credit-list.dividing-line-top li button{display:block;width:100%;text-align:left;}
+.credit-list.dividing-line-top li .info{display:inline-block;font-size:15px;color:$kb-ui03;}
+.credit-list.dividing-line-top li .tit{display:block;margin-top:7px;font-weight:bold;color:$kb-ui02;}
+.credit-list.dividing-line-top li .tit + .type{display:block;font-size:13px;margin-top:5px;color:$kb-ui05;}
+.credit-list.dividing-line-top li .amount{display:block;text-align:right;color:$kb-ui02;}
+.credit-list.dividing-line-top li .amount .num{font-weight:bold;}
+.credit-list.dividing-line-top li .amount .minus{color:$color-red;}
+.credit-list.dividing-line-top li .num + em{display:inline-block;position:relative;margin-left:10px;padding-left:5px;font-size:1.4rem;color:$kb-ui03;font-size:13px;}
+.credit-list.dividing-line-top li .num + em:before{display:block;position:absolute;top:50%;left:0;width:1px;height:12px;content:'';background:#dde1e4;margin-top:-6px;margin-left:-2px;}
+
 // 정기지출 항목 설정
 .services-management [class*="icon-box"]{margin-right:8px}
-.services-management-list{margin-top:24px;padding-top:24px;border-top:1px solid $kb-ui09}
+.services-management-list{margin-top:12px;margin-bottom:48px;padding-top:20px;border-top:1px solid $kb-ui09;}
 .services-management-list > div{display:flex;padding-bottom:33px;margin-bottom:28px;border-bottom:1px solid $kb-ui09}
+.services-management-list > div > span{margin-right:6px;}
 .services-management-list dl{flex:1}
-.services-management-list dt strong{font-weight:bold}
-.services-management-list dt strong{font-weight:bold}
+.services-management-list dt strong{font-weight:bold;line-height:32px;}
 .services-management-list dd{margin-top:12px}
 .services-management-list dd ul{display:flex;flex-wrap:wrap}
 .services-management-list dd ul li{margin-bottom:8px;margin-right:8px}
-.services-management .no-data{padding-bottom:67px}
+.services-management .no-data{padding:100px 0 57px}
+.select-regular-expense-list .accordian + .accordian{margin-top:-1px;}
+.select-regular-expense-list .accordian{border-bottom:0;}
+.select-regular-expense-list .accordian > dt{border:0;background:$kb-ui10;margin-left:-2.4rem;margin-right:-2.4rem;padding-left:2.4rem;padding-right:2.4rem;margin-top:10px;}
+.select-regular-expense-list .accordian > dt:first-child{margin-top:0;}
+.select-regular-expense-list .accordian > dd{border:0;padding:0;}
+.select-regular-expense-list .accordian > dd .st_list li{padding:20px 0;border-bottom:1px solid $kb-ui09;}
+.select-regular-expense-list .accordian > dd .st_list li:last-child{margin-bottom:40px;}
+.select-regular-expense-list .accordian > dd .st_list li strong{display:block;}
+.select-regular-expense-list .accordian > dd .st_list li em{display:block;margin-top:5px;}
+.select-regular-expense-list .accordian > dd .st_list li button{display:block;width:100%;text-align:left;}
+
 // 바텀시트
 .bottom-sheet_desc{margin:18px 24px 25px}
 
@@ -321,8 +448,6 @@
 .card-management-total .card-list .description-list .date{margin:0}
 .card-management-total .card-list .description-list .date .num{font-size:15px}
 .card-management-total .card-list .tag-list{margin-top:10px;padding-left:3.2rem}
-.card-management-total .card-list .tag-list .tag-label{margin-right:0.4rem;font-size:1.4rem;color:$kb-ui04;border-radius:0}
-.card-management-total .card-list .tag-list .tag-label + .tag-label{padding-left:0.7rem;border-left:1px solid $kb-ui08}
 .card-management-total .card-list.t01 li{flex-wrap:wrap}
 .card-management-total .card-list.t01 .percentage-graph{width:100%;margin-top:2.6rem;padding-top:2.2rem}
 .card-management-total .card-list.t01 .percentage-graph .graph-area{height:1.2rem;border:1px solid $kb-ui08;background-color:#f6f7f8}
@@ -372,7 +497,6 @@
 .expense-card-management-detail{padding-bottom:125px}
 .expense-card-management-detail .detail-tit{margin-top:32px;margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid $kb-ui09}
 .expense-card-management-detail .detail-content{width:100%;height:auto;min-height:400px;background-color:$kb-ui02}
-.expense-card-management-detail .sticky-bottom{position:fixed;bottom:0;left:0}
 
 /***** 지출 > 소비리포트  *****/
 .monthly-asset-summary .legend-unit,
@@ -445,33 +569,6 @@
 .finance-report-list .line-list-wrap .line-box[data-state="wait"] .tit,
 .finance-report-list .line-list-wrap .line-box[data-state="wait"] .date,
 .finance-report-list .line-list-wrap .line-box[data-state="wait"] .txt-con{color:$kb-ui06}
-
-
-/*------------- [가계부 차트] -------------*/
-//Lollipop
-.regular-expense-summary .markup-chart{margin-top:24px}
-.regular-expense-summary .markup-chart ul{display:flex;align-items:flex-end;justify-content:space-between;width:100%;height:46.533vw}
-.regular-expense-summary .markup-chart li{flex:1;position:relative;min-height:120px;padding-top:40px;text-align:center}
-.regular-expense-summary .markup-chart li:first-child .data{background-color:$color-yellow}
-.regular-expense-summary .markup-chart li p{position:relative;width:100%;height:100%}
-.regular-expense-summary .markup-chart li p::before{position:absolute;top:0;left:50%;content:'';display:block;width:1px;height:calc(100% - 30px);border-right:1px dashed $kb-ui07;border-color:$kb-ui07}
-.regular-expense-summary .markup-chart li .label{display:block;padding-top:8px;font-size:14px;color:$kb-ui05;border-top:1px solid $kb-ui09}
-.regular-expense-summary .markup-chart li .data{position:relative;display:inline-block;width:43px;height:43px;margin-bottom:7px;border-radius:50%;line-height:43px;text-align:center;font-size:14px;background-color:$kb-ui07}
-.regular-expense-summary .markup-chart li .data[data-positional-number="2"]{width:58px;height:58px;line-height:60px}
-.regular-expense-summary .markup-chart li .notice{position:absolute;top:0;left:0;font-size:14px;color:$color-red;box-shadow:0px 1px 5px 0 rgba(0, 0, 0, 0.2);border-radius:4px}
-.regular-expense-summary .markup-chart li .notice span{position:relative;display:inline-block;padding:7px;background-color:$kb-ui11}
-.regular-expense-summary .markup-chart li .notice::before{position:absolute;left:50%;bottom:-5px;content:'';display:block;width:10px;height:10px;margin-left:-5px;transform:rotate(45deg);background-color:$kb-ui11;box-shadow:0px 1px 5px 0 rgba(0, 0, 0, 0.2);}
-
-//관리가 필요한 정기지출
-.regular-expense-management .markup-chart ul,
-.regular-expense-management .markup-chart li{display:flex;align-items:center;justify-content:center}
-.regular-expense-management .markup-chart li{display:flex;flex-direction:column;width:21.93vw;height:21.93vw;max-width:200px;max-height:200px;padding:30px 5px;border-radius:50%;;text-align:center;background:linear-gradient(to left, #c6cbd0, #e4e7e9)}
-.regular-expense-management .markup-chart li.emphasis{width:32.66vw;height:32.66vw;max-width:245px;max-height:245px;padding:40px 10px;background:linear-gradient(to left, #fbc60a, #ffe381)}
-.regular-expense-management .markup-chart li+li{margin-left:20px}
-.regular-expense-management .markup-chart li strong{display:block}
-.regular-expense-management .markup-chart li strong,
-.regular-expense-management .markup-chart li .num{font-size:18px;font-weight:bold}
-.regular-expense-management .markup-chart li span{display:block;margin-top:8px;font-size:14px}
 
 
 /* 임시 아이콘 */

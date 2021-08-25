@@ -57,6 +57,36 @@
             </dl>
         </div>
         <hr>
+        <!-- 금액 + 단위 -->
+        <div class="box" id="dataUuit">
+            <h2>금액 + 단위</h2>
+            <dl class="flex-dl">
+                <dt>
+                    <pre>
+                        <code>
+
+                        </code>
+                    </pre>
+                </dt>
+                <dd data-description="" style="line-height:1.35">
+                    <p>2억 3천4백9십원</p>
+                    <p>(중간 중간 단위가 들어가있을때는 KB 폰트 사용/ 억단위 뒤에 한칸 띄우기)</p>
+                    <p>(만원 이상일 경우 숫자+단위 허용)</p>
+                    <hr>
+                    <p>2억 3천2백4십5만원</p>
+                    <hr>
+                    <hr>
+                    <p>(단위 앞에 2px의 여백이 있음)</p>                    
+                    <p>(.num[data-unit-after]): 기본</p>                    
+                    <p><span class="num" data-unit-after="원">100,000</span></p>
+                    <p><span class="num" data-unit-after="억">20</span></p>
+                    <hr>
+                    <p>(.num + .unit) : data-unit-after 사용불가시</p>                          
+                    <p><span class="num">20</span><span class="unit">억</span></p>
+                </dd>
+            </dl>
+        </div>
+        <hr>
         <!-- button -->
         <div class="box">
             <h2>Solid Button</h2>
@@ -68,28 +98,28 @@
                         </code>
                     </pre>
                 </dt>
-                <dd data-description=".btn-solid : 일반 솔리드 버튼(height:52px)">                    
-                    <button class="btn-solid"><span>[Default]솔리드 버튼</span></button>                    
+                <dd data-description=".btn-solid : 일반 솔리드 버튼(height:52px)">
+                    <button class="btn-solid"><span>[Default]솔리드 버튼</span></button>
                     <button class="btn-solid gray"><span>솔리드 버튼 gray</span></button>
                     <button class="btn-solid" disabled><span>솔리드 버튼(disabled)</span></button>
                     <hr>
                     <a href="javascript:;" class="btn-solid" role="button"><span>[Default]솔리드 링크버튼(height:52px)</span></a>
-                    <a href="javascript:;" class="btn-solid gray" role="button"><span>솔리드 링크 gray</span></a>                    
+                    <a href="javascript:;" class="btn-solid gray" role="button"><span>솔리드 링크 gray</span></a>
                     <a href="javascript:;" class="btn-solid is-disabled" role="button"><span>솔리드 링크(disabled)</span></a>
                 </dd>
-                <dd data-description=".btn-solid : 일반 솔리드 버튼 sm(height:40px)">                    
-                    <button class="btn-solid sm"><span>[Default]솔리드 버튼</span></button>                    
+                <dd data-description=".btn-solid : 일반 솔리드 버튼 sm(height:40px)">
+                    <button class="btn-solid sm"><span>[Default]솔리드 버튼</span></button>
                     <button class="btn-solid sm gray"><span>솔리드 버튼 gray</span></button>
                     <button class="btn-solid sm" disabled><span>솔리드 버튼(disabled)</span></button>
                     <hr>
                     <a href="javascript:;" class="btn-solid sm" role="button"><span>[Default]솔리드 링크버튼(height:52px)</span></a>
-                    <a href="javascript:;" class="btn-solid sm gray" role="button"><span>솔리드 링크 gray</span></a>                    
+                    <a href="javascript:;" class="btn-solid sm gray" role="button"><span>솔리드 링크 gray</span></a>
                     <a href="javascript:;" class="btn-solid sm is-disabled" role="button"><span>솔리드 링크(disabled)</span></a>
                 </dd>
                 <dd data-description=".btn-solid.form : form 안에서 사용">
 
                     <!--input + button-->
-                    <button class="btn-solid form"><span>폼요소에 사용되는 버튼</span></button>                    
+                    <button class="btn-solid form"><span>폼요소에 사용되는 버튼</span></button>
                     <button class="btn-solid form" disabled><span>폼요소에 사용되는 버튼(disabled)</span></button>
 
                     <hr>
@@ -139,7 +169,7 @@
                     <hr>
                     <!-- input + link-->
                     <a href="javascript:;" class="btn-line form" role="button"><span>폼요소에 사용되는 링크</span></a>
-                    <a href="javascript:;" class="btn-line form is-disabled" role="button"><span>폼요소에 사용되는 링크(disabled)</span></a>                    
+                    <a href="javascript:;" class="btn-line form is-disabled" role="button"><span>폼요소에 사용되는 링크(disabled)</span></a>
                 </dd>
                 <dd data-description=".btn-line.table : Table 안에 사용되는 라인버튼">
                     <!-- button in table-->
@@ -247,7 +277,7 @@
                     <span class="btn-switch"><input type="checkbox" id="toggleBtn3C"><label for="toggleBtn3C"><span>체크박스 옵션</span></label></span>
                     <hr>
                     <span class="btn-switch"><input type="checkbox" id="toggleBtn4C"><label for="toggleBtn4C"><span>체크박스 옵션</span></label></span>
-                </dd>                
+                </dd>
                 <dd data-description=".btn-switch : 토글버튼 + 텍스트 (라디오)">
                     <span class="btn-switch"><input type="radio" name="radioSwitch" id="toggleBtn1D" checked><label for="toggleBtn1D"><span>라디오 옵션</span></label></span>
                     <hr>
@@ -279,7 +309,7 @@
 
                         </code>
                     </pre>
-                </dt>                
+                </dt>
                 <dd data-description=".form-checkbox : 체크박스 (24px)">
                     <!-- Size 24px -->
                     <span class="form-checkbox"><input type="checkbox" id="checkboxSample11"><label for="checkboxSample11">Default</label></span>
@@ -401,18 +431,16 @@
                     <hr>
                     <p>
                         <b>SPRITE 로 구성</b><br><br>
-                        <i class="icon-bang_20_red"></i>
                         <i class="icon-bang_20_gray"></i>
                         <i class="icon-bang_24_bk"></i>
-                        <i class="icon-bank-account_20"></i>
                         <i class="icon-calendar_20"></i>
                         <i class="icon-data-clear_24"></i>
-                        <i class="icon-reset_20"></i>                    
+                        <i class="icon-reset_20"></i>
                         <i class="icon-plus_20"></i>
-                        <i class="icon-share"></i>                
-                        <i class="icon-search"></i>                
-                        <i class="icon-filter"></i>  
-                    </p>              
+                        <i class="icon-share"></i>
+                        <i class="icon-search"></i>
+                        <i class="icon-filter"></i>
+                    </p>
                 </dd>
             </dl>
 
@@ -703,12 +731,12 @@
                     <span class="prod-kind deposit-savings">예적금</span>
                     <span class="prod-kind deposit-savings">예금</span>
                     <span class="prod-kind deposit-savings">적금</span>
-                    <span class="prod-kind deposit-savings">청약</span>                    
+                    <span class="prod-kind deposit-savings">청약</span>
                     <span class="prod-kind deposit-withdrawal">입출금</span>
                     <span class="prod-kind deposit-withdrawal">페이</span>
                     <span class="prod-kind stock">주식</span>
                     <span class="prod-kind trust">신탁</span>
-                    <span class="prod-kind trust">ISA</span>                    
+                    <span class="prod-kind trust">ISA</span>
                     <span class="prod-kind fund">펀드</span>
                     <span class="prod-kind loan">대출</span>
                     <span class="prod-kind loan">신용대출</span>
@@ -727,7 +755,7 @@
                     <span class="prod-kind etc">기타</span>
 
 
-                    
+
                 </dd>
             </dl>
         </div>

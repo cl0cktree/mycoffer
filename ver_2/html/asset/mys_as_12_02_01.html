@@ -28,177 +28,140 @@
 		<!-- app-container //-->
 		<div class="app-container">
 
-			<!-- app-lnb //-->
-			<div class="app-lnb">
-				
-				
-			</div>
-			<!-- //app-lnb -->
-
 			<!-- app-content // -->
 			<main class="app-content mycar-content">
 
-				<!-- My Car 차고 최상단 메시지 // -->
-				<section class="kb-sec bg-white mycar-top-message">
-					
-					<div class="content-box shadow">
-						<strong class="name">김국민</strong> 님의 자동차 총 자산은 <span class="amount"><span class="num">859</span>만원</span>이에요.<br>
-						지난달보다 <span class="amount down"><span class="num">159</span>만원</span> 감소했습니다.
+				<section class="kb-sec mycar-tab">
+					<div class="tab_button">
+						<button class="is-active"><span>My Car 차고(1대)</span></button>
+						<button><span>Wish Car 차고(1대)</span></button>
 					</div>
-					
-				</section>
-				<!-- // My Car 차고 최상단 메시지 -->
-
-				<section class="kb-sec plain-note">
-					<p>My Car 차고에는 차량번호나 모델명을 직접입력한 자동차만 조회됩니다.</p>
+					<h2 class="is-hidden">My Car 차고</h2>
 				</section>
 
-				<!-- My Car 차량정보 // -->
+				<section class="kb-sec mycar-top-message">
+					<strong class="name">김국민</strong> 님의 자동차 총 자산은 <span class="amount"><span class="num">859</span>만원</span>입니다.<br>
+					지난달보다 <span class="amount down"><span class="num">159</span>만원</span> 감소했습니다.
+				</section>
+
+				<!-- 차량정보 // -->
 				<section class="kb-sec mycar-information">
-					<a class="link-modify" href="#">수정</a>
-					<div class="infobox">
-						<span class="model">쉐보레 말리브</span>
-						<span class="subtxt">2.0터보 LTZ(2016), 한국GM</span>
-						<span class="nickname">내차별명</span>
-						<span class="photo">
-							<img src="@@webRoot/static/images/_temp/car01.png" alt="한국GM 쉐보레 말리브">
-						</span>
-					</div>
-					<div class="infolist">
-						<dl class="description-list type2">
-							<dt>차량번호</dt>
-							<dd>63더 1234</dd>
-							<dt>주행거리</dt>
-							<dd><span class="num">50,000</span>Km</dd>
-						</dl>
+					<h2 class="is-hidden">My Car 차량정보</h2>
+					<div class="content-box">
+						<a class="link-modify" href="#">수정</a>
+						<div class="infobox">
+							<span class="nickname">내차별명</span>
+							<span class="model">쉐보레 말리브</span>
+							<span class="subtxt">2.0터보 LTZ(2016), 한국GM</span>
+							<span class="photo">
+								<img src="@@webRoot/static/images/_temp/car04.png" alt="한국GM 쉐보레 말리브">
+							</span>
+						</div>
+						<div class="infolist">
+							<dl class="description-list">
+								<dt>차량번호</dt>
+								<dd>63더 1234</dd>
+								<dt>주행거리</dt>
+								<dd><span class="num">50,000</span>Km</dd>
+							</dl>
+						</div>
 					</div>
 				</section>
-				<!-- // My Car 차량정보 -->
+				<!-- // 차량정보 -->
 
 				<!-- My Car 시세 // -->
 				<section class="kb-sec mycar-quotes">
-					<div class="summary">
-						<div class="title">My Car 시세</div>
-						
-						<div class="result">
-							<div class="amount"><span class="num">1,370</span>만원</div>
-							지난달보다 <span class="up"><span class="num">5</span>만원</span> 증가
-						</div>
-						
-					</div>
-					<!-- 차트 디자인 수정  // -->
+					<h2 class="title">My Car 시세 <small>(KB 차차차)</small></h2>
 					<!-- [Chart Area] // -->
 					<!--
 						[차트 디자인 정보]
 						Grid 라인 색상 : #ebeef0
-						꺽은선 색상 : #ffd338
+						꺽은선 색상 : #ffba53
 						꺽은선 Area 색상 : #f7f7f8
 						X축, Y축 레이블 텍스트 크기/색상 : 14px / #696e76
 						tooltip 텍스트 크기/색상 : 14px / #26282c
 					-->
-					<div class="chart-area">
-						<img class="temp" src="@@webRoot/static/images/_temp/chart_as1201.png" alt="차트 예시 이미지">
+					<div class="content-box">
+						<div class="chart-area">
+							<img class="temp" src="@@webRoot/static/images/_temp/chart_as1201.png" alt="차트 예시 이미지">
+						</div>
 					</div>
-					<!-- // [Chart Area] -->
-					<!-- // 차트 디자인  -->
-					<dl class="description-list type2">
-						<dt>시세정보</dt>
-						<dd>KB차차차</dd>
-						<dt>신차가격</dt>
-						<dd class="amount"><span class="num">1,370</span>만원</dd>
-						<dt>잔존가치</dt>
-						<dd class="amount"><span class="num">32.9</span>%</dd>
-					</dl>
-					<div class="btn-area bline">
-						<a href="#" class="btn-line"><span>비싸게 팔러 가기</span></a>
+					<div class="dlists">
+						<dl class="description-list type2">
+							<dt>시세금액</dt>
+							<dd class="amount"><span class="num">859</span>만원</dd>
+							<dt>지난달대비</dt>
+							<dd class="amount up"><span class="num">5</span>만원</dd>
+							<dt>출고가</dt>
+							<dd class="amount"><span class="num">2,500</span>만원</dd>
+							<dt>잔존가치</dt>
+							<dd class="amount"><span class="num">32</span>%</dd>
+						</dl>
+					</div>
+					<div class="kbchachacha-banner">
+						<a href="https://m.kbchachacha.com/public/web/sellme/submain.kbc">
+							<strong>KB차차차</strong>
+							<span>KB캐피탈이 만든 중고차 국민시세</span>
+						</a>
 					</div>
 				</section>
 				<!-- // My Car 시세 -->
 
 				<!-- My Car 유지비 관리 // -->
 				<section class="kb-sec mycar-maintain">
-					<div class="summary">
-						<div class="title">유지비 관리<span>(2월)</span></div><!-- 수정 2021-06-16 -->
-						
-						<div class="result">
-							<div class="amount"><span class="num">370</span>만원</div>
-							지난달보다 <span class="up"><span class="num">5</span>만원</span> 증가
-						</div>
-						
+					<h2 class="title">유지비 관리 <small>2월 기준</small></h2>
+					<div class="dlists">
+						<dl class="description-list type2">
+							<dt>유지비금액</dt>
+							<dd class="amount expense"><span class="num">370,000</span>원</dd>
+							<dt>지난달대비</dt>
+							<dd class="amount up"><span class="num">70,000</span>원</dd>
+							<dt>주유비</dt>
+							<dd class="amount"><span class="num">300,000</span>원</dd>
+							<dt>기타</dt>
+							<dd class="amount"><span class="num">70,000</span>원</dd>
+						</dl>
 					</div>
-					<dl class="description-list type2">
-						<dt>주유비</dt>
-						<dd class="amount"><span class="num">300,000</span>원</dd>
-						<dt>기타</dt>
-						<dd class="amount"><span class="num">70,000</span>원</dd>
-					</dl>
-					<div class="btn-area">
-						<a href="#" class="btn-line"><span>유지비 자세히 보기</span></a>
+					<div class="link-area">
+						<a href="#" class="link-arrow-after">유지비 자세히보기</a>
 					</div>
 				</section>
 				<!-- // My Car 유지비 관리 -->
 
 				<!-- My Car 대출 관리 // -->
 				<section class="kb-sec mycar-loan">
-					<div class="summary">
-						<div class="title">대출 관리</div>
+					<h2 class="title">대출 관리</h2>
+					<div class="dlists">
+						<dl class="description-list type2">
+							<dt>상품명</dt>
+							<dd>국민은행 신용대출</dd>
+							<dt>신규일</dt>
+							<dd class="date">2020.10.23</dd>
+							<dt>만기일</dt>
+							<dd class="date">2023.09.23</dd>
+							<dt>금리</dt>
+							<dd class="num">연 2.3%</dd>
+							<dt>대출잔액</dt>
+							<dd class="amount"><span class="num">1,700,000</span>원</dd>
+						</dl>
+						<dl class="description-list type2">
+							<dt>상품명</dt>
+							<dd>애니카자동차 대출</dd>
+							<dt>신규일</dt>
+							<dd class="date">2020.10.23</dd>
+							<dt>만기일</dt>
+							<dd class="date">2023.09.23</dd>
+							<dt>금리</dt>
+							<dd class="num">연 2.5%</dd>
+							<dt>대출잔액</dt>
+							<dd class="amount"><span class="num">700,000</span>원</dd>
+						</dl>
 					</div>
-					<dl class="description-list type2">
-						<dt>상품명</dt>
-						<dd>국민은행 신용대출</dd>
-						<dt>신규일</dt>
-						<dd class="date">2020.10.23</dd>
-						<dt>만기일</dt>
-						<dd class="date">2023.09.23</dd>
-						<dt>금리</dt>
-						<dd class="num">연 2.3%</dd>
-						<dt>대출잔액</dt>
-						<dd class="amount"><span class="num">1,700,000</span>원</dd>
-					</dl>
-					<dl class="description-list type2">
-						<dt>상품명</dt>
-						<dd>애니카자동차 대출</dd>
-						<dt>신규일</dt>
-						<dd class="date">2020.10.23</dd>
-						<dt>만기일</dt>
-						<dd class="date">2023.09.23</dd>
-						<dt>금리</dt>
-						<dd class="num">연 2.5%</dd>
-						<dt>대출잔액</dt>
-						<dd class="amount"><span class="num">700,000</span>원</dd>
-					</dl>
-					<div class="btn-area">
-						<a href="#" class="btn-line"><span>대출이 부담되시나요?</span></a>
+					<div class="link-area">
+						<a href="#" class="link-arrow-after">대출이 부담되시나요?</a>
 					</div>
 				</section>
 				<!-- // My Car 대출 관리 -->
-
-				<!-- My Car 보험 관리 // -->
-				<section class="kb-sec mycar-insurance">
-					<div class="summary">
-						<div class="title">보험 관리</div>
-					</div>
-					<dl class="description-list type2">
-						<dt>상품명</dt>
-						<dd>현대해상 자동차보험<span class="status normal">정상</span></dd><!-- 수정 2021-06-01 -->
-						<dt>신규일</dt>
-						<dd class="date">2020.10.23</dd>
-						<dt>만기일</dt>
-						<dd class="date"><span class="dday">(30일 남음)</span>2023.09.23</dd>
-					</dl>
-					<dl class="description-list type2">
-						<dt>상품명</dt>
-						<dd>애니카 운전자보험<span class="status effective">실효</span></dd><!-- 수정 2021-06-01 -->
-						<dt>신규일</dt>
-						<dd class="date">2020.10.23</dd>
-						<dt>만기일</dt>
-						<dd class="date"><span class="dday">(30일 남음)</span>2023.09.23</dd>
-					</dl>
-					<div class="btn-area">
-						<a href="#" class="btn-line"><span>다음 보험료 확인하러 가기</span></a>
-					</div>
-				</section>
-				<!-- // My Car 보험 관리 -->
 
 				<!-- My Car 등록하기 버튼 // -->
 				<section class="kb-sec mycar-buttons">
@@ -228,20 +191,7 @@
 	<!-- Add Script -->
 	<script>
 		// 자동차 - My Car 차고 GNB
-		gfn_gnb.select(5,0);
-
-		// 자동차 하위 메뉴 텍스트 전환 : 추가 2021-06-24
-		$(window).on('load', function() {
-			// My Car 차고 대 수
-			appendText($(".app-sub-wrap li:eq(0) a"), " (1대)");
-			// Wish Car 차고 대 수
-			appendText($(".app-sub-wrap li:eq(1) a"), " (2대)");
-
-			function appendText(elem, txt) {
-				var t = elem.text();
-				elem.text(t + txt);
-			}
-		});
+		gfn_gnb.select(5);
 	</script>
 
 </body>

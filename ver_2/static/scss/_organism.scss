@@ -5,7 +5,13 @@
 .account-info li .num{@include number(15px)}
 .account-info li > div{text-align:right;}
 
-
+.search-month{display:flex;justify-content:center;}
+.search-month strong.num{margin:0 0.9rem;font-weight:bold;font-size:1.9rem;line-height:24px;}
+.search-month > button{@include ir;width:24px;height:24px;background-image:url(../images/common/common.png);background-size:160px;background-repeat:no-repeat;}
+.search-month .btn-prev{background-position:0 -45px;}
+.search-month .btn-prev.is-disabled{background-position:0 -69px;}
+.search-month .btn-next{background-position:-24px -45px;}
+.search-month .btn-next.is-disabled{background-position:-24px -69px;}
 
 //Datepicker
 .calendar-nav{position:relative;display:flex;justify-content:center;align-items:center;margin-left:(-2.4rem);margin-right:(-2.4rem);padding:17px 40px;background-color:$kb-ui10;}
@@ -54,7 +60,7 @@
 .calendar-area .ui-widget-content .ui-datepicker-today .ui-state-highlight{position:relative;}
 .calendar-area .ui-widget-content .ui-datepicker-today .ui-state-highlight:after{content:'';position:absolute;top:0;left:calc(50% - 2px);width:4px;height:4px;border-radius:50%;background-color:$color-yellow}
 
-.pdf-viewer{overflow:auto;display:flex;flex-flow:column;height:calc(var(--vh, 1vh) * 100 - 48px);padding:0;background-color:red;}
+.pdf-viewer{overflow:auto;display:flex;flex-flow:column;height:calc(var(--vh, 1vh) * 100 - 48px);padding:0;background-color:$kb-ui08;}
 .pdf-viewer .pdf-area{flex:1;}
 .pdf-viewer .sticky-bottom.sticky-bottom:not(.popup_buttons){padding-top:0;height:52px;}
 .ios.homebar .pdf-viewer > section + .sticky-bottom.sticky-bottom:not(.popup_buttons){height:86px;}

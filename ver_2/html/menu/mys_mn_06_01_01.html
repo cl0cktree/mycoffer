@@ -10,7 +10,7 @@
 
 <body>
     @@include('@@webRoot/html/_include/app-a11y.html')
-    <div class="app"><!-- 수정 2021.06.25 : Liiv, Starbanking  앱 안에서  동작할 경우 data-page="submain" -->
+    <div class="app">
         
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
             'pageTit':'마이데이터 선물함',
@@ -22,9 +22,9 @@
             <div class="app-lnb">
                 <div class="tab swiper-container">
                     <ul class="swiper-wrapper">
-                        <li class="swiper-slide is-active"><a href="javscript:;">선물</a></li><!-- 수정 : 2021.06.25 -->
-                        <li class="swiper-slide"><a href="javscript:;">실시간 이벤트</a></li><!-- 수정 : 2021.06.25 -->
-                        <li class="swiper-slide"><a href="javscript:;">친구추천</a></li><!-- 수정 : 2021.06.25 -->
+                        <li class="swiper-slide is-active"><a href="javscript:;">선물</a></li>
+                        <li class="swiper-slide"><a href="javscript:;">실시간 이벤트</a></li>
+                        <li class="swiper-slide"><a href="javscript:;">친구추천</a></li>
                     </ul>
                 </div>
             </div>
@@ -38,7 +38,6 @@
                     </div>                  
                 </section>
 
-                <!-- 수정 2021-08-18 // -->
                 <section class="kb-sec">
                     <h2 class="is-hidden">쿠폰 리스트</h2>
 
@@ -55,7 +54,7 @@
                     </div>
                     
                     <ul class="coupon-list">
-                        <li class="">
+                        <li class=""><!-- 사용완료일 경우 .ix-expired 추가 --> 
                             <a href="javascript:;">
                                 <div class="coupon-info">
                                     <strong class="tit">네이버페이 3천원 쿠폰</strong>
@@ -83,7 +82,7 @@
                                 <button type="button" class="btn-text"><u>삭제</u></button>
                             </div>
                         </li>
-                        <li class="is-expired">
+                        <li class="is-expired"><!-- 사용완료일 경우 .ix-expired 추가 --> 
                             <a href="javascript:;">
                                 <div class="coupon-info">
                                     <strong class="tit">네이버페이 3천원 쿠폰</strong>
@@ -110,7 +109,6 @@
                     <!-- // 보유 쿠폰이 없을 때 -->
 
                 </section>
-                <!-- // 수정 2021-08-18 -->
 
             </main>
             <!-- // app-content -->
@@ -129,7 +127,6 @@
                 <section class="kb-sec tab_contents">
                     <ul class="select-list">
                         <li class="is-active"><button type="button"><strong class="tit">전체</strong><i class="icon-20"></i></button></li>
-                        <!-- <li><button type="button"><strong class="tit">추천순</strong><i class="icon-20"></i></button></li> --><!-- 수정 2021-08-18 -->
                         <li><button type="button"><strong class="tit">최신순</strong><i class="icon-20"></i></button></li>
                         <li><button type="button"><strong class="tit">마감일순</strong><i class="icon-20"></i></button></li>
                     </ul>
@@ -146,9 +143,6 @@
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
-    <script>        
-        gfn_gnb.select(10,0); //수정 2021.06.25 : liiv, starbanking  용
-    </script>
 
 </body>
 

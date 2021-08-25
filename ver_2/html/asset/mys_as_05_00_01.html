@@ -636,10 +636,27 @@
                     $(this).find('em>span').text('목록닫기');
                 }
             })
+
+            $('button[data-action="moveKBStarBanking"]').on('click',function(){
+                modalPopup({
+                    title: "",
+                    message: "KB스타뱅킹으로 이동하시겠습니까?",
+                    type: "confirm",
+                    textOkButton: "확인",
+                    textCancelButton: "취소",
+                    onOk: function() {
+                        
+                    },
+                    onCancel: function() {
+                        
+                    }
+                });
+            }); 
+            
             
         })
         
-        //최초 선택되는 내용을 바꾸고 싶으면... (ui.js)
+        //GNB 활성화 (번호:menu.js)
         gfn_gnb.select(1,1);
     </script>
 </body>

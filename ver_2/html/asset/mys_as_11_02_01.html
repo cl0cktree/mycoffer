@@ -9,7 +9,7 @@
 
 <body>
 	@@include('@@webRoot/html/_include/app-a11y.html')
-	<div class="app">
+	<div class="app" data-page="submain">
 		<!-- app-header //-->
 		@@include('@@webRoot/html/_include/app-integrated-header.html', {
 			'pageTit': '부동산 관리',
@@ -199,8 +199,8 @@
 	<script src="@@webRoot/static/js/ui.js"></script>
 	<!-- Add Script -->
 	<script>
-		//최초 선택되는 내용을 바꾸고 싶으면... (ui.js)
-        gfn_gnb.select(4,0);
+		//GNB 활성화 (번호:menu.js)
+        gfn_gnb.select(4);
 		
 		$('button[data-action=btnAddHouse]').on('click',function(){
             modalPopup({

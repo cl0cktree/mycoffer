@@ -187,6 +187,8 @@
 .goals-challenge .goals-desc .card-tit{@include text($size:$text01,$weight:normal);margin-bottom:3.2rem;}
 .goals-challenge .flex-box .btn-text span{@include text($size:$text03);color:$kb-ui05;}
 .goals-challenge .chart-area.t01{margin-top:-23px;}
+.goals-challenge .goals-now{font-size:$text03;margin-top:1.6rem;}
+.goals-challenge .goals-now strong{display:block;}
 //목표 요약
 .goals-summary{padding-bottom:5px;}
 .goals-summary .summary-piggymoeny{@include flexBetween;padding:25px 20px;background:#6349a5;color:#fff;border-radius:.8rem;margin-top:1.2rem;}
@@ -199,6 +201,7 @@
 .goals-summary .summary-challenge{@include text($size:$text02);}
 .goals-summary .summary-challenge .flex-box{justify-content:space-between;margin-top:1rem;}
 .goals-summary .summary-challenge .flex-box .h2{@include text($size: $text01, $weight:normal);}
+.goals-summary .summary-challenge .flex-box .h2.type2{font-size:2rem;line-height:1.4;}
 .goals-summary .summary-challenge .flex-box .h2 strong{font-weight:bold;}
 .goals-summary .summary-challenge .flex-box .h3{@include text($size: $text02, $weight:normal);}
 .goals-summary .summary-challenge .flex-box .h3 strong{font-weight:bold;}
@@ -212,9 +215,9 @@
 .challenge-box .content-box{width:100%;padding:24px 20px;border:1px solid $kb-ui08;margin:auto;}
 .challenge-box .content-box.swiper-slide{margin-left:0;margin-right:0;}
 .challenge-box .challenge-tit{@include flexBetween;position:relative;} 
-.challenge-box .challenge-tit i{margin-right:10px;}
 .challenge-box .d-day-patch{position:absolute;display:block;top:-2px;right:0;padding:9px 10px;background:$color-yellow;@include text($size:15px);line-height:1;border-radius:2px;font-family:'Roboto'}
 .challenge-box .challenge-info{padding-top:3.2rem;@include text($size:$text02);}
+.challenge-box .challenge-info.type2{padding-top:1.6rem;}
 .challenge-box .challenge-info .tit .tit-area{position:relative;}
 .challenge-box .challenge-info .tit .tit-area .hash{@include text($size:$text03);}
 .challenge-box .challenge-info .tit .tit-area .hash span{display:inline-block;}
@@ -227,10 +230,10 @@
 .challenge-box .challenge-info .graph{margin-bottom:10px;}
 .challenge-box .challenge-info .graph img{width:100%;}
 .challenge-box .challenge-info .total{margin-top:10px;@include text($size:$text03);}
-.challenge-box .challenge-info .content{margin-top:15px;}
+.challenge-box .challenge-info .content{margin-top:1.6rem;}
 .challenge-box .challenge-info .content .goal-txt{@include text($size:$text03);}
 .challenge-box .challenge-info .img-character{display:inline-block;width:83px;height:83px;vertical-align:top;}
-.challenge-box .challenge-info .txt{position:relative;display:inline-block;width:calc(100% - 98px);height:auto;margin-left:10px;padding:16px 16px 16px 14px;font-size:14px;color:$kb-ui04;background-color:$kb-ui10;}
+.challenge-box .challenge-info .txt{position:relative;display:inline-block;width:calc(100% - 98px);height:auto;margin-left:10px;padding:1.6rem 2rem;font-size:14px;color:$kb-ui04;background-color:$kb-ui10;}
 .challenge-box .challenge-info .txt::before{position:absolute;top:50%;left:-5px;content:'';display:block;width:0;height:0;margin-top:-3px;border-top:5px solid transparent;border-bottom:5px solid transparent;border-right:5px solid $kb-ui10;}
 .challenge-box .challenge-info .goals-desc > span > i{margin-right:4px;}
 .challenge-box .challenge-info .info-desc{@include text($weight:normal);}
@@ -276,7 +279,7 @@
 .btn-compare{width:40px;height:40px;position:absolute;top:18px;right:24px;z-index:1;}
 .btn-compare.type2{position:relative;top:0;right:0;}
 //목표 챌린지 추천
-.goals-recommend-challenge{padding-top:24px;}
+.goals-recommend-challenge{padding-top:4rem;}
 .goals-recommend-challenge + .goals-state{padding-top:32px;}
 //목표 달성 상태
 .goals-state .tit{padding-top:8px;}
@@ -346,10 +349,10 @@
 .goals-others > .content-box{margin:20px -8px 30px;}
 .goals-others .tab.depth2, .goals-recom .tab.depth2{padding-top:24px;padding-bottom:25px;border-bottom:1px solid #dde1e4;}
 
-.goals-noti.kb-sec.bg-gray{background:$kb-ui10;padding-bottom:31px;}
-.goals-noti h2{@include text($size:20px,$weight:bold);}
-.goals-noti h3{@include text($size:$text02,$weight:bold);margin-top:13px;}
-.goals-noti h3 + ul{margin-top:20px;}
+.goals-noti h2{@include text($size:2.4rem,$weight:bold);}
+.goals-noti h3{@include text($size:$text02,$weight:bold);margin-top:1.6rem;}
+.goals-noti h3 + ul{margin-top:2rem;}
+.goals-noti h3 + ul li{color:$kb-ui02;}
 
 .goals-use-best{margin-top:34px;margin-bottom:196px;}
 
@@ -521,7 +524,7 @@ section.gray-line + section{border-top:1rem solid $kb-ui10;}
 .character-graph[data-theme=coin] .graph-area > span i{background-image:url(../images/goal/progress_coin.png);width:36px;height:29px;}
 
 // 비교
-.character-graph.type2{padding-top:64px;}
+.character-graph.type2{padding-top:4.8rem;}
 .character-graph.type2 .graph-area{background:none;}
 .character-graph.type2 .graph-area > span{height:24px;border-radius:0 12px 12px 0;background-color:$color-yellow;}
 .character-graph.type2 .graph-area.sub > span{background-color:#e0e4e6;border:1px solid #e0e4e6;}

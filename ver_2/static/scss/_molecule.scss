@@ -7,9 +7,8 @@
 .btn-area button:first-child{border-top-left-radius: 2px; border-bottom-left-radius: 2px;}
 .btn-area a:last-child,
 .btn-area button:last-child{border-top-right-radius: 2px; border-bottom-right-radius: 2px;}
-.btn-area .lv2{flex:0 0 40%;}
 .btn-area .gray{flex:0 0 40%;}
-.btn-area.equal .lv2{flex:0 0 50%;}
+.btn-area.equal .gray{flex:0 0 50%;}
 .btn-area.center{align-items:center;text-align:center;}
 .btn-area.right{align-items:right;text-align:right;}
 .btn-area a[class*=btn-line]:not(:first-child),
@@ -271,16 +270,17 @@ ul.radio-group > li + li{margin-top:20px;}
 // .datepicker.is-active .form-text:after{content:none;}
 
 .datepicker .form-text .btn-datepicker{flex:0 0 20px;margin-left:4px;margin-right: 16px;}
-.datepicker .form-text input[inputmode=numeric] {padding-left: 14px; font-size: 17px; text-align: left;}
+.datepicker .form-text input[inputmode=numeric] {font-size: 17px; text-align: left;}
 .datepicker .form-text input[inputmode=numeric]::placeholder {font-size: 17px;}
 .timepicker .form-text .btn-timepicker{flex:0 0 20px;margin-left:4px;margin-right: 16px;}
-.timepicker .form-text input[inputmode=numeric] {padding-left: 14px; font-size: 17px; text-align: left;}
+.timepicker .form-text input[inputmode=numeric] {font-size: 17px; text-align: left;}
 .timepicker .form-text input[inputmode=numeric]::placeholder {font-size: 17px;}
 
 .date-time-picker .kb-form + .kb-form{margin-top:8px;}
 .date-time-picker .kb-form_inner{border:1px solid $kb-ui09;border-radius:2px;}
 .date-time-picker[data-status=error] .kb-form_inner,
 .date-time-picker [data-status=error] .kb-form_inner{border-bottom-width:2px;}
+.date-time-picker .kb-form input[type=text]{padding-left:16px;}
 
 //셀렉트 역할 ul
 .select-lists{display:flex;overflow:hidden;}
@@ -550,8 +550,10 @@ ul.radio-group > li + li{margin-top:20px;}
 .credit-list-amount .amount{line-height:1.8}
 .credit-list-amount .amount .num{font-size:1.9rem}
 .credit-list-amount .amount span{font-size:1.9rem;font-weight:bold}
-.credit-list-amount .income .num{color:$color-blue}
-.credit-list-amount .expense .num{color:$color-red}
+.credit-list-amount .income .num,
+.credit-list-amount .num.income{color:$color-blue}
+.credit-list-amount .expense .num,
+.credit-list-amount .num.expense{color:$color-red}
 .credit-list-amount .transfer .num{color:$kb-ui03}
 .credit-list > dt{position:relative;display:block;padding-top:2.4rem;border-bottom:0}
 .credit-list > dt.form-checkbox{margin-top:2.4rem;padding-top:0}
@@ -572,7 +574,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .credit-list dt .tit{font-weight:bold;color:$kb-ui02}
 .credit-list dt .date{font-family:'Roboto';font-size:14px;color:$kb-ui05}
 .credit-list dt .daycount{font-weight:bold}
-.credit-list dt .tag{margin-top:1rem;font-size:1.3rem;color:$kb-ui05}
+.credit-list dt .tag{margin-top:1.2rem;font-size:1.3rem;color:$kb-ui05}
 .credit-list dt .tag[data-state="warning"]{color:$color-red}
 .credit-list dt .tag[data-state="safety"]{color:$color-blue}
 .credit-list dt .tag em{color:$kb-ui05}
@@ -719,7 +721,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .content-box .info-amount dd strong + span{color:$kb-ui03}
 
 .total-summary{font-size:16px;line-height:24px}
-.total-summary .info{text-align:right;color:$kb-ui05}
+.total-summary .info{text-align:right;color:$kb-ui05;font-weight:normal}
 .total-summary .emphasis{font-weight:bold}
 .total-summary .color_red{color:$color-red}
 .total-summary .color_blue{color:$color-blue}
@@ -773,14 +775,15 @@ ul.radio-group > li + li{margin-top:20px;}
 .rank-list dt,
 .rank-list li{position:relative;padding-left:46px}
 .rank-list dt::before,
-.rank-list li::before{position:absolute;top:20px;left:0;counter-increment:ranking;content:counter(ranking);display:inline-block;width:3.2rem;height:3.2rem;line-height:3.2rem;border-radius:0.2rem;font-size:1.4rem;font-family:'Roboto';text-align:center;background-color:$kb-ui07}
+.rank-list li::before{position:absolute;top:20px;left:0;counter-increment:ranking;content:counter(ranking);display:inline-block;width:3.2rem;height:3.2rem;line-height:3.2rem;border-radius:0.2rem;font-size:1.4rem;font-family:'Roboto';text-align:center;background-color:$kb-ui07;color:$kb-ui04}
 .rank-list dt.rank::before,
-.rank-list li.rank::before{background-color:$color-yellow}
+.rank-list li.rank::before{color:$kb-ui02;background-color:$color-yellow}
 .rank-list dt strong,
 .rank-list li strong{font-size:1.6rem;font-weight:bold}
 .rank-list dt span,
 .rank-list li span{display:block;margin-top:12px;font-size:14px}
-.rank-list dd{font-size:14px;color:$color-red;text-align:right}
+.rank-list dt span{color:$kb-ui04}
+.rank-list dd{display:flex;align-items:flex-end;height:100%;font-size:14px;color:$color-red;text-align:right}
 .rank-list dd::after{content:'';display:inline-block;width:0px;height:0px;margin-left:7px;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:11px solid $color-red;}
 .rank-list .num{font-size:15px}
 .rank-list.t01{display:block}
@@ -789,7 +792,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .rank-list.t01 .tags{color:$kb-ui04}
 .rank-list.t01 .tags span{display:inline-block;margin-right:1.2rem;color:$kb-ui04}
 
-.kb-card{padding:18px 20px 16px;border-radius: 8px;box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.07);border: solid 1px $kb-ui08;}
+.kb-card{padding:18px 20px 20px;border-radius: 8px;box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.07);border: solid 1px $kb-ui08;}
 
 .badge + .account-card{margin-top:10px;}
 .account-card > .name,
@@ -837,3 +840,26 @@ ul + .btn-more-events{padding:15px 0;text-align:center;}
 .app-pagination .page-number .current{color:$kb-ui02;font-weight:bold;}
 .app-pagination .page-number .total{margin-left:5px;color:$kb-ui05;}
 .app-pagination .page-number .total:before{content:'/';display:inline-block;margin-right:5px;}
+
+//이력정보
+.history-info .date{font-family:'Roboto';font-size: 17px;font-weight:bold;color:$kb-ui02;}
+.history-info .timeline{margin-top:20px;}
+.history-info > li + li{padding-top:20px;}
+.history-info + .btn-text{justify-content:center;width:100%;margin-top:22px;padding-top:10px;padding-bottom:10px;}
+
+//타임라인
+.timeline{position:relative;margin-right:-24px;}
+.timeline > li{margin-left:17px;padding-right:24px;padding-bottom:17px;border-bottom:1px solid $kb-ui09;}
+.timeline > li + li{margin-top:3px;padding-top:20px;}
+.timeline .time{font-family:'Roboto';font-size: 15px;color:$kb-ui03;}
+.timeline .time:after{content:'';position:absolute;left:0;width:11px;height:11px;border-radius:50%;border:3px solid $kb-ui07;background-color:$kb-ui11;transform:translateY(2px)}
+.timeline .time + .doing{margin-top:20px;}
+.timeline .doing dt{font-weight:bold;}
+.timeline .doing dd{display:flex;justify-content:space-between;align-items:center;margin-top:14px;}
+.timeline .doing .destination{color:$kb-ui04;}
+.timeline > li:first-child:not(:last-child) .time:before,
+.timeline > li:last-child:not(:first-child) .time:before{content:'';position:absolute;left:5px;}
+.timeline > li:first-child:not(:last-child) .time:before{top:10px;bottom:20px;width:1px;border-left:1px dashed $kb-ui09}
+.timeline > li:last-child:not(:first-child){position:relative;}
+.timeline > li:last-child:not(:first-child) .time:after{left:-17px;}
+.timeline > li:last-child:not(:first-child) .time:before{left:-14px;top:34px;bottom:0;width:4px;background-color:$kb-ui11;}

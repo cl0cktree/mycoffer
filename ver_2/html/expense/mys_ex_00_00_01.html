@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko" data-channel="ch_star">
+<!-- [MYS_EX_00_00_01] 지출 > 제3자정보제공동의변경현황 (작성자 : 누리어 김삼희) -->
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "개인(신용)정보 제3자 제공 현황 | 지출"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header //-->
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'KB카드',
+            'type':''
+        })
+        <!-- // app-header -->
+
+        <!-- app-container //-->
+        <div class="app-container">
+            <!-- app-content // -->
+            <main class="app-content">
+                <!-- 컨텐츠 영역 -->
+                <section class="kb-sec">
+                    <div class="agree-group">
+                        <strong class="h4">[KB카드](선택) 개인(신용)정보 제3자 정보 제공 동의 현황</strong>
+                        <ul>
+                            <li><span class="form-radio"><input type="radio" name="agreeSelect" id="agreeChkTrue" checked><label for="agreeChkTrue">동의</label></span></li>
+                            <li><span class="form-radio"><input type="radio" name="agreeSelect" id="agreeChkFalse"><label for="agreeChkFalse">동의하지 않음</label></span></li>
+                        </ul>
+                    </div>
+                    <div class="agree-group">
+                        <strong class="h4">동의사항 변경하기</strong>
+                        <a href="mys_ex_00_00_01_p01.html" class="link-box_block link-arrow-after">
+                            [KB국민카드 정보제공용] 개인(신용)정보<br>제3자 제공 동의서(지출관리서비스)
+                        </a>
+                        <p class="simple-message">마이자산관리 > 지출 서비스에서 더 자세한 지출내역을 확인하시려면, [KB국민카드 정보제공용] 개인(신용)정보 제3자 제공동의서에 동의해주세요. </p>
+                    </div>
+                </section>
+                <!-- SECTION //-->
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button class="btn-solid" type="button" data-call-modal="noticeAgreeToProvide_false"><span>변경</span></button>
+                    </div>
+                </div>
+            </main>
+            <!-- // app-content -->
+        </div>
+        <!-- // app-container -->
+        <div class="layered">
+            <!-- Modal // -->
+            <div class="modal" id="noticeAgreeToProvide_false">
+                <div class="modal_contents">
+                    <p>(KB국민은행) 2021년 4월 7일 [KB카드]개인(신용)정보 제3자 정보제공에 동의를 철회했습니다.</p>
+                </div>
+                <div class="modal_buttons btn-area">
+                    <a href="MYS_EX_00_00_00.html" role="button" class="btn-solid ok"><span>확인</span></a>
+                </div>
+            </div>
+            <!-- // Modal -->
+        </div>
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    
+</body>
+
+</html>

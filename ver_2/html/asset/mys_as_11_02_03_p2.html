@@ -30,15 +30,9 @@
 				</section>
 				<section class="kb-sec planer">
 					<div class="progress-wrap">
-						<!-- 자산 + 준비자산 + wish gap + 대출 : 100% -->
+						<span class="wish-gap"></span>	<!-- left : 0 고정, width : 100% 고정 ( 자산 초과시 스크립트 제어) -->
 						<span class="my-house"></span><!-- width : 자산비율 백분율표시 (스크립트 제어) -->
-						<span class="my-cash" style="left:20%;"></span><!-- left : 자산 , width : 준비자산비율 백분율표시 (스크립트 제어) -->				
-						<span class="wish-gap" style="left:50%;"></span>				
-						<!-- left : wish-gap left: 자산 + 준비자산, width : 백분율 (스크립트 제어) -->
-						<span class="my-loan" style="left:70%;"></span>
-						<!-- left : wish-gap left: 자산 + 준비자산 + wish gap, width : 대출 백분율  (스크립트 제어)-->				
-						<!-- width 값은 하단에 제이쿼리 소스에 넣어주세요. -->
-
+						<span class="my-cash" style="left:20%;"></span><!-- left : 자산 , width : 준비자산비율 백분율표시 (스크립트 제어) -->
 					</div>
 					<div class="wish-house-price">
 						<h2 class="tit">Wish House KB시세</h2>
@@ -50,14 +44,26 @@
 								<p class="txt">My House 자산</p>
 								<p class="amount"><span class="num">5</span>억 <span class="num">9</span>천만원</p>
 							</li>
+							<li class="save yellow">
+								<p class="txt">남는 금액</p>
+								<p class="amount"><span class="num">5</span>억 <span class="num">6</span>천만원</p>
+							</li>
 							<li class="cash">
 								<p class="txt">Wish House 준비자산</p>
 								<p class="amount"><span class="num">5</span>억 <span class="num">6</span>천만원</p>
 							</li>
-							<li class="loan">
+							<li class="save">
+								<p class="txt">남는 금액</p>
+								<p class="amount"><span class="num">5</span>억 <span class="num">6</span>천만원</p>
+							</li>
+							<li class="minus type2">
+								<p class="txt">부족한 금액</p>
+								<p class="amount"><span class="num">5</span>억 <span class="num">2</span>천만원</p>
+							</li>
+							<!-- <li class="loan">
 								<p class="txt">My House 대출</p>
 								<p class="amount"><span class="num">2</span>억 <span class="num">4</span>천만원</p>
-							</li>
+							</li> -->
 						</ul>
 					</div>
 					<!-- <div class="smart-loan-banner">
@@ -82,7 +88,7 @@
 						<button type="button" data-call-layered="mys_as_11_00_00_p3">
 							<span class="loan-tit">KB Star 전월세보증금대출</span>
 							<span class="loan-desc">전월세 고민 빠르게 해결</span>
-							<span class="loan-amount">최대 <strong class="c-blue"><span class="num">2</span>억 <span class="num">2</span>천 <span class="num">2</span>백만원</strong></span>
+							<span class="loan-amount">최대 <strong class="c-blue"><span class="num">2</span>억 <span class="num">2</span>천<span class="num">2</span>백만원</strong></span>
 						</button>
 					</div>
 					<p class="simple-message">세금 및 부대비용(중개보수, 취득세)이 발생할 수 있습니다.</p>
@@ -91,22 +97,22 @@
 				<div class="sticky-bottom">
 					<!-- 자금필요 // -->
 					<div class="btn-area">
-						<!-- <button type="button" class="btn-solid gray" data-action="close"><span>준비자산 수정하기</span></button> -->
+						<!-- <button type="button" class="btn-solid gray" data-action="close"><span>준비자산 수정</span></button> -->
 						<button type="button" class="btn-solid" data-action="close"><span>준비자산 수정</span></button>
 					</div>
 					<!-- // 자금필요 -->
 					<!-- 부동산준비자산 등록후 자산초과 // -->
 					<!--
 					<div class="btn-area">
-						<button type="button" class="btn-solid gray" data-action="close"><span>준비자산 수정하기</span></button>
-						<button type="button" class="btn-solid" data-action="goLiiv"><span>리브부동산에서 매물보기</span></button>
+						<button type="button" class="btn-solid gray" data-action="close"><span>준비자산 수정</span></button>
+						<button type="button" class="btn-solid" data-action="goLiiv"><span>리브부동산에서 매물 확인</span></button>
 					</div>
 					-->
 					<!-- // 부동산준비자산 등록후 자산초과 -->
 					<!-- 부동산준비자산 등록전 자산초과 // -->
 					<!--
 					<div class="btn-area">
-						<button type="button" class="btn-solid" data-action="goLiiv"><span>리브부동산에서 매물보기</span></button>
+						<button type="button" class="btn-solid" data-action="goLiiv"><span>리브부동산에서 매물 확인</span></button>
 					</div>
 					-->
 					<!-- // 부동산준비자산 등록전 자산초과 -->
@@ -162,42 +168,41 @@
                 }
             });
         });
-
-		//최초 선택되는 내용을 바꾸고 싶으면... (ui.js)
-        gfn_gnb.select(4,1);
 		
 		
 		//start
 		var transitionEnd = 'transitionend webkitTransitionEnd oTransitionEnd transitionend';
 
-		$('.my-asset.wish-house-planer .progress-wrap .my-house').css({
-                "width":"20%", //my house 자산
+		$('.my-asset.wish-house-planer .progress-wrap .wish-gap').css({
+                "width":"100%", //wish-gap
+                //"width":"80%", //wish-gap 자산 초과시
+
             });
-
-		$('.my-house').one(transitionEnd, function(){
-			$(this).addClass('is-active');
-			$(this).next().css({
-				"width":"30%",  // wish house 준비자산
-			})
-        });
-
-		$('.my-cash').one(transitionEnd, function(){
-			$(this).addClass('is-active');
-			$(this).next().css({
-				"width":"20%", // wish gap
-			})
-		});
 
 		$('.wish-gap').one(transitionEnd, function(){
 			$(this).addClass('is-active');
 			$(this).next().css({
-				"width":"30%", // my house 대출
+				"width":"20%",  // wish house 준비자산
+			})
+        });
+
+		$('.my-house').one(transitionEnd, function(){
+			$(this).addClass('is-active');
+			$(this).next().css({
+				"width":"30%", // wish gap
 			})
 		});
 
-		$('.my-loan').one(transitionEnd, function(){
-			$(this).addClass('is-active'); 
+		$('.my-cash').one(transitionEnd, function(){
+			$(this).addClass('is-active');
+			// $(this).next().css({
+			// 	"width":"30%", // my house 대출
+			// })
 		});
+
+		//$('.my-loan').one(transitionEnd, function(){
+			//$(this).addClass('is-active'); 
+		//});
 		//end
 		
 		

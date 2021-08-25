@@ -28,79 +28,67 @@
 
 		<!-- app-container //-->
 		<div class="app-container">
-
-			<!-- app-lnb //-->
-			<div class="app-lnb">
-				
-				
-			</div>
-			<!-- //app-lnb -->
-
 			<!-- app-content // -->
 			<main class="app-content mycar-content">
 
-				<!-- My Car 차고 최상단 메시지 // -->
-				<section class="kb-sec bg-white mycar-top-message">
-					
-					<div class="content-box shadow">
-						<strong class="name">김국민</strong> 님의 자동차 총 자산은 <span class="amount"><span class="num">859</span>만원</span>이에요.<br>
-						지난달보다 <span class="amount down"><span class="num">159</span>만원</span> 감소했습니다.
+				<section class="kb-sec mycar-tab">
+					<div class="tab_button">
+						<button class="is-active"><span>My Car 차고(2대)</span></button>
+						<button><span>Wish Car 차고(1대)</span></button>
 					</div>
-					
+					<h2 class="is-hidden">My Car 차고</h2>
 				</section>
-				<!-- // My Car 차고 최상단 메시지 -->
 
-				<section class="kb-sec plain-note">
-					<p>My Car 차고에는 차량번호나 모델명을 직접입력한 자동차만 조회됩니다.</p>
+				<section class="kb-sec mycar-top-message">
+					<strong class="name">김국민</strong> 님의 자동차 총 자산은 <span class="amount"><span class="num">859</span>만원</span>입니다.<br>
+					지난달보다 <span class="amount down"><span class="num">159</span>만원</span> 감소했습니다.
 				</section>
-				
+
 				<!-- My Car 차량목록 // -->
 				<section class="kb-sec mycar-lists">
+					<h2 class="is-hidden">My Car 차량목록</h2>
+					<!-- 차량정보 // -->
 					<div class="mycar-information">
-						<div class="infobox">
-							<a href="#">
-								<span class="model">쉐보레 말리브</span>
-								<span class="subtxt">2.0터보 LTZ(2016), 한국GM</span>
+						<div class="content-box">
+							<div class="infobox">
 								<span class="nickname">내차별명</span>
+								<a href="#" class="model link-arrow-after">쉐보레 말리브</a>
+								<span class="subtxt">2.0터보 LTZ(2016), 한국GM</span>
 								<span class="photo">
-									<img src="@@webRoot/static/images/_temp/car01.png" alt="한국GM 쉐보레 말리브">
+									<img src="@@webRoot/static/images/_temp/car04.png" alt="한국GM 쉐보레 말리브">
 								</span>
-							</a>
-						</div>
-						<div class="infolist">
-							<dl class="description-list type2">
-								<dt class="vt">시세</dt>
-								<dd>
-									<div class="align">
-										<span class="amount"><span class="num">700,000</span>만원</span>
-										<small>지난달보다 <span class="down"><span class="num">159</span>만원</span> 감소</small>
-									</div>
-								</dd>
-								<dt>차량번호</dt>
-								<dd>63더 1234</dd>
-								<dt>주행거리</dt>
-								<dd><span class="num">50,000</span>Km</dd>
-							</dl>
+							</div>
+							<div class="infolist">
+								<dl class="description-list">
+									<dt>시세금액</dt>
+									<dd class="amount"><span class="num">859</span>만원</dd>
+									<dt>지난달대비</dt>
+									<dd class="amount up"><span class="num">5</span>만원</dd>
+									<dt>차량번호</dt>
+									<dd>63더 1234</dd>
+									<dt>주행거리</dt>
+									<dd><span class="num">50,000</span>Km</dd>
+								</dl>
+							</div>
 						</div>
 					</div>
-					<div class="mycar-information mycar-direct-input">
-						<div class="infobox">
-							<a href="#">
-								<span class="model">직접입력한 모델명</span>
+					<!-- // 차량정보 -->
+					<!-- 차량정보 (직접입력한경우) // -->
+					<div class="mycar-information">
+						<div class="content-box">
+							<div class="infobox">
+								<a href="#" class="model link-arrow-after">쉐보레 말리브</a>
 								<span class="photo default-photo"></span>
-							</a>						
-						</div>					
-						<div class="infolist">
-							<dl class="description-list type2">
-								<dt>가격</dt>
-								<dd>
-									<div class="align">
-										<span class="amount"><span class="num">1.4</span>억원</span>
-									</div>
-								</dd>
-							</dl>
+							</div>
+							<div class="infolist">
+								<dl class="description-list">
+									<dt>가격</dt>
+									<dd class="amount"><span class="num">6,700</span>만원</dd>
+								</dl>
+							</div>
 						</div>
 					</div>
+					<!-- // 차량정보 (직접입력한경우) -->
 				</section>
 				<!-- // My Car 차량목록 -->
 
@@ -132,20 +120,7 @@
 	<!-- Add Script -->
 	<script>
 		// 자동차 - My Car 차고 GNB
-		gfn_gnb.select(5,0);
-
-		// 자동차 하위 메뉴 텍스트 전환 : 추가 2021-06-24
-		$(window).on('load', function() {
-			// My Car 차고 대 수
-			appendText($(".app-sub-wrap li:eq(0) a"), " (1대)");
-			// Wish Car 차고 대 수
-			appendText($(".app-sub-wrap li:eq(1) a"), " (2대)");
-
-			function appendText(elem, txt) {
-				var t = elem.text();
-				elem.text(t + txt);
-			}
-		});
+		gfn_gnb.select(5);
 	</script>
 
 </body>

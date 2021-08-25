@@ -9,7 +9,7 @@
 
 <body>
     @@include('@@webRoot/html/_include/app-a11y.html')
-    <div class="app" data-page="submain">
+    <div class="app">
         <!-- app-header //-->
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
             'pageTit':'외화',
@@ -621,8 +621,6 @@
             })
             
         })
-        //최초 선택되는 내용을 바꾸고 싶으면... (ui.js)
-        gfn_gnb.select(1,7);
 
         //권종항목편집 드래그
         var $currencyModify = $('.currency-modify');
@@ -634,6 +632,24 @@
                 cancel: ".ui-state-disabled"
             });
         }
+
+
+        $('button[data-action="moveKBStarBanking"]').on('click',function(){
+            modalPopup({
+                title: "",
+                message: "KB스타뱅킹으로 이동하시겠습니까?",
+                type: "confirm",
+                textOkButton: "확인",
+                textCancelButton: "취소",
+                onOk: function() {
+                    
+                },
+                onCancel: function() {
+                    
+                }
+            });
+        }); 
+        
     </script>
 
 </body>

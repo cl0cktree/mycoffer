@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-channel="ch_star">
 <!-- [MYS_EX_04_04_00] 지출 > 주간 소비 리포트  (작성자: 누리어 시스템 김삼희)// -->
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
@@ -57,7 +57,7 @@
                     <strong class="h4 credit-list-tit">이번주 정기지출</strong>
                     <dl class="description-list credit-list-amount">
                         <dt>지출 합계</dt>
-                        <dd class="amount expense"><span class="num">230,000</span>원</dd>
+                        <dd class="amount expense">총 <span class="num">230,000</span>원</dd>
                         <dt>정기지출</dt>
                         <dd class="amount"><span class="num">3</span>건</dd>
                     </dl>
@@ -86,7 +86,7 @@
                                     </dt>
                                     <dd>
                                         <strong class="amount"><span class="num">15,000</span>원</strong>
-                                        <span class="info">잔액 <em class="num">+30,000</em>원</span>
+                                        <!-- [D] 2차 오픈 <span class="info">잔액 <em class="num">+30,000</em>원</span> //-->
                                     </dd>
                                 </dl>
                             </a>
@@ -101,7 +101,7 @@
                                     </dt>
                                     <dd>
                                         <strong class="amount"><span class="num">70,000</span>원</strong>
-                                        <span class="info">잔액 <em class="num">-30,000</em>원</span>
+                                        <!-- [D] 2차 오픈 <span class="info">잔액 <em class="num">-30,000</em>원</span> -->
                                     </dd>
                                 </dl>
                             </a>
@@ -172,7 +172,6 @@
                                 <div class="chart-area" id="">
                                     <img class="temp" src="../../static/images/_temp/chart_ex0401.png" alt="차트 예시 이미지">
                                 </div>
-                                <!-- [D] 21-07-02 수정 : 차트 legend 추가 //-->
                                 <div class="legend-unit t01">
                                     <dl>
                                         <dt class="yellow"><span><em class="num">1</em>위</span>식비</dt>
@@ -202,7 +201,6 @@
                                         </dd>
                                     </dl>
                                 </div>
-                                <!--// [D] 21-07-02 수정 : 차트 legend 추가 -->
                                 <!--// [chart area] -->
                             </figure>
                         </div>
@@ -268,7 +266,7 @@
                                     <dt>기준실적</dt>
                                     <dd>
                                         <span class="amount"><span class="num">270,000</span>원</span>
-                                        <span class="tag-label t02" data-state="stable">부족</span>
+                                        <span class="tag-label t02" data-state="stable">충족</span>
                                     </dd>
                                 </dl>
                             </li>

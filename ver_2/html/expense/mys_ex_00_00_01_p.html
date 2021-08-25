@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko" data-channel="ch_star">
+<!-- [MYS_EX_00_00_01_P] 지출 > 제3자정보제공동의변경 (작성자 : 누리어 김삼희) -->
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "개인(신용)정보 제3자 제공 동의서 | 지출"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header //-->
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'개인(신용)정보 제3자 제공 동의서',
+            'type':''
+        })
+        <!-- // app-header -->
+
+        <!-- app-container //-->
+        <div class="app-container">
+            <!-- app-content // -->
+            <main class="app-content">
+                <!-- 컨텐츠 영역 -->
+                <section class="kb-sec">
+                    <div>PDF 데이터 영역</div>
+                </section>
+                <!-- SECTION //-->
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button class="btn-solid" type="button" data-call-modal="noticeAgreeToProvideConfirm"><span>동의</span></button>
+                    </div>
+                </div>
+            </main>
+            <!-- // app-content -->
+        </div>
+        <!-- // app-container -->
+        <div class="layered">
+            <!-- Modal // -->
+            <div class="modal" id="noticeAgreeToProvideConfirm">
+                <div class="modal_contents">
+                    <p>(KB국민은행) 2021년 4월 7일 [KB카드]개인(신용)정보 제3자 정보제공에 동의했습니다.</p>
+                </div>
+                <div class="modal_buttons btn-area">
+                    <a href="MYS_EX_00_00_00.html" role="button" class="btn-solid ok"><span>확인</span></a>
+                </div>
+            </div>
+            <!-- // Modal -->
+        </div>
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    
+</body>
+
+</html>

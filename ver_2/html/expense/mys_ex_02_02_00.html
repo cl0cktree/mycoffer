@@ -1,34 +1,38 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-channel="ch_star" >
 <!-- [MYS_EX_02_02_00] 작성자: 누리어 시스템 김삼희 -->
+
 <head>
-	@@include('@@webRoot/html/_include/app-head.html',{
-		"title": "수기등록 | 지출"
-	})
+    @@include('@@webRoot/html/_include/app-head.html',{
+    "title": "직접등록 | 지출"
+    })
 </head>
 
 <body>
-	@@include('@@webRoot/html/_include/app-a11y.html')
-	<div class="app">
-		<!-- app-header //-->
-		@@include('@@webRoot/html/_include/app-integrated-header.html',{
-			'pageTit' :'수기등록',
-            'type':'close'
-		}) 
-		<!-- // app-header -->
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header //-->
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+        'pageTit' :'직접등록',
+        'type':'close'
+        })
+        <!-- // app-header -->
 
-		<!-- app-container //-->
-		<div class="app-container">
+        <!-- app-container //-->
+        <div class="app-container">
 
-			<!-- app-content // -->
-			<main class="app-content regulaer-expense-layered" data-layered-name="popupRegularExpenseUserRegister">
+            <!-- app-content // -->
+            <main class="app-content regulaer-expense-layered" data-layered-name="popupRegularExpenseUserRegister">
                 <!-- 타이틀//-->
                 <section class="kb-sec tit-area_icon-bg">
-                    <span class="icon-box_circle"><i class="icon-expense-4th-insurance"></i></span> <!-- [D] 21-06-28 수정 : 아이콘 교체 -->
-                    <h3 class="h3">정기지출 항목명</h3>
+                    <h3 class="h3">
+                        <i class="icon-expense-4th-insurance"></i>
+                        <em>정기지출 항목명</em>
+                    </h3>
                     <div class="kb-form" data-status="">
                         <div class="kb-form_inner form-text">
-                            <input type="text" id="regularExpenseUserRegisterName" value="" title="별명" placeholder="별명을 입력해 주세요 (최대 10자)">
+                            <input type="text" id="regularExpenseUserRegisterName" value="" title="별명"
+                                placeholder="별명을 입력해 주세요 (최대 10자)">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
                     </div>
@@ -38,26 +42,27 @@
                 <section class="kb-sec">
                     <h4 class="h4">이용정보</h4>
                     <div class="kb-form" data-status="">
-                        <label for="regularExpenseUserRegisterAmount">이용요금</label>
+                        <label for="regularExpenseUserRegisterAmount" class="required">이용요금</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" id="regularExpenseUserRegisterAmount" placeholder="금액을 입력해 주세요" value="" data-unit="원" data-action="autoSeperator">
+                            <input type="text" inputmode="numeric" id="regularExpenseUserRegisterAmount" placeholder="금액을 입력해주세요" value="" data-unit="원" data-action="autoSeperator">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
                         <em class="validation">Message</em>
                     </div>
                     <div class="kb-form" data-status="">
-                        <label for="regularExpenseUserRegisterPeriod">이용주기</label>
+                        <label for="regularExpenseUserRegisterPeriod" class="required">이용주기</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" id="regularExpenseUserRegisterPeriod" value="" placeholder="1개월">
+                                <!-- <input type="text" inputmode="numeric" id="regularExpenseUserRegisterPeriod" placeholder="1개월" value="1" data-unit="개월" data-action="autoSeperator"> -->
+                                <input type="text" id="regularExpenseUserRegisterPeriod" value="1개월" placeholder="">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
                         <em class="validation">Success Message</em>
                     </div>
                     <div class="kb-form" data-status="">
                         <div class="kb-form datepicker" data-status="">
-                            <label for="formTextSample08">이용시작</label>
+                            <label for="regularExpenseUserRegisterPeriod" class="required">이용시작일</label>
                             <div class="kb-form_inner form-text">
-                                <input type="text" id="formTextSample08" placeholder="2021.01.01">
+                                <input type="text" id="regularExpenseUserRegisterPeriod" value="2021.10.10">
                             </div>
                             <em class="validation">에러 메세지 영역 입니다.</em>
                         </div>
@@ -68,22 +73,18 @@
                 <section class="kb-sec mt40">
                     <h4 class="h4">결제정보</h4>
                     <div class="kb-form" data-status="">
-                        <label for="bsSelectOrganization">결제수단</label>
-                        <div class="kb-form_inner form-text">
-                            <input type="text" id="bsSelectOrganization" value="" role="button" placeholder="선택해주세요" data-call-layered="bsSelectOrganization" readonly="">
+                        <label for="bsSelectOrganization" class="required">결제수단</label>
+                        <div class="kb-form_inner form-text" data-role="popup">
+                            <input type="text" id="bsSelectOrganization" value="선택해주세요" role="button" placeholder="" data-call-layered="bsSelectOrganization" readonly="">
                         </div>
-                        <em class="validation">Message</em>
                     </div>
                     <div class="kb-form" data-status="">
-                        <label for="regularExpenseUserRegisterPayDate">결제일</label>
+                        <label for="regularExpenseUserRegisterPayDate" class="required">결제일</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" id="regularExpenseUserRegisterPayDate" value="" placeholder="1일">
+                            <input type="text" id="regularExpenseUserRegisterPayDate" value="12일" placeholder="">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
                         <em class="validation">Success Message</em>
-                    </div>
-                    <div class="btn-area mt28">
-                        <a href="javascript:;" class="btn-line" role="button"><span>기관 등록하기</span></a>
                     </div>
                 </section>
                 <!-- //결제정보 -->
@@ -93,24 +94,24 @@
                         <button class="btn-solid"><span>등록</span></button>
                     </div>
                 </section>
-			</main>
-			<!-- // app-content -->
+            </main>
+            <!-- // app-content -->
 
-		</div>
-		<!-- // app-container -->
+        </div>
+        <!-- // app-container -->
 
-		<!-- Layer (modal, bottom sheet) // -->
-		<div class="layered">
+        <!-- Layer (modal, bottom sheet) // -->
+        <div class="layered">
             @@include('@@webRoot/html/expense/layered/mys_ex_02_02_01_p.html')
-		</div>
-		<!-- // Layer (modal, bottom sheet) -->
-	</div>
+        </div>
+        <!-- // Layer (modal, bottom sheet) -->
+    </div>
 
-	<!-- Script -->
-	@@include('@@webRoot/html/_include/common-js.html')
-	<!-- Add Library (this page only)-->
-	<script src="@@webRoot/static/js/ui.js"></script>
-	<!-- Add Script -->
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
 
 </body>
 

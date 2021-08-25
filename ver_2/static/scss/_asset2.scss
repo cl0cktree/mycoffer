@@ -6,8 +6,7 @@
 .index-visual {display: flex; justify-content: center; align-items: center;}
 .index-visual > img {height: 135px;}
 
-.car-index {height: calc(var(--vh, 1vh) * 100 - 132px);padding-bottom: 24px; display: flex; flex-direction: column; background-color: #fff;}
-.car-index .index-visual {margin: 26px 0 31px;}
+.car-index .index-visual {margin: 100px 0 48px;}
 /* // 수정 2021-07-01 */
 
 /* 추가 2021-07-01 */ 
@@ -19,12 +18,18 @@
 .link-area_arrow .txt-area .title{@include text($size: $text02, $weight:bold);color: $kb-ui02;line-height:1;margin-top:.6rem;}
 .link-area_arrow .txt-area .desc{@include text($size: $text03);color: $kb-ui03;margin-top:1.1rem;line-height:1;} 
 .link-area_arrow [class^=icon-go]{position: absolute;right: 19px;}
-.car-add-complete:first-child {padding-top: 40px;}
 .car-add-complete .btn-line span{font-size: 16px;letter-spacing: -0.64px;}
-
 .car-add-complete .complete-msg {margin-top: 34px;}
+.car-add-complete .complete-msg .tit{font-size: 24px; font-weight: 700; color: $kb-ui02;}
 .car-add-complete .car-btns {margin-top: 45px;}
 .car-add-complete .sticky-bottom .btn-area{position:fixed;bottom:0;left:0;z-index:$level60;width:100%;}
+
+.link-area_arrow2 {border-top: 1px solid $kb-ui09;}
+.link-area_arrow2 a {position: relative; display: block; border-bottom: 1px solid $kb-ui09;}
+.link-area_arrow2 a > i {position: absolute; left: 0; top: 20px;}
+.link-area_arrow2 .txt-area {display: block; padding: 30px 0 20px 56px;}
+.link-area_arrow2 .txt-area .title {display:block; margin-bottom: 5px; @include text($size: $text01, $weight:bold);color: $kb-ui02;}
+.link-area_arrow2 .txt-area .desc {@include text($size: $text03);color: $kb-ui03;}
 
 .mycar-add-forms,
 .wishcar-add-forms {margin-top: 30px; margin-bottom: 18px;}
@@ -43,30 +48,32 @@
 .car-quotes p em {color: $color-blue;}
 .car-quotes .amount {padding: 0 2px 12px 0;margin-top: 20px; text-align: right; color: $kb-ui03; font-size: 19px; font-weight: bold; border-bottom: 1px solid $kb-ui09;}
 .car-quotes .amount .num {font-size: 21px; margin-right: 5px;}
+.car-quotes .label.required {padding-left: 0;}
 
-.upkeep-expenses-detail p {margin-top: 45px; margin-bottom: 20px; @include text($text02, normal); color: $kb-ui04;}
-// .upkeep-expenses-detail .btn-area + .upkeep-expenses-list {margin-top: 45px;}
-.upkeep-expenses-detail .chart-area + .upkeep-expenses-list {margin-top: 45px;}
-.upkeep-expenses-detail .chart-title {margin-bottom: 20px;padding-top: 8px; @include text($text02, normal);}
-.upkeep-expenses-detail .chart-title .range {display: block; color: $kb-ui04;}
+.upkeep-expenses-detail .top-area .tit{@include text($size:$text01,$weight:bold);display:inline-block;vertical-align:middle;}
+.upkeep-expenses-detail .top-area .info{font-size:$text03;color:$kb-ui04;display:inline-block;vertical-align:middle;}
+.upkeep-expenses-detail .top-area + .content-box {margin-top:1.4rem;}
+.upkeep-expenses-detail .graph-area{margin-top:20px;}
 
-.upkeep-expenses-list {margin-bottom: 20px;}
+.upkeep-expenses-detail .add-legend{font-size:14px;text-align:center;margin-top:16px;margin-bottom:5px;color:$kb-ui04}
+.upkeep-expenses-detail .add-legend i{display:inline-block;width:20px;height:8px;vertical-align:middle;margin-right:8px;}
+.upkeep-expenses-detail .add-legend p{display:inline-block;}
+.upkeep-expenses-detail .add-legend .num{margin-right:2px;font-size:15px;}
+
+.upkeep-expenses-list {margin-top: 48px; margin-bottom: 20px;}
 .upkeep-expenses-list .category-name {@include text($text01, normal);}
 .upkeep-expenses-list .category-name strong {font-weight: bold;}
-.upkeep-expenses-list .category-name + .description-list {margin-top: 15px;}
-.upkeep-expenses-list .description-list {height: 168px; overflow: hidden;}
-.upkeep-expenses-list .moreview-button {margin-top: 25px; border-top: 1px solid $kb-ui09;}
+.upkeep-expenses-list .category-name + .explist {margin-top: 15px;}
+.upkeep-expenses-list .explist {height: 290px; overflow: hidden; border-top: 1px solid $kb-ui07;}
+.upkeep-expenses-list .explist dt {padding-left: 2px; padding-top: 20px; font-size: 15px; font-family: roboto; color: $kb-ui03;}
+.upkeep-expenses-list .explist dd {padding: 20px 2px 20px; border-bottom: 1px solid $kb-ui09; @include clfix;}
+.upkeep-expenses-list .explist dd .text {float: left; width: 50%; font-size: 16px; color: $kb-ui04;}
+.upkeep-expenses-list .explist dd .amount {float: right; width: 50%; font-size: 16px; color: $kb-ui02; text-align: right;}
+.upkeep-expenses-list .moreview-button {margin-top: 25px;}
 .upkeep-expenses-list .moreview-button button {display: block; width: 100%; height: 52px;}
-.upkeep-expenses-list .moreview-button span {position: relative; padding-left: 19px;}
-.upkeep-expenses-list .moreview-button span::before,
-.upkeep-expenses-list .moreview-button span::after {content: ''; position: absolute; background-color: $kb-ui03;}
-.upkeep-expenses-list .moreview-button span::before {left: 0; top: 8px; width: 9px; height: 1px;}
-.upkeep-expenses-list .moreview-button span.show::after {left: 4px; top: 4px; width: 1px; height: 9px;}
-.upkeep-expenses-list .moreview-button span.show {display: inline-block;}
-.upkeep-expenses-list .moreview-button span.hide {display: none;}
-.upkeep-expenses-list.is-moreview-show .description-list {height: auto;}
-.upkeep-expenses-list.is-moreview-show .moreview-button span.show {display: none;}
-.upkeep-expenses-list.is-moreview-show .moreview-button span.hide {display: inline-block;}
+.upkeep-expenses-list .no-data {padding-top: 40px;}
+.upkeep-expenses-list.is-moreview-show .explist {height: auto;}
+.upkeep-expenses-list.is-moreview-show .moreview-button {display: none;}
 
 .loan-tab-contents:first-child {padding-top: 100px;}
 .loan-tab-contents .visual-area {margin-bottom: 20px; padding-bottom: 25px; text-align: center;}
@@ -92,6 +99,12 @@
 .mycar-content {margin-bottom: 50px;}
 .mycar-content .up {color: $color-red;}
 .mycar-content .down {color: $color-blue;}
+.mycar-content .expense {color: $color-blue;}
+.mycar-content .infolist .up::before,
+.mycar-content .dlists .up::before {content: '▲'; margin-right: 5px;}
+.mycar-content .infolist .down::before,
+.mycar-content .dlists .down::before {content: '▼'; margin-right: 5px;}
+.mycar-tab .tab_button {font-weight: bold;}
 .popup_contents.mycar-content {margin-bottom: 0;}
 
 .mycar-content .summary {padding-bottom: 15px;}
@@ -106,6 +119,9 @@
 .mycar-content .summary .result .amount {margin-bottom: 7px; font-size: 18px; font-weight: bold; color: $kb-ui02;}
 .mycar-content .summary .result .amount .num {font-size: 20px; margin-right: 3px;}
 
+.mycar-content .kb-sec > .title {@include text($text01, bold); color: $kb-ui02;}
+.mycar-content .kb-sec > .title small {@include text($text03, normal);}
+
 .mycar-content .new-data {padding: 10px 0 5px; text-align: right; color: $kb-ui04;}
 .mycar-content .new-data dt,
 .mycar-content .new-data dd {display: inline-block;}
@@ -119,35 +135,49 @@
 // .mycar-content .description-list dd .amount {display: block; font-size: 16px;}
 // .mycar-content .description-list dd .amount .num {font-size: 17px; top: 0;}
 
-.mycar-top-message {padding: 0 24px 20px; color: $kb-ui03;@include text($text02, normal);}
+.mycar-content .link-area {padding-top: 22px; text-align: right;}
+.mycar-content .link-arrow-after {padding-right: 25px;}
+.mycar-content .dlists {margin-top: 16px; border-top: 1px solid $kb-ui07;}
+.mycar-content .description-list {border-bottom: 1px solid $kb-ui09;}
+.mycar-content .description-list + .btn-area {margin-top: 5px;}
+.mycar-content .content-box .chart-area {margin-bottom: 0;}
+
+.mycar-top-message {margin-top: 25px; margin-bottom: 5px; padding: 0 26px; color: $kb-ui02;@include text($text02, normal);}
 .mycar-top-message .content-box {padding: 15px 20px;}
-.mycar-top-message .name {font-weight: normal;}
+.mycar-top-message .name {font-weight: bold;}
 .mycar-top-message .amount {font-weight: bold;}
-.mycar-top-message .amount.up .num::before {content: '▲'; margin-right: 2px;}
-.mycar-top-message .amount.down .num::before {content: '▼'; margin-right: 2px;}
+// .mycar-top-message .amount.up .num::before {content: '▲'; margin-right: 2px;}
+// .mycar-top-message .amount.down .num::before {content: '▼'; margin-right: 2px;}
+.mycar-top-message .amount.up,
+.mycar-top-message .amount.down {font-weight: normal;}
 .mycar-top-message strong {font-weight: bold;}
-.mycar-top-message + .mycar-lists {margin-top: -15px;}
+// .mycar-top-message + .mycar-lists {margin-top: -15px;}
 .plain-note p {padding: 0 2px 15px; border-bottom: 1px solid $kb-ui09;@include text($text03, normal); color: $kb-ui04;}
 
-.mycar-information {position: relative; padding-top: 15px; padding-bottom: 34px; border-bottom: 10px solid $kb-ui10; @include text($text02, normal); color: $kb-ui04; background-color: #fff;}
+.mycar-information {position: relative; padding-top: 15px; padding-bottom: 34px; @include text($text02, normal); color: $kb-ui04; background-color: #fff;}
 .mycar-information:first-child {margin-top: 30px;}
-.mycar-information .infobox {position: relative; z-index: 2; padding: 0 2px; height: 152px;}
+.mycar-information .content-box {position: relative;}
+.mycar-information .infobox {position: relative; z-index: 2; padding: 0 2px; min-height: 130px;}
 .mycar-information.mycar-direct-input .infobox {height: 130px;}
 .mycar-information .infobox > span,
 .mycar-information .infobox > a > span {display: block;}
 .mycar-information .infobox > a {display: block; height: inherit; margin-bottom: -36px;}
 .mycar-information .infobox .amount {margin-top: 15px; font-size: 23px; font-weight: bold; color: $kb-ui02;}
 .mycar-information .infobox .amount .num {font-size: 24px;}
-.mycar-information .nickname {color: $kb-ui03; font-size: 14px; word-break: break-all;}
-.mycar-information .model {margin-bottom: 3px; margin-right: 30px; color: $kb-ui02; @include text($text01, bold); word-break: break-all;}
-.mycar-information .subtxt {margin-bottom: 15px; color: $kb-ui02;}
-.mycar-information .photo {position: absolute; z-index: 1; right: 0; bottom: -10px; width: 160px;}
-.mycar-information .photo.default-photo {bottom: 0; right: 0; width: 155px; height: 82px; background: url(../images/asset/car_default.png) no-repeat 0 0; background-size: 100%}
-.mycar-information .infolist {padding: 0 20px; background-color: $kb-ui10; border-radius: 2px;}
-.mycar-information .description-list .num {position: relative; top: -2px;}
-.mycar-information .description-list dt,
-.mycar-information .description-list dd {margin-top: 3px; margin-bottom: 3px;}
-.mycar-information .description-list dt {align-items: flex-start;}
+.mycar-information .nickname {display: block; margin-bottom: 4px; color: $kb-ui04; font-size: 14px; word-break: break-all;}
+.mycar-information .model {margin-bottom: 4px; color: $kb-ui02; @include text($text02, bold); word-break: break-all;}
+.mycar-information .model.link-arrow-after {display: inline-block; padding-right: 20px;}
+.mycar-information .subtxt {margin-right: 160px; color: $kb-ui02;}
+.mycar-information .photo {position: absolute; z-index: 1; right: -10px; bottom: 0; width: 160px;}
+.mycar-information .photo.default-photo {width: 160px; height: 105px; background: url(../images/asset/car_default.png) no-repeat 0 0; background-size: 100%}
+.mycar-information .infolist {padding-top: 0;}
+.mycar-information .description-list {padding: 10px 0 0; border-bottom: 0;}
+// .mycar-information .description-list .num {position: relative; top: -2px;}
+.mycar-information .description-list .amount .num {top: 0px;}
+// .mycar-information .description-list dt,
+// .mycar-information .description-list dd {margin-top: 3px; margin-bottom: 3px;}
+// .mycar-information .description-list dt {align-items: flex-start;}
+.mycar-information .description-list dd {display: block;}
 .mycar-information .description-list dd .align small {font-size: 14px;}
 .mycar-information .description-list dd .align small .num {font-size: 15px; top: 0;}
 .mycar-information .description-list dd .align small .up .num::before {content: '▲'; margin-right: 2px;}
@@ -155,52 +185,46 @@
 .mycar-information .description-list dd .align .amount {display: block; font-size: 16px;}
 .mycar-information .description-list dd .align .amount .num {font-size: 17px; top: 0;}
 .mycar-information .link-modify {position: absolute; z-index: 3; right: 24px; top: 15px; color: $kb-ui04; font-size: 14px;}
-// .mycar-information:first-child .link-modify {top: 23px;}
 .mycar-information .link-modify::after {content: ''; position: absolute; left: 0; right: 0; bottom: 2px; height: 1px; background-color: $kb-ui04;}
 .mycar-information .bmsg {padding: 20px 2px 0; font-size: 14px; color: $kb-ui04;}
-// .mycar-information .nickname + .link-modify {top: 0;}
-// .mycar-information .link-modify {top: -25px;}
 .mycar-detail .mycar-information {margin-top: 0;}
-// .mycar-detail .mycar-information .link-modify {top: 0;}
 .mycar-detail .mycar-information .nickname + .link-modify {top: 20px;}
 .mycar-information .infolist + .btn-area {margin-top: -1px;}
+.mycar-information .infolist + .btn-solid {margin-top: 15px;}
 
-.mycar-lists .mycar-information {border-bottom: 1px solid $kb-ui09; padding-bottom: 20px;}
-.mycar-lists .mycar-information:first-child {margin-top: 0;}
+.mycar-lists {margin-bottom: 25px;}
+.mycar-lists .mycar-information {padding: 0; margin-top: 15px;}
 .mycar-lists .mycar-information .infolist {padding: 0; background-color: transparent;}
 .mycar-lists .mycar-information .infolist + .btn-area {margin-top: 5px;}
-.mycar-lists .mycar-information .link-modify {right: 2px;}
-// .mycar-lists .mycar-information .infolist {border-bottom: 1px solid $kb-ui03;}
-// .mycar-lists .mycar-information:last-child .infolist {border-bottom: 0; /* margin-bottom: -20px; */}
-.mycar-lists.is-no-data {display: flex; justify-content: center; align-items: center; height: calc(var(--vh, 1vh) * 100 - 200px - 76px - 45px);}
-.mycar-lists.is-no-data .no-data {margin-top: 0;}
-.mycar-lists.is-no-data .index-visual {margin-bottom: 40px;}
-// .mycar-lists.bg-white:first-child,
-// .mycar-lists.is-no-data:first-child {background-color: #fff;}
+.mycar-lists .mycar-information .link-modify {right: 20px;}
+.mycar-lists .no-data {margin-top: 60px;}
+.mycar-lists .index-visual {margin-bottom: 20px;}
 
+.mycar-information,
 .mycar-quotes,
 .mycar-maintain,
-.mycar-loan {padding-top: 32px;}
+.mycar-loan {padding-top: 20px;}
+.mycar-information,
 .mycar-quotes,
 .mycar-maintain,
 .mycar-loan,
-.mycar-insurance {position: relative; padding-bottom: 28px;}
+.mycar-insurance {position: relative; padding-bottom: 20px;}
 .mycar-quotes::after,
 .mycar-maintain::after,
-.mycar-loan::after,
-.mycar-insurance::after {content: ''; position: absolute; left: 24px; right: 24px; bottom: 0; height: 0; border-bottom: 1px solid $kb-ui09;}
+// .mycar-loan::after,
+// .mycar-insurance::after {content: ''; position: absolute; left: 24px; right: 24px; bottom: 0; height: 0; border-bottom: 1px solid $kb-ui09;}
 .mycar-loan .summary,
 .mycar-insurance .summary {padding-bottom: 0;}
 
 .mycar-quotes .chart-area {margin-bottom: 13px;}
-.mycar-loan .description-list + .description-list {border-top: 1px solid $kb-ui09;}
-.mycar-loan .description-list + .btn-area {margin-top: 5px;}
+.mycar-quotes .content-box {margin-top: 16px;}
+.mycar-quotes .dlists {border-top: 0; margin-top: 0;}
 .mycar-insurance .description-list + .description-list {border-top: 1px solid $kb-ui09;}
 .mycar-insurance .description-list + .btn-area {margin-top: 5px;}
 
 .mycar-insurance,
 .mycar-buttons,
-.mycar-agree-link {/* margin-top: 46px; */ padding-top: 32px;}
+.mycar-agree-link {/* margin-top: 46px; */ padding-top: 15px;}
 
 .mycar-insurance .status {padding: 0 2px; margin-left: 6px; font-size: 14px; line-height: 23px; }
 .mycar-insurance .status.normal {color: #287eff;}
@@ -217,14 +241,20 @@
 
 .chart-area .temp {display: block; width: 100%;}
 
+.kbchachacha-banner {position: relative; margin-top: 40px;}
+.kbchachacha-banner a {display: block; padding: 24px; height: 120px; background-color: #eef1fa; border-radius: 2px;}
+.kbchachacha-banner a::before {content: ''; position: absolute; right: 22px; bottom: 19px; width: 115px; height: 88px; background: url(../images/asset/kbchachacha_banner.png) no-repeat 0 0; background-size: 100% 100%;}
+.kbchachacha-banner strong {display: block; margin-bottom: 5px; font-size: 18px; font-weight: bold; color: $kb-ui02;}
+.kbchachacha-banner span {display: block; width: 140px; font-size: 14px; font-weight: normal; color: $kb-ui04; line-height: 1.4;}
+
 .mycar-best-recommend .title {display: block; padding-top: 25px; padding-bottom: 10px; @include text($text01, bold);}
-.mycar-best-recommend .best-list {display: flex;border-bottom: 1px solid $kb-ui09;}
+.mycar-best-recommend .best-list {display: flex;}
 .mycar-best-recommend .best-list li {flex: 1; padding: 0 2px;}
-.mycar-best-recommend .best-list a {display: block; padding: 20px 0;}
+.mycar-best-recommend .best-list a {display: block; padding: 0 0 20px;}
 .mycar-best-recommend .photo {display: block; margin-bottom: 20px;}
 .mycar-best-recommend .photo img {width: 100%;}
-.mycar-best-recommend .cate {display: block;@include text($text03, normal); color: $kb-ui04;}
-.mycar-best-recommend .model {display: block;@include text($text02, bold); color: $kb-ui02; word-break: break-all;}
+.mycar-best-recommend .cate {display: block; margin-bottom: 4px; @include text($text03, normal); color: $kb-ui04; text-align: center;}
+.mycar-best-recommend .model {display: block; font-size: 15px; font-weight: bold; color: $kb-ui02; word-break: break-all; text-align: center;}
 
 .bottom-sheet_contents .kb-sec.if-you-save:first-child {padding-top: 0;}
 

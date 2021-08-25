@@ -10,7 +10,7 @@
 
 <body>
     @@include('@@webRoot/html/_include/app-a11y.html')
-    <div class="app"><!-- 수정 2021.06.25 : Liiv, Starbanking  앱 안에서  동작할 경우 data-page="submain" -->
+    <div class="app">
         
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
             'pageTit':'마이데이터 선물함',
@@ -22,9 +22,9 @@
             <div class="app-lnb">
                 <div class="tab swiper-container">
                     <ul class="swiper-wrapper">
-                        <li class="swiper-slide"><a href="javscript:;">선물</a></li><!-- 수정 : 2021.06.25 -->
-                        <li class="swiper-slide"><a href="javscript:;">실시간 이벤트</a></li><!-- 수정 : 2021.06.25 -->
-                        <li class="swiper-slide is-active"><a href="javscript:;">친구추천</a></li><!-- 수정 : 2021.06.25 -->
+                        <li class="swiper-slide"><a href="javscript:;">선물</a></li>
+                        <li class="swiper-slide"><a href="javscript:;">실시간 이벤트</a></li>
+                        <li class="swiper-slide is-active"><a href="javscript:;">친구추천</a></li>
                     </ul>
                 </div>
             </div>
@@ -32,7 +32,6 @@
             <!-- app-content // -->
             <main class="app-content recommend-to-friend">
                 
-                <!-- 수정 2021-08-18 // -->    
                 <section class="kb-sec bg-white">
                     <div class="tab_button">
                         <a href="javascript:;" class="is-active"><span>친구추천</span></a>
@@ -54,27 +53,26 @@
                         <button><i class="icon-sms_sns_48">SMS</i><span>SMS 전송</span></button>
                     </div>
                 </section>
-                <!-- // 수정 2021-08-18 -->
 
                 <section class="kb-sec">
                     <ul class="rtf-detail">
                         <li>
-                            <h4 class="tit">기간</h4><!-- 수정 2021-08-18 -->
+                            <h4 class="tit">기간</h4>
                             <div><span class="num">2021.05.07</span>(목) ~ <span class="num">05.20</span>(수)</div>
                         </li>
                         <li>
-                            <h4 class="tit">대상</h4><!-- 수정 2021-08-18 -->
+                            <h4 class="tit">대상</h4>
                             <div>Liiv mate 모든 회원</div>
                         </li>
                         <li>
-                            <h4 class="tit">내용</h4><!-- 수정 2021-08-18 -->
+                            <h4 class="tit">내용</h4>
                             <div>
                                 <p>우리 자산 푸르게! 푸르게! 회원님들의 자산살림청 리브메이트가 여러분의 자산을 더욱 잘 가꿔드리기 위해 “자산연동 동의등록” 이벤트를 진행합니다.</p>
                                 <p class="c-red">500포인트리도 받고 리브메이트의 자산살림 서비스도 이용해 보세요!</p>
                             </div>
                         </li>
                         <li>
-                            <h4 class="tit">참여방법</h4><!-- 수정 2021-08-18 -->
+                            <h4 class="tit">참여방법</h4>
                             <div>
                                 행사 기간 동안 아래 버튼을 통해 자산연동하면, <br>
                                 500 포인트리 제공<br>
@@ -89,14 +87,12 @@
                         <li>준법감시인 심의필 제 <span class="num">201231-04358-</span>HMW(<span class="num">2020.12.31 ~ 2021.06.30</span>)</li>
                     </ul>
 
-                    <!-- 수정 2021-08-18 // -->    
                     <!-- 데이타가 없을 때 // -->
                     <div class="no-data">
                         <i class="icon-bang_60_gray"></i>
                         <p>이벤트 기간이 아닙니다.</p>
                     </div>
                     <!-- // 데이타가 없을 때 -->
-                    <!-- // 수정 2021-08-18 -->    
                 </section>
 
             </main>
@@ -116,9 +112,6 @@
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
-    <script>
-        gfn_gnb.select(10,2); //수정 2021.06.25 : liiv, starbanking  용
-    </script>
 
 </body>
 

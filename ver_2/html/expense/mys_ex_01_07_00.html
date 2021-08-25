@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-channel="ch_star">
 <!-- [MYS_EX_01_00_00] 지출 > 가계부 (작성자: 누리어 시스템 김삼희)// -->
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
@@ -10,7 +10,6 @@
 <body>
     @@include('@@webRoot/html/_include/app-a11y.html')
     <div class="app">
-    <!-- <div class="app" data-page="submain"> -->
         <!-- app-header //-->
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
             'pageTit':'가계부',
@@ -23,7 +22,7 @@
             <!-- app-content // -->
             <main class="app-content expense-account-book-total">
                 <!-- 지출 가계부 상세 내역 //-->
-                <section class="kb-sec full expense-account-book-list">
+                <section class="kb-sec expense-account-book-list">
                     <!-- 필터 영역 -->
                     <div class="filter-area">
                         <div class="condition-area">
@@ -39,10 +38,16 @@
                             </button>
                         </div>
                         <div class="filter-setting">
-                            <a href="mys_ex_01_02_00.html" class="btn-text btn-view-calendar" role="button"><i class="icon-calendar_20_bk"></i><span>달력 보기</span></a>
-                            <button class="btn-filter-setting" data-call-layered="bsExpenseAccountBookSetting"><i class="icon-more_24"><span>가계부 설정</span></i></button>
+                            <!-- optional -->
+                            <a href="mys_ex_01_02_00.html" class="btn-text sm" role="button"><i class="icon-calendar_20"></i><span>달력보기</span></a>
+                            <button class="btn-more-dot" data-call-layered="bsExpenseAccountBookSetting"><span>설정</span></button>
                         </div>
+                        <!-- <ul class="filter-result">
+                            <li><button type="button"><span>#검색결과_1</span></button></li>
+                            <li><button type="button"><span>#검색결과_2</span></button></li>
+                        </ul> -->
                     </div>
+                    <!-- 리스트 영역 -->
                     <!-- 리스트 영역 -->
                     <div class="no-data">
                         <i class="icon-bang_60_gray"></i>
@@ -60,7 +65,6 @@
             <!-- Bottom Sheet // -->
             @@include('@@webRoot/html/expense/layered/mys_ex_01_01_00_p01.html')
             @@include('@@webRoot/html/expense/layered/mys_ex_01_01_02_p.html')
-            @@include('@@webRoot/html/expense/layered/mys_ex_01_05_01_p.html')
             @@include('@@webRoot/html/expense/layered/mys_ex_01_05_02_p.html')
             @@include('@@webRoot/html/expense/layered/mys_ex_01_05_02_p01.html')
             @@include('@@webRoot/html/expense/layered/mys_ex_01_05_02_p02.html')
@@ -79,10 +83,6 @@
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
-    
-    <!-- <script>
-        gfn_gnb.select(2,0);
-    </script> -->
     
 </body>
 

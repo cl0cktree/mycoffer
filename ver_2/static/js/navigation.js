@@ -64,9 +64,13 @@ if($appMenu.length){
     }
 
     //header button
-    $appHeader.on('click','.btn-allmenu',function(){
+    $appHeader
+    .on('click','.btn-allmenu',function(){
         $appMenu.addClass('is-active');
         gfn_body.hold(true);
+    })
+    .on('click','.btn-history-back',function(){
+        history.back();
     });
 
     $appMenu.on('click','.btn-close',function(){

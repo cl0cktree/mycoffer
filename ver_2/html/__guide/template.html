@@ -30,9 +30,111 @@
         </div>
     </div>
     <div class="guide-container">
+        <div class="box" id="layout">
+            <h2>Layout</h2>
+            <dl class="flex-dl" aria-expanded='true'>
+                <dt>
+                    <pre>
+                        <code>
+
+                        </code>
+                    </pre>
+                </dt>
+                <dd data-description="" style="display:none;">
+                    <!-- html 
+                        data-channel : 유입된 채널 표시(ch_star, ch_liiv)
+                        외부에서 최초로 유입이 된 경우 class=""
+                    -->
+                    <!--
+                        [head 영역]
+                        meta 정보 
+                        CSS : jquery-ui.min.css, swiper.min.css, set-nav.css(dplan, mydata 공통), ui.css(mydata only)
+                        JS(라이브러리) : jquery-3.4.1.min.js, jquery-ui.min.js, jquery-ui.touch.js, current-device.min.js, moment.min.js, swiper-bundle.min.js
+                    -->
+                    <!-- body // -->
+                    <div class="app">
+                        <!-- COMMON HEADER [s] -->
+                        <div class="app-header">
+                            <!-- GNB 에서 바로 접근하는 Submain 일 경우 :  data-page="submain" -->
+                            <!-- .app-header[data-page="submain"] 일 경우 menu.js 에 있는 구성에 따라 GNB가 .app-lnb에 생성 -->
+                        </div>                        
+                        <div class="app-menu"><!-- 전체 메뉴 --></div>
+                        <!-- COMMON HEADER [e] -->
+
+                        <div class="app-container">
+
+                            <!-- LNB [s] (내용이 비어있을 경우 remove() : navigation.js ) // -->
+                            <div class="app-lnb">
+                                <!-- LNB, GNB가 있는 경우 (링크로 이동)-->
+                                <div class="tab"></div>
+                            </div>
+                            <!-- // LNB [s] -->
+
+                            <!-- CONTENT [s] -->
+                            <main class="app-content">
+                                
+                                <section class="kb-sec">
+                                    <h2>타이틀</h2>
+                                    내용                                    
+                                </section>
+
+                                <!-- 페이지 중간에 tab 이 있는 경우 (탭이 링크로 이동하는 경우는 .tab_contents 가 없음) -->
+                                <div class="tab"></div>
+                                <div class="tab_contents">
+                                    <div class="is-active"><!-- 보이는 컨텐츠-->
+                                        <section class="kb-sec">                                    
+                                            내용                                    
+                                        </section>
+                                    </div>
+                                    <div><!-- 보이지 않는 컨텐츠 -->
+                                        <section class="kb-sec">                                    
+                                            내용                                    
+                                        </section>
+                                    </div>
+                                </div>                                
+
+                                <!-- 페이지 하단 고정되는 버튼 // -->
+                                <div class="stick-bottom">
+                                    <div class="btn-area">
+                                        <button type="button" class="btn-solid gray"><span>취소</span></button>
+                                        <button type="button" class="btn-solid"><span>확인</span></button>
+                                    </div>
+                                </div>
+                                <!-- // 페이지 하단 고정되는 버튼 -->
+                            </main>
+                            <!-- CONTENT [e] -->
+
+                        </div>                        
+
+                        <div class="layered">
+                            <!-- bottom sheet / modal 의 위치 -->
+                            <div class="bottom-sheet" data-layered-name="바텀시트고유이름"></div>
+                            <div class="modal" data-layered-name="모달고유이름"></div>
+                        </div>
+                    </div>
+                    <!-- 
+                        [공통 스크립트]
+                        modalPopup.js : 모달 팝업 제어
+                        menu.js : GNB 메뉴 구조
+                        navigation.js : app-header 타입구분, GNB 생성, 웹접근성 바로가기 삽입, vh 단위 Fix                        
+                    -->
+                    <!-- 해당페이지에서만 필요한 라이브러리가 있는 경우 삽입 위치 -->
+                    <!-- 
+                        ui.js : 그 외 스크립트
+                    -->
+                    <!-- 
+                        해당 페이지에서만 작동하는 스크립트
+                        <script>바로쓰기</script>                        
+                    -->
+                    <!-- // body -->
+                    <!-- // html -->
+                </dd>
+            </dl>
+        </div>
+        <hr>
         <div class="box">
 			<h2>App Header</h2>
-            <div class="guide-desc">
+            <div class="guide-desc">                
                 * 타이틀이 없을 경우에도 .page-tit 반드시 존재해야함<br>
                 <b class="c-blue">submain</b> : CI + 알림 + 햄버거<br>
                 <b class="c-blue">home or ''</b> : (default) 뒤로가기 + 타이틀 + 홈 + 햄버거<br>
@@ -43,6 +145,11 @@
                 <b class="c-blue">'step'</b> : 뒤로가기 + 취소버튼<br>
                 <b class="c-blue">'step01'</b> : 취소 버튼<br>
                 <b class="c-blue">'complete'</b> : 타이틀(빈값) + 홈 + 햄버거
+                <hr>
+                <hr>
+                <p class="c-red">
+                    (스뱅) 다른 메뉴에서 최초 유입 하는 페이지 <b>html.no-historyback'(뒤로 가기 버튼 : &lt; 이 보이지 않아야함) : 개발</b>
+                </p>
             </div>
             <div class="iframe-view-group">
                 <div class="iframe-view">
@@ -161,10 +268,11 @@
                     </pre>
                 </dt>
                 <dd class="guide-description">
-                    <p>.app-content 아래 section<span class="c-blue">.kb-sec 으로 컨텐츠를 구분</span> <span class="c-red"><u>().kb-sec 을 div 등으로 감싸면 안됨)</u></span></p>
-
+                    <p>
+                        .app-content 아래 section<span class="c-blue">.kb-sec 으로 컨텐츠를 구분</span><br>
+                        <span class="c-red"><u>(.kb-sec 을 div 등으로 감싸면 안됨)</u></span>
+                    </p>
                     <p>회색 배경이 있는 경우 .kb-sec<span class="c-blue">.bg-gray</span>를 추가</p>
-                    <p>.kb-sec.bg-gray:first-child 의 배경은 상단 40px부터 시작됨(추후 일괄수정될수 있음)</p>
                     <p>.kb-sec.bg-gray 사용할 경우 여백은 padding을 사용하여야함 (margin을 사용할 경우 body 배경색이 나옴)</p>
                 </dd>
                 <dd class="no-space" data-description=".kb-sec">
@@ -179,14 +287,21 @@
                             1st content<br>
                         </section>
                         <section class="kb-sec full" style="background-color:burlywood;">
+                            2nd content<br>
+                            2nd content<br>
+                            2nd content<br>
+                            2nd content<br>
+                            2nd content<br>
+                            2nd content<br>
+                            2nd content<br>
                             <div class="">
-                                2nd content<br>
-                                2nd content<br>
-                                2nd content<br>
-                                2nd content<br>
-                                2nd content<br>
-                                2nd content<br>
-                                2nd content<br>
+                                in 2nd content<br>
+                                in 2nd content<br>
+                                in 2nd content<br>
+                                in 2nd content<br>
+                                in 2nd content<br>
+                                in 2nd content<br>
+                                in 2nd content<br>
                             </div>
                         </section>
                     </div>

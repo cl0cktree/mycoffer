@@ -17,110 +17,108 @@
 		})
 		<!-- // app-header -->
 
+		<script>
+			//chnannel 별 header 타입이 다름
+			if($('html').data('channel') != 'ch_star'){
+				$('.app-header').attr('data-type','submain');
+			}else{
+				$('.app-header').attr('data-type','');
+			}
+		</script>
+
 		<!-- app-container //-->
 		<div class="app-container">
-
-			<!-- app-lnb //-->
-			<div class="app-lnb">
-				
-				
-			</div>
-			<!-- //app-lnb -->
-
 			<!-- app-content // -->
 			<main class="app-content mycar-content">
 
-				<!-- My Car 차고 최상단 메시지 // -->
-				<section class="kb-sec bg-white mycar-top-message">
-					<div class="content-box shadow">
-						<strong class="name">김국민</strong> 님의 차고에는 <strong>총 <span class="num">2</span>대의 차량</strong>이<br>
-						고객님을 기다리고 있습니다.
+				<section class="kb-sec mycar-tab">
+					<div class="tab_button">
+						<button><span>My Car 차고(1대)</span></button>
+						<button class="is-active"><span>Wish Car 차고(2대)</span></button>
 					</div>
+					<h2 class="is-hidden">Wish Car 차고</h2>
 				</section>
-				<!-- // My Car 차고 최상단 메시지 -->
+
+				<section class="kb-sec mycar-top-message">
+					<strong class="name">김국민</strong> 님의 차고에는 총 <strong><span class="num">2</span>대</strong>의 차량이 고객님을 기다리고 있습니다.
+				</section>
 
 				<!-- Wish Car 차량목록 // -->
 				<section class="kb-sec mycar-lists">
+					<!-- 차량정보 // -->
 					<div class="mycar-information">
-						<a class="link-modify" href="#">수정</a>
-						<div class="infobox">
-							<span class="model">쉐보레 말리브</span>
-							<span class="subtxt">2.0터보 LTZ(2016), 한국GM</span>
-							<span class="nickname">내차별명</span>
-							<span class="photo">
-								<img src="@@webRoot/static/images/_temp/car01.png" alt="한국GM 쉐보레 말리브">
-							</span>
-						</div>					
-						<div class="infolist">
-							<dl class="description-list type2">
-								<dt>시세</dt>
-								<!-- 수정 2021-06-24 // -->
-								<dd>
-									<div class="align">
-										<span class="amount"><span class="num">7,000</span>만원</span>
-										<small>지난달 보다 <span class="up"><span class="num">5</span>만원</span> 증가</small>
-									</div>
-								</dd>
-								<!-- // 수정 2021-06-24 -->
-								<dt>주행거리</dt>
-								<dd><span class="num">50,000</span>Km</dd>
-							</dl>
-						</div>
-						<div class="btn-area">
-							<a href="#" class="btn-line"><span>Wish Car 플래너</span></a><!--  -->
+						<div class="content-box">
+							<a class="link-modify" href="#">수정</a>
+							<div class="infobox">
+								<span class="nickname">내차별명</span>
+								<span class="model">쉐보레 말리브</span>
+								<span class="subtxt">2.0터보 LTZ(2016), 한국GM</span>
+								<span class="photo">
+									<img src="@@webRoot/static/images/_temp/car04.png" alt="한국GM 쉐보레 말리브">
+								</span>
+							</div>
+							<div class="infolist">
+								<dl class="description-list">
+									<dt>시세금액</dt>
+									<dd class="amount"><span class="num">859</span>만원</dd>
+									<dt>지난달대비</dt>
+									<dd class="amount up"><span class="num">5</span>만원</dd>
+									<dt>주행거리</dt>
+									<dd><span class="num">50,000</span>Km</dd>
+								</dl>
+							</div>
+							<a href="#" class="btn-solid sm gray"><span>Wish Car 플래너</span></a>
 						</div>
 					</div>
+					<!-- // 차량정보 -->
+					<!-- 차량정보 // -->
 					<div class="mycar-information">
-						<a class="link-modify" href="#">수정</a>
-						<div class="infobox">
-							<span class="model">더 뉴 그랜져</span>
-							<span class="subtxt">2.3 프리미엄(2020), 현대</span>
-							<span class="photo">
-								<img src="@@webRoot/static/images/_temp/car02.png" alt="현대 더 뉴 그랜져">
-							</span>
-						</div>					
-						<div class="infolist">
-							<dl class="description-list type2">
-								<!-- 수정 2021-06-24 // -->
-								<dt>가격</dt>
-								<dd>
-									<div class="align">
-										<span class="amount"><span class="num">1억 4,000</span>만원</span>
-									</div>
-								</dd>
-								<!-- // 수정 2021-06-24 -->
-							</dl>
-						</div>
-						<div class="btn-area">
-							<a href="#" class="btn-line"><span>Wish Car 플래너</span></a><!--  -->
+						<div class="content-box">
+							<a class="link-modify" href="#">수정</a>
+							<div class="infobox">
+								<!-- <span class="nickname">내차별명</span> -->
+								<span class="model">쉐보레 말리브</span>
+								<span class="subtxt">2.0터보 LTZ(2016), 한국GM</span>
+								<span class="photo">
+									<img src="@@webRoot/static/images/_temp/car04.png" alt="한국GM 쉐보레 말리브">
+								</span>
+							</div>
+							<div class="infolist">
+								<dl class="description-list">
+									<dt>가격</dt>
+									<dd class="amount"><span class="num">5,500</span>만원</dd>
+								</dl>
+							</div>
+							<a href="#" class="btn-solid sm gray"><span>Wish Car 플래너</span></a>
 						</div>
 					</div>
+					<!-- // 차량정보 -->
 				</section>
 				<!-- // Wish Car 차량목록 -->
 
 				<!-- Wish Car 이런 차는 어떠세요? // -->
 				<section class="kb-sec mycar-best-recommend">
-					<strong class="title">이런 차는 어떠세요?</strong>
+					<h2 class="title">이런 차는 어떠세요?</h2>
 					<ul class="best-list">
 						<li>
 							<a href="#">
 								<span class="photo"><img src="@@webRoot/static/images/_temp/car01.png" alt="GLE클래스"></span>
-								<span class="model">GLE클래스</span>
-								<span class="cate">전체월간 BEST</span>
+								<span class="cate">30대 BEST</span>
+								<span class="model">GLE클래스</span>								
 							</a>
 						</li>
 						<li>
 							<a href="#">
 								<span class="photo"><img src="@@webRoot/static/images/_temp/car03.png" alt="제네시스 G70"></span>
+								<span class="cate">인기 BEST</span>
 								<span class="model">제네시스 G70</span>
-								<span class="cate">동일연령대 BEST</span>
 							</a>
 						</li>
 						<li>
 							<a href="#">
 								<span class="photo"><img src="@@webRoot/static/images/_temp/car02.png" alt="아우디 A6"></span>
-								<span class="model">아우디 A6</span>
 								<span class="cate">남성 BEST</span>
+								<span class="model">아우디 A6</span>
 							</a>
 						</li>						
 					</ul>
@@ -155,20 +153,7 @@
 	<!-- Add Script -->
 	<script>
 		// 자동차 - My Car 차고 GNB
-		gfn_gnb.select(5,1);
-
-		// 자동차 하위 메뉴 텍스트 전환 : 추가 2021-06-24
-		$(window).on('load', function() {
-			// My Car 차고 대 수
-			appendText($(".app-sub-wrap li:eq(0) a"), " (1대)");
-			// Wish Car 차고 대 수
-			appendText($(".app-sub-wrap li:eq(1) a"), " (2대)");
-
-			function appendText(elem, txt) {
-				var t = elem.text();
-				elem.text(t + txt);
-			}
-		});
+		gfn_gnb.select(5);
 	</script>
 
 </body>

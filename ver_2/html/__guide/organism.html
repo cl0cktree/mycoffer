@@ -16,7 +16,7 @@
     </style>
 </head>
 
-<body class="guide">
+<body class="guide app" style="display:block;"><!-- 모달 샘플을 위한 app-->
     <div class="guide-header">
         <h1><a href="./index.html">GUIDE</a></h1>
         <div class="guide_select">
@@ -52,14 +52,29 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td>셀렉트 내용을 호출</td>
-                        <td>/html/_layered/bsSelect.html</td>
-                        <td></td>
+                        <td><button type="button" class="btn-solid sm" data-call-layered="bsCalendar"><span>날짜선택</span></button></td>
+                        <td>/html/_layered/bs-calendar.html</td>
+                        <td>공통</td>
                     </tr>
                     <tr>
-                        <td>날짜선택</td>
-                        <td>/html/_layered/bs-calendar.html</td>
-                        <td></td>
+                        <td><button type="button" class="btn-solid sm" data-call-layered="bsTime"><span>시간선택</span></button></td>
+                        <td>/html/_layered/bs-time.html</td>
+                        <td>공통</td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" class="btn-solid sm" data-call-layered="bsTime"><span>다른 로그인 방법</span></button></td>
+                        <td>/html/_layered/bs-other-login.html</td>
+                        <td>공통</td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" class="btn-solid sm" data-call-layered="bsLookUp"><span>조회 선택</span></button></td>
+                        <td>/html/_layered/bs-lookup.html</td>
+                        <td>참고하여 각메뉴에서 작업</td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" class="btn-solid sm" data-call-layered="bsLookUpCondition"><span>조회 선택</span></button></td>
+                        <td>/html/_layered/bs-lookup-condition</td>
+                        <td>참고하여 각메뉴에서 작업</td>
                     </tr>
                     </tbody>
                 </table>
@@ -93,29 +108,29 @@
         <div class="box guide_modal">
             <h2 class="h2">Modal Sheets <a href="../_layered/_modals.html" target="_blank">샘플페이지 바로가기 &gt;</a></h2>
             <div class="table">
-                <table class="tbl-t01">
+                <table class="tbl-t01" style="text-align:center;">
                     <caption></caption>
                     <colgroup>
-                        <col style="width:30%">
-                        <col style="width:30%">
-                        <col style="width:40%">
+                        <col style="width:auto">
+                        <col style="width:auto">
+                        <col style="width:auto">
                     </colgroup>
                     <thead>
                     <tr>
                         <th>이미지</th>
-                        <th>File Name</th>
+                        <th>샘플</th>
                         <th>Description</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td><img src="./img/alert.png" alt=""></td>
-                        <td>modal-alert.html</td>
+                        <td><img src="./resources/images/alert.png" alt="" style="width:240px;"></td>
+                        <td><button type="button" class="btn-solid sm" data-call-layered="alertModalSample"><span>알럿형 모달</span></button></td>
                         <td>알럿형 모달</td>
                     </tr>
                     <tr>
-                        <td><img src="./img/alert.png" alt=""></td>
-                        <td>modal-confirm.html</td>
+                        <td><img src="./resources/images/confirm.png" alt="" style="width:240px;"></td>
+                        <td><button type="button" class="btn-solid sm" data-call-layered="confirmModalSample"><span>컨펌형 모달</span></button></td>
                         <td>컨펌형 모달</td>
                     </tr>
                     </tbody>
@@ -236,7 +251,7 @@
             <p>
                 HTML 작성 없이 단순 메시지 팝업으로 호출 할 경우
                 아래와 같이 <code>modalPopup(options)</code>를 사용한다.<br>
-                <em>(HTML 코드를 동적으로 생성했다가 팝업을 닫으면 삭제 됨)</em>
+                <b>HTML 코드를 동적으로 생성<span class="c-red">(.app 에 append)</span>했다가 팝업을 닫으면 삭제 됨</b>
             </p>
             <h4 class="h4">Options</h4>
             <table class="options">
@@ -298,10 +313,12 @@
 
             <div class="code">
                 <strong>Javascript</strong>
-                <pre><code class="javascript">modalPopup({
+                <pre>
+                    <code class="javascript">modalPopup({
     title: "공적연금 추가하기",
     message: "연금개시 연령은 55세~70세 사이로 입력할 수 있습니다."
-});</code></pre>
+});</code>
+</pre>
             </div>
             <div class="ex">
                 <button type="button" class="btn-line" onclick="demo2()"><span>DEMO 2 : '확인' 버튼만 있는 Modal Popup</span></button>
@@ -323,7 +340,8 @@
     onCancel: function() {
         console.log('DEMO 3 cancel');
     }
-});</code></pre>
+});</code>
+</pre>
             </div>
             <div class="ex">
                 <button type="button" class="btn-line" onclick="demo3()"><span>DEMO 3 : '변경', '닫기' 버튼이 있는 Modal Popup</span></button>
@@ -533,7 +551,11 @@
 
         <!-- Bottom Sheet // -->
         @@include('@@webRoot/html/_layered/_bottom-sheet-sample.html')
+        @@include('@@webRoot/html/_layered/bs-calendar.html')
+        @@include('@@webRoot/html/_layered/bs-time.html')
+        @@include('@@webRoot/html/_layered/bs-other-login.html')
         @@include('@@webRoot/html/_layered/bs-lookup.html')
+        @@include('@@webRoot/html/_layered/bs-lookup-condition.html')
         <!-- // Bottom Sheet -->
 
         <!-- Modal // -->
@@ -564,7 +586,7 @@
             $("#modalPopup1").modalPopup("open");
         }
 
-        function demo2() {
+        function demo2() {                        
             modalPopup({
                 title: "공적연금 추가하기",
                 message: "연금개시 연령은 55세~70세 사이로 입력할 수 있습니다."

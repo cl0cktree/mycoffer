@@ -9,9 +9,10 @@
 .h3 .num{@include heading($size: $heading03 + 1px)}
 .h4 .num{@include heading($size: $heading04 + 1px)}
 
-.num{font-family:'Roboto';font-size:1.7rem;}
-.num[data-unit-after]:after{content:attr(data-unit-after);@include text($size: 15px);margin-left:0.1em;}
-.num[data-unit-before]:before{content:attr(data-unit-before);@include text($size: 15px);margin-right:0.1em;}
+.num{display:inline-block;font-family:'Roboto';font-size:1.7rem;}
+.num[data-unit-after]:after{content:attr(data-unit-after);font-family:'KBFGText';font-size:16px;line-height:1;margin-left:2px;vertical-align:-1px;}
+.num[data-unit-before]:before{content:attr(data-unit-before);font-family:'KBFGText';font-size:16px;line-height:1;margin-right:1px;}
+.num + .unit{display:inline-block;margin-left:2px;vertical-align:-1px;}
 .label{display:block;margin-bottom:0.8rem;font-size:1.6rem;line-height:2rem;color:$kb-ui04;}
 .label.required{padding-left:26px;}
 .required:before{content:'';display:inline-block;width:20px;height:20px;background:url(../images/common/common.png) no-repeat -24px -20px;background-size:160px;vertical-align:top;}
@@ -24,7 +25,6 @@
 [class*=btn-solid] > span{display:inline-block;}
 [class*=btn-solid]:disabled,
 [class*=btn-solid].is-disabled{background-color:$kb-ui08;color:$kb-ui06;}
-[class*=btn-solid].lv2,
 [class*=btn-solid].gray{background-color:$kb-ui09;}
 .btn-solid.sm{height:4rem;font-size:1.5rem;font-weight:normal;}
 .btn-solid.form{width:auto;height:3rem;padding:0 1.8rem;border-radius:3rem;background-color:$kb-ui04;font-size:$text03;color:$kb-ui11;}
@@ -140,7 +140,7 @@ ul[data-style=list].sm li,
 
 .byte{font-size:1.4rem;font-family:'Roboto',sans-serif;color:$kb-ui06;}
 textarea:focus + .byte .current{color:$kb-ui02;}
-.textarea{position:relative;padding-bottom:3rem;border:1px solid $kb-ui09;}
+.textarea{position:relative;padding-bottom:3rem;border:1px solid $kb-ui09;border-radius:2px;}
 .textarea.is-focused{border-color:$kb-ui02}
 .textarea.is-disabled,
 .textarea.is-readonly{background-color:$kb-ui10;}
@@ -174,8 +174,8 @@ textarea:focus + .byte .current{color:$kb-ui02;}
 .terms-conditions .tbl-list td {padding:1rem;text-indent:0;text-align:left;}
 
 .terms-conditions strong {font-weight: bold;}
-.terms-conditions h2 {margin-bottom: 4rem;text-align: left; color: $kb-ui02; font-size: 2.8rem; font-weight: bold; line-height: 1.4;}
-.terms-conditions h2 span {display: block;color: $kb-ui04; @include text($text02, normal);}
+.terms-conditions h2 {margin-bottom: 4rem;text-align: left; color: $kb-ui02; font-size: 1.7rem; font-weight: bold; line-height: 1.4;}
+.terms-conditions h2 span {display: block;color: $kb-ui04; @include text($text02, normal); text-align: center;}
 .terms-conditions h3 {margin: 3rem 0 2rem;color: $kb-ui02; @include text($text01, bold);}
 .terms-conditions h4 {margin: 3rem 0 2rem;color: $kb-ui02; @include text($text01, bold);}
 .terms-conditions p {margin: 2rem 0; font-size: 1.4rem;}
@@ -229,10 +229,11 @@ p.simple-message {position: relative;margin-top: 2rem; padding-left: 2.4rem; col
 p.simple-message::before {content:'';position: absolute;left:0;top:0;width:20px;height:20px;background:url(../images/common/common.png) no-repeat -24px -20px;background-size:160px;}
 
 .agree-grade-graph {display: flex;}
-.agree-grade-graph .grade {flex: 1; text-align: center; font-size: 14px; color: $kb-ui04;}
-.agree-grade-graph .grade::before {content: ''; display: block; margin-right: 1px; margin-bottom: 5px; height: 12px; background-color: #d8dde0;}
-.agree-grade-graph .grade-1::before {border-top-left-radius: 12px; border-bottom-left-radius: 12px;}
-.agree-grade-graph .grade-5::before {border-top-right-radius: 12px; border-bottom-right-radius: 12px;}
+.agree-grade-graph .grade {position: relative; flex: 1; text-align: center; font-size: 14px; color: $kb-ui04;}
+.agree-grade-graph .grade::before {content: ''; display: block; margin-right: 1px; margin-bottom: 5px; height: 6px; background-color: #d8dde0;}
+.agree-grade-graph .grade::after {display: none; content: ''; position: absolute; left: 50%; top: -4px; margin-left: -7px; width: 15px; height: 15px; background-color: $kb-ui11; border: 1px solid $kb-ui08; border-radius: 100%;  box-shadow: 0px 8px 16px 0 rgba(0, 0, 0, 0.07);}
+.agree-grade-graph .grade-1::before {border-top-left-radius: 6px; border-bottom-left-radius: 6px;}
+.agree-grade-graph .grade-5::before {border-top-right-radius: 6px; border-bottom-right-radius: 6px;}
 .agree-grade-graph.is-grade-1 .grade-1,
 .agree-grade-graph.is-grade-2 .grade-2,
 .agree-grade-graph.is-grade-3 .grade-3,
@@ -243,6 +244,11 @@ p.simple-message::before {content:'';position: absolute;left:0;top:0;width:20px;
 .agree-grade-graph.is-grade-3 .grade-3::before {background-color: #00a697;}
 .agree-grade-graph.is-grade-4 .grade-4::before {background-color: #ff5583;}
 .agree-grade-graph.is-grade-5 .grade-5::before {background-color: #ff5757;}
+.agree-grade-graph.is-grade-1 .grade-1::after,
+.agree-grade-graph.is-grade-2 .grade-2::after,
+.agree-grade-graph.is-grade-3 .grade-3::after,
+.agree-grade-graph.is-grade-4 .grade-4::after,
+.agree-grade-graph.is-grade-5 .grade-5::after {display: block;}
 
 
 //잔여시간
@@ -259,7 +265,7 @@ p.simple-message::before {content:'';position: absolute;left:0;top:0;width:20px;
 .dividing-line-top{margin-top:2.4rem;padding-top:2.4rem;border-top:1px solid $kb-ui09}
 
 //태그 라벨
-.tag-label{display:inline-block;padding:0.5rem;border:1px solid $kb-ui06;font-size:1.4rem;line-height:1;color:$kb-ui05;border-radius:0.4rem;background-color:$kb-ui11}
+.tag-label{display:inline-block;padding:0.5rem;border:1px solid $kb-ui06;font-size:1.4rem;line-height:1;color:$kb-ui04;border-radius:0.4rem;background-color:$kb-ui11}
 .tag-label[data-state="wait"]{border-color:$kb-ui06;color:$kb-ui05}
 .tag-label[data-state="very-stable"],
 .tag-label[data-state="stable"],
@@ -277,8 +283,13 @@ p.simple-message::before {content:'';position: absolute;left:0;top:0;width:20px;
 .tag-label.t01{font-size:1.6rem;color:$kb-ui04;border-color:$kb-ui09}
 .tag-label.t02{padding:0;border:0;background-color:transparent;}
 .tag-label.t03{font-size:1.3rem;color:$kb-ui11;height:2.4rem;padding:0 0.8rem;line-height:2.4rem;border:none;border-radius:0.2rem}
-.tag-label.t03[data-state="active"]{background-color:$color-blue}
-.tag-label.t03[data-state="non-active"]{background-color:$kb-ui05}
+.tag-label.t03[data-state="active"],
+.tag-label.t03[data-state="today"]{background-color:$color-blue}
+.tag-label.t03[data-state="non-active"],
+.tag-label.t03[data-state="new"]{background-color:$kb-ui04}
+.tag-label.t03[data-state="less"]{background-color:$color-red}
+.tag-label.t03.round{padding:0 1rem;height:2rem;line-height:2rem;border-radius:1rem;vertical-align:middle;font-weight:normal}
+.tag-label + .tag-label{margin-left:0.4rem;padding-left:0.7rem;border-left:1px solid $kb-ui08}
 
 //링크 요소
 .link-box_block{display:block;min-width:100%;height:auto}

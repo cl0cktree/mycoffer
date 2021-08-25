@@ -1,32 +1,36 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-channel="ch_star" >
 <!-- [MYS_EX_02_01_04_P] 지출 > 정기지출 > 항목별 보기 (작성자: 누리어 시스템 김삼희)// -->
+
 <head>
-	@@include('@@webRoot/html/_include/app-head.html',{
-		"title": "상세보기 | 지출"
-	})
+    @@include('@@webRoot/html/_include/app-head.html',{
+    "title": "상세보기 | 지출"
+    })
 </head>
 
 <body>
-	@@include('@@webRoot/html/_include/app-a11y.html')
-	<div class="app">
-		<!-- app-header //-->
-		@@include('@@webRoot/html/_include/app-integrated-header.html',{
-			'pageTit' :'상세보기',
-            'type':'close'
-		}) 
-		<!-- // app-header -->
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header //-->
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+        'pageTit' :'상세보기',
+        'type':'home or'
+        })
+        <!-- // app-header -->
 
-		<!-- app-container //-->
-		<div class="app-container">
-			<!-- app-content // -->
-			<main class="app-content regulaer-expense-layered">
+        <!-- app-container //-->
+        <div class="app-container">
+            <!-- app-content // -->
+            <main class="app-content regulaer-expense-layered">
                 <!-- 타이틀//-->
                 <section class="kb-sec tit-area_icon-bg">
-                    <h3 class="h3"><span class="icon-box_circle"><i class="icon-expense-lease"></i></span>정기지출 항목명</h3>
-                    <div class="mt24">
-                        <a href="@@webRoot/html/expense/mys_ex_02_02_00.html" class="btn-line icon btn-edit-regular-list"><i class="icon-eraser"></i><span>수정하기</span></a>
-                        <button class="btn-line icon btn-delete-regular-list" onclick="deleteRegularExpenseList()"><i class="icon-trash"></i><span>삭제하기</span></button>
+                    <h3 class="h3">
+                        <i class="icon-expense-4th-insurance"></i>
+                        <em>정기지출 항목명</em>
+                    </h3>
+                    <div class="btn-wrap">
+                        <a href="@@webRoot/html/expense/mys_ex_02_02_00.html" class="btn-text" role="button"><u>수정</u></a>
+                        <button class="btn-text btn-delete-regular-list" onclick="deleteRegularExpenseList()"><u>삭제</u></button>
                     </div>
                 </section>
                 <!-- //타이틀 -->
@@ -38,7 +42,7 @@
                         <dd class="amount"><span class="num">20,000</span>원</dd>
                         <dt>이용주기</dt>
                         <dd>1개월</dd>
-                        <dt>이용시작</dt>
+                        <dt>이용시작일</dt>
                         <dd class="date">2021.06.13</dd>
                     </dl>
                 </section>
@@ -58,9 +62,6 @@
                 <section class="kb-sec">
                     <h4 class="h4 type-icon">
                         <strong>이용내역 <span>(최근 3개월)</span></strong>
-                        <button type="button" class="btn-share-regular-list" data-call-layered="bsShareRegularExpenseList">
-                            <span class="icon-box_circle_line"><i class="icon-share"></i></span>
-                        </button>
                     </h4>
                     <ul class="pay-use-list">
                         <li>
@@ -68,75 +69,69 @@
                                 <span class="date">4월 28일</span>
                                 <strong class="amount"><span class="num">20,000</span>원</strong>
                             </p>
-                            <span class="tag-label" data-state="non-active">D-3 예정</span>
+                            <span class="tag-label t03 round" data-state="active">결제완료</span>
                         </li>
                         <li>
                             <p>
                                 <span class="date">4월 28일</span>
                                 <strong class="amount"><span class="num">20,000</span>원</strong>
                             </p>
-                            <span class="tag-label" data-state="active">결제완료</span>
+                            <span class="tag-label t03 round" data-state="active">결제완료</span>
                         </li>
                         <li>
                             <p>
                                 <span class="date">4월 28일</span>
                                 <strong class="amount"><span class="num">20,000</span>원</strong>
                             </p>
-                            <span class="tag-label" data-state="active">결제완료</span>
-                        </li>
-                        <li>
-                            <p>
-                                <span class="date">4월 28일</span>
-                                <strong class="amount"><span class="num">20,000</span>원</strong>
-                            </p>
-                            <span class="tag-label" data-state="active">결제완료</span>
+                            <span class="tag-label t03 round" data-state="active">결제완료</span>
                         </li>
                     </ul>
                 </section>
                 <!-- //이용내역 -->
-			</main>
-			<!-- // app-content -->
+            </main>
+            <!-- // app-content -->
 
-		</div>
-		<!-- // app-container -->
+        </div>
+        <!-- // app-container -->
 
-		<!-- Layer (modal, bottom sheet) // -->
-		<div class="layered">
+        <!-- Layer (modal, bottom sheet) // -->
+        <div class="layered">
             @@include('@@webRoot/html/expense/layered/mys_ex_02_01_03_p.html')
-		</div>
-		<!-- // Layer (modal, bottom sheet) -->
-	</div>
+        </div>
+        <!-- // Layer (modal, bottom sheet) -->
+    </div>
 
-	<!-- Script -->
-	@@include('@@webRoot/html/_include/common-js.html')
-	<!-- Add Library (this page only)-->
-	<script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
     <script>
-        function deleteRegularExpenseList(){
+        function deleteRegularExpenseList() {
             modalPopup({
                 title: "내역에서 삭제",
-                message: "{정기지출내역}에서 {정기지출항목}을(를) 삭제하시겠습니까?",
+                message: "정기지출내역에서 {정기지출항목}을(를) 삭제하시겠습니까?",
                 type: "confirm",
                 textOkButton: "확인",
                 textCancelButton: "취소",
-                onOk: function() {
+                onOk: function () {
                     deleteRegularExpenseListConfirm();
                 },
-                onCancel: function() {
+                onCancel: function () {
                     console.log('DEMO 3 cancel');
                 }
             });
         }
-        function deleteRegularExpenseListConfirm(){
+
+        function deleteRegularExpenseListConfirm() {
             modalPopup({
                 title: "내역에서 삭제",
-                message: "{정기지출항목}아(가) 삭제되었습니다.",
+                message: "{정기지출항목}이(가) 삭제되었습니다.",
                 type: "confirm",
                 textOkButton: "확인"
             });
         }
     </script>
-	<!-- Add Script -->
+    <!-- Add Script -->
 
 </body>
 

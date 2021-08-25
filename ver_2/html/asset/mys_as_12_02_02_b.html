@@ -17,7 +17,7 @@
 		})
 		<!-- // app-header -->
 
-        <script>
+		<script>
             //chnannel 별 header 타입이 다름
             if($('html').data('channel') != 'ch_star'){
                 $('.app-header').attr('data-type','submain');
@@ -25,24 +25,25 @@
                 $('.app-header').attr('data-type','');
             }
         </script>
+		
 		<!-- app-container //-->
 		<div class="app-container">
-
-			<!-- app-lnb //-->
-			<div class="app-lnb">
-				
-				
-			</div>
-			<!-- //app-lnb -->
-
 			<!-- app-content // -->
 			<main class="app-content mycar-content">
 
+				<section class="kb-sec mycar-tab">
+					<div class="tab_button">
+						<button class="is-active"><span>My Car 차고</span></button>
+						<button><span>Wish Car 차고(1대)</span></button>
+					</div>
+					<h2 class="is-hidden">My Car 차고</h2>
+				</section>
+
 				<!-- My Car 차량목록 (등록된 차가 없을 때) // -->
-				<section class="kb-sec mycar-lists bg-white is-no-data">
+				<section class="kb-sec mycar-lists">
 					<div class="no-data">
 						<div class="index-visual">
-							<img src="@@webRoot/static/images/asset/car_img.png" alt="">
+							<img src="@@webRoot/static/images/asset/car_img_reg.png" alt="">
 						</div>
 						<p>보유한 자동차를 등록하고<br>내 자산을 한눈에 확인해 보세요.</p>
 					</div>
@@ -77,20 +78,7 @@
 	<!-- Add Script -->
 	<script>
 		// 자동차 - My Car 차고 GNB
-		gfn_gnb.select(5,0);
-
-		// 자동차 하위 메뉴 텍스트 전환 : 추가 2021-06-24
-		$(window).on('load', function() {
-			// My Car 차고 대 수
-			//appendText($(".app-sub-wrap li:eq(0) a"), " (1대)");
-			// Wish Car 차고 대 수
-			appendText($(".app-sub-wrap li:eq(1) a"), " (2대)");
-
-			function appendText(elem, txt) {
-				var t = elem.text();
-				elem.text(t + txt);
-			}
-		});
+		gfn_gnb.select(5);
 	</script>
 
 </body>

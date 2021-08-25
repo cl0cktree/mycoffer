@@ -9,7 +9,7 @@
 
 <body>
     @@include('@@webRoot/html/_include/app-a11y.html')
-    <div class="app" data-page="submain">
+    <div class="app">
         <!-- app-header //-->
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
             'pageTit':'월간 금융 리포트',
@@ -20,17 +20,10 @@
         <!-- app-container //-->
         <div class="app-container">
 
-            <!-- app-lnb //-->
-            <div class="app-lnb">
-                
-            </div>
-            <!-- //app-lnb -->
-
             <!-- app-content // -->
             <main class="app-content expense-finance-report bg-gray-bottom">
                 <!-- 월간 자산 요약 // -->
                 <section class="kb-sec bg-gray content-groups-type monthly-asset-summary">
-                        <!-- [D] 21-07-06 수정 : 디자인 변경으로 인한 마크업 수정 //-->
                     <div class="content-box shadow tit-box">
                         <a href="mys_ex_04_00_00.html" class="tit-box link-box_block">
                             <div class="content-box-info flex-box">
@@ -50,7 +43,6 @@
                                 <dd><strong class="amount"><em class="num">21,584,119</em>원 증가</strong></dd>
                             </dl>
                         </div>
-                        <!--// [D] 21-07-06 수정 : 디자인 변경으로 인한 마크업 수정 -->
                         <div class="highcharts-box no-space">
                             <div class="graph-area">
                                 <figure class="highcharts-figure">
@@ -72,7 +64,6 @@
                                     <div class="chart-area" id="">
                                         <img class="temp" src="../../static/images/_temp/chart_ex0403.png" alt="차트 예시 이미지">
                                     </div>
-                                    <!-- [D] 21-07-06 수정 : 차트 legend 추가 //-->
                                     <div class="legend-unit">
                                         <ul>
                                             <li class="coral">입출금·페이</li>
@@ -86,7 +77,6 @@
                                             <li class="yellow">적립포인트</li>          
                                         </ul>
                                     </div>
-                                    <!-- [D] 21-07-06 수정 : 차트 legend 추가 //-->
                                     <!--// [chart area] -->
                                 </figure>
                             </div>
@@ -132,7 +122,6 @@
                 <!-- // 월간 자산 요약 -->
                 
                 <!-- 월간 지출 요약 // -->
-                    <!-- [D] 21-07-06 수정 : 디자인 변경으로 인한 마크업 수정 //-->
                 <section class="kb-sec bg-gray content-groups-type monthly-expense-summary">
                     <div class="content-box shadow tit-box">
                         <div class="credit-list-group summary-box">
@@ -144,7 +133,6 @@
                                 <dd><strong class="amount"><em class="num">955,945</em>원 증가</strong></dd>
                             </dl>
                         </div>
-                        <!--// [D] 21-07-06 수정 : 디자인 변경으로 인한 마크업 수정 -->
                         <div class="highcharts-box no-space">
                             <div class="graph-area">
                                 <figure class="highcharts-figure">
@@ -193,7 +181,6 @@
                                     <div class="chart-area" id="">
                                         <img class="temp" src="../../static/images/_temp/chart_ex0409.png" alt="차트 예시 이미지">
                                     </div>
-                                    <!-- [D] 21-07-02 수정 : 차트 legend 추가 //-->
                                     <div class="legend-unit">
                                         <dl>
                                             <dt class="yellow"><span>1위</span>식비</dt>
@@ -223,7 +210,6 @@
                                             </dd>
                                         </dl>
                                     </div>
-                                    <!--// [D] 21-07-02 수정 : 차트 legend 추가 -->
                                     <!--// [chart area] -->
                                 </figure>
                             </div>
@@ -359,7 +345,6 @@
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
     <script>
-        gfn_gnb.select(2,3);
         $("#refreshReport").modalPopup({
             onOk: function() {
                 console.log('DEMO 1 ok');

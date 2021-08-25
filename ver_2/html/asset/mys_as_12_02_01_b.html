@@ -154,20 +154,7 @@
 	<!-- Add Script -->
 	<script>
 		// 자동차 - My Car 차고 GNB
-		gfn_gnb.select(5,0);
-
-		// 자동차 하위 메뉴 텍스트 전환 : 추가 2021-06-24
-		$(window).on('load', function() {
-			// My Car 차고 대 수
-			appendText($(".app-sub-wrap li:eq(0) a"), " (1대)");
-			// Wish Car 차고 대 수
-			appendText($(".app-sub-wrap li:eq(1) a"), " (2대)");
-
-			function appendText(elem, txt) {
-				var t = elem.text();
-				elem.text(t + txt);
-			}
-		});
+		gfn_gnb.select(5);
 	</script>
 
 </body>

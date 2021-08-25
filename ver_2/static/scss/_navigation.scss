@@ -6,11 +6,10 @@ i[class*='icon-']{overflow:hidden;display:inline-block;white-space:nowrap;text-i
 
 //header 버튼
 .btn-history-back{@include ir;display:inline-block;width:24px;height:24px;background:url(../images/common/common.png) no-repeat 0 -20px;background-size:160px;}
+.btn-allmenu{@include ir;display:inline-block;width:24px;height:24px;background:url(../images/common/common.png) no-repeat -100px -45px;background-size:160px;}
 .app-header .btn-close{@include iconCancel($size: 16px, $thick: 2px, $color: $kb-ui02, $padding: 4px);}
 .app-header .btn-cancel{padding-top:4px;padding-bottom:2px;line-height:2rem;color:$kb-ui04;}
-
 .page-tit{position:relative;top:1px;font-size:$text01;font-weight:normal;line-height:2.5rem;vertical-align:top;}
-
 .app-lnb{line-height: 1;}
 .app .tab{padding-left:2.4rem;}//.swiper-container 
 .app-lnb .tab_button{margin-left:24px;margin-right:24px;}
@@ -28,8 +27,6 @@ i[class*='icon-']{overflow:hidden;display:inline-block;white-space:nowrap;text-i
 .app-header .btn-history-back{margin-right:2px;}
 .app-header .header-btn{display:block;height:24px;margin-left:auto;}
 .app-header .btn-allmenu{margin-left:20px;}
-
-
 .app-header ~ .app-container{padding-top:4.8rem;}
 
 .app-header[data-type=close] .btn-close,
@@ -63,6 +60,7 @@ i[class*='icon-']{overflow:hidden;display:inline-block;white-space:nowrap;text-i
 [data-channel=ch_star] .app-header .btn-home,
 [data-channel=ch_star] .app-header .btn-allmenu,
 [data-channel=ch_star] .app-header .app-menu{display:none !important;}
+.no-historyback .btn-history-back{display:none !important;}
 
 //SUBMAIN
 //.app[data-page=submain]{display:block;background:#fff url(../images/theme/bg_purple.png) no-repeat fixed;background-size:100%;}

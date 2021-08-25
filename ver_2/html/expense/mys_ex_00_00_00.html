@@ -1,0 +1,268 @@
+<!-- [MYS_EX_00_00_00] 지출 > 홈 (작성자: 누리어 시스템 김삼희) -->
+<!DOCTYPE html>
+<html lang="ko" data-channel="ch_star">
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "홈 | 지출"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app" data-page="bridge">
+        <!-- app-header //-->
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'홈',
+            'type':''
+        })
+        <!-- // app-header -->
+
+        <!-- app-container //-->
+        <div class="app-container">
+            <!-- app-lnb (스타뱅킹용) //-->
+            <div class="app-lnb">
+                <div class="app-gnb-wrap">
+                    <div class="app-gnb tab swiper-container">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide"><a href="#"data-sub="">자산</a></li>                            
+                            <li class="swiper-slide"><a href="#">투자</a></li>
+                            <li class="swiper-slide is-active"><a href="#">지출</a></li>
+                            <li class="swiper-slide"><a href="#">세테크</a></li>
+                            <li class="swiper-slide"><a href="#">연금(은퇴)</a></li>
+                            <li class="swiper-slide"><a href="#">Fun테크</a></li>
+                            <li class="swiper-slide"><a href="#">전문가 상담</a></li>
+                        </ul>                        
+                    </div>
+                </div>
+            </div>
+            <!-- //app-lnb -->
+            <!-- app-content // -->
+            <main class="app-content expense-home">
+                <!-- 지출 요약 영역 //-->
+                <section class="kb-sec monthly-expense-guide dividing-space-bottom">
+                    <a href="mys_ex_01_00_00.html" class="link-box_block">
+                        <div class="content-box no-shadow">
+                            <div class="highcharts-box">
+                                <div class="graph-area">
+                                    <figure class="highcharts-figure">
+                                        <div class="chart-tit">
+                                            <h4 class="h4"><strong>김국민</strong>님의 월간지출추이
+                                                <span class="date num">(2021.08.01 ~ 2021.08.10)</span>
+                                            </h4>
+                                        </div>
+                                        <!-- [chart area] //-->
+                                        <!--
+                                            [차트 디자인 정보]
+                                            * 그래프(막대) 색상(컬러별)
+                                            - 노란색 :  #ffba53;
+                                            - 회색 :  #c6cbd0;
+
+                                            - 차트 텍스트 컬러/크기 : #26282c/14px
+                                        -->
+                                        <div class="chart-area" id="">
+                                            <img class="temp" src="../../static/images/_temp/chart_ex0410.png" alt="차트 예시 이미지">
+                                        </div>
+                                        <div class="legend-unit">
+                                            <span class="basic" data-type="dash">월평균지출금액 <em class="num">4,665,210</em>원</span>
+                                        </div>
+                                        <!--// [chart area] -->
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="notice-group flex-box mt24">
+                        <div class="notice-item">
+                            <strong class="h4">지출가이드</strong>
+                            <p class="desc">오늘까지<strong><em class="num">2,300,000</em>원 </strong>지출했어요</p>
+                            <div class="amount" data-value="up">
+                                <span>추천지출금액보다</span>
+                                <strong><em class="num">20</em>만원</strong>
+                            </div>
+                        </div>
+                        <div class="notice-item">
+                            <strong class="h4">카테고리 분석</strong>
+                            <p class="desc">지출이<br>가장많은<strong>주거&sol;공과금</strong></p>
+                            <div class="amount">
+                                <span>지출금액</span>
+                                <strong><em class="num">20</em>만원</strong>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--// 지출 요약 영역 -->
+                <!-- 다가오는 정기지출 //-->
+                <section class="kb-sec full swiper-card-list dividing-space-bottom">
+                    <div class="flex-box">
+                        <a href="mys_ex_02_00_00.html" class="link-box_block link-arrow-after">
+                            <strong class="h4">다가오는 정기지출 </strong>
+                        </a>
+                    </div>
+                    <div class="swiper-container t01 js-swiper" data-swiper-options="cardListSwiperOptions">
+                        <script>
+                            var cardListSwiperOptions = {
+                                "spaceBetween": 8,
+                                "pagination": {
+                                    "el": ".swiper-pagination"
+                                }
+                            };
+                        </script>
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide card-item">
+                                <span class="tag-label t03 round" data-state="today">오늘</span>
+                                <strong class="card-tit"><i class="icon-expense-finance"></i>통신비-SKT</strong>
+                                <dl>
+                                    <dt>예정금액</dt>
+                                    <dd><em class="num">234,000</em>원</dd>
+                                </dl>
+                            </div>
+                            <div class="swiper-slide card-item">
+                                <span class="tag-label t03 round" data-state="today">오늘</span>
+                                <strong class="card-tit"><i class="icon-expense-finance"></i>통신비-SKT</strong>
+                                <dl>
+                                    <dt>예정금액1</dt>
+                                    <dd><em class="num">234,000</em>원</dd>
+                                </dl>
+                            </div>
+                            <div class="swiper-slide card-item">
+                                <span class="tag-label t03 round" data-state="today">오늘</span>
+                                <strong class="card-tit"><i class="icon-expense-finance"></i>통신비-SKT</strong>
+                                <dl>
+                                    <dt>예정금액2</dt>
+                                    <dd><em class="num">234,000</em>원</dd>
+                                </dl>
+                            </div>
+                            <div class="swiper-slide card-item">
+                                <span class="tag-label t03 round" data-state="today">오늘</span>
+                                <strong class="card-tit"><i class="icon-expense-finance"></i>통신비-SKT</strong>
+                                <dl>
+                                    <dt>예정금액3</dt>
+                                    <dd><em class="num">234,000</em>원</dd>
+                                </dl>
+                            </div>
+                            <div class="swiper-slide card-item">
+                                <span class="tag-label t03 round" data-state="today">오늘</span>
+                                <strong class="card-tit"><i class="icon-expense-finance"></i>통신비-SKT</strong>
+                                <dl>
+                                    <dt>예정금액4</dt>
+                                    <dd><em class="num">234,000</em>원</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </section>
+                <!--// 다가오는 정기지출 -->
+                <!-- 카드 추천 //-->
+                <section class="kb-sec full customized-card-list dividing-space-bottom">
+                    <div class="trend-card">
+                        <div class="content-tit">
+                            <strong class="h1">온라인쇼핑, 커피/음료, <br>백화점/아울렛</strong>
+                            <p>지출이 많은 김국민님을 위한 <span class="c-blue">추천 카드</span></p>
+                        </div>
+                        <div class="content-tit flex-box">
+                            <div class="tooltip-box"><strong class="h4">KB추천카드 Top<em class="num">5</em></strong> <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                <!-- Tooltip (With title)-->
+                                <div class="tooltip">
+                                    <strong class="tit">KB추천카드란?</strong>
+                                    <div class="cont">고객님의 지출 소비 패턴을 분석해 가장 적합한 KB국민카드를 1위~5위까지 추천해드립니다. <br>매 월 1일, 지난달 지출 통계 기준으로 순위는 업데이트욉니다.</div>
+                                    <button class="btn-close"><span>닫기</span></button>
+                                </div>
+                            </div>
+                            <a href="mys_ex_03_00_00.html" role="button" class="btn-text"><span class="link-arrow">바로가기</span></a>
+                        </div>
+                        <ul class="rank-list t01">
+                            <li class="rank">
+                                <a href="" class="link-box_block link-arrow-after">
+                                    <strong>KB국민 심플라이트 카드</strong>
+                                    <p class="tags"><span>#추천사유</span><span>#추천사유</span></p>
+                                </a>
+                            </li>
+                            <li class="rank">
+                                <a href="" class="link-box_block link-arrow-after">
+                                    <strong>KB국민 심플라이트 카드</strong>
+                                    <p class="tags"><span>#추천사유</span><span>#추천사유</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="link-box_block link-arrow-after">
+                                    <strong>KB국민 심플라이트 카드</strong>
+                                    <p class="tags"><span>#추천사유</span><span>#추천사유</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="link-box_block link-arrow-after">
+                                    <strong>KB국민 심플라이트 카드</strong>
+                                    <p class="tags"><span>#추천사유</span><span>#추천사유</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="link-box_block link-arrow-after">
+                                    <strong>KB국민 심플라이트 카드</strong>
+                                    <p class="tags"><span>#추천사유</span><span>#추천사유</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                <!-- 서비스 배너 영역 //-->
+                    <div class="notice-group">
+                        <a href="mys_ex_03_00_00.html" rolee="button" class="link-box_block notice-item">
+                            <strong class="h4">나의 카드관리<span class="tag-label t03 round" data-state="less">부족</span></strong>
+                            <p class="desc">
+                                <span class="date"><em class="num">7</em>월 <em class="num">23</em>일</span>
+                                <span class="info" data-state="less">기준실적 부족카드 <em class="num">1</em>개</span>
+                            </p>
+                        </a>
+                        <a href="mys_ex_04_03_00.html" rolee="button" class="link-box_block notice-item">
+                            <strong class="h4">주간 소비리포트<span class="tag-label t03 round" data-state="new">신규</span></strong>
+                            <p class="desc">
+                                <span class="date"><em class="num">7</em>월 <em class="num">3</em>주차</span>
+                                <span class="info">소비리포트 발행</span>
+                            </p>
+                        </a>
+                    </div>
+                <!--// 서비스 배너 영역 -->
+                </section>
+                <!--// 카드 추천 -->
+                <!-- 개인정보동의 //-->
+                <section class="kb-sec link-to-agree">
+                    <a href="mys_ex_00_00_01.html" class="link-box_block link-arrow-after" role="button">
+                        <i class="icon-expense-finance"></i>개인(신용)정보 제3자 제공 동의 관리
+                    </a>
+                </section>
+                <!--// 개인정보동의 -->
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+        <div class="layered">
+            <!-- Modal // -->
+            <div class="modal" id="noticeAgreeToProvide">
+                <div class="modal_header">
+                    <strong class="tit">제3자(KB국민카드) 정보제공 동의 안내</strong>
+                </div>
+                <div class="modal_contents">
+                    <p>국민카드 보유고객님은 국민카드 내역을 포함한 지출관리 서비스를 이용하실 수 있습니다.</p>
+                    <p class="simple-message">마이데이터 시행 시, 전송요구권 행사를 통해 더욱 정교한 서비스를 제공할 예정입니다.<br>(2021년 12월 1일 예정)</p>
+                </div>
+                <div class="modal_buttons btn-area">
+                    <button class="btn-solid gray cancel" data-action="close"><span>취소</span></button>
+                    <a href="mys_ex_00_00_01_p.html" role="button" class="btn-solid ok"><span>확인</span></a>
+                </div>
+            </div>
+            <!-- // Modal -->
+        </div>
+    </div>
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    <script>
+        gfn_gnb.select(2);
+        $('#noticeAgreeToProvide').modalPopup('open');
+    </script>
+</body>
+
+</html>
