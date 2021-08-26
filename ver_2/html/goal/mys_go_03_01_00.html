@@ -27,7 +27,7 @@
                         <li>목표기간 1주</li>
                     </ul>
                 </section>
-                <section class="kb-sec goals-list">   
+                <section class="kb-sec goals-list gray-line">   
                     <div class="challenge-box content-swiper-wrap">
                         <div class="swiper-container content-swiper t01 js-swiper" data-swiper-options="goalGraphSwiperOptions">
                             <script>
@@ -64,7 +64,7 @@
                                     <div class="challenge-info non-tit">
                                         <h2 class="tit flex-box goals-desc type2">비교그룹과 월별 커피 업종 소비금액을 비교했어요.</h2>
                                         <div class="chart-area dbl-bar">
-                                            <div class="chart-area type-ratio" id="splineChart"></div>                                                                  
+                                            <div class="chart-area type-ratio mt0" id="splineChart"></div>                                                                  
                                             <!-- <span class="txt-gray">비교그룹</span>
                                             <span class="txt-yellow type2">나</span> -->
                                         </div>
@@ -76,25 +76,25 @@
                     </div>                    
                 </section>
                 
-                <section class="kb-sec goals-use-best">
-                    <div class="ranking-list content-box border">
+                <section class="kb-sec goals-use-best gray-line">
+                    <div class="ranking-list">
                         <h2 class="ranking-tit"><strong>커피 업종 소비 Top 3</strong></h2>
-                        <ul class="ranking-list">
-                            <li class="rank">할리스 전경련회관점 <span class="num">55,000</span>원</li>
-                            <li class="rank">제주스 전경련회관점 <span class="num">35,000</span>원</li>
-                            <li>스타벅스 목동점 <span class="num">10,000</span>원</li>
+                        <ul class="ranking-view">
+                            <li class="rank">할리스 전경련회관점 <strong class="num">55,000</strong>원</li>
+                            <li class="rank">제주스 전경련회관점 <strong class="num">35,000</strong>원</li>
+                            <li>스타벅스 목동점 <strong class="num">10,000</strong>원</li>
                         </ul>
                     </div>
                 </section> 
 
-                <section class="kb-sec bg-gray goals-setting">
+                <section class="kb-sec goals-setting">
                     <h2>목표금액 설정</h2>
                     <h3>평소 지출금액보다 <strong><span class="num">50,000</span>원 더 절약</strong>할 수 있어요.</h3>
                     <div class="character-graph js-slider">
-                        <div class="graph-area" data-default="50"><span class="handle ui-slider-handle"><i class="icon-star"></i><em class="value" data-unit="원"></em></span></div>
+                        <div class="graph-area" data-default="50"><span class="handle ui-slider-handle"><i class="icon-star"></i><em class="value num" data-unit="원"></em></span></div>
                         <div class="graph-txt">
-                            <p class="start-txt" data-unit="원">0</p><!-- 시작부분 텍스트 -->
-                            <p class="end-txt" data-unit="원">50,000</p><!-- 마지막부분 텍스트 -->
+                            <p class="start-txt" data-unit="원"><span class="num">0</span></p><!-- 시작부분 텍스트 -->
+                            <p class="end-txt" data-unit="원"><span class="num">50,000</span></p><!-- 마지막부분 텍스트 -->
                         </div>
                     </div>
                 </section>
@@ -135,6 +135,17 @@
     <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
     <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
 
+    <style>
+        .highcharts-tooltip-box:first-child .highcharts-label-box {
+            fill: #e0e4e6;
+        }
+        .highcharts-tooltip-box:first-child text {
+            fill:#000 !important;
+        }
+        .highcharts-tooltip-box:last-child .highcharts-label-box {
+            fill: #1b70ee;
+        }
+    </style>
     <script>
         // highchart 공통 options
         Highcharts.setOptions({
@@ -145,37 +156,45 @@
             label : { fontFamily: 'KBFGText'},
             credits: { enabled: false },
             exporting: { enabled: false },
-            lang: {
-                shortMonths: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월']
-            }
+            // lang: {
+            //     shortMonths: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월']
+            // }
         });
         // spline chart 선언
         var splineChart = new Highcharts.Chart({
             chart: {
                 renderTo: 'splineChart', // chart 삽입 target ID
                 type: "line",
-                // marginLeft: 0,
-                // marginRight: 0,
-                // marginTop:0
+                marginLeft: 10,
+                marginRight: 10,
+                paddingTop:0,
             },
             xAxis: {
                 // type: "category",
-                // categories: ["3월", "4월", "5월", "6월13일"],
-                //crosshair: true,
+                // categories: ["3월", "4월", "5월"],
                 labels: {
                     style: {
                         color: "#26282c",
                         fontSize: '3.733vw',
                         fontFamily: 'KBFGText',
-                    }                    
+                    },
+                    formatter: function () {
+                        return this.value + '월';
+                    }                   
                 },
-
-                
-                type: 'datetime'
+                crosshair: {
+                    width: 1,
+                    color: '#dde2e8',
+                    dashStyle: 'dot'
+                },
+                formatter: function () {
+                    return point.x + '월';
+                },
+                tickColor:'transparent'
             },
             yAxis: {
-                top:0,
-                endOnTick: false,
+                top:10,
+                endOnTick: true,
                 enabled: false,  // 사용 안함
                 labels: { enabled: false },  // 축 lebel 사용 안함
                 title: { enabled: false }, // 축 title 사용 안함
@@ -188,23 +207,20 @@
                     return [''].concat(
                         this.points ?
                             this.points.map(function (point) {
-                                return gfn_comma3Digit(point.y) + '원';
+                                return '&nbsp;&nbsp;&nbsp;' + gfn_comma3Digit(point.y) + ' 원' + '&nbsp;&nbsp;&nbsp;';
                             }) : []
                     );
                 },
                 split: true,
-                padding: 6,
-                backgroundColor: "#1b70ee",
+                padding: 4,
                 shadow: false,
-                borderRadius: 150,
+                borderRadius: 5,
                 verticalAlign: 'top',
                 borderColor: 'transparent',
                 style: {
                     fontSize: '4vw',
                     fontFamily: "KBFGText",
-                    color:'#fff',
-                    display:'block',
-                    paddingLeft:'16px',
+                    color:'#fff'
                 },
                 crosshairs: true,
                 shared: true
@@ -215,200 +231,26 @@
                     marker: {
                         enabled: false,
                         lineWidth: 1
-                    },
-                    //pointStart: Date.UTC(2021, 06, 25), // 3개월전 날짜
-                    //pointInterval: 24 * 3600 * 1000 // one day
+                    }
                 }
             },
             series: [{
                 // linkedTo: "main",
-                color: '#c6cbd0',
+                color: '#e0e4e6',
                 data: [
-                    [1483232400000, 12000],
-                    [1483318800000, 13000],
-                    [1483405200000, 11050],
-                    [1483491600000, 12900],
-                    [1483578000000, 11000],
-                    [1483664400000, 13000],
-                    [1483750800000, 14000],
-                    [1483837200000, 11000],
-                    [1483923600000, 12000],
-                    [1484010000000, 13000],
-                    [1484096400000, 11050],
-                    [1484182270000, 12900],
-                    [1484269200000, 11000],
-                    [1484355600000, 13000],
-                    [1484442000000, 14000],
-                    [1484528400000, 11000],
-                    [1484614800000, 12000],
-                    [1484701200000, 12000],
-                    [1484787600000, 13000],
-                    [1484874000000, 11050],
-                    [1484960400000, 12900],
-                    [1485046800000, 11000],
-                    [1485133200000, 13000],
-                    [1485219600000, 14000],
-                    [1485306000000, 11000],
-                    [1485392400000, 12000],
-                    [1485478800000, 13000],
-                    [1485565200000, 11050],
-                    [1485651600000, 12900],
-                    [1485738000000, 11000],
-                    [1485824400000, 13000],
-                    [1485910800000, 14000],
-                    [1485997200000, 11000],
-                    [1486083600000, 12000],
-                    [1486111050000, 13000],
-                    [1486256400000, 11050],
-                    [1486342270000, 12900],
-                    [1486429200000, 11000],
-                    [1486515600000, 13000],
-                    [1486602000000, 14000],
-                    [1486688400000, 11000],
-                    [1486774800000, 12000],
-                    [1486861200000, 12000],
-                    [1486947600000, 13000],
-                    [1487034000000, 11050],
-                    [1487120400000, 12900],
-                    [1487206800000, 11000],
-                    [1487293200000, 13000],
-                    [1487379600000, 14000],
-                    [1487466000000, 11000],
-                    [1487552400000, 12000],
-                    [1487638800000, 12000],
-                    [1487725200000, 13000],
-                    [1487811600000, 11050],
-                    [1487898000000, 12900],
-                    [1487984400000, 11000],
-                    [1488070800000, 13000],
-                    [1488157200000, 14000],
-                    [1488243600000, 11000],
-                    [1488330000000, 12000],
-                    [1488416400000, 12000],
-                    [1488502270000, 13000],
-                    [1488589200000, 11050],
-                    [1488675600000, 12900],
-                    [1488762000000, 12000],
-                    [1488848400000, 12000],
-                    [1488934800000, 13000],
-                    [1489021200000, 11050],
-                    [1489107600000, 12900],
-                    [1489194000000, 11000],
-                    [1489280400000, 13000],
-                    [1489366800000, 14000],
-                    [1489453200000, 11000],
-                    [1489539600000, 12000],
-                    [1489626000000, 12000],
-                    [1489712400000, 13000],
-                    [1489798800000, 11050],
-                    [1489885200000, 12900],
-                    [1489971600000, 11000],
-                    [1490058000000, 13000],
-                    [1490144400000, 14000],
-                    [1490230800000, 11000],
-                    [1490317200000, 12500],
-                    [1490403600000, 12600],
-                    [1490490000000, 12400],
-                    [1490572270000, 12900],
-                    [1490659200000, 12100],
-                    [1490745600000, 12300],
-                    [1490832000000, 12200],
-                    [1490918400000, 12000],
+                    [3, 15000],
+                    [4, 20000],
+                    [5, 30000],
+                    [6, 35000]
                 ]
             },{
                 // id: 'main',
                 color: '#1b70ee',
                 data: [
-                    [1483232400000, 22000],
-                    [1483318800000, 23000],
-                    [1483405200000, 22000],
-                    [1483491600000, 25000],
-                    [1483578000000, 21000],
-                    [1483664400000, 22500],
-                    [1483750800000, 22700],
-                    [1483837200000, 21000],
-                    [1483923600000, 22000],
-                    [1484010000000, 23000],
-                    [1484096400000, 22000],
-                    [1484182270000, 25000],
-                    [1484269200000, 21000],
-                    [1484355600000, 22500],
-                    [1484442000000, 22700],
-                    [1484528400000, 21000],
-                    [1484614800000, 22000],
-                    [1484701200000, 22000],
-                    [1484787600000, 23000],
-                    [1484874000000, 22000],
-                    [1484960400000, 25000],
-                    [1485046800000, 21000],
-                    [1485133200000, 22500],
-                    [1485219600000, 22700],
-                    [1485306000000, 21000],
-                    [1485392400000, 22000],
-                    [1485478800000, 23000],
-                    [1485565200000, 22000],
-                    [1485651600000, 25000],
-                    [1485738000000, 21000],
-                    [1485824400000, 22500],
-                    [1485910800000, 22700],
-                    [1485997200000, 21000],
-                    [1486083600000, 22000],
-                    [1486111050000, 23000],
-                    [1486256400000, 22000],
-                    [1486342270000, 25000],
-                    [1486429200000, 21000],
-                    [1486515600000, 22500],
-                    [1486602000000, 22700],
-                    [1486688400000, 21000],
-                    [1486774800000, 22000],
-                    [1486861200000, 22000],
-                    [1486947600000, 23000],
-                    [1487034000000, 22000],
-                    [1487120400000, 25000],
-                    [1487206800000, 21000],
-                    [1487293200000, 22500],
-                    [1487379600000, 22700],
-                    [1487466000000, 21000],
-                    [1487552400000, 22000],
-                    [1487638800000, 22000],
-                    [1487725200000, 23000],
-                    [1487811600000, 22000],
-                    [1487898000000, 25000],
-                    [1487984400000, 21000],
-                    [1488070800000, 22500],
-                    [1488157200000, 22700],
-                    [1488243600000, 21000],
-                    [1488330000000, 22000],
-                    [1488416400000, 22000],
-                    [1488502270000, 23000],
-                    [1488589200000, 22000],
-                    [1488675600000, 25000],
-                    [1488762000000, 22000],
-                    [1488848400000, 22000],
-                    [1488934800000, 23000],
-                    [1489021200000, 22000],
-                    [1489107600000, 25000],
-                    [1489194000000, 21000],
-                    [1489280400000, 22500],
-                    [1489366800000, 22700],
-                    [1489453200000, 21000],
-                    [1489539600000, 22000],
-                    [1489626000000, 22000],
-                    [1489712400000, 23000],
-                    [1489798800000, 22000],
-                    [1489885200000, 25000],
-                    [1489971600000, 21000],
-                    [1490058000000, 22500],
-                    [1490144400000, 22700],
-                    [1490230800000, 21000],
-                    [1490317200000, 22500],
-                    [1490403600000, 22100],
-                    [1490490000000, 22900],
-                    [1490572270000, 22300],
-                    [1490659200000, 22200],
-                    [1490745600000, 22900],
-                    [1490832000000, 22700],
-                    [1490918400000, 22500],              
+                    [3, 20600],
+                    [4, 35600],
+                    [5, 45600],
+                    [6, 65600]
                 ]
             }]
         });

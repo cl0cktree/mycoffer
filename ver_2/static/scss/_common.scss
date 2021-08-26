@@ -121,19 +121,23 @@
 .form-checkbox_icon label{@include flexCenter;flex-wrap:wrap;width:100%;height:100%;padding:24px 5px;background-color:$kb-ui11}
 .form-checkbox_icon label[data-status="inprogress"]{background-color:$kb-ui10}
 .form-checkbox_icon label[data-status="inprogress"] .status{display:inline-block;line-height:32px;color:$color-blue;font-size:12px;}
-.form-checkbox_icon label strong{display:block;width:100%;margin-top:12px;font-size:14px;color:$kb-ui05;text-align:center}
+.form-checkbox_icon label strong{display:block;width:100%;margin-top:12px;font-size:15px;color:$kb-ui02;text-align:center}
 .form-checkbox_icon input:checked + label{position:relative;color:$kb-ui02;font-weight:bold}
 .form-checkbox_icon input:checked + label:after{content:'';position:absolute;left:-1px;right:-1px;bottom:-1px;top:-1px;border:1px solid $kb-ui02;}
 .form-checkbox_icon input:checked + label strong{font-weight:bold;color:$kb-ui02}
 
-.dividing-line-bottom dd{border-bottom: none; padding-bottom:0px; }
 
-.accordian.t02 li{@include flexBetween}
-.accordian.t02 > dt{border-top:0;border-bottom:1px solid $kb-ui09}
-.accordian.t02 > dt label{font-weight:bold}
-.accordian.t02 > dd{padding-bottom:24px}
-.accordian.t02 > dt.is-active + dd{border-bottom-color:$kb-ui09}
-.accordian.t02 .status{color:$color-blue;font-size:12px;}
+
+.select-organization .accordian dd{padding-top:20px; padding-bottom:20px;  border-bottom:1px solid $kb-ui09;}
+.select-organization .dividing-line-bottom::after{background-color: transparent;}
+.accordian.t02 li{@include flexBetween;}
+.accordian.t02{margin-top: 18px;}
+.accordian.t02 > dt{border-top:0;}
+// .accordian.t02 > dt label{font-weight:bold}
+.accordian.t02 > dd{margin-bottom:24px;}
+.accordian.t02 > dt.is-active{font-weight:bold; border-top:1px solid $kb-ui03; }
+.accordian.t02 > dt.is-active + dd{border-bottom-color:$kb-ui03; }
+.accordian.t02 .status{color:$kb-ui04;font-size:14px;}
 
 //한개의 기관연결
 .request-txt p{text-align: right; color:$kb-ui04; font-size: $text03; margin-top: 75px;}
@@ -142,27 +146,40 @@
 // 기관선택 > 검색결과 mys_co_06_01_01_09
 .search-organization-form{position:relative}
 .search-organization-form .form-text{padding-top:30px}
-.search-organization-form .autocomplete-box{position:absolute;top:72px;left:0;z-index:$level20;width:100%;padding:0 24px;background-color:$kb-ui11;display:none}
+.search-organization-form .autocomplete-box{position:absolute;top:95px;left:0;z-index:$level20;width:100%;padding:0 24px;background-color:$kb-ui11;display:none;}
 .search-organization-form .autocomplete-box.is-active{display:block}
 .search-organization-form .autocomplete-box ul{padding:38px 0 16px;border-top:2px solid $kb-ui02;border-bottom:2px solid $kb-ui02}
 .search-organization-form .autocomplete-box li{padding:10px 0}
+.search-organization-form .autocomplete-box li span{color:$color-blue;}
 .search-result-list{margin-top:40px}
-.search-result-list .list-tit{margin-top:40px}
+.search-result-list .list-tit{margin-top:40px; margin-bottom:40px;  display: block;}
 .search-result-list .list-tit span{color:$color-blue}
-.search-result-list .result-list{margin-top:40px;padding:35px 0;border-top:1px solid $kb-ui03;border-bottom:1px solid $kb-ui09}
+.search-result-list .result-list{margin-top:20px; margin-bottom:48px;padding:35px 0;border-top:1px solid $kb-ui03;border-bottom:1px solid $kb-ui09}
 .search-result-list .result-list li{position:relative}
 .search-result-list .result-list li+li{margin-top:30px}
 .search-result-list .checkbox-group .form-checkbox_20,
 .search-result-list .checkbox-group label{width:100%}
+
+.search-result-list .checkbox-group .form-checkbox,
+.search-result-list .checkbox-group label{width:100%}
+
 .search-result-list .checkbox-group label{@include flexBetween}
 .search-result-list .checkbox-group input:disabled + label{color:$kb-ui04}
-.search-result-list .checkbox-group .status{font-size:12px;color:$color-blue}
+.search-result-list .checkbox-group .status{font-size:14px;color:$kb-ui04}
 
 // 기관 선택 > 전송요구 항목 설정 mys_co_06_01_01_07
+
+.caution-txt_01{display: block; border-bottom: 1px solid $kb-ui09;}
+.caution-txt_01 h4{padding-top: 60px; }
+.caution-txt_01 li{margin-top:40px;}
+.caution-txt_01 li:last-child{margin-bottom: 20px; }
+.caution-txt_01 p{font-size: 16px; margin-top:20px; line-height: 24px;}
+
 .count-step{margin-bottom:20px}
 .count-step strong{font-weight:bold}
 .setting-info-list dd + dt{margin-top:20px}
 .setting-info-list dd{color:#484b51}
+.agreement-to-terms h4{padding-top: 28px; padding-bottom: 48px; border-bottom: 1px solid $kb-ui03; line-height: 24px;}
 .agreement-to-terms .agreement-info{margin-top:24px}
 .agreement-to-terms .agreement-info > strong{font-size:16px}
 .agreement-to-terms .agreement-info .simple-message{margin-top:30px}
@@ -300,12 +317,15 @@
 .mydata-kbinfo .withdraw{margin-top:32px;text-align:right;}
 .mydata-kbinfo .withdraw .btn-text u{color:$kb-ui03;}
 
-.mydata-kbinfo .mydata-kbinfo-summary-list02{padding-top:0.2rem;}
+.mydata-kbinfo .mydata-kbinfo-summary-list02{padding-top:4.6rem;}
+// .mydata-kbinfo .mydata-kbinfo-summary-list02 .js-checkbox-selector:first-of-type{padding-top:4.4rem;}
+.mydata-kbinfo .mydata-kbinfo-summary-list02 .js-checkbox-selector > dt:first-of-type label{font-size:1.8rem;font-weight:bold;}
 .mydata-kbinfo .mydata-kbinfo-summary-list02 [class^=h]{margin-top:4.8rem;}
-.mydata-kbinfo .mydata-kbinfo-summary-list02 h2 .num{margin-left:4px;color:$color-blue;}
+.mydata-kbinfo .mydata-kbinfo-summary-list02 dd [class^=h]:first-child{margin-top:2.6rem;}
+.mydata-kbinfo .mydata-kbinfo-summary-list02 [class^=h] .num{margin-left:7px;}
 .mydata-kbinfo .mydata-kbinfo-summary-list02 .accordian{margin-top:1.5rem;}
-.mydata-kbinfo .mydata-kbinfo-summary-list02 .accordian dt label{@include text($text02, $line-height:1, $weight: bold)}
-.mydata-kbinfo .mydata-kbinfo-summary-list02 .accordian dt label .num{@include number($size: 17px, $weight: normal);margin-left:4px;color:$color-blue;}
+.mydata-kbinfo .mydata-kbinfo-summary-list02 .accordian dt label{font-size:1.6rem;font-weight:bold;}
+.mydata-kbinfo .mydata-kbinfo-summary-list02 .accordian dt label .num{@include number($size: 17px, $weight: normal);margin-left:4px;}
 .mydata-kbinfo .mydata-kbinfo-summary-list02 .accordian dd{padding-top:1.5rem;}
 .mydata-kbinfo .mydata-kbinfo-summary-list02 .accordian .additional-info{@include text($size:$text02, $line-height:1);margin-top:8px;padding-left:3.5rem;color:$kb-ui05;}
 .mydata-kbinfo .mydata-kbinfo-summary-list02 .accordian .additional-info .num{@include number($size: 15px, $line-height:1);}
@@ -410,9 +430,7 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .mydata-call-center [data-style=list] li ~ li{margin-top:1.2rem;}
 
 // temp
-.icon-temp{position: relative;width:40px;height:40px;background:lightGray;margin-right:1.6rem;}
-.icon-temp::after{content:'temp';position:absolute;top:0;left:0;}
-
+.mydata-call-center a [class^=icon]:first-child{margin-right:1.6rem;}
 
 
 //약관 및 정책

@@ -1,38 +1,82 @@
-<!-- [MYS_EX_01_01_04_P] 지출 > 가계부 > 수기 등록 > 거래수단 선택 팝업 (작성자: 누리어 시스템 김삼희)// -->
-<div class="bottom-sheet" data-layered-name="bsUserRegisterMethod">
+<!-- [MYS_EX_01_01_04_P] 지출 > 정기지출 > 연령/성별 선택 팝업 (작성자: 누리어 시스템 김삼희)// -->
+<div class="bottom-sheet" data-layered-name="bsSelectAgeAndGenter">
     <div class="bottom-sheet_header">
         <span class="tit">연령&sol;성별 선택</span>
     </div>
-    <div class="bottom-sheet_contents expense-layered">
+    <div class="bottom-sheet_contents">
         <section class="kb-sec">
-            <div class="select-lists">
-                <dl>
-                    <dt>연령대</dt>
-                    <dd>
-                        <ul class="select-list">
-                            <li class="is-active"><button type="button"><strong class="tit">20대 미만</strong><i class="icon-20"></i></button></li>
-                            <li><button type="button"><strong class="tit">20세~29세</strong><i class="icon-20"></i></button></li>
-                            <li><button type="button"><strong class="tit">20세~29세</strong><i class="icon-20"></i></button></li>
-                            <li><button type="button"><strong class="tit">40세~49세</strong><i class="icon-20"></i></button></li>
-                            <li><button type="button"><strong class="tit">50세~59세</strong><i class="icon-20"></i></button></li>
-                            <li><button type="button"><strong class="tit">60세 이상</strong><i class="icon-20"></i></button></li>
-                        </ul>
-                    </dd>
-                </dl>
-                <dl>
-                    <dt>성별</dt>
-                    <dd>
-                        <ul class="select-list">
-                            <li class="is-active"><button type="button"><strong class="tit">여성</strong><i class="icon-20"></i></button></li>
-                            <li><button type="button"><strong class="tit">남성</strong><i class="icon-20"></i></button></li>
-                        </ul>
-                    </dd>
-                </dl>
+            <div class="kb-form">
+                <strong class="label">연령대</strong>
+                <div class="age_grade">
+                    <ul class="btn-segmented_check" data-grid="2">
+                        <li>
+                            <input type="radio" name="ageGrade" id="ageGrade1">
+                            <label for="ageGrade1">20세 미만</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="ageGrade" id="ageGrade2">
+                            <label for="ageGrade2">20세~24세</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="ageGrade" id="ageGrade3">
+                            <label for="ageGrade3">25세~29세</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="ageGrade" id="ageGrade4">
+                            <label for="ageGrade4">30세~34세</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="ageGrade" id="ageGrade5">
+                            <label for="ageGrade5">35세~39세</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="ageGrade" id="ageGrade6">
+                            <label for="ageGrade6">40세~44세</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="ageGrade" id="ageGrade7" checked>
+                            <label for="ageGrade7">45세~49세</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="ageGrade" id="ageGrade8">
+                            <label for="ageGrade8">50세~54세</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="ageGrade" id="ageGrade9">
+                            <label for="ageGrade9">55세~56세</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="ageGrade" id="ageGrade10">
+                            <label for="ageGrade10">60세 이상</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="kb-sec mt24">
+            <div class="kb-form">
+                <strong class="label">성별</strong>
+                <div class="financial-assets">
+                    <ul class="btn-segmented_check" data-grid="3">
+                        <li>
+                            <input type="radio" name="genderOption" id="genderOption01">
+                            <label for="genderOption01">남성</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="genderOption" id="genderOption02" checked>
+                            <label for="genderOption02">여성</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="genderOption" id="genderOption03">
+                            <label for="genderOption03">기타</label>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
     </div>
     <div class="bottom-sheet_buttons">
-        <button class="btn-solid" data-action="close"><span>확인</span></button>
+        <button class="btn-solid" data-action="close"><span>선택</span></button>
     </div>
     <button class="btn-close" data-action="close"><span>닫기</span></button>
 </div>

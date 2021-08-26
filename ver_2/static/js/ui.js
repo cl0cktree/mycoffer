@@ -1547,5 +1547,29 @@ $('body').on('click','button[data-toggle-class]',function(){
 })
 
 
+var jsFixed = {
+    init: function(){
+        $('.js-fixed').each(function(){
+            var top = $(this).offset().top + $(this).outerHeight();            
+            $(this).attr('data-fix',top);
+        });
+    },
+    scroll : function(st, $this){
+        if($('.js-fixed').length){
+            var fixedTop = $this.data('fix');        
+            if(st >= fixedTop - 48){//fixed header
+                $this.addClass('is-fixed');
+            }else{
+                $this.removeClass('is-fixed');
+            }
+        }
+    }
+};
+if($('.js-fixed').length) jsFixed.init();
 
+$(window).on('scroll',function(){
+    st = $(this).scrollTop();
+
+    jsFixed.scroll(st, $('.page-step'));
+});
 

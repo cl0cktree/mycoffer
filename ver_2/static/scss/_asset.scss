@@ -3,7 +3,7 @@
 .percentage-graph .graph-area { position: relative; width: 100%; height: 20px; border-radius: 20px; background-color: #ebeef0;overflow:hidden;}
 .percentage-graph .graph-area > span { position: absolute; left: 0;top:0; width: 0; height: 100%; border-radius: 20px; background-color: #8c949e; transform: width .2s; overflow:hidden;;color:transparent;text-indent:-9999px;}
 .percentage-graph .graph-txt {@include text($size:1.3rem);color:$kb-ui04;display: block; position: relative; margin-top:1.2rem;}
-.percentage-graph .graph-txt .num{@include number($size:15px);color:$kb-ui02;margin-right:.2rem;}
+.percentage-graph .graph-txt .num{@include number($size:15px);color:$kb-ui02;}
 .percentage-graph .graph-txt:after { content: ''; display: block; clear: both; }
 .percentage-graph .graph-txt .start-txt { float: left;text-align: left; }
 .percentage-graph .graph-txt .end-txt { float: right;text-align: right; }
@@ -101,6 +101,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:#ffcc00;border:1
 /* 대상선택 */
 .btn-segmented_check[data-grid]{display:grid;}
 .btn-segmented_check[data-grid]>li{margin-top:-1px;}
+.btn-segmented_check[data-grid="2"]{grid-template-columns: 1fr 1fr}
 .btn-segmented_check[data-grid="3"]{grid-template-columns: 1fr 1fr 1fr;}
 .btn-segmented_check[data-grid="3"]>li:nth-child(3n+1) label{border-left:1px solid $kb-ui08;}
 .btn-segmented_check[data-grid="3"]>li:first-child label{border-radius:0.2rem 0  0 0;}
@@ -623,7 +624,6 @@ div.percentage-graph.yellow .graph-area > span{background-color:#ffcc00;border:1
 .my-asset .select-account .credit-list.type2 .amount{color:$kb-ui03;}
 .my-asset .select-account .description-list dt{align-items:flex-start;}
 .my-asset .select-account .description-list dd{margin-top:4rem;}
-.my-asset .select-account .description-list dd .num{margin-right:.2rem;}
 .my-asset .check-management{margin-top:4.8rem;}
 .my-asset .check-management .btn-switch{display:block;}
 .my-asset .check-management .btn-switch label{display:block;}
@@ -669,7 +669,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:#ffcc00;border:1
 
 /* wish house 플래너 */
 .my-asset.wish-house-planer .top-area .msg{@include text($size:$text01,$weight:bold);}
-.my-asset.wish-house-planer .top-area .msg b{color:$color-blue;}
+.my-asset.wish-house-planer .top-area .msg strong{color:$color-blue;font-weight:bold;}
 .my-asset.wish-house-planer .top-area .msg .num{@include number($size:21px,$weight:bold);}
 .my-asset.wish-house-planer .planer{padding-top:24px;}
 .my-asset.wish-house-planer .progress-wrap{position:relative;padding-top:7.3rem;}
@@ -720,7 +720,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:#ffcc00;border:1
 .my-asset.my-house-expens .add-legend{font-size:1.4rem;text-align:center;margin-top:1.6rem;color:$kb-ui02}
 .my-asset.my-house-expens .add-legend i{display:inline-block;width:2rem;height:.8rem;vertical-align:middle;margin-right:.8rem;}
 .my-asset.my-house-expens .add-legend p{display:inline-block;}
-.my-asset.my-house-expens .add-legend .num{margin-right:.2rem;font-size:1.5rem;}
+.my-asset.my-house-expens .add-legend .num{font-size:1.5rem;}
 .my-asset.my-house-expens .my-average{@include text($size:14px);text-align:center;margin-top:5px;}
 .my-asset.my-house-expens .my-average > em{display:inline-block;position:relative;padding-left:15px;}
 .my-asset.my-house-expens .my-average > em:before{display:inline-block;position:absolute;top:50%;left:0;margin-top:-4px;width:7px;height:7px;border-radius:7px;background-color:$kb-ui08;content:'';}
@@ -748,7 +748,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:#ffcc00;border:1
 .my-asset .house-data-list.expens .house-data-tit .data-wrap{display:flex;justify-content:space-between;align-items:center;}
 .my-asset .house-data-list.expens .house-data-tit .tit{@include text($size:$text01,$weight:bold);}
 .my-asset .house-data-list.expens .house-data-tit .amount{@include text($size:$text01,$weight:bold);}
-.my-asset .house-data-list.expens .house-data-tit .amount .num{font-size:1.9rem;margin-right:.2rem;}
+.my-asset .house-data-list.expens .house-data-tit .amount .num{font-size:1.9rem;}
 .my-asset .house-data-list .nick-name-area{display:flex;justify-content:space-between;align-items:center;margin-bottom:2.4rem;}
 .my-asset .house-data-list .nick-name-area.type2{margin-bottom:1rem;}
 .my-asset .house-data-list .nick-name-area .txt{color:$kb-ui03;}
@@ -777,7 +777,6 @@ div.percentage-graph.yellow .graph-area > span{background-color:#ffcc00;border:1
 .my-asset.house-view .other-conditions{padding-top:40px;padding-bottom:38px;}
 .my-asset.house-view .other-conditions .h4{margin-bottom:12px;}
 .my-asset.house-view .other-conditions .average-box{display:none;position:absolute;top:46px;left:0;text-align:center;}
-.my-asset.house-view .other-conditions .average-box .num{margin-right:.4rem;}
 .my-asset.house-view .other-conditions .btn-segmented .is-selected + .average-box{display:block;top:5.5rem;}
 .my-asset.house-view .other-conditions .btn-segmented li{position:initial;}
 .my-asset.house-view .other-conditions .btn-segmented{position:relative;}
@@ -995,10 +994,11 @@ div.percentage-graph.yellow .graph-area > span{background-color:#ffcc00;border:1
 .my-asset .btn-segmented.type2 .is-selected{background-color:#fff;border:3px solid $kb-ui09;}
 .my-asset .btn-segmented.type2 .is-selected:after{/*border:3px solid $kb-ui09;*/display:none;}
 .my-asset .loan-card-list{margin-top:4rem;}
-.my-asset .loan-card-list button{display:block;width:100%;border:1px solid $kb-ui08;border-radius:.8rem;text-align:left;padding:2rem 2.1rem;}
-.my-asset .loan-card-list button .loan-tit{display:block;font-weight:bold;line-height:1;}
-.my-asset .loan-card-list button .loan-desc{display:block;margin-top:1.6rem;color:$kb-ui04;font-size:$text03;line-height:1;}
-.my-asset .loan-card-list button .loan-amount{display:block;margin-top:2.8rem;text-align:right;font-size:$text03;line-height:1;}
+.my-asset .loan-card-list .tit{font-size:$text01;}
+.my-asset .loan-card-list button{display:block;width:100%;background:#6349a5;border-radius:.8rem;text-align:left;padding:2rem 2.2rem;color:#fff;}
+.my-asset .loan-card-list button .loan-tit{display:block;font-weight:bold;line-height:1;font-size:2rem;}
+.my-asset .loan-card-list button .loan-desc{display:block;margin-bottom:1.2rem;font-size:$text02;line-height:1;}
+.my-asset .loan-card-list button .loan-amount{display:block;margin-top:1.9rem;font-size:$text02;line-height:1;}
 .my-asset .loan-card-list button .loan-amount > strong{font-size:$text01;font-weight:bold;}
 .my-asset .loan-card-list button .loan-amount > strong .num{font-size:1.9rem;font-weight:bold;}
 .my-asset .loan-card-list button + button{margin-top:2rem;}

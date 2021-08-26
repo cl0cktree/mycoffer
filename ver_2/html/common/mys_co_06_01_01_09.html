@@ -1,4 +1,4 @@
-<!-- [MYS_CO_06_01_01_09] 전송요구방법 > 통합인증 > 기관 선택_검색결과 (작성자: 누리어 시스템 이진우)// -->
+<!-- [MYS_CO_06_01_01_09] 전송요구방법 > 통합인증 > 기관 선택_검색결과 (작성자: 누리어 시스템 변혜선)// -->
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -13,7 +13,7 @@
     <div class="app">
         
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
-            'pageTit':'기관 검색결과',
+            'pageTit':'검색기관',
             'type':'close'
         })
         
@@ -33,25 +33,38 @@
                     </div>
                     <div class="autocomplete-box">
                         <ul>
-                            <li>KB국민카드</li>
-                            <li>KB증권</li>
-                            <li>KB손해보험</li>
+                            <li><span>KB</span>국민카드</li>
+                            <li><span>KB</span>증권</li>
+                            <li><span>KB</span>손해보험</li>
                         </ul>
                     </div>
                 </section>
                 <!-- SECTION //-->
                 <!--// SECTION -->
                 <section class="kb-sec search-result-list">
-                    <strong class="h4 list-tit"><span>KB</span> 검색결과</strong>
+                    <strong class="h4 list-tit"><span>KB</span>으로 검색한 결과입니다.</strong>
+                    <strong class="h4">카드</strong>
                     <ul class="checkbox-group result-list">
-                        <li><span class="form-checkbox_20"><input type="checkbox" id="select11"><label for="select11">KB국민은행</label></span></li>
-                        <li><span class="form-checkbox_20"><input type="checkbox" id="select12"><label for="select12">신한은행</label></span></li>
-                        <li><span class="form-checkbox_20"><input type="checkbox" id="select13" disabled><label for="select13">NH농협은행 <span class="status">연결 중</span></label></span></li>
+                        <li><span class="form-checkbox"><input type="checkbox" id="select11"><label for="select11">KB국민은행</label></span></li>
+                        <li><span class="form-checkbox"><input type="checkbox" id="select12"><label for="select12">신한은행</label></span></li>
+                        <li><span class="form-checkbox"><input type="checkbox" id="select13" disabled><label for="select13">NH농협은행 <span class="status">연결 중</span></label></span></li>
+                    </ul>
+                    <strong class="h4">금융투자</strong>
+                    <ul class="checkbox-group result-list">
+                        <li><span class="form-checkbox"><input type="checkbox" id="select11"><label for="select11">KB증권</label></span></li>
+                        <li><span class="form-checkbox"><input type="checkbox" id="select12"><label for="select12">신한증권</label></span></li>
+                        <li><span class="form-checkbox"><input type="checkbox" id="select13" disabled><label for="select13">NH증권 <span class="status">연결 중</span></label></span></li>
+                    </ul>
+                    <strong class="h4">보험</strong>
+                    <ul class="checkbox-group result-list">
+                        <li><span class="form-checkbox"><input type="checkbox" id="select11"><label for="select11">KB보험</label></span></li>
+                        <li><span class="form-checkbox"><input type="checkbox" id="select12"><label for="select12">신한보험</label></span></li>
+                        <li><span class="form-checkbox"><input type="checkbox" id="select13" disabled><label for="select13">NH보험 <span class="status">연결 중</span></label></span></li>
                     </ul>
                     <!-- [D]] 검색 결과 없을 때 //-->
                     <!-- <div class="no-data">
                         <i class="icon-info_24"></i>
-                        <p>내역이 없습니다.</p>
+                        <p>검색 결과가 없습니다.</p>
                     </div> -->
                     <!--// [D]] 검색 결과 없을 때 -->
                 </section>

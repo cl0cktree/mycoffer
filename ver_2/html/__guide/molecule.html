@@ -418,7 +418,7 @@
 						<em class="validation">Error Message</em><!-- 성공/에러 메세지 -->
                         <p class="info-msg">(필요하면) 안내 메세지</p><!-- 안내 메세지 -->
 					</div>
-				</dd>				
+				</dd>
 			</dl>
 		</div>
 		<hr>
@@ -491,40 +491,39 @@
 				<dd data-description=".date-time-picker : 날짜 시간 선택">
                     <div class="kb-form_multi date-time-picker">
                         <strong class="tit required">날짜 및 시간</strong>
-                        <div class="kb-form datepicker">
+                        <div class="kb-form datepicker" data-status="">
                             <div class="kb-form_inner form-text">
                                 <input type="text" id="dateSelectorSample" title="날짜선택">
-                            </div>
-                            <em class="validation">오늘을 포함한 날짜만 선택해주세요.</em><!-- 성공/에러 메세지 -->                            
+                            </div>                            
                         </div>
                         <div class="kb-form timepicker" data-status="error">
                             <div class="kb-form_inner form-text">
                                 <input type="text" id="timeSelectorSample" title="시간선택">
-                            </div>
-                            <em class="validation">숫자 4자리로 입력해주세요.</em><!-- 성공/에러 메세지 -->
-                            <em class="validation">2400보다 큰 숫자를 입력 할 수 없습니다.</em><!-- 성공/에러 메세지 -->
+                            </div>                            
                         </div>
-                        
+                        <em class="validation">오늘을 포함한 날짜만 선택해주세요.</em><!-- 성공/에러 메세지 -->
+                        <em class="validation">숫자 4자리로 입력해주세요.</em><!-- 성공/에러 메세지 -->
+                        <em class="validation">2400보다 큰 숫자를 입력 할 수 없습니다.</em><!-- 성공/에러 메세지 -->
                     </div>
-				</dd>						
+				</dd>
 				<dd data-description=".date-time-picker : 날짜 시간 선택">
                     <div class="kb-form_multi date-time-picker">
                         <strong class="tit required">날짜 및 시간</strong>
                         <div class="kb-form datepicker" data-status="error">
                             <div class="kb-form_inner form-text">
                                 <input type="text" id="dateSelectorSample02" title="날짜선택">
-                            </div>
-                            <em class="validation">오늘을 포함한 날짜만 선택해주세요.</em><!-- 성공/에러 메세지 -->                            
+                            </div>                            
                         </div>
                         <div class="kb-form timepicker" data-status="error">
                             <div class="kb-form_inner form-text">
                                 <input type="text" id="timeSelectorSample02" title="시간선택">
-                            </div>
-                            <em class="validation">숫자 4자리도 입력해주세요.</em><!-- 성공/에러 메세지 -->
-                            <em class="validation">2400보다 큰 숫자를 입력 할 수 없습니다.</em><!-- 성공/에러 메세지 -->
+                            </div>                            
                         </div>
+                        <em class="validation">오늘을 포함한 날짜만 선택해주세요.</em><!-- 성공/에러 메세지 -->
+                        <em class="validation">숫자 4자리도 입력해주세요.</em><!-- 성공/에러 메세지 -->
+                        <em class="validation">2400보다 큰 숫자를 입력 할 수 없습니다.</em><!-- 성공/에러 메세지 -->
                     </div>
-				</dd>						
+				</dd>
 			</dl>
 		</div>
 		<hr>
@@ -850,43 +849,54 @@
                     </pre>
                 </dt>
 				<dd class="guide-description">
-					멀티폼에서는 data-status 값을 .kb-form_multi 에 넣어줌 (.kb-form 에는 없음)<br>
-					.validation도 .kb-form_multi 하단에 1개만 넣어줌 (.kb-form 에는 없음)
-
-
+					에러발생시 해당 폼(.kb-form)에 data-status="error" 넣어줌
+                    validation은 .kb-form_multi 하단에 1개만 넣어줌 (각 .kb-form 에는 없음)
                 </dd>
                 <dd data-description="멀티폼: 휴대폰번호">
-                    <div class="kb-form_multi" data-status="">
-                        <strong class="tit">전화번호</strong>
-                        <div class="kb-form">
-                            <label for="formMultiSample11">통신사</label>
+                    <div class="kb-form_multi kb-form_phone">
+                        <strong class="tit">휴대폰</strong>
+                        <div class="kb-form" data-status="">
                             <div class="kb-form_inner form-select">
                                 <button type="button" class="selected-option"></button>
-                                <select name="" id="formMultiSample11" title="통신사 선택">
+                                <select name="" id="formMultiPhone" title="통신사 선택">
                                     <option value="">통신사</option>
                                     <option value="">SKT</option>
                                     <option value="">KT</option>
                                     <option value="">LG</option>
                                     <option value="">알뜰폰</option>
                                 </select>
-                            </div>
-                            <em class="validation">에러 메세지 영역 입니다.</em>
+                            </div>                            
                         </div>
-                        <div class="kb-form">
-                            <label for="formMultiSample13">휴대폰번호</label>
+                        <div class="kb-form" data-status="">
+                            <div class="kb-form_inner form-select">
+                                <button type="button" class="selected-option">010</button>
+                                <select name="" id="formMultiPhone02" title="휴대폰 앞자리 번호">
+                                    <option value="">010</option>
+                                    <option value="" selected>010</option>
+                                    <option value="">011</option>
+                                    <option value="">016</option>
+                                    <option value="">017</option>
+                                    <option value="">018</option>
+                                    <option value="">019</option>
+                                </select>
+                            </div>                            
+                        </div>
+                        <div class="kb-form" data-status="">
+                            <label for="formMultiPhone03">휴대폰번호</label>
                             <div class="kb-form_inner form-text">
-                                <input type="text" inputmode="numeric" id="formMultiSample13" placeholder="휴대폰번호">
+                                <input type="text" class="align-l" inputmode="numeric" max-length="8" id="formMultiPhone03" placeholder="" title="휴대폰 뒷자리 번호">
                                 <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                            </div>
+                            </div>                            
                         </div>
-						<em class="validation">Success / Error Message</em><!-- 성공/에러 메세지 -->
-                        <p class="info-msg">(필요하면) 안내 메세지</p><!-- 안내 메세지 -->
+                        <em class="validation">통신사를 선택하세요.</em>
+                        <em class="validation">휴대폰 앞자리를 선택하세요.</em>
+                        <em class="validation">휴대폰 뒷자리를 선택하세요.</em>
                     </div>
                 </dd>
                 <dd data-description="멀티폼: 이메일">
-                    <div class="kb-form_multi kb-form_email" data-status="">
+                    <div class="kb-form_multi kb-form_email">
                         <strong class="tit">이메일</strong>
-                        <div class="kb-form">
+                        <div class="kb-form" data-status="">
                             <label for="formMultiEmail">이메일ID</label>
                             <div class="kb-form_inner form-text">
                                 <input type="text" id="formMultiEmail" placeholder="" value="acorn22">
@@ -894,7 +904,7 @@
                             </div>
                         </div>
 						<span class="between">@</span>
-                        <div class="kb-form">
+                        <div class="kb-form" data-status="">
                             <label for="formMultiEmail02">이메일서비스명</label>
                             <div class="kb-form_inner form-select">
                                 <button type="button" class="selected-option"></button>
@@ -910,7 +920,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="kb-form add-email-input">
+                        <div class="kb-form add-email-input" data-status="">
                             <label for="formMultiEmail03"></label>
                             <div class="kb-form_inner form-text">
                                 <input type="text" id="formMultiEmail03" placeholder="">
@@ -923,9 +933,9 @@
                     </div>
                 </dd>
                 <dd data-description="멀티폼: 이메일">
-                    <div class="kb-form_multi kb-form_email" data-status="error">
+                    <div class="kb-form_multi kb-form_email">
                         <strong class="tit">이메일</strong>
-                        <div class="kb-form">
+                        <div class="kb-form" data-status="">
                             <label for="formMultiEmail0">이메일ID</label>
                             <div class="kb-form_inner form-text">
                                 <input type="text" id="formMultiEmail0" placeholder="" value="acorn22">
@@ -933,7 +943,7 @@
                             </div>
                         </div>
 						<span class="between">@</span>
-                        <div class="kb-form">
+                        <div class="kb-form" data-status="">
                             <label for="formMultiEmail002">이메일서비스명</label>
                             <div class="kb-form_inner form-select">
                                 <button type="button" class="selected-option"></button>
@@ -961,14 +971,11 @@
 						<p><span class="form-checkbox"><input type="checkbox" id="noEmail02"><label for="noEmail02">이메일 없음</label></span></p>
                     </div>
                 </dd>
-                <dd data-description="멀티폼: 이메일(.kb-form 각각 빨간줄)">
+                <dd data-description="멀티폼: 에러">
 					<!--
-						.kb-form_multi 에서 내부에 일부 .kb-form에만 error 표시가 필요할 경우
-						.kb-form_multi 에는 data-status="has-error"
-						.kb-form 에는 data-status="error"
-						로 지정
+						에러가 난 .kb-form에 data-status="error" 
 					-->
-                    <div class="kb-form_multi kb-form_email" data-status="has-error">
+                    <div class="kb-form_multi kb-form_email">
                         <strong class="tit">이메일</strong>
                         <div class="kb-form" data-status="error">
                             <label for="formMultiEmail0b">이메일ID</label>
@@ -1001,12 +1008,13 @@
                                 <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                             </div>
                         </div>
+                        <em class="validation">에러 메세지</em>
                         <p class="info-msg">(필요하면) 안내 메세지</p><!-- 안내 메세지 -->
 						<p><span class="form-checkbox"><input type="checkbox" id="noEmail02"><label for="noEmail02">이메일 없음</label></span></p>
                     </div>
                 </dd>
 				<dd data-description="주민등록번호">
-                    <div class="kb-form_multi kb-form_citizen" data-status="has-error">
+                    <div class="kb-form_multi kb-form_citizen">
                         <strong class="tit">주민등록번호</strong>
                         <div class="kb-form" data-status="">
                             <label for="citizenCode">주민등록번호 앞자리</label>
@@ -1016,16 +1024,15 @@
                             </div>
                         </div>
 						<span class="between"> - </span>
-                        <div class="kb-form">
+                        <div class="kb-form" data-status="">
                             <label for="citizenCode02">주민등록번호 뒷자리의 첫번째 자리</label>
                             <div class="kb-form_inner form-text">
                                 <input type="text" id="citizenCode02" maxlength="1" placeholder="" value="" inputmode="numeric">
                             </div>
-                        </div>                        
-                        <p class="info-msg">(필요하면) 안내 메세지</p><!-- 안내 메세지 -->
+                        </div>
+                        <em class="validation">에러 메세지</em>
                     </div>
                 </dd>
-				
 			</dl>
 		</div>
 		<hr>
@@ -1603,21 +1610,21 @@
                         </dt>
                         <dd>
                             내용
-                        </dd>                       
+                        </dd>
                         <dt>
                             <strong>타이틀</strong>
                             <button type="button" class="accordian-trigger"></button>
                         </dt>
                         <dd>
                             내용
-                        </dd>                       
+                        </dd>
                         <dt>
                             <span>타이틀</span>
                             <button type="button" class="accordian-trigger"></button>
                         </dt>
                         <dd>
                             내용
-                        </dd>                       
+                        </dd>
                     </dl>
                 </dd>
                 <dd data-description=".accordian : checkbox">
@@ -1628,21 +1635,21 @@
                         </dt>
                         <dd>
                             내용
-                        </dd>                       
+                        </dd>
                         <dt>
                             <span class="form-checkbox"><input type="checkbox" id="accrdianCheck02"><label for="accrdianCheck02">아코디언 체크</label></span>
                             <button type="button" class="accordian-trigger"></button>
                         </dt>
                         <dd>
                             내용
-                        </dd>                       
+                        </dd>
                         <dt>
                             <span class="form-checkbox"><input type="checkbox" id="accrdianCheck03"><label for="accrdianCheck03">아코디언 체크</label></span>
                             <button type="button" class="accordian-trigger"></button>
                         </dt>
                         <dd>
                             내용
-                        </dd>                       
+                        </dd>
                     </dl>
                 </dd>
             </dl>
@@ -2354,7 +2361,7 @@
                                         </dd>
                                     </dl>
                                 </li>
-                            </ul>                            
+                            </ul>
                         </li>
                         <li>
                             <strong class="date">2021.08.10</strong>
@@ -2391,7 +2398,7 @@
                                         </dd>
                                     </dl>
                                 </li>
-                            </ul>                            
+                            </ul>
                         </li>
                         <li>
                             <strong class="date">2021.08.09</strong>
@@ -2428,7 +2435,7 @@
                                         </dd>
                                     </dl>
                                 </li>
-                            </ul>                            
+                            </ul>
                         </li>
                     </ul>
                     <button class="btn-text"><i class="icon-plus"></i><span>더보기</span></button>
@@ -2534,21 +2541,9 @@
 						</code>
 					</pre>
 				</dt>
-				<!-- <dd data-description=".condition-area: 총 갯수가 있는 경우" style="padding:0 24px;">
-					<div class="condition-area">
-						<button class="btn-condition" data-call-layered="">
-							<strong class="tit">총 <span class="num">17</span>개</strong>
-							<div>
-								<div class="sorting-status">
-									<span><em class="num">1</em>개월</span>
-									<span>전체</span>
-									<span>최신순</span>
-								</div>
-								<i class="arrow">조회조건 선택</i>
-							</div>
-						</button>
-					</div>
-				</dd> -->
+				<dd class="guide-description">
+                    호출하는 "조회 선택" 바텀 시트의 "상세검색"이 없어 검색 결과를 노출하지 않을때 사용
+                </dd>
 				<dd data-description=".condition-area: 총 갯수가 없는 경우" style="padding:0 24px;">
 					<div class="condition-area">
 						<button class="btn-condition" data-call-layered="">
@@ -2591,6 +2586,9 @@
 						</code>
 					</pre>
 				</dt>
+                <dd class="guide-description">
+                    호출하는 "조회 선택" 바텀 시트의 "상세검색" 내용을 검색 결과에 노출
+                </dd>
 				<dd data-description=".filter-area" style="padding:24px;">
                     <div class="filter-area">
                         <div class="condition-area">
@@ -2701,7 +2699,8 @@
 				</dd>
 			</dl>
 		</div>
-		<!-- 카드 형 -->
+        <hr>
+		<!-- Pagination -->
 		<div class="box">
 			<h2>Pagination</h2>
 			<dl class="flex-dl">
@@ -2716,6 +2715,42 @@
 					@@include('@@webRoot/html/_include/app-pagination.html')
 				</dd>
 			</dl>
+		</div>
+        <hr>
+		<!-- Step 상단 -->
+		<div class="box" id="pageStep">
+			<h2>Step 상단</h2>
+			<dl class="flex-dl">
+				<dt>
+					<pre>
+						<code>
+
+						</code>
+					</pre>
+				</dt>
+				<dd data-description="페이지 단계별 Step">
+                    <div class="page-step"><!-- 상단 고정을 하고 싶을 때 js-fixed -->
+                        <div class="step" aria-label="총 10단계 중 현재 1단계">
+                            <span class="current">1</span>
+                            <span class="total">10</span>
+                        </div>
+                        <h2 class="h1">약관동의</h2>
+                    </div>
+				</dd>
+				<dd data-description="페이지 단계별 Step (고정상태)">
+                    <div class="page-step is-fixed"><!-- 상단 고정을 하고 싶을 때 js-fixed -->
+                        <div class="step" aria-label="총 10단계 중 현재 1단계">
+                            <span class="current">1</span>
+                            <span class="total">10</span>
+                        </div>
+                        <h2 class="h1">약관동의</h2>
+                    </div>
+				</dd>
+			</dl>
+            <div class="iframe-view">
+                <strong class="tit">Step 상단 샘플</strong>
+                <iframe src="./sample/layout-step.html" frameborder="0"></iframe>
+            </div>
 		</div>
 	</div>
 </div>

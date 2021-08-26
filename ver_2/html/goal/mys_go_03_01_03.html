@@ -129,7 +129,8 @@
                 plotShadow: false,
                 type: 'packedbubble',
                 margin:0,
-                marginBottom:20
+                marginTop:0,
+                marginBottom:0
             },            
             tooltip: { enabled: false },
             plotOptions: {
@@ -139,21 +140,21 @@
                     zMin: 0,
                     layoutAlgorithm: {
                         splitSeries: false,
-                        gravitationalConstant: 0.005
+                        gravitationalConstant: 0.05
                     },
                     dataLabels: {
                         enabled: true,
                         formatter: function () { 
-                            return this.point.name + "<br><br><span style='font-size:5vw;font-family:Roboto;'><b style='font-size:6vw'>" + gfn_comma3Digit(this.point.value) + "</b>일"
+                            return this.point.name + "<br><span style='font-size:3.5vw;font-family:Roboto;'><b style='font-size:4vw'>" + gfn_comma3Digit(this.point.value) + "</b>일"
                         },    
-                        rotation:.000001,             
+                        rotation:1,             
                         style: {
-                            color: '#26282c',
+                            color: '#fff',
                             textOutline: 'none',
                             fontWeight: 'normal',
                             textAlign:'center',    
                             fontSize: '3.5vw',                        
-                            fontFamily: "KBFGText"                            
+                            fontFamily: "KBFGText"         
                         }
                     }
                 }  
@@ -161,19 +162,19 @@
             series: [{
                 name: null,
                 data: [{
-                    name: '<tspan dy="-15">나</tspan>',
+                    name: '<tspan dy="-5">비교그룹</tspan>',
                     value: 7,
                     color: {
                         radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
-                        stops: [ [0, '#c5d38d'], [1, '#a7c23a'] ]
+                        stops: [ [0, '#ff8a71'], [1, '#ff8a71'] ]
                     }
                 },{
-                    name: '<tspan dy="-15">다른 사람</tspan>',
+                    name: '<tspan dy="-5">나</tspan>',
                     color: '#f8956d',
                     value: 3,
                     color: {
                         radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
-                        stops: [ [0, '#e4e7e9'], [1, '#c6cbd0'] ]
+                        stops: [ [0, '#ffba53'], [1, '#ffba53'] ]
                     }
                 }]
             

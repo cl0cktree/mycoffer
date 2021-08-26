@@ -354,9 +354,9 @@
 .goals-noti h3 + ul{margin-top:2rem;}
 .goals-noti h3 + ul li{color:$kb-ui02;}
 
-.goals-use-best{margin-top:34px;margin-bottom:196px;}
+.goals-use-best{margin-top:4rem;padding-top:3.2rem;}
 
-.chart-area.dbl-bar > .chart-area.type-ratio{margin-top:2rem;margin-bottom:10px;}
+.chart-area.dbl-bar > .chart-area.type-ratio{margin-top:0;margin-bottom:-2rem;}
 .chart-area .txt-gray{@include text($size:$text03);padding-left:16px;position:relative;}
 .chart-area .txt-gray:before{content:'';width:9px;height:9px;position:absolute;display:block;border-radius:50%;top:5px;left:0;background:$kb-ui07;}
 .chart-area .txt-yellow{@include text($size:$text03);padding-left:16px;position:relative;}
@@ -367,26 +367,32 @@
 .chart-area p.txt-gray + p.txt-yellow.type2{margin-top:5px;}
 .chart-area span.txt-gray + span.txt-yellow{margin-left:18px;}
 
-.ranking-list .ranking-tit{font-size:18px;line-height:22px;}
+.ranking-list{padding-bottom:3.2rem;}
+.ranking-list .ranking-tit{font-size:$text01;}
 .ranking-list .ranking-tit strong{font-weight:bold;}
-.ranking-list .ranking-tit + .ranking-list{margin-top:27px;}
-.ranking-list ul.ranking-list li{padding-left:33px;position:relative;}
-.ranking-list ul.ranking-list li:before{content:'';@include text($size:$text03,$weight:bold);line-height:24px;width:24px;height:24px;position:absolute;left:0;top:-2px;text-align:center;background:$kb-ui07;display:block;}
-.ranking-list ul.ranking-list li.rank:before{background:$color-yellow;}
-.ranking-list ul.ranking-list li:nth-child(1):before{content:'1';}
-.ranking-list ul.ranking-list li:nth-child(2):before{content:'2';}
-.ranking-list ul.ranking-list li:nth-child(3):before{content:'3';}
-.ranking-list ul.ranking-list li:nth-child(4):before{content:'4';}
-.ranking-list ul.ranking-list li:nth-child(5):before{content:'5';}
-.ranking-list ul.ranking-list li + li{margin-top:19px;}
+.ranking-list .ranking-tit + .ranking-view{margin-top:2.4rem;}
+.ranking-list ul.ranking-view li{padding-left:33px;position:relative;}
+.ranking-list ul.ranking-view li strong{font-weight:bold;}
+.ranking-list ul.ranking-view li:before{content:'';@include text($size:$text03,$weight:bold);font-family:'Roboto';line-height:24px;width:24px;height:24px;border-radius:.2rem;position:absolute;left:0;top:-2px;text-align:center;background:$kb-ui07;display:block;}
+.ranking-list ul.ranking-view li.rank:before{background:$color-yellow;}
+.ranking-list ul.ranking-view li:nth-child(1):before{content:'1';}
+.ranking-list ul.ranking-view li:nth-child(2):before{content:'2';}
+.ranking-list ul.ranking-view li:nth-child(3):before{content:'3';}
+.ranking-list ul.ranking-view li:nth-child(4):before{content:'4';}
+.ranking-list ul.ranking-view li:nth-child(5):before{content:'5';}
+.ranking-list ul.ranking-view li + li{margin-top:19px;}
 
-.goals-setting{padding-top:24px;position:fixed;bottom:52px;width:100%;z-index:1;}
+.goals-setting{padding-top:24px;}
 .goals-setting h2{@include text($text01,$weight:bold)}
 .goals-setting h2 + h3{@include text($text02);margin-top:10px;}
 .goals-setting h2 + h3 strong{@include text($weight:bold)}
-.goals-setting .character-graph{margin-top:42px;}
-.goals-setting .character-graph .graph-txt > p{font-size:14px;font-weight:bold;}
-.goals-setting .character-graph .ui-slider .handle .value{font-size:14px;font-weight:bold;background:#f7f7f8;padding:1px 5px;}
+.goals-setting .character-graph{margin-top:5.2rem;}
+.goals-setting .character-graph .graph-txt > p{font-size:$text03;font-weight:bold;}
+.goals-setting .character-graph .graph-txt > p .num{font-size:1.5rem;}
+.goals-setting .character-graph .ui-slider .handle .value{font-size:1.5rem;font-weight:bold;padding:1px 5px;top:2.4rem;}
+.goals-setting .character-graph .ui-slider .handle .value:before{content:'추천';position:absolute;top:-5.8rem;font-size:1.4rem;left:1.5rem;font-family:'KBFGText';}
+.goals-setting .character-graph .ui-slider.left .handle .value:before{left:0;}
+.goals-setting .character-graph .ui-slider.right .handle .value:before{left: calc(50% + .5rem);}
 .goals-setting .character-graph .graph-txt p:after{content:attr(data-unit);}
 
 
@@ -468,6 +474,7 @@ section.gray-line + section{border-top:1rem solid $kb-ui10;}
 .character-graph:not(.js-slider) .graph-txt strong{font-weight:bold;}
 .character-graph:not(.js-slider) .graph-txt .start-txt{margin-left:0;line-height:1.4;}
 .character-graph:not(.js-slider) .graph-txt .end-txt{margin-right:0;line-height:1.4;}
+.character-graph:not(.js-slider) .graph-area{height:2rem;}
 .character-graph:not(.js-slider) .graph-area > span{background-color:#ffcc00;border:1px solid #ffbc00;}
 .character-graph:not(.js-slider) .graph-area > span i{display:block;position:absolute;bottom:5px;right:8px;background-size:contain;z-index:1;}
 .character-graph:not(.js-slider) .graph-area .flag{position:absolute;right:-10px;bottom:10px;}
@@ -536,6 +543,6 @@ section.gray-line + section{border-top:1rem solid $kb-ui10;}
 
 
 /*차트 비율*/
-.chart-area.type-ratio{height:calc(75vw - 88px);margin-top:28px;margin-bottom:-20px;}
+.chart-area.type-ratio{height:calc(75vw - 88px)}
 .chart-area.type-ratio.no-mt{margin-top:0;}
 // .goals-detail-list .challenge-info .type-ratio{margin-bottom:-20px;}

@@ -172,6 +172,8 @@ ul.radio-group > li + li{margin-top:20px;}
 .kb-form_multi[data-status=error] .kb-form_inner{border-bottom-color:$color-red;}
 .datepicker[data-status=error] .kb-form_inner,
 .kb-form_multi[data-status=error] .datepicker .kb-form_inner{border-bottom-width:2px;}
+
+.kb-form_multi .kb-form[data-status=error] ~ .validation{display:block;}
 // .kb-form.is-disabled,
 // .kb-form.is-readonly,
 // .kb-form.is-disabled label,
@@ -209,9 +211,13 @@ ul.radio-group > li + li{margin-top:20px;}
 	&::placeholder {font-size: 19px;color:$kb-ui07;}
 }
 .form-text input[type=text],
-.form-text input[type=password]{@include text($size:19px, $line-height: 32px, $weight: bold);}
+.form-text input[type=password],
+.form-text input[type=tel],
+.form-text input[type=number]{@include text($size:19px, $line-height: 32px, $weight: bold);}
 .form-text input[inputmode=numeric],
 .form-text input[inputmode=decimal]{@include number($size:21px, $line-height:32px, $weight: bold);text-align:right;}
+.form-text input[inputmode=numeric].align-l,
+.form-text input[inputmode=decimal].align-l{text-align:left;}
 .form-text input[inputmode=numeric]::placeholder{text-align:right;}
 .form-text .unit{@include text($size:20px, $weight: bold);margin-top:2px;margin-left:4px;}/*position:absolute;left:4px;top:3px;max-width:calc(100% - 54px);*/
 .form-text .btn-data-clear{display:none;margin-left:auto;}
@@ -231,8 +237,8 @@ ul.radio-group > li + li{margin-top:20px;}
 .form-radio-set .form-radio {margin: 5px 0;}
 .form-radio-set .form-radio label {color: $kb-ui02; }
 
-.form-select .selected-option{@include text($size:17px, $line-height:24px, $weight: bold);@include ellipsis;position:relative;display:block;width:100%;height:32px;padding-right:30px;text-align:left;border:none;}
-.form-select .selected-option:after{position: absolute;right:0;top: 6px;z-index: 1;content: '';width:2rem;height:2rem;background:url(../images/common/common.png) no-repeat -44px -20px;background-size:160px;}
+.form-select .selected-option{@include text($size:19px, $weight: bold);@include ellipsis;position:relative;display:block;width:100%;height:32px;padding-right:30px;text-align:left;border:none;padding-top:4px;}
+.form-select .selected-option:after{position: absolute;right:0;top: 8px;z-index: 1;content: '';width:2rem;height:2rem;background:url(../images/common/common.png) no-repeat -44px -20px;background-size:160px;}
 .form-select select{display:none;}
 .not-ready .form-select .selected-option{color:$kb-ui07}
 
@@ -260,6 +266,14 @@ ul.radio-group > li + li{margin-top:20px;}
 }
 .kb-form_citizen .between{@include ir;position:relative;flex:0 0 40px;}
 .kb-form_citizen .between:before{content:'';position:absolute;left:calc(50% - 4px);top:calc(50% - 1px);width:8px;height:2px;background-color:#222;}
+
+//휴대폰 번호
+.kb-form_phone{display:flex;flex-wrap:wrap;}
+.kb-form_phone .kb-form:first-of-type{flex:0 0 100%;}
+.kb-form_phone .kb-form:nth-of-type(2){flex:0 0 100px;margin-right:20px;}
+.kb-form_phone .kb-form:nth-of-type(2) .validation{width:100px;white-space:nowrap;}
+.kb-form_phone .kb-form{flex:1;}
+
 
 // //Datepicker
 // .date-time-selector .kb-form_inner,
@@ -440,7 +454,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .complete-msg i[class*=icon]{display:block;margin:0 auto;}
 .complete-msg p,
 .no-data p{@include text($size: $text02);margin-top:12px;}
-.complete-msg .tit,
+.complete-msg .tit{display: block; margin-top: 28px; font-size: 24px; line-height: 33px; font-weight: bold; color: $kb-ui02;}
 .no-data .no-data-tit{@include heading($size: $heading04);display:block;margin-top:32px;font-weight:normal}
 .complete-msg .tit + p,
 .no-data .no-data-tit + p{margin-top:11px;color:$kb-ui04;font-size:1.4rem;line-height:2rem}
@@ -453,9 +467,9 @@ ul.radio-group > li + li{margin-top:20px;}
 .agreement-to-terms .form-checkbox_20 input + label:before {left: 7px;}
 .agreement-to-terms .form-checkbox label {padding-right: 30px;}
 .agreement-to-terms .link {position: absolute; right: 0; top: 50%; transform:translateY(-50%); width: 24px; height: 24px; padding: 4px 6px 4px 9px;}
-.agreement-to-terms .link span {font-size: 0; @include iconBullet('right', 9px, 18px, 1px, $kb-ui05)}
+.agreement-to-terms .link span {font-size: 0; @include iconBullet($direction: 'right', $width: 9px, $color: $kb-ui05)}
 .agreement-to-terms .alink {position: absolute; right: 0; top: 50%; width: 24px; height: 24px; padding: 4px 6px 4px 9px; transform: translateY(-50%);}
-.agreement-to-terms .alink span {font-size: 0; @include iconBullet('right', 9px, 18px, 1px, $kb-ui05);}
+.agreement-to-terms .alink span {font-size: 0; @include iconBullet($direction: 'right', $width: 9px, $color: $kb-ui05);}
 .agreement-to-terms.expansion-mode .alink {left: 0; right: 0; top: 0; bottom: 0; width: auto; height: auto; padding: 0; transform: translateY(0);}
 .agreement-to-terms.expansion-mode .alink span {position: absolute; right: 6px; top: 50%; transform: translateY(-50%);}
 .agreement-to-terms.expansion-mode .header .alink span {display: none;}
@@ -642,12 +656,13 @@ ul.radio-group > li + li{margin-top:20px;}
 .account-radio-list.sml-icon li .icon-box_circle{width:32px;height:32px;}
 //캐릭터 그래프
 .character-graph{position:relative;}
-.character-graph .graph-area{position:relative;width:100%;height:20px;border-radius:20px;background-color:$kb-ui09;}
+.character-graph .graph-area{position:relative;width:100%;height:1rem;border-radius:2rem;background-color:$kb-ui09;}
+// .character-graph .graph-area{position:relative;width:100%;height:20px;border-radius:20px;background-color:$kb-ui09;}
 .character-graph:not(.js-slider) .graph-area > span{position:absolute;left:0;width:0;height:100%;border-radius:20px;background-color:$kb-ui05;transform:width .2s;}
 // .character-graph:not(.js-slider) .graph-area > span:after{content:'캐릭터위치';position:absolute;right:0;bottom:4px;width:60px;height:60px;background-color:aqua;}
-.character-graph .graph-txt{@include clfix;display:block;position:relative;margin-top:7px;}
-.character-graph .graph-txt .start-txt{float:left;margin-left:5px;text-align:left;}
-.character-graph .graph-txt .end-txt{float:right;margin-right:5px;text-align:right;}
+.character-graph .graph-txt{@include clfix;display:block;position:relative;margin-top:1.5rem;}
+.character-graph .graph-txt .start-txt{float:left;text-align:left;}
+.character-graph .graph-txt .end-txt{float:right;text-align:right;}
 .character-graph .graph-txt .current-txt{position:absolute;}
 .character-graph[data-theme=kiki]{padding-top:50px;}
 .character-graph[data-theme=ago]{padding-top:50px;}
@@ -660,7 +675,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .character-graph[data-theme=lamu] .graph-area > span{background-color:#6fd19d;}
 .character-graph[data-theme=kolly] .graph-area > span{background-color:#ffd339;}
 .character-graph .ui-widget.ui-widget-content{border:none;}
-.character-graph .ui-slider .ui-slider-range{border-radius:20px;background-color:$color-yellow;}
+.character-graph .ui-slider .ui-slider-range{border-radius:20px;background-color:$color-yellow-positive;}
 .character-graph .ui-slider .handle{border:none;background:none;top:0;}
 .character-graph .ui-slider .handle i{position:absolute;bottom:0;left:0;}
 .character-graph .ui-slider .handle .value{@include number($size:15px, $line-height:1);position:absolute;top:calc(100% + 7px);left:calc(50% + 10px);right:auto;transform:translateX(-50%);background-color:$kb-ui11;color:$kb-ui02;transition:left .2s, right .2s, transform .2s;}
@@ -783,7 +798,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .rank-list dt span,
 .rank-list li span{display:block;margin-top:12px;font-size:14px}
 .rank-list dt span{color:$kb-ui04}
-.rank-list dd{display:flex;align-items:flex-end;height:100%;font-size:14px;color:$color-red;text-align:right}
+.rank-list dd{display:flex;align-items:flex-end;justify-content:flex-end;height:100%;font-size:14px;color:$color-red;text-align:right}
 .rank-list dd::after{content:'';display:inline-block;width:0px;height:0px;margin-left:7px;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:11px solid $color-red;}
 .rank-list .num{font-size:15px}
 .rank-list.t01{display:block}
@@ -863,3 +878,18 @@ ul + .btn-more-events{padding:15px 0;text-align:center;}
 .timeline > li:last-child:not(:first-child){position:relative;}
 .timeline > li:last-child:not(:first-child) .time:after{left:-17px;}
 .timeline > li:last-child:not(:first-child) .time:before{left:-14px;top:34px;bottom:0;width:4px;background-color:$kb-ui11;}
+
+//
+.page-step{padding:16px 24px 0 24px;}
+.page-step .step{@include number;display:flex;;padding: 0rem;margin-bottom: 0;color:$kb-ui05;}
+.page-step .step .current{font-weight:bold;color:$kb-ui02;}
+.page-step .step .total:before{content:'/';display:inline-block;margin:0 2px;}
+.page-step .h1{@include heading($size: $heading01);display: block;margin: 0;padding-top: 1rem;}
+.page-step.is-fixed{@include clfix;position:fixed;top:48px;left:0;width:100%;background-color:$kb-ui09;padding-top:10px;padding-bottom:10px;}
+.page-step.is-fixed .step{float:right;font-size:12px;line-height:22px;}
+.page-step.is-fixed .h1{float:left;font-size:14px;line-height:22px;padding-top:0;}
+//.page-step.is-fixed + .kb-sec{margin-top:88px;}
+.page-step + .kb-sec{margin-top:48px;}
+.page-step.is-fixed + .kb-sec{margin-top:136px;}
+
+.page-step02.is-fixed{top:98px;}

@@ -1,4 +1,4 @@
-<!-- [MYS_CO_04_01_01] 로그인 > 공동인증서 > 공동인증서 목록 (작성자: 누리어 시스템 이진우)// -->
+<!-- [MYS_CO_06_01_01_02] 로그인 > 공동인증서 > 공동인증서 목록 (작성자: 누리어 시스템 변혜선)// -->
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -14,7 +14,7 @@
         
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
             'pageTit':'',
-            'type':'back'
+            'type':'step'
         })
         
 
@@ -23,7 +23,12 @@
 
             <!-- app-content // -->
             <main class="app-content joint-certificate">
-
+                <div class="app-step">
+                    <div class="step-number">
+                        <strong class="current">5</strong>
+                        <span class="total">7</span>
+                    </div>
+                </div>
                 <section class="kb-sec">
                     <h1 class="h1">공동인증서를 선택해 주세요.</h1><!-- 수정 : 2021.06.25 -->
                     <ul class="joint-certificate-list">
@@ -62,9 +67,9 @@
                         <!-- // 유효한 공인인증서가 없을 경우 -->
                     </ul>
                 </section>
-                <div class="sticky-bottom-menu">
+                <!-- <div class="sticky-bottom-menu">
                     <p class="certificate-center"><a href="javascript:;" class="btn-text" role="button"><span>인증센터</span></a></p>
-                </div>
+                </div> -->
             </main>
             <!-- // app-content -->
 

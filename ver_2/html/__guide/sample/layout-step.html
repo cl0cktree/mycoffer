@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "TEST PAGE | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'타이틀영역',
+            'type':'title'
+        })
+
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content" style="height:500px;">
+                <div class="page-step js-fixed">    
+                    <div class="step" aria-label="총 10단계 중 현재 1단계">
+                        <span class="current">1</span>                        
+                        <span class="total">10</span>
+                    </div>
+                    <h2 class="h1">약관동의</h2>
+                </div>
+                <section class="kb-sec">
+                    단계별 내용1<br>
+                    단계별 내용2<br>
+                    단계별 내용3<br>
+                    단계별 내용4<br>
+                    단계별 내용5<br>
+                    단계별 내용6<br>
+                    단계별 내용7<br>
+                    단계별 내용8<br>
+                    단계별 내용9<br>
+                </section>
+                
+
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+        <div class="layered">
+        </div>
+    </div>
+
+
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    <script>
+        if($('#headerTitle', parent.document).hasClass('starbanking')) $('html').attr('data-channel','ch_star');
+    </script>
+
+</body>
+
+</html>

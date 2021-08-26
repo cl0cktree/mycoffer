@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_AS_17_01_06_P1] 작성자: 유플리트 이현섭 -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "자산 | My금고"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-integrated-header.html',{
+			'pageTit' :'상품권/회원권',
+            'type':'close'
+		})
+		<!-- // app-header (for MyMoney) -->
+
+		<!-- app-container //-->
+		<div class="app-container">
+
+			<!-- app-content // -->
+			<main class="app-content my-safe-pop-gift my-asset pop-my-asset">
+                <section class="kb-sec">
+                    <div class="pop-notice header">
+                        <span>
+                            <strong class="h4">
+                                가지고 계신 상품권/회원권의 가치를 모아보세요.
+                            </strong>
+                        </span>
+                        <em class="mt4">* 표시된 항목은 필수 입력 사항입니다.</em>
+                    </div>
+                </section>
+                <section class="kb-sec mt28">
+                    <div class="kb-form not-ready no-transition giftcard-kind-form safe-flex100 mt28" data-status="">
+                        <label for="mysafe_14" class="giftcard-kind-title required">상품권/회원권</label>
+                        <div class="kb-form_inner form-select mt4">
+                            <button type="button" class="selected-option" data-call-layered="MYS_AS_17_01_06_BS1" id="mysafe_15"></button>
+                            <select name="" id="mysafe_14" title="상품권/회원권 선택">
+                                <option value="" selected>선택하세요</option>
+                                <option value="giftCard01" selected>백화점 상품권</option>
+                                <option value="giftCard02">문화 상품권</option>
+                                <option value="giftCard03">골프 회원권</option>
+                                <option value="giftCard04">콘도 회원권</option>
+                                <option value="giftCard05">직접 입력</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="kb-form not-ready no-transition giftcard-input-kind safe-flex100 safe-display-none">
+                        <!-- <label for="mysafe_16"></label> -->
+                        <div class="kb-form_inner form-text">
+                            <input type="text" class="giftcard-kind-input" id="mysafe_16" onkeydown="all_on_fun()" placeholder="최대 10자를 입력해주세요." value="" maxlength="10">
+                            <button class="btn-data-clear giftcard-kind-clear"><i class="icon-data-clear_24">지우기</i></button>
+                        </div>
+                    </div>
+                </section>
+                <section class="kb-sec mt24">
+                    <div class="kb-form not-ready no-transition giftcard-input-value safe-flex100" data-status="info">
+                        <label for="mysafe_17" class="required">현금금액</label>
+                        <div class="kb-form_inner form-text">
+                            <input type="text" inputmode="numeric" class="giftcard-value-input" id="mysafe_17" placeholder="값을 입력 하세요." value="1000000" data-unit="" data-action="autoSeperator"><span class="unit" style="left: 75.7031px;">원</span>
+                        <!-- <p class="my-giftcard-value-info info-msg">숫자만 입력 가능합니다.</p> -->
+                    </div>
+                </section>
+                <section class="kb-sec mt28">
+                    <div class="kb-form" data-status="">
+                        <div class="kb-form datepicker" data-status="">
+                            <label for="mysafe_18" class="required">유효기간</label>
+                            <div class="kb-form_inner form-text">
+                                <input type="text" class="mysafe-giftcard-datepicker" id="mysafe_18" placeholder="2021.01.01" value="2021.12.31" onkeydown="all_on_fun()">
+                            </div>
+                            <em class="validation">에러 메세지 영역 입니다.</em>
+                        </div>
+                    </div>
+                </section>
+                <section class="kb-sec mt28">
+                    <div class="kb-form not-ready no-transition giftcard-input-memo safe-flex100">
+                        <label for="mysafe_19">메모</label>
+                        <div class="kb-form_inner form-text">
+                            <input type="text" class="giftcard-memo-input" id="mysafe_19" placeholder="최대 10자를 입력해주세요." value="입학선물" maxlength="10">
+                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                        </div>
+                    </div>
+                </section>
+                <section class="kb-sec sticky-bottom">
+                    <div class="btn-area">
+                        <button class="btn-solid_sticky lv2"><span>취소</span></button>
+                        <button class="btn-solid_sticky my-giftcard-enrollment"><span>수정</span></button>
+                    </div>
+                </section>
+
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+            @@include('@@webRoot/html/mysafe/layered/MYS_AS_17_01_15_BS1.html')
+            @@include('@@webRoot/html/mysafe/layered/MYS_AS_17_01_15_BS2.html')
+            @@include('@@webRoot/html/_layered/bs-calendar.html')
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+    <script>
+        var giftcard_kind_input; //기타자산 직접 입력 시 공백여부 확인 및 값 확인용.
+        var gs_num=0; //기타자산 바텀시트 선택 여부 확인용.
+        var gsi=0; //기타자산 직접 입력 여부 확인용.
+        var $my_giftcard_value_info=$('.my-giftcard-value-info'); //.my-giftcard-value-info 선호출용.
+        var $my_giftcard_value=$('.my-giftcard-value'); //.my-giftcard-value 선호출용.
+        var $my_giftcard_enrollment=$('.my-giftcard-enrollment'); //.my-giftcard-enrollment 선호출용.
+        var $giftcard_value_input=$('.giftcard-value-input');
+        var $mysafe_giftcard_datepicker=$('.mysafe-giftcard-datepicker');
+        var data_split_year = $('.calendar-nav').children('strong').text().split('년')[0];
+        var data_split_year_1 = $('.calendar-nav').children('strong').text().split('년')[1];
+        var data_split_month_0 = data_split_year_1.split('월')[0];
+        var data_split_month = data_split_month_0.slice(-2,3);
+        var data_split_day='';
+        var currentVal=0;
+        var dataVal;
+        var changedDate;
+
+        // $('.btn-datepicker').attr({'data-page-id':'MYS_AS_17_01_06_BS2','data-call-layered':'bsCalendar'});
+        console.log(data_split_month);
+        
+        $('.ui-datepicker-calendar').find('td').on('click',function(event){
+            // event.preventDefault;
+            // changedDate = $('#datepicker').datepicker('getDate');
+            // console.log(this);
+            // console.log($(this).children('.ui-state-default').html());
+            // data_split_day=$('.ui-state-active').text();
+            // console.log(data_split_year+data_split_month+changedDate);
+            changedDate = $('this').find('.ui-state-active').text();
+        });
+        $('.btn-solid_sticky').on('click',function(){
+            $('.mysafe-giftcard-datepicker').val(data_split_year+'.'+data_split_month+'.'+changedDate);
+        });
+        /*-----input에 대한 바른 데이터 입력, 활성 및 비활성, 틀린 데이터 입력에 대한
+               동작 예시 함수로 본격적인 검증식 및 계산식은 프로그램밍이 필요함.-------*/
+        $('.giftcard-value-input').on('propertychange change keyup paste input', function(event) {//금액 입력시 변화 된 값 인식.
+            currentVal = $giftcard_value_input.val();
+            var oldVal;
+            if(currentVal == oldVal) {
+                return;
+            }
+            oldVal = currentVal;
+            all_on_fun();
+        });
+        $('.mysafe-giftcard-datepicker').on('propertychange change keyup paste input', function(event) {//일정 입력시 변화 된 값 인식.
+            dataVal = $mysafe_giftcard_datepicker.val();
+            var oldDate;
+            if(dataVal == oldDate) {
+                return;
+            }
+            oldDate = dataVal;
+            all_on_fun();
+        });
+        function all_on_fun(){//최종 등록 버튼 활성화 함수-기타자산 직접입력 완료/기타자산 선택이 선결/기타자산 금액이 입력 되면 활성화.
+            giftcard_kind_input=document.getElementById('mysafe_16').value;
+            if (giftcard_kind_input!==''){
+                gsi=1;
+            }else{
+                gsi=0;
+            }
+            console.log('out - '+dataVal);
+            if ((currentVal!=='')&&(currentVal!==undefined)&&(currentVal!==null)&&(currentVal!==0)&&(dataVal!=='')&&(dataVal!==undefined)&&(dataVal!==null)&&(dataVal!==0)&&((gs_num==1&&gsi>0)||(gs_num>1))){
+                $my_giftcard_enrollment.removeAttr('disabled');
+                // console.log('t - '+currentVal);
+            }else{
+                $my_giftcard_enrollment.removeAttr('disabled');
+                $my_giftcard_enrollment.attr('disabled','disabled');
+                // console.log('f - '+currentVal);
+            }
+        };
+        // $('input[type=text]').focusin(function(){//입력창에 포커스인하면 제목이 검은색으로 활성화.
+        //     if (($('input[type=text]').val() !== '')){
+        //         $(this).parent().parent().prev('.tit').removeClass('empty-giftcard-unit-info');
+        //         $(this).parent().parent().prev('.tit').prev('.tit').removeClass('empty-giftcard-unit-info');
+        //     }
+        //     $(this).parent().parent().prev('.tit').removeClass('empty-giftcard-unit-info');
+        //     $(this).parent().parent().prev('.tit').prev('.tit').removeClass('empty-giftcard-unit-info');
+        // });
+        // $('input[type=text]').focusout(function(){//입력창에 포커스아웃하면 제목이 회색으로 비활성화.
+        //     if(($('input[type=text]').val() !== '')){
+        //         $(this).parent().parent().prev('.tit').addClass('empty-giftcard-unit-info');
+        //         $(this).parent().parent().prev('.tit').prev('.tit').addClass('empty-giftcard-unit-info');
+        //     }
+        //     $(this).parent().parent().prev('.tit').addClass('empty-giftcard-unit-info');
+        //     $(this).parent().parent().prev('.tit').prev('.tit').addClass('empty-giftcard-unit-info');
+        // });
+        $('.giftCard').on('click',function(){//기타자산 형태선택 바텀시트 선택 시 동작부분.
+            document.getElementById('mysafe_16').value='';
+            // gsi=0;
+            if ($(this).is('.giftCard05')){
+                $('.giftcard-input-kind').removeClass('safe-display-none');
+                gs_num=1;
+            }else{
+                $('.giftcard-input-kind').removeClass('safe-display-none');
+                $('.giftcard-input-kind').addClass('safe-display-none');
+                gs_num=2;
+            }
+            all_on_fun();
+        });
+        $('.giftcard-kind-clear').on('click',function(){//기타자산 직접입력 삭제 버튼으로 클릭 시 관련된 기능들 리셋.
+            gsi=0;
+            $my_giftcard_enrollment.removeAttr('disabled');
+            $my_giftcard_enrollment.attr('disabled','disabled');
+        });
+        /*--------------------------------------------------------------------*/
+    </script>
+</body>
+
+</html>
