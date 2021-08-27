@@ -102,8 +102,15 @@ var nav = '<div class="app-gnb-wrap">';
 //LNB가 비어있으면 지우기
 if($('.app-lnb').is(':empty')) $('.app-lnb').remove();
 
-//Bridge, Submain 페이지(Starbanking 채널 아닐때) 
-if(($('.app').data('page') == 'submain' || $('.app').data('page') == 'bridge') && channel!="ch_star"){
+//Bridge, Submain 페이지(Starbanking 채널 아닐때)
+var pageType = $('.app').data('page');
+if(channel == "ch_star" && pageType == 'bridge'){    
+    //Starbanking Brige Page
+    if(!$('.app-lnb').length) $('.app-container').prepend('<div class="app-lnb"></div>');
+    $('.app-lnb').empty().html(nav);
+
+}else if(channel != "ch_star" && pageType == 'submain' || pageType == 'bridge'){
+    //My Money Submain Page
     if(!$('.app-lnb').length) $('.app-container').prepend('<div class="app-lnb"></div>');
     $('.app-lnb').empty().html(nav);
 }
@@ -160,6 +167,7 @@ var subMenuList = [];
 var $subMenu = $('.app-sub-wrap');
 var gfn_gnb = {
     init : function(){
+        console.log(gnbArr)
         $.each(gnbArr, function(index, item){
             gnbMenuList[index] = '<li class="swiper-slide" data-index="' + item.number+ '"><a href="' + item.link + '" data-sub="' + item.sub + '">' + item.name + '</a></li>';
         });
@@ -217,11 +225,9 @@ var gfn_gnb = {
 
 $(window)
 .on('load',function(){
-    if(channel != 'ch_star'){   //스타뱅킹은 Navigation을 그리지 않음
-        if($gnb.length){
-            gfn_gnb.init();
-            gfn_gnb.choose();
-        }
+    if($gnb.length){
+        gfn_gnb.init();
+        gfn_gnb.choose();
     }
     //remove unneccessary LNB
     if($('.app-lnb').is(':empty')) $('.app-lnb').remove();

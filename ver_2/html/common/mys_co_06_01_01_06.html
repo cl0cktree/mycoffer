@@ -13,33 +13,38 @@
     <div class="app">
         
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
-            'pageTit':'',
-            'type':'back'
+            'pageTit':'데이터 변경',
+            'type':''
         })
         
-
         <!-- app-container //-->
         <div class="app-container">
 
             <!-- app-content // -->
             <main class="app-content select-assets">
+                <div class="page-step js-fixed">  
+                    <div class="step" aria-label="총 4단계 중 현재 1단계">
+                        <span class="current">1</span>                        
+                        <span class="total">4</span>
+                    </div>
+                    <h2 class="h1">자산선택</h2>
+                </div>
+
                 <!--// SECTION -->
                 <section class="kb-sec">
-                    <h1 class="h2">6개 기관에서 <br>데이터를 가져왔습니다.</h1><!-- 수정 : 2021.06.25 -->
-                    <p>연결할 기관의 개별 상품(계좌)/정보를 선택해 주세요.</p><!-- 수정 : 2021.06.25 -->
+                    <p class="page-step-desc">상품(계좌)/정보를 선택해 주세요.</p>
 
-                    <h2 class="h4">은행<span class="num">3</span></h2>
+                    <h3 class="h4">연결 성공<span class="num">7</span></h3>
 
                     <dl class="accordian js-checkbox-selector">
                         <dt>
-                            <span class="form-checkbox"><input type="checkbox" id="bank01"><label for="bank01">우체국</label></span>
+                            <span class="form-checkbox"><input type="checkbox" id="bank01"><label for="bank01">IBK기업은행</label></span>
                             <button type="button" class="accordian-trigger"></button>
                         </dt>
                         <dd>
                             <ul class="checkbox-group">
-                                <li><span class="form-checkbox_20"><input type="checkbox" id="bank0101"><label for="bank0101">상품명 <em class="num">1234-5678-1234</em></label></span></li>
-                                <li><span class="form-checkbox_20"><input type="checkbox" id="bank0102"><label for="bank0102">상품명 <em class="num">1234-5678-1234</em></label></span></li>
-                                <li><span class="form-checkbox_20"><input type="checkbox" id="bank0103"><label for="bank0103">상품명 <em class="num">1234-5678-1234</em></label></span></li>
+                                <li><span class="form-checkbox_20 align-top"><input type="checkbox" id="bank1-1"><label for="bank1-1">상품명<em class="num">1234-5678-1234</em></label></span></li>
+                                <li><span class="form-checkbox_20 align-top"><input type="checkbox" id="bank1-2"><label for="bank1-2">상품명<em class="num">1234-5678-1234</em></label></span></li>
                             </ul>
                         </dd>
                         <dt>
@@ -48,89 +53,103 @@
                         </dt>
                         <dd>
                             <ul class="checkbox-group">
-                                <li><span class="form-checkbox_20"><input type="checkbox" id="bank0201"><label for="bank0201">상품명 <em class="num">1234-5678-1234</em></label></span></li>
-                                <li><span class="form-checkbox_20"><input type="checkbox" id="bank0202"><label for="bank0202">상품명 <em class="num">1234-5678-1234</em></label></span></li>
-                                <li><span class="form-checkbox_20"><input type="checkbox" id="bank0202"><label for="bank0202">상품명 <em class="num">1234-5678-1234</em></label></span></li>
+                                <li><span class="form-checkbox_20 align-top"><input type="checkbox" id="bank02-1"><label for="bank02-1">상품명<em class="num">1234-5678-1234</em></label></span></li>
                             </ul>
                         </dd>
                         <dt>
-                            <span class="form-checkbox"><input type="checkbox" id="bank03"><label for="bank03">NH농협은행</label></span>
+                            <span class="form-checkbox"><input type="checkbox" id="bank03"><label for="bank03">KB국민카드</label></span>
                             <button type="button" class="accordian-trigger"></button>
                         </dt>
                         <dd>
                             <ul class="checkbox-group">
-                                <li><span class="form-checkbox_20"><input type="checkbox" id="bank0301"><label for="bank0301">상품명 <em class="num">1234-5678-1234</em></label></span></li>
-                                <li><span class="form-checkbox_20"><input type="checkbox" id="bank0302"><label for="bank0302">상품명 <em class="num">1234-5678-1234</em></label></span></li>
-                                <li><span class="form-checkbox_20"><input type="checkbox" id="bank0302"><label for="bank0302">상품명 <em class="num">1234-5678-1234</em></label></span></li>
+                                <li><span class="form-checkbox_20 align-top"><input type="checkbox" id="bank0301"><label for="bank0301">상품명<em class="num">1234-5678-1234</em></label></span></li>
+                            </ul>
+                        </dd>
+                        <dt>
+                            <span class="form-checkbox"><input type="checkbox" id="bank04"><label for="bank04">KB증권</label></span>
+                            <button type="button" class="accordian-trigger"></button>
+                        </dt>
+                        <dd>
+                            <ul class="checkbox-group">
+                                <li><span class="form-checkbox_20 align-top"><input type="checkbox" id="bank4-1"><label for="bank4-1">상품명<em class="num">1234-5678-1234</em></label></span></li>
+                            </ul>
+                        </dd>
+                        <dt>
+                            <span class="form-checkbox"><input type="checkbox" id="bank05"><label for="bank05">KB손해보험</label></span>
+                            <button type="button" class="accordian-trigger"></button>
+                        </dt>
+                        <dd>
+                            <ul class="checkbox-group">
+                                <li><span class="form-checkbox_20 align-top"><input type="checkbox" id="bank5-1"><label for="bank5-1">상품명(보험/대출/개인형 IRP)<em class="num">1234-5678-1234</em></label></span></li>
+                            </ul>
+                        </dd>
+                        <dt>
+                            <span class="form-checkbox"><input type="checkbox" id="bank05"><label for="bank05">네이버파이낸셜</label></span>
+                            <button type="button" class="accordian-trigger"></button>
+                        </dt>
+                        <dd>
+                            <ul class="checkbox-group">
+                                <li><span class="form-checkbox_20 align-top"><input type="checkbox" id="bank5-1"><label for="bank5-1">선불전자지급수단<em class="num">ABCD123456781234</em></label></span></li>
+                            </ul>
+                        </dd>
+                        <dt>
+                            <span class="form-checkbox"><input type="checkbox" id="bank05"><label for="bank05">NH농협카드</label></span>
+                            <button type="button" class="accordian-trigger"></button>
+                        </dt>
+                        <dd>
+                            <ul class="checkbox-group">
+                                <li><span class="form-checkbox_20 align-top"><input type="checkbox" id="bank5-1"><label for="bank5-1">카드명<em class="num">1234-5678-1234</em></label></span></li>
                             </ul>
                         </dd>
                     </dl>
 
-                    <h2 class="h4">카드<span class="num">1</span></h2>
-
+                    <h2 class="h4">연결 지연<span class="num">1</span></h2>
                     <dl class="accordian js-checkbox-selector">
                         <dt>
-                            <span class="form-checkbox"><input type="checkbox" id="card01"><label for="card01">KB국민카드</label></span>
+                            <span class="form-checkbox"><input type="checkbox" id="card01"><label for="card01">롯데오토리스</label></span>
                             <button type="button" class="accordian-trigger"></button>
                         </dt>
                         <dd>
-                            <ul class="checkbox-group">
-                                <li><span class="form-checkbox_20"><input type="checkbox" id="card0101"><label for="card0101">상품명 <em class="num">1234-5678-1234</em></label></span></li>
-                                <li><span class="form-checkbox_20"><input type="checkbox" id="card0102"><label for="card0102">상품명 <em class="num">1234-5678-1234</em></label></span></li>
-                                <li><span class="form-checkbox_20"><input type="checkbox" id="card0102"><label for="card0102">상품명 <em class="num">1234-5678-1234</em></label></span></li>
-                            </ul>
+                            <div class="data-delay">
+                                <i class="icon-bang_48_gray"></i>
+                                <p class="desc">연결이 지연되고 있습니다.</p>
+                                <button class="btn-line sm inline"><span>다시 연결</span></button>
+                            </div>
                         </dd>
                     </dl>
-
-                    <h2 class="h4">보험<span class="num">1</span></h2>
-
+                    
+                    <h2 class="h4">연결 실패<span class="num">1</span></h2>
+                    
                     <dl class="accordian js-checkbox-selector">
                         <dt>
-                            <span class="form-checkbox"><input type="checkbox" id="insurance01"><label for="insurance01">KB생명</label></span>
+                            <span class="form-checkbox"><input type="checkbox" id="card01"><label for="card01">러시앤캐시</label></span>
                             <button type="button" class="accordian-trigger"></button>
                         </dt>
                         <dd>
-                            <ul class="checkbox-group">
-                                <li><span class="form-checkbox_20"><input type="checkbox" id="insurance0101"><label for="insurance0101">상품명 <em class="num">1234-5678-1234</em></label></span></li>
-                                <li><span class="form-checkbox_20"><input type="checkbox" id="insurance0102"><label for="insurance0102">상품명 <em class="num">1234-5678-1234</em></label></span></li>
-                                <li><span class="form-checkbox_20"><input type="checkbox" id="insurance0102"><label for="insurance0102">상품명 <em class="num">1234-5678-1234</em></label></span></li>
-                            </ul>
+                            <div class="no-data">
+                                <i class="icon-delay_40"></i>
+                                <p class="desc">연결 가능한 데이터가 없습니다.</p>
+                            </div>
                         </dd>
                     </dl>
-
-
-                    <div class="kb-form agree-integrated-authentication" data-status="">
-                        <div class="kb-form_inner">
-                            <span class="form-checkbox"><input type="checkbox" id="agreeCheck1b">
-                                <label for="agreeCheck1b">통합인증 이용 동의</label>                                    
-                            </span>
-                            <!-- 수정 : 2021.06.10 // -->
-                            <!-- <button type="button" class="link" data-call-layered="popupAgreeToUseIntegratedCertification"><i class="icon-link_24">전문보기</i></button> -->
-                            <a href="./mys_co_06_01_01_07_p1.html" class="link" role="button"><i class="icon-link_24">전문보기</i></a>
-                            <!-- // 수정 : 2021.06.10 -->
-                        </div>
-                        <em class="validation">통합 인증 이용에 동의해 주세요.</em>
-                    </div>
                     
                 </section>
                 <!-- SECTION //-->
+                
                 <div class="sticky-bottom">
                     <div class="btn-area">
-                        <button type="button" class="btn-solid" disabled><span>확인</span></button>
+                        <button type="button" class="btn-solid"><span>확인</span></button>
                     </div>
                 </div>
 
             </main>
             <!-- // app-content -->
 
-        </div>
+        </div>        
         <!-- // app-container -->
+    </div>
 
-        <!-- Layer (modal, bottom sheet) // -->
-        <div class="layered">
-            
-        </div>
-        <!-- // Layer (modal, bottom sheet) -->
+    <div class="layered">
     </div>
 
     <!-- Script -->
@@ -138,19 +157,16 @@
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
-    <script>
-        $('.agree-integrated-authentication').on('change','input:checkbox',function(){
-            var tf = $(this).prop('checked');
-            if(tf){
-                $('.select-assets .sticky-bottom button').prop('disabled', false);
-            }else{
-                $('.select-assets .sticky-bottom button').prop('disabled', true);
-            }
-        });
 
+    <script>
+        $('.sticky-bottom button').on('click', function() {
+            modalPopup({
+                title: '',
+                message: "연결 가능한 상품(계좌)/정보가 없어 데이터 연결이 취소 됩니다.?"
+            });
+        });
     </script>
 
 </body>
-
 </html>
 <!-- // [MYS_CO_06_01_01_09] 전송요구방법 > 통합인증 > 기관선택 > 검색결과 -->

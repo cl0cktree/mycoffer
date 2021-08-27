@@ -482,6 +482,7 @@ $('.bottom-sheet').on('click','[data-action=select]',function(){
 });
 
 //Layer layout(버튼이 있는 경우, 없는 경우 여백 다름)
+/*
 if($('.popup').length){
     $('.popup').each(function(){
         if($(this).find('.popup_buttons').length) $(this).addClass('with-button');//버튼이 있는 경우 하단 여백이 큼
@@ -502,6 +503,7 @@ if($('.bottom-sheet').length){
     //     if(childrenH >= thisH * 2) $(this).parents('.bottom-sheet.is-active').addClass('is-expanded');
     // });
 }
+ */
 
 //datepicker 입력
 $('body')
@@ -926,33 +928,37 @@ if($('.toggle-notice').length){
 }
 
 //체크박스 하위 선택
-$('.js-checkbox-selector').on('change','input:checkbox',function(){
-    var tf = $(this).prop('checked');
+$('.js-checkbox-selector').each(function(){
+    var $checkboxSelector = $(this);
+    var $checkbox = $checkboxSelector.find('input:checkbox');
+    var $exception = $checkboxSelector.find('.exception');
+    var checkboxLen = $checkbox.length;
+    var exceptionLen = $exception.length;
+    
+    $checkbox.each(function(i){        
+        var $this = $(this);
+        
+        //init
+        $this.attr('data-index',i);
+        var $allSelector = $checkboxSelector.find('input:checkbox[data-index=0]');
 
-    if($(this).closest('dt').length){   //상단 전체 선택
-        if(tf){
-            $(this).closest('dt').next('dd').find('input:checkbox').prop('checked',true);
-        }else{
-            $(this).closest('dt').next('dd').find('input:checkbox').prop('checked',false);
-        }
-    }else{  //하단 개별 선택
-        if(tf){
-            if($(this).closest('dd').find('input:checkbox').not(':checked').length == 0){
-                $(this).closest('dd').prev('dt').find('input:checkbox').prop('checked',true);
+        $this.on('change',function(){
+            var tf = $(this).prop('checked');            
+            if($this.data('index') == 0){   //상단 전체 선택 checkbox
+                if(tf){
+                    $checkbox.not('.exception').prop('checked',true);
+                }else{
+                    $checkbox.not('.exception').prop('checked',false);                        
+                }
+            }else{  //하단 개별 선택
+                if(tf){
+                    if($checkboxSelector.find('input:checkbox:checked').length == (checkboxLen - exceptionLen - 1)) $allSelector.not('.exception').prop('checked',true);
+                }else{
+                    $allSelector.not('.exception').prop('checked',false);
+                }
             }
-        }else{
-            $(this).closest('dd').prev('dt').find('input:checkbox').prop('checked',false);
-        }
-    }
-    // btn-switch 분리되어있을 때
-    if($(this).closest('.list-controls').length){
-        var targetName = $(this).closest('.js-checkbox-selector').data('target');
-        if(tf){
-            $(this).closest('section').find('dl[data-target="' + targetName + '"]').find('input:checkbox').prop('checked',true);
-        }else{
-            $(this).closest('section').find('dl[data-target="' + targetName + '"]').find('input:checkbox').prop('checked',false);
-        }
-    }
+        });
+    });
 });
 
 $('.js-checkbox-selector-trigger').on('change','input:checkbox',function(){

@@ -56,7 +56,7 @@
 						</div>
 					</div>
 					<div class="kb-form" data-status="">
-						<label for="mycarModifyForm2">주행거리(Km)</label>
+						<label for="mycarModifyForm2">주행거리</label><!-- 2021-08-27 수정 -->
 						<div class="kb-form_inner form-text">
 							<input type="text" inputmode="numeric" id="mycarModifyForm2" placeholder="" maxlength="7" value="120000" data-unit="Km" data-action="autoSeperator">
 							<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
@@ -71,27 +71,31 @@
 					</div>
 				</section>
 
-				<section class="kb-sec loan-account-selection">
-					<h2 class="tit">My Car 대출계좌 선택</h2>
-					<ul class="lists">
-						<li class="form-checkbox align-top">
-							<input type="checkbox" id="loanAccount1c">
-							<label for="loanAccount1c">
-								<span class="name">국민은행 자동차대출</span>
-								<span class="account num">8169160411122</span>
-								<span class="amount"><span class="num">13,000,000</span>원</span>
-							</label>
+				<!-- 2021-08-27 수정 // -->
+				<section class="kb-sec select-account">
+					<h2 class="h4">My Car 대출계좌 선택</h2>
+					<ul class="list">
+						<li>
+							<span class="form-checkbox"><input type="checkbox" id="loanAccount1" name="radioSample02"><label for="loanAccount1">국민은행 자동차대출</label></span>
+							<dl class="description-list">
+								<dt>
+									<strong class="account num">8169160411122</strong>
+								</dt>
+								<dd><strong class="amount"><span class="num" data-unit-after="원">13,000,000</span></strong></dd> 
+							</dl>
 						</li>
-						<li class="form-checkbox align-top">
-							<input type="checkbox" id="loanAccount2c">
-							<label for="loanAccount2c">
-								<span class="name">신한은행 신용대출</span>
-								<span class="account num">8169160411122</span>
-								<span class="amount"><span class="num">13,000,000</span>원</span>
-							</label>
+						<li>
+							<span class="form-checkbox"><input type="checkbox" id="loanAccount2" name="radioSample02"><label for="loanAccount2">신한은행 신용대출</label></span>
+							<dl class="description-list">
+								<dt>
+									<strong class="account num">81691604111122</strong>
+								</dt>
+								<dd><strong class="amount"><span class="num" data-unit-after="원">13,000,000</span></strong></dd> 
+							</dl>
 						</li>
 					</ul>
 				</section>
+				<!-- // 2021-08-27 수정 -->
 
 				<div class="sticky-bottom">
 					<div class="btn-area">

@@ -28,6 +28,7 @@
 [class*=btn-solid].gray{background-color:$kb-ui09;}
 .btn-solid.sm{height:4rem;font-size:1.5rem;font-weight:normal;}
 .btn-solid.form{width:auto;height:3rem;padding:0 1.8rem;border-radius:3rem;background-color:$kb-ui04;font-size:$text03;color:$kb-ui11;}
+.btn-solid.form span{font-weight:normal;}
 
 //Apple Homebar
 .ios.homebar .sticky-bottom .btn-solid,
@@ -61,7 +62,9 @@
 .btn-datepicker{@include ir;width:2rem;height:2rem;background:url(../images/common/common.png) no-repeat -130px -20px;background-size:160px;}
 .btn-timepicker{@include ir;width:2rem;height:2rem;background:url(../images/common/common.png) no-repeat -110px -20px;background-size:160px;}
 .btn-more-dot{@include ir;position:relative;display:inline-block;width:24px;height:24px;}
-.btn-more-dot:after{content:'';position:absolute;top:calc(50% - 2px);right:0;width:4px;height:4px;border-radius:50%;background-color:$kb-ui06;box-shadow:0 -8px 0 $kb-ui06, 0 8px 0 $kb-ui06;}
+.btn-more-dot:before{content:'';position:absolute;top:calc(50% - 2px);right:0;width:4px;height:4px;border-radius:50%;background-color:$kb-ui06;box-shadow:0 -8px 0 $kb-ui06, 0 8px 0 $kb-ui06;}
+.btn-more-plus{display:inline-block;width:100%;height:34px;color:$kb-ui02;font-size:16px;text-align:center;}
+.btn-more-plus:before{content:'+';font-family:serif;font-size:18px;margin-right:5px;}
 
 //버튼 내 아이콘 간격
 [class*=btn-solid] i[class*=icon-]:first-child,
@@ -125,8 +128,6 @@ ul[data-style=list].sm li,
 .icon-arrow-left{@include iconBullet($direction: 'left', $width: 9px, $thick: 1px, $color: $kb-ui05);}
 .icon-arrow-up{@include iconBullet($direction: 'up', $width: 16px, $thick: 2px, $color: $kb-ui05);}
 .icon-arrow-down{@include iconBullet($direction: 'down', $width: 16px, $thick: 2px, $color: $kb-ui05);}
-.icon-plus{@include iconPlus($width: 12px, $thick: 2px, $padding: 4px)}
-.btn-text .icon-plus{position: relative;top:-1px;}//폰트때문에 아래로 쳐져보이는 현상 방지
 
 .btn-data-clear{display:inline-block;width:24px;height:24px;}
 .btn-switch{@include btnSwitchB}
@@ -257,7 +258,7 @@ p.simple-message::before {content:'';position: absolute;left:0;top:0;width:20px;
 
 //잔여시간
 .remain-time{@include text($size: $text03);$color:$kb-ui04;}
-.remain-time strong{@include number($size: 15px, $weight: bold);}
+.remain-time strong{@include number($size: 15px, $weight: bold); color:$color-blue}
 
 //영역구분
 .dividing-line-bottom{position:relative;padding-bottom:3.3rem;margin-bottom:2.8rem}

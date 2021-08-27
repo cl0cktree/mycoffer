@@ -19,8 +19,21 @@
     </div>
     <div class="bottom-sheet_buttons">
         <button class="btn-solid gray" data-action="close"><span>미동의</span></button>
-        <button class="btn-solid" data-action="agree"><span>동의</span></button>
+        <button class="btn-solid" data-action="agree" disabled><span>동의</span></button>
     </div>
     <button class="btn-close" data-action="close"><span>닫기</span></button>
 </div>
 <!-- // [mys_as_08_00_00_p2] 보험 개인정보 수집 -->
+
+<script>
+    $(document).ready(function(){
+       $('#personInfoCollection').change(function(){
+           let chk = $(this).prop('checked');
+           if(chk){
+                $('.btn-solid[data-action="agree"]').removeAttr('disabled');
+           }else{
+                $('.btn-solid[data-action="agree"]').attr('disabled','disabled');
+           }
+       })
+    })
+</script>

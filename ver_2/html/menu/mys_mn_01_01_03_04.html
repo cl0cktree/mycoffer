@@ -1,0 +1,97 @@
+<!-- [MYS_MN_01_01_03_04] 전체메뉴 > My Data 관리 > 다른기관 > 변경 > 자산선택 > 인증서 선택 > 인증 (작성자: 누리어 시스템 최선화) // -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Last Depth | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'',
+            'type':'step'
+        })
+        
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <div class="page-step js-fixed">  
+                <div class="step" aria-label="총 4단계 중 현재 4단계">
+                    <span class="current">4</span>                        
+                    <span class="total">4</span>
+                </div>
+                <h2 class="h1">공동인증서 선택</h2>
+            </div>  
+            <!-- app-content // -->
+            <main class="app-content joint-certificate">                
+                <section class="kb-sec">
+                    <ul class="joint-certificate-list">
+                        <li class="link-arrow-after">
+                            <a href="javascript:;">
+                                <i class="icon-certificate-active"></i><!-- 인증서 활성화 icon -->
+                                <strong class="name">김민국</strong>
+                                <p><span>은행개인</span><strong>yessign</strong></p>
+                                <p><span>만료일</span><strong class="num">2022.04.14</strong></p>
+                            </a>
+                        </li>
+                        <li class="link-arrow-after">
+                            <a href="javascript:;">
+                                <i class="icon-certificate-expire"></i><!-- 인증서 만료 icon -->
+                                <strong class="name">김민국</strong>
+                                <p><span>은행개인</span><strong>yessign</strong></p>
+                                <p><span>만료일</span><strong class="num">2022.04.14</strong></p>
+                            </a>
+                        </li>
+                        <li class="link-arrow-after">
+                            <a href="javascript:;">
+                                <i class="icon-certificate-expire"></i><!-- 인증서 만료 icon -->
+                                <strong class="name">김민국</strong>
+                                <p><span>은행개인</span><strong>yessign</strong></p>
+                                <p><span>만료일</span><strong class="num">2022.04.14</strong></p>
+                            </a>
+                        </li>
+                        <!-- 유효한 공인인증서가 없을 경우 // -->
+                        <li>
+                            <a href="javascript:;">
+                                <i class="icon-certificate-none"></i><!-- 인증서 없음 icon -->
+                                <strong class="name">유효한 공동인증서가 없습니다.</strong>
+                                <p>스타뱅킹 인증센터에서 인증서 추가 후 이용해주세요.</p>
+                            </a>
+                        </li>
+                        <!-- // 유효한 공인인증서가 없을 경우 -->
+                    </ul>
+                </section>
+                
+            </main>
+            <!-- // app-content -->
+
+        </div>        
+        <!-- // app-container -->
+    </div>
+
+    <div class="layered">
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+
+    <script>
+        $('.sticky-bottom button').on('click', function() {
+            modalPopup({
+                title: '',
+                message: "연결 가능한 상품(계좌)/정보가 없어 데이터 연결이 취소 됩니다.?"
+            });
+        });
+    </script>
+
+</body>
+
+</html>

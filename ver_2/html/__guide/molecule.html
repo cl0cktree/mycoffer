@@ -697,7 +697,7 @@
 		</div>
 		<hr>
 		<!-- Select(Dropdown) -->
-		<div class="box">
+		<div class="box" id="formSelect">
 			<h2>Select(Dropdown)</h2>
 			<dl class="flex-dl">
 				<dt>
@@ -787,16 +787,18 @@
 					</div>
 				</dd>
 				<dd>
-					<div class="kb-form not-selected" data-status="">
+					<div class="kb-form" data-status="">
 						<label for="formSelectSample05">선택 타이틀</label>
 						<div class="kb-form_inner form-select">
-							<button type="button" class="selected-option"></button>
+							<button type="button" class="selected-option number">1999</button><!-- 숫자일때 number-->
 							<select name="" id="formSelectSample05" title="타이틀">
 								<option value="">최초 메세지</option>
-								<option value="">선택 option 1</option>
-								<option value="">선택 option 2</option>
-								<option value="">선택 option 3</option>
-								<option value="">선택 option 4</option>
+								<option value="" selected>1999</option>
+								<option value="">2000</option>
+								<option value="">2001</option>
+								<option value="">2002</option>
+								<option value="">2003</option>
+								<option value="">2004</option>
 							</select>
 						</div>
 						<em class="validation">안내 메세지 영역 입니다.</em>
@@ -860,7 +862,7 @@
                                 <button type="button" class="selected-option"></button>
                                 <select name="" id="formMultiPhone" title="통신사 선택">
                                     <option value="">통신사</option>
-                                    <option value="">SKT</option>
+                                    <option value="" selected>SKT</option>
                                     <option value="">KT</option>
                                     <option value="">LG</option>
                                     <option value="">알뜰폰</option>
@@ -1789,7 +1791,7 @@
 		</div>
 		<hr>
 		<!-- Checkbox 하위 선택 -->
-		<div class="box">
+		<div class="box" id="jsCheckboxSelector">
 			<h2>Checkbox 하위 선택</h2>
 			<dl class="flex-dl">
 				<dt>
@@ -1799,6 +1801,25 @@
 						</code>
 					</pre>
 				</dt>
+                <dd data-description=".js-checkbox-selector">
+                    <div class="js-checkbox-selector">
+                        <p><strong><span class="form-checkbox"><input type="checkbox" id="selectAll03"><label for="selectAll03">상품서비스 안내수단 전체 선택</label></span></strong></p>
+                        <br>
+                        <ul class="checkbox-group">
+                            <li><span class="form-checkbox_20"><input type="checkbox" id="select21"><label for="select21">문자</label></span></li>
+                            <li><span class="form-checkbox_20"><input type="checkbox" id="select22"><label for="select22">이메일</label></span></li>
+                            <li><span class="form-checkbox_20"><input type="checkbox" id="select23"><label for="select23">전화</label></span></li>
+                            <li><span class="form-checkbox_20"><input type="checkbox" id="select24"><label for="select24">DM</label></span></li>
+                        </ul>
+                        <br>
+                        <ul class="checkbox-group">
+                            <li><span class="form-checkbox_20"><input type="checkbox" id="select31" class="exception"><label for="select31">예외</label></span></li>
+                            <li><span class="form-checkbox_20"><input type="checkbox" id="select32"><label for="select32">이메일</label></span></li>
+                            <li><span class="form-checkbox_20"><input type="checkbox" id="select33"><label for="select33">전화</label></span></li>
+                            <li><span class="form-checkbox_20"><input type="checkbox" id="select34"><label for="select34">DM</label></span></li>
+                        </ul>
+                    </div>
+				</dd>
 				<dd data-description=".js-checkbox-selector">
 					<dl class="accordian js-checkbox-selector">
 						<dt><span class="form-checkbox"><input type="checkbox" id="selectAll"><label for="selectAll">상품서비스 안내수단 전체 선택</label></span></dt>
@@ -1820,7 +1841,7 @@
 							</ul>
 						</dd>
 					</dl>
-				</dd>
+				</dd>				
 			</dl>
 		</div>
 		<hr>

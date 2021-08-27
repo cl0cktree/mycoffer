@@ -4,7 +4,7 @@
 
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
-    "title": "입출금·페이 | 자산"
+    "title": "입출금 계좌 상세조회 | 자산"
     })
 </head>
 
@@ -13,7 +13,7 @@
     <div class="app">
         <!-- app-header //-->
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
-        'pageTit' :'입출금·페이',
+        'pageTit' :'입출금 계좌 상세조회',
         'type':'close'
         })
         <!-- // app-header -->
@@ -23,66 +23,22 @@
 
             <!-- app-content // -->
             <main class="app-content my-asset pop-account-detail">
-
-
                 <!--입출금//-->
-                <!-- 2021-06-09 수정 //-->
-                <section class="kb-sec full pay">
-                    <!-- 직접등록 2021-07-01 // -->
-                    <div class="account-top">
-                        <ul>
-                            <li class="account-wrap">
-                                <div class="icon-con">
-                                    <span><img src="../../static/images/ci/A1AAEO0000.png" alt="은행별 아이콘"></span>
-                                    
-                                </div>
-                                <div class="txt-con">
-                                    <em class="agency">국민은행</em>
-                                    <span class="bank-book">상품명</span>
-                                    <p class="balance mb0">
-                                        <span>잔액 <b class="amount"><span class="num">3,000,000</span>원</b></span>
-                                    </p>
-                                </div>
-                                <button type="button" class="btn-hide-account" data-call-layered="mys_as_05_00_01_p1"><i
-                                        class="icon-more_top_24"></i><span>계좌숨기기</span></button>
-                            </li>
-                            <li class="interest-rate">
-                                <dl class="description-list type2">
-                                    <dt>별명</dt>
-                                    <dd>바니간식비용 유치원비용</dd>
-                                    <dt>신규일</dt>
-                                    <dd class="date">2021.10.30</dd>
-                                </dl>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- // 직접등록 -->
+                <section class="kb-sec full">
                     <div class="account-top">                        
                         <ul>
                             <li class="account-wrap">
-                                <div class="icon-con">
-                                    <span><img src="@@webRoot/static/images/ci/A1AAEO0000.png" alt="은행별 아이콘"></span>                                    
-                                </div>
                                 <div class="txt-con">
-                                    <em class="agency">국민은행</em>
-                                    <span class="bank-book">KB국민은행ONE통장 </span>
-                                    <span class="num">1234-5678-1234</span>
-                                    <!-- 신규일 이동 -->
-                                    <p class="balance">
-                                        <span>잔액 <b class="amount"><span class="num">3,000,000</span>원</b></span>
+                                    <span class="bank-book">KB국민은행ONE통장</span>
+                                    <div class="agency-con">
+                                        <span class="agency-logo"><img src="@@webRoot/static/images/ci/A1AAEO0000.png" alt="은행별 아이콘"></span>
+                                        <em class="agency">국민<span class="num">9912801-00-285003</span></em>
+                                    </div>
+                                    <p class="balance mb0">
+                                        <span>보유금액 <b class="amount"><span class="num">3,000,000</span>원</b></span>
                                     </p>
                                 </div>
-                                <button type="button" class="btn-hide-account" data-call-layered="mys_as_05_00_01_p1"><i
-                                        class="icon-more_top_24"></i><span>계좌숨기기</span></button>
                             </li>
-                            <!-- 신규일 이동 // -->
-                            <li class="interest-rate">
-                                <dl class="description-list type2">
-                                    <dt>신규일</dt>
-                                    <dd class="date">2021.10.30</dd>
-                                </dl>
-                            </li>
-                            <!-- // 신규일 이동 -->
                         </ul>
                     </div>
 
@@ -91,12 +47,16 @@
                             <button class="btn-condition" data-call-layered="mys_as_05_01_02_p1">
                                 <div>
                                     <div class="sorting-status">
-                                        <span>1개월</span>
+                                        <span>직접입력</span>
+                                        <span>전체</span>
                                         <span>최신순</span>
                                     </div>
                                     <i class="arrow">조회조건 선택</i>
                                 </div>
                             </button>
+                        </div>
+                        <div class="hash-area">
+                            <span>#상세검색표기</span>
                         </div>
                         <!-- no-data 추가 // -->
                         <div class="no-data-wrap">
@@ -106,180 +66,41 @@
                             </div>
                         </div>
                         <!-- // no-data 추가 -->
-                        
-                        <div class="line-list-wrap type-time-line">
+                        <div class="detail-list-wrap">
+                            <div class="period-con"><span class=" num">2021.01.27 ~ 2021.04.26</span></div>
                             <ul class="d-list">
-                                <li class="lately">
-                                    <div class="line-box">
-                                        <div class="date">2020.10.12 10:10</div>
-                                        <div class="price-wrap">
-                                            <div class="type">입금</div>
-                                            <div class="txt-con">
-
-                                                <dl class="description-list">
-                                                    <dt>입금금액</dt>
-                                                    <dd class="amount"><b class="num plus">9,800</b>원</dd>
-                                                    <dt>잔액</dt>
-                                                    <dd class="total"><span class="num">300,000</span>원</dd>
-                                                </dl>
-                                                
-                                                <span class="memo">어멍김밥</span>
-                                            </div>
+                                <li> 
+                                    <div class="price-wrap">
+                                        <div class="date-con">
+                                            <span>2020.10.12 10:10</span>
+                                            <em>입금</em>
+                                        </div>
+                                        <div class="type">김국민</div>
+                                        <div class="txt-con">
+                                            <div class="amount">입금 <b class="num plus">9,800</b>원</div>
+                                            <div class="balance">잔액 <span class="num">300,000</span>원</div> 
                                         </div>
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="line-box">
-                                        <div class="date">2020.10.12 10:10</div>
-                                        <div class="price-wrap">
-                                            <div class="type">입금</div>
-                                            <div class="txt-con">
-                                                
-                                                <dl class="description-list">
-                                                    <dt>입금금액</dt>
-                                                    <dd class="amount"><b class="num plus">10,000</b>원</dd>
-                                                    <dt>잔액</dt>
-                                                    <dd class="total"><span class="num">300,000</span>원</dd>
-                                                </dl>
-                                                
-                                                <span class="memo">카카오페이</span>
-                                            </div>
+                                    <div class="price-wrap">
+                                        <div class="date-con">
+                                            <span>2020.10.12 10:10</span>
+                                            <em>출금</em>
                                         </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="line-box">
-                                        <div class="date">2020.10.12 10:10</div>
-                                        <div class="price-wrap">
-                                            <div class="type">출금</div>
-                                            <div class="txt-con">
-                                                
-                                                <dl class="description-list">
-                                                    <dt>출금금액</dt>
-                                                    <dd class="amount"><b class="num minus">9,800</b>원</dd>
-                                                    <dt>잔액</dt>
-                                                    <dd class="total"><span class="num">290,200</span>원</dd>
-                                                </dl>
-                                                
-                                            </div>
+                                        <div class="type">일일향코스요리</div>
+                                        <div class="txt-con">
+                                            <div class="amount">입금 <b class="num minus">9,800</b>원</div>
+                                            <div class="balance">잔액 <span class="num">300,000</span>원</div> 
                                         </div>
                                     </div>
                                 </li>
                             </ul>
-                            <button class="btn-view-more"><span>+ 더보기</span></button>
+                            <button class="btn-text btn-more"><i class="icon-plus"></i><span>더보기</span></button>
                         </div>
                     </div>
                 </section>
                 <!--입출금//-->
-                <!--페이//-->
-                
-                <section class="kb-sec full pay">
-                    <!-- 페이상세 //-->
-                    <div class="account-top bottom-line">
-                        <ul>
-                            <li class="account-wrap">
-                                <div class="icon-con">
-                                    <span><img src="@@webRoot/static/images/ci/A1AAEO0000.png" alt="은행별 아이콘"></span>
-                                    
-                                </div>
-                                <div class="txt-con">
-                                    <em class="agency">네이버 | 네이버 페이</em>
-                                    <span>asmikky@</span>
-                                    <p class="creat-date">
-                                        신규일 <span class="num">2020.09.05</span>
-                                    </p>
-                                    <p class="balance">
-                                        <span>보유금액 <b class="amount"><span class="num">1,847,538</span>원</b></span>
-                                    </p>
-                                </div>
-                                <button type="button" class="btn-hide-account" data-call-layered="mys_as_05_00_01_p1"><i
-                                        class="icon-more_top_24"></i><span>계좌숨기기</span></button>
-                            </li>
-                        </ul>
-
-                    </div>
-
-                    <div class="account-detail">
-                        <div class="condition-area">
-                            <button class="btn-condition" data-call-layered="mys_as_05_01_02_p1">
-                                <div>
-                                    <div class="sorting-status">
-                                        <span>1개월</span>
-                                        <span>최신순</span>
-                                    </div>
-                                    <i class="arrow">조회조건 선택</i>
-                                </div>
-                            </button>
-                        </div>
-                        
-                        <div class="line-list-wrap type-time-line">
-                            <ul class="d-list">
-                                <li class="lately">
-                                    <div class="line-box">
-                                        <div class="date">2020.10.12 10:10</div>
-                                        <div class="price-wrap">
-                                            <div class="type">충전</div>
-                                            <div class="txt-con">
-
-                                                <dl class="description-list">
-                                                    <dt>충전금액</dt>
-                                                    <dd class="amount"><b class="num plus">9,800</b>원</dd>
-                                                    <dt>잔액</dt>
-                                                    <dd class="total"><span class="num">290,200</span>원</dd>
-                                                </dl>
-                                                
-                                                <span class="memo">김국민(국민3379)</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="line-box">
-                                        <div class="date">2020.10.12 10:10</div>
-                                        <div class="price-wrap">
-                                            <div class="type">결제</div>
-                                            <div class="txt-con">
-
-                                                <dl class="description-list">
-                                                    <dt>결제금액</dt>
-                                                    <dd class="amount"><b class="num minus">9,800</b>원</dd>
-                                                    <dt>잔액</dt>
-                                                    <dd class="total"><span class="num">290,200</span>원</dd>
-                                                </dl>
-                                                
-                                                <span class="memo">봉추찜닭</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="line-box">
-                                        <div class="date">2020.10.12 10:10</div>
-                                        <div class="price-wrap">
-                                            <div class="type">송금</div>
-                                            <div class="txt-con">
-
-                                                <dl class="description-list">
-                                                    <dt>송금금액</dt>
-                                                    <dd class="amount"><b class="num minus">10,000</b>원</dd>
-                                                    <dt>잔액</dt>
-                                                    <dd class="total"><span class="num">300,000</span>원</dd>
-                                                </dl>
-                                                
-                                                <span class="memo">김우리(우리0000)</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                            <button class="btn-view-more"><span>+ 더보기</span></button>
-                        </div>
-                    </div>
-                </section>
-                <!--//페이-->
-
-
-
             </main>
             <!-- // app-content -->
 

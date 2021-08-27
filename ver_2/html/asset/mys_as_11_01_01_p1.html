@@ -64,20 +64,33 @@
 				</section>
 				<section class="kb-sec address-search">
 					<h2 class="is-hidden">검색</h2>
-					<ul class="btn-segmented_radio type2">
-                        <li>
-                            <input type="radio" name="btnradioHouse" id="btnradioHouse1">
-                            <label for="btnradioHouse1">아파트</label>
-                        </li>
-                        <li>
-                            <input type="radio" name="btnradioHouse" id="btnradioHouse2">
-                            <label for="btnradioHouse2">오피스텔</label>
-                        </li>
-                        <li>
-                            <input type="radio" name="btnradioHouse" id="btnradioHouse3">
-                            <label for="btnradioHouse3">기타</label>
-                        </li>
-                    </ul>
+					<!--
+						<ul class="btn-segmented_radio type2">
+							<li>
+								<input type="radio" name="btnradioHouse" id="btnradioHouse1">
+								<label for="btnradioHouse1">아파트</label>
+							</li>
+							<li>
+								<input type="radio" name="btnradioHouse" id="btnradioHouse2">
+								<label for="btnradioHouse2">오피스텔</label>
+							</li>
+							<li>
+								<input type="radio" name="btnradioHouse" id="btnradioHouse3">
+								<label for="btnradioHouse3">기타</label>
+							</li>
+						</ul> 
+					-->
+
+					<!-- 2021-08-27 수정 // -->
+					<div class="tab swiper-container">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide is-active"><a href="#target01">아파트</a></li>
+                            <li class="swiper-slide"><a href="#target02">오피스텔</a></li>
+                            <li class="swiper-slide"><a href="#target03">기타</a></li>
+                        </ul>
+                    </div>
+					<!-- // 2021-08-27 수정 -->
+
 					<div class="kb-form" data-status="">
 						<div class="kb-form_inner form-text">
 							<input type="text" id="formTextSample0555" value="" title="검색어" placeholder="검색어를 입력해주세요">
@@ -101,7 +114,7 @@
 							</a>
 						</li>
 					</ul>
-					<button class="btn-view-more"><i class="icon-plus"></i><span> 더보기</span></button>
+					<button class="btn-more-plus"><span> 더보기</span></button> <!-- 2021-08-27 수정 -->
 					<!-- no-data // -->					
 					<div class="no-data mt48">
 						<i class="icon-info_24"></i>

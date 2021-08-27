@@ -81,33 +81,45 @@
                             <li><span class="form-radio"><input type="radio" id="certificationSex02" name="certificationSex"><label for="certificationSex02">여자</label></span></li>
                         </ul>
                     </div> -->
-                    <div class="kb-form_multi kb-form" data-status="">
+                    <div class="kb-form_multi kb-form_phone kb-form">
                         <strong class="tit">휴대폰</strong>
-                        <div class="kb-form">
-                            <label for="formMultiSample11">통신사</label>
+                        <div class="kb-form" data-status="">
                             <div class="kb-form_inner form-select">
                                 <button type="button" class="selected-option"></button>
-                                <select name="" id="formMultiSample11" title="통신사 선택">
-                                    <option value="">통신사</option>
+                                <select name="" id="formMultiPhone" title="통신사 선택">
+                                    <option value="" selected="">통신사</option>
                                     <option value="">SKT</option>
                                     <option value="">KT</option>
-                                    <option value="">LG U+</option>
-                                    <option value="">SKT(알뜰폰)</option>
-                                    <option value="">KT(알뜰폰)</option>
-                                    <option value="">LG U+(알뜰폰)</option>
+                                    <option value="">LG</option>
+                                    <option value="">알뜰폰</option>
                                 </select>
                             </div>
-                            <em class="validation">에러 메세지 영역 입니다.</em>
                         </div>
-                        <div class="kb-form">
-                            <label for="formMultiSample13">휴대폰번호</label>
+                        <div class="kb-form" data-status="">
+                            <div class="kb-form_inner form-select">
+                                <button type="button" class="selected-option">010</button>
+                                <select name="" id="formMultiPhone02" title="휴대폰 앞자리 번호">
+                                    <option value="">010</option>
+                                    <option value="" selected="">010</option>
+                                    <option value="">011</option>
+                                    <option value="">016</option>
+                                    <option value="">017</option>
+                                    <option value="">018</option>
+                                    <option value="">019</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="kb-form" data-status="">
+                            <label for="formMultiPhone03">휴대폰번호</label>
                             <div class="kb-form_inner form-text">
-                                <input type="text" inputmode="numeric" id="formMultiSample13" placeholder="휴대폰번호">
+                                <input type="text" class="align-l" inputmode="numeric" max-length="8" id="formMultiPhone03" placeholder="" title="휴대폰 뒷자리 번호">
                                 <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                             </div>
                         </div>
-                        <em class="validation">에러 메세지 영역 입니다.</em>
-                    </div>                    
+                        <em class="validation">통신사를 선택하세요.</em>
+                        <em class="validation">휴대폰 앞자리를 선택하세요.</em>
+                        <em class="validation">휴대폰 뒷자리를 선택하세요.</em>
+                    </div>                
                     <div class="mt32"><button type="button" class="btn-line" data-action="sendCertificationNumber"><span>인증번호 요청</span></button></div><!-- 수정 : 2021.06.24 -->
                 </section>
                 <!-- 인증번호 발송 후 // -->
@@ -119,11 +131,15 @@
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
                         <em class="validation"></em>
-                        <div class="remain-time">잔여시간: <strong>2:59</strong></div>
-                        <button type="button" class="btn-text btn-extend-time"><u>입력시간 연장</u></button>
+                        <div class="remain-time"><i class="icon-clock"></i>잔여시간 <strong>2:59</strong><button class="btn-line table"><span>입력시간연장</span></button></div>                        
                     </div>
                 </section>
                 <!-- // 인증번호 발송 후 -->
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button class="btn-solid"><span>확인</span></button>
+                    </div>
+                </div>
             </main>
             <!-- // app-content -->
 

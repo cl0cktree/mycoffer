@@ -28,12 +28,13 @@
                         <li><span>‘항상 수입·지출 내역에서 <em class="c-red">숨기기’</em> 내역은 복원 후 <em class="c-red">[기타소득] 수입 카테고리 [기타] 지출</em> 카테고리로 분류됩니다.</span></li>
                     </ul>
                 </section>
-                <section class="kb-sec view-hidden-expense">
+                
+                <section class="kb-sec view-hidden-expense js-checkbox-selector"><!-- 수정 :  class 추가 -->
                     <div class="list-controls">
-                        <span class="form-checkbox js-checkbox-selector" data-target="hideListSelector"><input type="checkbox" id="selectAll" checked=""><label for="selectAll">전체 숨기기 해제</label></span>
+                        <span class="form-checkbox"><input type="checkbox" id="selectAll"><label for="selectAll">전체 숨기기 해제</label></span><!-- 수정 :  class 제거, data-target 제거 -->
                     </div>
                     <strong class="h4 credit-list-tit"><em class="num">7</em>월 <em class="num">15</em>일 (목)</strong>
-                    <dl class="credit-list" data-target="hideListSelector">
+                    <dl class="credit-list"><!-- 수정 :  class 제거, data-target 제거 -->
                         <dt class="form-checkbox">
                             <input type="checkbox" id="viewHideList01">
                             <label for="viewHideList01">
@@ -70,7 +71,7 @@
                         </dd>
                     </dl>
                     <strong class="h4 credit-list-tit"><em class="num">7</em>월 <em class="num">14</em>일 (수)</strong>
-                    <dl class="credit-list" data-target="hideListSelector">
+                    <dl class="credit-list"><!-- 수정 :  class 제거, data-target 제거 -->
                         <dt class="form-checkbox">
                             <input type="checkbox" id="viewHideList01">
                             <label for="viewHideList01">
