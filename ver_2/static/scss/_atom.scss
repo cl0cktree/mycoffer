@@ -55,12 +55,14 @@
 .btn-text u{display:inline-block;@include text($size: $text02);line-height:2rem;}
 .btn-text i[class*=icon-]{max-width:2rem;max-height:2rem;vertical-align:middle;}
 .btn-text.sm span,
-.btn-text.sm u{font-size:14px;color:$kb-ui04;}
+.btn-text.sm u{font-size:14px;color:$kb-ui04;font-weight:normal;}
 .btn-text.icon-arrow i {top:-1px;margin-left: 10px;@include iconBullet($direction: 'right', $width: 7px, $thick: 2px, $color: $kb-ui03);}
-.btn-text.sm.icon-arrow i{@include iconBullet($direction: 'right', $width: 7px, $thick: 2px, $color: $kb-ui05);}
+.btn-text.sm.icon-arrow i{@include iconBullet($direction: 'right', $width: 7px, $thick: 2px, $color: $kb-ui05);top:0;}
 
-.btn-datepicker{@include ir;width:2rem;height:2rem;background:url(../images/common/common.png) no-repeat -130px -20px;background-size:160px;}
-.btn-timepicker{@include ir;width:2rem;height:2rem;background:url(../images/common/common.png) no-repeat -110px -20px;background-size:160px;}
+.btn-datepicker{display:inline-block;width:34px;height:34px;text-align:center;}
+.btn-datepicker span{@include ir;width:20px;height:20px;margin:0 auto;background:url(../images/common/common.png) no-repeat -130px -20px;background-size:160px;}
+.btn-timepicker{display:inline-block;width:34px;height:34px;text-align:center;}
+.btn-timepicker span{@include ir;width:20px;height:20px;margin:0 auto;background:url(../images/common/common.png) no-repeat -110px -20px;background-size:160px;}
 .btn-more-dot{@include ir;position:relative;display:inline-block;width:24px;height:24px;}
 .btn-more-dot:before{content:'';position:absolute;top:calc(50% - 2px);right:0;width:4px;height:4px;border-radius:50%;background-color:$kb-ui06;box-shadow:0 -8px 0 $kb-ui06, 0 8px 0 $kb-ui06;}
 .btn-more-plus{display:inline-block;width:100%;height:34px;color:$kb-ui02;font-size:16px;text-align:center;}
@@ -232,6 +234,7 @@ textarea:focus + .byte .current{color:$kb-ui02;}
 
 p.simple-message {position: relative;margin-top: 2rem; padding-left: 2.4rem; color: $kb-ui04; @include text($text03, normal);}
 p.simple-message::before {content:'';position: absolute;left:0;top:0;width:20px;height:20px;background:url(../images/common/common.png) no-repeat -24px -20px;background-size:160px;}
+p.simple-message.align-r{float:right;}
 
 .agree-grade-graph {display: flex;}
 .agree-grade-graph .grade {position: relative; flex: 1; text-align: center; font-size: 14px; color: $kb-ui04;}
@@ -353,3 +356,13 @@ ul.link-arrow-after li:after,
 .link-arrow-after:after,
 .link-arrow{@include ir;display:inline-block;width:20px;height:20px;background:url(../images/common/common.png) no-repeat -90px -20px;background-size:160px;}
 
+//구분선
+.hr-divide_48,
+.hr-divide_32,
+.hr-divide_24{display:block;width:100%;height:10px;background-color:$kb-ui10;border:none;}
+.hr-divide_48{margin:48px 0;}
+.hr-divide_32{margin:32px 0;}
+.hr-divide_24{margin:24px 0;}
+.hr-line{display:block;width:100%;height:1px;background-color:$kb-ui09;margin:20px 0;}
+.kb-sec:not(.full) .hr-divide_48,
+.kb-sec:not(.full) .hr-divide_24{margin:0 -24px;}

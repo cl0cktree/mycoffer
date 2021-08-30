@@ -16,9 +16,9 @@
 //Datepicker
 .calendar-nav{position:relative;display:flex;justify-content:center;align-items:center;margin-left:(-2.4rem);margin-right:(-2.4rem);padding:0 60px;}
 .calendar-nav strong{@include number($weight:bold, $line-height:24px);margin:0 20px;}
-.calendar-nav .btn-text{@include btnText($size:14px);position:absolute;left:24px;top:5px;}
-.calendar-nav .btn-text:after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background-color:$kb-ui02}
-.calendar-nav .btn-text span{line-height:1;}
+.calendar-nav .btn-text{@include btnText($size:14px);position:absolute;left:24px;top:-4px;width:48px;height:34px;justify-content: center;}
+// .calendar-nav .btn-text{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background-color:$kb-ui02}
+.calendar-nav .btn-text span{line-height:1;border-bottom:1px solid $kb-ui02;}
 .calendar-nav > button:not(.btn-text){@include ir;width:24px;height:24px;background-image:url(../images/common/common.png);background-size:160px;background-repeat:no-repeat;}
 .calendar-nav .btn-first{background-position:-48px -45px;}
 .calendar-nav .btn-first.is-disabled{background-position:-48px -69px;}
@@ -41,9 +41,10 @@
 .calendar-area .ui-datepicker .ui-datepicker-header{display:none;}
 .calendar-area .ui-datepicker-calendar{font-family:'KBFGText';}
 .calendar-area .ui-datepicker-calendar th span{@include text($size: 14px, $line-height:1, $weight: normal)}
-.calendar-area .ui-datepicker td{height:60px;vertical-align:middle;text-align:center;}
-.calendar-area .ui-datepicker td span, 
-.calendar-area .ui-datepicker td a{@include number($size: 17px, $line-height:1, $weight: bold);width:36px;height:36px;margin:0 auto;padding:0;line-height:36px;text-align:center;}
+.calendar-area .ui-datepicker-calendar tbody a{display:inline-block;}
+.calendar-area .ui-datepicker-calendar td{height:60px;vertical-align:middle;text-align:center;}
+.calendar-area .ui-datepicker-calendar td span, 
+.calendar-area .ui-datepicker-calendar td a{@include number($size: 17px, $line-height:1, $weight: bold);width:36px;height:36px;margin:0 auto;padding:0;line-height:36px;text-align:center;}
 .calendar-area .ui-state-default, 
 .calendar-area .ui-widget-content .ui-state-default, 
 .calendar-area .ui-widget-header .ui-state-default, 
@@ -57,8 +58,9 @@
 .calendar-area .ui-widget-content .ui-state-disabled .ui-state-default, 
 .calendar-area .ui-widget-header .ui-state-disabled .ui-state-default{color:$kb-ui07;}
 .calendar-area .ui-widget-content .ui-state-active{border:none;background-color:$color-yellow;border-radius:50%;}
-.calendar-area .ui-widget-content .ui-datepicker-today .ui-state-highlight{position:relative;}
-.calendar-area .ui-widget-content .ui-datepicker-today .ui-state-highlight:after{content:'';position:absolute;top:0;left:calc(50% - 2px);width:4px;height:4px;border-radius:50%;background-color:$color-yellow}
+.calendar-area .ui-widget-content .ui-datepicker-today .ui-state-highlight{position:relative;background-color:$kb-ui09;border-radius:50%;}
+.calendar-area .ui-widget-content .ui-datepicker-today .ui-state-active{background-color:$color-yellow}
+//.calendar-area .ui-widget-content .ui-datepicker-today .ui-state-highlight:after{content:'';position:absolute;bottom:-12px;left:calc(50% - 2px);width:4px;height:4px;border-radius:50%;background-color:$color-yellow}
 
 .pdf-viewer{overflow:auto;display:flex;flex-flow:column;height:calc(var(--vh, 1vh) * 100 - 48px);padding:0;background-color:$kb-ui08;}
 .pdf-viewer .pdf-area{flex:1;}

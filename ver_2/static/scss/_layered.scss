@@ -21,14 +21,16 @@
 }
 
 /* Bottom Sheet */
-.bottom-sheet {position:fixed;left:0;right:0;bottom:-16px;z-index:$level90;max-height:calc(100% - 48px);padding-top:30px;border-top-left-radius: 12px;border-top-right-radius: 12px;background-color: $kb-ui11;transform:translateY(100%);transition:transform .3s cubic-bezier(0.165, 0.84, 0.44, 1);box-shadow: 0px -6px 8px rgba(0, 0, 0, 0.08);}
+.bottom-sheet {position:fixed;left:0;right:0;bottom:-16px;z-index:$level90;max-height:95%;padding-top:30px;border-top-left-radius: 12px;border-top-right-radius: 12px;background-color: $kb-ui11;transform:translateY(100%);transition:transform .3s cubic-bezier(0.165, 0.84, 0.44, 1),height .3s .1s cubic-bezier(0.165, 0.84, 0.44, 1);box-shadow: 0px -6px 8px rgba(0, 0, 0, 0.08);}
 // .bottom-sheet.is-expanded,
 // .bottom-sheet.full-size{max-height:90%}
 .bottom-sheet.is-active{display:flex;flex-flow:column;transform:translateY(-16px);}
+.bottom-sheet.bs-tab{height:70%;}
+.bottom-sheet.bs-tab.is-expanded{height:95%;}
 .bottom-sheet .bottom-sheet_header {flex:0 0 24px;padding:0 48px 0 24px;margin-bottom:24px;}
 .bottom-sheet .bottom-sheet_header .tit {font-size:20px;font-weight: bold;line-height: 24px;}
 .bottom-sheet_contents{@include text;flex:1;overflow:auto;padding-bottom:24px;}
-.with-button .bottom-sheet_contents{padding-bottom:60px;}//버튼이 있는 경우(with-button 클래스 : ui.js)
+// .with-button .bottom-sheet_contents{padding-bottom:60px;}//버튼이 있는 경우(with-button 클래스 : ui.js)
 // .bottom-sheet_contents.is-extended{max-height:80vh;}
 .bottom-sheet_contents .kb-sec:first-child{padding-top:0;}
 .bottom-sheet_buttons{display:flex;margin-top:36px;}
@@ -44,6 +46,9 @@
 .bottom-sheet_select li.is-selected button{background:url(../images/common/checkbox_20_on@2x.png) no-repeat right 0 top 50%;background-size:20px;}
 .ios.homebar .bottom-sheet_buttons .btn-solid{height:9.6rem;padding-top:1rem;}
 .ios.homebar .bottom-sheet_buttons .btn-solid > span{height:9.6rem;line-height:5.2rem;}
+
+.bottom-sheet .tab{flex:0 0 40px;}
+.bottom-sheet .tab + .bottom-sheet_contents{padding-top:32px;}
 
 .modal{display:none;position:fixed;left:50%;top:50%;z-index:$level100;width:calc(100vw - 48px);max-width:340px;max-height:calc(100% - 100px);padding-top:26px;background-color:$kb-ui11;border-radius:2px;}
 .modal.is-active{display:block;animation: modalIn .2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;}
@@ -68,12 +73,9 @@
 
 .bottom-sheet .btn-close,
 .modal .btn-close {
-    @include iconCancel($size: 16px, $thick: 2px, $color: $kb-ui05, $padding: 4px, $position: absolute);
-	right: 24px;top: 29px;
+    @include iconCancel($size: 16px, $thick: 2px, $color: $kb-ui05, $padding: 9px, $position: absolute);
+	right: 19px;top: 24px;
 }
-
-.popup .tab,
-.bottom-sheet .tab{margin-bottom:32px;}
 
 .modal .error-code{display:block;margin-top:12px;}
 

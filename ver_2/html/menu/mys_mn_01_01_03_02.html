@@ -4,51 +4,192 @@
 
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
-        "title": "Last Depth | 1st Depth"
+    "title": "Last Depth | 1st Depth"
     })
 </head>
 
 <body>
     @@include('@@webRoot/html/_include/app-a11y.html')
     <div class="app">
-        
+
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
-            'pageTit':'데이터 변경',
-            'type':'step'
+        'pageTit':'데이터 변경',
+        'type':'step'
         })
-        
+
         <!-- app-container //-->
         <div class="app-container">
 
             <!-- app-content // -->
-            <main class="app-content select-assets">
-                <div class="page-step js-fixed">  
-                    <div class="step" aria-label="총 4단계 중 현재 2단계">
-                        <span class="current">2</span>                        
+            <main class="app-content select-transmission-method">
+                <div class="page-step js-fixed">
+                    <div class="step" aria-label="총 2단계 중 현재 4단계">
+                        <span class="current">2</span>
                         <span class="total">4</span>
                     </div>
-                    <h2 class="h1">상세 정보 전송 요청</h2>
+                    <h2 class="h1">상세 정보 전송 요구</h2>
                 </div>
 
-                <!--// SECTION -->
-                <section class="kb-sec">
+                <section class="kb-sec transmission-request">
                     <p class="page-step-desc">상세정보를 가져오기 위한 요구사항을 확인하시고, 동의해 주세요.</p>
 
-                    변과장님 작업중
+                    <div class="caution-txt_01">
+                        <h3 class="tit">정보제공자(기관)</h3>
+                        <div class="desc-box">
+                            <p>우체국, 신한은행, NH농협은행, KB국민은행, 하나카드, 현대카드, 우리카드, 롯데카드, 삼성카드, KB증권, KB손해보험, 현대해상, 신한생명, 라이나생명 ... </p>
+                        </div>
+                        
+                        <h3 class="tit">전송을 요구하는 개인신용정보</h3>
+                        <div class="desc-box">
+                            <ul data-style="list">
+                                <li>은행 : 고객정보 최소생성일시, 계좌번호, 회차번호, 상품명, 계좌구분, 계좌상태, 외화계좌여부, 마이너스약정여부,
+                                    (적요전송요구여부)</li>
+                                <li>카드 : 카드식별자, 카드번호, 카드상품명, 본인/가족구분, 카드구분, (적요전송요구여부)</li>
+                                <li>보험 : 증권번호, 보험종류구분, 계좌번호, 상품명, 계좌구분, 계약상태</li>
+                                <li>보험 : 보험증권 목록, 대출계좌 목록 및 개인형IRP 계좌 목록 </li>
+                                <li>전자금융 : 선불전자지급수단 목록 및 계정 목록</li>
+                                <li>할부금융 : 계좌(대출/운용리스) 목록</li>
+                                <li>보증보험 : 보증보험 증권 목록</li>
+                                <li>통신 : 통신 계약 목록</li>
+                            </ul>
+                        </div>
 
+                        <h3 class="tit">개인신용정보를 제공받는 자</h3>
+                        <div class="desc-box">
+                            <p>KB국민은행</p>
+                        </div>
+
+                        <h3 class="tit">전송을 요구하는 목적</h3>
+                        <div class="desc-box">
+                            <p>전송요구를 통한 본인신용정보 통합조회 서비스의 이용</p>
+                        </div>
+
+                        <h3 class="tit">전송을 요구하는 개인신용정보 보유기간</h3>
+                        <div class="desc-box">
+                            <p>서비스 이용 종료 시 또는 삭제 요청 시까지</p>
+                        </div>
+
+                        <h3 class="tit">정기적 전송 요구 여부 및 요구하는 경우 그 주기</h3>
+                        <div class="desc-box">
+                            <ul class="btn-segmented_radio">
+                                <li>
+                                    <input type="radio" name="btnradio" id="btnradio1" checked="">
+                                    <label for="btnradio1">예(주1회)</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="btnradio" id="btnradio2">
+                                    <label for="btnradio2">아니오</label>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <h3 class="tit">전송요구의 종료시점(전송요구서 유효기간)</h3>
+                        <div class="desc-box">
+                            <div class="kb-form" data-status="error">
+                                <div class="lookup-period">
+                                    <ul class="btn-segmented_radio">
+                                        <li>
+                                            <input type="radio" name="btnradio" id="btnradio1">
+                                            <label for="btnradio1">1년</label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" name="btnradio" id="btnradio2">
+                                            <label for="btnradio2">직접입력(최대1년)</label>
+                                        </li>
+                                    </ul>
+                                    <div class="period-selector">
+                                        <input type="text" title="시작날짜" value="2021.08.28">
+                                        <span>~</span>
+                                        <input type="text" title="종료날짜" value="2021.08.31">
+                                    </div>
+                                    <em class="validation">최대 1년까지 선택 가능합니다.</em>
+                                    <em class="validation">종료일이 시작일보다 빠릅니다.</em>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
                 </section>
-                <!-- SECTION //-->
-                
+
+                <section class="kb-sec confirm-agree">
+                    <h3 class="is-hidden">약관 및 동의서 동의하기</h3>
+                    <div class="agreement-to-terms">
+                        <div class="header">
+                            <span class="form-checkbox">
+                                <input type="checkbox" id="agreeAllCheck" checked="">
+                                <label for="agreeAllCheck">전체동의</label>
+                            </span>
+                        </div>
+                        <ul class="checkbox-group st_list">
+                            <li>
+                                <span class="form-checkbox_20 align-top">
+                                    <input type="checkbox" id="agreeCheck1" checked="">
+                                    <label for="agreeCheck1">[필수]개인(신용)정보 수집・이용 동의서<br>(상세정보 전송)</label>
+                                    <a href="@@webRoot/html/terms/agree-use-personal-info.html" class="link"><span class="link-arrow">바로가기</span></a>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="form-checkbox_20 align-top">
+                                    <input type="checkbox" id="agreeCheck2" checked="">
+                                    <label for="agreeCheck2">[필수]통합인증 이용 약관</label>
+                                    <a href="" class="link"><span class="link-arrow">바로가기</span></a>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h4 class="tit h4">상품구매 카테고리 정보</h4>
+                    <div class="confirm-info">
+                        <p class="tit">가전 및 전자 / 도서 및 문구 / 패션 및 의류 / 스포츠 / 화장품 / 아동 및 유아 / 식품 / 생활 및 가구 /
+                            여행 및 교통 / 문화 및 레저 / 음식 / E쿠폰 및 기타서비스 카테고리 정보</p>
+                        <p class="question">위 상품구매 정보 수집・이용에 동의 하십니까?</p>
+                        <ul class="radio-group">
+                            <li>
+                                <span class="form-radio"><input type="radio" id="radioAgree1-1" name="radioAgree1" checked=""><label for="radioAgree1-1">동의하지 않음</label></span>
+                            </li>
+                            <li>
+                                <span class="form-radio"><input type="radio" id="radioAgree1-2" name="radioAgree1"><label for="radioAgree1-2">동의함</label></span>
+                            </li>    
+                        </ul>
+                    </div>
+                    
+                    <h4 class="tit h4">가맹점 정보</h4>
+                    <div class="confirm-info">
+                        <p class="tit">가맹점 정보</p>
+                        <p class="question">위 상품구매 정보 수집・이용에 동의 하십니까?</p>
+                        <ul class="radio-group">
+                            <li>
+                                <span class="form-radio"><input type="radio" id="radioAgree2-1" name="radioAgree2" checked=""><label for="radioAgree2-1">동의하지 않음</label></span>
+                            </li>
+                            <li>
+                                <span class="form-radio"><input type="radio" id="radioAgree2-2" name="radioAgree2"><label for="radioAgree2-2">동의함</label></span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h4 class="tit h4">적요 또는 거래메모 정보</h4>
+                    <div class="confirm-info">
+                        <p class="tit">적요 또는 거래메모 정보</p>
+                        <p class="question">위 적요 또는 거래메모 정보 수집・이용에 동의 하십니까?</p>
+                        <ul class="radio-group">
+                            <li>
+                                <span class="form-radio"><input type="radio" id="radioAgree3-1" name="radioAgree3" checked=""><label for="radioAgree3-1">동의하지 않음</label></span>
+                            </li>
+                            <li>
+                                <span class="form-radio"><input type="radio" id="radioAgree3-2" name="radioAgree3"><label for="radioAgree3-2">동의함</label></span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
                 <div class="sticky-bottom">
                     <div class="btn-area">
                         <button type="button" class="btn-solid"><span>확인</span></button>
                     </div>
                 </div>
-
             </main>
             <!-- // app-content -->
 
-        </div>        
+        </div>
         <!-- // app-container -->
     </div>
 
@@ -60,15 +201,6 @@
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
-
-    <script>
-        $('.sticky-bottom button').on('click', function() {
-            modalPopup({
-                title: '',
-                message: "연결 가능한 상품(계좌)/정보가 없어 데이터 연결이 취소 됩니다.?"
-            });
-        });
-    </script>
 
 </body>
 

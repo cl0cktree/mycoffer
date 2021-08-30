@@ -26,7 +26,7 @@
                                     "pagination": {
                                         "el": ".swiper-pagination"
                                     },
-                                        "spaceBetween": 16,
+                                    "spaceBetween": 16,
                                     "slidesPerView": "auto",
                                     "autoHeight": "true"                                    
                                 };
@@ -43,22 +43,22 @@
                                     <div class="challenge-info">
                                         <ul class="term-list">
                                             <li><span>목표기간</span> <em class="num">2021.04.01~2021.04.06</em></li>
-                                            <li><span>6개월 평균 소비금액</span> <em class="num">150,000</em>원</li>
-                                            <li><span>목표금액</span> <em class="num">150,000</em>원 (1주일)</li>
+                                            <li><span>6개월 평균 소비금액</span> <em class="num" data-unit-after="원">150,000</em></li>
+                                            <li><span>목표금액</span> <em class="num" data-unit-after="원">150,000</em> (1주일)</li>
                                         </ul>
                                         <div class="txt-goal-stat">
-                                            <h3>현재까지 <strong class="num">70,000</strong>원 사용했고,</h3>
-                                            <h3>목표까지 <strong class="num">80,000</strong>원 남았어요.</h3>
+                                            <h3>현재까지 <strong class="num" data-unit-after="원">70,000</strong> 사용했고,</h3>
+                                            <h3>목표까지 <strong class="num" data-unit-after="원">80,000</strong> 남았어요.</h3>
                                         </div>
                                         
-                                        <div class="character-graph goal" data-theme="pay">
+                                        <div class="character-graph goal low-top" data-theme="pay">
                                             <div class="graph-area">
                                                 <span data-goal="50"><i><img src="@@webRoot/static/images/_temp/@progress_coffee.png" alt="커피"></i></span>
                                                 <div class="flag"><i class="icon-flag-goal"></i></div>
                                             </div>
                                             <div class="graph-txt">
-                                                <p class="start-txt">현재소비금액<br><strong><span class="num">100,000</span>원</strong></p>
-                                                <p class="end-txt">목표금액<br><strong><span class="num">150,000</span>원</strong></p>
+                                                <p class="start-txt">현재소비금액<br><span class="num" data-unit-after="원">100,000</span></p>
+                                                <p class="end-txt">목표금액<br><strong><span class="num" data-unit-after="원">150,000</span></strong></p>
                                             </div>
                                         </div>                                    
                                     </div>
@@ -77,10 +77,11 @@
                                             <li><span>6개월 평균 소비금액</span> <em class="num">150,000</em>원</li>
                                             <li><span>목표금액</span> <em class="num">150,000</em>원 (1주일)</li>
                                         </ul>
+                                        <div class="chart-area type-ratio no-mt" id="columnChart01"></div>
                                         <ul class="legend-dot">
+                                            <li>지난주</li>
                                             <li class="current">현재</li>
                                         </ul>
-                                        <div class="chart-area type-ratio no-mt" id="columnChart01"></div>
                                     </div>
                                 </div>
                             </div>
@@ -89,10 +90,10 @@
                     </div>  
                 </section>
 
-                <section class="kb-sec goals-pay-list">
+                <section class="kb-sec goals-pay-list mt20">
                     <dl class="accordian">
                         <dt>
-                            <h2 class="spend-list-tit">지출내역 확인하기</h2>
+                            <h2>지출내역 확인하기</h2>
                             <button type="button" class="accordian-trigger"></button>
                         </dt>
                         <dd>
@@ -100,34 +101,32 @@
                                 <dl class="credit-list t01">
                                     <dt>
                                         <span class="info"><em class="date num">2021.08.09 17:45</em></span>
-                                        <h3 class="tit">카페</h3>
+                                        <strong class="tit">카페</strong>
                                     </dt>
                                     <dd>
                                         <span class="btn-switch label-front">
-                                            <strong class="amount"><span class="num">9,800</span>원</strong>
+                                            <strong class="amount"><span class="num" data-unit-after="원">9,800</span></strong>
                                         </span>
                                     </dd>
                                     <dt>
                                         <span class="info"><em class="date num">2021.08.09 17:45</em></span>
-                                        <h3 class="tit">카페</h3>
+                                        <strong class="tit">카페</strong>
                                     </dt>
                                     <dd>
                                         <span class="btn-switch label-front">
-                                            <strong class="amount"><span class="num">9,800</span>원</strong>
+                                            <strong class="amount"><span class="num" data-unit-after="원">9,800</span></strong>
+                                        </span>
+                                    </dd>
+                                    <dt>
+                                        <strong class="tit">합계</strong>
+                                    </dt>
+                                    <dd class="total">
+                                        <span class="btn-switch label-front">
+                                            <strong class="amount"><span class="num" data-unit-after="원">15,000</span></strong>
                                         </span>
                                     </dd>
                                 </dl>
                             </div>
-                        </dd>
-                    </dl>
-                    <dl class="credit-list t01">
-                        <dt>
-                            <h3 class="tit">합계</h3>
-                        </dt>
-                        <dd>
-                            <span class="btn-switch label-front">
-                                <strong class="amount"><span class="num">9,800</span>원</strong>
-                            </span>
                         </dd>
                     </dl>
                 </section>
@@ -173,12 +172,12 @@
                 type: "column",
                 marginLeft: 0,
                 marginRight: 0,
-                marginTop:0
+                marginTop:20,
             },
             legend: { enabled: false },
             xAxis: {
                 type: "category",
-                categories: ["7월12일", "7월13일", "7월14일", "7월15일"],
+                categories: ["1월4주", "2월1주", "2월2주", "2월3주"],
                 labels: {
                     style: {
                         color: "#aab0b8",
@@ -200,7 +199,7 @@
                         width: 1,
                         value: 3,
                         zIndex: 50,
-                        dashStyle: 'dash'
+                        dashStyle: 'dot'
                     },
                 ],
             },
@@ -208,17 +207,27 @@
                 series: {
                     grouping: false,
                     borderWidth: 0,
-                    pointWidth: 16,  // 막대그래프 너비
+                    pointWidth: 7,  // 막대그래프 너비
                     borderRadiusTopLeft: "50%",  // radius 값
                     borderRadiusTopRight: "50%" // radius 값
                 }
             },
-            series: [
-                {
-                    id: "inMoney",
+            series: [{
                     name: "현재",
-                    color: '#ffd338',
-                    data: [1, 2, 3, 4]
+                    color: "#ffd338",
+                    pointPlacement: -0.1,
+                    data: [1, 2, 3, 5]
+                },
+                {
+                    id: "main",
+                    name: "지난주",
+                    color: '#484b51',
+                    pointPlacement: 0.1,
+                    dataSorting: {
+                        enabled: true,
+                        matchByName: true
+                    },
+                    data: [3, 4, 5, 1]
                 }
             ],
         });

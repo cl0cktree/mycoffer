@@ -17,13 +17,12 @@
 		<!-- app-container //-->
 		<div class="app-container">
 			<!-- app-content // -->
-			<main class="app-content goals-challenge bg-gray-bottom">
+			<main class="app-content goals-challenge bg-gray-bottom">				
 				<!-- 목표 요약 // -->
-				<section class="kb-sec bg-gray goals-summary">                    
+				<section class="kb-sec goals-summary">
                     <a href="#none" class="btn-trans">
                         <dl class="summary-piggymoeny content-box shadow">
                             <dt>
-                                <i class="icon-pigbank_23"></i>
                                 <h2 class="pig-tit">저금통</h2>
                                 <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
                                 <!-- Tooltip (With title)-->
@@ -33,13 +32,16 @@
                                     <button class="btn-close"><span>닫기</span></button>
                                 </div>
                             </dt>
-                            <dd class="amount"><strong class="num">201,320,000</strong>원</dd>
+                            <dd class="amount"><strong class="num" data-unit-after="원">201,320,000</strong></dd>
                         </dl>
                     </a>
-                    <div class="summary-challenge">
+                    <div class="btn-area compare" data-call-layered="mys_as_07_00_00_p1">
+                        <button class="align-r"><u>비교그룹</u></button>
+                    </div>
+                    <div class="summary-challenge type2">
                         <div class="flex-box">
                             <h2 class="h2">김국민 님은<br><strong>3개의 챌린지를 진행중</strong>이에요.</h2>
-                            <button class="btn-text"><u>더보기</u></button>
+                            <button class="btn-text icon-arrow"><span>더보기</span><i></i></button>
                         </div>
                         <div class="challenge-box content-swiper-wrap">
                             <div class="swiper-container content-swiper t01 js-swiper" data-swiper-options="goalFlagGraphSwiperOptions">
@@ -61,8 +63,8 @@
                                         </div>                                        
                                         <div class="challenge-info">                                        
                                             <h4 class="info-desc">
-                                                <span class="period">$목표금액</span> 원 중<br>
-                                                <strong><span class="num">$사용금액</span> 원 남았어요.</strong>
+                                                <span class="period num" data-unit-after="원">40,000</span> 중<br>
+                                                <strong><span class="num" data-unit-after="원">20,000</span> 남았어요.</strong>
                                             </h4>
                                             <div class="character-graph goal icon" data-theme="pay">
                                                 <div class="graph-area">
@@ -70,8 +72,8 @@
                                                     <div class="flag"><i class="icon-flag-goal"></i></div>
                                                 </div>
                                                 <div class="graph-txt">
-                                                    <p class="start-txt">현재 소비금액<br><strong><span class="num">10</span>만원</strong></p>
-                                                    <p class="end-txt">목표금액<br><strong><span class="num">15</span>만원</strong></p><!-- 마지막부분 텍스트 -->
+                                                    <p class="start-txt">현재 소비금액<br><strong><span class="num" data-unit-after="만원">10</span></strong></p>
+                                                    <p class="end-txt">목표금액<br><strong><span class="num" data-unit-after="만원">15</span></strong></p><!-- 마지막부분 텍스트 -->
                                                 </div>
                                             </div>                                    
                                         </div>
@@ -84,7 +86,7 @@
                                         <div class="challenge-info">                                                                                    
                                             <h4 class="info-desc">
                                                 <span class="period">21.05.15~도전중</span><br>
-                                                <strong>배달음식 먹을 때 마다 4,000원 저축중</strong>
+                                                <strong>배달음식 먹을 때 마다 <span class="num" data-unit-after="원">4,000</span> 저축중</strong>
                                             </h4>
                                             <div class="character-graph" data-theme="bb">
                                                 <!-- kiki(술집), ago(택시), bb(배달음식), lamu(커피), kolly(편의점) -->
@@ -92,7 +94,7 @@
                                                     <span data-goal="50"><i></i></span>
                                                 </div>
                                                 <div class="graph-txt">
-                                                    <p class="start-txt">배달음식 <strong>총 5회, 20,000원</strong> 모았어요.</p><!-- 시작부분 텍스트 -->
+                                                    <p class="start-txt">배달음식 <strong>총 5회, <span class="num" data-unit-after="원">20,000</span></strong> 모았어요.</p><!-- 시작부분 텍스트 -->
                                                 </div>
                                             </div>
                                         </div>
@@ -113,8 +115,8 @@
                                                     <div class="flag"><i class="icon-flag-goal"></i></div>
                                                 </div>
                                                 <div class="graph-txt">
-                                                    <p class="start-txt">모은금액<br><strong><span class="num">10</span>만원</strong></p><!-- 시작부분 텍스트 -->
-                                                    <p class="end-txt">목표금액<br><strong><span class="num">15</span>만원</strong></p><!-- 마지막부분 텍스트 -->
+                                                    <p class="start-txt">모은금액<br><strong><span class="num"<span class="num" data-unit-after="만원"></span>>10</span></strong></p><!-- 시작부분 텍스트 -->
+                                                    <p class="end-txt">목표금액<br><strong><span class="num"<span class="num" data-unit-after="만원"></span>>15</span></strong></p><!-- 마지막부분 텍스트 -->
                                                 </div>
                                             </div>                                    
                                         </div>
@@ -124,30 +126,33 @@
                             </div>
                         </div>
                     </div>
-                </section>
-				<!-- // 목표 요약 -->
-                
-                <section class="kb-sec bg-gray goals-others">
-                    <div class="tab swiper-container depth2">
-                        <ul class="swiper-wrapper">
-                            <li class="swiper-slide"><a href="#none">아낀만큼</a></li>
-                            <li class="swiper-slide"><a href="#none">쓰는만큼</a></li>
-                            <li class="swiper-slide is-active"><a href="#none">남들만큼</a></li>
-                        </ul>
+                    <div class="tab_button">
+                        <button><span>아낀만큼</span></button>
+                        <button><span>쓰는만큼</span></button>
+                        <button class="is-active"><span>남들만큼</span></button>
                     </div>
-                    <button type="button" class="btn-compare" data-call-layered="mys_as_07_00_00_p1"><i class="icon-funnel"></i></button>
-                    <h2 class="goals-desc t03">김국민 님의 소비패턴을 다른 사람들과 <strong>비교분석</strong>해서, 딱 맞는 챌린지를 추천해드려요!</h2>
+                    <div class="summary-challenge">
+                        <div class="flex-box">
+                            <h2 class="h2 type2">
+                                로버트 몽고메리 님의 <strong>소비패턴</strong>을<br>다른 사람들과 <strong>비교 분석</strong>해서,<br>딱 맞는 챌린지를 추천해드려요!
+                            </h2>
+                        </div>
+                    </div>
+                </section>
+                <!-- 목표 내용// -->
+                
+                <section class="kb-sec goals-others">
                     <div class="content-box shadow">
                         <!-- [Chart Area] // -->
                         <div class="chart-area dbl-bar">
                             <div class="chart-area type-ratio" id="columnChart01"></div>
-                            <p class="txt-gray">나와 같은 연령대&#38;소득군 사람들의 월 평균 납임금액: <span class="num">700,000</span>원</p>
+                            <p class="txt-gray mt28">나와 같은 연령대&#38;소득군 사람들의 월 평균 납임금액: <span class="num">700,000</span>원</p>
                             <p class="txt-yellow">김국민 님의 월 평균 납인금액: <span class="num">500,000</span>원</p>
                         </div>
                         <!-- // [Chart Area] -->
                     </div>
                                         
-                    <h2 class="goals-desc t03 no-pad"><strong>김국민 님에게 필요한 저축금액을 알려드려요.</strong></h2>
+                    <h2 class="goals-desc t03"><strong class="tit-sml">김국민 님에게 필요한 저축금액을 알려드려요.</strong></h2>
                     <div class="challenge-box content-swiper-wrap">
                         <div class="swiper-container content-swiper t01 js-swiper" data-swiper-options="goalGraphSwiperOptions">
                             <script>
@@ -165,31 +170,34 @@
                                         <h3 class="h3">소액저축 챌린지</h3>
                                         <button type="button" class=""><span><i class="icon-link_24"></i></span></button>
                                     </div>
-                                    <div class="challenge-info">
+                                    <div class="challenge-info type2">
                                         <div class="tit flex-box goals-desc">
                                             <div class="left-cont">
-                                                <h4 class="spend-desc">나와 같은 연령대&amp;소득군 사람들은<br><strong>나보다 저축을 더 많이 하고 있어요.</strong></h4>
+                                                <h4 class="spend-desc">나와 같은 연령대&소득군의 사람들은<br><strong>나보다 저축을 더 많이 하고 있어요.</strong></h4>
                                                 <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
                                                 <div class="tooltip">
                                                     <strong class="tit">비교그룹</strong>
-                                                    <div class="cont">나와 같은 연령대&amp;소득군의 사람들은?<br><br>연령대: 30대<br>월 소득: 300만원~500만원<br>성별: 남성</div>
+                                                    <div class="cont">나와 같은 연령대&amp;소득군의 사람들은?<br><br>연령대: 30대<br>월 소득: <span class="num" data-unit-after="만원">300</span>~<span class="num" data-unit-after="만원">500</span><br>성별: 남성</div>
                                                     <button class="btn-close"><span>닫기</span></button>
                                                 </div>  
-                                            </div>                                        
-                                            <span class="right-cont">6개월<br><strong>250명</strong></span>
+                                            </div>  
                                         </div>
-                                        <!-- [Chart Area] // -->
-                                        <div class="chart-area dbl-circle">
-                                            <div class="chart-area type-ratio" id="bubbleChart01"></div>
+                                        <div class="goals-now">
+                                            <span>6개월</span>
+                                            <strong>550명 도전 중!</strong>
                                         </div>
-                                        <!-- // [Chart Area] -->
+                                        <div class="chart-area">
+                                            <div class="chart-flex">
+                                                <div class="chart-area type-ratio" id="bubbleChart01"></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div> 
                     
-                    <h2 class="goals-desc t03 no-pad"><strong>Flex한 목표를 세우고 저축액을 늘려보세요!</strong></h2>
+                    <h2 class="goals-desc t03"><strong class="tit-sml">Flex한 목표를 세우고 저축액을 늘려보세요!</strong></h2>
                     <div class="challenge-box content-swiper-wrap">
                         <div class="swiper-container content-swiper t01 js-swiper" data-swiper-options="goalHopeSwiperOptions">
                             <script>
@@ -216,7 +224,7 @@
                                             </div>
                                         </div>
                                         <div class="content">
-                                            <p class="goal-txt">목표금액 <strong><span class="num">150</span>만원</strong></p>
+                                            <p class="goal-txt">목표금액 <strong><span class="num" data-unit-after="만원">150</span></strong></p>
                                             <p class="goal-txt">목표기간 <strong><span class="num">6</span>개월</strong></p>
                                         </div>
                                     </div>
@@ -235,7 +243,7 @@
                                             </div>
                                         </div>
                                         <div class="content">
-                                            <p class="goal-txt">목표금액 <strong><span class="num">150</span>만원</strong></p>
+                                            <p class="goal-txt">목표금액 <strong><span class="num" data-unit-after="만원">150</span></strong></p>
                                             <p class="goal-txt">목표기간 <strong><span class="num">6</span>개월</strong></p>
                                         </div>
                                     </div>
@@ -254,7 +262,7 @@
                                             </div>
                                         </div>
                                         <div class="content">
-                                            <p class="goal-txt">목표금액 <strong><span class="num">150</span>만원</strong></p>
+                                            <p class="goal-txt">목표금액 <strong><span class="num" data-unit-after="만원">150</span></strong></p>
                                             <p class="goal-txt">목표기간 <strong><span class="num">6</span>개월</strong></p>
                                         </div>
                                     </div>
@@ -273,7 +281,7 @@
                                             </div>
                                         </div>
                                         <div class="content">
-                                            <p class="goal-txt">목표금액 <strong><span class="num">150</span>만원</strong></p>
+                                            <p class="goal-txt">목표금액 <strong><span class="num" data-unit-after="만원">150</span></strong></p>
                                             <p class="goal-txt">목표기간 <strong><span class="num">6</span>개월</strong></p>
                                         </div>
                                     </div>
@@ -292,7 +300,7 @@
                                             </div>
                                         </div>
                                         <div class="content">
-                                            <p class="goal-txt">목표금액 <strong><span class="num">150</span>만원</strong></p>
+                                            <p class="goal-txt">목표금액 <strong><span class="num" data-unit-after="만원">150</span></strong></p>
                                             <p class="goal-txt">목표기간 <strong><span class="num">6</span>개월</strong></p>
                                         </div>
                                     </div>
@@ -311,7 +319,7 @@
                                             </div>
                                         </div>
                                         <div class="content">
-                                            <p class="goal-txt">목표금액 <strong><span class="num">150</span>만원</strong></p>
+                                            <p class="goal-txt">목표금액 <strong><span class="num" data-unit-after="만원">150</span></strong></p>
                                             <p class="goal-txt">목표기간 <strong><span class="num">6</span>개월</strong></p>
                                         </div>
                                     </div>
@@ -330,7 +338,7 @@
                                             </div>
                                         </div>
                                         <div class="content">
-                                            <p class="goal-txt">목표금액 <strong><span class="num">150</span>만원</strong></p>
+                                            <p class="goal-txt">목표금액 <strong><span class="num" data-unit-after="만원">150</span></strong></p>
                                             <p class="goal-txt">목표기간 <strong><span class="num">6</span>개월</strong></p>
                                         </div>
                                     </div>
@@ -349,7 +357,7 @@
                                             </div>
                                         </div>
                                         <div class="content">
-                                            <p class="goal-txt">목표금액 <strong><span class="num">150</span>만원</strong></p>
+                                            <p class="goal-txt">목표금액 <strong><span class="num" data-unit-after="만원">150</span></strong></p>
                                             <p class="goal-txt">목표기간 <strong><span class="num">6</span>개월</strong></p>
                                         </div>
                                     </div>
@@ -368,7 +376,7 @@
                                             </div>
                                         </div>
                                         <div class="content">
-                                            <p class="goal-txt">목표금액 <strong><span class="num">150</span>만원</strong></p>
+                                            <p class="goal-txt">목표금액 <strong><span class="num" data-unit-after="만원">150</span></strong></p>
                                             <p class="goal-txt">목표기간 <strong><span class="num">6</span>개월</strong></p>
                                         </div>
                                     </div>
@@ -387,7 +395,7 @@
                                             </div>
                                         </div>
                                         <div class="content">
-                                            <p class="goal-txt">목표금액 <strong><span class="num">150</span>만원</strong></p>
+                                            <p class="goal-txt">목표금액 <strong><span class="num" data-unit-after="만원">150</span></strong></p>
                                             <p class="goal-txt">목표기간 <strong><span class="num">6</span>개월</strong></p>
                                         </div>
                                     </div>
@@ -406,7 +414,7 @@
                                             </div>
                                         </div>
                                         <div class="content">
-                                            <p class="goal-txt">목표금액 <strong><span class="num">150</span>만원</strong></p>
+                                            <p class="goal-txt">목표금액 <strong><span class="num" data-unit-after="만원">150</span></strong></p>
                                             <p class="goal-txt">목표기간 <strong><span class="num">6</span>개월</strong></p>
                                         </div>
                                     </div>
@@ -425,7 +433,7 @@
                                             </div>
                                         </div>
                                         <div class="content">
-                                            <p class="goal-txt">목표금액 <strong><span class="num">150</span>만원</strong></p>
+                                            <p class="goal-txt">목표금액 <strong><span class="num" data-unit-after="만원">150</span></strong></p>
                                             <p class="goal-txt">목표기간 <strong><span class="num">6</span>개월</strong></p>
                                         </div>
                                     </div>
@@ -444,7 +452,7 @@
                                             </div>
                                         </div>
                                         <div class="content">
-                                            <p class="goal-txt">목표금액 <strong><span class="num">150</span>만원</strong></p>
+                                            <p class="goal-txt">목표금액 <strong><span class="num" data-unit-after="만원">150</span></strong></p>
                                             <p class="goal-txt">목표기간 <strong><span class="num">6</span>개월</strong></p>
                                         </div>
                                     </div>
@@ -463,7 +471,7 @@
                                             </div>
                                         </div>
                                         <div class="content">
-                                            <p class="goal-txt">목표금액 <strong><span class="num">150</span>만원</strong></p>
+                                            <p class="goal-txt">목표금액 <strong><span class="num" data-unit-after="만원">150</span></strong></p>
                                             <p class="goal-txt">목표기간 <strong><span class="num">6</span>개월</strong></p>
                                         </div>
                                     </div>
@@ -482,7 +490,7 @@
                                             </div>
                                         </div>
                                         <div class="content">
-                                            <p class="goal-txt">목표금액 <strong><span class="num">150</span>만원</strong></p>
+                                            <p class="goal-txt">목표금액 <strong><span class="num" data-unit-after="만원">150</span></strong></p>
                                             <p class="goal-txt">목표기간 <strong><span class="num">6</span>개월</strong></p>
                                         </div>
                                     </div>
@@ -536,6 +544,7 @@
             exporting: { enabled: false }
         });
 
+
         //chart 선언
         var doubleColumnChart = new Highcharts.Chart({
             chart: {
@@ -543,12 +552,11 @@
                 type: "column",
                 marginLeft: 0,
                 marginRight: 0,
-                marginTop:0
+                marginTop:0,
             },
             legend: { enabled: false },
             xAxis: {
                 type: "category",
-                max: 5,
                 categories: ["1월", "2월", "3월", "4월", "5월", "6.13"],
                 labels: {
                     style: {
@@ -565,38 +573,46 @@
                 title: { enabled: false }, // 축 title 사용 안함
                 tickWidth: 0,  // 그리드 라인 너비
                 gridLineColor: null,  // 그리드 라인 컬러
-                plotLines: [{
-                    color: "#c7ccd1",
-                    width: 1,
-                    value: 3,
-                    zIndex: 50,
-                    dashStyle: 'dash'
-                }],
+                plotLines: [
+                    {
+                        color: "#c7ccd1",
+                        width: 1,
+                        value: 3,
+                        zIndex: 50,
+                        dashStyle: 'dot'
+                    },
+                ],
             },
             plotOptions: {
                 series: {
                     grouping: false,
                     borderWidth: 0,
-                    pointWidth: 16,  // 막대그래프 너비
+                    pointWidth: 7,  // 막대그래프 너비
                     borderRadiusTopLeft: "50%",  // radius 값
                     borderRadiusTopRight: "50%" // radius 값
                 }
             },
             series: [{
-                id: "outMoney",
-                name: "출금",
-                color: "#c6cbd0",
-                pointPlacement: -0.2,
-                data: [3, 3, 3, 3, 3, 10]
-            },{
-                id: "inMoney",
-                name: "입금",
-                color: '#ffd338',
-                data: [1, 2, 3, 4, 5, 6]
-            }]
+                    name: "현재",
+                    color: "#ffd338",
+                    pointPlacement: -0.1,
+                    data: [1, 2, 3, 5, 0, 8]
+                },
+                {
+                    id: "main",
+                    name: "지난주",
+                    color: '#484b51',
+                    pointPlacement: 0.1,
+                    dataSorting: {
+                        enabled: true,
+                        matchByName: true
+                    },
+                    data: [3, 4, 5, 1, 3, 6]
+                }
+            ],
         });
     </script>
-    
+        
     <script>
         // highchart 공통 options        
         Highcharts.setOptions({
@@ -616,7 +632,9 @@
                 plotBorderWidth: 0,
                 plotShadow: false,
                 type: 'packedbubble',
-                margin:0
+                margin:0,
+                marginTop:0,
+                marginBottom:0
             },            
             tooltip: { enabled: false },
             plotOptions: {
@@ -626,21 +644,21 @@
                     zMin: 0,
                     layoutAlgorithm: {
                         splitSeries: false,
-                        gravitationalConstant: 0.005
+                        gravitationalConstant: 0.05
                     },
                     dataLabels: {
                         enabled: true,
                         formatter: function () { 
-                            return this.point.name + "<br><br> <span style='font-size:5vw;font-family:Roboto;'><b style='font-size:6vw'>" + gfn_comma3Digit(this.point.value) + "</b>원"
-                        },       
-                        rotation:.000001,                                        
+                            return this.point.name + "<br><span style='font-size:3.5vw;font-family:Roboto;'><b style='font-size:4vw;'>" + gfn_comma3Digit(this.point.value) + "</b>원"
+                        },    
+                        rotation:1,             
                         style: {
-                            color: '#26282c',
+                            color: '#fff',
                             textOutline: 'none',
                             fontWeight: 'normal',
                             textAlign:'center',    
                             fontSize: '3.5vw',                        
-                            fontFamily: "KBFGText"                            
+                            fontFamily: "KBFGText"         
                         }
                     }
                 }  
@@ -648,21 +666,22 @@
             series: [{
                 name: null,
                 data: [{
-                    name: '<tspan dy="-15">나</tspan>',
-                    value: 350000, 
+                    name: '<tspan dy="-5">비교그룹</tspan>',
+                    value: 350000,
                     color: {
                         radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
-                        stops: [ [0, '#c5d38d'], [1, '#a7c23a'] ]
+                        stops: [ [0, '#ff8a71'], [1, '#ff8a71'] ]
                     }
                 },{
-                    name: '<tspan dy="-15">다른사람</tspan>',
+                    name: '<tspan dy="-5">나</tspan>',
                     color: '#f8956d',
-                    value: 150000, 
+                    value: 150000,
                     color: {
                         radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
-                        stops: [ [0, '#e4e7e9'], [1, '#c6cbd0'] ]
+                        stops: [ [0, '#ffba53'], [1, '#ffba53'] ]
                     }
-                }]            
+                }]
+            
             }]
         });
     </script>

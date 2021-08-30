@@ -2,31 +2,28 @@
 .temp-box{width:100%;padding:20px;background-color:$kb-ui08}
 .img-box img{width:100%}
 .content-tit{display:block;font-size:16px}
+.my-fun-data .chart-area + .legend-unit{margin-top:2rem}
 // top summary area
-.my-fun-data .summary-area{padding-top:22px;padding-bottom:24px;background-color:$kb-ui10}
-.my-fun-data .summary-area .summary-tit{display:flex;align-items:baseline;justify-content:space-between}
+.my-fun-data .summary-area{padding-top:22px;padding-bottom:24px;background-color:#faf6f0}
+.my-fun-data .summary-area .summary-tit{display:flex;align-items:flex-start;justify-content:space-between}
+.my-fun-data .summary-area .summary-tit .h2{margin-top:0}
 .my-fun-data .summary-area .summary-tit span{display:block;font-size:14px;line-height:23px;color:$kb-ui05;margin-top:8px;font-weight:normal}
+.my-fun-data .summary-area .summary-tit span strong{font-weight:bold}
 .my-fun-data .summary-desc{margin-top:20px;font-size:18px;line-height:24px}
 .my-fun-data .summary-desc.t01{font-size:14px;line-height:20px}
 .my-fun-data .summary-desc.flex-box{justify-content:space-between;align-items:baseline}
 .my-fun-data .summary-desc strong{font-weight:bold}
-.my-fun-data .summary-desc strong em{font-weight:bold;font-size:18px}
+.my-fun-data .summary-desc strong em{font-weight:bold;font-size:1.9rem}
 .my-fun-data .summary-desc dl{display:grid;grid-template-columns:1fr 1fr;color:$kb-ui03;font-size:16px;line-height:1}
 .my-fun-data .summary-desc dt,
 .my-fun-data .summary-desc dd{margin-top:16px}
 .my-fun-data .summary-desc dt:first-of-type,
 .my-fun-data .summary-desc dd:first-of-type{margin-top:0}
-.my-fun-data .summary-desc dd{text-align:right}
+.my-fun-data .summary-desc dd{text-align:right;font-weight:bold}
 .my-fun-data .summary-desc dd .num{display:inline-block;margin-left:10px;font-weight:bold}
 .my-fun-data .summary-desc .summary-img{width:auto;height:123px}
 .my-fun-data .summary-desc .summary-img img{width:auto;height:100%}
-.my-fun-data .comment-box{display:grid;grid-template-columns:auto 1fr;padding:20px;background-color:$kb-ui10;font-size:16px;line-height:23px;color:$kb-ui03}
-.my-fun-data .comment-box .tit{display:block;margin-bottom:12px;font-weight:bold;color:$kb-ui02}
-.my-fun-data .comment-box i{margin-right:12px}
-.my-fun-data .comment-box p{font-size:14px;line-height:18px}
-.my-fun-data .comment-box .btn-link{display:block;margin-top:15px}
-.my-fun-data .comment-box .btn-link u{font-size:14px;color:$kb-ui02}
-.my-fun-data .comment-box.t01{display:block;padding-top:24px;padding-bottom:24px}
+.my-fun-data .comment-box{font-size:1.6rem}
 .my-fun-data .chart-area.content-box{margin:24px -8px;padding:0;;overflow:hidden;box-shadow: 0px 2px 6px 1px rgba(58, 76, 130, 0.07)}
 
 .my-fun-data .chart-area div.temp{width:100%;height:165px;background-color:#21d0c4}
@@ -47,18 +44,18 @@
 .storytelling-wrap .storytelling-content p span{display:block;font-size:14px;color:$kb-ui03}
 
 /* [MYS_SP_02_00_00] My Fun Data */
-.myfundata-menu li{width:100%;padding:25px 25px 30px;background-color:$kb-ui10}
-.myfundata-menu li+li{margin-top:20px}
-.myfundata-menu li a{display:flex;justify-content:space-between;align-items:flex-end}
-.myfundata-menu li .tit + span{display:block;margin-top:17px;font-size:14px;line-height:20px;color:$kb-ui03}
-.myfundata-menu li .img-box{width:68px}
-.myfundata-menu li:nth-child(3) .img-box{width:78px}
+.myfundata-menu li{width:100%;padding:2rem 2rem 2.2rem;background-color:$kb-ui10}
+.myfundata-menu li+li{margin-top:2.4rem}
+.myfundata-menu li a{display:flex;justify-content:space-between}
+.myfundata-menu li .tit + span{display:block;margin-top:1.3rem;font-size:14px;line-height:20px;color:$kb-ui03}
+.myfundata-menu li .img-box{width:9rem}
 /* MY FUN DATA > menu bottom sheet */
+.myfundata-menu-bs{padding-bottom:0}
 .myfundata-menu-bs .kb-sec{display:flex;align-items:flex-start;justify-content:space-between;margin-top:32px}
 .myfundata-menu-bs .kb-sec .tit{font-weight:normal}
 .myfundata-menu-bs .kb-sec .tit strong{font-weight:bold}
-.myfundata-menu-bs .kb-sec .img-box{width:auto;height:117px;margin-top:20px}
-.myfundata-menu-bs .kb-sec .img-box img{width:auto;height:100%}
+.myfundata-menu-bs .kb-sec .img-box{width:15.9rem;height:auto}
+.myfundata-menu-bs .kb-sec .img-box img{width:100%;height:auto}
 
 /* [MYS_SP_02_00_02] 부자스토리텔링 */
 .storytelling-wrap .item-box{border-radius:50%}
@@ -175,25 +172,24 @@
 .my-expense-type .summary-area{background:none}
 .my-expense-type .summary-area .summary-desc{margin-top:16px;font-size:16px;line-height:23px}
 // 카드 라디오 목록
-.my-expense-type .card-radio-list{display:grid;grid-template-columns:1fr 1fr;column-gap:21px}
-.my-expense-type .card-radio-list li{margin-bottom:12px}
-.my-expense-type .card-radio-list li p{text-align:center}
-.my-expense-type .card-radio-list li .txt{padding:10px 15px;color:$kb-ui03;font-size:16px;line-height:23px}
-.my-expense-type .card-radio-list li .img-icon{width:65px;height:65px;margin:0 auto}
-.my-expense-type .card-radio-list li .img-icon .on{display:none}
-.my-expense-type .card-radio-list li .img-icon .off{display:block}
-.my-expense-type .card-radio-list li .form-checkbox{position:relative;width:100%;padding:10px;background-color:$kb-ui10;border:1px solid $kb-ui08;box-shadow: 0px 4px 6px 0 rgba(0, 0, 0, 0.07);border-radius:8px;overflow:hidden}
-.my-expense-type .card-radio-list li .form-checkbox::before,
-.my-expense-type .card-radio-list li .form-checkbox::after{position:absolute;content:'';display:block;width:33px;height:33px;transform:rotate(45deg);background-color:$kb-ui10}
-.my-expense-type .card-radio-list li .form-checkbox::before{top:-5px;left:-7px}
-.my-expense-type .card-radio-list li .form-checkbox::after{bottom:-5px;right:-7px}
-.my-expense-type .card-radio-list li .form-checkbox input + label{width:100%;padding:18px 0;background-color:$kb-ui11}
-.my-expense-type .card-radio-list li .form-checkbox input + label:before{position:relative;top:auto;left:auto;display:block;margin:0 auto;transform:none}
-.my-expense-type .card-radio-list li .form-checkbox input + label:after{top:3.6rem;left:calc(50% - 0.65rem);margin-top:-0.1rem}
-.my-expense-type .card-radio-list li .form-checkbox input + label .tit{margin:10px 0;font-size:16px;font-weight:bold;color:$kb-ui04}
-.my-expense-type .card-radio-list li .form-checkbox input:checked + label .tit{color:$kb-ui02}
-.my-expense-type .card-radio-list li .form-checkbox input:checked + label .img-icon .on{display:block}
-.my-expense-type .card-radio-list li .form-checkbox input:checked + label .img-icon .off{display:none}
+.my-expense-type .summary-tit .h2{margin-top:0}
+.my-expense-type .image-radio-group label{border-radius:0.4rem}
+.my-expense-type .form-image-radio input:checked + label::after{border-radius:0.4rem}
+.my-expense-type .image-radio-group .tit{display:block;font-size:1.6rem;font-weight:bold}
+.my-expense-type .image-radio-group .txt{display:block;margin-top:1.5rem;color:$kb-ui04;font-size:1.4rem;line-height:2rem}
+.my-expense-type .image-radio-group .img-icon{width:6rem;height:6rem;margin:0 auto}
+.my-expense-type .image-radio-group .img-icon img{width:100%;height:auto}
+.my-expense-type .image-radio-group .txt+.img-icon{margin-top:1rem}
+.my-expense-type .image-radio-group .txt+.img-icon{margin-top:1rem}
+// .my-expense-type .image-radio-group li .form-checkbox{position:relative;width:100%;padding:10px;background-color:$kb-ui10;border:1px solid $kb-ui08;box-shadow: 0px 4px 6px 0 rgba(0, 0, 0, 0.07);border-radius:8px;overflow:hidden}
+// .my-expense-type .image-radio-group li .form-checkbox::before,
+// .my-expense-type .image-radio-group li .form-checkbox::after{position:absolute;content:'';display:block;width:33px;height:33px;transform:rotate(45deg);background-color:$kb-ui10}
+// .my-expense-type .image-radio-group li .form-checkbox::before{top:-5px;left:-7px}
+// .my-expense-type .image-radio-group li .form-checkbox::after{bottom:-5px;right:-7px}
+// .my-expense-type .image-radio-group li .form-checkbox input + label{width:100%;padding:18px 0;background-color:$kb-ui11}
+// .my-expense-type .image-radio-group li .form-checkbox input + label:before{position:relative;top:auto;left:auto;display:block;margin:0 auto;transform:none}
+// .my-expense-type .image-radio-group li .form-checkbox input + label:after{top:3.6rem;left:calc(50% - 0.65rem);margin-top:-0.1rem}
+// .my-expense-type .image-radio-group li .form-checkbox input + label .tit{margin:10px 0;font-size:16px;font-weight:bold;color:$kb-ui04}
 
 /* [MYS_SP_02_01_03]  나의 소비유형 > 소비유형선택 > 소비유형스토리텔링 */
 // car moving : 뚜벅이싫어형
@@ -336,7 +332,7 @@
 
 /* [MYS_SP_02_01_03]  나의 소비유형 > 나의 소비유형 > 분석완료 */
 .my-expense-type-complete .recently-expense{margin-top:40px}
-.my-expense-type-complete .recently-expense .comment-box + [class^="btn-"]{margin-top:34px}
+.my-expense-type-complete .recently-expense .comment-box + [class^="btn-"]{margin-top:2rem}
 .my-expense-type-complete .recently-expense .card-box-desc{margin-top:10px}
 
 /* [MYS_SP_02_02_02] MY FUN DATA > 숨은내돈찾기_스토리텔링 */
@@ -430,41 +426,29 @@
 .find-point.swiper-slide-active .magnifying .eye{opacity:1;transition:opacity 0s linear 1s}
 /* [MYS_SP_02_02_01] MY FUN DATA > 숨은내돈찾기 데이터분석완료 */
 .find-finance-list{margin-top:50px}
-.find-finance-list .content-tit{display:flex;align-items:center;justify-content:space-between;font-size:18px;font-weight:bold}
-.find-finance-list .content-tit dt{font-weight:bold}
-.find-finance-list .content-tit dd .num{font-size:18px}
-.find-finance-list .content-tit dd{font-weight:normal}
-.find-finance-list .content-tit dt i{margin-right:12px;vertical-align:middle}
-.find-finance-list .card-box-desc .btn-line{margin-top:40px}
-.find-finance-list .card-box-desc.dividing-line-bottom::after{left:0;width:100%;height:1px}
-.find-my-finance-complete .kb-sec+.kb-sec{margin-top:47px}
-.find-my-finance-complete .find-finance-list:last-of-type{padding-bottom:12rem}
-.find-my-finance-complete .content-tit .h4{font-weight:normal}
-.find-my-finance-complete .content-tit strong{font-weight:bold}
-.find-my-finance-complete .content-tit + .card-box{margin-top:24px}
-.find-my-finance-complete .card-box{padding:20px;border:1px solid $kb-ui09}
-.find-my-finance-complete .card-box + .card-box{margin-top:20px}
-.find-my-finance-complete .card-box dt{@include flexBetween}
-.find-my-finance-complete .card-box dt span{vertical-align:middle}
-.find-my-finance-complete .card-box dt span + .tit{margin-left:12px}
-.find-my-finance-complete .card-box dt .tit{font-size:18px;font-weight:bold}
-.find-my-finance-complete .card-box dt .btn-more{margin:0}
-.find-my-finance-complete .card-box dd{display:flex;align-items:flex-start;justify-content:space-between;;margin-top:20px;padding-top:20px;border-top:1px solid $kb-ui09}
-.find-my-finance-complete .card-box dd .name{font-size:16px;color:$kb-ui04}
-.find-my-finance-complete .card-box dd .name{font-size:16px;color:$kb-ui04}
-.find-my-finance-complete .card-box dd .amount{text-align:right}
-.find-my-finance-complete .card-box dd .num{font-weight:bold}
-.find-my-finance-complete .card-box dd .num::after{content:'P';display:inline-block;width:14px;height:14px;margin-left:4px;font-size:9px;line-height:14px;color:#ffbc00;border-radius:50%;border:1px solid #ffbc00;text-align:center;vertical-align:middle}
-.find-my-finance-complete .card-box dd .add-txt{display:block;margin-top:12px;font-size:14px;color:$kb-ui06}
-.find-my-finance-complete .card-box + .card-box-desc{margin-top:28px}
-.find-my-finance-complete .card-box.t01{border-left:0;border-right:0}
-.find-my-finance-complete .card-box.t01 + .card-box.t01{margin-top:0;border-top:0}
-.find-my-finance-complete .card-box.t01 dt .info{display:flex}
-.find-my-finance-complete .card-box.t01 dt .info > span{margin-right:10px}
-.find-my-finance-complete .card-box.t01 dt span{display:block}
-.find-my-finance-complete .card-box.t01 dt .tit ~ span{margin-top:12px}
-.find-my-finance-complete .card-box.t01 dt .account-number{color:$kb-ui04}
-.find-my-finance-complete .card-box.t01 dd{display:block;text-align:right;border-top:0;margin-top:0}
-.find-my-finance-complete .card-box.t01 dd .num::after{display:none}
-.find-my-finance-complete .no-data{margin-top:24px;padding:48px 0;border-top:1px solid $kb-ui09;border-bottom:1px solid $kb-ui09}
-.find-my-finance-complete .no-data + .btn-solid{margin-top:48px}
+.find-finance-list dl + .content-box{margin-top:1.5rem}
+.find-finance-list dl .num{margin-left:0.8rem}
+.find-finance-list dt > span,
+.find-finance-list dt > strong{display:block}
+.find-finance-list dt .tit .img-resize_24{margin-right:1rem;vertical-align:text-bottom}
+.find-finance-list dt .tit .num{font-weight:bold}
+.find-finance-list dt .tit + span{margin-top:1rem;font-size:1.5rem;color:$kb-ui04;line-height:1}
+.find-finance-list dt .tit + .date{margin-top:2rem}
+.find-finance-list dt .tag-label,
+.find-finance-list dt .name{margin-bottom:0.8rem}
+.find-finance-list dd{margin-top:3.7rem;text-align:right}
+.find-finance-list dd strong{font-size:1.8rem;font-weight:bold;vertical-align:text-bottom}
+.find-finance-list dd strong .num{font-size:1.9rem;font-weight:bold}
+.find-finance-list dd strong::after{content:'P';display:inline-block;width:1.9rem;height:1.9rem;margin-left:0.5rem;text-align:center;line-height:1.8rem;color:$kb-ui04;font-size:1rem;border:0.1rem solid $kb-ui04;border-radius:50%;vertical-align:top}
+.find-finance-list dd.amount{font-size:1.4rem}
+.find-finance-list dd.amount strong::after{display:none}
+.find-finance-list dd strong + span{display:block;margin-top:1rem;font-size:1.4rem;color:$kb-ui04}
+.find-finance-list dd strong + span .num{font-size:1.5rem}
+.find-finance-list .content-tit{@include flexBetween}
+.find-finance-list .content-tit dt i{margin-right:0.9rem}
+.find-finance-list .content-tit dd{margin-top:0;font-size:1.8rem}
+.find-finance-list .content-tit dd .num{font-size:1.9rem}
+.find-finance-list .simple-message .link-arrow-after{margin-top:1.7rem;padding-right:2rem;text-align:right}
+.find-finance-list .no-data{padding-top:4.4rem;padding-bottom:4.4rem}
+.find-my-finance-complete .accordian dd{padding-bottom:2rem}
+.find-my-finance-complete .accordian dd .link-arrow-after{margin-top:24px;padding-right:2rem;text-align:right;font-size:1.4rem;color:$kb-ui04}

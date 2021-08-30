@@ -396,7 +396,7 @@
 						<em class="validation">Success / Error Message</em><!-- 성공/에러 메세지 -->
                         <p class="info-msg">(필요하면) 안내 메세지</p><!-- 안내 메세지 -->
 					</div>
-				</dd>
+				</dd>				
 				<dd data-description="data-status=success">
 					<div class="kb-form" data-status="success">
 						<label for="formTextSample06">이름</label>
@@ -419,6 +419,15 @@
                         <p class="info-msg">(필요하면) 안내 메세지</p><!-- 안내 메세지 -->
 					</div>
 				</dd>
+                <dd data-description="검색 : kb-form search (하단보더 검은색 유지)">
+                    <div class="kb-form search" data-status="">
+                        <div class="kb-form_inner form-text">
+                            <input type="text" id="formTextSearch" value="" title="검색어" placeholder="검색어를 입력해주세요">
+                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                            <button type="button" class="btn-search"><i class="icon-search">검색</i></button>
+                        </div>
+                    </div>
+                </dd>
 			</dl>
 		</div>
 		<hr>
@@ -528,7 +537,7 @@
 		</div>
 		<hr>
 		<!-- input:text(숫자) -->
-		<div class="box">
+		<div class="box" id="kbFormNumber">
 			<h2>input:text(숫자)</h2>
 			<dl class="flex-dl">
 				<dt>
@@ -591,8 +600,19 @@
 						<em class="validation">Success / Error Message</em><!-- 성공/에러 메세지 -->
                         <p class="info-msg">(필요하면) 안내 메세지</p><!-- 안내 메세지 -->
 					</div>
+				</dd>				
+				<dd data-description="">
+					<div class="kb-form" data-status="">
+						<label for="formAmountSample56">금액</label>
+						<div class="kb-form_inner form-text">                            
+							<input type="text" inputmode="numeric" id="formAmountSample56" placeholder="" value="10000" data-unit="원" data-action="autoSeperator">
+							<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+						</div>
+						<em class="validation">Success / Error Message</em><!-- 성공/에러 메세지 -->
+                        <p class="info-msg">(필요하면) 안내 메세지</p><!-- 안내 메세지 -->
+					</div>
 				</dd>
-				<dd data-description="data-status=success">
+                <dd data-description="data-status=success">
 					<div class="kb-form is-disabled" data-status="success">
 						<label for="formAmountSample06">금액</label>
 						<div class="kb-form_inner form-text">
@@ -613,6 +633,27 @@
 						<em class="validation">Success / Error Message</em><!-- 성공/에러 메세지 -->
                         <p class="info-msg">(필요하면) 안내 메세지</p><!-- 안내 메세지 -->
 					</div>
+				</dd>
+                <dd data-description=".kb-form_boundary 범위">
+                    <div class="kb-form_multi kb-form_boundary">
+                        <strong class="tit required">금액 설정</strong>
+                        <div class="kb-form" data-status="">
+                            <label for="formAmountBoundary01">최소 금액</label>
+                            <div class="kb-form_inner form-text">
+                                <input type="text" inputmode="numeric" id="formAmountBoundary01" placeholder="최소" value="" data-unit="원" data-action="autoSeperator">
+                                <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                            </div>
+                        </div>
+                        <div class="between">~</div>
+                        <div class="kb-form" data-status="">
+                            <label for="formAmountBoundary02">최대 금액</label>
+                            <div class="kb-form_inner form-text">
+                                <input type="text" inputmode="numeric" id="formAmountBoundary02" placeholder="최대" value="" data-unit="원" data-action="autoSeperator">
+                                <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                            </div>
+                        </div>
+                        <em class="validation">오늘을 포함한 날짜만 선택해주세요.</em><!-- 성공/에러 메세지 -->
+                    </div>
 				</dd>
 			</dl>
 		</div>
@@ -1130,7 +1171,7 @@
 						</code>
 					</pre>
 				</dt>
-				<dd data-description=".tab: TAB 일반">
+				<dd data-description=".tab: TAB 일반" style="padding-left:0;padding-right:0;">
 					<div class="tab swiper-container">
 						<ul class="swiper-wrapper">
 							<li class="swiper-slide is-active"><a href="#target01">홈</a></li>
@@ -1143,7 +1184,7 @@
 						</ul>
 					</div>
 				</dd>
-				<dd data-description=".tab: TAB swiper 동작하지 않음">
+				<dd data-description=".tab: TAB swiper 동작하지 않음" style="padding-left:0;padding-right:0;">
 					<div class="tab swiper-container">
 						<ul class="swiper-wrapper">
 							<li class="swiper-slide is-active"><a href="#target01">홈</a></li>
@@ -1152,7 +1193,7 @@
 						</ul>
 					</div>
 				</dd>
-				<dd data-description=".tab ~ .tab_cont: TAB이 링크가 아닐때">
+				<dd data-description=".tab ~ .tab_contents: TAB이 링크가 아닐때" style="padding-left:0;padding-right:0;">
 					<div class="tab swiper-container">
 						<ul class="swiper-wrapper">
 							<li class="swiper-slide is-active"><a href="#target01">홈</a></li>
@@ -1161,9 +1202,21 @@
 						</ul>
 					</div>
 					<div class="tab_contents">
-						<div class="is-active">1번 컨텐츠</div>
-						<div>2번 컨텐츠</div>
-						<div>3번 컨텐츠</div>
+						<div class="is-active">
+                            <section class="kb-sec">
+                                1번 컨텐츠
+                            </section>
+                        </div>
+						<div>
+                            <section class="kb-sec">
+                                2번 컨텐츠
+                            </section>
+                        </div>
+						<div>
+                            <section class="kb-sec">
+                                3번 컨텐츠
+                            </section>
+                        </div>
 					</div>
 				</dd>
 				<dd data-description=".tab_button: 버튼 모양 TAB">
@@ -1198,7 +1251,7 @@
 						</ul>
 					</div>
 				</dd> -->
-				<dd>
+				<dd style="padding-left:0;padding-right:0;">
 					<div class="tab swiper-container">
 						<ul class="swiper-wrapper">
 							<li class="swiper-slide is-active"><a href="#target01">홈</a></li>
@@ -1236,7 +1289,7 @@
 						</code>
 					</pre>
 				</dt>
-				<dd data-description=".tab-swiper-wrap > (.tab + .tab_contents): TAB 컨텐츠에 Swiper 가 있을 때">
+				<dd data-description=".tab-swiper-wrap > (.tab + .tab_contents): TAB 컨텐츠에 Swiper 가 있을 때" style="padding-left:0;padding-right:0;">
 					<div class="tab-swiper-wrap">
 						<div class="tab swiper-container">
 							<ul class="swiper-wrapper">
@@ -1246,30 +1299,34 @@
 						</div>
 						<div class="tab_contents">
 							<div class="is-active">
-								<div class="swiper-container">
-									<ul class="swiper-wrapper">
-										<li class="swiper-slide"><a href="#">Tab1 Slide1</a></li>
-										<li class="swiper-slide"><a href="#">Tab1 Slide2</a></li>
-										<li class="swiper-slide"><a href="#">Tab1 Slide3</a></li>
-									</ul>
-								</div>
+								<section class="kb-sec">
+                                    <div class="swiper-container">
+                                        <ul class="swiper-wrapper">
+                                            <li class="swiper-slide"><a href="#">Tab1 Slide1</a></li>
+                                            <li class="swiper-slide"><a href="#">Tab1 Slide2</a></li>
+                                            <li class="swiper-slide"><a href="#">Tab1 Slide3</a></li>
+                                        </ul>
+                                    </div>
+                                </section>
 							</div>
 							<div class="">
 								<div class="swiper-container">
-									<ul class="swiper-wrapper">
-										<li class="swiper-slide"><a href="#">Tab2 Slide1</a></li>
-										<li class="swiper-slide"><a href="#">Tab2 Slide2</a></li>
-										<li class="swiper-slide"><a href="#">Tab2 Slide3</a></li>
-									</ul>
+									<section class="kb-sec">
+                                        <ul class="swiper-wrapper">
+                                            <li class="swiper-slide"><a href="#">Tab2 Slide1</a></li>
+                                            <li class="swiper-slide"><a href="#">Tab2 Slide2</a></li>
+                                            <li class="swiper-slide"><a href="#">Tab2 Slide3</a></li>
+                                        </ul>
+                                    </section>
 								</div>
 							</div>
 						</div>
 					</div>
 				</dd>
 				<style>
-					.tab_contents .swiper-slide {height: 100px;padding-top:20px;}
+					.tab_contents .swiper-slide {height: 100px;}
 				</style>
-				<dd data-description="Pagination 사용(default, fraction, progressbar)">
+				<dd data-description="Pagination 사용(default, fraction, progressbar)" style="padding-left:0;padding-right:0;">
 					<div class="tab-swiper-wrap">
 						<div class="tab swiper-container">
 							<ul class="swiper-wrapper">
@@ -1280,39 +1337,45 @@
 						</div>
 						<div class="tab_contents">
 							<div class="is-active">
-								<div class="swiper-container">
-									<ul class="swiper-wrapper">
-										<li class="swiper-slide"><a href="#">Tab1 Slide1</a></li>
-										<li class="swiper-slide"><a href="#">Tab1 Slide2</a></li>
-										<li class="swiper-slide"><a href="#">Tab1 Slide3</a></li>
-									</ul>
-									<div class="swiper-pagination"></div>
-								</div>
+                                <section class="kb-sec">                                
+                                    <div class="swiper-container">
+                                        <ul class="swiper-wrapper">
+                                            <li class="swiper-slide"><a href="#">Tab1 Slide1</a></li>
+                                            <li class="swiper-slide"><a href="#">Tab1 Slide2</a></li>
+                                            <li class="swiper-slide"><a href="#">Tab1 Slide3</a></li>
+                                        </ul>
+                                        <div class="swiper-pagination"></div>
+                                    </div>
+                                </section>
 							</div>
-							<div class="">
-								<div class="swiper-container">
-									<ul class="swiper-wrapper">
-										<li class="swiper-slide"><a href="#">Tab2 Slide1</a></li>
-										<li class="swiper-slide"><a href="#">Tab2 Slide2</a></li>
-										<li class="swiper-slide"><a href="#">Tab2 Slide3</a></li>
-									</ul>
-									<div class="swiper-pagination" data-type="fraction"></div>
-								</div>
+							<div>
+                                <section class="kb-sec">                                
+                                    <div class="swiper-container">
+                                        <ul class="swiper-wrapper">
+                                            <li class="swiper-slide"><a href="#">Tab2 Slide1</a></li>
+                                            <li class="swiper-slide"><a href="#">Tab2 Slide2</a></li>
+                                            <li class="swiper-slide"><a href="#">Tab2 Slide3</a></li>
+                                        </ul>
+                                        <div class="swiper-pagination" data-type="fraction"></div>
+                                    </div>
+                                </section>
 							</div>
-							<div class="">
-								<div class="swiper-container">
-									<ul class="swiper-wrapper">
-										<li class="swiper-slide"><a href="#">Tab3 Slide1</a></li>
-										<li class="swiper-slide"><a href="#">Tab3 Slide2</a></li>
-										<li class="swiper-slide"><a href="#">Tab3 Slide3</a></li>
-									</ul>
-									<div class="swiper-pagination" data-type="progressbar"></div>
-								</div>
+							<div>
+								<section class="kb-sec">
+                                    <div class="swiper-container">
+                                        <ul class="swiper-wrapper">
+                                            <li class="swiper-slide"><a href="#">Tab3 Slide1</a></li>
+                                            <li class="swiper-slide"><a href="#">Tab3 Slide2</a></li>
+                                            <li class="swiper-slide"><a href="#">Tab3 Slide3</a></li>
+                                        </ul>
+                                        <div class="swiper-pagination" data-type="progressbar"></div>
+                                    </div>
+                                </section>
 							</div>
 						</div>
 					</div>
 				</dd>
-				<dd data-description="Pagination 사용(default, fraction, progressbar)">
+				<dd data-description="Pagination 사용(default, fraction, progressbar)" style="padding-left:0;padding-right:0;">
 					<div class="tab-swiper-wrap">
 						<div class="tab swiper-container">
 							<ul class="swiper-wrapper">
@@ -1327,74 +1390,88 @@
 						</div>
 						<div class="tab_contents">
 							<div class="is-active">
-								<div class="swiper-container">
-									<ul class="swiper-wrapper">
-										<li class="swiper-slide"><a href="#">Tab1 Slide1</a></li>
-										<li class="swiper-slide"><a href="#">Tab1 Slide2</a></li>
-										<li class="swiper-slide"><a href="#">Tab1 Slide3</a></li>
-									</ul>
-									<div class="swiper-pagination"></div>
-								</div>
+								<section class="kb-sec">
+                                    <div class="swiper-container">
+                                        <ul class="swiper-wrapper">
+                                            <li class="swiper-slide"><a href="#">Tab1 Slide1</a></li>
+                                            <li class="swiper-slide"><a href="#">Tab1 Slide2</a></li>
+                                            <li class="swiper-slide"><a href="#">Tab1 Slide3</a></li>
+                                        </ul>
+                                        <div class="swiper-pagination"></div>
+                                    </div>
+                                </section>
 							</div>
 							<div class="">
-								<div class="swiper-container">
-									<ul class="swiper-wrapper">
-										<li class="swiper-slide"><a href="#">Tab2 Slide1</a></li>
-										<li class="swiper-slide"><a href="#">Tab2 Slide2</a></li>
-										<li class="swiper-slide"><a href="#">Tab2 Slide3</a></li>
-									</ul>
-									<div class="swiper-pagination" data-type="fraction"></div>
-								</div>
+								<section class="kb-sec">
+                                    <div class="swiper-container">
+                                        <ul class="swiper-wrapper">
+                                            <li class="swiper-slide"><a href="#">Tab2 Slide1</a></li>
+                                            <li class="swiper-slide"><a href="#">Tab2 Slide2</a></li>
+                                            <li class="swiper-slide"><a href="#">Tab2 Slide3</a></li>
+                                        </ul>
+                                        <div class="swiper-pagination" data-type="fraction"></div>
+                                    </div>
+                                </section>
 							</div>
 							<div class="">
-								<div class="swiper-container">
-									<ul class="swiper-wrapper">
-										<li class="swiper-slide"><a href="#">Tab3 Slide1</a></li>
-										<li class="swiper-slide"><a href="#">Tab3 Slide2</a></li>
-										<li class="swiper-slide"><a href="#">Tab3 Slide3</a></li>
-									</ul>
-									<div class="swiper-pagination" data-type="progressbar"></div>
-								</div>
+								<section class="kb-sec">
+                                    <div class="swiper-container">
+                                        <ul class="swiper-wrapper">
+                                            <li class="swiper-slide"><a href="#">Tab3 Slide1</a></li>
+                                            <li class="swiper-slide"><a href="#">Tab3 Slide2</a></li>
+                                            <li class="swiper-slide"><a href="#">Tab3 Slide3</a></li>
+                                        </ul>
+                                        <div class="swiper-pagination" data-type="progressbar"></div>
+                                    </div>
+                                </section>
 							</div>
 							<div class="">
-								<div class="swiper-container">
-									<ul class="swiper-wrapper">
-										<li class="swiper-slide"><a href="#">Tab3 Slide1</a></li>
-										<li class="swiper-slide"><a href="#">Tab3 Slide2</a></li>
-										<li class="swiper-slide"><a href="#">Tab3 Slide3</a></li>
-									</ul>
-									<div class="swiper-pagination" data-type="progressbar"></div>
-								</div>
+								<section class="kb-sec">
+                                    <div class="swiper-container">
+                                        <ul class="swiper-wrapper">
+                                            <li class="swiper-slide"><a href="#">Tab3 Slide1</a></li>
+                                            <li class="swiper-slide"><a href="#">Tab3 Slide2</a></li>
+                                            <li class="swiper-slide"><a href="#">Tab3 Slide3</a></li>
+                                        </ul>
+                                        <div class="swiper-pagination" data-type="progressbar"></div>
+                                    </div>
+                                </section>
 							</div>
 							<div class="">
-								<div class="swiper-container">
-									<ul class="swiper-wrapper">
-										<li class="swiper-slide"><a href="#">Tab3 Slide1</a></li>
-										<li class="swiper-slide"><a href="#">Tab3 Slide2</a></li>
-										<li class="swiper-slide"><a href="#">Tab3 Slide3</a></li>
-									</ul>
-									<div class="swiper-pagination" data-type="progressbar"></div>
-								</div>
+								<section class="kb-sec">
+                                    <div class="swiper-container">
+                                        <ul class="swiper-wrapper">
+                                            <li class="swiper-slide"><a href="#">Tab3 Slide1</a></li>
+                                            <li class="swiper-slide"><a href="#">Tab3 Slide2</a></li>
+                                            <li class="swiper-slide"><a href="#">Tab3 Slide3</a></li>
+                                        </ul>
+                                        <div class="swiper-pagination" data-type="progressbar"></div>
+                                    </div>
+                                </section>
 							</div>
 							<div class="">
-								<div class="swiper-container">
-									<ul class="swiper-wrapper">
-										<li class="swiper-slide"><a href="#">Tab3 Slide1</a></li>
-										<li class="swiper-slide"><a href="#">Tab3 Slide2</a></li>
-										<li class="swiper-slide"><a href="#">Tab3 Slide3</a></li>
-									</ul>
-									<div class="swiper-pagination" data-type="progressbar"></div>
-								</div>
+								<section class="kb-sec">
+                                    <div class="swiper-container">
+                                        <ul class="swiper-wrapper">
+                                            <li class="swiper-slide"><a href="#">Tab3 Slide1</a></li>
+                                            <li class="swiper-slide"><a href="#">Tab3 Slide2</a></li>
+                                            <li class="swiper-slide"><a href="#">Tab3 Slide3</a></li>
+                                        </ul>
+                                        <div class="swiper-pagination" data-type="progressbar"></div>
+                                    </div>
+                                </section>
 							</div>
 							<div class="">
-								<div class="swiper-container">
-									<ul class="swiper-wrapper">
-										<li class="swiper-slide"><a href="#">Tab3 Slide1</a></li>
-										<li class="swiper-slide"><a href="#">Tab3 Slide2</a></li>
-										<li class="swiper-slide"><a href="#">Tab3 Slide3</a></li>
-									</ul>
-									<div class="swiper-pagination" data-type="progressbar"></div>
-								</div>
+								<section class="kb-sec">
+                                    <div class="swiper-container">
+                                        <ul class="swiper-wrapper">
+                                            <li class="swiper-slide"><a href="#">Tab3 Slide1</a></li>
+                                            <li class="swiper-slide"><a href="#">Tab3 Slide2</a></li>
+                                            <li class="swiper-slide"><a href="#">Tab3 Slide3</a></li>
+                                        </ul>
+                                        <div class="swiper-pagination" data-type="progressbar"></div>
+                                    </div>
+                                </section>
 							</div>
 						</div>
 					</div>

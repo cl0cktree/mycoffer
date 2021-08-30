@@ -1,0 +1,87 @@
+<!-- [MYS_CO_06_01_01_13] 전송요구방법 > 통합인증 > 통합인증 수단 선택 (작성자: 누리어 시스템 변혜선)// -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Last Depth | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'자산 등록',
+            'type':'step'
+        })
+        
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content select-certificate">
+                <div class="page-step">
+                    <div class="step" aria-label="총 7단계 중 현재 4단계">
+                        <span class="current">4</span>
+                        <span class="total">7</span>
+                    </div>
+                    <h2 class="h1">인증서 선택</h2>
+                </div>
+
+                <!--// SECTION -->                
+                <section class="kb-sec">
+                    <p class="page-step-desc">사용할 인증서를 선택해 주세요.</p> 
+
+                    <div class="caution-txt">
+                        <ul class="certificate-list">
+                            <li>
+                                <a href="javascript:;">
+                                    <i class="icon-certificate-kb_40"></i> 
+                                    <span class="txt">KB모바일인증서<span class="tag-label t04" data-state="active">사용가능</span></span>
+                                    <span class="link-arrow">바로가기</span>
+                                </a>
+                            </li> 
+                            <li>
+                                <a href="javascript:;">
+                                    <i class="icon-certificate-kb_40"></i> 
+                                    <span class="txt">공동인증서<span class="tag-label t04" data-state="active">사용가능</span></span>
+                                    <span class="link-arrow">바로가기</span>
+                                </a>
+                            </li> 
+                            <li>
+                                <a href="javascript:;">
+                                    <i class="icon-certificate-kb_40"></i> 
+                                    <span class="txt">금융인증서<span class="tag-label t04" data-state="active">사용가능</span></span>
+                                    <span class="link-arrow">바로가기</span>
+                                </a>
+                            </li> 
+                        </ul>
+                    </div>
+                </section>
+                <!-- SECTION //-->                
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+        <!-- Layer (modal, bottom sheet) // -->
+        <div class="layered">
+            
+        </div>
+        <!-- // Layer (modal, bottom sheet) -->
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+
+</body>
+
+</html>
+<!-- // [MYS_CO_06_01_01] 전송요구방법 > 통합인증 > 기관 선택 -->

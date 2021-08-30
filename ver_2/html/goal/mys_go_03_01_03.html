@@ -18,7 +18,7 @@
 		<div class="app-container">
 			<!-- app-content // -->
 			<main class="app-content goals-challenge">
-                <section class="kb-sec bg-gray goals-noti">
+                <section class="kb-sec goals-noti">
                     <h2>무지출 Day</h4>
                     <h3>쓰지 않는 자가 승자!</h4>
                     <ul data-style="list">
@@ -56,11 +56,11 @@
                             <i class="icon-expense-withdraw"></i>
                         </div>
                         <h2>지난달(30일) 기준 지출이 없었던 날은 단 3일이에요.</h2>
-                        <h3>비교그룹보다 <strong>지출한 날이 2일 더 많아요.</strong> 목표관리를 통해 지출일을 줄여보세요.</h3>
+                        <h3>비교그룹보다 <span class="c-red">지출한 날이 2일 더 많아요.</span> 목표관리를 통해 지출일을 줄여보세요.</h3>
                     </div>              
                 </section>
                 
-                <section class="kb-sec bg-gray goals-no-spand">
+                <section class="kb-sec goals-no-spand">
                     <h2 class="tit">무지출 날짜 선택</h2>
                     <ul class="btn-segmented_radio">
                         <li>
@@ -145,7 +145,7 @@
                     dataLabels: {
                         enabled: true,
                         formatter: function () { 
-                            return this.point.name + "<br><span style='font-size:3.5vw;font-family:Roboto;'><b style='font-size:4vw'>" + gfn_comma3Digit(this.point.value) + "</b>일"
+                            return this.point.name + "<br><span style='font-size:3.5vw;font-family:Roboto;'><b style='font-size:4vw;'>" + gfn_comma3Digit(this.point.value) + "</b>일"
                         },    
                         rotation:1,             
                         style: {

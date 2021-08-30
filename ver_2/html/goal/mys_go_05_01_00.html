@@ -18,13 +18,11 @@
 		<div class="app-container">
 			<!-- app-content // -->
 			<main class="app-content goals-challenge">
-                <section class="kb-sec bg-gray goals-noti">
-                    <h2>Flex 자금마련 챌린지</h4>
-                    <h3>매월 조금씩 저축해보세요.</h4>
-                    <ul data-style="list">
-                        <li>평균 목표금액 <span class="num">100,000</span> 원</li>
-                        <li>목표기간 6개월</li>
-                    </ul>
+                <section class="kb-sec goals-noti">
+                    <h2>Flex 자금마련 챌린지</h2>
+                    <h3>매월 조금씩 저축해보세요.</h3>
+                    <p data-style="list" class="mt20">평균 목표금액 <span class="num" data-unit-after="원">100,000</span></p>
+                    <p data-style="list">목표기간 <span class="num" data-unit-after="개월">6</span></p>
                 </section>
 
                 <section class="kb-sec goals-list mt20"> 
@@ -46,20 +44,22 @@
                                 <div class="swiper-slide content-box shadow">
                                     <!-- [Chart Area] // -->
                                     <div class="chart-area">
-                                        <h3 class="sub">비교그룹보다 저축이 200,000원 적어요. 부족한 200,000원 더 저축해보세요!</h3>
-                                        <div class="chart-area type-ratio" id="bubbleChart01"></div>
+                                        <h3 class="desc">김국민 님은<br><strong>월 <span class="num" data-unit-after="원">500,000</span> 저축중</strong>이에요.</h3>
+                                        <div class="chart-area">
+                                            <div class="chart-flex">
+                                                <div class="chart-area type-ratio" id="bubbleChart01"></div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <!-- // [Chart Area] -->
                                 </div>
                                 <div class="swiper-slide content-box shadow">
                                     <div class="challenge-info non-tit">
                                         <h3 class="tit flex-box goals-desc type2">비교그룹과 월별 커피업종 소비금액을 비교했어요.</h3>
-                                        <div class="chart-area dbl-bar">  
-                                            <!-- [Chart Area] -->
-                                            <div class="chart-area type-ratio" id="splineChart"></div>
-                                            <!-- // [Chart Area] -->                                                                                           
-                                            <span class="txt-gray">비교그룹</span>
-                                            <span class="txt-yellow type2">나</span>
+                                        <div class="chart-area dbl-bar">
+                                            <div class="chart-area type-ratio mt0" id="splineChart"></div>                                                                  
+                                            <span class="txt-orange">나</span>
+                                            <span class="txt-pink type2">비교그룹</span>
                                         </div>
                                     </div>
                                 </div>
@@ -67,7 +67,8 @@
                             <div class="swiper-pagination"></div>
                         </div>
                     </div> 
-                    <div class="align-r mt36">
+                    <div class="desc_compare">비교그룹보다 저축이 <span class="num" data-unit-after="원">200,000</span> 적어요.<br>부족한 <span class="num" data-unit-after="원">200,000</span> 더 저축해보세요.</div>
+                    <div class="align-r mt24">
                         <button class="btn-text icon-arrow"><span>챌린지만 미리 만들기<i></i></span></button>
                     </div>
                 </section>
@@ -97,7 +98,7 @@
     
     <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script> 
     <script src="@@webRoot/static/common/lib/highcharts/highcharts-more.js"></script>
-
+           
     <script>
         // highchart 공통 options        
         Highcharts.setOptions({
@@ -118,31 +119,32 @@
                 plotShadow: false,
                 type: 'packedbubble',
                 margin:0,
-                marginBottom:20
+                marginTop:0,
+                marginBottom:0
             },            
             tooltip: { enabled: false },
             plotOptions: {
                 packedbubble: {
-                    minSize: '80%',
-                    maxSize: '120%',
+                    minSize: '30%',
+                    maxSize: '100%',
                     zMin: 0,
                     layoutAlgorithm: {
                         splitSeries: false,
-                        gravitationalConstant: 0.005
+                        gravitationalConstant: 0.05
                     },
                     dataLabels: {
                         enabled: true,
                         formatter: function () { 
-                            return this.point.name + "<br><br> <span style='font-size:5vw;font-family:Roboto;'><b style='font-size:6vw'>" + gfn_comma3Digit(this.point.value) + "</b>원"
-                        },       
-                        rotation:.000001,                                        
+                            return this.point.name + "<br><span style='font-size:3.5vw;font-family:Roboto;'><b style='font-size:4vw;'>" + gfn_comma3Digit(this.point.value) + "</b>원"
+                        },    
+                        rotation:1,             
                         style: {
-                            color: '#26282c',
+                            color: '#fff',
                             textOutline: 'none',
                             fontWeight: 'normal',
                             textAlign:'center',    
                             fontSize: '3.5vw',                        
-                            fontFamily: "KBFGText"                            
+                            fontFamily: "KBFGText"         
                         }
                     }
                 }  
@@ -150,25 +152,36 @@
             series: [{
                 name: null,
                 data: [{
-                    name: '<tspan dy="-15">나</tspan>',
-                    value: 350000, 
+                    name: '<tspan dy="-5">비교그룹</tspan>',
+                    value: 350000,
                     color: {
                         radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
-                        stops: [ [0, '#c5d38d'], [1, '#a7c23a'] ]
+                        stops: [ [0, '#ff8a71'], [1, '#ff8a71'] ]
                     }
                 },{
-                    name: '<tspan dy="-15">비교그룹</tspan>',
+                    name: '<tspan dy="-5">나</tspan>',
                     color: '#f8956d',
-                    value: 150000, 
+                    value: 150000,
                     color: {
                         radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
-                        stops: [ [0, '#e4e7e9'], [1, '#c6cbd0'] ]
+                        stops: [ [0, '#ffba53'], [1, '#ffba53'] ]
                     }
-                }]            
+                }]
+            
             }]
         });
-    </script>
+    </script>    
     
+    
+
+    <style>
+        .highcharts-tooltip-box:first-child .highcharts-label-box {
+            fill: #ff8a71;
+        }
+        .highcharts-tooltip-box:last-child .highcharts-label-box {
+            fill: #ffba53;
+        }
+    </style>
     <script>
         // highchart 공통 options
         Highcharts.setOptions({
@@ -178,32 +191,46 @@
             credits: { enabled: false },
             label : { fontFamily: 'KBFGText'},
             credits: { enabled: false },
-            exporting: { enabled: false }
+            exporting: { enabled: false },
+            // lang: {
+            //     shortMonths: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월']
+            // }
         });
         // spline chart 선언
         var splineChart = new Highcharts.Chart({
             chart: {
                 renderTo: 'splineChart', // chart 삽입 target ID
-                type: "spline",
-                marginLeft: 0,
-                marginRight: 0,
-                marginTop:0
+                type: "line",
+                marginLeft: 10,
+                marginRight: 10,
+                paddingTop:0,
             },
             xAxis: {
-                type: "category",
-                categories: ["4월", "5월", "6월"],
-                crosshair: true,
+                // type: "category",
+                // categories: ["3월", "4월", "5월"],
                 labels: {
                     style: {
-                        color: "#aab0b8",
+                        color: "#26282c",
                         fontSize: '3.733vw',
                         fontFamily: 'KBFGText',
-                    }
+                    },
+                    formatter: function () {
+                        return this.value + '월';
+                    }                   
                 },
+                crosshair: {
+                    width: 1,
+                    color: '#dde2e8',
+                    dashStyle: 'dot'
+                },
+                formatter: function () {
+                    return point.x + '월';
+                },
+                tickColor:'transparent'
             },
             yAxis: {
-                top:0,
-                endOnTick: false,
+                top:10,
+                endOnTick: true,
                 enabled: false,  // 사용 안함
                 labels: { enabled: false },  // 축 lebel 사용 안함
                 title: { enabled: false }, // 축 title 사용 안함
@@ -212,48 +239,56 @@
             },
             tooltip: {
                 formatter: function () {
-                    // The first returned item is the header, subsequent items are the
                     // points
                     return [''].concat(
                         this.points ?
                             this.points.map(function (point) {
-                                return gfn_comma3Digit(point.y) + '원';
+                                return '&nbsp;&nbsp;&nbsp;' + gfn_comma3Digit(point.y) + ' 원' + '&nbsp;&nbsp;&nbsp;';
                             }) : []
                     );
                 },
                 split: true,
-                padding: 5,
-                backgroundColor: "#FFF",
-                shadow: true,
-                borderRadius: 4,
-                verticalAlign: 'bottom',
-                borderColor: '#f3f3f3',
+                padding: 4,
+                shadow: false,
+                borderRadius: 5,
+                verticalAlign: 'top',
+                borderColor: 'transparent',
                 style: {
                     fontSize: '4vw',
-                    fontFamily: "KBFGText"
+                    fontFamily: "KBFGText",
+                    color:'#fff'
                 },
                 crosshairs: true,
+                shared: true
             },
             plotOptions: {
                 series: {
-                    color: '#c7ccd1', // 기본색상
-                    lineWidth: 4,
+                    lineWidth: 2,
                     marker: {
                         enabled: false,
-                    },
+                        lineWidth: 1
+                    }
                 }
             },
-            series: [
-                {
-                    linkedTo: "main",
-                    data: [0, 680000, 665210]
-                },
-                {
-                    id: 'main',
-                    color: '#ffd435',
-                    data: [300000, 420000, 0]
-                }
-            ]
+            series: [{
+                // linkedTo: "main",
+                color: '#ff8a71',
+                data: [
+                    [3, 15000],
+                    [4, 20000],
+                    [5, 30000],
+                    [6, 35000]
+                ]
+            },{
+                // id: 'main',
+                color: '#ffba53',
+                data: [
+                    [3, 20600],
+                    [4, 35600],
+                    [5, 45600],
+                    [6, 65600]
+                ]
+            }]
         });
     </script>
 </body>

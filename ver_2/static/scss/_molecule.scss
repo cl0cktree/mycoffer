@@ -57,9 +57,11 @@
 .ios.homebar .sticky-bottom-menu{bottom:34px;}
 
 //툴팁
-.tooltip{display:none;position:absolute;left:20px;right:20px;z-index:$level50;transform:translateY(10px);padding:20px 20px 14px 20px;border-radius:2px;background-color:$kb-ui02;}
+.tooltip{display:none;position:absolute;left:20px;right:20px;z-index:$level30;transform:translateY(10px);padding:20px 20px 14px 20px;border-radius:2px;background-color:$kb-ui02;}
 .tooltip > .tit{display:block;margin-bottom:14px;font-size:$text02;color:$kb-ui08;line-height:1;}
 .tooltip > .tit ~ .cont{padding-right:0;}
+.tooltip > .tit ~ .cont .num{font-size:1.5rem;}
+.tooltip > .tit ~ .cont .num:after{font-size:1.4rem;}
 .tooltip .cont{@include text($size: $text03);padding-right:16px;color:$kb-ui08;}
 .tooltip .cont li{color:$kb-ui08;}
 .tooltip .cont li + li{margin-top:0.25em;}
@@ -218,8 +220,10 @@ ul.radio-group > li + li{margin-top:20px;}
 .form-text input[inputmode=numeric].align-l,
 .form-text input[inputmode=decimal].align-l{text-align:left;}
 .form-text input[inputmode=numeric]::placeholder{text-align:right;}
-.form-text .unit{@include text($size:20px, $weight: bold);margin-top:2px;margin-left:4px;;}/*position:absolute;left:4px;top:3px;max-width:calc(100% - 54px);*/
+.form-text .unit{@include text($size:20px, $weight: bold);margin-top:4px;margin-left:2px;}/*position:absolute;left:4px;top:3px;max-width:calc(100% - 54px);*/
+.form-text .prefix{@include text($size:16px, $weight: bold);margin-top:4px;margin-right:2px;}/*position:absolute;left:4px;top:3px;max-width:calc(100% - 54px);*/
 .form-text .btn-data-clear{display:none;margin-left:auto;}
+.form-text .btn-solid.form{font-weight:normal}
 .form-text .btn-solid.form,
 .form-text .btn-line.form,
 .form-text .btn-search{position:relative;z-index:1;margin-left:4px;}
@@ -229,9 +233,11 @@ ul.radio-group > li + li{margin-top:20px;}
 .form-text.is-focused .btn-data-clear{display:block;}
 .form-text.is-focused .unit{color:$kb-ui02;}
 .not-ready:not(.is-active) .form-text .unit,
+.is-disabled .form-text .prefix,
 .is-disabled .form-text .unit{color:$kb-ui07;}
 .is-disabled .form-text .btn-solid.form,
 .is-disabled .form-text .btn-line.form{display:none;}
+.is-readonly .form-text .prefix,
 .is-readonly .form-text .unit{color:$kb-ui02;}
 
 .form-radio-set {display: block; border-bottom: 0;}
@@ -243,6 +249,9 @@ ul.radio-group > li + li{margin-top:20px;}
 .form-select .selected-option:after{position: absolute;right:0;top: 8px;z-index: 1;content: '';width:2rem;height:2rem;background:url(../images/common/common.png) no-repeat -44px -20px;background-size:160px;}
 .form-select select{display:none;}
 .not-ready .form-select .selected-option{color:$kb-ui07}
+
+//검색 (하단 보더 항상 검은색)
+.search .form-text{border-color:$kb-ui02;}
 
 .kb-form_multi .kb-form label{@include hidden;}
 .kb-form_multi > .tit{@include text($size: 16px);flex:0 0 100%;display:block;position:relative;width:100%;min-height:26px;padding:8px 2px 0px 2px;color:$kb-ui04;}
@@ -276,6 +285,12 @@ ul.radio-group > li + li{margin-top:20px;}
 .kb-form_phone .kb-form:nth-of-type(2) .validation{width:100px;white-space:nowrap;}
 .kb-form_phone .kb-form{flex:1;}
 
+//금액 범위
+.kb-form_boundary{display:flex;flex-wrap:wrap;}
+.kb-form_boundary .between{@include ir;position:relative;flex:0 0 40px;}
+.kb-form_boundary .between:before{content:'';position:absolute;left:calc(50% - 4px);top:calc(50% - 1px);width:8px;height:2px;background-color:#222;}
+.kb-form_boundary .kb-form{flex:1;}
+
 
 // //Datepicker
 // .date-time-selector .kb-form_inner,
@@ -285,10 +300,10 @@ ul.radio-group > li + li{margin-top:20px;}
 // .datepicker .form-text .btn-data-clear{flex:0 0 24px;margin-left:4px}
 // .datepicker.is-active .form-text:after{content:none;}
 
-.datepicker .form-text .btn-datepicker{flex:0 0 20px;margin-left:4px;margin-right: 16px;}
+.datepicker .form-text .btn-datepicker{flex:0 0 34px;margin-left:4px;}
 .datepicker .form-text input[inputmode=numeric] {font-size: 17px; text-align: left;}
 .datepicker .form-text input[inputmode=numeric]::placeholder {font-size: 17px;}
-.timepicker .form-text .btn-timepicker{flex:0 0 20px;margin-left:4px;margin-right: 16px;}
+.timepicker .form-text .btn-timepicker{flex:0 0 34px;margin-left:4px;}
 .timepicker .form-text input[inputmode=numeric] {font-size: 17px; text-align: left;}
 .timepicker .form-text input[inputmode=numeric]::placeholder {font-size: 17px;}
 
@@ -297,6 +312,8 @@ ul.radio-group > li + li{margin-top:20px;}
 .date-time-picker[data-status=error] .kb-form_inner,
 .date-time-picker [data-status=error] .kb-form_inner{border-bottom-width:2px;}
 .date-time-picker .kb-form input[type=text]{padding-left:16px;}
+
+
 
 //셀렉트 역할 ul
 .select-lists{display:flex;overflow:hidden;}
@@ -329,14 +346,11 @@ ul.radio-group > li + li{margin-top:20px;}
 .grid-list[data-col="4"] > li{width:25%;}
 .grid-list[data-col="4"] > li:nth-child(n + 5){margin-top:32px;}
 
-//전화번호
-
-
 //기간선택
-.period-selector{@include number($size: 17px);display:flex;align-items:center;border:1px solid $kb-ui08;border-radius:2px;}
-.period-selector > span{flex:0 0 12px;text-align:center;}
-.period-selector input{flex:1;min-width:40px;height:46px;padding:0 8px 0 16px;font-size:17px;border:none;}
-.period-selector input + .btn-datepicker{flex:0 0 20px;margin-right:16px;}
+.period-selector{@include number($size: 17px);display:flex;align-items:center;padding:10px 0;border:1px solid $kb-ui08;border-radius:2px;}
+.period-selector > span{flex:0 0 12px;margin-left:16px;text-align:center;}
+.period-selector input{flex:1;min-width:40px;height:34px;line-height:34px;padding:0 8px 0 16px;font-size:17px;border:none;}
+.period-selector input + .btn-datepicker{flex:0 0 34px;}
 .period-selector.is-disabled{position:relative;background-color:$kb-ui10;}
 .period-selector.is-disabled:after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;}
 .period-selector.is-disabled input,
@@ -358,8 +372,8 @@ ul.radio-group > li + li{margin-top:20px;}
 
 }
 
-.kb-sec .tab{padding-left:0;padding-right:0;}
-.bottom-sheet .tab{padding-left:24px;}
+// .kb-sec .tab{padding-left:0;padding-right:0;}
+// .bottom-sheet .tab{min-width:100%;padding-left:24px;}
 
 .tab_button{display:flex;padding:3px;background-color:$kb-ui09;}
 .tab_button > button,
@@ -459,7 +473,8 @@ ul.radio-group > li + li{margin-top:20px;}
 .complete-msg .tit{display: block; margin-top: 28px; font-size: 24px; line-height: 33px; font-weight: bold; color: $kb-ui02;}
 .no-data .no-data-tit{@include heading($size: $heading04);display:block;margin-top:16px;font-weight:normal}
 .complete-msg .tit + p,
-.no-data .no-data-tit + p{margin-top:12px;color:$kb-ui04;font-size:1.4rem;line-height:2rem}
+.no-data .no-data-tit + p{margin-top:12px;color:$kb-ui04;font-size:1.6rem;line-height:2rem}
+.no-data.margin{margin:4.8rem 2.4rem}
 
 // 전체동의
 .agreement-to-terms {border-bottom: 1px solid $kb-ui09;}
@@ -498,7 +513,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .description-list {padding: 0 2px; display: grid; grid-template-columns: 1fr 1fr; @include text($text02, normal);}
 .description-list dt {margin: 2px 0; display: flex; align-items: center; color: $kb-ui04;}
 .description-list dd {display: flex; justify-content: flex-end; align-items: center; color: $kb-ui02; text-align: right;}
-.description-list dd.date {font-family: 'Roboto', sans-serif;}
+.description-list dd.date {font-family: 'Roboto', sans-serif; font-size: 17px;}
 .description-list dd.amount,
 .description-list dd.stock {display: block;}
 .description-list dd.amount .num,
@@ -507,9 +522,9 @@ ul.radio-group > li + li{margin-top:20px;}
 .description-list dd.minus {color: $color-blue;}
 .description-list strong {font-weight: bold;}
 .description-list dt strong {color: #26282c;}
-.description-list.type2 dt {margin: 8px 0;}
+.description-list.type2 dt {margin: 6px 0;}
 .description-list.type2 dd.amount,
-.description-list.type2 dd.stock {line-height: 39px;}
+.description-list.type2 dd.stock {line-height: 33px;}
 .description-list.type3 {grid-row-gap: 12px;}
 .description-list.type3 dt {align-items: flex-start; color:$kb-ui02;}
 .description-list.type3 dd {flex-direction: column; align-items: flex-end;}
@@ -526,17 +541,17 @@ ul.radio-group > li + li{margin-top:20px;}
 
 // 알려드립니다 (토글)
 .toggle-notice .header {padding: 0 2px;}
-.toggle-notice .header button {position: relative; width: 100%; padding-left:32px; text-align: left;}
+.toggle-notice .header button {position: relative; width: 100%; padding-left:31px; text-align: left;}
 .toggle-notice .header button:before,
 .toggle-notice .header button:after{content:'';position:absolute;background-image:url(../images/common/common.png);background-repeat:no-repeat;background-size:160px;}
-.toggle-notice .header button:before{left:0;top:0;width:24px;height:24px;background-position:-64px -20px;}
-.toggle-notice .header button:after{right:0;top:2px;width:20px;height:20px;background-position:-44px -20px;}
-.toggle-notice .tit {@include text($size: $text01, $weight: bold);display:inline-block;color: $kb-ui03;line-height: 24px}
+.toggle-notice .header button:before{left:0;top:0;width:24px;height:24px;background-position:-64px -20px;transform:scale(0.8);}
+.toggle-notice .header button:after{right:0;top:2px;width:20px;height:20px;background-position:-44px -20px;transform: rotate(180deg);}
+.toggle-notice .tit {@include text($size: $text02, $weight: bold);display:inline-block;color: $kb-ui03;line-height: 24px}
 .toggle-notice .notice-list {margin-top:12px;padding-top: 18px; border-top: 1px solid #dde1e4;}
-.toggle-notice .notice-list li {color: $kb-ui02;}
+.toggle-notice .notice-list li {color: $kb-ui02; font-size: 15px; line-height: 22px;}
 .toggle-notice .notice-list button {position: relative;}
 .toggle-notice .notice-list button::after {content: ''; position: absolute; left: 0; right: 0; bottom: 2px; height: 1px; background-color: $kb-ui02;}
-.toggle-notice.is-closed .header button > i {transform: rotate(180deg);}
+.toggle-notice.is-closed .header button:after {transform: rotate(0deg);}
 .toggle-notice .notice-list a {position: relative; display: inline-block;}
 .toggle-notice .notice-list a::after {content: ''; position: absolute; left: 0; right: 0; bottom: 2px; height: 1px; background-color: $kb-ui02;}
 
@@ -557,7 +572,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .flex-box[data-col="5"] > li{width:25%;}
 
 // 거래내역
-.credit-list-tit{display:block;padding-bottom:1.6rem;border-bottom:1px solid $kb-ui04}
+.credit-list-tit{display:block;padding-bottom:1.6rem;border-bottom:1px solid $kb-ui07}
 .credit-list-tit + .credit-list-amount{margin-top:0.4rem;border-top:0}
 .credit-list + .credit-list-tit{margin-top:4.8rem}
 .credit-list-amount{padding-top:1rem}
@@ -582,7 +597,6 @@ ul.radio-group > li + li{margin-top:20px;}
 .credit-list dd .info{display:block;width:100%}
 .credit-list dt label{display:block;font-size:16px}
 .credit-list dt label::before{top:0;transform:none}
-.credit-list dt label::after{top:1.28rem}
 .credit-list dt .info .num{font-size:1.5rem}
 .credit-list dt .info .num+em{display:inline-block;margin-left:1.1em;padding-left:0.8rem;font-size:1.4rem;border-left:1px solid $kb-ui08}
 .credit-list dt .info .tag{margin-left:10px}
@@ -823,8 +837,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .account-card .number + .nickname{margin-top:20px;}
 
 //이벤트 더보기
-.btn-more-events button{width:100%;justify-content:center;padding:20px 0;}
-ul + .btn-more-events{padding:15px 0;text-align:center;}
+.btn-more-events{padding:2.5rem 0;}
 
 // 이미지 포함 라디오
 .form-image-radio {display: block;}

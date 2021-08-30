@@ -247,48 +247,23 @@ if($('.app-content').attr('id') != 'content') $('.app-content').attr('id','conte
 
 
 //공통 스크롤 이벤트
-var scrollStatus = false;// down (true = up)
-var currentSt = st;
+var scrollDown = false;// down (true = up)
 var $processStep = $('.process-step');
 var fixedTop;
 if($gnb.length) fixedTop = $('.app-lnb').offset().top;
 
+var currentST;
 var scrollDirection = function(st){
     if(!st) st = 0;
-    if(st > currentSt){
-        scrollStatus = false;
-    }else if(st < currentSt){
-        scrollStatus = true;
+    if(st > currentST){
+        scrollDown = true;
+    }else if(st < currentST){
+        scrollDown = false;
     }
-    currentSt = st;
-    return scrollStatus;
+    //console.log(scrollDown, st, currentST);
+    currentST = st;
+    return scrollDown;
 };
-
-$(window).on('scroll',function(){
-    st = $(this).scrollTop();
-
-    //Scroll Status
-    //scrollDirection(st);
-
-    //gnb fixed
-    // if($gnb.length) {
-    //     if(st >= fixedTop){
-    //         $('.app-lnb').addClass('is-fixed');
-    //     }else{
-    //         $('.app-lnb').removeClass('is-fixed');
-    //     }
-    // }
-
-    //Process
-    // if(st > 0){
-    //     if($('.app-header').length) $('.app-header').addClass('is-fixed');
-    //     if($processStep.length) $processStep.addClass('is-fixed');
-    // }else{
-    //     if($processStep.length) $processStep.removeClass('is-fixed');
-    //     if($('.app-header').length) $('.app-header').removeClass('is-fixed');
-    // }
-});
-
 
 function isNumeric(str) {
     if (typeof str != "number"){
@@ -298,3 +273,7 @@ function isNumeric(str) {
     }
 }
 
+// 스크롤 여부 (true of false) 
+$.fn.hasScrollBar = function() {
+    return (this.prop("scrollHeight") == 0 && this.prop("clientHeight") == 0) || (this.prop("scrollHeight") > this.prop("clientHeight"));
+};

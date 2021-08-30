@@ -689,7 +689,7 @@
 	}
 }
 
-//Checkbox (BG 조정필요)
+//Checkbox
 @mixin checkbox($size : 24px, $align: left, $display: inline-block){
     display:$display;
     position:relative;
@@ -700,13 +700,14 @@
     input + label:before,
     input + label:after{
         content:'';
-        position:absolute;
-        top:50%;transform:translateY(-50%) rotate(-45deg);
+        position:absolute;        
+        top:0;transform:translateY(0) rotate(-45deg);
     }
     @if (remove-units($size) == 24 or remove-units($size) == 2.4){
         label{padding-top:0.1rem;padding-left:34px;font-size:$text02;}
         input + label:before{left:0;width:2.4rem;height:2.4rem;border:2px solid $kb-ui07;border-radius:50%;}
         input + label:after{left:0.6rem;z-index: 1;width: 1.2rem;height: .8rem;margin-top: -0.2rem;
+            top:0.9rem;transform:rotate(-45deg);            
             border-left: 3px solid $kb-ui07;
             border-bottom: 3px solid $kb-ui07;
             border-top-left-radius: 1px;
@@ -719,14 +720,16 @@
         input:disabled:checked + label:before{background-color:$kb-ui09;}
         input:disabled:checked + label:after{border-color:$kb-ui11;}
 
-        &.align-top input + label:before,
-        &.align-top input + label:after{top:0;transform:translateY(0) rotate(-45deg);}
-        &.align-top input + label:after{top:0.9rem;transform:rotate(-45deg);}
+        &.align-mid input + label:before,
+        &.align-mid input + label:after{top:50%;transform:translateY(-50%) rotate(-45deg);}
+        
         
     }@else if (remove-units($size) == 20 or remove-units($size) == 2){
         label{min-height:20px;padding-right:3rem;line-height:px-to-rem($size);font-size:px-to-rem($text02);}
         input + label:after{content:none;}
-        input + label:before{left: .4rem;top:calc(50% - 6px);width: 1.5rem;height: .8rem;transform:rotate(-45deg);
+        input + label:before{
+            top:4px;transform:translateY(0) rotate(-45deg);
+            left: .4rem;width: 1.5rem;height: .8rem;
             border-left: 2px solid #aab0b8;
             border-bottom: 2px solid #aab0b8;
             border-bottom-left-radius: 3px;
@@ -743,7 +746,7 @@
 
         }
 
-        &.align-top input + label:before{top:4px;transform:translateY(0) rotate(-45deg);}        
+        &.align-mid input + label:before{top:calc(50% - 6px);transform:rotate(-45deg);}        
         
     }
 
@@ -759,18 +762,16 @@
     input{@include hidden;}
     label{display:inline-block;min-height:24px;color:$kb-ui02;padding-top:2px;padding-left:32px;font-size:$text02;line-height:1.4;}
     label:before,
-    label:after{position:absolute;top:50%;transform:translateY(-50%);border-radius:50%;}
-    label:before{content:'';left:0;width:$size;height:$size;background-color:#fff;border:2px solid $kb-ui07;}
-    label:after{left:$size * 0.25;width: $size * 0.5;height: $size * 0.5;background-color:$color-yellow;}
+    label:after{position:absolute;transform:translateY(0);border-radius:50%;}
+    label:before{content:'';left:0;top:0;width:$size;height:$size;background-color:#fff;border:2px solid $kb-ui07;}
+    label:after{left:$size * 0.25;top:$size * 0.25;width: $size * 0.5;height: $size * 0.5;background-color:$color-yellow;}
     input:checked + label:before{border-color: $color-yellow;}
     input:checked + label:after{content:'';}
     input:disabled + label:before{border-color: $color-disable;}
     input:disabled:checked + label:after{background-color:$color-disable;}
     input:disabled + label{color:$color-disable;}
 
-    &.align-top input + label:before,
-    &.align-top input + label:after{transform:translateY(0)}
-    &.align-top input + label:before{top:0;}
-    &.align-top input + label:after{top:$size * 0.25;}
+    &.align-mid input + label:before,
+    &.align-mid input + label:after{top:50%;transform:translateY(-50%);}
 
 }

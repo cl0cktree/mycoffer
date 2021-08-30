@@ -76,12 +76,12 @@
                     <p>2억 3천2백4십5만원</p>
                     <hr>
                     <hr>
-                    <p>(단위 앞에 2px의 여백이 있음)</p>                    
-                    <p>(.num[data-unit-after]): 기본</p>                    
+                    <p>(단위 앞에 2px의 여백이 있음)</p>
+                    <p>(.num[data-unit-after]): 기본</p>
                     <p><span class="num" data-unit-after="원">100,000</span></p>
                     <p><span class="num" data-unit-after="억">20</span></p>
                     <hr>
-                    <p>(.num + .unit) : data-unit-after 사용불가시</p>                          
+                    <p>(.num + .unit) : data-unit-after 사용불가시</p>
                     <p><span class="num">20</span><span class="unit">억</span></p>
                 </dd>
             </dl>
@@ -103,7 +103,7 @@
                     <button class="btn-solid gray"><span>솔리드 버튼 gray</span></button>
                     <button class="btn-solid" disabled><span>솔리드 버튼(disabled)</span></button>
                     <hr>
-                    <a href="javascript:;" class="btn-solid" role="button"><span>[Default]솔리드 링크버튼(height:52px)</span></a>
+                    <a href="javascript:;" class="btn-solid" role="button"><span>[Default]솔리드 링크버튼</span></a>
                     <a href="javascript:;" class="btn-solid gray" role="button"><span>솔리드 링크 gray</span></a>
                     <a href="javascript:;" class="btn-solid is-disabled" role="button"><span>솔리드 링크(disabled)</span></a>
                 </dd>
@@ -112,7 +112,7 @@
                     <button class="btn-solid sm gray"><span>솔리드 버튼 gray</span></button>
                     <button class="btn-solid sm" disabled><span>솔리드 버튼(disabled)</span></button>
                     <hr>
-                    <a href="javascript:;" class="btn-solid sm" role="button"><span>[Default]솔리드 링크버튼(height:52px)</span></a>
+                    <a href="javascript:;" class="btn-solid sm" role="button"><span>[Default]솔리드 링크버튼</span></a>
                     <a href="javascript:;" class="btn-solid sm gray" role="button"><span>솔리드 링크 gray</span></a>
                     <a href="javascript:;" class="btn-solid sm is-disabled" role="button"><span>솔리드 링크(disabled)</span></a>
                 </dd>
@@ -232,11 +232,6 @@
                     <hr>
                     <a href="javascript:;" class="btn-text sm icon-arrow" role="button"><span>텍스트버튼</span><i></i></a>
                 </dd>
-                <dd data-description="더보기">
-                    <button class="btn-text"><i class="icon-plus"></i><span>더보기</span></button>
-                    <hr>
-                    <a href="javascript:;" class="btn-text" role="button"><i class="icon-plus"></i><span>더보기</span></a>
-                </dd>
             </dl>
         </div>
         <hr>
@@ -251,11 +246,11 @@
                         </code>
                     </pre>
                 </dt>
-                <dd data-description=".btn-more-plus : 더보기 버튼">                    
-                    <button type="button" class="btn-more-plus"><span>더보기</span></button>                    
+                <dd data-description=".btn-more-plus : 더보기 버튼">
+                    <button type="button" class="btn-more-plus"><span>더보기</span></button>
                 </dd>
-                <dd data-description=".btn-more-dot : 설정 등 옵션 버튼">                    
-                    <button type="button" class="btn-more-dot"><span>설정</span></button>                    
+                <dd data-description=".btn-more-dot : 설정 등 옵션 버튼">
+                    <button type="button" class="btn-more-dot"><span>설정</span></button>
                 </dd>
                 <dd data-description=".btn-switch : 토글버튼">
                     <span class="btn-switch"><input type="checkbox" id="toggleBtn1A"><label for="toggleBtn1A"></label></span>
@@ -306,7 +301,7 @@
         </div>
         <hr>
         <!-- form (checkbox) -->
-        <div class="box">
+        <div class="box" id="checkboxSample">
             <h2>Checkbox</h2>
             <dl class="flex-dl">
                 <dt>
@@ -326,15 +321,15 @@
                     <hr>
                     <span class="form-checkbox"><input type="checkbox" id="checkboxSample14" checked disabled><label for="checkboxSample14">Selected(Disabled)</label></span>
                 </dd>
-                <dd data-description=".form-checkbox.align-top : 상단 정렬">
+                <dd data-description=".form-checkbox.align-mid : 상하 중앙 정렬">
                     <!-- Size 24px -->
-                    <span class="form-checkbox align-top"><input type="checkbox" id="checkboxSample15"><label for="checkboxSample15">Default<br>2nd Line</label></span>
+                    <span class="form-checkbox align-mid"><input type="checkbox" id="checkboxSample15"><label for="checkboxSample15">Default<br>2nd Line</label></span>
                     <hr>
-                    <span class="form-checkbox align-top"><input type="checkbox" id="checkboxSample16"><label for="checkboxSample16">Default(Disabled)<br>2nd Line</label></span>
+                    <span class="form-checkbox align-mid"><input type="checkbox" id="checkboxSample16"><label for="checkboxSample16">Default(Disabled)<br>2nd Line</label></span>
                     <hr>
-                    <span class="form-checkbox align-top"><input type="checkbox" id="checkboxSample17" checked><label for="checkboxSample17">Selected<br>2nd Line</label></span>
+                    <span class="form-checkbox align-mid"><input type="checkbox" id="checkboxSample17" checked><label for="checkboxSample17">Selected<br>2nd Line</label></span>
                     <hr>
-                    <span class="form-checkbox align-top"><input type="checkbox" id="checkboxSample18" checked disabled><label for="checkboxSample18">Selected(Disabled)<br>2nd Line</label></span>
+                    <span class="form-checkbox align-mid"><input type="checkbox" id="checkboxSample18" checked disabled><label for="checkboxSample18">Selected(Disabled)<br>2nd Line</label></span>
                 </dd>
                 <dd data-description=".form-checkbox_20 : 체크박스 (20px)">
                     <!-- Size 20px : no text-->
@@ -346,15 +341,15 @@
                     <hr>
                     <span class="form-checkbox_20"><input type="checkbox" id="checkboxSample24" checked disabled><label for="checkboxSample24">Selected(Disabled)</label></span>
                 </dd>
-                <dd data-description=".form-checkbox_20.align-top : 상단 정렬)">
+                <dd data-description=".form-checkbox_20.align-mid : 상하 중앙 정렬)">
                     <!-- Size 20px : no text-->
-                    <span class="form-checkbox_20 align-top"><input type="checkbox" id="checkboxSample21"><label for="checkboxSample21">Default<br>2nd Line</label></span>
+                    <span class="form-checkbox_20 align-mid"><input type="checkbox" id="checkboxSample21"><label for="checkboxSample21">Default<br>2nd Line</label></span>
                     <hr>
-                    <span class="form-checkbox_20 align-top"><input type="checkbox" id="checkboxSample22"><label for="checkboxSample22">Default(Disabled)<br>2nd Line</label></span>
+                    <span class="form-checkbox_20 align-mid"><input type="checkbox" id="checkboxSample22"><label for="checkboxSample22">Default(Disabled)<br>2nd Line</label></span>
                     <hr>
-                    <span class="form-checkbox_20 align-top"><input type="checkbox" id="checkboxSample23" checked><label for="checkboxSample23">Selected<br>2nd Line</label></span>
+                    <span class="form-checkbox_20 align-mid"><input type="checkbox" id="checkboxSample23" checked><label for="checkboxSample23">Selected<br>2nd Line</label></span>
                     <hr>
-                    <span class="form-checkbox_20 align-top"><input type="checkbox" id="checkboxSample24" checked disabled><label for="checkboxSample24">Selected(Disabled)<br>2nd Line</label></span>
+                    <span class="form-checkbox_20 align-mid"><input type="checkbox" id="checkboxSample24" checked disabled><label for="checkboxSample24">Selected(Disabled)<br>2nd Line</label></span>
                 </dd>
             </dl>
         </div>
@@ -370,8 +365,7 @@
                         </code>
                     </pre>
                 </dt>
-                <dd data-description=".form-radio : 라디오 기본">
-                    <!-- Size 28px -->
+                <dd data-description=".form-radio : 라디오 기본">                    
                     <span class="form-radio"><input type="radio" id="radioSample01"><label for="radioSample01">Default<br>2nd Line</label></span>
                     <hr>
                     <span class="form-radio"><input type="radio" id="radioSample02" disabled><label for="radioSample02">Default(Disabled)<br>2nd Line</label></span>
@@ -380,15 +374,14 @@
                     <hr>
                     <span class="form-radio"><input type="radio" id="radioSample04" checked  disabled><label for="radioSample04">Selected(Disabled)<br>2nd Line</label></span>
                 </dd>
-                <dd data-description=".form-radio.align-top : 상단 정렬">
-                    <!-- Size 28px -->
-                    <span class="form-radio align-top"><input type="radio" id="radioSample11"><label for="radioSample11">Default<br>2nd Line</label></span>
+                <dd data-description=".form-radio align-mid : 상하 중앙 정렬">
+                    <span class="form-radio align-mid"><input type="radio" id="radioSample11"><label for="radioSample11">Default<br>2nd Line</label></span>
                     <hr>
-                    <span class="form-radio align-top"><input type="radio" id="radioSample12" disabled><label for="radioSample12">Default(Disabled)<br>2nd Line</label></span>
+                    <span class="form-radio align-mid"><input type="radio" id="radioSample12" disabled><label for="radioSample12">Default(Disabled)<br>2nd Line</label></span>
                     <hr>
-                    <span class="form-radio align-top"><input type="radio" id="radioSample13" checked><label for="radioSample13">Selected<br>2nd Line</label></span>
+                    <span class="form-radio align-mid"><input type="radio" id="radioSample13" checked><label for="radioSample13">Selected<br>2nd Line</label></span>
                     <hr>
-                    <span class="form-radio align-top"><input type="radio" id="radioSample14" checked  disabled><label for="radioSample14">Selected(Disabled)<br>2nd Line</label></span>
+                    <span class="form-radio align-mid"><input type="radio" id="radioSample14" checked  disabled><label for="radioSample14">Selected(Disabled)<br>2nd Line</label></span>
                 </dd>
             </dl>
         </div>
@@ -558,6 +551,11 @@
                 </dt>
                 <dd>
                     <p class="simple-message">위 정보는 국내 신용평가사인 NICE평가정보(주)에서 제공하는 데이터로 KB마이머니의 금융정보와 다를 수 있습니다.</p>
+                </dd>
+                <dd>
+                    <div class="clfix">
+                        <p class="simple-message align-r">금융정보와 다를 수 있습니다.</p><!-- float:right 상태 -->
+                    </div>
                 </dd>
             </dl>
 
@@ -805,6 +803,36 @@
                         <li>리스트 03</li>
                         <li>리스트 04</li>
                     </ul>
+                </dd>
+            </dl>
+        </div>
+        <hr>
+        <div class="box" id="hr">
+            <h2>hr (구분선)</h2>
+            <dl class="flex-dl">
+                <dt><pre><code></code></pre></dt>
+                <dd data-description=".hr-divide_48 : 상하 48px 구분선" style="padding-left:0;padding-right:0;">
+                    <section class="kb-sec">컨텐츠 01</section>
+                    <hr class="hr-divide_48">
+                    <section class="kb-sec">컨텐츠 02</section>
+                </dd>
+                <dd data-description=".hr-divide_32 : 상하 32px 구분선" style="padding-left:0;padding-right:0;">
+                    <section class="kb-sec">컨텐츠 01</section>
+                    <hr class="hr-divide_32">
+                    <section class="kb-sec">컨텐츠 02</section>
+                </dd>
+                <dd data-description=".hr-divide_24 : 상하 24px 구분선" style="padding-left:0;padding-right:0;">
+                    <section class="kb-sec">컨텐츠 01</section>
+                    <hr class="hr-divide_24">
+                    <section class="kb-sec">컨텐츠 02</section>
+                </dd>
+                <dd data-description=".hr-line : 상하 20px 구분선" style="padding-left:0;padding-right:0;">
+                    <section class="kb-sec">
+                        <p>컨텐츠 내용 01</p>
+                        <hr class="hr-line">
+                        <p>컨텐츠 내용 02</p>
+                    </section>
+                    
                 </dd>
             </dl>
         </div>

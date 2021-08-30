@@ -14,7 +14,7 @@
     <style>
         .guide{line-height:1.8;}
         .guide-container{padding-bottom:120px;}
-        .guide h2{font-size:28px;}
+        .guide h2{font-size:28px;color:#fff;}
         .guide div + h2{margin-top:80px;}        
         .guide h2 + div{margin-top:20px;}
         .guide h2 + div > ol:first-child{font-size:20px;}
@@ -27,7 +27,10 @@
         body.guide .highcharts-box .content-box-info .info-amount dd{margin-top:0}
         body.guide .highcharts-box .highcharts-figure .chart-area{min-width:330px}
 
-        .chart-sample{margin-top:30px;}
+        
+
+        .chart-sample{position:relative;margin-top:30px;}
+        .chart-sample .annotation{position:absolute;right:15px;top:15px;color:#fff;}
         .chart-sample h2{color:#fff;}
         .chart-sample ul{display:flex;flex-wrap:wrap;}
         .chart-sample li{flex:0 1 320px;margin:10px;padding:10px;text-align:center;border:1px solid #ddd;background-color:#fff;}
@@ -55,6 +58,7 @@
 
         <h2>Highcharts</h2>        
         <div class="box guide-chart">
+            <h2 class="is-hidden">차트 가이드</h2>
             <ol>
                 <li>* swiper</li>
             </ol>
@@ -80,8 +84,9 @@
             </dl>
         </div>
 
-        <div class="chart-sample">
-            <h2>Chart 타입별 샘플 <span>Click : 샘플페이지(새창)</span></h2>
+        <div class="box chart-sample">
+            <h2>Chart 타입별 샘플</h2>
+            <div class="annotation"><span>Click : 샘플페이지(새창)</span></div>
             <ul>
                 <li>
                     <a href="./highchart/bar-graph01.html" target="_blank">
@@ -184,7 +189,7 @@
         <hr>
 
         <div class="box fold mt20">
-            <h2><button type="button" class="btn-fold"><span>Swiper Chart Sample</span></button></h2>
+            <h2>Swiper Chart 샘플</h2>
             <dl class="flex-dl">
                 <dt>
                     <pre>

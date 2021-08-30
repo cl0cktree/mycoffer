@@ -482,28 +482,53 @@ $('.bottom-sheet').on('click','[data-action=select]',function(){
 });
 
 //Layer layout(버튼이 있는 경우, 없는 경우 여백 다름)
-/*
-if($('.popup').length){
-    $('.popup').each(function(){
-        if($(this).find('.popup_buttons').length) $(this).addClass('with-button');//버튼이 있는 경우 하단 여백이 큼
-    });
-}
+
+// if($('.popup').length){
+//     $('.popup').each(function(){
+//         if($(this).find('.popup_buttons').length) $(this).addClass('with-button');//버튼이 있는 경우 하단 여백이 큼
+//     });
+// }
 if($('.bottom-sheet').length){
-    $('.bottom-sheet').each(function(){
-        if($(this).find('.bottom-sheet_buttons').length) $(this).addClass('with-button');//버튼이 있는 경우 하단 여백이 큼
+    var bsDirection;
+    var startY = 0;
+    var endY = 0;
+    $('.bottom-sheet').each(function(i){
+        if($(this).find('.tab').length) $(this).addClass('bs-tab');//버튼이 있는 경우 하단 여백이 큼
+        $(this).find('.bottom-sheet_contents').attr('id','bsTabScroll' + i);
+        var $bsCont = document.getElementById('bsTabScroll' + i);
+        $bsCont.addEventListener("touchstart", touchStart, false);
+        $bsCont.addEventListener("touchend", function(ev){
+            touchEnd(ev);
+            var scrollStatus = this.getAttribute('data-scroll');
+            if(scrollStatus == 0 && bsDirection < 0){
+                this.closest('.bottom-sheet').classList.remove("is-expanded");
+            }
+        }, false);
     });
 
-    //바텀시트 내용이 많을 경우 스크롤했을때 확장 (제거)
-    // $('.bottom-sheet_contents').on('scroll',function(){
-    //     var thisH = $(this).outerHeight();
-    //     var childrenH = 0;
-    //     $(this).children().each(function(i){
-    //         childrenH += $(this).outerHeight();
-    //     });
-    //     if(childrenH >= thisH * 2) $(this).parents('.bottom-sheet.is-active').addClass('is-expanded');
-    // });
+    //Tab 이 있는 바텀시트는 스크롤시 확장됨
+    $('.bs-tab .bottom-sheet_contents').on('scroll',function(){
+        var st = $(this).scrollTop();
+        var $bs = $(this).closest('.bottom-sheet');
+        $(this).attr('data-scroll',st);
+        scrollDirection(st);
+        if(scrollDown) $bs.addClass('is-expanded');
+        //console.log(scrollDown, st, scroll);
+    });
+
+    function touchStart(ev) {
+        startY = ev.changedTouches[0].clientY;
+        return startY;
+    }
+    function touchEnd(ev) {
+        endY = ev.changedTouches[0].clientY;
+        bsDirection = startY - endY;
+        return bsDirection;
+    }
+
+
+
 }
- */
 
 //datepicker 입력
 $('body')
@@ -577,7 +602,7 @@ $('.timepicker').each(function(){
 //기간 선택
 $('.period-selector').each(function(){
     if($(this).hasClass('is-disabled')){
-        $(this).find('input').prop({'readonly': true});        
+        $(this).find('input').prop({'readonly': true});
     }else{
         $(this).find('input').prop({'readonly': false});
     }
@@ -833,7 +858,7 @@ if($('.accordian').length){
     })
     .on('click','dt',function(e){
         e.stopPropagation();
-        $(this).find('.accordian-trigger').trigger('click');        
+        $(this).find('.accordian-trigger').trigger('click');
         if(e.target.nodeName.toLowerCase() == 'label') return;
     });
 }
@@ -934,21 +959,21 @@ $('.js-checkbox-selector').each(function(){
     var $exception = $checkboxSelector.find('.exception');
     var checkboxLen = $checkbox.length;
     var exceptionLen = $exception.length;
-    
-    $checkbox.each(function(i){        
+
+    $checkbox.each(function(i){
         var $this = $(this);
-        
+
         //init
         $this.attr('data-index',i);
         var $allSelector = $checkboxSelector.find('input:checkbox[data-index=0]');
 
         $this.on('change',function(){
-            var tf = $(this).prop('checked');            
+            var tf = $(this).prop('checked');
             if($this.data('index') == 0){   //상단 전체 선택 checkbox
                 if(tf){
                     $checkbox.not('.exception').prop('checked',true);
                 }else{
-                    $checkbox.not('.exception').prop('checked',false);                        
+                    $checkbox.not('.exception').prop('checked',false);
                 }
             }else{  //하단 개별 선택
                 if(tf){
@@ -1391,11 +1416,11 @@ function drawInsuranceGauge(selector, current) {
 }
 
 function drawCreditGauge(selector, current, max) {
-    setGauge(selector, current, max, "#ffd338");
+    setGauge(selector, current, max, "#ffba53");
 }
 
 function drawDdayGauge(selector, current, max) {
-    setGauge(selector, current, max, "#f7956c");
+    setGauge(selector, current, max, "#ffba53");
 }
 
 function setGauge(selector, current, max, strokeColor) {
@@ -1556,13 +1581,13 @@ $('body').on('click','button[data-toggle-class]',function(){
 var jsFixed = {
     init: function(){
         $('.js-fixed').each(function(){
-            var top = $(this).offset().top + $(this).outerHeight();            
+            var top = $(this).offset().top + $(this).outerHeight();
             $(this).attr('data-fix',top);
         });
     },
     scroll : function(st, $this){
         if($('.js-fixed').length){
-            var fixedTop = $this.data('fix');        
+            var fixedTop = $this.data('fix');
             if(st >= fixedTop - 48){//fixed header
                 $this.addClass('is-fixed');
             }else{

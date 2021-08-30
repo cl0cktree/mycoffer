@@ -33,24 +33,28 @@
 					<!-- 페이지에 삽입 되는 부분 // -->
 					<div class="maturity-dday-circles">
 						<div class="dday-circle">
+							<div class="name-text">상품명이노출됩니다</div>
 							<div class="svg-area svg-gauge-circle2">
 								<svg class="dday-gauge-svg1" viewBox="0 0 134 134">
 									<use class="bar-bg" xlink:href="#ddayCirclePath"></use>
 									<use class="bar-fg" xlink:href="#ddayCirclePath"></use>
 								</svg>
+								<div class="inner">
+									<div class="dday">D-day<span class="num">50</span></div>
+								</div>
 							</div>
-							<div class="dday">D-day<br><span class="num">50</span>일</div>
-							<div class="btm-text">KB국민UP 정기예금<br>예금만기일</div>
 						</div>
 						<div class="dday-circle">
+							<div class="name-text">상품명상품명상품명상품명</div>
 							<div class="svg-area svg-gauge-circle2">
 								<svg class="dday-gauge-svg2" viewBox="0 0 134 134">
 									<use class="bar-bg" xlink:href="#ddayCirclePath"></use>
 									<use class="bar-fg" xlink:href="#ddayCirclePath"></use>
 								</svg>
+								<div class="inner">
+									<div class="dday"><strong>만기상품</strong></div>
+								</div>
 							</div>
-							<div class="dday">D-day<br><span class="num">70</span>일</div>
-							<div class="btm-text">하나저축은행 정기예금<br>예금만기일</div>
 						</div>
 						<svg class="defs">
 							<defs>
@@ -66,7 +70,7 @@
 								 * @param {number} max - 예금전체기간(일)
 								 */
 								drawDdayGauge(".dday-gauge-svg1", 315, 365);
-								drawDdayGauge(".dday-gauge-svg2", 295, 365);
+								drawDdayGauge(".dday-gauge-svg2", 365, 365);
 							});
 						</script>
 					</div>
