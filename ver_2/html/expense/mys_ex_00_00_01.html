@@ -32,9 +32,11 @@
                     </div>
                     <div class="agree-group">
                         <strong class="h4">동의사항 변경하기</strong>
-                        <a href="mys_ex_00_00_01_p01.html" class="link-box_block link-arrow-after">
-                            [KB국민카드 정보제공용] 개인(신용)정보<br>제3자 제공 동의서(지출관리서비스)
+                        <!-- [D] 2021-08-31 수정 : 체크박스 있는 버전으로 수정 //-->
+                        <a href="javascript:;" class="link-box_block link-arrow-after">
+                            <span class="form-checkbox"><input type="checkbox" id="agreeChk"><label for="agreeChk">[KB국민카드 정보제공용] 개인(신용)정보<br>제3자 제공 동의서(지출관리서비스)</label></span>
                         </a>
+                        <!--// [D] 2021-08-31 수정 : 체크박스 있는 버전으로 수정 -->
                         <p class="simple-message">마이자산관리 > 지출 서비스에서 더 자세한 지출내역을 확인하시려면, [KB국민카드 정보제공용] 개인(신용)정보 제3자 제공동의서에 동의해주세요. </p>
                     </div>
                 </section>
@@ -66,6 +68,15 @@
     @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
+    <script>
+        /* [D] 2021-08-31 수정 : 체크박스 동작 */
+        $('#agreeChk').on('change', function(){
+            var isChecked = $(this).prop('checked');
+            if(isChecked == true){
+                location.href="mys_ex_00_00_01_p01.html";
+            }
+        });
+    </script>
     <!-- Add Script -->
     
 </body>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko" data-channel="ch_star">
+<!-- [MYS_AS_10_01_00_P1] 작성자: 누리어 시스템 김은경 -->
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+    "title": "대출 · 부채 상세조회 | 자산"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header //-->
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+        'pageTit' :'대출 · 부채 상세조회',
+        'type':'close'
+        })
+        <!-- // app-header -->
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content my-asset pop-account-detail">
+
+
+                <section class="kb-sec full loan">
+                    <div class="account-top">
+                        <ul>
+                            <li class="account-wrap">
+                                <div class="txt-con">
+                                    <span class="bank-book">신한전세자금대출</span>
+                                    <div class="agency-con">
+                                        <span class="agency-logo"><img src="@@webRoot/static/images/ci/A1AAEO0000.png" alt="은행별 아이콘"></span>
+                                        <em class="agency">신한은행</em>
+                                    </div>
+                                    <p class="balance">
+                                        <span>대출잔액 <b class="amount"><span class="num">1,000,000</span>원</b></span>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="interest-rate more-view-box">
+                                <dl class="description-list">
+                                    <dt>대출원금</dt>
+                                    <dd class="amount"><span class="num">120,000,000</span>원</dd>
+                                    <dt>상환액</dt>
+                                    <dd class="amount"><span class="num">111,980,020</span>원</dd>
+                                    <dt>상환액 중 이자</dt>
+                                    <dd class="amount"><span class="num">1,000,000</span>원</dd>
+                                    <dt>최종적용금리</dt>
+                                    <dd class="amount">연 <span class="num">2.82</span>%</dd>
+                                    <dt>상환방법</dt>
+                                    <dd>만기일시상환</dd>
+                                    <dt>신규일</dt>
+                                    <dd class="date">2012.11.30</dd>
+                                    <dt>만기일</dt>
+                                    <dd class="date">2022.11.30</dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+
+                    
+                </section>
+
+
+
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+        <!-- Layer (modal, bottom sheet) // -->
+        <div class="layered">
+            @@include('@@webRoot/html/asset/layered/mys_as_05_00_01_p1.html')
+            @@include('@@webRoot/html/asset/layered/mys_as_10_01_02_p1.html')
+
+        </div>
+        <!-- // Layer (modal, bottom sheet) -->
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+
+</body>
+
+</html>

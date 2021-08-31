@@ -126,19 +126,20 @@
         var data_split_day='';
         var currentVal=0;
         var dataVal;
+        var changed;
         var changedDate;
 
         // $('.btn-datepicker').attr({'data-page-id':'MYS_AS_17_01_06_BS2','data-call-layered':'bsCalendar'});
-        console.log(data_split_month);
         
-        $('.ui-datepicker-calendar').find('td').on('click',function(event){
-            // event.preventDefault;
-            // changedDate = $('#datepicker').datepicker('getDate');
+        $('.ui-datepicker-calendar').find('td').one('click',function(event){
+
+            changed = $('#datepicker').datepicker('getDate');
             // console.log(this);
             // console.log($(this).children('.ui-state-default').html());
             // data_split_day=$('.ui-state-active').text();
             // console.log(data_split_year+data_split_month+changedDate);
-            changedDate = $('this').find('.ui-state-active').text();
+            changedDate = $('.ui-datepicker-calendar').find('.ui-state-active').html();
+
         });
         $('.btn-solid_sticky').on('click',function(){
             $('.mysafe-giftcard-datepicker').val(data_split_year+'.'+data_split_month+'.'+changedDate);
@@ -171,9 +172,8 @@
                 gsi=0;
             }
             console.log('out - '+dataVal);
-            if ((currentVal!=='')&&(currentVal!==undefined)&&(currentVal!==null)&&(currentVal!==0)&&(dataVal!=='')&&(dataVal!==undefined)&&(dataVal!==null)&&(dataVal!==0)&&((gs_num==1&&gsi>0)||(gs_num>1))){
+            if ((currentVal!=='')&&(currentVal!==undefined)&&(currentVal!==null)&&(currentVal!==0)&&(dataVal!=='')&&((gs_num==1&&gsi>0)||(gs_num>1))){
                 $my_giftcard_enrollment.removeAttr('disabled');
-                // console.log('t - '+currentVal);
             }else{
                 $my_giftcard_enrollment.removeAttr('disabled');
                 $my_giftcard_enrollment.attr('disabled','disabled');

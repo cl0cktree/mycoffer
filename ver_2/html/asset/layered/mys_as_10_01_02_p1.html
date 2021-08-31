@@ -2,24 +2,29 @@
 <!-- 조회, 설정 팝업// -->
 <div class="bottom-sheet" data-layered-name="mys_as_10_01_02_p1" >
     <div class="bottom-sheet_header">
-        <span class="tit">조회 조건 선택</span><!-- 2021-06-22 수정 -->
+        <span class="tit">조회기간 설정</span>
     </div>
     <div class="bottom-sheet_contents">
         <section class="kb-sec">
             <div class="kb-form">
                 <strong class="label">내역정렬</strong>
                 <div class="lookup-period">
-                    <ul class="btn-segmented">
-                        <li><button><span>최신순</span></button></li>
-                        <li><button class="is-selected"><span>과거순</span></button></li>
+                    <ul class="btn-segmented_radio">
+                        <li>
+                            <input type="radio" name="radioLookupSort" id="radioLookupSort1" checked="">
+                            <label for="radioLookupSort1">최신순</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="radioLookupSort" id="radioLookupSort2">
+                            <label for="radioLookupSort2">과거순</label>
+                        </li>
                     </ul>
                 </div>
             </div>
         </section>
     </div>
     <div class="bottom-sheet_buttons">
-        <button class="btn-solid gray" data-action="close"><span>초기화</span></button>
-        <button class="btn-solid"><span>확인</span></button>
+        <button class="btn-solid"><span>조회</span></button>
     </div>
     <button class="btn-close" data-action="close"><span>닫기</span></button>
 </div>

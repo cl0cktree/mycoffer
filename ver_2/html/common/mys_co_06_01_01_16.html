@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "자산 연동 | 약관동의"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content">                
+                <!-- SECTION //-->
+                <section class="kb-sec asset-sync">
+                    <div class="character-box">
+                        <img src="@@webRoot/static/images/etc/data-download@2x.png" alt=""><!-- 수정 : 2021.06.25 -->
+                    </div>                    
+                    <p>선택하신 기관의 데이터를 <br>연결하고 있습니다.</p><!-- 수정 : 2021.06.25 -->
+                    <!-- <div class="loader"><i></i><i></i><i></i><i></i><span>로딩중</span></div>                     -->
+                </section>
+                <section class="kb-sec asset-sync02">
+                    <ul class="checkbox-group">
+                        <li><span class="form-checkbox"><input type="checkbox" id="AssetSync01" disabled checked><label for="AssetSync01">우체국</label></span></li>
+                        <li><span class="form-checkbox"><input type="checkbox" id="AssetSync02" disabled ><label for="AssetSync02">IBK기업은행</label></span></li>
+                        <li><span class="form-checkbox"><input type="checkbox" id="AssetSync03" disabled ><label for="AssetSync03">SC제일은행</label></span></li>
+                    </ul>
+                </section>
+                <!--  // SECTION -->
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+        <!-- Layer (modal, bottom sheet) // -->
+        <div class="layered">            
+            @@include('@@webRoot/html/_layered/_popup-sample.html')
+            @@include('@@webRoot/html/_layered/_bottom-sheet-sample.html')
+            @@include('@@webRoot/html/_layered/_modal-sample.html')
+        </div>
+        <!-- // Layer (modal, bottom sheet) -->
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+
+</body>
+
+</html>

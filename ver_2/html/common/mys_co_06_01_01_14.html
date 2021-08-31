@@ -13,10 +13,12 @@
     <div class="app">
         
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
-            'pageTit':'자산등록',
+            'pageTit':'자산 등록',
             'type':'step'
         })
-        
+        <style>
+            .page-tit{display:block !important;} /* 임시 */
+        </style>
 
         <!-- app-container //-->
         <div class="app-container">
@@ -83,19 +85,18 @@
                                 </li>
                             </ul>
                         </div>
-
                         <h3 class="tit">전송요구의 종료시점(전송요구서 유효기간)</h3>
                         <div class="desc-box">
                             <div class="kb-form" data-status="error">
                                 <div class="lookup-period">
                                     <ul class="btn-segmented_radio">
                                         <li>
-                                            <input type="radio" name="btnradio" id="btnradio1">
-                                            <label for="btnradio1">1년</label>
+                                            <input type="radio" name="btnradio" id="btnradio3">
+                                            <label for="btnradio3">1년</label>
                                         </li>
                                         <li>
-                                            <input type="radio" name="btnradio" id="btnradio2">
-                                            <label for="btnradio2">직접입력(최대1년)</label>
+                                            <input type="radio" name="btnradio" id="btnradio4">
+                                            <label for="btnradio4">직접입력(최대1년)</label>
                                         </li>
                                     </ul>
                                     <div class="period-selector">
@@ -124,14 +125,28 @@
                             <li>
                                 <span class="form-checkbox_20 align-top">
                                     <input type="checkbox" id="agreeCheck1" checked="">
-                                    <label for="agreeCheck1">[필수]개인(신용)정보 수집・이용 동의서<br>(상세정보 전송)</label>
+                                    <label for="agreeCheck1">개인(신용)정보 수집・이용 동의서 <br>(상세정보 전송)[필수]</label>
                                     <a href="@@webRoot/html/terms/agree-use-personal-info.html" class="link"><span class="link-arrow">바로가기</span></a>
                                 </span>
                             </li>
                             <li>
                                 <span class="form-checkbox_20 align-top">
                                     <input type="checkbox" id="agreeCheck2" checked="">
-                                    <label for="agreeCheck2">[필수]통합인증 이용 약관</label>
+                                    <label for="agreeCheck2">통합인증을 위한 인증서 본인확인 서비스<br>이용약관 [필수]</label>
+                                    <a href="" class="link"><span class="link-arrow">바로가기</span></a>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="form-checkbox_20 align-top">
+                                    <input type="checkbox" id="agreeCheck3" checked="">
+                                    <label for="agreeCheck1">통합인증(인증서 본인확인)을 위한 <br>개인정보 처리 동의 [필수]</label>
+                                    <a href="" class="link"><span class="link-arrow">바로가기</span></a>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="form-checkbox_20 align-top">
+                                    <input type="checkbox" id="agreeCheck4" checked="">
+                                    <label for="agreeCheck2">통합인증(인증서 본인확인)위한 고유식별<br> 정보 수집·이용 및 위탁 동의[필수]</label>
                                     <a href="" class="link"><span class="link-arrow">바로가기</span></a>
                                 </span>
                             </li>

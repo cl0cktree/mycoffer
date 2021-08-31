@@ -1,0 +1,70 @@
+<!-- [mys_co_05_02_01_layered] 가입완료 작성자: 누리어 시스템 변혜선 -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "서비스약관동의"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header //-->
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'서비스약관동의',
+        })
+        <!-- // app-header -->
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content">
+                <section class="kb-sec">
+                    <button type="button" class="btn-line" onclick="modalDemo1()"><span>확인</span></button>
+                </section>
+                <section class="kb-sec">
+                    <button type="button" class="btn-line" onclick="modalDemo2()"><span>확인</span></button>
+                </section>
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+    </div>
+    <div class="layered">
+
+        <!-- Modal // -->
+        @@include('@@webRoot/html/_layered/_modal-sample.html')
+        <!-- // Modal -->
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    
+    <script>
+        function modalDemo1() {
+            modalPopup({
+                title: "",
+                message: "(국민은행) 2021년 4월 7일 상품서비스 안내 수신에 동의했습니다."
+            });
+        }
+        function modalDemo2() {
+            modalPopup({
+                title: "",
+                message: "(국민은행) 2021년 4월 7일 상품서비스 안내 수신을 거절했습니다.",
+            });
+        }
+        
+
+
+    </script>
+</body>
+
+</html>

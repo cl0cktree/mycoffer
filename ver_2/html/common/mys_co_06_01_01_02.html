@@ -13,42 +13,45 @@
     <div class="app">
         
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
-            'pageTit':'자산등록',
+            'pageTit':'자산 등록',
             'type':'step'
         })
-        
+        <style>
+            .page-tit{display:block !important;} /* 임시 */
+        </style>
 
         <!-- app-container //-->
         <div class="app-container">
-            <div class="page-step js-fixed">    
-                <div class="step" aria-label="총 7단계 중 현재 7단계">
-                    <span class="current">5</span>                        
-                    <span class="total">7</span>
-                </div>
-                <h2 class="h1">공동인증서 선택</h2>
-            </div>  
+            
             <!-- app-content // -->
-            <main class="app-content joint-certificate">                
+            <main class="app-content joint-certificate">           
+                <div class="page-step js-fixed">    
+                    <div class="step" aria-label="총 7단계 중 현재 5단계">
+                        <span class="current">5</span>                        
+                        <span class="total">7</span>
+                    </div>
+                    <h2 class="h1">공동인증서 선택</h2>
+                </div>       
                 <section class="kb-sec">
                     <ul class="joint-certificate-list">
-                        <li class="link-arrow-after">
-                            <a href="javascript:;">
+                        <li>
+                            <a href="javascript:;" class="link-arrow-after">
                                 <i class="icon-certificate-active"></i><!-- 인증서 활성화 icon -->
                                 <strong class="name">김민국</strong>
                                 <p><span>은행개인</span><strong>yessign</strong></p>
                                 <p><span>만료일</span><strong class="num">2022.04.14</strong></p>
                             </a>
                         </li>
-                        <li class="link-arrow-after">
-                            <a href="javascript:;">
+                        <li>
+                            <a href="javascript:;" class="link-arrow-after">
                                 <i class="icon-certificate-expire"></i><!-- 인증서 만료 icon -->
                                 <strong class="name">김민국</strong>
                                 <p><span>은행개인</span><strong>yessign</strong></p>
-                                <p><span>만료일</span><strong class="num">2022.04.14</strong></p>
+                                <p><span>만료일</span><strong class="num c-black">2022.04.14</strong></p>
                             </a>
                         </li>
-                        <li class="link-arrow-after">
-                            <a href="javascript:;">
+                        <li>
+                            <a href="javascript:;" class="link-arrow-after">
                                 <i class="icon-certificate-expire"></i><!-- 인증서 만료 icon -->
                                 <strong class="name">김민국</strong>
                                 <p><span>은행개인</span><strong>yessign</strong></p>

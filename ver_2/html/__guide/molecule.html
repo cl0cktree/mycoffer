@@ -1076,6 +1076,27 @@
                         <em class="validation">에러 메세지</em>
                     </div>
                 </dd>
+				<dd data-description="인증번호">
+					<div class="kb-form" data-status="">
+						<label for="kbFormCertificationNumber">인증번호</label>
+						<div class="kb-form_inner form-text">
+							<input class="align-l" type="text" inputmode="numeric" id="kbFormCertificationNumber" maxlength="6" value="" placeholder="숫자 6자리">
+							<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+						</div>
+						<div class="time-limit">
+							<div class="timer">
+								<i class="icon-clock"></i>
+								잔여시간 : <strong class="num">2:59</strong>
+							</div>
+							<div class="extension">
+								<button class="btn-line table"><span>인증시간 연장</span></button>
+							</div>
+							<div class="help">
+								<button class="btn-text icon-arrow"><span>인증번호가 오지않나요?</span><i></i></button>
+							</div>
+						</div>
+					</div>
+				</dd>
 			</dl>
 		</div>
 		<hr>
@@ -1669,9 +1690,9 @@
 			</dl>
 		</div>
 		<hr>
-        <!-- Accordian -->
+        <!-- accordion -->
         <div class="box">
-            <h2 class="h2">Accordian</h2>
+            <h2 class="h2">accordion</h2>
             <dl class="flex-dl">
                 <dt>
                     <pre>
@@ -1681,50 +1702,50 @@
                         </code>
                     </pre>
                 </dt>
-                <dd data-description=".accordian : 일반">
-                    <dl class="accordian">
+                <dd data-description=".accordion : 일반">
+                    <dl class="accordion">
                         <dt>
                             <div>타이틀</div>
-                            <button type="button" class="accordian-trigger"></button>
+                            <button type="button" class="accordion-trigger"></button>
                         </dt>
                         <dd>
                             내용
                         </dd>
                         <dt>
                             <strong>타이틀</strong>
-                            <button type="button" class="accordian-trigger"></button>
+                            <button type="button" class="accordion-trigger"></button>
                         </dt>
                         <dd>
                             내용
                         </dd>
                         <dt>
                             <span>타이틀</span>
-                            <button type="button" class="accordian-trigger"></button>
+                            <button type="button" class="accordion-trigger"></button>
                         </dt>
                         <dd>
                             내용
                         </dd>
                     </dl>
                 </dd>
-                <dd data-description=".accordian : checkbox">
-                    <dl class="accordian">
+                <dd data-description=".accordion : checkbox">
+                    <dl class="accordion">
                         <dt>
                             <span class="form-checkbox"><input type="checkbox" id="accrdianCheck01"><label for="accrdianCheck01">아코디언 체크</label></span>
-                            <button type="button" class="accordian-trigger"></button>
+                            <button type="button" class="accordion-trigger"></button>
                         </dt>
                         <dd>
                             내용
                         </dd>
                         <dt>
                             <span class="form-checkbox"><input type="checkbox" id="accrdianCheck02"><label for="accrdianCheck02">아코디언 체크</label></span>
-                            <button type="button" class="accordian-trigger"></button>
+                            <button type="button" class="accordion-trigger"></button>
                         </dt>
                         <dd>
                             내용
                         </dd>
                         <dt>
                             <span class="form-checkbox"><input type="checkbox" id="accrdianCheck03"><label for="accrdianCheck03">아코디언 체크</label></span>
-                            <button type="button" class="accordian-trigger"></button>
+                            <button type="button" class="accordion-trigger"></button>
                         </dt>
                         <dd>
                             내용
@@ -1898,7 +1919,7 @@
                     </div>
 				</dd>
 				<dd data-description=".js-checkbox-selector">
-					<dl class="accordian js-checkbox-selector">
+					<dl class="accordion js-checkbox-selector">
 						<dt><span class="form-checkbox"><input type="checkbox" id="selectAll"><label for="selectAll">상품서비스 안내수단 전체 선택</label></span></dt>
 						<dd style="display:block"><!-- 임시 style (accodian 이 dd가 display:none이어서...)-->
 							<ul class="checkbox-group">
@@ -2826,7 +2847,8 @@
 						</code>
 					</pre>
 				</dt>
-				<dd data-description="페이지 단계별 Step">
+                <dd class="guide-description">.app-content 안에 위치</dd>
+				<dd data-description="페이지 단계별 Step" style="padding-left:0;padding-right:0;">
                     <div class="page-step"><!-- 상단 고정을 하고 싶을 때 js-fixed -->
                         <div class="step" aria-label="총 10단계 중 현재 1단계">
                             <span class="current">1</span>
@@ -2835,7 +2857,7 @@
                         <h2 class="h1">약관동의</h2>
                     </div>
 				</dd>
-				<dd data-description="페이지 단계별 Step (고정상태)">
+				<dd data-description="페이지 단계별 Step (고정상태)" style="padding-left:0;padding-right:0;">
                     <div class="page-step is-fixed"><!-- 상단 고정을 하고 싶을 때 js-fixed -->
                         <div class="step" aria-label="총 10단계 중 현재 1단계">
                             <span class="current">1</span>
@@ -2848,6 +2870,10 @@
             <div class="iframe-view">
                 <strong class="tit">Step 상단 샘플</strong>
                 <iframe src="./sample/layout-step.html" frameborder="0"></iframe>
+            </div>
+            <div class="iframe-view">
+                <strong class="tit">Step 상단 샘플</strong>
+                <iframe src="./sample/layout-step-swiper.html" frameborder="0"></iframe>
             </div>
 		</div>
 	</div>

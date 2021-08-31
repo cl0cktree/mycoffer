@@ -820,34 +820,33 @@ if($('.js-slider').length){
                 }
             }
           });
-
     });
 }
 
-//accordian
-if($('.accordian').length){
-    $('.accordian').each(function(i){
-        var accordianNum = i;
+//accordion
+if($('.accordion').length){
+    $('.accordion').each(function(i){
+        var accordionNum = i;
         $(this).children().each(function(i){
-            var accordianEach = i;
+            var accordionEach = i;
             var tagName = this.tagName.toLowerCase();
-            var $trigger = $(this).find('.accordian-trigger');
+            var $trigger = $(this).find('.accordion-trigger');
             if(tagName == 'dt'){
-                $trigger.attr('id','accordian' + accordianNum + accordianEach);
+                $trigger.attr('id','accordion' + accordionNum + accordionEach);
                 !$(this).hasClass('is-active') ? $trigger.attr('aria-expanded', false) : $trigger.attr('aria-expanded',true)
             }else if(tagName == 'dd'){
-                $(this).attr('aria-labelledby','accordian' + accordianNum + accordianEach);
+                $(this).attr('aria-labelledby','accordion' + accordionNum + accordionEach);
             }
         });
     })
-    $('.accordian')
-    .on('click','.accordian-trigger',function(e){
+    $('.accordion')
+    .on('click','.accordion-trigger',function(e){
         e.stopPropagation();
         var $btn = $(this);
         var $dt = $(this).parent('dt');
         if(!$dt.hasClass('is-active')){
             $btn.attr('aria-expanded',true);
-            $dt.addClass('is-active').siblings('dt').removeClass('is-active').find('.accordian-trigger').attr('aria-expanded','false');
+            $dt.addClass('is-active').siblings('dt').removeClass('is-active').find('.accordion-trigger').attr('aria-expanded','false');
         }else{
             $btn.attr('aria-expanded',false);
             $dt.removeClass('is-active');
@@ -858,7 +857,7 @@ if($('.accordian').length){
     })
     .on('click','dt',function(e){
         e.stopPropagation();
-        $(this).find('.accordian-trigger').trigger('click');
+        $(this).find('.accordion-trigger').trigger('click');
         if(e.target.nodeName.toLowerCase() == 'label') return;
     });
 }
@@ -953,7 +952,7 @@ if($('.toggle-notice').length){
 }
 
 //체크박스 하위 선택
-$('.js-checkbox-selector').each(function(){
+$('.js-checkbox-selector').not("dl").each(function(){
     var $checkboxSelector = $(this);
     var $checkbox = $checkboxSelector.find('input:checkbox');
     var $exception = $checkboxSelector.find('.exception');
@@ -984,6 +983,35 @@ $('.js-checkbox-selector').each(function(){
             }
         });
     });
+});
+//체크박스 하위 선택 (DL 구성)
+$('dl.js-checkbox-selector').on('change','input:checkbox',function(){
+    var tf = $(this).prop('checked');
+
+    if($(this).closest('dt').length){   //상단 전체 선택
+        if(tf){
+            $(this).closest('dt').next('dd').find('input:checkbox').prop('checked',true);
+        }else{
+            $(this).closest('dt').next('dd').find('input:checkbox').prop('checked',false);
+        }
+    }else{  //하단 개별 선택
+        if(tf){
+            if($(this).closest('dd').find('input:checkbox').not(':checked').length == 0){
+                $(this).closest('dd').prev('dt').find('input:checkbox').prop('checked',true);
+            }
+        }else{
+            $(this).closest('dd').prev('dt').find('input:checkbox').prop('checked',false);
+        }
+    }
+    // btn-switch 분리되어있을 때
+    if($(this).closest('.list-controls').length){
+        var targetName = $(this).closest('.js-checkbox-selector').data('target');
+        if(tf){
+            $(this).closest('section').find('dl[data-target="' + targetName + '"]').find('input:checkbox').prop('checked',true);
+        }else{
+            $(this).closest('section').find('dl[data-target="' + targetName + '"]').find('input:checkbox').prop('checked',false);
+        }
+    }
 });
 
 $('.js-checkbox-selector-trigger').on('change','input:checkbox',function(){
@@ -1401,6 +1429,43 @@ function jsSwiperInit($elem) {
     $jsSwiper.addClass("js-swiper-"+id);
     $jsSwiper.data('swiper', new Swiper('.js-swiper-'+id, options));
 }
+
+//Page Step
+var $pageStepWrap = $('.page-step-wrap');
+var $pageStepSwiper = $('.page-step-swiper');
+if($pageStepSwiper.length){    
+    
+    var pageStepSwiper = new Swiper('.page-step-swiper', {
+        allowTouchMove : false,
+        on: {
+            init : function(swiper){                
+                pageStepFn(swiper.activeIndex);
+            },
+            slideChangeTransitionStart: function(swiper){
+                pageStepFn(swiper.activeIndex);
+            }
+        }        
+    });
+
+    function pageStepFn(idx){
+        var activeIdx = idx;
+        var tit = $pageStepSwiper.find('.swiper-slide').eq(activeIdx).find('.step-tit').text();
+        var buttons = $pageStepSwiper.find('.swiper-slide').eq(activeIdx).find('.btn-area').html();
+        $pageStepWrap.find('.page-step .current').text((activeIdx) + 1);
+        $pageStepWrap.find('.page-step h2').attr('data-step', (activeIdx + 1) + '. ');
+        $pageStepWrap.find('.page-step h2').text(tit)
+        $pageStepWrap.find('.sticky-bottom .btn-area').empty().append(buttons);
+    }
+
+    $pageStepWrap
+    .on('click','[data-action=prevStep]',function(){
+        pageStepSwiper.slidePrev();
+    })
+    .on('click','[data-action=nextStep]',function(){
+        pageStepSwiper.slideNext();
+    });
+}
+
 
 
 

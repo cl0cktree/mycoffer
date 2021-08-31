@@ -16,6 +16,9 @@
         'pageTit':'데이터 변경',
         'type':'step'
         })
+        <style>
+            .page-tit{display:block !important;} /* 임시 */
+        </style>
 
         <!-- app-container //-->
         <div class="app-container">
@@ -27,7 +30,7 @@
                         <span class="current">2</span>
                         <span class="total">4</span>
                     </div>
-                    <h2 class="h1">상세 정보 전송 요구</h2>
+                    <h2 class="h1">상세 정보 전송 요청</h2>
                 </div>
 
                 <section class="kb-sec transmission-request">
@@ -73,12 +76,12 @@
                         <div class="desc-box">
                             <ul class="btn-segmented_radio">
                                 <li>
-                                    <input type="radio" name="btnradio" id="btnradio1" checked="">
-                                    <label for="btnradio1">예(주1회)</label>
+                                    <input type="radio" name="btnradio1" id="btnradio1-1" checked="">
+                                    <label for="btnradio1-1">예(주1회)</label>
                                 </li>
                                 <li>
-                                    <input type="radio" name="btnradio" id="btnradio2">
-                                    <label for="btnradio2">아니오</label>
+                                    <input type="radio" name="btnradio1" id="btnradio1-2">
+                                    <label for="btnradio1-2">아니오</label>
                                 </li>
                             </ul>
                         </div>
@@ -89,12 +92,12 @@
                                 <div class="lookup-period">
                                     <ul class="btn-segmented_radio">
                                         <li>
-                                            <input type="radio" name="btnradio" id="btnradio1">
-                                            <label for="btnradio1">1년</label>
+                                            <input type="radio" name="btnradio2" id="btnradio2-1">
+                                            <label for="btnradio2-1">1년</label>
                                         </li>
                                         <li>
-                                            <input type="radio" name="btnradio" id="btnradio2">
-                                            <label for="btnradio2">직접입력(최대1년)</label>
+                                            <input type="radio" name="btnradio2" id="btnradio2-2">
+                                            <label for="btnradio2-2">직접입력(최대1년)</label>
                                         </li>
                                     </ul>
                                     <div class="period-selector">
@@ -127,6 +130,7 @@
                                     <a href="@@webRoot/html/terms/agree-use-personal-info.html" class="link"><span class="link-arrow">바로가기</span></a>
                                 </span>
                             </li>
+                            <!-- 
                             <li>
                                 <span class="form-checkbox_20 align-top">
                                     <input type="checkbox" id="agreeCheck2" checked="">
@@ -134,6 +138,7 @@
                                     <a href="" class="link"><span class="link-arrow">바로가기</span></a>
                                 </span>
                             </li>
+                            -->
                         </ul>
                     </div>
 
@@ -194,6 +199,7 @@
     </div>
 
     <div class="layered">
+        @@include('@@webRoot/html/_layered/bs-calendar.html')
     </div>
 
     <!-- Script -->

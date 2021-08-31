@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "TEST PAGE | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'타이틀영역',
+            'type':'title'
+        })
+
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content page-step-wrap" style="height:1000px;">
+                <div class="page-step js-fixed">    
+                    <div class="step" aria-label="총 10단계 중 현재 1단계">
+                        <span class="current">1</span>                        
+                        <span class="total">10</span>
+                    </div>
+                    <h2 class="h1" data-step="1">약관동의</h2>
+                </div>
+
+                <div class="swiper-container page-step-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <section class="kb-sec">
+                                <h3 class="step-tit is-hidden">약관동의</h3>
+                                단계별 내용1<br>
+                                단계별 내용1<br>
+                                단계별 내용1<br>
+                                단계별 내용1<br>
+                                단계별 내용1<br>
+                                단계별 내용1<br>
+                            </section>
+                            <div class="btn-area is-hidden">
+                                <button type="button" class="btn-solid" data-action="nextStep"><span>2단계로</span></button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <section class="kb-sec">
+                                <h3 class="step-tit is-hidden">단계2</h3>
+                                단계별 내용2<br>
+                                단계별 내용2<br>
+                                단계별 내용2<br>
+                                단계별 내용2<br>
+                                단계별 내용2<br>
+                                단계별 내용2<br>
+                            </section>
+                            <div class="btn-area is-hidden">
+                                <button type="button" class="btn-solid gray" data-action="prevStep"><span>이전</span></button>
+                                <button type="button" class="btn-solid" data-action="nextStep" disabled><span>다음</span></button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <section class="kb-sec">
+                                <h3 class="step-tit is-hidden">단계3</h3>
+                                단계별 내용3<br>
+                                단계별 내용3<br>
+                                단계별 내용3<br>
+                                단계별 내용3<br>
+                                단계별 내용3<br>
+                                단계별 내용3<br>
+                            </section>
+                            <div class="btn-area is-hidden">
+                                <button type="button" class="btn-solid gray" data-action="prevStep"><span>이전</span></button>
+                                <button type="button" class="btn-solid" data-action="nextStep"><span>다음</span></button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <section class="kb-sec">
+                                <h3 class="step-tit is-hidden">단계4</h3>
+                                단계별 내용4<br>
+                                단계별 내용4<br>
+                                단계별 내용4<br>
+                                단계별 내용4<br>
+                                단계별 내용4<br>
+                                단계별 내용4<br>
+                            </section>
+                            <div class="btn-area is-hidden">
+                                <button type="button" class="btn-solid gray" data-action="prevStep"><span>이전</span></button>
+                                <button type="button" class="btn-solid" data-action="nextStep"><span>다음</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sticky-bottom">
+                    <div class="btn-area"></div>
+                </div>
+                
+
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+        <div class="layered">
+        </div>
+    </div>
+
+
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    <script>
+        $(function(){
+            //다음 단계 : pageStepSwiper.slideNext();
+            //이전 단계 : pageStepSwiper.slidePrev();            
+        })
+    </script>
+
+</body>
+
+</html>

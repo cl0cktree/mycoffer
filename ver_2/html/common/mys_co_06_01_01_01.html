@@ -13,22 +13,25 @@
     <div class="app">
         
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
-            'pageTit':'',
-            'type':'back'
+            'pageTit':'자산 등록',
+            'type':'step'
         })
-        
+        <style>
+            .page-tit{display:block !important;} /* 임시 */
+        </style>
 
         <!-- app-container //-->
         <div class="app-container">
-            <div class="page-step js-fixed">    
-                <div class="step" aria-label="총 7단계 중 현재 7단계">
-                    <span class="current">2</span>                        
-                    <span class="total">7</span>
-                </div>
-                <h2 class="h1">기관선택</h2>
-            </div>   
+              
             <!-- app-content // -->
             <main class="app-content select-organization">
+                <div class="page-step js-fixed">    
+                    <div class="step" aria-label="총 7단계 중 현재 7단계">
+                        <span class="current">2</span>                        
+                        <span class="total">7</span>
+                    </div>
+                    <h2 class="h1">기관선택</h2>
+                </div> 
                 <!--// SECTION -->                
                 <section class="kb-sec">
                     <p>연결할 기관을 모두 선택해주세요.</p>
@@ -46,10 +49,10 @@
                 <!--// SECTION -->
                 <section class="kb-sec mt48">
                     <strong class="h4">추천기관</strong>                    
-                    <dl class="accordian js-checkbox-selector mt20">
+                    <dl class="accordion js-checkbox-selector mt20">
                         <dt class="is-active">
                             <span class="form-checkbox"><input type="checkbox" id="accrdianCheck01"><label for="accrdianCheck01">전체</label></span>
-                            <button type="button" class="accordian-trigger"></button>
+                            <button type="button" class="accordion-trigger"></button>
                         </dt>
                         <dd>
                             <ul class="checkbox-group_icon">
@@ -57,8 +60,8 @@
                                     <span class="form-checkbox_icon">
                                         <input type="checkbox" id="org_option01">
                                         <label for="org_option01">
-                                            <span class="img-resize_32"><img src="@@webRoot/static/images/ci/A1AAEO0000.png" alt=""></span><!-- 수정 : 2021.06.25 -->
-                                            <strong>우리은행</strong>
+                                            <span class="img-resize_32"><img src="@@webRoot/static/images/ci/C1AADA0000.png" alt=""></span><!-- 수정 : 2021.06.25 -->
+                                            <strong>국민은행</strong>
                                         </label>
                                     </span>
                                 </li>
@@ -66,7 +69,7 @@
                                     <span class="form-checkbox_icon">
                                         <input type="checkbox" id="org_option02">
                                         <label for="org_option02">
-                                            <span class="img-resize_32"><img src="@@webRoot/static/images/ci/A1AAEO0000.png" alt=""></span><!-- 수정 : 2021.06.25 -->
+                                            <span class="img-resize_32"><img src="@@webRoot/static/images/ci/A1AAER0000.png" alt=""></span><!-- 수정 : 2021.06.25 -->
                                             <strong>신한카드</strong>
                                         </label>
                                     </span>
@@ -75,8 +78,8 @@
                                     <span class="form-checkbox_icon">
                                         <input type="checkbox" id="org_option03">
                                         <label for="org_option03">
-                                            <span class="img-resize_32"><img src="@@webRoot/static/images/ci/A1AAEO0000.png" alt=""></span><!-- 수정 : 2021.06.25 -->
-                                            <strong>신한은행</strong>
+                                            <span class="img-resize_32"><img src="@@webRoot/static/images/ci/C1AAEY0000.png" alt=""></span><!-- 수정 : 2021.06.25 -->
+                                            <strong>삼성카드</strong>
                                         </label>
                                     </span>
                                 </li>
@@ -84,8 +87,8 @@
                                     <span class="form-checkbox_icon">
                                         <input type="checkbox" id="org_option04">
                                         <label for="org_option04">
-                                            <span class="img-resize_32"><img src="@@webRoot/static/images/ci/A1AAEO0000.png" alt=""></span><!-- 수정 : 2021.06.25 -->
-                                            <strong>NH농협은행</strong>
+                                            <span class="img-resize_32"><img src="@@webRoot/static/images/ci/D1AAFO0000.png" alt=""></span><!-- 수정 : 2021.06.25 -->
+                                            <strong>현대카드</strong>
                                         </label>
                                     </span>
                                 </li>
@@ -93,7 +96,7 @@
                                     <span class="form-checkbox_icon">
                                         <input type="checkbox" id="org_option05">
                                         <label for="org_option05">
-                                            <span class="img-resize_32"><img src="@@webRoot/static/images/ci/A1AAEO0000.png" alt=""></span><!-- 수정 : 2021.06.25 -->
+                                            <span class="img-resize_32"><img src="@@webRoot/static/images/ci/D1AADO0000.png" alt=""></span><!-- 수정 : 2021.06.25 -->
                                             <strong>롯데카드</strong>
                                         </label>
                                     </span>
@@ -102,7 +105,7 @@
                                     <span class="form-checkbox_icon">
                                         <input type="checkbox" id="org_option06" disabled>
                                         <label for="org_option06" data-status="inprogress">
-                                            <span class="img-resize_32"><img src="@@webRoot/static/images/ci/A1AAEO0000.png" alt=""></span><!-- 수정 : 2021.06.25 -->
+                                            <span class="img-resize_32"><img src="@@webRoot/static/images/ci/D1AABJ0000.png" alt=""></span><!-- 수정 : 2021.06.25 -->
                                             <strong>하나카드</strong>
                                         </label>
                                     </span>
@@ -115,10 +118,10 @@
                 <!--// SECTION -->
                 <section class="kb-sec mt48">
                     <strong class="h4">기관 선택</strong>
-                    <dl class="accordian t02 js-checkbox-selector">
+                    <dl class="accordion t02 js-checkbox-selector">
                         <dt>
                             <span class="form-checkbox"><input type="checkbox" id="org_option07"><label for="org_option07">은행 <span>15</span></label></span>
-                            <button type="button" class="accordian-trigger"></button>
+                            <button type="button" class="accordion-trigger"></button>
                         </dt>
                         <dd>
                             <ul class="checkbox-group st-list">
@@ -129,7 +132,7 @@
                         </dd>
                         <dt>
                             <span class="form-checkbox"><input type="checkbox" id="org_option11"><label for="org_option11">카드 <span>15</span></label></span>
-                            <button type="button" class="accordian-trigger"></button>
+                            <button type="button" class="accordion-trigger"></button>
                         </dt>
                         <dd>
                             <ul class="checkbox-group st-list">
@@ -138,7 +141,7 @@
                         </dd>
                         <dt>
                             <span class="form-checkbox"><input type="checkbox" id="org_option13"><label for="org_option13">금융투자 <span>15</span></label></span>
-                            <button type="button" class="accordian-trigger"></button>
+                            <button type="button" class="accordion-trigger"></button>
                         </dt>
                         <dd>
                             <ul class="checkbox-group st-list">
@@ -147,7 +150,7 @@
                         </dd>
                         <dt>
                             <span class="form-checkbox"><input type="checkbox" id="org_option15"><label for="org_option15">보험 <span>15</span></label></span>
-                            <button type="button" class="accordian-trigger"></button>
+                            <button type="button" class="accordion-trigger"></button>
                         </dt>
                         <dd>
                             <ul class="checkbox-group st-list">
@@ -156,7 +159,7 @@
                         </dd>
                         <dt>
                             <span class="form-checkbox"><input type="checkbox" id="org_option17"><label for="org_option17">간편결제 <span>15</span></label></span>
-                            <button type="button" class="accordian-trigger"></button>
+                            <button type="button" class="accordion-trigger"></button>
                         </dt>
                         <dd>
                             <ul class="checkbox-group st-list">
@@ -165,7 +168,7 @@
                         </dd>
                         <dt>
                             <span class="form-checkbox"><input type="checkbox" id="org_option17"><label for="org_option17">캐피탈 <span>15</span></label></span>
-                            <button type="button" class="accordian-trigger"></button>
+                            <button type="button" class="accordion-trigger"></button>
                         </dt>
                         <dd>
                             <ul class="checkbox-group st-list">
@@ -174,7 +177,7 @@
                         </dd>   
                         <dt>
                             <span class="form-checkbox"><input type="checkbox" id="org_option23"><label for="org_option23">통신 <span>15</span></label></span>
-                            <button type="button" class="accordian-trigger"></button>
+                            <button type="button" class="accordion-trigger"></button>
                         </dt>
                         <dd>
                             <ul class="checkbox-group st-list">
@@ -183,7 +186,7 @@
                         </dd>
                         <dt>
                             <span class="form-checkbox"><input type="checkbox" id="org_option25"><label for="org_option25">공공기관 <span>15</span></label></span>
-                            <button type="button" class="accordian-trigger"></button>
+                            <button type="button" class="accordion-trigger"></button>
                         </dt>
                         <dd>
                             <ul class="checkbox-group st-list">
@@ -192,7 +195,7 @@
                         </dd>
                         <dt>
                             <span class="form-checkbox"><input type="checkbox" id="org_option25"><label for="org_option25">대부업체 <span>15</span></label></span>
-                            <button type="button" class="accordian-trigger"></button>
+                            <button type="button" class="accordion-trigger"></button>
                         </dt>
                         <dd>
                             <ul class="checkbox-group st-list">
@@ -205,7 +208,7 @@
                 <!-- SECTION //-->
                 <div class="sticky-bottom">
                     <div class="btn-area">
-                        <button type="button" class="btn-solid"><span>선택(1,200)</span></button><!-- 수정 : 2021.06.25 -->
+                        <button type="button" class="btn-solid"><span>확인</span></button><!-- 수정 : 2021.06.25 -->
                     </div>
                 </div>
             </main>
@@ -226,7 +229,18 @@
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
-
+    <script>
+        modalPopup({
+            title: "",
+            message: "일괄 선택 가능한 기관수를 초과하였습니다. 추가하려는 기관을 건별로 선택해주세요."
+            
+        })
+        modalPopup({
+            title: "",
+            message: "선택한 기관 중 두개 이상 업종을 영위하는 기관(카드사 등)이 있습니다. 상세정보 요청 시 확인 가능합니다."
+            
+        })
+    </script>
 </body>
 
 </html>

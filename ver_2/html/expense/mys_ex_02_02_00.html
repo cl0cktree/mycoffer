@@ -23,10 +23,18 @@
 
             <!-- app-content // -->
             <main class="app-content regulaer-expense-layered" data-layered-name="popupRegularExpenseUserRegister">
+                <!-- [D] 2021-08-31 추가 : 필수입력안내란 //-->
+                <section class="kb-sec page-info bg-gray mb40">
+                    <ul class="select-list" data-style="list">
+                        <li><span>아직 확인되지 못한 자산이 있다면 입력해 주세요.</span></li>
+                        <li><span class="required">표시된 항목은 필수 입력 사항입니다.</span></li>
+                    </ul>
+                </section>
+                <!--// [D] 2021-08-31 추가 : 필수입력안내란 -->
                 <!-- 타이틀//-->
                 <section class="kb-sec tit-area_icon-bg">
                     <h3 class="h3">
-                        <i class="icon-expense-4th-insurance"></i>
+                        <i class="icon-box"></i><!-- [D] 2021-08-31 수정 : 아이콘변경 -->
                         <em>정기지출 항목명</em>
                     </h3>
                     <div class="kb-form" data-status="">
@@ -52,7 +60,6 @@
                     <div class="kb-form" data-status="">
                         <label for="regularExpenseUserRegisterPeriod" class="required">이용주기</label>
                         <div class="kb-form_inner form-text">
-                                <!-- <input type="text" inputmode="numeric" id="regularExpenseUserRegisterPeriod" placeholder="1개월" value="1" data-unit="개월" data-action="autoSeperator"> -->
                                 <input type="text" id="regularExpenseUserRegisterPeriod" value="1개월" placeholder="">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
@@ -75,7 +82,7 @@
                     <div class="kb-form" data-status="">
                         <label for="bsSelectOrganization" class="required">결제수단</label>
                         <div class="kb-form_inner form-text" data-role="popup">
-                            <input type="text" id="bsSelectOrganization" value="선택해주세요" role="button" placeholder="" data-call-layered="bsSelectOrganization" readonly="">
+                            <input type="text" id="bsSelectOrganization" value="" role="button" placeholder="선택해주세요" data-call-layered="bsSelectOrganization" readonly=""> <!-- [D] 2021-08-31 수정 : value값 삭제, placeholder 추가 -->
                         </div>
                     </div>
                     <div class="kb-form" data-status="">

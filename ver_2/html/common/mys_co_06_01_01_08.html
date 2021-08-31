@@ -1,4 +1,4 @@
-<!-- [MYS_CO_06_01_01_08] 전송요구방법 > 통합인증 > 기관선택 > 전송 요구 항목 설정 > 공동인증서 선택 > 인증서 비밀번호 입력 > 자산 선택 > 인증서 비밀번호 입력 > 완료(작성자: 누리어 시스템 이진우)// -->
+<!-- [MYS_CO_06_01_01_08] 전송요구방법 > 통합인증 > 기관선택 > 전송 요구 항목 설정 > 공동인증서 선택 > 인증서 비밀번호 입력 > 자산 선택 > 인증서 비밀번호 입력 > 완료(작성자: 누리어 시스템 변혜선)// -->
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -14,7 +14,7 @@
         
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
             'pageTit':'',
-            'type':'back'
+            'type':'complete'
         })
         
 
@@ -38,7 +38,6 @@
                         <button><span>KB금융그룹 계열사</span></button>
                     </div>
                     <h2 class="h4">권유직원선택</h2>
-                    <p>고객님의 마이데이터 서비스 가입 권유에 도움을 준 상담직원 또는 전담 직원을 선택해주세요.</p>
                     <ul class="radio-group">
                         <li>
                             <span class="form-radio">
@@ -76,11 +75,10 @@
                         <div class="recommend-employees-form">
                             <!-- 지점명 // -->
                             <div class="kb-form js-recommend-employees01" data-status="">
-                                <label for="recommendEmployees01">지점명</label>
                                 <div class="kb-form_inner form-select">
                                     <button type="button" class="selected-option"></button>
-                                    <select name="" id="recommendEmployees01" title="지점명/지역명 선택">
-                                        <option value="">지점명/지역명 선택</option>
+                                    <select name="" id="recommendEmployees01" title="지점명">
+                                        <option value="">지점명</option>
                                         <option value="">지점명</option>
                                         <option value="">지역명(시,구,군,읍,면,동)</option>
                                     </select>
@@ -88,9 +86,8 @@
                                 <em class="validation">Message</em>
                             </div>
                             <div class="kb-form js-recommend-employees02" data-status="">
-                                <label for="recommendEmployees02">지점명 or 지역명</label>
                                 <div class="kb-form_inner form-text">
-                                    <input type="text" id="recommendEmployees02" value="">
+                                    <input type="text" id="recommendEmployees02" value="지점명">
                                     <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                                     <a href="@@webRoot/html/common/mys_co_05_02_02.html" class="btn-solid form"><span>검색</span></a>
                                 </div>
@@ -99,9 +96,8 @@
                             <!-- // 지점명 -->
                             <!-- 직원이름 //-->
                             <div class="kb-form js-recommend-employees04" data-status="">
-                                <label for="recommendEmployees04">직원이름</label>
                                 <div class="kb-form_inner form-text">
-                                    <input type="text" id="recommendEmployees04" value="">
+                                    <input type="text" id="recommendEmployees04" value="" placeholder="직원이름">
                                     <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                                     <a href="@@webRoot/html/common/mys_co_05_02_02.html" class="btn-solid form"><span>검색</span></a>
                                 </div>
@@ -110,9 +106,8 @@
                             <!-- // 직원이름 -->
                             <!-- 직원번호 //-->
                             <div class="kb-form js-recommend-employees03" data-status="">
-                                <label for="recommendEmployees03">직원번호</label>
                                 <div class="kb-form_inner form-text">
-                                    <input type="text" id="recommendEmployees03" value="">
+                                    <input type="text" id="recommendEmployees03" value="" placeholder="직원번호">
                                     <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                                     <a href="@@webRoot/html/common/mys_co_05_02_02.html" class="btn-solid form"><span>검색</span></a>
                                 </div>
@@ -120,15 +115,11 @@
                             </div>
                             <!-- // 직원번호 -->
                             
-                            <p><button type="button" class="btn-line form"><span>검색초기화</span></button></p>
+                            <p><button type="button" class="btn-line"><span>검색초기화</span></button></p>
                         </div>
                     </div>
                     <div class="kb-form is-active is-readonly">
-                        <label for="">추천인코드</label>
-                        <div class="kb-form_inner form-text">
-                            <input type="text" id="" value="abcdefg12345" readonly>
-                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                        </div>
+                        <p>추천인코드:<span>KBstar1</span></p>
                     </div>
                 </section>
 
@@ -167,9 +158,7 @@
                 <!-- SECTION //-->
                 <div class="sticky-bottom">
                     <div class="btn-area">
-                        <button type="button" class="btn-solid gray"><span>자산 추가하기</span></button>
-                        <!--<button type="button" class="btn-solid"><span>메인으로 이동</span></button><!-- 수정 : 2021.06.11 -->
-                        <a href="javascript:;" class="btn-solid" role="button"><span>메인으로 이동</span></a><!-- 수정 : 2021.06.11 -->
+                        <button type="button" class="btn-solid"><span>확인</span></button>
                     </div>
                 </div>
 

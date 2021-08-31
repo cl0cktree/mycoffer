@@ -1,0 +1,114 @@
+<!-- [MYS_CO_06_01_01_01] 전송요구방법 > 통합인증 > 기관 선택 (작성자: 누리어 시스템 변혜선)// -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Last Depth | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'',
+            'type':'back'
+        })
+        
+
+        <!-- app-container //-->
+        <div class="app-container">
+              
+            <!-- app-content // -->
+            <main class="app-content select-organization">
+                <div class="page-step js-fixed">    
+                    <div class="step" aria-label="총 7단계 중 현재 7단계">
+                        <span class="current">3</span>                        
+                        <span class="total">3</span>
+                    </div>
+                    <h2 class="h1">정보 전송 요청</h2>
+                </div> 
+                <!--// SECTION -->                
+                <section class="kb-sec">
+                    <p>자산정보를 가져오기 위한 요구사항을 확인하시고, 동의해주세요.</p>
+                    <div class="kb-form mt24" data-status="">
+                        <!-- <label for="formTextSample0555">기관명</label>
+                        <div class="kb-form_inner form-text">
+                            <input type="text" id="formTextSample0555" value="" placeholder="기관명">
+                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                            <button type="button" class="btn-search"><i class="icon-search">검색</i></button>
+                        </div> -->
+                    </div>  
+                    <div class="kb-card">
+                        <label for="org_option01">
+                            <span class="img-resize_32"><img src="@@webRoot/static/images/ci/A1AAEO0000.png" alt=""></span>
+                            <strong>KB국민은행</strong>
+                        </label>
+                        <p>선택하신 기관에 정보 전송을 요청합니다.</p>
+                    </div>                  
+                </section>
+                <!-- SECTION //-->
+                <!--// SECTION -->
+                <section class="kb-sec confirm-agree">
+                    <h3 class="is-hidden">약관 및 동의서 동의하기</h3>
+                    <div class="agreement-to-terms">                        
+                        <ul class="checkbox-group st_list">
+                            <li>
+                                <span class="form-checkbox_20 align-top">
+                                    <input type="checkbox" id="agreeCheck1" checked="">
+                                    <label for="agreeCheck1">개인(신용)정보 수집·이용 동의 <br>(상세정보 전송) [필수]</label>
+                                    <a href="@@webRoot/html/terms/agree-use-personal-info.html" class="link"><span class="link-arrow">바로가기</span></a>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="form-checkbox_20 align-top">
+                                    <input type="checkbox" id="agreeCheck2" checked="">
+                                    <label for="agreeCheck2">개인(신용)정보 제공 동의서 [필수]</label>
+                                    <a href="" class="link"><span class="link-arrow">바로가기</span></a>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- SECTION //-->
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid"><span>선택(1,200)</span></button><!-- 수정 : 2021.06.25 -->
+                    </div>
+                </div>
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+        <!-- Layer (modal, bottom sheet) // -->
+        <div class="layered">
+            
+        </div>
+        <!-- // Layer (modal, bottom sheet) -->
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    <script>
+        // modalPopup({
+        //     title: "",
+        //     message: "일괄 선택 가능한 기관수를 초과하였습니다. 추가하려는 기관을 건별로 선택해주세요."
+            
+        // })
+        // modalPopup({
+        //     title: "",
+        //     message: "선택한 기관 중 두개 이상 업종을 영위하는 기관(카드사 등)이 있습니다. 상세정보 요청 시 확인 가능합니다."
+            
+        // })
+    </script>
+</body>
+
+</html>
+<!-- // [MYS_CO_06_01_01] 전송요구방법 > 통합인증 > 기관 선택 -->

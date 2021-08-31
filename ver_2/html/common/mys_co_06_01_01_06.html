@@ -14,9 +14,11 @@
         
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
             'pageTit':'데이터 변경',
-            'type':''
+            'type':'step'
         })
-        
+        <style>
+            .page-tit{display:block !important;} /* 임시 */
+        </style>
         <!-- app-container //-->
         <div class="app-container">
 
@@ -24,8 +26,8 @@
             <main class="app-content select-assets">
                 <div class="page-step js-fixed">  
                     <div class="step" aria-label="총 4단계 중 현재 1단계">
-                        <span class="current">1</span>                        
-                        <span class="total">4</span>
+                        <span class="current">6</span>                        
+                        <span class="total">7</span>
                     </div>
                     <h2 class="h1">자산선택</h2>
                 </div>
@@ -36,10 +38,10 @@
 
                     <h3 class="h4">연결 성공<span class="num">7</span></h3>
 
-                    <dl class="accordian js-checkbox-selector">
+                    <dl class="accordion js-checkbox-selector">
                         <dt>
                             <span class="form-checkbox"><input type="checkbox" id="bank01"><label for="bank01">IBK기업은행</label></span>
-                            <button type="button" class="accordian-trigger"></button>
+                            <button type="button" class="accordion-trigger"></button>
                         </dt>
                         <dd>
                             <ul class="checkbox-group">
@@ -49,7 +51,7 @@
                         </dd>
                         <dt>
                             <span class="form-checkbox"><input type="checkbox" id="bank02"><label for="bank02">신한은행</label></span>
-                            <button type="button" class="accordian-trigger"></button>
+                            <button type="button" class="accordion-trigger"></button>
                         </dt>
                         <dd>
                             <ul class="checkbox-group">
@@ -58,7 +60,7 @@
                         </dd>
                         <dt>
                             <span class="form-checkbox"><input type="checkbox" id="bank03"><label for="bank03">KB국민카드</label></span>
-                            <button type="button" class="accordian-trigger"></button>
+                            <button type="button" class="accordion-trigger"></button>
                         </dt>
                         <dd>
                             <ul class="checkbox-group">
@@ -67,7 +69,7 @@
                         </dd>
                         <dt>
                             <span class="form-checkbox"><input type="checkbox" id="bank04"><label for="bank04">KB증권</label></span>
-                            <button type="button" class="accordian-trigger"></button>
+                            <button type="button" class="accordion-trigger"></button>
                         </dt>
                         <dd>
                             <ul class="checkbox-group">
@@ -76,7 +78,7 @@
                         </dd>
                         <dt>
                             <span class="form-checkbox"><input type="checkbox" id="bank05"><label for="bank05">KB손해보험</label></span>
-                            <button type="button" class="accordian-trigger"></button>
+                            <button type="button" class="accordion-trigger"></button>
                         </dt>
                         <dd>
                             <ul class="checkbox-group">
@@ -85,7 +87,7 @@
                         </dd>
                         <dt>
                             <span class="form-checkbox"><input type="checkbox" id="bank05"><label for="bank05">네이버파이낸셜</label></span>
-                            <button type="button" class="accordian-trigger"></button>
+                            <button type="button" class="accordion-trigger"></button>
                         </dt>
                         <dd>
                             <ul class="checkbox-group">
@@ -94,7 +96,7 @@
                         </dd>
                         <dt>
                             <span class="form-checkbox"><input type="checkbox" id="bank05"><label for="bank05">NH농협카드</label></span>
-                            <button type="button" class="accordian-trigger"></button>
+                            <button type="button" class="accordion-trigger"></button>
                         </dt>
                         <dd>
                             <ul class="checkbox-group">
@@ -104,10 +106,10 @@
                     </dl>
 
                     <h2 class="h4">연결 지연<span class="num">1</span></h2>
-                    <dl class="accordian js-checkbox-selector">
+                    <dl class="accordion js-checkbox-selector">
                         <dt>
-                            <span class="form-checkbox"><input type="checkbox" id="card01"><label for="card01">롯데오토리스</label></span>
-                            <button type="button" class="accordian-trigger"></button>
+                            <span>롯데오토리스</span>
+                            <button type="button" class="accordion-trigger"></button>
                         </dt>
                         <dd>
                             <div class="data-delay">
@@ -120,10 +122,10 @@
                     
                     <h2 class="h4">연결 실패<span class="num">1</span></h2>
                     
-                    <dl class="accordian js-checkbox-selector">
+                    <dl class="accordion js-checkbox-selector">
                         <dt>
-                            <span class="form-checkbox"><input type="checkbox" id="card01"><label for="card01">러시앤캐시</label></span>
-                            <button type="button" class="accordian-trigger"></button>
+                            <span>러시앤캐시</span>
+                            <button type="button" class="accordion-trigger"></button>
                         </dt>
                         <dd>
                             <div class="no-data">
@@ -159,12 +161,12 @@
     <!-- Add Script -->
 
     <script>
-        $('.sticky-bottom button').on('click', function() {
-            modalPopup({
-                title: '',
-                message: "연결 가능한 상품(계좌)/정보가 없어 데이터 연결이 취소 됩니다.?"
-            });
-        });
+        // $('.sticky-bottom button').on('click', function() {
+        //     modalPopup({
+        //         title: '',
+        //         message: "연결 가능한 상품(계좌)/정보가 없어 데이터 연결이 취소 됩니다.?"
+        //     });
+        // });
     </script>
 
 </body>

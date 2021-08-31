@@ -2,81 +2,152 @@
 <!-- 조회, 설정 팝업// -->
 <div class="bottom-sheet" data-layered-name="mys_as_05_01_02_p1" >
     <div class="bottom-sheet_header">
-        <span class="tit">조회 조건 선택</span>
+        <span class="tit">조회기간 설정</span>
     </div>
     <div class="bottom-sheet_contents">
-        <section class="kb-sec">
-            <div class="is-active">
-                <div class="kb-form" data-status="error">
+        <section class="kb-sec more-view-box">
+            <div class="filter-period-setting more-view-item" data-status="" data-view-option="show">
+                <div class="kb-form">
                     <strong class="label">조회기간</strong>
                     <div class="lookup-period">
-                        <ul class="btn-segmented">
-                            <li><button><span>1개월</span></button></li>
-                            <li><button><span>3개월</span></button></li>
-                            <li><button><span>1년</span></button></li>
-                            <li><button class="is-selected"><span>직접입력</span></button></li>
+                        <ul class="btn-segmented_check">
+                            <li>
+                                <input type="radio" name="searchPeriod" id="searchPeriod1" checked="">
+                                <label for="searchPeriod1">1개월</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="searchPeriod" id="searchPeriod2">
+                                <label for="searchPeriod2">3개월</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="searchPeriod" id="searchPeriod3">
+                                <label for="searchPeriod3">1년</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="searchPeriod" id="searchPeriod4">
+                                <label for="searchPeriod4">직접입력</label>
+                            </li>
                         </ul>
-                        <div class="period-selector">
-                            <input type="text" title="시작날짜" value="2021.08.28" readonly="">
-                            <span>~</span>
-                            <input type="text" title="종료날짜" value="2021.08.31" readonly="">
-                            
+                        <div class="kb-form" data-status="error">
+                            <div class="period-selector">
+                                <input type="text" title="시작날짜" value="2021.08.28" readonly="">
+                                <span>~</span>
+                                <input type="text" title="종료날짜" value="2021.08.31" readonly="">
+                            </div>
+                            <em class="validation">조회기간은 최대 60개월 입니다.</em>
                         </div>
-                        <em class="validation">조회기간은 최대 60개월 입니다.</em>
                     </div>
                 </div>
-                <!--입출금//-->
+                <!-- 입출금 // -->
                 <div class="kb-form">
                     <strong class="label">거래유형</strong>
                     <div class="lookup-period">
-                        <ul class="btn-segmented">
-                            <li><button><span>전체</span></button></li>
-                            <li><button><span>입금</span></button></li>
-                            <li><button class="is-selected"><span>출금</span></button></li>
+                        <ul class="btn-segmented_check">
+                            <li>
+                                <input type="radio" name="typeChkbox" id="typeRadio01">
+                                <label for="typeRadio01">전체</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="typeChkbox" id="typeRadio02">
+                                <label for="typeRadio02">입금</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="typeChkbox" id="typeRadio03" checked="">
+                                <label for="typeRadio03">출금</label>
+                            </li>
                         </ul>
                     </div>
                 </div>
-                <!--//입출금-->
-                <!--페이//-->
+                <!-- // 입출금 -->
+                <!-- 페이 // -->
                 <div class="kb-form">
                     <strong class="label">거래유형</strong>
                     <div class="lookup-period">
-                        <ul class="btn-segmented">
-                            <li><button class="is-selected"><span>전체</span></button></li>
-                            <li><button><span>충전</span></button></li>
-                            <li><button><span>결제</span></button></li>
-                            <li><button><span>송금</span></button></li>
-                            <li><button><span>적립</span></button></li>
-                            <li><button><span>기타</span></button></li>
+                        <ul class="btn-segmented_check" data-grid="3">
+                            <li>
+                                <input type="radio" name="payTypeChkbox" id="payTypeRadio01">
+                                <label for="payTypeRadio01">전체</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="payTypeChkbox" id="payTypeRadio02">
+                                <label for="payTypeRadio02">충전</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="payTypeChkbox" id="payTypeRadio03" checked="">
+                                <label for="payTypeRadio03">결제</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="payTypeChkbox" id="payTypeRadio04">
+                                <label for="payTypeRadio04">송금</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="payTypeChkbox" id="payTypeRadio05">
+                                <label for="payTypeRadio05">적립</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="payTypeChkbox" id="payTypeRadio06" checked="">
+                                <label for="payTypeRadio06">기타</label>
+                            </li>
                         </ul>
                     </div>
                 </div>
-                <!--//페이-->
+                <!-- // 페이 -->
                 <div class="kb-form">
                     <strong class="label">내역정렬</strong>
                     <div class="lookup-period">
-                        <ul class="btn-segmented">
-                            <li><button><span>최신순</span></button></li>
-                            <li><button class="is-selected"><span>과거순</span></button></li>
+                        <ul class="btn-segmented_check">
+                            <li>
+                                <input type="radio" name="sortingOrder" id="sortingOrder1" checked="">
+                                <label for="sortingOrder1">최신순</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="sortingOrder" id="sortingOrder2">
+                                <label for="sortingOrder2">과거순</label>
+                            </li>
                         </ul>
                     </div>
                 </div>
-                <div class="kb-form">
-                    <span class="form-radio"><input type="checkbox" id="conditionSearch"><label for="conditionSearch">조건검색</label></span>
-                    <div class="kb-form mt32" data-status="">
+                <div class="btn-area right mt24">
+                    <a href="javascript:;" class="btn-text btn-more-view" role="button">
+                        <span class="hide-status">상세검색</span><span class="show-status">상세검색</span><i class="icon-arrow-down"></i>
+                    </a>
+                </div>
+                <div class="filter-category-setting more-view-item" data-status="" data-view-option="hide">                    
+                    <!-- 조회금액 //-->
+                    <div class="kb-form_multi kb-form_boundary" data-status="error">
+                        <div class="kb-form not-ready">
+                            <label for="formAmountBoundary01">최소 금액</label>
+                            <div class="kb-form_inner form-text">
+                                <input type="text" inputmode="numeric" id="formAmountBoundary01" placeholder="최소" value="" data-unit="원" data-action="autoSeperator">
+                            </div>
+                        </div>
+                        <div class="between">~</div>
+                        <div class="kb-form not-ready" data-status="">
+                            <label for="formAmountBoundary02">최대 금액</label>
+                            <div class="kb-form_inner form-text">
+                                <input type="text" inputmode="numeric" id="formAmountBoundary02" placeholder="최대" value="" data-unit="원" data-action="autoSeperator">
+                            </div>
+                        </div>
+                        <em class="validation">숫자만 입력해 주세요.(예:10000)</em><!-- 성공/에러 메세지 -->
+                    </div>                    
+                    <!--// 조회금액 -->
+                    <!-- 매장명(사용처) 검색 //-->
+                    <div class="kb-form" data-status="">
+                        <strong class="label">매장명(사용처) 검색</strong>
                         <div class="kb-form_inner form-text">
-                            <input type="text" id="" value="" title="금액 또는 매장명" placeholder="금액 또는 매장명을 입력해주세요">
+                            <input type="text" id="nameSearch" placeholder="직접입력" name="nameSearch">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
-                        <p class="info-msg">금액은 숫자만 입력해 주세요(예: 10000) <br>매장명 입력 시 한글이나 영문을 1글자 이상 입력해 주세요</p>
+                        <p class="info-msg">한글 또는 영문 2자 이상 입력해주세요.</p>
+                        <p class="info-msg">'적용' 미동의 고객의 경우, 검색 정보가 없을 수 있습니다.</p>
                     </div>
+                    <!--// 매장명(사용처) 검색 -->
                 </div>
             </div>
         </section>
     </div>
     <div class="bottom-sheet_buttons">
-        <button class="btn-solid gray" data-action="close"><span>초기화</span></button>
-        <button class="btn-solid"><span>확인</span></button>
+        <button class="btn-solid"><span>조회</span></button>
     </div>
     <button class="btn-close" data-action="close"><span>닫기</span></button>
 </div>

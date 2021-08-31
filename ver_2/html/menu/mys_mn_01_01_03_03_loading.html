@@ -1,0 +1,60 @@
+<!-- [MYS_MN_01_01_03_03] 전체메뉴 > My Data 관리 > 다른기관 > 변경 > 자산선택 > 인증서 선택 (작성자: 누리어 시스템 최선화) // -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Last Depth | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'',
+            'type':'title'
+        })
+        
+        <!-- app-container //-->
+        <div class="app-container">
+            
+            <!-- app-content // -->
+            <main class="app-content select-certificate">
+                
+                <section class="kb-sec">
+                    <div class="loading-msg">
+                        <img src="@@webRoot/static/images/common/certificate_loading.png" alt="">
+                        <p class="tit"><strong>금융인증서비스 화면을<br>불러오는 중입니다.</strong></p>
+                    </div>
+                </section>
+
+            </main>
+            <!-- // app-content -->
+
+        </div>        
+        <!-- // app-container -->
+    </div>
+
+    <div class="layered">
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+
+    <script>
+        $('.sticky-bottom button').on('click', function() {
+            modalPopup({
+                title: '',
+                message: "연결 가능한 상품(계좌)/정보가 없어 데이터 연결이 취소 됩니다.?"
+            });
+        });
+    </script>
+
+</body>
+
+</html>

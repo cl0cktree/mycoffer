@@ -1,0 +1,109 @@
+<!-- [MYS_CO_06_01_00] 전송 요구 방법 선택 (작성자: 누리어 시스템 변혜선)// -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Last Depth | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'',
+            'type':'back'
+        })
+        
+
+        <!-- app-container //-->
+        <div class="app-container">
+             
+            <!-- app-content // -->
+            <main class="app-content select-transmission-method">                
+                <div class="page-step js-fixed">    
+                    <div class="step" aria-label="총 7단계 중 현재 7단계">
+                        <span class="current">1</span>                        
+                        <span class="total">5</span>
+                    </div>
+                    <h2 class="h1">인증요청</h2>
+                </div>    
+                <section class="kb-sec">
+                    <div class="visual-area">
+						<img src="@@webRoot/static/images/common/transmission_request_int.png" alt="전송요구 이미지">
+						<div class="text">
+							<span class="stxt">본인명의 휴대폰 및 계좌비밀번호 확인을 통해<br>
+                                본인인증거래를 수행합니다</span>
+						</div>
+					</div>                                 
+                    <!-- <ul class="box-option-list is-link mt20">
+                        <li>
+                            <a href="mys_co_06_01_01_01.html" class="link-box_block">
+                                <span><i class="icon-certificate"></i></span>
+                                <p>
+                                    <strong>한 번에 모아오기</strong>
+                                    <span>여러 기관에 있는 내 자산 정보를<br>공동인증서로 한 번에 가져오기</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mys_co_06_01_01_01-1.html" class="link-box_block">
+                                <span><i class="icon-certificate"></i></span>
+                                <p>
+                                    <strong>하나씩 가져오기</strong>
+                                    <span>원하는 기관 선택 후<br>기관별 인증 방식에 따라 하나씩 가져오기</span>
+                                </p>
+                            </a>
+                        </li>
+                    </ul> -->
+                </section>
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid" onclick="modalDemo2()"><span>인증요청</span></button>
+                    </div>
+                </div>                
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+        <!-- Layer (modal, bottom sheet) // -->
+        <div class="layered">
+            @@include('@@webRoot/html/_layered/bs-calendar.html')
+            @@include('@@webRoot/html/_layered/modal-alert.html')
+        </div>
+        <!-- // Layer (modal, bottom sheet) -->
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+     <script src="@@webRoot/static/js/ui.js"></script>
+    <script>
+        function modalDemo2() {
+            modalPopup({
+                title: "",
+                message: "다른 기관 자산 정보를 등록하기 위해서는 인증서 등록이 필요합니다. KB스타뱅킹으로 이동하시겠습니다까?",
+                type: "confirm",
+                textOkButton: "취소",
+                textCancelButton: "확인",
+            });
+        }
+       
+        // function addCategoryLimitNumber() {
+        //     modalPopup({
+        //         title: "",
+        //         message: "마이데이터 서비스는 <br>만 19세 이상 고객에 대해 제공됩니다."
+        //     });
+        // }
+        // addCategoryLimitNumber();
+    </script>
+    <!-- Add Script -->
+
+</body>
+
+</html>
+<!-- // [MYS_CO_04_01_03] 전송 요구 방법 선택 -->

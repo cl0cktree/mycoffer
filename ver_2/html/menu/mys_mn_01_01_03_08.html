@@ -16,21 +16,52 @@
             'pageTit':'전송기간 연장',
             'type':'step'
         })
-        
+        <style>
+            .page-tit{display:block !important;} /* 임시 */
+        </style>
+
         <!-- app-container //-->
         <div class="app-container">
 
-            <div class="page-step js-fixed">  
-                <div class="step" aria-label="총 3단계 중 현재 2단계">
-                    <span class="current">2</span>                        
-                    <span class="total">3</span>
-                </div>
-                <h2 class="h1">인증서 선택</h2>
-            </div>  
+            
             <!-- app-content // -->
-            <main class="app-content joint-certificate">                
+            <main class="app-content select-certificate">                
+                <div class="page-step js-fixed">  
+                    <div class="step" aria-label="총 3단계 중 현재 2단계">
+                        <span class="current">2</span>                        
+                        <span class="total">3</span>
+                    </div>
+                    <h2 class="h1">인증서 선택</h2>
+                </div>  
+
                 <section class="kb-sec">
-                   
+                    <p class="page-step-desc">사용할 인증서를 선택해 주세요.</p> 
+
+                    <div class="caution-txt">
+                        <ul class="certificate-list">
+                            <li>
+                                <a href="javascript:;">
+                                    <i class="icon-certificate-kb_40"></i> 
+                                    <span class="txt">KB모바일인증서<span class="tag-label t03 round" data-state="active">사용가능</span></span>
+                                    <span class="link-arrow">바로가기</span>
+                                </a>
+                            </li> 
+                            <li>
+                                <a href="javascript:;" data-call-layered="mys_mn_01_01_03_02_certificate">
+                                    <i class="icon-certificate-co_40"></i> 
+                                    <span class="txt">공동인증서<span class="tag-label t03 round" data-state="active">사용가능</span></span>
+                                    <span class="link-arrow">바로가기</span>
+                                </a>
+                            </li> 
+                            <li>
+                                <a href="javascript:;">
+                                    <i class="icon-certificate-fin_40"></i> 
+                                    <span class="txt">금융인증서<span class="tag-label t03 round" data-state="inactive">발급필요</span></span>
+                                    <span class="link-arrow">바로가기</span>
+                                </a>
+                            </li> 
+                        </ul>
+                    </div>
                 </section>
                 
             </main>
@@ -41,6 +72,50 @@
     </div>
 
     <div class="layered">
+        <!-- 통합인증거래 이용동의 // -->
+        <div class="bottom-sheet" data-layered-name="mys_mn_01_01_03_02_certificate">
+            <div class="bottom-sheet_header">
+                <span class="tit">통합인증거래 이용동의</span>
+            </div>
+            <div class="bottom-sheet_contents">
+                <section class="kb-sec confirm-agree">
+                    <div class="agreement-to-terms">
+                        <div class="header">
+                            <span class="form-checkbox">
+                                <input type="checkbox" id="agreeAllCheck" checked="">
+                                <label for="agreeAllCheck">전체동의</label>
+                            </span>
+                        </div>
+                        <ul class="checkbox-group st_list">
+                            <li>
+                                <span class="form-checkbox_20 align-top">
+                                    <input type="checkbox" id="agreeCheck1" checked="">
+                                    <label for="agreeCheck1">[필수]통합인증을 위한 인증서 본인확인 서비스 이용약관</label>
+                                    <a href="@@webRoot/html/terms/agree-use-personal-info.html" class="link"><span class="link-arrow">바로가기</span></a>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="form-checkbox_20 align-top">
+                                    <input type="checkbox" id="agreeCheck2" checked="">
+                                    <label for="agreeCheck2">[필수]통합인증(인증서 본인확인)을 위한 개인정보 처리 동의</label>
+                                    <a href="" class="link"><span class="link-arrow">바로가기</span></a>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="form-checkbox_20 align-top">
+                                    <input type="checkbox" id="agreeCheck3" checked="">
+                                    <label for="agreeCheck3">[필수]통합인증(인증서 본인확인)을 위한 고유식별정보 수집・이용 및 위탁 동의</label>
+                                    <a href="" class="link"><span class="link-arrow">바로가기</span></a>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </section>
+            </div>
+            <button class="btn-close" data-action="close"><span>닫기</span></button>
+        </div>
+        <!-- // 통합인증거래 이용동의 -->
     </div>
 
     <!-- Script -->

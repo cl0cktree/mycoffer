@@ -13,29 +13,29 @@
     <div class="app">
         
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
-            'pageTit':'',
-            'type':'back'
+            'pageTit':'자산 등록',
+            'type':'home'
         })
-        
+        <style>
+            .page-tit{display:block !important;} /* 임시 */
+        </style>
 
         <!-- app-container //-->
         <div class="app-container">
-            <div class="page-step js-fixed">    
-                <div class="step" aria-label="총 7단계 중 현재 7단계">
-                    <span class="current">1</span>                        
-                    <span class="total">7</span>
-                </div>
-                <h2 class="h1">마이데이터 연결하기</h2>
-            </div>     
+             
             <!-- app-content // -->
             <main class="app-content select-transmission-method">                
+                <div class="page-step js-fixed">    
+                    <div class="step" aria-label="총 7단계 중 현재 7단계">
+                        <span class="current">1</span>                        
+                        <span class="total">7</span>
+                    </div>
+                    <h2 class="h1">마이데이터 연결하기</h2>
+                </div>    
                 <section class="kb-sec">
                     <div class="caution-txt">
                         <p>
-                            KB국민은행은 자산 및 지출, 목표 설정 등 금융
-                            자산뿐 아니라 부동산, 신용, 자동차 등 비금융 
-                            자산까지 고객의 미래 설계에 보탬이 되는 다양한
-                            콘텐츠를 통해 새로운 금융 경험 제공합니다.                      
+                            KB국민은행은 금융자산뿐 아니라 비금융 자산까지 고객의 미래 설계에 보템이 되는 다양한 콘텐츠를 통해 새로운 금융 경험을 제공합니다.                      
                         </p>  
                     </div>                    
                     <div class="visual-area">
@@ -99,8 +99,8 @@
                 title: "",
                 message: "다른 기관 자산 정보를 등록하기 위해서는 인증서 등록이 필요합니다. KB스타뱅킹으로 이동하시겠습니다까?",
                 type: "confirm",
-                textOkButton: "취소",
-                textCancelButton: "확인",
+                textOkButton: "확인",
+                textCancelButton: "취소",
             });
         }
        

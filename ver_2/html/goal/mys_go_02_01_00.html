@@ -13,7 +13,7 @@
 		<!-- app-header //-->
 		@@include('@@webRoot/html/_include/app-integrated-header.html', {
             pageTit:'저금통 거래내역',
-            type: 'back'
+            type: ''
         })
 		<!-- // app-header -->
 
@@ -26,12 +26,11 @@
 				<!-- 저금통 거래내역 상단 // -->
 				<section class="kb-sec full trans-history-status">
 					<div class="inner">
-						<button class="btn-mng" type="button" data-call-layered="bsPiggyBankMng"><i class="icon-more_24">저금통 관리</i></button>
+						<button class="btn-text" data-call-layered="bsPiggyBankMng"><u>관리</u></button>
 						<div class="center-text">
 							<h2 class="title">저금통</h2>
-							<span class="amount"><span class="num">1,700,000원</span></span>
+							<span class="amount"><span class="num" data-unit-after="원">1,700,000</span></span>
 						</div>
-						<!-- 2021-07-19 수정 // -->
 						<div class="character-graph" data-theme="character">
 							<div class="graph-area">
 								<span data-goal="50" class="green"><!-- ago,kolly 케이스: green 추가 -->
@@ -42,18 +41,20 @@
 								<p class="end-txt"><strong class="end">목표 3백만원</strong></p><!-- 마지막부분 텍스트 -->
 							</div>
 							<div class="graph-account">
-								<p class="left-txt"><em>연결계좌</em><span>계좌별명</span></p>
-								<p class="right-txt"><span class="num">025200-00-000000</span></p>
+								<h3 class="tit">연결계좌</h3>
+								<div class="desc">
+									<p class="left-txt">계좌별명계좌별명계좌별명좌별명계좌별명</p>
+									<p class="right-txt"><span class="num">025200-00-000000</span></p>
+								</div>
 							</div>
 						</div>
-						<!-- // 2021-07-19 수정 -->
 					</div>
 				</section>
 				<!-- // 저금통 거래내역 상단 -->
-
+				<hr class="hr-divide_32">
 				<!-- 저금통 거래내역 챌린지 선택 // -->
 				<section class="kb-sec trans-history-list">
-					<h2 class="tit">챌린지명</h2>
+					<h2 class="is-hidden">챌린지명</h2>
 					<ul class="btn-segmented_radio js-challenge-radio">
 						<li>
 							<input type="radio" name="radioChallenge" id="radioChallenge1" checked>
@@ -133,16 +134,21 @@
 				<section class="kb-sec">
 					<h2 class="is-hidden">저금통 거래내역 목록</h2>
                     <div class="account-detail">
-                        <div class="condition-area">
-                            <button class="btn-condition" data-call-layered="bsGoalHistorySearch">
-                                <div>
-                                    <div class="sorting-status">
-                                        <span>2021.01.01~2021.01.01</span>
-                                    </div>                                    
-                                    <i class="arrow">조회조건 선택</i>
-                                </div>
-                            </button>
-                        </div>
+                        <div class="filter-area">
+							<div class="condition-area">
+								<button class="btn-condition" data-call-layered="">
+									<div>
+										<div class="sorting-status">
+											<span><em class="num">1</em>개월</span>
+											<span>전체</span>
+											<span>최신순</span>
+										</div>
+										<i class="arrow">조회조건 선택</i>
+									</div>
+								</button>
+							</div>
+						</div>
+                        <!-- 수정예정: 디자인 가이드 미확정 // -->
                         <div class="line-list-wrap type-time-line">
                             <ul class="d-list">
                                 <li class="lately">
@@ -194,7 +200,10 @@
                                     </div>
                                 </li>
                             </ul>
-                        </div>
+                        </div>						
+                        <!-- // 수정예정: 디자인 가이드 미확정 -->
+						
+						<button type="button" class="btn-more-plus"><span>더보기</span></button>
                     </div>                 
                 </section>
 				<!-- // 저금통 거래내역 목록 -->

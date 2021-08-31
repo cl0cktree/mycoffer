@@ -48,7 +48,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="kb-form not-ready no-transition phone-input-kind safe-flex100 safe-display-none">
+                    <div class="kb-form not-ready no-transition phone-input-kind phone-input-kind-1 safe-flex100 safe-display-none">
                         <!-- <label for="mysafe_22"></label> -->
                         <div class="kb-form_inner form-text">
                             <input type="text" class="phone-kind-input" id="mysafe_22" onkeydown="all_on_fun()" placeholder="최대 10자를 입력해주세요." value="" maxlength="10">
@@ -72,7 +72,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="kb-form not-ready no-transition phone-input-kind safe-flex100 safe-display-none">
+                    <div class="kb-form not-ready no-transition phone-input-kind phone-input-kind-2 safe-flex100 safe-display-none">
                         <!-- <label for="mysafe_25"></label> -->
                         <div class="kb-form_inner form-text">
                             <input type="text" class="phone-kind-input" id="mysafe_25" onkeydown="all_on_fun()" placeholder="최대 10자를 입력해주세요." value="" maxlength="10">
@@ -94,7 +94,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="kb-form not-ready no-transition phone-input-kind safe-flex100 safe-display-none">
+                    <div class="kb-form not-ready no-transition phone-input-kind phone-input-kind-3 safe-flex100 safe-display-none">
                         <!-- <label for="mysafe_28"></label> -->
                         <div class="kb-form_inner form-text">
                             <input type="text" class="phone-kind-input" id="mysafe_28" onkeydown="all_on_fun()" placeholder="최대 10자를 입력해주세요." value="" maxlength="10">
@@ -170,9 +170,11 @@
 	<!-- Add Script -->
     <script>
         var phone_kind_input; //기타자산 직접 입력 시 공백여부 확인 및 값 확인용.
-        var gs_num=0; //기타자산 바텀시트 선택 여부 확인용.
-        var gsi=0; //기타자산 직접 입력 여부 확인용.
-        var $my_phone_value_info=$('.my-phone-value'); //.my-phone-value 선호출용.
+        var safe_phon_sel_1=0; //제조사 선택 확인용.
+        var safe_phon_sel_2=0; //모델 선택 확인용.
+        var safe_phon_sel_3=0; //용량 선택 확인용.
+        var price_check=0;
+        // var $my_phone_value_info=$('.my-phone-value'); //.my-phone-value 선호출용.
         var $my_phone_value=$('.my-phone-value'); //.my-phone-value 선호출용.
         var $my_phone_enrollment=$('.my-phone-enrollment'); //.my-phone-enrollment 선호출용.
         var $phone_value_input=$('.phone-value-input');
@@ -187,20 +189,21 @@
         var changedDate;
 
         // $('.btn-datepicker').attr({'data-page-id':'MYS_AS_17_01_06_BS2','data-call-layered':'bsCalendar'});
-        console.log(data_split_month);
         
         $('.ui-datepicker-calendar').find('td').on('click',function(event){
-            // event.preventDefault;
-            // changedDate = $('#datepicker').datepicker('getDate');
+            
+            changed = $('#datepicker').datepicker('getDate');
             // console.log(this);
             // console.log($(this).children('.ui-state-default').html());
             // data_split_day=$('.ui-state-active').text();
             // console.log(data_split_year+data_split_month+changedDate);
-            changedDate = $('this').find('.ui-state-active').text();
+            changedDate = $('.ui-datepicker-calendar').find('.ui-state-active').html();
+
         });
         $('.btn-solid_sticky').on('click',function(){
-            $('.mysafe-phone-datepicker').val(data_split_year+'.'+data_split_month+'.'+changedDate);
+            $('.mysafe-giftcard-datepicker').val(data_split_year+'.'+data_split_month+'.'+changedDate);
         });
+
         /*-----input에 대한 바른 데이터 입력, 활성 및 비활성, 틀린 데이터 입력에 대한
                동작 예시 함수로 본격적인 검증식 및 계산식은 프로그램밍이 필요함.-------*/
         $('.phone-value-input').on('propertychange change keyup paste input', function(event) {//금액 입력시 변화 된 값 인식.
@@ -222,20 +225,28 @@
             all_on_fun();
         });
         function all_on_fun(){//최종 등록 버튼 활성화 함수-기타자산 직접입력 완료/기타자산 선택이 선결/기타자산 금액이 입력 되면 활성화.
-            phone_kind_input=document.getElementById('mysafe_16').value;
-            if (phone_kind_input!==''){
-                gsi=1;
-            }else{
-                gsi=0;
-            }
+            // phone_kind_input=document.getElementById('mysafe_16').value;
+            console.log('sel_1 = '+safe_phon_sel_1+' / sel_2 = '+safe_phon_sel_2+' / sel_3 = '+safe_phon_sel_3);
+            // if (phone_kind_input!==''){
+            //     safe_phon_sel_2=1;
+            // }else{
+            //     safe_phon_sel_2=0;
+            // }
             console.log('out - '+dataVal);
-            if ((currentVal!=='')&&(currentVal!==undefined)&&(currentVal!==null)&&(currentVal!==0)&&(dataVal!=='')&&(dataVal!==undefined)&&(dataVal!==null)&&(dataVal!==0)&&((gs_num==1&&gsi>0)||(gs_num>1))){
+            if ((safe_phon_sel_1>0)&&(safe_phon_sel_2>0)&&(safe_phon_sel_3>0)&&(price_check>0)){
                 $my_phone_enrollment.removeAttr('disabled');
                 // console.log('t - '+currentVal);
             }else{
                 $my_phone_enrollment.removeAttr('disabled');
                 $my_phone_enrollment.attr('disabled','disabled');
                 // console.log('f - '+currentVal);
+            }
+        };
+        function safe_btn_on(){//조회버튼 및 그 제목 활성화.
+            if ((safe_phon_sel_1>0)&&(safe_phon_sel_2>0)&&(safe_phon_sel_3>0)){
+                $my_phone_value.removeAttr('disabled');
+            }else{
+                $my_phone_value.attr('disabled','disabled');
             }
         };
 
@@ -249,13 +260,14 @@
         };
 
         $my_phone_value.on('click',function(){//조회버튼 클릭시 숨어 있던 가격 부분이 노출 되는 함수의 트리거.
-            if ((bu_num>0)&&(get_data_status=='success')){
+            if ((safe_phon_sel_1>0)&&(safe_phon_sel_2>0)&&(safe_phon_sel_3>0)){
                 value_trans_ok();
-                mgv=1;
+                price_check=1;
             }else{
                 // value_trans_cancle();
-                mgv=0;
+                price_check=0;
             }
+            safe_btn_on();
             all_on_fun();
         });
 
@@ -275,21 +287,49 @@
         //     $(this).parent().parent().prev('.tit').addClass('empty-phone-unit-info');
         //     $(this).parent().parent().prev('.tit').prev('.tit').addClass('empty-phone-unit-info');
         // });
-        $('.phone').on('click',function(){//기타자산 형태선택 바텀시트 선택 시 동작부분.
-            document.getElementById('mysafe_16').value='';
-            // gsi=0;
-            if ($(this).is('.phonManufacturer05')){
-                $('.phone-input-kind').removeClass('safe-display-none');
-                gs_num=1;
+        $('.phonManufacturer').on('click',function(){//기타자산 형태선택 바텀시트 선택 시 동작부분.
+            // document.getElementById('mysafe_16').value='';
+            // safe_phon_sel_2=0;
+            if ($(this).is('.phonManufacturer06')){
+                $('.phone-input-kind-1').removeClass('safe-display-none');
+                safe_phon_sel_1=1;
             }else{
-                $('.phone-input-kind').removeClass('safe-display-none');
-                $('.phone-input-kind').addClass('safe-display-none');
-                gs_num=2;
+                $('.phone-input-kind-1').removeClass('safe-display-none');
+                $('.phone-input-kind-1').addClass('safe-display-none');
+                safe_phon_sel_1=2;
+            }
+            safe_btn_on();
+            all_on_fun();
+        });
+        $('.phonModel').on('click',function(){//기타자산 형태선택 바텀시트 선택 시 동작부분.
+            // document.getElementById('mysafe_16').value='';
+            // safe_phon_sel_2=0;
+            if ($(this).is('.phonModel06')){
+                $('.phone-input-kind-2').removeClass('safe-display-none');
+                safe_phon_sel_2=1;
+            }else{
+                $('.phone-input-kind-2').removeClass('safe-display-none');
+                $('.phone-input-kind-2').addClass('safe-display-none');
+                safe_phon_sel_2=2;
             }
             all_on_fun();
         });
+        $('.phonStorage').on('click',function(){//기타자산 형태선택 바텀시트 선택 시 동작부분.
+            // document.getElementById('mysafe_16').value='';
+            // safe_phon_sel_2=0;
+            if ($(this).is('.phonStorage04')){
+                $('.phone-input-kind-3').removeClass('safe-display-none');
+                safe_phon_sel_3=1;
+            }else{
+                $('.phone-input-kind-3').removeClass('safe-display-none');
+                $('.phone-input-kind-3').addClass('safe-display-none');
+                safe_phon_sel_3=2;
+            }
+            safe_btn_on();
+            all_on_fun();
+        });
         $('.phone-kind-clear').on('click',function(){//기타자산 직접입력 삭제 버튼으로 클릭 시 관련된 기능들 리셋.
-            gsi=0;
+            safe_phon_sel_2=0;
             $my_phone_enrollment.removeAttr('disabled');
             $my_phone_enrollment.attr('disabled','disabled');
         });
