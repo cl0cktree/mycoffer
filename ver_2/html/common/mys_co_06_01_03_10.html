@@ -1,4 +1,4 @@
-<!-- [MYS_CO_04_04_00_p1] 휴대폰 인증 (작성자: 누리어 시스템 변혜선)// -->
+<!-- [mys_co_06_01_03_10] 계좌 인증 (작성자: 누리어 시스템 변혜선)// -->
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -13,8 +13,8 @@
     <div class="app">
         
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
-            'pageTit':'휴대폰 본인인증',
-            'type':'step'
+            'pageTit':'<span class="is-hidden">KB국민은행</span>',
+            'type':'kb'
         })
         
 
@@ -31,22 +31,21 @@
                     <h2 class="h1">계좌인증</h2>
                 </div>  
                 <section class="kb-sec">  
-                    <div class="kb-form_multi kb-form_phone kb-form">
-                        <strong class="tit">계좌선택</strong>
-                        <div class="kb-form" data-status="">
-                            <div class="kb-form_inner form-select">
-                                <button type="button" class="selected-option"></button>
-                                <select name="" id="formMultiPhone" title="계좌선택">
-                                    <option value="" selected="">계좌선택</option>
-                                    <option value="">SKT</option>
-                                    <option value="">KT</option>
-                                    <option value="">LG</option>
-                                    <option value="">알뜰폰</option>
-                                </select>
-                            </div>
-                            <em class="validation">계좌를 선택해 주세요.</em>
-                        </div>                                    
-                    </div>                                     
+					<div class="account-link">
+                        <h3 class="is-hidden">계좌선택</h3>
+						<div class="kb-form mt24" data-status="">
+							<label for="">계좌선택</label>
+							<div class="kb-form_inner form-select">
+								<button type="button" class="selected-option" data-call-layered="bsAccountSelect"></button>
+								<select name="" id="" title="계좌 선택">
+									<option value="" selected>계좌선택</option>
+									<option value="bank01">010101-01-010101 : 월급통장</option>
+									<option value="bank02">111111-00-000000 : 용돈통장</option>
+								</select>
+							</div>
+							<p class="validation">계좌를 선택해 주세요.</p>
+						</div>
+					</div>                               
                     <div class="kb-form" data-status="">                        
                         <label for="certificationName">계좌비밀번호</label>
                         <div class="kb-form_inner form-text">
@@ -74,6 +73,7 @@
             @@include('@@webRoot/html/_layered/popup-agree-mobile-id-personal-info-collection.html')
             @@include('@@webRoot/html/_layered/popup-agree-terms-of-use-of-telecommunications-company.html')
             @@include('@@webRoot/html/_layered/popup-agree-mobile-id-personal-info-service.html') -->
+            @@include('@@webRoot/html/common/layered/mys_co_06_01_03_10_p1.html')
         </div>
         <!-- // Layer (modal, bottom sheet) -->
     </div>

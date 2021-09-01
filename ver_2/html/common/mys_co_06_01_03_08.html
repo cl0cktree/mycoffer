@@ -1,4 +1,4 @@
-<!-- [MYS_CO_06_01_00] 전송 요구 방법 선택 (작성자: 누리어 시스템 변혜선)// -->
+<!-- [mys_co_06_01_03_08] 인증요청 (작성자: 누리어 시스템 변혜선)// -->
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -6,6 +6,7 @@
     @@include('@@webRoot/html/_include/app-head.html',{
         "title": "Last Depth | 1st Depth"
     })
+    
 </head>
 
 <body>
@@ -13,8 +14,8 @@
     <div class="app">
         
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
-            'pageTit':'',
-            'type':'back'
+            'pageTit':'<span class="is-hidden">KB국민은행</span>',
+            'type':'kb'
         })
         
 
@@ -61,7 +62,7 @@
                 </section>
                 <div class="sticky-bottom">
                     <div class="btn-area">
-                        <button type="button" class="btn-solid" onclick="modalDemo2()"><span>인증요청</span></button>
+                        <a href="mys_co_06_01_03_09.html" class="btn-solid" role="button"><span>인증요청</span></a>
                     </div>
                 </div>                
             </main>
@@ -83,15 +84,7 @@
     <!-- Add Library (this page only)-->
      <script src="@@webRoot/static/js/ui.js"></script>
     <script>
-        function modalDemo2() {
-            modalPopup({
-                title: "",
-                message: "다른 기관 자산 정보를 등록하기 위해서는 인증서 등록이 필요합니다. KB스타뱅킹으로 이동하시겠습니다까?",
-                type: "confirm",
-                textOkButton: "취소",
-                textCancelButton: "확인",
-            });
-        }
+       
        
         // function addCategoryLimitNumber() {
         //     modalPopup({

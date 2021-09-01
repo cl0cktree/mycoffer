@@ -6,37 +6,37 @@
     <div class="bottom-sheet_contents expense-layered">
         <section class="kb-sec more-view-box">
             <div class="filter-period-setting more-view-item" data-status="" data-view-option="show">
+                <!-- [D] 2021-09-01 수정 : 선택 동작 가능하게 변경 // -->
                 <div class="kb-form">
                     <strong class="label">조회기간</strong>
-                    <!-- [D] 2021-08-31 수정 : 단순 버튼 -> 체크박스 타입으로 변경 // -->
-                    <div class="lookup-period">
+                    <div class="lookup-period select-period">
                         <ul class="btn-segmented_check">
                             <li>
-                                <input type="radio" name="searchPeriod" id="searchPeriod1" checked>
-                                <label for="searchPeriod1">1개월</label>
+                                <input type="radio" name="searchPeriod0" id="searchPeriod01" checked>
+                                <label for="searchPeriod01">1개월</label>
                             </li>
                             <li>
-                                <input type="radio" name="searchPeriod" id="searchPeriod2">
-                                <label for="searchPeriod2">3개월</label>
+                                <input type="radio" name="searchPeriod0" id="searchPeriod02">
+                                <label for="searchPeriod02">3개월</label>
                             </li>
                             <li>
-                                <input type="radio" name="searchPeriod" id="searchPeriod3">
-                                <label for="searchPeriod3">6개월</label>
+                                <input type="radio" name="searchPeriod0" id="searchPeriod03">
+                                <label for="searchPeriod03">6개월</label>
                             </li>
                             <li>
-                                <input type="radio" name="searchPeriod" id="searchPeriod4"><!-- last-child check 하단 period-selector 활성화-->
-                                <label for="searchPeriod4">직접입력</label>
+                                <input type="radio" name="searchPeriod0" id="searchPeriod04"><!-- last-child check 하단 period-selector 활성화-->
+                                <label for="searchPeriod04">직접입력</label>
                             </li>
                         </ul>
                         <div class="period-selector is-disabled">
-                            <input type="text" title="시작날짜" value="2021.08.28" disabled>
+                            <input type="text" title="시작날짜" value="2021.08.28">
                             <span>~</span>
-                            <input type="text" title="종료날짜" value="2021.08.31" disabled>
+                            <input type="text" title="종료날짜" value="2021.08.31">
                         </div>
                         <p class="error-msg">조회기간은 최대 60개월 입니다.</p>
                     </div>
-                    <!--// [D] 2021-08-31 수정 : 단순 버튼 -> 체크박스 타입으로 변경 // -->
                 </div>
+                <!-- // [D] 2021-09-01 수정 : 선택 동작 가능하게 변경 -->
                 <div class="kb-form">
                     <strong class="label">거래유형</strong>
                     <div class="lookup-period">

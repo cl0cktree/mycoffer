@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<!-- [MYS_SP_02_05_01]
+		MY FUN DATA > 나혼자스토리_분석완료 (작성자: 누리어 시스템 김삼희) -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "만약 나 혼자 산다면 | MY FUN DATA"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header //-->
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'만약 나 혼자 산다면',
+            'type':'back'
+        })
+		<!-- // app-header -->
+
+		<!-- app-container //-->
+		<div class="app-container">
+
+			<!-- app-content // -->
+			<main class="app-content my-fun-data">
+
+				<!-- 스토리텔링 컨텐츠 // -->
+				<section class="kb-sec expense-persent">
+                    <h4 class="h4">나의 지출현황</h4>
+                    <ul>
+                        <li class="up">
+                            <strong class="num">28%</strong>
+                            <span>식비</span>
+                        </li>
+                        <li class="up">
+                            <strong class="num">13%</strong>
+                            <span>주거비</span>
+                        </li>
+                        <li class="up">
+                            <strong class="num">18%</strong>
+                            <span>쇼핑여가</span>
+                        </li>
+                    </ul>
+                    <div class="total-summary">
+                        <span><strong>주거비</strong> 항목의 지출이</span>
+                        <span>1인가구 평균대비 <strong class="num">28%</strong> 많아요</span>
+                        <span>목표를 설정하여 지출관리를 시작해보세요</span>
+                    </div>
+                </section>
+                <div class="sticky-bottom t01">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid"><span>지출내역 확인하기</span></button>
+                    </div>
+                </div>
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (modal, bottom sheet) // -->
+		<div class="layered">
+		</div>
+		<!-- // Layer (modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+	
+</body>
+
+</html>

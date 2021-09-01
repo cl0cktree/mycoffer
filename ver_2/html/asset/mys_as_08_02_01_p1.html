@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ko" data-channel="ch_star">
+<html lang="ko">
 <!-- [MYS_AS_08_02_01] 자산 > 보험 (작성자: 누리어 시스템 김은경)// -->
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
-        "title": "보험 | 자산"
+        "title": " 보장내역 분석 | 자산"
     })
 </head>
 
@@ -22,132 +22,54 @@
             <!-- app-content // -->
             <main class="app-content my-asset guarantee-history-analysis">
                 <section class="kb-sec guarantee-history-analysis-summary">
-                    <h2><b>김국민</b>님 주요보장내역 분석 </h2>
-                    <div>
-                        주요 13대 보장 중 <br>
-                        <span class="c-red">실손/후유장애</span>의 보장이 부족합니다.
-                        <p>(신정원 내보험다보여 기준)</p>
+                    <h2>건강보험 주요 보장내역 분석 <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                        <div class="tooltip">
+                            <strong class="tit">대출금리는?</strong>
+                            <div class="cont">
+                               보험 대출과 리스의 금리는 가중평균금리에 미포함입니다.
+                            </div>
+                            <button class="btn-close"><span>닫기</span></button>
+                        </div>
+                    </h2>
+                    <div class="info">
+                        주요 14대 담보 중 뇌/심장의 보장이 부족합니다. <br>(신정원 내보험다보여 기준)
                     </div>
                 </section>
-
-                <section class="kb-sec guarantee-history-analysis-chart">
-                    <!-- [chart area] //-->                                   
-                    <!--
-                        [차트 디자인 정보]
-                        * 색상(컬러별)
-                        - 노란색 :  #ffd338;
-                        - 파란색 :  #3f6fd1;                        
-                        - 보라색 :  #9e6eda;
-                        - 자주색 : #d575c9;
-
-                        - 차트 텍스트 컬러/크기 : #26282c/14px
-                        - 하단 색상 텍스트 크기 : 14px
-                        - 건수 텍스트 컬러/크기 : #26282c/16px
-                    -->         
-                    <!-- 2021-06-16 수정 // -->
-                    <div class="chart-area">                        
-                        <div class="insu-report-circles">
-                            <div class="report-circle" data-status="caution"><!-- data-status= good(충분)/caution(유의)/short(부족) -->
-                                <div class="point"><span class="num">40</span>점</div>
-                                <div class="cate">암</div>
-                                <div class="btm"></div>
-                                <div class="svg-area svg-gauge-circle">
-                                    <svg class="insurance-gauge-svg1" viewBox="0 0 100 100"><!-- 2021-07-05 수정 -->
-                                        <use class="bar-bg" xlink:href="#insuCirclePath"></use>
-                                        <use class="bar-fg" xlink:href="#insuCirclePath"></use>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="insu-report-circles">
-                            <div class="report-circle" data-status="good"><!-- data-status= good(충분)/caution(유의)/short(부족) -->
-                                <div class="point"><span class="num">50</span>점</div>
-                                <div class="cate">뇌-심장</div>
-                                <div class="btm"></div>
-                                <div class="svg-area svg-gauge-circle">
-                                    <svg class="insurance-gauge-svg2" viewBox="0 0 100 100"><!-- 2021-07-05 수정 -->
-                                        <use class="bar-bg" xlink:href="#insuCirclePath"></use>
-                                        <use class="bar-fg" xlink:href="#insuCirclePath"></use>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="chart-area">                        
-                        <div class="insu-report-circles">
-                            <div class="report-circle" data-status="good"><!-- data-status= good(충분)/caution(유의)/short(부족) -->
-                                <div class="point"><span class="num">50</span>점</div>
-                                <div class="cate">사망</div>
-                                <div class="btm"></div>
-                                <div class="svg-area svg-gauge-circle">
-                                    <svg class="insurance-gauge-svg3" viewBox="0 0 100 100"><!-- 2021-07-05 수정 -->
-                                        <use class="bar-bg" xlink:href="#insuCirclePath"></use>
-                                        <use class="bar-fg" xlink:href="#insuCirclePath"></use>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="insu-report-circles">
-                            <div class="report-circle" data-status="short"><!-- data-status= good(충분)/caution(유의)/short(부족) -->
-                                <div class="point"><span class="num">20</span>점</div>
-                                <div class="cate">실손</div>
-                                <div class="btm"></div>
-                                <div class="svg-area svg-gauge-circle">
-                                    <svg class="insurance-gauge-svg4" viewBox="0 0 100 100"><!-- 2021-07-05 수정 -->
-                                        <use class="bar-bg" xlink:href="#insuCirclePath"></use>
-                                        <use class="bar-fg" xlink:href="#insuCirclePath"></use>
-                                    </svg>
-                                </div>
-                            </div>
-                            <svg class="defs">
-                                <defs>
-                                    <path id="insuCirclePath" d="M 50 7.5 A 1 1 0 0 1 50 92.5 A 1 1 0 0 1 50 7.5 Z"></path>
-                                </defs>
-                            </svg>
-                            <script>
-                                window.addEventListener('load', function() {
-                                    /**
-                                     * drawInsuranceGauge function
-                                     * @param {string} selector - 선택자
-                                     * @param {number} current - 점수
-                                     * @param {number} grade - 1: 충분, 2: 유의, 3: 부족
-                                     */
-                                    drawInsuranceGauge(".insurance-gauge-svg1", 70, 2);
-                                    drawInsuranceGauge(".insurance-gauge-svg2", 40, 1);
-                                    drawInsuranceGauge(".insurance-gauge-svg3", 40, 3);
-                                    drawInsuranceGauge(".insurance-gauge-svg4", 20, 3);
-                                });
-                            </script>
-                        </div>
-                    </div>
-                    <!-- // 2021-06-16 수정 -->
-                    <!--// [chart area] -->
-                </section>
-
                 <section class="kb-sec guarantee-traffic-light">
                     <ul class="grid-list" data-col="3">
                         <li data-status="good"><!-- data-status= good(충분)/caution(유의)/short(부족) -->
+                            <span>암</span>
+                        </li>
+                        <li data-status="caution">
+                            <span>뇌&middot;심장</span>
+                        </li>
+                        <li data-status="short">
+                            <span>사망</span>
+                        </li>
+                        <li data-status="good">
+                            <span>실손</span>
+                        </li>
+                        <li data-status="good">
                             <span>운전자</span>
                         </li>
                         <li data-status="caution">
                             <span>수술</span>
                         </li>
-                        <li data-status="short">
-                            <span>후유장애</span>
-                        </li>
                         <li data-status="good">
                             <span>상해</span>
                         </li>
+                        <li data-status="short">
+                            <span>후유장애</span>
+                        </li>                        
                         <li data-status="good">
                             <span>입원비</span>
                         </li>
                         <li data-status="good">
-                            <span>배상/비용</span>
-                        </li>
-                        <li data-status="good">
                             <span>간병</span>
                         </li>
+                        <li data-status="good">
+                            <span>배상/비용</span>
+                        </li>                       
                         <li data-status="good">
                             <span>치아</span>
                         </li>
@@ -195,32 +117,35 @@
                         <ul class="list">
                             <li>
                                 <button type="button" data-call-layered="mys_as_06_00_00_p2" >
-                                    <span class="info">내게 꼭 맞는 신용대출</span>
-                                    <em class="tit">KB내맘대로 적금</em>
-                                    <p class="rate">                                        
-                                        <span>최고 연3.1%</span>
-                                        <span>최대 3.6%</span>
-                                    </p>
+                                    <span class="prod-kind insurance">보험</span>                                    
+                                    <em class="tit">(무)KB건강하게 사는 간편암보험</em>
+                                    <span class="info">표적항암약물치료까지 보장하는 암보험</span>
                                     <div class="hash-tag">
                                         <span>#내맘대로</span>
                                         <span>#금리</span>
                                         <span>#사회초년생</span>
                                     </div>
+                                    <p class="rate">
+                                        <span>보장기간 <b>20년</b></span>
+                                        <span>납입기간 <b>20년</b></span>
+                                    </p>
+                                    
                                 </button>
                             </li>
                             <li>
                                 <button type="button" data-call-layered="mys_as_06_00_00_p2" >
-                                    <span class="info">맑은하늘을 만들고 금리고 UP</span>
+                                    <span class="prod-kind insurance">보험</span>  
                                     <em class="tit">KB내맘대로 적금</em>
-                                    <p class="rate">                                        
-                                        <span>최고 연3.1%</span>
-                                        <span>최대 3.6%</span>
-                                    </p>
+                                    <span class="info">맑은하늘을 만들고 금리고 UP</span>
                                     <div class="hash-tag">
                                         <span>#내맘대로</span>
                                         <span>#금리</span>
                                         <span>#사회초년생</span>
                                     </div>
+                                    <p class="rate">  
+                                        <span>보장기간 <b>20년</b></span>
+                                        <span>납입기간 <b>20년</b></span>
+                                    </p>
                                 </button>
                             </li>
                         </ul>

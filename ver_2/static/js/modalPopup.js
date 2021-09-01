@@ -41,7 +41,7 @@
     
             module = {
                 initialize: function() {
-                    $module.before('<div class="dim" style="z-index:399;display:none;"></div>');
+                    $module.before('<div class="dim" style="z-index:' + (layeredLevel - 1) + ';display:none;"></div>');
                     $dimm = $module.prev();                
                     module.bind.events();
                     module.instantiate();
@@ -88,7 +88,7 @@
     
                 open: function() {
                     $body.addClass("is-hold");
-                    $wrap.addClass("is-active");
+                    $wrap.addClass("is-active").css('z-index', layeredLevel);
                     $dimm.fadeIn(settings.duration);
                     $wrap.fadeIn(settings.duration);
                 },
@@ -206,6 +206,7 @@
         modalPopupIdx++;
     
         var id = "MD" + modalPopupIdx;
+        var zIdex = layeredLevel;
         var html = '';
         // html += `	<div class="modal-popup" id="${id}">`;
         // html += `		<div class="modal-popup-dimm"></div>`;
@@ -228,7 +229,7 @@
         // html += `			</div>`;
         // html += `		</div>`;
         // html += `	</div>`;
-        html += `	<div class="modal" id="${id}">`;
+        html += `	<div class="modal" id="${id}" style="z-index:${zIdex}">`;
         if (settings.title != "") {
             html += `		<div class="modal_header">`;
             html += `			<strong class="tit">${settings.title}</strong>`;

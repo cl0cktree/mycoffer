@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "레이어(어드민)"
+    })
+    
+</head>
+
+<body>
+
+    <div class="app">
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'타이틀영역',
+            'type':'home'
+        })
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-lnb //-->
+            <div class="app-lnb">              
+            </div>
+            <!-- //app-lnb -->
+
+            <!-- app-content // -->
+            <main class="app-content">
+                
+                <section class="kb-sec">
+                    <button type="button" class="btn-solid sm a"><span>풀팝업 호출</span></button>
+                    <br>
+                    <br>
+                    <button type="button" class="btn-solid sm b"><span>바텀시트 호출</span></button>
+                    <br>
+                    <br>
+                    <button type="button" class="btn-solid sm c"><span>모달 호출</span></button>                    
+                </section>
+                
+                <section class="kb-sec">                   
+
+                    <h3 class="h3 mt20">Console Window에서 아래 명령어를 통해 테스트 가능</h3>
+                    
+                    <ul data-style="list" class="mt20">
+                        <li>레이어 열기 : gfn_layered.open('레이어이름');</li>
+                        <li>레이어 닫기 : gfn_layered.close('레이어이름');</li>
+                    </ul>
+                    <p class="simple-message mt36">
+                        레이어 이름은 현재 <u class="c-blue">"adminLayer1" ~ "adminLayer<span class="layer-count">레이어갯수</span>"</u>까지 있습니다.<br>
+                        레이어 이름은 변경 가능 합니다.
+                    </p>
+                </section>
+                
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+        <div class="layered">
+            <!-- popup (Full Page) Sample //-->
+            <div class="popup" data-layered-name="adminLayer1">
+                <div class="popup_header">
+                    <strong class="tit">어드민 등록 팝업 타이틀</strong>
+                </div>
+                <div class="popup_contents">
+                    <section class="kb-sec">
+                        <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                            <!-- 에디터 내용 노출 -->
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                        </div>
+                        <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->       
+                    </section>                    
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday"><label for="notToday">오늘 하루 보지 않기</label></span></div>                    
+                <div class="popup_buttons sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid gray" data-action="close"><span>취소</span></button>
+                        <button type="button" class="btn-solid" data-action="close"><span>확인</span></button>
+                    </div>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- // popup (Full Page) Sample -->
+
+            <!-- Bottom Sheet 샘플 //-->
+            <div class="bottom-sheet" data-layered-name="adminLayer2">
+                <div class="bottom-sheet_header">
+                    <span class="tit">어드민 등록 바텀시트</span>
+                </div>
+                <div class="bottom-sheet_contents">                    
+                    <section class="kb-sec">
+                        <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                            <!-- 에디터 내용 노출 -->
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                        </div>
+                        <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->       
+                    </section>     
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday02"><label for="notToday02">오늘 하루 보지 않기</label></span></div>                    
+                <div class="bottom-sheet_buttons">
+                    <button class="btn-solid gray" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid"><span>확인</span></button>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- //Bottom Sheet -->
+
+            <!-- Modal 샘플 //-->
+            <div class="modal" data-layered-name="adminLayer3">    
+                <div class="modal_header">
+                    <strong class="tit">어드민 등록 모달</strong>
+                </div>
+                <div class="modal_contents">
+                    <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                        <!-- 에디터 내용 노출 -->
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                    </div>
+                    <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->  
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday03"><label for="notToday03">오늘 하루 보지 않기</label></span></div>                    
+                <div class="modal_buttons btn-area">
+                    <button class="btn-solid gray" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid"><span>확인</span></button>
+                </div>
+            </div>
+            <!-- //Modal -->
+
+            <!-- ************************** 중복 테스트용 Clone [s] ************************************* -->
+            <!-- popup (Full Page) Sample //-->
+            <div class="popup" data-layered-name="">
+                <div class="popup_header">
+                    <strong class="tit">어드민 등록 팝업 타이틀</strong>
+                </div>
+                <div class="popup_contents">
+                    <section class="kb-sec">
+                        <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                            <!-- 에디터 내용 노출 -->
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                        </div>
+                        <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->       
+                    </section>                    
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday"><label for="notToday">오늘 하루 보지 않기</label></span></div>                    
+                <div class="popup_buttons sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid gray" data-action="close"><span>취소</span></button>
+                        <button type="button" class="btn-solid" data-action="close"><span>확인</span></button>
+                    </div>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- // popup (Full Page) Sample -->
+
+            <!-- Bottom Sheet 샘플 //-->
+            <div class="bottom-sheet" data-layered-name="">
+                <div class="bottom-sheet_header">
+                    <span class="tit">어드민 등록 바텀시트</span>
+                </div>
+                <div class="bottom-sheet_contents">                    
+                    <section class="kb-sec">
+                        <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                            <!-- 에디터 내용 노출 -->
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                        </div>
+                        <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->       
+                    </section>     
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday02"><label for="notToday02">오늘 하루 보지 않기</label></span></div>                    
+                <div class="bottom-sheet_buttons">
+                    <button class="btn-solid gray" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid"><span>확인</span></button>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- //Bottom Sheet -->
+
+            <!-- Modal 샘플 //-->
+            <div class="modal" data-layered-name="">    
+                <div class="modal_header">
+                    <strong class="tit">어드민 등록 모달</strong>
+                </div>
+                <div class="modal_contents">
+                    <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                        <!-- 에디터 내용 노출 -->
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                    </div>
+                    <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->  
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday03"><label for="notToday03">오늘 하루 보지 않기</label></span></div>                    
+                <div class="modal_buttons btn-area">
+                    <button class="btn-solid gray" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid"><span>확인</span></button>
+                </div>
+            </div>
+            <!-- //Modal -->
+            <!-- popup (Full Page) Sample //-->
+            <div class="popup" data-layered-name="">
+                <div class="popup_header">
+                    <strong class="tit">어드민 등록 팝업 타이틀</strong>
+                </div>
+                <div class="popup_contents">
+                    <section class="kb-sec">
+                        <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                            <!-- 에디터 내용 노출 -->
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                        </div>
+                        <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->       
+                    </section>                    
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday"><label for="notToday">오늘 하루 보지 않기</label></span></div>                    
+                <div class="popup_buttons sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid gray" data-action="close"><span>취소</span></button>
+                        <button type="button" class="btn-solid" data-action="close"><span>확인</span></button>
+                    </div>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- // popup (Full Page) Sample -->
+
+            <!-- Bottom Sheet 샘플 //-->
+            <div class="bottom-sheet" data-layered-name="">
+                <div class="bottom-sheet_header">
+                    <span class="tit">어드민 등록 바텀시트</span>
+                </div>
+                <div class="bottom-sheet_contents">                    
+                    <section class="kb-sec">
+                        <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                            <!-- 에디터 내용 노출 -->
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                        </div>
+                        <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->       
+                    </section>     
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday02"><label for="notToday02">오늘 하루 보지 않기</label></span></div>                    
+                <div class="bottom-sheet_buttons">
+                    <button class="btn-solid gray" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid"><span>확인</span></button>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- //Bottom Sheet -->
+
+            <!-- Modal 샘플 //-->
+            <div class="modal" data-layered-name="">    
+                <div class="modal_header">
+                    <strong class="tit">어드민 등록 모달</strong>
+                </div>
+                <div class="modal_contents">
+                    <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                        <!-- 에디터 내용 노출 -->
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                    </div>
+                    <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->  
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday03"><label for="notToday03">오늘 하루 보지 않기</label></span></div>                    
+                <div class="modal_buttons btn-area">
+                    <button class="btn-solid gray" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid"><span>확인</span></button>
+                </div>
+            </div>
+            <!-- //Modal -->
+            <!-- popup (Full Page) Sample //-->
+            <div class="popup" data-layered-name="">
+                <div class="popup_header">
+                    <strong class="tit">어드민 등록 팝업 타이틀</strong>
+                </div>
+                <div class="popup_contents">
+                    <section class="kb-sec">
+                        <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                            <!-- 에디터 내용 노출 -->
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                        </div>
+                        <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->       
+                    </section>                    
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday"><label for="notToday">오늘 하루 보지 않기</label></span></div>                    
+                <div class="popup_buttons sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid gray" data-action="close"><span>취소</span></button>
+                        <button type="button" class="btn-solid" data-action="close"><span>확인</span></button>
+                    </div>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- // popup (Full Page) Sample -->
+
+            <!-- Bottom Sheet 샘플 //-->
+            <div class="bottom-sheet" data-layered-name="">
+                <div class="bottom-sheet_header">
+                    <span class="tit">어드민 등록 바텀시트</span>
+                </div>
+                <div class="bottom-sheet_contents">                    
+                    <section class="kb-sec">
+                        <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                            <!-- 에디터 내용 노출 -->
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                        </div>
+                        <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->       
+                    </section>     
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday02"><label for="notToday02">오늘 하루 보지 않기</label></span></div>                    
+                <div class="bottom-sheet_buttons">
+                    <button class="btn-solid gray" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid"><span>확인</span></button>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- //Bottom Sheet -->
+
+            <!-- Modal 샘플 //-->
+            <div class="modal" data-layered-name="">    
+                <div class="modal_header">
+                    <strong class="tit">어드민 등록 모달</strong>
+                </div>
+                <div class="modal_contents">
+                    <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                        <!-- 에디터 내용 노출 -->
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                    </div>
+                    <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->  
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday03"><label for="notToday03">오늘 하루 보지 않기</label></span></div>                    
+                <div class="modal_buttons btn-area">
+                    <button class="btn-solid gray" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid"><span>확인</span></button>
+                </div>
+            </div>
+            <!-- //Modal -->
+            <!-- popup (Full Page) Sample //-->
+            <div class="popup" data-layered-name="">
+                <div class="popup_header">
+                    <strong class="tit">어드민 등록 팝업 타이틀</strong>
+                </div>
+                <div class="popup_contents">
+                    <section class="kb-sec">
+                        <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                            <!-- 에디터 내용 노출 -->
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                        </div>
+                        <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->       
+                    </section>                    
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday"><label for="notToday">오늘 하루 보지 않기</label></span></div>                    
+                <div class="popup_buttons sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid gray" data-action="close"><span>취소</span></button>
+                        <button type="button" class="btn-solid" data-action="close"><span>확인</span></button>
+                    </div>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- // popup (Full Page) Sample -->
+
+            <!-- Bottom Sheet 샘플 //-->
+            <div class="bottom-sheet" data-layered-name="">
+                <div class="bottom-sheet_header">
+                    <span class="tit">어드민 등록 바텀시트</span>
+                </div>
+                <div class="bottom-sheet_contents">                    
+                    <section class="kb-sec">
+                        <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                            <!-- 에디터 내용 노출 -->
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                        </div>
+                        <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->       
+                    </section>     
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday02"><label for="notToday02">오늘 하루 보지 않기</label></span></div>                    
+                <div class="bottom-sheet_buttons">
+                    <button class="btn-solid gray" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid"><span>확인</span></button>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- //Bottom Sheet -->
+
+            <!-- Modal 샘플 //-->
+            <div class="modal" data-layered-name="">    
+                <div class="modal_header">
+                    <strong class="tit">어드민 등록 모달</strong>
+                </div>
+                <div class="modal_contents">
+                    <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                        <!-- 에디터 내용 노출 -->
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                    </div>
+                    <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->  
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday03"><label for="notToday03">오늘 하루 보지 않기</label></span></div>                    
+                <div class="modal_buttons btn-area">
+                    <button class="btn-solid gray" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid"><span>확인</span></button>
+                </div>
+            </div>
+            <!-- //Modal -->
+            <!-- popup (Full Page) Sample //-->
+            <div class="popup" data-layered-name="">
+                <div class="popup_header">
+                    <strong class="tit">어드민 등록 팝업 타이틀</strong>
+                </div>
+                <div class="popup_contents">
+                    <section class="kb-sec">
+                        <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                            <!-- 에디터 내용 노출 -->
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                        </div>
+                        <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->       
+                    </section>                    
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday"><label for="notToday">오늘 하루 보지 않기</label></span></div>                    
+                <div class="popup_buttons sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid gray" data-action="close"><span>취소</span></button>
+                        <button type="button" class="btn-solid" data-action="close"><span>확인</span></button>
+                    </div>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- // popup (Full Page) Sample -->
+
+            <!-- Bottom Sheet 샘플 //-->
+            <div class="bottom-sheet" data-layered-name="">
+                <div class="bottom-sheet_header">
+                    <span class="tit">어드민 등록 바텀시트</span>
+                </div>
+                <div class="bottom-sheet_contents">                    
+                    <section class="kb-sec">
+                        <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                            <!-- 에디터 내용 노출 -->
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                        </div>
+                        <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->       
+                    </section>     
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday02"><label for="notToday02">오늘 하루 보지 않기</label></span></div>                    
+                <div class="bottom-sheet_buttons">
+                    <button class="btn-solid gray" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid"><span>확인</span></button>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- //Bottom Sheet -->
+
+            <!-- Modal 샘플 //-->
+            <div class="modal" data-layered-name="">    
+                <div class="modal_header">
+                    <strong class="tit">어드민 등록 모달</strong>
+                </div>
+                <div class="modal_contents">
+                    <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                        <!-- 에디터 내용 노출 -->
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                    </div>
+                    <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->  
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday03"><label for="notToday03">오늘 하루 보지 않기</label></span></div>                    
+                <div class="modal_buttons btn-area">
+                    <button class="btn-solid gray" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid"><span>확인</span></button>
+                </div>
+            </div>
+            <!-- //Modal -->
+            <!-- popup (Full Page) Sample //-->
+            <div class="popup" data-layered-name="">
+                <div class="popup_header">
+                    <strong class="tit">어드민 등록 팝업 타이틀</strong>
+                </div>
+                <div class="popup_contents">
+                    <section class="kb-sec">
+                        <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                            <!-- 에디터 내용 노출 -->
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                        </div>
+                        <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->       
+                    </section>                    
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday"><label for="notToday">오늘 하루 보지 않기</label></span></div>                    
+                <div class="popup_buttons sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid gray" data-action="close"><span>취소</span></button>
+                        <button type="button" class="btn-solid" data-action="close"><span>확인</span></button>
+                    </div>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- // popup (Full Page) Sample -->
+
+            <!-- Bottom Sheet 샘플 //-->
+            <div class="bottom-sheet" data-layered-name="">
+                <div class="bottom-sheet_header">
+                    <span class="tit">어드민 등록 바텀시트</span>
+                </div>
+                <div class="bottom-sheet_contents">                    
+                    <section class="kb-sec">
+                        <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                            <!-- 에디터 내용 노출 -->
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                        </div>
+                        <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->       
+                    </section>     
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday02"><label for="notToday02">오늘 하루 보지 않기</label></span></div>                    
+                <div class="bottom-sheet_buttons">
+                    <button class="btn-solid gray" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid"><span>확인</span></button>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- //Bottom Sheet -->
+
+            <!-- Modal 샘플 //-->
+            <div class="modal" data-layered-name="">    
+                <div class="modal_header">
+                    <strong class="tit">어드민 등록 모달</strong>
+                </div>
+                <div class="modal_contents">
+                    <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                        <!-- 에디터 내용 노출 -->
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                    </div>
+                    <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->  
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday03"><label for="notToday03">오늘 하루 보지 않기</label></span></div>                    
+                <div class="modal_buttons btn-area">
+                    <button class="btn-solid gray" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid"><span>확인</span></button>
+                </div>
+            </div>
+            <!-- //Modal -->
+            <!-- popup (Full Page) Sample //-->
+            <div class="popup" data-layered-name="">
+                <div class="popup_header">
+                    <strong class="tit">어드민 등록 팝업 타이틀</strong>
+                </div>
+                <div class="popup_contents">
+                    <section class="kb-sec">
+                        <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                            <!-- 에디터 내용 노출 -->
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                        </div>
+                        <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->       
+                    </section>                    
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday"><label for="notToday">오늘 하루 보지 않기</label></span></div>                    
+                <div class="popup_buttons sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid gray" data-action="close"><span>취소</span></button>
+                        <button type="button" class="btn-solid" data-action="close"><span>확인</span></button>
+                    </div>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- // popup (Full Page) Sample -->
+
+            <!-- Bottom Sheet 샘플 //-->
+            <div class="bottom-sheet" data-layered-name="">
+                <div class="bottom-sheet_header">
+                    <span class="tit">어드민 등록 바텀시트</span>
+                </div>
+                <div class="bottom-sheet_contents">                    
+                    <section class="kb-sec">
+                        <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                            <!-- 에디터 내용 노출 -->
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                        </div>
+                        <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->       
+                    </section>     
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday02"><label for="notToday02">오늘 하루 보지 않기</label></span></div>                    
+                <div class="bottom-sheet_buttons">
+                    <button class="btn-solid gray" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid"><span>확인</span></button>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- //Bottom Sheet -->
+
+            <!-- Modal 샘플 //-->
+            <div class="modal" data-layered-name="">    
+                <div class="modal_header">
+                    <strong class="tit">어드민 등록 모달</strong>
+                </div>
+                <div class="modal_contents">
+                    <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                        <!-- 에디터 내용 노출 -->
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                    </div>
+                    <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->  
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday03"><label for="notToday03">오늘 하루 보지 않기</label></span></div>                    
+                <div class="modal_buttons btn-area">
+                    <button class="btn-solid gray" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid"><span>확인</span></button>
+                </div>
+            </div>
+            <!-- //Modal -->
+            <!-- popup (Full Page) Sample //-->
+            <div class="popup" data-layered-name="">
+                <div class="popup_header">
+                    <strong class="tit">어드민 등록 팝업 타이틀</strong>
+                </div>
+                <div class="popup_contents">
+                    <section class="kb-sec">
+                        <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                            <!-- 에디터 내용 노출 -->
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                        </div>
+                        <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->       
+                    </section>                    
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday"><label for="notToday">오늘 하루 보지 않기</label></span></div>                    
+                <div class="popup_buttons sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid gray" data-action="close"><span>취소</span></button>
+                        <button type="button" class="btn-solid" data-action="close"><span>확인</span></button>
+                    </div>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- // popup (Full Page) Sample -->
+
+            <!-- Bottom Sheet 샘플 //-->
+            <div class="bottom-sheet" data-layered-name="">
+                <div class="bottom-sheet_header">
+                    <span class="tit">어드민 등록 바텀시트</span>
+                </div>
+                <div class="bottom-sheet_contents">                    
+                    <section class="kb-sec">
+                        <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                            <!-- 에디터 내용 노출 -->
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                        </div>
+                        <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->       
+                    </section>     
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday02"><label for="notToday02">오늘 하루 보지 않기</label></span></div>                    
+                <div class="bottom-sheet_buttons">
+                    <button class="btn-solid gray" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid"><span>확인</span></button>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- //Bottom Sheet -->
+
+            <!-- Modal 샘플 //-->
+            <div class="modal" data-layered-name="">    
+                <div class="modal_header">
+                    <strong class="tit">어드민 등록 모달</strong>
+                </div>
+                <div class="modal_contents">
+                    <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                        <!-- 에디터 내용 노출 -->
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                    </div>
+                    <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->  
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday03"><label for="notToday03">오늘 하루 보지 않기</label></span></div>                    
+                <div class="modal_buttons btn-area">
+                    <button class="btn-solid gray" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid"><span>확인</span></button>
+                </div>
+            </div>
+            <!-- //Modal -->
+            <!-- popup (Full Page) Sample //-->
+            <div class="popup" data-layered-name="">
+                <div class="popup_header">
+                    <strong class="tit">어드민 등록 팝업 타이틀</strong>
+                </div>
+                <div class="popup_contents">
+                    <section class="kb-sec">
+                        <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                            <!-- 에디터 내용 노출 -->
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                        </div>
+                        <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->       
+                    </section>                    
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday"><label for="notToday">오늘 하루 보지 않기</label></span></div>                    
+                <div class="popup_buttons sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid gray" data-action="close"><span>취소</span></button>
+                        <button type="button" class="btn-solid" data-action="close"><span>확인</span></button>
+                    </div>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- // popup (Full Page) Sample -->
+
+            <!-- Bottom Sheet 샘플 //-->
+            <div class="bottom-sheet" data-layered-name="">
+                <div class="bottom-sheet_header">
+                    <span class="tit">어드민 등록 바텀시트</span>
+                </div>
+                <div class="bottom-sheet_contents">                    
+                    <section class="kb-sec">
+                        <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                            <!-- 에디터 내용 노출 -->
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                        </div>
+                        <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->       
+                    </section>     
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday02"><label for="notToday02">오늘 하루 보지 않기</label></span></div>                    
+                <div class="bottom-sheet_buttons">
+                    <button class="btn-solid gray" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid"><span>확인</span></button>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- //Bottom Sheet -->
+
+            <!-- Modal 샘플 //-->
+            <div class="modal" data-layered-name="">    
+                <div class="modal_header">
+                    <strong class="tit">어드민 등록 모달</strong>
+                </div>
+                <div class="modal_contents">
+                    <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                        <!-- 에디터 내용 노출 -->
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                    </div>
+                    <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->  
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday03"><label for="notToday03">오늘 하루 보지 않기</label></span></div>                    
+                <div class="modal_buttons btn-area">
+                    <button class="btn-solid gray" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid"><span>확인</span></button>
+                </div>
+            </div>
+            <!-- //Modal -->
+            <!-- popup (Full Page) Sample //-->
+            <div class="popup" data-layered-name="">
+                <div class="popup_header">
+                    <strong class="tit">어드민 등록 팝업 타이틀</strong>
+                </div>
+                <div class="popup_contents">
+                    <section class="kb-sec">
+                        <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                            <!-- 에디터 내용 노출 -->
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                        </div>
+                        <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->       
+                    </section>                    
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday"><label for="notToday">오늘 하루 보지 않기</label></span></div>                    
+                <div class="popup_buttons sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid gray" data-action="close"><span>취소</span></button>
+                        <button type="button" class="btn-solid" data-action="close"><span>확인</span></button>
+                    </div>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- // popup (Full Page) Sample -->
+
+            <!-- Bottom Sheet 샘플 //-->
+            <div class="bottom-sheet" data-layered-name="">
+                <div class="bottom-sheet_header">
+                    <span class="tit">어드민 등록 바텀시트</span>
+                </div>
+                <div class="bottom-sheet_contents">                    
+                    <section class="kb-sec">
+                        <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                            <!-- 에디터 내용 노출 -->
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                        </div>
+                        <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->       
+                    </section>     
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday02"><label for="notToday02">오늘 하루 보지 않기</label></span></div>                    
+                <div class="bottom-sheet_buttons">
+                    <button class="btn-solid gray" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid"><span>확인</span></button>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- //Bottom Sheet -->
+
+            <!-- Modal 샘플 //-->
+            <div class="modal" data-layered-name="">    
+                <div class="modal_header">
+                    <strong class="tit">어드민 등록 모달</strong>
+                </div>
+                <div class="modal_contents">
+                    <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                        <!-- 에디터 내용 노출 -->
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                    </div>
+                    <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->  
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday03"><label for="notToday03">오늘 하루 보지 않기</label></span></div>                    
+                <div class="modal_buttons btn-area">
+                    <button class="btn-solid gray" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid"><span>확인</span></button>
+                </div>
+            </div>
+            <!-- //Modal -->
+            <!-- popup (Full Page) Sample //-->
+            <div class="popup" data-layered-name="">
+                <div class="popup_header">
+                    <strong class="tit">어드민 등록 팝업 타이틀</strong>
+                </div>
+                <div class="popup_contents">
+                    <section class="kb-sec">
+                        <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                            <!-- 에디터 내용 노출 -->
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                        </div>
+                        <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->       
+                    </section>                    
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday"><label for="notToday">오늘 하루 보지 않기</label></span></div>                    
+                <div class="popup_buttons sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid gray" data-action="close"><span>취소</span></button>
+                        <button type="button" class="btn-solid" data-action="close"><span>확인</span></button>
+                    </div>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- // popup (Full Page) Sample -->
+
+            <!-- Bottom Sheet 샘플 //-->
+            <div class="bottom-sheet" data-layered-name="">
+                <div class="bottom-sheet_header">
+                    <span class="tit">어드민 등록 바텀시트</span>
+                </div>
+                <div class="bottom-sheet_contents">                    
+                    <section class="kb-sec">
+                        <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                            <!-- 에디터 내용 노출 -->
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                        </div>
+                        <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->       
+                    </section>     
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday02"><label for="notToday02">오늘 하루 보지 않기</label></span></div>                    
+                <div class="bottom-sheet_buttons">
+                    <button class="btn-solid gray" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid"><span>확인</span></button>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- //Bottom Sheet -->
+
+            <!-- Modal 샘플 //-->
+            <div class="modal" data-layered-name="">    
+                <div class="modal_header">
+                    <strong class="tit">어드민 등록 모달</strong>
+                </div>
+                <div class="modal_contents">
+                    <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                        <!-- 에디터 내용 노출 -->
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                    </div>
+                    <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->  
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday03"><label for="notToday03">오늘 하루 보지 않기</label></span></div>                    
+                <div class="modal_buttons btn-area">
+                    <button class="btn-solid gray" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid"><span>확인</span></button>
+                </div>
+            </div>
+            <!-- //Modal -->
+            <!-- popup (Full Page) Sample //-->
+            <div class="popup" data-layered-name="">
+                <div class="popup_header">
+                    <strong class="tit">어드민 등록 팝업 타이틀</strong>
+                </div>
+                <div class="popup_contents">
+                    <section class="kb-sec">
+                        <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                            <!-- 에디터 내용 노출 -->
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                        </div>
+                        <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->       
+                    </section>                    
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday"><label for="notToday">오늘 하루 보지 않기</label></span></div>                    
+                <div class="popup_buttons sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid gray" data-action="close"><span>취소</span></button>
+                        <button type="button" class="btn-solid" data-action="close"><span>확인</span></button>
+                    </div>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- // popup (Full Page) Sample -->
+
+            <!-- Bottom Sheet 샘플 //-->
+            <div class="bottom-sheet" data-layered-name="">
+                <div class="bottom-sheet_header">
+                    <span class="tit">어드민 등록 바텀시트</span>
+                </div>
+                <div class="bottom-sheet_contents">                    
+                    <section class="kb-sec">
+                        <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                            <!-- 에디터 내용 노출 -->
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                        </div>
+                        <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->       
+                    </section>     
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday02"><label for="notToday02">오늘 하루 보지 않기</label></span></div>                    
+                <div class="bottom-sheet_buttons">
+                    <button class="btn-solid gray" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid"><span>확인</span></button>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- //Bottom Sheet -->
+
+            <!-- Modal 샘플 //-->
+            <div class="modal" data-layered-name="">    
+                <div class="modal_header">
+                    <strong class="tit">어드민 등록 모달</strong>
+                </div>
+                <div class="modal_contents">
+                    <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                        <!-- 에디터 내용 노출 -->
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                    </div>
+                    <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->  
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday03"><label for="notToday03">오늘 하루 보지 않기</label></span></div>                    
+                <div class="modal_buttons btn-area">
+                    <button class="btn-solid gray" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid"><span>확인</span></button>
+                </div>
+            </div>
+            <!-- //Modal -->
+            <!-- popup (Full Page) Sample //-->
+            <div class="popup" data-layered-name="">
+                <div class="popup_header">
+                    <strong class="tit">어드민 등록 팝업 타이틀</strong>
+                </div>
+                <div class="popup_contents">
+                    <section class="kb-sec">
+                        <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                            <!-- 에디터 내용 노출 -->
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                        </div>
+                        <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->       
+                    </section>                    
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday"><label for="notToday">오늘 하루 보지 않기</label></span></div>                    
+                <div class="popup_buttons sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid gray" data-action="close"><span>취소</span></button>
+                        <button type="button" class="btn-solid" data-action="close"><span>확인</span></button>
+                    </div>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- // popup (Full Page) Sample -->
+
+            <!-- Bottom Sheet 샘플 //-->
+            <div class="bottom-sheet" data-layered-name="">
+                <div class="bottom-sheet_header">
+                    <span class="tit">어드민 등록 바텀시트</span>
+                </div>
+                <div class="bottom-sheet_contents">                    
+                    <section class="kb-sec">
+                        <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                            <!-- 에디터 내용 노출 -->
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                            에디터 내용 노출 영역<br>
+                        </div>
+                        <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->       
+                    </section>     
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday02"><label for="notToday02">오늘 하루 보지 않기</label></span></div>                    
+                <div class="bottom-sheet_buttons">
+                    <button class="btn-solid gray" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid"><span>확인</span></button>
+                </div>
+                <button class="btn-close" data-action="close"><span>닫기</span></button>
+            </div>
+            <!-- //Bottom Sheet -->
+
+            <!-- Modal 샘플 //-->
+            <div class="modal" data-layered-name="">    
+                <div class="modal_header">
+                    <strong class="tit">어드민 등록 모달</strong>
+                </div>
+                <div class="modal_contents">
+                    <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                        <!-- 에디터 내용 노출 -->
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                    </div>
+                    <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->  
+                </div>
+                <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday03"><label for="notToday03">오늘 하루 보지 않기</label></span></div>                    
+                <div class="modal_buttons btn-area">
+                    <button class="btn-solid gray" data-action="close"><span>취소</span></button>
+                    <button class="btn-solid"><span>확인</span></button>
+                </div>
+            </div>
+            <!-- //Modal -->
+
+            <!-- ************************** 중복 테스트용 Clone [e] ************************************* -->
+
+        </div>
+
+        
+    </div>
+
+    
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->    
+
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <script>
+        $('.layered').children('div').each(function(i){
+            $(this).attr('data-layered-name','adminLayer' + (i + 1));
+            $('.layer-count').text(i)
+        });
+
+        //아래 2개로 열고 닫기
+        //gfn_layered.open('레이어이름');
+        //gfn_layered.close('레이어이름');
+
+        $('.a').on('click',function(){
+            gfn_layered.open('adminLayer1');
+        });
+        $('.b').on('click',function(){
+            gfn_layered.open('adminLayer2');
+        });
+        $('.c').on('click',function(){
+            gfn_layered.open('adminLayer3');
+        });
+    </script>
+
+
+    
+</body>
+
+</html>

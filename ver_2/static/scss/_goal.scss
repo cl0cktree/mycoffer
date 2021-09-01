@@ -54,26 +54,39 @@
 .pgbank-mng-pop .links i {position: absolute; right: 0; top: 50%; margin-top: -12px;}
 
 .pgbank-trans-history .account-detail{margin-top:20px;}
+.pgbank-trans-history .account-detail .period-con .num{font-size:1.5rem;}
 .pgbank-trans-history .account-detail .d-list .price-wrap{margin-top:5px;}
 .pgbank-trans-history .account-detail .d-list .price-wrap .txt-con{text-align:right;width:auto;}
 .pgbank-trans-history .account-detail .d-list .price-wrap .type{@include text($weight: bold);}
 .pgbank-trans-history .account-detail .d-list .price-wrap .txt-con .amount{font-weight:bold;display:block;}
+.pgbank-trans-history .account-detail .d-list .price-wrap .txt-con .amount .num{font-weight:bold;}
+.pgbank-trans-history .account-detail .d-list .price-wrap .txt-con .amount .num:after{vertical-align:0;font-weight:normal;color:$kb-ui02;}
 .pgbank-trans-history .account-detail .d-list .price-wrap .txt-con .plus{color:$color-blue;}
 .pgbank-trans-history .account-detail .d-list .price-wrap .txt-con .minus{color:$color-red;}
 .pgbank-trans-history .account-detail .d-list .price-wrap .txt-con .total{display:block;}
 .pgbank-trans-history .account-detail .d-list .price-wrap .txt-con .memo{display:block;margin-top:6px;}
+.pgbank-trans-history .account-detail .d-list .price-wrap .txt-con .balance{margin-top:.8rem;font-size:$text03;color:$kb-ui04;}
+.pgbank-trans-history .account-detail .d-list .price-wrap .txt-con .balance .num{font-size:1.5rem;}
+.pgbank-trans-history .account-detail .d-list .price-wrap .txt-con .balance .num::after{font-size:1.4rem;vertical-align:0;}
+.pgbank-trans-history .account-detail .d-list .price-wrap .txt-con.type2 .amount{font-weight:normal;}
+.pgbank-trans-history .account-detail .d-list .price-wrap .date-con .num{font-size:1.5rem;margin-bottom:1.2rem;}
+.pgbank-trans-history .account-detail .d-list .price-wrap .date-con em{color:$kb-ui03;font-size:1.3rem;padding-left:1.4rem;position:relative;}
+.pgbank-trans-history .account-detail .d-list .price-wrap .date-con em:before{content:'';width:1px;height:1.2rem;display:block;position:absolute;left:.5rem;top:.2rem;background:$kb-ui08;}
 .pgbank-trans-history .account-detail .description-list dd.amount .num {bottom: 0;}
 
+
 .pgbank-empty-confirm .description-list {margin-top: 40px; padding: 20px 0; grid-template-columns: 64px auto; border-top: 1px solid #ebeef0;}
-.pgbank-empty-confirm .complete-msg .tit {letter-spacing: -0.96px;}
+.pgbank-empty-confirm .complete-msg{margin-top:2.8rem;}
+.pgbank-empty-confirm .complete-msg .tit {letter-spacing: -.11rem;}
+.pgbank-empty-confirm .description-list dd.amount .num:after{font-weight:normal;}
 
 .pgbank-rules p {margin-bottom: 13px; font-size: 16px; line-height: 23px; color: #696e76;}
 .pgbank-rules p:first-child {padding-top: 8px;}
-.pgbank-rules .main-copy {margin-bottom: 13px; padding-top: 8px; font-size: 28px; line-height: 39px; font-weight: bold; letter-spacing: -1.12px;}
-.pgbank-rules p + .main-copy {margin-bottom: 40px; padding-top: 0;}
-.pgbank-rules .main-copy + p {margin-bottom: 40px; padding-top: 0;}
-.pgbank-rules .h4 {margin-bottom: 24px;}
-.pgbank-rules .character-selection {margin: 0 (-2.4rem) 45px; padding: 0 2.4rem; overflow-x: auto;}
+.pgbank-rules .main-copy {margin-bottom:1.6rem;font-size:2.4rem;}
+.pgbank-rules p + .main-copy {margin-bottom:4rem;}
+.pgbank-rules .main-copy + p {margin-bottom:6rem;}
+.pgbank-rules .h4{margin-bottom:1.2rem;}
+.pgbank-rules .character-selection {margin: 0 (-2.4rem) 4.8rem; padding: 0 2.4rem; overflow-x: auto;}
 .pgbank-rules .character-selection::-webkit-scrollbar {display: none;}
 .pgbank-rules .character-selection ul {font-size: 0; white-space: nowrap;}
 .pgbank-rules .character-selection li {display: inline-block; margin-right: 12px; width: 145px; height: 215px;}
@@ -113,11 +126,12 @@
 .goal-challenge-msg .img{flex:0 0 68px;}
 .goal-challenge-msg .img + strong{@include text($size:$text02);flex:1;margin-left:20px;}
 
-.bottom-sheet[data-layered-name=bsSavingMyAccount] .msg{@include text($size: $text01, $line-height:1, $weight:bold)}
+.bottom-sheet[data-layered-name=bsSavingMyAccount] .msg{@include text($size: $text02, $line-height:1, $weight:normal)}
 .bottom-sheet[data-layered-name=bsSavingMyAccount] .saving-acount-info li{@include clfix;line-height:1;margin-top:20px;}
 .bottom-sheet[data-layered-name=bsSavingMyAccount] .saving-acount-info li > span{float:left;color:$kb-ui04;}
-.bottom-sheet[data-layered-name=bsSavingMyAccount] .saving-acount-info li > strong{float:right;font-weight:bold;}
+.bottom-sheet[data-layered-name=bsSavingMyAccount] .saving-acount-info li > strong{float:right;font-weight:normal;}
 .bottom-sheet[data-layered-name=bsSavingMyAccount] .saving-acount-info li .num{line-height:1;}
+.bottom-sheet[data-layered-name=bsSavingMyAccount] .saving-acount-info li .num::after{vertical-align:0;}
 
 .goal-invest-direct .kb-sec:first-child{padding-top:44px;}
 .goal-invest-direct .kb-sec + .kb-sec{margin-top:48px;}
@@ -134,7 +148,7 @@
 .goal-ama-others-detail .challenge-info .term-list li{font-size:1.4rem;line-height:1.4;padding-left:1.2rem;}
 .goal-ama-others-detail .challenge-info .term-list li > span{display:inline-block;font-size:$text03;color:$kb-ui04;position:relative;}
 .goal-ama-others-detail .challenge-info .term-list li + li{margin-top:1.4rem;}
-.goal-ama-others-detail .challenge-info .term-list li strong{font-weight:bold;}
+.goal-ama-others-detail .challenge-info .term-list li strong{font-weight:bold;margin-left:.4rem;}
 .goal-ama-others-detail .challenge-info .term-list li strong .num{font-weight:bold;font-size:1.5rem;}
 .goal-ama-others-detail .challenge-info .term-list li strong .num:after{font-size:$text03;font-weight:normal;vertical-align:0;}
 // .goal-ama-others-detail .challenge-info .term-list li > span{display:inline-block;font-size:12px;background:#f7f7f8;border:1px solid #8c949e;min-width:63px;padding:0 10px;height:20px;line-height:20px;text-align:center;border-radius:2px;margin-right:6px;}
@@ -321,9 +335,10 @@
 .goals-state li .info>i{position:absolute;top:2.5rem;left:1.5rem;}
 .goals-state li .list-tit{display:block;font-weight:bold;}
 // .goals-state li > a{position:absolute;width:100%;height:100%;top:0;left:0}
-.goals-state li .stamp{display:block;width:47px;height:47px;position:absolute;right:20px;top:50%;transform:translateY(-50%);}
+.goals-state li .stamp{display:block;height:2.4rem;line-height:2.4rem;padding:0 1.2rem;font-size:1.3rem;border-radius:5rem;position:absolute;background:$color-blue;color:#fff;right:20px;top:50%;transform:translateY(-50%);}
+.goals-state li .stamp[data-status=fail]{background:$kb-ui05;}
 .goals-state li .stamp.type2{margin-right:15px;}
-.goals-state li .stamp.type2:after{content:'';width:24px;height:24px;display:block;background:url(../images/goal/go_detail_24.png) no-repeat;background-size:contain;position:absolute;right:-30px;top:12px;}
+.goals-state li .stamp.type2:after{content:'';width:24px;height:24px;display:block;background:url(../images/goal/go_detail_24.png) no-repeat;background-size:contain;position:absolute;right:-30px;top:0;}
 .goals-state .goals-desc button.btn-text u{font-size:14px;color:$kb-ui04;}
 .goals-state li a.btn-trans{position:absolute;width:100%;height:100%;top:0;left:0;z-index:1;}
 .goals-state .goals-desc .info-desc{@include text($size:$text03,$weight:normal);}
@@ -341,6 +356,7 @@
 .icon-sel .icon-type label{padding-left:0;width:100%;height:100%;position:relative;background:#f7f7f8;border-radius:1rem;}
 .icon-sel .icon-type label i{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:6rem;height:auto;}
 .icon-sel .icon-type input + label:before{display:none;}
+.icon-sel .icon-type input:checked + label{background:#fff;}
 .icon-sel .icon-type input:checked + label:after{content:'';display:block;position:absolute;left:50%;top:50%;transform:translate(-50%, -50%);z-index:1;width:calc(100% + .2rem);height:calc(100% + .2rem);border:.3rem solid #ffd338;border-radius:1rem;}
 // .icon-sel .icon-type input:checked + label:before{content:'선택완료';font-weight:bold;color:#fff;text-align:center;display:block;background:none;z-index:2;width:100%;margin-top:4.8rem;transform:none;height:auto;border:none;top:auto;left:0;}
 // .icon-sel .icon-type input:checked + label:after{content:'';background:red;width:100%;height:100%;display:block;}
@@ -524,7 +540,7 @@
 .goals-pay-list .credit-list dd .amount .num:before{content:'출금';font-weight:normal;margin-right:1rem;font-size:$text02;font-family: 'KBFGText';}
 .goals-pay-list .credit-list dd .amount .num{font-size:1.9rem;}
 .goals-pay-list .credit-list dd .amount .num:after{font-size:$text02;color:$kb-ui02;vertical-align:0;font-weight:normal;}
-.goals-pay-list .credit-list dd.total{border-bottom:none;padding-bottom:0;padding-top:2rem;margin-top:-1px;border-top:1px solid $kb-ui02;}
+.goals-pay-list .credit-list dd.total{border-bottom:none;padding-bottom:2.4rem;padding-top:2rem;margin-top:-1px;border-top:1px solid $kb-ui02;}
 .goals-pay-list .credit-list dd.total .amount{@include text($text01);font-weight:bold;}
 .goals-pay-list .credit-list dd.total .amount .num{color:1.9rem;font-size:$text01}
 .goals-pay-list .credit-list dd.total .amount .num:before{content:'합계';}
@@ -536,6 +552,24 @@
 .goal-fin-challenge .fin-chall .flex-box{padding-top:3.2rem;padding-bottom:3.2rem;@include text($text01);}
 .goal-fin-challenge .fin-chall .flex-box .h2{@include text($size: $text01, $weight:normal);}
 .goal-fin-challenge .fin-chall .flex-box .h2 strong{font-weight:bold;}
+
+.saving-info .info-area{margin-bottom:5.2rem;}
+.saving-info .info-area .tit{font-weight:normal;}
+.saving-info .info-area .num{font-weight:bold;margin-top:1rem;}
+
+.saving-setting .tit{font-size:$text01;}
+.saving-setting .tit + .line-btn-full{margin-top:2rem;}
+.saving-setting .line-btn-full{border-top:1px solid $kb-ui09;border-bottom:1px solid $kb-ui09;}
+.saving-setting .line-btn-full button{display:flex;width:100%;padding:2rem 0;align-items:center;justify-content:space-between;}
+.saving-setting .line-btn-full button + button{border-top:1px solid $kb-ui09;}
+
+.payment-list li{border-bottom:1px solid $kb-ui09;padding:2rem 0;}
+.payment-list li .time{color:$kb-ui04;}
+.payment-list li .time + .tit{margin-top:1.6rem;}
+.payment-list li .time .num{font-size:1.5rem;}
+.payment-list li .tit + .description-list{margin-top:2rem;}
+.payment-list li .description-list + .name{margin-top:2rem;}
+.payment-list li .name{font-size:$text03;text-align:right;}
 
 section.kb-sec.bottom-bg{border-bottom:1rem solid $kb-ui10;}
 section.gray-line + section{border-top:1rem solid $kb-ui10;}

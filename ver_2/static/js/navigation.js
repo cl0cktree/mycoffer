@@ -44,7 +44,7 @@ if($appMenu.length){
             $appHeader.find('.btn-history-back, .btn-home ,.btn-close, .btn-cancel').remove();
             break;
         case 'step01':
-            $appHeader.find('.btn-history-back, .btn-home, .btn-notice-box, .btn-allmenu').remove();            
+            $appHeader.find('.btn-history-back, .btn-notice-box').remove();            
             $appMenu.remove();
             break;
         case 'step':
@@ -53,6 +53,17 @@ if($appMenu.length){
             break;
         case 'complete':            
             $appHeader.find('.btn-history-back, .btn-notice-box, .btn-close, .btn-cancel').remove();                        
+            break;
+        case 'kb':            
+            $appHeader.find('.page-tit').siblings().remove();                        
+            break;
+        case 'trans-step01':            
+            $appHeader.find('.btn-history-back, .btn-home, .btn-notice-box, .btn-cancel, .btn-allmenu').remove();                        
+            $appMenu.remove();
+            break;
+        case 'trans-step':            
+            $appHeader.find('.btn-notice-box, .btn-close, .btn-home, .btn-allmenu').remove();                        
+            $appMenu.remove();
             break;
         case 'home':
             $appHeader.find('.btn-notice-box, .btn-close, .btn-cancel').remove();

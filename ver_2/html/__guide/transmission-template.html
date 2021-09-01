@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Template"
+    })
+
+    <link rel="stylesheet" href="./resources/guide.css">
+    <link rel="stylesheet" href="./resources/jquery-ui.css">
+    <link rel="stylesheet" href="./resources/a11y-dark.min.css">
+    <script src="./resources/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+
+<body class="guide">
+    <div class="guide-header">
+        <h1><a href="./index.html">GUIDE</a></h1>
+        <div class="guide_select">
+            <input type="checkbox" id="guide_menu"><label for="guide_menu"></label>
+            <ul class="gnb">
+                <li class="index"><a href="./index.html">Index</a></li>
+                <li><a href="./log.html">Log</a></li>
+                <li><a href="./atom.html">Atom</a></li>
+                <li><a href="./molecule.html">Molecule</a></li>
+                <li><a href="./organism.html">Organism</a></li>
+                <li class="is-active"><a href="./template.html">Template</a></li>
+                <li><a href="./highcharts-sample.html">Highcharts</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="guide-container">
+        <div class="box">
+			<h2>전송요구 App Header</h2>
+            <div class="guide-desc">                
+                * 타이틀이 없을 경우에도 .page-tit 반드시 존재해야함<br>
+                <b class="c-blue">'trans-step'</b> : ci + 닫기<br>
+                <b class="c-blue">'trans-step01'</b> : 뒤로가기 + ci + 취소 버튼<br>
+                <hr>
+                <hr>
+            </div>
+            <div class="iframe-view-group">
+                <div class="iframe-view">
+                    <strong class="tit">타앱에서 접속하는 페이지 STEP 01</strong>
+                    <iframe src="./sample/header-trans-step01.html" frameborder="0"></iframe>
+                </div>
+                <div class="iframe-view">
+                    <strong class="tit">타앱에서 접속하는 페이지 STEP 02~</strong>
+                    <iframe src="./sample/header-trans-step.html" frameborder="0"></iframe>
+                </div>
+            </div>
+		</div>
+		<hr>
+    </div>
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="./resources/guide.js"></script>
+
+    <script src="@@webRoot/static/js/ui.js"></script>
+
+
+</body>
+
+</html>

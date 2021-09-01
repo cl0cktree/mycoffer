@@ -151,33 +151,50 @@ var gfn_layered = {
         dim = dim == undefined ? true : dim;
         duration = duration == undefined ? 200 : duration;
         if(name != '' && name != undefined){
+
+            layeredLevel = layeredLevel + 2;
+
             var $selectedLayer = $layered.children('div[data-layered-name=' + name + ']');
 
             focusTrap($selectedLayer);
             if ($selectedLayer.length === 0) return;
 
             if(dim){
-                if(!$selectedLayer.hasClass('popup')) gfn_dim.show($selectedLayer, layeredLevel, duration);
-                //gfn_dim.show($selectedLayer, layeredLevel);
+                //스크롤 원위치
+                $selectedLayer.find('.popup_contents, .botttom-sheet_contents, .modal_contents').scrollTop(0);
+               
+                //DIM SHOW
+                gfn_dim.show($selectedLayer, layeredLevel, duration);
+
+                //Transform 50%, 50% blur issue
+                if($selectedLayer.hasClass('modal')){
+                    var modalWidth = $selectedLayer.outerWidth();
+                    var modalHeight = $selectedLayer.outerHeight();
+                    if(modalWidth % 2 != 0) modalWidth = modalWidth + 1;
+                    if(modalHeight % 2 != 0) modalHeight = modalHeight + 1;
+                    $selectedLayer.css({'width': modalWidth, 'height': modalHeight});
+                }
             }
             $selectedLayer.addClass('is-active').css('z-index', layeredLevel);
             gfn_body.hold(true);
-
-            layeredLevel = layeredLevel + 2;
         }
-        //console.log('layered.open')
     },
     close: function(name, duration){
-        //console.log(name, 'layered.close')
         duration = duration == undefined ? 200 : duration;
         if(name != '' && name != undefined){
             var $selectedLayer = $layered.children('div[data-layered-name=' + name + ']');
             gfn_body.hold(false);
             gfn_dim.hide($selectedLayer.prev('.dim'), duration);
             //$selectedLayer.removeClass('is-active is-expanded').removeAttr('style');
-            if(!$selectedLayer.hasClass('modal')){
-                $selectedLayer.removeClass('is-active is-expanded').removeAttr('style');
-            }else{
+            if($selectedLayer.hasClass('popup')){
+                $selectedLayer.removeClass('is-active').removeAttr('style');
+            }else if($selectedLayer.hasClass('bottom-sheet')){
+                //$selectedLayer.removeClass('is-active is-expanded').removeAttr('style');
+                $selectedLayer.addClass('bs-out');
+                $selectedLayer.one('animationend',function(){
+                    if($selectedLayer.hasClass('bs-out')) $selectedLayer.removeClass('is-active is-expanded bs-out').removeAttr('style');
+                });
+            }else if($selectedLayer.hasClass('modal')){
                 $selectedLayer.addClass('modal-out');
                 $selectedLayer.one('animationend',function(){
                     if($selectedLayer.hasClass('modal-out')) $selectedLayer.removeClass('is-active is-expanded modal-out').removeAttr('style');
@@ -189,6 +206,7 @@ var gfn_layered = {
             gfn_dim.hide();
             $layered.children('div').removeClass('is-active is-expanded').removeAttr('style');
         }
+        
     }
 };
 $layered.children('div').each(function(){
@@ -264,7 +282,7 @@ var gfn_formText = {
             $input.val(gfn_comma3Digit($input.val()));
         }
 
-        //unit 위치
+        //unit 위치 (정렬 변경으로 불필요)
         // if($target.find('.measurement').length){
         //     $target.find('.measurement').text($input.val());
         //     $target.find('.unit').css({'left' : $target.find('.measurement').outerWidth() + 4 + 'px'});
@@ -910,7 +928,6 @@ if($('.add-form-box').length){
         if(chkModal && $editBox.hasClass('is-edit')){
             var name = $(this).data('call-layered');
             gfn_layered.open(name);
-            console.log('test');
         }
     });
     $('.btn-add-form').on('click', function(){

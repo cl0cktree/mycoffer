@@ -15,7 +15,6 @@ i[class*='icon-']{overflow:hidden;display:inline-block;white-space:nowrap;text-i
 .app-lnb .tab + .tab_button{margin-top:28px;margin-bottom:20px;}
 
 .app-header{display:flex;flex:0 0 4.8rem;position:fixed;top:0;left:0;z-index:$level40;width:100%;height:4.8rem;background-color:$kb-ui11;padding:1.2rem 2.4rem;}
-.app-header .page-tit{@include ellipsis;flex:1;}
 .app-header .btn-history-back,
 .app-header .btn-allmenu,
 .app-header .btn-close,
@@ -23,6 +22,8 @@ i[class*='icon-']{overflow:hidden;display:inline-block;white-space:nowrap;text-i
 .app-header .btn-notice-box,
 .app-header .btn-cancel,
 .app-header .page-tit{display:none;vertical-align:top;}
+.app-header .page-tit{@include ellipsis;flex:1;}
+
 .app-header .btn-history-back{margin-right:2px;}
 .app-header .header-btn{display:block;height:24px;margin-left:auto;}
 .app-header .btn-allmenu{margin-left:20px;}
@@ -35,11 +36,12 @@ i[class*='icon-']{overflow:hidden;display:inline-block;white-space:nowrap;text-i
 .app-header[data-type=submain] .btn-history-back,
 .app-header[data-type=submain] .btn-notice-box,
 .app-header[data-type=submain] .btn-allmenu{display:inline-block;}
+.app-header[data-type^=step] .page-tit,
 .app-header[data-type^=step] .btn-cancel,
 .app-header[data-type^=step] .btn-history-back{display:inline-block;}
-.app-header[data-type=step01] .btn-cancel,
-.app-header[data-type=step01] .btn-history-back{display:none;}
-.app-header[data-type=step01] .btn-cancel{display:inline-block;}
+.app-header[data-type=step01] .btn-cancel{display:none;}
+.app-header[data-type=step01] .btn-home,
+.app-header[data-type=step01] .btn-allmenu{display:inline-block;}
 .app-header[data-type=complete] .page-tit,
 .app-header[data-type=complete] .btn-home,
 .app-header[data-type=complete] .btn-allmenu{display:inline-block;}
@@ -47,6 +49,14 @@ i[class*='icon-']{overflow:hidden;display:inline-block;white-space:nowrap;text-i
 .app-header[data-type=home] .btn-home,
 .app-header[data-type=home] .page-tit,
 .app-header[data-type=home] .btn-history-back{display:inline-block;}
+.app-header[data-type=kb] .page-tit{@include ir;flex:none;width:113px;height:20px;margin-top:2px;background:url(../images/common/common.png) no-repeat 0 -95px;background-size:160px;}
+.app-header .ci-kb{margin-top:2px;}
+.app-header[data-type^=trans-step] .page-tit{@include ir;flex:none;width:113px;height:20px;margin-top:2px;background:url(../images/common/common.png) no-repeat 0 -95px;background-size:160px;}
+.app-header[data-type^=trans-step] .btn-cancel,
+.app-header[data-type^=trans-step] .btn-history-back{display:inline-block;}
+.app-header[data-type=trans-step01] .btn-cancel,
+.app-header[data-type=trans-step01] .btn-history-back{display:none;}
+.app-header[data-type=trans-step01] .btn-close{display:inline-block;}
 
 
 //NEW STARBANKIKNG

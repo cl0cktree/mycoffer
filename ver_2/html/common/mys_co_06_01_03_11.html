@@ -1,0 +1,146 @@
+<!-- [MYS_CO_06_01_03_01] 타 마이데이터사업자 기관 선택화면> 국민은행 선택 > KB 모바일인증서(보안인증) > 자산선택 (작성자: 누리어 시스템 이진우)// -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Last Depth | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'KB국민은행',
+            'type':'title'
+        })
+        
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content info-distributer-asset">
+                <div class="page-step js-fixed">    
+                    <div class="step" aria-label="총 5단계 중 현재 4단계">
+                        <span class="current">4</span>                        
+                        <span class="total">5</span>
+                    </div>
+                    <h2 class="h1">자산 선택</h2>
+                </div>   
+                <section class="kb-sec">  
+                    <p>상품(계좌)/정보를 선택해주세요.</p>
+                    <!-- 수정 : 2021.06.11 // -->
+                    <dl class="info-distributer-asset-selector js-checkbox-selector">
+                        <dt><span class="form-checkbox"><input type="checkbox" id="selectAll"><label for="selectAll">전체선택</label></span></dt>
+                        <dd>
+                            <ul class="info-distributer-asset-list">
+                                <li>
+                                    <span class="form-checkbox_20">
+                                        <input type="checkbox" id="accountNumber01">
+                                        <label for="accountNumber01">통신구분 
+                                        <span class="account-number">010-10**-00**</span></label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="form-checkbox_20">
+                                        <input type="checkbox" id="accountNumber02">
+                                        <label for="accountNumber02">통신구분 
+                                        <span class="account-number">010-10**-00**</span></label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="form-checkbox_20">
+                                        <input type="checkbox" id="accountNumber03">
+                                        <label for="accountNumber03">통신구분
+                                        <span class="account-number">010-10**-00**</span></label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="form-checkbox_20">
+                                        <input type="checkbox" id="accountNumber04">
+                                        <label for="accountNumber04">통신구분
+                                        <span class="account-number">010-10**-00**</span></label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="form-checkbox_20">
+                                        <input type="checkbox" id="accountNumber05">
+                                        <label for="accountNumber05">통신구분
+                                        <span class="account-number">010-10**-00**</span></label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="form-checkbox_20">
+                                        <input type="checkbox" id="accountNumber06">
+                                        <label for="accountNumber06">통신구분
+                                        <span class="account-number">010-10**-00**</span></label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="form-checkbox_20">
+                                        <input type="checkbox" id="accountNumber07">
+                                        <label for="accountNumber07">통신구분
+                                        <span class="account-number">010-10**-00**</span></label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="form-checkbox_20">
+                                        <input type="checkbox" id="accountNumber08">
+                                        <label for="accountNumber08">통신구분
+                                        <span class="account-number">010-10**-00**</span></label>
+                                    </span>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <!-- // 수정 : 2021.06.11 -->                
+                </section>
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid" onclick="modalDemo1()"><span>확인</span></button>
+                    </div>
+                </div>
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+        <!-- Layer (modal, bottom sheet) // -->
+        <div class="layered">
+            <!-- 금융인증서 불러오기 // -->
+            <div class="popup" data-layered-name="popupCertificationLoading">
+                <div class="popup_contents">
+                    <section class="kb-sec">
+                        <div class="loading-certification">
+                            <strong class="tit">금융인증서비스 화면을 불러오는 중입니다.</strong>
+                            <div class="loader"><i></i><i></i><i></i><i></i><span>로딩중</span></div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!-- // 금융인증서 불러오기 -->
+            @@include('@@webRoot/html/common/layered/mys_co_04_05_00_p1.html')
+        </div>
+        <!-- // Layer (modal, bottom sheet) -->
+    </div>
+    <script>
+        function modalDemo1() {
+            modalPopup({
+                title: "",
+                message: "자산을 선택해 주세요"
+            });
+        }
+    </script>
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+
+</body>
+
+</html>
+

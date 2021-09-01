@@ -30,11 +30,7 @@
 .btn-solid.form{width:auto;height:3rem;padding:0 1.8rem;border-radius:3rem;background-color:$kb-ui04;font-size:$text03;color:$kb-ui11;}
 .btn-solid.form span{font-weight:normal;}
 
-//Apple Homebar
-.ios.homebar .sticky-bottom .btn-solid,
-.ios.homebar .popup_buttons .btn-solid{height:9.6rem;padding-top:1rem;}
-.ios.homebar .sticky-bottom .btn-solid > span,
-.ios.homebar .popup_buttons .btn-solid > span{height:9.6rem;line-height:5.2rem;}
+
 
 
 //버튼 LineType (amount:금액선택, table, form, segemented button : 탭형태)
@@ -298,10 +294,11 @@ p.simple-message.align-r{float:right;}
 .tag-label.t03[data-state="less"]{background-color:$color-red}
 .tag-label.t03[data-state="inactive"]{background-color:$kb-ui05}
 .tag-label.t03.round{padding:0 1rem;height:2rem;line-height:2rem;border-radius:1rem;vertical-align:middle;font-weight:normal}
-.tag-label + .tag-label{margin-left:0.4rem;padding-left:0.7rem;border-left:1px solid $kb-ui08}
+.tag-label.t02 + .tag-label.t02{margin-left:0.4rem;padding-left:0.7rem;border-left:1px solid $kb-ui08}
 
 //링크 요소
 .link-box_block{display:block;min-width:100%;height:auto}
+.link-box_block:focus{outline:none}
 
 // 공사중
 .under-construction {height: 15rem; background-color: rgba(255,0,0,.5); display: flex; justify-content: center; align-items: center; font-size: 2.4rem; font-weight: bold; color: #fff;}
@@ -338,6 +335,8 @@ p.simple-message.align-r{float:right;}
 .at_company-ci > i,
 .at_company-ci > img{@include absCenter;width:100%;height:100%;}
 .at_company-ci.size_24{width:2.4rem;height:2.4rem;}
+
+.ci-kb{@include ir;display:inline-block;width:113px;height:20px;background:url(../images/common/common.png) no-repeat 0 -95px;background-size:160px;}
 
 .img-resize_24,
 .img-resize_32{display:inline-block;position:relative;border-radius:50%;}

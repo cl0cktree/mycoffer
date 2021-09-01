@@ -1,4 +1,4 @@
-<!-- [MYS_CO_04_04_00_p1] 휴대폰 인증 (작성자: 누리어 시스템 변혜선)// -->
+<!-- [mys_co_06_01_03_09] 휴대폰 인증 (작성자: 누리어 시스템 변혜선)// -->
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -13,7 +13,7 @@
     <div class="app">
         
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
-            'pageTit':'휴대폰 본인인증',
+            'pageTit':'<span class="ci-kb">KB국민은행</span>',
             'type':'step'
         })
         
@@ -54,7 +54,7 @@
                             <input type="text" id="certificationName" value="" placeholder="이름">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
-                        <em class="validation"></em>
+                        <em class="validation">이름을 입력해 주세요</em>
                     </div>
                     <div class="kb-form_multi kb-form_citizen" data-status="has-error">
                         <strong class="tit">주민등록번호</strong>
@@ -140,12 +140,12 @@
                         <div class="remain-time"><i class="icon-clock"></i>잔여시간 <strong>2:59</strong><button class="btn-line table"><span>입력시간연장</span></button></div>                        
                     </div>
                 </section>
-                <!-- // 인증번호 발송 후 -->
+                <!-- // 인증번호 발송 후 --> 
                 <div class="sticky-bottom">
                     <div class="btn-area">
-                        <button class="btn-solid"><span>확인</span></button>
+                        <button type="button" class="btn-solid" onclick="modalDemo1()"><span>확인</span></button>
                     </div>
-                </div>
+                </div>               
             </main>
             <!-- // app-content -->
 
@@ -167,6 +167,14 @@
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
+    <script>
+        function modalDemo1() {
+            modalPopup({
+                title: "고객님 죄송합니다",
+                message: "본인인증에 실패하였습니다. <br>· 대표전화<br> 1588-9999, 1599-9999, 1644-9999"
+            });
+        }
+    </script>
     <script>
         $('button[data-action=sendCertificationNumber]').on('click',function(){
             var top = $(this).offset().top;

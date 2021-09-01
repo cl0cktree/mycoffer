@@ -109,6 +109,7 @@
 .kb-sec.confirm-agree .confirm-info .question{margin-top:1.2rem;}
 .kb-sec.confirm-agree .radio-group{flex-direction:row;margin-top:1.4rem;}
 .kb-sec.confirm-agree .radio-group li{margin-top:0;width:50%;}
+.bottom-sheet .confirm-agree .agreement-to-terms .header{padding-top:0;}
 
 // 전송 요구 방법 선택 mys_co_06_01_00
 .box-option-list:not(.is-link) li{display:flex;margin-bottom:24px;padding:28px 24px;border:1px solid $kb-ui08;border-radius:2px}
@@ -200,8 +201,14 @@
 .request-txt p{text-align: right; color:$kb-ui04; font-size: $text03; margin-top: 75px;}
 .request-txt a{float: right; /*text-decoration:underline; text-underline-position: under;*/ margin-top: 23px;}
 //개별인증
-.select-organization .kb-card{text-align: center;}
-.select-organization .kb-card .org_option01{line-height: 30px;height:30px; background-color: red; }
+.select-organization .kb-card{text-align: center; margin-bottom:150px;}
+.select-organization .kb-card span img{margin-top:10px}
+.select-organization .kb-card strong{padding-left:10px;}
+.select-organization .kb-card p{padding-top:30px;}
+//계좌인증
+.bottom-sheet_contents .mobie-cetification li{border-bottom:1px solid $kb-ui09; padding-bottom:25px;}
+.bottom-sheet_contents .select-organization p{padding-bottom:16px;}
+.bottom-sheet_contents .select-organization .checkbox-group{padding-top:16px;}
 // 기관선택 > 검색결과 mys_co_06_01_01_09
 .search-organization-form{position:relative}
 .search-organization-form .autocomplete-box{position:absolute;top:95px;left:0;z-index:$level20;width:100%;padding:0 24px;background-color:$kb-ui11;display:none;}
@@ -337,7 +344,8 @@
 .info-distributer-asset .info-distributer-asset-list .account-amount{display:block;margin-top:4px;text-align:right;font-weight:bold;}
 .info-distributer-asset .info-distributer-asset-list .account-amount .num{font-weight:bold;}
 
-
+.info-distributer-asset .balance{font-weight: 300; padding-right:10px;}
+.info-distributer-asset .kb-sec{margin-top: 23px;}
 //mys_mn_01_01_01.html
 // .mydata-kbinfo h2{margin-top:28px;}
 .mydata-kbinfo .mydata-kbinfo-list{margin-top:1.6rem;border-top:0.1rem solid $kb-ui09;}
@@ -464,9 +472,9 @@
 .joint-certificate-list li p + p{margin-top:4px;}
 .joint-certificate-list li p{@include text($size: $text03, $line-height:1);color:$kb-ui04}
 .joint-certificate-list li p > span{display:inline-block;min-width:52px;margin-right:14px;}
-.joint-certificate-list li p > strong{color:$kb-ui02}
-.joint-certificate-list li p > strong.num{@include number($size: 15px, $line-height:1);color:$color-red}
-.joint-certificate-list li p > strong.num.c-black{color:$kb-ui02;}
+// .joint-certificate-list li p > strong{color:$kb-ui02}
+.joint-certificate-list li p > strong.num{@include number($size: 15px, $line-height:1);}
+// .joint-certificate-list li p > strong.num.c-black{color:$kb-ui02;}
 .joint-certificate-list li .icon-link_20{position:absolute;right:0;top:calc(50% - 8px);transform:translateY(-50%)}
 .joint-certificate{padding-bottom:100px;}
 

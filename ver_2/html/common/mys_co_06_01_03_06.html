@@ -1,4 +1,4 @@
-<!-- [MYS_CO_06_01_01_13] 전송요구방법 > 통합인증 > 통합인증 수단 선택 (작성자: 누리어 시스템 변혜선)// -->
+<!-- [mys_co_06_01_03_06] kb스타뱅킹앱이용여부에 따른 인증밥법 (작성자: 누리어 시스템 변혜선)// -->
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -13,8 +13,8 @@
     <div class="app">
         
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
-            'pageTit':'자산 등록',
-            'type':'submain'
+            'pageTit':'<span class="is-hidden">KB국민은행</span>',
+            'type':'kb'
         })
         
 
@@ -32,14 +32,14 @@
                     <div class="caution-txt">
                         <ul class="certificate-list">
                             <li>
-                                <a href="javascript:;">
+                                <a href="javascript:;" onclick="modalDemo1()">
                                     <i class="icon-infouser"></i> 
                                     <span class="txt">KB스타뱅킹 이용 고객<p>고객님께서 이용하시는 KB스타뱅킹을<br>통해 본인인증거래를 수행합니다</p></span>                                    
                                     <span class="link-arrow">바로가기</span>
                                 </a>
                             </li> 
                             <li>
-                                <a href="javascript:;">
+                                <a href="mys_co_06_01_03_08.html">
                                     <i class="icon-infouser"></i> 
                                     <span class="txt">KB스타뱅킹 미설치 고객<p>본인명의 휴대폰 및 계좌비밀번호 확인을 <br>통해 본인인증 거래를 수행합니다</p></span>
                                     <span class="link-arrow">바로가기</span>
@@ -67,7 +67,14 @@
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
-
+    <script>
+        function modalDemo1() {
+            modalPopup({
+                title: "",
+                message: "KB스타뱅킹이 설치되지 않았습니다. 미설치 고객용 버튼 클릭해 주세요."
+            });
+        }
+    </script>
 </body>
 
 </html>
