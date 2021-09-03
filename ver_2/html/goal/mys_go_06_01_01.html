@@ -149,85 +149,89 @@
     <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
 
     <!-- Add Script -->
-    <script>
-        // highchart 공통 options
-        Highcharts.setOptions({
-            title: { text: null },
-            subTitle: { text: null },
-            credits: { enabled: false },
-            tooltip: { enabled: false },
-            label : { fontFamily: 'KBFGText'},
-            credits: { enabled: false },
-            exporting: { enabled: false }
-        });
+    <script>       
+        $(document).ready(function(){ // 2021-09-02 추가
+
+            // highchart 공통 options
+            Highcharts.setOptions({
+                title: { text: null },
+                subTitle: { text: null },
+                credits: { enabled: false },
+                tooltip: { enabled: false },
+                label : { fontFamily: 'KBFGText'},
+                credits: { enabled: false },
+                exporting: { enabled: false }
+            });
 
 
-        //chart 선언
-        var doubleColumnChart = new Highcharts.Chart({
-            chart: {
-                renderTo: 'columnChart01', // chart 삽입 target ID
-                type: "column",
-                marginLeft: 0,
-                marginRight: 0,
-                marginTop:20,
-            },
-            legend: { enabled: false },
-            xAxis: {
-                type: "category",
-                categories: ["1월4주", "2월1주", "2월2주", "2월3주"],
-                labels: {
-                    style: {
-                        color: "#aab0b8",
-                        fontSize: "3.733vw",
-                        fontFamily: 'KBFGText',
-                    }
-                }
-            },
-            yAxis: {
-                endOnTick: false,
-                enabled: false,  // 사용 안함
-                labels: { enabled: false },  // 축 lebel 사용 안함
-                title: { enabled: false }, // 축 title 사용 안함
-                tickWidth: 0,  // 그리드 라인 너비
-                gridLineColor: null,  // 그리드 라인 컬러
-                plotLines: [
-                    {
-                        color: "#c7ccd1",
-                        width: 1,
-                        value: 3,
-                        zIndex: 50,
-                        dashStyle: 'dot'
-                    },
-                ],
-            },
-            plotOptions: {
-                series: {
-                    grouping: false,
-                    borderWidth: 0,
-                    pointWidth: 7,  // 막대그래프 너비
-                    borderRadiusTopLeft: "50%",  // radius 값
-                    borderRadiusTopRight: "50%" // radius 값
-                }
-            },
-            series: [{
-                    name: "현재",
-                    color: "#ffd338",
-                    pointPlacement: -0.1,
-                    data: [1, 2, 3, 5]
+            //chart 선언
+            var doubleColumnChart = new Highcharts.Chart({
+                chart: {
+                    renderTo: 'columnChart01', // chart 삽입 target ID
+                    type: "column",
+                    marginLeft: 0,
+                    marginRight: 0,
+                    marginTop:20,
                 },
-                {
-                    id: "main",
-                    name: "지난주",
-                    color: '#484b51',
-                    pointPlacement: 0.1,
-                    dataSorting: {
-                        enabled: true,
-                        matchByName: true
+                legend: { enabled: false },
+                xAxis: {
+                    type: "category",
+                    categories: ["1월4주", "2월1주", "2월2주", "2월3주"],
+                    labels: {
+                        style: {
+                            color: "#aab0b8",
+                            fontSize: "3.733vw",
+                            fontFamily: 'KBFGText',
+                        }
+                    }
+                },
+                yAxis: {
+                    endOnTick: false,
+                    enabled: false,  // 사용 안함
+                    labels: { enabled: false },  // 축 lebel 사용 안함
+                    title: { enabled: false }, // 축 title 사용 안함
+                    tickWidth: 0,  // 그리드 라인 너비
+                    gridLineColor: null,  // 그리드 라인 컬러
+                    plotLines: [
+                        {
+                            color: "#c7ccd1",
+                            width: 1,
+                            value: 3,
+                            zIndex: 50,
+                            dashStyle: 'dot'
+                        },
+                    ],
+                },
+                plotOptions: {
+                    series: {
+                        grouping: false,
+                        borderWidth: 0,
+                        pointWidth: 7,  // 막대그래프 너비
+                        borderRadiusTopLeft: "50%",  // radius 값
+                        borderRadiusTopRight: "50%" // radius 값
+                    }
+                },
+                series: [{
+                        name: "현재",
+                        color: "#ffd338",
+                        pointPlacement: -0.1,
+                        data: [1, 2, 3, 5]
                     },
-                    data: [3, 4, 5, 1]
-                }
-            ],
-        });
+                    {
+                        id: "main",
+                        name: "지난주",
+                        color: '#484b51',
+                        pointPlacement: 0.1,
+                        dataSorting: {
+                            enabled: true,
+                            matchByName: true
+                        },
+                        data: [3, 4, 5, 1]
+                    }
+                ],
+            });
+        
+        }) //2021-09-02 추가
     </script>
 </body>
 

@@ -24,13 +24,22 @@
             <main class="app-content mm-manage-certificate">
                 <!-- 공동 인증서 없을 때 // -->
                 <section class="kb-sec">
-                    <p>KB마이머니에 등록된 공동인증서입니다.</p>
-                    <p>인증서를 발급/갱신하신 경우, 원활한 자산정보 업데이트를 위해 새로운 인증서로 교체해 주시기 바랍니다.</p>
+                    <h2 class="h3">공동인증서 가져오기</h2>
+                    <ul class="manage-certificate">
+                        <li><a href="javascript:;">PC에서 가져오기<i class="icon-link_24"></i></a></li>
+                        <li><a href="javascript:;">스마트폰에서 가져오기<i class="icon-link_24"></i></a></li>                        
+                    </ul>
+                    <h2 class="h3">공동인증서 발급하기</h2>
+                    <ul class="manage-certificate">
+                        <li><a href="javascript:;" onclick="modalDemo3()">스타뱅킹 인증센터<i class="icon-link_24"></i></a></li>                       
+                    </ul>
+                </section>  
+                <section class="kb-sec">                    
                     <div class="no-data">
                         <i class="icon-info_24"></i>
                         <p>선택 가능한 공동인증서가 없습니다.</p>
                     </div>
-                </section>   
+                </section> 
                 <!-- // 공동 인증서 없을 때 -->
 
             </main>
@@ -50,7 +59,17 @@
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
-
+    <script>
+        function modalDemo3() {
+            modalPopup({
+                title: "",
+                message: "KB스타뱅킹으로 이동하시겠습니까?",
+                type: "confirm",                
+                textCancelButton: "취소",
+                textOkButton: "확인",
+            });
+        }
+    </script>
 </body>
 
 </html>

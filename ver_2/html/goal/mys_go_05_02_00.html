@@ -59,28 +59,6 @@
 	<script src="@@webRoot/static/js/ui.js"></script>
     <script src="@@webRoot/static/common/lib/swiper.min.js"></script>
     <script>
-        var $contentSwiper = $('.content-swiper-wrap');
-        if($contentSwiper.length > 0){
-            $contentSwiper.each(function(index){
-                var $contentSwiper = $(this).find('.swiper-container');
-                var index = index+1;
-                $contentSwiper.addClass('content-swiper' + index);
-                var swiper = new Swiper('.content-swiper' + index, {
-                    slidesPerView: 'auto',
-                    centeredSlides: 'true',
-                    spaceBetween: 24,
-                    pagination: {
-                        el: $('.content-swiper' + index).find('.swiper-pagination'),
-                        type: 'bullets',
-                        clickable: 'true',
-                    },
-                    navigation: {
-                        nextEl: $('.content-swiper' + index).find('.swiper-button-next'),
-                        prevEl: $('.content-swiper' + index).find('.swiper-button-prev'),
-                    },
-                });
-            });
-        };
     </script>
 </body>
 

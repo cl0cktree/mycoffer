@@ -160,7 +160,12 @@
 					<h2 class="is-hidden">지출정보</h2>
 					<div class="house-data-tit">
 						<div class="data-wrap">
-							<p class="tit">My House 지출 (4월)</p>
+							 <!-- 20211-09-02 수정 // -->
+							<div>
+								<p class="tit">My House 지출</p>
+								<span class="info">(8월)</span>
+							</div>
+							 <!-- // 20211-09-02 수정 -->
 							<p class="amount"><span class="num" data-unit-after="원">4,500,000</span></p> <!-- 2021-08-26 수정 -->
 						</div>
 					</div>
@@ -211,30 +216,34 @@
 	<script src="@@webRoot/static/js/ui.js"></script>
 	<!-- Add Script -->
 	<script>
-		//GNB 활성화 (번호:menu.js)
-        gfn_gnb.select(4);
-		
-		$('button[data-action=btnAddHouse]').on('click',function(){
-            modalPopup({
-                title: "",
-                message: "부동산은 최대 10채까지 등록할 수 있습니다.<br>(부동산 삭제 시 추가 등록 가능)",
-                type: "alert"
-            });
-        });
+        $(document).ready(function(){ // 2021-09-02 추가
+				
+			//GNB 활성화 (번호:menu.js)
+			gfn_gnb.select(4);
+			
+			$('button[data-action=btnAddHouse]').on('click',function(){
+				modalPopup({
+					title: "",
+					message: "부동산은 최대 10채까지 등록할 수 있습니다.<br>(부동산 삭제 시 추가 등록 가능)",
+					type: "alert"
+				});
+			});
 
 
-		// 부동산 하위 메뉴 텍스트 전환
-		$(window).on('load', function() {
-			// My House
-			appendText($(".app-sub-wrap li:eq(0) a"), " (1채)");
-			// Wish House
-			appendText($(".app-sub-wrap li:eq(1) a"), " (2채)");
+			// 부동산 하위 메뉴 텍스트 전환
+			$(window).on('load', function() {
+				// My House
+				appendText($(".app-sub-wrap li:eq(0) a"), " (1채)");
+				// Wish House
+				appendText($(".app-sub-wrap li:eq(1) a"), " (2채)");
 
-			function appendText(elem, txt) {
-				var t = elem.text();
-				elem.text(t + txt);
-			}
-		});
+				function appendText(elem, txt) {
+					var t = elem.text();
+					elem.text(t + txt);
+				}
+			});
+
+		}) // 2021-09-02 추가
 	</script>
 </body>
 

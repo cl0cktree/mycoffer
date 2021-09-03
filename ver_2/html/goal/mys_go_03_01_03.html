@@ -109,77 +109,81 @@
     <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>
     <script src="@@webRoot/static/common/lib/highcharts/highcharts-more.js"></script>
 
-    <script>
-        // highchart 공통 options        
-        Highcharts.setOptions({
-            title: { text: null },
-            subTitle: { text: null },
-            legend: { enabled: false },
-            credits: { enabled: false },
-            label : { fontFamily: 'KBFGText'},
-            credits: { enabled: false },
-            exporting: { enabled: false }
-        });
-        
-        var bubbleChart = new Highcharts.Chart({
-            chart: {
-                renderTo: 'bubbleChart01', // chart 삽입 target ID                
-                plotBackgroundColor: null,
-                plotBorderWidth: 0,
-                plotShadow: false,
-                type: 'packedbubble',
-                margin:0,
-                marginTop:0,
-                marginBottom:0
-            },            
-            tooltip: { enabled: false },
-            plotOptions: {
-                packedbubble: {
-                    minSize: '30%',
-                    maxSize: '100%',
-                    zMin: 0,
-                    layoutAlgorithm: {
-                        splitSeries: false,
-                        gravitationalConstant: 0.05
-                    },
-                    dataLabels: {
-                        enabled: true,
-                        formatter: function () { 
-                            return this.point.name + "<br><span style='font-size:3.5vw;font-family:Roboto;'><b style='font-size:4vw;'>" + gfn_comma3Digit(this.point.value) + "</b>일"
-                        },    
-                        rotation:1,             
-                        style: {
-                            color: '#000',
-                            textOutline: 'none',
-                            fontWeight: 'normal',
-                            textAlign:'center',    
-                            fontSize: '3.5vw',                        
-                            fontFamily: "KBFGText"         
-                        }
-                    }
-                }  
-            },
-            series: [{
-                name: null,
-                data: [{
-                    name: '<tspan dy="-5">비교그룹</tspan>',
-                    value: 7,
-                    color: {
-                        radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
-                        stops: [ [0, '#ff8a71'], [1, '#ff8a71'] ]
-                    }
-                },{
-                    name: '<tspan dy="-5">나</tspan>',
-                    color: '#f8956d',
-                    value: 3,
-                    color: {
-                        radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
-                        stops: [ [0, '#ffba53'], [1, '#ffba53'] ]
-                    }
-                }]
+    <script>        
+        $(document).ready(function(){ // 2021-09-02 추가
+
+            // highchart 공통 options        
+            Highcharts.setOptions({
+                title: { text: null },
+                subTitle: { text: null },
+                legend: { enabled: false },
+                credits: { enabled: false },
+                label : { fontFamily: 'KBFGText'},
+                credits: { enabled: false },
+                exporting: { enabled: false }
+            });
             
-            }]
-        });
+            var bubbleChart = new Highcharts.Chart({
+                chart: {
+                    renderTo: 'bubbleChart01', // chart 삽입 target ID                
+                    plotBackgroundColor: null,
+                    plotBorderWidth: 0,
+                    plotShadow: false,
+                    type: 'packedbubble',
+                    margin:0,
+                    marginTop:0,
+                    marginBottom:0
+                },            
+                tooltip: { enabled: false },
+                plotOptions: {
+                    packedbubble: {
+                        minSize: '30%',
+                        maxSize: '100%',
+                        zMin: 0,
+                        layoutAlgorithm: {
+                            splitSeries: false,
+                            gravitationalConstant: 0.05
+                        },
+                        dataLabels: {
+                            enabled: true,
+                            formatter: function () { 
+                                return this.point.name + "<br><span style='font-size:3.5vw;font-family:Roboto;'><b style='font-size:4vw;'>" + gfn_comma3Digit(this.point.value) + "</b>일"
+                            },    
+                            rotation:1,             
+                            style: {
+                                color: '#000',
+                                textOutline: 'none',
+                                fontWeight: 'normal',
+                                textAlign:'center',    
+                                fontSize: '3.5vw',                        
+                                fontFamily: "KBFGText"         
+                            }
+                        }
+                    }  
+                },
+                series: [{
+                    name: null,
+                    data: [{
+                        name: '<tspan dy="-5">비교그룹</tspan>',
+                        value: 7,
+                        color: {
+                            radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
+                            stops: [ [0, '#ff8a71'], [1, '#ff8a71'] ]
+                        }
+                    },{
+                        name: '<tspan dy="-5">나</tspan>',
+                        color: '#f8956d',
+                        value: 3,
+                        color: {
+                            radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
+                            stops: [ [0, '#ffba53'], [1, '#ffba53'] ]
+                        }
+                    }]
+                
+                }]
+            });
+        
+        }) // 2021-09-02 추가
     </script>
 </body>
 

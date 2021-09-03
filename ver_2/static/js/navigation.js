@@ -178,7 +178,7 @@ var subMenuList = [];
 var $subMenu = $('.app-sub-wrap');
 var gfn_gnb = {
     init : function(){
-        console.log(gnbArr)
+        // console.log(gnbArr)
         $.each(gnbArr, function(index, item){
             gnbMenuList[index] = '<li class="swiper-slide" data-index="' + item.number+ '"><a href="' + item.link + '" data-sub="' + item.sub + '">' + item.name + '</a></li>';
         });
@@ -195,8 +195,8 @@ var gfn_gnb = {
     choose: function(gnbIdx, subIdx){
         if($gnb.length){
             if(gnbIdx == undefined) gnbIdx = depth1;
-            if(subIdx == undefined) subIdx = depth2;
-            if(subShow == undefined) subShow = true;
+            // if(subIdx == undefined) subIdx = depth2;
+            // if(subShow == undefined) subShow = true;
 
             if(isNumeric(gnbIdx)){//숫자로 입력
                 // var sub = $gnb.find('.swiper-slide[data-index="' + gnbIdx + '"]').find('a').data('sub');

@@ -158,74 +158,76 @@
 	<script src="@@webRoot/static/js/ui.js"></script>
 	<!-- Add Script -->
 	<script>
-		$('button[data-action=kbSmartLoan]').on('click',function(){
-            modalPopup({
-                title: "",
-                message: "상세보기 페이지로 이동하시겠습니까?",
-                type: "confirm",
-                textOkButton: "확인",
-                textCancelButton: "취소",
-                onOk: function() {
-                    
-                },
-                onCancel: function() {
-                    
-                }
-            });
-        });
-		$('button[data-action=goLiiv]').on('click',function(){
-            modalPopup({
-                title: "",
-                message: "리브부동산으로 이동하시겠습니까?",
-                type: "confirm",
-                textOkButton: "확인",
-                textCancelButton: "취소",
-                onOk: function() {
-                    
-                },
-                onCancel: function() {
-                    
-                }
-            });
-        });
-		
-		
-		//start
-		var transitionEnd = 'transitionend webkitTransitionEnd oTransitionEnd transitionend';
+        $(document).ready(function(){ // 2021-09-02 추가
+			
+			$('button[data-action=kbSmartLoan]').on('click',function(){
+				modalPopup({
+					title: "",
+					message: "상세보기 페이지로 이동하시겠습니까?",
+					type: "confirm",
+					textOkButton: "확인",
+					textCancelButton: "취소",
+					onOk: function() {
+						
+					},
+					onCancel: function() {
+						
+					}
+				});
+			});
+			$('button[data-action=goLiiv]').on('click',function(){
+				modalPopup({
+					title: "",
+					message: "리브부동산으로 이동하시겠습니까?",
+					type: "confirm",
+					textOkButton: "확인",
+					textCancelButton: "취소",
+					onOk: function() {
+						
+					},
+					onCancel: function() {
+						
+					}
+				});
+			});
+			
+			
+			//start
+			var transitionEnd = 'transitionend webkitTransitionEnd oTransitionEnd transitionend';
 
-		$('.my-asset.wish-house-planer .progress-wrap .wish-gap').css({
-                "width":"100%", //wish-gap
-                //"width":"80%", //wish-gap 자산 초과시
+			$('.my-asset.wish-house-planer .progress-wrap .wish-gap').css({
+					"width":"100%", //wish-gap
+					//"width":"80%", //wish-gap 자산 초과시
 
-            });
+				});
 
-		$('.wish-gap').one(transitionEnd, function(){
-			$(this).addClass('is-active');
-			$(this).next().css({
-				"width":"20%",  // wish house 준비자산
-			})
-        });
+			$('.wish-gap').one(transitionEnd, function(){
+				$(this).addClass('is-active');
+				$(this).next().css({
+					"width":"20%",  // wish house 준비자산
+				})
+			});
 
-		$('.my-house').one(transitionEnd, function(){
-			$(this).addClass('is-active');
-			$(this).next().css({
-				"width":"30%", // wish gap
-			})
-		});
+			$('.my-house').one(transitionEnd, function(){
+				$(this).addClass('is-active');
+				$(this).next().css({
+					"width":"30%", // wish gap
+				})
+			});
 
-		$('.my-cash').one(transitionEnd, function(){
-			$(this).addClass('is-active');
-			// $(this).next().css({
-			// 	"width":"30%", // my house 대출
-			// })
-		});
+			$('.my-cash').one(transitionEnd, function(){
+				$(this).addClass('is-active');
+				// $(this).next().css({
+				// 	"width":"30%", // my house 대출
+				// })
+			});
 
-		//$('.my-loan').one(transitionEnd, function(){
-			//$(this).addClass('is-active'); 
-		//});
-		//end
-		
-		
+			//$('.my-loan').one(transitionEnd, function(){
+				//$(this).addClass('is-active'); 
+			//});
+			//end
+			
+		}) // 2021-09-02 추가
 	
 	</script>
 </body>

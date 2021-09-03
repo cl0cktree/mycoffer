@@ -90,14 +90,18 @@
 	<script src="@@webRoot/static/js/ui.js"></script>
 	<!-- Add Script -->
 	<script>
-		//alert		
-		$('button[data-action=btnAddHouse]').on('click',function(){
-            modalPopup({
-                title: "",
-                message: "부동산은 최대 10채까지 등록할 수 있습니다.<br>(부동산 삭제 시 추가 등록 가능)",
-                type: "alert"
-            });
-        });
+        $(document).ready(function(){ // 2021-09-02 추가
+			
+			//alert		
+			$('button[data-action=btnAddHouse]').on('click',function(){
+				modalPopup({
+					title: "",
+					message: "부동산은 최대 10채까지 등록할 수 있습니다.<br>(부동산 삭제 시 추가 등록 가능)",
+					type: "alert"
+				});
+			});
+
+		}) // 2021-09-02 추가
 	</script>
 
 </body>

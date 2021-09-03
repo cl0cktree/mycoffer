@@ -247,22 +247,13 @@
 	<script src="@@webRoot/static/js/ui.js"></script>
     
     <script>
-        var $btnTarget = $(".swiper-slide > button");
-        if($btnTarget.length > 0){            
-            $($btnTarget).on('click',function() {
-                var $isSelect = $(this).hasClass('is-selected')
-                if(!$isSelect){
-                    $(this).addClass('is-selected')
-                }else{
-                    $(this).removeClass('is-selected')
-                }
-            });
-        }
-    </script>
-    
-    <script>        
-        //GNB 활성화 (번호:menu.js)
-        gfn_gnb.select(3);
+                     
+        $(document).ready(function(){ // 2021-09-02 추가
+
+            //GNB 활성화 (번호:menu.js)
+            gfn_gnb.select(3);
+
+        }) // 2021-09-02 추가
     </script>
 </body>
 </html>

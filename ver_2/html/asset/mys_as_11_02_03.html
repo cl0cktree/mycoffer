@@ -71,7 +71,7 @@
                         <dd class="amount minus"><em><span class="num" data-unit-after="만원">8,500</span> (</span><span class="num not-cash">44.5</span><span class="c-black">%)</span></em></dd> <!-- 2021-08-26 수정 -->
                     </dl>
 					<div class="btn-area no-space">
-						<a href="#" class="btn-line sm"><span>Wish House 플래너</span></a> <!-- 2021-09-01 수정 -->
+						<a href="#" class="btn-solid sm gray"><span>Wish House 플래너</span></a> <!-- 2021-09-02 수정 -->
 					</div>
 					
 					<div class="house-data-tit">
@@ -86,7 +86,7 @@
                         <dd class="amount">12억원</dd>
                     </dl>
 					<div class="btn-area no-space">
-						<a href="#" class="btn-line sm"><span>Wish House 플래너</span></a> <!-- 2021-09-01 수정 -->
+						<a href="#" class="btn-solid sm gray"><span>Wish House 플래너</span></a> <!-- 2021-09-02 수정 -->
 					</div>	
 
                     <div class="btn-area mt28">
@@ -142,43 +142,46 @@
 	<!-- Add Library (this page only)-->
 	<script src="@@webRoot/static/js/ui.js"></script>
 	<script>
+        $(document).ready(function(){ // 2021-09-02 추가
+				
+			$('button[data-action=goLiiv]').on('click',function(){
+				modalPopup({
+					title: "",
+					message: "리브부동산으로 이동하시겠습니까?",
+					type: "confirm",
+					textOkButton: "확인",
+					textCancelButton: "취소",
+					onOk: function() {
+						
+					},
+					onCancel: function() {
+						
+					}
+				});
+			});		
+			
+			$('button[data-action=btnAddHouse]').on('click',function(){
+				modalPopup({
+					title: "",
+					message: "부동산은 최대 10채까지 등록할 수 있습니다.",
+					type: "alert"
+				});
+			});
 
-		$('button[data-action=goLiiv]').on('click',function(){
-            modalPopup({
-                title: "",
-                message: "리브부동산으로 이동하시겠습니까?",
-                type: "confirm",
-                textOkButton: "확인",
-                textCancelButton: "취소",
-                onOk: function() {
-                    
-                },
-                onCancel: function() {
-                    
-                }
-            });
-        });		
+			// 부동산 하위 메뉴 텍스트 전환
+			$(window).on('load', function() {
+				// My House
+				appendText($(".app-sub-wrap li:eq(0) a"), " (1채)");
+				// Wish House
+				appendText($(".app-sub-wrap li:eq(1) a"), " (2채)");
+
+				function appendText(elem, txt) {
+					var t = elem.text();
+					elem.text(t + txt);
+				}
+			});
 		
-		$('button[data-action=btnAddHouse]').on('click',function(){
-            modalPopup({
-                title: "",
-                message: "부동산은 최대 10채까지 등록할 수 있습니다.",
-                type: "alert"
-            });
-        });
-
-		// 부동산 하위 메뉴 텍스트 전환
-		$(window).on('load', function() {
-			// My House
-			appendText($(".app-sub-wrap li:eq(0) a"), " (1채)");
-			// Wish House
-			appendText($(".app-sub-wrap li:eq(1) a"), " (2채)");
-
-			function appendText(elem, txt) {
-				var t = elem.text();
-				elem.text(t + txt);
-			}
-		});
+		}) // 2021-09-02 추가
 	</script>
 </body>
 

@@ -683,107 +683,112 @@
     
     <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script> 
     <script src="@@webRoot/static/common/lib/highcharts/highcharts-more.js"></script>
-    <script>        
-        //GNB 활성화 (번호:menu.js)
-        gfn_gnb.select(3);
+    <script>
     </script> 
 
-    <script>
-        // highchart 공통 options        
-        Highcharts.setOptions({
-            title: { text: null },
-            subTitle: { text: null },
-            legend: { enabled: false },
-            credits: { enabled: false },
-            label : { fontFamily: 'KBFGText'},
-            credits: { enabled: false },
-            exporting: { enabled: false }
-        });
-        
-        var bubbleChart = new Highcharts.Chart({
-            chart: {
-                renderTo: 'bubbleChart01', // chart 삽입 target ID                
-                plotBackgroundColor: null,
-                plotBorderWidth: 0,
-                plotShadow: false,
-                type: 'packedbubble',
-                //height: (3 / 4 * 100) + '%', // 4:3 비율로 설정                
-                margin:0,
-                marginBottom:20
-            },            
-            tooltip: { enabled: false },
-            plotOptions: {
-                packedbubble: {
-                    minSize: '40%',
-                    maxSize: '175%',
-                    zMin: 0,
-                    zMax: 100,                       
-                    layoutAlgorithm: {
-                        splitSeries: false,
-                        gravitationalConstant: 0.005
-                    },
-                    dataLabels: {
-                        enabled: true,
-                        formatter: function () { 
-                            return this.point.name + "<br> <span style='font-size:1.4rem;font-family:Roboto;'><b style='font-size:1.4rem'>" + gfn_comma3Digit(this.point.value) + "</b>%"
-                        },              
-                        style: {
-                            color: '#000',
-                            textOutline: 'none',
-                            fontWeight: 'normal',
-                            textAlign:'center',    
-                            fontSize: '1.4rem',                        
-                            fontFamily: "KBFGText"                            
-                        }
-                    }
-                }  
-            },
-            series: [{
-                name: null,
-                data: [{
-                    name: '식비',
-                    value: 320000,
-                    color: {
-                        radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
-                        stops: [ [0, '#ffba53'], [1, '#ffba53'] ]
-                    },
-                    dataLabels: {
-                        formatter: function () { 
-                            return this.point.name + "<br> <span style='font-size:1.5rem;font-family:Roboto;'><b style='font-size:1.5rem'>" + gfn_comma3Digit(this.point.value) + "</b>원"
-                        }
-                    }
-                },{
-                    name: '여행',
-                    value: 25,
-                    color: {
-                        radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
-                        stops: [ [0, '#ff8a71'], [1, '#ff8a71'] ]
-                    }
-                },{
-                    name: "통신비",
-                    value: 12,
-                    color: {
-                        radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
-                        stops: [ [0, '#ff6391'], [1, '#ff6391'] ]
-                    }
-                },{
-                    name: "편의점",
-                    value: 5,
-                    color: {
-                        radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
-                        stops: [ [0, '#ff445a'], [1, '#ff445a'] ]
-                    }
-                },{
-                    name: "음주",
-                    value: 3,
-                    color: {
-                        radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
-                        stops: [ [0, '#d090ee'], [1, '#d090ee'] ]
-                    }
-                }]
+    <script>               
+        $(document).ready(function(){ // 2021-09-02 추가
+
+            // highchart 공통 options        
+            Highcharts.setOptions({
+                title: { text: null },
+                subTitle: { text: null },
+                legend: { enabled: false },
+                credits: { enabled: false },
+                label : { fontFamily: 'KBFGText'},
+                credits: { enabled: false },
+                exporting: { enabled: false }
+            });
             
-            }]
-        });
+            var bubbleChart = new Highcharts.Chart({
+                chart: {
+                    renderTo: 'bubbleChart01', // chart 삽입 target ID                
+                    plotBackgroundColor: null,
+                    plotBorderWidth: 0,
+                    plotShadow: false,
+                    type: 'packedbubble',
+                    //height: (3 / 4 * 100) + '%', // 4:3 비율로 설정                
+                    margin:0,
+                    marginBottom:20
+                },            
+                tooltip: { enabled: false },
+                plotOptions: {
+                    packedbubble: {
+                        minSize: '40%',
+                        maxSize: '175%',
+                        zMin: 0,
+                        zMax: 100,                       
+                        layoutAlgorithm: {
+                            splitSeries: false,
+                            gravitationalConstant: 0.005
+                        },
+                        dataLabels: {
+                            enabled: true,
+                            formatter: function () { 
+                                return this.point.name + "<br> <span style='font-size:1.4rem;font-family:Roboto;'><b style='font-size:1.4rem'>" + gfn_comma3Digit(this.point.value) + "</b>%"
+                            },              
+                            style: {
+                                color: '#000',
+                                textOutline: 'none',
+                                fontWeight: 'normal',
+                                textAlign:'center',    
+                                fontSize: '1.4rem',                        
+                                fontFamily: "KBFGText"                            
+                            }
+                        }
+                    }  
+                },
+                series: [{
+                    name: null,
+                    data: [{
+                        name: '식비',
+                        value: 320000,
+                        color: {
+                            radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
+                            stops: [ [0, '#ffba53'], [1, '#ffba53'] ]
+                        },
+                        dataLabels: {
+                            formatter: function () { 
+                                return this.point.name + "<br> <span style='font-size:1.5rem;font-family:Roboto;'><b style='font-size:1.5rem'>" + gfn_comma3Digit(this.point.value) + "</b>원"
+                            }
+                        }
+                    },{
+                        name: '여행',
+                        value: 25,
+                        color: {
+                            radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
+                            stops: [ [0, '#ff8a71'], [1, '#ff8a71'] ]
+                        }
+                    },{
+                        name: "통신비",
+                        value: 12,
+                        color: {
+                            radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
+                            stops: [ [0, '#ff6391'], [1, '#ff6391'] ]
+                        }
+                    },{
+                        name: "편의점",
+                        value: 5,
+                        color: {
+                            radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
+                            stops: [ [0, '#ff445a'], [1, '#ff445a'] ]
+                        }
+                    },{
+                        name: "음주",
+                        value: 3,
+                        color: {
+                            radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
+                            stops: [ [0, '#d090ee'], [1, '#d090ee'] ]
+                        }
+                    }]
+                
+                }]
+            });
+                
+            //GNB 활성화 (번호:menu.js)
+            gfn_gnb.select(3);
+            
+        }) // 2021-09-02 추가
     </script>
 </body>
 

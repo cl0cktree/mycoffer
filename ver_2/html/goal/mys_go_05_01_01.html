@@ -66,16 +66,20 @@
 	<script src="@@webRoot/static/js/ui.js"></script>
 	<!-- Add Script -->
 
-	<script>
-		// 비밀번호 입력 신규 설정을 선택한 경우 비밀번호 입력 폼 보여줌
-		$(".js-pw-radio").on("click.ui", newPasswordCheck);
-		function newPasswordCheck() {
-			if ($(".js-pw-new").is(":checked")) {
-				$(".js-pw-forms").show();
-			} else {
-				$(".js-pw-forms").hide();
+	<script>                     
+        $(document).ready(function(){ // 2021-09-02 추가
+
+			// 비밀번호 입력 신규 설정을 선택한 경우 비밀번호 입력 폼 보여줌
+			$(".js-pw-radio").on("click.ui", newPasswordCheck);
+			function newPasswordCheck() {
+				if ($(".js-pw-new").is(":checked")) {
+					$(".js-pw-forms").show();
+				} else {
+					$(".js-pw-forms").hide();
+				}
 			}
-		}
+
+		}) // 2021-09-02 추가
 	</script>
 	
 </body>

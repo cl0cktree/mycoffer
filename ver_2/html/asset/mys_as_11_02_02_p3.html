@@ -182,22 +182,26 @@
 	<script src="@@webRoot/static/js/ui.js"></script>
 	<!-- Add Script -->
 	<script>
-		//삭제 컨펌
-        $('button[data-action=myHouseDelete]').on('click',function(){
-            modalPopup({
-                title: "",
-                message: "My House를 삭제하시겠습니까? <br> 부동산 자산에서 My House가 <br>삭제됩니다.",
-                type: "confirm",
-                textOkButton: "확인",
-                textCancelButton: "취소",
-                onOk: function() {
-                    
-                },
-                onCancel: function() {
-                    
-                }
-            });
-        });
+        $(document).ready(function(){ // 2021-09-02 추가
+			
+			//삭제 컨펌
+			$('button[data-action=myHouseDelete]').on('click',function(){
+				modalPopup({
+					title: "",
+					message: "My House를 삭제하시겠습니까? <br> 부동산 자산에서 My House가 <br>삭제됩니다.",
+					type: "confirm",
+					textOkButton: "확인",
+					textCancelButton: "취소",
+					onOk: function() {
+						
+					},
+					onCancel: function() {
+						
+					}
+				});
+			});
+
+		}) // 2021-09-02 추가
 	</script>
 </body>
 

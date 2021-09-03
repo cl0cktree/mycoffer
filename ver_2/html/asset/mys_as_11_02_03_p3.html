@@ -92,21 +92,25 @@
 	<script src="@@webRoot/static/js/ui.js"></script>
 	<!-- Add Script -->
 	<script>
-		$('button[data-action=wishHouseDelete]').on('click',function(){
-            modalPopup({
-                title: "",
-                message: "Wish House를 삭제하시겠습니까?",
-                type: "confirm",
-                textOkButton: "확인",
-                textCancelButton: "취소",
-                onOk: function() {
-                    
-                },
-                onCancel: function() {
-                    
-                }
-            });
-        });
+        $(document).ready(function(){ // 2021-09-02 추가
+			
+			$('button[data-action=wishHouseDelete]').on('click',function(){
+				modalPopup({
+					title: "",
+					message: "Wish House를 삭제하시겠습니까?",
+					type: "confirm",
+					textOkButton: "확인",
+					textCancelButton: "취소",
+					onOk: function() {
+						
+					},
+					onCancel: function() {
+						
+					}
+				});
+			});
+
+		}) // 2021-09-02 추가
 	</script>
 </body>
 

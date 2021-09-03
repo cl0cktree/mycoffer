@@ -25,26 +25,169 @@
 			<main class="app-content my-fun-data">
 
 				<!-- 스토리텔링 컨텐츠 // -->
-				<section class="kb-sec expense-persent">
+				<section class="kb-sec expenditure-status">
                     <h4 class="h4">나의 지출현황</h4>
-                    <ul>
-                        <li class="up">
-                            <strong class="num">28%</strong>
-                            <span>식비</span>
+                    <ul class="mt20">
+                        <li>
+                            <span><i class="icon-food"></i>식비</span>
+                            <strong class="num">28%<i class="icon-arrow-up_red_20"></i></strong>
                         </li>
-                        <li class="up">
-                            <strong class="num">13%</strong>
-                            <span>주거비</span>
+                        <li>
+                            <span><i class="icon-remittance"></i>가족에게 송금</span>
+                            <strong class="num">13%<i class="icon-arrow-up_red_20"></i></strong>
                         </li>
-                        <li class="up">
-                            <strong class="num">18%</strong>
-                            <span>쇼핑여가</span>
+                        <li>
+                            <span><i class="icon-housing-expense"></i> 주거비</span>
+                            <strong class="num">8%<i class="icon-arrow-down_blue_20"></i></strong>
                         </li>
                     </ul>
                     <div class="total-summary">
                         <span><strong>주거비</strong> 항목의 지출이</span>
                         <span>1인가구 평균대비 <strong class="num">28%</strong> 많아요</span>
                         <span>목표를 설정하여 지출관리를 시작해보세요</span>
+                    </div>
+                    <div class="btn-area right mt24"><a href="" class="btn-text icon-arrow"><span>목표 바로가기</span><i></i></a></div>
+                </section>
+                <section class="kb-sec expeense-analysis mt48">
+                    <h4 class="h4">1인가구 지출 분석</h4>
+                    <div class="graph-area mt20">
+                        <table class="compare-graph">
+                            <caption>1인가구 지출 분석</caption>
+                            <colgroup>
+                                <col width="15%">
+                                <col width="26%">
+                                <col width="17%">
+                                <col width="26%">
+                                <col width="15%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col" colspan="2">나</th>
+                                    <th><span class="is-hidden">범례</span></th>
+                                    <th scope="col" colspan="2">1인가구</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="num graph-data">13.8%</span><span><em class="num">40</em>만원</span></td>
+                                    <td data-direction="left"><span class="graph" data-percent="13.8"></span></td>
+                                    <th scope="row">
+                                        <span class="graph-name-box">
+                                            <i class="icon-saving"></i><strong class="graph-data-name">저축&sol;투자</strong>
+                                        </span>
+                                    </th>
+                                    <td data-direction="right"><span class="graph" data-percent="20.8"></span></td>
+                                    <td><span class="num graph-data">20.8%</span><span><em class="num">100</em>만원</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="num graph-data">35%</span><span><em class="num">40</em>만원</span></td>
+                                    <td data-direction="left"><span class="graph" data-percent="35"></span></td>
+                                    <th scope="row">
+                                        <span class="graph-name-box">
+                                            <i class="icon-food"></i><strong class="graph-data-name">식비</strong>
+                                        </span>
+                                    </th>
+                                    <td data-direction="right"><span class="graph" data-percent="60"></span></td>
+                                    <td><span class="num graph-data">60%</span><span><em class="num">100</em>만원</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="num graph-data">55%</span><span><em class="num">40</em>만원</span></td>
+                                    <td data-direction="left"><span class="graph" data-percent="55"></span></td>
+                                    <th scope="row">
+                                        <span class="graph-name-box">
+                                            <i class="icon-housing-expense"></i><strong class="graph-data-name">주거비</strong>
+                                        </span>
+                                    </th>
+                                    <td data-direction="right"><span class="graph" data-percent="46"></span></td>
+                                    <td><span class="num graph-data">46%</span><span><em class="num">100</em>만원</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="num graph-data">22%</span><span><em class="num">40</em>만원</span></td>
+                                    <td data-direction="left"><span class="graph" data-percent="22"></span></td>
+                                    <th scope="row">
+                                        <span class="graph-name-box">
+                                            <i class="icon-shopping"></i><strong class="graph-data-name">쇼핑여가</strong>
+                                        </span>
+                                    </th>
+                                    <td data-direction="right"><span class="graph" data-percent="8"></span></td>
+                                    <td><span class="num graph-data">8%</span><span><em class="num">100</em>만원</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="num graph-data">33%</span><span><em class="num">40</em>만원</span></td>
+                                    <td data-direction="left"><span class="graph" data-percent="33"></span></td>
+                                    <th scope="row">
+                                        <span class="graph-name-box">
+                                            <i class="icon-finance"></i><strong class="graph-data-name">대출금상환</strong>
+                                        </span>
+                                    </th>
+                                    <td data-direction="right"><span class="graph" data-percent="13"></span></td>
+                                    <td><span class="num graph-data">13%</span><span><em class="num">100</em>만원</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="num graph-data">3%</span><span><em class="num">40</em>만원</span></td>
+                                    <td data-direction="left"><span class="graph" data-percent="3"></span></td>
+                                    <th scope="row">
+                                        <span class="graph-name-box">
+                                            <i class="icon-traffic"></i><strong class="graph-data-name">교통통신비</strong>
+                                        </span>
+                                    </th>
+                                    <td data-direction="right"><span class="graph" data-percent="21"></span></td>
+                                    <td><span class="num graph-data">21%</span><span><em class="num">100</em>만원</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="num graph-data">19</span><span><em class="num">40</em>만원</span></td>
+                                    <td data-direction="left"><span class="graph" data-percent="19"></span></td>
+                                    <th scope="row">
+                                        <span class="graph-name-box">
+                                            <i class="icon-event-fee"></i><strong class="graph-data-name">경조사</strong>
+                                        </span>
+                                    </th>
+                                    <td data-direction="right"><span class="graph" data-percent="34"></span></td>
+                                    <td><span class="num graph-data">34</span><span><em class="num">100</em>만원</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="num graph-data">22%</span><span><em class="num">40</em>만원</span></td>
+                                    <td data-direction="left"><span class="graph" data-percent="22"></span></td>
+                                    <th scope="row">
+                                        <span class="graph-name-box">
+                                            <i class="icon-remittance"></i><strong class="graph-data-name">가족에게 송금</strong>
+                                        </span>
+                                    </th>
+                                    <td data-direction="right"><span class="graph" data-percent="22"></span></td>
+                                    <td><span class="num graph-data">22%</span><span><em class="num">100</em>만원</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="num graph-data">33%</span><span><em class="num">40</em>만원</span></td>
+                                    <td data-direction="left"><span class="graph" data-percent="33"></span></td>
+                                    <th scope="row">
+                                        <span class="graph-name-box">
+                                            <i class="icon-medical-expenses"></i><strong class="graph-data-name">의료비</strong>
+                                        </span>
+                                    </th>
+                                    <td data-direction="right"><span class="graph" data-percent="33"></span></td>
+                                    <td><span class="num graph-data">33%</span><span><em class="num">100</em>만원</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="num graph-data">43%</span><span><em class="num">40</em>만원</span></td>
+                                    <td data-direction="left"><span class="graph" data-percent="43"></span></td>
+                                    <th scope="row">
+                                        <span class="graph-name-box">
+                                            <i class="icon-educational-cost"></i><strong class="graph-data-name">교육비</strong>
+                                        </span>
+                                    </th>
+                                    <td data-direction="right"><span class="graph" data-percent="43"></span></td>
+                                    <td><span class="num graph-data">43%</span><span><em class="num">100</em>만원</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="simple-message mt20">위 데이터는 KB경영연구소 ‘2020 1인가구 보고서’를 바탕으로 분석한 결과이며, 실제 지출내역과 다를 수 있습니다.</p>
+                </section>
+                <section class="kb-sec dividing-space-top">
+                    <div class="register-msg">
+                        <button type="button" data-call-layered="mys_as_04_00_00_p1"><i class="icon-add_type2_48"></i></button>
+                        <strong class="tit">자산추가등록</strong>
+                        <p>고객님이 보유한 모든 자산을 등록하면<br>더 정확한 결과를 확인할 수 있습니다.</p>
                     </div>
                 </section>
                 <div class="sticky-bottom t01">
@@ -60,6 +203,7 @@
 
 		<!-- Layer (modal, bottom sheet) // -->
 		<div class="layered">
+            @@include('@@webRoot/html/asset/layered/mys_as_04_00_00_p1.html')
 		</div>
 		<!-- // Layer (modal, bottom sheet) -->
 	</div>
@@ -68,6 +212,16 @@
 	@@include('@@webRoot/html/_include/common-js.html')
 	<!-- Add Library (this page only)-->
 	<script src="@@webRoot/static/js/ui.js"></script>
+    <script>
+        $(function(){
+            var $compareGraph = $('.compare-graph');
+            $compareGraph.find('.graph').each( function(){
+                var $this = $(this);
+                var compareGraphData = $this.attr('data-percent');
+                $this.width(compareGraphData + '%');
+            });
+        });
+    </script>
 	<!-- Add Script -->
 	
 </body>

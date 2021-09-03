@@ -95,82 +95,7 @@
     
     <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script> 
     <script src="@@webRoot/static/common/lib/highcharts/highcharts-more.js"></script>
-           
-    <script>
-        // highchart 공통 options        
-        Highcharts.setOptions({
-            title: { text: null },
-            subTitle: { text: null },
-            legend: { enabled: false },
-            credits: { enabled: false },
-            label : { fontFamily: 'KBFGText'},
-            credits: { enabled: false },
-            exporting: { enabled: false }
-        });
-        
-        var bubbleChart = new Highcharts.Chart({
-            chart: {
-                renderTo: 'bubbleChart01', // chart 삽입 target ID                
-                plotBackgroundColor: null,
-                plotBorderWidth: 0,
-                plotShadow: false,
-                type: 'packedbubble',
-                margin:0,
-                marginTop:0,
-                marginBottom:0
-            },            
-            tooltip: { enabled: false },
-            plotOptions: {
-                packedbubble: {
-                    minSize: '30%',
-                    maxSize: '100%',
-                    zMin: 0,
-                    layoutAlgorithm: {
-                        splitSeries: false,
-                        gravitationalConstant: 0.05
-                    },
-                    dataLabels: {
-                        enabled: true,
-                        formatter: function () { 
-                            return this.point.name + "<br><span style='font-size:3.5vw;font-family:Roboto;'><b style='font-size:4vw;'>" + gfn_comma3Digit(this.point.value) + "</b>원"
-                        },    
-                        rotation:1,             
-                        style: {
-                            color: '#000',
-                            textOutline: 'none',
-                            fontWeight: 'normal',
-                            textAlign:'center',    
-                            fontSize: '3.5vw',                        
-                            fontFamily: "KBFGText"         
-                        }
-                    }
-                }  
-            },
-            series: [{
-                name: null,
-                data: [{
-                    name: '<tspan dy="-5">비교그룹</tspan>',
-                    value: 350000,
-                    color: {
-                        radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
-                        stops: [ [0, '#ff8a71'], [1, '#ff8a71'] ]
-                    }
-                },{
-                    name: '<tspan dy="-5">나</tspan>',
-                    color: '#f8956d',
-                    value: 150000,
-                    color: {
-                        radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
-                        stops: [ [0, '#ffba53'], [1, '#ffba53'] ]
-                    }
-                }]
             
-            }]
-        });
-    </script>    
-    
-    
-
     <style>
         .highcharts-tooltip-box:first-child .highcharts-label-box {
             fill: #ff8a71;
@@ -178,115 +103,176 @@
         .highcharts-tooltip-box:last-child .highcharts-label-box {
             fill: #ffba53;
         }
-    </style>
-    <script>
-        // highchart 공통 options
-        Highcharts.setOptions({
-            title: { text: null },
-            subTitle: { text: null },
-            legend: { enabled: false },
-            credits: { enabled: false },
-            label : { fontFamily: 'KBFGText'},
-            credits: { enabled: false },
-            exporting: { enabled: false },
-            // lang: {
-            //     shortMonths: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월']
-            // }
-        });
-        // spline chart 선언
-        var splineChart = new Highcharts.Chart({
-            chart: {
-                renderTo: 'splineChart', // chart 삽입 target ID
-                type: "line",
-                marginLeft: 10,
-                marginRight: 10,
-                paddingTop:0,
-            },
-            xAxis: {
-                // type: "category",
-                // categories: ["3월", "4월", "5월"],
-                labels: {
-                    style: {
-                        color: "#26282c",
-                        fontSize: '3.733vw',
-                        fontFamily: 'KBFGText',
+    </style>       
+    <script>                     
+        $(document).ready(function(){ // 2021-09-02 추가
+
+            // highchart 공통 options        
+            Highcharts.setOptions({
+                title: { text: null },
+                subTitle: { text: null },
+                legend: { enabled: false },
+                credits: { enabled: false },
+                label : { fontFamily: 'KBFGText'},
+                credits: { enabled: false },
+                exporting: { enabled: false }
+            });
+            
+            var bubbleChart = new Highcharts.Chart({
+                chart: {
+                    renderTo: 'bubbleChart01', // chart 삽입 target ID                
+                    plotBackgroundColor: null,
+                    plotBorderWidth: 0,
+                    plotShadow: false,
+                    type: 'packedbubble',
+                    margin:0,
+                    marginTop:0,
+                    marginBottom:0
+                },            
+                tooltip: { enabled: false },
+                plotOptions: {
+                    packedbubble: {
+                        minSize: '30%',
+                        maxSize: '100%',
+                        zMin: 0,
+                        layoutAlgorithm: {
+                            splitSeries: false,
+                            gravitationalConstant: 0.05
+                        },
+                        dataLabels: {
+                            enabled: true,
+                            formatter: function () { 
+                                return this.point.name + "<br><span style='font-size:3.5vw;font-family:Roboto;'><b style='font-size:4vw;'>" + gfn_comma3Digit(this.point.value) + "</b>원"
+                            },    
+                            rotation:1,             
+                            style: {
+                                color: '#000',
+                                textOutline: 'none',
+                                fontWeight: 'normal',
+                                textAlign:'center',    
+                                fontSize: '3.5vw',                        
+                                fontFamily: "KBFGText"         
+                            }
+                        }
+                    }  
+                },
+                series: [{
+                    name: null,
+                    data: [{
+                        name: '<tspan dy="-5">비교그룹</tspan>',
+                        value: 350000,
+                        color: {
+                            radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
+                            stops: [ [0, '#ff8a71'], [1, '#ff8a71'] ]
+                        }
+                    },{
+                        name: '<tspan dy="-5">나</tspan>',
+                        color: '#f8956d',
+                        value: 150000,
+                        color: {
+                            radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
+                            stops: [ [0, '#ffba53'], [1, '#ffba53'] ]
+                        }
+                    }]
+                
+                }]
+            });
+                    
+            var splineChart = new Highcharts.Chart({
+                chart: {
+                    renderTo: 'splineChart', // chart 삽입 target ID
+                    type: "line",
+                    marginLeft: 10,
+                    marginRight: 10,
+                    paddingTop:0,
+                },
+                xAxis: {
+                    // type: "category",
+                    // categories: ["3월", "4월", "5월"],
+                    labels: {
+                        style: {
+                            color: "#26282c",
+                            fontSize: '3.733vw',
+                            fontFamily: 'KBFGText',
+                        },
+                        formatter: function () {
+                            return this.value + '월';
+                        }                   
+                    },
+                    crosshair: {
+                        width: 1,
+                        color: '#dde2e8',
+                        dashStyle: 'dot'
                     },
                     formatter: function () {
-                        return this.value + '월';
-                    }                   
+                        return point.x + '월';
+                    },
+                    tickColor:'transparent'
                 },
-                crosshair: {
-                    width: 1,
-                    color: '#dde2e8',
-                    dashStyle: 'dot'
+                yAxis: {
+                    top:10,
+                    endOnTick: true,
+                    enabled: false,  // 사용 안함
+                    labels: { enabled: false },  // 축 lebel 사용 안함
+                    title: { enabled: false }, // 축 title 사용 안함
+                    tickWidth: 0,  // 그리드 라인 너비
+                    gridLineColor: 'transparsnt',  // 그리드 라인 컬러
                 },
-                formatter: function () {
-                    return point.x + '월';
+                tooltip: {
+                    formatter: function () {
+                        // points
+                        return [''].concat(
+                            this.points ?
+                                this.points.map(function (point) {
+                                    return '&nbsp;&nbsp;&nbsp;' + gfn_comma3Digit(point.y) + ' 원' + '&nbsp;&nbsp;&nbsp;';
+                                }) : []
+                        );
+                    },
+                    split: true,
+                    padding: 4,
+                    shadow: false,
+                    borderRadius: 5,
+                    verticalAlign: 'top',
+                    borderColor: 'transparent',
+                    style: {
+                        fontSize: '4vw',
+                        fontFamily: "KBFGText",
+                        color:'#000'
+                    },
+                    crosshairs: true,
+                    shared: true
                 },
-                tickColor:'transparent'
-            },
-            yAxis: {
-                top:10,
-                endOnTick: true,
-                enabled: false,  // 사용 안함
-                labels: { enabled: false },  // 축 lebel 사용 안함
-                title: { enabled: false }, // 축 title 사용 안함
-                tickWidth: 0,  // 그리드 라인 너비
-                gridLineColor: 'transparsnt',  // 그리드 라인 컬러
-            },
-            tooltip: {
-                formatter: function () {
-                    // points
-                    return [''].concat(
-                        this.points ?
-                            this.points.map(function (point) {
-                                return '&nbsp;&nbsp;&nbsp;' + gfn_comma3Digit(point.y) + ' 원' + '&nbsp;&nbsp;&nbsp;';
-                            }) : []
-                    );
-                },
-                split: true,
-                padding: 4,
-                shadow: false,
-                borderRadius: 5,
-                verticalAlign: 'top',
-                borderColor: 'transparent',
-                style: {
-                    fontSize: '4vw',
-                    fontFamily: "KBFGText",
-                    color:'#fff'
-                },
-                crosshairs: true,
-                shared: true
-            },
-            plotOptions: {
-                series: {
-                    lineWidth: 2,
-                    marker: {
-                        enabled: false,
-                        lineWidth: 1
+                plotOptions: {
+                    series: {
+                        lineWidth: 2,
+                        marker: {
+                            enabled: false,
+                            lineWidth: 1
+                        }
                     }
-                }
-            },
-            series: [{
-                // linkedTo: "main",
-                color: '#ff8a71',
-                data: [
-                    [3, 15000],
-                    [4, 20000],
-                    [5, 30000],
-                    [6, 35000]
-                ]
-            },{
-                // id: 'main',
-                color: '#ffba53',
-                data: [
-                    [3, 20600],
-                    [4, 35600],
-                    [5, 45600],
-                    [6, 65600]
-                ]
-            }]
-        });
+                },
+                series: [{
+                    // linkedTo: "main",
+                    color: '#ff8a71',
+                    data: [
+                        [3, 15000],
+                        [4, 20000],
+                        [5, 30000],
+                        [6, 35000]
+                    ]
+                },{
+                    // id: 'main',
+                    color: '#ffba53',
+                    data: [
+                        [3, 20600],
+                        [4, 35600],
+                        [5, 45600],
+                        [6, 65600]
+                    ]
+                }]
+            });
+        
+        }) // 2021-09-02 추가
     </script>
 </body>
 

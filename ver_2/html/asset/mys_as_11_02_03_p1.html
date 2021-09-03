@@ -301,19 +301,23 @@
 	<script src="@@webRoot/static/js/ui.js"></script>
 	<!-- Add Script -->
 	<script>
-		$('button[data-action=moreViewChart]').one('click',function(){
-            $(this).closest('.other-conditions').find('.percent-chart-list .show-later').css('display','table');
-			$(this).closest('.other-conditions').find('.info-box').show();
-            $(this).hide();
-        }); 
-		$('.my-asset .conditions-con .btn-line').click(function(){
-			var chk = $(this).hasClass('disabled');
-			if(chk){
-				$(this).removeClass('disabled');
-			}else{
-				$(this).addClass('disabled');
-			}
-		})
+        $(document).ready(function(){ // 2021-09-02 추가
+			
+			$('button[data-action=moreViewChart]').one('click',function(){
+				$(this).closest('.other-conditions').find('.percent-chart-list .show-later').css('display','table');
+				$(this).closest('.other-conditions').find('.info-box').show();
+				$(this).hide();
+			}); 
+			$('.my-asset .conditions-con .btn-line').click(function(){
+				var chk = $(this).hasClass('disabled');
+				if(chk){
+					$(this).removeClass('disabled');
+				}else{
+					$(this).addClass('disabled');
+				}
+			})
+
+		}) // 2021-09-02 추가
 	</script>
 </body>
 

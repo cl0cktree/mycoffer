@@ -33,7 +33,7 @@
 						</div>
 						<div class="character-graph" data-theme="character">
 							<div class="graph-area">
-								<span data-goal="50" class="green"><!-- ago,kolly 케이스: green 추가 -->
+								<span data-goal="50">
 									<i><img src="@@webRoot/static/images/_temp/@progress_ago.png" alt="아고"></i>
 								</span>
 							</div>
@@ -206,15 +206,19 @@
 	<!-- Add Script -->
 
 	<script>
-		// 챌린지명 선택 옵션
-		$(".js-challenge-radio input[type=radio]").on("click.ui", clickChallengeRadio);
-		function clickChallengeRadio() {
-			var idx = $(".js-challenge-radio input[type=radio]:checked").parents("li").index();
-			$("[class*='js-challenge-select']").hide();
-			$(".js-challenge-select"+idx).show();
-			gfn_formSelect.select($(".js-challenge-select"+idx+" select").prop("id"), 1);	// 보여주는 select 기본 전체로 다시 지정
-		}
-		clickChallengeRadio();
+        $(document).ready(function(){
+
+			// 챌린지명 선택 옵션
+			$(".js-challenge-radio input[type=radio]").on("click.ui", clickChallengeRadio);
+			function clickChallengeRadio() {
+				var idx = $(".js-challenge-radio input[type=radio]:checked").parents("li").index();
+				$("[class*='js-challenge-select']").hide();
+				$(".js-challenge-select"+idx).show();
+				gfn_formSelect.select($(".js-challenge-select"+idx+" select").prop("id"), 1);	// 보여주는 select 기본 전체로 다시 지정
+			}
+			clickChallengeRadio();
+
+		})
 	</script>
 	
 </body>

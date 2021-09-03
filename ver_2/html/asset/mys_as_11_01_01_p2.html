@@ -224,33 +224,37 @@
 	<script src="@@webRoot/static/js/ui.js"></script>
 	<!-- Add Script -->
 	<script>
-		// 주거형태 항목 변경
-        var $myHouseWrap = $('.my-house');
-        if($myHouseWrap){
-            $('input[name=housingType]').on('change',function(){
-                let val = $(this).val();
-                switch(val){
-                    case '전세/월세': 
-                        $myHouseWrap.find('.possession').hide();
-                        $myHouseWrap.find('.rental').show();
-                    break
-                    default:
-                        $myHouseWrap.find('.rental').hide();
-                        $myHouseWrap.find('.possession').show();
-                    break
-                }
-            });  
-        }
+        $(document).ready(function(){ // 2021-09-02 추가
+			
+			// 주거형태 항목 변경
+			var $myHouseWrap = $('.my-house');
+			if($myHouseWrap){
+				$('input[name=housingType]').on('change',function(){
+					let val = $(this).val();
+					switch(val){
+						case '전세/월세': 
+							$myHouseWrap.find('.possession').hide();
+							$myHouseWrap.find('.rental').show();
+						break
+						default:
+							$myHouseWrap.find('.rental').hide();
+							$myHouseWrap.find('.possession').show();
+						break
+					}
+				});  
+			}
 
+			
+			//alert
+			$('button[data-action=btnApply]').on('click',function(){
+				modalPopup({
+					title: "",
+					message: "나의 보증금을 입력해 주세요.<br>계약일을 입력해 주세요.<br>오늘까지만 입력할 수 있습니다.<br>계약일을 정확화게 입력해 주세요.<br>만기일을 입력해 주세요.<br>만기일을 정확하게 입력해 주세요.<br>만기일이 계약일보다 빠릅니다.",
+					type: "alert"
+				});
+			});
 		
-		//alert
-		$('button[data-action=btnApply]').on('click',function(){
-            modalPopup({
-                title: "",
-                message: "나의 보증금을 입력해 주세요.<br>계약일을 입력해 주세요.<br>오늘까지만 입력할 수 있습니다.<br>계약일을 정확화게 입력해 주세요.<br>만기일을 입력해 주세요.<br>만기일을 정확하게 입력해 주세요.<br>만기일이 계약일보다 빠릅니다.",
-                type: "alert"
-            });
-        });
+		}) // 2021-09-02 추가
 	</script>
 </body>
 

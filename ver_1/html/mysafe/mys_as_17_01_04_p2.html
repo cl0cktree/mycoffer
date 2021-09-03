@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
-<!-- [MYS_AS_17_01_04_p1] 작성자: 유플리트 이현섭 -->
+<!-- [MYS_AS_17_01_04_p2] 작성자: 유플리트 이현섭 -->
 <head>
 	@@include('@@webRoot/html/_include/app-head.html',{
 		"title": "자산 | My금고"
@@ -26,8 +26,10 @@
 				
         <section class="kb-sec">
             <div class="pop-notice">
-                <span>현금자산을 My 금고에 보관해보세요. 외화 <br>
-                    등록 시 원화환산금액을 확인할 수 있습니다.</span>
+                <span>
+                    현금자산을 My 금고에 보관해보세요. 외화 <br>
+                    등록 시 원화환산금액을 확인할 수 있습니다.
+                </span>
                 <em>* 표시된 항목은 필수 입력 사항입니다.</em>
             </div>
         </section>
@@ -35,10 +37,10 @@
             <div class="kb-form  no-transition" data-status="">
                 <label for="cashType" class="required">통화</label>
                 <div class="kb-form_inner form-select">
-                    <button type="button" class="selected-option" data-call-layered="mys_as_04_02_00_p1"></button>
+                    <button type="button" class="selected-option" data-call-layered="mys_as_17_01_04_bs1"></button>
                     <select name="" id="cashType" title="통화 선택">
                         <option value="">통화 선택</option>
-                        <option value="KRW" selected="">KRW (한국)</option>
+                        <option value="KRW" selected="">원화 (현금)</option>
                         <option value="USD">USD (미국 달러)</option>
                         <option value="JPY">JPY (일본 엔)</option>
                         <option value="CNY">CNY (중국 위안)</option>
@@ -123,7 +125,7 @@
 
 		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
 		<div class="layered">
-            @@include('@@webRoot/html/asset/layered/mys_as_04_02_00_p1.html')
+            @@include('@@webRoot/html/mysafe/layered/mys_as_17_01_04_bs1.html')
 		</div>
 		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
 	</div>

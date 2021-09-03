@@ -5,7 +5,7 @@
     @@include('@@webRoot/html/_include/app-head.html',{
         "title": "Organism"
     })
-    
+
     <link rel="stylesheet" href="./resources/guide.css">
     <link rel="stylesheet" href="./resources/jquery-ui.css">
     <link rel="stylesheet" href="./resources/a11y-dark.min.css">
@@ -30,12 +30,34 @@
                 <li><a href="./template.html">Template</a></li>
                 <li><a href="./highcharts-sample.html">Highcharts</a></li>
             </ul>
-        </div>     
-    </div>    
-    <div class="guide-container">        
+        </div>
+    </div>
+    <div class="guide-container">
+        <div class="box" id="loaders">
+            <h2 class="h2">Loader</h2>
+            <div class="guide-desc">
+                <div>
+                    Page loader 호출 : gfn_pageLoader.show();<br>
+                    Page loader 숨기기 : gfn_pageLoader.hide();<br>
+                </div>
+                <div class="mt12">
+                    부분영역 loader 호출 : gfn_partitialLoader.show(selector, '메세지');<br>
+                    부분영역 loader 숨기기 : gfn_partitialLoader.hide(selector);<br>
+                </div>
+                <p class="simple-message">
+                    부분영역 loader가 걸리면 target에 .is-loding 클래스가 붙고 children은 opacity:0 이 붙음<br>
+                    tag 없이 text가 있으면 opacity가 동작하지 않음
+                </p>
+                
+            </div>
+            <div class="iframe-view">
+                <strong class="tit">loader 샘플</strong>
+                <iframe src="./loader.html" frameborder="0"></iframe>
+            </div>     
+        </div>
         <div class="box">
             <h2 class="h2">Botom Sheets (in _layered) <a href="../_layered/_bottom-sheets.html" target="_blank">샘플페이지 바로가기 &gt;</a></h2>
-            <div class="table">            
+            <div class="table">
                 <table class="tbl-t01">
                     <caption></caption>
                     <colgroup>
@@ -202,7 +224,7 @@
                         $('#'+id).modalPopup('open');
                     });
                     </code>
-                </pre>                
+                </pre>
             </div>
 
             <h4 class="h4">Example</h4>
@@ -230,7 +252,7 @@
     }
 });</code></pre>
             </div>
-            <div class="ex">                
+            <div class="ex">
                 <div class="modal" id="modalPopup1">
                     <div class="modal_contents">
                         로그아웃 후 인증서 발급이 가능합니다.<br>
@@ -351,7 +373,7 @@
 
         <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
-        <hr>        
+        <hr>
         <!-- Grid  -->
         <div class="box">
             <h2 class="h2">Grid</h2>
@@ -500,9 +522,9 @@
                     <div class="swiper-container t01 js-swiper" data-swiper-options="recommFundSwiperOptions">
                         <script>
                             var recommFundSwiperOptions = {
-                                "slidesPerView": 2, 
-                                "slidesPerGroup": 2, 
-                                "spaceBetween": 20, 
+                                "slidesPerView": 2,
+                                "slidesPerGroup": 2,
+                                "spaceBetween": 20,
                                 "pagination": {
                                     "el": ".swiper-pagination"
                                 }
@@ -521,9 +543,9 @@
                     <div class="swiper-container t01 js-swiper" data-swiper-options="recommFundSwiperOptions" data-init-call="testFunc">
                         <script>
                             var recommFundSwiperOptions = {
-                                "slidesPerView": 2, 
-                                "slidesPerGroup": 2, 
-                                "spaceBetween": 20, 
+                                "slidesPerView": 2,
+                                "slidesPerGroup": 2,
+                                "spaceBetween": 20,
                                 "pagination": {
                                     "el": ".swiper-pagination"
                                 }
@@ -566,12 +588,12 @@
     </div>
 
     @@include('@@webRoot/html/_include/common-js.html')
-    <!-- Add Library (this page only)-->    
+    <!-- Add Library (this page only)-->
     <script src="./resources/guide.js"></script>
 
     <script src="@@webRoot/static/js/ui.js"></script>
-    
-    
+
+
     <script>
         $("#modalPopup1").modalPopup({
             onOk: function() {
@@ -586,7 +608,7 @@
             $("#modalPopup1").modalPopup("open");
         }
 
-        function demo2() {                        
+        function demo2() {
             modalPopup({
                 title: "공적연금 추가하기",
                 message: "연금개시 연령은 55세~70세 사이로 입력할 수 있습니다."

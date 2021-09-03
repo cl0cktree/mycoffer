@@ -17,6 +17,28 @@
 
             <!-- app-content // -->
             <main class="app-content">
+
+                <section class="kb-sec">
+                    <div class="target" style="width:100%;text-align:center;background-color:beige">
+                        <div>
+                            로딩바가 보여질 영역<br>
+                            로딩바가 보여질 영역<br>
+                            로딩바가 보여질 영역<br>
+                            로딩바가 보여질 영역<br>
+                            로딩바가 보여질 영역<br>
+                            로딩바가 보여질 영역<br>
+                        </div>
+                    </div>
+                </section>
+                <section class="kb-sec mt36">
+                    <button type="button" class="btn-solid a"><span>로딩 On</span></button>
+                    <br>
+                    <br>
+                    <button type="button" class="btn-solid b"><span>로딩 Off</span></button>
+                    <br>
+                    <br>
+                    <button type="button" class="btn-solid c"><span>페이지 로딩 On (3초 후 자동꺼짐)</span></button>
+                </section>
                 
             </main>
             <!-- // app-content -->
@@ -31,12 +53,7 @@
         <!-- // Layer (modal, bottom sheet) -->
     </div>
 
-    <!-- 공통 Loader // -->
-    <div class="common-loader">
-        <strong class="tit">(메세지가 필요한 경우에 넣음)</strong>
-        <div class="loader"><i></i><i></i><i></i><i></i><span>로딩중</span></div>
-    </div>    
-    <!-- // 공통 Loader -->
+    
 
     <!-- Script -->
     @@include('@@webRoot/html/_include/common-js.html')
@@ -44,7 +61,25 @@
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
     <script>
-        gfn_layered.open('popupCertificationLoading');
+        
+        $('.a').on('click',function(){
+            gfn_partitialLoader.show($('.target'), '자료를 불러오는 중입니다.');
+        });
+
+        $('.b').on('click',function(){
+            gfn_partitialLoader.hide($('.target'));
+        });
+
+        $('.c').on('click',function(){
+            gfn_pageLoader.show();
+            setTimeout(function(){
+                gfn_pageLoader.hide();
+            },3000)
+        });
+
+        //부분 영역 loader        
+        //gfn_partitialLoader.show($('.target')); //메세지가 필요 없을때
+        //gfn_partitialLoader.hide($('.target'));        
     </script>
 
 </body>
