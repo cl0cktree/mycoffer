@@ -21,13 +21,13 @@
 }
 
 /* Bottom Sheet */
-.bottom-sheet {display:none;position:fixed;left:0;right:0;bottom:-16px;z-index:$level90;max-height:95%;padding-top:30px;border-top-left-radius: 12px;border-top-right-radius: 12px;background-color: $kb-ui11;transition:transform .3s cubic-bezier(0.165, 0.84, 0.44, 1),height .3s .1s cubic-bezier(0.165, 0.84, 0.44, 1);box-shadow: 0px -6px 8px rgba(0, 0, 0, 0.08);}
-.bottom-sheet.is-active{display:flex;flex-flow:column;animation:bsShow .2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;}
-.bottom-sheet.bs-out{animation:bsHide .2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;}
+.bottom-sheet {display:none;position:fixed;left:0;right:0;bottom:-16px;z-index:$level90;max-height:95%;padding-top:32px;border-top-left-radius: 12px;border-top-right-radius: 12px;background-color: $kb-ui11;transition:transform .3s cubic-bezier(0.165, 0.84, 0.44, 1),height .3s .1s cubic-bezier(0.165, 0.84, 0.44, 1);box-shadow: 0px -6px 8px rgba(0, 0, 0, 0.08);}
+.bottom-sheet.is-active{display:flex;flex-flow:column;animation:bsShow .3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;}
+.bottom-sheet.bs-out{animation:bsHide .3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;}
 .bottom-sheet.bs-tab{height:70%;}
 .bottom-sheet.bs-tab.is-expanded{height:95%;}
-.bottom-sheet .bottom-sheet_header {flex:0 0 24px;padding:0 48px 0 24px;margin-bottom:24px;}
-.bottom-sheet .bottom-sheet_header .tit {font-size:20px;font-weight: bold;line-height: 24px;}
+.bottom-sheet .bottom-sheet_header {flex:0 0 28px;padding:0 48px 0 24px;margin-bottom:20px;}
+.bottom-sheet .bottom-sheet_header .tit {font-size:20px;font-weight: bold;line-height: 28px;color:$kb-ui01;}
 .bottom-sheet_contents{@include text;flex:1;overflow:auto;margin-bottom:24px;}
 .bottom-sheet_contents .kb-sec:first-child{padding-top:0;}
 .bottom-sheet .not-today + .bottom-sheet_buttons{margin-top:0;}
@@ -80,7 +80,7 @@
 
 .bottom-sheet .btn-close,
 .modal .btn-close {
-    @include iconCancel($size: 16px, $thick: 2px, $color: $kb-ui05, $padding: 9px, $position: absolute);
+    @include iconCancel($size: 18px, $thick: 2px, $color: $kb-ui05, $padding: 9px, $position: absolute);
 	right: 19px;top: 24px;
 }
 .modal .error-code{display:block;margin-top:12px;}

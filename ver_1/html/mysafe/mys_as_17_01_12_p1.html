@@ -27,7 +27,7 @@
                     <div class="pop-notice header">
                         <span>
                             <strong class="h4">
-                                소유하고 계신 의미있는 자산을 My 금고에 보관하세요!
+                                의미있는 내 모든 자산<br>My 금고에 보관하세요.
                             </strong>
                         </span>
                         <em class="mt4">* 표시된 항목은 필수 입력 사항입니다.</em>
@@ -52,7 +52,7 @@
                         <div class="kb-form not-ready no-transition etc-input-kind safe-flex100 safe-display-none">
                             <!-- <label for="mysafe_11"></label> -->
                             <div class="kb-form_inner form-text">
-                                <input type="text" class="etc-kind-input" id="mysafe_11" onkeydown="all_on_fun()" placeholder="최대 10자를 입력해주세요." value="" maxlength="10">
+                                <input type="text" class="etc-kind-input" id="mysafe_11" placeholder="최대 10자를 입력해주세요." value="" maxlength="10">
                                 <button class="btn-data-clear etc-kind-clear"><i class="icon-data-clear_24">지우기</i></button>
                             </div>
                         </div>
@@ -80,7 +80,7 @@
                 <section class="kb-sec sticky-bottom">
                     <div class="btn-area">
                         <button class="btn-solid_sticky lv2"><span>취소</span></button>
-                        <button class="btn-solid_sticky my-etc-enrollment" disabled=""><span>등록</span></button>
+                        <button class="btn-solid_sticky my-etc-enrollment"><span>등록</span></button>
                     </div>
                 </section>
 
@@ -120,7 +120,7 @@
                 return;
             }
             oldVal = currentVal;
-            all_on_fun();
+            // all_on_fun();
         });
         function all_on_fun(){//최종 등록 버튼 활성화 함수-기타자산 직접입력 완료/기타자산 선택이 선결/기타자산 금액이 입력 되면 활성화.
             etc_kind_input=document.getElementById('mysafe_11').value;
@@ -165,7 +165,7 @@
                 $('.etc-input-kind').addClass('safe-display-none');
                 gs_num=2;
             }
-            all_on_fun();
+            // all_on_fun();
         });
         $('.etc-kind-clear').on('click',function(){//기타자산 직접입력 삭제 버튼으로 클릭 시 관련된 기능들 리셋.
             gsi=0;

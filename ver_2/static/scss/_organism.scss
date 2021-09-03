@@ -14,26 +14,27 @@
 .search-month .btn-next.is-disabled{background-position:-24px -69px;}
 
 //Datepicker
-.calendar-nav{position:relative;display:flex;justify-content:center;align-items:center;margin-left:(-2.4rem);margin-right:(-2.4rem);padding:0 60px;}
-.calendar-nav strong{@include number($weight:bold, $line-height:24px);margin:0 20px;}
-.calendar-nav .btn-text{@include btnText($size:14px);position:absolute;left:24px;top:-4px;width:48px;height:34px;justify-content: center;}
+.calendar-nav{position:relative;display:flex;justify-content:center;align-items:center;margin-left:(-2.4rem);margin-right:(-2.4rem);padding:10px 60px;}
+.calendar-nav strong{@include number($weight:bold, $line-height:34px);margin:0 20px;}
+.calendar-nav .btn-text{@include btnText($size:14px);position:absolute;left:24px;top:11px;width:48px;height:34px;justify-content: center;}
 // .calendar-nav .btn-text{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background-color:$kb-ui02}
 .calendar-nav .btn-text span{line-height:1;border-bottom:1px solid $kb-ui02;}
-.calendar-nav > button:not(.btn-text){@include ir;width:24px;height:24px;background-image:url(../images/common/common.png);background-size:160px;background-repeat:no-repeat;}
-.calendar-nav .btn-first{background-position:-48px -45px;}
-.calendar-nav .btn-first.is-disabled{background-position:-48px -69px;}
-.calendar-nav .btn-prev{background-position:0 -45px;}
-.calendar-nav .btn-prev.is-disabled{background-position:0 -69px;}
-.calendar-nav .btn-next{background-position:-24px -45px;}
-.calendar-nav .btn-next.is-disabled{background-position:-24px -69px;}
-.calendar-nav .btn-last{background-position:-72px -45px;}
-.calendar-nav .btn-last.is-disabled{background-position:-72px -69px;}
+.calendar-nav > button:not(.btn-text){position:relative;@include ir;width:24px;height:34px;}
+.calendar-nav > button:not(.btn-text):before{content:'';position:absolute;top:5px;left:0;width:24px;height:24px;background-image:url(../images/common/common.png);background-size:160px;background-repeat:no-repeat;}
+.calendar-nav .btn-first:before{background-position:-48px -45px;}
+.calendar-nav .btn-first.is-disabled:before{background-position:-48px -69px;}
+.calendar-nav .btn-prev:before{background-position:0 -45px;}
+.calendar-nav .btn-prev.is-disabled:before{background-position:0 -69px;}
+.calendar-nav .btn-next:before{background-position:-24px -45px;}
+.calendar-nav .btn-next.is-disabled:before{background-position:-24px -69px;}
+.calendar-nav .btn-last:before{background-position:-72px -45px;}
+.calendar-nav .btn-last.is-disabled:before{background-position:-72px -69px;}
 
-.calendar-area{margin-top:16px;padding-top:24px;border-top:1px solid $kb-ui09;}
+.calendar-area{padding-top:20px;border-top:1px solid $kb-ui09;}
 .calendar-area th,
 .calendar-area td{text-align:center;}
-.calendar-area th{padding-top:0;padding-bottom:3px;color:$kb-ui04;line-height:1;}
-.calendar-area td{height:36px;font-size:17px;color:$kb-ui02;font-weight:bold;}
+.calendar-area th{padding-top:0;padding-bottom:1px;color:$kb-ui04;line-height:1;}
+.calendar-area td{height:60px;font-size:17px;color:$kb-ui02;font-weight:bold;}
 .calendar-area td.today button{width:36px;height:36px;border-radius:50%;background-color:$color-yellow}
 .calendar-area .ui-datepicker{padding:0;}
 .calendar-area .ui-widget.ui-widget-content{width:100%;border:none;}
@@ -62,7 +63,16 @@
 .calendar-area .ui-widget-content .ui-datepicker-today .ui-state-active{background-color:$color-yellow}
 //.calendar-area .ui-widget-content .ui-datepicker-today .ui-state-highlight:after{content:'';position:absolute;bottom:-12px;left:calc(50% - 2px);width:4px;height:4px;border-radius:50%;background-color:$color-yellow}
 
+.bottom-sheet[data-layered-name=bsCalendar] .bottom-sheet_contents{margin-bottom:0;}
+.bottom-sheet[data-layered-name=bsCalendar] .bottom-sheet_buttons{margin-top:48px;}
+
 .pdf-viewer{overflow:auto;display:flex;flex-flow:column;height:calc(var(--vh, 1vh) * 100 - 48px);padding:0;background-color:$kb-ui08;}
 .pdf-viewer .pdf-area{flex:1;}
 .pdf-viewer .sticky-bottom.sticky-bottom:not(.popup_buttons){padding-top:0;height:52px;}
 .ios.homebar .pdf-viewer > section + .sticky-bottom.sticky-bottom:not(.popup_buttons){height:86px;}
+
+//404 등 에러페이지
+.kb-sec.error-page{padding-top:calc(var(--vh, 1vh) * 17.11);text-align:center;}
+.kb-sec.error-page .msg{margin-top:30px;color:$kb-ui04;font-weight:bold;}
+.kb-sec.error-page .msg .num{display:block;margin-bottom:16px;font-size:24px;font-weight:bold;}
+.kb-sec.error-page .btn-area{margin-top:60px;}

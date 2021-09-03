@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html lang="ko">
 <!-- [MYS_SP_01_01_00] 작성자: 누리어 시스템 황철민 -->
+<!DOCTYPE html>
+<html lang="ko" data-channel="ch_star">
 <head>
 	@@include('@@webRoot/html/_include/app-head.html',{
 		"title": "약관동의 | 신용관리"
@@ -9,13 +9,12 @@
 
 <body>
 	@@include('@@webRoot/html/_include/app-a11y.html')
-	<div class="app">
-		<!-- app-header //-->
+	<div class="app" data-page="submain">
+
 		@@include('@@webRoot/html/_include/app-integrated-header.html', {
-			'pageTit': '약관동의',
+			'pageTit': '신용관리',
 			'type': ''
 		})
-		<!-- // app-header -->
 
 		<!-- app-container //-->
 		<div class="app-container">
@@ -26,14 +25,14 @@
 				<!-- 신용관리 약관동의 // -->
 				<section class="kb-sec credit-management-agree">
 					<div class="descriptions">
-						<!-- 수정 : 2021-07-02 // -->
-						<p>"신용관리서비스"는 국내 신용평가사 "NICE평가정보(주)"의 신용정보를 바탕으로 서비스를 제공하며, 원활한 신용관리서비스 이용을 위해 고객님의 동의가 필요합니다.</p>
-						<p>서비스를 신청하는 휴대폰이 본인명의이고 KB국민은행에 등록된 정보와 일치하는 경우 신용관리서비스에 가입할 수 있습니다.</p>
-						<!-- // 수정 : 2021-07-02 -->
+						<ul class="sm" data-style="list">
+							<li>"신용관리서비스"는 국내 신용평가사 "NICE평가정보(주)"의 신용정보를 바탕으로 서비스를 제공하며, 원활한 신용관리서비스 이용을 위해 고객님의 동의가 필요합니다.</li>
+							<li>서비스를 신청하는 휴대폰이 본인명의이고 KB국민은행에 등록된 정보와 일치하는 경우 신용관리서비스에 가입할 수 있습니다.</li>
+						</ul>
 					</div>
 					<div class="agreement-to-terms expansion-mode">
 						<div class="header">
-							<span class="form-checkbox"><input type="checkbox" id="agreeAllCheck" onchange="allCheckChange(this)"><label for="agreeAllCheck">전체동의</label><a class="alink" href="@@webRoot/html/special/mys_sp_01_01_00_p4.html"><span>전문보기</span></a></span>
+							<span class="form-checkbox"><input type="checkbox" id="agreeAllCheck"><label for="agreeAllCheck">전체동의</label><a class="alink" href="@@webRoot/html/special/mys_sp_01_01_00_p4.html"><span>전문보기</span></a></span>
 						</div>
 						<div class="checkbox-group st_list">
 							<span class="form-checkbox_20"><input type="checkbox" id="agreeCheck1"><label for="agreeCheck1">[필수]신용관리서비스 이용약관</label><a class="alink" href="@@webRoot/html/special/mys_sp_01_01_00_p1.html"><span>전문보기</span></a></span>
@@ -42,22 +41,13 @@
 						</div>
 					</div>
 					<p class="info-msg">본인은 위 항목에 대한 내용을 충분히 이해하고 확인하였습니다.</p>
-					<div class="sticky-bottom">
-						<div class="btn-area">
-							<button class="btn-solid" disabled><span>확인</span></button>
-						</div>
-					</div>
-					<script>
-						function allCheckChange(elem) {
-							var button = document.querySelector(".credit-management-agree .btn-solid");
-							if (elem.checked) {
-								button.removeAttribute("disabled");
-							} else {
-								button.setAttribute("disabled", true);
-							}
-						}
-					</script>
 				</section>
+
+				<div class="sticky-bottom">
+					<div class="btn-area">
+						<button type="button" class="btn-solid"><span>확인</span></button>
+					</div>
+				</div>
 				<!-- // 신용관리 약관동의 -->
 
 			</main>
@@ -77,7 +67,11 @@
 	<!-- Add Library (this page only)-->
 	<script src="@@webRoot/static/js/ui.js"></script>
 	<!-- Add Script -->
-	
+	<script>
+		// 신용관리
+		gfn_gnb.select(7);
+	</script>
+
 </body>
 
 </html>

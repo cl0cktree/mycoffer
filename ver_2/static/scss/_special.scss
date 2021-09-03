@@ -1,108 +1,110 @@
 // 신용관리 약관동의
+.credit-management-agree,
+.credit-management-agree:first-child {padding-top: 0;}
 .credit-management-agree .agreement-to-terms {margin-bottom: 8px;}
 .credit-management-agree .agree-message {color: $kb-ui04; @include text($text03, normal);}
-.credit-management-agree .descriptions {margin: 30px 0 45px;color: $kb-ui03; @include text($text02, normal);}
-.credit-management-agree .descriptions p {margin: 15px 0;}
+.credit-management-agree .descriptions {margin: 0 -24px 36px; padding: 20px 24px; background-color: $kb-ui10;}
 
 // 신용거래 내역
-.credit-transaction-summary {position: relative; margin: 0; padding: 0 24px; background-color: $kb-ui10;}
-.credit-transaction-summary::before {content: ''; position: absolute; left: 24px; right: 0; top: -1px; height: 1px; background-color: $kb-ui08;}
-.credit-transaction-summary:first-child {padding-top: 0;}
-.summary-header {padding: 18px 0; min-height: 110px; border-top-left-radius: 2px; border-top-right-radius: 2px;}
-.summary-header .tit {margin-bottom: 6px; display: block; @include text($text02, normal); color: $kb-ui03;}
-.summary-header .tit i {position: relative; top:-2px;transform:scale(0.5);}
-.summary-header .amount {display: block; font-size: 26px; font-weight: bold;}
-.summary-header .amount .num {margin-right:5px;font-size:30px;}
-.summary-header .two-values {display: flex; margin-top: 17px; text-align: center;}
-.summary-header .two-values .txt {display: block; margin-bottom: 5px; font-size: 14px; color: $kb-ui04; font-weight: normal;}
-.summary-header .two-values .amount {flex:1;font-size: 23px;position: relative;}
+.credit-transaction-summary,
+.credit-transaction-summary:first-child {position: relative; padding-top: 30px;}
+.credit-transaction-summary::after {content: ''; position: absolute; left: 24px; right: 24px; bottom: 0; height: 1px; background-color: $kb-ui09;}
+.summary-header {padding: 0 0 28px;}
+.summary-header .title {margin-bottom: 16px; display: block; font-size: 15px; font-weight: normal; color: $kb-ui02;}
+.summary-header .title h2 {display: inline; font-size: 15px; font-weight: normal; color: $kb-ui02;}
+.summary-header .title i {position: relative; top:-2px;}
+.summary-header .amount {display: block; font-size: 24px; font-weight: bold; text-align: right;}
+.summary-header .amount .num {margin-right:2px;font-size:28px;}
+.summary-header .two-values {position: relative; z-index: 1;display: flex; padding: 20px 0; margin-top: 22px; margin-bottom: -33px; text-align: center; background-color: #6349a5; border-radius: 8px; color: $kb-ui11;}
+.summary-header .two-values .txt {display: block; margin-bottom: 5px; font-size: 14px; font-weight: normal;}
+.summary-header .two-values .amount {flex:1;font-size: 23px;position: relative;text-align: center;}
 .summary-header .two-values .amount .num {margin-right:3px;font-size: 24px;}
-.summary-header .two-values .amount:first-child::after {content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 1px; background-color: $kb-ui08;}
-.summary-body {position: relative;padding: 12px 0; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px;}
-.summary-body::before {content: ''; position: absolute; left: 0; right: 0; top: 0; height: 1px; background-color: $kb-ui09;}
+.summary-header .two-values .amount:first-child::after {content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 1px; background-color: $kb-ui09; opacity: .3;}
+.summary-body {position: relative; padding: 0 0 12px; margin-top: -13px;}
 
 @include smallDevice {
 	.summary-header .two-values .amount {font-size: 18px;}
 	.summary-header .two-values .amount .num {margin-right: 2px; font-size: 20px;}
 }
 
-.credit-transaction-graph .title,
-.credit-transaction-list .title {margin: 20px 0; @include text($text01, bold);}
+.credit-transaction-graph .title {margin: 20px 0; @include text($text01, bold);}
+.credit-transaction-list .title {margin: 20px -24px 4px 0; padding-bottom: 16px; border-bottom: 1px solid $kb-ui05; @include text($text01, bold);}
 
 .credit-transaction-graph {position: relative; margin-top: 46px;}
 .credit-transaction-graph .per {position: absolute; right: 24px; top: 2px; font-size: 19px; font-weight: bold;}
-.credit-transaction-graph .bar-wrapper {height: 12px; margin-bottom: 10px; border-radius: 12px; background-color: $kb-ui09;}
-.credit-transaction-graph .bar-wrapper .bar {height: 12px; border-radius: 12px; background-color: #ffd338; transition: width .5s ease-in-out;}
+.credit-transaction-graph .bar-wrapper {position: relative; height: 12px; margin-bottom: 10px; border-radius: 12px; background-color: $kb-ui10; box-shadow: inset 0 0 1px 1px $kb-ui08; overflow: hidden;}
+.credit-transaction-graph .bar-wrapper .bar {height: 12px; border-radius: 12px; background-color: $color-yellow-negative; border: 1px solid $color-yellow-positive; transition: width .5s ease-in-out;}
 .credit-transaction-graph .values {@include text($text03, normal); color: $kb-ui04;}
 .credit-transaction-graph .values::after {content: ''; display: block; clear: both;}
 .credit-transaction-graph .values .left {float: left;}
 .credit-transaction-graph .values .right {float: right; text-align: right;}
-.credit-transaction-graph .values .amount {display: block; @include text($text02, normal); color: $kb-ui02; margin-top: -3px;}
-.credit-transaction-graph .values .amount .num {font-size: 17px;}
+.credit-transaction-graph .values .amount {display: block; @include text($text03, normal); color: $kb-ui02;}
+.credit-transaction-graph .values .amount .num {font-size: 15px;}
 
 
 .credit-transaction-list {margin-top:48px;}
 .credit-transaction-list .title + .infomation-lists {padding-top: 0;}
-.credit-transaction-list .accordion dt {position: relative; padding-left: 2px; padding-right: 2px; white-space: nowrap}
-.credit-transaction-list .accordion dt .cnt {position: absolute; right: 32px; top: 20px; font-size: 23px;}
-.credit-transaction-list .accordion dt .cnt .num {font-size: 24px;}
-.credit-transaction-list .accordion .text small {display: block; @include text($text02, normal); color: $kb-ui04;}
-.credit-transaction-list .accordion > dd {padding: 22px 2px 18px;}
-.credit-transaction-list .text .amount {position: absolute; right: 32px; top: 50%; transform: translateY(-50%); @include text(23px);}
-.credit-transaction-list .text .amount .num {margin-right: 4px; @include number(24px); font-weight: normal;}
-.credit-transaction-list .is-active .text .amount,
-.credit-transaction-list .is-active .text .amount .num {font-weight: bold;}
-.credit-transaction-list .no-data {margin: 100px 0;}
 
-.accordion .infomation-lists {margin: -22px 0 -18px; padding: 0;}
+.credit-transaction-list .accordion {border-bottom: 0;}
+.credit-transaction-list .accordion > dt {position: relative; margin-top: 20px; padding: 15px 2px; white-space: nowrap; border-top: 0; border-bottom: 2px solid $kb-ui07; white-space: nowrap;}
+.credit-transaction-list .accordion > dt .text {font-weight: bold;}
+.credit-transaction-list .accordion > dt .text small {display: block; @include text($text02, normal); color: $kb-ui04;}
+.credit-transaction-list .accordion > dd {padding: 10px 0; border-top: 0; border-bottom: 0;}
+.credit-transaction-list .accordion .is-active + dd {border-bottom: 1px solid $kb-ui09;}
+.credit-transaction-list .accordion .description-list dt {white-space: nowrap;}
+.credit-transaction-list .text .amount {position: absolute; right: 32px; top: 50%; transform: translateY(-50%); @include text($text02, bold); color: $kb-ui03;}
+.credit-transaction-list .text .amount .num {margin-right: 2px; @include number(17px, bold);}
+
+.credit-transaction-list .no-data {margin: 70px 0;}
+
+.accordion .infomation-lists {margin: -10px 0 -11px; padding: 0;}
 .accordion .infomation-lists ul,
 .accordion .infomation-lists li {border: 0;}
-.accordion .infomation-lists li {margin: 30px 0; padding: 0;}
+.accordion .infomation-lists li {margin: 0; padding: 20px 0 10px; border-bottom: 1px solid $kb-ui09;}
 
 .credit-transaction-message {margin-top: 20px; margin-bottom: 60px;}
 
 // 휴대폰본인인증
-.phone-auth-agree .agreement-to-terms {border-bottom: 0;}
+.phone-auth-agree .agreement-to-terms {margin-bottom: 20px;}
 .phone-auth-form .kb-form + .btn-area {margin-top: 32px;}
-.phone-auth-form .time-limit {margin-top: 10px; padding-left: 4px;}
-.phone-auth-form .authcode-input {display: none;}
-.phone-auth-form .authcode-input.is-active {display: block;}
+.phone-auth-form .authcode-input {display: block; margin-top: 48px;}
 .phone-auth-form .authcode-input .btn-area {margin-bottom: 20px;}
-.phone-auth-form .info-msg {margin-top: 35px;}
+.phone-auth-form .info-msg:first-child {margin-top: -10px; margin-bottom: 10px;}
+.phone-auth-form .info-msg + .btn-area {margin-top: 10px;}
+.phone-auth-form .info-msg + .btn-area + .kb-form {margin-top: 23px;}
 
-.time-limit {color: $kb-ui04; @include text($text03, normal);}
-.time-limit .num {font-weight: bold; font-size: 15px;}
-
-.push-check {position: relative;margin-top: 40px;}
-.push-check .text {display: block; @include text($text02, normal); color: $kb-ui02; line-height: 25px;}
-.push-check .btn-switch {position: absolute; right: 0; top: 0;}
-
+.push-check {position: relative; margin-top: 28px;}
+.authcode-input + .push-check {margin-top: 45px;}
 // 신용관리서비스 가입완료
 .credit-management-complete {margin-top: 68px;}
 
 // 정보 목록
 .infomation-lists {padding: 18px 0 20px;}
-.infomation-lists ul {border-top: 1px solid $kb-ui09;}
-.infomation-lists li {padding: 25px 2px 17px; border-bottom: 1px solid $kb-ui09;}
-.infomation-lists .name {display: inline-block; margin-bottom: 5px; font-weight: bold;}
+// .infomation-lists ul {border-top: 1px solid $kb-ui09;}
+.infomation-lists li {padding: 20px 2px 10px; border-bottom: 1px solid $kb-ui09;}
+.infomation-lists .name {display: inline-block; margin-bottom: 7px; font-weight: bold;}
 .infomation-lists .no-data {margin: 100px 0;}
-.infomation-lists .list-summary {margin-bottom: 14px; @include text($text02, normal); color: $kb-ui04;}
-.infomation-lists .list-summary .num {color: $kb-ui02; font-size: 17px; font-weight: bold;}
+
+// 조회/변동 내역
+.lookup-change-history,
+.lookup-change-history:first-child {padding-top: 0;}
+.lookup-change-history .infomation-lists {padding: 0;}
+.lookup-change-history .list-summary {margin: 0 -24px 5px; padding: 15px 24px 16px; @include text($text02, normal); color: $kb-ui04; background-color: $kb-ui10;}
+.lookup-change-history .list-summary .num {color: $color-blue; font-size: 17px; font-weight: bold;}
 
 // 신용평점 올리기
-.credit-score-up:first-child {padding-top: 56px;}
-.credit-score-up .keyvisual {position: relative; padding: 75px 0 43px; text-align: center;}
+.credit-score-up,
+.credit-score-up:first-child {padding-top: 26px;}
+.credit-score-up .keyvisual {position: relative;}
 .credit-score-up .keyvisual span {display: block; color: $kb-ui03; @include text($text02, normal);}
-.credit-score-up .keyvisual strong {display: block; padding: 10px 0 7px; font-size: 18px; font-weight: bold; color: $kb-ui02;}
-.credit-score-up .keyvisual::after {content: ''; position: absolute; left: 50%; top: 0; margin-left: -32px; width: 64px; height: 64px; background: url(../images/special/img_up.png) no-repeat 0 0 / 100% 100%;}
-.credit-score-up + .toggle-notice {margin-top: 28px;}
+.credit-score-up .keyvisual strong {display: block; padding: 0; margin-bottom: 10px; font-size: 28px; line-height: 39px; font-weight: bold; color: $kb-ui02;}
+.credit-score-up .keyvisual::after {content: ''; display: block; margin: 23px auto 20px; width: 199px; height: 153px; background: url(../images/special/img_up.png) no-repeat 0 0 / 100% 100%;}
+.credit-score-up + .toggle-notice {margin-top: 50px;}
 
 .credit-score-complete {position: relative;}
-.credit-score-complete .flex-layout {height: calc(var(--vh, 1vh) * 100 - 68px - 125px); display: flex; flex-direction: column; justify-content: space-between;}
-.credit-score-complete .flex-top {height: 50%; display: flex; align-items: center; justify-content: center;}
-.credit-score-complete .flex-middle {padding: 16px 0; margin-bottom: 50px; border-top: 1px solid $kb-ui09; border-bottom: 1px solid $kb-ui09;}
-.credit-score-complete .flex-bottom {position: absolute; left: 24px; right: 24px; bottom: 0;}
-.credit-score-complete .description-list {padding: 0 2px;}
+.credit-score-complete .flex-top {margin: 32px 0 65px;}
+.credit-score-complete .flex-bottom {margin: 3px 0 20px;}
+.credit-score-complete .description-list {padding: 10px 2px; border-top: 1px solid $kb-ui09; border-bottom: 1px solid $kb-ui09; font-size: 14px;}
 .credit-score-complete .description-list dd {color: $kb-ui02;}
 .credit-score-complete .sticky-bottom.sticky-bottom {height: 0; margin: 0; padding: 0;}
 @media (max-height: 650px) {
@@ -112,68 +114,96 @@
 }
 
 // 나만의 대출상품
-.loan-top-box {margin-bottom: 20px; margin-top: 20px;}
-.loan-top-box div.inner {padding: 27px 24px; height: 116px; color: $kb-ui03;}
-.loan-top-box div.inner strong {font-weight: bold;}
-.loan-top-box .name {display: block; margin-bottom: 10px; @include text($text02, normal);}
-.loan-top-box .rate,
-.loan-top-box .rate .num {font-size: 22px;}
-.loan-top-box.my-loan-rate {position: relative; background-color: #f7f7f8;}
-.loan-top-box.my-loan-link {position: relative; background-color: #dcedec;}
-.loan-top-box.my-loan-link a {display: block; padding: 21px 24px; @include text($text02, normal); color: $kb-ui03;}
-.loan-top-box.my-loan-link span {display: block;}
-.loan-top-box.my-loan-link strong {display: block; margin-top: 3px; margin-bottom: 15px; font-size: 22px; font-weight: bold; color: $kb-ui02;}
+.loan-top-box {margin: 0 0 47px;}
+.my-loan-rate,
+.my-loan-link {position: relative; display: block; padding: 16px 22px; margin: 0 -8px; @include text($text02, normal); color: $kb-ui02;}
+.my-loan-rate {background-color: $kb-ui10; border-radius: 8px;}
+.my-loan-link {background-color: #eef1fa; border-radius: 8px;}
+.my-loan-rate .txt1 {display: block; margin-bottom: 5px;}
+.my-loan-rate strong {font-weight: bold;}
+.my-loan-rate .rate {font-size: 30px; color: $color-blue; font-weight: bold;}
+.my-loan-link span {display: block;}
+.my-loan-link strong {display: block; margin: 5px 0; font-size: 22px; font-weight: bold; color: $kb-ui02;}
+.my-loan-rate + .my-loan-link {margin-top: 20px;}
 
 .loan-product-banners {margin-bottom: 48px;}
-.loan-product-banners .item {display: block; padding: 23px; height: 158px; background-color: #eff2ff; border-radius: 2px;}
+.loan-product-banners h2 {margin-bottom: 10px;}
+.loan-product-banners .item {display: block; padding: 17px 23px; width: 100%; height: 148px; background-color: #eff2ff; color: $kb-ui02; border-radius: 8px; text-align: left; letter-spacing: -0.32px; line-height: 16px;}
+.loan-product-banners .items-a .item {background-color: #5b4197; color: #fff;}
+.loan-product-banners .items-b .item {background-color: #009b7e; color: #fff;}
+.loan-product-banners .items-c .item {background-color: #5c4630; color: #fff;}
 .loan-product-banners .item .text1,
-.loan-product-banners .item .text2 {display: block; font-size: 16px; line-height: 23px; color: $kb-ui03;}
-.loan-product-banners .item .text1 {padding-right: 34px; @include ellipsis(100%);}
+.loan-product-banners .item .text2 {display: block; @include text($text02, normal);}
+.loan-product-banners .item .text1 {@include ellipsis(100%);}
 .loan-product-banners .item .text2 {@include ellipsis(100%);}
-.loan-product-banners .item .name {margin: 5px 0;font-size: 22px; line-height: 31px; overflow: hidden; display: -webkit-box; width: 100%; height:62px; -webkit-line-clamp: 2; -webkit-box-orient: vertical;text-overflow: ellipsis; font-weight: bold;}
-.loan-product-banners .no-data {margin-top:0;padding-top:20px; height: 158px;}
+.loan-product-banners .item .name {margin: 0 0 5px; font-size: 20px; line-height: 28px; overflow: hidden; display: -webkit-box; width: 100%; height:62px; -webkit-line-clamp: 2; -webkit-box-orient: vertical;text-overflow: ellipsis; font-weight: bold;}
+
+.loan-product-banners .tab.swiper-container {margin: 0 -24px 20px;}
+.loan-product-banners .tab_contents {margin: 0 -24px;}
+.loan-product-banners .tab_contents .swiper-container {height: 178px;}
+.loan-product-banners .tab_contents .swiper-slide {padding: 0 16px;}
 .loan-product-banners .swiper-pagination-fraction {width: auto; left: auto; bottom: auto; right: 24px; top: 24px; font-family: roboto, sans-serif; font-size: 15px; color: $kb-ui05;}
 .loan-product-banners .swiper-pagination-current {color: $kb-ui02;}
+.loan-product-banners .swiper-container + .no-data {margin-top: 20px;}
+.loan-product-banners .no-data {margin:0 16px;padding-top:35px; height: 148px; border: 1px solid $kb-ui08; border-radius: 8px;}
 
-.recommend-prod-job .tit {display: block; padding-left: 2px; margin-bottom: 16px; @include text($text01, bold);}
-.recommend-prod-job li {margin-bottom: 24px; border: 1px solid $kb-ui08; border-radius: 2px;}
+// .recommend-prod-job .tit {display: block; padding-left: 2px; margin-bottom: 16px; @include text($text01, bold);}
+.recommend-prod-job h2 {margin-bottom: 15px;}
+.recommend-prod-job ul {margin: 0 -8px;}
+.recommend-prod-job li {margin-bottom: 10px; background-color: $kb-ui10; border-radius: 8px;}
 .recommend-prod-job li a {display: block; padding: 20px 25px; color: $kb-ui03;}
-.recommend-prod-job li .subtxt {display: block; @include text($text02, normal);}
-.recommend-prod-job li .maintxt {display: -webkit-box; font-size: 22px; line-height: 31px; height: 62px; -webkit-line-clamp: 2; -webkit-box-orient: vertical; text-overflow: ellipsis; font-weight: bold; overflow: hidden;}
+.recommend-prod-job li .subtxt {display: block; @include text($text03, normal); color: $kb-ui04;}
+.recommend-prod-job li .maintxt {display: block;  @include text($text01, bold); color: $kb-ui02; @include ellipsis(100%);}
 
 // 신용관리를 위한 꿀팁
 .tip-contents {margin-top: 8px;}
-.tip-contents dt {position: relative; padding-left: 32px; @include text($text01, bold);}
+.tip-contents dt {position: relative; padding-left: 34px; @include text($text01, bold);}
 .tip-contents dt::before {content: ''; position: absolute; left:0; top: 0; width: 24px; height: 24px; background-color: rgba(255,0,0,.2);}
 .tip-contents dd {padding: 25px 2px 20px; margin-bottom: 24px; @include text($text02, normal); border-bottom: 1px solid $kb-ui08;}
 .tip-contents .tip .img_area {display: none;}
-.tip-contents .tip .h3 {position: relative; padding-left: 32px; @include text($text01, bold);}
+.tip-contents .tip .h3 {position: relative; padding-left: 34px; @include text($text01, bold);}
 .tip-contents .tip .h3 .dot {position: absolute; left: 0; top: 2px; width: 24px; height: 24px; background: url(../images/special/icon_tip.png) no-repeat 0 0; background-size: 100% 100%;}
-.tip-contents .tip .txt {padding: 20px; margin-top: 15px; margin-bottom: 24px; @include text($text02, normal); background-color: #f7f7f8;}
+.tip-contents .tip .txt {padding: 20px; margin-top: 15px; margin-bottom: 24px; @include text($text02, normal); background-color: $kb-ui10; word-break: break-all;}
 
 // 이메일 수정
-.change-email {margin-top: 40px;}
+.change-email {margin-top: 20px;}
 .kb-sec.change-email:first-child {padding-top: 0;}
 .change-email .info-msg {margin-top: 20px;}
 
-// 신용평가 상세내역
-.credit-rating-chart {position: relative; padding-bottom: 30px; margin-bottom: 30px;}
-.credit-rating-chart::after {content: ''; position: absolute; left: 24px; right: 24px; bottom: 0; height: 1px; border-bottom: 1px solid $kb-ui09;}
-.credit-rating-chart + .credit-rating-chart::after {height: 10px; left: 0; right: 0; background-color: $kb-ui10; border-bottom: 0;}
+// 신용평점 분석 상세
+.credit-summary {padding: 27px 0; margin: 16px 16px 48px; text-align: center; color: $kb-ui11; border-radius: 8px; background-color: #6349a5; @include clfix;}
+.credit-summary:first-child {padding-top: 27px;}
+.credit-summary h2 {margin-bottom: 25px; @include text($text01, normal);}
+.credit-summary h2 strong {font-weight: bold;}
+.credit-summary .percent,
+.credit-summary .point {position: relative; float: left; width: 50%;}
+.credit-summary .point::before {content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background-color: #8071b3;}
+.credit-summary .txt {display: flex; flex-direction: column; justify-content: center; margin-bottom: 2px; font-size: 13px; line-height: 18px;}
+.credit-summary .txt.l2 {height: 38px;}
+.credit-summary .txt span {display: block;}
+.credit-summary .percent .val {font-size: 29px;}
+.credit-summary .point .val {font-size: 13px;}
+.credit-summary .num {margin-right: 2px; font-size: 32px;}
+
+.credit-rating-chart {margin-bottom: 48px;}
 .credit-rating-chart .h4 {margin-bottom: 20px;}
-// .credit-rating-chart .chart-area {height: calc((100vw - 48px) * 0.5259);}
-.app-lnb + .app-content .kb-sec.credit-rating-chart:first-child {padding-top: 28px;}
+.credit-rating-chart .content-box {position: relative;}
+.credit-rating-chart .graph {margin-right: 150px; min-height: 100px;}
+.credit-rating-chart .graph .chart-area {/* max-width: 150px; */ margin: 0 auto;}
+.credit-rating-chart .values {display: flex; flex-direction: column; justify-content: center; position: absolute; top: 0; bottom: 0; right: 20px; width: 135px;}
+.credit-rating-chart .values li {height: 25px; @include clfix}
+.credit-rating-chart .values li .label {position: relative; float: left; padding-left: 16px; font-size: 14px; line-height: 25px; color: $kb-ui04;}
+.credit-rating-chart .values li .label::before {content: ''; position: absolute; left: 0; top: 50%; margin-top: -5px; width: 10px; height: 10px; border-radius: 10px; background-color: #ccc;}
+.credit-rating-chart .values li.cate1 .label::before {background-color: #ffba53;}
+.credit-rating-chart .values li.cate2 .label::before {background-color: #ff8a71;}
+.credit-rating-chart .values li.cate3 .label::before {background-color: #ff6391;}
+.credit-rating-chart .values li.cate4 .label::before {background-color: #ff445a;}
+.credit-rating-chart .values li .num {float: right; font-size: 15px; line-height: 25px; color: $kb-ui02;}
 
 .credit-rating-details .h4 {margin-bottom: 20px;}
-.credit-rating-details .accordion {padding: 11px 0; margin-bottom: 10px; border-top: 1px solid #484b51; border-bottom: 1px solid #dde1e4;}
-.credit-rating-details .accordion > dd {padding: 11px 2px; border-bottom: 0;}
-.credit-rating-details .accordion > dt {border-top: 0; padding: 11px 0;}
-.credit-rating-details .accordion > dt.is-active {font-weight: normal;}
-.credit-rating-details .accordion > dt button {margin-top: -7px;}
-.credit-rating-details .stit {position: relative; display: block; padding: 0 2px 0 2px; margin: 6px 0 19px; font-weight: bold;}
-// .credit-rating-details .stit::before {content: ''; position: absolute; left: 0; top: 0; width: 24px; height: 24px; background-color: rgba(255,0,0,.2);}
+.credit-rating-details .accordion .is-active .tag-label {font-weight: normal;}
 .credit-rating-details .desc {padding: 0 2px 15px; @include text($text02, normal);}
-.credit-rating-details .tag-label {position: absolute; right: 30px; top: 7px;}
+.credit-rating-details .tag-label {position: absolute; right: 30px; top: 50%; transform: translateY(-50%);}
 .credit-rating-details .rating-flag {position: absolute; right: 30px; top: 7px; width: 69px; height: 30px; border-radius: 30px; border: 1px solid $kb-ui08; font-size: $text03; line-height: 30px; font-weight: normal; color: $kb-ui02; text-align: center;}
 .credit-rating-details .rating-1, 
 .credit-rating-details .rating-2,
@@ -182,48 +212,29 @@
 .credit-rating-details .rating-5 {background-color: #fff9e4;}
 
 .nice-data-area strong {font-weight: bold;}
-.nice-data-area .items {padding: 6px 0 25px; /*border-top: 1px solid $kb-ui09;*/ border-bottom: 1px solid $kb-ui09;}
 .nice-data-area .item {position: relative; margin-bottom: 12px; padding-left: 12px; @include text($text02, normal); color: $kb-ui03;}
 .nice-data-area .item::before {content: ''; position: absolute; left: 2px; top: 9px; width: 3px; height: 3px; background-color: $kb-ui03;}
 .nice-data-area .item:last-child {margin-bottom: 0;}
 
 // 신용관리
-.credit-management .credit-point {padding-top: 30px; padding-bottom: 34px; border-bottom: 10px solid $kb-ui10;}
-.credit-management .bottom-simple-link {margin-top: 25px;}
-.credit-management .toggle-notice {padding-top: 30px;}
-
-.credit-management .summary {@include text($text02, normal); color: $kb-ui02;}
-.credit-management .summary strong {font-weight: bold;}
-.credit-management .summary .point {font-size: 15px;}
-.credit-management .summary .point.up {color: $color-red;}
-.credit-management .summary .point.down {color: $color-blue;}
-
-.credit-history {padding-bottom: 34px;}
-.credit-history .content-box {padding-bottom: 0;}
-.credit-history .button-area {margin-top: 20px;}
-.credit-history .summary {margin-bottom: 18px;}
-.credit-history .links {display: flex;}
-.credit-history .links .link {position: relative; display: block; height: 60px; flex: 1; text-align: center; font-size: 16px; line-height: 60px; color: $kb-ui04; overflow: hidden;}
-.credit-history .links .link .num {font-size: 17px; font-weight: bold; color: $kb-ui02;}
-.credit-history .links .link::before {content: ''; position: absolute; left: 0; top: 24px; bottom: 24px; width: 1px; background-color: $kb-ui09;}
-.credit-history .links .link:first-child::before {display: none;}
-.credit-history .links .link i {@include iconBullet($direction: 'right', $width: 8px, $thick : 1px, $color : $kb-ui03); margin: 0 0 -1px 10px;}
-
-.alarm-message {position: relative; display: block; margin-bottom: 15px; padding: 8px 0 15px; border-radius: 2px; border-bottom: 1px solid $kb-ui09; overflow: hidden;}
-.alarm-message p {display: block; padding-left: 30px; @include text($text02, bold); color: $kb-ui03;}
-.alarm-message p i {position: absolute; right: 0; top: 0;}
-.alarm-message i.icon-bell2_24 {position: absolute; left: 0;}
-.alarm-message p {animation: alarmMessage 1s ease .3s forwards; opacity: 0;}
+.credit-alarm {margin-bottom: 30px;}
+.alarm-message {position: relative; display: block; padding: 10px 0 15px; border-radius: 2px; border-bottom: 1px solid $kb-ui09; overflow: hidden;}
+.alarm-message .bell {position: absolute; left: 0; top: 10px; width: 32px; height: 32px; border-radius: 10px; background-color: #805ec0;}
+.alarm-message i.icon-bell4_24 {position: absolute; left: 50%; top: 50%; margin: -12px 0 0 -12px;}
+.alarm-message .text {display: block; padding-left: 45px; font-size: $text02; line-height: 32px; color: $kb-ui02;}
+.alarm-message .text i {@include iconBullet($direction: 'right', $width: 8px, $thick : 2px, $color : $kb-ui05); position: absolute; right: 0; top: 50%; margin-top: -7px;}
+.alarm-message .text {animation: alarmMessage 1s ease .3s forwards; opacity: 0;}
 @keyframes alarmMessage {
 	0% {transform: translateX(-100%);opacity: 0;}
 	100% {transform: translateX(0%);opacity: 1;}
 }
-.alarm-message p i {animation: alarmMessageArrow .5s ease 1.1s forwards; opacity: 0;}
+.alarm-message .text i {animation: alarmMessageArrow .5s ease 1.1s forwards; opacity: 0;}
 @keyframes alarmMessageArrow {
 	0% {transform: translateX(-100%);opacity: 0;}
 	100% {transform: translateX(0%);opacity: 1;}
 }
-.alarm-message i.icon-bell2_24 {animation: alarmMessageBell .5s ease 1.1s forwards, alarmMessageBell2 1.5s linear 1.3s infinite; opacity: 0; transform-origin: 50% 10%;}
+.alarm-message .bell {animation: alarmMessageBell .5s ease 1.1s forwards; opacity: 0; transform-origin: 50% 10%;}
+.alarm-message i.icon-bell4_24 {animation: alarmMessageBell2 1.5s linear 1.3s infinite; transform-origin: 50% 10%;}
 @keyframes alarmMessageBell {
 	0% {opacity: 0;}
 	100% {opacity: 1;}
@@ -241,68 +252,85 @@
 	100% {transform: rotate(0deg);}
 }
 
-.my-credit-mng {padding-top: 30px;}
-.my-credit-mng .h4 {margin-bottom: 23px;}
-.my-credit-mng .h4 {margin-bottom: 23px;}
-.my-credit-mng .button-area {margin-top: 24px;}
-.my-credit-mng + .kb-sec:not(.toggle-notice) {padding-top: 24px;}
+.credit-gauge {margin-bottom: 48px;}
+.credit-gauge .title {display: inline-block; margin-bottom: 20px; font-weight: normal;}
+.credit-gauge .title strong {font-weight: bold;}
+.credit-gauge .button-area {margin-top: 16px;}
+.credit-gauge .tooltip {transform: translateY(0);}
 
-.icon-text-links {padding: 12px 2px; border-top: 1px solid $kb-ui03; border-bottom: 1px solid $kb-ui08;}
-.icon-text-links li .link {position: relative; display: block; padding: 12px 0;@include text($text02, normal); color: $kb-ui02;}
-.icon-text-links li .link i:first-child {margin-right: 9px;}
-.icon-text-links li .link i:last-child {@include iconBullet($direction: 'right', $width: 9px, $thick : 1px, $color : $kb-ui05); position: absolute; right: 5px; margin-top: 2px;}
+.credit-logs {margin-bottom: 48px;}
+.credit-logs .title {margin-bottom: 20px; @include text($text02, bold); color: $kb-ui02;}
+.credit-logs .content-box {padding-bottom: 10px;}
+.credit-logs .links {display: flex; margin-top: 10px;}
+.credit-logs .links .btn-text {position: relative; display: block; padding: 10px 0; flex: 1; text-align: center; overflow: hidden;}
+.credit-logs .links .btn-text span {font-size: 15px; color: $kb-ui04;}
+.credit-logs .links .btn-text .num {margin-left: 10px; font-size: 17px; font-weight: bold; color: $kb-ui02;}
+.credit-logs .links .btn-text:last-child .num {color: $color-blue;}
+.credit-logs .links .btn-text i {position: relative; top: 1px;}
+.credit-logs .links .btn-text::before {content: ''; position: absolute; left: 0; top: 13px; bottom: 13px; width: 1px; background-color: $kb-ui08;}
+.credit-logs .links .btn-text:first-child::before {display: none;}
 
-.compare-bar-area {margin: 12px 0;}
-.compare-bar-area .row {position: relative; height: 28px;}
-.compare-bar-area .row .num {font-size: 15px;}
-.compare-bar-area .row.me {color: $kb-ui03;}
-.compare-bar-area .row.avg,
+.credit-point {margin-bottom: 48px;}
+.credit-point .summary {@include text($text02, normal); color: $kb-ui02;}
+.credit-point .summary strong {font-weight: bold;}
+.credit-point .content-box {margin-top: 20px;}
+
+.my-credit-mng {margin-bottom: 48px;}
+.my-credit-mng .h4 {margin-bottom: 20px;}
+.my-credit-mng .button-area {margin-top: 20px;}
+.my-credit-mng .icon-text-links {padding: 0; border-top: 1px solid $kb-ui09;}
+.my-credit-mng .icon-text-links li {border-bottom: 1px solid $kb-ui09;}
+.my-credit-mng .icon-text-links li .link {position: relative; display: block; padding: 20px 0; font-size: $text02; line-height: 40px; color: $kb-ui02;}
+.my-credit-mng .icon-text-links li .link i:first-child {margin-right: 15px;}
+.my-credit-mng .icon-text-links li .link i:last-child {@include iconBullet($direction: 'right', $width: 8px, $thick : 1px, $color : $kb-ui05); position: absolute; right: 5px; top: 50%; transform: translateY(-50%);}
+
+.credit-compare {margin-bottom: 48px;}
+.credit-compare h2 {display: inline-block;}
+.credit-compare .btn-question {position: relative; top: -2px;}
+.credit-compare .summary {margin: 10px 0 15px; @include text($text02, normal);}
+.credit-compare .summary .num {font-size: 17px;}
+.credit-compare .summary .amount {color: $color-blue; font-weight: bold;}
+.credit-compare + .kb-sec > .simple-message {margin-top: -25px;}
+
+.content-box > .compare-bar-area {margin: -10px 0;}
+.compare-bar-area .row {position: relative; height: 32px;}
+.compare-bar-area .row .num {margin-right: 2px; font-size: 14px;}
+.compare-bar-area .row .text {position: absolute; font-size: 13px; line-height: 32px;}
+.compare-bar-area .row .bar-zone {margin: 0 45px 0 70px; padding-top: 10px;}
+.compare-bar-area.has-suffix .row .bar-zone {margin-right: 65px;}
+.compare-bar-area .row .bar {display: block; height: 12px; border-top-right-radius: 12px; border-bottom-right-radius: 12px;}
+.compare-bar-area .row .value {position: absolute; top: 50%; right: 2px; transform: translateY(-50%); font-size: 13px;}
+
+.compare-bar-area .row.me {color: $kb-ui02;}
+.compare-bar-area .row.avg {color: $kb-ui02;}
 .compare-bar-area .row.all {color: $kb-ui05;}
-.compare-bar-area .row .text {position: absolute; font-size: 14px; line-height: 38px;}
-.compare-bar-area .row .bar-zone {margin: 0 45px 0 62px; padding-top: 11px;}
-.compare-bar-area .row .bar {position: relative; display: block; height: 15px; border-radius: 15px;}
-.compare-bar-area .row .bar .value {position: absolute; top: 0; left: calc(100% + 5px); font-size: 14px;}
-.compare-bar-area .row.me .bar {background-color: #ffd338;}
-.compare-bar-area .row.avg .bar {background-color: #c6cbd0;}
+.compare-bar-area .row.me .bar {background-color: #ffba53;}
+.compare-bar-area .row.avg .bar {background-color: #ff8a71;}
 .compare-bar-area .row.all .bar {background-color: #c6cbd0;}
-.compare-bar-area.has-suffix .row .bar-zone {margin-right: 70px;}
+.compare-bar-area .row.me .value {font-weight: bold;}
 
-.compare-bar2-area {margin: 12px 0 25px;}
-.compare-bar2-area .row {position: relative; height: 38px;}
-.compare-bar2-area .row .num {font-size: 16px; font-weight: bold;}
-.compare-bar2-area .row.me,
-.compare-bar2-area .row.avg {color: $kb-ui02;}
-.compare-bar2-area .row .text {position: absolute; font-size: 14px; line-height: 38px;}
-.compare-bar2-area .row .bar-zone {margin: 0 45px 0 62px; padding-top: 11px;}
-.compare-bar2-area .row .bar {display: block; height: 17px; border-top-right-radius: 17px; border-bottom-right-radius: 17px;}
-.compare-bar2-area .row .bar .value {position: absolute; top: 50%; right: 2px; transform: translateY(-50%);}
-.compare-bar2-area .row.me .bar {background-color: #ff9901;}
-.compare-bar2-area .row.avg .bar {background-color: #c6cbd0;}
-.compare-bar2-area.has-suffix .row .bar-zone {margin-right: 70px;}
-.compare-bar2-area.increase .row.me .bar {background-color: #fa7b4e;}
-.compare-bar2-area.decrease .row.me .bar {background-color: #1dcfc1;}
+.credit-point .button-area {margin-top: 28px;}
+.credit-point .compare-bar-area .row.avg {color: $kb-ui05;}
+.credit-point .compare-bar-area .row.me .bar {background-color: #ffba53;}
+.credit-point .compare-bar-area .row.avg .bar {background-color: $kb-ui07;}
 
-.credit-compare-details .compare-bar-container {margin-top: 45px;}
-.credit-compare-details .kb-sec:last-child {margin-top: 30px;}
-.credit-compare-details .info-msg {margin-top: 20px;}
+.my-credit-power {margin-bottom: 48px;}
+.my-credit-power h2 {display: inline-block;}
+.my-credit-power small {@include text($text03, normal); color: $kb-ui04;}
+.my-credit-power .content-box {margin-top: 15px;}
+.my-credit-power .uright {margin-bottom: 5px; text-align: right; font-size: 13px; color: $kb-ui05;}
+.my-credit-power .description-list {margin-top: 20px; padding-bottom: 10px; border-bottom: 1px solid $kb-ui09;}
 
-.my-credit-power {padding-top: 8px;}
-// .my-credit-power:first-child {padding-top: 40px;}
-.my-credit-power dl {margin-top: 20px; padding: 8px 12px; border: 1px solid $kb-ui08; border-radius: 2px; @include text($text02, normal);}
-.my-credit-power dl::after {content: ''; clear: both; display: block;}
-.my-credit-power dt {float: left; color: $kb-ui04;}
-.my-credit-power dd {float: right; color: $kb-ui03;}
-.my-credit-power .chart-area {margin-top: 24px;}
-.my-credit-power .graph-area,
-.my-credit-power .chart-area {position: relative; padding-bottom: 24px;}
-.my-credit-power .graph-area::before,
-.my-credit-power .chart-area::before,
-.my-credit-power .graph-area::after,
-.my-credit-power .chart-area::after {position: absolute; bottom: 0; font-size: 14px; color: #26282c;}
-.my-credit-power .graph-area::before,
-.my-credit-power .chart-area::before {content: '← 저소득'; left: 2px;}
-.my-credit-power .graph-area::after,
-.my-credit-power .chart-area::after {content: '고소득 →'; right: 2px;}
+.direction-text {position: relative; margin-top: 10px; height: 14px;}
+.direction-text > span {position: absolute; bottom: 0; font-size: 14px; color: $kb-ui02;}
+.direction-text > span::before,
+.direction-text > span::after {content: ''; position: absolute; background-color: $kb-ui04;}
+.direction-text > span.left {left: 42px; padding-left: 22px;}
+.direction-text > span.left::before {left: 0; bottom: 4px; width: 16px; height: 1px;}
+.direction-text > span.left::after {left: 0; bottom: 4px; width: 8px; height: 1px; transform-origin: 0 0; transform: rotate(-45deg);}
+.direction-text > span.right {right: 2px; padding-right: 22px;}
+.direction-text > span.right::before {right: 0; bottom: 4px; width: 16px; height: 1px;}
+.direction-text > span.right::after {right: 0; bottom: 4px; width: 8px; height: 1px; transform-origin: 100% 0; transform: rotate(45deg);}
 
 .compare-bar-container .compare-bar-area {margin-top: 20px; margin-bottom: 24px;}
 .compare-bar-container .compare-summary {padding: 15px; border: 1px solid $kb-ui08; @include text($text02, normal); color: $kb-ui03; border-radius: 2px;}
@@ -317,7 +345,11 @@
 .credit-my-position .toppos .num {font-size: 15px;}
 .credit-my-position .point {top: 68px; font-size: 25px; color: $kb-ui02; font-weight: bold;}
 .credit-my-position .point .num {font-size: 30px;}
-.credit-my-position .svg-area {display: block; width: 232px; height: 120px; margin: 0 auto;}
+.credit-my-position .svg-area {position: relative; display: block; width: 232px; height: 120px; margin: 0 auto;}
+.credit-my-position .svg-area .min,
+.credit-my-position .svg-area .max {position: absolute; bottom: 0; font-size: $text03; line-height: 1; color: $kb-ui05; font-family: roboto;}
+.credit-my-position .svg-area .min {right: 100%; padding-right: 3px;}
+.credit-my-position .svg-area .max {left: 100%; padding-left: 3px;}
 
 // graph-gauge-circle
 svg.defs {display: none;}
@@ -329,4 +361,4 @@ svg.defs {display: none;}
 .svg-gauge-circle2 svg .bar-fg { stroke-width: 6; fill: none; stroke: #ebeef0; }
 .svg-gauge-half svg { width: 232px; height: 120px; }
 .svg-gauge-half svg .bar-bg, 
-.svg-gauge-half svg .bar-fg { stroke-width: 20; fill: none; stroke: #ebeef0; }
+.svg-gauge-half svg .bar-fg { stroke-width: 20; fill: none; stroke: $kb-ui07;}

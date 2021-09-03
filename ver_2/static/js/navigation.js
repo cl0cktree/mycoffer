@@ -288,3 +288,30 @@ function isNumeric(str) {
 $.fn.hasScrollBar = function() {
     return (this.prop("scrollHeight") == 0 && this.prop("clientHeight") == 0) || (this.prop("scrollHeight") > this.prop("clientHeight"));
 };
+
+//부분 영역 loader
+var gfn_partitialLoader = {    
+    show : function($target, msg){
+        //gfn_partitialLoader.show($target); //메세지가 필요 없을때
+        if(!msg) msg = '';
+        $target.addClass('is-loading');
+        $target.append('<div class="partitial-loader"><div class="msg">' + msg + '</div></div>');
+    },
+    hide : function($target){
+        $target.removeClass('is-loading');
+        $target.find('.partitial-loader').remove();
+    },
+};
+
+//Page Loader
+var gfn_pageLoader = {
+    show : function(){
+        $('body').append('<div class="page-loader"><div class="animation"><span>로딩중</span></div></div>');
+        $('.page-loader').fadeIn();
+    },
+    hide : function($target){
+        $('body').find('.page-loader').fadeOut(200, function(){
+            $(this).remove();
+        });
+    },
+};

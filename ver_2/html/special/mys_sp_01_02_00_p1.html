@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html lang="ko">
 <!-- [MYS_SP_01_02_00_P1] 작성자: 누리어 시스템 황철민 -->
+<!DOCTYPE html>
+<html lang="ko" data-channel="ch_star">
 <head>
 	@@include('@@webRoot/html/_include/app-head.html',{
 		"title": "정보 수정 | 신용관리"
@@ -10,12 +10,11 @@
 <body>
 	@@include('@@webRoot/html/_include/app-a11y.html')
 	<div class="app">
-		<!-- app-header //-->
+
 		@@include('@@webRoot/html/_include/app-integrated-header.html',{
 			'pageTit' :'정보 수정',
 			'type': 'close'
 		}) 
-		<!-- // app-header -->
 
 		<!-- app-container //-->
 		<div class="app-container">
@@ -24,12 +23,12 @@
 			<main class="app-content">
 
 				<section class="kb-sec change-email">
-					<div class="kb-form_multi kb-form_email" data-status="error">
+					<div class="kb-form_multi kb-form_email">
 						<strong class="tit">이메일 주소(NICE평가정보(주) 제공용)</strong>
 						<div class="kb-form">
 							<label for="formMultiEmail">이메일ID</label>
 							<div class="kb-form_inner form-text">
-								<input type="text" id="formMultiEmail" placeholder="아이디" value="acorn22"><!-- 수정 : 2021-07-02 -->
+								<input type="text" id="formMultiEmail" placeholder="아이디" value="acorn22">
 								<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
 							</div>
 						</div>
@@ -50,28 +49,26 @@
 								</select>
 							</div>
 						</div>
-						<div class="kb-form add-email-input">
+						<div class="kb-form add-email-input" data-status="error">
 							<label for="formMultiEmail03"></label>
 							<div class="kb-form_inner form-text">
 								<input type="text" id="formMultiEmail03" placeholder="" value="upleat.com">
 								<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
 							</div>
 						</div>
-						<em class="validation">이메일 주소를 정확히 입력해 주세요.</em><!-- 수정 : 2021-07-02 -->
+						<em class="validation">이메일 주소를 정확히 입력해 주세요.</em>
 					</div>
 
-					<!-- 추가 2021-06-02 // -->
 					<div class="push-check">
 						<span class="form-checkbox"><input type="checkbox" id="creditPushCheck2"><label for="creditPushCheck2">신용관리 서비스이용 문자 수신여부</label></span>
 					</div>
-					<!-- // 추가 2021-06-02 -->
 				</section>
 
-				<section class="kb-sec sticky-bottom">
+				<div class="sticky-bottom">
 					<div class="btn-area">
-						<button type="button" class="btn-solid"><span>확인</span></button>
+						<button type="button" class="btn-solid"><span>수정</span></button>
 					</div>
-				</section>
+				</div>
 
 			</main>
 			<!-- // app-content -->

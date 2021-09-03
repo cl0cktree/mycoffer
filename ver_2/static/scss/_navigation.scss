@@ -170,3 +170,22 @@ i[class*='icon-']{overflow:hidden;display:inline-block;white-space:nowrap;text-i
 .ios.homebar .all-menu-list > li > a + ul{padding-bottom:5.4rem;}
 
 
+//부분 영역 로딩
+.is-loading{position:relative;min-height:84px;}
+.is-loading > :not(.partitial-loader){opacity:0;}
+.partitial-loader{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;flex-flow:column;justify-content:center;}
+.partitial-loader:before{content:'';flex:0 0 12px;display:block;width:54px;height:12px;margin:14px auto;animation:partitialLoader 1s steps(17) infinite alternate;background-image:url(../images/common/loader.png);background-size:54px;}
+.partitial-loader .msg{@include text;text-align:center;margin-top:20px;}
+
+@keyframes partitialLoader {
+    0%{background-position:0 0;}
+    100%{background-position:0 -204px;}    
+}
+
+.page-loader{display:none;position:fixed;top:0;bottom:0;left:0;right:0;z-index:$level100;display:flex;flex-direction:column;justify-content:center;align-items:center;background-color:rgba(0,0,0,0.7)}
+.page-loader .animation{@include ir;width:56px;height:80px;animation:pageLoader 1s steps(11) infinite alternate;background-image:url(../images/common/page-loader.png);background-size:56px;}
+
+@keyframes pageLoader {
+    0%{background-position:0 0;}
+    100%{background-position:0 -880px;}    
+}

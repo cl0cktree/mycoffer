@@ -12,7 +12,7 @@
 .face-id .banner-msg{@include text($size: $text02, $weight: bold);margin-top:40px;padding:20px 24px;background-color:$kb-ui10;color:$kb-ui02;}
 
 //KB모바일인증서(mys_co_04_03_00)
-.app-content[class*=login-certification] .kb-mobile-certification-msg{padding-top:47px;text-align:center;}
+.app-content[class*=login-certification] .kb-mobile-certification-msg{padding-top:47px; padding-bottom:262px;text-align:center;}
 .app-content[class*=login-certification] .kb-mobile-certification-msg p{@include text($size: $text01);margin-top:24px;}
 .app-content[class*=login-certification] .kb-mobile-certification-msg p strong{font-weight:bold;}
 .app-content[class*=login-certification] .kb-mobile-certification-msg + ul{margin-top:156px;margin-bottom:24px;}
@@ -20,6 +20,8 @@
 .app-content[class*=login-certification] .other-login .btn-text span{@include text($size:$text03,$weight:bold); }
 .app-content[class*=login-certification] .other-login .btn-text i{@include iconBullet($direction: 'up', $width: 13px, $thick: 2px, $color: #52565d);top:0px;margin-left:10px;}
 .app-content[class*=login-certification] .certification-issued{margin-top:32px;text-align:center;}
+.certification-issued button{color:$kb-ui03;}
+.certification-issued button:first-child::after{content: "|"; color:$kb-ui08; padding: 0 13px;}
 .popup[data-layered-name=popupCertificationLoading] .loading-certification{text-align: center;}
 .popup[data-layered-name=popupCertificationLoading] .loading-certification img{width:150px; height:150px;  margin-bottom:28px}
 .popup[data-layered-name=popupCertificationLoading] .loading-certification .tit{display:block;text-align:center;color:$kb-ui03; font-size: $text01; line-height: 24px;}
@@ -46,8 +48,8 @@
 .simple-password-input04 p{@include text($size: $text03);margin-top:12px;color:$kb-ui04;}
 
 //로그인연장
-.modal[data-layered-name=modalLoginExtension] .login-extension-time{margin-bottom:12px; margin-top:8px; padding-top:22px; padding-bottom:22px;text-align:center;font-weight:bold; background-color: #eff2ff;}
-.modal[data-layered-name=modalLoginExtension] .login-extension-time strong{@include number($size:$heading03, $line-height:1);display:inline-block;margin-right:8px;color:$color-blue;}
+.modal[data-layered-name=modalLoginExtension] .login-extension-time{margin-bottom:12px; margin-top:8px; padding-top:22px; padding-bottom:22px;text-align:center;font-weight:bold;}
+.modal[data-layered-name=modalLoginExtension] .login-extension-time strong{font-size:$heading01; font-weight:bold;display:inline-block;margin-right:8px;color:$color-blue;}
 
 //가입완료(mys_co_05_04_00)
 .join-complete .service-join-status-msg{@include text($size: $text02);margin-top:16px;color:$kb-ui04;}
@@ -62,6 +64,7 @@
 .mobie-cetification .radio-group > li{flex:1;}
 .mobie-cetification .agreement-to-terms{margin-bottom:48px;}
 .mobie-cetification .btn-extend-time{margin-top:8px;}
+.mobie-cetification .authentication-number-notification li{padding-top: 15px; }
 .js-sended-number .remain-time{padding-top: 8px;}
 .js-sended-number .remain-time i{padding-right:5px;}
 .js-sended-number .remain-time button{float: right; }
@@ -83,7 +86,7 @@
 .kb-sec.asset-sync{padding-top:12vh;text-align:center;}
 .asset-sync .character-box{width:134px;height:134px;margin:0 auto;}
 .asset-sync .character-box img{width:100%;height:100%;}
-.asset-sync .character-box + p{@include text($size:$text01);margin-top:16px;}
+.asset-sync .character-box + p{@include text($size:$text01);margin-top:16px; color:$kb-ui03;}
 .asset-sync .loader{margin-top:40px;}
 .asset-sync02{position:absolute;bottom:24px;left:0;width:100%;}
 .asset-sync02 .checkbox-group{overflow:auto;padding-top:28px;padding-bottom:28px;border-top:1px solid $kb-ui03;border-bottom:1px solid $kb-ui09;min-height:80px;max-height:206px}
@@ -97,7 +100,7 @@
 .transmission-request .agreement-to-terms{border-bottom: none;}
 .transmission-request .agreement-to-terms .st_list{border-bottom:1px solid $kb-ui10;}
 .transmission-request ~ .kb-sec.confirm-agree{border-top:10px solid $kb-ui10;}
-
+.transmission-request p{font-weight: bold;}
 .kb-sec.confirm-agree .agreement-to-terms .header{padding-bottom:1em; padding-top:5rem}
 .kb-sec.confirm-agree .agreement-to-terms > .checkbox-group:first-child{border-top:1px solid $kb-ui03;}
 .kb-sec.confirm-agree .agreement-to-terms .checkbox-group{padding:2rem 0 2.1rem;}
@@ -111,6 +114,10 @@
 .kb-sec.confirm-agree .radio-group li{margin-top:0;width:50%;}
 .bottom-sheet .confirm-agree .agreement-to-terms .header{padding-top:0;}
 
+
+
+.select-organization .kb-sec.confirm-agree .agreement-to-terms .checkbox-group{padding:2rem 0 2.1rem;}
+.select-organization .kb-sec.confirm-agree .agreement-to-terms .checkbox-group label{display:inline-block;width:auto;padding-left:35px;padding-right:0;margin-right:3rem; font-weight: normal;font-size: 16px;}
 // 전송 요구 방법 선택 mys_co_06_01_00
 .box-option-list:not(.is-link) li{display:flex;margin-bottom:24px;padding:28px 24px;border:1px solid $kb-ui08;border-radius:2px}
 .box-option-list.is-link li [class*="link-box"]{display:flex;margin-bottom:24px;padding:25px 20px;border:1px solid $kb-ui08;border-radius:2px}
@@ -132,6 +139,7 @@
 .app-step .step-number .total:before{content:'/';display:inline-block;margin-right:1px;}
 .select-transmission-method .visual-area {margin-bottom: 20px; padding-bottom: 25px; text-align: center;}
 .select-transmission-method .visual-area img {display: block; width: 200px; margin: 0 auto 20px;}
+.select-transmission-method .visual-area .mydata{margin: 0 auto 28px;}
 .select-transmission-method .visual-area .text .stxt {display: block; margin-bottom: 3px; @include text($text02, normal); color: $kb-ui04;}
 .select-transmission-method .visual-area .text .mtxt {@include text($text02, normal);}
 .select-transmission-method .visual-area .text strong {font-weight: bold;}
@@ -166,6 +174,7 @@
 .is-employee-search .full{padding-top:0rem;}
 .is-employee-search .employee-search-msg{padding-top: 2rem; padding-bottom: 2rem;}
 // 기관선택 mys_co_06_01_01
+
 .select-organization .checkbox-group_icon{margin-top:0px}
 .select-organization .caution-txt{padding-bottom: 70px; display: block;}
 .select-organization .caution-txt p{font-size: 16px; margin-top:24px; line-height: 24px; margin-bottom: 19px;}
@@ -201,7 +210,7 @@
 .request-txt p{text-align: right; color:$kb-ui04; font-size: $text03; margin-top: 75px;}
 .request-txt a{float: right; /*text-decoration:underline; text-underline-position: under;*/ margin-top: 23px;}
 //개별인증
-.select-organization .kb-card{text-align: center; margin-bottom:150px;}
+.select-organization .kb-card{text-align: center; margin-bottom:150px; box-shadow: none;;}
 .select-organization .kb-card span img{margin-top:10px}
 .select-organization .kb-card strong{padding-left:10px;}
 .select-organization .kb-card p{padding-top:30px;}
@@ -296,6 +305,22 @@
 .select-assets .agree-integrated-authentication .kb-form_inner{padding-bottom:20px;border-bottom:1px solid $kb-ui03}
 .select-assets .agree-integrated-authentication .kb-form_inner .link{position:relative;left:8px;margin-left:auto;}
 
+
+.select-assets_02 .kb-sec [class^=h]{margin-top:3.2rem;line-height:1;}
+.select-assets_02 .kb-sec [class^=h] .num{padding-left:0.7rem;font-size:19px;}
+.select-assets_02 .accordion{margin-top:1.4rem; }
+.select-assets_02 .accordion .num{@include number($size: 17px);display:block;margin-top:0.4rem;color:$kb-ui02;line-height:1;}
+.select-assets_02 .accordion > dt{padding:2rem 0 2rem 0.2rem;font-weight:bold;}
+.select-assets_02 .accordion > dt:first-child{border-top:1px solid $kb-ui03;}
+.select-assets_02 .accordion .no-data{margin-top:1.6rem;}
+.select-assets_02 .checkbox-group li{padding:2rem 0 1.4rem;margin-top:0;border-bottom:1px solid $kb-ui09;}
+.select-assets_02 .checkbox-group li:first-child{padding-top:0;}
+.select-assets_02 .agree-integrated-authentication{margin-top:56px;}
+.select-assets_02 .agree-integrated-authentication .kb-form_inner{padding-bottom:20px;border-bottom:1px solid $kb-ui03}
+.select-assets_02 .agree-integrated-authentication .kb-form_inner .link{position:relative;left:8px;margin-left:auto;}
+
+
+
 .select-assets-complete h2 + p{@include text($text02);margin-top:20px;}
 .select-assets-complete .select-recommend-employee{margin-top:48px;}
 .select-assets-complete .radio-group{margin-top:20px;}
@@ -305,12 +330,12 @@
 .select-assets-complete .radio-group li {border-top:1px solid $kb-ui09; padding-top:20px;}
 .select-assets-complete .radio-group li:last-child{border-bottom:1px solid $kb-ui09; padding-bottom:20px;}
 .select-assets-complete .form-radio label{display:block;font-weight:bold;color:$kb-ui02;}
-.select-assets-complete .employee-info{display:flex;margin-top:4px;color:$kb-ui04;}
-.select-assets-complete .employee-info .date{@include number($size: 17px, $line-height:1);}
-.select-assets-complete .employee-info .branch{@include ellipsis;max-width:calc(100% - 84px)}
-.select-assets-complete .employee-info .branch:before{content:'|';display:inline-block;margin-left:4px;padding-right:4px;}
+.select-assets-complete .employee-info{display:flex;margin-top:7px;color:$kb-ui04;}
+.select-assets-complete .employee-info .date{@include number($size: 14px, $line-height:1.2); padding-left:14px; margin-top:-4px;}
+.select-assets-complete .employee-info .branch{@include ellipsis;max-width:calc(100% - 64px); font-size: 14px; padding-right:4px; padding-right:14px; margin-top:-3px;}
+.select-assets-complete .employee-info .branch:after{content: "|"; position: absolute;@include ellipsis; max-width:calc(100% - 64px);  font-size: 14px; padding-left:14px; color:$kb-ui09; }
 .select-assets-complete .recommend-employees{margin-top:20px;margin-bottom:40px;}
-.select-assets-complete .recommend-employees-form{margin-top:24px;}
+.select-assets-complete .recommend-employees-form{margin-top:8px;}
 .select-assets-complete .recommend-employees-form > .kb-form + p:last-child{margin-top:24px;}
 .select-assets-complete .recommend-employees-form > .kb-form,
 .select-assets-complete .recommend-employees-form > .kb-form + p:last-child{display:none;}
@@ -335,6 +360,7 @@
 .info-distributer-asset .info-distributer-asset-tit .num{font-size:25px;}
 .info-distributer-asset .info-distributer-asset-tit + p{margin-top:20px;color:$kb-ui04;}
 .info-distributer-asset .info-distributer-asset-selector{margin-top:48px;overflow:auto;max-height:calc(var(--vh, 1vh) * 100 - 292px);padding-bottom:20px;}
+.info-distributer-asset .info-distributer-asset-selector label{font-weight: bold;}
 .info-distributer-asset .info-distributer-asset-list{margin-top:20px;padding-top:4px;padding-bottom:24px;border-top:1px solid $kb-ui03;border-bottom:1px solid $kb-ui08;}
 .info-distributer-asset .info-distributer-asset-list li{padding-top:20px;}
 .info-distributer-asset .info-distributer-asset-list li + li{margin-top:20px;border-top:1px solid $kb-ui09;}
@@ -344,7 +370,33 @@
 .info-distributer-asset .info-distributer-asset-list .account-amount{display:block;margin-top:4px;text-align:right;font-weight:bold;}
 .info-distributer-asset .info-distributer-asset-list .account-amount .num{font-weight:bold;}
 
-.info-distributer-asset .balance{font-weight: 300; padding-right:10px;}
+
+
+.info-distributer-asset_02 .sticky-bottom.sticky-bottom:not(.popup_buttons){padding-top:0;height:auto;}
+.info-distributer-asset_02 .info-distributer-asset-tit{@include text($size: 24px, $weight: bold);margin-top:20px;}
+.info-distributer-asset_02 .info-distributer-asset-tit .num{font-size:25px;}
+.info-distributer-asset_02 .info-distributer-asset-tit + p{margin-top:20px;color:$kb-ui04;}
+.info-distributer-asset_02 .info-distributer-asset-selector{margin-top:48px;overflow:auto;max-height:calc(var(--vh, 1vh) * 100 - 292px);padding-bottom:20px;}
+.info-distributer-asset_02 .info-distributer-asset-list{margin-top:20px;padding-top:4px;padding-bottom:24px;border-top:1px solid $kb-ui03;border-bottom:1px solid $kb-ui08;}
+.info-distributer-asset_02 .info-distributer-asset-list li{padding-top:20px;}
+.info-distributer-asset_02 .info-distributer-asset-list li + li{margin-top:20px;border-top:1px solid $kb-ui09;}
+.info-distributer-asset_02 .info-distributer-asset-list li .form-checkbox_20{display:block;}
+.info-distributer-asset_02 .info-distributer-asset-list .form-checkbox_20 label{display:block;font-weight:normal;}
+.info-distributer-asset_02 .info-distributer-asset-list .account-number{display:block;margin-top:4px;font-weight:bold;}
+.info-distributer-asset_02 .info-distributer-asset-list .account-amount{display:block;margin-top:4px;text-align:right;font-weight:bold;}
+.info-distributer-asset_02 .info-distributer-asset-list .account-amount .num{font-weight:bold;}
+
+.info-distributer-asset_02 dd{margin-top: 20px;}
+.info-distributer-asset_02 .info-distributer-asset-list_02{margin-top:0px;padding-top:4px;padding-bottom:124px;border-top:1px solid $kb-ui09;border-bottom:1px solid $kb-ui08;}
+.info-distributer-asset_02 .info-distributer-asset-list_02 li{padding-top:20px;}
+.info-distributer-asset_02 .info-distributer-asset-list_02 li + li{margin-top:20px;border-top:1px solid $kb-ui09;}
+.info-distributer-asset_02 .info-distributer-asset-list_02 li .form-checkbox_20{display:block;}
+.info-distributer-asset_02 .info-distributer-asset-list_02 .form-checkbox_20 label{display:block;font-weight:normal;}
+.info-distributer-asset_02 .info-distributer-asset-list_02 .account-number{display:block;margin-top:4px;font-weight:bold;}
+.info-distributer-asset_02 .info-distributer-asset-list_02 .account-amount{display:block;margin-top:4px;text-align:right;font-weight:bold;}
+.info-distributer-asset_02 .info-distributer-asset-list_02 .account-amount .num{font-weight:bold; font-size: 19px;}
+.info-distributer-asset_02 .balance{font-weight: 300; padding-right:10px; font-size: 14px;;}
+
 .info-distributer-asset .kb-sec{margin-top: 23px;}
 //mys_mn_01_01_01.html
 // .mydata-kbinfo h2{margin-top:28px;}
@@ -477,7 +529,6 @@
 // .joint-certificate-list li p > strong.num.c-black{color:$kb-ui02;}
 .joint-certificate-list li .icon-link_20{position:absolute;right:0;top:calc(50% - 8px);transform:translateY(-50%)}
 .joint-certificate{padding-bottom:100px;}
-
 .joint-certificate-password h2{text-align: center; @include text($size: $heading02); font-weight: bold;}
 .kb-sec.joint-certificate-password{padding-top:75px;}
 .kb-sec.joint-certificate-password .form-text{padding-top:80px;}
@@ -507,8 +558,8 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .select-infouser .kb-sec:first-of-type{margin-top:1.5rem;}
 .select-infouser .certificate-list{margin-top:2rem;}
 .select-infouser .certificate-list li{border-bottom:1px solid $kb-ui09;}
-.select-infouser .certificate-list li span p{color:$kb-ui04; font-size: 14px; font-weight: bold; line-height: 20px; padding-top:10px }
-.select-infouser .certificate-list li a{display:flex;justify-content:space-between;align-items:center;padding:2rem 0;}
+.select-infouser .certificate-list li span p{color:$kb-ui04; font-size: 14px; font-weight: normal; line-height: 20px; padding-top:10px }
+.select-infouser .certificate-list li a{display:flex;justify-content:space-between;align-items:center;padding:2.4rem 0;}
 .select-infouser .certificate-list li i{margin-top:-50px}
 .select-infouser .certificate-list li i:first-child{margin-right:1.5rem; }
 .select-infouser .certificate-list li .txt{flex: 1 0 auto;font-size:1.8rem;font-weight:bold;line-height:1.1;}
@@ -677,7 +728,20 @@ h1 + .joint-certificate-list{margin-top:28px;}
 
 
 //스마트폰(승인번호)
-.pc-import .form-text{margin-right:16px; width:30%; float: left;}
+.approval-number .kb-form{width: 100%; display:block;margin-bottom: 96px; clear: both;}
+.approval-number .kb-form .kb-form_inner{width:100%}
+.approval-number .kb-form .kb-form_inner{width:29.8%; float: left;margin-right: 16px;}
+.approval-number .kb-form .form-text-last{margin-right: 0px; }
+.pc-import .kb-sec{padding-left: 0px;}
+.pc-import .kb-sec{padding-left: 0px;}
+.pc-import .tab_contents .kb-sec:first-child{padding-left: 24px;}
+.pc-import .approval-number input{text-align: left;}
+.pc-import .approval-number .list-decimal{display: block;}
+.pc-import .approval-number .list-decimal ul{display: block;}
+.pc-import .approval-number .list-decimal li{list-style-type: decimal; margin-left:20px; color:$kb-ui02; font-size: 16px;font-weight: bold; padding-bottom: 20px; line-height:24px;}
+.pc-import .approval-number .list-decimal li p{font-weight: normal; padding-left:10px;}
+.pc-import .approval-number .list-decimal .simple-message{color:$color-red; margin-top:0px;}
+.pc-import .approval-number .list-decimal .simple-message::before{content:'*';position: absolute;left:0;top:5px;width:20px;height:20px;background:none; font-size: 24px;}
 //플러스존 -> My 혜택 - > 마이데이터 선물함(리워드 쿠폰)
 .search-bar{display:flex;justify-content:space-between;align-items:center;margin-left:(-2.4rem);margin-right:(-2.4rem);padding-top:12px;padding-bottom:12px;padding-left:2.4rem;padding-right:2.4rem;background-color:$kb-ui10;}
 .search-bar .tit{font-weight:bold;}

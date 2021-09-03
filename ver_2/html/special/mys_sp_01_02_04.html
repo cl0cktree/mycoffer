@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html lang="ko">
 <!-- [MYS_SP_01_02_00] 작성자: 누리어 시스템 황철민 -->
+<!DOCTYPE html>
+<html lang="ko" data-channel="ch_star">
 <head>
 	@@include('@@webRoot/html/_include/app-head.html',{
 		"title": "신용 비교분석 상세 | 신용관리"
@@ -10,123 +10,179 @@
 <body>
 	@@include('@@webRoot/html/_include/app-a11y.html')
 	<div class="app">
-		<!-- app-header //-->
+
 		@@include('@@webRoot/html/_include/app-integrated-header.html', {
 			'pageTit': '신용 비교분석 상세',
 			'type': ''
 		})
-		<!-- // app-header -->
 
 		<!-- app-container //-->
 		<div class="app-container">
 
 			<!-- app-content // -->
-			<main class="app-content credit-compare-details">
+			<main class="app-content">
+
+				<section class="kb-sec credit-summary">
+					<h2><strong>김국민</strong> 님의 신용구매력</h2>
+					<div class="percent">
+						<span class="txt l2">소득상위</span>
+						<span class="val"><span class="num">15</span>%</span>
+					</div>
+					<div class="point">
+						<span class="txt l2">평균소득<br>(NICE소득정보기준)</span>
+						<span class="val"><span class="num">550</span>만원</span>
+					</div>
+				</section>
 
 				<section class="kb-sec my-credit-power">
-					<h4 class="h4">김국민 님 신용구매력(소득)</h4><!-- 수정 : 2021-07-02 -->
-					<!-- [Chart Area] // -->
-					<!--
-						[차트 디자인 정보]
-						Grid 라인 색상 : #ebeef0
-						곡선 색상 : #f7956c
-						곡선 굵기 : 2px
-						X축 레이블 텍스트 사이즈/색상 : 14px/#8c949e
-						Tooltip 텍스트 사이즈/색상 : 15px/#26282c/Bold
-						Tooltip '상위21%' 사이즈/색상 : 14px/#8c949e
-					-->
-					<div class="chart-area">
-						<img class="temp" src="@@webRoot/static/images/_temp/chart_sp0104.png" alt="차트 예시 이미지">
+					<h2 class="h4">내 신용 구매력 <small>O 구간</small></h2>
+					<button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+					<div class="tooltip">
+						<strong class="tit">내 신용구매력 구간이란?</strong>
+						<div class="cont">
+							<ul data-style="list">
+								<li>신용구매력 구간의 A~O까지 총 15개 구간으로, A에 가까울수록 소득이 많으며 신용구매력이 높습니다. 신용구매력은 NICE에서 보유한 소득추정모델을 사용하였으며, 나와 비슷한 구매력을 가진 사람들의 소비와 대출을 비교합니다.</li>
+							</ul>
+						</div>
+						<button class="btn-close"><span>닫기</span></button>
 					</div>
-					<!-- // [Chart Area] -->
-					<dl>
-						<dt>비슷한 소득군 수</dt><!-- 수정 2021-06-23 -->
-						<dd class="amount"><span class="num">1,400,100</span>명</dd>
+
+					<div class="content-box">
+						<div class="uright">구간별 인원수: 만명</div>
+						<!-- [Chart Area] // -->
+						<!--
+							[차트 디자인 정보]
+							Grid 라인 색상 : #ebeef0
+							꺽은선 색상 : #ffba53
+							X,Y축 레이블 텍스트 사이즈/색상 : 14px/#26282c, #8c949e
+						-->
+						<div class="chart-area">
+							<img class="temp" src="@@webRoot/static/images/_temp/chart_sp0109.png" alt="차트 예시 이미지">
+						</div>
+						<!-- // [Chart Area] -->
+						<div class="direction-text">
+							<span class="left">구매력 낮음</span>
+							<span class="right">구매력 높음</span>
+						</div>
+					</div>
+					<dl class="description-list type2">
+						<dt>유사 소득인원</dt>
+						<dd class="amount"><span class="num">1,850,300</span>명</dd>
+						<dt>구성비</dt>
+						<dd class="amount"><span class="num">3</span>%</dd>
 					</dl>
 				</section>
 
-				<section class="kb-sec compare-bar-container">
-					<h4 class="h4">카드 이용금액 비교</h4>
-					<!--
-						[개발]
-						나, 연령평균, 전연령대 중 큰 쪽의 .bar 는 100% , 다른 쪽은  %계산하여 width 지정
-					-->
-					<div class="compare-bar-area has-suffix">
-						<div class="row me">
-							<div class="text">나</div>
-							<div class="bar-zone">
-								<span class="bar" style="width: 31.6%;">
-									<span class="value"><span class="num">140</span>만원</span>
-								</span>
-							</div>
+				<section class="kb-sec credit-compare">
+					<h2 class="h4">O구간 대비 월 평균 카드 사용량 비교</h2>
+					<button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+					<div class="tooltip">
+						<strong class="tit">구간대비 월평균 카드사용량이란?</strong>
+						<div class="cont">
+							<ul data-style="list">
+								<li>구간에 속한 구간의 월 평균카드사용금액으로 다음과 같이 표시됩니다.</li>
+								<li>우수: 월 평균카드사용금액의 70%미만</li>
+								<li>양호: 월 평균카드사용금액의 70%이상 100%미만</li>
+								<li>주의: 월 평균카드사용금액의 100%이상 130%미만</li>
+								<li>위험: 월 평균카드사용금액의 130%초과</li>
+							</ul>
 						</div>
-						<div class="row avg">
-							<div class="text"><span class="num">30</span>대</div><!-- 수정 2021-06-23 -->
-							<div class="bar-zone">
-								<span class="bar" style="width: 100%;">
-									<span class="value"><span class="num">442</span>만원</span>
-								</span>
-							</div>
-						</div>
-						<div class="row all">
-							<div class="text">전연령대</div>
-							<div class="bar-zone">
-								<span class="bar" style="width: 93.4%;">
-									<span class="value"><span class="num">413</span>만원</span>
-								</span>
-							</div>
-						</div>
+						<button class="btn-close"><span>닫기</span></button>
 					</div>
-					<div class="compare-summary">
-						<strong>김국민</strong> 님의 카드이용금액은 <span class="num">30</span>대(비슷한 소득군) 평균보다 약 <strong><span class="num">302</span>만원</strong> 적습니다. 
+					<p class="summary">
+						김국민 님의 카드이용금액은 <span class="num">30</span>대(비슷한 소득군) 평균보다 약 <span class="amount"><span class="num">30</span>만원</span> 적습니다.
+					</p>
+					<div class="content-box">
+						<!--
+							[개발]
+							나, 연령평균, 전연령대 중 큰 쪽의 .bar 는 100% , 다른 쪽은  %계산하여 width 지정
+						-->
+						<div class="compare-bar-area has-suffix">
+							<div class="row me">
+								<div class="text">나</div>
+								<div class="bar-zone">
+									<span class="bar" style="width: 31.6%;">
+										<span class="value"><span class="num">140</span>만원</span>
+									</span>
+								</div>
+							</div>
+							<div class="row avg">
+								<div class="text">30대</div>
+								<div class="bar-zone">
+									<span class="bar" style="width: 100%;">
+										<span class="value"><span class="num">442</span>만원</span>
+									</span>
+								</div>
+							</div>
+							<div class="row all">
+								<div class="text">전연령대</div>
+								<div class="bar-zone">
+									<span class="bar" style="width: 93.4%;">
+										<span class="value"><span class="num">413</span>만원</span>
+									</span>
+								</div>
+							</div>
+						</div>
 					</div>
 				</section>
 
-				<section class="kb-sec compare-bar-container">
-					<h4 class="h4">대출잔액 비교</h4>
-					<!--
-						[개발]
-						나, 연령평균, 전연령대 중 큰 쪽의 .bar 는 100% , 다른 쪽은  %계산하여 width 지정
-					-->
-					<div class="compare-bar-area has-suffix">
-						<div class="row me">
-							<div class="text">나</div>
-							<div class="bar-zone">
-								<span class="bar" style="width: 25.4%;">
-									<span class="value"><span class="num">1,400</span>만원</span>
-								</span>
-							</div>
+				<section class="kb-sec credit-compare">
+					<h2 class="h4">O구간 대비 대출잔액 비교</h2>
+					<button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+					<div class="tooltip">
+						<strong class="tit">구간대비 대출잔액이란?</strong>
+						<div class="cont">
+							<ul data-style="list">
+								<li>구간에 속한 구간의 평균대출금액으로 다음과 같이 표시됩니다.</li>
+								<li>우수: 평균여신잔액의 70%미만</li>
+								<li>양호: 평균여신잔액의 70%이상 100%미만</li>
+								<li>주의: 평균여신잔액의 100%이상 130%미만</li>
+								<li>위험: 평균여신잔액의 130%초과</li>
+							</ul>
 						</div>
-						<div class="row avg">
-							<div class="text"><span class="num">30</span>대</div><!-- 수정 2021-06-23 -->
-							<div class="bar-zone">
-								<span class="bar" style="width: 60%;">
-									<span class="value"><span class="num">3,300</span>만원</span>
-								</span>
+						<button class="btn-close"><span>닫기</span></button>
+					</div>
+					<p class="summary">
+						김국민 님의 대출금액은 <span class="num">30</span>대(비슷한 소득군) 평균보다 약 <span class="amount"><span class="num">30</span>만원</span> 적습니다.
+					</p>
+					<div class="content-box">
+						<!--
+							[개발]
+							나, 연령평균, 전연령대 중 큰 쪽의 .bar 는 100% , 다른 쪽은  %계산하여 width 지정
+						-->
+						<div class="compare-bar-area has-suffix">
+							<div class="row me">
+								<div class="text">나</div>
+								<div class="bar-zone">
+									<span class="bar" style="width: 31.6%;">
+										<span class="value"><span class="num">140</span>만원</span>
+									</span>
+								</div>
 							</div>
-						</div>
-						<div class="row all">
-							<div class="text">전연령대</div>
-							<div class="bar-zone">
-								<span class="bar" style="width: 100%;">
-									<span class="value"><span class="num">5,500</span>만원</span>
-								</span>
+							<div class="row avg">
+								<div class="text">30대</div>
+								<div class="bar-zone">
+									<span class="bar" style="width: 100%;">
+										<span class="value"><span class="num">442</span>만원</span>
+									</span>
+								</div>
+							</div>
+							<div class="row all">
+								<div class="text">전연령대</div>
+								<div class="bar-zone">
+									<span class="bar" style="width: 93.4%;">
+										<span class="value"><span class="num">413</span>만원</span>
+									</span>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="compare-summary">
-						<strong>김국민</strong> 님의 대출금액은 <span class="num">30</span>대(비슷한 소득군) 평균보다 약 <strong><span class="num">1,900</span>만원</strong> 적습니다. 
-					</div>
 				</section>
-				
-				<section class="kb-sec">
-					<!-- 수정 2021-06-22 // -->
-					<!-- <div class="button-area">
-						<a href="javascript:;" class="btn-solid"><span>나만의 대출상품 확인하기</span></a>
-					</div> -->
-					<!-- 수정 2021-06-22 // -->
-					<p class="info-msg">위 정보는 국내 신용평가사인 NICE평가정보(주)에서 제공하는 데이터로, 문의사항은 NICE지키미 고객센터(1588-2486)로 연락해 주세요.</p><!-- 수정 : 2021-07-02 -->
+
+				<section class="kb-sec ">
+					<p class="simple-message">위 정보는 국내 신용평가사인 NICE평가정보(주)에서 제공하는 데이터로, 문의사항은 NICE지키미 고객센터(1588-2486)로 연락해 주세요.</p>
 				</section>
+
 			</main>
 			<!-- // app-content -->
 

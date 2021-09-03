@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
-<!-- [MYS_AS_02_00_00] 작성자: 누리어 시스템 김은경 -->
+<!-- [MYS_AS_02_00_00] 작성자: 누리어 시스템 황철민 -->
 <head>
 	@@include('@@webRoot/html/_include/app-head.html',{
 		"title": "자산 | 종합솔루션"
@@ -16,370 +16,384 @@
 
 		<!-- app-container //-->
 		<div class="app-container">
-			 <!-- app-lnb //-->
-			 <div class="app-lnb">
-                
-                        
-            </div>
-            <!-- //app-lnb -->
+
 			<!-- app-content // -->
-			<main class="app-content my-asset solution bg-gray-bottom">
-                <section class="kb-sec bg-gray asset-summary">
-                    <div class="content-box shadow">
-						<div class="top-area">
-							<h4 class="h4">김국민님 자산을 한눈에 Check!</h4>
-							<p class="msg">
-								나의 자산 구성은 금융자산중 자산종류 비중이 <span class="num">30%</span> 비금융자산중 자산종류 비중이 <span class="num">20%</span> 부채중 부채종류 비중이 <span class="num">50%</span>로 가장 높아요!
-							</p>
+			<main class="app-content my-asset solution">
+
+				<section class="kb-sec my-asset-summary">
+					<h2 class="title"><strong>김국민</strong> 님의 자산을 한눈에 Check!</h2>
+					<div class="content-box">
+						<p>
+							나의 자산 구성은<br>
+							금융자산중 <strong>투자</strong> 비중이 <span class="num">45</span>%<br>
+							비금융자산중 <strong>부동산</strong> 비중이 <span class="num">34</span>%<br>
+							부채중 <strong>카드</strong> 비중이 <span class="num">20</span>%로 가장 높아요!
+						</p>
+					</div>
+				</section>
+
+				<section class="kb-sec my-asset-compare">
+					<h2 class="is-hidden">나의 자산 연령대 그룹과 비교하기</h2>
+					<div class="asset-graph-head">
+						<div class="ages-head">
+							<div class="kb-form">
+								<label for="selectAgesAsset">연령 선택</label>
+								<div class="kb-form_inner form-select">
+									<button type="button" class="selected-option"></button>
+									<select name="" id="selectAgesAsset" title="연령 선택">
+										<option value=""></option>
+										<option value="">20세~24세</option>
+										<option value="">25세~29세</option>
+										<option value="">30세~34세</option>
+										<option value="" selected>35세~39세</option>
+										<option value="">40세~44세</option>
+										<option value="">45세~49세</option>
+										<option value="">50세~54세</option>
+										<option value="">55세~59세</option>
+										<option value="">60세 이상</option>
+									</select>
+								</div>
+							</div>
 						</div>
-						<div class="chart-area">
-							<table class="solution-list">
-								<caption>나와 30대평균 비교차트</caption>
-								<colgroup>
-								<col style="width:35%">
-								<col style="width:30%">
-								<col style="width:35%">
-								</colgroup>
-								<thead>
-									<tr>
-										<th scope="col"><button type="button" class="btn-similar" data-call-layered="mys_as_07_00_00_p1"><b>30대<i class="arrow"></i></b></button>평균</th>
-										<th><span class="blind">항목</span></th>
-										<th scope="col">나</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td><div class="percentage-graph type4">
-											<!-- 2021-08-11 태그수정 // -->
-											<button type="button" class="graph-area">
-												<span style="width:15%">11%</span><!-- style로 그래프 넓이값 제어 -->
-											</button>
-											<!-- // 2021-08-11 태그수정 -->
-										</div></td>
-										<th scope="row">입출금&middot;페이</th>
-										<td><div class="percentage-graph type5">
-											<!-- 2021-08-11 태그수정 // -->
-											<button type="button" class="graph-area">
-												<span style="width:11%">11%</span><!-- style로 그래프 넓이값 제어 -->
-											</button>
-											<!-- // 2021-08-11 태그수정 -->
-										</div></td>
-									</tr>
-									<tr>
-										<td><div class="percentage-graph type4">
-											<!-- 2021-08-11 태그수정 // -->
-											<button type="button" class="graph-area">
-												<span style="width:15%">15%</span><!-- style로 그래프 넓이값 제어 -->
-											</button>
-											<!-- // 2021-08-11 태그수정 -->
-										</div></td>
-										<th scope="row">예적금</th>
-										<td><div class="percentage-graph type5">
-											<!-- 2021-08-11 태그수정 // -->
-											<button type="button" class="graph-area">
-												<span style="width:11%">11%</span><!-- style로 그래프 넓이값 제어 -->
-											</button>
-											<!-- // 2021-08-11 태그수정 -->
-										</div></td>
-									</tr>
-									<tr>
-										<td><div class="percentage-graph type4">
-											<!-- 2021-08-11 태그수정 // -->
-											<button type="button" class="graph-area">
-												<span style="width:15%">15%</span><!-- style로 그래프 넓이값 제어 -->
-											</button>
-											<!-- // 2021-08-11 태그수정 -->
-										</div></td>
-										<th scope="row">투자</th>
-										<td><div class="percentage-graph type5">
-											<!-- 2021-08-11 태그수정 // -->
-											<button type="button" class="graph-area">
-												<span style="width:11%">11%</span><!-- style로 그래프 넓이값 제어 -->
-											</button>
-											<!-- // 2021-08-11 태그수정 -->
-										</div></td>
-									</tr>
-									<tr>
-										<td><div class="percentage-graph type4">
-											<!-- 2021-08-11 태그수정 // -->
-											<button type="button" class="graph-area">
-												<span style="width:15%">15%</span><!-- style로 그래프 넓이값 제어 -->
-											</button>
-											<!-- // 2021-08-11 태그수정 -->
-										</div></td>
-										<th scope="row">연금(은퇴)</th>
-										<td><div class="percentage-graph type5">
-											<!-- 2021-08-11 태그수정 // -->
-											<button type="button" class="graph-area">
-												<span style="width:11%">11%</span><!-- style로 그래프 넓이값 제어 -->
-											</button>
-											<!-- // 2021-08-11 태그수정 -->
-										</div></td>
-									</tr>
-									<tr>
-										<td><div class="percentage-graph type4">
-											<!-- 2021-08-11 태그수정 // -->
-											<button type="button" class="graph-area">
-												<span style="width:15%">15%</span><!-- style로 그래프 넓이값 제어 -->
-											</button>
-											<!-- // 2021-08-11 태그수정 -->
-										</div></td>
-										<th scope="row">보험</th>
-										<td><div class="percentage-graph type5">
-											<!-- 2021-08-11 태그수정 // -->
-											<button type="button" class="graph-area">
-												<span style="width:11%">11%</span><!-- style로 그래프 넓이값 제어 -->
-											</button>
-											<!-- // 2021-08-11 태그수정 -->
-										</div></td>
-									</tr>
-									<tr>
-										<td><div class="percentage-graph type4">
-											<!-- 2021-08-11 태그수정 // -->
-											<button type="button" class="graph-area">
-												<span style="width:15%">15%</span><!-- style로 그래프 넓이값 제어 -->
-											</button>
-											<!-- // 2021-08-11 태그수정 -->
-										</div></td>
-										<th scope="row">외화</th>
-										<td><div class="percentage-graph type5">
-											<!-- 2021-08-11 태그수정 // -->
-											<button type="button" class="graph-area">
-												<span style="width:11%">11%</span><!-- style로 그래프 넓이값 제어 -->
-											</button>
-											<!-- // 2021-08-11 태그수정 -->
-										</div></td>
-									</tr>
-									<tr>
-										<td><div class="percentage-graph type4 mint">
-											<!-- 2021-08-11 태그수정 // -->
-											<button type="button" class="graph-area">
-												<span style="width:60%">60%</span><!-- style로 그래프 넓이값 제어 -->
-											</button>
-											<!-- // 2021-08-11 태그수정 -->
-										</div></td>
-										<th scope="row">부동산</th>
-										<td><div class="percentage-graph type5 mint">
-											<!-- 2021-08-11 태그수정 // -->
-											<button type="button" class="graph-area">
-												<span style="width:70%">70%</span><!-- style로 그래프 넓이값 제어 -->
-											</button>
-											<!-- // 2021-08-11 태그수정 -->
-										</div></td>
-									</tr>
-									<tr>
-										<td><div class="percentage-graph type4 mint">
-											<!-- 2021-08-11 태그수정 // -->
-											<button type="button" class="graph-area">
-												<span style="width:20%">20%</span><!-- style로 그래프 넓이값 제어 -->
-											</button>
-											<!-- // 2021-08-11 태그수정 -->
-										</div></td>
-										<th scope="row">자동차</th>
-										<td><div class="percentage-graph type5 mint">
-											<!-- 2021-08-11 태그수정 // -->
-											<button type="button" class="graph-area">
-												<span style="width:30%">30%</span><!-- style로 그래프 넓이값 제어 -->
-											</button>
-											<!-- // 2021-08-11 태그수정 -->
-										</div></td>
-									</tr>
-									<tr>
-										<td><div class="percentage-graph type4 cobalt">
-											<!-- 2021-08-11 태그수정 // -->
-											<button type="button" class="graph-area">
-												<span style="width:20%">20%</span><!-- style로 그래프 넓이값 제어 -->
-											</button>
-											<!-- // 2021-08-11 태그수정 -->
-										</div></td>
-										<th scope="row">대출</th>
-										<td><div class="percentage-graph type5 cobalt">
-											<!-- 2021-08-11 태그수정 // -->
-											<button type="button" class="graph-area">
-												<span style="width:30%">30%</span><!-- style로 그래프 넓이값 제어 -->
-											</button>
-											<!-- // 2021-08-11 태그수정 -->
-										</div></td>
-									</tr>
-									<tr>
-										<td><div class="percentage-graph type4 cobalt">
-											<!-- 2021-08-11 태그수정 // -->
-											<button type="button" class="graph-area">
-												<span style="width:20%">20%</span><!-- style로 그래프 넓이값 제어 -->
-											</button>
-											<!-- // 2021-08-11 태그수정 -->
-										</div></td>
-										<th scope="row">카드</th>
-										<td><div class="percentage-graph type5 cobalt">
-											<!-- 2021-08-11 태그수정 // -->
-											<button type="button" class="graph-area">
-												<span style="width:10%">10%</span><!-- style로 그래프 넓이값 제어 -->
-											</button>
-											<!-- // 2021-08-11 태그수정 -->
-										</div></td>
-									</tr>
-								</tbody>
-							</table>							
+						<div class="me-head">
+							<span class="txt">비교 대상</span>
+							<strong class="me">나</strong>
+						</div>
+					</div>					
+					<div class="asset-graph-lists">
+						<div class="is-hidden">금융자산 목록</div>
+						<ul class="group-a">
+							<li>
+								<span class="asset-label">입출금&middot;페이</span>
+								<span class="is-hidden">: 선택 연령대 비중</span>
+								<span class="bar-area ages">
+									<span class="bar" style="width: 100%">
+										<span class="val">100%</span>
+									</span>
+								</span>
+								<span class="is-hidden">, 나의 비중</span>
+								<span class="bar-area me">
+									<span class="bar" style="width: 80%">
+										<span class="val">80%</span>
+									</span>									
+								</span>
+								<span class="is-hidden">입니다.</span>
+							</li>
+							<li>
+								<span class="asset-label">예적금</span>
+								<span class="is-hidden">: 선택 연령대 비중</span>
+								<span class="bar-area ages">
+									<span class="bar" style="width: 40%">
+										<span class="val">40%</span>
+									</span>									
+								</span>
+								<span class="is-hidden">, 나의 비중</span>
+								<span class="bar-area me">
+									<span class="bar" style="width: 60%">
+										<span class="val">60%</span>
+									</span>									
+								</span>
+								<span class="is-hidden">입니다.</span>
+							</li>
+							<li>
+								<span class="asset-label">투자</span>
+								<span class="is-hidden">: 선택 연령대 비중</span>
+								<span class="bar-area ages">
+									<span class="bar" style="width: 85%">
+										<span class="val">85%</span>
+									</span>									
+								</span>
+								<span class="is-hidden">, 나의 비중</span>
+								<span class="bar-area me">
+									<span class="bar" style="width: 100%">
+										<span class="val">100%</span>
+									</span>									
+								</span>
+								<span class="is-hidden">입니다.</span>
+							</li>
+							<li>
+								<span class="asset-label">연금(은퇴)</span>
+								<span class="is-hidden">: 선택 연령대 비중</span>
+								<span class="bar-area ages">
+									<span class="bar" style="width: 60%">
+										<span class="val">60%</span>
+									</span>									
+								</span>
+								<span class="is-hidden">, 나의 비중</span>
+								<span class="bar-area me">
+									<span class="bar" style="width: 30%">
+										<span class="val">30%</span>
+									</span>									
+								</span>
+								<span class="is-hidden">입니다.</span>
+							</li>
+							<li>
+								<span class="asset-label">보험</span>
+								<span class="is-hidden">: 선택 연령대 비중</span>
+								<span class="bar-area ages">
+									<span class="bar" style="width: 70%">
+										<span class="val">70%</span>
+									</span>									
+								</span>
+								<span class="is-hidden">, 나의 비중</span>
+								<span class="bar-area me">
+									<span class="bar" style="width: 64%">
+										<span class="val">64%</span>
+									</span>									
+								</span>
+								<span class="is-hidden">입니다.</span>
+							</li>
+						</ul>
+						<div class="is-hidden">비금융자산 목록</div>
+						<ul class="group-b">
+							<li>
+								<span class="asset-label">부동산</span>
+								<span class="is-hidden">: 선택 연령대 비중</span>
+								<span class="bar-area ages">
+									<span class="bar" style="width: 80%">
+										<span class="val">80%</span>
+									</span>									
+								</span>
+								<span class="is-hidden">, 나의 비중</span>
+								<span class="bar-area me">
+									<span class="bar" style="width: 60%">
+										<span class="val">60%</span>
+									</span>									
+								</span>
+								<span class="is-hidden">입니다.</span>
+							</li>
+							<li>
+								<span class="asset-label">자동차</span>
+								<span class="is-hidden">: 선택 연령대 비중</span>
+								<span class="bar-area ages">
+									<span class="bar" style="width: 40%">
+										<span class="val">40%</span>
+									</span>									
+								</span>
+								<span class="is-hidden">, 나의 비중</span>
+								<span class="bar-area me">
+									<span class="bar" style="width: 20%">
+										<span class="val">20%</span>
+									</span>									
+								</span>
+								<span class="is-hidden">입니다.</span>
+							</li>
+						</ul>
+						<div class="is-hidden">부채 목록</div>
+						<ul class="group-c">
+							<li>
+								<span class="asset-label">대출</span>
+								<span class="is-hidden">: 선택 연령대 비중</span>
+								<span class="bar-area ages">
+									<span class="bar" style="width: 65%">
+										<span class="val">65%</span>
+									</span>									
+								</span>
+								<span class="is-hidden">, 나의 비중</span>
+								<span class="bar-area me">
+									<span class="bar" style="width: 15%">
+										<span class="val">15%</span>
+									</span>									
+								</span>
+								<span class="is-hidden">입니다.</span>
+							</li>
+							<li>
+								<span class="asset-label">카드</span>
+								<span class="is-hidden">: 선택 연령대 비중</span>
+								<span class="bar-area ages">
+									<span class="bar" style="width: 80%">
+										<span class="val">80%</span>
+									</span>									
+								</span>
+								<span class="is-hidden">, 나의 비중</span>
+								<span class="bar-area me">
+									<span class="bar" style="width: 25%">
+										<span class="val">25%</span>
+									</span>									
+								</span>
+								<span class="is-hidden">입니다.</span>
+							</li>
+						</ul>
+					</div>
+					<script>
+						$("body").on("click", ".asset-graph-lists .bar-area", function() {
+							$(".asset-graph-lists .bar-area.is-active").removeClass("is-active");
+							$(this).addClass("is-active");
+						});
+					</script>
+				</section>
+
+				<section class="kb-sec my-asset-more">
+					<h2 class="h4">조금 더 알아볼까요?</h2>
+
+					<div class="more-container">
+						<ul class="grid-list" data-col="4">
+							<li class="on">
+								<button type="button">
+									<i class="icon-asset-finance"></i>
+									<span class="name">금융자산</span>
+									<span class="status good">많음</span>
+									<!-- <span class="status bad">적음</span> -->
+								</button>
+								<div class="more-content">
+									<div class="gbox">
+										<dl>
+											<dt>총자산</dt>
+											<dd><span class="num">8</span>억 <span class="num">1</span>천만원</dd>
+											<dt>금융자산</dt>
+											<dd><span class="num">3</span>천만원</dd>
+										</dl>
+									</div>
+									<div class="emoti-msg">
+										<span class="lv1">20대 평균보다 금융자산이 많아요.</span>
+										<!-- <span class="lv4">20대 평균보다 금융자산이 적어요.</span> -->
+									</div>
+								</div>
+							</li>
+							<li>
+								<button type="button">
+									<i class="icon-asset-debt"></i>
+									<span class="name">부채비중</span>
+									<!-- <span class="status good">없음</span> -->
+									<!-- <span class="status suitable">적정</span> -->
+									<span class="status normal">보통</span>
+									<!-- <span class="status bad">주의</span> -->
+								</button>
+								<div class="more-content">
+									<div class="gbox">
+										<dl>
+											<dt>총부채</dt>
+											<dd><span class="num">2</span>억 <span class="num">3</span>천만원</dd>
+											<dt>부채비중(총자산대비)</dt>
+											<dd><span class="num">23</span>%</dd>
+										</dl>
+									</div>
+									<div class="emoti-msg">
+										<!-- <span class="lv1">부채가 없으시네요.</span> -->
+										<!-- <span class="lv2">부채비중이 양호하시네요.</span> -->
+										<span class="lv3">부채비중이 보통이시네요.</span>
+										<!-- <span class="lv4">부채비중이 높은편이네요.</span> -->
+									</div>
+								</div>
+							</li>
+							<li>
+								<button type="button">
+									<i class="icon-asset-estate"></i>
+									<span class="name">부동산</span>
+									<span class="status good">있음</span>
+									<!-- <span class="status bad">없음</span> -->
+								</button>
+								<div class="more-content">
+									<!-- 등록한 부동산이 있는 경우 // -->
+									<div class="gbox">
+										<dl>
+											<dt>보유 부동산</dt>
+											<dd><span class="num">2</span>개</dd>
+											<dt>시세(합계)</dt>
+											<dd><span class="num">7</span>억 <span class="num">8</span>천만원</dd>
+										</dl>
+									</div>
+									<div class="emoti-msg">
+										<span class="lv1">시세차익 +1억원</span>
+										<!-- <span class="lv4">시세차익 -1억원</span> -->
+									</div>
+									<!-- // 등록한 부동산이 있는 경우 -->
+
+									<!-- 등록한 부동산이 없는 경우 // -->
+									<!-- <div class="no-data">
+										<i class="icon-bang_48_gray"></i>
+										<p>MY House에<br>등록한 부동산이 없습니다.</p>
+									</div> -->
+									<!-- // 등록한 부동산이 없는 경우 -->
+								</div>								
+							</li>
+							<li>
+								<button type="button">
+									<i class="icon-asset-car"></i>
+									<span class="name">자동차</span>
+									<span class="status good">있음</span>
+									<!-- <span class="status bad">없음</span> -->
+								</button>
+								<div class="more-content">
+									<!-- 등록한 자동차가 있는 경우 // -->
+									<div class="gbox">
+										<dl>
+											<dt>보유 자동차</dt>
+											<dd><span class="num">3</span>대</dd>
+											<dt>최근 차량 유지비</dt>
+											<dd><span class="num">2</span>백만원</dd>
+										</dl>
+									</div>
+									<div class="emoti-msg">
+										<!-- <span class="lv1">내 차의 지난 한달 동안 유지비가 줄었어요.</span> -->
+										<!-- <span class="lv3">내 차의 지난 한달 동안 유지비가 비슷해요.</span> -->
+										<span class="lv4">내 차의 지난 한달 동안 유지비가 늘었어요.</span>
+									</div>
+									<!-- // 등록한 자동차가 있는 경우 -->
+
+									<!-- 등록한 자동차가 없는 경우 // -->
+									<!-- <div class="no-data">
+										<i class="icon-bang_48_gray"></i>
+										<p>MY Car에<br>등록한 자동차가 없습니다.</p>
+									</div> -->
+									<!-- // 등록한 자동차가 없는 경우 -->
+								</div>
+							</li>
+						</ul>
+					</div>
+					<script>
+						$("body").on("click", ".my-asset-more button", function() {
+							$(".my-asset-more li.on").removeClass("on");
+							$(this).parent().addClass("on");
+						});
+					</script>
+				</section>
+
+				<section class="kb-sec key-point">
+					<h2 class="h4">나의 자산관리 솔루션</h2>
+					<div class="content-box no-shadow">
+						<div class="tit"><strong>김국민</strong>님의 자산관리 키포인트는 <span class="hash">포트폴리오 변경</span></div>
+						<p class="txt">
+							부동산을 보유중이신 당신의 부채비중은 <span class="num">60%</span>로<br>
+							'주의'가 필요해요!<br>
+							부채를 줄이면 대출이자 등 비용도 절약하고 <br>
+							재무상태도 안정적으로 유지할 수 있어요.<br>
+							지금 내 대출을 확인해보세요~!
+						</p>
+						<div class="key-link">
+							<a href="javascript:;" class="btn-text sm icon-arrow" role="button"><span>내 부채 현황 확인하기</span><i></i></a>
 						</div>
 					</div>
-                </section>
-				<section class="kb-sec solution-more">
-					<h4 class="h4">조금 더 알아볼까요?</h4>
-					<ul class="grid-list" data-col="4">
-						<li class="on">
-							<button type="button"><em><i class="icon-finance_28"></i></em><span>금융자산</span><b>많음</b></button>
-						</li>
-						<li>
-							<button type="button"><em><i class="icon-liability_28"></i></em><span>부채비중</span><b>주의</b></button>
-						</li>
-						<li>
-							<button type="button"><em><i class="icon-house_28"></i></em><span>부동산</span><b>있음</b></button>
-						</li>
-						<li>
-							<button type="button"><em><i class="icon-car_28"></i></em><span>자동차</span><b>낮음</b></button>
-						</li>
-					</ul>
-					<ul class="more-list">
-						<li style="display:block;">
-							<div class="info-box">
-								<dl class="description-list type4">
-									<dt>총 자산</dt>
-									<dd>
-										<span class="amount"><span class="num">8</span>억 <span class="num">7</span>천만원</span>
-									</dd>
-									<dt>금융자산</dt>
-									<dd>
-										<span class="amount"><span class="num">5</span>천만원</span>
-									</dd>
-								</dl>
-								<div class="solution-msg">
-									<img src="@@webRoot/static/images/asset/i_solution_plenty.png" alt="많음">
-									<!--
-									<img src="@@webRoot/static/images/asset/i_solution_caution.png" alt="적음">
-									-->
-									<span>30대 평균보다 금융자산이 많아요</span> 
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="info-box">
-								<ul class="description-list-variable">
-									<li>
-										<p class="tit">총 부채</p>
-										<p class="amount"><em class="num">1</em>억 <em class="num">7</em>천만원
-										</p>
-									</li>
-									<li>
-										<p class="tit">부채비중(총자산대비)</p>
-										<p class="amount"><span class="num">48%</span>
-										</p>
-									</li>
-								</ul>
-								<div class="solution-msg">
-									<img src="@@webRoot/static/images/asset/i_solution_usually.png" alt="보통">
-									<!--
-									<img src="@@webRoot/static/images/asset/i_solution_plenty.png" alt="적정">									
-									<img src="@@webRoot/static/images/asset/i_solution_caution.png" alt="주의">
-									-->
-									<span>부채비중이 보통이시네요</span> 
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="info-box">
-								<dl class="description-list type4">
-									<dt>보유 부동산</dt>
-									<dd>
-										<span class="amount"><span class="num">2</span>억 <span class="num">7</span>천만원</span>
-									</dd>
-									<dt>시세(합계)</dt>
-									<dd>
-										<span class="amount"><span class="num">6</span>억 <span class="num">8</span>천만원</span></span>
-									</dd>
-								</dl>
-								<div class="solution-msg">
-									<img src="@@webRoot/static/images/asset/i_solution_caution.png" alt="시세차익 - 인 경우">
-									<!--
-									<img src="@@webRoot/static/images/asset/i_solution_plenty.png" alt="시세차익 0원 이상">	
-									-->
-									<span>시세차익 -1억원</span> 
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="info-box">
-								<dl class="description-list type4">
-									<dt>보유 자동차</dt>
-									<dd>
-										<span class="amount"><span class="num">2</span>대</span>
-									</dd>
-									<dt>최근 차량 유지비</dt>
-									<dd>
-										<span class="amount"><span class="num">1700</span>만원</span>
-									</dd>
-								</dl>
-								<div class="solution-msg">
-									<img src="@@webRoot/static/images/asset/i_solution_plenty.png" alt="감소">
-									<!--
-									<img src="@@webRoot/static/images/asset/i_solution_usually.png" alt="비슷">
-									<img src="@@webRoot/static/images/asset/i_solution_caution.png" alt="많음">
-									-->
-									<span>내 차의 지난 한달 동안 유지비가 줄었어요.</span> 
-								</div>
-							</div>
-						</li>
-					</ul>
 				</section>
-				<section class="kb-sec key-point">
-					<h4 class="h4">나의 자산관리 솔루션</h4>
-					<div class="tit">포트폴리오 변경</div>
-					<!--2021-07-01 수정 // -->
-					<p class="txt">
-						김국민님의 자산관리 키포인트는 '부채 줄이기'!<br>
-						부동산을 보유중이신 당신의 부채비중은 <span class="num">60%</span>로<br>
-						'주의'가 필요해요!<br>
-						부채를 줄이면 대출이자 등 비용도 절약하고 <br>
-						재무상태도 안정적으로 유지할 수 있어요.<br>
-						지금 내 대출을 확인해보세요~!
-					</p>
-					<div class="btn-area"><button class="btn-line"><span>내 부채 현황 확인하기</span></button></div>
-					<!-- // 2021-07-01 수정-->
-				</section>
+
 				<section class="kb-sec solution-tip">
-					<h4 class="h4">Tip</h4>
+					<h2 class="h4">Tip</h2>
 					<div class="tit">
-						앗, 연령대 상품군 비교에서 
-						부족했던 상품군이 있네요! 함께 준비해 보세요<!--2021-07-01 수정-->
+						앗, 연령대 상품군 비교에서 부족했던 상품군이 있네요! 함께 준비해 보세요.
 					</div>
 					<div class="tab swiper-container">
                         <ul class="swiper-wrapper">
-                            <li class="swiper-slide is-active"><a href="#target01">예/적금</a></li>
-                            <li class="swiper-slide"><a href="#target02">펀드/증권</a></li>
-							<!-- 2021-07-19 신탁 삭제 // -->
-							<li class="swiper-slide"><a href="#target03">연금/보험</a></li>
-							<!-- // 2021-07-19 신탁 삭제 -->
+                            <li class="swiper-slide is-active"><a href="#tipContent1">예/적금</a></li>
+                            <li class="swiper-slide"><a href="#tipContent2">펀드/증권</a></li>
+							<li class="swiper-slide"><a href="#tipContent3">연금/보험</a></li>
                         </ul>
                     </div> 
 					<div class="tab_contents">	
-						<div class="is-active product-info">
-							<div class="info-box">
-								<p class="tit">KB내맘대로 적금</p>
-								<p class="txt"><span class="num">3.1%</span></p>
-								<button type="button" class="link"><span>바로가기</span><i class="icon-link_24"></i></button>
-							</div>
+						<div class="is-active product-info" id="tipContent1">
+							<a class="content-box link-arrow-after" href="#">
+								<span class="tit">KB내맘대로 적금</span>
+								<span class="txt"><span class="num">3.1</span>%</span>
+							</a>
 						</div>
-						<div class="product-info">
-							<div class="info-box">
-								<p class="tit">로보어드바이저(AI)가 추천하는 포트폴리오</p>
-								<button type="button" class="link"><span>바로가기</span><i class="icon-link_24"></i></button>
-							</div>
+						<div class="product-info" id="tipContent2">
+							<a class="content-box link-arrow-after" href="#">
+								<span class="tit">로보어드바이저(AI)가 추천하는 포트폴리오</span>
+							</a>
 						</div>	
-						<!-- 2021-07-19 신탁 삭제 -->
-						<div class="product-info">
-							<div class="info-box">
-								<p class="tit">(무)라이프플래닛 저축보험</p>
-								<button type="button" class="link"><span>바로가기</span><i class="icon-link_24"></i></button>
-							</div>
+						<div class="product-info" id="tipContent3">
+							<a class="content-box link-arrow-after" href="#">
+								<span class="tit">(무)라이프플래닛저축보험III</span>
+							</a>
 						</div>
 					</div>
 				</section>						
@@ -400,24 +414,6 @@
 	<!-- Add Library (this page only)-->
 	<script src="@@webRoot/static/js/ui.js"></script>
 	<!-- Add Script -->
-	<script>
-		$obj = $('.solution-more');
-		$obj.find('button').on('click',function(){
-			var idx = $(this).closest('li').index();
-			$(this).closest('li').addClass('on').siblings().removeClass('on');
-			$obj.find('.more-list > li').eq(idx).show().siblings().hide();
-
-			
-		})	
-		$solutionList = $('.solution-list');		
-		$solutionList.find('.graph-area').on('click',function(){
-			let chartTxt = $(this).closest('tr').find('th').text();
-			let chartPercent = $(this).find('span').text();
-			$('div').remove('.percent-txt');
-			$(this).closest('.percentage-graph').append('<div class="percent-txt">'+ chartTxt + ' <span class="num">'+chartPercent+'</span></div>');
-		})
-		
-	</script>
 </body>
 
 </html>

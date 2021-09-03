@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html lang="ko">
 <!-- [MYS_SP_01_02_01] 작성자: 누리어 시스템 황철민 -->
+<!DOCTYPE html>
+<html lang="ko" data-channel="ch_star">
 <head>
 	@@include('@@webRoot/html/_include/app-head.html',{
 		"title": "신용평점 분석 상세 | 신용관리"
@@ -10,76 +10,78 @@
 <body>
 	@@include('@@webRoot/html/_include/app-a11y.html')
 	<div class="app">
-		<!-- app-header //-->
+
 		@@include('@@webRoot/html/_include/app-integrated-header.html', {
 			'pageTit': '신용평점 분석 상세',
 			'type': ''
 		}) 
-		<!-- // app-header -->
 
 		<!-- app-container //-->
 		<div class="app-container">
 
-			<!-- app-lnb //-->
-			<div class="app-lnb">
-				<!-- 프로세스 -->
-				<!-- TAB -->
-			</div>
-			<!-- //app-lnb -->
-
 			<!-- app-content // -->
 			<main class="app-content">
 
-				<!-- 신용평점 위치 // -->
-				<section class="kb-sec credit-rating-chart">
-					<h4 class="h4">김국민 님의 신용평점</h4><!-- 수정 : 2021-07-02 -->
-					<!-- 수정 2021-06-16 // -->
-					<div class="credit-my-position">
-						<span class="toppos">상위 <span class="num">21</span>%</span>
-						<span class="point"><span class="num">809</span> 점</span>
-						<div class="svg-area svg-gauge-half">
-							<svg class="defs">
-								<defs><path id="creCirclePath" d="M 10 120 A 1 1 0 0 1 222 120"></path></defs>
-							</svg>
-							<svg class="credit-gauge-svg1" viewBox="0 0 232 120"><!-- 수정 : 2021-07-05 -->
-								<use class="bar-bg" xlink:href="#creCirclePath"></use>
-								<use class="bar-fg" xlink:href="#creCirclePath"></use>
-							</svg>
-						</div>
-						<script>
-							window.addEventListener('load', function() {
-								/**
-								 * drawCreditGauge function
-								 * @param {string} selector - 선택자
-								 * @param {number} current - 점수
-								 * @param {number} max - 최대 값
-								 */
-								drawCreditGauge(".credit-gauge-svg1", 809, 1000);
-							});
-						</script>
+				<section class="kb-sec credit-summary">
+					<h2><strong>김국민</strong> 님의 신용평점</h2>
+					<div class="percent">
+						<span class="txt">상위</span>
+						<span class="val"><span class="num">15</span>%</span>
 					</div>
-					<!-- // 수정 2021-06-16 -->
+					<div class="point">
+						<span class="txt">신용평점</span>
+						<span class="val"><span class="num">850</span>점</span>
+					</div>
 				</section>
-				<!-- // 신용평점 위치 -->
+
+				<!-- 신용평점 비교분석 // -->
+				<section class="kb-sec credit-rating-chart">
+					<h2 class="h4">신용평점 비교분석</h2>
+					<div class="content-box">
+						<!-- [Chart Area] // -->
+						<!--
+							[차트 디자인 정보]
+							Grid 라인 색상 : #ebeef0
+							'나' bar 색상 : #ffba53
+							'전체평균' bar 색상 : #ff8a71
+							X,Y축 레이블 텍스트 사이즈/색상 : 14px/#8c949e
+						-->
+						<div class="chart-area">
+							<img class="temp" src="@@webRoot/static/images/_temp/chart_sp0108.png" alt="차트 예시 이미지">
+						</div>
+						<!-- // [Chart Area] -->
+						<p class="simple-message">전 국민과 비교하는 나의 신용평점 위치 입니다.</p>
+					</div>
+				</section>
+				<!-- // 신용평점 비교분석 -->
 
 				<!-- 신용도 평가기준 // -->
 				<section class="kb-sec credit-rating-chart">
-					<h4 class="h4">신용도 평가기준</h4>
-					<!-- [Chart Area] // -->
-					<!--
-						[차트 디자인 정보]
-						'상환이력' 색상 : #ffd338
-						'거래기간' 색상 : #f78657
-						'신용형태' 색상 : #d575c9
-						'부채수준' 색상 : #96857f
-						그래프(원) 크기 : 150px * 150px
-						그래프(원) 굵기 : 20px
-						텍스트 사이즈/색상 : 14px/#26282c
-					-->
-					<div class="chart-area">
-						<img class="temp" src="@@webRoot/static/images/_temp/chart_sp0102.png" alt="차트 예시 이미지">
+					<h2 class="h4">신용도 평가기준</h2>
+					<div class="content-box">
+						<div class="graph">
+							<!-- [Chart Area] // -->
+							<!--
+								[차트 디자인 정보]
+								'상환이력' 색상 : #ffba53
+								'거래기간' 색상 : #ff8a71
+								'신용형태' 색상 : #ff6391
+								'부채수준' 색상 : #ff445a
+								그래프(원) 크기 : 150px * 150px
+								그래프(원) 굵기 : 40px'
+							-->
+							<div class="chart-area">
+								<img class="temp" src="@@webRoot/static/images/_temp/chart_sp0107.png" alt="차트 예시 이미지">
+							</div>
+							<!-- // [Chart Area] -->
+						</div>
+						<ul class="values">
+							<li class="cate1"><span class="label">상환이력</span><span class="num">20%</span></li>
+							<li class="cate2"><span class="label">거래기간</span><span class="num">30%</span></li>
+							<li class="cate3"><span class="label">신용형태</span><span class="num">10%</span></li>
+							<li class="cate4"><span class="label">부채수준</span><span class="num">60%</span></li>
+						</ul>
 					</div>
-					<!-- // [Chart Area] -->
 				</section>
 				<!-- // 신용도 평가기준 -->
 				
@@ -93,15 +95,14 @@
                     <span class="tag-label" data-state="concern">우려</span>
 				-->
 				<section class="kb-sec credit-rating-details">
-					<h4 class="h4">신용평가 상세내역</h4>
+					<h2 class="h4">신용평가 상세내역</h2>
 					<dl class="accordion">
 						<dt>
 							<span class="tit">상환이력</span>
-							<span class="tag-label" data-state="very-stable">매우안정</span><!--  -->
+							<span class="tag-label" data-state="very-stable">매우안정</span>
 							<button type="button" class="accordion-trigger"></button>
 						</dt>
 						<dd>
-							<strong class="stit">상환이력이란?</strong>
 							<p class="desc">상환이력이란 대출금 납입회수, 대출상환금액 등 대출거래 내역에 대한 정보입니다.</p>
 							<div class="nice-data-area">
 								<ul class="items">
@@ -113,11 +114,10 @@
 						</dd>
 						<dt>
 							<span class="tit">거래기간</span>
-							<span class="tag-label" data-state="stable">안정</span><!--  -->
+							<span class="tag-label" data-state="stable">안정</span>
 							<button type="button" class="accordion-trigger"></button>
 						</dt>
 						<dd>
-							<strong class="stit">거래기간이란?</strong>
 							<p class="desc">거래기간이란 신용카드, 대출, 보증 등 신용거래 활동을 시작한 이후의 기간입니다.</p>
 							<div class="nice-data-area">
 								<ul class="items">
@@ -129,11 +129,10 @@
 						</dd>
 						<dt>
 							<span class="tit">신용형태</span>
-							<span class="tag-label" data-state="usually">보통</span><!--  -->
+							<span class="tag-label" data-state="usually">보통</span>
 							<button type="button" class="accordion-trigger"></button>
 						</dt>
 						<dd>
-							<strong class="stit">신용형태란?</strong>
 							<p class="desc">신용형태란 신용거래 기관 및 상품의 종류를 의미합니다. 신용형태에 따라 채무상환부담에 차이가 발생합니다.</p>
 							<div class="nice-data-area">
 								<ul class="items">
@@ -145,11 +144,10 @@
 						</dd>
 						<dt>
 							<span class="tit">부채수준</span>
-							<span class="tag-label" data-state="concern">우려</span><!--  -->
+							<span class="tag-label" data-state="concern">우려</span>
 							<button type="button" class="accordion-trigger"></button>
 						</dt>
 						<dd>
-							<strong class="stit">부채수준이란?</strong>
 							<p class="desc">부채수준이란 개인이 현재 보유한 대출, 보증 등의 채무 정보입니다.</p>
 							<div class="nice-data-area">
 								<ul class="items">
@@ -161,7 +159,6 @@
 						</dd>
 					</dl>
 
-					<p class="info-msg">위 정보는 국내 신용평가사인 NICE평가정보(주)에서 제공하는 데이터로, 문의사항은 NICE지키미고객센터(1588-2486)로 연락해 주세요.</p>
 				</section>
 				<!-- // 신용평가 상세내역 -->
 

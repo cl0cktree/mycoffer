@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html lang="ko">
 <!-- [MYS_SP_01_02_16] 작성자: 누리어 시스템 황철민 -->
+<!DOCTYPE html>
+<html lang="ko" data-channel="ch_star">
 <head>
 	@@include('@@webRoot/html/_include/app-head.html',{
 		"title": "신용거래 내역-연체 | 신용관리"
@@ -10,20 +10,17 @@
 <body>
 	@@include('@@webRoot/html/_include/app-a11y.html')
 	<div class="app">
-		<!-- app-header //-->
+
 		@@include('@@webRoot/html/_include/app-integrated-header.html', {
 			'pageTit': '신용거래 내역',
 			'type': ''
 		})
-		<!-- // app-header -->
 
 		<!-- app-container //-->
 		<div class="app-container">
 
 			<!-- app-lnb //-->
 			<div class="app-lnb">
-				<!-- 프로세스 -->
-				<!-- TAB -->
 				<div class="tab swiper-container">
 					<ul class="swiper-wrapper">
 						<li class="swiper-slide"><a href="#">카드</a></li>
@@ -41,10 +38,19 @@
 				<!-- 목록 있는 경우 // -->
 				<section class="kb-sec credit-transaction-summary">
 					<div class="summary-header">
-						<span class="tit">
-							연체잔액
-							<button type="button" data-call-layered="modalAbount"><i class="icon-tooltip-que">연체잔액이란?</i></button>
-						</span>
+						<div class="title">
+							<h2>연체잔액</h2>
+							<button type="button" class="btn-question"><i class="icon-tooltip-que_20">대출잔액이란?</i></button>
+							<div class="tooltip">
+								<strong class="tit">연체잔액이란?</strong>
+								<div class="cont">
+									<ul data-style="list">
+										<li>결제기한 안에 이행하여야 할 채무를 지체하였을 때, 밀린 날짜에 따라 더 내야 하는 금액을 합한 금액이 표시됩니다. 연체는 신용점수를 낮추는 가장 큰 원인이니 주의해 주세요.</li>
+									</ul>
+								</div>
+								<button class="btn-close"><span>닫기</span></button>
+							</div>
+						</div>
 						<span class="two-values">
 							<span class="amount"><span class="txt">단기</span><span class="num">4,000,000</span>원</span>
 							<span class="amount"><span class="txt">장기</span><span class="num">1,000,000</span>원</span>
@@ -53,11 +59,13 @@
 				</section>
 
 				<section class="kb-sec credit-transaction-list">
-					<h3 class="title">금융기관별 연체내역</h3>
-					<!-- 수정 2021-06-24 // -->
+					<h2 class="title">금융기관별 연체내역</h2>
 					<dl class="accordion">
 						<dt class="is-active">
-							<span>장기연체<span class="cnt"><span class="num">2</span>건</span></span>
+							<div class="text">
+								단기연체
+								<span class="amount"><span class="num">2</span>건</span>
+							</div>
 							<button type="button" class="accordion-trigger"></button>
 						</dt>
 						<dd>
@@ -86,7 +94,10 @@
 						</dd>
 
 						<dt>
-							<span>단기연체<span class="cnt"><span class="num">1</span>건</span></span>
+							<div class="text">
+								장기연체
+								<span class="amount"><span class="num">1</span>건</span>
+							</div>
 							<button type="button" class="accordion-trigger"></button>
 						</dt>
 						<dd>
@@ -105,17 +116,25 @@
 							</div>
 						</dd>
 					</dl>
-					<!-- // 수정 2021-06-24 -->
 				</section>
 				<!-- // 목록 있는 경우 -->
 
 				<!-- 목록 없는 경우 // -->
 				<section class="kb-sec credit-transaction-summary">
 					<div class="summary-header">
-						<span class="tit">
-							연체잔액
-							<button type="button" data-call-layered="modalAbount"><i class="icon-tooltip-que"></i></button>
-						</span>
+						<div class="title">
+							<h2>연체잔액</h2>
+							<button type="button" class="btn-question"><i class="icon-tooltip-que_20">대출잔액이란?</i></button>
+							<div class="tooltip">
+								<strong class="tit">연체잔액이란?</strong>
+								<div class="cont">
+									<ul data-style="list">
+										<li>결제기한 안에 이행하여야 할 채무를 지체하였을 때, 밀린 날짜에 따라 더 내야 하는 금액을 합한 금액이 표시됩니다. 연체는 신용점수를 낮추는 가장 큰 원인이니 주의해 주세요.</li>
+									</ul>
+								</div>
+								<button class="btn-close"><span>닫기</span></button>
+							</div>
+						</div>
 						<span class="two-values">
 							<span class="amount"><span class="txt">단기</span><span class="num">0</span>원</span>
 							<span class="amount"><span class="txt">장기</span><span class="num">0</span>원</span>
@@ -125,14 +144,14 @@
 
 				<section class="kb-sec credit-transaction-list">
 					<div class="no-data">
-						<i class="icon-info_24"></i>
-						<p>연체잔액이 없습니다.</p>
+						<i class="icon-bang_60_gray"></i>
+						<strong class="no-data-tit">연체잔액이 없습니다.</strong>
 					</div>
 				</section>
 				<!-- // 목록 없는 경우 -->
 	
 				<section class="kb-sec credit-transaction-message">
-					<p class="info-msg">위 정보는 국내 신용평가사인 NICE평가정보(주)에서 제공하는 데이터로 KB국민은행의 금융정보와 다를 수 있습니다.</p>
+					<p class="simple-message">위 정보는 국내 신용평가사인 NICE평가정보(주)에서 제공하는 데이터로 KB국민은행의 금융정보와 다를 수 있습니다.</p>
 				</section>
 
 			</main>
@@ -143,21 +162,6 @@
 
 		<!-- Layer (modal, bottom sheet) // -->
 		<div class="layered">
-			<!-- 안내팝업 // -->
-			<div class="modal" data-layered-name="modalAbount" id="modalAbount">
-				<div class="modal_header">
-					<strong class="tit">연체잔액이란?</strong>
-				</div>
-				<div class="modal_contents">
-					<ul data-style="list">
-						<li>결제기한 안에 이행하여야 할 채무를 지체하였을 때, 밀린 날짜에 따라 더 내야 하는 금액을 합한 금액이 표시됩니다. 연체는 신용점수를 낮추는 가장 큰 원인이니 주의해 주세요.</li>
-					</ul>
-				</div>
-				<div class="modal_buttons btn-area">
-					<button class="btn-solid ok" data-action="close"><span>확인</span></button>
-				</div>
-			</div>
-			<!-- // 안내팝업 -->
 		</div>
 		<!-- // Layer (modal, bottom sheet) -->
 	</div>

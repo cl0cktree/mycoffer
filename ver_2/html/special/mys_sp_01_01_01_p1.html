@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html lang="ko">
 <!-- [MYS_SP_01_01_01_P1] 작성자: 누리어 시스템 황철민 -->
+<!DOCTYPE html>
+<html lang="ko" data-channel="ch_star">
 <head>
 	@@include('@@webRoot/html/_include/app-head.html',{
 		"title": "휴대폰본인인증 | 신용관리"
@@ -10,12 +10,11 @@
 <body>
 	@@include('@@webRoot/html/_include/app-a11y.html')
 	<div class="app">
-		<!-- app-header //-->
+
 		@@include('@@webRoot/html/_include/app-integrated-header.html',{
 			'pageTit' :'휴대폰본인인증',
-			'type': 'close'
+			'type': ''
 		}) 
-		<!-- // app-header -->
 
 		<!-- app-container //-->
 		<div class="app-container">
@@ -25,10 +24,11 @@
 
 				<!-- 휴대폰본인인증 // -->
 				<section class="kb-sec phone-auth-agree">
+					<h2 class="is-hidden">휴대폰본인인증 약관</h2>
 					<!-- 동의하기(전체동의) // -->
-					<div class="agreement-to-terms"><!-- 수정 2021-06-29 -->
+					<div class="agreement-to-terms">
 						<div class="header">
-							<span class="form-checkbox"><input type="checkbox" id="agreeAllCheck"><label for="agreeAllCheck">전체동의</label></span><!-- 수정 2021-06-29 -->
+							<span class="form-checkbox"><input type="checkbox" id="agreeAllCheck"><label for="agreeAllCheck">전체동의</label></span>
 						</div>					
 						<div class="checkbox-group st_list">
 							<span class="form-checkbox_20"><input type="checkbox" id="agreeCheck1"><label for="agreeCheck1">[필수]고유식별정보 처리 동의</label><a class="alink" href="@@webRoot/html/terms/agree-unique-id-info.html"><span>전문보기</span></a></span>
@@ -43,6 +43,7 @@
 
 				<!-- 휴대폰 본인인증 폼 // -->
 				<section class="kb-sec phone-auth-form">
+					<h2 class="is-hidden">휴대폰 본인인증 입력폼</h2>
 					<div class="kb-form is-readonly" data-status="">
 						<label for="kbFormInput1">이름</label>
 						<div class="kb-form_inner form-text">
@@ -51,27 +52,30 @@
 						</div>
 					</div>
 
-					<div class="kb-form is-readonly" data-status="">
-						<label for="kbFormInput2">생년월일</label>
-						<div class="kb-form_inner form-text">
-							<input type="text" inputmode="numeric" id="kbFormInput2" value="900101-1******">
-							<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+					<div class="kb-form_multi kb-form_citizen">
+						<strong class="tit">생년월일</strong>
+						<div class="kb-form  is-readonly" data-status="">
+							<label for="citizenCode">주민등록번호 앞자리</label>
+							<div class="kb-form_inner form-text">
+								<input type="text" id="citizenCode" maxlength="6" placeholder="" value="900101" inputmode="numeric">
+								<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+							</div>
+						</div>
+						<span class="between"> - </span>
+						<div class="kb-form  is-readonly" data-status="">
+							<label for="citizenCode02">주민등록번호 뒷자리의 첫번째 자리</label>
+							<div class="kb-form_inner form-text">
+								<input type="text" id="citizenCode02" maxlength="1" placeholder="" value="1" inputmode="numeric">
+							</div>
 						</div>
 					</div>
 
-					<!-- 수정 : 2021-08-05 // -->
-					<!-- 
-						.kb-form_multi 에서 내부에 일부 .kb-form에만 error 표시가 필요할 경우
-						.kb-form_multi 에는 data-status="has-error" 
-						.kb-form 에는 data-status="error"
-						로 지정
-					-->
 					<div class="kb-form_multi kb-form_email" data-status="has-error">
-						<strong class="tit">이메일 주소(NICE평가정보(주) 제공용)</strong>
+						<strong class="tit required">이메일 주소(NICE평가정보(주) 제공용)</strong>
 						<div class="kb-form" data-status="error">
 							<label for="formMultiEmail">이메일ID</label>
 							<div class="kb-form_inner form-text">
-								<input type="text" id="formMultiEmail" placeholder="아이디" value=""><!-- 수정 : 2021-07-02 -->
+								<input type="text" id="formMultiEmail" placeholder="아이디" value="">
 								<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
 							</div>
 						</div>
@@ -101,7 +105,6 @@
 						</div>
 						<em class="validation">이메일 주소를 정확히 입력해 주세요.</em>
 					</div>
-					<!-- // 수정 : 2021-08-05 -->
 
 					<div class="kb-form" data-status="">
 						<label for="kbFormInput5">통신사</label>
@@ -109,11 +112,11 @@
 							<button type="button" class="selected-option"></button>
 							<select name="" id="kbFormInput5" title="통신사 선택">
 								<option value="">최초 메세지</option>
-								<option value="" selected="">KT</option>
-								<option value="">SKT</option>
+								<option value="" selected="">SKT</option>
+								<option value="">KT</option>								
 								<option value="">LG U+</option>
-								<option value="">KT 알뜰폰</option>
 								<option value="">SKT 알뜰폰</option>								
+								<option value="">KT 알뜰폰</option>
 								<option value="">LG U+ 알뜰폰</option>
 							</select>
 						</div>
@@ -122,54 +125,60 @@
 					<div class="kb-form is-readonly" data-status="">
 						<label for="kbFormInput6">은행에 등록된 휴대폰번호</label>
 						<div class="kb-form_inner form-text">
-							<input type="text" inputmode="numeric" id="kbFormInput6" value="01012**34**">
+							<input class="align-l" type="text" inputmode="numeric" id="kbFormInput6" value="01012**34**">
 							<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
 						</div>
 					</div>
 
-					<div class="btn-area">
-						<button class="btn-solid btn-phone-check"><span>휴대폰 명의확인</span></button><!-- 수정 : 2021-07-02 -->
-					</div>
-
-					<!-- 인증번호 입력 // -->
 					<div class="authcode-input">
+						<p class="info-msg">입력하신 휴대폰번호로 SMS 인증번호를 전송합니다.</p>
+						<p class="info-msg">[인증번호 요청]을 눌러 SMS 인증번호를 입력해주세요.</p>
 						<div class="btn-area">
-							<button class="btn-solid"><span>인증번호 발송</span></button>
-						</div>
+							<button class="btn-line"><span>인증번호 요청</span></button>
+						</div>						
+
 						<div class="kb-form" data-status="">
-							<label for="kbFormInput9">인증번호</label>
+							<label for="kbFormCertificationNumber">인증번호</label>
 							<div class="kb-form_inner form-text">
-								<input type="text" inputmode="numeric" id="kbFormInput9" maxlength="6" value="" placeholder="숫자 6자리"><!-- 수정 : 2021-07-02 -->
+								<input class="align-l" type="text" inputmode="numeric" id="kbFormCertificationNumber" maxlength="6" value="" placeholder="숫자 6자리">
 								<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
 							</div>
+							<div class="time-limit">
+								<div class="timer">
+									<i class="icon-clock"></i>
+									잔여시간 : <strong class="num">2:59</strong>
+								</div>
+								<div class="extension">
+									<button class="btn-line table"><span>인증시간 연장</span></button>
+								</div>
+								<div class="help">
+									<button class="btn-text icon-arrow" onclick="certificationNumberAlert()"><span>인증번호가 오지않나요?</span><i></i></button>
+									<script>
+										function certificationNumberAlert() {
+											modalPopup({
+												title: "",
+												message: '<ul data-style="list"><li>1600-1522 번호가 스팸으로 등록되면, 인증번호를 받을 수 없습니다.</li><li>스팸등록을 해제 후 다시 시도해주세요.</li></ul>'
+											});
+										}
+									</script>
+								</div>
+							</div>
 						</div>
-						<div class="time-limit">잔여시간 : <strong class="num">2:59</strong></div>
 					</div>
-					<!-- // 인증번호 입력 -->
-					<script>
-						// [개발 참고용] 휴대폰명의확인 클릭시 인증번호 입력 보여주기
-						var phoneCheck = document.querySelector('.btn-phone-check');
-						var authcodeInput = document.querySelector('.authcode-input');
-						phoneCheck.addEventListener('click', function() {
-							phoneCheck.style.display = "none";
-							authcodeInput.classList.add('is-active');
-						});
-					</script>
 
-					<p class="info-msg">서비스를 신청하는 휴대폰이 본인명의이고 KB국민은행에 등록된 정보와 일치하는 경우 신용관리서비스에 가입할 수 있습니다.</p><!-- 수정 : 2021-07-02 -->
-					<!-- 수정 2021-06-02 // -->
 					<div class="push-check">
 						<span class="form-checkbox"><input type="checkbox" id="creditPushCheck"><label for="creditPushCheck">신용관리 서비스이용 문자 수신여부</label></span>
 					</div>
-					<!-- // 수정 2021-06-02 -->
+
+					<p class="simple-message">서비스를 신청하는 휴대폰이 본인명의이고 KB국민은행에 등록된 정보와 일치하는 경우 신용관리서비스에 가입할 수 있습니다.</p>
 				</section>
 				<!-- // 휴대폰 본인인증 폼 -->
 
-				<section class="kb-sec sticky-bottom">
+				<div class="sticky-bottom">
 					<div class="btn-area">
 						<button type="button" class="btn-solid"><span>확인</span></button>
 					</div>
-				</section>
+				</div>
 
 			</main>
 			<!-- // app-content -->

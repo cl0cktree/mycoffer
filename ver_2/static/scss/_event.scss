@@ -69,7 +69,7 @@
 }
 
 //Event Floating Banner
-.floating-banner{position:fixed;left:0;right:0;bottom:-16px;z-index:$level90;max-height:calc(100% - 48px);padding-top:30px;padding-bottom:24px;border-top-left-radius: 12px;border-top-right-radius: 12px;background-color: $kb-ui11;box-shadow: 0px -6px 8px rgba(0, 0, 0, 0.08);}
+.floating-banner{position:fixed;left:0;right:0;bottom:-16px;z-index:$level90;max-height:95%;;padding-top:30px;padding-bottom:24px;border-top-left-radius: 12px;border-top-right-radius: 12px;background-color: $kb-ui11;box-shadow: 0px -6px 8px rgba(0, 0, 0, 0.08);}
 .ios.homebar .floating-banner{padding-bottom:58px;}
 .floating-banner .kb-sec:first-child{padding-top:0;}
 //.floating-banner .fb-content{display:flex;justify-content:space-between;}
@@ -86,7 +86,7 @@
     @include iconCancel($size: 16px, $thick: 2px, $color: $kb-ui05, $padding: 4px, $position: absolute);
 	right: 24px;top: 29px;
 }
-.floating-banner[data-animation^=fb]{transition:transform .4s, opacity .4s;}
+.floating-banner[data-animation^=fb]{transition:transform .3s cubic-bezier(0.165, 0.84, 0.44, 1), opacity .3s cubic-bezier(0.165, 0.84, 0.44, 1);}
 .floating-banner[data-animation=fbBottomUp]{transform:translateY(110vh);}
 .floating-banner[data-animation=fbBottomUp].is-active{transform:translateY(-16px);}
 .floating-banner[data-animation=fbLeftRight]{transform:translateX(-110vw) translateY(-16px)}

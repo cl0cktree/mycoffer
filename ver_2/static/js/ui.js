@@ -100,13 +100,13 @@ if((winH / winW) < 0.52 && $('html').hasClass('ios')) $('html').addClass('homeba
 
 var gfn_dim = {
     show : function($target, level, duration){
-        duration = duration != undefined ? duration : 200;
+        duration = duration != undefined ? duration : 20;
         if(!$target.prev('.dim').length) $('<div class="dim"/>').insertBefore($target);
         $target.prev('.dim').fadeIn(duration).css('z-index',(level - 1));
     },
     hide : function($target, duration){
         var $dim = $(".dim");
-        duration = duration != undefined ? duration : '200';
+        duration = duration != undefined ? duration : 20;
         if($target != undefined){
             $target = !$target.is('.dim') ? $dim : $target;
         }else{
@@ -120,37 +120,12 @@ var gfn_dim = {
 
 $('body').on('click','.dim',function(){
     if($(this).next('div').is('.bottom-sheet') || $(this).next('div').is('.floating-banner')){
-        gfn_dim.hide($(this));
+        // gfn_dim.hide($(this));
         gfn_layered.close($(this).next('div').attr('data-layered-name'));
     }
 });
 
-//부분 영역 loader
-var gfn_partitialLoader = {    
-    show : function($target, msg){
-        //gfn_partitialLoader.show($target); //메세지가 필요 없을때
-        if(!msg) msg = '';
-        $target.addClass('is-loading');
-        $target.append('<div class="partitial-loader"><div class="msg">' + msg + '</div></div>');
-    },
-    hide : function($target){
-        $target.removeClass('is-loading');
-        $target.find('.partitial-loader').remove();
-    },
-};
 
-//Page Loader
-var gfn_pageLoader = {
-    show : function(){
-        $('body').append('<div class="page-loader"><div class="animation"><span>로딩중</span></div></div>');
-        $('.page-loader').fadeIn();
-    },
-    hide : function($target){
-        $('body').find('.page-loader').fadeOut(200, function(){
-            $(this).remove();
-        });
-    },
-};
 
 var _btnTop = {
     click : function(){
@@ -210,21 +185,23 @@ var gfn_layered = {
         duration = duration == undefined ? 200 : duration;
         if(name != '' && name != undefined){
             var $selectedLayer = $layered.children('div[data-layered-name=' + name + ']');
-            gfn_body.hold(false);
-            gfn_dim.hide($selectedLayer.prev('.dim'), duration);
+            gfn_body.hold(false);            
             //$selectedLayer.removeClass('is-active is-expanded').removeAttr('style');
-            if($selectedLayer.hasClass('popup')){
+            if($selectedLayer.hasClass('popup') || $selectedLayer.hasClass('floating-banner')){
                 $selectedLayer.removeClass('is-active').removeAttr('style');
+                gfn_dim.hide($selectedLayer.prev('.dim'), duration);
             }else if($selectedLayer.hasClass('bottom-sheet')){
                 //$selectedLayer.removeClass('is-active is-expanded').removeAttr('style');
                 $selectedLayer.addClass('bs-out');
                 $selectedLayer.one('animationend',function(){
                     if($selectedLayer.hasClass('bs-out')) $selectedLayer.removeClass('is-active is-expanded bs-out').removeAttr('style');
-                });
+                    gfn_dim.hide($selectedLayer.prev('.dim'), duration);
+                });                
             }else if($selectedLayer.hasClass('modal')){
                 $selectedLayer.addClass('modal-out');
                 $selectedLayer.one('animationend',function(){
                     if($selectedLayer.hasClass('modal-out')) $selectedLayer.removeClass('is-active is-expanded modal-out').removeAttr('style');
+                    gfn_dim.hide($selectedLayer.prev('.dim'), duration);
                 });
             }
             //$('[data-call-layered="' + name +'"]').focus(); (수정 : loop 문제)
@@ -534,21 +511,25 @@ $('.bottom-sheet').on('click','[data-action=select]',function(){
 //     });
 // }
 if($('.bottom-sheet').length){
-    var bsDirection;
+    var bsTouchDirection;
     var startY = 0;
     var endY = 0;
     $('.bottom-sheet').each(function(i){
-        if($(this).find('.tab').length) $(this).addClass('bs-tab');//버튼이 있는 경우 하단 여백이 큼
-        $(this).find('.bottom-sheet_contents').attr('id','bsTabScroll' + i);
-        var $bsCont = document.getElementById('bsTabScroll' + i);
-        $bsCont.addEventListener("touchstart", touchStart, false);
-        $bsCont.addEventListener("touchend", function(ev){
-            touchEnd(ev);
-            var scrollStatus = this.getAttribute('data-scroll');
-            if(scrollStatus == 0 && bsDirection < 0){
-                this.closest('.bottom-sheet').classList.remove("is-expanded");
-            }
-        }, false);
+        if($(this).find('.tab').length) {
+            $(this).addClass('bs-tab');     //TAB이 있는 바텀시트 구분 (스크롤시 확장이 되야함)
+            $(this).find('.bottom-sheet_contents').attr('id','bsTabScroll' + i);            
+            var $bsCont = document.getElementById('bsTabScroll' + i);
+
+            $bsCont.addEventListener("touchstart", touchStart, false);
+            $bsCont.addEventListener("touchend", function(ev){
+                touchEnd(ev);
+                var scrollStatus = this.getAttribute('data-scroll');
+                if(scrollStatus == 0 && bsTouchDirection < 0){
+                    //터치시 scroll이 꼭대기일때 작아짐
+                    this.closest('.bottom-sheet').classList.remove("is-expanded");
+                }
+            }, false);
+        }
     });
 
     //Tab 이 있는 바텀시트는 스크롤시 확장됨
@@ -558,7 +539,6 @@ if($('.bottom-sheet').length){
         $(this).attr('data-scroll',st);
         scrollDirection(st);
         if(scrollDown) $bs.addClass('is-expanded');
-        //console.log(scrollDown, st, scroll);
     });
 
     function touchStart(ev) {
@@ -567,12 +547,9 @@ if($('.bottom-sheet').length){
     }
     function touchEnd(ev) {
         endY = ev.changedTouches[0].clientY;
-        bsDirection = startY - endY;
-        return bsDirection;
+        bsTouchDirection = startY - endY;
+        return bsTouchDirection;
     }
-
-
-
 }
 
 //datepicker 입력
@@ -839,11 +816,18 @@ if($('.js-slider').length){
     $('.js-slider').each(function(i){
         var theme = $(this).data('theme');
         var $graph = $(this).find('.graph-area');
+        var graph_width = $graph.outerWidth();
         var $handle = $(this).find('.handle');
         var dft = $(this).find('.graph-area').data('default');
-        var min = gfn_removeComma3Digit($(this).find('.start-txt').text());
-        var max = gfn_removeComma3Digit($(this).find('.end-txt').text());
+        var $min = $(this).find('.start-txt');
+        var $max = $(this).find('.end-txt');
+        var min = gfn_removeComma3Digit($min.text());
+        var max = gfn_removeComma3Digit($max.text());
         var defaultNum = gfn_comma3Digit((max - min) * dft * 0.01);
+
+        var min_width = Math.floor((1 - ((graph_width - $min.outerWidth()) / graph_width)) * 100);
+        var max_width = Math.floor((1 - ((graph_width - $max.outerWidth()) / graph_width)) * 100);
+
         // console.log(min, max, defaultNum);
         $graph.slider({
             value: dft,
@@ -854,11 +838,19 @@ if($('.js-slider').length){
                 $handle.find('.value').text(defaultNum);
             },
             slide: function( event, ui ) {
-                var val = gfn_comma3Digit((max - min) * ui.value * 0.01);
+                var val;
+                var $value = $handle.find('.value');
+                var value_width = Math.floor((1 - ((graph_width - $value.outerWidth()) / graph_width)) * 100);                
+                
+                if($value.hasClass('integer')){
+                    val = Math.floor((max - min) * ui.value * 0.01);
+                }else{
+                    val = gfn_comma3Digit((max - min) * ui.value * 0.01);
+                }                
                 $handle.find('.value').text( val );
-                if(ui.value >= 80){
+                if(ui.value >= (100 - max_width - value_width)){
                     $(this).removeClass('left').addClass('right');
-                }else if(ui.value <= 20){
+                }else if(ui.value <= min_width + value_width){
                     $(this).removeClass('right').addClass('left');
                 }else{
                     $(this).removeClass('right left');
@@ -1011,18 +1003,20 @@ $('.js-checkbox-selector').not("dl").each(function(){
         var $allSelector = $checkboxSelector.find('input:checkbox[data-index=0]');
 
         $this.on('change',function(){
-            var tf = $(this).prop('checked');
-            if($this.data('index') == 0){   //상단 전체 선택 checkbox
-                if(tf){
-                    $checkbox.not('.exception').prop('checked',true);
-                }else{
-                    $checkbox.not('.exception').prop('checked',false);
-                }
-            }else{  //하단 개별 선택
-                if(tf){
-                    if($checkboxSelector.find('input:checkbox:checked').length == (checkboxLen - exceptionLen - 1)) $allSelector.not('.exception').prop('checked',true);
-                }else{
-                    $allSelector.not('.exception').prop('checked',false);
+            if(!$(this).hasClass('exception')){
+                var tf = $(this).prop('checked');
+                if($this.data('index') == 0){   //상단 전체 선택 checkbox
+                    if(tf){
+                        $checkbox.not('.exception').prop('checked',true);
+                    }else{
+                        $checkbox.not('.exception').prop('checked',false);
+                    }
+                }else{  //하단 개별 선택
+                    if(tf){
+                        if($checkboxSelector.find('input:checkbox:checked').length == (checkboxLen - exceptionLen - 1)) $allSelector.not('.exception').prop('checked',true);
+                    }else{
+                        $allSelector.not('.exception').prop('checked',false);
+                    }
                 }
             }
         });
@@ -1429,10 +1423,13 @@ $('body').on('click','.btn-segmented button, .btn-segmented a',function(){
 //권유 직원 검색
 var $recommendEmployees = $('.recommend-employees');
 if($recommendEmployees.length){
-    $recommendEmployees.find('.btn-segmented').on('click','button',function(){
-        var idx = $(this).parent('li').index();
+    $recommendEmployees.find('.btn-segmented_radio').on('change','input:radio',function(){
+        
+        var idx = $(this).parent('li').index();        
         $(this).addClass('is-selected').parent('li').siblings('li').find('button').removeClass('is-selected');
+
         var $recommendEmployeesFrom = $recommendEmployees.find('.recommend-employees-form');
+        
         $recommendEmployeesFrom.children('.kb-form').hide();
         if(idx == 3){
             $recommendEmployeesFrom.find('p').hide();
@@ -1592,8 +1589,12 @@ if($('.character-graph').length > 0){
         var item = $this.find(".graph-area > span > i");
         var itemBar = item.parent();
 
+        
         if(itemBar.width() - 8 < item.width()){
             itemBar.addClass('min-size');
+            if(itemBar.width() < 10){
+                itemBar.css("border", "none")
+            }
         }else{
             itemBar.removeClass('min-size');
         }

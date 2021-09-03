@@ -66,63 +66,79 @@
 				<!-- // 비밀번호 입력 -->
 
 				<!-- 권유직원선택 // -->
-				<section class="kb-sec recommend-employees">
+				<section class="kb-sec">
 					<h4 class="h4">권유직원선택</h4>
-					<ul class="btn-segmented">
-						<li><button><span>지점명</span></button></li>
-						<li><button><span>직원이름</span></button></li>
-						<li><button><span>직원번호</span></button></li>
-						<li><button class="is-selected"><span>없음</span></button></li>
-					</ul>
-					<div class="recommend-employees-form">
-						<!-- 지점명 // -->
-						<div class="kb-form js-recommend-employees01" data-status="">
-							<label for="recommendEmployees01">지점명</label>
-							<div class="kb-form_inner form-select">
-								<button type="button" class="selected-option"></button>
-								<select name="" id="recommendEmployees01" title="지점명/지역명 선택">
-									<option value="">지점명/지역명 선택</option>
-									<option value="" selected>지점명</option>
-									<option value="">지역명(시,구,군,읍,면,동)</option>
-								</select>
-							</div>
-							<em class="validation">Message</em>
-						</div>
-						<div class="kb-form js-recommend-employees02" data-status="">
-							<label for="recommendEmployees02">지점명 or 지역명</label>
-							<div class="kb-form_inner form-text">
-								<input type="text" id="recommendEmployees02" value="">
-								<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-								<a href="@@webRoot/html/common/mys_co_05_02_02.html" class="btn-solid form"><span>검색</span></a>
-							</div>
-							<em class="validation">Success Message</em>
-						</div>
-						<!-- // 지점명 -->
-						<!-- 직원이름 //-->
-						<div class="kb-form js-recommend-employees04" data-status="">
-							<label for="recommendEmployees04">직원이름</label>
-							<div class="kb-form_inner form-text">
-								<input type="text" id="recommendEmployees04" value="">
-								<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-								<a href="@@webRoot/html/common/mys_co_05_02_02_02.html" class="btn-solid form"><span>검색</span></a>
-							</div>
-							<em class="validation">Success Message</em>
-						</div>
-						<!-- // 직원이름 -->
-						<!-- 직원번호 //-->
-						<div class="kb-form js-recommend-employees03" data-status="">
-							<label for="recommendEmployees03">직원번호</label>
-							<div class="kb-form_inner form-text">
-								<input type="text" id="recommendEmployees03" value="">
-								<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-								<a href="@@webRoot/html/common/mys_co_05_02_02_02.html" class="btn-solid form"><span>검색</span></a>
-							</div>
-							<em class="validation">Success Message</em>
-						</div>
-						<!-- // 직원번호 -->
-						
-						<p><button type="button" class="btn-line form"><span>검색 초기화</span></button></p>
-					</div>
+					<!-- 수정 [s]-->
+                    <div class="recommend-employees mt24">
+                        <ul class="btn-segmented_radio">
+                            <li>
+                                <input type="radio" name="recommendEmployees" id="recommendEmployees1">
+                                <label for="recommendEmployees1">지점명</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="recommendEmployees" id="recommendEmployees2">
+                                <label for="recommendEmployees2">직원이름</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="recommendEmployees" id="recommendEmployees3">
+                                <label for="recommendEmployees3">직원번호</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="recommendEmployees" id="recommendEmployees4" checked>
+                                <label for="recommendEmployees4">없음</label>
+                            </li>
+                        </ul>
+                        <div class="recommend-employees-form">
+                            <!-- 지점명 // -->
+                            <div class="kb-form js-recommend-employees01 outline lg" data-status="">
+                                <div class="kb-form_inner form-select" >
+                                    <button type="button" class="selected-option"></button>
+                                    <select name="" id="recommendEmployees01" title="지점명">
+                                        <option value="">지점명</option>
+                                        <option value="" selected>지점명</option>
+                                        <option value="">지역명(시,구,군,읍,면,동)</option>
+                                    </select>
+                                </div>
+                                <em class="validation">Message</em>
+                            </div>
+                            <div class="kb-form js-recommend-employees02" data-status="">
+                                <div class="kb-form_inner form-text">
+                                    <input type="text" id="recommendEmployees02" value="" placeholder="지점명">
+                                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                                    <a href="@@webRoot/html/common/mys_co_05_02_02.html" class="btn-solid form"><span>검색</span></a>
+                                </div>
+                                <em class="validation">Success Message</em>
+                            </div>
+                            <!-- // 지점명 -->
+                            <!-- 직원이름 //-->
+                            <div class="kb-form js-recommend-employees04" data-status="">
+                                <div class="kb-form_inner form-text">
+                                    <input type="text" id="recommendEmployees04" value="" placeholder="직원이름">
+                                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                                    <a href="@@webRoot/html/common/mys_co_05_02_02.html" class="btn-solid form"><span>검색</span></a>
+                                </div>
+                                <em class="validation">Success Message</em>
+                            </div>
+                            <!-- // 직원이름 -->
+                            <!-- 직원번호 //-->
+                            <div class="kb-form js-recommend-employees03" data-status="">
+                                <div class="kb-form_inner form-text">
+                                    <input type="text" id="recommendEmployees03" value="" placeholder="직원번호">
+                                    <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                                    <a href="@@webRoot/html/common/mys_co_05_02_02.html" class="btn-solid form"><span>검색</span></a>
+                                </div>
+                                <em class="validation">Success Message</em>
+                            </div>
+                            <!-- // 직원번호 -->
+                            <!--//없음-->
+                            <div class="kb-form is-active is-readonly">
+                                <p>추천인코드:<span>KBstar1</span></p>
+                            </div>
+                            <!--//없음-->
+                            <p><button type="button" class="btn-line"><span>검색초기화</span></button></p>
+                        </div>
+                    </div>
+                    <!-- 수정 [e]-->
 				</section>
 				<!-- // 권유직원선택 -->				
 

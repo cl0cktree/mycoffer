@@ -76,6 +76,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .bottom-sheet[data-layered-name="assetFinancialInstitution"] .grid-list li span {word-break:break-word;}
 .my-asset .tag-label{font-size:1.2rem;padding:.3rem .5rem;vertical-align:top;}
 // .my-asset .tag-label.type2{background:$kb-ui05;color:#fff;font-size:1.3rem;padding:.4rem 1rem;border:none;border-radius:10rem;;}
+.my-asset .list-area{padding-bottom:48px;border-bottom:10px solid $kb-ui10;}
 .my-asset .tag-label.type2{@include text($size:1.3rem,$line-height:1);border:1px solid $kb-ui07;padding:.5rem .8rem;border-radius:2px;letter-spacing:-0.48px;color:$kb-ui03;}
 .my-asset .content-box + .content-box{margin-top: 16px;}
 .my-asset .content-box .compare-box{position:relative;background-color:$kb-ui10;border-radius:3px;overflow:hidden;}
@@ -96,9 +97,9 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .content-box .compare-box dd.lately{margin-right:20px;}
 .my-asset .content-box .compare-box dd.other{margin-left:20px;}
 .my-asset .content-box .compare-box .compare.eq:before{border:0;}
-.my-asset .compare-con{padding-top:24px;padding-bottom:30px;}
+.my-asset .compare-con{padding-top:44px;padding-bottom:48px;border-bottom:10px solid $kb-ui10;}
 .my-asset .compare-con > .h4{margin-bottom:12px;}
-.my-asset .compare-con .content-box > .msg{margin-bottom:10px;line-height:1.4;}
+.my-asset .compare-con .content-box > .msg{margin-bottom:20px;line-height:1.4;}
 .my-asset .compare-con .content-box .plus{color:$color-blue;}
 .my-asset .compare-con .content-box .minus{color:$color-red;}
 .my-asset .compare-con .content-box > .bottom-msg{margin-top:10px;}
@@ -120,6 +121,8 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 
 .my-asset .p-list .account-wrap .agency-con .title{font-size:16px;}
 .my-asset .p-list .account-wrap .agency-con .num{font-size:17px;}
+.my-asset .p-list .account-wrap .agency-con .account
+{display:inline-block;font-size:16px;}
 .my-asset .p-list .btn-more-view.account-wrap .agency-con .title{font-weight:bold;}
 
 /* 대상선택 */
@@ -145,6 +148,10 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .asset-summary .highcharts-box .graph-info .graph-msg .btn-more{margin-top:0;}
 .my-asset .asset-summary .highcharts-box .chart-area{height:calc((100vw - 56px) * 0.58);}
 .my-asset .asset-summary .highcharts-box .chart-area img{width:100%;}
+.my-asset .asset-summary .maturity-dday-circles{margin-top: 2rem;height:calc((100vw - 56px) * 0.58);}
+.my-asset .asset-summary .maturity-dday-circles .svg-area{margin-top:1.65rem;}
+.my-asset .asset-summary .maturity-dday-circles .dday{top:10rem;}
+.my-asset .asset-summary .maturity-dday-circles .btm-text{@include ellipsis($width: 40vw);margin-top:1.6rem;}
 .my-asset .asset-summary .highcharts-box .graph-info .txt{@include text;}/*margin-bottom:28px; 그래프 여백 때문에 임시 제거*/
 .my-asset .asset-summary .highcharts-box .graph-info .txt em{color:$color-red;@include text($weight:bold);}
 .my-asset .asset-summary .highcharts-box .graph-info .txt .plus {color:$color-red;}
@@ -159,7 +166,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .asset-summary .highcharts-box .graph-info .price-wrap{font-weight:bold;}
 .my-asset .asset-summary .highcharts-box .graph-info .price-wrap .num{@include number($size:19px);}
 .my-asset .asset-summary .highcharts-box .my-average{@include text($size:14px);text-align:center;margin-top:5px;}
-.my-asset .asset-summary .highcharts-box .my-average > em{display:inline-block;padding-left:36px;background:url(../../static/images/asset/bg_my_average.png) no-repeat 0 center;background-size:26px auto;}
+.my-asset .asset-summary .highcharts-box .my-average > em{display:inline-block;padding-left:36px;background:url(../../static/images/asset/bg_my_average.png) no-repeat 0 center;background-size:26px auto;color:$kb-ui04;}
 .my-asset .asset-summary .highcharts-box .my-average .num{@include number($size:15px);}
 .my-asset .asset-summary .top-area .msg{@include text($size:16px);margin-bottom:20px;margin-top:3.2rem;}
 .my-asset .asset-summary .top-area .msg.type2{margin-bottom:0;}
@@ -268,37 +275,42 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .btn-hide-account{position:absolute;top:0;right:0;}
 .my-asset .btn-hide-account span{display:block;width:0;height:0;overflow:hidden;text-indent:-9999px;}
 .my-asset .list-area .no-data{margin-top:0;padding-top:67px;padding-bottom:67px;}
-.my-asset .recommend-prod{padding-top:30px;padding-bottom:30px;border-bottom:10px solid $kb-ui10;}
+.my-asset .recommend-prod{padding-top:44px;padding-bottom:48px;border-bottom:10px solid $kb-ui10;}
 .my-asset .recommend-prod .tit{@include text($size: 14px);color:$kb-ui02;margin-top:4px;}
 .my-asset .recommend-prod .list>li{margin-top:18px;}
-.my-asset .recommend-prod .list button{display:block;width:100%;padding:26px 20px;border:1px solid $kb-ui08;text-align:left;}
+.my-asset .recommend-prod .list button{display:block;width:100%;padding:20px;border:1px solid $kb-ui08;text-align:left;border-radius:8px;}
 .my-asset .recommend-prod .list button .info{@include text($size: 14px);display:block;}
-.my-asset .recommend-prod .list button .tit{@include text($size: 18px,$weight:bold);;display:block;color:$kb-ui02;margin-top:4px;}
-.my-asset .recommend-prod .list button .rate{display:flex;margin-top:10px;}
+.my-asset .recommend-prod .list button .tit{@include text($size: 16px,$weight:bold);;display:block;color:$kb-ui02;margin-top:4px;}
+.my-asset .recommend-prod .list button .rate{display:flex;float:right;margin-top:18px;}
 .my-asset .recommend-prod .list button .rate span{padding-left:15px;@include text($size: 14px);color:$kb-ui03;}
 .my-asset .recommend-prod .list button .rate span:first-child{padding-left:0;}
 .my-asset .recommend-prod .list button .rate span:after{display:block;content:'';width:1px;height:10px;background-color:$kb-ui06;margin-top:-16px;margin-left:-7px;}
 .my-asset .recommend-prod .list button .rate span:first-child:after{display:none;}
 .my-asset .recommend-prod .list button .rate span.danger {color: $color-red;}
-.my-asset .recommend-prod .list button .hash-tag{@include text($size:14px);color:$kb-ui04;margin-top:4px;}
+.my-asset .recommend-prod .list button .rate b{font-size:18px;font-weight:bold;}
+.my-asset .recommend-prod .list button .hash-tag{@include text($size:14px);color:$kb-ui04;margin-top:7px;}
+
 .my-asset .best-list-con{padding-top:34px;}
 .my-asset .best-list-con .top-area{@include text($size: 18px);vertical-align:top;}
 .my-asset .best-list-con .top-area .btn-similar{vertical-align:top;}
 .my-asset .btn-similar{border-bottom:2px solid $kb-ui09;padding-bottom:6px;margin-bottom:4px;margin-right:4px;}
 .my-asset .btn-similar .arrow{@include iconBullet($direction: 'down', $width: 16px, $thick : 1px, $color : $kb-ui05,);vertical-align:middle;}
-.my-asset .best-tit-con{margin-top:32px;}
+.my-asset .best-tit-con .tit{margin-bottom:20px;}
 .my-asset .best-tit-con .tit .h4,
 .my-asset .best-tit-con .tit .btn-question{display:inline-block;}
 .my-asset .best-list-con .except_kb{margin-top:15px;}
 .my-asset .btn-question span{display:block;width:0;height:0;overflow:hidden;text-indent:-9999px;}
-.my-asset .best-list-con .list{margin-top:12px;}
-.my-asset .best-list-con .list li{position:relative;margin-top:20px;}
+.my-asset .best-list-con .list{margin-top:12px;border-bottom:1px solid $kb-ui08;}
+.my-asset .best-list-con .list li{position:relative;border-top:1px solid $kb-ui07;}
 .my-asset .best-list-con .list li:first-child{margin-top:0;}
-.my-asset .best-list-con .list .flag{position:absolute;top:0;right:0;width:34px;height:34px;background-color:$color-yellow;text-align:center;border-radius:2px;}
-.my-asset .best-list-con .list .flag .num{display:block;font-weight:bold;line-height:34px;}
-.my-asset .best-list-con .list button{display:block;width:100%;padding:28px 20px;border:1px solid $kb-ui08;text-align:left;}
-.my-asset .best-list-con .list .account-wrap .agency{margin-bottom:6px;}
-.my-asset .best-list-con .list .account-wrap .user-info{@include text($size: 14px);border-top:1px solid $kb-ui08;padding-top:10px;margin-top:10px;color:$kb-ui04;}
+.my-asset .best-list-con .list li + li {border-top:1px solid $kb-ui08;}
+.my-asset .best-list-con .list .flag{width:32px;height:32px;text-align:center;border-radius:4px;background-color:$kb-ui07;}
+.my-asset .best-list-con .list .flag.top{background-color:$color-yellow;}
+.my-asset .best-list-con .list .flag .num{display:block;font-weight:bold;line-height:32px;margin-top:0;}
+.my-asset .best-list-con .list button{display:block;width:100%;padding:24px 0 20px;text-align:left;}
+.my-asset .best-list-con .list .account-wrap .agency{margin-bottom:0;line-height:32px;}
+.my-asset .best-list-con .list .account-wrap .agency .num{font-size:15px;}
+.my-asset .best-list-con .list .account-wrap .user-info{@include text($size: 14px);margin-top:10px;color:$kb-ui04;}
 .my-asset .best-list-con .list .account-wrap .user-info .num{color:$kb-ui04;@include text($size: 15px);}
 .my-asset .best-list-con .list .account-wrap .user-info em{color:$kb-ui02;}
 
@@ -346,7 +358,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset.pop-account-detail .foreign .account-detail{margin-top:0;}
 .my-asset.pop-account-detail .foreign .account-detail .d-list .price-wrap .txt-con .amount{@include text($weight: normal);}
 .my-asset.pop-account-detail .foreign .account-detail .d-list .price-wrap .txt-con .exchange{display:block;}
-.my-asset .foreign .txt-con .balance + .simple-message{text-align:right;margin-top:-1rem;}
+.my-asset .foreign .txt-con .balance + .simple-message{text-align:right;margin-top:-1rem;padding-left:0;}
 .my-asset .foreign .txt-con .simple-message:before{display:none;}
 .my-asset .foreign .interest-rate .list + .description-list{margin-top:6px;}
 
@@ -536,9 +548,10 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .asset-modify .asset-modify-top .btn-area {margin-top: 20px;}
 .my-asset .asset-modify .ui-sortable {position: relative; border-top: 0;}
 .my-asset .asset-modify .ui-sortable::before {content:'';position:absolute;z-index:10;left:0;right:0;top:0;height:1px;background-color:$kb-ui07;}
+.my-asset .asset-modify + .bottom-sheet_buttons {margin-top: 0;}
 
 /* 입출금 관리 */
-
+.my-asset.pay .list-area{border-bottom:0;}
 .my-asset.pay .smart-loan-banner{margin-top:0;}
 .my-asset.pay .recommend-prod .list  .smart-loan-banner button{border:none;background:url(../../static/images/asset/banner_smart_loan2.png) no-repeat right center $kb-ui10;background-size:106px auto;}
 .my-asset .smart-fund-banner button{display:block;width:100%;text-align:left;background:url(../../static/images/asset/banner_smart_loan.png) no-repeat right center $kb-ui10;background-size:75px auto;padding:20px 26px;}
@@ -681,7 +694,10 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .check-management .btn-switch label span{@include text($size:18px,$weight:bold);} 
 .my-asset .check-management .info{margin-top:1.6rem;@include text($size:$text03,$weight:normal);}
 .my-asset .my-house .selected{margin-top:2.8rem;}
-.my-asset .my-house .selected .kb-form + .kb-form{margin-top:1.6rem;}
+.my-asset .my-house .selected .kb-form_multi .dbl-line{display:flex;}
+.my-asset .my-house .selected .kb-form_multi .dbl-line > .kb-form{flex:1;margin-top:0;}
+.my-asset .my-house .selected .kb-form_multi .dbl-line > .kb-form + .kb-form{margin-left:2rem;}
+// .my-asset .my-house .selected .kb-form + .kb-form{margin-top:1.6rem;}
 .my-asset .my-house .possession{margin-top:2.8rem;}
 .my-asset .my-house .rental{margin-top:2.8rem;}
 .my-asset .house-add-complete .house-btns {text-align: center;}
@@ -784,7 +800,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset.my-house-expens .expens-list .h4 + .info{font-size:$text03;color:$kb-ui04;display:inline-block;vertical-align:middle;}
 .my-asset.my-house-expens .expens-list > ul{border-top:1px solid  $kb-ui07;}
 .my-asset.my-house-expens .expens-list > ul > li{padding:20px 0;border-bottom:1px solid $kb-ui09;}
-.my-asset.my-house-expens .expens-list > ul > li .tit{@include text($size:1.5rem);color:$kb-ui03;margin-bottom:1.2rem;}
+.my-asset.my-house-expens .expens-list > ul > li .tit{@include text($size:1.5rem);color:$kb-ui02;margin-bottom:1.2rem;}
 .my-asset.my-house-expens .expens-list > ul > li .date{color:$kb-ui04;}
 .my-asset.my-house-expens .expens-list .no-data{padding-top:4.8rem;border-top:1px solid $kb-ui07;}
 
@@ -1032,19 +1048,106 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset.solution .solution-more .more-list .description-list-variable .tit:before {position:absolute;top:50%;left:2px; display:block; content: ''; width: 3px; height: 3px; background-color: #484b51; margin-right: 5px;margin-top:-2px; }
 .my-asset.solution .solution-more .info-box .solution-msg{position:relative;padding:20px 20px 0;margin:20px -20px 0;border-top:1px solid $kb-ui07;text-align:center;}
 .my-asset.solution .solution-more .info-box .solution-msg img{width:24px;margin-right:10px;vertical-align:middle;}
-.my-asset.solution .key-point{padding-top:32px;padding-bottom:32px;border-bottom:10px solid $kb-ui10;}
-.my-asset.solution .key-point .tit{margin-top:20px;}
-.my-asset.solution .key-point .txt{@include text($size:14px);margin-top:18px;}
+
+
+/* 종합솔루션 v2 */
+.my-asset-summary {margin-bottom: 22px;}
+.my-asset-summary strong {font-weight: bold;}
+.my-asset-summary .title {margin-bottom: 15px; @include text($text01, normal);}
+.my-asset-summary p {@include text($text02, normal); color: $kb-ui02;}
+.my-asset-summary .num {font-size: 17px; font-weight: bold;}
+.my-asset-compare {padding-bottom: 20px; margin-bottom: 48px; border-bottom: 10px solid $kb-ui10;}
+.asset-graph-head {position: relative; height: 60px; margin-bottom: 18px;}
+.asset-graph-head > div {position: absolute; top: 0; bottom: 0; @include text($text02, normal); color: $kb-ui04;}
+.asset-graph-head .ages-head {left: 0; right: calc(50% + 47px);}
+.asset-graph-head .me-head {right: 0; left: calc(50% + 47px); padding-top: 7px; text-align: center;}
+.asset-graph-head .me-head .me {display: block; margin-top: 3px; font-size: 19px; font-weight: bold; color: $kb-ui02;}
+.asset-graph-head .form-select .selected-option {padding-right: 10px; color: $kb-ui02;}
+.asset-graph-head .kb-form_inner {padding-top: 0; margin-top: -4px;}
+.asset-graph-lists ul {padding: 11px 0; border-bottom: 1px solid $kb-ui09;}
+.asset-graph-lists ul:last-child {border-bottom: 0;}
+.asset-graph-lists li {position: relative; height: 34px;}
+.asset-graph-lists .asset-label {position: absolute; left: 50%; top: 50%; font-size: 14px; color: $kb-ui02; text-align: center; transform: translate(-50%, -50%);}
+.asset-graph-lists .val {font-size: 15px; color: $kb-ui02; text-align: center;}
+.asset-graph-lists .bar-area {position: absolute; top: 50%; margin-top: -6px; height: 12px; background-color: $kb-ui10;}
+.asset-graph-lists .bar-area.ages {left: 0; right: calc(50% + 47px); border-top-left-radius: 12px; border-bottom-left-radius: 12px;}
+.asset-graph-lists .bar-area.me {right: 0; left: calc(50% + 47px); border-top-right-radius: 12px; border-bottom-right-radius: 12px;}
+.asset-graph-lists .bar-area .bar {position: absolute; top: 0; bottom: 0; background-color: #ffba53;}
+.asset-graph-lists .bar-area.ages .bar {right: 0; border-top-left-radius: 12px; border-bottom-left-radius: 12px;}
+.asset-graph-lists .bar-area.me .bar {left: 0; border-top-right-radius: 12px; border-bottom-right-radius: 12px;}
+.asset-graph-lists .group-a .bar-area.ages .bar {background-color: #ff8a71;}
+.asset-graph-lists .group-b .bar-area.ages .bar {background-color: #ff6391;}
+.asset-graph-lists .group-c .bar-area.ages .bar {background-color: #ff445a;}
+.asset-graph-lists .val {display: none; position: absolute; top: -28px; background-color: #fff; box-shadow: 0px 1px 5px 0 rgba(0, 0, 0, 0.2); border-radius: 3px; line-height: 1.2; padding: 4px 7px; text-overflow: ellipsis; white-space: nowrap;}
+.asset-graph-lists .val::after{position: absolute; bottom: -5px; left: 50%; margin-left: -6px; content: ''; display: block; width: 12px; height: 5px; background: url(../../static/images/asset/bg_d_day.png) no-repeat 0 0; background-size: contain;}
+.asset-graph-lists .is-active .val {display: block;}
+.asset-graph-lists .bar-area.ages .val {left: 0; transform: translateX(-40%);}
+.asset-graph-lists .bar-area.me .val {right: 0; transform: translateX(40%);}
+
+.my-asset-more {padding-bottom: 32px; margin-bottom: 48px; border-bottom:10px solid $kb-ui10;}
+.my-asset-more h2 {margin-bottom: 12px;}
+.my-asset-more .more-container {position: relative; min-height: 292px;}
+.my-asset-more ul {margin: 0 -4px;}
+.my-asset-more li {padding: 0 4px;}
+.my-asset-more li.on button {background-color: $kb-ui11; border-color: $kb-ui02;}
+.my-asset-more button {display: block; width: 100%; height: 100px; padding: 10px 0 0; background-color: #f7f7f9; border: 1px solid $kb-ui09; border-radius: 4px;}
+.my-asset-more button span {display: block; @include text($text03, normal); color: $kb-ui02;}
+.my-asset-more button .status {font-size: 12px;}
+.my-asset-more button .status.good {color: $color-blue;} // 많음, (자동차, 부동산)있음, (부채비중)없음
+.my-asset-more button .status.suitable {color: #009edd;} // (부채비중)적정
+.my-asset-more button .status.normal {color: #00a596;} // (부채비중)보통
+.my-asset-more button .status.bad {color: $color-red;} // 적음, (자동차, 부동산)없음, (부채비중)주의
+.my-asset-more button i[class*=icon] {margin: 0 auto 4px;}
+.my-asset-more .more-content {display: none; position: absolute; left: 0; right: 0; top: 120px;}
+.my-asset-more .on .more-content {display: block;}
+.my-asset-more .gbox {background-color: $kb-ui10; border-radius: 8px;}
+.my-asset-more .gbox::after {content: ''; position: absolute; top: -10px; width: 14px; height: 10px; background: url(../../static/images/asset/bg_solution_box.png) no-repeat 0 0; background-size: 100% 100%;}
+.my-asset-more li:nth-child(1) .gbox::after {left: 12.5%; margin-left: -7px;}
+.my-asset-more li:nth-child(2) .gbox::after {left: 37.5%; margin-left: -7px;}
+.my-asset-more li:nth-child(3) .gbox::after {left: 62.5%; margin-left: -7px;}
+.my-asset-more li:nth-child(4) .gbox::after {left: 87.5%; margin-left: -7px;}
+.my-asset-more .gbox dl {margin: 0 20px; font-size: 16px; line-height: 55px; @include clfix;}
+.my-asset-more .gbox dt {clear: both; float: left; width: 50%; color: $kb-ui04; border-top: 1px solid $kb-ui08; text-align: left; white-space: nowrap;}
+.my-asset-more .gbox dd {float: right; width: 50%; color: $kb-ui02; border-top: 1px solid $kb-ui08; text-align: right; white-space: nowrap;}
+.my-asset-more .gbox dd .num {font-size: 17px; font-weight: bold;}
+.my-asset-more .gbox dd span {display: inline;}
+.my-asset-more .gbox dt:first-child,
+.my-asset-more .gbox dt:first-child + dd {border-top: 0;}
+.my-asset-more .emoti-msg {margin: 16px 0;}
+.my-asset-more .emoti-msg > span {display: inline-block; height: 24px; font-size: $text02; font-weight: bold; line-height: 24px; color: $kb-ui02;}
+.my-asset-more .emoti-msg > span .num {font-size: 17px;}
+.my-asset-more .emoti-msg > span::before {content: ''; display: inline-block; width: 24px; height: 24px; margin-right: 8px; background: url(../../static/images/asset/sp_emoti.png) no-repeat 0 0; background-size: 100px 25px; vertical-align: middle;}
+.my-asset-more .emoti-msg > span.lv1 {color: #4abeff;}
+.my-asset-more .emoti-msg > span.lv1::before {background-position: 0 0;}
+.my-asset-more .emoti-msg > span.lv2 {color: #31c09e;}
+.my-asset-more .emoti-msg > span.lv2::before {background-position: -25px 0;}
+.my-asset-more .emoti-msg > span.lv3 {color: #ffc107;}
+.my-asset-more .emoti-msg > span.lv3::before {background-position: -50px 0;}
+.my-asset-more .emoti-msg > span.lv4 {color: #ff5858;}
+.my-asset-more .emoti-msg > span.lv4::before {background-position: -75px 0;}
+.my-asset-more .no-data {margin-top: 24px;}
+
+.my-asset.solution .key-point{padding-bottom:48px;margin-bottom: 48px; border-bottom:10px solid $kb-ui10;}
+.my-asset.solution .key-point h2 {margin-bottom: 12px;}
+.my-asset.solution .key-point .tit{position: relative; padding-left: 40px; margin-bottom: 20px; @include text($text02, normal);}
+.my-asset.solution .key-point .tit::before {content: ''; position: absolute; left: 0; top: 0; width: 32px; height: 32px; background:url(../../static/images/asset/ico_solution.png) repeat 0 0;background-size: 100% 100%;}
+.my-asset.solution .key-point .tit .hash {display: block; margin-top: 2px; font-weight: bold; color: $color-blue;}
+.my-asset.solution .key-point .tit .hash::before {content: '#';}
+.my-asset.solution .key-point .txt{@include text($text02, normal);}
 .my-asset.solution .key-point .btn-area{margin-top:28px;}
-.my-asset.solution .solution-tip{padding-top:32px;}
-.my-asset.solution .solution-tip > .tit{line-height:1.4;margin-top:24px;}
-.my-asset.solution .solution-tip .tab{margin-top:28px;margin-right:-24px;}
-.my-asset.solution .solution-tip .tab_contents{padding-bottom:30px;}
-.my-asset.solution .solution-tip .info-box{position:relative;background-color:$kb-ui10;border-radius:2px;margin-top:24px;padding:24px 40px 24px 20px;}
-.my-asset.solution .solution-tip .info-box .link{position:absolute;right:20px;top:50%;margin-top:-12px;width:24px;height:24px;}
-.my-asset.solution .solution-tip .info-box .link > span{@include hidden;}
-.my-asset.solution .solution-tip .info-box .tit{font-weight:bold;line-height:1.4;}
-.my-asset.solution .solution-tip .info-box .txt{color:$kb-ui04;margin-top:4px;}
+.my-asset.solution .key-point .key-link {margin-top: 20px; text-align: right;}
+
+.my-asset.solution .solution-tip > h2 {margin-bottom: 14px;}
+.my-asset.solution .solution-tip > .tit {@include text($text02, normal);}
+.my-asset.solution .solution-tip .tab {margin-top:36px;margin-right:-24px;padding-left: 0;}
+.my-asset.solution .solution-tip .tab_contents {padding-top:28px;padding-bottom:30px;}
+.my-asset.solution .solution-tip .tab_contents a {display: block; padding-right: 40px;}
+.my-asset.solution .solution-tip .tab_contents a .tit,
+.my-asset.solution .solution-tip .tab_contents a .txt {@include text($text02, normal);}
+.my-asset.solution .solution-tip .tab_contents a .num {display: inline-block; margin-top: -2px; padding-left: 20px; font-size: 17px; font-weight: bold;}
+.my-asset.solution .solution-tip .link-arrow-after:not(ul):after {right: 15px;}
+
+
 
 /*hbk 추가*/
 .my-asset hr.line-gray{border:none;border-top:1px solid $kb-ui07;margin:0 2.4rem;}

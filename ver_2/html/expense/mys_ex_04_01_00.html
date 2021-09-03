@@ -21,301 +21,366 @@
         <div class="app-container">
 
             <!-- app-content // -->
-            <main class="app-content expense-finance-report bg-gray-bottom">
+            <main class="app-content expense-finance-report">
                 <!-- 월간 자산 요약 // -->
-                <section class="kb-sec bg-gray content-groups-type monthly-asset-summary">
-                    <div class="content-box shadow tit-box">
-                        <a href="mys_ex_04_00_00.html" class="tit-box link-box_block">
-                            <div class="content-box-info flex-box">
-                                <div class="content-box-tit">
-                                    <strong class="h4">2021년 5월 금융리포트</strong>
-                                    <span class="date">발행일 21.5.25 | 기준일 21.4.26~21.5.25</span>
-                                </div>
-                                <i class="icon-arrow-right"></i>
+                <section class="kb-sec expense-guide monthly-asset-summary dividing-space-bottom">
+                    <div class="date-month">
+                        <h4 class="h4">2021년 5월 금융리포트</h4>
+                        <span class="date">발행일 <em class="num">21.5.25</em> | 기준일 <em class="num">21.4.26~21.5.25</em></span>
+                    </div>
+                    <div class="content-box shadow compare-summary">
+                        <div class="content-box-info">
+                            <div class="content-box-tit">
+                                <h4 class="h4">
+                                    <span class="tit">월간 자산 요약</span>
+                                    <span class="date">기준일 <em class="num">21.07.04 ~ 21.08.04</em></span>
+                                </h4>
                             </div>
-                        </a>
-                        <div class="credit-list-group summary-box">
-                            <strong class="h3">월간 자산 요약</strong>
-                            <dl class="credit-list t01">
-                                <dt>이번달 순자산</dt>
-                                <dd><strong class="amount expense"><em class="num">325,030,049</em>원</strong></dd>
-                                <dt>지난달대비</dt>
-                                <dd><strong class="amount"><em class="num">21,584,119</em>원 증가</strong></dd>
-                            </dl>
                         </div>
-                        <div class="highcharts-box no-space">
-                            <div class="graph-area">
-                                <figure class="highcharts-figure">
-                                    <!-- [chart area] //-->
-                                    <!--
-                                        [차트 디자인 정보]
-                                        * 그래프(도넛) 색상(컬러별)
-                                        - 노랑 : #ffd338;
-                                        - 주황 : #f78657;
-                                        - 분홍 : #d575c9;
-                                        - 보라 : #9448d9;
-                                        - 갈색 : #96857f;
-                                        - 파랑 : #3f6fd1;
-                                        - 벽돌 : #c36f36;
-    
-                                        - 차트 텍스트 컬러/크기 : #26282c/16px
-                                        - legend 텍스트 컬러/크기 : #26282c/14px
-                                    -->
-                                    <div class="chart-area" id="">
-                                        <img class="temp" src="../../static/images/_temp/chart_ex0403.png" alt="차트 예시 이미지">
+                        <dl class="description-list credit-list-amount">
+                            <dt>이번달 순자산</dt>
+                            <dd class="amount expense"><span class="num">325,030,049</span>원</dd>
+                            <dt>지난달대비</dt>
+                            <dd class="amount"><span class="num">21,584,119</span><strong>원 증가</strong></dd>
+                        </dl>
+                    </div>
+                    <div class="highcharts-box mt12">
+                        <div class="graph-area doughnut-type">
+                            <figure class="highcharts-figure">
+                                <!-- [chart area] //-->
+                                <!--
+                                    [차트 디자인 정보]
+                                    * 그래프(도넛) 색상(컬러별)
+                                    - 분홍색 :  #ff6391
+                                    - 다홍색 :  #ff445a
+                                    - 노란색 :  #ffba53
+                                    - 살구색 :  #ff8a71
+                                    - 보라색 :  #d090ee
+
+                                    - 차트 텍스트 컬러/크기 : #26282c/16px
+                                    - legend 텍스트 컬러/크기 : #26282c/14px
+                                -->
+                                <div class="chart-area" id="">
+                                    <img class="temp" src="../../static/images/_temp/chart_ex0403.png" alt="차트 예시 이미지">
+                                </div>
+                                <div class="legend-unit">
+                                    <ul>
+                                        <li class="yellow">입출금·페이</li>
+                                        <li class="apricot">예적금</li>
+                                        <li class="pink">투자</li>
+                                        <li class="cherryred">보험</li>
+                                        <li class="lightpurple">대출·부채</li>
+                                        <li class="deeppurple">외화</li>
+                                        <li class="skyblue">적립포인트</li>          
+                                    </ul>
+                                </div>
+                                <!--// [chart area] -->
+                            </figure>
+                        </div>
+                        <dl class="description-list credit-list-amount">
+                            <dt>총자산</dt>
+                            <dd class="amount"><span class="num">531,345,235</span>원</dd>
+                            <dt>총부채</dt>
+                            <dd class="amount"><span class="num">531,345,235</span>원</dd>
+                            <dt>순 자산</dt>
+                            <dd class="amount"><span class="num">531,345,235</span>원</dd>
+                        </dl>
+                        <div class="graph-area line-type">
+                            <figure class="highcharts-figure">
+                                <div class="content-box-info">
+                                    <div class="content-box-tit">
+                                        <h4 class="h4">자산&sol;부채 추이 <span class="tag-label t02" data-state="wait">최근 6개월</span></h4>
                                     </div>
-                                    <div class="legend-unit">
-                                        <ul>
-                                            <li class="coral">입출금·페이</li>
-                                            <li class="orange">예적금</li>
-                                            <li class="magenta">투자</li>
-                                            <li class="green">보험</li>
-                                            <li class="blue">대출·부채</li>
-                                            <li class="green">연금</li>
-                                            <li class="purple">현금</li>
-                                            <li class="brown">외환</li>
-                                            <li class="yellow">적립포인트</li>          
-                                        </ul>
-                                    </div>
-                                    <!--// [chart area] -->
-                                </figure>
-                            </div>
-                            <div class="credit-list-group">
-                                <dl class="credit-list t01">
-                                    <dt>총자산</dt>
-                                    <dd><strong class="amount"><em class="num">53,135,994</em>원</strong></dd>
-                                    <dt>총부채</dt>
-                                    <dd><strong class="amount"><em class="num">206,105,954</em>원</strong></dd>
-                                    <dt>순자산</dt>
-                                    <dd><strong class="amount"><em class="num">325,030,049</em>원</strong></dd>
-                                </dl>
-                            </div>
-                            <div class="graph-area">
-                                <figure class="highcharts-figure">
-                                    <div class="content-box-info">
-                                        <div class="content-box-tit">
-                                            <h4 class="h4">자산&sol;부채 추이 <span>최근6개월</span></h4>
-                                        </div>
-                                    </div>
-                                    <!-- [chart area] //-->
-                                    <!--
-                                        [차트 디자인 정보]
-                                        * 그래프(도넛) 색상(컬러별)
-                                        - 노랑 : #ffd338;
-                                        - 파랑 : #3f6fd1;
-                                        - 갈색 : #96857f;
-                                        - 분홍 : #d575c9;
-                                        - 주황 : #f78657;
-    
-                                        - 차트 텍스트 컬러/크기 : #26282c/16px
-                                        - legend 텍스트 컬러/크기 : #26282c/14px
-                                    -->
-                                    <div class="chart-area" id="">
-                                        <img class="temp" src="../../static/images/_temp/chart_ex0404.png" alt="차트 예시 이미지">
-                                    </div>
-                                    <!--// [chart area] -->
-                                </figure>
-                            </div>
+                                </div>
+                                <!-- [chart area] //-->
+                                <!--
+                                    [차트 디자인 정보]
+                                    * 라인 색상(컬러별)
+                                    - 노란색 :  #ffba53
+                                    - 살구색 :  #ff8a71
+
+                                    - 차트 중앙 텍스트 컬러/크기 : #26282c/14px
+                                -->
+                                <div class="chart-area" id="">
+                                    <img class="temp" src="../../static/images/_temp/chart_ex0404.png" alt="차트 예시 이미지">
+                                </div>
+                                <div class="legend-unit align-c">
+                                    <ul>
+                                        <li><i class="icon-legend_circle_yellow">My 자산 그래프 범례</i><span>My자산</span></li>
+                                        <li><i class="icon-legend_square_apricot">My 부채 그래프 범례</i><span>My부채</span></li>
+                                    </ul>
+                                </div>
+                                <!--// [chart area] -->
+                            </figure>
                         </div>
                     </div>
                 </section>
                 <!-- // 월간 자산 요약 -->
                 
                 <!-- 월간 지출 요약 // -->
-                <section class="kb-sec bg-gray content-groups-type monthly-expense-summary">
-                    <div class="content-box shadow tit-box">
-                        <div class="credit-list-group summary-box">
-                            <strong class="h3">월간 지출 요약</strong>
-                            <dl class="credit-list t01">
-                                <dt>이번달 총 지출금액</dt>
-                                <dd><strong class="amount expense"><em class="num">7,500,994</em>원</strong></dd>
-                                <dt>지난달 대비</dt>
-                                <dd><strong class="amount"><em class="num">955,945</em>원 증가</strong></dd>
-                            </dl>
-                        </div>
-                        <div class="highcharts-box no-space">
-                            <div class="graph-area">
-                                <figure class="highcharts-figure">
-                                    <div class="content-box-info">
-                                        <div class="content-box-tit">
-                                            <h4 class="h4">지출금액 분석 <span>최근6개월</span></h4>
-                                        </div>
-                                    </div>
-                                    <!-- [chart area] //-->
-                                    <!--
-                                        [차트 디자인 정보]
-                                        * 그래프(막대) 색상(컬러별)
-                                        - 노랑 : #ffd338;
-                                        - 회색 : #c6cbd0;
-    
-                                        - 차트 텍스트 컬러/크기 : #8c949e/16px
-                                        - legend 텍스트 컬러/크기 : #26282c/14px
-                                        - dataLabel 텍스트 컬러/크기 : #26282c/14px
-                                    -->
-                                    <div class="chart-area" id="">
-                                        <img class="temp" src="../../static/images/_temp/chart_ex0405.png" alt="차트 예시 이미지">
-                                    </div>
-                                    <!--// [chart area] -->
-                                </figure>
-                            </div>
-                            <div class="graph-area">
-                                <figure class="highcharts-figure">
-                                    <div class="content-box-info">
-                                        <div class="content-box-tit">
-                                            <h4 class="h4">이번달 카테고리 유형별 지출 분석</h4>
-                                        </div>
-                                    </div>
-                                    <!-- [chart area] //-->
-                                    <!--
-                                        [차트 디자인 정보]
-                                        * 그래프(도넛) 색상(컬러별)
-                                        - 노랑 : #ffd338;
-                                        - 파랑 : #3f6fd1;
-                                        - 갈색 : #96857f;
-                                        - 분홍 : #d575c9;
-                                        - 주황 : #f78657;
-    
-                                        - 차트 텍스트 컬러/크기 : #26282c/16px
-                                        - legend 텍스트 컬러/크기 : #26282c/14px
-                                    -->
-                                    <div class="chart-area" id="">
-                                        <img class="temp" src="../../static/images/_temp/chart_ex0409.png" alt="차트 예시 이미지">
-                                    </div>
-                                    <div class="legend-unit">
-                                        <dl>
-                                            <dt class="yellow"><span>1위</span>식비</dt>
-                                            <dd>
-                                                <span class="amount"><em class="num">1,000,000</em>원</span> &sol;
-                                                <span><em class="num">24</em>건</span>
-                                            </dd>
-                                            <dt class="orange"><span>2위</span>여행</dt>
-                                            <dd>
-                                                <span class="amount"><em class="num">600,000</em>원</span> &sol; 
-                                                <span><em class="num">3</em>건</span>
-                                            </dd>
-                                            <dt class="purple"><span>3위</span>술&sol;유흥</dt>
-                                            <dd>
-                                                <span class="amount"><em class="num">250,000</em>원</span> &sol; 
-                                                <span><em class="num">5</em>건</span>
-                                            </dd>
-                                            <dt class="brown"><span>4위</span>반려동물</dt>
-                                            <dd>
-                                                <span class="amount"><em class="num">120,000</em>원</span> &sol; 
-                                                <span><em class="num">3</em>건</span>
-                                            </dd>
-                                            <dt class="blue"><span>5위</span>뷰티</dt>
-                                            <dd>
-                                                <span class="amount"><em class="num">19,000</em>원</span> &sol; 
-                                                <span><em class="num">1</em>건</span>
-                                            </dd>
-                                        </dl>
-                                    </div>
-                                    <!--// [chart area] -->
-                                </figure>
-                            </div>
-                            <div class="btn-area center mt16">
-                                <button class="btn-more-view"><i class="icon-plus_20"></i><span>카테고리별 전체보기</span></button>
-                            </div>
-                            <div class="graph-area">
-                                <figure class="highcharts-figure">
-                                    <div class="content-box-info">
-                                        <div class="content-box-tit">
-                                            <h4 class="h4">정기지출 분석 <span>최근6개월</span></h4>
-                                        </div>
-                                    </div>
-                                    <!-- [chart area] //-->
-                                    <!--
-                                        [차트 디자인 정보]
-                                        * 그래프(막대) 색상(컬러별)
-                                        - 노랑 : #ffd338;
-                                        - 회색 : #c6cbd0;
-    
-                                        - 차트 텍스트 컬러/크기 : #8c949e/16px
-                                        - legend 텍스트 컬러/크기 : #26282c/14px
-                                        - dataLabel 텍스트 컬러/크기 : #26282c/14px
-                                    -->
-                                    <div class="chart-area" id="">
-                                        <img class="temp" src="../../static/images/_temp/chart_ex0406.png" alt="차트 예시 이미지">
-                                    </div>
-                                    <!--// [chart area] -->
-                                </figure>
-                            </div>
-                            <div class="graph-area">
-                                <figure class="highcharts-figure">
-                                    <div class="content-box-info">
-                                        <div class="content-box-tit">
-                                            <h4 class="h4">카드 결제 금액<span>최근6개월</span></h4>
-                                        </div>
-                                    </div>
-                                    <!-- [chart area] //-->
-                                    <!--
-                                        [차트 디자인 정보]
-                                        * 그래프(라인) 색상(컬러별)
-                                        - 노랑 : #ffd338;
-                                        - 민트 : #21d0c4;
-                                        - 보라 : #d575c9;
-    
-                                        - 차트 텍스트 컬러/크기 : #8c949e/16px
-                                        - legend 텍스트 컬러/크기 : #26282c/14px
-                                        - dataLabel 텍스트 컬러/크기 : #26282c/14px
-                                    -->
-                                    <div class="chart-area" id="">
-                                        <img class="temp" src="../../static/images/_temp/chart_ex0407.png" alt="차트 예시 이미지">
-                                    </div>
-                                    <!--// [chart area] -->
-                                </figure>
+                <section class="kb-sec expense-guide monthly-expense-summary dividing-space-bottom">
+                    <div class="content-box shadow compare-summary">
+                        <div class="content-box-info">
+                            <div class="content-box-tit">
+                                <h4 class="h4"><span class="tit">월간 지출 요약</span></h4>
                             </div>
                         </div>
-                        <div class="more-view-box credit-list-group">
-                            <dl class="credit-list t01 rank-type">
-                                <dt class="more-view-item" data-view-option="show">
-                                    <strong class="tit"><em class="rank">1위</em>KB국민카드</strong>
-                                </dt>
+                        <dl class="description-list credit-list-amount">
+                            <dt>이번달 순자산</dt>
+                            <dd class="amount expense"><span class="num">325,030,049</span>원</dd>
+                            <dt>지난달대비</dt>
+                            <dd class="amount"><span class="num">21,584,119</span><strong>원 증가</strong></dd>
+                        </dl>
+                    </div>
+                    <div class="highcharts-box mt16">
+                        <div class="graph-area">
+                            <figure class="highcharts-figure">
+                                <!-- [chart area] //-->
+                                <!--
+                                    [차트 디자인 정보]
+                                    * 그래프(막대) 색상(컬러별)
+                                    - 노랑 : #ffba53;
+                                    - 회색 : #c6cbd0;
+
+                                    - 차트 텍스트 컬러/크기 : #8c949e/16px
+                                    - legend 텍스트 컬러/크기 : #26282c/14px
+                                    - dataLabel 텍스트 컬러/크기 : #26282c/14px
+                                -->
+                                <div class="chart-area" id="">
+                                    <img class="temp" src="../../static/images/_temp/chart_ex0405.png" alt="차트 예시 이미지">
+                                </div>
+                                <div class="legend-unit"><span class="basic" data-type="dash">평균지출금액 <em class="num">2,720,000</em>원</span></div>
+                                <!--// [chart area] -->
+                            </figure>
+                        </div>
+                        <div class="graph-area doughnut-type">
+                            <figure class="highcharts-figure">
+                                <div class="chart-tit"><h4 class="h4">이번달 카테고리 유형별 지출 분석</h4></div>
+                                <!-- [chart area] //-->
+                                <!--
+                                    [차트 디자인 정보]
+                                    * 그래프(도넛) 색상(컬러별)
+                                    - 분홍색 :  #ff6391
+                                    - 다홍색 :  #ff445a
+                                    - 노란색 :  #ffba53
+                                    - 살구색 :  #ff8a71
+                                    - 보라색 :  #d090ee
+                                    (6위부터는 #dde1e4)
+
+                                    - 차트 텍스트 컬러/크기 : #26282c/16px
+                                    - legend 텍스트 컬러/크기 : #26282c/14px
+                                -->
+                                <div class="chart-area" id="">
+                                    <img class="temp" src="../../static/images/_temp/chart_ex0401.png" alt="차트 예시 이미지">
+                                </div>
+                                <div class="legend-unit t01 more-view-box">
+                                    <dl>
+                                        <dt class="yellow" class="more-view-item" data-view-option="show"><span><em class="num">1</em>위</span>식비</dt>
+                                        <dd class="more-view-item" data-view-option="show">
+                                            <span class="amount"><em class="num">1,000,000</em>원</span> &sol;
+                                            <span><em class="num">24</em>건</span>
+                                        </dd>
+                                        <dt class="apricot" class="more-view-item" data-view-option="show"><span><em class="num">2</em>위</span>여행</dt>
+                                        <dd class="more-view-item" data-view-option="show">
+                                            <span class="amount"><em class="num">600,000</em>원</span> &sol; 
+                                            <span><em class="num">24</em>건</span>
+                                        </dd>
+                                        <dt class="pink" class="more-view-item" data-view-option="show"><span><em class="num">3</em>위</span>술&sol;유흥</dt>
+                                        <dd class="more-view-item" data-view-option="show">
+                                            <span class="amount"><em class="num">250,000</em>원</span> &sol; 
+                                            <span><em class="num">24</em>건</span>
+                                        </dd>
+                                        <dt class="cherryred" class="more-view-item" data-view-option="show"><span><em class="num">4</em>위</span>반려동물</dt>
+                                        <dd class="more-view-item" data-view-option="show">
+                                            <span class="amount"><em class="num">120,000</em>원</span> &sol; 
+                                            <span><em class="num">24</em>건</span>
+                                        </dd>
+                                        <dt class="lightpurple" class="more-view-item" data-view-option="show"><span><em class="num">5</em>위</span>뷰티</dt>
+                                        <dd class="more-view-item" data-view-option="show">
+                                            <span class="amount"><em class="num">120,000</em>원</span> &sol; 
+                                            <span><em class="num">24</em>건</span>
+                                        </dd>
+                                        <dt class="more-view-item" data-view-option="hide"><span><em class="num">6</em>위</span>문화&sol;여가</dt>
+                                        <dd class="more-view-item" data-view-option="hide">
+                                            <span class="amount"><em class="num">10,000</em>원</span> &sol; 
+                                            <span><em class="num">3</em>건</span>
+                                        </dd>
+                                        <dt class="more-view-item" data-view-option="hide"><span><em class="num">7</em>위</span>주고&sol;공과금</dt>
+                                        <dd class="more-view-item" data-view-option="hide">
+                                            <span class="amount"><em class="num">10,000</em>원</span> &sol; 
+                                            <span><em class="num">8</em>건</span>
+                                        </dd>
+                                        <dt class="more-view-item" data-view-option="hide"><span><em class="num">8</em>위</span>의료&sol;건강</dt>
+                                        <dd class="more-view-item" data-view-option="hide">
+                                            <span class="amount"><em class="num">10,000</em>원</span> &sol; 
+                                            <span><em class="num">24</em>건</span>
+                                        </dd>
+                                        <dt class="more-view-item" data-view-option="hide"><span><em class="num">9</em>위</span>생활</dt>
+                                        <dd class="more-view-item" data-view-option="hide">
+                                            <span class="amount"><em class="num">10,000</em>원</span> &sol; 
+                                            <span><em class="num">1</em>건</span>
+                                        </dd>
+                                        <dt class="more-view-item" data-view-option="hide"><span><em class="num">10</em>위</span>패션&sol;쇼핑</dt>
+                                        <dd class="more-view-item" data-view-option="hide">
+                                            <span class="amount"><em class="num">10,000</em>원</span> &sol; 
+                                            <span><em class="num">4</em>건</span>
+                                        </dd>
+                                        <dt class="more-view-item" data-view-option="hide"><span><em class="num">11</em>위</span>카페&sol;간식</dt>
+                                        <dd class="more-view-item" data-view-option="hide">
+                                            <span class="amount"><em class="num">10,000</em>원</span> &sol; 
+                                            <span><em class="num">5</em>건</span>
+                                        </dd>
+                                        <dt class="more-view-item" data-view-option="hide"><span><em class="num">12</em>위</span>자동차</dt>
+                                        <dd class="more-view-item" data-view-option="hide">
+                                            <span class="amount"><em class="num">10,000</em>원</span> &sol; 
+                                            <span><em class="num">5</em>건</span>
+                                        </dd>
+                                        <dt class="more-view-item" data-view-option="hide"><span><em class="num">13</em>위</span>온라인쇼핑</dt>
+                                        <dd class="more-view-item" data-view-option="hide">
+                                            <span class="amount"><em class="num">10,000</em>원</span> &sol; 
+                                            <span><em class="num">8</em>건</span>
+                                        </dd>
+                                        <dt class="more-view-item" data-view-option="hide"><span><em class="num">14</em>위</span>경조사</dt>
+                                        <dd class="more-view-item" data-view-option="hide">
+                                            <span class="amount"><em class="num">10,000</em>원</span> &sol; 
+                                            <span><em class="num">3</em>건</span>
+                                        </dd>
+                                        <dt class="more-view-item" data-view-option="hide"><span><em class="num">15</em>위</span>미분류</dt>
+                                        <dd class="more-view-item" data-view-option="hide">
+                                            <span class="amount"><em class="num">10,000</em>원</span> &sol; 
+                                            <span><em class="num">1</em>건</span>
+                                        </dd>
+                                        <dt class="more-view-item" data-view-option="hide"><span><em class="num">16</em>위</span>교통</dt>
+                                        <dd class="more-view-item" data-view-option="hide">
+                                            <span class="amount"><em class="num">10,000</em>원</span> &sol; 
+                                            <span><em class="num">1</em>건</span>
+                                        </dd>
+                                        <dt class="more-view-item" data-view-option="hide"><span><em class="num">17</em>위</span>교육</dt>
+                                        <dd class="more-view-item" data-view-option="hide">
+                                            <span class="amount"><em class="num">10,000</em>원</span> &sol; 
+                                            <span><em class="num">5</em>건</span>
+                                        </dd>
+                                        <dt class="more-view-item" data-view-option="hide"><span><em class="num">18</em>위</span>금융</dt>
+                                        <dd class="more-view-item" data-view-option="hide">
+                                            <span class="amount"><em class="num">10,000</em>원</span> &sol; 
+                                            <span><em class="num">7</em>건</span>
+                                        </dd>
+                                    </dl>
+                                    <div class="btn-area center mt20">
+                                        <button class="btn-more-plus btn-more-view center"><span class="show-status">접기</span><span class="hide-status">더보기</span></button>
+                                    </div>
+                                </div>
+                                <!--// [chart area] -->
+                            </figure>
+                        </div>
+                        <div class="graph-area">
+                            <figure class="highcharts-figure">
+                                <div class="content-box-info">
+                                    <div class="content-box-tit">
+                                        <h4 class="h4">카드 결제 금액 <span class="tag-label t02" data-state="wait">최근 6개월</span></h4>
+                                    </div>
+                                </div>
+                                <!-- [chart area] //-->
+                                <!--
+                                    [차트 디자인 정보]
+                                    * 그래프(라인) 색상(컬러별)
+                                    - 노랑 : #ffd338;
+                                    - 민트 : #21d0c4;
+                                    - 보라 : #d575c9;
+
+                                    - 차트 텍스트 컬러/크기 : #8c949e/16px
+                                    - legend 텍스트 컬러/크기 : #26282c/14px
+                                    - dataLabel 텍스트 컬러/크기 : #26282c/14px
+                                -->
+                                <div class="chart-area" id="">
+                                    <img class="temp" src="../../static/images/_temp/chart_ex0407.png" alt="차트 예시 이미지">
+                                </div>
+                                <div class="legend-unit align-c">
+                                    <ul>
+                                        <li><i class="icon-legend_circle_yellow">그래프 범례 : 현대카드</i><span>현대카드</span></li>
+                                        <li><i class="icon-legend_square_apricot">그래프 범례 : 우리카드</i><span>우리카드</span></li>
+                                        <li><i class="icon-legend_triangle_pink">그래프 범례 : KB국민카드</i><span>KB국민카드</span></li>
+                                    </ul>
+                                </div>
+                                <!--// [chart area] -->
+                            </figure>
+                        </div>
+                        <div class="more-view-box">
+                            <dl class="description-list type3">
+                                <dt class="more-view-item" data-view-option="show"><span><em class="num">1</em>위</span>KB국민카드</dt>
                                 <dd class="more-view-item" data-view-option="show">
-                                    <strong class="amount"><em class="num">1,000,000</em>원</strong>
+                                    <span><em class="num">50,000</em>원</span>
                                     <span class="amount income"><em class="num">100,000</em>원</span>
                                 </dd>
-                                <dt class="more-view-item" data-view-option="show">
-                                    <strong class="tit"><em class="rank">2위</em>우리카드</strong>
-                                </dt>
+                                <dt class="more-view-item" data-view-option="show"><span><em class="num">2</em>위</span>우리카드</dt>
                                 <dd class="more-view-item" data-view-option="show">
-                                    <strong class="amount"><em class="num">5,000,000</em>원</strong>
-                                    <span class="amount income">+<em class="num">100,000</em>원</span>
+                                    <span><em class="num">50,000</em>원</span>
+                                    <span class="amount income"><em class="num">15,080</em>원</span>
                                 </dd>
-                                <dt class="more-view-item" data-view-option="show">
-                                    <strong class="tit"><em class="rank">3위</em>현대카드</strong>
-                                </dt>
+                                <dt class="more-view-item" data-view-option="show"><span><em class="num">3</em>위</span>현대카드</dt>
                                 <dd class="more-view-item" data-view-option="show">
-                                    <strong class="amount"><em class="num">5,000,000</em>원</strong>
-                                    <span class="amount expense">-<em class="num">100,000</em>원</span>
+                                    <span><em class="num">50,000</em>원</span>
+                                    <span class="amount expense"><em class="num">267,500</em>원</span>
+                                </dd>
+                                <dt class="more-view-item" data-view-option="hide"><span><em class="num">4</em>위</span>카드상품명</dt>
+                                <dd class="more-view-item" data-view-option="hide">
+                                    <span><em class="num">10,000</em>원</span>
+                                    <span class="amount income"><em class="num">267,500</em>원</span>
+                                </dd>
+                                <dt class="more-view-item" data-view-option="hide"><span><em class="num">5</em>위</span>카드상품명</dt>
+                                <dd class="more-view-item" data-view-option="hide">
+                                    <span><em class="num">10,000</em>원</span>
+                                    <span class="amount expense"><em class="num">267,500</em>원</span>
+                                </dd>
+                                <dt class="more-view-item" data-view-option="hide"><span><em class="num">6</em>위</span>카드상품명</dt>
+                                <dd class="more-view-item" data-view-option="hide">
+                                    <span><em class="num">10,000</em>원</span>
+                                    <span class="amount income"><em class="num">267,500</em>원</span>
+                                </dd>
+                                <dt class="more-view-item" data-view-option="hide"><span><em class="num">7</em>위</span>카드상품명</dt>
+                                <dd class="more-view-item" data-view-option="hide">
+                                    <span><em class="num">10,000</em>원</span>
+                                    <span class="amount expense"><em class="num">267,500</em>원</span>
+                                </dd>
+                                <dt class="more-view-item" data-view-option="hide"><span><em class="num">8</em>위</span>카드상품명</dt>
+                                <dd class="more-view-item" data-view-option="hide">
+                                    <span><em class="num">10,000</em>원</span>
+                                    <span class="amount income"><em class="num">267,500</em>원</span>
+                                </dd>
+                                <dt class="more-view-item" data-view-option="hide"><span><em class="num">9</em>위</span>카드상품명</dt>
+                                <dd class="more-view-item" data-view-option="hide">
+                                    <span><em class="num">10,000</em>원</span>
+                                    <span class="amount expense"><em class="num">267,500</em>원</span>
+                                </dd>
+                                <dt class="more-view-item" data-view-option="hide"><span><em class="num">10</em>위</span>카드상품명</dt>
+                                <dd class="more-view-item" data-view-option="hide">
+                                    <span><em class="num">10,000</em>원</span>
+                                    <span class="amount income"><em class="num">267,500</em>원</span>
                                 </dd>
                             </dl>
-                            <div class="btn-area center mt16">
-                                <button class="btn-more-view"><i class="icon-plus_20"></i><span> 전체보기</span></button>
+                            <div class="btn-area center">
+                                <button class="btn-more-plus btn-more-view center"><span class="show-status">접기</span><span class="hide-status">더보기</span></button>
                             </div>
                         </div>
                     </div>
                 </section>
                 <!-- // 월간 지출 요약 -->
                 <!-- 목표관리가 필요한 지출 //-->
-                <section class="kb-sec full bg-gray management-expense-goal">
-                    <div>
-                        <strong class="content-group-tit mt16">목표관리가 필요한 지출</strong>
-                        <div class="content-box mt24 mb24 pb20 align-c">커피 줄이기 챌린지 영역</div>
-                        <a href="mys_ex_04_00_00.html" class="link-box_block content-box shadow">
-                            <i class="icon-chart-card"></i>
-                            <dl>
-                                <dt>금융리포트</dt>
-                                <dd>나도 모르는 나의 지출 패턴을 분석한 주간, 월간, 연간 금융리포트도 지금 확인하세요.</dd>
-                            </dl>
-                        </a>
-                        <p class="annotation">최신 정보가 반영된 리포트를 원하시면 하단의 ‘리포트 새로고침’을 눌러주세요</p>
-                    </di>
+                <section class="kb-sec management-expense-goal">
+                    <h4 class="h4">목표관리가 필요한 지출</h4>
+                    <div class="content-box mt24 mb24 pb20 align-c">커피 줄이기 챌린지 영역</div>
+                    <a href="mys_ex_04_00_00.html" class="link-banner link-box_block">
+                        <i class="icon-temp_dummy_40"></i>
+                        <dl>
+                            <dt>금융리포트</dt>
+                            <dd>나도 모르는 나의 지출 패턴을 분석한 주간, 월간, 연간 금융리포트도 지금 확인하세요.</dd>
+                        </dl>
+                    </a>
+                    <p class="simple-message">최신 정보가 반영된 리포트를 원하시면 하단의 ‘리포트 새로고침’을 눌러주세요</p>
                 </section>
                 <!-- //목표관리가 필요한 지출 -->
                 <div class="sticky-bottom">
                     <div class="btn-area">
-                        <a href="mys_ex_04_00_00.html" role="button" class="btn-solid gray"><span>닫기</span></a>
                         <button type="button" class="btn-solid" data-call-modal="refreshReport"><span>리포트 새로고침</span></button>
                     </div>
                 </div>

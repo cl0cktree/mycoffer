@@ -20,10 +20,10 @@ var cookie = {
 $('body')
 .on('click','.event-sticker .btn-close',function(){
     $(this).parents('.event-sticker').remove();
+})
+.on('click','.event-sticker a[data-call-layered]',function(){
+    $(this).parents('.event-sticker').remove();
 });
-// .on('click','.event-sticker a[data-call-layered]',function(){
-//     $(this).parents('.event-sticker').remove();
-// });
 
 //Promotion (Global)
 (function($) {

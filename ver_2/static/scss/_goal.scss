@@ -21,7 +21,7 @@
 
 
 .pgbank-join-content .recommend-employees .h4 {margin-bottom: 25px;}
-.pgbank-join-content .recommend-employees-form{margin-top:24px;}
+.pgbank-join-content .recommend-employees-form{margin-top:8px;}
 .pgbank-join-content .recommend-employees-form > .kb-form + p:last-child{margin-top:24px;}
 .pgbank-join-content .recommend-employees-form > .kb-form,
 .pgbank-join-content .recommend-employees-form > .kb-form + p:last-child{display:none;}
@@ -159,6 +159,10 @@
 .goal-ama-others-detail .challenge-info .term-list.type2 li{line-height:1.4;padding-left:1.2rem;}
 .goal-ama-others-detail .challenge-info .term-list.type2 li + li{margin-top:15px;}
 
+.goal-ama-others-detail .challenge-money{margin-top:2rem;text-align:right;font-size:$text02;}
+.goal-ama-others-detail .challenge-money strong{font-weight:bold;margin-left:1rem;font-size:2rem;}
+.goal-ama-others-detail .challenge-money strong:after{font-weight:normal;vertical-align:0;}
+
 .goal-ama-others-detail .character-graph.add-pad{padding:0;}
 .goal-ama-others-detail .character-graph .graph-txt .tit{font-size:$text03;}
 .goal-ama-others-detail .character-graph .graph-txt .date{@include number($size: 15px, $weight:bold, $line-height:1);display:block;margin-top:4px;}
@@ -294,6 +298,8 @@
 .challenge-box .challenge-tit > button.type2{width:calc(100% + 10px);}
 .challenge-box .list-up .content-box{margin-left:0;margin-right:0;}
 .challenge-box .list-up .content-box + .content-box{margin-top:2.8rem;}
+.challenge-box .list-up .content-box[data-status=disabled] .challenge-tit,
+.challenge-box .list-up .content-box[data-status=disabled] .challenge-info{opacity:.2;}
 //목표 내용
 .goals-list{position:relative;}
 .goals-list .goals-filter{text-align:right;}
@@ -462,12 +468,12 @@
 .goals-setting h2 + h3 strong{@include text($weight:bold)}
 .goals-setting h2 + h3 strong .num:after{vertical-align:0;}
 .goals-setting .character-graph{margin-top:5.2rem;}
-.goals-setting .character-graph .graph-txt > p{font-size:$text03;font-weight:bold;}
+.goals-setting .character-graph .graph-txt > p{font-weight:bold;}
 .goals-setting .character-graph .graph-txt > p .num{font-size:1.5rem;}
 .goals-setting .character-graph .ui-slider .handle .value{font-size:1.5rem;font-weight:bold;padding:1px 5px;top:2.4rem;}
-.goals-setting .character-graph .ui-slider .handle .value:before{content:'추천';position:absolute;top:-5.8rem;font-size:1.4rem;left:1.5rem;font-family:'KBFGText';}
-.goals-setting .character-graph .ui-slider.left .handle .value:before{left:0;}
-.goals-setting .character-graph .ui-slider.right .handle .value:before{left: calc(50% + .5rem);}
+.goals-setting .character-graph .ui-slider .handle .value:before{content:'추천';position:absolute;top:-5.8rem;font-size:1.4rem;left:50%;font-family:'KBFGText';transform:translateX(calc(-50% - 0rem));}
+// .goals-setting .character-graph .ui-slider.left .handle .value:before{left:0;transform:none;}
+.goals-setting .character-graph .ui-slider.right .handle .value:before{left:auto;right:.2rem;transform:none;}
 .goals-setting .character-graph .graph-txt p:after{content:attr(data-unit);}
 
 
@@ -546,6 +552,10 @@
 .goals-pay-list .credit-list dd.total .amount .num{color:1.9rem;font-size:$text01}
 .goals-pay-list .credit-list dd.total .amount .num:before{content:'합계';}
 .goals-pay-list .credit-list dd.total .amount .num:after{font-size:1.6rem;vertical-align:0;font-weight:normal;}
+
+.goals-pay-info{margin-top:3.2rem;}
+.goals-pay-info .tit{font-weight:bold;margin-bottom:1rem;}
+// .goals-pay-info [data-style=list] li{@include text($text03);}
 
 .goal-fin-challenge .kb-sec.bg-gray{background:$kb-ui10;}
 .goal-fin-challenge .btn-group{margin-top:10px;text-align:right;}

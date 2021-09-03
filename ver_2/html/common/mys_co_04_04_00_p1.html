@@ -120,7 +120,23 @@
                         <em class="validation">휴대폰 앞자리를 선택하세요.</em>
                         <em class="validation">휴대폰 뒷자리를 선택하세요.</em>
                     </div>                
-                    <div class="mt32"><button type="button" class="btn-line" data-action="sendCertificationNumber"><span>인증번호 요청</span></button></div><!-- 수정 : 2021.06.24 -->
+                    <!--ios용-->
+                    <div class="mt32"><button type="button" class="btn-line" data-action="sendCertificationNumber"><span>휴대폰 명의확인</span></button></div><!-- 수정 : 2021.06.24 -->
+                    <ul class="authentication-number-notification">
+                        <li><p class="info-msg">입력하신 정보로 통신사와 휴대폰 명의를 확인합니다.</p></li>
+                        <li><p class="info-msg">[휴대폰 명의확인]을 눌러  SMS 인증번호를 <br>입력해주세요.</p></li>
+                    </ul>
+                    <!--ios용-->  
+                    <!--android용-->          
+                    <div class="mt32"><button type="button" class="btn-line" data-action="sendCertificationNumber"><span>인증번호 요청</span></button></div>
+                    <!--android용 재발송버튼-->
+                    <div class="mt32"><button type="button" class="btn-line" data-action="sendCertificationNumber"><span>인증번호 재발송</span></button></div>
+                    <!--android용 재발송버튼-->
+                    <ul class="authentication-number-notification">
+                        <li><p class="info-msg">입력하신 휴대폰번호로 SMS 인증번호 전송합니다.</p></li>
+                        <li><p class="info-msg">[인증번호 요청]을 눌러  SMS 인증번호를 <br>입력해주세요.</p></li>
+                    </ul>
+                    <!--android용-->
                 </section>
                 <!-- 인증번호 발송 후 // -->
                 <section class="kb-sec mt20 js-sended-number" style="display:none;">

@@ -14,8 +14,6 @@
 	<style>
 		.tab{overflow:hidden;}/* 임시 */
 		i.icon-{background-color:#ddd;}
-		.slider-sample .graph-txt p{font-family:'Roboto';font-size:15px;line-height:1}
-		.slider-sample .graph-txt p:after{content:attr(data-unit);font-size:14px;}
 	</style>
 </head>
 
@@ -78,7 +76,7 @@
 						<a href="javascript:;" class="btn-line"><span>다음</span></a>
 					</div>
 				</dd>
-				<!-- <dd data-description=".btn-segmented : 탭형태의 버튼 그룹">
+				<dd data-description=".btn-segmented : 탭형태의 버튼 그룹">
 					<ul class="btn-segmented">
 						<li><button class="is-selected"><span>선택</span></button></li>
 						<li><button><span>기본</span></button></li>
@@ -90,7 +88,7 @@
 						<li><a href="javascript:;"><span>기본</span></a></li>
 						<li><a href="javascript:;" class="is-disabled"><span>disabled</span></a></li>
 					</ul>
-				</dd> -->
+				</dd>
 
 				<dd data-description=".btn-segmented_check : 탭형태의 버튼(체크박스) 그룹 ">
 					<ul class="btn-segmented_check">
@@ -762,7 +760,38 @@
 							</select>
 						</div>
 						<em class="validation">Message</em>
+					</div>					
+				</dd>
+				<dd data-description=".kb-form .form-select: outline">
+                    <!-- 박스형 기본 (40px)-->
+					<div class="kb-form outline" data-status="">						
+						<div class="kb-form_inner form-select">
+							<button type="button" class="selected-option"></button>
+							<select name="" id="formSelectSample91" title="타이틀">
+								<option value="">최초 메세지</option>
+								<option value="" selected>선택 option 1</option>
+								<option value="">선택 option 2</option>
+								<option value="">선택 option 3</option>
+								<option value="">선택 option 4</option>
+							</select>
+						</div>
+						<em class="validation">Message</em>
 					</div>
+                    <hr>
+                    <!-- 박스형 큰사이즈 (48px)-->
+					<div class="kb-form outline lg" data-status="">						
+						<div class="kb-form_inner form-select">
+							<button type="button" class="selected-option"></button>
+							<select name="" id="formSelectSample92" title="타이틀">
+								<option value="">최초 메세지</option>
+								<option value="" selected>선택 option 1</option>
+								<option value="">선택 option 2</option>
+								<option value="">선택 option 3</option>
+								<option value="">선택 option 4</option>
+							</select>
+						</div>
+						<em class="validation">Message</em>
+					</div>		
 				</dd>
 				<dd data-description=".kb-form .form-select: 값이 있을대">
 					<div class="kb-form" data-status="">
@@ -2637,12 +2666,12 @@
 						</div>
 					</div>
 				</dd>
-				<dd data-description=".character-graph js-slider">
+				<dd data-description="정수값이 필요할 때 : value.integer">
 					<div class="character-graph js-slider slider-sample">
-						<div class="graph-area" data-default="40"><span class="handle ui-slider-handle"><i class="icon-star"></i><em class="value" data-unit="원"></em></span></div>
+						<div class="graph-area" data-default="20"><span class="handle ui-slider-handle"><i class="icon-star"></i><em class="value integer" data-unit="일"></em></span></div>
 						<div class="graph-txt">
-							<p class="start-txt" data-unit="원">0</p><!-- 시작부분 텍스트 -->
-							<p class="end-txt" data-unit="원">50,000</p><!-- 마지막부분 텍스트 -->
+							<p class="start-txt" data-unit="일">0</p><!-- 시작부분 텍스트 -->
+							<p class="end-txt" data-unit="일">50</p><!-- 마지막부분 텍스트 -->
 						</div>
 					</div>
 				</dd>

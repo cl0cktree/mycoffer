@@ -31,34 +31,75 @@
                     </div>
                     <div class="tab_contents">
                         <div class="is-active">
-                            <section class="kb-sec">
+                            <section class="kb-sec approval-number">
                                 <div class="kb-form" data-status="">
-                                    <label for="formAmountSample02">숫자 13자리</label>
+                                    <label for="formAmountSample01">숫자 13자리</label>
                                     <div class="kb-form_inner form-text">
-                                        <input type="text" inputmode="numeric" id="formAmountSample02" placeholder="" value="" data-action="autoSeperator">
+                                        <input type="number" inputmode="numeric" id="formAmountSample01" placeholder="" value="" data-action="" maxlength='4'>
                                         <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                                     </div>
                                     <div class="kb-form_inner form-text">
-                                        <input type="text" inputmode="numeric" id="formAmountSample02" placeholder="" value="" data-action="autoSeperator">
+                                        <input type="number" inputmode="numeric" id="formcAmountSample01" placeholder="" value="" data-action=""maxlength='4'>
                                         <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                                     </div>
-                                    <div class="kb-form_inner form-text">
-                                        <input type="text" inputmode="numeric" id="formAmountSample02" placeholder="" value="" data-action="autoSeperator">
+                                    <div class="kb-form_inner form-text form-text-last">
+                                        <input type="number" inputmode="numeric" id="formAmountSample01" placeholder="" value="" data-action="" maxlength='5'>
                                         <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                                     </div>
                                     <em class="validation">Success / Error Message</em><!-- 성공/에러 메세지 -->
                                 </div>
-                                <p data-style="list">대학등록금 납부증명 영수증이 필요한 고객님께서 가까운 지점을 방문하셔서 발급받으시기 바랍니다.</p>
-                                <p class="sm" data-style="list">(sm:15px)대학등록금 납부증명 영수증이 필요한 고객님께서 가까운 지점을 방문하셔서 발급받으시기 바랍니다.</p>
+                                <div class="list-decimal">
+                                    <ul>
+                                        <li><p>PC에서 KB국민은행 홈페이지 접속<br>(www.kbstar.com)</p></li>
+                                        <li><p>[인증센터 > KB스타뱅킹용 인증서 복사 ><br>
+                                            PC > 스마트폰 인증서 복사하기] 선택</p></li>
+                                        <li><p>[인증서 이동] 창에서 복사할 인증서를 선택하여 <br>
+                                            비밀번호 입력 후 생성된 승인번호(13자리)를 <br>
+                                            스마트폰에 입력 또는 QR코드 촬영</p></li>
+                                        <li><p>스마트폰에서 인증서 복사 완료 확인</p></li>  
+                                    </ul>
+                                </div>
+                                <!-- <div class="kb-form_multi kb-form_boundary">
+                                    <strong class="tit required">금액 설정</strong>
+                                    <div class="kb-form" data-status="">
+                                        <div class="kb-form_inner form-text">
+                                            <input type="text" inputmode="numeric" id="formAmountBoundary01" placeholder="최소" value="" data-action="autoSeperator">
+                                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                                        </div>
+                                    </div>
+                                    <div class="kb-form" data-status="">
+                                        <label for="formAmountBoundary02">최대 금액</label>
+                                        <div class="kb-form_inner form-text">
+                                            <input type="text" inputmode="numeric" id="formAmountBoundary02" placeholder="최대" value="" data-action="autoSeperator">
+                                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                                        </div>
+                                    </div>
+                                    <em class="validation">오늘을 포함한 날짜만 선택해주세요.</em>
+                                </div> -->
                             </section>
                         </div>
                         <div>
-                            <section class="kb-sec">
-                                2번 컨텐츠
+                            <section class="kb-sec approval-number">
+                                <div class="list-decimal">
+                                    <ul>
+                                        <li><p>PC에서 KB국민은행 홈페이지 접속<br>(www.kbstar.com)</p></li>
+                                        <li><p>[인증센터 > KB스타뱅킹용 인증서 복사 ><br>
+                                            PC > 스마트폰 인증서 복사하기] 선택</p></li>
+                                        <li><p>[인증서 이동] 창에서 복사할 인증서를 선택하여 <br>
+                                            비밀번호 입력 후 생성된 승인번호(13자리)를 <br>
+                                            스마트폰에 입력 또는 QR코드 촬영</p></li>
+                                        <li><p>스마트폰에서 인증서 복사 완료 확인</p></li>  
+                                    </ul>
+                                </div>
                             </section>
                         </div>
                     </div>
                 </section> 
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid" onclick="modalDemo1()"><span>QR코드 촬영</span></button>
+                    </div>
+                </div>
             </main>
             <!-- // app-content -->
 

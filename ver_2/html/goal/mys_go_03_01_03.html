@@ -42,7 +42,7 @@
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide content-box shadow">
                                     <div class="chart-area">
-                                        <h3 class="sub">비교그룹과 월별 커피 업종 소비금액을 비교했어요.</h3>
+                                        <h3 class="sub">비교그룹과 월별 무지출 날짜를 비교했어요.</h3>
                                         <div class="chart-flex">
                                             <div class="chart-area type-ratio" id="bubbleChart01"></div>
                                         </div>
@@ -55,34 +55,22 @@
                         <div class="ico">
                             <i class="icon-expense-withdraw"></i>
                         </div>
-                        <h2>지난달(<span class="num">30</span>일) 기준 지출이 없었던 날은 단 <span class="num">3</span>일이에요.</h2>
-                        <h3>비교그룹보다 <span class="c-red">지출한 날이 <span class="num">2</span>일 더 많아요.</span> 목표관리를 통해 지출일을 줄여보세요.</h3>
+                        <h2>전월 기준 무지출 Day는 <span class="num">5</span>일이에요.</h2>
+                        <h3>비교그룹보다 <span class="c-red">무지출 Day가 <span class="num">5</span>일 더 적어요.</span> 목표관리를 통해 무지출 Day를 늘려보세요.</h3>
                     </div>              
-                </section>
-                
-                <section class="kb-sec goals-no-spand">
-                    <h2 class="tit">무지출 날짜 선택</h2>
-                    <ul class="btn-segmented_radio">
-                        <li>
-                            <input type="radio" name="btnradio" id="btnradio1" checked="">
-                            <label for="btnradio1"><span class="num">3</span>일</label>
-                        </li>
-                        <li>
-                            <input type="radio" name="btnradio" id="btnradio2">
-                            <label for="btnradio2"><span class="num">7</span>일</label>
-                        </li>
-                        <li>
-                            <input type="radio" name="btnradio" id="btnradio3">
-                            <label for="btnradio3"><span class="num">10</span>일</label>
-                        </li>
-                    </ul>
-                    <div class="text-trophy">
-                        <div class="ico">
-                            <i class="icon-half_star_24"></i>
+                </section>                
+                <hr class="hr-divide_32">  
+                <section class="kb-sec goals-setting">
+                    <h2>무지출Day 도전 일수</h2>
+                    <h3>선택한 일수만큼 <strong>무지출Day에 도전</strong>하고 지출금액을 줄여보세요.</h3>
+                    <div class="character-graph js-slider">
+                        <div class="graph-area" data-default="50"><span class="handle ui-slider-handle"><i class="icon-star"></i><em class="value integer" data-unit="일"></em></span></div><!-- 수정 -->
+                        <div class="graph-txt">
+                            <p class="start-txt" data-unit="일">0</p><!-- 시작부분 텍스트 -->
+                            <p class="end-txt" data-unit="일">30</p><!-- 마지막부분 텍스트 -->
                         </div>
-                        <h2>선택한 기간만큼 지출을 줄이고 목표를 달성해보세요!</h2>
-                    </div>   
-                </section> 
+                    </div>
+                </section>
 
                 <div class="sticky-bottom">
                     <div class="btn-area">
@@ -110,7 +98,7 @@
     <script src="@@webRoot/static/common/lib/highcharts/highcharts-more.js"></script>
 
     <script>        
-        $(document).ready(function(){ // 2021-09-02 추가
+        $(document).ready(function(){
 
             // highchart 공통 options        
             Highcharts.setOptions({
@@ -183,7 +171,7 @@
                 }]
             });
         
-        }) // 2021-09-02 추가
+        })
     </script>
 </body>
 

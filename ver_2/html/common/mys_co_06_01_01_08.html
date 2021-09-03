@@ -45,8 +45,8 @@
                                 <label for="recommendMember">
                                     김민국
                                     <em class="employee-info">
-                                        <span class="date">2021.05.31</span>
                                         <span class="branch">역삼동 영업점 내점 상담</span>
+                                        <span class="date">2021.05.31</span>
                                     </em>
                                 </label>
                             </span>
@@ -57,29 +57,42 @@
                                 <label for="recommendMember02">
                                     김민국
                                     <em class="employee-info">
-                                        <span class="date">2021.05.31</span>
                                         <span class="branch">역삼동 영업점 내점 상담</span>
+                                        <span class="date">2021.05.31</span>
                                     </em>
                                 </label>
                             </span>
                         </li>
                     </ul>
                     <p class="simple-message">고객님의 마이데이터 서비스 가입 권유 및 도움을 준 상담직원 또는 전담 직원을 선택해주세요. </p>
+                    <!-- 수정 [s]-->
                     <div class="recommend-employees">
-                        <ul class="btn-segmented">
-                            <li><button><span>지점명</span></button></li>
-                            <li><button><span>직원이름</span></button></li>
-                            <li><button><span>직원번호</span></button></li>
-                            <li><button><span>없음</span></button></li>
+                        <ul class="btn-segmented_radio">
+                            <li>
+                                <input type="radio" name="recommendEmployees" id="recommendEmployees1">
+                                <label for="recommendEmployees1">지점명</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="recommendEmployees" id="recommendEmployees2">
+                                <label for="recommendEmployees2">직원이름</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="recommendEmployees" id="recommendEmployees3">
+                                <label for="recommendEmployees3">직원번호</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="recommendEmployees" id="recommendEmployees4" checked>
+                                <label for="recommendEmployees4">없음</label>
+                            </li>
                         </ul>
                         <div class="recommend-employees-form">
                             <!-- 지점명 // -->
-                            <div class="kb-form js-recommend-employees01" data-status="">
-                                <div class="kb-form_inner form-select">
+                            <div class="kb-form js-recommend-employees01 outline lg" data-status="">
+                                <div class="kb-form_inner form-select" >
                                     <button type="button" class="selected-option"></button>
                                     <select name="" id="recommendEmployees01" title="지점명">
                                         <option value="">지점명</option>
-                                        <option value="">지점명</option>
+                                        <option value="" selected>지점명</option>
                                         <option value="">지역명(시,구,군,읍,면,동)</option>
                                     </select>
                                 </div>
@@ -114,10 +127,15 @@
                                 <em class="validation">Success Message</em>
                             </div>
                             <!-- // 직원번호 -->
-                            
+                            <!--//없음-->
+                            <div class="kb-form is-active is-readonly">
+                                <p>추천인코드:<span>KBstar1</span></p>
+                            </div>
+                            <!--//없음-->
                             <p><button type="button" class="btn-line"><span>검색초기화</span></button></p>
                         </div>
                     </div>
+                    <!-- 수정 [e]-->
                     <div class="kb-form is-active is-readonly">
                         <p>추천인코드:<span>KBstar1</span></p>
                     </div>
@@ -125,7 +143,7 @@
 
                 <!-- 수정 : 2021.06.25 // -->
                 <section class="kb-sec recommend-mydata-service">
-                    <strong class="tit">마이데이터 서비스 추천하기</strong>
+                    <strong class="tit">마이데이터 서비스 추천하기!</strong>
                     <ul>
                         <li>
                             <a href="javascript:;">

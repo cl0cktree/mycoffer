@@ -23,7 +23,7 @@
                     <h3>카페인 샤워는 이제 그만!</h4>
                     <ul data-style="list">
                         <li><span class="num">250</span>명이 도전 중이에요.</li>
-                        <li><span class="num">6</span>개월 평균 목표금액 <span class="num" data-unit-after="원">10,000</span></li>
+                        <!-- <li><span class="num">6</span>개월 평균 목표금액 <span class="num" data-unit-after="원">10,000</span></li> -->
                         <li>목표기간 <span class="num">1</span>주</li>
                     </ul>
                 </section>
@@ -43,7 +43,7 @@
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide content-box shadow">
                                     <div class="challenge-info non-tit">
-                                        <h2 class="tit flex-box goals-desc type2">비교그룹과 평균 커피 업종 소비금액을 비교했어요.</h2>
+                                        <h2 class="tit flex-box goals-desc type2">비교그룹과 평균 소비금액을 비교했어요.</h2>
                                         <div class="character-graph type2" data-theme="pay">
                                             <div class="graph-area">
                                                 <span data-goal="10"><i><img src="@@webRoot/static/images/_temp/@progress_coffee.png" alt="커피"></i></span>
@@ -62,7 +62,7 @@
                                 </div>
                                 <div class="swiper-slide content-box shadow">
                                     <div class="challenge-info non-tit">
-                                        <h2 class="tit flex-box goals-desc type2">비교그룹과 월별 커피 업종 소비금액을 비교했어요.</h2>
+                                        <h2 class="tit flex-box goals-desc type2">비교그룹과 월별 소비금액을 비교했어요.</h2>
                                         <div class="chart-area dbl-bar">
                                             <div class="chart-area type-ratio mt0" id="splineChart"></div>                                                                  
                                             <!-- <span class="txt-gray">비교그룹</span>
@@ -88,13 +88,13 @@
                 </section> 
                 <hr class="hr-divide_32">  
                 <section class="kb-sec goals-setting">
-                    <h2>목표금액 설정</h2>
+                    <h2>목표 예산금액금액 설정</h2>
                     <h3>평소 지출금액보다 <strong><span class="num" data-unit-after="원">50,000</span> 더 절약</strong>할 수 있어요.</h3>
                     <div class="character-graph js-slider">
                         <div class="graph-area" data-default="50"><span class="handle ui-slider-handle"><i class="icon-star"></i><em class="value num" data-unit="원"></em></span></div>
                         <div class="graph-txt">
-                            <p class="start-txt" data-unit="원"><span class="num">0</span></p><!-- 시작부분 텍스트 -->
-                            <p class="end-txt" data-unit="원"><span class="num">50,000</span></p><!-- 마지막부분 텍스트 -->
+                            <p class="start-txt" data-unit="원">0</p><!-- 시작부분 텍스트 -->
+                            <p class="end-txt" data-unit="원">50,000</p><!-- 마지막부분 텍스트 -->
                         </div>
                     </div>
                 </section>
@@ -140,7 +140,7 @@
         }
     </style>
     <script>
-        $(document).ready(function(){ // 2021-09-02 추가
+        $(document).ready(function(){
             
             var bar = document.querySelectorAll(".graph-area > span");
             for(i=0; i<bar.length; i++){ 
@@ -150,6 +150,7 @@
                         item.classList.add('min-size'); 
                 }
             }
+            
             // highchart 공통 options
             Highcharts.setOptions({
                 title: { text: null },
@@ -257,7 +258,7 @@
                     ]
                 }]
             });
-        }) // 2021-09-02 추가
+        })
     </script>
 </body>
 
