@@ -45,123 +45,87 @@
                     <div class="highcharts-box">
                         <div class="graph-area">
                             <figure class="highcharts-figure">
+                                <!-- [D] 2021-09-07 수정 : 각 버튼 data-value, data-positional-number 삭제 //-->
                                 <div class="markup-chart lollipop">
                                     <ul>
                                         <li>
                                             <p>
-                                                <button type="button" class="data" data-value="30" data-call-layered="bsRegularExpenseDetailList"><strong><em class="num">30</em>건</strong></button>
+                                                <button type="button" class="data" ata-call-layered="bsRegularExpenseDetailList"><strong><em class="num">30</em>건</strong></button>
                                                 <span class="label"><em class="num">10</em>일</span>
                                             </p>
                                         </li>
                                         <li>
                                             <p>
-                                                <button type="button"class="data" data-value="10" data-call-layered="bsRegularExpenseDetailList"><strong><em class="num">10</em>건</strong></button>
+                                                <button type="button"class="data" data-call-layered="bsRegularExpenseDetailList"><strong><em class="num">10</em>건</strong></button>
                                                 <span class="label"><em class="num">20</em>일</span>
                                             </p>
                                         </li>
                                         <li>
                                             <p>
-                                                <button type="button"class="data" data-value="20" data-call-layered="bsRegularExpenseDetailList"><strong><em class="num">20</em>건</strong></button>
+                                                <button type="button"class="data" data-call-layered="bsRegularExpenseDetailList"><strong><em class="num">20</em>건</strong></button>
                                                 <span class="label"><em class="num">25</em>일</span>
                                             </p>
                                         </li>
                                         <li>
                                             <p>
-                                                <button type="button"class="data" data-value="5" data-call-layered="bsRegularExpenseDetailList"><strong><em class="num">5</em>건</strong></button>
+                                                <button type="button"class="data" data-call-layered="bsRegularExpenseDetailList"><strong><em class="num">5</em>건</strong></button>
                                                 <span class="label"><em class="num">30</em>일</span>
                                             </p>
                                         </li>
                                         <li>
                                             <p>
-                                                <button type="button"class="data" data-value="1" data-call-layered="bsRegularExpenseDetailList"><strong><em class="num">1</em>건</strong></button>
+                                                <button type="button"class="data" data-call-layered="bsRegularExpenseDetailList"><strong><em class="num">1</em>건</strong></button>
                                                 <span class="label"><em class="num">3</em>일</span>
                                             </p>
                                         </li>
                                     </ul>
                                 </div>
+                                <!--// [D] 2021-09-07 수정 : 각 버튼 data-value, data-positional-number 삭제 -->
                             </figure>
                         </div>
                     </div>
                 </section>
                 <!--// 정기지출 summary 차트 -->
                 <section class="kb-sec regular-expense-trend dividing-space-bottom">
-                    <div class="swiper-container t01 mt16 js-swiper" data-swiper-options="highchartSwiperOptions">
-                        <!-- // swiper option -->
-                        <script>
-                            var highchartSwiperOptions = {
-                                "pagination": {
-                                    "el": ".swiper-pagination"
-                                }
-                            };
-                        </script>
-                        <!-- swiper option //-->
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="graph-area">
-                                    <figure class="highcharts-figure">
-                                        <h4 class="h4">월간 정기지출 추이</h4>
-                                        <p class="total-summary"><strong class="emphasis">김국민</strong>님 이번달 정기지출이 많네요.<br>조금 줄여보는 건 어떨까요?</p>
-                                        <!-- [chart area] //-->
-                                        <!--
-                                            [차트 디자인 정보]
-                                            * 그래프(막대) 색상(컬러별)
-                                            - 노란색 :  #ffba53;
-                                            - 회색 :  #c6cbd0;
+                    <!-- [D] 2021-09-06 수정 : swiper 및 버블차트(이번달 정기지출 소비 패턴) 삭제 //-->
+                    <div class="graph-area">
+                        <figure class="highcharts-figure">
+                            <h4 class="h4">월간 정기지출 추이</h4>
+                            <p class="total-summary"><strong class="emphasis">김국민</strong>님 이번달 정기지출이 많네요.<br>조금 줄여보는 건 어떨까요?</p>
+                            <!-- [chart area] //-->
+                            <!--
+                                [차트 디자인 정보]
+                                * 그래프(막대) 색상(컬러별)
+                                - 노란색 :  #ffba53;
+                                - 회색 :  #c6cbd0;
 
-                                            - 차트 텍스트 컬러/크기 : #26282c/14px
-                                        -->
-                                        <div class="chart-area" id="">
-                                            <img class="temp" src="../../static/images/_temp/chart_ex0103.png" alt="차트 예시 이미지">
-                                        </div>
-                                        <div class="legend-unit">
-                                            <span class="basic" data-type="dash">월평균정기지출금액 <em class="num">4,665,210</em>원</span>
-                                        </div>
-                                        <!--// [chart area] -->
-                                    </figure>
-                                </div>
+                                - 차트 텍스트 컬러/크기 : #26282c/14px
+                            -->
+                            <div class="chart-area" id="">
+                                <img class="temp" src="../../static/images/_temp/chart_ex0103.png" alt="차트 예시 이미지">
                             </div>
-                            <div class="swiper-slide">
-                                <div class="graph-area">
-                                    <figure class="highcharts-figure">
-                                        <h4 class="h4">이번달 정기지출 소비 패턴</h4>
-                                        <p class="total-summary">이번달 항목명항목명항목명 지출이 많았어요.</p>
-                                        <!-- [Chart Area] // -->
-                                        <!--
-                                            [차트 디자인 정보]
-                                            * 그래프(원) 크기/색상(컬러별)
-                                            - 분홍색 :  80*80px / #ff6391
-                                            - 다홍색 :  58*58px / #ff445a
-                                            - 노란색 :  110*110px / #ffba53
-                                            - 살구색 :  100*100px / #ff8a71
-                                            - 보라색 :  48*48px / #d090ee
-
-                                            텍스트 컬러 : #ffffff
-                                            이름 텍스트 크기 : 12px
-                                            값 텍스트 크기 : 12px/bold
-                                        -->
-                                        <div class="chart-area" id="">
-                                            <img class="temp" src="../../static/images/_temp/chart_ex0203.png" alt="차트 예시 이미지">
-                                        </div>
-                                        <!--// [chart area] -->
-                                    </figure>
-                                </div>
+                            <div class="legend-unit">
+                                <span class="basic" data-type="dash">월평균정기지출금액 <em class="num">4,665,210</em>원</span>
                             </div>
-                        </div>
-                        <div class="swiper-pagination"></div>
+                            <!--// [chart area] -->
+                        </figure>
                     </div>
+                    <!--// [D] 2021-09-06 수정 : swiper 및 버블차트(이번달 정기지출 소비 패턴) 삭제 -->
                 </section>
                 <!-- 정기지출 목록 상세 //-->
                 <section class="kb-sec full regular-expense-list dividing-space-bottom">
                     <!-- 리스트 영역 -->
-                    <div class="more-view-item" data-view-option="show">
+                    
+                    <!--[D] 2021-09-06 수정 : .amount에서 .expense 클래스 제거 (금액 텍스트 컬러 변경의 건), 더보기 기능 활성화를 위한 태그 수정 //-->
+                    <div class="more-view-box">
                         <strong class="h4 credit-list-tit">생활 서비스</strong>
                         <dl class="description-list credit-list-amount">
                             <dt>월 지출예정 총액</dt>
-                            <dd class="amount expense"><span class="num">8,230,000</span>원</dd>
+                            <dd class="amount"><span class="num">8,230,000</span>원</dd>
                         </dl>
                         <!-- [D] 2021-09-01 수정 : 아이콘 및 텍스트 수정 //-->
                         <ul class="credit-list_link-type">
-                            <li>
+                            <li class="more-view-item" data-view-option="show">
                                 <a href="mys_ex_02_01_04_p.html" class="link-box_block">
                                     <dl class="credit-list" data-list-type="icon">
                                         <dt>
@@ -171,13 +135,13 @@
                                             <span class="tag">국민카드</span>
                                         </dt>
                                         <dd>
-                                            <strong class="amount expense"><span class="num">120,000</span>원</strong>
-                                            <span class="info">1개월</span>
+                                            <strong class="amount"><span class="num">120,000</span>원</strong>
+                                            <strong class="info"><span>이용주기</span> 1개월</strong> <!-- [D] 2021-09-06 수정 : info 태그 수정 및 '이용주기' 추가 -->
                                         </dd>
                                     </dl>
                                 </a>
                             </li>
-                            <li>
+                            <li class="more-view-item" data-view-option="show">
                                 <a href="mys_ex_02_01_04_p.html" class="link-box_block">
                                     <dl class="credit-list" data-list-type="icon">
                                         <dt>
@@ -187,24 +151,41 @@
                                             <span class="tag">삼성카드</span>
                                         </dt>
                                         <dd>
-                                            <strong class="amount expense"><span class="num">67.900</span>원</strong>
-                                            <span class="info">1개월</span>
+                                            <strong class="amount"><span class="num">67.900</span>원</strong>
+                                            <strong class="info"><span>이용주기</span> 1개월</strong> <!-- [D] 2021-09-06 수정 : info 태그 수정 및 '이용주기' 추가 -->
+                                        </dd>
+                                    </dl>
+                                </a>
+                            </li>
+                            <li class="more-view-item" data-view-option="hide">
+                                <a href="mys_ex_02_01_04_p.html" class="link-box_block">
+                                    <dl class="credit-list" data-list-type="icon">
+                                        <dt>
+                                            <span class="icon-type-img"><img src="@@webRoot/static/images/expense/icon-tele-fee.png" alt=""></span>
+                                            <span class="tag-label t03 round" data-state="active">D-4</span>
+                                            <strong class="tit">SKT</strong>
+                                            <span class="tag">삼성카드11</span>
+                                        </dt>
+                                        <dd>
+                                            <strong class="amount"><span class="num">67.900</span>원</strong>
+                                            <strong class="info"><span>이용주기</span> 1개월</strong> <!-- [D] 2021-09-06 수정 : info 태그 수정 및 '이용주기' 추가 -->
                                         </dd>
                                     </dl>
                                 </a>
                             </li>
                         </ul>
                         <!--// [D] 2021-09-01 수정 : 아이콘 및 텍스트 수정 -->
+                        <button class="btn-more-plus btn-more-view center"><span>더보기</span></button><!-- [D] 2021-09-06 수정 : 더보기 버튼 추가 -->
                     </div>
-                    <div class="more-view-item" data-view-option="show">
+                    <div class="more-view-box">
                         <strong class="h4 credit-list-tit">구독 서비스</strong>
                         <dl class="description-list credit-list-amount">
                             <dt>월 지출예정 총액</dt>
-                            <dd class="amount expense"><span class="num">8,230,000</span>원</dd>
+                            <dd class="amount"><span class="num">8,230,000</span>원</dd>
                         </dl>
                         <ul class="credit-list_link-type">
                             <!-- [D] 2021-09-01 수정 : 아이콘 및 텍스트 수정 //-->
-                            <li>
+                            <li class="more-view-item" data-view-option="show">
                                 <a href="mys_ex_02_01_04_p.html" class="link-box_block">
                                     <dl class="credit-list" data-list-type="icon">
                                         <dt>
@@ -214,13 +195,13 @@
                                             <span class="tag">국민카드</span>
                                         </dt>
                                         <dd>
-                                            <strong class="amount expense"><span class="num">200,000</span>원</strong>
-                                            <span class="info">1개월</span>
+                                            <strong class="amount"><span class="num">200,000</span>원</strong>
+                                            <strong class="info"><span>이용주기</span> 1개월</strong> <!-- [D] 2021-09-06 수정 : info 태그 수정 및 '이용주기' 추가 -->
                                         </dd>
                                     </dl>
                                 </a>
                             </li>
-                            <li>
+                            <li class="more-view-item" data-view-option="show">
                                 <a href="mys_ex_02_01_04_p.html" class="link-box_block">
                                     <dl class="credit-list" data-list-type="icon">
                                         <dt>
@@ -230,16 +211,33 @@
                                             <span class="tag">삼성카드</span>
                                         </dt>
                                         <dd>
-                                            <strong class="amount expense"><span class="num">9,900</span>원</strong>
-                                            <span class="info">1개월</span>
+                                            <strong class="amount"><span class="num">9,900</span>원</strong>
+                                            <strong class="info"><span>이용주기</span> 1개월</strong> <!-- [D] 2021-09-06 수정 : info 태그 수정 및 '이용주기' 추가 -->
+                                        </dd>
+                                    </dl>
+                                </a>
+                            </li>
+                            <li class="more-view-item" data-view-option="hide">
+                                <a href="mys_ex_02_01_04_p.html" class="link-box_block">
+                                    <dl class="credit-list" data-list-type="icon">
+                                        <dt>
+                                            <span class="icon-type-img"><img src="@@webRoot/static/images/expense/icon-vod.png" alt=""></span>
+                                            <span class="tag-label t03 round" data-state="active">D-4</span>
+                                            <strong class="tit">멜론 스트리밍 서비스11</strong>
+                                            <span class="tag">삼성카드</span>
+                                        </dt>
+                                        <dd>
+                                            <strong class="amount"><span class="num">9,900</span>원</strong>
+                                            <strong class="info"><span>이용주기</span> 1개월</strong> <!-- [D] 2021-09-06 수정 : info 태그 수정 및 '이용주기' 추가 -->
                                         </dd>
                                     </dl>
                                 </a>
                             </li>
                             <!--// [D] 2021-09-01 수정 : 아이콘 및 텍스트 수정 -->
                         </ul>
+                        <button class="btn-more-plus btn-more-view center"><span>더보기</span></button><!-- [D] 2021-09-06 수정 : 더보기 버튼 위치 수정 -->
                     </div>
-                    <button class="btn-more-plus btn-more-view center"><span>더보기</span></button><!-- [D] 2021-08-31 수정 : 더보기 버튼 수정 -->
+                    <!--// [D] 2021-09-06 수정 : .amount에서 .expense 클래스 제거 (금액 텍스트 컬러 변경의 건), 더보기 기능 활성화를 위한 태그 수정 -->
                 </section>
                 <!--// 정기지출 목록 상세 -->
                 <!--정기지출 트랜드 //-->
@@ -339,24 +337,18 @@
                         <div class="graph-area">
                             <figure class="highcharts-figure">
                                 <!-- [chart area] //-->
+                                <!-- [D] 2021-09-07 수정 : 마크업 수정 //-->
                                 <div class="markup-chart">
-                                    <ul>
-                                        <li class="emphasis">
-                                            <dl>
-                                                <dt>식비</dt>
-                                                <dd><em class="num">530,000</em>원</dd>
-                                            </dl>
-                                            <span class="data-name">정기지출항목명</span>
-                                        </li>
-                                        <li>
-                                            <dl>
-                                                <dt>여행</span>
-                                                <dd><em class="num">230,000</em>원</dd>
-                                            </dl>
-                                            <span class="data-name">평균</span>
-                                        </li>
-                                    </ul>
+                                    <dl>
+                                        <dt class="emphasis">현재<strong>통신비</strong></dt>
+                                        <dd><em class="num">320,000</em>원</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>과거<strong>통신비</strong></dt>
+                                        <dd><em class="num">20,000</em>원</dd>
+                                    </dl>
                                 </div>
+                                <!--// [D] 2021-09-07 수정 : 마크업 수정 -->
                                 <!--// [chart area] -->
                             </figure>
                         </div>
@@ -369,7 +361,7 @@
         <!-- // app-container -->
         <div class="layered">
             <!-- Layer // -->
-            @@include('@@webRoot/html/expense/layered/mys_ex_02_00_00_p01.html')
+            @@include('@@webRoot/html/expense/layered/mys_ex_02_00_00_p.html')
             @@include('@@webRoot/html/expense/layered/mys_ex_01_01_04_p.html')
             <!-- // Layer -->
         </div>
@@ -379,36 +371,46 @@
     @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
+
+    <!-- [D] 2021-09-07 수정 : 스크립트 수정 //-->
     <script>
-        
         // lollipop chart
         $lollipop = $('.lollipop');
         if($lollipop){
             var chartHt = function(){
                 var targets = [];
-                // var max;
-                // var step;
-                var total = $lollipop.find('ul').height();
+                var total = $lollipop.height();
                 $lollipop.find('.data').each( function(){
                     // find max
                     var $this = $(this);
-                    var number = Number($this.data('value'));
+                    var numVal = $this.find('.num').text(); 
+                    var number = Number(numVal);
                     targets.push(number);
                     var max = Math.max.apply(null, targets);
                     // control size
-                    if(number > 9) $this.attr('data-positional-number', 2);
+                    if(numVal.length > 1) {
+                        $this.attr('data-positional-number', 2);
+                    }
+                    if(number == max) {
+                        $this.attr('data-positional-number', 3);
+                    }
                     // add padding
                     var step = Math.floor(total/max);
-                    var rst = (number*step) - $this.height() - 57;
-                    if(rst > 0) $this.css('margin-bottom', rst + 'px');
+                    var rst = (number*step) - $this.height();
+                    var limit = total - $this.height() - $this.siblings('.label').outerHeight();
+                    if(rst < 0) {
+                        rst = 7;
+                    }
+                    if(rst > limit) {
+                        rst = limit;
+                    }
+                    $this.css('margin-bottom', (rst/10) + 'rem');
                 });
             }
             chartHt();
-            $(window).resize( function(){
-                chartHt();
-            });
         }
     </script>
+    <!--// [D] 2021-09-07 수정 : 스크립트 수정 -->
     <!-- Add Script -->
     
 </body>

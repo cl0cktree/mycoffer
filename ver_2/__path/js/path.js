@@ -120,7 +120,7 @@ $(function(){
 					}
 				});
 			} else {
-				$this.attr('title', 'Ctrl + Click : New Window');
+				//$this.attr('title', 'Ctrl + Click : New Window');
 			}
 		}
 	});
@@ -132,7 +132,6 @@ $(function(){
         resize: function( event, ui ){
             $('#viewArea').css('left','0');
             $('.header, #treeArea').css('width', windowW - ui.size.width + 'px');
-
         }
     });
 
@@ -294,20 +293,18 @@ document.addEventListener('keydown',function(event){
     }
 });
 
-$(document).ready(function() {
-    $("body").append("<div class='follow-memo' style='display: none;'></div>");
-    var $memo = $(".follow-memo");
-    $(window).on("mousemove", function(e) {
-        $memo.css({
-            "transform": "translate(" + (e.pageX + 15) + "px," + (e.pageY - 10) + "px)"
-        })
-    });
+$(document).ready(function() { 
     $("#root_tree a").on("mouseover", function() {
         if ($(this).data("memo")) {
-            $memo.text($(this).data("memo")).show();
+            $("body").append("<div class='follow-memo'>" + $(this).data("memo") + "</div>");            
         }
     })
     $("#root_tree a").on("mouseleave", function() {
-        $memo.text("").hide();
-    })
+        $('body').find('.follow-memo').remove();
+    });
+    $('#treeArea').on("mousemove", function(e) {
+        $('body').find('.follow-memo').css({
+            "transform": "translate(" + (e.pageX + 15) + "px," + (e.pageY - 10) + "px)"
+        })
+    });
 });

@@ -23,12 +23,15 @@
 
             <!-- app-content // -->
             <main class="app-content select-transmission-method">
+                <h1 class="is-hidden">전송요구</h1>
                 <div class="page-step js-fixed">    
-                    <div class="step" aria-label="총 5단계 중 현재 5단계">
-                        <span class="current">5</span>                        
-                        <span class="total">5</span>
+                    <div class="page-step-inner">
+                        <div class="step" aria-label="총 5단계 중 현재 5단계">
+                            <span class="current">5</span>                        
+                            <span class="total">5</span>
+                        </div>
+                        <h2 class="h1">상세 정보 전송 요구</h2>
                     </div>
-                    <h2 class="h1">상세 정보 전송 요구</h2>
                 </div> 
                 <section class="kb-sec transmission-request">                    
                     <div class="caution-txt_01">
@@ -38,7 +41,7 @@
                         </div>                        
                         <h3 class="tit">전송을 요구하는 개인신용정보</h3>
                         <div class="desc-box">
-                            <p>계약관리번호, 가입번호, 통신구분, 가임구분, 청구
+                            <p>계약관리번호, 가입번호, 통신구분, 가임구분, 청구S
                                 금액, 납부예정일자, 납부연월, 납부금액, 납부수단,
                                 이용일시, 결제금액, 가맹점명, 결제상품명</p>
                         </div>
@@ -70,21 +73,21 @@
                         <h3 class="tit">전송요구의 종료시점(전송요구서 유효기간)</h3>
                         <div class="desc-box">
                             <div class="kb-form" data-status="error">
-                                <div class="lookup-period">
+                                <div class="lookup-period select-period">
                                     <ul class="btn-segmented_radio">
                                         <li>
-                                            <input type="radio" name="btnradio" id="btnradio3">
+                                            <input type="radio" name="btnradio1" id="btnradio3" checked>
                                             <label for="btnradio3">1년</label>
                                         </li>
                                         <li>
-                                            <input type="radio" name="btnradio" id="btnradio4">
+                                            <input type="radio" name="btnradio1" id="btnradio4">
                                             <label for="btnradio4">직접입력(최대1년)</label>
                                         </li>
                                     </ul>
-                                    <div class="period-selector">
-                                        <input type="text" title="시작날짜" value="2021.08.28">
+                                    <div class="period-selector is-disabled">
+                                        <input type="text" title="시작날짜" value="2021.08.28" readonly>
                                         <span>~</span>
-                                        <input type="text" title="종료날짜" value="2021.08.31">
+                                        <input type="text" title="종료날짜" value="2021.08.31" readonly>
                                     </div>
                                     <em class="validation">최대 1년까지 선택 가능합니다.</em>
                                     <em class="validation">종료일이 시작일보다 빠릅니다.</em>
@@ -116,15 +119,7 @@
     @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
-    <!--<script>
-        function addCategoryLimitNumber() {
-            modalPopup({
-                title: "",
-                message: "마이데이터 서비스는 <br>만 19세 이상 고객에 대해 제공됩니다."
-            });
-        }
-        addCategoryLimitNumber();
-    </script> -->
+
     <!-- Add Script -->
 
 </body>

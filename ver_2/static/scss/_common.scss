@@ -68,18 +68,21 @@
 .js-sended-number .remain-time{padding-top: 8px;}
 .js-sended-number .remain-time i{padding-right:5px;}
 .js-sended-number .remain-time button{float: right; }
+.js-sended-number .time-limit .timer span{padding-left: 5px;;}
 //서비스 이용약관 mys_co_05_02_01
 .agree-term .simple-message,
 .agree-term .simple-message + p{margin-top:20px;}
 .agree-term .kb-form_email{margin-top:32px;}
 .agree-term .go-service-info{margin-top:20px;text-align:right;}
+.agree-term .go-service-info a{padding-bottom: 5px;}
+.agree-term .go-service-info a span{padding-right:6px}
 .agree-term .go-service-info .btn-text{@include btnText($size: 16px); display: block; padding-top: 20x; }
 .agree-term .agreement-to-terms .checkbox-group.st_list:last-child{padding-top:0;padding-bottom:20px;}
 .agree-term .h1{padding:16px 24px 0 24px; margin-bottom:47px;}
 .agree-term .caution-txt{padding-bottom: 118px; display: block;}
 .agree-term .caution-txt p{font-size: 15px; margin-top:67px; line-height: 20px; margin-bottom: 19px;}
 .agree-term .caution-txt p span{display: block; font-weight: bold;}
-.agree-term .caution-txt a{float: right; }
+// .agree-term .caution-txt a{float: right; }
 .agree-term .employee-search-msg{@include text($text02);padding-top:28px;padding-bottom:28px;background-color:$kb-ui10;color:$kb-ui02; display: inline-block; margin-bottom:53px;}
 .agree-term .employee-search-msg span{font-weight: bold;}
 .agree-term .employee-search-msg a{float: right; margin-top:18px;}
@@ -90,23 +93,22 @@
 .asset-sync .loader{margin-top:40px;}
 .asset-sync02{position:absolute;bottom:24px;left:0;width:100%;}
 .asset-sync02 .checkbox-group{overflow:auto;padding-top:28px;padding-bottom:28px;border-top:1px solid $kb-ui03;border-bottom:1px solid $kb-ui09;min-height:80px;max-height:206px}
-.asset-sync02 .checkbox-group label{color:$kb-ui04}
+.asset-sync02 .checkbox-group .form-checkbox{display:block;}
+.asset-sync02 .checkbox-group label{display:block;color:$kb-ui04;text-align:left;}
 .ios.homebar .asset-sync02{bottom:58px;}
 
 //전송요구스탭서브문구
-.kb-sec.transmission-request{margin-top:1.5rem;}
-.transmission-request .full h4, .transmission-request .full .tit{margin-left: -24px; margin-right: -24px; padding-left:24px; }
+.page-step + .transmission-request{margin-top:44px;}
+.transmission-request .full h4, 
+.transmission-request .full .tit{margin-left: -24px; margin-right: -24px; padding-left:24px; }
 .transmission-request hr{height:10px; border:none; background-color: $kb-ui10; margin:0 -2.4rem 50px -2.4rem;}
 .transmission-request .agreement-to-terms{border-bottom: none;}
 .transmission-request .agreement-to-terms .st_list{border-bottom:1px solid $kb-ui10;}
-.transmission-request ~ .kb-sec.confirm-agree{border-top:10px solid $kb-ui10;}
-.transmission-request p{font-weight: bold;}
-.kb-sec.confirm-agree .agreement-to-terms .header{padding-bottom:1em; padding-top:5rem}
 .kb-sec.confirm-agree .agreement-to-terms > .checkbox-group:first-child{border-top:1px solid $kb-ui03;}
 .kb-sec.confirm-agree .agreement-to-terms .checkbox-group{padding:2rem 0 2.1rem;}
 .kb-sec.confirm-agree .agreement-to-terms .checkbox-group label{display:inline-block;width:auto;padding-right:0;margin-right:3rem;}
 .kb-sec.confirm-agree .agreement-to-terms .link{width:3rem;height:3rem;padding:0.5rem;}
-.kb-sec.confirm-agree .agreement-to-terms .link-arrow{width:2rem;height:2rem;background:none;}
+// .kb-sec.confirm-agree .agreement-to-terms .link-arrow{width:2rem;height:2rem;background:none;}
 .kb-sec.confirm-agree > .tit{margin-top:4.3rem;}
 .kb-sec.confirm-agree .confirm-info{margin-top:1.6rem;line-height:1.44;}
 .kb-sec.confirm-agree .confirm-info .question{margin-top:1.2rem;}
@@ -115,9 +117,13 @@
 .bottom-sheet .confirm-agree .agreement-to-terms .header{padding-top:0;}
 
 
-
 .select-organization .kb-sec.confirm-agree .agreement-to-terms .checkbox-group{padding:2rem 0 2.1rem;}
 .select-organization .kb-sec.confirm-agree .agreement-to-terms .checkbox-group label{display:inline-block;width:auto;padding-left:35px;padding-right:0;margin-right:3rem; font-weight: normal;font-size: 16px;}
+
+.select-organization .radio-group .form-radio{display:block;}
+.select-organization .radio-group .form-radio label{display:block;padding-bottom:16px;}
+.select-organization .radio-group .form-radio label:before{top:22px;}
+
 // 전송 요구 방법 선택 mys_co_06_01_00
 .box-option-list:not(.is-link) li{display:flex;margin-bottom:24px;padding:28px 24px;border:1px solid $kb-ui08;border-radius:2px}
 .box-option-list.is-link li [class*="link-box"]{display:flex;margin-bottom:24px;padding:25px 20px;border:1px solid $kb-ui08;border-radius:2px}
@@ -137,14 +143,14 @@
 .app-step .step-number .current{color:$kb-ui02;font-weight:bold;}
 .app-step .step-number .total{margin-left:0px;color:$kb-ui05;}
 .app-step .step-number .total:before{content:'/';display:inline-block;margin-right:1px;}
-.select-transmission-method .visual-area {margin-bottom: 20px; padding-bottom: 25px; text-align: center;}
+.select-transmission-method .visual-area {margin-top:60px;margin-bottom: 20px; padding-bottom: 25px; text-align: center;}
 .select-transmission-method .visual-area img {display: block; width: 200px; margin: 0 auto 20px;}
 .select-transmission-method .visual-area .mydata{margin: 0 auto 28px;}
 .select-transmission-method .visual-area .text .stxt {display: block; margin-bottom: 3px; @include text($text02, normal); color: $kb-ui04;}
 .select-transmission-method .visual-area .text .mtxt {@include text($text02, normal);}
 .select-transmission-method .visual-area .text strong {font-weight: bold;}
 .simple-message_02{padding-bottom:30px;}
-
+.search-organization-result .form-text .btn-search{margin-right:0px;}
 //마이데이터 연결안내
 .my-asset .asset-modify .asset-modify-top {margin-bottom: 20px;}
 .my-asset .asset-modify .asset-modify-top .total {padding-top: 24px;@include clfix;}
@@ -153,6 +159,7 @@
 .my-asset .asset-modify .asset-modify-top .total em {font-weight: bold;}
 .my-asset .asset-modify .asset-modify-top .btn-area {margin-top: 20px;}
 //직원선택
+.select-recommend-employee .is-readonly{margin-top: 48px; }
 .select-recommend-employee .is-readonly p{ background-color:$kb-ui10; color:$color-blue; font-weight: bold; text-align: center; padding:30px 0; font-size: 16px;;}
 .select-recommend-employee .btn-area{margin-top:23px;}
 .select-recommend-employee .tab ul{display:flex; background-color:$kb-ui09;}
@@ -167,6 +174,8 @@
 .select-recommend-employee .tab li.is-active button{color:$kb-ui02;font-weight:bold; z-index: 999999; left:0.3rem; top:0.3rem; width:100%; height:4.1rem; line-height:1rem;background-color:$kb-ui11;}
 .select-recommend-employee .tab ~ .tab_contents > div{display:none;}
 .select-recommend-employee .tab ~ .tab_contents > div.is-active{display:block;}
+.select-recommend-employee .simple-message{margin-bottom: 17px;}
+
 [data-page-name^=employeeSearch] .employee-search-msg .txt{font-size:17px;color:$color-blue;}
 .is-branch-search .full{padding-top:0rem;}
 .is-branch-search .employee-search-msg{padding-top: 2rem; padding-bottom: 2rem;}
@@ -179,6 +188,9 @@
 .select-organization .caution-txt{padding-bottom: 70px; display: block;}
 .select-organization .caution-txt p{font-size: 16px; margin-top:24px; line-height: 24px; margin-bottom: 19px;}
 .select-organization .kb-sec a{float: right;}
+.select-organization .agency-search{margin-top:24px; margin-bottom:90px; clear: both;}
+
+//기관선택체크박스일때
 .checkbox-group_icon{display:grid;grid-template-columns:repeat(3, 1fr);grid-auto-rows:110px;padding-top:0px; }
 .checkbox-group_icon li{border:1px solid $kb-ui08;}
 .checkbox-group_icon li:nth-child(n + 4){border-top:none;}
@@ -192,6 +204,22 @@
 .form-checkbox_icon input:checked + label{position:relative;color:$kb-ui02;font-weight:bold}
 .form-checkbox_icon input:checked + label:after{content:'';position:absolute;left:-1px;right:-1px;bottom:-1px;top:-1px;border:1px solid $kb-ui02;}
 .form-checkbox_icon input:checked + label strong{font-weight:bold;color:$kb-ui02}
+
+
+//기관선택라디오박스일때
+.radio-group_icon{display:grid;grid-template-columns:repeat(3, 1fr);grid-auto-rows:110px;padding-top:0px; }
+.radio-group_icon li{border:1px solid $kb-ui08;}
+.radio-group_icon li:nth-child(n + 4){border-top:none;}
+.radio-group_icon li:nth-child(3n + 2),
+.radio-group_icon li:nth-child(3n + 3){border-left:none;}
+.form-radio_icon input{overflow:hidden;position:absolute;width:1px;height:1px;padding:0;margin:-1px;clip:rect(0, 0, 0, 0);border:0}
+.form-radio_icon label{@include flexCenter;flex-wrap:wrap;width:100%;height:100%;padding:24px 5px;background-color:$kb-ui11}
+.form-radio_icon label[data-status="inprogress"]{background-color:$kb-ui10}
+.form-radio_icon label[data-status="inprogress"] .status{display:inline-block;line-height:32px;color:$color-blue;font-size:12px;}
+.form-radio_icon label strong{display:block;width:100%;margin-top:12px;font-size:15px;color:$kb-ui02;text-align:center}
+.form-radio_icon input:checked + label{position:relative;color:$kb-ui02;font-weight:bold}
+.form-radio_icon input:checked + label:after{content:'';position:absolute;left:-1px;right:-1px;bottom:-1px;top:-1px;border:1px solid $kb-ui02;}
+.form-radio_icon input:checked + label strong{font-weight:bold;color:$kb-ui02}
 
 
 
@@ -210,19 +238,21 @@
 .request-txt p{text-align: right; color:$kb-ui04; font-size: $text03; margin-top: 75px;}
 .request-txt a{float: right; /*text-decoration:underline; text-underline-position: under;*/ margin-top: 23px;}
 //개별인증
-.select-organization .kb-card{text-align: center; margin-bottom:150px; box-shadow: none;;}
+.select-organization .kb-card{text-align: center; margin-bottom:100px; box-shadow: none;;}
 .select-organization .kb-card span img{margin-top:10px}
 .select-organization .kb-card strong{padding-left:10px;}
 .select-organization .kb-card p{padding-top:30px;}
 //계좌인증
-.bottom-sheet_contents .mobie-cetification li{border-bottom:1px solid $kb-ui09; padding-bottom:25px;}
-.bottom-sheet_contents .select-organization p{padding-bottom:16px;}
-.bottom-sheet_contents .select-organization .checkbox-group{padding-top:16px;}
+.bottom-sheet .mobie-cetification .list{overflow: auto;}
+.bottom-sheet .mobie-cetification li{border-bottom:1px solid $kb-ui09; padding-bottom:20px;}
+.bottom-sheet .select-organization p{padding-bottom:16px;}
+.bottom-sheet .select-organization .checkbox-group{padding-top:16px;}
+.bottom-sheet .mobie-cetification .account-radio-list.sml-icon li label{padding-left:0px;}
 // 기관선택 > 검색결과 mys_co_06_01_01_09
 .search-organization-form{position:relative}
-.search-organization-form .autocomplete-box{position:absolute;top:95px;left:0;z-index:$level20;width:100%;padding:0 24px;background-color:$kb-ui11;display:none;}
+.search-organization-form .autocomplete-box{position:absolute;top:70px;left:0;z-index:$level20;width:100%;padding:0 24px;background-color:$kb-ui11;display:none;}
 .search-organization-form .autocomplete-box.is-active{display:block}
-.search-organization-form .autocomplete-box ul{padding:38px 0 16px;border-top:2px solid $kb-ui02;border-bottom:2px solid $kb-ui02}
+.search-organization-form .autocomplete-box ul{padding:32px 0 16px;border-top:2px solid $kb-ui02;border-bottom:2px solid $kb-ui02}
 .search-organization-form .autocomplete-box li{padding:10px 0}
 .search-organization-form .autocomplete-box li span{color:$color-blue;}
 .search-result-list{margin-top:40px}
@@ -247,7 +277,6 @@
 .mydata-connection-info .mydata-connection-info-top .btn-area{margin-bottom:20px; margin-top:20px; }
 // 기관 선택 > 전송요구 항목 설정 mys_co_06_01_01_07
 
-.caution-txt_01{padding-bottom:51px;}
 .caution-txt_01 h4, .caution-txt_01 .tit{padding:2rem 2.4rem;margin:0 -2.4rem;background-color:$kb-ui10;}
 .caution-txt h4{padding: 30px 0;}
 .caution-txt_01 .h4{border-bottom: none; padding-bottom: 20px;}
@@ -282,51 +311,36 @@
 .set-transfer-requirements_step04 .agreement-to-terms .link{position:relative}
 .set-transfer-requirements_step04 .agreement-to-terms .link span{display:block}
 
-.page-step-desc{margin-bottom:4rem;line-height:1.56;}
-.data-delay{margin-top:1.6rem;text-align:center;}
+.data-delay{margin-top:48px;margin-bottom:48px;text-align:center;}
 .data-delay i:first-child{margin-bottom:1.2rem}
 .data-delay .btn-line.inline{display:inline-block;width:auto;padding:0 1.8rem;margin-top:1.4rem}
 
-// .select-assets h1 + p{@include text;margin-top:16px;color:$kb-ui03}
-// .select-assets h1 + p + h2{margin-top:44px;}
-.select-assets .kb-sec [class^=h]{margin-top:3.2rem;line-height:1;}
+// .select-assets .kb-sec [class^=h]{margin-top:3.2rem;line-height:1;}
 .select-assets .kb-sec [class^=h] .num{padding-left:0.7rem;font-size:19px;}
-// .select-assets h2 .num:before{content:'('}
-// .select-assets h2 .num:after{content:')'}
-.select-assets .accordion{margin-top:1.4rem;}
-.select-assets .accordion .num{@include number($size: 17px);display:block;margin-top:0.4rem;color:$kb-ui04;line-height:1;}
-// .select-assets .accordion + h2{margin-top:32px;}
+.select-assets .kb-sec > .accordion{margin:1.4rem 0 4.2rem;}
+.select-assets .accordion .num{@include number($size: 17px);display:block;font-weight:bold;}
 .select-assets .accordion > dt{padding:2rem 0 2rem 0.2rem;font-weight:bold;}
 .select-assets .accordion > dt:first-child{border-top:1px solid $kb-ui03;}
-.select-assets .accordion .no-data{margin-top:1.6rem;}
-.select-assets .checkbox-group li{padding:2rem 0 1.4rem;margin-top:0;border-bottom:1px solid $kb-ui09;}
-.select-assets .checkbox-group li:first-child{padding-top:0;}
+.select-assets .accordion > dd{padding-top:0;padding-bottom:0;}
+.select-assets .accordion .no-data{margin:48px 0;}
+.select-assets .checkbox-group li:first-child{padding-top:10px;}
+.select-assets .checkbox-group li + li{margin-top:0;border-top:1px solid $kb-ui09;}
+.select-assets .checkbox-group .form-checkbox_20{display:block;}
+.select-assets .checkbox-group .form-checkbox_20 label{display:block;padding-top:18px;padding-bottom:16px;}
+.select-assets .checkbox-group .form-checkbox_20 label:before{top:22px;}
+
+
+
 .select-assets .agree-integrated-authentication{margin-top:56px;}
 .select-assets .agree-integrated-authentication .kb-form_inner{padding-bottom:20px;border-bottom:1px solid $kb-ui03}
 .select-assets .agree-integrated-authentication .kb-form_inner .link{position:relative;left:8px;margin-left:auto;}
 
-
-.select-assets_02 .kb-sec [class^=h]{margin-top:3.2rem;line-height:1;}
-.select-assets_02 .kb-sec [class^=h] .num{padding-left:0.7rem;font-size:19px;}
-.select-assets_02 .accordion{margin-top:1.4rem; }
-.select-assets_02 .accordion .num{@include number($size: 17px);display:block;margin-top:0.4rem;color:$kb-ui02;line-height:1;}
-.select-assets_02 .accordion > dt{padding:2rem 0 2rem 0.2rem;font-weight:bold;}
-.select-assets_02 .accordion > dt:first-child{border-top:1px solid $kb-ui03;}
-.select-assets_02 .accordion .no-data{margin-top:1.6rem;}
-.select-assets_02 .checkbox-group li{padding:2rem 0 1.4rem;margin-top:0;border-bottom:1px solid $kb-ui09;}
-.select-assets_02 .checkbox-group li:first-child{padding-top:0;}
-.select-assets_02 .agree-integrated-authentication{margin-top:56px;}
-.select-assets_02 .agree-integrated-authentication .kb-form_inner{padding-bottom:20px;border-bottom:1px solid $kb-ui03}
-.select-assets_02 .agree-integrated-authentication .kb-form_inner .link{position:relative;left:8px;margin-left:auto;}
-
-
-
 .select-assets-complete h2 + p{@include text($text02);margin-top:20px;}
 .select-assets-complete .select-recommend-employee{margin-top:48px;}
 .select-assets-complete .radio-group{margin-top:20px;}
-.select-recommend-employee .h4{padding-top:20px; }
+.select-recommend-employee .h4{margin-top:20px;  margin-bottom:32px; }
 .select-recommend-employee .h4_01{padding-top:20px; padding-bottom: 30px;}
-.select-assets-complete .radio-group{margin-top:20px; }
+.select-assets-complete .radio-group{margin-top:16px; }
 .select-assets-complete .radio-group li {border-top:1px solid $kb-ui09; padding-top:20px;}
 .select-assets-complete .radio-group li:last-child{border-bottom:1px solid $kb-ui09; padding-bottom:20px;}
 .select-assets-complete .form-radio label{display:block;font-weight:bold;color:$kb-ui02;}
@@ -340,7 +354,7 @@
 .select-assets-complete .recommend-employees-form > .kb-form,
 .select-assets-complete .recommend-employees-form > .kb-form + p:last-child{display:none;}
 .select-assets-complete .kb-form.is-disabled input{color:$kb-ui02}
-.select-assets-complete .recommend-mydata-service{margin-top:36px;}
+.select-assets-complete .recommend-mydata-service{margin-top:48px;}
 .recommend-mydata-service .tit{@include text($size: $text01, $weight:bold, $line-height:1);display:block;}
 .recommend-mydata-service ul{display:flex;justify-content:space-around;margin-top:24px;}
 .recommend-mydata-service li{text-align:center;}
@@ -351,51 +365,30 @@
 .bottom-sheet[data-layered-name=bsSetTransferResult] ul{padding-top:8px;}
 .bottom-sheet[data-layered-name=bsSetTransferResult] li{margin-top:24px;color:$kb-ui04;line-height:1;}
 .bottom-sheet[data-layered-name=bsSetTransferResult] li strong{@include text($size: $text02, $line-height:1, $weight: bold);display:block;margin-bottom:8px;color:$kb-ui02}
-
 .bottom-sheet[data-layered-name=mydataConnectionResult] .msg{@include text($size: $text01, $line-height:1, $weight:bold); background-color: red;}
+//기관선택바텀시트
+.select-organization .radio-group{margin-top:20px;}
 
+.info-distributer-asset .asset-accout-list,
+.info-distributer-asset_02 .asset-accout-list{margin-top:16px;}
+.info-distributer-asset_02 .accordion > dt{padding-top:20px;padding-bottom:20px;}
+.info-distributer-asset_02 .accordion > dd{padding:0;border-top:none;}
+.info-distributer-asset_02 .accordion .asset-accout-list{margin-top:0;}
 
-.info-distributer-asset .sticky-bottom.sticky-bottom:not(.popup_buttons){padding-top:0;height:auto;}
-.info-distributer-asset .info-distributer-asset-tit{@include text($size: 24px, $weight: bold);margin-top:20px;}
-.info-distributer-asset .info-distributer-asset-tit .num{font-size:25px;}
-.info-distributer-asset .info-distributer-asset-tit + p{margin-top:20px;color:$kb-ui04;}
-.info-distributer-asset .info-distributer-asset-selector{margin-top:48px;overflow:auto;max-height:calc(var(--vh, 1vh) * 100 - 292px);padding-bottom:20px;}
-.info-distributer-asset .info-distributer-asset-selector label{font-weight: bold;}
-.info-distributer-asset .info-distributer-asset-list{margin-top:20px;padding-top:4px;padding-bottom:24px;border-top:1px solid $kb-ui03;border-bottom:1px solid $kb-ui08;}
-.info-distributer-asset .info-distributer-asset-list li{padding-top:20px;}
-.info-distributer-asset .info-distributer-asset-list li + li{margin-top:20px;border-top:1px solid $kb-ui09;}
-.info-distributer-asset .info-distributer-asset-list li .form-checkbox_20{display:block;}
-.info-distributer-asset .info-distributer-asset-list .form-checkbox_20 label{display:block;font-weight:normal;}
-.info-distributer-asset .info-distributer-asset-list .account-number{display:block;margin-top:4px;font-weight:bold;}
-.info-distributer-asset .info-distributer-asset-list .account-amount{display:block;margin-top:4px;text-align:right;font-weight:bold;}
-.info-distributer-asset .info-distributer-asset-list .account-amount .num{font-weight:bold;}
+.asset-accout-list{border-bottom:1px solid $kb-ui08;}
+.asset-accout-list > li{border-top:1px solid $kb-ui08;}
+.asset-accout-list .form-checkbox_20{display:block;}
+.asset-accout-list .form-checkbox_20 label{display:block;padding-top:18px;padding-bottom:16px;}
+.asset-accout-list .form-checkbox_20 label:before{top:22px;}
+.asset-accout-list .account-name,
+.asset-accout-list .account-number,
+.asset-accout-list .account-amount{display:block;}
+.asset-accout-list .account-number{@include number;font-weight:bold;}
+.asset-accout-list .account-amount{margin-top:20px;text-align:right;}
+.asset-accout-list .account-amount .num{font-weight:bold;font-size:19px;}
+.asset-accout-list .account-amount .num:after{font-size:18px;}
+.asset-accout-list .account-amount .balance{margin-right:10px;font-size:14px;}
 
-
-
-.info-distributer-asset_02 .sticky-bottom.sticky-bottom:not(.popup_buttons){padding-top:0;height:auto;}
-.info-distributer-asset_02 .info-distributer-asset-tit{@include text($size: 24px, $weight: bold);margin-top:20px;}
-.info-distributer-asset_02 .info-distributer-asset-tit .num{font-size:25px;}
-.info-distributer-asset_02 .info-distributer-asset-tit + p{margin-top:20px;color:$kb-ui04;}
-.info-distributer-asset_02 .info-distributer-asset-selector{margin-top:48px;overflow:auto;max-height:calc(var(--vh, 1vh) * 100 - 292px);padding-bottom:20px;}
-.info-distributer-asset_02 .info-distributer-asset-list{margin-top:20px;padding-top:4px;padding-bottom:24px;border-top:1px solid $kb-ui03;border-bottom:1px solid $kb-ui08;}
-.info-distributer-asset_02 .info-distributer-asset-list li{padding-top:20px;}
-.info-distributer-asset_02 .info-distributer-asset-list li + li{margin-top:20px;border-top:1px solid $kb-ui09;}
-.info-distributer-asset_02 .info-distributer-asset-list li .form-checkbox_20{display:block;}
-.info-distributer-asset_02 .info-distributer-asset-list .form-checkbox_20 label{display:block;font-weight:normal;}
-.info-distributer-asset_02 .info-distributer-asset-list .account-number{display:block;margin-top:4px;font-weight:bold;}
-.info-distributer-asset_02 .info-distributer-asset-list .account-amount{display:block;margin-top:4px;text-align:right;font-weight:bold;}
-.info-distributer-asset_02 .info-distributer-asset-list .account-amount .num{font-weight:bold;}
-
-.info-distributer-asset_02 dd{margin-top: 20px;}
-.info-distributer-asset_02 .info-distributer-asset-list_02{margin-top:0px;padding-top:4px;padding-bottom:124px;border-top:1px solid $kb-ui09;border-bottom:1px solid $kb-ui08;}
-.info-distributer-asset_02 .info-distributer-asset-list_02 li{padding-top:20px;}
-.info-distributer-asset_02 .info-distributer-asset-list_02 li + li{margin-top:20px;border-top:1px solid $kb-ui09;}
-.info-distributer-asset_02 .info-distributer-asset-list_02 li .form-checkbox_20{display:block;}
-.info-distributer-asset_02 .info-distributer-asset-list_02 .form-checkbox_20 label{display:block;font-weight:normal;}
-.info-distributer-asset_02 .info-distributer-asset-list_02 .account-number{display:block;margin-top:4px;font-weight:bold;}
-.info-distributer-asset_02 .info-distributer-asset-list_02 .account-amount{display:block;margin-top:4px;text-align:right;font-weight:bold;}
-.info-distributer-asset_02 .info-distributer-asset-list_02 .account-amount .num{font-weight:bold; font-size: 19px;}
-.info-distributer-asset_02 .balance{font-weight: 300; padding-right:10px; font-size: 14px;;}
 
 .info-distributer-asset .kb-sec{margin-top: 23px;}
 //mys_mn_01_01_01.html
@@ -537,7 +530,7 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .app-lnb + .joint-certificate .kb-sec:first-child{margin-top:24px;}
 
 //인증서선택
-.select-certificate .kb-sec:first-of-type{margin-top:1.5rem;}
+.select-certificate .kb-sec:first-of-type{margin-top:4rem;overflow:hidden;}
 .select-certificate .certificate-list{margin-top:-1.5rem;}
 .select-certificate .certificate-list li{border-bottom:1px solid $kb-ui09;}
 .select-certificate .certificate-list li a{display:flex;justify-content:space-between;align-items:center;padding:2rem 0;}
@@ -666,7 +659,7 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .mm-alarm-setting h2 .tit{@include text($size: $text01, $line-height:1, $weight:bold);float:left;}
 .mm-alarm-setting h2 .btn-switch{float:right;}
 .mm-alarm-setting h2 + p{@include text;margin-top:16px;}
-.mm-alarm-setting p:last-child{margin-top:12px;}
+.mm-alarm-setting p:last-child{margin-top:28px;}
 .mm-alarm-setting p .btn-text{@include btnText($size:14px);color:$kb-ui04}
 .mm-alarm-setting .mm-alarm-setting-detail{margin-top:28px;border-top:1px solid $kb-ui09;}
 .mm-alarm-setting .mm-alarm-setting-detail li{@include clfix;padding:16px 0;border-bottom:1px solid $kb-ui09;}
@@ -674,7 +667,7 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .mm-alarm-setting .mm-alarm-setting-detail li .btn-switch{float:right;}
 
 //이용동의
-.mn-agreements .kb-sec + .kb-sec{padding-top:4.8rem;margin-top:4.8rem;border-top:1rem solid $kb-ui10;}
+// .mn-agreements .kb-sec + .kb-sec{padding-top:4.8rem;margin-top:4.8rem;border-top:1rem solid $kb-ui10;}
 .mn-agreements h2{padding-bottom:1.65rem;line-height:1;border-bottom:1px solid $kb-ui02;}
 .mn-agreements .mn-agreements-list{padding:20px 0;border-bottom:1px solid $kb-ui09;}
 .mn-agreements .mn-agreements-list a{@include text;position:relative;display:block;padding-right:32px;}
@@ -742,6 +735,10 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .pc-import .approval-number .list-decimal li p{font-weight: normal; padding-left:10px;}
 .pc-import .approval-number .list-decimal .simple-message{color:$color-red; margin-top:0px;}
 .pc-import .approval-number .list-decimal .simple-message::before{content:'*';position: absolute;left:0;top:5px;width:20px;height:20px;background:none; font-size: 24px;}
+.approval-number .qrscan{ width:120px; height:120px; background-color: $kb-ui07; margin:24px auto 48px auto; text-align: center; line-height:120px; color:$kb_ui11; }
+.pc-import .qrscan-datail-dim{position:fixed;top:0;left:0;bottom:0;right:0;background-color:rgba(0,0,0,0.3);z-index:0;}
+.qrscan-datail-dim p{width:255px; height:255px; line-height: 255px;; background-color: $kb-ui10; margin: 0 auto; text-align: center; position: fixed;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);}
 //플러스존 -> My 혜택 - > 마이데이터 선물함(리워드 쿠폰)
 .search-bar{display:flex;justify-content:space-between;align-items:center;margin-left:(-2.4rem);margin-right:(-2.4rem);padding-top:12px;padding-bottom:12px;padding-left:2.4rem;padding-right:2.4rem;background-color:$kb-ui10;}
 .search-bar .tit{font-weight:bold;}
@@ -811,7 +808,7 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .bottom-sheet .event-result dd{@include text;margin-top:28px;text-align:left;}
 .app-lnb + .app-content .kb-sec:first-child > .tab_button{margin-top:1.2rem;}
 
-.recommend-to-friend .kb-sec:first-of-type{/*margin-top:2rem;*/border-bottom:1rem solid #ebeef0;}
+// .recommend-to-friend .kb-sec:first-of-type{/*margin-top:2rem;*/border-bottom:1rem solid #ebeef0;}
 .recommend-to-friend .kb-sec:first-of-type .tab_button{margin-top:2.8rem;margin-bottom:2rem;}
 .recommend-to-friend .rtf-code{padding:2.8rem;margin-top:3.2rem;margin-bottom:4.5rem;font-weight:bold;text-align:center;color:#287eff;background-color:$kb-ui10;}
 .recommend-to-friend .event-img{margin:0 -2.4rem;text-align:center;}

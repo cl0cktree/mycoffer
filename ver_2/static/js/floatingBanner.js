@@ -50,10 +50,10 @@ $('body')
             fbShow: false
         }, options );
 
-        if(settings.fbCallLayered.length > 0 && settings.fbLink.indexOf('/') > 0){
-            alert('링크, 바텀시트 호출 중 하나만 입력하세요');
-            return false;
-        }
+        // if(settings.fbCallLayered.length > 0 && settings.fbLink.indexOf('/') > 0){
+        //     alert('링크, 바텀시트 호출 중 하나만 입력하세요');
+        //     return false;
+        // }
 
         var $promotionBanner = $('.floating-banner[data-layered-name=' + settings.fbName + ']');
         if(!$promotionBanner.length){        
@@ -100,10 +100,10 @@ $('body')
         }
 
         //바로 보여주기
-        var cookieChecker = cookie.get(settings.fbCheckboxName);
+        var cookieChecker = cookie.get(settings.fbFormName);
         if(settings.fbShow && !cookieChecker) gfn_layered.open(settings.fbName);
         
-        return false;
+        //return false;
     };
 
     //Event Sticker
@@ -121,10 +121,10 @@ $('body')
         }, options );
 
         //Validation
-        if(settings.esPosition > 9 || settings.esPosition < 1){
-            alert('1~9 사이의 숫자를 넣어주세요.');
-            return false;
-        }
+        // if(settings.esPosition > 9 || settings.esPosition < 1){
+        //     alert('1~9 사이의 숫자를 넣어주세요.');
+        //     return false;
+        // }
         // if(!isNumeric(settings.esImgSize)){
         //     alert('px로 숫자만 넣어주세요.');
         //     return false;
@@ -132,13 +132,13 @@ $('body')
         //     settings.esImgSize = (settings.esImgSize / 10);//rem 으로 변환            
         // }
         
-        if(settings.esCallLayered.length > 0 && settings.esLink.indexOf('/') > 0){
-            alert('링크, 바텀시트 호출 중 하나만 입력하세요');
-            return false;
-        }else if(settings.esCallLayered.length == false && settings.esLink.indexOf('/') < 0){
-            alert('링크, 바텀시트 호출 중 하나를 입력하세요');
-            return false;
-        }
+        // if(settings.esCallLayered.length > 0 && settings.esLink.indexOf('/') > 0){
+        //     alert('링크, 바텀시트 호출 중 하나만 입력하세요');
+        //     return false;
+        // }else if(settings.esCallLayered.length == false && settings.esLink.indexOf('/') < 0){
+        //     alert('링크, 바텀시트 호출 중 하나를 입력하세요');
+        //     return false;
+        // }
 
         var eventStickerHTML = '<div class=\"event-sticker\" data-animation=\"' + settings.esAnimation + '\" data-position=\"' + settings.esPosition + '\">'
             if(settings.esLink != '') eventStickerHTML += '<a href=\"' + settings.esLink + '\">';
@@ -152,7 +152,7 @@ $('body')
 
         this.append(eventStickerHTML);
 
-        return false;
+        //return false;
     };
 
 }(jQuery));

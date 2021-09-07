@@ -1,4 +1,4 @@
-<!-- [MYS_CO_04_01_03] 지문 FACE ID (작성자: 누리어 시스템 이진우)// -->
+<!-- [mys_co_04_01_03] 전체메뉴 > 공동인증서 관리 (작성자: 누리어 시스템 변혜선)// -->
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -13,52 +13,112 @@
     <div class="app">
         
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
-            'pageTit':'',
-            'type':'close'
+            'pageTit':'PC에서 가져오기',
+            'type':''
         })
         
-
         <!-- app-container //-->
         <div class="app-container">
 
             <!-- app-content // -->
-            <main class="app-content face-id">
-
+            <main class="app-content pc-import">
                 <section class="kb-sec">
-                    <strong class="h2">지문(Face ID)로<br>더 간편하게 로그인하세요.</strong>
-                    <ul data-style="list">
-                        <li>휴대폰에 등록된 지문 (Face ID) 정보로 로그인이 가능합니다.</li>
-                        <li>KB국민은행은 회원님의 지문(Face ID) 정보를 저장하지 않습니다.</li>
-                    </ul>
-
-                    <div class="banner-msg">해당 스마트폰은 <br>지문(Face ID) 로그인 서비스를 이용하실 수 있습니다.</div>
-                </section>
-
-                <section class="kb-sec">
-                    <strong class="h4">꼭 알아두세요!</strong>
-                    <ul data-style="list">
-                        <li>스마트 기기에 지문(Face ID)정보가 미리 등록되어 있어야 하며, 등록은 1인 1폰으로 제한됩니다.</li>
-                        <li>인증서 만료, 갱신, 폐기 시 지문(FACE ID)를 재등록해야 합니다.</li>
-                        <li>지원 가능 기기는 안드로이드 6.0이상, IOS 8.0 이상이며 제조사 및 스마트폰 환경에 따라 서비스 이용이 불가합니다.</li>
-                    </ul>
-                </section>
-
+                    <div class="tab swiper-container">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide is-active"><a href="#target01">승인번호</a></li>
+                            <li class="swiper-slide"><a href="#target02">QR코드</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab_contents">
+                        <div class="is-active">
+                            <section class="kb-sec approval-number">
+                                <div class="kb-form" data-status="">
+                                    <label for="formAmountSample01">숫자 13자리</label>
+                                    <div class="kb-form_inner form-text">
+                                        <input type="number" inputmode="numeric" id="formAmountSample01" placeholder="" value="" data-action="" maxlength='4'>
+                                        <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                                    </div>
+                                    <div class="kb-form_inner form-text">
+                                        <input type="number" inputmode="numeric" id="formcAmountSample01" placeholder="" value="" data-action=""maxlength='4'>
+                                        <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                                    </div>
+                                    <div class="kb-form_inner form-text form-text-last">
+                                        <input type="number" inputmode="numeric" id="formAmountSample01" placeholder="" value="" data-action="" maxlength='5'>
+                                        <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                                    </div>
+                                    <em class="validation">Success / Error Message</em><!-- 성공/에러 메세지 -->
+                                </div>
+                                <div class="list-decimal">
+                                    <ul>
+                                        <li><p>PC에서 KB국민은행 홈페이지 접속<br>(www.kbstar.com)</p></li>
+                                        <li><p>[인증센터 > KB스타뱅킹용 인증서 복사 ><br>
+                                            PC > 스마트폰 인증서 복사하기] 선택</p></li>
+                                        <li><p>[인증서 이동] 창에서 복사할 인증서를 선택하여 <br>
+                                            비밀번호 입력 후 생성된 승인번호(13자리)를 <br>
+                                            스마트폰에 입력 또는 QR코드 촬영</p></li>
+                                        <li><p>스마트폰에서 인증서 복사 완료 확인</p></li> 
+                                    </ul>
+                                </div>
+                                <!-- <div class="kb-form_multi kb-form_boundary">
+                                    <strong class="tit required">금액 설정</strong>
+                                    <div class="kb-form" data-status="">
+                                        <div class="kb-form_inner form-text">
+                                            <input type="text" inputmode="numeric" id="formAmountBoundary01" placeholder="최소" value="" data-action="autoSeperator">
+                                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                                        </div>
+                                    </div>
+                                    <div class="kb-form" data-status="">
+                                        <label for="formAmountBoundary02">최대 금액</label>
+                                        <div class="kb-form_inner form-text">
+                                            <input type="text" inputmode="numeric" id="formAmountBoundary02" placeholder="최대" value="" data-action="autoSeperator">
+                                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                                        </div>
+                                    </div>
+                                    <em class="validation">오늘을 포함한 날짜만 선택해주세요.</em>
+                                </div> -->
+                            </section>
+                        </div>
+                        <div>
+                            <section class="kb-sec approval-number">
+                                <div class="list-decimal">
+                                    <ul>
+                                        <li><p>PC에서 KB국민은행 홈페이지 접속<br>(www.kbstar.com)</p></li>
+                                        <li><p>[인증센터 > KB스타뱅킹용 인증서 복사 ><br>
+                                            PC > 스마트폰 인증서 복사하기] 선택</p></li>
+                                        <li><p>[인증서 이동] 창에서 복사할 인증서를 선택하여 <br>
+                                            비밀번호 입력 후 생성된 승인번호(13자리)를 <br>
+                                            스마트폰에 입력 또는 QR코드 촬영</p></li>
+                                        <li><p>스마트폰에서 인증서 복사 완료 확인</p></li> 
+                                    </ul>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </section> 
+                <!--인증번호 미입력시-->
                 <div class="sticky-bottom">
                     <div class="btn-area">
-                        <button type="button" class="btn-solid" data-action="close"><span>지문(Face ID) 등록/변경</span></button>
+                        <button type="button" class="btn-solid" disabled><span>QR코드 촬영</span></button>
                     </div>
                 </div>
+                <!--인증번호 미입력시-->
+                <!--인증번호 입력시 활성화-->
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid" ><span>QR코드 촬영</span></button>
+                    </div>
+                </div>
+                <!--인증번호 입력시 활성화-->
             </main>
             <!-- // app-content -->
 
-        </div>
         <!-- // app-container -->
+    </div>
 
-        <!-- Layer (modal, bottom sheet) // -->
-        <div class="layered">
-            
-        </div>
-        <!-- // Layer (modal, bottom sheet) -->
+    <div class="layered">
+
+        <!-- @@include('@@webRoot/html/_layered/popup-notice-setting.html') -->
+
     </div>
 
     <!-- Script -->
@@ -66,8 +126,20 @@
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
-
+    <script>
+        
+            modalPopup({
+                title: "",
+                message: "인증서를 가져오기에 성공하였습니다.",
+                type: "확인"
+            });
+            modalPopup({
+                title: "",
+                message: "인증서를 가져오는데 실패하였습니다.",
+                type: "확인"
+            });
+        
+    </script>
 </body>
 
 </html>
-<!-- // [MYS_CO_04_01_03] 지문 FACE ID -->

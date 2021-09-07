@@ -5,16 +5,15 @@
     @@include('@@webRoot/html/_include/app-head.html',{
         "title": "자산 연동 | 약관동의"
     })
-    @@include('@@webRoot/html/_include/app-integrated-header.html',{
-        'pageTit':'<span class="is-hidden">KB국민은행</span>',
-        'type':'kb'
-    })
-    
 </head>
 
 <body>
     @@include('@@webRoot/html/_include/app-a11y.html')
     <div class="app">
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'<span class="is-hidden">KB국민은행</span>',
+            'type':'kb'
+        })
 
         <!-- app-container //-->
         <div class="app-container">
@@ -24,10 +23,9 @@
                 <!-- SECTION //-->
                 <section class="kb-sec asset-sync">
                     <div class="character-box">
-                        <img src="@@webRoot/static/images/common/certificate_loading.png" alt=""><!-- 수정 : 2021.06.25 -->
+                        <img src="@@webRoot/static/images/common/move-authentication-screen.png" alt="">
                     </div>                    
-                    <p>인증 화면으로 이동중입니다.</p><!-- 수정 : 2021.06.25 -->
-                    <!-- <div class="loader"><i></i><i></i><i></i><i></i><span>로딩중</span></div>                     -->
+                    <p>인증 화면으로 이동중입니다.</p>
                 </section>
                 <!--  // SECTION -->
             </main>
@@ -38,9 +36,7 @@
 
         <!-- Layer (modal, bottom sheet) // -->
         <div class="layered">            
-            @@include('@@webRoot/html/_layered/_popup-sample.html')
-            @@include('@@webRoot/html/_layered/_bottom-sheet-sample.html')
-            @@include('@@webRoot/html/_layered/_modal-sample.html')
+            
         </div>
         <!-- // Layer (modal, bottom sheet) -->
     </div>

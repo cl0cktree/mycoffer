@@ -16,19 +16,19 @@
 .with-button .popup_contents{padding-bottom:60px;}
 .popup > .tit{display:block;padding:2px 0 15px 0;font-size:24px;font-weight:bold;white-space:nowrap;}
 .popup .btn-close {
-    @include iconCancel($size: 16px, $thick: 2px, $color: $kb-ui02, $padding: 4px, $position: absolute);
+    @include iconCancel($size: 24px, $thick: 2px, $color: $kb-ui02, $padding: 4px, $position: absolute);
 	right: 24px;top: 12px;
 }
 
 /* Bottom Sheet */
 .bottom-sheet {display:none;position:fixed;left:0;right:0;bottom:-16px;z-index:$level90;max-height:95%;padding-top:32px;border-top-left-radius: 12px;border-top-right-radius: 12px;background-color: $kb-ui11;transition:transform .3s cubic-bezier(0.165, 0.84, 0.44, 1),height .3s .1s cubic-bezier(0.165, 0.84, 0.44, 1);box-shadow: 0px -6px 8px rgba(0, 0, 0, 0.08);}
-.bottom-sheet.is-active{display:flex;flex-flow:column;animation:bsShow .3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;}
+.bottom-sheet.is-active{display:flex;flex-flow:column;bottom:0;animation:bsShow .3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;}
 .bottom-sheet.bs-out{animation:bsHide .3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;}
 .bottom-sheet.bs-tab{height:70%;}
 .bottom-sheet.bs-tab.is-expanded{height:95%;}
 .bottom-sheet .bottom-sheet_header {flex:0 0 28px;padding:0 48px 0 24px;margin-bottom:20px;}
-.bottom-sheet .bottom-sheet_header .tit {font-size:20px;font-weight: bold;line-height: 28px;color:$kb-ui01;}
-.bottom-sheet_contents{@include text;flex:1;overflow:auto;margin-bottom:24px;}
+.bottom-sheet .bottom-sheet_header .tit {font-size:20px;font-weight: bold;line-height: 28px;color:$kb-ui01;letter-spacing:-0.02em}
+.bottom-sheet_contents{@include text;flex:1;overflow:hidden;overflow-y:auto;margin-bottom:24px;}
 .bottom-sheet_contents .kb-sec:first-child{padding-top:0;}
 .bottom-sheet .not-today + .bottom-sheet_buttons{margin-top:0;}
 .bottom-sheet_buttons{display:flex;margin-top:36px;}
@@ -45,10 +45,10 @@
 
 @keyframes bsShow {
     0%{transform:translateY(100%);}
-    100%{transform:translateY(-16px);}    
+    100%{transform:translateY(0);}    
 }
 @keyframes bsHide {
-    0%{transform:translateY(-16px);}    
+    0%{transform:translateY(0);}    
     100%{transform:translateY(100%);}
 }
 
@@ -58,7 +58,7 @@
 .modal_header{min-height:28px;padding:0 24px;}
 .modal_header .tit{@include heading($size: 20px);display:inline-block;padding:0 2px;}
 .modal_header  + .modal_contents{margin-top:15px;}
-.modal_contents{@include text($size: $text02);overflow:auto;margin-top:3px;margin-bottom:28px;padding:0 24px;color:$kb-ui03;}
+.modal_contents{@include text($size: $text02);overflow:auto;margin-top:3px;margin-bottom:28px;padding:0 24px;}
 .modal-not-today{flex:1 0 76px;padding:28px 24px 24px;background-color:$kb-ui11;}
 .modal_contents ul[data-style=list] li{color:$kb-ui03;}
 .modal .not-today + .modal_buttons {margin-top:0;}
@@ -80,8 +80,8 @@
 
 .bottom-sheet .btn-close,
 .modal .btn-close {
-    @include iconCancel($size: 18px, $thick: 2px, $color: $kb-ui05, $padding: 9px, $position: absolute);
-	right: 19px;top: 24px;
+    @include iconCancel($size: 18px, $thick: 2px, $color: $kb-ui05, $padding: 8px, $position: absolute);
+	right: 16px;top: 28px;
 }
 .modal .error-code{display:block;margin-top:12px;}
 

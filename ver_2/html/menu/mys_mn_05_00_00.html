@@ -29,9 +29,9 @@
                         <ul class="certificate-list">
                             <li>
                                 <a href="javascript:;">
-                                    <i class="icon-kakao_sns_48"></i> 
+                                    <i class="icon-kakao_40"></i> 
                                     <span class="txt">카카오<span class="tag-label t03 round" data-state="active">사용중</span></span>
-                                    <span>해지하기</span><span class="link-arrow">바로가기</span>
+                                    <span>해지하기</span><span class="link-arrow" onclick="modalDemo1()">해지하기</span>
                                 </a>
                             </li> 
                         </ul>
@@ -40,9 +40,9 @@
                         <ul class="certificate-list">
                             <li>
                                 <a href="javascript:;">
-                                    <i class="icon-naver"></i> 
+                                    <i class="icon-naver_40"></i> 
                                     <span class="txt">네이버<span class="tag-label t03 round" data-state="active">사용중</span></span>
-                                    <span>해지하기</span><span class="link-arrow">바로가기</span>
+                                    <span>해지하기</span><span class="link-arrow" onclick="modalDemo2()">해지하기</span>
                                 </a>
                             </li> 
                         </ul>
@@ -51,9 +51,9 @@
                         <ul class="certificate-list">
                             <li>
                                 <a href="javascript:;">
-                                    <i class="icon-apple"></i> 
+                                    <i class="icon-apple_40"></i> 
                                     <span class="txt">Apple<span class="tag-label t03 round" data-state="active">사용중</span></span>
-                                    <span>설정하기</span><span class="link-arrow">바로가기</span>
+                                    <span>설정하기</span><span class="link-arrow">설정하기</span>
                                 </a>
                             </li> 
                         </ul>
@@ -89,7 +89,7 @@
                         </ul>
                     </div> -->
                     <!-- 수정 : 2021.06.04 // -->
-                    <p class="bottom-btn-text02"><a href="javascript:;" class="btn-text" role="button"><u>로그아웃</u></a></p>
+                    <p class="bottom-btn-text02"><button class="btn-text" onclick="modalDemo3()"><span><u>로그아웃</u></span></button></p>
                 </section>   
 
             </main>
@@ -109,7 +109,34 @@
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
-
+    <script>
+        function modalDemo1() {
+            modalPopup({
+                title: "",
+                message: "SNS 로그인 기능을 해지하시겠습니까?",
+                type: "confirm",
+                textOkButton: "취소",
+                textCancelButton: "확인",
+            });
+        }
+        function modalDemo2() {
+            modalPopup({
+                title: "",
+                message: "SNS 로그인 기능이 해지되었습니다.",
+                type: "확인"
+            });
+        }
+        function modalDemo3() {
+            modalPopup({
+                title: "",
+                message: "로그아웃 하시겠습니까?",
+                type: "confirm",
+                textOkButton: "취소",
+                textCancelButton: "확인",
+            });
+        }
+        
+</script>
 </body>
 
 </html>

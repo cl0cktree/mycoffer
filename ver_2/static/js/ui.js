@@ -76,6 +76,7 @@ function gfn_fnChkByte($target, maxByte){
     }
 }
 
+var st = $window.scrollTop();
 var $body = $('body');
 var $layered = $('.layered');
 
@@ -230,27 +231,27 @@ $('body').on('click','[data-action=close]',function(){
     var duration = $(this).data('call-layered') != undefined ? 0 : undefined;
     gfn_layered.close(name, duration);
 
-    //Cookie[s]
+    //Cookie[s] // jsp로 이동
     //Checkbox 형태일때
-    var cookieChecker = $(this).closest('.floating-banner').find('.cookie-hidden');
-    if(cookieChecker.length && cookieChecker.is(':checkbox')){
-        var cookieValue = cookieChecker.prop('checked');
-        var cookieName = cookieChecker.attr('name');
-        var cookieDay = cookieChecker.data('expire-day');
-        if(!cookieValue){
-            cookie.delete(cookieName);
-        }else{
-            cookie.set(cookieName, cookieValue, cookieDay);
-        }
-    }
+    // var cookieChecker = $(this).closest('.floating-banner').find('.cookie-hidden');
+    // if(cookieChecker.length && cookieChecker.is(':checkbox')){
+    //     var cookieValue = cookieChecker.prop('checked');
+    //     var cookieName = cookieChecker.attr('name');
+    //     var cookieDay = cookieChecker.data('expire-day');
+    //     if(!cookieValue){
+    //         cookie.delete(cookieName);
+    //     }else{
+    //         cookie.set(cookieName, cookieValue, cookieDay);
+    //     }
+    // }
 
-    //button 형태일 때
-    var $buttonWithCookie = $(this);
-    if($buttonWithCookie.hasClass('cookie-hidden')){
-        var buttonWithCookieName = $buttonWithCookie.attr('name');
-        var buttonWithCookieDay = $buttonWithCookie.data('expire-day');
-        cookie.set(buttonWithCookieName, true, buttonWithCookieDay);
-    }
+    // //button 형태일 때
+    // var $buttonWithCookie = $(this);
+    // if($buttonWithCookie.hasClass('cookie-hidden')){
+    //     var buttonWithCookieName = $buttonWithCookie.attr('name');
+    //     var buttonWithCookieDay = $buttonWithCookie.data('expire-day');
+    //     cookie.set(buttonWithCookieName, true, buttonWithCookieDay);
+    // }
     //Cookie[e]
 
 });
@@ -299,7 +300,7 @@ var gfn_formText = {
         $target.find('.measurement').text('');
     },
     write: function(id, val){
-        var $this;
+        var $this = $('input[type=text]');
         if(typeof(id) == 'string'){
             $this = $('#'+id);
         }else if(typeof(id) == 'object'){
@@ -316,12 +317,13 @@ var gfn_formText = {
         }
     },
     clear: function(id){
-        var $this;
+        var $this = $('input[type=text]');
         if(typeof(id) == 'string'){
             $this = $('#'+id);
         }else if(typeof(id) == 'object'){
             $this = $(id);
         }
+
         $this.val('');
         $this.closest('.kb-form').removeClass('is-active').addClass('not-ready');
     }
@@ -426,8 +428,11 @@ var gfn_formSelect = {
                 var $options = $target.find('select').find('option');
                 $options.each(function(idx) {
                     var selectedClass = $(this).is(":selected") ? "is-selected" : "";
-                    if(idx != 0)
-                    $bsSelect.find('.bottom-sheet_select').append('<li class="'+selectedClass+'"><button type="button">'+$(this).text()+'</button></li>');
+                    if(idx != 0){
+                        $bsSelect.find('.bottom-sheet_select').append('<li class="'+selectedClass+'"><button type="button">'+$(this).text()+'</button></li>');
+                    }
+                    
+                    
                 });
 
                 //call bottom sheet
@@ -1426,7 +1431,7 @@ if($recommendEmployees.length){
     $recommendEmployees.find('.btn-segmented_radio').on('change','input:radio',function(){
         
         var idx = $(this).parent('li').index();        
-        $(this).addClass('is-selected').parent('li').siblings('li').find('button').removeClass('is-selected');
+        //$(this).addClass('is-selected').parent('li').siblings('li').find('button').removeClass('is-selected');
 
         var $recommendEmployeesFrom = $recommendEmployees.find('.recommend-employees-form');
         

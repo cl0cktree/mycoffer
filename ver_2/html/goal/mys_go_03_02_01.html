@@ -62,8 +62,8 @@
                                 <div class="swiper-slide content-box shadow">
                                     <div class="challenge-info non-tit">
                                         <h2 class="tit flex-box goals-desc type2">비교그룹과 월별 소비금액을 비교했어요.</h2>
-                                        <div class="chart-area dbl-bar">
-                                            <div class="chart-area type-ratio mt0" id="splineChart"></div>                                                                  
+                                        <div class="chart-area" id="splineChart">
+                                            <!-- <div class="chart-area type-ratio mt0"></div>                                                                   -->
                                             <!-- <span class="txt-gray">비교그룹</span>
                                             <span class="txt-yellow type2">나</span> -->
                                         </div>
@@ -170,7 +170,10 @@
                     type: "line",
                     marginLeft: 10,
                     marginRight: 10,
+                    marginBottom: 23,
                     paddingTop:0,
+                    height: 186,
+                    backgroundColor: 'none'
                 },
                 xAxis: {
                     // type: "category",
@@ -178,7 +181,7 @@
                     labels: {
                         style: {
                             color: "#26282c",
-                            fontSize: '3.733vw',
+                            fontSize: '1.4rem',
                             fontFamily: 'KBFGText',
                         },
                         formatter: function () {
@@ -221,7 +224,7 @@
                     verticalAlign: 'top',
                     borderColor: 'transparent',
                     style: {
-                        fontSize: '4vw',
+                        fontSize: '1.4rem',
                         fontFamily: "KBFGText",
                         color:'#fff'
                     },

@@ -24,13 +24,48 @@
             <!-- app-content // -->
             <main class="app-content mobie-cetification">
                 <div class="page-step js-fixed">    
-                    <div class="step" aria-label="총 3단계 중 현재 5단계">
-                        <span class="current">3</span>                        
-                        <span class="total">5</span>
+                    <div class="page-step-inner">
+                        <div class="step" aria-label="총 3단계 중 현재 5단계">
+                            <span class="current">3</span>                        
+                            <span class="total">5</span>
+                        </div>
+                        <h2 class="h1">계좌인증</h2>
                     </div>
-                    <h2 class="h1">계좌인증</h2>
                 </div>  
-                <section class="kb-sec">  
+                <section class="kb-sec pgbank-join">
+					<div class="account-link">
+						<div class="kb-form" data-status="">
+							<label for="">계좌선택</label>
+							<div class="kb-form_inner form-select">
+								<button type="button" class="selected-option" data-call-layered="bsAccountSelect"></button>
+								<select name="" id="" title="계좌 선택">
+									<option value="" selected>계좌선택</option>
+									<option value="bank01">010101-01-010101</option>
+									<option value="bank02">111111-00-000000</option>
+                                    <option value="bank03">222222-00-000000</option>
+                                    <option value="bank04">333333-00-000000</option>
+                                    <option value="bank05">444444-00-000000</option>
+                                    <option value="bank06">555555-00-000000</option>
+                                    <option value="bank07">666666-00-000000</option>
+                                    <option value="bank08">777777-00-000000</option>
+                                    <option value="bank09">888888-00-000000</option>
+                                    <option value="bank10">999999-00-000000</option>
+								</select>
+							</div>
+							<p class="validation">계좌를 선택해 주세요.</p>
+						</div>
+                        <div class="kb-form mt24" data-status="">                        
+                            <label for="certificationName">계좌비밀번호</label>
+                            <div class="kb-form_inner form-text">
+                                <input type="password" id="certificationName" value="" placeholder="계좌비밀번호">
+                                <button class="btn-data-clear"><i class="icon-data-clear_24">계좌비밀번호</i></button>
+                            </div>
+                            <em class="validation">계좌비밀번호를 입력해 주세요.</em>
+                            <em class="validation">비밀번호가 일치하지 않습니다.</em>
+                        </div>     
+					</div>
+				</section>
+                <!-- <section class="kb-sec">  
 					<div class="account-link">
                         <h3 class="is-hidden">계좌선택</h3>
 						<div class="kb-form" data-status="">
@@ -55,7 +90,7 @@
                         <em class="validation">계좌비밀번호를 입력해 주세요.</em>
                         <em class="validation">비밀번호가 일치하지 않습니다.</em>
                     </div>                     
-                </section>
+                </section> -->
                 <div class="sticky-bottom">
                     <div class="btn-area">
                         <button class="btn-solid"><span>확인</span></button>
@@ -73,6 +108,7 @@
             @@include('@@webRoot/html/_layered/popup-agree-mobile-id-personal-info-collection.html')
             @@include('@@webRoot/html/_layered/popup-agree-terms-of-use-of-telecommunications-company.html')
             @@include('@@webRoot/html/_layered/popup-agree-mobile-id-personal-info-service.html') -->
+           
             @@include('@@webRoot/html/common/layered/mys_co_06_01_03_10_p1.html')
         </div>
         <!-- // Layer (modal, bottom sheet) -->

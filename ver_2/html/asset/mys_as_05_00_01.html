@@ -56,11 +56,9 @@
                                                     <div class="tooltip">
                                                         <strong class="tit">입출금잔액 </strong>
                                                         <div class="cont">
-                                                            입출금잔액은 기관별 계좌 총합산 금액입니다.
+                                                            마이데이터 전송요구에 동의한 입출금 계좌의 합산 금액입니다.
                                                             <ul data-style="list">
-                                                                <li>처음 가입할 경우, 최근 3개월 그래프가 노출됩니다.</li>
-                                                                <li>정기전송 동의 후 매달 방문한 경우, 6개월까지 노출됩니다.</li>
-                                                                <li>잔액이 0 또는 데이터가 없을 경우, 해당월 그래프 미노출됩니다.</li>
+                                                                <li>잔액이 0 또는 데이터가 없을 경우, 그래프가 노출되지 않습니다.</li>
                                                             </ul>
                                                         </div>
                                                         <button class="btn-close"><span>닫기</span></button>
@@ -69,7 +67,7 @@
                                                 <div class="graph-msg">
                                                     <div class="txt">
                                                         김국민님<br>
-                                                        현재 입출금 계좌잔액은 <b><span class="num">300,000</span></b>원 입니다.<br>
+                                                        입출금 계좌잔액은 <b class="num">300,000</b>원 입니다.<br>
                                                         여유자금을 저축해보는 여유는 어떠세요?
                                                     </div>
                                                 </div>
@@ -108,17 +106,13 @@
                                                     <div class="tooltip">
                                                         <strong class="tit">입출금잔액 흐름</strong>
                                                         <div class="cont">
-                                                            입출금 잔액은 최근 3개월 평균 잔액변동을 표기합니다.
-                                                            <ul data-style="list">
-                                                                <li>정기전송 동의 후 매일 방문한 경우, 최근 3개월까지 노출됩니다.</li>
-                                                                <li>정기전송 미동의 고객, 잔액 0 경우, 또는 값이 없을 경우, 해당일 잔액 "-" 노출됩니다.</li>
-                                                            </ul>
+                                                            최근 3개월 잔액변동을 나타냅니다.
                                                         </div>
                                                         <button class="btn-close"><span>닫기</span></button>
                                                     </div></h4>
                                                 <div class="graph-msg">
                                                     <div class="txt">
-                                                        김국민님 최근 3개월 동안 잔액이 평균 <b><span class="num">300,000</span></b>원 늘었어요. 내 입출금&middot;페이 통장 변화를 한눈에 확인해보세요.
+                                                        김국민님 <br>최근 3개월 동안 잔액이 평균 <b class="num">300,000</b>원 늘었어요. 내 입출금&middot;페이 통장 변화를 한눈에 확인해보세요.
                                                     </div>
                                                 </div>
                                             </div>
@@ -171,7 +165,7 @@
                             <!--D:금융사별 agency , 상품별 product //-->
                             <dl class="more-view-box is-show">
                                 <dt>
-                                    <a href="javascript:;" class="btn-more-view" role="button">
+                                    <a href="javascript:;" class="btn-more-view account-wrap" role="button">
                                         <em class="type">입출금</em>
                                         <span class="total"><em class="amount"><b class="num">400,000</b>원</em></span>
                                         <em class="arrow"><i class="icon-arrow-down"></i><span>목록열기</span></em>
@@ -301,24 +295,21 @@
                                 </dd>
                             </dl>
                         </div>
-                    </div>
                     <!--//금융사별 보기-->
+                    </div>
                 </section>
                 <section class="kb-sec compare-con">
-                    <h4 class="h4">내 입출금 통장 잔액 진단 <button type="button" class="btn-question"><i
+                    <h4 class="h4">내입출금통장 잔액 진단 <button type="button" class="btn-question"><i
                                 class="icon-tooltip-que_20"></i></button>
                         <div class="tooltip">
-                            <strong class="tit">내 입출금 통장 잔액 진단</strong>
+                            <strong class="tit">입출금통장 잔액 진단</strong>
                             <div class="cont">
-                                <ul data-style="list">
-                                    <li>기준일 : 오늘 기준</li>
-                                    <li>평균잔액 비교 : 1개월 평균잔액 &amp; 3개월 평균잔액</li>
-                                </ul>
+                                어제 기준 1개월 평균잔액과 3개월 평균잔액을 비교한 내용입니다.
                             </div>
                             <button class="btn-close"><span>닫기</span></button>
                         </div>
                     </h4>
-                    <div class="content-box shadow">
+                    <div class="content-box">
                         <p class="msg">입출금 통장 잔액이 평소보다 늘었어요.<br><!-- 2021-06-22 수정 -->
                             돈이 놀지않게 관리해보세요.</p>
                         <div class="link-box_block compare-amount" data-compare-value="left">
@@ -333,7 +324,7 @@
                             </dl>
                         </div>
                     </div>
-                    <div class="content-box shadow">
+                    <div class="content-box">
                         <div class="tit">비교그룹 보다 <button type="button" class="btn-question"><i
                                     class="icon-tooltip-que_20"></i></button>
                             <div class="tooltip">
@@ -351,7 +342,7 @@
                         <!--
                                 [차트 디자인 정보]
                                 * 그래프(막대) 색상(컬러별)
-                                - 나 : #ffd338 ;
+                                 - 나 : #ffcc00 ;
                                 - 비교그룹 : #c6cbd0 ;
                                 - 차이 : #f7f7f8 ; 
 
@@ -416,16 +407,16 @@
                                     class="icon-tooltip-que_20"></i><span>인기상품</span></button>
                             <!-- Tooltip (With title)-->
                             <div class="tooltip">
-                                <strong class="tit">인기상품이란?</strong>
+                                <strong class="tit">인기상품</strong>
                                 <div class="cont">
-                                    마이데이터에 가입한 고객님이 가장 많이 선택한 상품입니다.
+                                    당행 마이데이터 이용고객이 가장 많이 선택한 상품입니다.
                                 </div>
                                 <button class="btn-close"><span>닫기</span></button>
                             </div>
                         </div>
                         <div class="top-area">
                             <button type="button" class="btn-similar" data-call-layered="mys_as_07_00_00_p1"><b>40세~44세
-                                    <i class="arrow"></i></b></button><br>사람들의 사람들의 <b>입출금 인기 상품</b>을 확인하세요.
+                                    <i class="arrow"></i></b></button><br>사람들의 <b>입출금 인기 상품</b>을 확인하세요.
                         </div>
                         <div class="except_kb">
                             <span class="form-checkbox"><input type="checkbox" id="checkboxSample01"><label for="checkboxSample01">KB국민은행 제외</label></span>
@@ -532,22 +523,7 @@
     <script>
         $(document).ready(function () {
             let $wrap = $('.my-asset');
-            $wrap.find('.sort-area .type-product').on('click', function () {
-                $(this).addClass('is-active');
-                $('.sort-area .type-agency').removeClass('is-active');
-                if ($('.my-asset .p-list')) {
-                    $('.p-list.product').show();
-                    $('.p-list.agency').hide();
-                }
-            })
-            $wrap.find('.sort-area .type-agency').on('click', function () {
-                $(this).addClass('is-active');
-                $('.sort-area .type-product').removeClass('is-active');
-                if ($('.my-asset .p-list')) {
-                    $('.p-list.product').hide();
-                    $('.p-list.agency').show();
-                }
-            })
+            
             $wrap.find('.p-list dl').each(function () {
                 let chk = $(this).hasClass('is-show');
                 if (chk) {

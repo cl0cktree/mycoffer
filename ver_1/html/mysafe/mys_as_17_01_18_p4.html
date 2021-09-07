@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_AS_17_01_18_P2] 작성자: 유플리트 이현섭 -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "자산 | My금고"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-integrated-header.html',{
+			'pageTit' :'휴대폰 등급 기준 안내',
+			'type': 'close'
+		}) 
+		<!-- // app-header (for MyMoney) -->
+
+		<!-- app-container //-->
+		<div class="app-container mysafe-phone-status mysafe-phone-status-iphone-s">
+
+			<!-- app-content // -->
+			<main class="app-content">
+
+				<section class="kb-sec in-tab">
+					<div class="tab swiper-container">
+						<ul class="swiper-wrapper">
+							<li class="swiper-slide is-active"><a href="#">아이폰 등급기준</a></li>
+							<li class="swiper-slide"><a href="#">삼성 및 기타 휴대폰 등급 기준</a></li>
+						</ul>
+					</div>
+					<div class="tab depth2 swiper-container">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide"><a href="#">S등급</a></li>
+                            <li class="swiper-slide"><a href="#">A등급</a></li>
+                            <li class="swiper-slide is-active"><a href="#">B등급</a></li>
+                            <li class="swiper-slide"><a href="#">C등급</a></li>
+                            <li class="swiper-slide"><a href="#">D등급</a></li>
+                        </ul>
+                    </div>
+				</section>
+				<section class="kb-sec">
+					<div class="table mt20">
+                        <table class="phone-table-lcd">
+                            <colgroup>
+                                <col style="width:50%">
+                                <col style="width:50%">
+                            </colgroup>
+                            <caption>핸드폰 액정 확인표</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">항목</th>
+                                    <th scope="col">상태</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>액정</td>
+                                    <td class="align-c safe-padding-zero">
+										<span class="phone-class-badge bad">흠집</span>
+									</td>
+                                </tr>
+								<tr>
+                                    <td colspan="2">액정에 기스가 있는 경우</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+					<div class="mysafe-img-box">
+						<ul class="mysafe-img-list">
+							<li class="align-c">
+								<img src="@@webRoot/static/images/mysafe/phon_lcd_b.png" alt="">
+							</li>
+						</ul>
+					</div>
+				</section>
+
+				<section class="kb-sec">
+					<div class="table mt20">
+                        <table class="phone-table-back">
+                            <colgroup>
+                                <col style="width:50%">
+                                <col style="width:50%">
+                            </colgroup>
+                            <caption>핸드폰 뒷판(측면) 확인표</caption>
+                            <tbody>
+                                <tr>
+                                    <td>뒷판(측면)</td>
+                                    <td class="align-c safe-padding-zero">
+										<span class="phone-class-badge bad">흠집, 찍힘</span>
+									</td>
+                                </tr>
+								<tr>
+                                    <td colspan="2">뒷판(측면)에 기스나 찍힘이 있는 경우</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+					<div class="mysafe-img-box">
+						<ul class="mysafe-img-list">
+							<li class="align-c">
+								<img src="@@webRoot/static/images/mysafe/phon_back_b_1.png" alt="">
+							</li>
+							<li class="align-c">
+								<img src="@@webRoot/static/images/mysafe/phon_back_b_2.png" alt="">
+							</li>
+						</ul>
+					</div>
+				</section>
+
+				<section class="kb-sec">
+					<div class="table mt20">
+                        <table class="phone-table-back">
+                            <colgroup>
+                                <col style="width:50%">
+                                <col style="width:50%">
+                            </colgroup>
+                            <caption>핸드폰 잔상 확인표</caption>
+                            <tbody>
+                                <tr>
+                                    <td>잔상</td>
+                                    <td class="align-c safe-padding-zero">
+										<span class="phone-class-badge bad">약잔상~중잔상</span>
+									</td>
+                                </tr>
+								<tr>
+                                    <td colspan="2">약잔상-중잔상이 있는 경우</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+					<div class="mysafe-img-box">
+						<ul class="mysafe-img-list">
+							<li class="align-c">
+								<img src="@@webRoot/static/images/mysafe/phon_burn_b.png" alt="">
+							</li>
+						</ul>
+					</div>
+				</section>
+				
+				<section class="kb-sec">
+					<div class="table mt20">
+						<table class="phone-table-back">
+							<colgroup>
+                                <col style="width:50%">
+                                <col style="width:50%">
+                            </colgroup>
+                            <caption>핸드폰 센서 및 기타 확인표</caption>
+							<thead>
+                                <tr>
+                                    <th scope="col">항목</th>
+                                    <th scope="col">상태</th>
+                                </tr>
+                            </thead>
+							<tbody>
+								<tr>
+									<td>지문/FACE ID</td>
+									<td class="align-c safe-padding-zero">
+										<span class="phone-class-badge normal">정상</span>
+									</td>
+								</tr>
+								<tr>
+									<td>나침판</td>
+									<td class="align-c safe-padding-zero">
+										<span class="phone-class-badge normal">정상</span>
+									</td>
+								</tr>
+								<tr>
+									<td>LCD</td>
+									<td class="align-c safe-padding-zero">
+										<span class="phone-class-badge normal">정상</span>
+									</td>
+								</tr>
+								<tr>
+									<td>음성녹음</td>
+									<td class="align-c safe-padding-zero">
+										<span class="phone-class-badge bad">녹음 어플 장애</span>
+									</td>
+								</tr>
+								<tr>
+									<td>카메라</td>
+									<td class="align-c safe-padding-zero">
+										<span class="phone-class-badge bad">카메라멍 1-2개</span>
+									</td>
+								</tr>
+								<tr>
+									<td>와이파이</td>
+									<td class="align-c safe-padding-zero">
+										<span class="phone-class-badge normal">정상</span>
+									</td>
+								</tr>
+								<tr>
+									<td>전원</td>
+									<td class="align-c safe-padding-zero">
+										<span class="phone-class-badge normal">정상</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</section>
+
+				<section class="kb-sec sticky-bottom">
+					<div class="btn-area">
+						<button type="button" class="btn-solid_sticky"><span>확인</span></button>
+					</div>
+				</section>
+
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+
+</body>
+
+</html>

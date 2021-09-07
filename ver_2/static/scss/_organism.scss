@@ -14,21 +14,21 @@
 .search-month .btn-next.is-disabled{background-position:-24px -69px;}
 
 //Datepicker
-.calendar-nav{position:relative;display:flex;justify-content:center;align-items:center;margin-left:(-2.4rem);margin-right:(-2.4rem);padding:10px 60px;}
-.calendar-nav strong{@include number($weight:bold, $line-height:34px);margin:0 20px;}
-.calendar-nav .btn-text{@include btnText($size:14px);position:absolute;left:24px;top:11px;width:48px;height:34px;justify-content: center;}
+.calendar-nav{position:relative;display:flex;justify-content:center;align-items:center;margin-left:(-2.4rem);margin-right:(-2.4rem);padding:11px 60px;}
+.calendar-nav strong{@include number($weight:bold);width:112px;line-height:34px;text-align:center;}
+.calendar-nav .btn-text{@include btnText($size:14px);position:absolute;left:24px;top:11px;width:48px;height:34px;justify-content: center;color:$kb-ui02;}
 // .calendar-nav .btn-text{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background-color:$kb-ui02}
 .calendar-nav .btn-text span{line-height:1;border-bottom:1px solid $kb-ui02;}
-.calendar-nav > button:not(.btn-text){position:relative;@include ir;width:24px;height:34px;}
-.calendar-nav > button:not(.btn-text):before{content:'';position:absolute;top:5px;left:0;width:24px;height:24px;background-image:url(../images/common/common.png);background-size:160px;background-repeat:no-repeat;}
-.calendar-nav .btn-first:before{background-position:-48px -45px;}
-.calendar-nav .btn-first.is-disabled:before{background-position:-48px -69px;}
-.calendar-nav .btn-prev:before{background-position:0 -45px;}
-.calendar-nav .btn-prev.is-disabled:before{background-position:0 -69px;}
-.calendar-nav .btn-next:before{background-position:-24px -45px;}
-.calendar-nav .btn-next.is-disabled:before{background-position:-24px -69px;}
-.calendar-nav .btn-last:before{background-position:-72px -45px;}
-.calendar-nav .btn-last.is-disabled:before{background-position:-72px -69px;}
+.calendar-nav > button:not(.btn-text){position:relative;@include ir;width:26px;height:34px;}
+.calendar-nav > button:not(.btn-text):before{content:'';position:absolute;top:50%;left:50%;width:20px;height:20px;margin:-10px 0 0 -10px;background-image:url(../images/common/common.png);background-size:160px;background-repeat:no-repeat;}
+.calendar-nav .btn-first:before{background-position:0 -120px;}
+.calendar-nav .btn-first.is-disabled:before{background-position:0 -140px;}
+.calendar-nav .btn-prev:before{background-position:-20px -120px;}
+.calendar-nav .btn-prev.is-disabled:before{background-position:-20px -140px;}
+.calendar-nav .btn-next:before{background-position:-40px -120px;}
+.calendar-nav .btn-next.is-disabled:before{background-position:-40px -140px;}
+.calendar-nav .btn-last:before{background-position:-60px -120px;}
+.calendar-nav .btn-last.is-disabled:before{background-position:-60px -140px;}
 
 .calendar-area{padding-top:20px;border-top:1px solid $kb-ui09;}
 .calendar-area th,
@@ -36,7 +36,8 @@
 .calendar-area th{padding-top:0;padding-bottom:1px;color:$kb-ui04;line-height:1;}
 .calendar-area td{height:60px;font-size:17px;color:$kb-ui02;font-weight:bold;}
 .calendar-area td.today button{width:36px;height:36px;border-radius:50%;background-color:$color-yellow}
-.calendar-area .ui-datepicker{padding:0;}
+.calendar-area .ui-datepicker,
+.calendar-area .ui-datepicker td{padding:0;}
 .calendar-area .ui-widget.ui-widget-content{width:100%;border:none;}
 .calendar-area .ui-datepicker table{margin-bottom:0;}
 .calendar-area .ui-datepicker .ui-datepicker-header{display:none;}
@@ -64,6 +65,7 @@
 //.calendar-area .ui-widget-content .ui-datepicker-today .ui-state-highlight:after{content:'';position:absolute;bottom:-12px;left:calc(50% - 2px);width:4px;height:4px;border-radius:50%;background-color:$color-yellow}
 
 .bottom-sheet[data-layered-name=bsCalendar] .bottom-sheet_contents{margin-bottom:0;}
+.bottom-sheet[data-layered-name=bsCalendar] .bottom-sheet_contents .kb-sec{padding-left:20px;padding-right:20px;}
 .bottom-sheet[data-layered-name=bsCalendar] .bottom-sheet_buttons{margin-top:48px;}
 
 .pdf-viewer{overflow:auto;display:flex;flex-flow:column;height:calc(var(--vh, 1vh) * 100 - 48px);padding:0;background-color:$kb-ui08;}

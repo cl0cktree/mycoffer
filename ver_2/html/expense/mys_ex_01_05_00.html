@@ -37,7 +37,7 @@
                 </section>
                 <!--// [D] 2021-08-31 추가 : 필수입력안내란 -->
                 <!-- 수기 등록 입력 옵션//-->
-                <section class="kb-sec user-register-option dividing-line-bottom">
+                <section class="kb-sec user-register-option mb40"><!-- [D] 2021-09-06 수정 : 클래스 수정 -->
                     <ul class="lsit-view-setting">
                         <li><span class="btn-switch"><input type="checkbox" name="radioSwitch" id="IncludeEexpenseSum" checked=""><label for="IncludeEexpenseSum"><span>지출 합계 포함</span></label></span></li>
                     </ul>
@@ -45,22 +45,26 @@
                 <!-- //수기 등록 입력 옵션-->
                 <!-- 수기 등록 입력 폼//-->
                 <section class="kb-sec user-register-forms more-view-box">
-                    <!-- 날짜 및 시간//-->
-                    <div class="kb-form_multi date-time-picker">
+                    <!-- 날짜 및 시간//--> <!-- [D] 2021-09-06 수정 : GUI 수정 요청사항 적용 -->
+                    <div class="kb-form_multi date-time">
                         <strong class="tit required">날짜 및 시간</strong>
-                        <div class="kb-form datepicker" data-status="error">
+                        <div class="kb-form" data-status="error">
+                            <label for="inputDate">날짜</label>
                             <div class="kb-form_inner form-text">
-                                <input type="text" id="dateSelectorSample" title="날짜선택">
+                                <input type="text" id="inputDate" maxlength="6" placeholder="" value="2021.09.06" inputmode="numeric">
+                                <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                             </div>
-                            <em class="validation">오늘을 포함한 날짜만 선택해주세요.</em><!-- 성공/에러 메세지 -->
                         </div>
-                        <div class="kb-form timepicker" data-status="error">
+                        <div class="kb-form" data-status="error">
+                            <label for="inputTime">사건</label>
                             <div class="kb-form_inner form-text">
-                                <input type="text" id="timeSelectorSample" title="시간선택">
+                                <input type="text" id="inputTime" maxlength="6" placeholder="" value="18:34" inputmode="numeric">
+                                <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                             </div>
-                            <em class="validation">숫자 4자리도 입력해주세요.</em><!-- 성공/에러 메세지 -->
-                            <em class="validation">2400보다 큰 숫자를 입력 할 수 없습니다.</em><!-- 성공/에러 메세지 -->
                         </div>
+                        <em class="validation">오늘을 포함한 날짜만 선택해주세요.</em><!-- 성공/에러 메세지 -->
+                        <em class="validation">숫자 4자리도 입력해주세요.</em><!-- 성공/에러 메세지 -->
+                        <em class="validation">2400보다 큰 숫자를 입력 할 수 없습니다.</em><!-- 성공/에러 메세지 -->
                     </div>
                     <!-- 금액//-->
                     <div class="kb-form more-view-item" data-status="error" data-view-option="show">
@@ -112,10 +116,8 @@
                         <em class="validation">Success Message</em>
                     </div>
                     <!-- 더보기버튼//-->
-                    <div class="btn-area right">
-                        <a href="javascript:;" class="btn-text btn-more-view" role="button">
-                            <span class="hide-status">상세 입력</span><span class="show-status">닫기</span><i class="icon-arrow-down"></i>
-                        </a>
+                    <div class="btn-area right mt12"> <!-- [D] 2021-09-06 수정 : 클래스 추가 -->
+                        <a href="javascript:;" class="btn-text btn-more-view" role="button"><span>상세입력</span><i class="icon-arrow-down"></i></a><!-- [D] 2021-09-06 수정 : 텍스트 영역 수정 -->
                     </div>
                 </section>
                 <!-- //수기 등록 입력 폼-->
@@ -139,10 +141,6 @@
             @@include('@@webRoot/html/expense/layered/mys_ex_01_05_02_p01.html')
             @@include('@@webRoot/html/expense/layered/mys_ex_01_05_02_p02.html')
             @@include('@@webRoot/html/expense/layered/mys_ex_01_05_07_p.html')
-
-            @@include('@@webRoot/html/_layered/bs-time.html')
-            @@include('@@webRoot/html/_layered/bs-calendar.html')
-
             <div class="modal modal_radioOption" id="hideList">
                 <div class="modal_header">
                     <strong class="form-tit">내역에서 숨기기</strong>

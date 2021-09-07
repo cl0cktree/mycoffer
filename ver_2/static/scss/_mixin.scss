@@ -97,6 +97,7 @@
 
 //Text ($disabled : 흐린 텍스트)
 @mixin text($size : $text02, $weight : normal, $line-height: 1.4) {
+    font-family:'KBFGText',sans-serif;
     font-size: px-to-rem($size);
     font-weight: $weight;    
 
@@ -114,7 +115,7 @@
     //disabled
     .is-disabled,
     :disabled{
-        color:$text-color-blur;
+        color:$kb-ui04;
     }
 }
 
@@ -703,6 +704,7 @@
         position:absolute;        
         top:0;transform:translateY(0) rotate(-45deg);
     }
+    input:disabled + label{color:$kb-ui07;}
     @if (remove-units($size) == 24 or remove-units($size) == 2.4){
         label{padding-top:0.1rem;padding-left:34px;font-size:$text02;}
         input + label:before{left:0;width:2.4rem;height:2.4rem;border:2px solid $kb-ui07;border-radius:50%;}
@@ -735,7 +737,7 @@
             border-bottom-left-radius: 3px;
         }
         input:checked + label:before{border-color:$color-yellow-negative;}
-        input:disabled + label:before{border-color:$kb-ui06;}
+        input:disabled + label:before{border-color:$kb-ui07;}
         input:disabled:checked + label:before{border-color:#ffedaf;}
 
         @if($align == left){
@@ -767,10 +769,9 @@
     label:after{left:$size * 0.25;top:$size * 0.25;width: $size * 0.5;height: $size * 0.5;background-color:$color-yellow;}
     input:checked + label:before{border-color: $color-yellow;}
     input:checked + label:after{content:'';}
-    input:disabled + label:before{border-color: $color-disable;}
-    input:disabled:checked + label:after{background-color:$color-disable;}
-    input:disabled + label{color:$color-disable;}
-
+    input:disabled + label:before{border-color:$kb-ui07;}
+    input:disabled:checked + label:after{background-color:$kb-ui07;}
+    input:disabled + label{color:$kb-ui07;}
     &.align-mid input + label:before,
     &.align-mid input + label:after{top:50%;transform:translateY(-50%);}
 

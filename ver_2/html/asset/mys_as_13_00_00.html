@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-channel="ch_star">
 
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
-        "title": "외화 | 자산"
+    "title": "외화 | 자산"
     })
 </head>
 
@@ -12,8 +12,8 @@
     <div class="app">
         <!-- app-header //-->
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
-            'pageTit':'외화',
-            'type':''
+        'pageTit':'외화',
+        'type':'complete'
         })
         <!-- // app-header -->
 
@@ -22,8 +22,8 @@
 
             <!-- app-lnb //-->
             <div class="app-lnb">
-                
-                            
+
+
             </div>
             <!-- //app-lnb -->
 
@@ -31,7 +31,7 @@
             <main class="app-content my-asset foreign-currency">
                 <!-- 컨텐츠 영역 -->
                 <!-- SECTION //-->
-                <section class="kb-sec full bg-gray asset-summary">
+                <section class="kb-sec asset-summary">
                     <div class="highcharts-box charts-type_square no-space">
                         <div class="swiper-container t01 js-swiper" data-swiper-options="currencySummarySwiperOptions">
                             <script>
@@ -44,116 +44,31 @@
                                         "delay": 5000,
                                     },
                                     // 2021-08-10
-                                    "autoHeight" : true
+                                    "autoHeight": true
                                 };
                             </script>
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <div class="graph-area">
-                                        <figure class="highcharts-figure content-box">
+                                        <figure class="highcharts-figure">
                                             <div class="graph-info">
                                                 <h4 class="h4">
-                                                    JPY(일본 <span class="num">100</span>엔)<button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                                    JPY(일본 <span class="num">100</span>엔)<button type="button"
+                                                        class="btn-question"><i
+                                                            class="icon-tooltip-que_20"></i></button>
                                                     <div class="tooltip">
-                                                        <strong class="tit">환산기준?</strong>
+                                                        <strong class="tit">환산기준</strong>
                                                         <div class="cont">
-                                                            외화/골드 원화환산금액은 전일은 마지막 회차, 당일은 최종 고시환율 기준으로 단순 계산한 값으로 실제 평가금액과는 차이가 있을 수 있습니다.
+                                                            외화/골드 원화환산 평가금액은 전일은 마지막 회차 기준, 당일은 최종 고시환율 기준으로 단순히 계산한 값으로
+                                                            실제 평가금액과 다를 수 있습니다. 보유금액 변동에 따른 차이가 반영됩니다.
                                                         </div>
                                                         <button class="btn-close"><span>닫기</span></button>
                                                     </div>
-                                                    <button class="btn-more"><i class="icon-setting_menu_24"></i></button>
-                                                </h4>		
-                                                <div class="graph-msg">
-													<div class="txt">
-                                                        김국민님의 <br>총 외화자산은 <b><span class="num">1,000,000</span>원</b> 입니다.<br>지난달에도 JPY<span class="num">1,160.87</span> 보유하고 있었어요!
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- [chart area] //-->
-                                            <!--
-                                                [차트 디자인 정보]
-                                                * 그래프(막대) 색상(컬러별)
-                                                - 노란색 :  #ffd338;
-                                                - 회색 :  #c6cbd0;
-
-                                                - 차트 텍스트 컬러/크기 : #26282c/14px
-                                                - X축 텍스트 컬러/크기 : #8c949e/14px
-												- data labels 텍스트 컬러/크기 : #26282c/14px
-                                            -->
-                                            <div class="chart-area" id="">
-                                                <img class="temp" src="@@webRoot/static/images/_temp/chart_as0600_2.png" alt="차트 예시 이미지">
-                                            </div>
-                                            <!--// [chart area] -->
-                                            <!--
-											<div class="my-average">
-												<em>내 평균 <span class="num">4,665,210</span>원</em> 
-											</div>
-                                            -->
-                                        </figure>
-										
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="graph-area">
-                                        <figure class="highcharts-figure content-box">
-                                            <div class="graph-info">
-                                                <h4 class="h4">USD(미국) <span class="num">100</span>달러)<button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
-                                                    <div class="tooltip">
-                                                        <strong class="tit">환산기준?</strong>
-                                                        <div class="cont">
-                                                            외화/골드 원화환산금액은 전일은 마지막 회차, 당일은 최종 고시환율 기준으로 단순 계산한 값으로 실제 평가금액과는 차이가 있을 수 있습니다.
-                                                        </div>
-                                                        <button class="btn-close"><span>닫기</span></button>
-                                                    </div>
-                                                    <button class="btn-more"><i class="icon-setting_menu_24"></i></button>
-                                                </h4>		
-                                                <div class="graph-msg">
-													<div class="txt">
-                                                        김국민님의 <br>총 외화자산은 <b><span class="num">1,000,000</span>원</b> 입니다.<br>지난달에도 USD<span class="num">1,160.87</span> 보유하고 있었어요!
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- [chart area] //-->
-                                            <!--
-                                                [차트 디자인 정보]
-                                                * 그래프(막대) 색상(컬러별)
-                                                - 노란색 :  #ffd338;
-                                                - 회색 :  #c6cbd0;
-
-                                                - 차트 텍스트 컬러/크기 : #26282c/14px
-                                                - X축 텍스트 컬러/크기 : #8c949e/14px
-												- data labels 텍스트 컬러/크기 : #26282c/14px
-                                            -->
-                                            <div class="chart-area" id="">
-                                                <img class="temp" src="@@webRoot/static/images/_temp/chart_as0600_2.png" alt="차트 예시 이미지">
-                                            </div>
-                                            <!--// [chart area] -->
-                                            <!--
-											<div class="my-average">
-												<em>내 평균 <span class="num">4,665,210</span>원</em> 
-											</div>
-                                            -->
-                                        </figure>
-										
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="graph-area">
-                                        <figure class="highcharts-figure content-box">
-                                            <div class="graph-info">
-                                                <h4 class="h4">EUR(유럽연합 유로 )<button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
-                                                    <div class="tooltip">
-                                                        <strong class="tit">환산기준?</strong>
-                                                        <div class="cont">
-                                                            외화/골드 원화환산금액은 전일은 마지막 회차, 당일은 최종 고시환율 기준으로 단순 계산한 값으로 실제 평가금액과는 차이가 있을 수 있습니다.
-                                                        </div>
-                                                        <button class="btn-close"><span>닫기</span></button>
-                                                    </div>
-                                                    <button class="btn-more"><i class="icon-setting_menu_24"></i></button>
                                                 </h4>
                                                 <div class="graph-msg">
-													<div class="txt">
-                                                        김국민님의 <br>총 외화자산은 <b><span class="num">1,000,000</span>원</b> 입니다.<br>지난달에도 EUR<span class="num">1,160.87</span> 보유하고 있었어요!
+                                                    <div class="txt">
+                                                        김국민님 <br>총 외화자산은 원화로 <b class="num">1,000,000</b>원 입니다.<br>지난달에도
+                                                        JPY <b class="num">1,160.87</b> 보유하고 있었어요.
                                                     </div>
                                                 </div>
                                             </div>
@@ -169,7 +84,8 @@
 												- data labels 텍스트 컬러/크기 : #26282c/14px
                                             -->
                                             <div class="chart-area" id="">
-                                                <img class="temp" src="@@webRoot/static/images/_temp/chart_as0600_2.png" alt="차트 예시 이미지">
+                                                <img class="temp" src="@@webRoot/static/images/_temp/graph-as-13.png"
+                                                    alt="차트 예시 이미지">
                                             </div>
                                             <!--// [chart area] -->
                                             <!--
@@ -178,7 +94,103 @@
 											</div>
                                             -->
                                         </figure>
-										
+
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure">
+                                            <div class="graph-info">
+                                                <h4 class="h4">USD(미국 달러)<button type="button" class="btn-question"><i
+                                                            class="icon-tooltip-que_20"></i></button>
+                                                    <div class="tooltip">
+                                                        <strong class="tit">환산기준</strong>
+                                                        <div class="cont">
+                                                            외화/골드 원화환산 평가금액은 전일은 마지막 회차 기준, 당일은 최종 고시환율 기준으로 단순히 계산한 값으로
+                                                            실제 평가금액과 다를 수 있습니다. 보유금액 변동에 따른 차이가 반영됩니다.
+                                                        </div>
+                                                        <button class="btn-close"><span>닫기</span></button>
+                                                    </div>
+                                                </h4>
+                                                <div class="graph-msg">
+                                                    <div class="txt">
+                                                        김국민님 <br>총 외화자산은 원화로<b class="num">1,000,000</b>원 입니다.<br>지난달에도
+                                                        USD <b class="num">1,160.87</b> 보유하고 있었어요.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- [chart area] //-->
+                                            <!--
+                                                [차트 디자인 정보]
+                                                * 그래프(막대) 색상(컬러별)
+                                                - 노란색 :  #ffd338;
+                                                - 회색 :  #c6cbd0;
+
+                                                - 차트 텍스트 컬러/크기 : #26282c/14px
+                                                - X축 텍스트 컬러/크기 : #8c949e/14px
+												- data labels 텍스트 컬러/크기 : #26282c/14px
+                                            -->
+                                            <div class="chart-area" id="">
+                                                <img class="temp" src="@@webRoot/static/images/_temp/graph-as-13-2.png"
+                                                    alt="차트 예시 이미지">
+                                            </div>
+                                            <!--// [chart area] -->
+                                            <!--
+											<div class="my-average">
+												<em>내 평균 <span class="num">4,665,210</span>원</em> 
+											</div>
+                                            -->
+                                        </figure>
+
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure">
+                                            <div class="graph-info">
+                                                <h4 class="h4">EUR(유럽연합 유로)<button type="button" class="btn-question"><i
+                                                            class="icon-tooltip-que_20"></i></button>
+                                                    <div class="tooltip">
+                                                        <strong class="tit">환산기준?</strong>
+                                                        <div class="cont">
+                                                            외화/골드 원화환산 평가금액은 전일은 마지막 회차 기준, 당일은 최종 고시환율 기준으로 단순히 계산한 값으로
+                                                            실제 평가금액과 다를 수 있습니다. 보유금액 변동에 따른 차이가 반영됩니다.
+                                                        </div>
+                                                        <button class="btn-close"><span>닫기</span></button>
+                                                    </div>
+                                                    <button class="btn-more"><i
+                                                            class="icon-setting_menu_24"></i></button>
+                                                </h4>
+                                                <div class="graph-msg">
+                                                    <div class="txt">
+                                                        김국민님 <br>총 외화자산은 원화로 <b class="num">1,000,000</b>원 입니다.<br>지난달보다
+                                                        EUR <b class="num">1.00</b> 늘었어요.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- [chart area] //-->
+                                            <!--
+                                                [차트 디자인 정보]
+                                                * 그래프(막대) 색상(컬러별)
+                                                - 노란색 :  #ffd338;
+                                                - 회색 :  #c6cbd0;
+
+                                                - 차트 텍스트 컬러/크기 : #26282c/14px
+                                                - X축 텍스트 컬러/크기 : #8c949e/14px
+												- data labels 텍스트 컬러/크기 : #26282c/14px
+                                            -->
+                                            <div class="chart-area" id="">
+                                                <img class="temp" src="@@webRoot/static/images/_temp/chart_as0600_2.png"
+                                                    alt="차트 예시 이미지">
+                                            </div>
+                                            <!--// [chart area] -->
+                                            <!--
+											<div class="my-average">
+												<em>내 평균 <span class="num">4,665,210</span>원</em> 
+											</div>
+                                            -->
+                                        </figure>
+
                                     </div>
                                 </div>
                             </div>
@@ -186,256 +198,329 @@
                         </div>
                     </div>
                 </section>
-                
-                <section class="kb-sec sort-area">
-                    <button class="btn-line form type-product is-active"><i class="icon-type_product_20"></i><span>상품별</span></button><!-- 2021-06-25 수정 -->
-                    <button class="btn-line form type-agency"><i class="icon-type_agency_20"></i><span>금융사별</span></button><!-- 2021-06-25 수정 -->
-                </section>
-                <section class="kb-sec list-area foreign">
-                    <div class="no-data">
-                        <i class="icon-info_24"></i>
-                        <p>조회내역이 없습니다.</p>
+
+
+                <section class="kb-sec full list-area foreign">
+                    <div class="tab swiper-container sort-area">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide is-active"><a href="#target01">상품별</a></li>
+                            <li class="swiper-slide"><a href="#target02">기관별</a></li>
+                        </ul>
                     </div>
-                    <div class="p-list product"><!--D:금융사별 agency , 상품별 product //-->
-                        <dl class="more-view-box is-show">
-                            <dt>    
-                                <a href="javascript:;" class="btn-more-view" role="button">  
-                                    <em class="type">USD(미국달러)</em>
-                                    <span class="total">총 원화환산금액 : <em class="amount"><b class="num">400,000</b>원</em></span>  
-                                    <em class="arrow"><i class="icon-arrow-down"></i><span>목록열기</span></em>  
-                                </a>                      
-                            </dt>
-                            <dd>
-                                <a href="@@webRoot/html/asset/mys_as_13_01_00_p1.html" class="btn-account-detail"><!-- 2021-06-11 a태그 수정 -->
-                                    <div class="account-wrap">
-                                        <div class="icon-con">
-                                            <span><img src="@@webRoot/static/images/ci/A1AAEO0000.png" alt="은행별 아이콘"></span>
+                    <div class="tab_contents">
+                        <div class="p-list product is-active">
+                            <!-- no-data //
+                            <div class="no-data-wrap">
+                                <div class="no-data">
+                                    <i class="icon-info_24"></i>
+                                    <p>조회내역이 없습니다.</p>
+                                </div>
+                            </div>
+                            // no-data -->
+                            <!--D:금융사별 agency , 상품별 product //-->
+                            <dl class="more-view-box is-show">
+                                <dt>
+                                    <a href="javascript:;" class="btn-more-view account-wrap" role="button">
+                                        <em class="type">USD(미국 달러)</em>
+                                        <span class="total"><em class="amount"><b class="num">400,000</b>원</em></span>
+                                        <em class="arrow"><i class="icon-arrow-down"></i><span>목록열기</span></em>
+                                    </a>
+                                </dt>
+                                <dd>
+                                    <a href="@@webRoot/html/asset/mys_as_13_01_00_p1.html" class="btn-account-detail">
+                                        <div class="account-wrap">
+                                            <div class="txt-con">
+                                                <span class="p-name">상품명</span>
+                                                <div class="agency-con">
+                                                    <span class="agency-logo"><img
+                                                            src="@@webRoot/static/images/ci/A1AAEO0000.png"
+                                                            alt="은행별 아이콘"></span>
+                                                    <em class="agency"><span class="title">기관명</span><span
+                                                            class="num">9912801-00-285003</span></em>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="txt-con">
-                                            <span class="agency">국민은행</span>
-                                            <span class="p-name">상품명</span>
-                                            <span class="account num">1234-5678-1234</span>
+                                        <span class="balance"><em class="amount">USD <b
+                                                    class="num">1,800.00</b></em></span>
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="@@webRoot/html/asset/mys_as_13_01_00_p1.html" class="btn-account-detail">
+                                        <div class="account-wrap">
+                                            <div class="txt-con">
+                                                <span class="p-name">상품명</span>
+                                                <div class="agency-con">
+                                                    <span class="agency-logo"><img
+                                                            src="@@webRoot/static/images/ci/A1AAEO0000.png"
+                                                            alt="은행별 아이콘"></span>
+                                                    <em class="agency"><span class="title">기관명</span><span
+                                                            class="num">9912801-00-285003</span></em>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <span class="balance amount">USD <b class="num">1,800.00</b></span>  <!-- 2021-06-23 '원' 삭제 -->
-                                </a>
-                                <button type="button" class="btn-hide-account"><i class="icon-more_24"></i><span>계좌숨기기</span></button>
-                            </dd>
-                            <dd>
-                                <a href="@@webRoot/html/asset/mys_as_13_01_00_p1.html" class="btn-account-detail"><!-- 2021-06-11 a태그 수정 -->
-                                    <div class="account-wrap">
-                                        <div class="icon-con">
-                                            <span><img src="@@webRoot/static/images/ci/A1AAEO0000.png" alt="은행별 아이콘"></span>
+                                        <span class="balance"><em class="amount">USD <b
+                                                    class="num">1,800.00</b></em></span>
+                                    </a>
+                                </dd>
+                            </dl>
+                            <dl class="more-view-box">
+                                <dt>
+                                    <a href="javascript:;" class="btn-more-view account-wrap" role="button">
+                                        <em class="type">JPY(일본 100엔)</em>
+                                        <span class="total"><em class="amount"><b class="num">400,000</b>원</em></span>
+                                        <em class="arrow"><i class="icon-arrow-down"></i><span>목록열기</span></em>
+                                    </a>
+                                </dt>
+                                <dd>
+                                    <a href="@@webRoot/html/asset/mys_as_13_01_00_p1.html" class="btn-account-detail">
+                                        <div class="account-wrap">
+                                            <div class="txt-con">
+                                                <span class="p-name">상품명</span>
+                                                <div class="agency-con">
+                                                    <span class="agency-logo"><img
+                                                            src="@@webRoot/static/images/ci/A1AAEO0000.png"
+                                                            alt="은행별 아이콘"></span>
+                                                    <em class="agency"><span class="title">기관명</span><span
+                                                            class="num">9912801-00-285003</span></em>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="txt-con">
-                                            <span class="agency">국민은행</span>
-                                            <span class="p-name">상품명</span>
-                                            <span class="account num">1234-5678-1234</span>
+                                        <span class="balance"><em class="amount">JPY <b
+                                                    class="num">1,800.00</b></em></span>
+                                    </a>
+                                </dd>
+                            </dl>
+                            <dl class="more-view-box">
+                                <dt>
+                                    <a href="javascript:;" class="btn-more-view account-wrap" role="button">
+                                        <em class="type">EUR(유럽연합 유로)</em>
+                                        <span class="total"><em class="amount"><b class="num">400,000</b>원</em></span>
+                                        <em class="arrow"><i class="icon-arrow-down"></i><span>목록열기</span></em>
+                                    </a>
+                                </dt>
+                                <dd>
+                                    <a href="@@webRoot/html/asset/mys_as_13_01_00_p1.html" class="btn-account-detail">
+                                        <div class="account-wrap">
+                                            <div class="txt-con">
+                                                <span class="p-name">상품명</span>
+                                                <div class="agency-con">
+                                                    <span class="agency-logo"><img
+                                                            src="@@webRoot/static/images/ci/A1AAEO0000.png"
+                                                            alt="은행별 아이콘"></span>
+                                                    <em class="agency"><span class="title">기관명</span><span
+                                                            class="num">9912801-00-285003</span></em>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <span class="balance amount">USD <b class="num">1,800.00</b></span>  <!-- 2021-06-23 '원' 삭제 -->
-                                </a>
-                                <button type="button" class="btn-hide-account"><i class="icon-more_24"></i><span>계좌숨기기</span></button>
-                            </dd>
-                        </dl>
-                        <dl class="more-view-box">
-                            <dt> 
-                                <a href="javascript:;" class="btn-more-view" role="button">  
-                                    <em class="type">JPY(일본 100엔)</em>
-                                    <span class="total">총잔액 : <em class="amount"><b class="num">400,000</b>원</em></span>  
-                                    <em class="arrow"><i class="icon-arrow-down"></i><span>목록열기</span></em>  
-                                </a>                       
-                            </dt>
-                            <dd>
-                                <a href="@@webRoot/html/asset/mys_as_13_01_00_p1.html" class="btn-account-detail"><!-- 2021-06-11 a태그 수정 -->
-                                    <div class="account-wrap">
-                                        <div class="icon-con">
-                                            <span><img src="@@webRoot/static/images/ci/A1AAEO0000.png" alt="은행별 아이콘"></span>
+                                        <span class="balance"><em class="amount">EUR <b
+                                                    class="num">1,800.00</b></em></span>
+                                    </a>
+                                </dd>
+                            </dl>
+                            <dl class="more-view-box">
+                                <dt>
+                                    <a href="javascript:;" class="btn-more-view account-wrap" role="button">
+                                        <em class="type">XAU(금)</em>
+                                        <span class="total"><em class="amount"><b class="num">400,000</b>원</em></span>
+                                        <em class="arrow"><i class="icon-arrow-down"></i><span>목록열기</span></em>
+                                    </a>
+                                </dt>
+                                <dd>
+                                    <a href="@@webRoot/html/asset/mys_as_13_01_00_p1.html" class="btn-account-detail">
+                                        <div class="account-wrap">
+                                            <div class="txt-con">
+                                                <span class="p-name">상품명</span>
+                                                <div class="agency-con">
+                                                    <span class="agency-logo"><img
+                                                            src="@@webRoot/static/images/ci/A1AAEO0000.png"
+                                                            alt="은행별 아이콘"></span>
+                                                    <em class="agency"><span class="title">기관명</span><span
+                                                            class="num">9912801-00-285003</span></em>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="txt-con">
-                                            <span class="agency">국민은행</span>
-                                            <span class="p-name">상품명</span>
-                                            <span class="account num">1234-5678-1234</span>
+                                        <span class="balance"><em class="amount">XAU <b
+                                                    class="num">10.13</b></em>(gram)</span>
+                                        <p class="simple-message">* 국민은행 시세로 환산한 금액입니다.</p>
+                                    </a>
+                                </dd>
+                            </dl>
+                            <dl class="more-view-box">
+                                <dt>
+                                    <a href="javascript:;" class="btn-more-view account-wrap" role="button">
+                                        <em class="type">OMR</em>
+                                        <span class="total"><em class="amount"><b class="num">400,000</b>원</em></span>
+                                        <em class="arrow"><i class="icon-arrow-down"></i><span>목록열기</span></em>
+                                    </a>
+                                </dt>
+                                <dd>
+                                    <a href="@@webRoot/html/asset/mys_as_13_01_00_p1.html" class="btn-account-detail">
+                                        <div class="account-wrap">
+                                            <div class="txt-con">
+                                                <span class="prod-kind loan">채권</span>
+                                                <span class="p-name">상품명</span>
+                                                <div class="agency-con">
+                                                    <span class="agency-logo"><img
+                                                            src="@@webRoot/static/images/ci/A1AAEO0000.png"
+                                                            alt="은행별 아이콘"></span>
+                                                    <em class="agency"><span class="title">기관명</span><span
+                                                            class="num">9912801-00-285003</span></em>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <span class="balance amount">JPY <b class="num">1,800.00</b></span>  <!-- 2021-06-23 '원' 삭제 -->
-                                </a>
-                                <button type="button" class="btn-hide-account"><i class="icon-more_24"></i><span>계좌숨기기</span></button>
-                            </dd>
-                            <dd>
-                                <a href="@@webRoot/html/asset/mys_as_13_01_00_p1.html" class="btn-account-detail"><!-- 2021-06-11 a태그 수정 -->
-                                    <div class="account-wrap">
-                                        <div class="icon-con">
-                                            <span><img src="@@webRoot/static/images/ci/A1AAEO0000.png" alt="은행별 아이콘"></span>
+                                        <span class="balance"><em class="amount">OMR <b
+                                                    class="num">500.00</b></em>(gram)</span>
+                                        <p class="simple-message">* OMR는(은) 환율 미제공 권종입니다.</p>
+                                    </a>
+                                </dd>
+                            </dl>
+                        </div>
+                        <!--금융사별 보기//-->
+                        <div class="p-list agency">
+                            <!-- no-data //
+                        <div class="no-data-wrap">
+                            <div class="no-data">
+                                <i class="icon-info_24"></i>
+                                <p>조회내역이 없습니다.</p>
+                            </div>
+                        </div>
+                        // no-data -->
+                            <dl class="more-view-box is-show">
+                                <dt>
+                                    <a href="javascript:;" class="btn-more-view account-wrap" role="button">
+                                        <div class="agency-con">
+                                            <span class="agency-logo"><img
+                                                    src="@@webRoot/static/images/ci/A1AAEO0000.png"
+                                                    alt="은행별 아이콘"></span>
+                                            <b class="agency"><span class="title">국민은행</span>
+                                            </b>
                                         </div>
-                                        <div class="txt-con">
-                                            <span class="agency">국민은행</span>
-                                            <span class="p-name">상품명</span>
-                                            <span class="account num">1234-5678-1234</span>
+                                        <span class="total"><em class="amount"><b class="num">400,000</b>원</em></span>
+                                        <em class="arrow"><i class="icon-arrow-down"></i><span>목록열기</span></em>
+                                    </a>
+                                </dt>
+                                <dd>
+                                    <a href="@@webRoot/html/asset/mys_as_13_01_00_p1.html" class="btn-account-detail">
+                                        <div class="account-wrap">
+                                            <div class="txt-con">
+                                                <span class="p-name">상품명</span>
+                                                <span class="account num">1234-5678-1234</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <span class="balance amount">JPY <b class="num">1,800.00</b></span>  <!-- 2021-06-23 '원' 삭제 -->
-                                </a>
-                                <button type="button" class="btn-hide-account"><i class="icon-more_24"></i><span>계좌숨기기</span></button>
-                            </dd>
-                        </dl>
-                    </div>
+                                        <ul class="balance">
+                                            <li>USD <span class="amount"><b class="num">700.00</b></span></li>
+                                            <li>JPY <span class="amount"><b class="num">10,000.00</b></span></li>
+                                            <li>CNY <span class="amount"><b class="num">500.00</b></span></li>
+                                        </ul>
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="@@webRoot/html/asset/mys_as_13_01_00_p1.html" class="btn-account-detail">
+                                        <div class="account-wrap">
+                                            <div class="txt-con">
+                                                <span class="p-name">상품명</span>
+                                                <span class="account num">1234-5678-1234</span>
+                                            </div>
+                                        </div>
+                                        <span class="balance amount">XAU <b class="num">10.13</b>(gram)</span>
+                                        <p class="simple-message">* 국민은행 시세로 환산한 금액입니다.</p>
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="@@webRoot/html/asset/mys_as_13_01_00_p1.html" class="btn-account-detail">
+                                        <div class="account-wrap">
+                                            <div class="txt-con">
+                                                <span class="p-name">상품명</span>
+                                                <span class="account num">1234-5678-1234</span>
+                                            </div>
+                                        </div>
+                                        <ul class="balance">
+                                            <li>USD <span class="amount"><b class="num">700.00</b></span></li>
+                                            <li>JPY <span class="amount"><b class="num">10,000.00</b></span></li>
+                                            <li>CNY <span class="amount"><b class="num">500.00</b></span></li>
+                                        </ul>
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="@@webRoot/html/asset/mys_as_13_01_00_p1.html" class="btn-account-detail">
+                                        <div class="account-wrap">
+                                            <div class="txt-con">
+                                                <span class="p-name">상품명</span>
+                                                <span class="account num">1234-5678-1234</span>
+                                            </div>
+                                        </div>
+                                        <ul class="balance">
+                                            <li>USD <span class="amount"><b class="num">700.00</b></span></li>
+                                            <li>OMR <span class="amount"><b class="num">10,000.00</b></span></li>
+                                            <li>CNY <span class="amount"><b class="num">500.00</b></span></li>
+                                        </ul>
+                                        <p class="simple-message">* OMR는(은) 환율 미제공 권종입니다.</p>
+                                    </a>
+                                </dd>
+                            </dl>
+                            <dl class="more-view-box">
+                                <dt>
+                                    <a href="javascript:;" class="btn-more-view account-wrap" role="button">
+                                        <div class="agency-con">
+                                            <span class="agency-logo"><img
+                                                    src="@@webRoot/static/images/ci/A1AAEO0000.png"
+                                                    alt="은행별 아이콘"></span>
+                                            <b class="agency"><span class="title">하나은행</span>
+                                            </b>
+                                        </div>
+                                        <span class="total"><em class="amount"><b class="num">400,000</b>원</em></span>
+                                        <em class="arrow"><i class="icon-arrow-down"></i><span>목록열기</span></em>
+                                    </a>
+                                </dt>
+                                <dd>
+                                    <a href="@@webRoot/html/asset/mys_as_13_01_00_p1.html" class="btn-account-detail">
+                                        <div class="account-wrap">
+                                            <div class="txt-con">
+                                                <span class="p-name">상품명</span>
+                                                <span class="account num">1234-5678-1234</span>
+                                            </div>
+                                        </div>
+                                        <ul class="balance">
+                                            <li>USD <span class="amount"><b class="num">700.00</b></span></li>
+                                            <li>JPY <span class="amount"><b class="num">10,000.00</b></span></li>
+                                            <li>CNY <span class="amount"><b class="num">500.00</b></span></li>
+                                        </ul>
+                                    </a>
+                                </dd>
+                            </dl>                            
+                        </div>
+                        <!--//금융사별 보기-->
                 </section>
-                <section class="kb-sec list-area tab_contents">
-                    <!--금융사별 보기//-->
-                    <div class="p-list agency"><!--D:금융사별 agency , 상품별 product //-->
-                        <dl class="more-view-box is-show">
-                            <dt>
-                                <a href="javascript:;" class="btn-more-view" role="button">  
-                                    <em class="type">국민은행</em>
-                                    <span class="total">총 원화환산금액 : <em class="amount"><b class="num">400,000</b>원</em></span> 
-                                    <em class="arrow"><i class="icon-arrow-down"></i><span>목록열기</span></em>  
-                                </a>                             
-                            </dt>
-                            <dd>
-                                <a href="@@webRoot/html/asset/mys_as_13_01_00_p1.html" class="btn-account-detail"><!-- 2021-06-11 a태그 수정 -->
-                                    <div class="account-wrap">
-                                        <div class="txt-con">
-                                            <span class="p-name"><b>상품명</b></span>
-                                            <span class="account num">1234-5678-1234</span>
-                                        </div>
-                                    </div>
-                                    <ul class="balance amount">
-                                        <li>USD <b class="num">700.00</b></li>
-                                        <li>JPY <b class="num">10,000.00</b></li>
-                                        <li>CNY <b class="num">500.00</b></li>
-                                    </ul>
-                                </a>
-                                <button type="button" class="btn-hide-account"><i class="icon-more_24"></i><span>계좌숨기기</span></button>
-                            </dd>
-                            <dd>
-                                <button type="button" data-call-layered="mys_as_13_01_00_p1" class="btn-account-detail"><!-- 2021-06-11 a태그 수정 -->
-                                    <div class="account-wrap">
-                                        <div class="txt-con">
-                                            <span class="p-name"><b>상품명</b></span>
-                                            <span class="account num">1234-5678-1234</span>
-                                        </div>
-                                    </div>
-                                    <ul class="balance amount">
-                                        <li>USD <b class="num">700.00</b></li>
-                                        <li>JPY <b class="num">10,000.00</b></li>
-                                        <li>CNY <b class="num">500.00</b></li>
-                                    </ul>
-                                </button>
-                                <button type="button" class="btn-hide-account"><i class="icon-more_24"></i><span>계좌숨기기</span></button>
-                            </dd>
-                        </dl>
-                        <dl class="more-view-box">
-                            <dt>
-                                <a href="javascript:;" class="btn-more-view" role="button">  
-                                    <em class="type">우리은행</em>
-                                    <span class="total">총 원화환산금액 : <em class="amount"><b class="num">400,000</b>원</em></span> 
-                                    <em class="arrow"><i class="icon-arrow-down"></i><span>목록열기</span></em>  
-                                </a>                             
-                            </dt>
-                            <dd>
-                                <a href="@@webRoot/html/asset/mys_as_13_01_00_p1.html" class="btn-account-detail"><!-- 2021-06-11 a태그 수정 -->
-                                    <div class="account-wrap">
-                                        <div class="txt-con">
-                                            <span class="p-name"><b>상품명</b></span>
-                                            <span class="account num">1234-5678-1234</span>
-                                        </div>
-                                    </div>
-                                    <ul class="balance amount">
-                                        <li>XAU <b class="num">700.00</b></li>
-                                    </ul>
-                                </a>
-                                <button type="button" class="btn-hide-account"><i class="icon-more_24"></i><span>계좌숨기기</span></button>
-                            </dd>
-                        </dl>
-                        <dl class="more-view-box">
-                            <dt>
-                                <a href="javascript:;" class="btn-more-view" role="button">  
-                                    <em class="type">기타</em>
-                                    <span class="total">총 원화환산금액 : <em class="amount"><b class="num">400,000</b>원</em></span> 
-                                    <em class="arrow"><i class="icon-arrow-down"></i><span>목록열기</span></em>  
-                                </a>                             
-                            </dt>
-                            <dd>
-                                <a href="@@webRoot/html/asset/mys_as_13_01_00_p1.html" class="btn-account-detail"><!-- 2021-06-11 a태그 수정 -->
-                                    <div class="account-wrap">
-                                        <div class="txt-con">
-                                            <span class="p-name"><b>USD(미국달러)</b> <span class="tag-label t02" data-state="inprogress"><!-- 2021-06-11 t02추가 -->직접등록</span></span>
-                                        </div>
-                                    </div>
-                                    <ul class="balance amount">
-                                        <li>USD <b class="num">700.00</b></li>
-                                    </ul>
-                                </a>
-                                <button type="button" class="btn-hide-account"><i class="icon-more_24"></i><span>계좌숨기기</span></button>
-                            </dd>
-                        </dl>
-                    </div>
-                    <!--//금융사별 보기-->
-                </section>
-                <section class="kb-sec bg-gray compare-con">
-                    <h4 class="h4">내 외화자산 진단 <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                <section class="kb-sec compare-con">
+                    <h4 class="h4">내 외화자산 진단 <button type="button" class="btn-question"><i
+                        class="icon-tooltip-que_20"></i></button>
                         <div class="tooltip">
-                            <strong class="tit">환산 기준?</strong>
+                            <strong class="tit">외화자산 진단</strong>
                             <div class="cont">
-                                외화/골드 원화환산금액은 전일은 마지막 회차, 당일은 최종 고시환율 기준으로 단순 계산한 값으로 실제 평가금액과는 차이가 있을 수 있습니다.
+                                외화/골드 원화환산 평가금액은 전일은 마지막 회차 기준, 당일은 최종 고시환율 기준으로 단순히 계산한 값으로 실제 평가금액과 다를 수 있습니다. 보유금액 변동에 따른 차이가 반영됩니다.
                             </div>
                             <button class="btn-close"><span>닫기</span></button>
                         </div>
                     </h4>
-                    <div class="content-box shadow">
-                        <p class="msg">전일 대비 <b class="plus"><span class="num">25</span>만원</b> 증가했어요.</p>
-                        <div class="compare-box">
-                            <div class="tit">원화환산금액</div>
-                            <ul>
-                                <li class="mine">
-                                    <p class="type">4월 25일</p>
-                                    <p class="amount"><span class="num">3,250,000</span>원</p>
-                                </li>
-                                <li class="other">                                    
-                                    <p class="type">4월 26일</p>
-                                    <p class="amount"><span class="num">3,300,000</span>원</p>
-                                </li>
-                            </ul>
-                            <div class="compare eq">
-                                <!-- 내 수령액이 평균보다 클때 gt, 작을때 lt , 같을때 eq 추가 2021-07-28 -->
-                            </div>
+                    <div class="content-box">
+                        <p class="msg">원화환산금액이 <br>어제보다 <b class="plus"><span class="num">25</span>만원</b> 늘었어요.</p>
+                        <div class="link-box_block compare-amount" data-compare-value="right">
+                            <!--- [D] 값 비교 옵션 : right, left, equal //-->
+                            <dl>
+                                <dt>4월 25일</dt>
+                                <dd><em class="num">325</em>만원</dd>
+                            </dl>
+                            <dl>
+                                <dt>4월 26일</dt>
+                                <dd><em class="num">330</em>만원</dd>
+                            </dl>
                         </div>
                     </div>
-                    <div class="content-box shadow">
-                            <div class="tit">비교그룹 보다 <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
-                                <div class="tooltip">
-                                    <strong class="tit">비교그룹?</strong>
-                                    <div class="cont">
-                                        나와 금융자산 규모가 비슷한 고객
-                                    </div>
-                                    <button class="btn-close"><span>닫기</span></button>
-                                </div>
-                            </div>
-                            <div class="msg">
-                                <b>나의 3개월 평균 원화환산금액은 </b>
-                                입출금통장에 <b class="minus"><span class="num">100,000</span>원</b> 적어요!
-                            </div>
-                            <!-- [chart area] //-->
-                            <!--
-                                [차트 디자인 정보]
-                                * 그래프(막대) 색상(컬러별)
-                                - 나 : #ffd338 ;
-                                - 비교그룹 : #c6cbd0 ;
-                                - 차이 : #f7f7f8 ; 
-
-                                 - X축 텍스트 컬러/크기 : #26282c/14px
-								 - data labels 텍스트 컬러/크기 : #26282c/14px
-                            -->
-                            <div class="chart-area" id="">
-                                <img class="temp" src="@@webRoot/static/images/_temp/chart_as0500_4.png" alt="차트 예시 이미지">
-                            </div>
-                            <!--// [chart area] -->
-                    </div>                    
-                </section>
+                </section>                
                 <section class="kb-sec exchange-Rate">
-                    <h4 class="h4">환율그래프 
-                        <button type="button" class="btn-text" data-call-layered="mys_as_13_00_00_p1"><u>외화편집</u></button><!-- 2021-08-05 수정 -->
+                    <h4 class="h4">환율그래프
+                        <button type="button" class="btn-text"
+                            data-call-layered="mys_as_13_00_00_p1"><u>외화편집</u></button><!-- 2021-08-05 수정 -->
                     </h4>
                     <div class="swiper-container t01 js-swiper" data-swiper-options="exchangeSwiperOptions">
                         <script>
@@ -449,7 +534,8 @@
                             <div class="swiper-slide">
                                 <button type="button" class="is-active">
                                     <div class="icon-con">
-                                        <img src="@@webRoot/static/images/flag/US.png" alt="통화 아이콘"><!-- 2021-06-25 수정 -->
+                                        <img src="@@webRoot/static/images/flag/US.png" alt="통화 아이콘">
+                                        <!-- 2021-06-25 수정 -->
                                     </div>
                                     <div class="txt-con">
                                         <p class="tit">USD</p>
@@ -460,41 +546,44 @@
                             <div class="swiper-slide">
                                 <button type="button">
                                     <div class="icon-con">
-                                        <img src="@@webRoot/static/images/flag/JP.png" alt="통화 아이콘"><!-- 2021-06-25 수정 -->
+                                        <img src="@@webRoot/static/images/flag/JP.png" alt="통화 아이콘">
+                                        <!-- 2021-06-25 수정 -->
                                     </div>
                                     <div class="txt-con">
                                         <p class="tit">JPY</p>
                                         <p class="amount"><span class="num">1,117.60</span></p>
-                                    </div>    
+                                    </div>
                                 </button>
                             </div>
                             <div class="swiper-slide">
                                 <button type="button">
                                     <div class="icon-con">
-                                        <img src="@@webRoot/static/images/flag/B1.png" alt="통화 아이콘"><!-- 2021-06-25 수정 -->
+                                        <img src="@@webRoot/static/images/flag/B1.png" alt="통화 아이콘">
+                                        <!-- 2021-06-25 수정 -->
                                     </div>
                                     <div class="txt-con">
                                         <p class="tit">EUR</p>
                                         <p class="amount"><span class="num">1,117.60</span></p>
                                     </div>
-                                </button> 
+                                </button>
                             </div>
                             <div class="swiper-slide">
                                 <button type="button">
                                     <div class="icon-con">
-                                        <img src="@@webRoot/static/images/flag/CN.png" alt="통화 아이콘"><!-- 2021-06-25 수정 -->
+                                        <img src="@@webRoot/static/images/flag/CN.png" alt="통화 아이콘">
+                                        <!-- 2021-06-25 수정 -->
                                     </div>
                                     <div class="txt-con">
                                         <p class="tit">CNY</p>
                                         <p class="amount"><span class="num">1,117.60</span></p>
-                                    </div> 
+                                    </div>
                                 </button>
                             </div>
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
                     <!-- [chart area] //-->
-                            <!--
+                    <!--
                                 [차트 디자인 정보]
                                 * 그래프(라인) 색상(컬러별)
                                 - 갈색 : #ad7d43 ;  //2021-07-29 수정
@@ -506,53 +595,39 @@
                                 - 추가설명 : #696e76/14px
                                 
                             -->
-                            <div class="chart-area" id="">
-                                <img class="temp" src="@@webRoot/static/images/_temp/chart_as1300_3.png" alt="차트 예시 이미지">
-                            </div>
-                            <!--// [chart area] -->
-                            <!-- 2021-08-06 추가 // -->
-                            <div class="graph-notice">
-                                고시기준일시 2021.04.05 11:11:00<br>
-                                고시회차 66회
-                            </div>
-                            <!-- // 2021-08-06 추가 -->
+                    <div class="chart-area" id="">
+                        <img class="temp" src="@@webRoot/static/images/_temp/chart_as1300_3.png" alt="차트 예시 이미지">
+                    </div>
+                    <!--// [chart area] -->
+                    <div class="graph-notice">
+                        최신고시정보 : <span class="plus">96회차 17:03:34</span>
+                    </div>
                 </section>
                 <section class="kb-sec recommend-prod">
                     <h4 class="h4">추천상품</h4>
-                        <ul class="list">
-                            <li>
-                                <button type="button" data-call-layered="mys_as_13_00_00_p2" >
-                                    <span class="info">맑은하늘을 만들고 금리고 UP</span>
-                                    <em class="tit">KB내맘대로 적금</em>
-                                    <p class="rate">                                        
-                                        <span>최고 연3.1%</span>
-                                        <span>최대 3.6%</span>
-                                    </p>
-                                    <div class="hash-tag">
-                                        <span>#내맘대로</span>
-                                        <span>#금리</span>
-                                        <span>#사회초년생</span>
-                                    </div>
-                                </button>
-                            </li>
-                            <li>
-                                <button type="button" data-call-layered="mys_as_13_00_00_p2" >
-                                    <span class="info">맑은하늘을 만들고 금리고 UP</span>
-                                    <em class="tit">KB내맘대로 적금</em>
-                                    <p class="rate">                                        
-                                        <span>최고 연3.1%</span>
-                                        <span>최대 3.6%</span>
-                                    </p>
-                                    <div class="hash-tag">
-                                        <span>#내맘대로</span>
-                                        <span>#금리</span>
-                                        <span>#사회초년생</span>
-                                    </div>
-                                </button>
-                            </li>
-                        </ul>
-                    
+                    <ul class="list">
+                        <li>
+                            <button type="button" data-call-layered="mys_as_05_00_01_p2">
+                                <span class="prod-kind foreign-currency">외화</span>
+                                <em class="tit">KB wise 외화정기예금</em>
+                                <span class="info">예금금리가 복리로 적용되는</span>
+                                <div class="hash-tag">
+                                    <span>#추천코드</span>
+                                    <span>#고객성향분석</span>
+                                </div>
+                                <p class="rate">
+                                    <span>최고 연 <b>3.1</b>%</span>
+                                    <span>19세 이상의 국민인 거주자</span>
+                                </p>
+                            </button>
+                        </li>
+                    </ul>
+
                 </section>
+
+
+
+                
                 <!--  // SECTION -->
             </main>
             <!-- // app-content -->
@@ -562,14 +637,14 @@
     </div>
 
     <div class="layered">
-        
+
         @@include('@@webRoot/html/asset/layered/mys_as_13_01_02_p1.html')
         @@include('@@webRoot/html/asset/layered/mys_as_13_00_00_p1.html')
         @@include('@@webRoot/html/asset/layered/mys_as_13_00_00_p2.html')
         @@include('@@webRoot/html/asset/layered/mys_as_07_00_00_p1.html')
         @@include('@@webRoot/html/_layered/bs-calendar.html')
         @@include('@@webRoot/html/_layered/bs-age-asset.html')
-        
+
     </div>
 
     <!-- Script -->
@@ -578,54 +653,53 @@
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
     <script>
-        
-        $(document).ready(function(){
+        $(document).ready(function () {
             let $wrap = $('.my-asset');
-            $wrap.find('.sort-area .type-product').on('click',function(){
+            $wrap.find('.sort-area .type-product').on('click', function () {
                 $(this).addClass('is-active');
                 $('.sort-area .type-agency').removeClass('is-active');
-                if($('.my-asset .p-list')){                
+                if ($('.my-asset .p-list')) {
                     $('.p-list.product').show();
                     $('.p-list.agency').hide();
                 }
             })
-            $wrap.find('.sort-area .type-agency').on('click',function(){
+            $wrap.find('.sort-area .type-agency').on('click', function () {
                 $(this).addClass('is-active');
                 $('.sort-area .type-product').removeClass('is-active');
-                if($('.my-asset .p-list')){
+                if ($('.my-asset .p-list')) {
                     $('.p-list.product').hide();
                     $('.p-list.agency').show();
                 }
             })
-            $wrap.find('.p-list dl').each(function(){
+            $wrap.find('.p-list dl').each(function () {
                 let chk = $(this).hasClass('is-show');
-                if(chk){
+                if (chk) {
                     $(this).find('dd').show();
                     $(this).find('.btn-more-view>em>span').text('목록닫기');
                 }
             })
-            $wrap.find('.btn-more-view').on('click',function(){
+            $wrap.find('.btn-more-view').on('click', function () {
                 let $parent = $(this).closest('.more-view-box');
                 let chk = $parent.hasClass('is-show');
-                if(chk){
+                if (chk) {
                     $parent.find('dd').hide();
                     $(this).find('em>span').text('목록열기');
-                }else{
+                } else {
                     $parent.find('dd').show();
                     $(this).find('em>span').text('목록닫기');
                 }
             })
-            $('.exchange-Rate').find('button').on("click",function(){
-                $(this).closest('.swiper-wrapper').find('button').removeClass('is-active');                
+            $('.exchange-Rate').find('button').on("click", function () {
+                $(this).closest('.swiper-wrapper').find('button').removeClass('is-active');
                 $(this).addClass('is-active');
             })
-            
+
         })
 
         //권종항목편집 드래그
         var $currencyModify = $('.currency-modify');
-        if($currencyModify){
-            $currencyModify.find( "#sortable" ).sortable({
+        if ($currencyModify) {
+            $currencyModify.find("#sortable").sortable({
                 handle: ".btn-handle",
                 axis: "y",
                 placeholder: "ui-state-highlight",
@@ -634,22 +708,21 @@
         }
 
 
-        $('button[data-action="moveKBStarBanking"]').on('click',function(){
+        $('button[data-action="moveKBStarBanking"]').on('click', function () {
             modalPopup({
                 title: "",
                 message: "KB스타뱅킹으로 이동하시겠습니까?",
                 type: "confirm",
                 textOkButton: "확인",
                 textCancelButton: "취소",
-                onOk: function() {
-                    
+                onOk: function () {
+
                 },
-                onCancel: function() {
-                    
+                onCancel: function () {
+
                 }
             });
-        }); 
-        
+        });
     </script>
 
 </body>

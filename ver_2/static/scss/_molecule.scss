@@ -86,7 +86,7 @@
 .btn-segmented button > span,
 .btn-segmented a > span{line-height:42px;font-size:$text02;color:$kb-ui05;}
 .btn-segmented button:disabled,
-.btn-segmented a.is-disabled{background-color:$color-disable;}
+.btn-segmented a.is-disabled{background-color:$kb-ui09;}
 .btn-segmented button:disabled > span,
 .btn-segmented a.is-disabled > span{color:$kb-ui07;}
 .btn-segmented .is-selected{background-color:$kb-ui11;}
@@ -123,7 +123,7 @@
 	label {position: relative;height:100%;display:flex;justify-content:center;align-items:center;padding:12px 0 11px 0; line-height: 1.2; text-align: center; background-color: $kb-ui10; font-size: $text02; color: $kb-ui05;border:1px solid $kb-ui08; cursor:pointer;word-break: break-all;}
 	:checked+label {background-color: $kb-ui11; color: $kb-ui02; font-weight: bold;}
 	:checked+label::after {content: ''; position: absolute; top:-1px;left: -1px;bottom: -1px;right: -1px;border:1px solid $kb-ui02;z-index:1;}
-	:disabled+label {background-color: $color-disable; color: $kb-ui07;}
+	:disabled+label {background-color:$kb-ui09; color: $kb-ui07;}
 	li:first-child label,
 	li:first-child label::after {border-radius: 2px 0 0 2px;} 
 	li:last-child label,
@@ -237,7 +237,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .form-text .btn-solid.form,
 .form-text .btn-line.form,
 .form-text .btn-search{position:relative;z-index:1;margin-left:4px;}
-.form-text .btn-search{flex:0 0 24px;width:24px;height:24px;padding:1px;margin-left:15px;margin-right:23px;}//닫기버튼 여백 1px 뺌
+.form-text .btn-search{flex:0 0 24px;width:24px;height:24px;padding:1px;margin-left:15px;}
 .form-text .measurement{@include number(24px);position:absolute;top:-9999px;opacity:0;max-width:calc(100% - 54px)}
 .form-text input:focus ~ .btn-data-clear{display:block;}
 .form-text.is-focused .btn-data-clear{display:block;}
@@ -268,7 +268,9 @@ ul.radio-group > li + li{margin-top:20px;}
 .outline.lg .form-select .selected-option:after{right:18px;top:13px}
 
 //검색 (하단 보더 항상 검은색)
-.search .form-text{border-color:$kb-ui02;}
+.search .form-text{position:relative;border-color:$kb-ui02;}
+.search .form-text:after{content:'';position:absolute;bottom:-2px;right:-24px;height:2px;width:24px;background-color:$kb-ui02;}
+.search[data-status=error] .form-text:after{background-color:$color-red;}
 
 //멀티폼
 .kb-form_multi .kb-form label{@include hidden;}
@@ -319,8 +321,8 @@ ul.radio-group > li + li{margin-top:20px;}
 // .datepicker.is-active .form-text:after{content:none;}
 
 .datepicker .form-text .btn-datepicker{flex:0 0 34px;margin-left:4px;}
-.datepicker .form-text input[inputmode=numeric] {font-size: 17px; text-align: left;}
-.datepicker .form-text input[inputmode=numeric]::placeholder {font-size: 17px;}
+.datepicker .form-text input[inputmode=numeric] {font-size: 21px; text-align: left;}
+.datepicker .form-text input[inputmode=numeric]::placeholder {font-size: 19px;}
 .timepicker .form-text .btn-timepicker{flex:0 0 34px;margin-left:4px;}
 .timepicker .form-text input[inputmode=numeric] {font-size: 17px; text-align: left;}
 .timepicker .form-text input[inputmode=numeric]::placeholder {font-size: 17px;}
@@ -393,9 +395,9 @@ ul.radio-group > li + li{margin-top:20px;}
 // .kb-sec .tab{padding-left:0;padding-right:0;}
 // .bottom-sheet .tab{min-width:100%;padding-left:24px;}
 
-.tab_button{display:flex;padding:3px;background-color:$kb-ui09;}
+.tab_button{display:flex;padding:3px;background-color:$kb-ui09;border-radius:3px;}
 .tab_button > button,
-.tab_button > a{flex:1;height:32px;text-align:center;background-color:$kb-ui09;border-radius:2px;}
+.tab_button > a{flex:1;height:32px;text-align:center;background-color:$kb-ui09;border-radius:3px;}
 .tab_button > button:not(:first-child),
 .tab_button > a:not(:first-child){margin-left:3px;}
 .tab_button > button span,
@@ -479,7 +481,6 @@ ul.radio-group > li + li{margin-top:20px;}
 .more-view-box.is-show .btn-more-view .show-status{display:inline-block}
 .more-view-box .btn-more-view .show-status,
 .more-view-box.is-show .btn-more-view .hide-status{display:none}
-.more-view-box.is-show .btn-more-plus:before{content:'-'}
 
 .no-data{text-align:center;}
 .no-data .icon-info_24{display:block;margin:0 auto;}
@@ -488,7 +489,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .no-data [class*=icon],
 .complete-msg i[class*=icon]{display:block;margin:0 auto;}
 .complete-msg p,
-.no-data p{@include text($size: $text02);margin-top:12px;}
+.no-data p{@include text($size: $text02);margin-top:2rem}
 .complete-msg .tit{display: block; margin-top: 28px; font-size: 24px; line-height: 33px; font-weight: bold; color: $kb-ui02;}
 .no-data .no-data-tit{@include heading($size: $heading04);display:block;margin-top:16px;font-weight:normal}
 .complete-msg .tit + p,
@@ -502,8 +503,8 @@ ul.radio-group > li + li{margin-top:20px;}
 .agreement-to-terms .form-checkbox_20 label {margin-left: 7px; padding-right: 30px; @include text($size:$text02);}
 .agreement-to-terms .form-checkbox_20 input + label:before {left: 7px;}
 .agreement-to-terms .form-checkbox label {padding-right: 30px; font-size: $text01; font-weight: bold; line-height: 22px;}
-.agreement-to-terms .link {position: absolute; right: 0; top: 50%; transform:translateY(-50%); width: 24px; height: 24px; padding: 4px 6px 4px 9px;}
-.agreement-to-terms .link span {font-size: 0; @include iconBullet($direction: 'right', $width: 9px, $color: $kb-ui05)}
+.agreement-to-terms .link {position: absolute; right: 0; top: 50%; transform:translateY(-50%); width: 30px; height: 30px; padding: 4px 6px 4px 9px;}
+// .agreement-to-terms .link span {font-size: 0; @include iconBullet($direction: 'right', $width: 9px, $color: $kb-ui05)}
 .agreement-to-terms .alink {position: absolute; z-index: 10; right: 0; top: 50%; width: 24px; height: 24px; padding: 4px 6px 4px 9px; transform: translateY(-50%);}
 .agreement-to-terms .alink span {font-size: 0; @include iconBullet($direction: 'right', $width: 9px, $color: $kb-ui05);}
 .agreement-to-terms.expansion-mode .alink {left: 0; right: 0; top: 0; bottom: 0; width: auto; height: auto; padding: 0; transform: translateY(0);}
@@ -608,7 +609,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .credit-list > dt{position:relative;display:block;padding-top:2.4rem;border-bottom:0}
 .credit-list > dt.form-checkbox{margin-top:2.4rem;padding-top:0}
 .credit-list > dd{padding:1.2rem 0 2rem;border-bottom:1px solid $kb-ui09}
-.credit-list .info:not(:first-child){display:block;margin-top:10px;line-height:1}
+.credit-list .info:not(:first-child){display:block;margin-top:10px;line-height:1;color:$kb-ui03}
 .credit-list dt .info,
 .credit-list dt .tit,
 .credit-list dt .tag,
@@ -616,8 +617,8 @@ ul.radio-group > li + li{margin-top:20px;}
 .credit-list dd .info{display:block;width:100%}
 .credit-list dt label{display:block;font-size:16px}
 .credit-list dt label::before{top:0;transform:none}
-.credit-list dt .info .num{font-size:1.5rem}
-.credit-list dt .info .num+em{display:inline-block;margin-left:1.1em;padding-left:0.8rem;font-size:1.4rem;border-left:1px solid $kb-ui08}
+.credit-list dt .info .num{font-size:1.5rem;color:$kb-ui03}
+.credit-list dt .info .num+em{display:inline-block;margin-left:0.8rem;padding-left:0.8rem;font-size:1.4rem;border-left:1px solid $kb-ui09}
 .credit-list dt .info .tag{margin-left:10px}
 .credit-list dt .info + .tit{margin-top:12px}
 .credit-list dt .tit{font-weight:bold;color:$kb-ui02}
@@ -641,6 +642,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .credit-list dd .amount ~ .info{color:$kb-ui05}
 .credit-list dd .amount ~ .info[data-state="warning"]{color:$color-red}
 .credit-list dd .amount ~ .info[data-state="safety"]{color:$color-blue}
+.credit-list dd .amount ~ .info span{color:$kb-ui06}
 .credit-list dd .amount ~ .info .num{font-size:15px}
 .credit-list dd .btn-switch .amount{margin-right:12px}
 .credit-list dd .btn-switch label::before{top:0;margin-top:6px}
@@ -938,14 +940,13 @@ ul.radio-group > li + li{margin-top:20px;}
 .page-step .step .current{font-weight:bold;color:$kb-ui02;}
 .page-step .step .total:before{content:'/';display:inline-block;margin:0 2px;}
 .page-step .h1{@include heading($size: $heading01);display: block;margin: 0;padding-top: 1rem;}
-.page-step.is-fixed{@include clfix;position:fixed;top:48px;left:0;z-index:$level60;width:100%;background-color:$kb-ui09;padding-top:10px;padding-bottom:10px;}
+.page-step .page-step-desc{@include text;margin-top:16px;}
+.page-step.is-fixed .page-step-inner{@include clfix;position:fixed;top:48px;left:0;z-index:$level60;width:100%;background-color:$kb-ui09;padding-top:10px;padding-bottom:10px;padding-left:24px;padding-right:24px;}
 .page-step.is-fixed .step{float:right;font-size:12px;line-height:22px;}
 .page-step.is-fixed .h1{float:left;font-size:14px;line-height:22px;padding-top:0;}
-//.page-step.is-fixed + .kb-sec{margin-top:88px;}
-.page-step + .kb-sec{margin-top:48px;}
-.page-step + .kb-sec.mt24{margin-top:24px;}
-.page-step.is-fixed + .kb-sec{margin-top:136px;}
+.page-step.is-fixed:before{content:'';display:block;height:72px;}
 .page-step.is-fixed h2:before{content:attr(data-step);}
+.page-step + .kb-sec{margin-top:48px;}
 
 // 인증번호 잔여시간
 .time-limit {margin-top: 10px; @include clfix;}

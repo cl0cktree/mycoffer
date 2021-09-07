@@ -1,0 +1,189 @@
+<!-- [MYS_AS_00_00_00] 작성자: 누리어 시스템 황철민 -->
+<!DOCTYPE html>
+<html lang="ko" data-channel="ch_star">
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "자산 | 자산통합조회"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app" data-page="submain">
+		<!-- app-header //-->
+		@@include('@@webRoot/html/_include/app-integrated-header.html', {'pageTit': '자산그래프','type':'title'})
+		<!-- // app-header -->
+
+		<!-- app-container //-->
+		<div class="app-container">
+
+			<!-- app-content // -->
+			<main class="app-content my-asset">
+
+				<!-- 자산비중 // -->
+				<section class="kb-sec asset-main-sec asset-proportion">
+					<div class="title">
+						<h2 class="h4">자산비중</h2>
+						<button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+						<div class="tooltip">
+							<strong class="tit">자산비중</strong>
+							<div class="cont">
+								<p>비교그룹과 나의 자산항목별 비중(%) 비교 안내</p>
+								<ul data-style="list">
+									<li>자산: 금융자산+비금융자산+대출&middot;부채</li>
+									<li>비교그룹: 연령({}세~{}세), 순자산</li>
+								</ul>
+							</div>
+							<button class="btn-close"><span>닫기</span></button>
+						</div>
+						<a href="javascript:;" class="btn-text icon-arrow" role="button">
+							<span class="is-hidden">링크</span><i></i>
+						</a>
+					</div>
+
+					<p class="section-text">
+						비교그룹보다 연금은 <em class="num">00</em>% 높고, 투자 <em class="num">00</em>% 적어요.<br>
+						부족한 부분을 점검해 보세요.
+					</p>
+
+					<div class="content-box">
+						<span class="form-checkbox"><input type="checkbox" id="viewOnlyFinance"><label for="viewOnlyFinance">금융상품만 보기</label></span>
+						<!-- 금융상품만 보기: false // -->
+						<div class="chart-wrap" data-cwidx="1">
+							<div class="chart-area" id="barChart01">
+								<img class="temp" src="@@webRoot/static/images/_temp/chart_as0000_2_3.png" alt="차트 예시 이미지">
+							</div>
+							<div class="chart-area" id="barChart02">
+								<img class="temp" src="@@webRoot/static/images/_temp/chart_as0000_2_4.png" alt="차트 예시 이미지">
+							</div>
+							<!-- 차트샘플 /html/__guide/highchart/bar-graph05.html -->
+							<div class="legend-unit t02">
+								<ul>
+									<li class="cate1">입출금</li>
+									<li class="cate2">예적금</li>
+									<li class="cate3">투자</li>
+									<li class="cate4">보험</li>
+									<li class="cate5">외화</li>
+									<li class="cate6">부동산</li>
+									<li class="cate7">자동차</li>
+									<li class="cate8">대출&middot;부채</li>
+									<li class="cate9">페이</li>
+								</ul>
+							</div>
+						</div>
+						<!-- // 금융상품만 보기: false -->
+						<!-- 금융상품만 보기: true // -->
+						<div class="chart-wrap" data-cwidx="2">
+							<div class="chart-flex">
+								<div class="chart-area" id="donutChart01">
+									<img class="temp" src="@@webRoot/static/images/_temp/chart_as0000_2_1.png" alt="차트 예시 이미지">
+								</div>
+								<div class="chart-area" id="donutChart02">
+									<img class="temp" src="@@webRoot/static/images/_temp/chart_as0000_2_2.png" alt="차트 예시 이미지">
+								</div>
+							</div>
+							<!-- 차트샘플 /html/__guide/highchart/donut-graph01.html -->
+							<div class="legend-unit t02">
+								<ul>
+									<li class="cate1">입출금</li>
+									<li class="cate2">예적금</li>
+									<li class="cate3">투자</li>
+									<li class="cate4">보험</li>
+									<li class="cate5">외화</li>
+									<li class="cate6">페이</li>
+								</ul>
+							</div>
+						</div>
+						<!-- // 금융상품만 보기: true -->
+						<script>
+							$('#viewOnlyFinance').on('change', viewOnlyFinanceChange);
+							function viewOnlyFinanceChange() {
+								var chk = $('#viewOnlyFinance').prop("checked");
+								if(chk){
+									$('.chart-wrap[data-cwidx=1]').hide();
+									$('.chart-wrap[data-cwidx=2]').show();
+								}else{
+									$('.chart-wrap[data-cwidx=1]').show();
+									$('.chart-wrap[data-cwidx=2]').hide();
+								}
+							}
+							viewOnlyFinanceChange();
+						</script>
+					</div>
+				</section>
+				<!-- // 자산비중 -->
+
+				<hr class="hr-divide_48">
+
+				<!-- 자산흐름 // -->
+				<section class="kb-sec asset-main-sec asset-flow">
+					<div class="title">
+						<h2 class="h4">자산흐름</h2>
+						<button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+						<div class="tooltip">
+							<strong class="tit">자산흐름</strong>
+							<div class="cont">
+								<p>최근 3개월 동안 비교그룹과 나의 자산흐름 비교 안내</p>
+								<ul data-style="list">
+									<li>자산: 순자산(금융자산+비금융자산-대출&middot;부채</li>
+									<li>비교그룹: 연령({}세~{}세), 순자산</li>
+								</ul>
+							</div>
+							<button class="btn-close"><span>닫기</span></button>
+						</div>
+						<a href="javascript:;" class="btn-text icon-arrow" role="button">
+							<span class="is-hidden">링크</span><i></i>
+						</a>
+					</div>
+
+					<p class="section-text">
+						비교그룹보다 보유자산이 줄고 있어요. 줄어든 자산을 확인해보세요.
+					</p>
+
+					<div class="content-box">
+						<span class="form-checkbox"><input type="checkbox" id="viewOnlyFinance2"><label for="viewOnlyFinance2">금융상품만 보기</label></span>
+
+						<div class="chart-wrap">
+							<!-- [chart area] //-->
+							<!--
+								[차트 디자인 정보]
+								* 그래프 색상
+								- 나 :  #ffba53
+								- 비교그룹 : #ff8a71
+								- X축 텍스트 컬러/크기 : #26282c/14px
+							-->
+							<div class="chart-area" id="">
+								<img class="temp" src="@@webRoot/static/images/_temp/chart_as0000_3.png" alt="차트 예시 이미지">
+							</div>
+							<!-- // [chart area] -->
+						</div>
+					</div>
+				</section>
+				<!-- // 자산흐름 -->
+
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+		
+		<!-- Layer (modal, bottom sheet) // -->
+		<div class="layered">
+		</div>
+		<!-- // Layer (modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+	<script>
+
+
+		//GNB 활성화 (번호:menu.js)
+        gfn_gnb.select(1);
+	</script>
+</body>
+
+</html>

@@ -74,10 +74,10 @@
                                     <div class="challenge-info">
                                         <ul class="term-list">
                                             <li><span>목표기간</span> <em class="num">2021.04.01~2021.04.06</em></li>
-                                            <li><span>6개월 평균 소비금액</span> <em class="num">150,000</em>원</li>
-                                            <li><span>목표금액</span> <em class="num">150,000</em>원 (1주일)</li>
+                                            <li><span>6개월 평균 소비금액</span> <em class="num" data-unit-after="원">150,000</em></li>
+                                            <li><span>목표금액</span> <em class="num" data-unit-after="원">150,000</em> (1주일)</li>
                                         </ul>
-                                        <div class="chart-area type-ratio no-mt" id="columnChart01"></div>
+                                        <div class="chart-area" id="columnChart01"></div>
                                         <ul class="legend-dot">
                                             <li>지난주</li>
                                             <li class="current">현재</li>
@@ -172,6 +172,8 @@
                     marginLeft: 0,
                     marginRight: 0,
                     marginTop:20,
+                    marginBottom: 23,
+                    height: 195
                 },
                 legend: { enabled: false },
                 xAxis: {
@@ -180,7 +182,7 @@
                     labels: {
                         style: {
                             color: "#aab0b8",
-                            fontSize: "3.733vw",
+                            fontSize: "1.4rem",
                             fontFamily: 'KBFGText',
                         }
                     }

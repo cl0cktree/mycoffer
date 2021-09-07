@@ -69,20 +69,30 @@
                     </pre>
                 </dt>
                 <dd data-description="" style="line-height:1.35">
-                    <p>2억 3천4백9십원</p>
-                    <p>(중간 중간 단위가 들어가있을때는 KB 폰트 사용/ 억단위 뒤에 한칸 띄우기)</p>
-                    <p>(만원 이상일 경우 숫자+단위 허용)</p>
-                    <hr>
-                    <p>2억 3천2백4십5만원</p>
-                    <hr>
-                    <hr>
-                    <p>(단위 앞에 2px의 여백이 있음)</p>
-                    <p>(.num[data-unit-after]): 기본</p>
+                    <p><b>(숫자 단위 앞에 2px의 여백이 있음)</b></p>
+                    <p><b>(.num[data-unit-after]): 기본</b></p>
                     <p><span class="num" data-unit-after="원">100,000</span></p>
                     <p><span class="num" data-unit-after="억">20</span></p>
-                    <hr>
+                    <p><span class="num" data-unit-after="억원">20</span></p>
+                    <p><span class="num" data-unit-after="만원">4</span></p>
+                    <p><span class="num" data-unit-after="%">20</span></p>
+                    <p><span class="num" data-unit-after="P">200</span></p>
+                    <p><span class="num" data-unit-after="억">2</span>&nbsp;<!-- 억단위 뒤에 한칸--><span class="num" data-unit-after="천">3</span><span class="num" data-unit-after="백">4</span><span class="num" data-unit-after="십원">9</span></p>
                     <p>(.num + .unit) : data-unit-after 사용불가시</p>
                     <p><span class="num">20</span><span class="unit">억</span></p>
+                    <hr>
+                    <hr>
+                    <p><b>단순 텍스트</b></p>
+                    <p>삼백만원, 만원, 백원</p>
+                    <hr>
+                    <hr>
+                    <p><b>기타) 예외 년, 일, 월, 호 등등</b></p>
+                    <p>매월&nbsp;<span class="num">20</span>일</p>
+                    <p>&nbsp;<span class="num">20</span>개월</p>
+                    <p><span class="num">201</span>동&nbsp;<span class="num">302</span>호</p>
+                    <p><span class="num">2011</span>년&nbsp;<span class="num">12</span>월&nbsp;<span class="num">27</span>일</p>
+                    <p><span class="num">2011.09.10</span></p>                    
+                    <p><span class="num">123-0000-123456</span></p>                    
                 </dd>
             </dl>
         </div>
@@ -111,8 +121,8 @@
                     <button class="btn-solid"><span>[Default]솔리드 버튼 (52px)</span></button>
                     <button class="btn-solid md"><span>md 솔리드 버튼 (44px)</span></button>
                     <button class="btn-solid mm"><span>mm 솔리드 버튼 (40px)</span></button>
-                    <button class="btn-solid sm"><span>sm 솔리드 버튼 (36px)</span></button>                    
-                    <button class="btn-solid xs"><span>xs 솔리드 버튼 (28px)</span></button>                    
+                    <button class="btn-solid sm"><span>sm 솔리드 버튼 (36px)</span></button>
+                    <button class="btn-solid xs"><span>xs 솔리드 버튼 (28px)</span></button>
                 </dd>
                 <dd data-description=".btn-solid : 일반 솔리드 링크 버튼">
                     <a href="javascript:;" class="btn-solid" role="button"><span>[Default]솔리드 링크버튼 (52px)</span></a>
@@ -159,8 +169,8 @@
                     <button class="btn-line lg"><span>lg 라인 버튼 (52px)</span></button>
                     <button class="btn-line"><span>[Default] 라인 버튼 (44px)</span></button>
                     <button class="btn-line mm"><span>mm 라인 버튼 (40px)</span></button>
-                    <button class="btn-line sm"><span>sm 라인 버튼 (36px)</span></button>                    
-                    <button class="btn-line xs"><span>xs 라인 버튼 (28px)</span></button>  
+                    <button class="btn-line sm"><span>sm 라인 버튼 (36px)</span></button>
+                    <button class="btn-line xs"><span>xs 라인 버튼 (28px)</span></button>
                     <hr>
                     <!-- link -->
                     <a href="javascript:;" class="btn-line lg" role="button"><span>lg 라인 링크버튼 (52px)</span></a>
@@ -322,7 +332,7 @@
                     <!-- Size 24px -->
                     <span class="form-checkbox"><input type="checkbox" id="checkboxSample11"><label for="checkboxSample11">Default</label></span>
                     <hr>
-                    <span class="form-checkbox"><input type="checkbox" id="checkboxSample12"><label for="checkboxSample12">Default(Disabled)</label></span>
+                    <span class="form-checkbox"><input type="checkbox" id="checkboxSample12" disabled><label for="checkboxSample12">Default(Disabled)</label></span>
                     <hr>
                     <span class="form-checkbox"><input type="checkbox" id="checkboxSample13" checked><label for="checkboxSample13">Selected</label></span>
                     <hr>
@@ -332,7 +342,7 @@
                     <!-- Size 24px -->
                     <span class="form-checkbox align-mid"><input type="checkbox" id="checkboxSample15"><label for="checkboxSample15">Default<br>2nd Line</label></span>
                     <hr>
-                    <span class="form-checkbox align-mid"><input type="checkbox" id="checkboxSample16"><label for="checkboxSample16">Default(Disabled)<br>2nd Line</label></span>
+                    <span class="form-checkbox align-mid"><input type="checkbox" id="checkboxSample16" disabled><label for="checkboxSample16">Default(Disabled)<br>2nd Line</label></span>
                     <hr>
                     <span class="form-checkbox align-mid"><input type="checkbox" id="checkboxSample17" checked><label for="checkboxSample17">Selected<br>2nd Line</label></span>
                     <hr>
@@ -342,7 +352,7 @@
                     <!-- Size 20px : no text-->
                     <span class="form-checkbox_20"><input type="checkbox" id="checkboxSample21"><label for="checkboxSample21">Default</label></span>
                     <hr>
-                    <span class="form-checkbox_20"><input type="checkbox" id="checkboxSample22"><label for="checkboxSample22">Default(Disabled)</label></span>
+                    <span class="form-checkbox_20"><input type="checkbox" id="checkboxSample22" disabled><label for="checkboxSample22">Default(Disabled)</label></span>
                     <hr>
                     <span class="form-checkbox_20"><input type="checkbox" id="checkboxSample23" checked><label for="checkboxSample23">Selected</label></span>
                     <hr>
@@ -352,7 +362,7 @@
                     <!-- Size 20px : no text-->
                     <span class="form-checkbox_20 align-mid"><input type="checkbox" id="checkboxSample21"><label for="checkboxSample21">Default<br>2nd Line</label></span>
                     <hr>
-                    <span class="form-checkbox_20 align-mid"><input type="checkbox" id="checkboxSample22"><label for="checkboxSample22">Default(Disabled)<br>2nd Line</label></span>
+                    <span class="form-checkbox_20 align-mid"><input type="checkbox" id="checkboxSample22" disabled><label for="checkboxSample22">Default(Disabled)<br>2nd Line</label></span>
                     <hr>
                     <span class="form-checkbox_20 align-mid"><input type="checkbox" id="checkboxSample23" checked><label for="checkboxSample23">Selected<br>2nd Line</label></span>
                     <hr>
@@ -372,7 +382,7 @@
                         </code>
                     </pre>
                 </dt>
-                <dd data-description=".form-radio : 라디오 기본">                    
+                <dd data-description=".form-radio : 라디오 기본">
                     <span class="form-radio"><input type="radio" id="radioSample01"><label for="radioSample01">Default<br>2nd Line</label></span>
                     <hr>
                     <span class="form-radio"><input type="radio" id="radioSample02" disabled><label for="radioSample02">Default(Disabled)<br>2nd Line</label></span>
@@ -764,6 +774,8 @@
                     <span class="prod-kind retirement-pension">IRP</span>
                     <span class="prod-kind derivatives">파생상품</span>
                     <span class="prod-kind etc">기타</span>
+                    <span class="prod-kind maturity">만기상품</span>
+                    <span class="prod-kind maturity">만기예정</span>
 
 
 
@@ -839,7 +851,7 @@
                         <hr class="hr-line">
                         <p>컨텐츠 내용 02</p>
                     </section>
-                    
+
                 </dd>
             </dl>
         </div>

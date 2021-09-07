@@ -22,13 +22,15 @@
             <!-- app-content // -->
             <main class="app-content">
                 <!-- 컨텐츠 영역 -->
-                <section class="kb-sec">
+                <section class="kb-sec agree-to-provide-information"> <!-- [D] 2021-09-06 수정: 클래스 추가 -->
                     <div class="agree-group">
                         <strong class="h4">[KB카드](선택) 개인(신용)정보 제3자 정보 제공 동의 현황</strong>
-                        <ul>
-                            <li><span class="form-radio"><input type="radio" name="agreeSelect" id="agreeChkTrue" checked><label for="agreeChkTrue">동의</label></span></li>
-                            <li><span class="form-radio"><input type="radio" name="agreeSelect" id="agreeChkFalse"><label for="agreeChkFalse">동의하지 않음</label></span></li>
+                        <!-- [D] 2021-09-07 수정: ul 클래스 추가 및 li 내부 span 클래스 변경 (form-radio -> form-checkbox) //-->
+                        <ul class="flex-box" data-col="2">
+                            <li><span class="form-checkbox"><input type="radio" name="agreeSelect" id="agreeChkTrue" checked><label for="agreeChkTrue">동의</label></span></li>
+                            <li><span class="form-checkbox"><input type="radio" name="agreeSelect" id="agreeChkFalse"><label for="agreeChkFalse">동의하지 않음</label></span></li>
                         </ul>
+                        <!--// [D] 2021-09-07 수정: ul 클래스 추가 및 li 내부 span 클래스 변경 (form-radio -> form-checkbox) -->
                     </div>
                     <div class="agree-group">
                         <strong class="h4">동의사항 변경하기</strong>

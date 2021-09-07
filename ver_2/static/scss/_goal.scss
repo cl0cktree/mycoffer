@@ -47,7 +47,8 @@
 
 .pgbank-mng-pop .description-list {grid-template-columns: 100px auto;}
 .pgbank-mng-pop .description-list dt {align-items: flex-start;}
-.pgbank-mng-pop .description-list dd {padding: 2px 0;}
+.pgbank-mng-pop .description-list dd {padding: 2px 0;display:block;}
+.pgbank-mng-pop .description-list dd > .num:after{vertical-align:0;}
 .pgbank-mng-pop .links {margin-top: 20px;}
 .pgbank-mng-pop .links li {position: relative; border-top: 1px solid #ebeef0;}
 .pgbank-mng-pop .links a {display: block; padding: 0 2px; font-size: 18px; line-height: 67px;}
@@ -85,15 +86,15 @@
 .pgbank-rules .main-copy {margin-bottom:1.6rem;font-size:2.4rem;}
 .pgbank-rules p + .main-copy {margin-bottom:4rem;}
 .pgbank-rules .main-copy + p {margin-bottom:6rem;}
-.pgbank-rules .h4{margin-bottom:1.2rem;}
-.pgbank-rules .character-selection {margin: 0 (-2.4rem) 4.8rem; padding: 0 2.4rem; overflow-x: auto;}
+.pgbank-rules .h4{margin-bottom:1.6rem;margin-top:2.2rem;}
+.pgbank-rules .character-selection {margin: 0 (-2.4rem) 4.8rem; padding: 0 2.4rem .3rem; overflow-x:auto;}
 .pgbank-rules .character-selection::-webkit-scrollbar {display: none;}
 .pgbank-rules .character-selection ul {font-size: 0; white-space: nowrap;}
 .pgbank-rules .character-selection li {display: inline-block; margin-right: 12px; width: 145px; height: 215px;}
 .pgbank-rules .character-selection li:last-child {margin-right: 24px;}
 .pgbank-rules .character-selection li input[type=checkbox],
 .pgbank-rules .character-selection li input[type=radio] {position: absolute; left: -10000px; visibility: hidden;}
-.pgbank-rules .character-selection li label {position: relative; display: block; width: inherit; height: inherit; text-align: center; border: 1px solid #dde1e4; border-radius: 6px; overflow: hidden;  background-image: url(../images/goal/sprite_char_card.png); background-size: 710px 213px;}
+.pgbank-rules .character-selection li label {position: relative; display: block; width: inherit; height: inherit; text-align: center; border: 1px solid #dde1e4; border-radius: 6px; overflow: hidden;  background-image: url(../images/goal/sprite_char_card.png); background-size: 710px 213px;box-shadow:0 .2rem .2rem 0 rgba(0,0,0,.11);}
 .pgbank-rules .character-selection li[data-theme='lamu'] label {background-position: 0 0;}
 .pgbank-rules .character-selection li[data-theme='kolly'] label {background-position: -142px 0;}
 .pgbank-rules .character-selection li[data-theme='ago'] label {background-position: -284px 0;}
@@ -252,7 +253,7 @@
 .challenge-box.badge_swiper .cicle-badge img{width:6.8rem;}
 
 .challenge-box{margin-top:20px;margin-left:-8px;margin-right:-8px;}
-.challenge-box .content-box{width:100%;padding:24px 20px;border:1px solid $kb-ui08;margin:auto;}
+.challenge-box .content-box{width:100%;max-width:100%;padding:24px 20px;border:1px solid $kb-ui08;margin:auto;}
 .challenge-box .content-box.swiper-slide{margin-left:0;margin-right:0;}
 .challenge-box .challenge-tit{@include flexBetween;position:relative;} 
 .challenge-box .challenge-tit .h3{font-size:2.4rem;}
@@ -417,12 +418,12 @@
 
 .goals-use-best{padding-top:1.2rem;}
 
-.chart-area.dbl-bar > .chart-area.type-ratio{margin-top:0;}
+.chart-area.dbl-bar > .chart-area.type-ratio{margin-top:0;margin-bottom:-2.5rem;}
 .chart-area .txt-gray{@include text($size:$text03);padding-left:16px;position:relative;}
 .chart-area .txt-gray:before{content:'';width:9px;height:9px;position:absolute;display:block;border-radius:50%;top:5px;left:0;background:$kb-ui03;}
 .chart-area .txt-yellow{@include text($size:$text03);padding-left:16px;position:relative;}
 .chart-area .txt-yellow:before{content:'';width:9px;height:9px;position:absolute;display:block;border-radius:50%;top:5px;left:0;background:$color-yellow;}
-.chart-area .txt-orange{@include text($size:$text03);padding-left:16px;position:relative;}
+.chart-area .txt-orange{@include text($size:$text03);padding-left:16px;position:relative;display:inline-block;margin-top:2.4rem;}
 .chart-area .txt-orange:before{content:'';width:9px;height:9px;position:absolute;display:block;border-radius:50%;top:5px;left:0;background:#ffba53;}
 .chart-area .txt-pink{@include text($size:$text03);padding-left:16px;position:relative;}
 .chart-area .txt-pink:before{content:'';width:9px;height:9px;position:absolute;display:block;border-radius:50%;top:5px;left:0;background:#ff8a71;}
@@ -519,7 +520,7 @@
 .goals-detail-list .challenge-info .txt-goal-stat h3 > .num:after{font-size:$text02;font-weight:normal;}
 // .goals-detail-list .challenge-info .txt-goal-stat + .character-graph{padding-top:100px;}
 .goals-detail-list .challenge-info .txt-goal-stat .tit{font-weight:bold;margin-bottom:10px;}
-.goals-detail-list .challenge-info .legend-dot{margin-top:1.2rem;}
+.goals-detail-list .challenge-info .legend-dot{margin-top:1.4rem;}
 .goals-detail-list .challenge-info .legend-dot li{@include text($text03);display:inline-block;}
 .goals-detail-list .challenge-info .legend-dot li + li{margin-left:25px;}
 .goals-detail-list .challenge-info .legend-dot li:before{content:'';width:9px;height:9px;display:inline-block;margin-right:10px;background:$kb-ui02;border-radius:50%;}
@@ -528,6 +529,8 @@
 .goals-detail-list + .goals-pay-list{margin-top:0;} 
 
 .goals-detail-list .trophy-gray{padding:20px;background:$kb-ui10;}
+.goals-detail-list .trophy-light-orange{padding:20px;background:#fffae5;}
+
 .goals-pay-list .accordion > dt{border-top:none;font-size:$text01;font-weight:bold;}
 .goals-pay-list .accordion > dt.is-active + dd{border-bottom:none;}
 .goals-pay-list .accordion > dd{@include text($text01);padding:0;}
@@ -651,11 +654,11 @@ section.gray-line + section{border-top:1rem solid $kb-ui10;}
 .character-graph[data-theme=eatout] .graph-area > span i{background-image:url(../images/goal/progress_eatout.png);width:39px;height:39px;}
 
 //남들만큼 아이콘
-.character-graph[data-theme=coin]{padding-top:8.4rem;}
+.character-graph[data-theme=coin]{padding-top:8.5rem;}
 .character-graph[data-theme=coin] .graph-area > span i{background-image:url(../images/goal/progress_coin.png);width:36px;height:29px;}
 
 // 비교
-.character-graph.type2{padding-top:4.8rem;}
+.character-graph.type2{padding-top:6.4rem;}
 .character-graph.type2 .graph-area{background:none;}
 .character-graph.type2 .graph-area > span{height:24px;border-radius:0 12px 12px 0;background-color:$color-yellow;}
 .character-graph.type2 .graph-area.sub > span{background-color:#e0e4e6;border:1px solid #e0e4e6;}
@@ -668,5 +671,6 @@ section.gray-line + section{border-top:1rem solid $kb-ui10;}
 
 /*차트 비율*/
 .chart-area.type-ratio{height:calc(75vw - 88px)}
+.chart-area.type-ratio.type2{height:calc(75vw - 10.6rem);}
 .chart-area.type-ratio.no-mt{margin-top:0;}
 // .goals-detail-list .challenge-info .type-ratio{margin-bottom:-20px;}

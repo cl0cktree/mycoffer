@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko" data-channel="ch_star" >
 <!-- [MYS_EX_02_01_01_P] 작성자: 누리어 시스템 김삼희 -->
-
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
     "title": "정기지출항목설정 | 지출"
@@ -30,6 +29,7 @@
                 </section>
                 <!-- //타이틀 -->
                 <!-- 관리 중인 서비스//-->
+                <!-- [D] 2021-09-06 수정 : 내역 없을 떄 및 하단 플로팅 버튼 추가 수정 //-->
                 <section class="kb-sec services-management mt48">
                     <h4 class="h4">관리 중인 서비스</h4>
                     <div class="services-management-list">
@@ -64,27 +64,24 @@
                             </dl>
                         </div>
                     </div>
-                </section>
-                <!-- [D] 내역이 없을 때 //-->
-                <section class="kb-sec">
+                    <!-- [D] 내역이 없을 때 //-->
                     <h3 class="h1">관리중인 항목이 없습니다.</h3>
                     <p class="mt12">매 월, 정기적으로 나가는 지출을 관리해보세요.</p> <!-- [D] 2021-08-31 수정 : 클래스 수정 -->
-                </section>
-                <section class="kb-sec services-management">
                     <div class="no-data">
-                        <i class="icon-add_type2"></i>
+                        <i class="icon-bang_60_gray"></i>
                         <p>내역이 존재하지 않습니다.</p>
                     </div>
-                </section>
-                <!--// [D] 내역이 없을 때 -->
-
-                <!-- 관리 중인 서비스//-->
-                <section class="kb-sec services-management mt48">
-
-                    <div class="btn-area">
+                    <!--// [D] 내역이 없을 때 -->
+                    <div class="btn-area mt48">
                         <button type="button" class="btn-line" data-call-layered="bsSelectRegularExpenseList"><span>정기지출 항목 추가</span></button>
                     </div>
                 </section>
+                <!--// [D] 2021-09-06 수정 : 내역 없을 떄 및 하단 플로팅 버튼 추가 수정 -->
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <a href="@@webRoot/html/expense/mys_ex_02_02_00.html" role="button" class="btn-solid"><span>정기지출 직접등록</span></a>
+                    </div>
+                </div>
             </main>
             <!-- // app-content -->
 
@@ -93,8 +90,8 @@
 
         <!-- Layer (modal, bottom sheet) // -->
         <div class="layered">
-            @@include('@@webRoot/html/expense/layered/mys_ex_02_01_01_p01.html')
             @@include('@@webRoot/html/expense/layered/mys_ex_02_01_02_p.html')
+            <!-- @@include('@@webRoot/html/expense/layered/mys_ex_02_01_07_p.html') -->
         </div>
         <!-- // Layer (modal, bottom sheet) -->
     </div>

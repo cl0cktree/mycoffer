@@ -29,29 +29,28 @@
 
                     <div class="designed-img"><img src="@@webRoot/html/__guide/highchart/images/bar-graph05.png" alt=""></div>
 
-                    
+                    <div class="content-box">
                         <div class="chart-area" id="barChart01"></div>
-                    
-                    <div class="legend-unit">
-                        <ul>
-                            <li class="yellow">입출금·페이</li>
-                            <li class="brown">예적금</li>
-                            <li class="magenta">투자</li>
-                            <li class="blue">보험</li>
-                            <li class="orange">대출·부채</li>
-                            <li class="sky">연금</li>
-                            <li class="pink">외화</li>
-                            <li class="green">My금고</li>
-                            <li class="lightGreen">적립포인트</li>   
-                            <li class="purple not-finance">부동산</li>
-                            <li class="coral not-finance">자동차</li>                 
-                        </ul>
+                        <div class="chart-area" id="barChart02"></div>
+                        
+                        <div class="legend-unit t02">
+                            <ul>
+                                <li class="cate1">입출금</li>
+                                <li class="cate2">예적금</li>
+                                <li class="cate3">투자</li>
+                                <li class="cate4">보험</li>
+                                <li class="cate5">외화</li>
+                                <li class="cate6">부동산</li>
+                                <li class="cate7">자동차</li>
+                                <li class="cate8">대출&middot;부채</li>
+                                <li class="cate9">페이</li>
+                            </ul>
+                        </div>
                     </div>
+
                 </section>
 
                 <hr>
-
-                
 
             </main>
             <!-- // app-content -->
@@ -69,120 +68,200 @@
 
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
+    
     <script>
-        // highchart 공통 options
-        
-        Highcharts.setOptions({
-            title: { text: null },
-            subTitle: { text: null },
-            legend: { enabled: false },
-            credits: { enabled: false },
-            label : { fontFamily: 'KBFGText'},
-            credits: { enabled: false },
-            //tooltip: { enabled: false },
-            exporting: { enabled: false },
-            colors: ['#ffd435', '#978680', '#d676ca','#3f6fd1','#f7956c','#67d4d4','#f675cd','#40b78f','#c2d467','#9e6eda','#f76c6c']
-        });
-        
         // 첫번째 bar chart 선언
         var barChart = new Highcharts.Chart({
             chart: {
                 renderTo: 'barChart01', // chart 삽입 target ID                
                 type: 'bar',
-                height: '30%',
+                height: '20%',
+                margin: [20,0,0,0]
             },
-            xAxis: {
-                categories: ['나','비교그룹'],
-                lineWidth: 0,
-                minorGridLineWidth: 0,
-                lineColor: 'transparent',
-                labels: {
-                    style: {
-                        color: "#26282c",
-                        fontSize: '14px',
-                        fontFamily: 'KBFGText',
-                    }
-                },
+            title: {
+                text: '나',
+                align: 'left',
+                style: {fontSize:'4vw',fontFamily: "KBFGText"}
             },
-            yAxis: {
-                enabled: false,  // 사용 안함
-                labels: { enabled: false },  // 축 lebel 사용 안함
-                title: { enabled: false }, // 축 title 사용 안함
-                tickWidth: 0,  // 그리드 라인 너비
-                gridLineColor: 'transparsnt',  // 그리드 라인 컬러
-                
-                max : 100 // 총 합이 100%
+            subTitle: {
+                text: null
             },
             legend: {
-                reversed: true,
-                borderRadius: 5,
-                            
-
-            },   
+                enabled: false
+            },
+            credits: {
+                enabled: false
+            },
+            exporting: {
+                enabled: false
+            },
+            xAxis: {
+                visible: false
+            },
+            yAxis: {
+                visible: false,
+                max : 100, // 총 합이 100%
+                reversed: true
+            },
             tooltip: {
-                pointFormat: '<b>{point.series.name}:{point.percentage:.1f}</b>%'
+                formatter: function () { 
+                    return this.y + "%"
+                },
+                shape: 'rect',
+                padding: 5,
+                backgroundColor: "#FFF",
+                shadow: true,
+                borderRadius: 4,
+                borderColor: '#f3f3f3',
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '4vw',
+                    fontFamily: "KBFGText",
+                }
             },
             accessibility: {
                 point: { valueSuffix: '%' }
             },
             plotOptions: {
                 series: {
-                   
-                    pointWidth: 16,  // 막대그래프 너비
+                    pointWidth: 22,  // 막대그래프 너비
                     stacking: 'normal',
-                    borderWidth: 0,
+                    borderWidth: 1,
                 }
             },
+            colors: ['#ffba53','#ff8a71','#ff6391','#ff445a','#d090ee','#bc63e5','#7fa2ed','#55c1e3','#4dac8a'],
             series: [{
-                name: '입출금·페이',
-                data: [5,5],
-                //오른쪽 라운딩
-                borderRadiusTopLeft: 100,
-                borderRadiusTopRight: 100
+                name: '입출금',
+                data: [30]
             }, {
                 name: '예적금',
-                data: [5,5]
+                data: [23]
             }, {
                 name: '투자',
-                data: [10,10]
+                data: [10]
             },
             {
                 name: '보험',
-                data: [10,10]
-            },
-            {
-                name: '대출·부채',
-                data: [10,10]
-            },
-            {
-                name: '연금',
-                data: [10,10]
+                data: [10]
             },
             {
                 name: '외화',
-                data: [10,15]
-            },
-            {
-                name: 'My금고',
-                data: [10,5]
-            },
-            {
-                name: '적립포인트',
-                data: [10,15]
+                data: [5]
             },
             {
                 name: '부동산',
-                data: [10,5]
+                data: [7]
             },
             {
                 name: '자동차',
-                data: [10,10],
-                //왼쪽 라운딩
-                borderRadiusBottomLeft: 100,
-                borderRadiusBottomRight: 100
+                data: [5]
             },
-            ]
+            {
+                name: '대출&middot부채',
+                data: [2]
+            },
+            {
+                name: '페이',
+                data: [8]
+            }]
         });
+
+        // 두번째 bar chart 선언
+        var barChart2 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'barChart02', // chart 삽입 target ID                
+                type: 'bar',
+                height: '20%',
+                margin: [20,0,0,0]
+            },
+            title: {
+                text: '비교그룹',
+                align: 'left',
+                style: {fontSize:'4vw',fontFamily: "KBFGText"}
+            },
+            subTitle: {
+                text: null
+            },
+            legend: {
+                enabled: false
+            },
+            credits: {
+                enabled: false
+            },
+            exporting: {
+                enabled: false
+            },
+            xAxis: {
+                visible: false
+            },
+            yAxis: {
+                visible: false,
+                max : 100, // 총 합이 100%
+                reversed: true
+            },
+            tooltip: {
+                formatter: function () { 
+                    return this.y + "%"
+                },
+                shape: 'rect',
+                padding: 5,
+                backgroundColor: "#FFF",
+                shadow: true,
+                borderRadius: 4,
+                borderColor: '#f3f3f3',
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '4vw',
+                    fontFamily: "KBFGText",
+                }
+            },
+            accessibility: {
+                point: { valueSuffix: '%' }
+            },
+            plotOptions: {
+                series: {
+                    pointWidth: 22,  // 막대그래프 너비
+                    stacking: 'normal',
+                    borderWidth: 1,
+                }
+            },
+            colors: ['#ffba53','#ff8a71','#ff6391','#ff445a','#d090ee','#bc63e5','#7fa2ed','#55c1e3','#4dac8a'],
+            series: [{
+                name: '입출금',
+                data: [25]
+            }, {
+                name: '예적금',
+                data: [25]
+            }, {
+                name: '투자',
+                data: [10]
+            },
+            {
+                name: '보험',
+                data: [8]
+            },
+            {
+                name: '외화',
+                data: [8]
+            },
+            {
+                name: '부동산',
+                data: [7]
+            },
+            {
+                name: '자동차',
+                data: [7]
+            },
+            {
+                name: '대출&middot부채',
+                data: [7]
+            },
+            {
+                name: '페이',
+                data: [3]
+            }]
+        });
+
     </script>
 
 </body>

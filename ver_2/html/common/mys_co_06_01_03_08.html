@@ -25,15 +25,17 @@
             <!-- app-content // -->
             <main class="app-content select-transmission-method">                
                 <div class="page-step js-fixed">    
-                    <div class="step" aria-label="총 5단계 중 현재 1단계">
-                        <span class="current">1</span>                        
-                        <span class="total">5</span>
+                    <div class="page-step-inner">
+                        <div class="step" aria-label="총 5단계 중 현재 1단계">
+                            <span class="current">1</span>                        
+                            <span class="total">5</span>
+                        </div>
+                        <h2 class="h1">인증요청</h2>
                     </div>
-                    <h2 class="h1">인증요청</h2>
                 </div>    
                 <section class="kb-sec">
                     <div class="visual-area">
-						<img class="mydata" src="@@webRoot/static/images/common/transmission_request_int.png" alt="전송요구 이미지">
+						<img class="mydata" src="@@webRoot/static/images/common/transmission_request_int_02.png" alt="전송요구 이미지">
 						<div class="text">
 							<span class="stxt">본인명의 휴대폰 및 계좌비밀번호 확인을 통해<br>
                                 본인인증거래를 수행합니다</span>
@@ -63,17 +65,27 @@
     <!-- Script -->
     @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
-     <script src="@@webRoot/static/js/ui.js"></script>
+    <script src="@@webRoot/static/js/ui.js"></script>
     <script>
-       
-       
-        // function addCategoryLimitNumber() {
-        //     modalPopup({
-        //         title: "",
-        //         message: "마이데이터 서비스는 <br>만 19세 이상 고객에 대해 제공됩니다."
-        //     });
-        // }
-        // addCategoryLimitNumber();
+		// 기획확인용 임시 스크립트
+		document.querySelector('.app-header .btn-close').setAttribute('href', '');
+
+		$('.app-header .btn-close').on('click', (e) => {
+			e.preventDefault();
+			addCategoryLimitNumber(); // 헤더 닫기 버튼 선택시 실행할 함수
+			$('.btn-solid.ok').on('click', () => history.back())
+		});
+		
+		// 헤더 닫기 버튼 선택시 실행할 함수
+        function addCategoryLimitNumber() {
+            modalPopup({
+                title: "",
+                message: "KB스타뱅킹 자산정보 전송을 위한 본인인증을 취소하시겠습니까?",
+                type: "confirm",
+                textOkButton: "확인",
+                textCancelButton: "취소",
+            });
+        }
     </script>
     <!-- Add Script -->
 
