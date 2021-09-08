@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+@@include('@@webRoot/html/_include/app-head.html',{
+"title": "Last Depth | 1st Depth"
+})
+</head>
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header //-->
+        t@@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit' :'line-graph06'
+        })
+        <!-- // app-header -->
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content">
+
+                <section class="kb-sec">
+
+                    <!--  그래프 샘플 // -->
+                    <div class="chart-area" id="testChart"></div>
+                    <!-- // 그래프 샘플-->
+
+                </section>
+
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+    </div>
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
+    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
+
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    <script>
+        // highchart 공통 options
+        Highcharts.setOptions({
+            title: { text: null },
+            subTitle: { text: null },
+            credits: { enabled: false },
+            label : { fontFamily: 'KBFGText'},
+            credits: { enabled: false },
+            exporting: { enabled: false },
+            legend: { enabled: false }
+        });
+        // spline chart 선언
+        var columnChart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'testChart', // chart 삽입 target ID
+                type: 'line',
+                height: (2 / 3 * 100) + '%', // 2:3 비율로 설정
+                margin: [0,0,20,0]
+            },
+            tooltip: {
+                formatter: function () {
+                    return [''].concat(
+                        this.points ?
+                            this.points.map(function (point) {
+                                return gfn_comma3Digit(point.y) + '원';
+                            }) : []
+                    );
+                },
+                split: true,
+                padding: 5,
+                backgroundColor: "#FFF",
+                shadow: true,
+                borderRadius: 4,
+                verticalAlign: 'bottom',
+                borderColor: '#f3f3f3',
+                style: {
+                    fontSize: '4vw',
+                    fontFamily: "KBFGText",
+                }
+            },
+            xAxis: {
+                tickInterval: 5,
+                tickWidth: 0,
+                gridLineWidth: 0,
+                labels: {
+                    style: {
+                        color: "#26282c",
+                        fontSize: "3.733vw",
+                        fontFamily: "KBFGText"
+                    }
+                },
+            },
+            yAxis: {
+                enabled: false,  // 사용 안함
+                labels: { enabled: false },  // 축 lebel 사용 안함
+                title: { enabled: false }, // 축 title 사용 안함
+                tickWidth: 0,  // 그리드 라인 너비
+                gridLineColor: 'transparsnt',  // 그리드 라인 컬러,
+                plotLines: [{
+                    color: '#c7cbd0',
+                    width: 1,
+                    value: 300000,
+                    zIndex: 50,
+                    dashStyle: 'dot'
+                }]
+            },
+            plotOptions: {
+                series: {
+                    lineWidth: 2,
+                    marker: {
+                        enabled: false,
+                    },
+                }
+            },
+            colors: ['#ffba53','#ff8a71','#ff6391','#ff445a','#d090ee','#bc63e5','#7fa2ed','#55c1e3','#4dac8a'],
+            series: [{
+                id: "main",
+                data: [40585,43039,44926,41256,36844,28955,26113,28433,32687,35689,33656,34559,29197,26495,28291,35472,38363,41645,40268,32846,33560,39327,42947,44179,41938,40964,32176,28915,37077,41477,41840]
+            }, {
+                linkedTo: "main",
+                data: [48351,51499,53359,49018,43332,33419,30020,33183,38782,42566,39972,40414,33565,30738,32822,42081,45652,49572,47936,37539,38527,46847,51286,53245,50733,49046,37106,33218,44192,49612,50285]
+            }]
+        });
+    </script>
+
+</body>
+</html>

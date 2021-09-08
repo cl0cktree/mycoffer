@@ -424,7 +424,8 @@
                                             <span class="account num">1234-5678-1234</span>
                                         </div>
                                     </div>
-                                    <span class="balance amount">잔액 <b class="num">3,000,000</b>원</span>
+                                    <div class="balance">잔액  <em class="amount"><b
+                                            class="num">3,000,000</b>원</em></div>
                                  </a>
                                 <!--그래프영역//-->
                                 <div class="percentage-graph type2">
@@ -452,7 +453,8 @@
                                             <div class="s-txt">납입횟수 <span class="num">9</span>회</div>
                                         </div>
                                     </div>
-                                    <span class="balance amount">잔액 <b class="num">3,000,000</b>원</span>
+                                    <div class="balance">잔액  <em class="amount"><b
+                                            class="num">3,000,000</b>원</em></div>
                                  </a>
                                  <!--그래프영역//-->
                                 <div class="percentage-graph type2">
@@ -496,7 +498,8 @@
                                             <div class="s-txt">신규일 <span class="num">2020.01.20</span></div>
                                         </div>
                                     </div>
-                                    <span class="balance amount">잔액 <b class="num">3,000,000</b>원</span>
+                                    <div class="balance">잔액  <em class="amount"><b
+                                            class="num">3,000,000</b>원</em></div>
                                  </a>
                             </dd>
                             <dd>
@@ -508,7 +511,8 @@
                                             <span class="account num">1234-5678-1234</span>
                                         </div>
                                     </div>
-                                    <span class="balance amount">잔액 <b class="num">3,000,000</b>원</span>
+                                    <div class="balance">잔액  <em class="amount"><b
+                                            class="num">3,000,000</b>원</em></div>
                                  </a>
                                 <!--그래프영역//-->
                                 <div class="percentage-graph type2">
@@ -535,7 +539,7 @@
                     <h4 class="h4">보유상품 분석</h4>
                     <div class="content-box">
                         <p class="bottom-msg">
-                            예적금의 <span class="num plus">25%</span>(<span class="num">000,000</span>원)를 청약으로 관리하고 있습니다.
+                            예적금의 <b class="plus"><span class="num">25</span>%</b>(<span class="num">000,000</span>원)를 청약으로 관리하고 있습니다.
                         </p>
                         <!-- [chart area] //-->
                         <!--
@@ -560,7 +564,7 @@
                     </div>
                     <div class="content-box">
                         <div class="tit">비교그룹 보다 <button type="button" class="btn-question"><i
-                                    class="icon-tooltip-que_20"></i></button>
+                                    class="icon-tooltip-que_20"><span>비교그룹</span></i></button>
                             <div class="tooltip">
                                 <strong class="tit">비교그룹</strong>
                                 <div class="cont">
@@ -570,7 +574,7 @@
                             </div>
                         </div>
                         <div class="msg">
-                            최근 6개월 평균 저축금액이 <b class="plus"><span class="num">20</span></b>만원 부족해요.
+                            최근 6개월 평균 저축금액이 <b class="plus"><span class="num">20</span>만원</b> 부족해요.
                         </div>
                         <!-- [chart area] //-->
                         <!--
@@ -668,8 +672,12 @@
                             </div>
                         </div>
                         <div class="top-area">
-                            <button type="button" class="btn-similar" data-call-layered="mys_as_07_00_00_p1"><b>비교그룹
-                                    <i class="arrow"></i></b></button><br>사람들의 사람들의 <b>예적금 상품</b>을 확인하세요.
+                            <p class="info">가장 많이 이용하는 예적금 상품을 확인하세요.</p>
+                            <div class="btn-wrap">
+                                <span class="s-tit">비교그룹 선택</span>
+                                <button type="button" class="btn-similar" data-call-layered="mys_as_07_00_00_p1"><b>40세~44세 3천~5천만원 
+                                    <i class="arrow"></i></b></button>
+                            </div>
                         </div>
                         <div class="except_kb">
                             <span class="form-checkbox"><input type="checkbox" id="checkboxSample01"><label for="checkboxSample01">KB국민은행 제외</label></span>
@@ -804,7 +812,7 @@
         $(document).ready(function () {
             currentTxtPosition('.my-asset.deposit .percentage-graph.type2');
         })
-        $('body').on('click', '.more-view-box .btn-more-view', function () {
+        $('body').on('click', '.more-view-box .btn-more-view, .list-area .tab a', function () {
             currentTxtPosition('.my-asset.deposit .more-view-box .percentage-graph.type2');
         })
 

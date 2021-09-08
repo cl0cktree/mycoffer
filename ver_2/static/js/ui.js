@@ -754,8 +754,8 @@ if($tab.length) tab();
 $('.tab.swiper-container').each(function(idx) {
     var $tab = $(this);
     var $tabLinks = $tab.find("a, button");
-    var $tabContents = $tab.next('.tab_contents').find('> div');
-    var isContentsTab = $tab.next('.tab_contents');
+    var $tabContents = $tab.nextUntil('.app-container','.tab_contents').find('> div');
+    var isContentsTab = $tab.nextUntil('.app-container','.tab_contents');
     var isContentsSwiper = $tab.parent().hasClass('tab-swiper-wrap');
 
     //WAI-ARIA

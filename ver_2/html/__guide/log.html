@@ -31,7 +31,30 @@
     </div>
     <div class="guide-container">
         <div class="guide-history">
-            <dl data-month="8">
+            <dl data-month="9">
+                <dt data-writer="이진우">2021.09.08</dt>
+                <dd><b>data-unit-after 의 font-weight: inherit 에서 normal로 수정</b></dd>
+                <dd>
+                    <b>.page-tit</b>
+                    <ul data-style="list">
+                        <li>개발파트에서 title을 넣는 가이드를 보니 아래처럼 되어있음</li>
+                        <li>$('.page-tit').text(document.title);</li>
+                        <li>$('.page-tit').text('타이틀');</li>                        
+                        <li>
+                            그래서~<br>
+                            $('.page-tit')에 ci 등 이미지(BG)가 들어가야할 경우<br>
+                            .app-container 시작전에 아래 내용을 써줘야함<br>
+                            $('.app-header').find('.page-tit').html('&lt;span class="ci-kb"&gt;KB국민은행&lt;/span&gt;');
+                        </li>
+                    </ul>
+                </dd>
+                <dd>
+                    <b>.tab 버튼 클릭시 .tab-contents > div 변경 건</b>
+                    <ul data-style="list">
+                        <li>$('.tab').next('.tab-contents')에서 $('.tab').nextUntil('.app-container','.tab-contents')로 수정</li>
+                        <li>layered 에서 해당 현상이 발견될 경우 알려주세요~!</li>
+                    </ul>
+                </dd>
                 <dt data-writer="이진우">2021.09.07</dt>
                 <dd>
                     <b><a href="./atom.html#dataUuit">금액 단위 업데이트</a></b>
@@ -112,6 +135,8 @@
                         </li>
                     </ul>
                 </dd>
+            </dl>
+            <dl data-month="8">
                 <dt data-writer="황철민">2021.08.31</dt>
                 <dd>
                     <b><a href="./molecule.html#jsCheckboxSelector">js-checkbox-selector(체크박스 하위 선택) 수정</a></b>

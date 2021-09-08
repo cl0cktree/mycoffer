@@ -29,9 +29,19 @@
 					<p class="sub-desc">캐릭터를 바꾸거나 금액을 변경할 수 있어요.</p>					
 
 					<h3 class="h4">누구와 어떤 저축을 도전할까요?</h3>
-					<div class="character-selection">
-						<ul>
-							<li data-theme="lamu">
+
+					<div class="swiper-container t01 js-swiper" data-swiper-options="goalCharacterSelect">
+						<script>
+							var goalCharacterSelect = {
+								"pagination": {
+									"el": ".swiper-pagination"
+								},
+								spaceBetween:20,
+                                slidesPerView: "auto",
+							};
+						</script>
+						<div class="swiper-wrapper character-selection">
+							<div class="swiper-slide" data-theme="lamu">
 								<input id="checkCharacter1" type="checkbox" name="checkCharacter">
 								<label for="checkCharacter1">
 									<span class="desc">
@@ -40,8 +50,8 @@
 									</span>
 									<i class="icon-complete_60"></i>
 								</label>
-							</li>
-							<li data-theme="kolly">
+							</div>
+							<div class="swiper-slide" data-theme="kolly">
 								<input id="checkCharacter2" type="checkbox" name="checkCharacter" checked>
 								<label for="checkCharacter2">
 									<span class="desc">
@@ -50,8 +60,8 @@
 									</span>
 									<i class="icon-complete_60"></i>
 								</label>
-							</li>
-							<li data-theme="ago">
+							</div>
+							<div class="swiper-slide" data-theme="ago">
 								<input id="checkCharacter3" type="checkbox" name="checkCharacter">
 								<label for="checkCharacter3">
 									<span class="desc">
@@ -60,8 +70,8 @@
 									</span>
 									<i class="icon-complete_60"></i>
 								</label>
-							</li>
-							<li data-theme="bb">
+							</div>
+							<div class="swiper-slide" data-theme="bb">
 								<input id="checkCharacter4" type="checkbox" name="checkCharacter">
 								<label for="checkCharacter4">
 									<span class="desc">
@@ -70,8 +80,8 @@
 									</span>
 									<i class="icon-complete_60"></i>
 								</label>
-							</li>
-							<li data-theme="kiki">
+							</div>
+							<div class="swiper-slide" data-theme="kiki">
 								<input id="checkCharacter5" type="checkbox" name="checkCharacter">
 								<label for="checkCharacter5">
 									<span class="desc">
@@ -80,8 +90,9 @@
 									</span>
 									<i class="icon-complete_60"></i>
 								</label>
-							</li>
-						</ul>
+							</div>
+						</div>
+						<div class="swiper-pagination"></div>
 					</div>
 
 					<h3 class="h4">얼마나 저축할까요?</h3>

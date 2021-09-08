@@ -74,8 +74,8 @@
                                     <div class="challenge-info">
                                         <ul class="term-list">
                                             <li><span>목표기간</span> <em class="num">2021.04.01~2021.04.06</em></li>
-                                            <li><span>6개월 평균 소비금액</span> <em class="num" data-unit-after="원">150,000</em></li>
-                                            <li><span>목표금액</span> <em class="num" data-unit-after="원">150,000</em> (1주일)</li>
+                                            <li><span>과거 소비금액</span> <em class="num" data-unit-after="원">150,000</em> (월 평균)</li>
+                                            <li><span>목표예산 금액</span> <em class="num" data-unit-after="원">150,000</em> (1주일)</li>
                                         </ul>
                                         <div class="chart-area" id="columnChart01"></div>
                                         <ul class="legend-dot">
@@ -148,6 +148,18 @@
     <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
     <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
 
+    <style>
+        /* .highcharts-tooltip-box:first-child .highcharts-label-box {
+            fill: #ffd338;
+        } */
+        .highcharts-tooltip-box:first-child text {
+            fill:#000 !important;
+        }
+        .highcharts-tooltip-box:last-child .highcharts-label-box {
+            fill: #ffd338;
+        }
+    </style>
+
     <!-- Add Script -->
     <script>       
         $(document).ready(function(){
@@ -157,7 +169,7 @@
                 title: { text: null },
                 subTitle: { text: null },
                 credits: { enabled: false },
-                tooltip: { enabled: false },
+                tooltip: { enabled: true },
                 label : { fontFamily: 'KBFGText'},
                 credits: { enabled: false },
                 exporting: { enabled: false }
@@ -171,14 +183,33 @@
                     type: "column",
                     marginLeft: 0,
                     marginRight: 0,
-                    marginTop:20,
-                    marginBottom: 23,
-                    height: 195
-                },
+                    marginTop:10,
+                    marginBottom: 35,
+                    height: 195,
+                },                
                 legend: { enabled: false },
+                // legend: { 
+                //     enabled: true,
+                //     layout: 'horizontal',
+                //     align: 'left',
+                //     verticalAlign: 'bottom',
+                //     squareSymbol:false,
+                //     symbolHeight:8,
+                //     symbolWidth:8,
+                //     y:20,
+                //     x:-12,
+                //     itemDistance:24,
+                //     itemStyle: {
+                //         fontSize: '1.4rem',
+                //         fontFamily: "KBFGText",
+                //         fontWeight: 'bold',
+                //         color:'#26282c'
+                //     },
+                // },
                 xAxis: {
+                    top:20,
                     type: "category",
-                    categories: ["1월4주", "2월1주", "2월2주", "2월3주"],
+                    categories: ["7월12일", "7월13일", "7월14일", "7월15일"],
                     labels: {
                         style: {
                             color: "#aab0b8",
@@ -188,21 +219,44 @@
                     }
                 },
                 yAxis: {
+                    top:20,
                     endOnTick: false,
                     enabled: false,  // 사용 안함
                     labels: { enabled: false },  // 축 lebel 사용 안함
                     title: { enabled: false }, // 축 title 사용 안함
                     tickWidth: 0,  // 그리드 라인 너비
                     gridLineColor: null,  // 그리드 라인 컬러
-                    plotLines: [
-                        {
-                            color: "#c7ccd1",
-                            width: 1,
-                            value: 3,
-                            zIndex: 50,
-                            dashStyle: 'dot'
-                        },
-                    ],
+                    plotLines: [{
+                        color: "#c7ccd1",
+                        width: 1,
+                        value: 3,
+                        zIndex: 50,
+                        dashStyle: 'dot'
+                    }],
+                },
+                tooltip: {
+                    formatter: function () {
+                        // points
+                        return [''].concat(
+                            this.points ?
+                                this.points.map(function (point) {
+                                    return '&nbsp;&nbsp;&nbsp;' + gfn_comma3Digit(point.y) + ' 원' + '&nbsp;&nbsp;&nbsp;';
+                                }) : []
+                        );
+                    },
+                    padding: 4,
+                    shadow: false,
+                    borderRadius: 5,
+                    verticalAlign: 'top',
+                    borderColor: 'transparent',
+                    style: {
+                        fontSize: '1.4rem',
+                        fontFamily: "KBFGText",
+                        color:'#fff'
+                    },
+                    crosshairs: false,
+                    split: true,
+                    shared: true
                 },
                 plotOptions: {
                     series: {
@@ -214,22 +268,22 @@
                     }
                 },
                 series: [{
-                        name: "현재",
-                        color: "#ffd338",
-                        pointPlacement: -0.1,
-                        data: [1, 2, 3, 5]
-                    },
-                    {
-                        id: "main",
-                        name: "지난주",
-                        color: '#484b51',
-                        pointPlacement: 0.1,
-                        dataSorting: {
-                            enabled: true,
-                            matchByName: true
-                        },
-                        data: [3, 4, 5, 1]
-                    }
+                    name: "현재",
+                    color: "#ffd338",
+                    pointPlacement: 0,
+                    data: [1000, 4000, 3000, 5000]
+                },
+                // {
+                //     id: "main",
+                //     name: "지난주",
+                //     color: '#484b51',
+                //     pointPlacement: 0.1,
+                //     dataSorting: {
+                //         enabled: true,
+                //         matchByName: true
+                //     },
+                //     data: [3000, 4000, 5000, 1000]
+                // }
                 ],
             });
         

@@ -145,9 +145,10 @@
 .rich-simulation-complete .summary-desc .summary-img{height:135px}
 .rich-simulation-complete .rich-finance-compare{margin-top:32px}
 .rich-simulation-complete .rich-finance-compare > p{line-height:2.3rem}
-.rich-simulation-complete .rich-finance-compare .more-view-box{margin-top:43px;border-top:1px solid $kb-ui09}
-.rich-simulation-complete .rich-finance-compare .more-view-box.is-show .icon-plus_20{display:none}
-.rich-simulation-complete .rich-finance-compare .more-view-box.is-show .btn-area{margin-top:40px}
+.rich-simulation-complete .rich-finance-compare .accordion,
+.rich-simulation-complete .rich-finance-compare .accordion dt{border:0}
+.rich-simulation-complete .rich-finance-compare .accordion dt{font-weight:bold;border-bottom:2px solid $kb-ui04}
+.rich-simulation-complete .rich-finance-compare .accordion dd{padding-top:0}
 .more-view-box .btn-more-view.btn-line{padding:0}
 .more-view-box .btn-more-view i{vertical-align:middle}
 .comparison-list li+li{margin-top:25px}
@@ -178,7 +179,7 @@
 .my-expense-type .image-radio-group .txt+.img-icon{margin-top:1rem}
 
 /* [MYS_SP_02_01_03]  나의 소비유형 > 소비유형선택 > 소비유형스토리텔링 */
-// car moving : 뚜벅이싫어형
+// car moving :뚜벅이싫어형
 .storytelling-wrap .car-moving .item::after{position:absolute;bottom:20px;right:-35px;content:'';display:block;width:35px;height:10px;background:url(../images/special/img_motion_item_wind.png) no-repeat;background-size:100% auto}
 .storytelling-wrap .car-moving .item{position:absolute;top:70px;left:100%;width:182px;height:150px;animation:carRunning 1.8s linear 1 forwards}
 .storytelling-wrap .car-moving .item .car{position:relative;width:153px;height:100%;animation:carStopMove 1.8s linear infinite forwards}
@@ -211,7 +212,7 @@
     60%{transform:translate(10px, 10px);opacity:0}
     100%{transform:translate(10px, 10px);opacity:0}
 }
-// coffee-shower : 커피샤워형
+// coffee-shower :커피샤워형
 .storytelling-wrap .coffee-shower{border-bottom-left-radius:50%;border-bottom-right-radius:50%;overflow:hidden}
 .storytelling-wrap .coffee-shower .coffee{position:absolute;left:50%;bottom:0;transform:translateX(-50%)}
 .storytelling-wrap .coffee-shower .coffee li{display:flex;justify-content:flex-end}
@@ -265,7 +266,7 @@
     60%{transform:translateY(0)}
     100%{transform:translateY(0)}
 }
-// delivery : 외식이좋아형
+// delivery :외식이좋아형
 .storytelling-wrap .delivery .item{position:absolute;top:50%;left:50%;transform:translate(-55%, -40%)}
 .storytelling-wrap .delivery .motocycle{position:relative;left:138%;width:187px;height:132px;animation:carRunning 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards}
 .storytelling-wrap .delivery .motocycle img{position:relative;z-index:10}
@@ -281,7 +282,7 @@
     0%{transform:translateX(200px)}
     100%{transform:translateX(0)}
 }
-// culture life : 문화생활형
+// culture life :문화생활형
 .storytelling-wrap .culture-life{border-radius:50%}
 .storytelling-wrap .culture-life .cinema{position:absolute;top:54px;left:42px}
 .storytelling-wrap .culture-life .ticket{position:absolute;top:26px;right:-54px;width:110px;height:83px}
@@ -455,11 +456,21 @@
 .compare-graph thead th{height:3.9rem;padding:0;border-top:1px solid $kb-ui08;border-bottom:1px solid $kb-ui08;vertical-align:middle}
 .compare-graph td{font-size:1.4rem}
 .compare-graph td span .num{font-size:1.5rem}
-.compare-graph td[data-direction="left"]{text-align:right}
-.compare-graph td[data-direction="left"] .graph{background-color:#ffba53;border-top-left-radius:0.6rem;border-bottom-left-radius:0.6rem}
-.compare-graph td[data-direction="right"] .graph{background-color:#ff8a71;border-top-right-radius:0.6rem;border-bottom-right-radius:0.6rem}
-.compare-graph .graph{display:inline-block;width:auto;height:1.2rem;margin-top:1rem}
-.compare-graph .graph-data{display:block;margin:0.8rem 0;font-weight:bold}
+.compare-graph tbody tr:first-child td,
+.compare-graph tbody tr:first-child th{padding-top:4rem}
+.compare-graph tbody td:last-child{text-align:right}
+.compare-graph .graph{position:relative;display:inline-block;width:100%;height:1.2rem;margin-top:1rem;text-indent:-5000px;color:transparent;background-color:$kb-ui10}
+.compare-graph .graph .bar{position:absolute;display:block;width:auto;height:100%}
+.compare-graph .graph .value{position:absolute;top:0;display:none;width:auto;min-width:max-content;padding:0.4rem 0.7rem;color:$kb-ui02;text-indent:0;border-radius:0.4rem;background-color:$kb-ui11;box-shadow:0px 1px 0.5rem 0 rgba(0,0,0,0.2);transform:translateY(-125%)}
+.compare-graph .graph .value::after{position:absolute;bottom:-0.5rem;left:50%;margin-left:-0.6rem;content:'';display:block;width:1.2rem;height:0.5rem;background:url(../../static/images/asset/bg_d_day.png) no-repeat 0 0;background-size:contain}
+.compare-graph .graph.is-active .value{display:block}
+.compare-graph .graph[data-direction="left"]{border-top-left-radius:0.6rem;border-bottom-left-radius:0.6rem}
+.compare-graph .graph[data-direction="left"] .bar{right:0;background-color:#ffba53;border-top-left-radius:0.6rem;border-bottom-left-radius:0.6rem}
+.compare-graph .graph[data-direction="left"] .value.is-over{transform:translate(100%, -125%)}
+.compare-graph .graph[data-direction="right"]{border-top-right-radius:0.6rem;border-bottom-right-radius:0.6rem}
+.compare-graph .graph[data-direction="right"] .bar{left:0;background-color:#ff8a71;border-top-right-radius:0.6rem;border-bottom-right-radius:0.6rem}
+.compare-graph .graph[data-direction="right"] .value.is-over{transform:translate(-100%, -125%)}
+.compare-graph .graph-data{display:block;margin:0.8rem 0;font-size:1.5rem;font-weight:bold}
 .compare-graph .graph-name-box{position:relative;display:block;padding-bottom:2rem}
 .compare-graph .graph-name-box [class*='icon-']{display:block;margin:0 auto 0.8rem}
 .compare-graph .graph-data-name{position:absolute;left:0;bottom:0;width:100%;text-align:center;font-size:1.4rem;font-weight:normal}

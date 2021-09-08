@@ -395,15 +395,19 @@ ul.radio-group > li + li{margin-top:20px;}
 // .kb-sec .tab{padding-left:0;padding-right:0;}
 // .bottom-sheet .tab{min-width:100%;padding-left:24px;}
 
-.tab_button{display:flex;padding:3px;background-color:$kb-ui09;border-radius:3px;}
+.tab_button{display:flex;background-color:$kb-ui09;border-radius:40px;}
 .tab_button > button,
-.tab_button > a{flex:1;height:32px;text-align:center;background-color:$kb-ui09;border-radius:3px;}
-.tab_button > button:not(:first-child),
-.tab_button > a:not(:first-child){margin-left:3px;}
+.tab_button > a{flex:1;height:40px;padding:0 12px;text-align:center;background-color:$kb-ui09;color:$kb-ui05;border-radius:40px;font-weight:bold;border:1px solid $kb-ui09;border-width:1px 0;}
+.tab_button > button + button,
+.tab_button > a + a{margin-left:1px;}
 .tab_button > button span,
-.tab_button > a span{display:inline-block;line-height:32px;font-size:15px;color:$kb-ui05;}
+.tab_button > a span{display:inline-block;line-height:38px;font-size:16px;color:$kb-ui05;letter-spacing:-0.02em;}
+.tab_button > a:not(.is-active) + a:not(.is-active),
+.tab_button > button:not(.is-active) + button:not(.is-active){position:relative;}
+.tab_button > a:not(.is-active) + a:not(.is-active):before,
+.tab_button > button:not(.is-active) + button:not(.is-active):before{content:'';position:absolute;left:-1px;top:12px;width:1px;height:16px;background-color:$kb-ui07;}
 .tab_button > button.is-active,
-.tab_button > a.is-active{background-color:$kb-ui11;}
+.tab_button > a.is-active{border-color:$kb-ui08;border-width:1px;background-color:$kb-ui11;box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);}
 .tab_button > button.is-active span,
 .tab_button > a.is-active span{color:$kb-ui02;}
 
@@ -684,6 +688,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .line-list-wrap.type-time-line > ul > li .line-box > .date + .price-wrap{margin-top:2rem}
 .line-list-wrap.type-time-line > ul > li .line-box > .date + .price-wrap .txt-con{margin-top:1.2rem;font-size:1.4rem;color:$kb-ui04}
 .line-list-wrap.type-time-line > ul > li .line-box .tit .tag-label{margin-left:1.2rem;vertical-align:top}
+.line-list-wrap.type-time-line > ul > li .line-box .memo{line-height:2.2rem}
 .line-list-wrap.type-time-line > ul > li .line-box[data-state="wait"] .tit,
 .line-list-wrap.type-time-line > ul > li .line-box[data-state="wait"] .date,
 .line-list-wrap.type-time-line > ul > li .line-box[data-state="wait"] .txt-con{color:$kb-ui06}
@@ -883,13 +888,16 @@ ul.radio-group > li + li{margin-top:20px;}
 .form-image-radio {display: block;}
 .form-image-radio input[type=radio] {position: absolute;left: -10000px;visibility: hidden;}
 .form-image-radio label {position: relative; display: block; padding: 20px; background-color: $kb-ui10; border: 1px solid $kb-ui08; border-radius: 2px; text-align: center;}
-.form-image-radio label > span {position: relative; z-index: 2; display: block; margin-top: 10px; font-size: 15px; color: $kb-ui03;}
+.form-image-radio label > span {position: relative; z-index: 2; display: block; margin-top: 10px; font-size: 16px; color: $kb-ui03;}
 .form-image-radio input:checked + label {background-color: $kb-ui11; box-shadow: 0px 8px 10px 0 rgba(0, 0, 0, 0.1);}
 .form-image-radio input:checked + label::after {content: ''; position: absolute; z-index: 1; left: -1px; right: -1px; top: -1px; bottom: -1px; border: 3px solid $color-yellow-negative; border-radius: 2px;}
+.form-image-radio input:checked + label > span {font-weight: bold;}
 
-.image-radio-group.grid-list[data-col="2"] > li:nth-child(n + 3) {margin-top: 12px;}
-.image-radio-group.grid-list[data-col="2"] > li:nth-child(2n + 1) {padding-right: 6px;}
-.image-radio-group.grid-list[data-col="2"] > li:nth-child(2n) {padding-left: 6px;}
+.image-radio-group.grid-list {margin: 0 -6px;}
+.image-radio-group.grid-list > li {padding-left: 6px; padding-right: 6px;}
+.image-radio-group.grid-list[data-col="2"] > li:nth-child(n + 3),
+.image-radio-group.grid-list[data-col="3"] > li:nth-child(n + 4) {margin-top: 12px;}
+
 
 //Pagination
 .app-pagination{display:flex;justify-content:center;align-items:center;margin-top:20px;margin-bottom:20px;}

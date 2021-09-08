@@ -42,8 +42,8 @@
                                 <li class="cate5">외화</li>
                                 <li class="cate6">부동산</li>
                                 <li class="cate7">자동차</li>
-                                <li class="cate8">대출&middot;부채</li>
-                                <li class="cate9">페이</li>
+                                <li class="cate8">페이</li>
+                                <li class="cate0">대출&middot;부채</li>
                             </ul>
                         </div>
                     </div>
@@ -75,8 +75,8 @@
             chart: {
                 renderTo: 'barChart01', // chart 삽입 target ID                
                 type: 'bar',
-                height: '20%',
-                margin: [20,0,0,0]
+                height: '30%',
+                margin: [28,0,15,0]
             },
             title: {
                 text: '나',
@@ -101,11 +101,10 @@
             yAxis: {
                 visible: false,
                 max : 100, // 총 합이 100%
-                reversed: true
             },
             tooltip: {
                 formatter: function () { 
-                    return this.y + "%"
+                    return this.series.name + " " + this.y + "%"
                 },
                 shape: 'rect',
                 padding: 5,
@@ -129,41 +128,35 @@
                     borderWidth: 1,
                 }
             },
-            colors: ['#ffba53','#ff8a71','#ff6391','#ff445a','#d090ee','#bc63e5','#7fa2ed','#55c1e3','#4dac8a'],
+            colors: ['#ffba53','#ff8a71','#ff6391','#ff445a','#d090ee','#bc63e5','#7fa2ed','#55c1e3','#c6cbd0'].reverse(),
             series: [{
                 name: '입출금',
-                data: [30]
+                data: [30,0]
             }, {
                 name: '예적금',
-                data: [23]
+                data: [23,0]
             }, {
                 name: '투자',
-                data: [10]
-            },
-            {
+                data: [10,0]
+            }, {
                 name: '보험',
-                data: [10]
-            },
-            {
+                data: [10,0]
+            }, {
                 name: '외화',
-                data: [5]
-            },
-            {
+                data: [5,0]
+            }, {
                 name: '부동산',
-                data: [7]
-            },
-            {
+                data: [9,0]
+            }, {
                 name: '자동차',
-                data: [5]
-            },
-            {
-                name: '대출&middot부채',
-                data: [2]
-            },
-            {
+                data: [5,0]
+            }, {
                 name: '페이',
-                data: [8]
-            }]
+                data: [8,0]
+            }, {
+                name: '대출&middot부채',
+                data: [0,20]
+            }].reverse()
         });
 
         // 두번째 bar chart 선언
@@ -171,8 +164,8 @@
             chart: {
                 renderTo: 'barChart02', // chart 삽입 target ID                
                 type: 'bar',
-                height: '20%',
-                margin: [20,0,0,0]
+                height: '30%',
+                margin: [28,0,15,0]
             },
             title: {
                 text: '비교그룹',
@@ -197,11 +190,10 @@
             yAxis: {
                 visible: false,
                 max : 100, // 총 합이 100%
-                reversed: true
             },
             tooltip: {
                 formatter: function () { 
-                    return this.y + "%"
+                    return this.series.name + " " + this.y + "%"
                 },
                 shape: 'rect',
                 padding: 5,
@@ -225,41 +217,35 @@
                     borderWidth: 1,
                 }
             },
-            colors: ['#ffba53','#ff8a71','#ff6391','#ff445a','#d090ee','#bc63e5','#7fa2ed','#55c1e3','#4dac8a'],
+            colors: ['#ffba53','#ff8a71','#ff6391','#ff445a','#d090ee','#bc63e5','#7fa2ed','#55c1e3','#c6cbd0'].reverse(),
             series: [{
                 name: '입출금',
-                data: [25]
+                data: [35,0]
             }, {
                 name: '예적금',
-                data: [25]
+                data: [16,0]
             }, {
                 name: '투자',
-                data: [10]
-            },
-            {
+                data: [12,0]
+            }, {
                 name: '보험',
-                data: [8]
-            },
-            {
+                data: [7,0]
+            }, {
                 name: '외화',
-                data: [8]
-            },
-            {
+                data: [8,0]
+            }, {
                 name: '부동산',
-                data: [7]
-            },
-            {
+                data: [10,0]
+            }, {
                 name: '자동차',
-                data: [7]
-            },
-            {
-                name: '대출&middot부채',
-                data: [7]
-            },
-            {
+                data: [7,0]
+            }, {
                 name: '페이',
-                data: [3]
-            }]
+                data: [5,0]
+            }, {
+                name: '대출&middot부채',
+                data: [0,25]
+            }].reverse()
         });
 
     </script>

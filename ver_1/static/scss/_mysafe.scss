@@ -9,6 +9,7 @@
 .safe-minus{color:#287eff;}
 .safe-zero{color:#696e76;}
 .safe-padding-zero{padding:0!important;}
+.safe-pb-06{padding-bottom:0.6rem!important;}
 .safe-content-plus{color:#ff5858;}
 .safe-content-plus:before{content:'';display:inline-block;width:0rem;height:0rem;margin-right:0.4rem;border-left:0.7rem solid transparent;border-right:0.7rem solid transparent;border-bottom:1.1rem solid #ff5858;}
 .safe-content-minus{color:#287eff;}
@@ -24,7 +25,7 @@
 .my-safe.bg-gray{background-color: #f7f7f8;}
 .my-safe .kb-sec .content-box{margin-left:0;margin-right:0;}
 .my-safe>.asset-my-safe{padding-bottom:1.6rem;font-weight:400;}
-.my-safe>.asset-my-safe:after{content: '';display:block;position:fixed;width:100%;height:calc(100vh - 25rem);background-color: #f7f7f8;top:15rem;left:0;z-index:-1;}
+.my-safe>.asset-my-safe:after{content: '';display:block;position:fixed;width:100%;height:calc(100vh);background-color: #f7f7f8;top:15rem;left:0;z-index:-1;}
 .my-safe>.asset-my-safe .top-area{margin: 0 auto;}
 .my-safe>.asset-my-safe .top-area>.name-wrap{font-size:2.2rem;border-bottom:0rem solid #ffd338;}
 .my-safe>.asset-my-safe .top-area>.name-wrap .ctm-name{font-size:2.2rem;font-weight:bold;}
@@ -204,7 +205,7 @@
 .my-safe-list>.kb-sec .my-safe-asset-box>li{display:block;width:100%;}
 .my-safe-list>.kb-sec .my-safe-asset-box>li:nth-of-type(2){padding-top:1.2rem;padding-bottom:1.2rem;border-top:0.1rem solid #ebeef0;}
 .my-safe-list>.kb-sec .my-safe-asset-box>li a{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-align:center;align-items:center;width:100%;height:auto;padding-bottom:1.2rem;}
-.my-safe-list>.kb-sec .my-safe-asset-box>li a .h4{flex:calc(100% - 1.8rem);font-size:1.6rem;line-height:1.6rem;}
+.my-safe-list>.kb-sec .my-safe-asset-box>li .h4{flex:calc(100% - 1.8rem);font-size:1.6rem;line-height:1.6rem;}
 .my-safe-list>.kb-sec .my-safe-asset-box>li a .my-safe-right-icon{flex:1;}
 .my-safe-list>.kb-sec .my-safe-asset-box>li>dl{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-align:center;align-items:center;width:100%;}
 .my-safe-list>.kb-sec .my-safe-asset-box>li>dl dt{color:#696e76;}
@@ -222,8 +223,50 @@
 
 .my-safe-list>.kb-sec .my-safe-asset-box .my-variance-date dl dt{position:relative;padding-left:0em;}
 .my-safe-list>.kb-sec .my-safe-asset-box .my-variance-date dl dt:before{content:'*';display:none;position:absolute;left:0;top:0.2em;}
+.my-safe-list>.kb-sec .my-safe-asset-box .my-variance-date-last{padding:0.6rem 0 0.6rem;border-top:0.1rem solid #ebeef0;}
 
-/* [MYS_AS_17_01_09_P2] 휴대폰 모델 등급 공통 */
+/* [MYS_AS_17_01_18_P1] 휴대폰 시세조회 */
+.mysafe-phone-value .myphone-value-title .myphone-value-title-factory{display:block;padding-bottom:1rem;}
+.mysafe-phone-value .myphone-value-title .myphone-value-title-model{font-size:2rem;line-height:2rem;}
+.mysafe-phone-value>.asset-my-phone{padding-bottom:3rem;font-weight:400;}
+.mysafe-phone-value>.asset-my-phone>div:after{content:"";display:block;height:0;clear:both;}
+.mysafe-phone-value>.asset-my-phone>div>ul{display:block;width:50%;}
+.mysafe-phone-value>.asset-my-phone>div>ul:nth-of-type(1){border-right:0.1rem solid #ebeef0;float:left;}
+.mysafe-phone-value>.asset-my-phone>div>ul:nth-of-type(2){float:right;}
+.mysafe-phone-value>.asset-my-phone>div>ul>li:nth-of-type(1){height:2.4rem;font-weight:bold;line-height:2.4rem;}
+.mysafe-phone-value>.asset-my-phone>div>ul>li:nth-of-type(2){height:2.4rem;font-size:1.2rem;line-height:2.4rem;}
+.mysafe-phone-value>.asset-my-phone>div>ul>li .num{font-size:1.5rem;font-weight:bold;}
+
+.index-visual img{width:10.9rem;height:auto;}
+
+.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box{border-top:0.1rem solid #484b51;border-radius:0 0 1.2rem 1.2rem;padding:1rem 2rem;}
+.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li{height:3.5rem;border-bottom:0.1rem solid #ebeef0;line-height:3.5rem;}
+.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li:last-of-type{border-bottom:0rem solid #ebeef0;}
+.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li>dl{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-align:center;align-items:center;width:100%;}
+.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li>dl dt{position:relative;padding-left:2.6rem;color:#696e76;}
+.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li>dl dt:after{content:"";display:block;position:absolute;width:1.6rem;height:1.6rem;background-repeat:no-repeat;left:0;top:1rem;}
+.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li:nth-of-type(1)>dl dt:after{background-image:url('../images/mysafe/phone_value_rank_icon.png');background-size:8rem 1.6rem;background-position:0 0;}
+.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li:nth-of-type(2)>dl dt:after{background-image:url('../images/mysafe/phone_value_rank_icon.png');background-size:8rem 1.6rem;background-position:-1.6rem 0;}
+.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li:nth-of-type(3)>dl dt:after{background-image:url('../images/mysafe/phone_value_rank_icon.png');background-size:8rem 1.6rem;background-position:-3.2rem 0;}
+.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li:nth-of-type(4)>dl dt:after{background-image:url('../images/mysafe/phone_value_rank_icon.png');background-size:8rem 1.6rem;background-position:-4.8rem 0;}
+.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li:nth-of-type(5)>dl dt:after{background-image:url('../images/mysafe/phone_value_rank_icon.png');background-size:8rem 1.6rem;background-position:-6.4rem 0;}
+
+.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li>dl dt .num{font-size:1.7rem;}
+.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li>dl dd{font-weight:bold;}
+
+
+.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box .icon-my-safe{background-color:#f2f2f2;background-image:url('../images/mysafe/main_icon_img.png');background-size:9.6rem 6.4rem;width:3.2rem;height:3.2rem;border-radius:50%;margin-top:2rem;}
+.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box .icon-my-safe-01{background-position:0rem 0rem;}
+.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box .icon-my-safe-02{background-position:6.4rem 0rem;}
+.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box .icon-my-safe-03{background-position:0rem 3.2rem;}
+.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box .icon-my-safe-04{background-position:6.4rem 3.2rem;}
+.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box .icon-my-safe-05{background-position:3.2rem 3.2rem;}
+
+.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box .my-safe-right-icon{position:absolute;top:50%;margin-top:-0.8rem;right:0;}
+.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box .icon-arrow-right:before {border-top:0.1rem solid #484b51;border-right: 0.1rem solid #484b51;}
+
+
+/* [MYS_AS_17_01_18_P2~11] 휴대폰 모델 등급 공통 */
 .mysafe-phone-status .phone-class-badge{display:inline-block;min-width: 6.7rem;height: 3.4rem;border-radius: 3rem;margin:0 auto;padding:0 2rem;font-size: 1.4rem;color: #fff; line-height: 3.4rem;}
 .mysafe-phone-status .phone-class-badge.normal{background-color:#287eff;}
 .mysafe-phone-status .phone-class-badge.bad{background-color:#ff5858;}

@@ -145,7 +145,7 @@
                     <div class="content-box shadow">
                         <!-- [Chart Area] // -->
                         <div class="chart-area">
-                            <div id="columnChart01"></div>
+                            <div class="no-mar" id="columnChart01"></div>
                             <p class="txt-gray mt28">나와 같은 연령대&#38;소득군 사람들의 월 평균 납임금액: <strong class="num" data-unit-after="원">700,000</strong></p>
                             <p class="txt-yellow">김국민 님의 월 평균 납인금액: <strong class="num" data-unit-after="원">500,000</strong></p>
                         </div>
@@ -525,6 +525,18 @@
     <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>    
     <script src="@@webRoot/static/common/lib/highcharts/highcharts-more.js"></script>
 
+    <style>
+        .highcharts-tooltip-box:first-child .highcharts-label-box {
+            fill: #ffd338;
+        }
+        .highcharts-tooltip-box:first-child text {
+            fill:#000 !important;
+        }
+        .highcharts-tooltip-box:last-child .highcharts-label-box {
+            fill: #484b51;
+        }
+    </style>
+
     <!-- Add Script -->
     <script>                     
         $(document).ready(function(){
@@ -549,12 +561,39 @@
                     type: "column",
                     marginLeft: 0,
                     marginRight: 0,
-                    marginTop:0,
-                    marginBottom:23,
-                    height:150
+                    marginTop:10,
+                    marginBottom:35,
+                    height:180,
+                    backgroundColor:'transparent'
                 },
                 legend: { enabled: false },
+                tooltip: {
+                    enabled: true,
+                    formatter: function () {
+                        // points
+                        return [''].concat(
+                            this.points ?
+                                this.points.map(function (point) {
+                                    return '&nbsp;&nbsp;&nbsp;' + gfn_comma3Digit(point.y) + ' 원' + '&nbsp;&nbsp;&nbsp;';
+                                }) : []
+                        );
+                    },
+                    padding: 4,
+                    shadow: false,
+                    borderRadius: 5,
+                    verticalAlign: 'top',
+                    borderColor: 'transparent',
+                    style: {
+                        fontSize: '1.4rem',
+                        fontFamily: "KBFGText",
+                        color:'#fff'
+                    },
+                    crosshairs: false,
+                    split: true,
+                    shared: true
+                },
                 xAxis: {
+                    top:20,
                     type: "category",
                     categories: ["1월", "2월", "3월", "4월", "5월", "6.13"],
                     labels: {
@@ -566,21 +605,20 @@
                     }
                 },
                 yAxis: {
+                    top:20,
                     endOnTick: false,
                     enabled: false,  // 사용 안함
                     labels: { enabled: false },  // 축 lebel 사용 안함
                     title: { enabled: false }, // 축 title 사용 안함
                     tickWidth: 0,  // 그리드 라인 너비
                     gridLineColor: null,  // 그리드 라인 컬러
-                    plotLines: [
-                        {
-                            color: "#c7ccd1",
-                            width: 1,
-                            value: 3,
-                            zIndex: 50,
-                            dashStyle: 'dot'
-                        },
-                    ],
+                    plotLines: [{
+                        color: "#c7ccd1",
+                        width: 1,
+                        value: 3,
+                        zIndex: 50,
+                        dashStyle: 'dot'
+                    }],
                 },
                 plotOptions: {
                     series: {
@@ -595,7 +633,7 @@
                         name: "현재",
                         color: "#ffd338",
                         pointPlacement: -0.1,
-                        data: [1, 2, 3, 5, 0, 8]
+                        data: [1000, 2000, 3000, 5000, 1500, 8000]
                     },
                     {
                         id: "main",
@@ -606,7 +644,7 @@
                             enabled: true,
                             matchByName: true
                         },
-                        data: [3, 4, 5, 1, 3, 6]
+                        data: [3000, 4000, 5000, 1000, 3000, 6000]
                     }
                 ],
             });
@@ -623,8 +661,7 @@
                     marginTop:0,
                     marginBottom:0,
                     height: 125
-                },            
-                tooltip: { enabled: false },
+                },
                 plotOptions: {
                     packedbubble: {
                         minSize: '60px',

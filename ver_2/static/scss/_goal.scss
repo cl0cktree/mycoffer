@@ -87,29 +87,30 @@
 .pgbank-rules p + .main-copy {margin-bottom:4rem;}
 .pgbank-rules .main-copy + p {margin-bottom:6rem;}
 .pgbank-rules .h4{margin-bottom:1.6rem;margin-top:2.2rem;}
-.pgbank-rules .character-selection {margin: 0 (-2.4rem) 4.8rem; padding: 0 2.4rem .3rem; overflow-x:auto;}
+.pgbank-rules .swiper-container{margin:0 -2.4rem;padding-bottom:0}
+.pgbank-rules .character-selection {margin: 0 0 3rem; padding: 0 2.4rem .3rem;}
 .pgbank-rules .character-selection::-webkit-scrollbar {display: none;}
-.pgbank-rules .character-selection ul {font-size: 0; white-space: nowrap;}
-.pgbank-rules .character-selection li {display: inline-block; margin-right: 12px; width: 145px; height: 215px;}
-.pgbank-rules .character-selection li:last-child {margin-right: 24px;}
-.pgbank-rules .character-selection li input[type=checkbox],
-.pgbank-rules .character-selection li input[type=radio] {position: absolute; left: -10000px; visibility: hidden;}
-.pgbank-rules .character-selection li label {position: relative; display: block; width: inherit; height: inherit; text-align: center; border: 1px solid #dde1e4; border-radius: 6px; overflow: hidden;  background-image: url(../images/goal/sprite_char_card.png); background-size: 710px 213px;box-shadow:0 .2rem .2rem 0 rgba(0,0,0,.11);}
-.pgbank-rules .character-selection li[data-theme='lamu'] label {background-position: 0 0;}
-.pgbank-rules .character-selection li[data-theme='kolly'] label {background-position: -142px 0;}
-.pgbank-rules .character-selection li[data-theme='ago'] label {background-position: -284px 0;}
-.pgbank-rules .character-selection li[data-theme='bb'] label {background-position: -426px 0;}
-.pgbank-rules .character-selection li[data-theme='kiki'] label {background-position: -568px 0;}
-.pgbank-rules .character-selection li label::before {display: none; content: '선택완료'; position: absolute; z-index: 1; left: -1px; right: -1px; top: -1px; bottom: -1px; background-color: rgba(0,0,0,.6); font-size: 24px; font-weight: bold; color: #fff; text-align: center; padding-top: 142px;}
-.pgbank-rules .character-selection li label i {display: none; position: absolute; z-index: 2; left: 50%; top: 52px; margin-left: -30px;}
-.pgbank-rules .character-selection li input[type=checkbox]:checked + label::before,
-.pgbank-rules .character-selection li input[type=radio]:checked + label::before,
-.pgbank-rules .character-selection li input[type=checkbox]:checked + label i {display: block;}
-.pgbank-rules .character-selection li input[type=radio]:checked + label i {display: block;}
-.pgbank-rules .character-selection li .desc {display: block; padding-top: 30px;}
-.pgbank-rules .character-selection li .name {display: block; margin-bottom: 102px; font-size: 16px; line-height: 23px; color: #26282c; font-weight: bold;}
-.pgbank-rules .character-selection li .text {display: block; font-size: 14px; line-height: 20px; color: #696e76;}
-.pgbank-rules .character-selection li .text span {color: #26282c;}
+.pgbank-rules .character-selection {font-size: 0; white-space: nowrap;}
+.pgbank-rules .character-selection .swiper-slide {display:block;margin-right:10px;width:14.4rem;height:21.5rem;}
+// .pgbank-rules .character-selection .swiper-slide:last-child {margin-right: 24px;}
+.pgbank-rules .character-selection .swiper-slide input[type=checkbox],
+.pgbank-rules .character-selection .swiper-slide input[type=radio] {position: absolute; left: -10000px; visibility: hidden;}
+.pgbank-rules .character-selection .swiper-slide label {position:relative;display:block;width:inherit;height:inherit;text-align:center;border-radius:.6rem;overflow:hidden;background-size:cover;box-shadow:0 .2rem .2rem 0 rgba(0,0,0,.11);}
+.pgbank-rules .character-selection .swiper-slide[data-theme='lamu'] label {background-image:url(../images/goal/card_lamu.png);}
+.pgbank-rules .character-selection .swiper-slide[data-theme='kolly'] label{background-image:url(../images/goal/card_kolly.png);}
+.pgbank-rules .character-selection .swiper-slide[data-theme='ago'] label  {background-image:url(../images/goal/card_ago.png);}
+.pgbank-rules .character-selection .swiper-slide[data-theme='bb'] label   {background-image:url(../images/goal/card_bb.png);}
+.pgbank-rules .character-selection .swiper-slide[data-theme='kiki'] label {background-image:url(../images/goal/card_kiki.png);}
+.pgbank-rules .character-selection .swiper-slide label::before {display: none; content: '선택완료'; position: absolute; z-index: 1; left: -1px; right: -1px; top: -1px; bottom: -1px; background-color: rgba(0,0,0,.6); font-size: 24px; font-weight: bold; color: #fff; text-align: center; padding-top: 142px;}
+.pgbank-rules .character-selection .swiper-slide label i {display: none; position: absolute; z-index: 2; left: 50%; top: 52px; margin-left: -30px;}
+.pgbank-rules .character-selection .swiper-slide input[type=checkbox]:checked + label::before,
+.pgbank-rules .character-selection .swiper-slide input[type=radio]:checked + label::before,
+.pgbank-rules .character-selection .swiper-slide input[type=checkbox]:checked + label i {display: block;}
+.pgbank-rules .character-selection .swiper-slide input[type=radio]:checked + label i {display: block;}
+.pgbank-rules .character-selection .swiper-slide .desc {display: block; padding-top: 30px;}
+.pgbank-rules .character-selection .swiper-slide .name {display: block; margin-bottom: 102px; font-size: 16px; line-height: 23px; color: #26282c; font-weight: bold;}
+.pgbank-rules .character-selection .swiper-slide .text {display: block; font-size: 14px; line-height: 20px; color: #696e76;}
+.pgbank-rules .character-selection .swiper-slide .text span {color: #26282c;}
 
 .pgbank-complete-rule .box {position: relative; margin-top: 55px; margin-bottom: 30px; padding: 17px 20px; @include text($text02, normal); color: $kb-ui03; border: 1px solid $kb-ui09; border-radius: 2px;}
 .pgbank-complete-rule .box span {display: block;}
@@ -407,6 +408,7 @@
 
 .goals-others{position:relative;}
 .goals-others > .content-box{margin:20px -8px 30px;}
+.goals-others .chart-area .no-mar{margin-top:-2.5rem;}
 .goals-others .tab.depth2, .goals-recom .tab.depth2{padding-top:24px;padding-bottom:25px;border-bottom:1px solid #dde1e4;}
 
 .goals-noti h2{@include text($size:2rem,$weight:bold);line-height:1;}
@@ -415,6 +417,7 @@
 .goals-noti h3 + ul li{color:$kb-ui02;}
 .goals-noti h3 + ul li:before{top:50%;transform:translateY(-50%);}
 .goals-noti h3 + ul li .num:after{vertical-align:0;}
+.goals-noti .num:after{vertical-align:0;}
 
 .goals-use-best{padding-top:1.2rem;}
 
@@ -484,6 +487,7 @@
 .text-trophy h2{@include text($weight:bold);}
 .text-trophy h2 span,
 .text-trophy h3 span{display:inline;}
+.text-trophy .num:after{vertical-align:0;}
 .text-trophy p + span{margin-top:13px;}
 .text-trophy h2 + h3{margin-top:13px;@include text($weight:normal);}
 .text-trophy span{display:block;}
@@ -674,3 +678,8 @@ section.gray-line + section{border-top:1rem solid $kb-ui10;}
 .chart-area.type-ratio.type2{height:calc(75vw - 10.6rem);}
 .chart-area.type-ratio.no-mt{margin-top:0;}
 // .goals-detail-list .challenge-info .type-ratio{margin-bottom:-20px;}
+
+.character-graph.goal .start-txt,
+.character-graph.goal .end-txt,
+.character-graph.type2 .start-txt,
+.character-graph.type2 .start-txt{font-size:1.4rem;font-family:'KBFGText';}
