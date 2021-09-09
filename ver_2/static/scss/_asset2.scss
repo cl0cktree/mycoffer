@@ -46,7 +46,8 @@
 .car-quotes p {margin-bottom: 20px; @include text($text02, normal);}
 .car-quotes p em {color: $color-blue;}
 .car-quotes .amount {padding: 0 2px 12px 0;margin-top: 20px; text-align: right; color: $kb-ui02; font-size: 24px; font-weight: bold;}
-.car-quotes .amount .num {font-size: 28px; margin-right: 2px;}
+.car-quotes .amount .num {font-size: 28px;}
+.car-quotes .amount .num::after {font-size: 24px; font-weight: bold; vertical-align: 1px;}
 .car-quotes .label.required {padding-left: 0;}
 
 .upkeep-expenses-detail .top-area .tit{@include text($size:$text01,$weight:bold);display:inline-block;vertical-align:middle;}
@@ -77,7 +78,7 @@
 
 // .loan-tab-contents:first-child {padding-top: 100px;}
 .loan-tab-contents .visual-area {margin-top: 34px; margin-bottom: 20px; padding-bottom: 25px; text-align: center;}
-.loan-tab-contents .visual-area img {display: block; width: 148px; margin: 0 auto 20px;}
+.loan-tab-contents .visual-area img {display: block; width: 150px; margin: 0 auto 20px;}
 .loan-tab-contents .visual-area .text .stxt {display: block; margin-bottom: 3px; @include text($text02, normal); color: $kb-ui04;}
 .loan-tab-contents .visual-area .text .mtxt {@include text($text02, normal);}
 .loan-tab-contents .visual-area .text strong {font-weight: bold;}
@@ -135,12 +136,17 @@
 .mycar-top-message .content-box {padding: 15px 20px;}
 .mycar-top-message .name {font-weight: bold;}
 .mycar-top-message .amount {font-weight: bold;}
+.mycar-top-message .amount .num::after {font-weight: bold;}
 // .mycar-top-message .amount.up .num::before {content: '▲'; margin-right: 2px;}
 // .mycar-top-message .amount.down .num::before {content: '▼'; margin-right: 2px;}
 .mycar-top-message .amount.up,
-.mycar-top-message .amount.down {font-weight: normal;}
+.mycar-top-message .amount.down,
+.mycar-top-message .amount.up .num::after,
+.mycar-top-message .amount.down .num::after {font-weight: normal;}
 .mycar-top-message strong {font-weight: bold;}
+.mycar-top-message strong .num::after {font-weight: bold;}
 // .mycar-top-message + .mycar-lists {margin-top: -15px;}
+
 .plain-note p {padding: 0 2px 15px; border-bottom: 1px solid $kb-ui09;@include text($text03, normal); color: $kb-ui04;}
 
 .mycar-information {position: relative; padding-top: 15px; padding-bottom: 34px; @include text($text02, normal); color: $kb-ui04; background-color: #fff;}
@@ -157,8 +163,8 @@
 .mycar-information .model {margin-bottom: 4px; color: $kb-ui02; @include text($text02, bold); word-break: break-all;}
 .mycar-information .model.link-arrow-after {display: inline-block; padding-right: 20px;}
 .mycar-information .subtxt {position: relative; z-index: 2; color: $kb-ui02;}
-.mycar-information .photo {position: absolute; z-index: 1; right: -10px; bottom: 0; width: 160px;}
-.mycar-information .photo.default-photo {width: 160px; height: 105px; background: url(../images/asset/car_default.png) no-repeat 0 0; background-size: 100%}
+.mycar-information .photo {position: absolute; z-index: 1; right: 0; bottom: 0; width: 160px;}
+.mycar-information .photo.default-photo {width: 155px; height: 82px; background: url(../images/asset/car_default.png) no-repeat 0 0; background-size: 100%}
 .mycar-information .infolist {padding-top: 0;}
 .mycar-information .description-list {padding: 10px 0 0; border-bottom: 0;}
 // .mycar-information .description-list .num {position: relative; top: -2px;}
@@ -232,7 +238,7 @@
 
 .kbchachacha-banner {position: relative; margin-top: 40px;}
 .kbchachacha-banner a {display: block; padding: 24px; height: 120px; background-color: #eef1fa; border-radius: 2px;}
-.kbchachacha-banner a::before {content: ''; position: absolute; right: 22px; bottom: 19px; width: 115px; height: 88px; background: url(../images/asset/kbchachacha_banner.png) no-repeat 0 0; background-size: 100% 100%;}
+.kbchachacha-banner a::before {content: ''; position: absolute; right: 24px; bottom: 0; width: 111px; height: 105px; background: url(../images/asset/kbchachacha_banner.png) no-repeat 0 0; background-size: 100% 100%;}
 .kbchachacha-banner strong {display: block; margin-bottom: 5px; font-size: 18px; font-weight: bold; color: $kb-ui02;}
 .kbchachacha-banner span {display: block; width: 140px; font-size: 14px; font-weight: normal; color: $kb-ui04; line-height: 1.4;}
 
@@ -261,6 +267,7 @@
 .wishcar-strategy .description-list dt {@include text($text01, bold); color: $kb-ui02;}
 .wishcar-strategy .description-list dd {@include text($text02, bold); position: relative; top: 2px;}
 .wishcar-strategy .need {color: #7fa2ed; font-weight: bold;}
+.wishcar-strategy .num::after {font-weight: bold;}
 
 .mydata-agree {margin: 48px 0; text-align: center;}
 .mydata-agree strong {font-size: 20px; font-weight: bold;}
@@ -276,7 +283,8 @@
 .asset-selector .btn-switch label .dot.asset {background-color: #ff8a71;}
 .asset-selector .btn-switch span {margin-right: 0; font-size: 16px; color: $kb-ui02;}
 .asset-selector .btn-switch span.amount {float: right; margin-right: 58px;}
-.asset-selector .btn-switch span.amount .num {font-size: 17px; margin-right: 5px;}
+.asset-selector .btn-switch span.amount .num {font-size: 17px; margin-right: 3px;}
+.asset-selector .btn-switch span.amount .num::after {font-weight: normal;}
 .asset-selector + .info-msg {margin-top: 30px;}
 
 .car-moving-zone {position: relative; z-index: 1; width: calc(100% - 100px); height: 75px;}

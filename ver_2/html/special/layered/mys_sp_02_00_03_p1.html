@@ -3,20 +3,19 @@
     <div class="bottom-sheet_header">
         <span class="tit">금액을 선택해 주세요.</span>
     </div>
-    <!-- [D] 21-06-29 수정 : 금액 선택기 수정 (체크박스 -> 버튼) 및 금액 확인 안풋 박스 추가, 하단 버튼 텍스트 수정 //-->
     <div class="bottom-sheet_contents">
 		<section class="kb-sec">
             <div class="btn-amount t01">
-                <button type="button"><span><em class="num">1</em>억</span></button>
-                <button type="button"><span><em class="num">3</em>억</span></button>
-                <button type="button"><span><em class="num">5</em>억</span></button>
-                <button type="button"><span><em class="num">10</em>억</span></button>
-                <button type="button"><span><em class="num">20</em>억</span></button>
-                <button type="button"><span><em class="num">50</em>억</span></button>
+                <button type="button"><span><em class="num" data-unit-after="억">1</em></span></button>
+                <button type="button"><span><em class="num" data-unit-after="억">3</em></span></button>
+                <button type="button"><span><em class="num" data-unit-after="억">5</em></span></button>
+                <button type="button"><span><em class="num" data-unit-after="억">10</em></span></button>
+                <button type="button"><span><em class="num" data-unit-after="억">20</em></span></button>
+                <button type="button"><span><em class="num" data-unit-after="억">50</em></span></button>
             </div>
             <div class="kb-form" data-status="error">
                 <div class="kb-form_inner form-text">
-                    <input type="text" inputmode="numeric" id="formAmountSample04" placeholder="" value="3" data-unit="억" data-action="autoSeperator" readonly><!-- [D] 21-07-02 수정 : 금액 변경 -->
+                    <input type="text" inputmode="numeric" id="formAmountSample04" placeholder="" value="3" data-unit="억" data-action="autoSeperator" readonly>
                     <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                 </div>
                 <em class="validation">각 항목을 합한 합계는 50억을 넘을 수 없습니다.</em>
@@ -27,7 +26,6 @@
         <button class="btn-solid gray"><span>초기화</span></button>
         <button class="btn-solid"><span>확인</span></button>
     </div>
-    <!--// [D] 21-06-29 수정 : 금액 선택기 수정 (체크박스 -> 버튼) 및 금액 확인 안풋 박스 추가, 하단 버튼 텍스트 수정 -->
     <button class="btn-close" data-action="close"><span>닫기</span></button>
 </div>
 <!-- // 부자스토리텔링 > 시뮬레이션 > 금액선택 -->

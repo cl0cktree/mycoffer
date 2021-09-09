@@ -28,6 +28,7 @@
 .legend-unit dd .num{font-size:1.5rem}
 .legend-unit .basic{display:block;margin-top:20px;font-size:14px;text-align:center}
 .legend-unit .basic .num{font-size:15px;font-weight:bold}
+.legend-unit .basic .num:after{font-size:14px;font-weight:bold}
 .legend-unit .basic[data-type="dash"]::before{content:'';display:inline-block;width:20px;height:1px;margin-right:12px;border-bottom:2px dotted $kb-ui07;vertical-align:middle}
 .legend-unit.align-c li:first-child,
 .legend-unit.align-c li~li{width:auto}
@@ -52,6 +53,10 @@
 .btn-register i{vertical-align:middle}
 .compare-summary .total-summary{margin-top:1.4rem;color:$color-blue;text-align:center}
 .compare-summary .content-box-tit{text-align:center}
+.kb-sec:not(.expense-guide) .compare-summary dd.amount .num,
+.kb-sec:not(.expense-guide) .compare-summary .amount .num{font-size:1.9rem}
+.kb-sec:not(.expense-guide) .compare-summary dd.amount .num::after,
+.kb-sec:not(.expense-guide) .compare-summary .amount .num::after{font-size:1.8rem}
 .content-tit.flex-box{display:flex;justify-content:space-between}
 .content-tit.border-tit,
 .border-tit{padding-bottom:1.6rem;border-bottom:1px solid $kb-ui07;align-items:center}
@@ -158,7 +163,8 @@
 .compare-amount{display:grid;grid-template-columns:1fr 1fr;background-color:$kb-ui10;border-radius:2px;}
 .compare-amount dl{position:relative;flex:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;height:6.7rem;padding:0 1.4rem}
 .compare-amount dt{margin-bottom:0.4rem;font-size:1.2rem;color:$kb-ui05}
-.compare-amount dd{font-size:1.4rem}
+.compare-amount dd,
+.compare-amount dd .num[data-unit-after]::after{font-size:1.4rem}
 .compare-amount dd .num{font-size:1.5rem}
 .compare-amount[data-compare-value="equal"] dl,
 .compare-amount[data-compare-value="left"] dl:first-child,
@@ -168,8 +174,8 @@
 .compare-amount[data-compare-value="left"] dl:first-child dt,
 .compare-amount[data-compare-value="right"] dl:last-child dt{margin-bottom:0.8rem;font-size:1.4rem;color:$kb-ui02}
 .compare-amount[data-compare-value="equal"] dl dd,
-.compare-amount[data-compare-value="left"] dl:first-child dd,
-.compare-amount[data-compare-value="right"] dl:last-child dd{font-size:1.8rem;font-weight:bold}
+.compare-amount[data-compare-value="left"] dl:first-child dd .num[data-unit-after]::after,
+.compare-amount[data-compare-value="right"] dl:last-child dd .num[data-unit-after]::after{font-size:1.8rem;font-weight:bold}
 .compare-amount[data-compare-value="equal"] dl dd .num,
 .compare-amount[data-compare-value="left"] dl:first-child dd .num,
 .compare-amount[data-compare-value="right"] dl:last-child dd .num{font-size:1.9rem;font-weight:bold}
@@ -402,7 +408,8 @@
 .pay-use-list li{@include flexBetween;padding:1.8rem 2rem;background-color:$kb-ui11;border:1px solid $kb-ui08;border-radius:8px;box-shadow:0px 2px 3px 0 rgba(0, 0, 0, 0.07);margin-left:-0.8rem;margin-right:-0.8rem;}
 .pay-use-list li p > *{display:block}
 .pay-use-list li p strong{margin-top:1rem;font-weight:bold;font-size:18px}
-.pay-use-list li .num{font-size:18px}
+.pay-use-list li .num{font-size:1.7rem}
+.pay-use-list li .num[data-unit-after]::after{font-size:1.8rem;font-weight:bold}
 .pay-use-list li+li{margin-top:16px}
 .pay-use-list li .tag-label.round{height:2.4rem;line-height:2.4rem;border-radius:1.2rem}
 .regulaer-expense-layered .h4 span{color:$kb-ui05;font-size:14px;}
@@ -468,7 +475,9 @@
 .card-management-total .border-tit + .card-list li:first-child{border-top:0}
 .card-management-total .estimated-payment-amount .date-month{text-align:center}
 .card-management-total .estimated-payment-amount .content-box-tit{text-align:center}
+.card-management-total .estimated-payment-amount .description-list dd{font-size:1.4rem}
 .card-management-total .estimated-payment-amount .description-list dd:not(.date) .num{font-weight:bold;color:$color-blue;font-size:1.5rem}
+.card-management-total .estimated-payment-amount .description-list .num[data-unit-after]::after{font-size:1.4rem;color:$kb-ui02}
 .card-management-total .estimated-payment-amount .description-list dt{font-size:1.4rem;color:$kb-ui05}
 .card-management-total .my-card-list .content-box{align-items:center}
 .card-management-total .my-card-list .content-box .btn-area{padding:1.6rem}
@@ -477,6 +486,7 @@
 .card-management-total .my-card-list .description-list dd{align-items:baseline}
 .card-management-total .my-card-list .description-list dd,
 .card-management-total .my-card-list .description-list dd .num{font-size:1.7rem;color:$kb-ui02}
+.card-management-total .my-card-list .tag-list .tag-label{color:$kb-ui04}
 .card-management-total .card-list{width:100%}
 .card-management-total .card-list li{display:flex;align-items:center;padding:20px 0;border-top:1px solid $kb-ui09}
 .card-management-total .card-list .card-info{flex:1}
@@ -485,9 +495,10 @@
 .card-management-total .card-list .list-tit + dl li:first-child{border-top:0}
 .card-management-total .card-list .description-list dt{margin:0}
 .card-management-total .card-list .description-list .date,
-.card-management-total .card-list .description-list .date .num{font-weight:bold;color:$kb-ui02}
+.card-management-total .card-list .description-list .date .num{color:$kb-ui02}
 .card-management-total .card-list .description-list .date{margin:0}
 .card-management-total .card-list .description-list .date .num{font-size:15px}
+.card-management-total .card-list .description-list .num[data-unit-after]::after{font-size:1.6rem}zz
 .card-management-total .card-list .tag-list{margin-top:10px;padding-left:3.2rem}
 .card-management-total .card-list.t01 li{flex-wrap:wrap}
 .card-management-total .card-list.t01 .percentage-graph{width:100%;margin-top:2.6rem;padding-top:2.2rem}
@@ -498,6 +509,7 @@
 .card-management-total .card-list .edit-user.kb-form .radio-group input[type="radio"] + label{font-size:16px;font-weight:normal;color:$kb-ui02}
 .card-management-total .card-list .edit-user.kb-form .radio-group input[type="radio"] + label::after{display:none;bottom:auto;left:6px;width:12px;height:12px;background-color:$color-yellow}
 .card-management-total .card-list .edit-user.kb-form .radio-group input[type="radio"]:checked + label:after{display:block}
+.card-management-total .card-list .edit-user.kb-form .radio-group + label{padding-top:0}
 .card-management-total .card-list .btn-record-edit{font-size:1.6rem;text-align:right}
 .card-management-total .card-list .btn-record-edit::after{content:'';display:inline-block;width:0.9rem;height:0.9rem;margin-left:0.9rem;transform:translateY(-0.2rem) rotate(45deg);border-right:0.2rem solid #26282c;border-bottom:0.2rem solid #26282c;border-bottom-right-radius:0.2rem;}
 .card-management-total .card-list .btn-record-edit .num{font-weight:bold}
@@ -544,6 +556,7 @@
 /***** 지출 > 소비리포트  *****/
 .weekly-expense-summary .date-month .date,
 .monthly-asset-summary .date-month .date{margin-top:0.6rem}
+.monthly-asset-summary .compare-summary .amount .num[data-unit-after]::after{font-weight:bold}
 .weekly-expense-report .legend-unit{margin-top:4.8rem}
 // Main
 .content-groups-type .group-tit,
@@ -592,8 +605,10 @@
 .monthly-expense-summary .credit-list dt,
 .monthly-expense-summary .credit-list dd{padding:1rem 0}
 .monthly-expense-summary .credit-list.rank-type + .btn-area{padding-bottom:0}
+.monthly-expense-summary .credit-list-amount .amount .num[data-unit-after]::after{font-weight:bold}
 .monthly-expense-summary .description-list.type3{padding:2rem 0;border-top:1px solid $kb-ui09;border-bottom:1px solid $kb-ui09}
 .monthly-expense-summary .description-list.type3 .num{font-size:1.5rem}
+.monthly-expense-summary .description-list.type3 .num[data-unit-after]::after{font-size:1.4rem}
 .monthly-expense-summary .description-list.type3 dt{font-size:1.4rem}
 .monthly-expense-summary .description-list.type3 dt span{display:inline-block;margin-right:1.3rem;font-size:1.4rem;font-weight:bold;vertical-align:middle}
 .monthly-expense-summary .description-list.type3 dt span .num{font-weight:bold}

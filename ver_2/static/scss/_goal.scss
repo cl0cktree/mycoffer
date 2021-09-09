@@ -218,7 +218,8 @@
 .goals-challenge .goals-now{font-size:$text03;margin-top:1.6rem;}
 .goals-challenge .goals-now > span{display:block;color:$kb-ui02;font-size:$text03;}
 .goals-challenge .goals-now strong{display:block;}
-.goals-challenge .goals-now strong .num{font-size:1.5rem;}
+.goals-challenge .goals-now .num{font-size:1.5rem;}
+.goals-challenge .goals-now .num:after{font-size:1.4rem;}
 //목표 요약
 .goals-summary{padding-bottom:5px;}
 .goals-summary .summary-piggymoeny{@include flexBetween;padding:25px 20px;background:#6349a5;color:#fff;border-radius:.8rem;margin-top:1.2rem;}
@@ -238,6 +239,7 @@
 .goals-summary .summary-challenge .flex-box .h2{@include text($size: $text01, $weight:normal);}
 .goals-summary .summary-challenge .flex-box .h2.type2{font-size:2rem;line-height:1.4;}
 .goals-summary .summary-challenge .flex-box .h2 strong{font-weight:bold;}
+.goals-summary .summary-challenge .flex-box .h2 strong .num{font-size:1.9rem;}
 .goals-summary .summary-challenge .flex-box .h3{@include text($size: $text02, $weight:normal);}
 .goals-summary .summary-challenge .flex-box .h3 strong{font-weight:bold;}
 .goals-summary .summary-challenge .flex-box .h4{@include text($weight:normal);}
@@ -269,7 +271,7 @@
 .challenge-box .challenge-info .tit .tit-area > i{position:absolute;top:4rem;right:0;width:10rem;height:10rem;}
 .challenge-box .challenge-info > strong{position:relative;}
 .challenge-box .challenge-info strong{font-weight:bold;}
-.challenge-box .challenge-info strong .num:after{font-size:$text02;vertical-align:0;}
+.challenge-box .challenge-info strong .num:after{font-size:$text03;vertical-align:0;font-weight:bold;}
 .challenge-box .challenge-info .period{color:$kb-ui05;}
 .challenge-box .challenge-info .period:after{font-size:1.6rem;vertical-align:0;}
 .challenge-box .challenge-info .graph{margin-bottom:10px;}
@@ -277,6 +279,7 @@
 .challenge-box .challenge-info .total{margin-top:10px;@include text($size:$text03);}
 .challenge-box .challenge-info .content{margin-top:1.6rem;}
 .challenge-box .challenge-info .content .goal-txt{@include text($size:$text03);}
+.challenge-box .challenge-info .content .goal-txt .num{font-size:1.5rem;}
 .challenge-box .challenge-info .img-character{display:inline-block;width:83px;height:83px;vertical-align:top;}
 .challenge-box .challenge-info .txt{position:relative;display:inline-block;width:calc(100% - 98px);height:auto;margin-left:10px;padding:1.6rem 2rem;font-size:14px;color:$kb-ui04;background-color:$kb-ui10;}
 .challenge-box .challenge-info .txt::before{position:absolute;top:50%;left:-5px;content:'';display:block;width:0;height:0;margin-top:-3px;border-top:5px solid transparent;border-bottom:5px solid transparent;border-right:5px solid $kb-ui10;}
@@ -336,6 +339,7 @@
 .goals-state .tit{@include text($size:$text01);font-weight:normal;margin-top:3.2rem;margin-bottom:2rem;}
 .goals-state .tit{margin-top:0;}
 .goals-state .tit strong{font-weight:bold;}
+.goals-state .tit strong .num{font-size:1.9rem;}
 .goals-state .filter-area{border-top:none;}
 .goals-state ul{margin-top:20px;}
 .goals-state li{position:relative;display:flex;justify-content:space-between;padding:1.4rem 1.5rem 1.4rem 5.5rem;border:1px solid $kb-ui08;border-radius:2px;font-size:14px;line-height:22px;border-radius:.8rem;}
@@ -487,7 +491,7 @@
 .text-trophy h2{@include text($weight:bold);}
 .text-trophy h2 span,
 .text-trophy h3 span{display:inline;}
-.text-trophy .num:after{vertical-align:0;}
+.text-trophy .num:after{vertical-align:0;font-weight:inherit;}
 .text-trophy p + span{margin-top:13px;}
 .text-trophy h2 + h3{margin-top:13px;@include text($weight:normal);}
 .text-trophy span{display:block;}
@@ -598,7 +602,7 @@ section.gray-line + section{border-top:1rem solid $kb-ui10;}
 .character-graph.min-pad[data-theme=coin]{padding-top:2rem;}
 .character-graph:not(.js-slider) .graph-txt{font-size:14px;margin-top:12px;}
 .character-graph:not(.js-slider) .graph-txt .num{font-size:15px;}
-.character-graph:not(.js-slider) .graph-txt .num:after{font-size:$text03;vertical-align:0;}
+.character-graph:not(.js-slider) .graph-txt .num:after{font-size:$text03;vertical-align:0;font-weight:inherit;}
 .character-graph:not(.js-slider) .graph-txt strong{font-weight:bold;}
 .character-graph:not(.js-slider) .graph-txt .start-txt{margin-left:0;line-height:1.4;}
 .character-graph:not(.js-slider) .graph-txt .end-txt{margin-right:0;line-height:1.4;}

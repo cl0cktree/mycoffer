@@ -51,17 +51,18 @@
         if(pageID.indexOf('/HTML/') < 0) $('button[data-page-id=' + pageID + ']').click();
         //레이어 확인용 스크립트 (개발시 삭제) [e]
         
+        // 수정 (웹접근성 이슈 : 드래그 삭제)
         //권종항목편집 드래그
-        var $currencyModify = $('.currency-modify');
-        if($currencyModify){
-            $currencyModify.find( "#sortable" ).sortable({
-                items: "li:not(.ui-state-disabled)",
-                handle: ".btn-handle",
-                axis: "y",
-                placeholder: "ui-state-highlight",
-                cancel: ".ui-state-disabled"
-            });
-        }
+        // var $currencyModify = $('.currency-modify');
+        // if($currencyModify){
+        //     $currencyModify.find( "#sortable" ).sortable({
+        //         items: "li:not(.ui-state-disabled)",
+        //         handle: ".btn-handle",
+        //         axis: "y",
+        //         placeholder: "ui-state-highlight",
+        //         cancel: ".ui-state-disabled"
+        //     });
+        // }
         //스타뱅킹 이동
         $('button[data-action=moveKBStarBanking]').on('click',function(){
             modalPopup({

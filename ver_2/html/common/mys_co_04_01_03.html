@@ -14,7 +14,7 @@
         
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
             'pageTit':'PC에서 가져오기',
-            'type':''
+            'type':'step'
         })
         
         <!-- app-container //-->
@@ -35,15 +35,15 @@
                                 <div class="kb-form" data-status="">
                                     <label for="formAmountSample01">숫자 13자리</label>
                                     <div class="kb-form_inner form-text">
-                                        <input type="number" inputmode="numeric" id="formAmountSample01" placeholder="" value="" data-action="" maxlength='4'>
+                                        <input type="text" inputmode="numeric" id="formAmountSample01" placeholder="" value="" data-action="" maxlength='4'>
                                         <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                                     </div>
                                     <div class="kb-form_inner form-text">
-                                        <input type="number" inputmode="numeric" id="formcAmountSample01" placeholder="" value="" data-action=""maxlength='4'>
+                                        <input type="text" inputmode="numeric" id="formcAmountSample01" placeholder="" value="" data-action=""maxlength='4'>
                                         <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                                     </div>
                                     <div class="kb-form_inner form-text form-text-last">
-                                        <input type="number" inputmode="numeric" id="formAmountSample01" placeholder="" value="" data-action="" maxlength='5'>
+                                        <input type="text" inputmode="numeric" id="formAmountSample01" class="formAmountSample01" placeholder="" value="" data-action="" maxlength='5'>
                                         <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                                     </div>
                                     <em class="validation">Success / Error Message</em><!-- 성공/에러 메세지 -->
@@ -59,24 +59,12 @@
                                         <li><p>스마트폰에서 인증서 복사 완료 확인</p></li> 
                                     </ul>
                                 </div>
-                                <!-- <div class="kb-form_multi kb-form_boundary">
-                                    <strong class="tit required">금액 설정</strong>
-                                    <div class="kb-form" data-status="">
-                                        <div class="kb-form_inner form-text">
-                                            <input type="text" inputmode="numeric" id="formAmountBoundary01" placeholder="최소" value="" data-action="autoSeperator">
-                                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                                        </div>
-                                    </div>
-                                    <div class="kb-form" data-status="">
-                                        <label for="formAmountBoundary02">최대 금액</label>
-                                        <div class="kb-form_inner form-text">
-                                            <input type="text" inputmode="numeric" id="formAmountBoundary02" placeholder="최대" value="" data-action="autoSeperator">
-                                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                                        </div>
-                                    </div>
-                                    <em class="validation">오늘을 포함한 날짜만 선택해주세요.</em>
-                                </div> -->
                             </section>
+                            <div class="sticky-bottom">
+                                <div class="btn-area">
+                                    <button type="button" class="btn-solid" disabled="true"><span>확인</span></button>
+                                </div>
+                            </div>
                         </div>
                         <div>
                             <section class="kb-sec approval-number">
@@ -92,23 +80,15 @@
                                     </ul>
                                 </div>
                             </section>
+                            <div class="sticky-bottom">
+                                <div class="btn-area">
+                                    <button type="button" class="btn-solid"><span>QR코드 촬영</span></button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section> 
-                <!--인증번호 미입력시-->
-                <div class="sticky-bottom">
-                    <div class="btn-area">
-                        <button type="button" class="btn-solid" disabled><span>QR코드 촬영</span></button>
-                    </div>
-                </div>
-                <!--인증번호 미입력시-->
-                <!--인증번호 입력시 활성화-->
-                <div class="sticky-bottom">
-                    <div class="btn-area">
-                        <button type="button" class="btn-solid" ><span>QR코드 촬영</span></button>
-                    </div>
-                </div>
-                <!--인증번호 입력시 활성화-->
+                
             </main>
             <!-- // app-content -->
 
@@ -139,6 +119,17 @@
                 type: "확인"
             });
         
+    </script>
+    <script>
+        $(function(){
+            $(".formAmountSample01").on('input', function(){
+                if($(".formAmountSample01").val() == '')
+                    $(".btn-solid").attr("disabled",true);
+                else
+                    $(".btn-solid").attr("disabled", false);
+            });
+            
+        })
     </script>
 </body>
 

@@ -125,12 +125,34 @@
             </div>
             <div class="bottom-sheet_contents">
                 <section class="kb-sec">
-                    <ul class="select-list">
-                        <li class="is-active"><button type="button"><strong class="tit">전체</strong><i class="icon-20"></i></button></li>
-                        <li><button type="button"><strong class="tit">최신순</strong><i class="icon-20"></i></button></li>
-                        <li><button type="button"><strong class="tit">마감일순</strong><i class="icon-20"></i></button></li>
-                    </ul>
+                    <div class="kb-form">
+                        <strong class="label">조회조건</strong>
+                        <div class="lookup-period">
+                            <ul class="btn-segmented_radio">
+                                <li>
+                                    <input type="radio" name="btnradio" id="btnradio1">
+                                    <label for="btnradio1">전체</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="btnradio" id="btnradio2">
+                                    <label for="btnradio2">추천순</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="btnradio" id="btnradio3">
+                                    <label for="btnradio3">최신순</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="btnradio" id="btnradio4" checked>
+                                    <label for="btnradio4">마감일순</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </section>
+            </div>
+            <div class="bottom-sheet_buttons">
+                <button class="btn-solid gray"><span>초기화</span></button>
+                <button class="btn-solid" data-action="close"><span>확인</span></button>
             </div>
             <button class="btn-close" data-action="close"><span>닫기</span></button>
         </div>

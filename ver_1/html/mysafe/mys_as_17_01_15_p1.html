@@ -50,7 +50,7 @@
                     <div class="kb-form not-ready no-transition giftcard-input-kind safe-flex100 safe-display-none">
                         <!-- <label for="mysafe_16"></label> -->
                         <div class="kb-form_inner form-text">
-                            <input type="text" class="giftcard-kind-input" id="mysafe_16" onkeydown="all_on_fun()" placeholder="최대 10자를 입력해주세요." value="" maxlength="10">
+                            <input type="text" class="giftcard-kind-input" id="mysafe_16" placeholder="최대 10자를 입력해주세요." value="" maxlength="10">
                             <button class="btn-data-clear giftcard-kind-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                         <div class="kb-form datepicker" data-status="">
                             <label for="mysafe_18">유효기간</label>
                             <div class="kb-form_inner form-text">
-                                <input type="text" class="mysafe-giftcard-datepicker" id="mysafe_18" placeholder="2021.01.01" onkeydown="all_on_fun()">
+                                <input type="text" class="mysafe-giftcard-datepicker" id="mysafe_18" placeholder="2021.01.01">
                             </div>
                             <em class="validation">에러 메세지 영역 입니다.</em>
                         </div>
@@ -86,7 +86,7 @@
                 <section class="kb-sec sticky-bottom">
                     <div class="btn-area">
                         <button class="btn-solid_sticky lv2"><span>취소</span></button>
-                        <button class="btn-solid_sticky my-giftcard-enrollment" disabled=""><span>등록</span></button>
+                        <button class="btn-solid_sticky my-giftcard-enrollment"><span>등록</span></button>
                     </div>
                 </section>
 
@@ -153,7 +153,7 @@
                 return;
             }
             oldVal = currentVal;
-            all_on_fun();
+            // all_on_fun();
         });
         $('.mysafe-giftcard-datepicker').on('propertychange change keyup paste input', function(event) {//일정 입력시 변화 된 값 인식.
             dataVal = $mysafe_giftcard_datepicker.val();
@@ -162,7 +162,7 @@
                 return;
             }
             oldDate = dataVal;
-            all_on_fun();
+            // all_on_fun();
         });
         function all_on_fun(){//최종 등록 버튼 활성화 함수-기타자산 직접입력 완료/기타자산 선택이 선결/기타자산 금액이 입력 되면 활성화.
             giftcard_kind_input=document.getElementById('mysafe_16').value;
@@ -207,7 +207,7 @@
                 $('.giftcard-input-kind').addClass('safe-display-none');
                 gs_num=2;
             }
-            all_on_fun();
+            // all_on_fun();
         });
         $('.giftcard-kind-clear').on('click',function(){//기타자산 직접입력 삭제 버튼으로 클릭 시 관련된 기능들 리셋.
             gsi=0;

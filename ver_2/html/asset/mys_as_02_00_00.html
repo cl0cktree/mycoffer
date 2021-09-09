@@ -1,6 +1,6 @@
+<!-- [MYS_AS_02_00_00] 작성자: 누리어 시스템 황철민 -->
 <!DOCTYPE html>
 <html lang="ko">
-<!-- [MYS_AS_02_00_00] 작성자: 누리어 시스템 황철민 -->
 <head>
 	@@include('@@webRoot/html/_include/app-head.html',{
 		"title": "자산 | 종합솔루션"
@@ -25,9 +25,9 @@
 					<div class="content-box">
 						<p>
 							나의 자산 구성은<br>
-							금융자산중 <strong>투자</strong> 비중이 <span class="num">45</span>%<br>
-							비금융자산중 <strong>부동산</strong> 비중이 <span class="num">34</span>%<br>
-							부채중 <strong>카드</strong> 비중이 <span class="num">20</span>%로 가장 높아요!
+							금융자산중 <strong>투자</strong> 비중이 <span class="num" data-unit-after="%">45</span><br>
+							비금융자산중 <strong>부동산</strong> 비중이 <span class="num" data-unit-after="%">34</span><br>
+							부채중 <strong>카드</strong> 비중이 <span class="num" data-unit-after="%">20</span>로 가장 높아요!
 						</p>
 					</div>
 				</section>
@@ -64,7 +64,7 @@
 						<div class="is-hidden">금융자산 목록</div>
 						<ul class="group-a">
 							<li>
-								<span class="asset-label">입출금&middot;페이</span>
+								<span class="asset-label">입출금</span>
 								<span class="is-hidden">: 선택 연령대 비중</span>
 								<span class="bar-area ages">
 									<span class="bar" style="width: 100%">
@@ -112,7 +112,7 @@
 								<span class="is-hidden">입니다.</span>
 							</li>
 							<li>
-								<span class="asset-label">연금(은퇴)</span>
+								<span class="asset-label">보험</span>
 								<span class="is-hidden">: 선택 연령대 비중</span>
 								<span class="bar-area ages">
 									<span class="bar" style="width: 60%">
@@ -128,7 +128,7 @@
 								<span class="is-hidden">입니다.</span>
 							</li>
 							<li>
-								<span class="asset-label">보험</span>
+								<span class="asset-label">외화</span>
 								<span class="is-hidden">: 선택 연령대 비중</span>
 								<span class="bar-area ages">
 									<span class="bar" style="width: 70%">
@@ -139,6 +139,22 @@
 								<span class="bar-area me">
 									<span class="bar" style="width: 64%">
 										<span class="val">64%</span>
+									</span>									
+								</span>
+								<span class="is-hidden">입니다.</span>
+							</li>
+							<li>
+								<span class="asset-label">페이</span>
+								<span class="is-hidden">: 선택 연령대 비중</span>
+								<span class="bar-area ages">
+									<span class="bar" style="width: 20%">
+										<span class="val">20%</span>
+									</span>									
+								</span>
+								<span class="is-hidden">, 나의 비중</span>
+								<span class="bar-area me">
+									<span class="bar" style="width: 24%">
+										<span class="val">24%</span>
 									</span>									
 								</span>
 								<span class="is-hidden">입니다.</span>
@@ -182,7 +198,7 @@
 						<div class="is-hidden">부채 목록</div>
 						<ul class="group-c">
 							<li>
-								<span class="asset-label">대출</span>
+								<span class="asset-label">대출&middot;부채</span>
 								<span class="is-hidden">: 선택 연령대 비중</span>
 								<span class="bar-area ages">
 									<span class="bar" style="width: 65%">
@@ -198,7 +214,7 @@
 								<span class="is-hidden">입니다.</span>
 							</li>
 							<li>
-								<span class="asset-label">카드</span>
+								<span class="asset-label">부동산임대보증금</span>
 								<span class="is-hidden">: 선택 연령대 비중</span>
 								<span class="bar-area ages">
 									<span class="bar" style="width: 80%">
@@ -239,9 +255,9 @@
 									<div class="gbox">
 										<dl>
 											<dt>총자산</dt>
-											<dd><span class="num">8</span>억 <span class="num">1</span>천만원</dd>
+											<dd><span class="num" data-unit-after="억">8</span> <span class="num" data-unit-after="천만원">1</span></dd>
 											<dt>금융자산</dt>
-											<dd><span class="num">3</span>천만원</dd>
+											<dd><span class="num" data-unit-after="천만원">3</span></dd>
 										</dl>
 									</div>
 									<div class="emoti-msg">
@@ -263,9 +279,9 @@
 									<div class="gbox">
 										<dl>
 											<dt>총부채</dt>
-											<dd><span class="num">2</span>억 <span class="num">3</span>천만원</dd>
+											<dd><span class="num" data-unit-after="억">2</span> <span class="num" data-unit-after="천만원">3</span></dd>
 											<dt>부채비중(총자산대비)</dt>
-											<dd><span class="num">23</span>%</dd>
+											<dd><span class="num" data-unit-after="%">23</span></dd>
 										</dl>
 									</div>
 									<div class="emoti-msg">
@@ -290,7 +306,7 @@
 											<dt>보유 부동산</dt>
 											<dd><span class="num">2</span>개</dd>
 											<dt>시세(합계)</dt>
-											<dd><span class="num">7</span>억 <span class="num">8</span>천만원</dd>
+											<dd><span class="num" data-unit-after="억">7</span> <span class="num" data-unit-after="천만원">8</span></dd>
 										</dl>
 									</div>
 									<div class="emoti-msg">
@@ -321,7 +337,7 @@
 											<dt>보유 자동차</dt>
 											<dd><span class="num">3</span>대</dd>
 											<dt>최근 차량 유지비</dt>
-											<dd><span class="num">2</span>백만원</dd>
+											<dd><span class="num" data-unit-after="백만원">2</span></dd>
 										</dl>
 									</div>
 									<div class="emoti-msg">
@@ -354,7 +370,7 @@
 					<div class="content-box no-shadow">
 						<div class="tit"><strong>김국민</strong>님의 자산관리 키포인트는 <span class="hash">포트폴리오 변경</span></div>
 						<p class="txt">
-							부동산을 보유중이신 당신의 부채비중은 <span class="num">60%</span>로<br>
+							부동산을 보유중이신 당신의 부채비중은 <span class="num" data-unit-after="%">60</span>로<br>
 							'주의'가 필요해요!<br>
 							부채를 줄이면 대출이자 등 비용도 절약하고 <br>
 							재무상태도 안정적으로 유지할 수 있어요.<br>
@@ -382,7 +398,7 @@
 						<div class="is-active product-info" id="tipContent1">
 							<a class="content-box link-arrow-after" href="#">
 								<span class="tit">KB내맘대로 적금</span>
-								<span class="txt"><span class="num">3.1</span>%</span>
+								<span class="txt"><span class="num" data-unit-after="%">3.1</span></span>
 							</a>
 						</div>
 						<div class="product-info" id="tipContent2">

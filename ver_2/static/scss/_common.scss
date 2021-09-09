@@ -12,7 +12,7 @@
 .face-id .banner-msg{@include text($size: $text02, $weight: bold);margin-top:40px;padding:20px 24px;background-color:$kb-ui10;color:$kb-ui02;}
 
 //KB모바일인증서(mys_co_04_03_00)
-.app-content[class*=login-certification] .kb-mobile-certification-msg{padding-top:47px; padding-bottom:92px;text-align:center;}
+.app-content[class*=login-certification] .kb-mobile-certification-msg{padding-top:60px; padding-bottom:92px;text-align:center;}
 .app-content[class*=login-certification] .kb-mobile-certification-msg p{@include text($size: $text01);margin-top:24px;}
 .app-content[class*=login-certification] .kb-mobile-certification-msg p strong{font-weight:bold;}
 .app-content[class*=login-certification] .kb-mobile-certification-msg + ul{margin-bottom:24px;}
@@ -52,6 +52,7 @@
 .modal[data-layered-name=modalLoginExtension] .login-extension-time strong{font-size:$heading01; font-weight:bold;display:inline-block;margin-right:8px;color:$color-blue;}
 //다른로그인 방법
 .login-certification01{padding-bottom:148px;}
+.login-certification01 .login-certification01-h2{font-size: 15px; color:$kb-ui02; font-weight: normal; padding-top:2px; padding-bottom:8px;}
 //가입완료(mys_co_05_04_00)
 .join-complete .service-join-status-msg{@include text($size: $text02);margin-top:16px;color:$kb-ui04;}
 .join-complete .service-join-status-msg02{@include text($size: $text02);margin-top:48px;color:$kb-ui04;}
@@ -114,7 +115,7 @@
 // .kb-sec.confirm-agree .agreement-to-terms .link-arrow{width:2rem;height:2rem;background:none;}
 .kb-sec.confirm-agree > .tit{margin-top:4.3rem;}
 .kb-sec.confirm-agree .confirm-info{margin-top:1.5rem;line-height:1.44;}
-.kb-sec.confirm-agree .confirm-info .question{margin-top:1rem;}
+.kb-sec.confirm-agree .confirm-info .question{margin-top:1rem;font-weight:bold;}
 .kb-sec.confirm-agree .radio-group{flex-direction:row;margin-top:1.4rem;}
 .kb-sec.confirm-agree .radio-group li{margin-top:0;width:50%;}
 .bottom-sheet .confirm-agree .agreement-to-terms .header{padding-top:0;}
@@ -242,8 +243,9 @@
 .accordion.t02 .status{color:$kb-ui04;font-size:14px;}
 
 //한개의 기관연결
-.request-txt p{text-align: right; color:$kb-ui04; font-size: $text03; margin-top: 86px;}
-.request-txt a{float: right; /*text-decoration:underline; text-underline-position: under;*/ margin-top: 23px;}
+.request-txt p{text-align: right; color:$kb-ui04; font-size: $kb-ui02; margin-top: 86px;}
+.request-txt a{float: right;  /*text-decoration:underline; text-underline-position: under;*/ margin-top: 23px;}
+.request-txt .btn-text span{font-size: 14px; color: $kb-ui04;}
 //개별인증
 .select-organization .kb-card{text-align: center; margin-bottom:100px; box-shadow: none;;}
 .select-organization .kb-card span img{margin-top:10px}
@@ -279,24 +281,18 @@
 .search-result-list .checkbox-group label{@include flexBetween}
 .search-result-list .checkbox-group input:disabled + label{color:$kb-ui08}
 .search-result-list .checkbox-group .status{font-size:14px;color:$kb-ui04}
+
 //마이데이터 연결안내
 .mydata-connection-info .mydata-connection-info-top {margin-bottom: 20px;}
 .mydata-connection-info .mydata-connection-info-top p{color:$kb-ui04;}
 .mydata-connection-info .mydata-connection-info-top .line{border-top:1px solid $kb-ui09;padding-top: 16px; }
 .mydata-connection-info .mydata-connection-info-top .btn-area{margin-bottom:20px; margin-top:20px; }
-// 기관 선택 > 전송요구 항목 설정 mys_co_06_01_01_07
 
+// 기관 선택 > 전송요구 항목 설정 mys_co_06_01_01_07
 .caution-txt_01 h4, .caution-txt_01 .tit{padding:2rem 2.4rem;margin:0 -2.4rem;background-color:$kb-ui10;}
 .caution-txt h4{padding: 30px 0;}
 .caution-txt_01 .h4{border-bottom: none; padding-bottom: 20px;}
 .caution-txt_01 .h5{background-color:$kb-ui11;}
-
-// .caution-txt_01 li{margin-top:20px; margin-bottom:40px;}
-// .caution-txt_01 li:last-child{margin-bottom: 20px; }
-// .caution-txt_01 .txt{padding-bottom: 48px;}
-// .caution-txt_01 .list_type p{padding-bottom:20px}
-// .caution-txt_01 li span:last-child{margin-left: 45px;}
-
 .caution-txt_01 .tit{margin:0 -2.4rem;}
 .caution-txt_01 .desc-box{padding:1.7rem 0 3.7rem;line-height:1.44;}
 .caution-txt_01 .desc-box p{font-size:1.6rem;line-height:1.44;}
@@ -403,7 +399,6 @@
 
 .info-distributer-asset .kb-sec{margin-top: 23px;}
 //mys_mn_01_01_01.html
-// .mydata-kbinfo h2{margin-top:28px;}
 .mydata-kbinfo .mydata-kbinfo-list{margin-top:1.6rem;border-top:0.1rem solid $kb-ui09;}
 .mydata-kbinfo .mydata-kbinfo-list li{padding:20px 0;border-bottom:1px solid $kb-ui09;}
 .mydata-kbinfo .mydata-kbinfo-list li .form-checkbox_20,
@@ -413,6 +408,7 @@
 .mydata-kbinfo .mydata-kbinfo-list li .asset-owner{@include text($size: 16px, $line-height:1);display:block;margin-top:0.4rem;}
 .mydata-kbinfo .mydata-kbinfo-list li .asset-amount{@include number($size: 18px, $line-height:1, $weight:bold);display:block;margin-top:2.5rem;text-align:right;}
 .mydata-kbinfo .mydata-kbinfo-list li .asset-amount .num{font-size:1.9rem;padding-right:2px;}
+.mydata-kbinfo .mydata-kbinfo-list li .asset-amount .num::after{font-size:1.8rem;font-weight:bold;}
 .mydata-kbinfo .mydata-complete{padding-top:4.4rem;}
 
 
@@ -441,9 +437,7 @@
 .app[data-page=submain] .recommend-to-friend .recommend-history{margin-top:0;padding-top:12px;}
 
 
-// .mydata-kbinfo .kb-sec.kb-sec.bg-gray:first-of-type{margin-top:-1.2rem;}
 .mydata-kbinfo .kb-sec.kb-sec.bg-gray:first-of-type + .kb-sec{margin-top:4rem;}
-// .mydata-kbinfo .inner-text-bg .c-red, .mydata-kbinfo .inner-text-bg .num{font-size:1.5rem;font-weight:bold;}
 .mydata-kbinfo .inner-text-bg .c-red{font-size:1.5rem;font-weight:bold;}
 .mydata-kbinfo .kb-sec:first-child .condition-area{margin-top:12px;border-top:1px solid $kb-ui08;}
 .mydata-kbinfo .mydata-kbinfo-msg{@include text;margin-top:32px;margin-bottom:48px;}
@@ -475,7 +469,6 @@
 .mydata-kbinfo .withdraw .btn-text u{color:$kb-ui03;}
 
 .mydata-kbinfo .mydata-kbinfo-summary-list02{padding-top:4.6rem;}
-// .mydata-kbinfo .mydata-kbinfo-summary-list02 .js-checkbox-selector:first-of-type{padding-top:4.4rem;}
 .mydata-kbinfo .mydata-kbinfo-summary-list02 .js-checkbox-selector > dt:first-of-type label{font-size:1.8rem;font-weight:bold;}
 .mydata-kbinfo .mydata-kbinfo-summary-list02 [class^=h]{margin-top:4.8rem;}
 .mydata-kbinfo .mydata-kbinfo-summary-list02 dd [class^=h]:first-child{margin-top:2.6rem;}
@@ -490,14 +483,10 @@
 .mydata-kbinfo .mydata-kbinfo-summary-list02 .accordion .additional-info .d-day{@include text($size:$text03, $line-height:1);display:none;margin-left:8px;color:$color-red;}
 .mydata-kbinfo .mydata-kbinfo-summary-list02 .accordion .additional-info .d-day.is-active{display:inline-block;}
 .mydata-kbinfo .mydata-kbinfo-summary-list02 .accordion + h2{margin-top:48px;}
-// .mydata-kbinfo .mydata-kbinfo-acount-info li{@include clfix;}
 .mydata-kbinfo .mydata-kbinfo-acount-info li{padding:1.5rem 0;border-bottom:1px solid $kb-ui09;}
-// .mydata-kbinfo .mydata-kbinfo-acount-info li + li{margin-top:24px;}
 .mydata-kbinfo .mydata-kbinfo-acount-info li strong{@include text($text02)}
 .mydata-kbinfo .mydata-kbinfo-acount-info li span{display:block;font-size:16px;color:$kb-ui02;}
 .mydata-kbinfo .mydata-kbinfo-acount-info li .num{font-size:1.7rem;font-weight:bold;}
-// .mydata-kbinfo .mydata-kbinfo-acount-info li strong{float:left;color:$kb-ui04;}
-// .mydata-kbinfo .mydata-kbinfo-acount-info li span{float:right;font-size:16px;color:$kb-ui04;}
 
 //mys_mn_01_01_02_01.html
 .mydata-kbinfo-detail .kb-sec:first-child{padding-top:0;}
@@ -507,7 +496,6 @@
 .mydata-kbinfo-detail .mydata-kbinfo-detail-summary .expiration.is-active{color:$color-red;}
 .mydata-kbinfo-detail .mydata-kbinfo-detail-summary .expiration strong,
 .mydata-kbinfo-detail .mydata-kbinfo-detail-summary .expiration .num{font-weight:bold;}
-// .mydata-kbinfo-detail h2{margin-top:44px;}
 .mydata-kbinfo-detail [class^=h]{margin-top:4.3rem;}
 .mydata-kbinfo-detail [class^=h] + .table{margin-top:1.3rem;}
 .mydata-kbinfo-detail p:last-child{margin-top:32px;text-align:right;}
@@ -519,8 +507,7 @@
 
 /* 공동 인증서 */
 .joint-certificate-list li{border-bottom:1px solid $kb-ui09;}
-.joint-certificate-list li + li{margin-top:32px;}
-.joint-certificate-list li > a{position:relative;display:block;padding-top:8px;padding-left:56px;padding-bottom:22px;padding-right:24px;}
+.joint-certificate-list li > a{position:relative;display:block;padding-top:30px;padding-left:56px;padding-bottom:14px;padding-right:24px;}
 // .joint-certificate-list li > a:after{content:'';position:absolute;top:50%;right:2px;width:8px;height:8px;border:1px solid $kb-ui04;border-left:none;border-bottom:none;transform:translateY(-50%) rotate(45deg)} //20210818bhs수정
 .joint-certificate-list li i[class^=icon-certificate-]{position:absolute;left:0;top:2px;}
 .joint-certificate-list li .name{@include text($size: $text01, $line-height:1, $weight:bold);display:block;margin-bottom:8px;}
@@ -532,6 +519,8 @@
 .joint-certificate-list li p > strong.num{@include number($size: 15px, $line-height:1);}
 // .joint-certificate-list li p > strong.num.c-black{color:$kb-ui02;}
 .joint-certificate-list li .icon-link_20{position:absolute;right:0;top:calc(50% - 8px);transform:translateY(-50%)}
+.joint-certificate-list li + li:first-child{margin-top: 18px;}
+.joint-certificate-list li i{margin-top: 22px;}
 .joint-certificate{padding-bottom:100px;}
 .joint-certificate-password h2{text-align: center; @include text($size: $heading02); font-weight: bold;}
 .kb-sec.joint-certificate-password{padding-top:75px;}
@@ -539,7 +528,8 @@
 .kb-sec.joint-certificate-password p{@include text($size: $text03, $line-height:1);color:$kb-ui04}
 h1 + .joint-certificate-list{margin-top:28px;}
 .app-lnb + .joint-certificate .kb-sec:first-child{margin-top:24px;}
-
+.login-certification01 .no-data{margin-top: 50px;}
+.joint-certificate-list{margin-top:-30px;}
 //인증서선택
 .select-certificate .kb-sec:first-of-type{margin-top:4rem;overflow:hidden;}
 .select-certificate .certificate-list{margin-top:-1.5rem;}
@@ -587,18 +577,10 @@ h1 + .joint-certificate-list{margin-top:28px;}
 
 //FAQ
 .mydata-faq .accordion{margin-top:1.2rem;}
-// .mydata-faq .accordion dt,
-// .mydata-faq .accordion dd{position:relative;padding-left:34px;}
-// .mydata-faq .accordion dt:before{content:'Q'}
-// .mydata-faq .accordion dd:before{content:'A'}
-// .mydata-faq .accordion dt:before,
-// .mydata-faq .accordion dd:before{@include text($size: $text01, $weight:bold, $line-height:1);position:absolute;left:2px;}
-// .mydata-faq .accordion dt:before{top:19px}
-// .mydata-faq .accordion dd:before{top:31px}
+
 
 //전화상담
 .kb-sec.bg-gray .inner-text-bg{@include text($size: 15px);padding:0.2rem 0;text-align:left;color:$kb-ui03;}
-// .mydata-call-center .kb-sec.bg-gray .info-text{@include text($size: 15px);$color:$kb-ui03;padding:0.4rem 0;}
 .mydata-call-center .operation-time{margin:4.1rem 0;}
 .mydata-call-center .operation-time p[data-style=list]{margin-top:2rem;font-size:1.6rem;color:$kb-ui02;}
 .mydata-call-center .operation-time p .num{font-size:1.6rem;}
@@ -610,11 +592,10 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .mydata-call-center .connect-call-center li [class^=icon]:last-child{align-self:center;}
 .mydata-call-center .connect-call-center li .tit{@include text($size: $text01, $line-height:1, $weight:bold);display:block;margin-bottom:1rem;}
 .mydata-call-center .connect-call-center li .num{@include text($size: $text03, $line-height:1);color:$kb-ui03;}
+.mydata-call-center .connect-call-center a [class^=icon]:first-child{margin-right:1.6rem;}
 .mydata-call-center [data-style=list]{color:$kb-ui01;}
 .mydata-call-center [data-style=list] li ~ li{margin-top:1.2rem;}
 
-// temp
-.mydata-call-center a [class^=icon]:first-child{margin-right:1.6rem;}
 
 //약관 및 정책
 .term-lists{margin-top:40px;}
@@ -730,7 +711,7 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .mm-manage-certificate .manage-certificate > li .tit:before{content:'';position:absolute;left:0;top:calc(50% - 3px);width:3px;height:3px;background-color:$kb-ui04;}
 .mm-manage-certificate .manage-certificate > li .icon-link_24{float:right;}
 .mm-manage-certificate .btn-text{width:100%; display: inline-block; text-align: center;}
-
+.mm-manage-certificate .btn-line{margin-top:73px;}
 //스마트폰(승인번호)
 .approval-number .kb-form{width: 100%; display:block;margin-bottom: 96px; clear: both;}
 .approval-number .kb-form .kb-form_inner{width:100%}
@@ -797,7 +778,6 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .pointree .search-month{margin-top:6.1rem;}
 .pointree .no-data{margin-top:10rem;}
 .pointree .kb-sec:first-of-type .tab_button{margin:2.6rem 0 2rem;}
-// .pointree .search-month{margin-top:32px;}
 .pointree .banner-about-pointree{padding:2.4rem 2.2rem;margin:2rem -0.8rem 0;border-radius:0.8rem;background:#fcf1ed url(../images/menu/pointree.png) no-repeat right 0 top 0;background-size:auto 95%;}
 .pointree .banner-about-pointree .tit{font-size:2rem;font-weight:bold;}
 .pointree .banner-about-pointree .tit + p{@include text($size:16px);margin-top:2rem;}
@@ -808,8 +788,8 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .pointree-list .tit{display:block;margin-top:1rem;font-weight:bold;}
 .pointree-list li p{margin-top:1.5rem;font-size:1.6rem;}
 .pointree-list li p .num{font-size:15px;}
-.pointree-list li .point{position:absolute;right:2px;top:50%;transform:translateY(-50%);font-size:1.9rem;font-weight:bold;color:$color-blue;}
-.pointree-list li .point:after{content:'P';padding-left:0.3rem;font-family:'KBFGText';font-size:1.8rem;color:$kb-ui02;}
+.pointree-list li .point{position:absolute;right:2px;top:50%;transform:translateY(-50%);font-size:1.9rem;font-family:roboto;font-weight:bold;color:$color-blue;}
+.pointree-list li .point::after{content:'P';font-family:'KBFGText';font-size:1.8rem;color:$kb-ui02;}
 .pointree-list + .btn-view-more{width:100%;margin-top:32px;padding:4px 0;}
 
 .bottom-sheet .event-result{text-align:center;}
@@ -819,7 +799,6 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .bottom-sheet .event-result dd{@include text;margin-top:28px;text-align:left;}
 .app-lnb + .app-content .kb-sec:first-child > .tab_button{margin-top:1.2rem;}
 
-// .recommend-to-friend .kb-sec:first-of-type{/*margin-top:2rem;*/border-bottom:1rem solid #ebeef0;}
 .recommend-to-friend .kb-sec:first-of-type .tab_button{margin-top:2.8rem;margin-bottom:2rem;}
 .recommend-to-friend .rtf-code{padding:2.8rem;margin-top:3.2rem;margin-bottom:4.5rem;font-weight:bold;text-align:center;color:#287eff;background-color:$kb-ui10;}
 .recommend-to-friend .event-img{margin:0 -2.4rem;text-align:center;}
@@ -851,21 +830,16 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .reward-benefit .search-bar{margin-top:32px;}
 .reward-benefit .condition-area{margin-top:1rem;}
 .reward-benefit .no-data{margin-top:10rem;}
-// .reward-benefit .no-data{margin-top:10.3rem;}
 .reward-benefit .no-data p{margin-top:2rem;line-height:1.17;}
-// .reward-benefit .reward-benefit-list{margin-top:3.2rem;}
-//.reward-benefit .reward-benefit-list li > a{position:relative;overflow:hidden;display:flex;flex-flow:column;justify-content:center;height:calc((100vw - 48px) * 0.41);padding-left:25px;padding-right:34%;border-radius:2px;}
 .reward-benefit .reward-benefit-list li{padding-bottom:20px;border-bottom:1px solid $kb-ui09;}
 .reward-benefit .reward-benefit-list li + li{margin-top:20px;}
 .reward-benefit .reward-benefit-list li > a{position:relative;border-radius:2px;}
-//.reward-benefit .reward-benefit-list li .img{position:absolute;left:0;top:0;right:0;bottom:0;}
 .reward-benefit .reward-benefit-list li .img,
 .reward-benefit .reward-benefit-list li .img img{width:100%;}
 .reward-benefit .reward-benefit-list li .tit,
 .reward-benefit .reward-benefit-list li .date,
 .reward-benefit .reward-benefit-list li .application-available-number{position:relative;}
 .reward-benefit .reward-benefit-list li .tit{margin-top:1.7rem;@include ellipsisMulti($size: 18px, $line : 2, $lh: 25px, $fixH : false);font-weight:bold;}
-//.reward-benefit .reward-benefit-list li .date{@include number($size: 15px);display:block;margin-top:4px;line-height:1;color:$kb-ui03;}
 .reward-benefit .reward-benefit-list li .date{display:block;margin-top:1.2rem;@include number($size: 15px, $line-height:1);color:$kb-ui05;}
 .reward-benefit .reward-benefit-list li .application-available-number{margin-top:1.3rem;font-size:14px;font-weight:bold;color:$color-red;}
 .reward-benefit .reward-benefit-list li .application-available-number .num{font-size:1.5rem;}

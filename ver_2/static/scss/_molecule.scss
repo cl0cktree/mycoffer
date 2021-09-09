@@ -541,7 +541,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .description-list dd.amount,
 .description-list dd.stock {display: block;}
 .description-list dd.amount .num,
-.description-list dd.stock .num {font-size: 17px; position: relative; /* bottom: 1px; */ right: 2px;}
+.description-list dd.stock .num {font-size: 17px;}
 .description-list dd.plus {color: $color-red;}
 .description-list dd.minus {color: $color-blue;}
 .description-list strong {font-weight: bold;}
@@ -603,13 +603,17 @@ ul.radio-group > li + li{margin-top:20px;}
 .credit-list-amount{padding:0.5rem 0;border-top:1px solid $kb-ui09;border-bottom:1px solid $kb-ui09}
 .credit-list-amount dt{margin:0.6rem 0}
 .credit-list-amount .amount{line-height:1.8}
-.credit-list-amount .amount .num{font-size:1.9rem}
+// .credit-list-amount .amount .num[data-unit-after]::after{font-size:1.8rem}
 .credit-list-amount .amount span{font-size:1.9rem;font-weight:bold}
 .credit-list-amount .income .num,
 .credit-list-amount .num.income{color:$color-blue}
 .credit-list-amount .expense .num,
 .credit-list-amount .num.expense{color:$color-red}
 .credit-list-amount .transfer .num{color:$kb-ui03}
+.credit-list-amount .income .num[data-unit-after]::after,
+.credit-list-amount .num.income[data-unit-after]::after,
+.credit-list-amount .expense .num[data-unit-after]::after,
+.credit-list-amount .num.expense[data-unit-after]::after{color:$kb-ui02}
 .credit-list > dt{position:relative;display:block;padding-top:2.4rem;border-bottom:0}
 .credit-list > dt.form-checkbox{margin-top:2.4rem;padding-top:0}
 .credit-list > dd{padding:1.2rem 0 2rem;border-bottom:1px solid $kb-ui09}
@@ -637,7 +641,8 @@ ul.radio-group > li + li{margin-top:20px;}
 .credit-list dt [class^="icon-"]{position:absolute;top:50%;left:0;width:3.2rem;height:3.2rem}
 .credit-list dt [class^="icon-"] + .info{margin-top:0}
 .credit-list dd{display:flex;flex-wrap:wrap;flex-direction:column;justify-content:flex-end;text-align:right}
-.credit-list dd .amount{color:$kb-ui02}
+.credit-list dd .amount,
+.credit-list dd .amount .num[data-unit-after]::after{color:$kb-ui02}
 .credit-list dd .amount .num{color:$kb-ui02;font-weight:bold}
 .credit-list dd .amount.expense .num{color:$color-red}
 .credit-list dd .amount.income .num{color:$color-blue}
@@ -660,6 +665,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .credit-list_link-type .credit-list{padding-left:0;padding-right:0;border-bottom:1px solid $kb-ui09}
 .credit-list_link-type .credit-list dt,
 .credit-list_link-type .credit-list dd{border-bottom:0}
+.credit-list_link-type .credit-list .tag{line-height:1}
 .credit-list{font-size:16px;color:$kb-ui04}
 
 .kb-sec > .credit-list-group .group-tit{border-top:0}
@@ -963,4 +969,13 @@ ul.radio-group > li + li{margin-top:20px;}
 .time-limit .timer i {position: absolute; left: 0; top: 50%; margin-top: -10px;}
 .time-limit .extension {float: right;}
 .time-limit .help {margin-top: 20px; clear: both; float: right;}
+
+.order-change-list > li{position:relative;padding-right:40px;}
+.order-change-list .order-change{position:absolute;right:0;top:50%;transform:translateY(-50%)}
+.order-change{display:flex;flex-flow:column;height:60px;}
+.order-change > button{position:relative;flex:0 0 30px;width:30px;height:30px;}
+.order-change > button span{@include ir;}
+.order-change > button:before{content:'';position:absolute;left:8px;width:13px;height:8px;background:url(../images/common/common.png) no-repeat;background-size:160px;}
+.order-change .btn-order-prev:before{bottom:6px;background-position:-100px -70px;}
+.order-change .btn-order-next:before{top:6px;background-position:-115px -70px;}
 

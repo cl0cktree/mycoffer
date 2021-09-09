@@ -124,11 +124,6 @@ ul[data-style=list] li > ul{margin-top:10px;}
 ul[data-style=list].sm li,
 [data-style=list].sm:not(ul){font-size:15px;line-height:22px;}
 
-.annotation{position:relative;padding-left:17px;font-size:14px;line-height:22px;color:$kb-ui03}
-.annotation::before{content:'\002A';position:absolute;top:0.3rem;left:0}
-.annotation[data-style=exclamation]{padding-left:22px;color:$kb-ui04;}
-.annotation[data-style=exclamation]::before{content:'';width:2rem;height:2rem;top:0.1rem;background-image:url(../images/common/common.png);background-repeat:no-repeat;background-size:16.2rem;background-position: -6.6rem -11.8rem;}
-
 .icon-arrow-right{@include iconBullet($direction: 'right', $width: 9px, $thick: 1px, $color: $kb-ui05);}
 .icon-arrow-left{@include iconBullet($direction: 'left', $width: 9px, $thick: 1px, $color: $kb-ui05);}
 .icon-arrow-up{@include iconBullet($direction: 'up', $width: 16px, $thick: 2px, $color: $kb-ui05);}
@@ -238,6 +233,8 @@ textarea:focus + .byte .current{color:$kb-ui02;}
 p.simple-message {position: relative;margin-top: 2rem; padding-left: 2.4rem; color: $kb-ui04; @include text($text03, normal);}
 p.simple-message::before {content:'';position: absolute;left:0;top:0;width:20px;height:20px;background:url(../images/common/common.png) no-repeat -24px -20px;background-size:160px;}
 p.simple-message.align-r{float:right;}
+p.simple-message .num{font-size:1.5rem;}
+p.simple-message .num:after{font-size:$text03;font-weight:inherit;}
 
 .agree-grade-graph {display: flex;}
 .agree-grade-graph .grade {position: relative; flex: 1; text-align: center; font-size: 14px; color: $kb-ui04;}
@@ -285,6 +282,8 @@ p.simple-message.align-r{float:right;}
 .tag-label[data-state="error"],
 .tag-label[data-state="danger"]{border-color:$color-red;color:$color-red}
 .tag-label[data-state="type"]{border-color:#9e6eda;color:#9e6eda}
+.tag-label[data-state="global"]{border-color:$kb-ui07;color:$kb-ui03}
+.tag-label[data-state="low-danger"]{border-color:$color-blue;color:$color-blue}
 
 .tag-label[data-state="very-stable"],
 .tag-label[data-state="stable"],
@@ -298,7 +297,7 @@ p.simple-message.align-r{float:right;}
 .tag-label[data-state="concern"]{background-color: #ffefee; color: #fb0000;}
 
 .tag-label.t01{font-size:1.6rem;color:$kb-ui04;border-color:$kb-ui09}
-.tag-label.t02{padding:0;border:0;background-color:transparent;font-weight:normal}
+.tag-label.t02{padding:0;border:0;background-color:transparent;font-weight:normal;border-radius:0;}
 .tag-label.t03{font-size:1.3rem;color:$kb-ui11;height:2.4rem;padding:0 0.8rem;line-height:2.4rem;border:none;border-radius:0.2rem}
 .tag-label.t03[data-state="active"],
 .tag-label.t03[data-state="today"]{background-color:$color-blue}

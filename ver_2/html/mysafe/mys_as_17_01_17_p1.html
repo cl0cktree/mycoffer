@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- [MYS_AS_17_01_06_P1] 작성자: 유플리트 이현섭 -->
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "자산 | My금고"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header (for MyMoney) //-->
+		@@include('@@webRoot/html/_include/app-integrated-header.html',{
+			'pageTit' :'휴대폰',
+            'type':'close'
+		})
+		<!-- // app-header (for MyMoney) -->
+
+		<!-- app-container //-->
+		<div class="app-container">
+
+			<!-- app-content // -->
+			<main class="app-content my-safe-pop-phone my-asset pop-my-asset">
+                <section class="kb-sec">
+                    <div class="pop-notice header">
+                        <span>
+                            <strong class="h4">
+                                보유한 휴대폰 시세를 My 금고<br>에서 확인해보세요.
+                            </strong>
+                        </span>
+                        <em class="mt4">* 표시된 항목은 필수 입력 사항입니다.</em>
+                    </div>
+                </section>
+                
+                <section class="kb-sec mt28">
+                    <div class="kb-form not-ready no-transition phone-kind-form safe-flex100 mt28" data-status="">
+                        <label for="mysafe_21" class="phone-kind-title required">제조사</label>
+                        <div class="kb-form_inner form-select mt4">
+                            <button type="button" class="selected-option" data-call-layered="MYS_AS_17_01_17_BS1" id="mysafe_20"></button>
+                            <select name="" id="mysafe_21" title="제조사 선택">
+                                <option value="" selected>선택하세요</option>
+                                <option value="phonManufacturer01">삼성</option>
+                                <option value="phonManufacturer02">애플</option>
+                                <option value="phonManufacturer03">LG</option>
+                                <option value="phonManufacturer04">샤오미</option>
+                                <option value="phonManufacturer05">. . .</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="kb-form not-ready no-transition phone-input-kind phone-input-kind-1 safe-flex100 safe-display-none">
+                        <!-- <label for="mysafe_22"></label> -->
+                        <div class="kb-form_inner form-text">
+                            <input type="text" class="phone-kind-input" id="mysafe_22" placeholder="최대 10자를 입력해주세요." value="" maxlength="10">
+                            <button class="btn-data-clear phone-kind-clear"><i class="icon-data-clear_24">지우기</i></button>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="kb-sec mt28">
+                    <div class="kb-form not-ready no-transition phone-kind-form safe-flex100 mt28" data-status="">
+                        <label for="mysafe_24" class="phone-kind-title required">모델</label>
+                        <div class="kb-form_inner form-select mt4">
+                            <button type="button" class="selected-option" data-call-layered="MYS_AS_17_01_17_BS2" id="mysafe_23"></button>
+                            <select name="" id="mysafe_24" title="모델 선택">
+                                <option value="" selected>선택하세요</option>
+                                <option value="phonModel01">갤럭시 S20</option>
+                                <option value="phonModel02">갤럭시 S20+</option>
+                                <option value="phonModel03">갤럭시 노트</option>
+                                <option value="phonModel04">갤럭시 플립</option>
+                                <option value="phonModel05">. . .</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="kb-form not-ready no-transition phone-input-kind phone-input-kind-2 safe-flex100 safe-display-none">
+                        <!-- <label for="mysafe_25"></label> -->
+                        <div class="kb-form_inner form-text">
+                            <input type="text" class="phone-kind-input" id="mysafe_25" placeholder="최대 10자를 입력해주세요." value="" maxlength="10">
+                            <button class="btn-data-clear phone-kind-clear"><i class="icon-data-clear_24">지우기</i></button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="kb-sec mt28">
+                    <div class="kb-form not-ready no-transition phone-kind-form safe-flex100 mt28" data-status="">
+                        <label for="mysafe_27" class="phone-kind-title required">용량</label>
+                        <div class="kb-form_inner form-select mt4">
+                            <button type="button" class="selected-option" data-call-layered="MYS_AS_17_01_17_BS3" id="mysafe_26"></button>
+                            <select name="" id="mysafe_27" title="용량 선택">
+                                <option value="" selected>선택하세요</option>
+                                <option value="phonStorage01">128G</option>
+                                <option value="phonStorage02">256G</option>
+                                <option value="phonStorage03">1T</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="kb-form not-ready no-transition phone-input-kind phone-input-kind-3 safe-flex100 safe-display-none">
+                        <!-- <label for="mysafe_28"></label> -->
+                        <div class="kb-form_inner form-text">
+                            <input type="text" class="phone-kind-input" id="mysafe_28" placeholder="최대 10자를 입력해주세요." value="" maxlength="10">
+                            <button class="btn-data-clear phone-kind-clear"><i class="icon-data-clear_24">지우기</i></button>
+                        </div>
+                    </div>
+                </section>
+                <section class="kb-sec mt24">
+                    <label for="mysafe_29" class="tit phone-trans-titlte phone-price-info mt24">*휴대폰 시세</label>
+                    <div class="button-area safe-flex100">
+                        <button class="btn-line my-phone-value" disabled=""><span>조회</span></button>
+                    </div>
+                    <div class="kb-form phone-input-value safe-flex100 mt12 safe-display-none not-ready no-transition" data-status="info">
+                        <!-- <label for="mysafe_04">금액</label> -->
+                        <div class="kb-form_inner form-text">
+                            <input type="text" inputmode="numeric" class="phone-value-input" id="mysafe_29" placeholder="" value="10000000" data-unit="" data-action="autoSeperator" readonly=""><span class="unit" style="left: 75.7031px;">원</span>
+                        </div>
+                    </div>
+                    <p class="my-phone-trans-info info-msg">
+                        휴대폰 시세는 (주)민팃에서 제공하는
+                        <span class="safe-color-red">
+                            해당 단말기의 S급 시세로 시간이 지남에 따라 감가상각으로 실제 시세와는 차이가 있을 수 있습니다.
+                        </span>
+                    </p>
+                </section>
+                <section class="kb-sec mt28">
+                    <div class="kb-form" data-status="">
+                        <div class="kb-form datepicker" data-status="">
+                            <label for="mysafe_30">구입일자</label>
+                            <div class="kb-form_inner form-text">
+                                <input type="text" class="mysafe-phone-datepicker" id="mysafe_30" placeholder="2021.01.01">
+                            </div>
+                            <em class="validation">에러 메세지 영역 입니다.</em>
+                        </div>
+                    </div>
+                </section>
+                <section class="kb-sec mt28">
+                    <div class="kb-form not-ready no-transition phone-input-memo safe-flex100">
+                        <label for="mysafe_31">메모</label>
+                        <div class="kb-form_inner form-text">
+                            <input type="text" class="phone-memo-input" id="mysafe_31" placeholder="최대 10자를 입력해주세요." value="" maxlength="10">
+                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                        </div>
+                    </div>
+                </section>
+                <section class="kb-sec sticky-bottom">
+                    <div class="btn-area">
+                        <button class="btn-solid gray"><span>취소</span></button>
+                        <button class="btn-solid my-phone-enrollment"><span>등록</span></button>
+                    </div>
+                </section>
+
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
+		<div class="layered">
+            @@include('@@webRoot/html/mysafe/layered/MYS_AS_17_01_17_BS1.html')
+            @@include('@@webRoot/html/mysafe/layered/MYS_AS_17_01_17_BS2.html')
+            @@include('@@webRoot/html/mysafe/layered/MYS_AS_17_01_17_BS3.html')
+            @@include('@@webRoot/html/_layered/bs-calendar.html')
+		</div>
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+    <script>
+        var phone_kind_input; //기타자산 직접 입력 시 공백여부 확인 및 값 확인용.
+        var safe_phon_sel_1=0; //제조사 선택 확인용.
+        var safe_phon_sel_2=0; //모델 선택 확인용.
+        var safe_phon_sel_3=0; //용량 선택 확인용.
+        var price_check=0;
+        // var $my_phone_value_info=$('.my-phone-value'); //.my-phone-value 선호출용.
+        var $my_phone_value=$('.my-phone-value'); //.my-phone-value 선호출용.
+        var $my_phone_enrollment=$('.my-phone-enrollment'); //.my-phone-enrollment 선호출용.
+        var $phone_value_input=$('.phone-value-input');
+        var $mysafe_phone_datepicker=$('.mysafe-phone-datepicker');
+        var data_split_year = $('.calendar-nav').children('strong').text().split('년')[0];
+        var data_split_year_1 = $('.calendar-nav').children('strong').text().split('년')[1];
+        var data_split_month_0 = data_split_year_1.split('월')[0];
+        var data_split_month = data_split_month_0.slice(-2,3);
+        var data_split_day='';
+        var currentVal=0;
+        var dataVal;
+        var changedDate;
+
+        // $('.btn-datepicker').attr({'data-page-id':'MYS_AS_17_01_06_BS2','data-call-layered':'bsCalendar'});
+        
+        $('.ui-datepicker-calendar').find('td').on('click',function(event){
+            
+            changed = $('#datepicker').datepicker('getDate');
+            // console.log(this);
+            // console.log($(this).children('.ui-state-default').html());
+            // data_split_day=$('.ui-state-active').text();
+            // console.log(data_split_year+data_split_month+changedDate);
+            changedDate = $('.ui-datepicker-calendar').find('.ui-state-active').html();
+
+        });
+        $('.btn-solid').on('click',function(){
+            $('.mysafe-giftcard-datepicker').val(data_split_year+'.'+data_split_month+'.'+changedDate);
+        });
+
+        /*-----input에 대한 바른 데이터 입력, 활성 및 비활성, 틀린 데이터 입력에 대한
+               동작 예시 함수로 본격적인 검증식 및 계산식은 프로그램밍이 필요함.-------*/
+        $('.phone-value-input').on('propertychange change keyup paste input', function(event) {//금액 입력시 변화 된 값 인식.
+            currentVal = $phone_value_input.val();
+            var oldVal;
+            if(currentVal == oldVal) {
+                return;
+            }
+            oldVal = currentVal;
+            // all_on_fun();
+        });
+        $('.mysafe-phone-datepicker').on('propertychange change keyup paste input', function(event) {//일정 입력시 변화 된 값 인식.
+            dataVal = $mysafe_phone_datepicker.val();
+            var oldDate;
+            if(dataVal == oldDate) {
+                return;
+            }
+            oldDate = dataVal;
+            // all_on_fun();
+        });
+        function all_on_fun(){//최종 등록 버튼 활성화 함수-기타자산 직접입력 완료/기타자산 선택이 선결/기타자산 금액이 입력 되면 활성화.
+            // phone_kind_input=document.getElementById('mysafe_16').value;
+            console.log('sel_1 = '+safe_phon_sel_1+' / sel_2 = '+safe_phon_sel_2+' / sel_3 = '+safe_phon_sel_3);
+            // if (phone_kind_input!==''){
+            //     safe_phon_sel_2=1;
+            // }else{
+            //     safe_phon_sel_2=0;
+            // }
+            console.log('out - '+dataVal);
+            if ((safe_phon_sel_1>0)&&(safe_phon_sel_2>0)&&(safe_phon_sel_3>0)&&(price_check>0)){
+                $my_phone_enrollment.removeAttr('disabled');
+                // console.log('t - '+currentVal);
+            }else{
+                $my_phone_enrollment.removeAttr('disabled');
+                $my_phone_enrollment.attr('disabled','disabled');
+                // console.log('f - '+currentVal);
+            }
+        };
+        function safe_btn_on(){//조회버튼 및 그 제목 활성화.
+            if ((safe_phon_sel_1>0)&&(safe_phon_sel_2>0)&&(safe_phon_sel_3>0)){
+                $my_phone_value.removeAttr('disabled');
+            }else{
+                $my_phone_value.attr('disabled','disabled');
+            }
+        };
+
+        function value_trans_ok(){//조회버튼 클릭 시 입력창(가격-readonly)노출 됨.
+            $('.my-phone-trans-info').addClass('safe-display-none');
+            $('.phone-input-value').removeClass('safe-display-none');
+        };
+        function value_trans_cancle(){//value_trans_ok() 함수의 반대 동작.
+            $('.my-phone-trans-info').removeClass('safe-display-none');
+            $('.phone-input-value').addClass('safe-display-none');
+        };
+
+        $my_phone_value.on('click',function(){//조회버튼 클릭시 숨어 있던 가격 부분이 노출 되는 함수의 트리거.
+            if ((safe_phon_sel_1>0)&&(safe_phon_sel_2>0)&&(safe_phon_sel_3>0)){
+                value_trans_ok();
+                price_check=1;
+            }else{
+                // value_trans_cancle();
+                price_check=0;
+            }
+            safe_btn_on();
+            // all_on_fun();
+        });
+
+        // $('input[type=text]').focusin(function(){//입력창에 포커스인하면 제목이 검은색으로 활성화.
+        //     if (($('input[type=text]').val() !== '')){
+        //         $(this).parent().parent().prev('.tit').removeClass('empty-phone-unit-info');
+        //         $(this).parent().parent().prev('.tit').prev('.tit').removeClass('empty-phone-unit-info');
+        //     }
+        //     $(this).parent().parent().prev('.tit').removeClass('empty-phone-unit-info');
+        //     $(this).parent().parent().prev('.tit').prev('.tit').removeClass('empty-phone-unit-info');
+        // });
+        // $('input[type=text]').focusout(function(){//입력창에 포커스아웃하면 제목이 회색으로 비활성화.
+        //     if(($('input[type=text]').val() !== '')){
+        //         $(this).parent().parent().prev('.tit').addClass('empty-phone-unit-info');
+        //         $(this).parent().parent().prev('.tit').prev('.tit').addClass('empty-phone-unit-info');
+        //     }
+        //     $(this).parent().parent().prev('.tit').addClass('empty-phone-unit-info');
+        //     $(this).parent().parent().prev('.tit').prev('.tit').addClass('empty-phone-unit-info');
+        // });
+        $('.phonManufacturer').on('click',function(){//기타자산 형태선택 바텀시트 선택 시 동작부분.
+            // document.getElementById('mysafe_16').value='';
+            // safe_phon_sel_2=0;
+            if ($(this).is('.phonManufacturer06')){
+                $('.phone-input-kind-1').removeClass('safe-display-none');
+                safe_phon_sel_1=1;
+            }else{
+                $('.phone-input-kind-1').removeClass('safe-display-none');
+                $('.phone-input-kind-1').addClass('safe-display-none');
+                safe_phon_sel_1=2;
+            }
+            safe_btn_on();
+            // all_on_fun();
+        });
+        $('.phonModel').on('click',function(){//기타자산 형태선택 바텀시트 선택 시 동작부분.
+            // document.getElementById('mysafe_16').value='';
+            // safe_phon_sel_2=0;
+            if ($(this).is('.phonModel06')){
+                $('.phone-input-kind-2').removeClass('safe-display-none');
+                safe_phon_sel_2=1;
+            }else{
+                $('.phone-input-kind-2').removeClass('safe-display-none');
+                $('.phone-input-kind-2').addClass('safe-display-none');
+                safe_phon_sel_2=2;
+            }
+            // all_on_fun();
+        });
+        $('.phonStorage').on('click',function(){//기타자산 형태선택 바텀시트 선택 시 동작부분.
+            // document.getElementById('mysafe_16').value='';
+            // safe_phon_sel_2=0;
+            if ($(this).is('.phonStorage04')){
+                $('.phone-input-kind-3').removeClass('safe-display-none');
+                safe_phon_sel_3=1;
+            }else{
+                $('.phone-input-kind-3').removeClass('safe-display-none');
+                $('.phone-input-kind-3').addClass('safe-display-none');
+                safe_phon_sel_3=2;
+            }
+            safe_btn_on();
+            // all_on_fun();
+        });
+        $('.phone-kind-clear').on('click',function(){//기타자산 직접입력 삭제 버튼으로 클릭 시 관련된 기능들 리셋.
+            safe_phon_sel_2=0;
+            $my_phone_enrollment.removeAttr('disabled');
+            $my_phone_enrollment.attr('disabled','disabled');
+        });
+        /*--------------------------------------------------------------------*/
+    </script>
+</body>
+
+</html>

@@ -51,7 +51,7 @@
                     <div class="kb-form not-ready no-transition phone-input-kind phone-input-kind-1 safe-flex100 safe-display-none">
                         <!-- <label for="mysafe_22"></label> -->
                         <div class="kb-form_inner form-text">
-                            <input type="text" class="phone-kind-input" id="mysafe_22" onkeydown="all_on_fun()" placeholder="최대 10자를 입력해주세요." value="" maxlength="10">
+                            <input type="text" class="phone-kind-input" id="mysafe_22" placeholder="최대 10자를 입력해주세요." value="" maxlength="10">
                             <button class="btn-data-clear phone-kind-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                     <div class="kb-form not-ready no-transition phone-input-kind phone-input-kind-2 safe-flex100 safe-display-none">
                         <!-- <label for="mysafe_25"></label> -->
                         <div class="kb-form_inner form-text">
-                            <input type="text" class="phone-kind-input" id="mysafe_25" onkeydown="all_on_fun()" placeholder="최대 10자를 입력해주세요." value="" maxlength="10">
+                            <input type="text" class="phone-kind-input" id="mysafe_25" placeholder="최대 10자를 입력해주세요." value="" maxlength="10">
                             <button class="btn-data-clear phone-kind-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
                     </div>
@@ -97,7 +97,7 @@
                     <div class="kb-form not-ready no-transition phone-input-kind phone-input-kind-3 safe-flex100 safe-display-none">
                         <!-- <label for="mysafe_28"></label> -->
                         <div class="kb-form_inner form-text">
-                            <input type="text" class="phone-kind-input" id="mysafe_28" onkeydown="all_on_fun()" placeholder="최대 10자를 입력해주세요." value="" maxlength="10">
+                            <input type="text" class="phone-kind-input" id="mysafe_28" placeholder="최대 10자를 입력해주세요." value="" maxlength="10">
                             <button class="btn-data-clear phone-kind-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
                     </div>
@@ -125,7 +125,7 @@
                         <div class="kb-form datepicker" data-status="">
                             <label for="mysafe_30">구입일자</label>
                             <div class="kb-form_inner form-text">
-                                <input type="text" class="mysafe-phone-datepicker" id="mysafe_30" placeholder="2021.01.01" value="2021.06.10" onkeydown="all_on_fun()">
+                                <input type="text" class="mysafe-phone-datepicker" id="mysafe_30" placeholder="2021.01.01" value="2021.06.10">
                             </div>
                             <em class="validation">에러 메세지 영역 입니다.</em>
                         </div>
@@ -213,7 +213,7 @@
                 return;
             }
             oldVal = currentVal;
-            all_on_fun();
+            // all_on_fun();
         });
         $('.mysafe-phone-datepicker').on('propertychange change keyup paste input', function(event) {//일정 입력시 변화 된 값 인식.
             dataVal = $mysafe_phone_datepicker.val();
@@ -222,7 +222,7 @@
                 return;
             }
             oldDate = dataVal;
-            all_on_fun();
+            // all_on_fun();
         });
         function all_on_fun(){//최종 등록 버튼 활성화 함수-기타자산 직접입력 완료/기타자산 선택이 선결/기타자산 금액이 입력 되면 활성화.
             // phone_kind_input=document.getElementById('mysafe_16').value;
@@ -268,7 +268,7 @@
                 price_check=0;
             }
             safe_btn_on();
-            all_on_fun();
+            // all_on_fun();
         });
 
         // $('input[type=text]').focusin(function(){//입력창에 포커스인하면 제목이 검은색으로 활성화.
@@ -299,7 +299,7 @@
                 safe_phon_sel_1=2;
             }
             safe_btn_on();
-            all_on_fun();
+            // all_on_fun();
         });
         $('.phonModel').on('click',function(){//기타자산 형태선택 바텀시트 선택 시 동작부분.
             // document.getElementById('mysafe_16').value='';
@@ -312,7 +312,7 @@
                 $('.phone-input-kind-2').addClass('safe-display-none');
                 safe_phon_sel_2=2;
             }
-            all_on_fun();
+            // all_on_fun();
         });
         $('.phonStorage').on('click',function(){//기타자산 형태선택 바텀시트 선택 시 동작부분.
             // document.getElementById('mysafe_16').value='';
@@ -326,7 +326,7 @@
                 safe_phon_sel_3=2;
             }
             safe_btn_on();
-            all_on_fun();
+            // all_on_fun();
         });
         $('.phone-kind-clear').on('click',function(){//기타자산 직접입력 삭제 버튼으로 클릭 시 관련된 기능들 리셋.
             safe_phon_sel_2=0;

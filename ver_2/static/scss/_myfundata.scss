@@ -56,6 +56,7 @@
 .myfundata-menu-bs .kb-sec .img-box img{width:100%;height:auto}
 
 /* [MYS_SP_02_00_02] 부자스토리텔링 */
+.rich-storytelling .swiper-container{padding-bottom:4rem}
 .storytelling-wrap .item-box{border-radius:50%}
 .storytelling-wrap .item{position:absolute}
 //동전들
@@ -142,7 +143,7 @@
 .rich-storytelling-simulation .simulate-list .kb-form.select-bs .kb-form_inner input[role="button"]{display:inline-block;min-width:56px;max-width:min-content}
 
 /* [MYS_SP_02_00_04] 부자스토리탤링 시뷸레이션 완료 */
-.rich-simulation-complete .summary-desc .summary-img{height:135px}
+.rich-simulation-complete .summary-desc .summary-img{height:11rem}
 .rich-simulation-complete .rich-finance-compare{margin-top:32px}
 .rich-simulation-complete .rich-finance-compare > p{line-height:2.3rem}
 .rich-simulation-complete .rich-finance-compare .accordion,
@@ -163,7 +164,6 @@
 .comparison-list .data .amount+.amount{padding-top:0}
 .comparison-list .data .num{font-size:15px;font-weight:bold}
 .comparison-list .data .percent .num{font-size:17px}
-.comparison-list ul + .annotation{margin-top:12px}
 
 /* [MYS_SP_02_01_02]  나의 소비유형 > 소비유형선택 */
 .my-expense-type .summary-area{background:none}
@@ -180,20 +180,18 @@
 
 /* [MYS_SP_02_01_03]  나의 소비유형 > 소비유형선택 > 소비유형스토리텔링 */
 // car moving :뚜벅이싫어형
-.storytelling-wrap .car-moving .item::after{position:absolute;bottom:20px;right:-35px;content:'';display:block;width:35px;height:10px;background:url(../images/special/img_motion_item_wind.png) no-repeat;background-size:100% auto}
-.storytelling-wrap .car-moving .item{position:absolute;top:70px;left:100%;width:182px;height:150px;animation:carRunning 1.8s linear 1 forwards}
-.storytelling-wrap .car-moving .item .car{position:relative;width:153px;height:100%;animation:carStopMove 1.8s linear infinite forwards}
+.storytelling-wrap .car-moving .item::after{position:absolute;bottom:3rem;left:-2.8rem;content:'';display:block;width:3.2rem;height:2.1rem;background:url(../images/special/img_motion_item_wind.png) no-repeat;background-size:100% auto}
+.storytelling-wrap .car-moving .item{position:absolute;top:70px;right:100%;width:17.6rem;height:11.9rem;animation:carRunning 1.8s linear 1 forwards}
+.storytelling-wrap .car-moving .item .car{position:relative;width:100%;height:100%;animation:carStopMove 1.8s linear infinite forwards}
 .storytelling-wrap .car-moving .item .car::before,
-.storytelling-wrap .car-moving .item .car::after{position:absolute;content:'';display:block;width:37px;height:37px;border-radius:50%;background:url(../images/special/img_motion_item_wheel01.png) no-repeat;background-size:100% auto;animation:wheel 1s linear infinite forwards}
-.storytelling-wrap .car-moving .item .car::before{left:10px;bottom:0;}
-.storytelling-wrap .car-moving .item .car::after{right:10px;bottom:0;}
-.storytelling-wrap .car-moving .item .drops{position:absolute;top:50px;left:118px}
-.storytelling-wrap .car-moving .item .drops span{display:block;width:17px;height:20px;background:url(../images/special/img_motion_item_oildrop.png) no-repeat;background-size:auto 100%;animation:drop 3s ease infinite forwards}
-.storytelling-wrap .car-moving .item .drops span:nth-child(1){margin-left:3px;animation-duration:1.5s;animation-delay:0.5s}
-.storytelling-wrap .car-moving .item .drops span:nth-child(2){margin-top:12px;margin-left:17px;animation-delay:0.1s}
-.storytelling-wrap .car-moving .item .drops span:nth-child(3){margin-top:-5px;animation-duration:1.7s;animation-delay:0.3s}
-.storytelling-wrap .car-moving .item .drops span:nth-child(4){margin-top:-10px;margin-left:47px}
+.storytelling-wrap .car-moving .item .car::after{position:absolute;content:'';display:block;width:3.3rem;height:3.3rem;border-radius:50%;background:url(../images/special/img_motion_item_wheel01.png) no-repeat;background-size:100% auto;animation:wheel 1s linear infinite forwards}
+.storytelling-wrap .car-moving .item .car::before{left:0.95rem;bottom:-1.85rem;}
+.storytelling-wrap .car-moving .item .car::after{right:2.75rem;bottom:-1.85rem;}
 @keyframes carRunning{
+    0%{transform:translateX(0)}
+    100%{transform:translateX(130%)}
+}
+@keyframes carRunningLt{
     0%{transform:translateX(0)}
     100%{transform:translateX(-120%)}
 }
@@ -205,107 +203,113 @@
 }
 @keyframes wheel{
     from{transform:rotate(0deg)}
-    to{transform:rotate(-360deg)}
-}
-@keyframes drop{
-    0%{transform:translate(0, 0);opacity:1}
-    60%{transform:translate(10px, 10px);opacity:0}
-    100%{transform:translate(10px, 10px);opacity:0}
+    to{transform:rotate(360deg)}
 }
 // coffee-shower :커피샤워형
 .storytelling-wrap .coffee-shower{border-bottom-left-radius:50%;border-bottom-right-radius:50%;overflow:hidden}
-.storytelling-wrap .coffee-shower .coffee{position:absolute;left:50%;bottom:0;transform:translateX(-50%)}
-.storytelling-wrap .coffee-shower .coffee li{display:flex;justify-content:flex-end}
-.storytelling-wrap .coffee-shower .coffee span{display:block;width:44px;height:64px;transform:translateY(-40px);opacity:0;animation:falling 0.6s ease 1 forwards}
-.storytelling-wrap .coffee-shower .coffee span[data-idx="1"]{animation-delay:0.2s}
-.storytelling-wrap .coffee-shower .coffee span[data-idx="2"]{animation-delay:0.3s}
-.storytelling-wrap .coffee-shower .coffee span[data-idx="3"]{animation-delay:0.4s}
-.storytelling-wrap .coffee-shower .coffee span[data-idx="4"]{animation-delay:0.5s}
-.storytelling-wrap .coffee-shower .coffee span[data-idx="5"]{animation-delay:0.6s}
-.storytelling-wrap .coffee-shower .coffee span[data-idx="6"]{animation-delay:0.7s}
-.storytelling-wrap .coffee-shower .coffee span[data-idx="7"]{animation-delay:0.8s;animation:falling 0.6s ease 1 forwards, bounce 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) infinite forwards 2s}
-.storytelling-wrap .coffee-shower .coffee span[data-idx="8"]{animation-delay:0.9s}
+.storytelling-wrap .coffee-shower .coffee{left:10.5rem;top:9rem;width:8.8rem;height:11rem;opacity:0;animation:fadeDown 0.6s ease 1 forwards}
+.storytelling-wrap .coffee-shower .paper{left:7rem;top:14.5rem;width:6.2rem;height:6.3rem;opacity:0;animation:fadeUp 0.6s ease 1 forwards}
 .storytelling-wrap .coffee-shower .coin{top:0;left:0;width:100%;height:100%}
-.storytelling-wrap .coffee-shower .coin div{position:absolute;width:128px;height:37px}
-.storytelling-wrap .coffee-shower .coin div span{position:relative;z-index:10;display:block;width:51px;height:100%;margin:0 auto}
-.storytelling-wrap .coffee-shower .coin div::before,
-.storytelling-wrap .coffee-shower .coin div::after{position:absolute;top:0;content:'';display:block;width:42px;height:31px}
-.storytelling-wrap .coffee-shower .coin div::before{left:0;background:url(../images/special/img_motion_item_wing-lt.png) no-repeat;background-size:100% auto;transform-origin:center right;animation:wingLt 0.3s ease infinite forwards}
-.storytelling-wrap .coffee-shower .coin div::after{right:0;background:url(../images/special/img_motion_item_wing-rt.png) no-repeat;background-size:100% auto;transform-origin:center left;animation:wingRt 0.3s ease infinite forwards}
-.storytelling-wrap .coffee-shower .coin div:first-child{left:-80px;bottom:0;animation:flyingRt 2.8s linear infinite forwards 0.5s}
-.storytelling-wrap .coffee-shower .coin div:last-child{right:-120px;bottom:0;animation:flyingLt 2.8s linear infinite forwards 0.8s}
-@keyframes falling{
+.storytelling-wrap .coffee-shower .coin li{position:absolute}
+.storytelling-wrap .coffee-shower .coin li:nth-child(1){top:6.2rem;left:7.3rem;width:4rem;height:4rem;opacity:0;animation:fadeDown 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards 0.25s}
+.storytelling-wrap .coffee-shower .coin li:nth-child(2){top:5rem;right:8rem;width:2.8rem;height:1.1rem;opacity:0;animation:fadeDown 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards 0.45s}
+.storytelling-wrap .coffee-shower .coin li:nth-child(3){top:12.5rem;right:6.5rem;width:2.7rem;height:2.2rem;opacity:0;animation:fadeDown 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards 0.35s}
+// .storytelling-wrap .coffee-shower .coffee li{display:flex;justify-content:flex-end}
+// .storytelling-wrap .coffee-shower .coffee span{display:block;width:44px;height:64px;transform:translateY(-40px);opacity:0;animation:falling 0.6s ease 1 forwards}
+// .storytelling-wrap .coffee-shower .coffee span[data-idx="1"]{animation-delay:0.2s}
+// .storytelling-wrap .coffee-shower .coffee span[data-idx="2"]{animation-delay:0.3s}
+// .storytelling-wrap .coffee-shower .coffee span[data-idx="3"]{animation-delay:0.4s}
+// .storytelling-wrap .coffee-shower .coffee span[data-idx="4"]{animation-delay:0.5s}
+// .storytelling-wrap .coffee-shower .coffee span[data-idx="5"]{animation-delay:0.6s}
+// .storytelling-wrap .coffee-shower .coffee span[data-idx="6"]{animation-delay:0.7s}
+// .storytelling-wrap .coffee-shower .coffee span[data-idx="7"]{animation-delay:0.8s;animation:falling 0.6s ease 1 forwards, bounce 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) infinite forwards 2s}
+// .storytelling-wrap .coffee-shower .coffee span[data-idx="8"]{animation-delay:0.9s}
+// .storytelling-wrap .coffee-shower .coin{top:0;left:0;width:100%;height:100%}
+// .storytelling-wrap .coffee-shower .coin div{position:absolute;width:128px;height:37px}
+// .storytelling-wrap .coffee-shower .coin div span{position:relative;z-index:10;display:block;width:51px;height:100%;margin:0 auto}
+// .storytelling-wrap .coffee-shower .coin div::before,
+// .storytelling-wrap .coffee-shower .coin div::after{position:absolute;top:0;content:'';display:block;width:42px;height:31px}
+// .storytelling-wrap .coffee-shower .coin div::before{left:0;background:url(../images/special/img_motion_item_wing-lt.png) no-repeat;background-size:100% auto;transform-origin:center right;animation:wingLt 0.3s ease infinite forwards}
+// .storytelling-wrap .coffee-shower .coin div::after{right:0;background:url(../images/special/img_motion_item_wing-rt.png) no-repeat;background-size:100% auto;transform-origin:center left;animation:wingRt 0.3s ease infinite forwards}
+// .storytelling-wrap .coffee-shower .coin div:first-child{left:-80px;bottom:0;animation:flyingRt 2.8s linear infinite forwards 0.5s}
+// .storytelling-wrap .coffee-shower .coin div:last-child{right:-120px;bottom:0;animation:flyingLt 2.8s linear infinite forwards 0.8s}
+@keyframes fadeDown{
     0%{transform:translateY(-50px);opacity:0}
     100%{transform:translateY(0);opacity:1}
 }
-@keyframes wingLt{
-    0%{transform:rotate(15deg)}
-    50%{transform:rotate(-15deg)}
-    100%{transform:rotate(15deg)}
+@keyframes fadeUp{
+    0%{transform:translateY(50px);opacity:0}
+    100%{transform:translateY(0);opacity:1}
 }
-@keyframes wingRt{
-    0%{transform:rotate(-15deg)}
-    50%{transform:rotate(15deg)}
-    100%{transform:rotate(-15deg)}
-}
-@keyframes flyingRt{
-    0%{transform:translate(0, 0) rotate(20deg);opacity:1}
-    35%{transform:translate(80%, -275%) rotate(20deg);opacity:1}
-    70%{transform:translate(160%, -550%) rotate(20deg);opacity:0}
-    100%{transform:translate(160%, -550%) rotate(20deg);opacity:0}
-}
-@keyframes flyingLt{
-    0%{transform:translate(0, 0) rotate(-20deg) scale(0.7);opacity:1}
-    35%{transform:translate(-80%, -200%) rotate(-20deg) scale(0.7);opacity:1}
-    70%{transform:translate(-180%, -400%) rotate(-20deg) scale(0.7);opacity:0}
-    100%{transform:translate(-180%, -400%) rotate(-20deg) scale(0.7);opacity:0}
-}
-@keyframes bounce{
-    0%{transform:translateY(0)}
-    50%{transform:translateY(-5px)}
-    60%{transform:translateY(0)}
-    100%{transform:translateY(0)}
-}
+// @keyframes wingLt{
+//     0%{transform:rotate(15deg)}
+//     50%{transform:rotate(-15deg)}
+//     100%{transform:rotate(15deg)}
+// }
+// @keyframes wingRt{
+//     0%{transform:rotate(-15deg)}
+//     50%{transform:rotate(15deg)}
+//     100%{transform:rotate(-15deg)}
+// }
+// @keyframes flyingRt{
+//     0%{transform:translate(0, 0) rotate(20deg);opacity:1}
+//     35%{transform:translate(80%, -275%) rotate(20deg);opacity:1}
+//     70%{transform:translate(160%, -550%) rotate(20deg);opacity:0}
+//     100%{transform:translate(160%, -550%) rotate(20deg);opacity:0}
+// }
+// @keyframes flyingLt{
+//     0%{transform:translate(0, 0) rotate(-20deg) scale(0.7);opacity:1}
+//     35%{transform:translate(-80%, -200%) rotate(-20deg) scale(0.7);opacity:1}
+//     70%{transform:translate(-180%, -400%) rotate(-20deg) scale(0.7);opacity:0}
+//     100%{transform:translate(-180%, -400%) rotate(-20deg) scale(0.7);opacity:0}
+// }
+// @keyframes bounce{
+//     0%{transform:translateY(0)}
+//     50%{transform:translateY(-5px)}
+//     60%{transform:translateY(0)}
+//     100%{transform:translateY(0)}
+// }
 // delivery :외식이좋아형
 .storytelling-wrap .delivery .item{position:absolute;top:50%;left:50%;transform:translate(-55%, -40%)}
-.storytelling-wrap .delivery .motocycle{position:relative;left:138%;width:187px;height:132px;animation:carRunning 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards}
+.storytelling-wrap .delivery .item::after{position:absolute;bottom:4.2rem;right:-2.5rem;content:'';display:block;width:3.2rem;height:2.1rem;background:url(../images/special/img_motion_item_wind.png) no-repeat;background-size:100% auto;transform:scaleX(-1)}
+.storytelling-wrap .delivery .motocycle{position:relative;left:123%;width:14.4rem;height:12.8rem;animation:carRunningLt 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards}
 .storytelling-wrap .delivery .motocycle img{position:relative;z-index:10}
 .storytelling-wrap .delivery .motocycle::before,
-.storytelling-wrap .delivery .motocycle::after{position:absolute;content:'';display:block;width:40px;height:40px;border-radius:50%;background:url(../images/special/img_motion_item_wheel.png) no-repeat;background-size:100% auto;animation:wheel 0.8s linear infinite forwards}
-.storytelling-wrap .delivery .motocycle::before{left:10px;bottom:0}
-.storytelling-wrap .delivery .motocycle::after{right:38px;bottom:0}
+.storytelling-wrap .delivery .motocycle::after{position:absolute;content:'';display:block;width:3.3rem;height:3.3rem;border-radius:50%;background:url(../images/special/img_motion_item_wheel.png) no-repeat;background-size:100% auto;animation:wheel 0.8s linear infinite forwards}
+.storytelling-wrap .delivery .motocycle::before{left:1rem;bottom:0}
+.storytelling-wrap .delivery .motocycle::after{right:0.8rem;bottom:0}
 .storytelling-wrap .delivery .food{position:absolute;transform:translateX(200px);animation:foodFollow 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards 0.1s}
-.storytelling-wrap .delivery .food01{top:15px;right:13px;width:68px;height:56px;z-index:10}
-.storytelling-wrap .delivery .food02{top:-18px;right:-15px;width:64px;height:62px;animation-delay:0.25s}
-.storytelling-wrap .delivery .food03{top:54px;right:-42px;width:39px;height:32px;animation-delay:0.45s}
+.storytelling-wrap .delivery .food01{top:0.7rem;right:1.2rem;width:6.1rem;height:5.6rem;z-index:10}
+.storytelling-wrap .delivery .food02{top:-2rem;right:-0.1rem;width:4.8rem;height:5.5rem;animation-delay:0.25s}
+.storytelling-wrap .delivery .food02::after{position:absolute;top:0.3rem;right:-3rem;content:'';display:block;width:2.8rem;height:2.6rem;background:url(../images/special/img_motion_item_chip_stick.png) no-repeat;background-size:100% auto}
 @keyframes foodFollow {
     0%{transform:translateX(200px)}
     100%{transform:translateX(0)}
 }
 // culture life :문화생활형
 .storytelling-wrap .culture-life{border-radius:50%}
-.storytelling-wrap .culture-life .cinema{position:absolute;top:54px;left:42px}
-.storytelling-wrap .culture-life .ticket{position:absolute;top:26px;right:-54px;width:110px;height:83px}
+.storytelling-wrap .culture-life .cinema{position:absolute;top:54px;left:7.2rem}
+.storytelling-wrap .culture-life .ticket{position:absolute;top:7.6rem;right:-3.4rem;width:7.9rem;height:6.2rem}
 .storytelling-wrap .culture-life .ticket img{transform:translate(-55px, 10px);opacity:0;animation:slideIn_rtop 0.6s ease 1 forwards 0.9s}
-.storytelling-wrap .culture-life .film{width:138px;height:138px}
+.storytelling-wrap .culture-life .film{width:12.6rem;height:12.6rem}
+.storytelling-wrap .culture-life .film::before{position:absolute;top:4.3rem;left:-3.9rem;content:'';display:block;width:14.1rem;height:9.7rem;background:url(../images/special/img_motion_item_roll_film.png) no-repeat;background-size:100% auto;opacity:0;;animation:fadeIn 0.4s linear 1 forwards 0.7s}
 .storytelling-wrap .culture-life .film img{position:relative;z-index:10;transform:translateX(170%) rotate(0);animation:tumbleInto 0.7s linear 1 forwards}
-.storytelling-wrap .culture-life .film::before{position:absolute;left:calc(50% + 20px);bottom:20px;content:'';display:block;width:104px;height:30px;background:url(../images/special/img_motion_item_film.png) no-repeat;background-size:100% auto;transform:translateX(-60%);opacity:0;animation:slideIn 0.6s ease 1 forwards 0.8s}
-.storytelling-wrap .culture-life .popcorn{position:absolute;top:calc(50% - 10px);left:calc(50% - 10px);z-index:10;width:63px;height:88px;}
+.storytelling-wrap .culture-life .popcorn{position:absolute;top:calc(50% - 10px);left:50%;z-index:10;width:6.7rem;height:8.5rem}
 .storytelling-wrap .culture-life .popcorn::before,
 .storytelling-wrap .culture-life .popcorn::after{position:absolute;content:'';display:block;transform:translateY(20px) scale(0);animation:popInto 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards 1.2s}
-.storytelling-wrap .culture-life .popcorn::before{top:-11px;left:calc(50% + 12px);width:19px;height:18px;background:url(../images/special/img_motion_item_corn.png) no-repeat;background-size:100% auto}
-.storytelling-wrap .culture-life .popcorn::after{top:17px;left:calc(50% + 37px);width:12px;height:11px;background:url(../images/special/img_motion_item_corn-small.png) no-repeat;background-size:100% auto;animation-delay:1.4s}
+.storytelling-wrap .culture-life .popcorn::before{top:-11px;left:calc(50% + 1.8rem);width:1.6rem;height:1.6rem;background:url(../images/special/img_motion_item_corn.png) no-repeat;background-size:100% auto}
+.storytelling-wrap .culture-life .popcorn::after{top:0;left:calc(50% + 37px);width:1rem;height:1rem;background:url(../images/special/img_motion_item_corn-small.png) no-repeat;background-size:100% auto;animation-delay:1.4s}
 .storytelling-wrap .culture-life .popcorn img{opacity:0;transform:translateY(50px);animation:fallingBounce 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards 1s}
 @keyframes tumbleInto{
     0%{transform:translateX(170%) rotate(0)}
     100%{transform:translateX(0) rotate(-360deg)}
 }
-@keyframes slideIn{
-    0%{opacity:1;transform:translateX(-60%)}
-    100%{opacity:1;transform:translateX(0)}
+@keyframes fadeIn{
+    0%{opacity:0}
+    100%{opacity:1}
 }
 @keyframes slideIn_rtop{
-    0%{opacity:1;transform:translate(-55px, 10px)}
+    0%{opacity:1;transform:translate(-2rem, 1rem)}
     100%{opacity:1;transform:translate(0, 0)}
 }
 @keyframes fallingBounce{

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
-<!-- [MYS_AS_17_01_04_p1] 작성자: 유플리트 이현섭 -->
+<!-- [MYS_AS_17_01_04_p2] 작성자: 유플리트 이현섭 -->
 <head>
 	@@include('@@webRoot/html/_include/app-head.html',{
 		"title": "자산 | My금고"
@@ -10,12 +10,12 @@
 <body>
 	@@include('@@webRoot/html/_include/app-a11y.html')
 	<div class="app my-safe-back-top">
-		<!-- app-header //-->
+		<!-- app-header (for MyMoney) //-->
 		@@include('@@webRoot/html/_include/app-integrated-header.html',{
 			'pageTit' :'현금(원화/외화)',
             'type':'close'
 		})
-		<!-- // app-header -->
+		<!-- // app-header (for MyMoney) -->
 
 		<!-- app-container //-->
 		<div class="app-container">
@@ -26,13 +26,15 @@
 				
         <section class="kb-sec">
             <div class="pop-notice">
-                <span>외화현찰 등록시 KB외환 매매기준율을 적용한 <br>
-                    원화환산금액을 확인할 수 있습니다.</span>
+                <span>
+                    현금자산을 My 금고에 보관해보세요. 외화 <br>
+                    등록 시 원화환산금액을 확인할 수 있습니다.
+                </span>
                 <em>* 표시된 항목은 필수 입력 사항입니다.</em>
             </div>
         </section>
         <section class="kb-sec cash-registration">
-            <div class="kb-form " data-status="">
+            <div class="kb-form  no-transition" data-status="">
                 <label for="cashType" class="required">통화</label>
                 <div class="kb-form_inner form-select">
                     <button type="button" class="selected-option" data-call-layered="mys_as_04_02_00_p1"></button>
@@ -66,7 +68,7 @@
         </section>
         <section class="kb-sec cash-type">
         <!--외화//-->                
-            <div class="kb-form cash_2" data-status="">
+            <div class="kb-form cash_2 not-ready no-transition" data-status="">
                 <label for="kbFormInput31" class="required">보유금액</label>
                 <div class="kb-form_inner form-text">
                     <input type="text" inputmode="decimal" id="kbFormInput31" placeholder="금액을 입력해 주세요" value="">
@@ -74,19 +76,19 @@
                 </div>
                 <em class="validation">Message</em>
             </div>
-            <div class="kb-form cash_2" data-status="">
+            <div class="kb-form cash_2 not-ready no-transition" data-status="info">
                 <label for="kbFormInput32" class="required">원화환산금액</label>
                 <div class="kb-form_inner form-text">
                     <input type="text" id="kbFormInput32" value="" placeholder="">
                     <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                 </div>
                 <button class="btn-line"><span>조회</span></button>
-                <p class="info-msg">보유금액 입력 후 조회 버튼을 누르시면 원화환산금액이 조회됩니다.</p>
-                <p class="info-msg">원화환산금액은 ‘매매기준율’을 적용하기 때문에 실제 매매시 가격과 다를 수 있습니다.<br> (1달러 = 1,000원 / 2021.04.27 14:44:35 2회차 매매기준율)</p>
+                <em class="validation">보유금액 입력 후 조회 버튼을 누르시면 원화환산금액이 조회됩니다.</em>
+                <em class="validation">원화환산금액은 ‘매매기준율’을 적용하기 때문에 실제 매매시 가격과 다를 수 있습니다.<br> (1달러 = 1,000원 / 2021.04.27 14:44:35 2회차 매매기준율)</em>
             </div>
         <!--//외화--> 
         <!--현금//-->
-            <div class="kb-form cash" data-status="">
+            <div class="kb-form cash not-ready no-transition" data-status="">
                 <label for="kbFormInput34" class="required">현금금액</label>
                 <div class="kb-form_inner form-text">
                     <input type="text" inputmode="numeric" id="kbFormInput34" placeholder="금액을 입력해 주세요" value="10000000" data-unit="원" data-action="autoSeperator">
@@ -97,7 +99,7 @@
         <!--//현금--> 
         </section>
         <section class="kb-sec nickname">
-            <div class="kb-form" data-status="">
+            <div class="kb-form not-ready no-transition" data-status="">
                 <label for="kbFormInput33">별명</label>
                 <div class="kb-form_inner form-text">
                     <input type="text" id="kbFormInput33" value="비상금" placeholder="최대 10자를 입력해주세요.">
@@ -121,11 +123,11 @@
 		</div>
 		<!-- // app-container -->
 
-		<!-- Layer (modal, bottom sheet) // -->
+		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
 		<div class="layered">
             @@include('@@webRoot/html/asset/layered/mys_as_04_02_00_p1.html')
 		</div>
-		<!-- // Layer (modal, bottom sheet) -->
+		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
 	</div>
 
 	<!-- Script -->

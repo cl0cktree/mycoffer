@@ -1256,7 +1256,8 @@ function wishCarStrategyInit() {
             $notEnough.hide();
             $enough.show();
         }
-        $need.text(need.toLocaleString() + "만원");
+        // $need.text(need.toLocaleString() + "만원");
+        $need.html('<span class="num" data-unit-after="만원">' + need.toLocaleString() + "</span>");
         $strategyProgressBar.data("need", need);
     }
 
@@ -1719,3 +1720,14 @@ $(window).on('scroll',function(){
     jsFixed.scroll(st, $('.page-step'));
 });
 
+//순서 변경
+if($('.order-change-list').length){
+    $('.order-change-list').find('.order-change > button').on('click',function(){
+        var $eachList = $(this).parents('li');
+        if($(this).hasClass('btn-order-next')){
+            $eachList.insertAfter($eachList.next('li'));
+        }else if($(this).hasClass('btn-order-prev')){
+            $eachList.insertBefore($eachList.prev('li'));
+        }
+    });
+}

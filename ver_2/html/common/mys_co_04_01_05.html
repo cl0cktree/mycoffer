@@ -13,25 +13,30 @@
     <div class="app">
         
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
-            'pageTit':'인증서 가져오기',
-            'type':'title'
+            'pageTit':'공동인증서 로그인',
+            'type':'step'
         })
         
         <!-- app-container //-->
         <div class="app-container">
 
             <!-- app-content // -->
-            <main class="app-content pc-import">
-                <section class="kb-sec">
-                    <div class="qrscan-datail-dim">
-                        <p>QR코드</p>
-                    </div>                    
-                </section> 
-                <div class="sticky-bottom">
-                    <div class="btn-area">
-                        <button type="button" class="btn-solid" disabled><span>취소</span></button>
-                    </div>
-                </div>              
+            <main class="app-content">
+                <!-- 공동 인증서 없을 때 // -->
+                <section class="kb-sec mm-manage-certificate">
+                    <h2 class="h3">공동인증서 가져오기</h2>
+                    <ul class="manage-certificate">
+                        <li><a href="javascript:;">PC에서 가져오기<i class="icon-link_24"></i></a></li>
+                        <li><a href="javascript:;">스마트폰에서 가져오기<i class="icon-link_24"></i></a></li>                        
+                    </ul>
+                    <h2 class="h3">공동인증서 발급하기</h2>
+                    <ul class="manage-certificate">
+                        <li><a href="javascript:;" onclick="modalDemo3()">KB스타뱅킹 인증센터<i class="icon-link_24"></i></a></li>                       
+                    </ul>
+                </section>  
+                
+                <!-- // 공동 인증서 없을 때 -->
+
             </main>
             <!-- // app-content -->
 
@@ -50,8 +55,15 @@
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
     <script>
-
-        
+        function modalDemo3() {
+            modalPopup({
+                title: "",
+                message: "KB스타뱅킹으로 이동하시겠습니까?",
+                type: "confirm",                
+                textCancelButton: "취소",
+                textOkButton: "확인",
+            });
+        }
     </script>
 </body>
 

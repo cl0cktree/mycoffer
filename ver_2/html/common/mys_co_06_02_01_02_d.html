@@ -1,6 +1,6 @@
+<!-- [MYS_CO_06_02_01_02] My NOW (작성자: 누리어 시스템 황철민) -->
 <!DOCTYPE html>
 <html lang="ko">
-<!-- [MYS_CO_06_02_01_02] My NOW (작성자: 누리어 시스템 황철민)// -->
 <head>
 	@@include('@@webRoot/html/_include/app-head.html',{
 		"title": "My NOW | 1st Depth"
@@ -15,17 +15,9 @@
             'pageTit':'KB마이머니',
             'type':'submain'
         })
-        
 
 		<!-- app-container //-->
 		<div class="app-container">
-
-			<!-- app-lnb //-->
-			<div class="app-lnb">
-				
-			</div>
-			<!-- //app-lnb -->
-
 			<!-- app-content // -->
 			<main class="app-content">
 
@@ -44,13 +36,13 @@
 					<div class="dashboard-section dashboard-asset">
 						<a href="#" class="sec-title">
 							나의<br>순자산<i class="icon-link_w_24"></i>
-							<!-- <span class="sec-amount"><span class="num">136,100,136</span>원</span> -->
+							<!-- <span class="sec-amount"><span class="num" data-unit-after="원">136,100,136</span></span> -->
 						</a>						
 						<!-- 
-						<div class="sub-text">전일보다 <span class="num">1,600,000</span>원 증가</div>
+						<div class="sub-text">전일보다 <span class="num" data-unit-after="원">1,600,000</span> 증가</div>
 						<div class="info-text">
-							총자산 <span class="num">2,400,000,000</span>원<br>
-							부채 <span class="num">780,500,000</span>원
+							총자산 <span class="num" data-unit-after="원">2,400,000,000</span><br>
+							부채 <span class="num" data-unit-after="원">780,500,000</span>
 						</div> 
 						-->
 						<span class="msg"><i class="icon-bang_20_wh"></i>데이터 연동에 실패했습니다.</span>
@@ -66,9 +58,9 @@
 					<div class="dashboard-section dashboard-expense">
 						<a href="#" class="sec-title">
 							<span class="num">6</span>월<br>지출금액<i class="icon-link_w_24"></i>
-							<!-- <span class="sec-amount"><span class="num">1,806,400</span>원</span> -->
+							<!-- <span class="sec-amount"><span class="num" data-unit-after="원">1,806,400</span></span> -->
 						</a>
-						<!-- <div class="sub-text">목표액 보다 <span class="num">526,000</span>원 더 사용했어요.</div> -->
+						<!-- <div class="sub-text">목표액 보다 <span class="num" data-unit-after="원">526,000</span> 더 사용했어요.</div> -->
 						<span class="msg"><i class="icon-bang_20_wh"></i>데이터 연동에 실패했습니다.</span>
 						<a href="#" class="link-text">
 							예정지출 <br>
@@ -96,7 +88,7 @@
 									<span class="dday" data-swiper-parallax="-200"><span>D</span>7</span>
 									<div class="challenge-info">
 										<span class="period">목표금액까지</span><br>
-										<strong><span class="num">50,000</span>원 더 쓸 수 있어요.</strong>
+										<strong><span class="num" data-unit-after="원">50,000</span> 더 쓸 수 있어요.</strong>
 										<div class="character-graph goal icon" data-theme="coffee">
 											<!-- coffee(커피), alcohol(음주), store(편의점), taxi(택시비), delivery(배달음식), shopping(홈쇼핑), oil(주유비), mobile(통신비), fastfood(패스트푸드), eatout(외식비) -->
 											<div class="graph-area">
@@ -104,8 +96,8 @@
 												<div class="flag"><i class="icon-flag-dashboard"></i></div>
 											</div>
 											<div class="graph-txt">
-												<p class="start-txt">현재지출금액<br><strong><span class="num">10</span>만원</strong></p><!-- 시작부분 텍스트 -->
-												<p class="end-txt">목표금액<br><strong><span class="num">15</span>만원</strong></p><!-- 마지막부분 텍스트 -->
+												<p class="start-txt">현재지출금액<br><strong><span class="num" data-unit-after="만원">10</span></strong></p><!-- 시작부분 텍스트 -->
+												<p class="end-txt">목표금액<br><strong><span class="num" data-unit-after="만원">15</span></strong></p><!-- 마지막부분 텍스트 -->
 											</div>
 										</div>
 									</div>
@@ -142,8 +134,8 @@
 												<div class="flag"><i class="icon-flag-dashboard"></i></div>
 											</div>
 											<div class="graph-txt">
-												<p class="start-txt">모은금액<br><strong><span class="num">85</span>만원</strong></p><!-- 시작부분 텍스트 -->
-												<p class="end-txt">목표금액<br><strong><span class="num">300</span>만원</strong></p><!-- 마지막부분 텍스트 -->
+												<p class="start-txt">모은금액<br><strong><span class="num" data-unit-after="만원">85</span></strong></p><!-- 시작부분 텍스트 -->
+												<p class="end-txt">목표금액<br><strong><span class="num" data-unit-after="만원">300</span></strong></p><!-- 마지막부분 텍스트 -->
 											</div>
 										</div>
 									</div>
@@ -180,7 +172,7 @@
 							<li class="item item-mysafe">
 								<a href="#">
 									<span class="tit">My 금고</span>
-									<span class="value"><span class="num">1,806,000</span>원</span>
+									<span class="value"><span class="num" data-unit-after="원">1,806,000</span></span>
 									<span class="desc">지난달보다 806,400원 하락</span>
 								</a>
 							</li>
@@ -198,14 +190,14 @@
 							<li class="item item-mycar">
 								<a href="#">
 									<span class="tit">My Car 차량유지비</span>
-									<span class="value"><span class="num">806,000</span>원</span>
+									<span class="value"><span class="num" data-unit-after="원">806,000</span></span>
 									<span class="desc">지난달보다 50,000원 상승</span>
 								</a>
 							</li>
 							<li class="item item-mycar">
 								<a href="#">
 									<span class="tit">Wish Car<span class="vbar">볼보 XC90</span></span>
-									<span class="value"><span class="num">81,800,000</span>원</span>
+									<span class="value"><span class="num" data-unit-after="원">81,800,000</span></span>
 									<span class="desc">등록일보다 100만원 하락</span>
 								</a>
 							</li>
@@ -223,14 +215,14 @@
 							<li class="item item-myhouse">
 								<a href="#">
 									<span class="tit">My House</span>
-									<span class="value"><span class="num">1,220,000,000</span>원</span>
+									<span class="value"><span class="num" data-unit-after="원">1,220,000,000</span></span>
 									<span class="desc">매입가보다 1,000만원 하락<br>지난달보다 100만원 하락</span>
 								</a>
 							</li>
 							<li class="item item-myhouse">
 								<a href="#">
 									<span class="tit">Wish House<span class="vbar">대치오피스텔</span></span>
-									<span class="value"><span class="num">1,020,000,000</span>원</span>
+									<span class="value"><span class="num" data-unit-after="원">1,020,000,000</span></span>
 									<span class="desc">등록일보다 100만원 하락</span>
 								</a>
 							</li>
