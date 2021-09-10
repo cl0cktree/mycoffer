@@ -18,50 +18,51 @@
 		<div class="app-container">
 			<!-- app-content // -->
 			<main class="app-content">
-                <section class="kb-sec my-bucket-list">
-                    <h2 class="is-hidden">버킷리스트 만들기 정보입력</h2>
+                <!-- 2021-09-09 수정 // -->
+                <section class="kb-sec bg-gray">
+                    <p class="simple-message">표시된 항목은 필수 입력 사항입니다.</p>
+                </section>
+                <!-- // 2021-09-09 수정 -->
+                <section class="kb-sec my-bucket-list mt28">
+                    <h2 class="is-hidden">버킷리스트명</h2> <!-- 2021-09-09 수정 -->
                     <div class="kb-form" data-status="">
-                        <label for="bucketList" class="required">나만의 버킷 이름을 입력해주세요.</label>
+                        <label for="bucketList" class="required">버킷리스트명</label> <!-- 2021-09-09 수정 -->
                         <div class="kb-form_inner form-text">
                             <input type="text" id="bucketList" value="" title="나만의 버킷리스트" placeholder="예)친구 축의금 모으기">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                        </div>
-                        <p class="info-msg">필수 입력 항목입니다.</p>
-                        <p class="info-msg">최대 $$자까지 입력할 수 있습니다.</p>
-                        <p class="info-msg">특수문자는 입력할 수 없습니다.</p>
+                        </div>                        
+                        <p class="info-msg">최대 <span class="num">12</span>자까지 입력할 수 있어요.</p> <!-- 2021-09-09 수정 -->
+                        <p class="info-msg">특수문자를 사용 할 수 없어요.</p> <!-- 2021-09-09 수정 -->
                     </div>
                     <div class="kb-form" data-status="">
-                        <label for="formBucketGoal" class="required">목표 금액을 입력해주세요.</label>
+                        <label for="formBucketGoal" class="required">목표 금액</label>
                         <div class="kb-form_inner form-text">
                             <input type="text" inputmode="numeric" id="formBucketGoal" placeholder="금액을 입력해주세요" value="" data-unit="원" data-action="autoSeperator" title="목표금액">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
-                        <p class="info-msg">목표금액은 최대 $$원까지 설정할 수 있습니다.</p>
+                        <p class="info-msg">최대 <span class="num" data-unit-after="만원">300</span>까지 설정 할 수 있어요.</p> <!-- 2021-09-09 수정 -->
                     </div>
-                    <h2 class="h4 required">목표기간을 설정해주세요.</h2>
+                    <h2 class="h4 required">목표기간</h2>
                     <div class="kb-form" data-status="">
+                        <!-- 2021-09-09 수정 // -->
                         <ul class="btn-segmented_radio mt16">
                             <li>
                                 <input type="radio" name="btnradio" id="btnradio1" checked="">
-                                <label for="btnradio1">1개월</label>
+                                <label for="btnradio1">6개월</label>
                             </li>
                             <li>
                                 <input type="radio" name="btnradio" id="btnradio2">
-                                <label for="btnradio2">3개월</label>
-                            </li>
-                            <li>
-                                <input type="radio" name="btnradio" id="btnradio3">
-                                <label for="btnradio3">6개월</label>
+                                <label for="btnradio2">12개월</label>
                             </li>
                         </ul>
-                        <p class="info-msg">목표기간은 적금계좌를 연결한 날부터 시작됩니다.</p>
+                        <!-- // 2021-09-09 수정 -->
                     </div>
-                    <h2 class="h4">이미지를 선택해 주세요.</h2>
+                    <h2 class="h4">이미지 선택</h2>
                     <div class="kb-form" data-status="">
                         <div class="input-img-box">
                             <div class="checkbox-group icon-sel">
                                 <span class="form-checkbox_20 icon-type">
-                                    <input type="radio" name="checkboxIconSel" id="checkboxIconSel01">
+                                    <input type="radio" name="checkboxIconSel" id="checkboxIconSel01" checked="">
                                     <label for="checkboxIconSel01"><i><img src="@@webRoot/static/images/_temp/@goal_icon_1.png" alt="지구를 도는 비행기"></i></label>
                                 </span>
                                 <span class="form-checkbox_20 icon-type">
@@ -86,16 +87,15 @@
                                 </span>
                             </div>
                         </div>
-                        <p class="info-msg">선택하지 않으면 기본 이미지로 설정됩니다.</p>
                     </div>
                     <div class="kb-form" data-status="">
-                        <label for="bucketListMeno">메모를 입력해주세요.</label>
+                        <label for="bucketListMeno">메모 입력</label> <!-- 2021-09-09 수정 -->
                         <div class="kb-form_inner form-text">
                             <input type="text" id="bucketListMeno" value="" title="나만의 버킷리스트" placeholder="예)#축의금 #축하금모으기">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
-                        <p class="info-msg">메모는 최대 $$자까지 입력할 수 있습니다.</p>
-                        <p class="info-msg">특수문자는 입력할 수 없습니다.</p>
+                        <p class="info-msg">최대 <span class="num">20</span>자까지 입력할 수 있어요.</p> <!-- 2021-09-09 수정 -->
+                        <p class="info-msg">특수문자를 사용 할 수 없어요.</p> <!-- 2021-09-09 수정 -->
                     </div>
                 </section>
                 <div class="sticky-bottom">
@@ -119,7 +119,6 @@
 	@@include('@@webRoot/html/_include/common-js.html')
 	<!-- Add Library (this page only)-->
 	<script src="@@webRoot/static/js/ui.js"></script>
-    <script src="@@webRoot/static/common/lib/swiper.min.js"></script>
 </body>
 
 </html>

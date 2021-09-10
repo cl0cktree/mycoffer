@@ -1,30 +1,14 @@
 /* DASHBOARD */
-$dashboardExpenseMarginTop: 6.67vw;
-
 .kb-sec.dashboard {position: relative; padding: 28px 0 0 0;}
-
-// .dashboard .link-bell {position: absolute; z-index: 2; right: 20px; top: 16px; padding: 4px;}
-// .dashboard .link-bell .message {position: relative; display: inline-block; width: 0; height: 24px; overflow: hidden;}
-// .dashboard .link-bell .message span {position: absolute; left: 0; display: inline-block; @include text($text03, bold); line-height: 24px; white-space: nowrap;}
-// .dashboard .link-bell .message span::before {content: ''; position: absolute; left: 0; right: 0; bottom: 3px; height: 1px; background-color: #26282c;}
 
 .dashboard-section {position: relative; padding: 24px;}
 .dashboard-section .sec-title {font-size: 20px; line-height: 41px; font-weight: bold; text-align: center;}
 .dashboard-section .sec-title .num {font-size: 22px;}
-// .dashboard-section a.sec-title {position: relative; display: block;}
-
-// .dashboard-section .sec-title i {margin-top: 7px;}
-// .dashboard-section .sec-title > .num {font-size: 34px;}
 .dashboard-section .sec-amount {display: block; text-align: center; font-size: 18px; line-height: 1;}
 .dashboard-section .sec-amount .num {font-size: 29px; margin-right: 2px; font-weight: bold;}
-// .dashboard-section.sticky-bottom.sticky-bottom:not(.popup_buttons) {height: 0; padding: 0; background-color: #f7f7f8;}
-// .dashboard-section.sticky-bottom .btn-solid span {position: relative; padding-left: 33px;}
-// .dashboard-section.sticky-bottom .btn-solid span::before, 
-// .dashboard-section.sticky-bottom .btn-solid span::after {content: ''; position: absolute; left: 6px; top: 50%; width: 14px; height: 2px; margin-top: -1px; background-color: #26282c; border-radius: 0;}
-// .dashboard-section.sticky-bottom .btn-solid span::after {transform: rotate(90deg);}
 
 .dashboard-asset,
-.dashboard-expense {position: relative; padding: 37px 20px 32px; margin: 0 16px 20px; background-color: #f1f4ff; border-radius: 8px;}
+.dashboard-expense {position: relative; padding: 37px 20px 32px; margin: 0 16px 20px; background-color: #f3eefe; border-radius: 8px;}
 .dashboard-asset .sec-amount,
 .dashboard-expense .sec-amount {display: block; text-align: center; font-size: 18px; line-height: 1;}
 .dashboard-asset .sec-amount .num,
@@ -32,7 +16,17 @@ $dashboardExpenseMarginTop: 6.67vw;
 .dashboard-asset .sub-text,
 .dashboard-expense .sub-text {display: block; margin-top: 10px; text-align: center; font-size: 16px; line-height: 1; color: $kb-ui04;}
 .dashboard-asset .sub-text .num,
-.dashboard-expense .sub-text .num {font-size: 17px; margin-right: 2px;}
+.dashboard-expense .sub-text .num {font-size: 17px;}
+.dashboard-asset .sub-text .num[data-unit-after]::after,
+.dashboard-expense .sub-text .num[data-unit-after]::after {vertical-align: 0; color: $kb-ui04;}
+.dashboard-asset .sub-text .num.up,
+.dashboard-expense .sub-text .num.down {color: $color-red;}
+.dashboard-asset .sub-text .num.down,
+.dashboard-expense .sub-text .num.up {color: $color-blue;}
+.dashboard-asset .sub-text .num.up::before,
+.dashboard-expense .sub-text .num.up::before {content: '▲';}
+.dashboard-asset .sub-text .num.down::before,
+.dashboard-expense .sub-text .num.down::before {content: '▼';}
 .dashboard-asset .key-visual,
 .dashboard-expense .key-visual {margin-top: 20px;}
 .dashboard-asset .key-visual img {display: block; margin: 0 auto; width: 163px;}
@@ -40,74 +34,36 @@ $dashboardExpenseMarginTop: 6.67vw;
 .dashboard-expense .button-area {margin-top: 20px;}
 .dashboard-expense .button-area .btn-line {color: $kb-ui11; background-color: $kb-ui04; border: 0;}
 
-// .dashboard-asset {z-index: 1; height: 334px; padding-top: 24px; background-color: transparent;}
-// .dashboard-asset .sec-title,
-// .dashboard-asset .sec-amount {color: #ffffff;}
-// .dashboard-asset .sub-text {margin-top: 3px; @include text($text03, normal);}
-// .dashboard-asset .sub-text .num {font-size: 15px;}
-// .dashboard-asset .info-text {margin-top: 22px; @include text($text02, bold); line-height: 27px;}
-// .dashboard-asset .info-text .num {font-size: 18px;}
-// .dashboard-asset .msg {display: block; @include text($text03, normal); color: $kb-ui10;}
-// .dashboard-asset .msg i {margin-right: 5px;}
-// .dashboard-asset .sec-title + .msg {margin-top: 8px;}
-// .dashboard-asset .object .coin-1 {position: absolute; z-index: 2; right: 100px; bottom: 47px; width: 64px; height: 52px; background: url(../images/common/dashboard_coin.png) no-repeat 0 0; background-size: 100% 100%;}
-// .dashboard-asset .object .coin-2 {position: absolute; z-index: 2; right: 45px; bottom: 130px; width: 32px; height: 26px; background: url(../images/common/dashboard_coin.png) no-repeat 0 0; background-size: 100% 100%; transform: rotate(35deg)}
-// .dashboard-asset .object .card {position: absolute; z-index: 1; right: 0; bottom: -170px; width: 315px; height: 253px; background: url(../images/common/dashboard_card.png) no-repeat 0 0; background-size: 100% 100%;}
+.dashboard-asset .msg,
+.dashboard-expense .msg {display: block; text-align: center; line-height: 20px;}
+.dashboard-asset .msg i,
+.dashboard-expense .msg i {transform: translate(-2px, -1px);}
 
-// .dashboard-asset .object .coin-1 {animation: dsCoinAni 1s ease 0.8s forwards; transform: translateY(35px); opacity: 0;}
-// .dashboard-asset .object .coin-2 {animation: dsCoinAni 1s ease 1.0s forwards; transform: translateY(35px); opacity: 0;}
-// .dashboard-asset .object .card {animation: dsCardAni 1s ease .3s forwards; transform-origin: 0% 30%; transform: rotate(16deg) translateY(35px);}
-// @keyframes dsCardAni {
-// 	0% {transform: rotate(16deg) translateY(35px);}
-// 	100% {transform: rotate(0deg) translateY(0);}
-// }
-// @keyframes dsCoinAni {
-// 	0% {transform: translateY(35px); opacity: 0;}
-// 	100% {transform: translateY(0); opacity: 1;}
-// }
-
-// .dashboard-expense {z-index: 2; margin-top: $dashboardExpenseMarginTop; padding-top: calc(56px - 6.67vw); min-height: 310px; background-color: #696e76;}
-// .dashboard-expense::before {content: ''; position: absolute; left: 0; right: 0; bottom: 100%; height: $dashboardExpenseMarginTop; background: url(../images/common/dashboard_bg.png) no-repeat 0 0; background-size: 100% auto;}
-// .dashboard-expense .sec-title,
-// .dashboard-expense .sec-amount {color: #ffffff;}
-// .dashboard-expense .sub-text {color: #ffffff; margin-top: 3px; @include text($text03, normal);}
-// .dashboard-expense .sub-text .num {font-size: 15px;}
-// .dashboard-expense .link-text {position: relative; display: inline-block; color: #ffffff; padding-right: 13px; margin-top: 22px; font-size: 17px; font-weight: bold; line-height: 27px;}
-// .dashboard-expense .link-text::before {content: ''; position: absolute; left: 0; right: 0; bottom: 1px; height: 1px; background-color: #fff;}
-// .dashboard-expense .link-text::after {content: ''; position: absolute; right: 0; bottom: 1px; width: 7px; height: 1px; background-color: #fff; transform-origin: 100% 50%; transform: rotate(45deg);}
-// .dashboard-expense .link-text .num {font-size: 18px;}
-// .dashboard-expense .sec-title + .link-text {margin-top: 0;}
-// .dashboard-expense .msg + .link-text {margin-top: 58px;}
-// .dashboard-expense .msg {display: block; @include text($text03, normal); color: $kb-ui10;}
-// .dashboard-expense .msg i {margin-right: 5px;}
-// .dashboard-expense .sec-title + .msg {margin-top: 8px;}
-// .dashboard-expense .link-text + .msg {margin-top: 12px;}
-
-.dashboard-goal {padding: 0; margin: 0 16px 48px; background-color: #708beb; border-radius: 8px;}
-// .dashboard-goal .swiper-container.t02{padding-bottom:30px}
-// .dashboard-goal .swiper-container.t02 .swiper-pagination{left: 20px; top: 142px; bottom: auto; width: auto;}
+.dashboard-goal {padding: 0; margin: 0 16px 48px; background-color: #6349a5; border-radius: 8px;}
 .dashboard-goal .swiper-pagination-bullet-active {background-color: $kb-ui02;}
 .dashboard-goal .swiper-container-horizontal>.swiper-pagination-bullets,
 .dashboard-goal .swiper-pagination-custom,
 .dashboard-goal .swiper-pagination-fraction {bottom: 25px;}
 
-.dashboard-goal .goal-slide {/* padding: 0 24px; min-height: 420px; */ overflow: hidden;}
+.dashboard-goal .goal-slide {overflow: hidden;}
 .dashboard-goal .goal-slide .link-area {position: relative; display: block; height: 395px; text-align: center;}
 .dashboard-goal .goal-slide .dday {position: absolute; top: 48px; left: 50%; transform: translateX(-50%); padding: 0 13px; font-family: roboto; font-size: 13px; line-height: 24px; font-weight: bold; color: $kb-ui02; background-color: #ffdd6c; border-radius: 12px;}
 .dashboard-goal .goal-slide .dday > span::after {content: '-';}
-.dashboard-goal .goal-slide .text-wrap {display: block; min-height: 200px; padding-top: 100px; color: $kb-ui11;}
+.dashboard-goal .goal-slide .text-wrap {display: block; min-height: 203px; padding-top: 100px; color: $kb-ui11;}
 .dashboard-goal .goal-slide .text-wrap .title {display: block; margin-bottom: 2px; font-size: 20px; line-height: 28px; font-weight: bold;}
-.dashboard-goal .goal-slide .text-wrap .subtxt {display: block; margin-bottom: 16px; font-size: 16px; line-height: 23px;}
+.dashboard-goal .goal-slide .text-wrap .subtxt {display: block; margin-bottom: 15px; font-size: 16px; line-height: 23px;}
 .dashboard-goal .goal-slide .text-wrap .period {display: block; font-size: 14px; line-height: 20px;}
 .dashboard-goal .goal-slide .text-wrap .num[data-unit-after]::after {vertical-align: 0;}
 .dashboard-goal .goal-slide .challenge-info {margin: 0 20px;}
 
 .dashboard-goal .character-graph {padding-top:80px;}
 .dashboard-goal .character-graph strong {font-weight: bold;}
-.dashboard-goal .character-graph .graph-area {height: 23px; border-radius: 22px;}
-.dashboard-goal .character-graph .graph-area > span {background-color: #fddf3c;}
-.dashboard-goal .character-graph .graph-area .flag {right:-13px;}
-.dashboard-goal .character-graph .graph-txt {color: $kb-ui11;}
+.dashboard-goal .character-graph .graph-area {height: 20px; border-radius: 20px;}
+.dashboard-goal .character-graph .graph-area > span {background-color: #ffdd6c; border: 0;}
+.dashboard-goal .character-graph .graph-area > span i {transform: scale(.875); transform-origin: 50% 100%;}
+.dashboard-goal .character-graph .graph-area .flag {right: -10px;}
+.dashboard-goal .character-graph .graph-area i.icon-flag-dashboard {display: inline-block; width: 18px; height: 35px; background: url(../images/common/dash_flag.png) no-repeat 0 0; background-size: 100% 100%;}
+.dashboard-goal .character-graph .graph-txt {color: $kb-ui11; margin-top: 15px;}
 .dashboard-goal .character-graph .graph-txt .num {font-weight:bold; font-size:15px;}
 .dashboard-goal .character-graph .graph-txt .num::before {content: ''; display: inline-block; width: 4px;}
 .dashboard-goal .character-graph .graph-txt .start-txt, 

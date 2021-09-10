@@ -11,22 +11,31 @@
 	@@include('@@webRoot/html/_include/app-a11y.html')
 	<div class="app">
 		<!-- app-header //-->
-        @@include('@@webRoot/html/_include/app-integrated-header.html',{'pageTit':'챌린지 자세히보기','type':''})
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{'pageTit':'상세내역','type':''})
 		<!-- // app-header -->
 
 		<!-- app-container //-->
 		<div class="app-container">
+
 			<!-- app-content // -->
-			<main class="app-content goals-challenge">
-                <section class="kb-sec goals-noti">
-                    <h2>한달 예산으로 살기</h4>
-                    <h3>정해진 한달 예산으로 버티자!</h4>
-                    <ul data-style="list">
-                        <li><span class="num">250</span>명이 도전 중이에요.</li> <!-- 2021-09-09 수정 -->
-                        <li>목표기간 한달</li>
-                    </ul>
+			<main class="app-content goal-ama-others-detail">	
+                <section class="kb-sec goals-noti type2">
+                    <h2>
+                        한달 예산으로 살기
+                        <i class="badge d-day">D-10</i>
+                    </h2>
+                    <h3>정해진 한달 예산으로 버티자!</h3>
+                    <dl class="description-list">
+                        <dt>목표기간</dt>
+                        <dd><span class="num">2021.08.01~2021.09.30</span></dd>
+                        <dt>과거 소비금액</dt>
+                        <dd class="account"><span class="num" data-unit-after="원">250,000</span> (월평균)</dd>
+                        <dt>목표예산 금액</dt>
+                        <dd class="account"><span class="num" data-unit-after="원">150,000</span> (<span class="num">1</span>주일)</dd>
+                    </dl>
                 </section>
-                <section class="kb-sec goals-list">   
+                <hr class="hr-divide_32">               
+                <section class="kb-sec goals-detail-list">
                     <div class="challenge-box content-swiper-wrap">
                         <div class="swiper-container content-swiper t01 js-swiper" data-swiper-options="goalGraphSwiperOptions">
                             <script>
@@ -35,74 +44,94 @@
                                         "el": ".swiper-pagination"
                                     },
                                     "spaceBetween": 16,
-                                    "slidesPerView": "auto",
-                                    "autoHeight": "true"                                    
+                                    "autoHeight": "true"                                        
                                 };
                             </script>
+                            
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide content-box shadow">
-                                    <div class="challenge-info non-tit">
-                                        <h2 class="tit flex-box goals-desc type2">비교그룹과 평균 소비금액을 비교했어요.</h2>
-                                        <div class="character-graph type2" data-theme="pay">
-                                            <div class="graph-area">
-                                                <span data-goal="50"><i><img src="@@webRoot/static/images/_temp/@progress_coffee.png" alt="커피"></i></span>
-                                            </div>
-                                            <div class="graph-txt">
-                                                <p class="start-txt">나 <strong class="num" data-unit-after="원">150,000</strong></p>
-                                            </div>
-                                            <div class="graph-area sub">
-                                                <span data-goal="50"></span>
-                                            </div>
-                                            <div class="graph-txt">
-                                                <p class="start-txt">다른사람 <strong class="num" data-unit-after="원">100,000</strong></p>
-                                            </div>
+                                    <div class="challenge-info">
+                                        <div class="txt-goal-stat">
+                                            <p>현재소비금액</p>
                                         </div>
+                                        
+                                        <div class="character-graph goal low-top success" data-theme="coffee">
+                                            <div class="graph-area">
+                                                <span data-goal="100"><i></i></span>
+                                                <div class="flag"><i class="icon-flag-goal"></i></div>
+                                            </div>
+                                            <div class="graph-txt">
+                                                <p class="start-txt">현재 소비금액<br><span class="num" data-unit-after="원">100,000</span></p>
+                                                <p class="end-txt">목표예산 금액<br><strong><span class="num" data-unit-after="원">150,000</span></strong></p>
+                                            </div>
+                                        </div>                                    
                                     </div>
                                 </div>
                                 <div class="swiper-slide content-box shadow">
                                     <div class="challenge-info non-tit">
-                                        <h2 class="tit flex-box goals-desc type2">비교그룹과 월별 소비금액을 비교했어요.</h2>
-                                        <div class="chart-area" id="splineChart">
-                                            <!-- <div class="chart-area type-ratio mt0"></div>                                                                   -->
-                                            <!-- <span class="txt-gray">비교그룹</span>
-                                            <span class="txt-yellow type2">나</span> -->
-                                        </div>
+                                        <div class="chart-area" id="columnChart01"></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="swiper-pagination"></div>
                         </div>
-                    </div>                    
-                </section>
-                <hr class="hr-divide_32">                  
-                <section class="kb-sec goals-use-best">
-                    <div class="ranking-list">
-                        <h2 class="ranking-tit"><strong>가장 많이 쓰는 소비 Top 3</strong></h2>
-                        <ul class="ranking-view">
-                            <li class="rank">할리스 전경련회관점 <strong class="num" data-unit-after="원">55,000</strong></li>
-                            <li class="rank">제주스 전경련회관점 <strong class="num" data-unit-after="원">35,000</strong></li>
-                            <li>스타벅스 목동점 <strong class="num" data-unit-after="원">10,000</strong></li>
-                        </ul>
                     </div>
+                </section>               
+                
+                <section class="kb-sec goals-img-status type2">
+                    <p>목표예산 <span class="num" data-unit-after="원"><strong>2,500,000</strong></span> 중<br>현재 <span class="num" data-unit-after="원"><strong>2,500,000</strong></span><br>사용 중이예요.</p>
+                    <img src="@@webRoot/static/images/goal/friend-sucess.png" alt="즐거워하는 키키">
                 </section> 
-                <hr class="hr-divide_32">  
-                <section class="kb-sec goals-setting">
-                    <h2>목표 예산금액 설정</h2>
-                    <h3>평소 지출금액보다 <strong><span class="num" data-unit-after="원">175,000</span> 더 절약</strong>할 수 있어요.</h3>
-                    <div class="character-graph js-slider">
-                        <div class="graph-area" data-default="50"><span class="handle ui-slider-handle"><i class="icon-star"></i><em class="value num" data-unit="원"></em></span></div>
-                        <div class="graph-txt">
-                            <p class="start-txt" data-unit="원">0</p><!-- 시작부분 텍스트 -->
-                            <p class="end-txt" data-unit="원">3,350,000</p><!-- 마지막부분 텍스트 -->
-                        </div>
-                    </div>
+
+                <section class="kb-sec goals-pay-list">
+                    <dl class="accordion">
+                        <dt>
+                            <h2>지출내역 확인하기</h2>
+                            <button type="button" class="accordion-trigger"></button>
+                        </dt>
+                        <dd>
+                            <div class="credit-list-group">
+                                <dl class="credit-list t01">
+                                    <dt>
+                                        <span class="info"><em class="date num">2021.08.09 17:45</em></span>
+                                        <strong class="tit">카페</strong>
+                                    </dt>
+                                    <dd>
+                                        <span class="btn-switch label-front">
+                                            <strong class="amount"><span class="num" data-unit-after="원">9,800</span></strong>
+                                        </span>
+                                    </dd>
+                                    <dt>
+                                        <span class="info"><em class="date num">2021.08.09 17:45</em></span>
+                                        <strong class="tit">카페</strong>
+                                    </dt>
+                                    <dd>
+                                        <span class="btn-switch label-front">
+                                            <strong class="amount"><span class="num" data-unit-after="원">9,800</span></strong>
+                                        </span>
+                                    </dd>
+                                    <dd class="total">
+                                        <span class="btn-switch label-front">
+                                            <strong class="amount"><span class="num" data-unit-after="원">15,000</span></strong>
+                                        </span>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </dd>
+                    </dl>
                 </section>
 
-                <div class="sticky-bottom">
-                    <div class="btn-area">
-                        <button type="button" class="btn-solid" data-action="" onclick=""><span>도전</span></button>
+                <section class="kb-sec goals-pay-info">
+                    <div class="pay-info">
+                        <h3 class="tit">유의사항</h3>
+                        <ul class="sm" data-style="list">
+                            <li>저금통이란?<br>저금통은 ~~~ 경로에서 개설이 가능합니다. 저금통을 만든 후 목표챌린지를 도전해보세요.</li>
+                            <li>절약한 금액이란?<br>목표예산에서 현재 소비금액을 제외하고 남은 금액입니다.</li>
+                            <li>이체시기는?<br>목표기간에 끝난 다음날 00시에 자동으로 이체처리 됩니다.</li>
+                            <li>자동이체는 어디서?<br>저금통 개설 시 연결계좌로 선택한 계좌에 잔액이 있는 경우 자동으로 이체처리 됩니다.</li>
+                        </ul>
                     </div>
-                </div>
+                </section>
 			</main>
 			<!-- // app-content -->
 
@@ -111,7 +140,7 @@
 
 		<!-- Layer (modal, bottom sheet) // -->
 		<div class="layered">
-            @@include('@@webRoot/html/asset/layered/mys_as_07_00_00_p1.html')
+			@@include('@@webRoot/html/goal/layered/mys_go_02_01_03_p1.html')
 		</div>
 		<!-- // Layer (modal, bottom sheet) -->
 	</div>
@@ -120,92 +149,67 @@
 	@@include('@@webRoot/html/_include/common-js.html')
 	<!-- Add Library (this page only)-->
 	<script src="@@webRoot/static/js/ui.js"></script>
-    <script>
-       
-    </script>
+    <!-- Add Script -->
+
+    <!-- 2021-09-09 추가 // -->
     
     <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
     <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
 
-    <style>
-        .highcharts-tooltip-box:first-child .highcharts-label-box {
-            fill: #e0e4e6;
-        }
-        .highcharts-tooltip-box:first-child text {
-            fill:#000 !important;
-        }
-        .highcharts-tooltip-box:last-child .highcharts-label-box {
-            fill: #1b70ee;
-        }
-    </style>
     <script>
-        $(document).ready(function(){
-            
-            var bar = document.querySelectorAll(".graph-area > span");
-            for(i=0; i<bar.length; i++){ 
-                var item = bar.item(i); 
-                console.log(item.clientWidth);
-                if(item.clientWidth < 40){
-                        item.classList.add('min-size'); 
-                }
-            }
-            
+         $(document).ready(function(){
+
             // highchart 공통 options
             Highcharts.setOptions({
                 title: { text: null },
                 subTitle: { text: null },
-                legend: { enabled: false },
                 credits: { enabled: false },
+                tooltip: { enabled: true },
                 label : { fontFamily: 'KBFGText'},
                 credits: { enabled: false },
-                exporting: { enabled: false },
-                // lang: {
-                //     shortMonths: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월']
-                // }
+                exporting: { enabled: false }
             });
-            // spline chart 선언
-            var splineChart = new Highcharts.Chart({
+
+
+            //chart 선언
+            var doubleColumnChart = new Highcharts.Chart({
                 chart: {
-                    renderTo: 'splineChart', // chart 삽입 target ID
-                    type: "line",
-                    marginLeft: 10,
-                    marginRight: 10,
-                    marginBottom: 23,
-                    paddingTop:0,
-                    height: 186,
-                    backgroundColor: 'none'
-                },
+                    renderTo: 'columnChart01', // chart 삽입 target ID
+                    type: "column",
+                    marginLeft: 0,
+                    marginRight: 0,
+                    marginTop:10,
+                    marginBottom: 35,
+                    height: 190,
+                },                
+                legend: { enabled: false },
                 xAxis: {
-                    // type: "category",
-                    // categories: ["3월", "4월", "5월"],
+                    top:20,
+                    type: "category",
+                    categories: ["7월12일", "7월13일", "7월14일", "7월15일"],
                     labels: {
                         style: {
                             color: "#26282c",
-                            fontSize: '1.4rem',
+                            fontSize: "1.3rem",
                             fontFamily: 'KBFGText',
-                        },
-                        formatter: function () {
-                            return '7월' + this.value + '주차';
                         }
-                    },
-                    crosshair: {
-                        width: 1,
-                        color: '#dde2e8',
-                        dashStyle: 'dot'
-                    },
-                    tickColor:'transparent',
-                    offset:0,
-                    max:null,
-                    angle:20
+                    }
                 },
                 yAxis: {
-                    top:10,
-                    endOnTick: true,
+                    top:20,
+                    endOnTick: false,
                     enabled: false,  // 사용 안함
                     labels: { enabled: false },  // 축 lebel 사용 안함
                     title: { enabled: false }, // 축 title 사용 안함
                     tickWidth: 0,  // 그리드 라인 너비
-                    gridLineColor: 'transparsnt',  // 그리드 라인 컬러
+                    gridLineColor: null,  // 그리드 라인 컬러
+                    plotLines: [{
+                        color: "#c7ccd1",
+                        width: 1,
+                        value: 2500,
+                        zIndex: 50,
+                        dashStyle: 'dot'
+                    }],
                 },
                 tooltip: {
                     formatter: function () {
@@ -213,46 +217,50 @@
                         return [''].concat(
                             this.points ?
                                 this.points.map(function (point) {
-                                    return '&nbsp;&nbsp;&nbsp;' + gfn_comma3Digit(point.y) + ' 원' + '&nbsp;&nbsp;&nbsp;';
+                                    return gfn_comma3Digit(point.y) + ' 원';
                                 }) : []
                         );
                     },
-                    split: true,
                     padding: 4,
-                    shadow: false,
+                    shadow: true,
                     borderRadius: 5,
                     verticalAlign: 'top',
-                    borderColor: 'transparent',
+                    borderColor: '#fff',
                     style: {
                         fontSize: '1.4rem',
                         fontFamily: "KBFGText",
-                        color:'#fff'
+                        color:'#26282c'
                     },
-                    crosshairs: true,
+                    crosshairs: false,
+                    split: true,
                     shared: true
                 },
                 plotOptions: {
                     series: {
-                        lineWidth: 2,
-                        marker: {
-                            enabled: false,
-                            lineWidth: 1
-                        },
-                        pointStart:1,
+                        grouping: false,
+                        borderWidth: 0,
+                        pointWidth: 7,  // 막대그래프 너비
+                        borderRadiusTopLeft: "50%",  // radius 값
+                        borderRadiusTopRight: "50%", // radius 값
+                        states: {
+                            hover: {
+                                enabled: true,
+                                color:'#ffba53'
+                            }
+                        }
                     }
                 },
                 series: [{
-                    // linkedTo: "main",
-                    color: '#e0e4e6',
-                    data: [15000, 20000, 30000, 35000]
-                },{
-                    // id: 'main',
-                    color: '#1b70ee',
-                    data: [20600, 35600, 45600, 65600]
-                }]
+                    name: "현재",
+                    color: "#c6cbd0",
+                    pointPlacement: 0,
+                    data: [1000, 4000, 3000, 5000]
+                }],
             });
+
         })
-    </script>
+</script>
+    <!-- // 2021-09-09 수정 -->
 </body>
 
 </html>

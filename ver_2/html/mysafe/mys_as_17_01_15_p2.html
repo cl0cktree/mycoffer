@@ -22,23 +22,21 @@
 
 			<!-- app-content // -->
 			<main class="app-content my-safe-pop-gift my-asset pop-my-asset">
-                <section class="kb-sec">
-                    <div class="pop-notice header">
-                        <span>
-                            <strong class="h4">
-                                보유한 상품권, 회원권을<br>My 금고에 모아보세요.
-                            </strong>
-                        </span>
-                        <em class="mt4">* 표시된 항목은 필수 입력 사항입니다.</em>
-                    </div>
+                <section class="kb-sec bg-gray">
+                    <ul class="sm" data-style="list">
+                        <li>
+                            보유한 상품권, 회원권을 My 금고에 모아보세요.
+                        </li>
+                        <li><span class="required">표시된 항목은 필수 입력 사항입니다.</span></li>
+                    </ul>
                 </section>
                 <section class="kb-sec mt28">
                     <div class="kb-form not-ready no-transition giftcard-kind-form safe-flex100 mt28" data-status="">
-                        <label for="mysafe_14" class="giftcard-kind-title required">상품권/회원권</label>
+                        <label for="mysafe_14" class="giftcard-kind-title required">종류</label>
                         <div class="kb-form_inner form-select mt4">
-                            <button type="button" class="selected-option" data-call-layered="MYS_AS_17_01_06_BS1" id="mysafe_15"></button>
-                            <select name="" id="mysafe_14" title="상품권/회원권 선택">
-                                <option value="">선택하세요</option>
+                            <button type="button" class="selected-option" data-call-layered="MYS_AS_17_01_15_BS1" id="mysafe_15"></button>
+                            <select name="" id="mysafe_14" title="상품권/회원권 종류선택">
+                                <option value="">종류선택</option>
                                 <option value="giftCard01" selected>백화점 상품권</option>
                                 <option value="giftCard02">문화 상품권</option>
                                 <option value="giftCard03">골프 회원권</option>
@@ -50,16 +48,16 @@
                     <div class="kb-form not-ready no-transition giftcard-input-kind safe-flex100 safe-display-none">
                         <!-- <label for="mysafe_16"></label> -->
                         <div class="kb-form_inner form-text">
-                            <input type="text" class="giftcard-kind-input" id="mysafe_16" placeholder="최대 10자를 입력해주세요." value="" maxlength="10">
+                            <input type="text" class="giftcard-kind-input" id="mysafe_16" placeholder="최대 10자 입력 가능" value="" maxlength="10">
                             <button class="btn-data-clear giftcard-kind-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
                     </div>
                 </section>
                 <section class="kb-sec mt24">
                     <div class="kb-form not-ready no-transition giftcard-input-value safe-flex100" data-status="info">
-                        <label for="mysafe_17" class="required">현금금액</label>
+                        <label for="mysafe_17" class="required">금액</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" class="giftcard-value-input" id="mysafe_17" placeholder="값을 입력 하세요." value="1000000" data-unit="" data-action="autoSeperator"><span class="unit" style="left: 75.7031px;">원</span>
+                            <input type="text" inputmode="numeric" class="giftcard-value-input" id="mysafe_17" placeholder="금액입력" value="1000000" data-unit="" data-action="autoSeperator"><span class="unit" style="left: 75.7031px;">원</span>
                         <!-- <p class="my-giftcard-value-info info-msg">숫자만 입력 가능합니다.</p> -->
                     </div>
                 </section>
@@ -68,7 +66,7 @@
                         <div class="kb-form datepicker" data-status="">
                             <label for="mysafe_18">유효기간</label>
                             <div class="kb-form_inner form-text">
-                                <input type="text" class="mysafe-giftcard-datepicker" id="mysafe_18" placeholder="2021.01.01" value="2021.12.31">
+                                <input type="text" class="mysafe-giftcard-datepicker" id="mysafe_18" placeholder="날짜선택" value="2021.12.31">
                             </div>
                             <em class="validation">에러 메세지 영역 입니다.</em>
                         </div>
@@ -78,14 +76,14 @@
                     <div class="kb-form not-ready no-transition giftcard-input-memo safe-flex100">
                         <label for="mysafe_19">메모</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" class="giftcard-memo-input" id="mysafe_19" placeholder="최대 10자를 입력해주세요." value="입학선물" maxlength="10">
+                            <input type="text" class="giftcard-memo-input" id="mysafe_19" placeholder="최대 10자 입력 가능" value="입학선물" maxlength="10">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
                     </div>
                 </section>
                 <section class="kb-sec sticky-bottom">
                     <div class="btn-area">
-                        <button class="btn-solid gray"><span>취소</span></button>
+                        <button class="btn-solid gray"><span>삭제</span></button>
                         <button class="btn-solid my-giftcard-enrollment"><span>수정</span></button>
                     </div>
                 </section>
@@ -99,7 +97,6 @@
 		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
 		<div class="layered">
             @@include('@@webRoot/html/mysafe/layered/MYS_AS_17_01_15_BS1.html')
-            @@include('@@webRoot/html/mysafe/layered/MYS_AS_17_01_15_BS2.html')
             @@include('@@webRoot/html/_layered/bs-calendar.html')
 		</div>
 		<!-- // Layer (fullpage popup, modal, bottom sheet) -->

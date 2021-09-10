@@ -22,14 +22,34 @@
 
 			<!-- app-content // -->
 			<main class="app-content my-safe-pop-gold my-asset pop-my-asset">
-                <section class="kb-sec">
-                    <div class="pop-notice wide header">
-                        <span>
-                            <strong class="h4">
-                                현재 금 시세를 반영한 원화환산금액을 확인할 수 있습니다.
-                            </strong>
-                        </span>
-                        <em class="mt4">* 항목을 터치하면 수정모드로 전환 됩니다. <br>&nbsp;&nbsp; 수정 후 저장 버튼으로 저장하세요.</em>
+                <section class="kb-sec bg-gray">
+                    <ul class="sm" data-style="list">
+                        <li>
+                            보유한 금 시세를 My 금고에서 확인해보세요.
+                        </li>
+                        <li><span class="required">표시된 항목은 필수 입력 사항입니다.</span></li>
+                    </ul>
+                </section>
+                <section class="kb-sec mt28">
+                    <div class="kb-form not-ready no-transition gold-shape-form safe-flex100 mt28" data-status="">
+                        <label for="mysafe_06" class="gold-unit-title required">형태</label>
+                        <div class="kb-form_inner form-select mt4">
+                            <button type="button" class="selected-option" data-call-layered="MYS_AS_17_01_08_BS1" id="mysafe_05"></button>
+                            <select name="" id="mysafe_06" title="금 형태선택">
+                                <option value="">형태선택</option>
+                                <option value="goldShape01">골드바</option>
+                                <option value="goldShape02">돌반지</option>
+                                <option value="goldShape03">액세서리</option>
+                                <option value="goldShape04" selected>직접 입력</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="kb-form not-ready no-transition gold-input-shape safe-flex100">
+                        <!-- <label for="goldUnitInput"></label> -->
+                        <div class="kb-form_inner form-text">
+                            <input type="text" class="gold-shape-input" id="mysafe_07" placeholder="최대 10자 입력 가능" value="결혼반지" maxlength="10">
+                            <button class="btn-data-clear gold-shape-clear"><i class="icon-data-clear_24">지우기</i></button>
+                        </div>
                     </div>
                 </section>
                 <section class="kb-sec gold-input-form mt28">
@@ -80,32 +100,10 @@
                     </div>
                 </section>
                 <section class="kb-sec mt28">
-                    <div class="kb-form not-ready no-transition gold-shape-form safe-flex100 mt28" data-status="">
-                        <label for="mysafe_06" class="gold-unit-title required">형태</label>
-                        <div class="kb-form_inner form-select mt4">
-                            <button type="button" class="selected-option" data-call-layered="MYS_AS_17_01_08_BS1" id="mysafe_05"></button>
-                            <select name="" id="mysafe_06" title="금 형태선택">
-                                <option value="">선택하세요</option>
-                                <option value="goldShape01">골드바</option>
-                                <option value="goldShape02">돌반지</option>
-                                <option value="goldShape03">액세서리</option>
-                                <option value="goldShape04" selected>직접 입력</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="kb-form not-ready no-transition gold-input-shape safe-flex100">
-                        <!-- <label for="goldUnitInput"></label> -->
-                        <div class="kb-form_inner form-text">
-                            <input type="text" class="gold-shape-input" id="mysafe_07" placeholder="최대 10자를 입력해주세요." value="결혼반지" maxlength="10">
-                            <button class="btn-data-clear gold-shape-clear"><i class="icon-data-clear_24">지우기</i></button>
-                        </div>
-                    </div>
-                </section>
-                <section class="kb-sec mt28">
                     <div class="kb-form not-ready no-transition gold-input-memo safe-flex100">
                         <label for="goldUnitInput">메모</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" class="gold-memo-input" id="mysafe_08" placeholder="최대 10자를 입력해주세요." value="행복한 기억" maxlength="10">
+                            <input type="text" class="gold-memo-input" id="mysafe_08" placeholder="최대 10자 입력 가능" value="행복한 기억" maxlength="10">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
                     </div>

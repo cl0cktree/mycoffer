@@ -34,51 +34,90 @@
 
                 <section class="kb-sec asset-summary">
                     <div class="highcharts-box charts-type_square no-space">
-                        <div class="swiper-container t01 js-swiper" data-swiper-options="paySummarySwiperOptions">
+                        <div class="swiper-container t01 js-swiper" data-swiper-options="currencySummarySwiperOptions">
                             <script>
-                                var paySummarySwiperOptions = {
-                                    'autoHeight': true,
+                                var currencySummarySwiperOptions = {
                                     "pagination": {
                                         "el": ".swiper-pagination"
-                                    }
+                                    },
+                                    // 2021-08-10
+                                    "autoplay": {
+                                        "delay": 5000,
+                                    },
+                                    // 2021-08-10
+                                    "autoHeight": true
                                 };
                             </script>
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <div class="graph-area">
-                                        <!--
-                                            [차트 디자인 정보]
-                                            * 그래프(막대) 색상(컬러별)
-                                            - 노란색 :  #ffd338;
-                                            - 파란색 :  #3f6fd1;
-                                            - 회색 :  #c6cbd0;
-                                            - 보라색 :  #9e6eda;
-                                            - 자주색 : #d575c9;
-
-                                            - 차트 텍스트 컬러/크기 : #26282c/14px
-                                            - X축 텍스트 컬러/크기 : #8c949e/14px
-                                            - data labels 텍스트 컬러/크기 : #26282c/14px
-                                        -->
                                         <figure class="highcharts-figure">
                                             <div class="graph-info">
                                                 <h4 class="h4">보험</h4>
                                                 <div class="graph-msg">
                                                     <div class="txt">
-                                                        김국민님의
-                                                        월 납입 보험료 총액은 <b><span class="num"
-                                                                data-unit-after="원">100,000</span></b> 입니다.
-                                                        지난달과 총액이 똑같아요!
+                                                        김국민님<br>월 납입 보험료 총액은 <b><span class="num" data-unit-after="원">100,000</span></b> 입니다. <br>지난달과 총액이 똑같아요!
                                                     </div>
-                                                    <button class="btn-more"><i class="icon-more_24"></i></button>
                                                 </div>
                                             </div>
                                             <!-- [chart area] //-->
+                                            <!--
+                                                [차트 디자인 정보]
+                                                * 그래프(막대) 색상(컬러별)
+                                                - 노란색 :  #ffd338;
+                                                - 회색 :  #c6cbd0;
+
+                                                - 차트 텍스트 컬러/크기 : #26282c/14px
+                                                - X축 텍스트 컬러/크기 : #8c949e/14px
+												- data labels 텍스트 컬러/크기 : #26282c/14px
+                                            -->
                                             <div class="chart-area" id="">
-                                                <img class="temp"
-                                                    src="@@webRoot/static/images/_temp/graph_as_08_00_00-01.png"
+                                                <img class="temp" src="@@webRoot/static/images/_temp/graph_as_08_00_00-01.png"
                                                     alt="차트 예시 이미지">
                                             </div>
                                             <!--// [chart area] -->
+                                            <!--
+											<div class="my-average">
+												<em>내 평균 <span class="num" data-unit-after="원">4,665,210</span></em> 
+											</div>
+                                            -->
+                                        </figure>
+
+                                    </div>
+                                </div>
+                                
+                                <div class="swiper-slide">
+                                    <div class="graph-area">
+                                        <figure class="highcharts-figure">
+                                            <div class="graph-info">
+                                                <h4 class="h4">저축성 보험</h4>
+                                                <div class="graph-msg">
+                                                    <div class="txt">
+                                                        김국민님<br> 저축성 보험 납입액은 <span class="num" data-unit-after="원"><b>300,000</b></span> 입니다.<br>지난달보다 납입액이 늘었어요!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- [chart area] //-->
+                                            <!--
+                                                [차트 디자인 정보]
+                                                * 그래프(막대) 색상(컬러별)
+                                                - 노란색 :  #ffba53;
+                                                - 회색 :  #c6cbd0;
+
+                                                - 차트 텍스트 컬러/크기 : #26282c/14px
+                                                - X축 텍스트 컬러/크기 : #8c949e/14px
+												- data labels 텍스트 컬러/크기 : #26282c/14px
+                                            -->
+                                            <div class="chart-area" id="">
+                                                <img class="temp" src="@@webRoot/static/images/_temp/graph_as_08_00_00-03.png"
+                                                    alt="차트 예시 이미지">
+                                            </div>
+                                            <!--// [chart area] -->
+                                            <!--
+											<div class="my-average">
+												<em>내 평균 <span class="num" data-unit-after="원">4,665,210</span></em> 
+											</div>
+                                            -->
                                         </figure>
 
                                     </div>
@@ -90,69 +129,33 @@
                                                 <h4 class="h4">보장성 보험</h4>
                                                 <div class="graph-msg">
                                                     <div class="txt">
-                                                        김국민님의 보장성 보험
-                                                        월 납입액은 <b><span class="num"
-                                                                data-unit-after="원">100,000</span></b> 입니다.
-                                                        지난달보다 납입액이 늘었어요!
+                                                        김국민님<br>보장성 보험 월 납입액은 <b><span class="num" data-unit-after="원">100,000</span></b> 입니다. <br>지난달보다 납입액이 늘었어요!
                                                     </div>
-                                                    <button class="btn-more"><i class="icon-more_24"></i></button>
                                                 </div>
                                             </div>
+                                            <!-- [chart area] //-->
+                                            <!--
+                                                [차트 디자인 정보]
+                                                * 그래프(막대) 색상(컬러별)
+                                                - 노란색 :  #ffd338;
+                                                - 회색 :  #c6cbd0;
+
+                                                - 차트 텍스트 컬러/크기 : #26282c/14px
+                                                - X축 텍스트 컬러/크기 : #8c949e/14px
+												- data labels 텍스트 컬러/크기 : #26282c/14px
+                                            -->
                                             <div class="chart-area" id="">
-                                                <img class="temp"
-                                                    src="@@webRoot/static/images/_temp/graph_as_08_00_00-02.png"
+                                                <img class="temp" src="@@webRoot/static/images/_temp/graph_as_08_00_00-02.png"
                                                     alt="차트 예시 이미지">
                                             </div>
                                             <!--// [chart area] -->
+                                            <!--
+											<div class="my-average">
+												<em>내 평균 <span class="num" data-unit-after="원">4,665,210</span></em> 
+											</div>
+                                            -->
                                         </figure>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="graph-area">
-                                        <figure class="highcharts-figure">
-                                            <div class="graph-info">
-                                                <h4 class="h4">자동차 보험</h4>
-                                                <div class="graph-msg">
-                                                    <div class="txt">
-                                                        김국민님의 자동차(운전자) 보험
-                                                        납입액은 <span class="num" data-unit-after="원"><b>300,000</b></span>
-                                                        입니다.<b>
-                                                            지난달보다 납입액이 늘었어요!
-                                                    </div>
-                                                    <button class="btn-more"><i class="icon-more_24"></i></button>
-                                                </div>
-                                            </div>
-                                            <div class="chart-area" id="">
-                                                <img class="temp"
-                                                    src="@@webRoot/static/images/_temp/graph_as_08_00_00-03.png"
-                                                    alt="차트 예시 이미지">
-                                            </div>
-                                            <!--// [chart area] -->
-                                        </figure>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="graph-area">
-                                        <figure class="highcharts-figure">
-                                            <div class="graph-info">
-                                                <h4 class="h4">저축성 보험</h4>
-                                                <div class="graph-msg">
-                                                    <div class="txt">
-                                                        김국민님의
-                                                        저축성 보험 납입액은 <span class="num"
-                                                            data-unit-after="원"><b>300,000</b></span> 입니다.
-                                                        지난달보다 납입액이 늘었어요!
-                                                    </div>
-                                                    <button class="btn-more"><i class="icon-more_24"></i></button>
-                                                </div>
-                                            </div>
-                                            <div class="chart-area" id="">
-                                                <img class="temp"
-                                                    src="@@webRoot/static/images/_temp/graph_as_08_00_00-04.png"
-                                                    alt="차트 예시 이미지">
-                                            </div>
-                                            <!--// [chart area] -->
-                                        </figure>
+
                                     </div>
                                 </div>
                             </div>
@@ -249,7 +252,7 @@
                                     <a href="@@webRoot/html/asset/mys_as_08_01_00_p1.html" class="btn-account-detail">
                                         <div class="account-wrap">
                                             <div class="txt-con">
-                                                <span class="prod-kind maturity">만기</span>
+                                                <span class="prod-kind maturity">만기경과</span><span class="prod-kind maturity">실효</span>
                                                 <span class="p-name">저축성보험 상품명 노출</span>
                                                 <div class="agency-con">
                                                     <span class="agency-logo"><img
@@ -595,16 +598,6 @@
                                 <button class="btn-close"><span>닫기</span></button>
                             </div>
                         </h4>
-                        <div class="content-box shadow my-insurance-diagnosis-summary">
-                            <p>
-                                비교그룹 대비한<br>
-                                월 평균 납입보험료 비율입니다
-                            </p>
-                            <div class="">
-                                <p>동일연령대 보다 <strong><span class="num" data-unit-after="%">20</span>많이</strong></p>
-                                <p>유사자산규모 대비 <strong><span class="num" data-unit-after="%">50</span>적게</strong></p>
-                            </div>
-                        </div>
                         <div class="highcharts-box charts-type_square no-space">
                             <div class="swiper-container t01 js-swiper" data-swiper-options="paySummarySwiperOptions">
                                 <script>
@@ -630,21 +623,7 @@
                                             -->
                                             <figure class="highcharts-figure content-box">
                                                 <div class="graph-info">
-                                                    비교그룹 보다
-                                                    <button type="button" class="btn-question"><i
-                                                            class="icon-tooltip-que_20"></i><span>비교그룹</span></button>
-                                                    <!-- Tooltip (With title)-->
-                                                    <div class="tooltip">
-                                                        <strong class="tit">비교그룹</strong>
-                                                        <div class="cont">
-                                                            나와 금융자산 규모가 비슷한 그룹입니다.
-                                                        </div>
-                                                        <button class="btn-close"><span>닫기</span></button>
-                                                    </div>
-                                                    <br>
-                                                    월 평균 납입보험료가 <b class="num"
-                                                            data-unit-after="%">50</b> 더
-                                                    적어요.
+                                                    비슷한 자산규모 고객 보다<br>월 평균 납입보험료를 <b class="num" data-unit-after="%">50</b> <br>적게 내고 계시네요.
                                                 </div>
                                                 <!-- [chart area] //-->
                                                 <div class="chart-area" id="">
@@ -662,21 +641,7 @@
                                         <div class="graph-area">
                                             <figure class="highcharts-figure content-box">
                                                 <div class="graph-info">
-                                                    비교그룹 보다
-                                                    <button type="button" class="btn-question"><i
-                                                            class="icon-tooltip-que_20"></i><span>비교그룹</span></button>
-                                                    <!-- Tooltip (With title)-->
-                                                    <div class="tooltip">
-                                                        <strong class="tit">비교그룹</strong>
-                                                        <div class="cont">
-                                                            나와 같은 연령대 그룹입니다.
-                                                        </div>
-                                                        <button class="btn-close"><span>닫기</span></button>
-                                                    </div>
-                                                    <br>
-                                                    월 평균 납입보험료가 <b class="num"
-                                                            data-unit-after="%">20</b> 더
-                                                    많아요.
+                                                   같은 연령대 보다<br>월평균 납입보험료를 <b class="num" data-unit-after="%">20</b> <br>많이 내고 계시네요.
                                                 </div>
                                                 <!-- [chart area] //-->
                                                 <div class="chart-area" id="">
@@ -694,8 +659,6 @@
                             </div>
                         </div>
                     </div>
-
-
                 </section>
                 <!-- // 내 보험 납입금액 진단 -->
 
@@ -885,17 +848,18 @@
             $(this).hide();
             gfn_layered.open('bsPersonInfoCollection');
         });
-
+        
         var $agreeBS = $('.bottom-sheet[data-layered-name=bsPersonInfoCollection]');
-        $agreeBS.find('button[data-action=agree]').prop('disabled', true);
+        //$agreeBS.find('button[data-action=agree]').prop('disabled', true);
 
+        //임시스크립트
         $agreeBS.on('click', 'button[data-action=agree]', function () {
             gfn_layered.close('bsPersonInfoCollection');
             $('button[data-action=chartShow]').hide();
             $('.warranty-details').find('.chart-area').show();
             $('.btn-warranty-details').show().siblings('.btn-warranty-reanalysis').show();
         });
-
+        /*
         $agreeBS.on('change', 'input:checkbox', function () {
             var checked = $(this).is(':checked');
             if (!checked) {
@@ -904,7 +868,7 @@
                 $agreeBS.find('button[data-action=agree]').prop('disabled', false);
             }
         });
-
+        */
         $(document).ready(function () {
             currentTxtPosition('.my-asset .percentage-graph.type2');
         })

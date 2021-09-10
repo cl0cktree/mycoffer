@@ -202,6 +202,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .asset-summary .highcharts-box .graph-info .txt .plus {color:$color-red;}
 .my-asset .asset-summary .highcharts-box .graph-info .txt .minus {color:$color-blue;}
 .my-asset .asset-summary .highcharts-box .graph-info .txt small {font-size: 14px;}
+.my-asset .asset-summary .highcharts-box .graph-info .txt .num:before{font-weight:normal;font-size:16px;}
 .my-asset .asset-summary .highcharts-box .graph-info .tooltip .txt{color:$kb-ui08;margin-bottom:0.5rem;}
 .my-asset.asset-index .tooltip .cont .tit{margin-bottom:1.2rem;}
 .my-asset .asset-summary .highcharts-box .graph-info .tooltip .info{color:$kb-ui08;font-size: 1.4rem;font-weight: normal; line-height: 2.0rem;letter-spacing: -0.01em;margin-top:1rem;}
@@ -780,6 +781,8 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .asset-insurance .asset-summary{padding-bottom:48px;}
 .warranty-details{border-top:10px solid $kb-ui10;}
 
+/* 주식 */
+.my-asset.stock .account-top .btn-area{margin:0 24px;}
 
 /* 보험 */
 
@@ -805,7 +808,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .credit-score .box-area .num:after{font-weight:bold;}
 .my-asset .credit-score .box-area .score{text-align:right;padding-right:10px;}
 .my-asset .credit-score .box-area .percent:before{display:inline-block;content:'|';padding-right:10px;}
-
+.my-asset .credit-score .error .no-data-wrap{padding-bottom:3.8rem;}
 .my-asset .credit-score .error .box-area{grid-template-columns:1fr;text-align:center;font-weight:normal;margin-top:1.2rem;background-color:$kb-ui09;font-size:16px;}
 .my-asset .credit-score .after{overflow:hidden;}
 .my-asset .credit-score .after .btn-text{float:right;margin-top:1.4rem;vertical-align:middle;}
@@ -837,23 +840,15 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset.pop-account-detail .loan .account-top .more-view-box .description-list dt{align-items:flex-start;}
 .my-asset.pop-account-detail .loan .account-top .more-view-box .description-list dd{margin:0.5rem 0;}
 
-
-
 /* 외화 */
 .my-asset .currency-modify .currency-top .s-txt{@include text($size:16px);color:$kb-ui02;margin-bottom:20px;}
 .my-asset .currency-modify .order-change-list{border-top: 1px solid $kb-ui07;}
-.my-asset .currency-modify .order-change-list li{padding: 24px 36px 23px 2px;border-bottom: 1px solid $kb-ui09;}
-.my-asset .currency-modify .order-change-list li.is-disabled > p{pointer-events: auto;opacity:0.5;}
+.my-asset .currency-modify .order-change-list li{padding: 20px 36px 19px 2px;border-bottom: 1px solid $kb-ui09;}
+.my-asset .currency-modify .order-change-list li.disabled > .order-change {pointer-events: auto; opacity:0.25;}
 .my-asset .currency-modify .order-change-list {position: relative; border-top: 0;}
 .my-asset .currency-modify .order-change-list::before {content:'';position:absolute;z-index:10;left:0;right:0;top:0;height:1px;background-color:$kb-ui07;}
-
-
-// .my-asset .currency-modify .currency-top .s-txt{@include text($size:16px);color:$kb-ui02;margin-bottom:20px;}
-// .my-asset .currency-modify .ui-state-disabled > p{pointer-events: auto;opacity:0.5;}
-// .my-asset .currency-modify .ui-sortable {position: relative; border-top: 0;}
-// .my-asset .currency-modify .ui-sortable::before {content:'';position:absolute;z-index:10;left:0;right:0;top:0;height:1px;background-color:$kb-ui07;}
-// .my-asset .currency-modify .ui-state-highlight{height:72px;}
-// .my-asset .currency-modify .ui-sortable li {padding: 24px 36px 23px 2px;}
+.my-asset.foreign-currency .p-list > dl > dd .more-area{text-align:right;margin-top:20px;overflow:hidden;}
+.my-asset.foreign-currency .p-list > dl > dd .more-area button[data-action=more]{float:right;}
 
 /* 적립포인트 */
 .my-asset.point .asset-summary{padding-bottom:48px;}
@@ -1509,7 +1504,8 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .kb-fund.type-s .rate {margin-top: 15px; float: none; text-align: right;}
 
 .kb-fund-tv {margin-bottom: 24px;}
-.kb-fund-tv-banner {display: block; padding: 24px; color: $kb-ui02; background-color: $kb-ui10; border-radius: 8px;}
+.kb-fund-tv-banner {position: relative; display: block; padding: 24px; color: $kb-ui02; background-color: $kb-ui10; border-radius: 8px;}
+.kb-fund-tv-banner::after {content: ''; position: absolute; right: 20px; bottom: 26px; width: 132px; height: 65px; background-image: url(../images/asset/kb_fund_tv.png); background-size: 100% 100%;}
 .kb-fund-tv-banner .title {display: block; @include text($text01, bold);}
 .kb-fund-tv-banner .subtxt {display: block; @include text($text02, normal);}
 

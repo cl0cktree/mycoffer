@@ -111,6 +111,13 @@
 [data-status=success] ~ .validation:before{background-position: -4rem 0;}
 [data-status=success] .validation:before{background-position: -4rem 0;}
 
+.info-msg .num,
+.error-msg .num,
+.success-ms .num{font-size:1.5rem;}
+.info-msg .num:after,
+.error-msg .num:after,
+.success-ms .num:after{font-size:$text03;font-weight:inherit;}
+
 ul[data-style=list] li,
 [data-style=list]:not(ul){position:relative;padding-left:1.5rem;line-height:1.4;color:$kb-ui03;}
 ul[data-style=list] > li + li{margin-top:0.8em;}
@@ -363,6 +370,7 @@ p.simple-message .num:after{font-size:$text03;font-weight:inherit;}
 
 ul.link-arrow-after li,
 .link-arrow-after{position:relative;padding-right:30px;}
+ul.link-arrow-after{padding-right:0;}
 .link-arrow-after:not(ul):after,
 ul.link-arrow-after li:after{content:'';position:absolute;right:0;top:calc(50% - 10px);}
 ul.link-arrow-after li:after,

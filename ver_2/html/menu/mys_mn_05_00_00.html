@@ -21,75 +21,46 @@
         <div class="app-container">
 
             <!-- app-content // -->
-            <main class="app-content mm-setting">                
-                <section class="kb-sec">                    
+            <main class="app-content mm-setting">
+                <section class="kb-sec">         
+                    <h1 class="is-hidden">설정</h1>           
                     <h2 class="h3">로그인설정</h2>
-                    <h3 class="h4">SNS로그인</h3>
-                    <div class="kb-card">
-                        <ul class="certificate-list">
-                            <li>
-                                <a href="javascript:;">
-                                    <i class="icon-kakao_40"></i> 
-                                    <span class="txt">카카오<span class="tag-label t03 round" data-state="active">사용중</span></span>
-                                    <span>해지하기</span><span class="link-arrow" onclick="modalDemo1()">해지하기</span>
-                                </a>
-                            </li> 
-                        </ul>
-                    </div>
-                    <div class="kb-card">
-                        <ul class="certificate-list">
-                            <li>
-                                <a href="javascript:;">
-                                    <i class="icon-naver_40"></i> 
-                                    <span class="txt">네이버<span class="tag-label t03 round" data-state="active">사용중</span></span>
-                                    <span>해지하기</span><span class="link-arrow" onclick="modalDemo2()">해지하기</span>
-                                </a>
-                            </li> 
-                        </ul>
-                    </div>
-                    <div class="kb-card">
-                        <ul class="certificate-list">
-                            <li>
-                                <a href="javascript:;">
-                                    <i class="icon-apple_40"></i> 
-                                    <span class="txt">Apple<span class="tag-label t03 round" data-state="active">사용중</span></span>
-                                    <span>설정하기</span><span class="link-arrow">설정하기</span>
-                                </a>
-                            </li> 
-                        </ul>
-                    </div>
-                    <!-- <div class="simple-password-setting">
-                        <strong class="tit">SNS로그인</strong>
-                        <span class="btn-switch"><input type="checkbox" id="toggleBtn1A"><label for="toggleBtn1A"></label></span>
-                    </div>
-                    <p class="simple-message">6자리 숫자로 간편하게 로그인 하실 수 있습니다.</p>
-                    <p class="simple-message">인증서 기간 만료 또는 폐기 시 재설정 하셔야 합니다.<br>인증서 유효기간을 확인해 주세요.</p>
-                    <p class="bottom-btn-text"><a href="javascript:;" class="btn-text sm icon-arrow" role="button"><span>간편비밀번호 변경하기</span><i></i></a></p> -->
+                    <h3>SNS로그인</h3>
+                    <ul class="certificate-list">
+                        <li class="kb-card">                            
+                            <i class="icon-kakao_40"></i> 
+                            <span class="txt">
+                                <em>카카오</em>
+                                <strong class="tag-label t03 round" data-state="active">사용중</strong>
+                            </span>
+                            <a href="javascript:;" class="btn-text sm icon-arrow" onclick="modalDemo1()"><span>해지하기</span><i></i></a>
+                        </li> 
+                        <li class="kb-card">
+                            <i class="icon-naver_40"></i> 
+                            <span class="txt">
+                                <em>네이버</em>
+                                <!-- <strong class="tag-label t03 round" data-state="active">사용중</strong> -->
+                            </span>                            
+                            <a href="javascript:;" class="btn-text sm icon-arrow"><span>설정하기</span><i></i></a>
+                        </li>
+                        <li class="kb-card">
+                            <i class="icon-apple_40"></i> 
+                            <span class="txt">
+                                <em>Apple</em>
+                                <strong class="tag-label t03 round" data-state="active">사용중</strong>
+                            </span>
+                            <a href="javascript:;" class="btn-text sm icon-arrow" onclick="modalDemo1()"><span>해지하기</span><i></i></a>
+                        </li>
+                    </ul>
                 </section>   
 
                 <section class="kb-sec">
-                    <ul class="manage-certificate">
-                        <li><a href="javascript:;">Push 알림 설정 <i class="icon-link_24"></i></a></li>
-                        <li><a href="javascript:;">공동인증서 관리<i class="icon-link_24"></i></a></li>
-                        
-                        <!-- <li><a href="javascript:;">자산/지출 숨김 설정 <i class="icon-link_24"></i></a></li> -->
+                    <ul class="manage-certificate link-arrow-after">
+                        <li><a href="javascript:;">Push 알림 설정</a></li>
+                        <li><a href="javascript:;">공동인증서 관리</a></li>                        
+                        <!-- <li><a href="javascript:;">자산/지출 숨김 설정 <i class="link-arrow"></i></a></li> -->
                     </ul>
-                    <!-- // 수정 : 2021.06.04 -->
-                    <!-- <div class="my-now-mode">
-                        <h2 class="h2">My NOW 모드 설정</h2>
-                        <ul data-style="list">
-                            <li>
-                                <strong class="tit">Young 모드</strong>
-                                <span class="btn-switch"><input type="checkbox" id="myNowMode01" checked><label for="myNowMode01"></label></span>
-                            </li>
-                            <li>
-                                <strong class="tit">큰글씨 모드</strong>
-                                <span class="btn-switch"><input type="checkbox" id="myNowMode02" checked><label for="myNowMode02"></label></span>
-                            </li>
-                        </ul>
-                    </div> -->
-                    <!-- 수정 : 2021.06.04 // -->
-                    <p class="bottom-btn-text02"><button class="btn-text" onclick="modalDemo3()"><span><u>로그아웃</u></span></button></p>
+                    <p class="bottom-btn-text02"><button class="btn-text" onclick="modalDemo3()"><u>로그아웃</u></button></p>
                 </section>   
 
             </main>
@@ -115,8 +86,11 @@
                 title: "",
                 message: "SNS 로그인 기능을 해지하시겠습니까?",
                 type: "confirm",
-                textOkButton: "취소",
-                textCancelButton: "확인",
+                textOkButton: "확인",
+                textCancelButton: "취소",
+                onOk: function() {
+                    modalDemo2();
+                }
             });
         }
         function modalDemo2() {
@@ -125,16 +99,20 @@
                 message: "SNS 로그인 기능이 해지되었습니다.",
                 type: "확인"
             });
-        }
+        }        
         function modalDemo3() {
             modalPopup({
                 title: "",
                 message: "로그아웃 하시겠습니까?",
                 type: "confirm",
-                textOkButton: "취소",
-                textCancelButton: "확인",
+                textOkButton: "확인",
+                textCancelButton: "취소",
+                onOk: function() {
+                    //Logout
+                }
             });
         }
+        
         
 </script>
 </body>

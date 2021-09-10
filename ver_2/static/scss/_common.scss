@@ -581,16 +581,16 @@ h1 + .joint-certificate-list{margin-top:28px;}
 
 //전화상담
 .kb-sec.bg-gray .inner-text-bg{@include text($size: 15px);padding:0.2rem 0;text-align:left;color:$kb-ui03;}
-.mydata-call-center .operation-time{margin:4.1rem 0;}
-.mydata-call-center .operation-time p[data-style=list]{margin-top:2rem;font-size:1.6rem;color:$kb-ui02;}
+.mydata-call-center .operation-time{margin:3.6rem 0;}
+.mydata-call-center .operation-time p[data-style=list]{margin-top:1.4rem;font-size:1.6rem;color:$kb-ui02;}
 .mydata-call-center .operation-time p .num{font-size:1.6rem;}
-.mydata-call-center .connect-call-center{margin-top:5rem;margin-bottom:4.5rem;}
+.mydata-call-center .connect-call-center{margin-top:4.6rem;margin-bottom:4.5rem;}
 .mydata-call-center .connect-call-center li{border-bottom:0.1rem solid $kb-ui09;}
 .mydata-call-center .connect-call-center li:first-child{border-top:0.1rem solid $kb-ui09;}
-.mydata-call-center .connect-call-center li > a{display:flex;justify-content:space-between;padding:2rem 0;}
-.mydata-call-center .connect-call-center li .text-wrap{flex:1 0 auto;align-self:center;}
+.mydata-call-center .connect-call-center li > a{display:flex;justify-content:space-between;padding:2rem 0 1.6rem;}
+.mydata-call-center .connect-call-center li .text-wrap{flex:1 0 auto;align-self:center;margin-top:0.8rem;}
 .mydata-call-center .connect-call-center li [class^=icon]:last-child{align-self:center;}
-.mydata-call-center .connect-call-center li .tit{@include text($size: $text01, $line-height:1, $weight:bold);display:block;margin-bottom:1rem;}
+.mydata-call-center .connect-call-center li .tit{@include text($size: $text01, $line-height:1, $weight:bold);display:block;margin-bottom:0.5rem;}
 .mydata-call-center .connect-call-center li .num{@include text($size: $text03, $line-height:1);color:$kb-ui03;}
 .mydata-call-center .connect-call-center a [class^=icon]:first-child{margin-right:1.6rem;}
 .mydata-call-center [data-style=list]{color:$kb-ui01;}
@@ -610,10 +610,8 @@ h1 + .joint-certificate-list{margin-top:28px;}
 //앱설정
 .mm-setting .simple-message + .simple-message{margin-top:12px}
 .mm-setting .kb-sec + .kb-sec{margin-top:0px;}
-.mm-setting .kb-sec:first-child{position:relative;padding-top:0px;padding-bottom:16px;}
-.mm-setting .kb-sec:first-child:after{content:'';position:absolute;left:24px;right:24px;bottom:0;height:1px;background-color:$kb-ui09;}
-.mm-setting h2{@include text($size: $text01, $weight:bold, $line-height:1);margin-bottom:20px;}
-.mm-setting h3{margin-bottom:16px;}
+.mm-setting h2{font-weight:bold;}
+.mm-setting h2 + h3{margin-top:20px;}
 .mm-setting .simple-password-setting{@include clfix;}
 .mm-setting .simple-password-setting .tit{position:relative;float:left;font-weight:bold;margin-top:5px;padding-left:7px;}
 .mm-setting .simple-password-setting .tit:before{content:'';position:absolute;left:0;top:calc(50% - 3px);width:3px;height:3px;background-color:$kb-ui04;}
@@ -623,8 +621,10 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .mm-setting p.bottom-btn-text .btn-text{@include btnText($size: $text03);color:$kb-ui04;}
 .mm-setting p.bottom-btn-text02{margin-top:48px;}
 .mm-setting p.bottom-btn-text02 .btn-text{@include btnText($size: $text02, $underline: true);}
+.mm-setting .kb-sec + .kb-sec{margin-top:32px;}
+.mm-setting .manage-certificate{border-top:1px solid $kb-ui09;}
 .mm-setting .manage-certificate > li{border-bottom:1px solid $kb-ui09}
-.mm-setting .manage-certificate > li > a{@include clfix;@include text($text01, $weight:bold, $line-height:1);display:block;padding:24px 0;}
+.mm-setting .manage-certificate > li > a{@include clfix;@include text($text01, $weight:bold, $line-height:1);display:block;padding:18px 0;}
 .mm-setting .manage-certificate > li .tit{position:relative;font-size:$text02;font-weight:bold;margin-top:5px;padding-left:7px;}
 .mm-setting .manage-certificate > li .tit:before{content:'';position:absolute;left:0;top:calc(50% - 3px);width:3px;height:3px;background-color:$kb-ui04;}
 .mm-setting .manage-certificate > li .icon-link_24{float:right;}
@@ -635,23 +635,20 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .mm-setting .my-now-mode .tit{float:left;font-weight:bold}
 .mm-setting .my-now-mode .btn-switch{float:right;}
 
-.mm-setting .kb-card{margin-bottom:16px;}
-.mm-setting .kb-sec:first-of-type{margin-top:1.5rem;}
-.mm-setting .certificate-list{margin-top:-1.5rem;}
-.mm-setting .certificate-list li{border-bottom:none;}
-.mm-setting .certificate-list li a{display:flex;justify-content:space-between;align-items:center;padding:2rem 0 0 0;}
+.mm-setting .certificate-list{margin-top:14px;}
+.mm-setting .certificate-list li{display:flex;align-items:center;margin-top:16px;padding-top:19px;}
 .mm-setting .certificate-list li i:first-child{margin-right:1.5rem;}
-.mm-setting .certificate-list li .txt{flex: 1 0 auto;font-size:1.8rem;font-weight:bold;line-height:1.1;}
-.mm-setting .tag-label.t03{margin-left:1rem;vertical-align:top;}
+.mm-setting .certificate-list li .txt{flex: 1 0 auto;letter-spacing: 0.02em;}
+.mm-setting .certificate-list li .txt em{display:inline-block;min-width:50px;font-size:1.8rem;line-height:20px;}
+.mm-setting .certificate-list .tag-label{margin-left:1rem;vertical-align:top;}
+.mm-setting .certificate-list li .btn-text{margin-left:auto;}
 
 //알림 설정
-.mm-alarm-setting .kb-sec:first-child{padding-top:23px;}
-.mm-alarm-setting .kb-sec + .kb-sec{margin-top:20px;}
 .mm-alarm-setting h2{@include clfix;}
 .mm-alarm-setting h2 .tit{@include text($size: $text01, $line-height:1, $weight:bold);float:left;}
 .mm-alarm-setting h2 .btn-switch{float:right;}
 .mm-alarm-setting h2 + p{@include text;margin-top:16px;}
-.mm-alarm-setting p:last-child{margin-top:28px;}
+.mm-alarm-setting p:last-child{margin-top:20px;}
 .mm-alarm-setting p .btn-text{@include btnText($size:14px);color:$kb-ui04}
 .mm-alarm-setting .mm-alarm-setting-detail{margin-top:28px;border-top:1px solid $kb-ui09;}
 .mm-alarm-setting .mm-alarm-setting-detail li{@include clfix;padding:16px 0;border-bottom:1px solid $kb-ui09;}
@@ -705,32 +702,36 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .mm-manage-certificate h2{margin-bottom:0px; margin-top:48px;}
 .mm-manage-certificate .available-certificate{margin-top:28px;}
 .mm-manage-certificate .new-certificate{margin-top:48px;}
-
+.mm-manage-certificate .manage-certificate{margin-top:6px;}
 .mm-manage-certificate .manage-certificate > li{border-bottom:1px solid $kb-ui09}
-.mm-manage-certificate .manage-certificate > li > a{@include clfix;@include text($text02, $line-height:1);display:block;padding:24px 0;}
+.mm-manage-certificate .manage-certificate > li > a{@include clfix;@include text($text02, $line-height:1);display:block;padding:18px 0;}
 .mm-manage-certificate .manage-certificate > li .tit:before{content:'';position:absolute;left:0;top:calc(50% - 3px);width:3px;height:3px;background-color:$kb-ui04;}
-.mm-manage-certificate .manage-certificate > li .icon-link_24{float:right;}
+
 .mm-manage-certificate .btn-text{width:100%; display: inline-block; text-align: center;}
 .mm-manage-certificate .btn-line{margin-top:73px;}
+
 //스마트폰(승인번호)
-.approval-number .kb-form{width: 100%; display:block;margin-bottom: 96px; clear: both;}
-.approval-number .kb-form .kb-form_inner{width:100%}
-.approval-number .kb-form .kb-form_inner{width:29.8%; float: left;margin-right: 16px;}
-.approval-number .kb-form .form-text-last{margin-right: 0px; }
-.pc-import .kb-sec{padding-left: 0px;}
-.pc-import .kb-sec{padding-left: 0px;}
-.pc-import .tab_contents .kb-sec:first-child{padding-left: 24px;}
-.pc-import .approval-number input{text-align: left;}
-.pc-import .approval-number .list-decimal{display: block;}
-.pc-import .approval-number .list-decimal ul{display: block;}
-.pc-import .approval-number .list-decimal li{list-style-type: decimal; margin-left:20px; color:$kb-ui02; font-size: 16px;font-weight: bold; padding-bottom: 20px; line-height:24px;}
-.pc-import .approval-number .list-decimal li p{font-weight: normal; padding-left:10px;}
-.pc-import .approval-number .list-decimal .simple-message{color:$color-red; margin-top:0px;}
-.pc-import .approval-number .list-decimal .simple-message::before{content:'*';position: absolute;left:0;top:5px;width:20px;height:20px;background:none; font-size: 24px;}
+.approval-number .kb-form_multi{display:flex;flex-wrap:wrap;}
+.approval-number .kb-form_multi > .tit{flex:0 0 100%;}
+.approval-number .kb-form_multi .kb-form{flex:1;}
+.approval-number .kb-form_multi .kb-form + .kb-form{margin-left:16px;margin-top:0;}
+.approval-number .kb-form_multi + .list-decimal{margin-top:48px;}
+.approval-number .list-decimal li{list-style-type: decimal; margin-left:20px; color:$kb-ui02; font-size: 16px; padding-bottom: 20px; line-height:24px;}
+.approval-number .list-decimal li p{font-weight: normal; padding-left:10px;}
+.approval-number .list-decimal .simple-message{color:$color-red; margin-top:0px;}
+.approval-number .list-decimal .simple-message::before{content:'*';position: absolute;left:0;top:5px;width:20px;height:20px;background:none; font-size: 24px;}
+
 .approval-number .qrscan{ width:120px; height:120px; background-color: $kb-ui07; margin:24px auto 48px auto; text-align: center; line-height:120px; color:$kb_ui11; }
-.pc-import .qrscan-datail-dim{position:fixed;top:0;left:0;bottom:0;right:0;background-color:rgba(0,0,0,0.3);z-index:0;}
+.pc-import .qrscan-datail-dim{position:fixed;top:0;left:0;bottom:0;right:0;background-color:rgba(0,0,0,0.7);z-index:0;}
 .qrscan-datail-dim p{width:255px; height:255px; line-height: 255px;; background-color: $kb-ui10; margin: 0 auto; text-align: center; position: fixed;
     top: 50%; left: 50%; transform: translate(-50%, -50%);}
+
+    
+.app-lnb .approval-number .qrscan{ width:120px; height:120px; background-color: $kb-ui07; margin:24px auto 48px auto; text-align: center; line-height:120px; color:$kb_ui11; }
+.app-lnb .qrscan-datail-dim{position:fixed;top:0;left:0;bottom:0;right:0;background-color:rgba(0,0,0,0.7);z-index:0;}
+.app-lnb .qrscan-datail-dim p{width:255px; height:255px; line-height: 255px;; background-color: $kb-ui10; margin: 0 auto; text-align: center; position: fixed;
+        top: 50%; left: 50%; transform: translate(-50%, -50%);}
+    
 //플러스존 -> My 혜택 - > 마이데이터 선물함(리워드 쿠폰)
 .search-bar{display:flex;justify-content:space-between;align-items:center;margin-left:(-2.4rem);margin-right:(-2.4rem);padding-top:12px;padding-bottom:12px;padding-left:2.4rem;padding-right:2.4rem;background-color:$kb-ui10;}
 .search-bar .tit{font-weight:bold;}

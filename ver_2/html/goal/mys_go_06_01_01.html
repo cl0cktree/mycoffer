@@ -1,9 +1,9 @@
-<!-- [MYS_GO_06_01_01] 작성자: 누리어 시스템 김홍범 -->
+<!-- [MYS_GO_06_01_02] 작성자: 누리어 시스템 김홍범 -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 	@@include('@@webRoot/html/_include/app-head.html',{
-		"title": "아낀만큼 진행 상세 내역 | 아낀만큼 | 목표"
+		"title": "아낀만큼완료상세 성공 | 완료 챌린지 목록 | 목표"
 	})
 </head>
 
@@ -11,13 +11,32 @@
 	@@include('@@webRoot/html/_include/app-a11y.html')
 	<div class="app">
 		<!-- app-header //-->
-        @@include('@@webRoot/html/_include/app-integrated-header.html',{'pageTit':'상세 내역','type':''})
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{'pageTit':'상세내역','type':''})
 		<!-- // app-header -->
 
 		<!-- app-container //-->
 		<div class="app-container">
+
 			<!-- app-content // -->
-			<main class="app-content goals-challenge">
+			<main class="app-content goal-ama-others-detail">			
+                <!-- 2021-09-09 수정 //-->
+                <section class="kb-sec goals-noti type2">
+                    <h2>
+                        커피 줄이기
+                        <i class="badge d-day">D-10</i>
+                    </h2>
+                    <h3>카페인 중독! 더는 위험해요 ㅠㅠ</h3>
+                    <dl class="description-list">
+                        <dt>목표기간</dt>
+                        <dd><span class="num">2021.08.01~2021.09.30</span></dd>
+                        <dt>과거 소비금액</dt>
+                        <dd class="account"><span class="num" data-unit-after="원">250,000</span> (월평균)</dd>
+                        <dt>목표예산 금액</dt>
+                        <dd class="account"><span class="num" data-unit-after="원">150,000</span> (<span class="num">1</span>주일)</dd>
+                    </dl>
+                </section>
+                <!-- // 2021-09-09 수정 -->
+                <hr class="hr-divide_32">               
                 <section class="kb-sec goals-detail-list">
                     <div class="challenge-box content-swiper-wrap">
                         <div class="swiper-container content-swiper t01 js-swiper" data-swiper-options="goalGraphSwiperOptions">
@@ -27,70 +46,50 @@
                                         "el": ".swiper-pagination"
                                     },
                                     "spaceBetween": 16,
-                                    "slidesPerView": "auto",
-                                    "autoHeight": "true"                                    
+                                    "autoHeight": "true"                                        
                                 };
                             </script>
+                                
+                            <!-- 2021-09-09 수정 // -->
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide content-box shadow">
-                                    <div class="challenge-tit">
-                                        <h2 class="h3">
-                                            커피 줄이기
-                                            <span>카페인 샤워는 이제 그만!</span>
-                                        </h2>
-                                        <span class="num">D-5</span>
-                                    </div>
                                     <div class="challenge-info">
-                                        <ul class="term-list">
-                                            <li><span>목표기간</span> <em class="num">2021.04.01~2021.04.06</em></li>
-                                            <li><span>과거 소비금액</span> <em class="num" data-unit-after="원">150,000</em> (월 평균)</li>
-                                            <li><span>목표예산 금액</span> <em class="num" data-unit-after="원">150,000</em> (1주일)</li>
-                                        </ul>
                                         <div class="txt-goal-stat">
-                                            <h3>목표예산 <strong class="num" data-unit-after="원">70,000</strong> 중</h3>
-                                            <h3>현재 <strong class="num" data-unit-after="원">80,000</strong> 사용 중 이에요.</h3>
+                                            <p>현재소비금액</p>
                                         </div>
                                         
-                                        <div class="character-graph goal low-top" data-theme="pay">
+                                        <div class="character-graph goal low-top success" data-theme="coffee"> <!-- 2021-09-09 수정 -->
                                             <div class="graph-area">
-                                                <span data-goal="50"><i><img src="@@webRoot/static/images/_temp/@progress_coffee.png" alt="커피"></i></span>
+                                                <span data-goal="100"><i></i></span>
                                                 <div class="flag"><i class="icon-flag-goal"></i></div>
                                             </div>
                                             <div class="graph-txt">
-                                                <p class="start-txt">현재소비금액<br><span class="num" data-unit-after="원">100,000</span></p>
+                                                <p class="start-txt">현재 소비금액<br><span class="num" data-unit-after="원">100,000</span></p>
                                                 <p class="end-txt">목표예산 금액<br><strong><span class="num" data-unit-after="원">150,000</span></strong></p>
                                             </div>
                                         </div>                                    
                                     </div>
                                 </div>
                                 <div class="swiper-slide content-box shadow">
-                                    <div class="challenge-tit">
-                                        <h2 class="h3">
-                                            커피 줄이기
-                                            <span>카페인 중독! 더는 위험해요!</span>
-                                        </h2>
-                                        <span class="num">D-5</span>
-                                    </div>
-                                    <div class="challenge-info">
-                                        <ul class="term-list">
-                                            <li><span>목표기간</span> <em class="num">2021.04.01~2021.04.06</em></li> <!-- 2021-09-09 수정 -->
-                                            <li><span>과거 소비금액</span> <em class="num" data-unit-after="원">150,000</em> (월 평균)</li>
-                                            <li><span>목표예산 금액</span> <em class="num" data-unit-after="원">150,000</em> (1주일)</li>
-                                        </ul>
+                                    <div class="challenge-info non-tit">
                                         <div class="chart-area" id="columnChart01"></div>
-                                        <ul class="legend-dot">
-                                            <li>지난주</li>
-                                            <li class="current">현재</li>
-                                        </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="swiper-pagination"></div>
+                            <!-- // 2021-09-09 수정 -->
                         </div>
-                    </div>  
-                </section>
+                    </div>
+                </section>               
+                
+                <!-- 2021-09-09 추가 //-->
+                <section class="kb-sec goals-img-status type2">
+                    <p>목표예산 <span class="num" data-unit-after="원"><strong>2,500,000</strong></span> 중<br>현재 <span class="num" data-unit-after="원"><strong>2,500,000</strong></span><br>사용 중이예요.</p>
+                    <img src="@@webRoot/static/images/goal/friend-sucess.png" alt="즐거워하는 키키">
+                </section> 
+                <!-- // 2021-09-09 추가 -->  
 
-                <section class="kb-sec goals-pay-list mt20">
+                <section class="kb-sec goals-pay-list">
                     <dl class="accordion">
                         <dt>
                             <h2>지출내역 확인하기</h2>
@@ -127,6 +126,20 @@
                         </dd>
                     </dl>
                 </section>
+
+                <section class="kb-sec goals-pay-info">
+                    <div class="pay-info">
+                        <h3 class="tit">유의사항</h3>
+                        <!-- 2021-09-09 수정 // -->
+                        <ul class="sm" data-style="list">
+                            <li>저금통이란?<br>저금통은 ~~~ 경로에서 개설이 가능합니다. 저금통을 만든 후 목표챌린지를 도전해보세요.</li>
+                            <li>절약한 금액이란?<br>목표예산에서 현재 소비금액을 제외하고 남은 금액입니다.</li>
+                            <li>이체시기는?<br>목표기간에 끝난 다음날 00시에 자동으로 이체처리 됩니다.</li>
+                            <li>자동이체는 어디서?<br>저금통 개설 시 연결계좌로 선택한 계좌에 잔액이 있는 경우 자동으로 이체처리 됩니다.</li>
+                        </ul>
+                        <!-- // 2021-09-09 수정 -->
+                    </div>
+                </section>
 			</main>
 			<!-- // app-content -->
 
@@ -135,7 +148,7 @@
 
 		<!-- Layer (modal, bottom sheet) // -->
 		<div class="layered">
-            @@include('@@webRoot/html/asset/layered/mys_as_07_00_00_p1.html')
+			@@include('@@webRoot/html/goal/layered/mys_go_02_01_03_p1.html')
 		</div>
 		<!-- // Layer (modal, bottom sheet) -->
 	</div>
@@ -144,25 +157,15 @@
 	@@include('@@webRoot/html/_include/common-js.html')
 	<!-- Add Library (this page only)-->
 	<script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
 
+    <!-- 2021-09-09 추가 // -->
+    
     <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
     <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
 
-    <style>
-        /* .highcharts-tooltip-box:first-child .highcharts-label-box {
-            fill: #ffd338;
-        } */
-        .highcharts-tooltip-box:first-child text {
-            fill:#000 !important;
-        }
-        .highcharts-tooltip-box:last-child .highcharts-label-box {
-            fill: #ffd338;
-        }
-    </style>
-
-    <!-- Add Script -->
-    <script>       
-        $(document).ready(function(){
+    <script>
+         $(document).ready(function(){
 
             // highchart 공통 options
             Highcharts.setOptions({
@@ -185,35 +188,17 @@
                     marginRight: 0,
                     marginTop:10,
                     marginBottom: 35,
-                    height: 195,
+                    height: 190,
                 },                
                 legend: { enabled: false },
-                // legend: { 
-                //     enabled: true,
-                //     layout: 'horizontal',
-                //     align: 'left',
-                //     verticalAlign: 'bottom',
-                //     squareSymbol:false,
-                //     symbolHeight:8,
-                //     symbolWidth:8,
-                //     y:20,
-                //     x:-12,
-                //     itemDistance:24,
-                //     itemStyle: {
-                //         fontSize: '1.4rem',
-                //         fontFamily: "KBFGText",
-                //         fontWeight: 'bold',
-                //         color:'#26282c'
-                //     },
-                // },
                 xAxis: {
                     top:20,
                     type: "category",
                     categories: ["7월12일", "7월13일", "7월14일", "7월15일"],
                     labels: {
                         style: {
-                            color: "#aab0b8",
-                            fontSize: "1.4rem",
+                            color: "#26282c",
+                            fontSize: "1.3rem",
                             fontFamily: 'KBFGText',
                         }
                     }
@@ -229,7 +214,7 @@
                     plotLines: [{
                         color: "#c7ccd1",
                         width: 1,
-                        value: 3,
+                        value: 2500,
                         zIndex: 50,
                         dashStyle: 'dot'
                     }],
@@ -240,19 +225,19 @@
                         return [''].concat(
                             this.points ?
                                 this.points.map(function (point) {
-                                    return '&nbsp;&nbsp;&nbsp;' + gfn_comma3Digit(point.y) + ' 원' + '&nbsp;&nbsp;&nbsp;';
+                                    return gfn_comma3Digit(point.y) + ' 원';
                                 }) : []
                         );
                     },
                     padding: 4,
-                    shadow: false,
+                    shadow: true,
                     borderRadius: 5,
                     verticalAlign: 'top',
-                    borderColor: 'transparent',
+                    borderColor: '#fff',
                     style: {
                         fontSize: '1.4rem',
                         fontFamily: "KBFGText",
-                        color:'#fff'
+                        color:'#26282c'
                     },
                     crosshairs: false,
                     split: true,
@@ -264,31 +249,26 @@
                         borderWidth: 0,
                         pointWidth: 7,  // 막대그래프 너비
                         borderRadiusTopLeft: "50%",  // radius 값
-                        borderRadiusTopRight: "50%" // radius 값
+                        borderRadiusTopRight: "50%", // radius 값
+                        states: {
+                            hover: {
+                                enabled: true,
+                                color:'#ffba53'
+                            }
+                        }
                     }
                 },
                 series: [{
                     name: "현재",
-                    color: "#ffd338",
+                    color: "#c6cbd0",
                     pointPlacement: 0,
                     data: [1000, 4000, 3000, 5000]
-                },
-                // {
-                //     id: "main",
-                //     name: "지난주",
-                //     color: '#484b51',
-                //     pointPlacement: 0.1,
-                //     dataSorting: {
-                //         enabled: true,
-                //         matchByName: true
-                //     },
-                //     data: [3000, 4000, 5000, 1000]
-                // }
-                ],
+                }],
             });
-        
+
         })
-    </script>
+</script>
+    <!-- // 2021-09-09 수정 -->
 </body>
 
 </html>

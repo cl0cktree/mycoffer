@@ -24,18 +24,15 @@
 					<h2 class="gbox">챌린지명에 연결할 계좌를 선택해주세요.</h2>
 					<div class="account-link">
                         <h3 class="is-hidden">연결계좌</h3>
-						<div class="kb-form mt24" data-status="">
-							<label for="">연결계좌</label>
-							<div class="kb-form_inner form-select">
-								<button type="button" class="selected-option" data-call-layered="bsAccountSelect"></button>
-								<select name="" id="" title="계좌 선택">
-									<option value="">최초 메세지</option>
-									<option value="bank01" selected>010101-01-010101 : 월급통장</option>
-									<option value="bank02">111111-00-000000 : 용돈통장</option>
-								</select>
+						<!-- 2021-09-09 수정 // -->
+						<div class="kb-form mt24" data-status="">							
+							<label for="bsSelectOrganization">연결계좌</label>
+							<div class="kb-form_inner form-text" data-role="popup">
+								<input type="text" id="bsSelectOrganization" value="" role="button" placeholder="선택해주세요" data-call-layered="bsSelectOrganization" readonly=""> <!-- [D] 2021-08-31 수정 : value값 삭제, placeholder 추가 -->
 							</div>
 							<p class="info-msg">적금계좌만 연결할 수 있습니다.</p>
 						</div>
+						<!-- // 2021-09-09 수정 -->
 					</div>
 				</section>
 				<!-- 연결 계좌 선택 // -->			
@@ -55,7 +52,7 @@
 
 		<!-- Layer (modal, bottom sheet) // -->
 		<div class="layered">
-			@@include('@@webRoot/html/goal/layered/mys_go_01_01_02_p1.html')
+			@@include('@@webRoot/html/expense/layered/mys_ex_02_02_01_p.html')
 		</div>
 		<!-- // Layer (modal, bottom sheet) -->
 	</div>

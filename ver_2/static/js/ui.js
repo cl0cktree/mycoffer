@@ -155,8 +155,6 @@ var gfn_layered = {
         duration = duration == undefined ? 200 : duration;
         if(name != '' && name != undefined){
 
-            layeredLevel = layeredLevel + 2;
-
             var $selectedLayer = $layered.children('div[data-layered-name=' + name + ']');
 
             focusTrap($selectedLayer);
@@ -180,6 +178,8 @@ var gfn_layered = {
             }
             $selectedLayer.addClass('is-active').css('z-index', layeredLevel);
             gfn_body.hold(true);
+
+            layeredLevel = layeredLevel + 10;
         }
     },
     close: function(name, duration){
@@ -431,10 +431,8 @@ var gfn_formSelect = {
                     if(idx != 0){
                         $bsSelect.find('.bottom-sheet_select').append('<li class="'+selectedClass+'"><button type="button">'+$(this).text()+'</button></li>');
                     }
-                    
-                    
                 });
-
+                
                 //call bottom sheet
                 gfn_layered.open('bsSelect');
                 gfn_bsSelect.bind();
@@ -450,6 +448,15 @@ var gfn_formSelect = {
         $options.eq(idx).prop('selected', true);
         $selectedOption.text($options.eq(idx).text());
         $select.trigger('change');
+    },
+    // form-select 초기화
+    init: function(id) {
+        var $select = $('#'+id);
+        var $options = $select.find('option');
+        var $thisForm = $select.parents('.kb-form');
+        var $selectedOption = $thisForm.find('.selected-option');
+        $thisForm.addClass('not-ready');
+        $selectedOption.text($options.eq(0).text());
     }
 };
 
@@ -828,7 +835,7 @@ if($('.js-slider').length){
         var $max = $(this).find('.end-txt');
         var min = gfn_removeComma3Digit($min.text());
         var max = gfn_removeComma3Digit($max.text());
-        var defaultNum = gfn_comma3Digit((max - min) * dft * 0.01);
+        var defaultNum = (max - min) * dft * 0.01;
 
         var min_width = Math.floor((1 - ((graph_width - $min.outerWidth()) / graph_width)) * 100);
         var max_width = Math.floor((1 - ((graph_width - $max.outerWidth()) / graph_width)) * 100);
@@ -839,10 +846,18 @@ if($('.js-slider').length){
             orientation: "horizontal",
             range: "min",
             animate: true,
-            create: function(event, ui) {
-                $handle.find('.value').text(defaultNum);
+            create: function(event, ui) {                
+                var val = defaultNum;
+                var $value = $handle.find('.value');
+
+                if($value.hasClass('integer')){
+                    val = Math.floor(defaultNum);
+                }else{
+                    val = gfn_comma3Digit(defaultNum);
+                }
+                $handle.find('.value').text(val);
             },
-            slide: function( event, ui ) {
+            slide: function(event, ui) {
                 var val;
                 var $value = $handle.find('.value');
                 var value_width = Math.floor((1 - ((graph_width - $value.outerWidth()) / graph_width)) * 100);                

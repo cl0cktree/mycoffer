@@ -18,40 +18,46 @@
 		<div class="app-container">
 			<!-- app-content // -->
 			<main class="app-content goals-challenge">
-                <section class="kb-sec goals-noti">
-                    <h2>무지출 Day</h4>
-                    <h3>쓰지 않는 자가 승자!</h4>
-                    <ul data-style="list">
-                        <li><span class="num">250</span>명이 도전 중이에요.</li> <!-- 2021-09-09 수정 -->
-                        <li>목표기간 한달</li>
-                    </ul>
-                </section>
-                <section class="kb-sec goals-list add-fix">                      
+                <!-- 2021-09-09 수정 //-->
+                <section class="kb-sec goals-noti type2">
+                    <h2>무지출 Day</h2>
+                    <h3>쓰지 않는 자가 승자!</h3>
                     
-                    <div class="content-box shadow">
-                        <div class="chart-area">
-                            <h3 class="sub">비교그룹과 월별 무지출 날짜를 비교했어요.</h3>
-                            <div class="chart-flex mt24">
-                                <div id="bubbleChart01"></div>
+                    <dl class="description-list">
+                        <dt>도전자</dt>
+                        <dd><span class="num">250</span>명</dd>
+                        <dt>목표기간</dt>
+                        <dd>한달</dd>
+                    </dl>
+                </section>
+                <section class="kb-sec goals-list"> 
+                    <div class="challenge-box">
+                        <div class="content-box shadow">
+                            <!-- [Chart Area] // -->
+                            <div class="chart-area">
+                                <h3 class="desc">비교그룹과 월별 무지출 날짜를 비교했어요.</h3>
+                                <div class="chart-area mt32" id="bubbleChart01"></div>
                             </div>
+                            <!-- // [Chart Area] -->
                         </div>
-                    </div>               
-                    <div class="text-trophy mt24">
-                        <div class="ico">
-                            <i class="icon-expense-withdraw"></i>
-                        </div>
-                        <h2>전월 기준 무지출 Day는 <span class="num">5</span>일이에요.</h2> <!-- 2021-09-09 수정 -->
-                        <h3>비교그룹보다 <span class="c-red">무지출 Day가 <span class="num">5</span>일 더 적어요.</span> 목표관리를 통해 무지출 Day를 늘려보세요.</h3> <!-- 2021-09-09 수정 -->
-                    </div>              
-                </section>                
-                <hr class="hr-divide_32">  
+                    </div> 
+                </section> 
+                <!-- // 2021-09-09 수정 -->         
+                <!-- <hr class="hr-divide_32">  2021-09-09 삭제 -->
+                <!-- 2021-09-09 추가 //-->
+                   
+                <section class="kb-sec goals-img-status type2">
+                    <p>전월 기준 무지출 Day는 <span class="num type2">5</span>일이에요.<br>비교그룹보다 <strong class="type2">무지출 Day가 <span class="num">5</span>일 더 적어요.</strong> 목표관리를 통해 무지출 Day를 늘려보세요.</p>
+                    <img src="@@webRoot/static/images/goal/friend-sucess.png" alt="즐거워하는 키키">
+                </section> 
+                <hr class="hr-divide_48">
                 <section class="kb-sec goals-setting">
                     <h2>무지출Day 도전 일수</h2>
-                    <h3>선택한 일수만큼 <strong>무지출Day에 도전</strong>하고 지출금액을 줄여보세요.</h3>
+                    <h3>선택한 일수만큼 <strong>무지출Day</strong>에 도전하고 지출금액을 줄여보세요.</h3>
                     <div class="character-graph js-slider">
-                        <div class="graph-area" data-default="50"><span class="handle ui-slider-handle"><i class="icon-star"></i><em class="value integer" data-unit="일"></em></span></div>
+                        <div class="graph-area" data-default="50"><span class="handle ui-slider-handle"><i class="icon-star"></i><em class="value num integer" data-unit="일"></em></span></div>
                         <div class="graph-txt">
-                            <p class="start-txt" data-unit="일">0</p><!-- 시작부분 텍스트 -->
+                            <p class="start-txt" data-unit="일">1</p><!-- 시작부분 텍스트 -->
                             <p class="end-txt" data-unit="일">30</p><!-- 마지막부분 텍스트 -->
                         </div>
                     </div>
@@ -62,6 +68,7 @@
                         <button type="button" class="btn-solid" data-action="" onclick=""><span>도전</span></button>
                     </div>
                 </div>
+                <!-- // 2021-09-09 추가 -->  
 			</main>
 			<!-- // app-content -->
 

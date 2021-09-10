@@ -20,11 +20,15 @@
 			<main class="app-content goals-challenge">
                 <section class="kb-sec goals-noti">
                     <h2>커피 줄이기</h4>
-                    <h3>카페인 샤워는 이제 그만!</h4>
-                    <ul data-style="list">
-                        <li><span class="num">250</span>명이 도전 중이에요.</li> <!-- 2021-09-09 수정 -->
-                        <li>목표기간 <span class="num">1</span>주</li> <!-- 2021-09-09 수정 -->
-                    </ul>
+                    <h3>카페인 샤워는 이제 그만!카페인 샤워는 이제 그만!카페인 샤워는 이제 그만!</h3> <!-- 2021-09-09 수정 -->
+                    <!-- 2021-09-09 수정 //-->
+                    <dl class="description-list">
+                        <dt>도전자</dt>
+                        <dd><span class="num">250</span>명</dd>
+                        <dt>목표기간</dt>
+                        <dd><span class="num">1</span>주</dd>
+                    </dl>
+                    <!-- // 2021-09-09 수정 -->
                 </section>
                 <section class="kb-sec goals-list">   
                     <div class="challenge-box content-swiper-wrap">
@@ -43,7 +47,7 @@
                                 <div class="swiper-slide content-box shadow">
                                     <div class="challenge-info non-tit">
                                         <h2 class="tit flex-box goals-desc type2">비교그룹과 평균 소비금액을 비교했어요.</h2>
-                                        <div class="character-graph type2" data-theme="pay">
+                                        <div class="character-graph type2 lg" data-theme="pay"> <!-- 2021-09-09 수정 -->
                                             <div class="graph-area">
                                                 <span data-goal="10"><i><img src="@@webRoot/static/images/_temp/@progress_coffee.png" alt="커피"></i></span>
                                             </div>
@@ -62,11 +66,13 @@
                                 <div class="swiper-slide content-box shadow">
                                     <div class="challenge-info non-tit">
                                         <h2 class="tit flex-box goals-desc type2">비교그룹과 월별 소비금액을 비교했어요.</h2>
-                                        <div class="chart-area" id="splineChart">
-                                            <!-- <div class="chart-area type-ratio mt0"></div>                                                                   -->
-                                            <!-- <span class="txt-gray">비교그룹</span>
-                                            <span class="txt-yellow type2">나</span> -->
-                                        </div>
+                                        <div class="chart-area" id="splineChart"></div>
+                                        <!-- 2021-09-09 수정 // -->
+                                        <ul class="legend-dot type2">
+                                            <li class="yellow">나</li>
+                                            <li class="red">비교그룹</li>
+                                        </ul>
+                                        <!-- // 2021-09-09 수정 -->
                                     </div>
                                 </div>
                             </div>
@@ -74,7 +80,7 @@
                         </div>
                     </div>                    
                 </section>
-                <hr class="hr-divide_32">                  
+                <hr class="hr-divide_48">  <!-- 2021-09-09 수정 -->
                 <section class="kb-sec goals-use-best">
                     <div class="ranking-list">
                         <h2 class="ranking-tit"><strong>소비 Top 3</strong></h2> <!-- 2021-09-09 수정 -->
@@ -84,8 +90,8 @@
                             <li>스타벅스 목동점 <strong class="num" data-unit-after="원">10,000</strong></li>
                         </ul>
                     </div>
-                </section> 
-                <hr class="hr-divide_32">  
+                </section>
+                <hr class="hr-divide_48">  <!-- 2021-09-09 수정 -->
                 <section class="kb-sec goals-setting">
                     <h2>목표 예산금액 설정</h2>
                     <h3>평소 지출금액보다 <strong><span class="num" data-unit-after="원">50,000</span> 더 절약</strong>할 수 있어요.</h3>
@@ -123,27 +129,15 @@
     
     <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
     <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
-
-    <style>
-        .highcharts-tooltip-box:first-child .highcharts-label-box {
-            fill: #e0e4e6;
-        }
-        .highcharts-tooltip-box:first-child text {
-            fill:#000 !important;
-        }
-        .highcharts-tooltip-box:last-child .highcharts-label-box {
-            fill: #1b70ee;
-        }
-    </style>
+    <!-- 2021-09-09 수정 // -->
     <script>
         $(document).ready(function(){
             
             var bar = document.querySelectorAll(".graph-area > span");
             for(i=0; i<bar.length; i++){ 
                 var item = bar.item(i); 
-                console.log(item.clientWidth);
                 if(item.clientWidth < 40){
-                        item.classList.add('min-size'); 
+                    item.classList.add('min-size'); 
                 }
             }
             
@@ -155,10 +149,7 @@
                 credits: { enabled: false },
                 label : { fontFamily: 'KBFGText'},
                 credits: { enabled: false },
-                exporting: { enabled: false },
-                // lang: {
-                //     shortMonths: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월']
-                // }
+                exporting: { enabled: false }
             });
             // spline chart 선언
             var splineChart = new Highcharts.Chart({
@@ -169,11 +160,9 @@
                     marginRight: 10,
                     marginBottom: 23,
                     backgroundColor: 'none',
-                    height: 186
+                    height: 160
                 },
                 xAxis: {
-                    // type: "category",
-                    // categories: ["3월", "4월", "5월"],
                     labels: {
                         style: {
                             color: "#26282c",
@@ -202,6 +191,7 @@
                     title: { enabled: false }, // 축 title 사용 안함
                     tickWidth: 0,  // 그리드 라인 너비
                     gridLineColor: 'transparsnt',  // 그리드 라인 컬러
+                    
                 },
                 tooltip: {
                     formatter: function () {
@@ -209,19 +199,19 @@
                         return [''].concat(
                             this.points ?
                                 this.points.map(function (point) {
-                                    return '&nbsp;&nbsp;&nbsp;' + gfn_comma3Digit(point.y) + ' 원' + '&nbsp;&nbsp;&nbsp;';
+                                    return gfn_comma3Digit(point.y) + ' 원';
                                 }) : []
                         );
                     },
                     padding: 4,
-                    shadow: false,
+                    shadow: true,
                     borderRadius: 5,
                     verticalAlign: 'top',
-                    borderColor: 'transparent',
+                    borderColor: '#fff',
                     style: {
                         fontSize: '1.4rem',
                         fontFamily: "KBFGText",
-                        color:'#fff'
+                        color:'#26282c'
                     },
                     crosshairs: true,
                     split: true,
@@ -229,16 +219,19 @@
                 },
                 plotOptions: {
                     series: {
-                        lineWidth: 2,
+                        lineWidth: 1,
                         marker: {
-                            enabled: false,
-                            lineWidth: 1
+                            enabled: true,
+                            lineWidth: 1,
+                            width:2,
+                            height:2,
+                            backgroundColor:'#fff'
                         }
                     }
                 },
                 series: [{
                     // linkedTo: "main",
-                    color: '#e0e4e6',
+                    color: '#ffba53',
                     data: [
                         [3, 15000],
                         [4, 20000],
@@ -247,7 +240,7 @@
                     ]
                 },{
                     // id: 'main',
-                    color: '#1b70ee',
+                    color: '#ff8a71',
                     data: [
                         [3, 20600],
                         [4, 35600],
@@ -258,6 +251,7 @@
             });
         })
     </script>
+    <!-- // 2021-09-09 수정 -->
 </body>
 
 </html>

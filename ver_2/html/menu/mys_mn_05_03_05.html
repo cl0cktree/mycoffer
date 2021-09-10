@@ -19,86 +19,59 @@
         
         <!-- app-container //-->
         <div class="app-container">
-
+            <!-- app-lnb //-->
+            <div class="app-lnb">
+                <div class="tab swiper-container">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide is-active"><a href="./mys_mn_05_03_05.html">승인번호</a></li>
+                        <li class="swiper-slide"><a href="./mys_mn_05_03_05_1.html">QR코드</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //app-lnb -->
             <!-- app-content // -->
-            <main class="app-content pc-import">
-                <section class="kb-sec">
-                    <div class="tab swiper-container">
-                        <ul class="swiper-wrapper">
-                            <li class="swiper-slide is-active"><a href="#target01">승인번호</a></li>
-                            <li class="swiper-slide"><a href="#target02">QR코드</a></li>
+            <div class="app-content">
+                <section class="kb-sec approval-number">                                
+                    <div class="kb-form_multi">         
+                        <strong class="tit">숫자 13자리</strong>    
+                        <div class="kb-form" data-status="">
+                            <div class="kb-form_inner form-text">
+                                <input type="text" class="align-l" inputmode="numeric" maxlength="4" id="approvalNumber01" placeholder="" title="첫번째 4자리">
+                                <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                            </div>
+                        </div>
+                        <div class="kb-form" data-status="">
+                            <div class="kb-form_inner form-text">
+                                <input type="text" class="align-l" inputmode="numeric" maxlength="4" id="approvalNumber02" placeholder="" title="두번째 4자리">
+                                <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                            </div>
+                        </div>
+                        <div class="kb-form" data-status="">
+                            <div class="kb-form_inner form-text">
+                                <input type="text" class="align-l" inputmode="numeric" maxlength="5" id="approvalNumber03" placeholder="" title="마지막 5자리">
+                                <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-decimal">
+                        <ul>
+                            <li>PC에서 KB국민은행 홈페이지 접속<br>(www.kbstar.com)</li>
+                            <li>[인증센터 > KB스타뱅킹용 인증서 복사 &gt; PC &gt; 스마트폰 인증서 복사하기] 선택</li>
+                            <li>[인증서 이동] 창에서 복사할 인증서를 선택하여 비밀번호 입력 후 생성된 승인번호(13자리)를 스마트폰에 입력 또는 QR코드 촬영</li>
+                            <li>스마트폰에서 인증서 복사 완료 확인</li> 
                         </ul>
                     </div>
-                    <div class="tab_contents">
-                        <div class="is-active">
-                            <section class="kb-sec approval-number">
-                                <div class="kb-form" data-status="">
-                                    <label for="formAmountSample01">숫자 13자리</label>
-                                    <div class="kb-form_inner form-text">
-                                        <input type="text" inputmode="numeric" id="formAmountSample01" placeholder="" value="" data-action="" maxlength='4'>
-                                        <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                                    </div>
-                                    <div class="kb-form_inner form-text">
-                                        <input type="text" inputmode="numeric" id="formcAmountSample01" placeholder="" value="" data-action=""maxlength='4'>
-                                        <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                                    </div>
-                                    <div class="kb-form_inner form-text form-text-last">
-                                        <input type="text" inputmode="numeric" id="formAmountSample01" class="formAmountSample01" placeholder="" value="" data-action="" maxlength='5'>
-                                        <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                                    </div>
-                                    <em class="validation">Success / Error Message</em><!-- 성공/에러 메세지 -->
-                                </div>
-                                <div class="list-decimal">
-                                    <ul>
-                                        <li><p>PC에서 KB국민은행 홈페이지 접속<br>(www.kbstar.com)</p></li>
-                                        <li><p>[인증센터 > KB스타뱅킹용 인증서 복사 ><br>
-                                            PC > 스마트폰 인증서 복사하기] 선택</p></li>
-                                        <li><p>[인증서 이동] 창에서 복사할 인증서를 선택하여 <br>
-                                            비밀번호 입력 후 생성된 승인번호(13자리)를 <br>
-                                            스마트폰에 입력 또는 QR코드 촬영</p></li>
-                                        <li><p>스마트폰에서 인증서 복사 완료 확인</p></li> 
-                                    </ul>
-                                </div>
-                            </section>
-                            <div class="sticky-bottom">
-                                <div class="btn-area">
-                                    <button type="button" class="btn-solid" disabled="true" ><span>확인</span></button>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <section class="kb-sec approval-number">
-                                <div class="list-decimal">
-                                    <ul>
-                                        <li><p>PC에서 KB국민은행 홈페이지 접속<br>(www.kbstar.com)</p></li>
-                                        <li><p>[인증센터 > KB스타뱅킹용 인증서 복사 ><br>
-                                            PC > 스마트폰 인증서 복사하기] 선택</p></li>
-                                        <li><p>[인증서 이동] 창에서 복사할 인증서를 선택하여 <br>
-                                            비밀번호 입력 후 생성된 승인번호(13자리)를 <br>
-                                            스마트폰에 입력 또는 QR코드 촬영</p></li>
-                                        <li><p>스마트폰에서 인증서 복사 완료 확인</p></li> 
-                                    </ul>
-                                </div>
-                            </section>
-                            <div class="sticky-bottom">
-                                <div class="btn-area">
-                                    <button type="button" class="btn-solid"><span>QR코드 촬영</span></button>
-                                </div>
-                            </div>
-                        </div>
+                </section>
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid" disabled><span>확인</span></button>
                     </div>
-                </section>                 
-            </main>
+                </div>
+            </div>            
             <!-- // app-content -->
-
+        </div>
         <!-- // app-container -->
-    </div>
-
-    <div class="layered">
-
-        <!-- @@include('@@webRoot/html/_layered/popup-notice-setting.html') -->
-
-    </div>
+    </div>    
     
     <!-- Script -->
     @@include('@@webRoot/html/_include/common-js.html')
@@ -107,26 +80,40 @@
     <!-- Add Script -->
     <script>
         
-            modalPopup({
-                title: "",
-                message: "인증서를 가져오기에 성공하였습니다.",
-                type: "확인"
-            });
-            modalPopup({
-                title: "",
-                message: "인증서를 가져오는데 실패하였습니다.",
-                type: "확인"
-            });
-        
-    </script>
-    <script>
+        modalPopup({
+            title: "",
+            message: "인증서를 가져오기에 성공하였습니다.",
+            type: "확인"
+        });
+        modalPopup({
+            title: "",
+            message: "인증서를 가져오는데 실패하였습니다.",
+            type: "확인"
+        });
+
         $(function(){
-            $(".formAmountSample01").on('input', function(){
-                if($(".formAmountSample01").val() == '')
-                    $(".btn-solid").attr("disabled",true);
-                else
-                    $(".btn-solid").attr("disabled", false);
+            var allCheck = [];
+            var $approvalNumberForm = $('.approval-number').find('.kb-form');
+
+            var _allCheck = function(){                
+                $approvalNumberForm.each(function(i){                    
+                    if($(this).find('input').val().length == $(this).find('input').attr('maxlength')){
+                        allCheck[i] = true;
+                    }else{
+                        allCheck[i] = false;
+                    }
+                });
+                if(allCheck.every( e  => e == true)){
+                    $('.sticky-bottom').find('.btn-solid').prop('disabled',false);
+                }else{
+                    $('.sticky-bottom').find('.btn-solid').prop('disabled',true);
+                }
+            };
+
+            $approvalNumberForm.on('keyup','input',function(){
+                _allCheck();
             });
+
             
         })
     </script>
