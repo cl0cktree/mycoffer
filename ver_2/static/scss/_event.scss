@@ -93,8 +93,15 @@
 .floating-banner[data-animation=fbLeftRight].is-active{transform:translateY(0) translateY(-16px)}
 .floating-banner[data-animation=fbRightLeft]{transform:translateX(110vw) translateY(-16px)}
 .floating-banner[data-animation=fbRightLeft].is-active{transform:translateX(0) translateY(-16px)}
-.floating-banner[data-animation=fbFadeIn]{opacity:0;transform:translateY(-16px) scalc(0)}
-.floating-banner[data-animation=fbFadeIn].is-active{opacity:1;transform:translateY(-16px) scalc(1)}
+.floating-banner[data-animation=fbFadeIn]{opacity:0;transform:translateY(-16px) scale(0);transition:transform 0s, opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1);}
+.floating-banner[data-animation=fbFadeIn].is-active{opacity:1;transform:translateY(-16px) scale(1)}
+.floating-banner[data-type="1/5"]{height:20%;}
+.floating-banner[data-type="1/4"]{height:25%;}
+.floating-banner[data-type="1/2"]{height:50%;}
+.floating-banner[data-type="1/1"]{height:100%;}
+.floating-banner[data-type="1/5"] .floating-banner_contents,
+.floating-banner[data-type="1/4"] .floating-banner_contents,
+.floating-banner[data-type="1/2"] .floating-banner_contents{overflow:auto;height:100%;}
 
 //Event Roullete
 .event-roullete{height:134.66vw;background-image:url(../images/event/roulette-bg.png);}

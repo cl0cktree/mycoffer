@@ -6,9 +6,10 @@
 .dashboard-section .sec-title .num {font-size: 22px;}
 .dashboard-section .sec-amount {display: block; text-align: center; font-size: 18px; line-height: 1;}
 .dashboard-section .sec-amount .num {font-size: 29px; margin-right: 2px; font-weight: bold;}
+.dashboard-section .sec-amount .num::after {font-size: 18px; font-weight: normal; vertical-align: middle;}
 
 .dashboard-asset,
-.dashboard-expense {position: relative; padding: 37px 20px 32px; margin: 0 16px 20px; background-color: #f3eefe; border-radius: 8px;}
+.dashboard-expense {position: relative; padding: 37px 20px 32px; margin: 0 16px 20px; background-color: #f3eefe; border-radius: 8px; text-align: center;}
 .dashboard-asset .sec-amount,
 .dashboard-expense .sec-amount {display: block; text-align: center; font-size: 18px; line-height: 1;}
 .dashboard-asset .sec-amount .num,
@@ -34,10 +35,11 @@
 .dashboard-expense .button-area {margin-top: 20px;}
 .dashboard-expense .button-area .btn-line {color: $kb-ui11; background-color: $kb-ui04; border: 0;}
 
-.dashboard-asset .msg,
-.dashboard-expense .msg {display: block; text-align: center; line-height: 20px;}
-.dashboard-asset .msg i,
-.dashboard-expense .msg i {transform: translate(-2px, -1px);}
+.dashboard-asset .error-msg,
+.dashboard-expense .error-msg {display: inline-block; margin-top: 10px; text-align: center;}
+
+.dashboard-asset .link,
+.dashboard-expense .link {display: block;}
 
 .dashboard-goal {padding: 0; margin: 0 16px 48px; background-color: #6349a5; border-radius: 8px;}
 .dashboard-goal .swiper-pagination-bullet-active {background-color: $kb-ui02;}
@@ -104,11 +106,12 @@
 .dashboard-items .item a .vbar {position: relative; margin-left: 7px; padding-left: 9px; @include text($text02, bold);}
 .dashboard-items .item a .vbar::before {content: ''; position: absolute; left: 0; top: 50%; width: 2px; height: 11px; margin-top: -5px; background-color: #dde1e4;}
 .dashboard-items .item a .value {margin-top: 1px; @include text($text02, bold);}
-.dashboard-items .item a .value .num {font-size: 22px; margin-right: 3px;}
+.dashboard-items .item a .value .num {font-size: 22px;}
+.dashboard-items .item a .value .num::after {font-size: 16px;}
 .dashboard-items .item a .desc {margin-top: 3px; @include text($text03, normal);}
+.dashboard-items .item a .desc .num {font-size: 15px;}
+.dashboard-items .item a .desc .num::after {font-size: 14px; vertical-align: 0;}
 .dashboard-items .item a .tit + .desc,
-.dashboard-items .item a .tit + .msg {margin-top: 11px;}
-.dashboard-items .item a .msg {@include text($text03, normal);}
-.dashboard-items .item a .msg i {margin-right: 5px;}
+.dashboard-items .item a .tit + .error-msg {margin-top: 11px;}
 .dashboard-items .last-update {margin: 28px 0; text-align: center; font-size: 14px; color: $kb-ui05;}
 .dashboard-items .last-update .datetime {margin-right: 5px; font-size: 15px; font-family: 'Roboto', sans-serif;}

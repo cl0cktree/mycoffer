@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko" data-channel="ch_star">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+    "title": "입출금 | 자산"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header //-->
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+        'pageTit':'입출금',
+        'type':'complete'
+
+        })
+        <!-- // app-header -->
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-lnb //-->
+            <div class="app-lnb">
+
+
+            </div>
+            <!-- //app-lnb -->
+
+            <!-- app-content // -->
+            <main class="app-content my-asset">
+                <!-- 컨텐츠 영역 -->
+                <!-- SECTION //-->
+                <!-- 등록된 자산 없음 // -->
+                <section class="kb-sec have-not-data">
+                        <div class="no-data">
+                            <i class="icon-bang_60_gray"></i>
+                            <strong class="no-data-tit">등록된 자산이 없습니다.</strong>
+                            <p>나의 자산 현황을 한 눈에 살펴보세요.</p>
+                        </div>
+                </section>
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button class="btn-solid"><span>자산등록 바로가기</span></button>
+                    </div>
+                </div>
+                <!-- // 등록된 자산 없음 -->
+                <!--  // SECTION -->
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+    </div>
+
+    <div class="layered">
+        @@include('@@webRoot/html/asset/layered/mys_as_05_00_01_p2.html')
+        
+        @@include('@@webRoot/html/asset/layered/mys_as_05_01_01_p1.html')
+        @@include('@@webRoot/html/asset/layered/mys_as_07_00_00_p1.html')
+        @@include('@@webRoot/html/_layered/bs-calendar.html')
+        @@include('@@webRoot/html/_layered/bs-age-asset.html')
+       
+
+
+        <!-- 응답코드 팝업 // -->
+        <div class="modal" id="pageErrorMessage">
+            <div class="modal_header">			
+                <strong class="tit">고객님 죄송합니다.</strong>		
+            </div>
+            <div class="modal_contents">
+                <div class="error-code">응답코드(CAQ00000)</div>
+                <div class="tel-info">대표전화 : 1588-0000, 1644-9999</div>
+            </div>
+            <div class="modal_buttons btn-area">
+                <button class="btn-solid ok"><span>확인</span></button>
+            </div>
+        </div>
+        <!-- // 응답코드 팝업 -->
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    <script>
+        $(document).ready(function () {
+
+            //응답코드 팝업 호출
+            $("#pageErrorMessage").modalPopup("open");
+
+        })
+
+        
+    </script>
+</body>
+
+</html>

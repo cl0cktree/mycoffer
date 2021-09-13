@@ -33,7 +33,7 @@ $('body')
         var settings = $.extend({
             // 옵션의 기본 값입니다.
             fbName: "bsFloatingBannerOneQuarter",
-            fbType: "",
+            fbType: "1/5",
             fbAnimation: "fbBottomUp",
             fbTitle: "",
             fbMsg: "",

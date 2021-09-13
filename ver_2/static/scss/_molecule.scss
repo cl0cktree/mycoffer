@@ -40,8 +40,8 @@
 .app-content.bg-gray-bottom .sticky-bottom{background-color:$kb-ui10;}
 .sticky-bottom:not(.popup_buttons) .btn-area,
 .app-content .sticky-bottom .btn-area{position:fixed;bottom:0;left:0;z-index:$level60;width:100%;}
-.sticky-bottom .btn-area .btn-solid{height:64px;border-radius:0;}
-.sticky-bottom .btn-area .btn-solid > span{height:64px;line-height:64px}
+.sticky-bottom:not(.popup_buttons) .btn-area .btn-solid{height:64px;border-radius:0;}
+.sticky-bottom:not(.popup_buttons) .btn-area .btn-solid > span{height:64px;line-height:64px}
 
 //Apple Homebar
 .ios.homebar .sticky-bottom .btn-solid,
@@ -164,7 +164,9 @@ ul.radio-group > li + li{margin-top:20px;}
 	.form-radio{@include radio($size: 22px);}
 }
 
+.kb-form > .label,
 .kb-form > label{@include text($size: 16px);display:block;position:relative;top:0;width:100%;min-height:26px;padding:7px 2px 0 2px;color:$kb-ui04;background-color:$kb-ui11;white-space:nowrap;}
+
 
 .kb-form_inner{display:flex;align-items:center;position:relative;width:100%;padding-top:5px;padding-left:2px;padding-right:2px;padding-bottom:5px;border-bottom:2px solid $kb-ui09;}
 .kb-form_inner.is-focused{border-bottom-color:$kb-ui02;}
@@ -497,7 +499,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .complete-msg .tit{display: block; margin-top: 28px; font-size: 24px; line-height: 33px; font-weight: bold; color: $kb-ui02;}
 .no-data .no-data-tit{@include heading($size: $heading04);display:block;margin-top:16px;font-weight:normal}
 .complete-msg .tit + p,
-.no-data .no-data-tit + p{margin-top:12px;color:$kb-ui04;font-size:1.6rem;line-height:2rem}
+.no-data .no-data-tit + p{margin-top:12px;color:$kb-ui04;font-size:1.4rem;line-height:2rem;color:$kb-ui04;}
 .no-data.margin{margin:4.8rem 2.4rem}
 
 // 전체동의
@@ -831,12 +833,11 @@ ul.radio-group > li + li{margin-top:20px;}
 .btn-condition > .tit .num{line-height:1;}
 .btn-condition > div{float:left;}
 .btn-condition > div .sorting-status,
-.btn-condition > div .sorting-status > span,
-.btn-condition > div .icon-filter_20{float:left;}
+.btn-condition > div .sorting-status > span{float:left;}
 .btn-condition > div .sorting-status > span{font-size:$text03;line-height:20px;color:$kb-ui02;font-weight:bold;}
-.btn-condition > div .sorting-status .num{font-size:$num03}
+.btn-condition > div .sorting-status .num{font-size:$num03;vertical-align:top;position:relative;top:-1px;}
 .btn-condition > div .sorting-status > span + span:before{content:'\00B7';display:inline-block;margin-left:4px;margin-right:5px;}
-.btn-condition > div .arrow{@include ir;@include iconBullet($direction: 'down', $width: 14px, $thick : 2px, $color : $kb-ui02);float:left;margin-top:0.4em;margin-left:8px;}
+.btn-condition > div .arrow{@include ir;float:left;width:20px;height:20px;margin-left:7px;background:url(../images/common/common.png) no-repeat -130px -45px / 160px;}
 .filter-area{@include flexBetween;flex-wrap:wrap;border-top:1px solid $kb-ui08;background-color:$kb-ui10;margin-left:-24px;margin-right:-24px;padding-left:24px;padding-right:24px;}
 .filter-area .condition-area{margin-left:0;margin-right:0;padding-left:0;padding-right:0;}
 .filter-area .btn-text span{color:$kb-ui02;}

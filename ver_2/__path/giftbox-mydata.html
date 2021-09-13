@@ -53,6 +53,27 @@
 	<script type="text/javascript" src="./js/TreeListFilter.js"></script>
 	<script type="text/javascript" src="./js/path.js"></script>
 	
+	<script>
+		/* 화면 ID 복사 */
+		let links = document.querySelectorAll('#wrap a');
+		let regText = /mys{1}.*_*.html/;
+		
+		[].map.call(links, function(item, idx){
+			item.addEventListener('click', () => {
+				var temp = regText.exec(item.href);	
+				temp = temp[0].slice(0, temp[0].length -5);;
+
+				let createInput = document.createElement("input");
+				createInput.setAttribute("type", "text");
+				document.querySelector('body').appendChild(createInput);
+				createInput.value = temp;
+				createInput.select();
+				document.execCommand('copy');
+				document.querySelector('body').removeChild(createInput);
+			})
+		})
+    </script>
+	
 </body>
 
 </html>

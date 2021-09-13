@@ -160,9 +160,11 @@
 .mycar-information .infobox .amount {margin-top: 15px; font-size: 23px; font-weight: bold; color: $kb-ui02;}
 .mycar-information .infobox .amount .num {font-size: 24px;}
 .mycar-information .nickname {display: block; margin-bottom: 4px; color: $kb-ui04; font-size: 14px; word-break: break-all;}
-.mycar-information .model {margin-bottom: 4px; color: $kb-ui02; @include text($text02, bold); word-break: break-all;}
+.mycar-information .model {color: $kb-ui02; @include text($text02, bold); word-break: break-all;}
 .mycar-information .model.link-arrow-after {display: inline-block; padding-right: 20px;}
-.mycar-information .subtxt {position: relative; z-index: 2; color: $kb-ui02;}
+.mycar-information .model .manufacturer {display: inline; position: relative; padding-right: 8px; margin-right: 7px;}
+.mycar-information .model .manufacturer::after {content: ''; position: absolute; right: 0; top: 4px; bottom: 4px; width: 1px; background-color: $kb-ui08;}
+.mycar-information .subtxt {position: relative; z-index: 2; margin-top: 4px; color: $kb-ui04; font-size: 14px;}
 .mycar-information .photo {position: absolute; z-index: 1; right: 0; bottom: 0; width: 160px;}
 .mycar-information .photo.default-photo {width: 155px; height: 82px; background: url(../images/asset/car_default.png) no-repeat 0 0; background-size: 100%}
 .mycar-information .infolist {padding-top: 0;}
@@ -188,7 +190,7 @@
 .mycar-information .infolist + .btn-solid {margin-top: 15px;}
 
 .mycar-lists {margin-bottom: 25px;}
-.mycar-lists .mycar-information {padding: 0; margin-top: 15px;}
+.mycar-lists .mycar-information {padding: 0; margin-top: 25px;}
 .mycar-lists .mycar-information .infolist {padding: 0; background-color: transparent;}
 .mycar-lists .mycar-information .infolist + .btn-area {margin-top: 5px;}
 .mycar-lists .mycar-information .link-modify {right: 20px;}
@@ -264,6 +266,11 @@
 .if-you-save .result-text {text-align: center; font-size: 19px; font-weight: bold; color: $kb-ui03;}
 .if-you-save .result-text strong {font-weight: bold; color: $color-blue;}
 .if-you-save .result-text strong .num {font-size: 20px;}
+.if-you-save .error-text {text-align: center; font-size: 19px; font-weight: bold; color: $color-red;}
+.if-you-save .error-text .num {font-size: 21px;}
+.if-you-save .error-text .num::after {font-size: 19px; font-weight: bold;}
+.if-you-save .result-text.is-hide,
+.if-you-save .error-text.is-hide {display: none;}
 
 .wishcar-strategy .summary {padding-top: 8px; min-height: 54px; @include text($text02, normal);}
 .wishcar-strategy .summary strong {font-weight: bold;}
@@ -289,6 +296,7 @@
 .asset-selector .btn-switch span.amount {float: right; margin-right: 58px;}
 .asset-selector .btn-switch span.amount .num {font-size: 17px; margin-right: 3px;}
 .asset-selector .btn-switch span.amount .num::after {font-weight: normal;}
+.asset-selector .btn-switch .tooltip {margin: 0 -24px;}
 .asset-selector + .info-msg {margin-top: 30px;}
 
 .car-moving-zone {position: relative; z-index: 1; width: calc(100% - 100px); height: 75px;}

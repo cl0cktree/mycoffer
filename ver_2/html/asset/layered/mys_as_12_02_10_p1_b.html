@@ -6,11 +6,25 @@
 	<div class="bottom-sheet_contents">
 		<section class="kb-sec if-you-save">
 			<div class="kb-form" data-status="">
+				<!-- 추가 수정 // -->
 				<label for="myMonthlyIncome">나의 월소득</label>
 				<div class="kb-form_inner form-text">
-					<input type="text" inputmode="numeric" id="myMonthlyIncome" placeholder="" maxlength="6" value="0" data-default="0" data-unit="만원" data-action="autoSeperator">
+					<input type="text" inputmode="numeric" id="myMonthlyIncome" placeholder="" maxlength="6" value="0" data-default="0" data-unit="만원" data-action="autoSeperator" onkeyup="monthlyIncomeCheck(this.value)" onchange="monthlyIncomeCheck(this.value)">
 					<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
 				</div>
+				<script>
+					function monthlyIncomeCheck(val) {
+						var inputValue = parseInt(val.replaceAll(",",""));
+						if (inputValue > 5000) {
+							$(".if-you-save .result-text").addClass("is-hide");
+							$(".if-you-save .error-text").removeClass("is-hide");
+						} else {
+							$(".if-you-save .result-text").removeClass("is-hide");
+							$(".if-you-save .error-text").addClass("is-hide");
+						}
+					}
+				</script>
+				<!-- // 추가 수정 -->
 			</div>
 			<div class="radio-set">
 				<strong class="label">모으는 방법</strong>
@@ -28,6 +42,11 @@
 				<div class="result-case case-c">내 자동차 마련의 꿈, <strong>꿈으로만</strong> 남겠어요.</div>
 				<div class="result-case case-d">수입이 없어서 얼마나 걸릴지 <strong>알 수 없어요</strong>.</div>
 			</div>
+			<!-- 추가 수정 // -->
+			<div class="error-text is-hide">
+				<p><span class="num" data-unit-after="만원">5,000</span> 이하로 입력해 주세요.</p>
+			</div>
+			<!-- // 추가 수정 -->
 		</section>
 	</div>
 	<!-- 
