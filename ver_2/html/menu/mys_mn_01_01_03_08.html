@@ -4,7 +4,7 @@
 
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
-        "title": "Last Depth | 1st Depth"
+        "title": "연장_인증서 선택 | 마이데이터 관리"
     })
 </head>
 
@@ -16,9 +16,6 @@
             'pageTit':'전송기간 연장',
             'type':'step'
         })
-        <style>
-            .page-tit{display:block !important;} /* 임시 */
-        </style>
 
         <!-- app-container //-->
         <div class="app-container">
@@ -29,9 +26,9 @@
                 <h1 class="is-hidden">전송기간 연장</h1>           
                 <div class="page-step js-fixed">  
                     <div class="page-step-inner">
-                        <div class="step" aria-label="총 3단계 중 현재 2단계">
+                        <div class="step" aria-label="총 2단계 중 현재 2단계">
                             <span class="current">2</span>                        
-                            <span class="total">3</span>
+                            <span class="total">2</span>
                         </div>
                         <h2 class="h1">인증서 선택</h2>
                     </div>
@@ -126,6 +123,19 @@
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
 
+    <script>
+        $(document).ready(function(){
+            $('.btn-cancel').on('click', function() {
+                modalPopup({
+                    title: '',
+                    message: "마이데이터 서비스 이용을 위한 자산 등록을 취소하시겠습니까?",
+                    type: "confirm",
+                    textOkButton: "확인",
+                    textCancelButton: "취소"
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

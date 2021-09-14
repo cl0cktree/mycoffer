@@ -274,10 +274,10 @@
 
 .wishcar-strategy .summary {padding-top: 8px; min-height: 54px; @include text($text02, normal);}
 .wishcar-strategy .summary strong {font-weight: bold;}
-.wishcar-strategy .description-list {padding: 25px 2px 15px;}
+.wishcar-strategy .description-list {padding: 48px 2px 15px;}
 .wishcar-strategy .description-list dt {@include text($text01, bold); color: $kb-ui02;}
 .wishcar-strategy .description-list dd {@include text($text02, bold); position: relative; top: 2px;}
-.wishcar-strategy .need {color: #7fa2ed; font-weight: bold;}
+.wishcar-strategy .need {color: $kb-ui02; font-weight: bold;}
 .wishcar-strategy .num::after {font-weight: bold;}
 
 .mydata-agree {margin: 48px 0; text-align: center;}
@@ -286,7 +286,7 @@
 .mydata-agree a {position: relative; @include text($text02, normal); color: $kb-ui04;}
 .mydata-agree a::after {content: ''; position: absolute; left: 0; right: 0; bottom: 2px; height: 1px; background-color: $kb-ui04;}
 
-.asset-selector {padding: 15px 2px; border-top: 1px solid $kb-ui09; border-bottom: 1px solid $kb-ui09;}
+.asset-selector {padding: 15px 2px; border-top: 1px solid $kb-ui03; border-bottom: 1px solid $kb-ui09;}
 .asset-selector .btn-switch {display: block; height: auto;}
 .asset-selector .btn-switch label {padding: 15px 0; display: block;}
 .asset-selector .btn-switch label .dot {display: inline-block; width: 8px; height: 8px; margin-right: 2px; border-radius: 100%;}
@@ -302,7 +302,7 @@
 .car-moving-zone {position: relative; z-index: 1; width: calc(100% - 100px); height: 75px;}
 .car-moving-zone .car {position: absolute; left: 0%; bottom: 0; width: 100px; transform: scale(0.7); transform-origin: left bottom; transition: all .5s ease-in-out;}
 .car-moving-zone img {width: 100%; transform: scaleX(-1);}
-.progress-bar-zone {position: relative;z-index: 2;height: 22px; background-color: #7fa2ed; border-radius: 22px; overflow: hidden;}
+.progress-bar-zone {position: relative;z-index: 2;height: 22px; background-color: $kb-ui07; border-radius: 22px; overflow: hidden;}
 .progress-bar-zone .bar-mycar,
 .progress-bar-zone .bar-myasset {position: absolute; left: 0; top: 0; bottom: 0; width: 0%; transition: width .5s ease-in-out;}
 .progress-bar-zone .bar-mycar {z-index: 5; background-color: #ffba53;}
@@ -378,3 +378,8 @@
 .report-view dt .file {position: relative; margin-top: 5px; display: block; font-size: 14px; line-height: 24px; color: #8c949e;}
 .report-view dt .file .icon-down {position: absolute; right: 0; top: 0;}
 .report-view dt + dd{@include text;color:$kb-ui03;margin-top:24px;padding-top:32px;border-top:1px solid $kb-ui09;}
+
+.invest .account-top .account-wrap{position:relative;}
+.invest .account-top .account-wrap:after{display:block;position:absolute;bottom:0;left:0;width:calc(100% - 48px);margin:0 24px;content:'';height:1px;background-color:$kb-ui09;}
+
+.my-asset.investment .p-list > dl > dd .btn-line.sm{margin-top:20px;}

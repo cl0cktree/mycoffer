@@ -4,7 +4,7 @@
 
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
-        "title": "Last Depth | 1st Depth"
+        "title": "변경_인증서선택 | 마이데이터 관리"
     })
 </head>
 
@@ -24,9 +24,9 @@
             <main class="app-content select-certificate">
                 <div class="page-step js-fixed">  
                     <div class="page-step-inner">
-                        <div class="step" aria-label="총 4단계 중 현재 3단계">
+                        <div class="step" aria-label="총 3단계 중 현재 3단계">
                             <span class="current">3</span>                        
-                            <span class="total">4</span>
+                            <span class="total">3</span>
                         </div>
                         <h2 class="h1">인증서 선택</h2>
                     </div>
@@ -124,6 +124,20 @@
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
+
+    <script>
+        $(document).ready(function(){
+            $('.btn-cancel').on('click', function() {
+                modalPopup({
+                    title: '',
+                    message: "마이데이터 서비스 이용을 위한 자산 등록을 취소하시겠습니까?",
+                    type: "confirm",
+                    textOkButton: "확인",
+                    textCancelButton: "취소"
+                });
+            });
+        });
+    </script>
 
 </body>
 

@@ -20,7 +20,7 @@
 .app-content[class*=login-certification] .other-login .btn-text span{@include text($size:$text03,$weight:bold); }
 .app-content[class*=login-certification] .other-login .btn-text i{@include iconBullet($direction: 'up', $width: 13px, $thick: 2px, $color: #52565d);top:0px;margin-left:10px;}
 .app-content[class*=login-certification] .certification-issued{margin-top:32px;text-align:center;}
-.certification-issued button{color:$kb-ui03;}
+.certification-issued button{color:$kb-ui03; font-size: 14px;;}
 .certification-issued button:first-child::after{content: "|"; color:$kb-ui08; padding: 0 13px;}
 .popup[data-layered-name=popupCertificationLoading] .loading-certification{text-align: center;}
 .popup[data-layered-name=popupCertificationLoading] .loading-certification img{width:150px; height:150px;  margin-bottom:28px}
@@ -85,7 +85,7 @@
 .agree-term .caution-txt p{font-size: 15px; margin-top:67px; line-height: 20px; margin-bottom: 19px;}
 .agree-term .caution-txt p span{display: block; font-weight: bold;}
 // .agree-term .caution-txt a{float: right; }
-.agree-term .employee-search-msg{@include text($text02);padding-top:28px;padding-bottom:28px;background-color:$kb-ui10;color:$kb-ui02; display: inline-block; margin-bottom:53px;}
+.agree-term .employee-search-msg{@include text($text02);padding-top:28px;padding-bottom:28px;background-color:$kb-ui10;color:$kb-ui02; margin-bottom:53px; overflow: hidden;}
 .agree-term .employee-search-msg span{font-weight: bold;}
 .agree-term .employee-search-msg a{float: right; margin-top:18px;}
 .agree-term .employee-search-msg a i{margin-top: 0.75rem;}
@@ -105,6 +105,7 @@
 .transmission-request .full h4, 
 .transmission-request .full .tit{margin-left: -24px; margin-right: -24px; padding-left:24px; }
 .transmission-request .h5{padding-top:0; padding-bottom:0;}
+.transmission-request .h5_top_bottom{margin-top:20px; margin-bottom:15px;}
 .transmission-request hr{height:10px; border:none; background-color: $kb-ui10; margin:0 -2.4rem 50px -2.4rem;}
 .transmission-request .agreement-to-terms{border-bottom: none;}
 .transmission-request .agreement-to-terms .st_list{border-bottom:1px solid $kb-ui10;}
@@ -241,10 +242,10 @@
 .accordion.t02 > dt.is-active{font-weight:bold; border-top:1px solid $kb-ui03; }
 .accordion.t02 > dt.is-active + dd{border-bottom-color:$kb-ui03; }
 .accordion.t02 .status{color:$kb-ui04;font-size:14px;}
-
+.select-organization .accordion.t02 > dd{margin-bottom:0px;}
 //한개의 기관연결
-.request-txt p{text-align: right; color:$kb-ui04; font-size: $kb-ui02; margin-top: 86px;}
-.request-txt a{float: right;  /*text-decoration:underline; text-underline-position: under;*/ margin-top: 23px;}
+.request-txt p{text-align: right; color:$kb-ui02; font-size: 14px; margin-top: 86px;}
+.request-txt a{float: right;  /*text-decoration:underline; text-underline-position: under;*/ margin-top: 14px;}
 .request-txt .btn-text span{font-size: 14px; color: $kb-ui04;}
 //개별인증
 .select-organization .kb-card{text-align: center; margin-bottom:100px; box-shadow: none;;}
@@ -352,7 +353,7 @@
 .select-assets-complete .radio-group li:last-child{border-bottom:1px solid $kb-ui09; padding-bottom:20px;}
 .select-assets-complete .form-radio label{display:block;font-weight:bold;color:$kb-ui02;}
 .select-assets-complete .employee-info{display:flex;margin-top:7px;color:$kb-ui04;}
-.select-assets-complete .employee-info .date{@include number($size: 14px, $line-height:1.2); padding-left:14px; margin-top:-4px;}
+.select-assets-complete .employee-info .date{@include number( $line-height:1.2); padding-left:14px; margin-top:-3.5px; font-size: 14px}
 .select-assets-complete .employee-info .branch{@include ellipsis;max-width:calc(100% - 64px); font-size: 14px; padding-right:4px; padding-right:14px; margin-top:-3px;}
 .select-assets-complete .employee-info .branch:after{content: "|"; position: absolute;@include ellipsis; max-width:calc(100% - 64px);  font-size: 14px; padding-left:14px; color:$kb-ui09; }
 .select-assets-complete .recommend-employees{margin-top:20px;margin-bottom:40px;}
@@ -360,6 +361,8 @@
 .select-assets-complete .recommend-employees-form > .kb-form + p:last-child{margin-top:24px;}
 .select-assets-complete .recommend-employees-form > .kb-form,
 .select-assets-complete .recommend-employees-form > .kb-form + p:last-child{display:none;}
+
+.recommend-employees-form .btn-line{margin-top:27px;}
 .select-assets-complete .kb-form.is-disabled input{color:$kb-ui02}
 .select-assets-complete .recommend-mydata-service{margin-top:48px;}
 .recommend-mydata-service .tit{@include text($size: $text01, $weight:bold, $line-height:1);display:block;}
@@ -709,7 +712,7 @@ h1 + .joint-certificate-list{margin-top:28px;}
 
 .mm-manage-certificate .btn-text{width:100%; display: inline-block; text-align: center;}
 .mm-manage-certificate .btn-line{margin-top:73px;}
-
+.mm-manage-certificate .manage-certificate i{float: right;}
 //스마트폰(승인번호)
 .approval-number .kb-form_multi{display:flex;flex-wrap:wrap;}
 .approval-number .kb-form_multi > .tit{flex:0 0 100%;}
@@ -849,23 +852,21 @@ h1 + .joint-certificate-list{margin-top:28px;}
 //마이데이터 서비스 소개
 .mydata-service .img{width:100%;}
 .mydata-service dl{margin-top:25px;}
-.mydata-service-introduction h2{@include heading($size: 21px);}
-.mydata-service-introduction .desc{margin-top:26px;}
+.mydata-service-introduction h2{@include heading($size: 28px, $weight:normal);}
+.mydata-service-introduction .desc{margin-top:20px;}
 .mydata-service-introduction .desc dt{@include text($size: $text01, $weight:bold)}
-.mydata-service-introduction .desc dd{@include text($size: $text03);margin-top:12px;color:$kb-ui03}
-.mydata-service-introduction ul{margin-top:40px;padding-bottom:48px;border-bottom:1px solid $kb-ui09;}
-.mydata-service-introduction li{position:relative;padding-top:2px;padding-left:36px;}
+.mydata-service-introduction .desc dd{@include text($size: $text02);margin-top:12px;}
+.mydata-service-introduction ul{margin-top:24px;}
+.mydata-service-introduction li{position:relative;padding-top:2px;padding-left:49px;}
 .mydata-service-introduction li + li{margin-top:26px;}
 .mydata-service-introduction li i{position:absolute;left:0;top:0;}
-.mydata-service-introduction li .tit{@include text($size: $text03, $weight:bold);display:block;}
+.mydata-service-introduction li .tit{@include text($size: $text02, $weight:bold);display:block;}
 .mydata-service-introduction li p{@include text($size: $text03);margin-top:8px;color:$kb-ui04;}
-.mydata-service-specialty{margin-top:48px;}
-.mydata-service-specialty h2{@include heading($size: 21px);}
-.mydata-service-specialty h2 + p{@include text($size: $text03);color:$kb-ui04;margin-top:12px;}
-.mydata-service-specialty h2 + p .tit{@include text($size: $text01, $weight:bold);color:$kb-ui02;display:block;margin-bottom:12px;}
+.mydata-service-specialty h2{@include heading($size: 28px, $weight:normal);}
+.mydata-service-specialty h3{@include heading($size: 18px);margin-top:20px;}
+.mydata-service-specialty h3 + p{@include text($size: $text02);margin-top:16px;}
 .mydata-service-specialty dt{@include text($size: $text02, $weight:bold);}
-.mydata-service-specialty dd{@include text($size: $text03);color:$kb-ui04;margin-top:12px;}
-.mydata-service-specialty .desc{margin-top:28px;}
-
-
+.mydata-service-specialty dd{@include text($size: $text03);margin-top:12px;}
+.mydata-service-specialty .desc{margin-top:24px;}
+.mydata-service-specialty .desc + .desc{margin-top:40px;}
 

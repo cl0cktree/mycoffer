@@ -3,7 +3,7 @@
 <!-- [MYS_MN_03] 작성자 : 누리어 시스템 최선화 -->
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
-        "title": "LAYER | 전체메뉴"
+        "title": "LAYER | 고객센터"
     })
     <style>
         .layer-call{max-width:300px;margin:0 auto;padding:40px 0;}
@@ -14,13 +14,12 @@
 </head>
 <body>    
     <div class="layer-call">
-        <a href="@@webRoot/html/terms/open-api.html" class="btn-line"><span>오픈 API 수집&middot;이용 동의 전문</span></a> <!-- 2021-06-10 수정 -->
-        
+        <a href="@@webRoot/html/terms/open-api.html" class="btn-line"><span>오픈 API 수집&middot;이용 동의 전문</span></a>
     </div>
 
     <div class="layered">
-        <!-- @@include('@@webRoot/html/_layered/popup-open-api.html') -->
     </div>
+
     <!-- Script -->
     @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
@@ -41,7 +40,6 @@
         if(pageID.indexOf('/HTML/') < 0) $('button[data-page-id=' + pageID + ']').click();
         //레이어 확인용 스크립트 (개발시 삭제) [e]
     </script>
-    
 
 </body>
 </html>

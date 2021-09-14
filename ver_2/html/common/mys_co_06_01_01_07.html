@@ -25,9 +25,9 @@
                 <h1 class="is-hidden">전송요구</h1>
                 <div class="page-step js-fixed">
                     <div class="page-step-inner">
-                        <div class="step" aria-label="총 7단계 중 현재 3단계">
+                        <div class="step" aria-label="총 6단계 중 현재 3단계">
                             <span class="current">3</span>
-                            <span class="total">7</span>
+                            <span class="total">6</span>
                         </div>
                         <h2 class="h1">정보 전송 요청</h2>
                     </div>
@@ -128,7 +128,19 @@
     @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
-
+    <script>
+        $(document).ready(function(){
+            $('.btn-cancel').on('click', function() {
+                modalPopup({
+                    title: '',
+                    message: "마이데이터 서비스 이용을 위한 자산 등록을 취소하시겠습니까?",
+                    type: "confirm",
+                    textOkButton: "확인",
+                    textCancelButton: "취소"
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

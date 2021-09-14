@@ -4,7 +4,7 @@
 
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
-        "title": "Last Depth | 1st Depth"
+        "title": "변경_자산선택 | 마이데이터 관리"
     })
 </head>
 
@@ -24,9 +24,9 @@
             <main class="app-content select-assets">
                 <div class="page-step js-fixed">  
                     <div class="page-step-inner">
-                        <div class="step" aria-label="총 4단계 중 현재 1단계">
+                        <div class="step" aria-label="총 3단계 중 현재 1단계">
                             <span class="current">1</span>                        
-                            <span class="total">4</span>
+                            <span class="total">3</span>
                         </div>
                         <h2 class="h1">자산선택</h2>
                     </div>
@@ -158,10 +158,13 @@
     <!-- Add Script -->
 
     <script>
-        $('.sticky-bottom button').on('click', function() {
-            modalPopup({
-                title: '',
-                message: "연결 가능한 상품(계좌)/정보가 없어 데이터 연결이 취소 됩니다."
+        $(document).ready(function(){
+            $('.btn-cancel').on('click', function() {
+                modalPopup({
+                    title: '',
+                    message: "마이데이터 서비스 이용을 위한 자산 등록을 취소하시겠습니까?",
+                    
+                });
             });
         });
     </script>

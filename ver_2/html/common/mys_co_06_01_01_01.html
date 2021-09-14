@@ -25,9 +25,9 @@
                 <h1 class="is-hidden">전송요구</h1>
                 <div class="page-step js-fixed">    
                     <div class="page-step-inner">
-                        <div class="step" aria-label="총 7단계 중 현재 2단계">
+                        <div class="step" aria-label="총 6단계 중 현재 2단계">
                             <span class="current">2</span>                        
-                            <span class="total">7</span>
+                            <span class="total">6</span>
                         </div>
                         <h2 class="h1">기관선택</h2>
                     </div>
@@ -218,16 +218,17 @@
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
     <script>
-        // modalPopup({
-        //     title: "",
-        //     message: "일괄 선택 가능한 기관수를 초과하였습니다. 추가하려는 기관을 건별로 선택해주세요."
-            
-        // })
-        // modalPopup({
-        //     title: "",
-        //     message: "선택한 기관 중 두개 이상 업종을 영위하는 기관(카드사 등)이 있습니다. 상세정보 요청 시 확인 가능합니다."
-            
-        // })
+        $(document).ready(function(){
+            $('.btn-cancel').on('click', function() {
+                modalPopup({
+                    title: '',
+                    message: "마이데이터 서비스 이용을 위한 자산 등록을 취소하시겠습니까?",
+                    type: "confirm",
+                    textOkButton: "확인",
+                    textCancelButton: "취소"
+                });
+            });
+        });
     </script>
 </body>
 

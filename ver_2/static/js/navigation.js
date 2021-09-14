@@ -33,22 +33,27 @@ if($appMenu.length){
     
     switch (headerType){        
         case 'close':
-            $appHeader.find('.btn-close').show().siblings().not('.page-tit').remove();
+            $appHeader.find('.btn-history-back').remove();
+            $appHeader.find('.btn-close').siblings().remove();
             $appMenu.remove();
             break;
         case 'title':
             $appHeader.find('.page-tit').siblings().remove();
             $appMenu.remove();
             break;
+        case 'back':
+            $appHeader.find('.header-btn').remove();
+            $appMenu.remove();
+            break;
         case 'submain':
             $appHeader.find('.btn-history-back, .btn-home ,.btn-close, .btn-cancel').remove();
             break;
         case 'step01':
-            $appHeader.find('.btn-history-back, .btn-notice-box').remove();            
+            $appHeader.find('.btn-history-back, .btn-notice-box, .btn-close, .btn-cancel').remove();            
             $appMenu.remove();
             break;
         case 'step':
-            $appHeader.find('.btn-home, .btn-notice-box, .btn-allmenu').remove();            
+            $appHeader.find('.btn-home, .btn-notice-box, .btn-allmenu, .btn-close').remove();            
             $appMenu.remove();
             break;
         case 'complete':            

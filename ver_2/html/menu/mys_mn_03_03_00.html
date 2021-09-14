@@ -4,7 +4,7 @@
 
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
-        "title": "Last Depth | 1st Depth"
+        "title": "약관 및 정책 | 고객센터"
     })
 </head>
 
@@ -53,8 +53,6 @@
     </div>
 
     <div class="layered">
-        <!-- @@include('@@webRoot/html/_layered/popup-open-api.html') -->
-
     </div>
 
     <!-- Script -->
@@ -65,19 +63,14 @@
     <!-- Add Script -->
 
     <script>
-        $('a[data-action=personalInfo]').on('click',function(){
-            modalPopup({
-                title: "",
-                message: "개인정보처리방침 화면으로 <br>이동하시겠습니까?",
-                type: "confirm",
-                onOk: function() {
-                    
-                },
-                onCancel: function() {
-                    
-                }
+        $(document).ready(function(){
+            $('a[data-action=personalInfo]').on('click',function(){
+                modalPopup({
+                    title: "",
+                    message: "개인정보처리방침 화면으로 <br>이동하시겠습니까?",
+                    type: "confirm",
+                });
             });
-
         });
     </script>
 
