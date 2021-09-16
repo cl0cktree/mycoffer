@@ -1,0 +1,104 @@
+<!-- [mys_mn_05_layered] 가입완료 작성자: 누리어 시스템 변혜선 -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "마이머니앱설정"
+    })
+</head>
+<style>
+    .layer-call{max-width:300px;margin:0 auto;padding:40px 0;}
+    .layer-call > a,
+    .layer-call > button{flex-flow:column;margin-top:10px;}
+    .layer-call > button:before{content:attr(data-page-id);}
+    .layer-call > button span{display:block;}
+</style>
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header //-->
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'마이머니앱설정',
+        })
+        <!-- // app-header -->
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <div class="layer-call">                
+                <button type="button" class="btn-line" onclick="modalDemo1()" data-page-id="mys_mn_05_03_01"><span>KB스타뱅킹 인증센터</span></button>
+                <button type="button" class="btn-line" onclick="modalDemo2()" data-page-id="mys_mn_05_03_05"><span>PC에서 가져오기 성공(alret)</span></button>
+                <button type="button" class="btn-line" onclick="modalDemo3()" data-page-id="mys_mn_05_03_05_1"><span>PC에서 가져오기 실패(alret)</span></button>
+                <button type="button" class="btn-line" onclick="modalDemo2()" data-page-id="mys_mn_05_03_06"><span>스마트폰에서 가져오기 성공(alret)</span></button>
+                <button type="button" class="btn-line" onclick="modalDemo3()" data-page-id="mys_mn_05_03_06_1"><span>스마트폰에서 가져오기 실패(alret)</span></button>
+            </div>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+    </div>
+    <div class="layered">
+
+        <!-- Modal // -->
+        @@include('@@webRoot/html/_layered/_modal-sample.html')
+        <!-- // Modal -->
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    
+    <script>
+        function modalDemo1() {
+            modalPopup({
+                title: "",
+                message: "KB스타뱅킹으로 이동하시겠습니까?",
+                type: "confirm",
+                textCancelButton: "취소",
+                textOkButton: "확인",
+                onOk: function() {
+                    modalDemo2();
+                }
+            });
+        }
+        function modalDemo2() {
+            modalPopup({
+                title: "",
+                message: "인증서를 가져오기에 성공하였습니다.",
+                type: "확인",                
+                            
+            });
+        }
+        function modalDemo3() {
+            modalPopup({
+                title: "",
+                message: "인증서를 가져오는데 실패하였습니다.",
+                type: "확인",                
+                            
+            });
+        }
+    </script>
+
+    <script>
+
+        //레이어 확인용 스크립트 (개발시 삭제) [s]
+        var url = window.location.href;
+        var urlArr = url.split('#');
+        var pageID = urlArr[urlArr.length - 1].toUpperCase();
+
+        $('.layer-call').on('click','button',function(){
+            var newUrl = url.replace(pageID, '');
+            window.location.href = urlArr[0] + '#' + $(this).data('page-id');
+        });
+        
+        if(pageID.indexOf('/HTML/') < 0) $('button[data-page-id=' + pageID + ']').click();
+        //레이어 확인용 스크립트 (개발시 삭제) [e]
+    </script>
+</body>
+
+</html>

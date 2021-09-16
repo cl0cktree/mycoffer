@@ -1,10 +1,10 @@
-<!-- [mys_co_06_01_03_08] 인증요청 (작성자: 누리어 시스템 변혜선)// -->
+<!-- [mys_co_06_01_03_08] 타 마이데이터사업자 정보제공 요청 발생 > 인증방식선택(KB스타뱅킹 미설치 고객) > 정보제공자_로딩페이지 > 다중인증거래 안내 (작성자: 누리어 시스템 변혜선, 최선화) // -->
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
-        "title": "Last Depth | 1st Depth"
+        "title": "정보제공자_다중인증거래 안내 | 전송요구"
     })
     
 </head>
@@ -38,17 +38,17 @@
                 </div>    
                 <section class="kb-sec">
                     <div class="visual-area">
-						<img class="mydata" src="@@webRoot/static/images/common/transmission_request_int_02.png" alt="전송요구 이미지">
+						<img class="mydata_01" src="@@webRoot/static/images/common/transmission_request_int_02.png" alt="전송요구 이미지">
 						<div class="text">
 							<span class="stxt">본인명의 휴대폰 및 계좌비밀번호 확인을 통해<br>
                                 본인인증거래를 수행합니다</span>
 						</div>
 					</div>                            
-                   
                 </section>
+
                 <div class="sticky-bottom">
                     <div class="btn-area">
-                        <a href="mys_co_06_01_03_09.html" class="btn-solid" role="button"><span>인증요청</span></a>
+                        <a href="@@webRoot/html/common/mys_co_06_01_03_09.html" class="btn-solid" role="button"><span>인증요청</span></a>
                     </div>
                 </div>                
             </main>
@@ -59,8 +59,6 @@
 
         <!-- Layer (modal, bottom sheet) // -->
         <div class="layered">
-            @@include('@@webRoot/html/_layered/bs-calendar.html')
-            @@include('@@webRoot/html/_layered/modal-alert.html')
         </div>
         <!-- // Layer (modal, bottom sheet) -->
     </div>
@@ -69,6 +67,7 @@
     @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
     <script>
 		// 기획확인용 임시 스크립트
 		document.querySelector('.app-header .btn-close').setAttribute('href', '');
@@ -90,9 +89,7 @@
             });
         }
     </script>
-    <!-- Add Script -->
 
 </body>
 
 </html>
-<!-- // [MYS_CO_04_01_03] 전송 요구 방법 선택 -->

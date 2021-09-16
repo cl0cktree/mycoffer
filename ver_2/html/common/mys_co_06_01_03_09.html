@@ -1,10 +1,10 @@
-<!-- [mys_co_06_01_03_09] 휴대폰 인증 (작성자: 누리어 시스템 변혜선)// -->
+<!-- [mys_co_06_01_03_09] 타 마이데이터사업자 정보제공 요청 발생 > 인증방식선택(KB스타뱅킹 미설치 고객) > 다중인증거래 안내 > 휴대폰 본인인증 (작성자: 누리어 시스템 변혜선, 최선화) // -->
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
-        "title": "Last Depth | 1st Depth"
+        "title": "정보제공자_휴대폰 본인인증 | 전송요구"
     })
 </head>
 
@@ -116,23 +116,23 @@
                         <em class="validation">휴대폰 앞자리를 선택하세요.</em>
                         <em class="validation">휴대폰 뒷자리를 선택하세요.</em>
                     </div>   
-                    <!--ios용-->
-                    <div class="mt32"><button type="button" class="btn-line" data-action="sendCertificationNumber"><span>휴대폰 명의확인</span></button></div><!-- 수정 : 2021.06.24 -->
+                    <!-- ios용 // -->
+                    <div class="mt32"><button type="button" class="btn-line" data-action="sendCertificationNumber"><span>휴대폰 명의확인</span></button></div>
                     <ul class="authentication-number-notification">
                         <li><p class="info-msg">입력하신 정보로 통신사와 휴대폰 명의를 확인합니다.</p></li>
-                        <li><p class="info-msg">[휴대폰 명의확인]을 눌러  SMS 인증번호를 <br>입력해주세요.</p></li>
+                        <li><p class="info-msg">[휴대폰 명의확인]을 눌러 SMS 인증번호를 입력해주세요.</p></li><!-- 수정(br 태그 삭제) 2021-09-16 -->
                     </ul>
-                    <!--ios용-->  
-                    <!--android용-->          
-                    <div class="mt32"><button type="button" class="btn-line" data-action="sendCertificationNumber"><span>인증번호 요청</span></button></div><!-- 수정 : 2021.06.24 -->
-                    <!--android용 재발송버튼-->
-                    <div class="mt32"><button type="button" class="btn-line" data-action="sendCertificationNumber"><span>인증번호 재발송</span></button></div>
-                    <!--android용 재발송버튼-->
+                    <!-- // ios용 -->  
+                    <!-- android용 // -->          
+                    <div class="mt32"><button type="button" class="btn-line" data-action="sendCertificationNumber"><span>인증번호 요청</span></button></div>
+                    
+                    <div class="mt32"><button type="button" class="btn-line" data-action="sendCertificationNumber"><span>인증번호 재발송</span></button></div><!-- android용_재발송버튼 -->
+
                     <ul class="authentication-number-notification">
                         <li><p class="info-msg">입력하신 휴대폰번호로 SMS 인증번호 전송합니다.</p></li>
-                        <li><p class="info-msg">[인증번호 요청]을 눌러  SMS 인증번호를 <br>입력해주세요.</p></li>
-                    </ul>
-                    <!--android용--> 
+                        <li><p class="info-msg">[인증번호 요청]을 눌러 SMS 인증번호를 입력해주세요.</p></li>
+                    </ul><!-- 수정(br 태그 삭제) 2021-09-16 -->
+                    <!-- // android용 --> 
                 </section>
                 <!-- 인증번호 발송 후 // -->
                 <section class="kb-sec mt20 js-sended-number" style="display:none;">
@@ -151,7 +151,7 @@
                                 <button class="btn-line table"><span>인증시간 연장</span></button>
                             </div>
                             <div class="help">
-                                <button class="btn-text icon-arrow" onclick="modalDemo2()"><span>인증번호가 오지않나요?</span><i></i></button>
+                                <button class="btn-text icon-arrow"><span>인증번호가 오지않나요?</span><i></i></button><!-- 수정(onclick 삭제) 2021-09-16 -->
                             </div>
                         </div>
                     </div>
@@ -159,7 +159,7 @@
                 <!-- // 인증번호 발송 후 --> 
                 <div class="sticky-bottom">
                     <div class="btn-area">
-                        <button type="button" class="btn-solid" onclick="modalDemo1()"><span>확인</span></button>
+                        <button type="button" class="btn-solid"><span>확인</span></button><!-- 수정(onclick 삭제) 2021-09-16 -->
                     </div>
                 </div>               
             </main>
@@ -170,10 +170,6 @@
 
         <!-- Layer (modal, bottom sheet) // -->
         <div class="layered">
-            <!-- @@include('@@webRoot/html/_layered/popup-agree-unique-id-info.html')
-            @@include('@@webRoot/html/_layered/popup-agree-mobile-id-personal-info-collection.html')
-            @@include('@@webRoot/html/_layered/popup-agree-terms-of-use-of-telecommunications-company.html')
-            @@include('@@webRoot/html/_layered/popup-agree-mobile-id-personal-info-service.html') -->
         </div>
         <!-- // Layer (modal, bottom sheet) -->
     </div>
@@ -184,27 +180,28 @@
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
     <script>
-        function modalDemo1() {
-            modalPopup({
-                title: "고객님 죄송합니다",
-                message: "본인인증에 실패하였습니다. <br>· 대표전화<br> 1588-9999, 1599-9999, 1644-9999"
+        $(document).ready(function(){
+            $('button[data-action=sendCertificationNumber]').on('click',function(){
+                var top = $(this).offset().top;
+                $('.js-sended-number').show();
+                $('html,body').stop().animate({'scrollTop': top}, 10);
             });
-        }
-        function modalDemo2() {
-            modalPopup({
-                title: "고객님 죄송합니다",
-                message: "1600-1522 번호가 스팸으로 등록되면, 인증번호를 받을 수 없습니다. 스팸등록을 해제 후 다시 시도해주세요."
+
+            // 기획확인용
+            $('.time-limit .help button').on('click', function(){
+                modalPopup({
+                    title: "고객님 죄송합니다",
+                    message: "1600-1522 번호가 스팸으로 등록되면, 인증번호를 받을 수 없습니다. 스팸등록을 해제 후 다시 시도해주세요."
+                });
             });
-        }
-    </script>
-    <script>
-        $('button[data-action=sendCertificationNumber]').on('click',function(){
-            var top = $(this).offset().top;
-            $('.js-sended-number').removeAttr('style');
-            $('html,body').stop().animate({'scrollTop': top}, 10);
+            $('.sticky-bottom button').on('click', function(){
+                modalPopup({
+                    title: "고객님 죄송합니다",
+                    message: "본인인증에 실패하였습니다. <br>· 대표전화<br> 1588-9999, 1599-9999, 1644-9999"
+                });
+            });
         });
     </script>
-
 </body>
 
 </html>

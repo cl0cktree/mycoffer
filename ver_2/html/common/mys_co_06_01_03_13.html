@@ -1,10 +1,10 @@
-<!-- [MYS_CO_06_01_03_01] 타 마이데이터사업자 기관 선택화면> 국민은행 선택 > KB 모바일인증서(보안인증) > 자산선택 (작성자: 누리어 시스템 이진우)// -->
+<!-- [MYS_CO_06_01_03_16] 타 마이데이터사업자 정보제공 요청 발생 > 인증방식선택(KB스타뱅킹 이용 고객) > 다중인증거래 안내 > 휴대폰 본인인증 > 계좌인증 > 자산선택_통신 (작성자: 누리어 시스템 변혜선, 최선화) // -->
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
-        "title": "Last Depth | 1st Depth"
+        "title": "정보제공자_자산선택_통신 | 전송요구"
     })
 </head>
 
@@ -36,11 +36,8 @@
                     <p class="page-step-desc">상품(계좌)/정보를 선택해주세요.</p>
                 </div>
                 <section class="kb-sec">
-                    <dl class="accordion js-checkbox-selector mt48">
-                        <dt class="is-active">
-                            <span class="form-checkbox"><input type="checkbox" id="accrdianCheck01"><label for="accrdianCheck01">전체선택</label></span>
-                            <button type="button" class="accordion-trigger"></button>
-                        </dt>
+                    <dl class="js-checkbox-selector mt48">
+                        <dt><span class="form-checkbox"><input type="checkbox" id="selectAll"><label for="selectAll">전체선택</label></span></dt>
                         <dd>
                             <ul class="asset-accout-list">
                                 <li>
@@ -116,19 +113,6 @@
 
         <!-- Layer (modal, bottom sheet) // -->
         <div class="layered">
-            <!-- 금융인증서 불러오기 // -->
-            <div class="popup" data-layered-name="popupCertificationLoading">
-                <div class="popup_contents">
-                    <section class="kb-sec">
-                        <div class="loading-certification">
-                            <strong class="tit">금융인증서비스 화면을 불러오는 중입니다.</strong>
-                            <div class="loader"><i></i><i></i><i></i><i></i><span>로딩중</span></div>
-                        </div>
-                    </section>
-                </div>
-            </div>
-            <!-- // 금융인증서 불러오기 -->
-            @@include('@@webRoot/html/common/layered/mys_co_04_05_00_p1.html')
         </div>
         <!-- // Layer (modal, bottom sheet) -->
     </div>
@@ -138,7 +122,6 @@
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
-
 </body>
 
 </html>

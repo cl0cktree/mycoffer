@@ -1,13 +1,11 @@
 <!-- [MYS_CO_06_01_02_01] 전송요구방법 > 통합인증 > 기관 선택 (작성자: 누리어 시스템 변혜선)// -->
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
         "title": "Last Depth | 1st Depth"
     })
 </head>
-
 <body>
     @@include('@@webRoot/html/_include/app-a11y.html')
     <div class="app">
@@ -16,10 +14,8 @@
             'pageTit':'자산 등록',
             'type':'step'
         })
-
         <!-- app-container //-->
-        <div class="app-container">
-              
+        <div class="app-container">              
             <!-- app-content // -->
             <main class="app-content select-organization">
                 <div class="page-step js-fixed">    
@@ -31,12 +27,10 @@
                         <h2 class="h1">기관선택</h2>
                     </div>
                     <p class="page-step-desc">연결할 기관을 선택해주세요.</p>
-                </div> 
-                
+                </div>                 
                 <section class="kb-sec agency-search">                    
                     <p><a href="/html/common/mys_co_06_01_01_09.html" class="btn-text icon-arrow" role="button"><span>기관검색</span><i></i></a></p>                  
-                </section>
-                
+                </section>                
                 <section class="kb-sec mt48">
                     <strong class="h4">추천기관</strong>                    
                     <dl class="accordion js-checkbox-selector mt20">
@@ -103,8 +97,7 @@
                             </ul>
                         </dd>
                     </dl>                    
-                </section>
-                
+                </section>                
                 <section class="kb-sec mt48">
                     <strong class="h4">기관 선택</strong>
                     <dl class="accordion t02 js-checkbox-selector">
@@ -193,7 +186,6 @@
                         </dd>
                     </dl>
                 </section>
-
                 <div class="sticky-bottom">
                     <div class="btn-area">
                         <button type="button" class="btn-solid"><span>확인</span></button>
@@ -201,33 +193,31 @@
                 </div>
             </main>
             <!-- // app-content -->
-
         </div>
         <!-- // app-container -->
-
         <!-- Layer (modal, bottom sheet) // -->
         <div class="layered">
             @@include('@@webRoot/html/common/layered/mys_co_06_01_02_01_p1.html')
         </div>
         <!-- // Layer (modal, bottom sheet) -->
     </div>
-
     <!-- Script -->
     @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
     <script>
-        modalPopup({
-            title: "",
-            message: "일괄 선택 가능한 기관수를 초과하였습니다. 추가하려는 기관을 건별로 선택해주세요."
-            
-        })
-        modalPopup({
-            title: "",
-            message: "선택한 기관 중 두개 이상 업종을 영위하는 기관(카드사 등)이 있습니다. 상세정보 요청 시 확인 가능합니다."
-            
-        })
+        $(document).ready(function(){
+            $('.btn-cancel').on('click', function() {
+                modalPopup({
+                    title: '',
+                    message: "마이데이터 서비스 이용을 위한 자산 등록을 취소하시겠습니까?",
+                    type: "confirm",
+                    textOkButton: "확인",
+                    textCancelButton: "취소"
+                });
+            });
+        });
     </script>
 </body>
 

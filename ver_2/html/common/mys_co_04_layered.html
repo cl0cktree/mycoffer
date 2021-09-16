@@ -1,40 +1,60 @@
+<!-- [MYS_CO_04_layered] 가입완료 작성자: 누리어 시스템 변혜선 -->
 <!DOCTYPE html>
 <html lang="ko">
-<!-- [MYS_CO_04] 작성자: 누리어 시스템 이진우 -->
 
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
-        "title": "LAYER | 로그인, 회원가입"
+        "title": "로그인, 회원가입"
     })
-    <style>
-        .layer-call{max-width:300px;margin:0 auto;padding:40px 0;}
-        .layer-call > button{flex-flow:column;margin-top:10px;}
-        .layer-call > button:before{content:attr(data-page-id);}
-        .layer-call > button span{display:block;}
-    </style>
 </head>
+<style>
+    .layer-call{max-width:300px;margin:0 auto;padding:40px 0;}
+    .layer-call > a,
+    .layer-call > button{flex-flow:column;margin-top:10px;}
+    .layer-call > button:before{content:attr(data-page-id);}
+    .layer-call > button span{display:block;}
+</style>
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header //-->
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'로그인, 회원가입',
+        })
+        <!-- // app-header -->
 
-<body>    
-    <div class="layer-call">
-        <h1 class="h2">레이어 모음</h1>        
-      
-        <a href="@@webRoot/html/terms/agree-unique-id-info.html" class="btn-line"><span>고유식별정보 처리 동의</span></a> <!-- 2021-06-10 수정 -->
-        <a href="@@webRoot/html/terms/agree-terms-of-use-of-telecommunications-company.html" class="btn-line"><span>통신사 이용약관 동의</span></a> <!-- 2021-06-10 수정 -->
-        <a href="@@webRoot/html/terms/agree-mobile-id-personal-info-collection.html" class="btn-line"><span>휴대폰본인확인 개인정보 수집이용동의</span></a> <!-- 2021-06-10 수정 -->
-        
-        <button type="button" class="btn-line" data-call-layered="bsOtherLogin" data-page-id="MYS_CO_04_05_00_P1"><span>다른 로그인 방법</span></button>
-        <button type="button" class="btn-line" data-call-layered="modalLoginExtension" data-page-id="MYS_CO_04_06_00_P1"><span>로그인 연장</span></button>
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <div class="layer-call">    
+                <a href="@@webRoot/html/terms/agree-unique-id-info.html" class="btn-line"><span>고유식별정보 처리 동의</span></a> 
+                <a href="@@webRoot/html/terms/agree-terms-of-use-of-telecommunications-company.html" class="btn-line"><span>통신사 이용약관 동의</span></a> 
+                <a href="@@webRoot/html/terms/agree-mobile-id-personal-info-collection.html" class="btn-line"><span>휴대폰본인확인 개인정보 수집이용동의</span></a>         
+                <button type="button" class="btn-line" data-call-layered="bsOtherLogin" data-page-id="MYS_CO_04_05_00_P1"><span>다른 로그인 방법</span></button>
+                <button type="button" class="btn-line" data-call-layered="modalLoginExtension" data-page-id="MYS_CO_04_06_00_P1"><span>로그인 연장</span></button>
+                <button type="button" class="btn-line" data-call-layered="NotSeeCertificate" data-page-id="MYS_CO_04_04_01_P1"><span>공인인증서가안보이세요?</span></button>            
+                <button type="button" class="btn-line" onclick="modalDemo2()" data-page-id="mys_co_04_01_03"><span>PC에서 가져오기 성공(alret)</span></button>
+                <button type="button" class="btn-line" onclick="modalDemo3()" data-page-id="mys_co_04_01_03_1"><span>PC에서 가져오기 실패(alret)</span></button>
+                <button type="button" class="btn-line" onclick="modalDemo2()" data-page-id="mys_co_04_01_04"><span>스마트폰에서 가져오기 성공(alret)</span></button>
+                <button type="button" class="btn-line" onclick="modalDemo3()" data-page-id="mys_co_04_01_04_1"><span>스마트폰에서 가져오기 실패(alret)</span></button> 
+            </div>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
     </div>
+    <div class="layered">
 
-    <div class="layered">        
+        <!-- Modal // -->
         @@include('@@webRoot/html/common/layered/mys_co_04_04_01_m01.html')
-        @@include('@@webRoot/html/common/layered/mys_co_04_04_01_m02.html')        
+        @@include('@@webRoot/html/common/layered/mys_co_04_04_01_m02.html')  
+        @@include('@@webRoot/html/common/layered/mys_co_04_04_01_p1.html')      
         @@include('@@webRoot/html/common/layered/mys_co_04_05_00_p1.html')
-        @@include('@@webRoot/html/common/layered/mys_co_04_06_00_p1.html')                
-        <!-- @@include('@@webRoot/html/_layered/popup-agree-unique-id-info.html')
-        @@include('@@webRoot/html/_layered/popup-agree-mobile-id-personal-info-collection.html')
-        @@include('@@webRoot/html/_layered/popup-agree-terms-of-use-of-telecommunications-company.html')
-        @@include('@@webRoot/html/_layered/popup-agree-mobile-id-personal-info-service.html') -->
+        @@include('@@webRoot/html/common/layered/mys_co_04_06_00_p1.html') 
+        @@include('@@webRoot/html/_layered/_modal-sample.html')
+        <!-- // Modal -->
     </div>
 
     <!-- Script -->
@@ -42,121 +62,137 @@
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
-
-    <script>                      
-
-        $('button[data-page-id=MYS_CO_04_01_03_M01]').on('click',function(){
-            modalPopup({
-                title: "휴대폰에 저장된 지문(Face ID) <br>정보가 없습니다.",
-                message: "기기에서 지문(Face ID) 등록 후 다시 <br>시도해 주세요.",
-                type: "alert",
-                textOkButton: "확인",
-                onOk: function() {
-                    
-                },
-                onCancel: function() {
-                    
-                }
-            });
-        });
-        $('button[data-page-id=MYS_CO_04_01_03_08]').on('click',function(){
-            modalPopup({
-                title: "지문(Face ID)로그인 설정완료",
-                message: "지문(Face ID)로그인 설정되었습니다. <br>로그인 설정은 설정 &gt; 로그인 설정 &gt; <br>지문(Face ID)에서 변경 가능합니다.",
-                type: "alert",
-                textOkButton: "확인",
-                onOk: function() {
-                    
-                },
-                onCancel: function() {
-                    
-                }
-            });
-        });
-
-        $('button[data-page-id=MYS_CO_04_04_03_04_M01]').on('click',function(){
-            modalPopup({
-                title: "",
-                message: "간편 비밀번호가 등록되었습니다.",
-                type: "alert",
-                textOkButton: "확인",
-                onOk: function() {
-                    
-                },
-                onCancel: function() {
-                    
-                }
-            });
-        });
-
-        $('button[data-page-id=MYS_CO_04_04_01_M03]').on('click',function(){
-            modalPopup({
-                title: "",
-                message: "화면잠금 설정된 기기에서만 <br>자동 로그인이 가능합니다. <br>기기 설정 메뉴에서 화면 잠금 후 <br>다시 시도해 주세요.",
-                type: "alert",
-                textOkButton: "확인",
-                onOk: function() {
-                    
-                },
-                onCancel: function() {
-                    
-                }
-            });
-        });
-
-        $('button[data-page-id=MYS_CO_04_04_01_M04]').on('click',function(){
-            modalPopup({
-                title: "",
-                message: "간편비밀번호를 재설정 하기 위해 <br>본인인증 화면으로 이동합니다.",
-                type: "alert",
-                textOkButton: "확인",                
-                onOk: function() {
-                    
-                },
-                onCancel: function() {
-                    
-                }
-            });
-        });
-
-        $('button[data-action=moveKBStarBanking]').on('click',function(){
-            modalPopup({
-                title: "",
-                message: "KB스타뱅킹으로 이동하시겠습니까?",
-                type: "confirm",
-                textOkButton: "확인",
-                textCancelButton: "취소",
-                onOk: function() {
-                    
-                },
-                onCancel: function() {
-                    
-                }
-            });
-        });
-
-        $('button[data-action=sendCertificationNumber]').on('click',function(){
-            var top = $(this).offset().top;
-            $('.js-sended-number').removeAttr('style');
-            $(this).parents('.popup').find('.popup_contents').stop().animate({'scrollTop': top}, 10);
-        });
-
-        //레이어 확인용 스크립트 (개발시 삭제) [s]
-        var url = window.location.href;
-        var urlArr = url.split('#');
-        var pageID = urlArr[urlArr.length - 1].toUpperCase();
-
-        $('.layer-call').on('click','button',function(){
-            var newUrl = url.replace(pageID, '');
-            window.location.href = urlArr[0] + '#' + $(this).data('page-id');
-        });
-        
-        if(pageID.indexOf('/HTML/') < 0) $('button[data-page-id=' + pageID + ']').click();
-        //레이어 확인용 스크립트 (개발시 삭제) [e]
-        
-    </script>
     
+    <script>        
+        function modalDemo2() {
+            modalPopup({
+                title: "",
+                message: "인증서를 가져오기에 성공하였습니다.",
+                type: "확인",                
+                            
+            });
+        }
+        function modalDemo3() {
+            modalPopup({
+                title: "",
+                message: "인증서를 가져오는데 실패하였습니다.",
+                type: "확인",                
+                            
+            });
+        }
+    </script>
 
+<script>      
+    $('button[data-page-id=MYS_CO_04_01_03_M01]').on('click',function(){
+        modalPopup({
+            title: "휴대폰에 저장된 지문(Face ID) <br>정보가 없습니다.",
+            message: "기기에서 지문(Face ID) 등록 후 다시 <br>시도해 주세요.",
+            type: "alert",
+            textOkButton: "확인",
+            onOk: function() {
+                
+            },
+            onCancel: function() {
+                
+            }
+        });
+    });
+    $('button[data-page-id=MYS_CO_04_01_03_08]').on('click',function(){
+        modalPopup({
+            title: "지문(Face ID)로그인 설정완료",
+            message: "지문(Face ID)로그인 설정되었습니다. <br>로그인 설정은 설정 &gt; 로그인 설정 &gt; <br>지문(Face ID)에서 변경 가능합니다.",
+            type: "alert",
+            textOkButton: "확인",
+            onOk: function() {
+                
+            },
+            onCancel: function() {
+                
+            }
+        });
+    });
+
+    $('button[data-page-id=MYS_CO_04_04_03_04_M01]').on('click',function(){
+        modalPopup({
+            title: "",
+            message: "간편 비밀번호가 등록되었습니다.",
+            type: "alert",
+            textOkButton: "확인",
+            onOk: function() {
+                
+            },
+            onCancel: function() {
+                
+            }
+        });
+    });
+
+    $('button[data-page-id=MYS_CO_04_04_01_M03]').on('click',function(){
+        modalPopup({
+            title: "",
+            message: "화면잠금 설정된 기기에서만 <br>자동 로그인이 가능합니다. <br>기기 설정 메뉴에서 화면 잠금 후 <br>다시 시도해 주세요.",
+            type: "alert",
+            textOkButton: "확인",
+            onOk: function() {
+                
+            },
+            onCancel: function() {
+                
+            }
+        });
+    });
+
+    $('button[data-page-id=MYS_CO_04_04_01_M04]').on('click',function(){
+        modalPopup({
+            title: "",
+            message: "간편비밀번호를 재설정 하기 위해 <br>본인인증 화면으로 이동합니다.",
+            type: "alert",
+            textOkButton: "확인",                
+            onOk: function() {
+                
+            },
+            onCancel: function() {
+                
+            }
+        });
+    });
+
+    $('button[data-action=moveKBStarBanking]').on('click',function(){
+        modalPopup({
+            title: "",
+            message: "KB스타뱅킹으로 이동하시겠습니까?",
+            type: "confirm",
+            textOkButton: "확인",
+            textCancelButton: "취소",
+            onOk: function() {
+                
+            },
+            onCancel: function() {
+                
+            }
+        });
+    });
+
+    $('button[data-action=sendCertificationNumber]').on('click',function(){
+        var top = $(this).offset().top;
+        $('.js-sended-number').removeAttr('style');
+        $(this).parents('.popup').find('.popup_contents').stop().animate({'scrollTop': top}, 10);
+    });
+    
+    //레이어 확인용 스크립트 (개발시 삭제) [s]
+    var url = window.location.href;
+    var urlArr = url.split('#');
+    var pageID = urlArr[urlArr.length - 1].toUpperCase();
+
+    $('.layer-call').on('click','button',function(){
+        var newUrl = url.replace(pageID, '');
+        window.location.href = urlArr[0] + '#' + $(this).data('page-id');
+    });
+    
+    if(pageID.indexOf('/HTML/') < 0) $('button[data-page-id=' + pageID + ']').click();
+    //레이어 확인용 스크립트 (개발시 삭제) [e]
+    
+</script>
 </body>
 
 </html>

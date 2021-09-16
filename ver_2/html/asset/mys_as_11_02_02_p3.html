@@ -160,7 +160,7 @@
 				<div class="sticky-bottom">
 					<div class="btn-area">
 						<button class="btn-solid gray" data-action="myHouseDelete"><span>삭제</span></button>
-						<button type="button" class="btn-solid"><span>수정</span></button>
+						<button type="button" class="btn-solid" data-action="myHouseModify"><span>수정</span></button>
 					</div>
 				</div>
 			</main>
@@ -200,6 +200,16 @@
 					}
 				});
 			});
+
+			// 추가 수정 //
+			$('button[data-action=myHouseModify]').on('click',function(){
+				modalPopup({
+					title: "",
+					message: "오늘까지만 입력할 수 있습니다.",
+					type: "alert"
+				});
+			});
+			// 추가 수정 //
 
 		}) // 2021-09-02 추가
 	</script>

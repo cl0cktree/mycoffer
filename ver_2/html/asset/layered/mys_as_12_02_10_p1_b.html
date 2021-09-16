@@ -9,12 +9,12 @@
 				<!-- 추가 수정 // -->
 				<label for="myMonthlyIncome">나의 월소득</label>
 				<div class="kb-form_inner form-text">
-					<input type="text" inputmode="numeric" id="myMonthlyIncome" placeholder="" maxlength="6" value="0" data-default="0" data-unit="만원" data-action="autoSeperator" onkeyup="monthlyIncomeCheck(this.value)" onchange="monthlyIncomeCheck(this.value)">
+					<input type="text" inputmode="numeric" id="myMonthlyIncome" placeholder="" maxlength="5" value="0" data-default="0" data-unit="만원" data-action="autoSeperator" onkeyup="monthlyIncomeCheck(this.value)" onchange="monthlyIncomeCheck(this.value)"><!-- 추가 수정 -->
 					<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
 				</div>
 				<script>
 					function monthlyIncomeCheck(val) {
-						var inputValue = parseInt(val.replaceAll(",",""));
+						var inputValue = parseInt(val.replace(/,/gi,""));
 						if (inputValue > 5000) {
 							$(".if-you-save .result-text").addClass("is-hide");
 							$(".if-you-save .error-text").removeClass("is-hide");

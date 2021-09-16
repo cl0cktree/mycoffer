@@ -31,6 +31,8 @@
                 <button type="button" class="btn-line" onclick="modalDemo2()" data-page-id="mys_co_05_02_01"><span>서비스이용제한안내</span></button>
                 <button type="button" class="btn-line" onclick="modalDemo2()" data-page-id="mys_co_05_02_01"><span>서비스이용제한안내</span></button>
                 <button type="button" class="btn-line" onclick="modalDemo3()" data-page-id="mys_co_05_02_01"><span>서비스이용제한안내</span></button>
+                <button type="button" class="btn-line" onclick="modalDemo5()" data-page-id="mys_co_05_02_01"><span>서비스약관동의(동의)</span></button>
+                <button type="button" class="btn-line" onclick="modalDemo6()" data-page-id="mys_co_05_02_01"><span>서비스약관동의(거절)</span></button>
             </div>
             <!-- // app-content -->
 
@@ -80,7 +82,18 @@
                 
             })
         }
-
+        function modalDemo5() {
+            modalPopup({
+                title: "",
+                message: "(국민은행) 2021년 4월 7일 상품서비스 안내 수신에 동의했습니다."
+            });
+        }
+        function modalDemo6() {
+            modalPopup({
+                title: "",
+                message: "(국민은행) 2021년 4월 7일 상품서비스 안내 수신을 거절했습니다.",
+            });
+        }
 
 
         $('button[data-page-id=MYS_CO_05_01_02]').on('click',function(){

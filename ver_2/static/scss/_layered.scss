@@ -9,7 +9,7 @@
 .popup .popup_buttons{display:none;margin-top:0;}
 .popup.is-active{top:0;}
 .popup.is-active .popup_buttons{display:block;}
-.popup_header{flex:0 0 48px;padding:12px 48px 11px 24px;text-align:center;}
+.popup_header{flex:0 0 48px;padding:12px 48px 11px 24px;text-align:left;}
 .popup_header .tit{@include text($size: $text01);display:inline-block;}
 .popup_contents{overflow:auto;flex:1;margin-bottom:24px;}
 .popup_contents.is-hold{overflow:hidden;height:calc(var(--vh, 1vh) * 100 - 48px)};
@@ -28,20 +28,23 @@
 .bottom-sheet.bs-tab.is-expanded{height:95%;}
 .bottom-sheet .bottom-sheet_header {flex:0 0 28px;padding:0 48px 0 24px;margin-bottom:20px;}
 .bottom-sheet .bottom-sheet_header .tit {font-size:20px;font-weight: bold;line-height: 28px;color:$kb-ui01;letter-spacing:-0.02em}
-.bottom-sheet_contents{@include text;flex:1;overflow:hidden;overflow-y:auto;margin-bottom:24px;}
+.bottom-sheet_contents{@include text;flex:1;overflow:hidden;overflow-y:auto;padding-bottom:32px;}
 .bottom-sheet_contents .kb-sec:first-child{padding-top:0;}
 .bottom-sheet .not-today + .bottom-sheet_buttons{margin-top:0;}
-.bottom-sheet_buttons{display:flex;margin-top:36px;}
-.bottom-sheet_buttons .btn-solid{flex:1;border-radius:0;}
+.bottom-sheet_buttons{display:flex;}
+.bottom-sheet_buttons .btn-solid{flex:1;border-radius:0;font-size:20px;font-weight:bold;height:auto;line-height:6rem;}
 .bottom-sheet_buttons .btn-solid + .btn-solid{flex: 0 0 60%}
+.ios.homebar .bottom-sheet_buttons .btn-solid{padding-top:1rem;}
+.ios.homebar .bottom-sheet_buttons .btn-solid > span{line-height:6rem;padding-bottom:1.2rem;}
+
 .bottom-sheet_select{overflow:auto;max-height:100%;margin:0 24px;}
 .bottom-sheet_select li button{width:100%;padding:5px 25px 5px 0;text-align:left;font-size:16px;line-height:24px;}
 .bottom-sheet_select li + li{margin-top:6px;}
 .bottom-sheet_select li.is-selected button{background:url(../images/common/checkbox_20_on@2x.png) no-repeat right 0 top 50%;background-size:20px;}
-.ios.homebar .bottom-sheet_buttons .btn-solid{height:9.6rem;padding-top:1rem;}
-.ios.homebar .bottom-sheet_buttons .btn-solid > span{height:9.6rem;line-height:5.2rem;}
 .bottom-sheet .tab{flex:0 0 40px;}
 .bottom-sheet .tab + .bottom-sheet_contents{padding-top:32px;}
+.bottom-sheet > .btn-close{right: 16px;top: 15px;}
+.bottom-sheet .bottom-sheet_header ~ .btn-close{top: 27px;}
 
 @keyframes bsShow {
     0%{transform:translateY(100%);}
@@ -63,6 +66,8 @@
 .modal_contents ul[data-style=list] li{color:$kb-ui03;}
 .modal .not-today + .modal_buttons {margin-top:0;}
 .modal_buttons {margin-top:4px;}
+.modal_buttons .btn-solid{font-weight:bold;}
+.modal > .btn-close{right: 16px;top: 27px;}
 
 //오늘하루 보지 않기
 .popup .not-today,
@@ -80,8 +85,7 @@
 
 .bottom-sheet > .btn-close,
 .modal > .btn-close {
-    @include iconCancel($size: 18px, $thick: 2px, $color: $kb-ui05, $padding: 8px, $position: absolute);
-	right: 16px;top: 28px;
+    @include iconCancel($size: 18px, $thick: 2px, $color: $kb-ui05, $padding: 8px, $position: absolute);	
 }
 .modal .error-code{display:block;margin-top:12px;}
 

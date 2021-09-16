@@ -28,9 +28,21 @@
             <div class="layer-call">
                 <button type="button" class="btn-line" onclick="modalDemo1()" data-page-id="MYS_CO_06_01_01_01"><span>기관선택(alert)</span></button>
                 <button type="button" class="btn-line" onclick="modalDemo2()" data-page-id="MYS_CO_06_01_01_01"><span>기관선택(alert)</span></button>
+                <button type="button" class="btn-line" onclick="modalDemo4()" data-page-id="MYS_CO_06_01_01_07"><span>마이데이터취소확인</span></button>
+                <button type="button" class="btn-line" onclick="modalDemo1()" data-page-id="MYS_CO_06_01_02_01"><span>기관선택(alert)</span></button>
+                <button type="button" class="btn-line" onclick="modalDemo2()" data-page-id="MYS_CO_06_01_02_01"><span>기관선택(alert)</span></button>
+                <button type="button" class="btn-line" onclick="modalDemo5()" data-page-id="MYS_CO_06_01_01_05"><span>자산연동로딩페이지취소확인</span></button>
+                <button type="button" class="btn-line" onclick="modalDemo6()" data-page-id="MYS_CO_06_01_01_06"><span>전송요구방법 선택(alert)</span></button>                
+                <button type="button" class="btn-line" onclick="modalDemo7()" data-page-id="MYS_CO_06_01_01_16"><span>자산연동로딩페이지취소확인</span></button>
+                <button type="button" class="btn-line" onclick="modalDemo8()" data-page-id="MYS_CO_06_01_01_15"><span>개별인증자산연동로딩페이지취소확인</span></button>
+                <button type="button" class="btn-line" onclick="modalDemo8()" data-page-id="MYS_CO_06_01_02_15"><span>기관데이터연결방법</span></button>
                 <button type="button" class="btn-line" data-call-layered="mys_co_06_01_00_p2" data-page-id="MYS_CO_06_01_00"><span>마이데이터연결방법</span></button>
+                <button type="button" class="btn-line" onclick="modalDemo9()" data-page-id="MYS_CO_06_01_00"><span>데이터연결확인</span></button>
                 <button type="button" class="btn-line" data-call-layered="bsSetTransferRequirements_01" data-page-id="MYS_CO_06_01_01_07"><span>전송 요구 항목 설정 (3/6)</span></button>
-                <button type="button" class="btn-line" data-call-layered="select-engineering-industry" data-page-id="MYS_CO_06_01_02_01"><span>기관 업종 선택</span></button>
+                <button type="button" class="btn-line" data-call-layered="select-engineering-industry" data-page-id="MYS_CO_06_01_02_01"><span>기관 업종 선택</span></button>                
+                <button type="button" class="btn-line" onclick="modalDemo3()" data-page-id="MYS_CO_06_01_03_04"><span>자산선택확인</span></button>
+                <button type="button" class="btn-line" onclick="modalDemo10()" data-page-id="mys_co_06_01_03_09"><span>개별인증자산연동로딩페이지취소확인</span></button>
+                <button type="button" class="btn-line" onclick="modalDemo11()" data-page-id="mys_co_06_01_03_09"><span>기관데이터연결방법</span></button>
                 <a href="@@webRoot/html/common/mys_co_05_02_02.html" class="btn-line"><span>직원조회</span></a> 
                 <a href="@@webRoot/html/common/mys_co_05_02_02_02.html" class="btn-line"><span>직원조회</span></a>            
                 
@@ -86,6 +98,87 @@
                 
             })
         }
+        function modalDemo3() {
+            modalPopup({
+                title: "",
+                message: "자산을 선택해 주세요"
+            });
+        }
+        function modalDemo4() {
+            modalPopup({
+                title: "",
+                message: "마이데이터 서비스 이용을 위한 자산 등록을 취소하시겠습니까?",
+                type: "confirm",
+                textCancelButton: "확인",
+                textOkButton: "취소",
+                
+            });
+        }
+        function modalDemo5() {
+            modalPopup({
+                title: "",
+                message: "데이터가 연결되지 않았습니다. 다시 시도하시겠습니까?",
+                type: "confirm",
+                textCancelButton: "확인",
+                textOkButton: "취소",
+                
+            });
+        }
+        function modalDemo7() {
+            modalPopup({
+                title: "",
+                message: "데이터가 연결되지 않았습니다. 다시 시도하시겠습니까?",
+                type: "confirm",
+                textCancelButton: "확인",
+                textOkButton: "취소",
+                
+            });
+        }
+        function modalDemo8() {
+            modalPopup({
+                title: "",
+                message: "데이터가 연결되지 않았습니다. 다시 시도하시겠습니까?",
+                type: "confirm",
+                textCancelButton: "확인",
+                textOkButton: "취소",
+                
+            });
+        }
+        function modalDemo9() {
+            modalPopup({
+                title: "",
+                message: "다른 기관 자산 정보를 등록하기 위해서는 인증서 등록이 필요합니다. KB스타뱅킹으로 이동하시겠습니까?",
+                type: "confirm",
+                textCancelButton: "확인",
+                textOkButton: "취소",
+                
+            });
+        }
+        modalPopup({
+                title: "",
+                message: "데이터가 연결되지 않았습니다.<br>다시 시도하시겠습니까?",
+                type: "confirm",
+                textCancelButton: "취소",
+                textOkButton: "확인",
+            });
+        function modalDemo6() {
+            modalPopup({
+                title: "",
+                message: "연결 가능한 상품(계좌)/정보가 없어 데이터 연결이 취소됩니다."
+            });
+        }
+        function modalDemo10() {
+            modalPopup({
+                title: "고객님 죄송합니다",
+                message: "본인인증에 실패하였습니다. <br>· 대표전화<br> 1588-9999, 1599-9999, 1644-9999"
+            });
+        }
+        function modalDemo11() {
+            modalPopup({
+                title: "고객님 죄송합니다",
+                message: "1600-1522 번호가 스팸으로 등록되면, 인증번호를 받을 수 없습니다. 스팸등록을 해제 후 다시 시도해주세요."
+            });
+        }
         // $('button[data-page-id=MYS_CO_06_01_01_01]').on('click',function(){
         //     modalPopup({
         //         title: "",
@@ -99,19 +192,19 @@
         //         }
         //     });
         // });
-        $('button[data-page-id=MYS_CO_06_01_01_06]').on('click',function(){
-            modalPopup({
-                title: "",
-                message: "자산을 선택해 주세요.",
-                type: "alert",
-                onOk: function() {
+        // $('button[data-page-id=MYS_CO_06_01_01_06]').on('click',function(){
+        //     modalPopup({
+        //         title: "",
+        //         message: "자산을 선택해 주세요.",
+        //         type: "alert",
+        //         onOk: function() {
                     
-                },
-                onCancel: function() {
+        //         },
+        //         onCancel: function() {
                     
-                }
-            });
-        });
+        //         }
+        //     });
+        // });
         $('button[data-page-id=MYS_CO_05_01_03]').on('click',function(){
             modalPopup({
                 title: "약관 동의 안내",

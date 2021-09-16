@@ -15,6 +15,7 @@
 .summary-header .title i {position: relative; top:-2px;}
 .summary-header .amount {display: block; font-size: 24px; font-weight: bold; text-align: right;}
 .summary-header .amount .num {margin-right:2px;font-size:28px;}
+.summary-header .amount .num::after {font-size: 24px; font-weight: bold;}
 .summary-header .two-values {position: relative; z-index: 1;display: flex; padding: 20px 0; margin-top: 22px; margin-bottom: -33px; text-align: center; background-color: #6349a5; border-radius: 8px; color: $kb-ui11;}
 .summary-header .two-values .txt {display: block; margin-bottom: 5px; font-size: 14px; font-weight: normal;}
 .summary-header .two-values .amount {flex:1;font-size: 23px;position: relative;text-align: center;}
@@ -28,7 +29,7 @@
 }
 
 .credit-transaction-graph .title {margin: 20px 0; @include text($text01, bold);}
-.credit-transaction-list .title {margin: 20px -24px 4px 0; padding-bottom: 16px; border-bottom: 1px solid $kb-ui05; @include text($text01, bold);}
+.credit-transaction-list .title {margin: 20px 0 4px; @include text($text01, bold);}
 
 .credit-transaction-graph {position: relative; margin-top: 46px;}
 .credit-transaction-graph .per {position: absolute; right: 24px; top: 2px; font-size: 19px; font-weight: bold;}
@@ -45,22 +46,27 @@
 .credit-transaction-list {margin-top:48px;}
 .credit-transaction-list .title + .infomation-lists {padding-top: 0;}
 
-.credit-transaction-list .accordion {border-bottom: 0;}
-.credit-transaction-list .accordion > dt {position: relative; margin-top: 20px; padding: 15px 2px; white-space: nowrap; border-top: 0; border-bottom: 2px solid $kb-ui07; white-space: nowrap;}
-.credit-transaction-list .accordion > dt .text {font-weight: bold;}
-.credit-transaction-list .accordion > dt .text small {display: block; @include text($text02, normal); color: $kb-ui04;}
-.credit-transaction-list .accordion > dd {padding: 10px 0; border-top: 0; border-bottom: 0;}
-.credit-transaction-list .accordion .is-active + dd {border-bottom: 1px solid $kb-ui09;}
+.credit-transaction-list .accordion {border-bottom: 0; margin: 20px -24px 0;}
+.credit-transaction-list .accordion > dt {position: relative; margin-top: 10px; padding: 10px 24px 9px; white-space: nowrap; border-top: 0; white-space: nowrap; background-color: $kb-ui10;}
+.credit-transaction-list .accordion > dt .text { @include text($text03, bold);}
+.credit-transaction-list .accordion > dt .text small {display: block; @include text($text03, normal); color: $kb-ui04;}
+.credit-transaction-list .accordion > dd {padding: 15px 24px; border-top: 0; border-bottom: 0;}
 .credit-transaction-list .accordion .description-list dt {white-space: nowrap;}
-.credit-transaction-list .text .amount {position: absolute; right: 32px; top: 50%; transform: translateY(-50%); @include text($text02, bold); color: $kb-ui03;}
-.credit-transaction-list .text .amount .num {margin-right: 2px; @include number(17px, bold);}
+.credit-transaction-list .text .amount {position: absolute; right: 52px; top: 50%; transform: translateY(-50%);}
+.credit-transaction-list .text .amount .num {@include number(15px, bold); color: $kb-ui02;}
+.credit-transaction-list .text .amount .num::after {@include text($text03, bold);}
+.credit-transaction-list .content-box {padding: 15px 20px;}
+.credit-transaction-list .content-box .date {margin-top: 0; color: $kb-ui02;}
 
 .credit-transaction-list .no-data {margin: 70px 0;}
+.credit-transaction-list .infomation-lists ul {margin-top: 12px;}
+.credit-transaction-list .infomation-lists li {border: 0; padding: 0 0 15px;}
+.credit-transaction-list .infomation-lists .name {margin-bottom: 12px;}
 
-.accordion .infomation-lists {margin: -10px 0 -11px; padding: 0;}
+.accordion .infomation-lists {margin: 0 0 -10px; padding: 0;}
 .accordion .infomation-lists ul,
-.accordion .infomation-lists li {border: 0;}
-.accordion .infomation-lists li {margin: 0; padding: 20px 0 10px; border-bottom: 1px solid $kb-ui09;}
+.accordion .infomation-lists li {margin: 0; border: 0;}
+.accordion .infomation-lists li {padding: 0 0 15px;}
 
 .credit-transaction-message {margin-top: 20px; margin-bottom: 60px;}
 
@@ -315,9 +321,10 @@
 .credit-point .compare-bar-area .row.avg .bar {background-color: $kb-ui07;}
 
 .my-credit-power {margin-bottom: 48px;}
-.my-credit-power h2 {display: inline-block;}
+.my-credit-power h2 {float: left; display: inline-block; margin-bottom: 15px;}
+.my-credit-power .heading-right {float: right; padding-top: 4px;}
 .my-credit-power small {@include text($text03, normal); color: $kb-ui04;}
-.my-credit-power .content-box {margin-top: 15px;}
+.my-credit-power .content-box {clear: both;}
 .my-credit-power .uright {margin-bottom: 5px; text-align: right; font-size: 13px; color: $kb-ui05;}
 .my-credit-power .description-list {margin-top: 20px; padding-bottom: 10px; border-bottom: 1px solid $kb-ui09;}
 

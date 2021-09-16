@@ -151,6 +151,7 @@
 .select-transmission-method .visual-area {margin-top:55px;margin-bottom: 20px; padding-bottom: 25px; text-align: center;}
 .select-transmission-method .visual-area img {display: block; width: 200px; margin: 0 auto 20px;}
 .select-transmission-method .visual-area .mydata{margin: 0 auto 23px;}
+.select-transmission-method .visual-area .mydata_01{margin: 94px auto 23px auto;}
 .select-transmission-method .visual-area .text .stxt {display: block; margin-top: 3px; margin-bottom: 3px; @include text($text02, normal); color: $kb-ui04;}
 .select-transmission-method .visual-area .text .mtxt {@include text($text02, normal);}
 .select-transmission-method .visual-area .text strong {font-weight: bold;}
@@ -331,13 +332,13 @@
 .select-assets .accordion > dt:first-child{border-top:1px solid $kb-ui03;}
 .select-assets .accordion > dd{padding-top:0;padding-bottom:0;}
 .select-assets .accordion .no-data{margin:48px 0;}
-.select-assets .checkbox-group li:first-child{padding-top:10px;}
-.select-assets .checkbox-group li + li{margin-top:0;border-top:1px solid $kb-ui09;}
+.select-assets .accordion > dd .checkbox-group{margin-bottom:48px;}
+.select-assets .checkbox-group li{margin-top:0;border-top:1px solid $kb-ui09;}
+.select-assets .checkbox-group li:first-child{padding-top:10px;border-top:0;}
+.select-assets .checkbox-group li:last-child{border-bottom:1px solid $kb-ui09;}
 .select-assets .checkbox-group .form-checkbox_20{display:block;}
 .select-assets .checkbox-group .form-checkbox_20 label{display:block;padding-top:18px;padding-bottom:16px;}
 .select-assets .checkbox-group .form-checkbox_20 label:before{top:22px;}
-
-
 
 .select-assets .agree-integrated-authentication{margin-top:56px;}
 .select-assets .agree-integrated-authentication .kb-form_inner{padding-bottom:20px;border-bottom:1px solid $kb-ui03}
@@ -378,17 +379,16 @@
 .bottom-sheet[data-layered-name=mydataConnectionResult] .msg{@include text($size: $text01, $line-height:1, $weight:bold); background-color: red;}
 //기관선택바텀시트
 .select-organization .radio-group{margin-top:20px;}
-
 .info-distributer-asset .asset-accout-list,
 .info-distributer-asset_02 .asset-accout-list{margin-top:16px;}
 .info-distributer-asset_02 .accordion > dt{padding-top:20px;padding-bottom:20px;}
 .info-distributer-asset_02 .accordion > dd{padding:0;border-top:none;}
 .info-distributer-asset_02 .accordion .asset-accout-list{margin-top:0;}
-
+.info-distributer-asset_02 .js-checkbox-selector > dt:first-child input:checked + label{font-weight:bold;}
 .asset-accout-list{border-bottom:1px solid $kb-ui08;}
 .asset-accout-list > li{border-top:1px solid $kb-ui08;}
 .asset-accout-list .form-checkbox_20{display:block;}
-.asset-accout-list .form-checkbox_20 label{display:block;padding-top:18px;padding-bottom:16px;}
+.asset-accout-list .form-checkbox_20 label{display:block;padding-top:18px;padding-bottom:16px; }
 .asset-accout-list .form-checkbox_20 label:before{top:22px;}
 .asset-accout-list .account-name,
 .asset-accout-list .account-number,
@@ -477,7 +477,7 @@
 .mydata-kbinfo .mydata-kbinfo-summary-list02 dd [class^=h]:first-child{margin-top:2.6rem;}
 .mydata-kbinfo .mydata-kbinfo-summary-list02 [class^=h] .num{margin-left:7px;}
 .mydata-kbinfo .mydata-kbinfo-summary-list02 .accordion{margin-top:1.5rem;}
-.mydata-kbinfo .mydata-kbinfo-summary-list02 .accordion dt label{font-size:1.6rem;font-weight:bold;}
+.mydata-kbinfo .mydata-kbinfo-summary-list02 .accordion dt label{font-size:1.6rem;}
 .mydata-kbinfo .mydata-kbinfo-summary-list02 .accordion dt label .num{@include number($size: 17px, $weight: normal);margin-left:4px;}
 .mydata-kbinfo .mydata-kbinfo-summary-list02 .accordion dd{padding-top:1.5rem;}
 .mydata-kbinfo .mydata-kbinfo-summary-list02 .accordion .additional-info{@include text($size:$text02, $line-height:1);margin-top:8px;padding-left:3.5rem;color:$kb-ui05;}
@@ -490,6 +490,7 @@
 .mydata-kbinfo .mydata-kbinfo-acount-info li strong{@include text($text02)}
 .mydata-kbinfo .mydata-kbinfo-acount-info li span{display:block;font-size:16px;color:$kb-ui02;}
 .mydata-kbinfo .mydata-kbinfo-acount-info li .num{font-size:1.7rem;font-weight:bold;}
+.mydata-kbinfo .mydata-list-wrap .js-checkbox-selector > dt:first-child input:checked + label{font-weight:bold;}
 
 //mys_mn_01_01_02_01.html
 .mydata-kbinfo-detail .kb-sec:first-child{padding-top:0;}
@@ -555,11 +556,11 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .select-infouser .kb-sec:first-of-type{margin-top:1.5rem;}
 .select-infouser .certificate-list{margin-top:2rem;}
 .select-infouser .certificate-list li{border-bottom:1px solid $kb-ui09;}
-.select-infouser .certificate-list li span p{color:$kb-ui04; font-size: 14px; font-weight: normal; line-height: 20px; padding-top:10px }
 .select-infouser .certificate-list li a{display:flex;justify-content:space-between;align-items:center;padding:2.4rem 0;}
 .select-infouser .certificate-list li i{margin-top:-50px}
-.select-infouser .certificate-list li i:first-child{margin-right:1.5rem; }
+.select-infouser .certificate-list li i:first-child{margin-right:1.5rem;}
 .select-infouser .certificate-list li .txt{flex: 1 0 auto;font-size:1.8rem;font-weight:bold;line-height:1.1;}
+.select-infouser .certificate-list li .txt span{display:block;color:$kb-ui04;font-size:14px;font-weight: normal;line-height:20px;padding-top:10px;}
 
 //공지사항
 .mydata-notie .msg{margin-top:24px;color:$kb-ui03;}
@@ -712,7 +713,7 @@ h1 + .joint-certificate-list{margin-top:28px;}
 
 .mm-manage-certificate .btn-text{width:100%; display: inline-block; text-align: center;}
 .mm-manage-certificate .btn-line{margin-top:73px;}
-.mm-manage-certificate .manage-certificate i{float: right;}
+.manage-certificate span{float: right;}
 //스마트폰(승인번호)
 .approval-number .kb-form_multi{display:flex;flex-wrap:wrap;}
 .approval-number .kb-form_multi > .tit{flex:0 0 100%;}
@@ -779,15 +780,16 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .coupon-detail-summary .bar-code{padding:2rem 4rem;margin-top:3.2rem;border:0.1rem solid $kb-ui08;border-radius:0.2rem;}
 .coupon-detail-summary .btn-solid{margin-top:3.2rem;margin-bottom:4.8rem;}
 
-.pointree .search-month{margin-top:6.1rem;}
+.pointree .search-month{margin-top:7.3rem;}
 .pointree .no-data{margin-top:10rem;}
 .pointree .kb-sec:first-of-type .tab_button{margin:2.6rem 0 2rem;}
-.pointree .banner-about-pointree{padding:2.4rem 2.2rem;margin:2rem -0.8rem 0;border-radius:0.8rem;background:#fcf1ed url(../images/menu/pointree.png) no-repeat right 0 top 0;background-size:auto 95%;}
+.pointree .banner-about-pointree{position:relative;padding:2.4rem 2.2rem;margin:2rem -0.8rem 2rem;border-radius:0.8rem;background-color:#faf6f0;}
+.pointree .banner-about-pointree::after{content:'';position:absolute;right:0;bottom:-0.9rem;display:block;width:15rem;height:8rem;background:url(../images/menu/pointree.png) no-repeat 0 0;background-size:100% 100%;}
 .pointree .banner-about-pointree .tit{font-size:2rem;font-weight:bold;}
-.pointree .banner-about-pointree .tit + p{@include text($size:16px);margin-top:2rem;}
-.pointree .banner-about-pointree .btn-text{@include btnText($size:14px);margin-top:3rem;}
+.pointree .banner-about-pointree .tit + p{@include text($size:16px);margin-top:2rem;color:$kb-ui03;}
+.pointree .banner-about-pointree .btn-text{@include btnText($size:16px);margin-top:3rem;}
 .pointree-list li{position:relative;padding:1.8rem 0.2rem;border-bottom:1px solid $kb-ui08}
-.pointree-list li:first-child{margin-top:2rem;border-top:1px solid $kb-ui08;}
+.pointree-list li:first-child{margin-top:2.5rem;border-top:1px solid $kb-ui08;}
 .pointree-list .date{@include number($size: 15px);line-height:1;color:$kb-ui05;}
 .pointree-list .tit{display:block;margin-top:1rem;font-weight:bold;}
 .pointree-list li p{margin-top:1.5rem;font-size:1.6rem;}
@@ -870,3 +872,9 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .mydata-service-specialty .desc{margin-top:24px;}
 .mydata-service-specialty .desc + .desc{margin-top:40px;}
 
+
+//공동안증서안보이세요 팝업 04_01_01_p1
+.modal_contents h2{@include text($size: $text01, $weight:bold);}
+.modal_contents ul{padding-bottom:39px;}
+.modal_contents ul:last-child{padding-bottom:0px;}
+.modal_contents p{padding:13px 0;}

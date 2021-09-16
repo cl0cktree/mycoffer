@@ -56,45 +56,25 @@ $('body')
         // }
 
         var $promotionBanner = $('.floating-banner[data-layered-name=' + settings.fbName + ']');
-        if(!$promotionBanner.length){        
-            var floatingBannerHTML = '<div class=\"floating-banner\" data-type=\"' + settings.fbType + '\" data-animation=\"' + settings.fbAnimation + '\" data-layered-name=\"' + settings.fbName + '\">';            
+        if(!$promotionBanner.length){
+            var floatingBannerHTML = '<div class=\"floating-banner\" data-type=\"' + settings.fbType + '\" data-animation=\"' + settings.fbAnimation + '\" data-layered-name=\"' + settings.fbName + '\">';
                 floatingBannerHTML += '<div class=\"floating-banner_contents\">';
                 floatingBannerHTML += '<section class=\"kb-sec\">';
-                floatingBannerHTML += '<p class=\"not-today\"><button type=\"button\" class=\"cookie-hidden\" data-action=\"close\" data-expire-day=\"' + settings.fbExpireDay + '\"' + settings.fbFormName + '><span>' + settings.fbFormMsg + '</span></button></p>';
-                //floatingBannerHTML += '<p class=\"not-today\"><span class=\"form-checkbox\"><input type=\"checkbox\" class=\"cookie-hidden\" data-expire-day=\"' + settings.fbExpireDay + '\" id=\"' + settings.fbFormId + '\" name=\"' + settings.fbCookieName + '\" ' + settings.fbCheckboxChecked + '><label for=\"' + settings.fbCheckboxId + '\">' + settings.fbCheckboxMsg + '</label></span></p>';
-                floatingBannerHTML += '<div class=\"fb-content\">';            
-                floatingBannerHTML += '<div class=\"fb-msg\">';            
+                floatingBannerHTML += '<p class=\"not-today\"><span class=\"form-checkbox\"><input type=\"checkbox\" class=\"cookie-hidden\" data-expire-day=\"' + settings.fbExpireDay + '\" id=\"' + settings.fbFormId + '\" name=\"' + settings.fbFormName + '\"><label for=\"' + settings.fbFormId + '\">' + settings.fbFormMsg + '</label></span></p>';
+                floatingBannerHTML += '<div class=\"fb-content\">';
+                floatingBannerHTML += '<div class=\"fb-msg\">';
                 if(settings.fbImgSrc != '') floatingBannerHTML += '<img class=\"fb-img\" src=\"' + settings.fbImgSrc + '\" alt="">';
                 floatingBannerHTML += settings.fbMsg;
-                if(settings.fbLink.indexOf('/') > 0) floatingBannerHTML += '<br><a href=\"' + settings.fbLink + '\" class=\"link\"><span>' + settings.fbLinkMsg + '</span></a>';                
+                if(settings.fbLink.indexOf('/') > 0) floatingBannerHTML += '<br><a href=\"' + settings.fbLink + '\" class=\"link\"><span>' + settings.fbLinkMsg + '</span></a>';
                 if(settings.fbCallLayered != '') floatingBannerHTML += '<br><button class="link" data-action="close" data-call-layered="' + settings.fbCallLayered + '"';
                 if(settings.fbFunction != '') floatingBannerHTML += ' onclick="' + settings.fbFunction + '\;"';
                 if(settings.fbCallLayered != '' && settings.fbLinkMsg != '') floatingBannerHTML += '><span>' + settings.fbLinkMsg + '</span></button>';
-                floatingBannerHTML += '</div>';            
-                floatingBannerHTML += '</div>';            
+                floatingBannerHTML += '</div>';
+                floatingBannerHTML += '</div>';
                 floatingBannerHTML += '</section>';
                 floatingBannerHTML += '</div>';
                 floatingBannerHTML += '<button class=\"btn-close\" data-action=\"close\"><span>닫기</span></button>';
                 floatingBannerHTML += '</div>';
-            // var floatingBannerHTML = '<div class=\"floating-banner\" data-type=\"' + settings.fbType + '\" data-animation=\"' + settings.fbAnimation + '\" data-layered-name=\"' + settings.fbName + '\">';            
-            //     floatingBannerHTML += '<div class=\"floating-banner_contents\">';
-            //     floatingBannerHTML += '<section class=\"kb-sec\">';
-            //     floatingBannerHTML += '<p class=\"not-today\"><button type=\"button\" class=\"cookie-hidden\" data-action=\"close\" data-expire-day=\"' + settings.fbExpireDay + '\"' + settings.fbFormName + '><span>' + settings.fbFormMsg + '</span></button></p>';
-            //     //floatingBannerHTML += '<p class=\"not-today\"><span class=\"form-checkbox\"><input type=\"checkbox\" class=\"cookie-hidden\" data-expire-day=\"' + settings.fbExpireDay + '\" id=\"' + settings.fbFormId + '\" name=\"' + settings.fbCookieName + '\" ' + settings.fbCheckboxChecked + '><label for=\"' + settings.fbCheckboxId + '\">' + settings.fbCheckboxMsg + '</label></span></p>';
-            //     floatingBannerHTML += '<div class=\"fb-content\">';            
-            //     floatingBannerHTML += '<div class=\"fb-msg\">';            
-            //     floatingBannerHTML += '<div>' + settings.fbMsg + '</div>';
-            //     if(settings.fbLink.indexOf('/') > 0) floatingBannerHTML += '<a href=\"' + settings.fbLink + '\" class=\"link\"><span>' + settings.fbLinkMsg + '</span></a>';                
-            //     if(settings.fbCallLayered != '') floatingBannerHTML += '<button class="link" data-action="close" data-call-layered="' + settings.fbCallLayered + '"';
-            //     if(settings.fbFunction != '') floatingBannerHTML += ' onclick="' + settings.fbFunction + '\;"';
-            //     if(settings.fbCallLayered != '' && settings.fbLinkMsg != '') floatingBannerHTML += '><span>' + settings.fbLinkMsg + '</span></button>';
-            //     floatingBannerHTML += '</div>';            
-            //     if(settings.fbImgSrc != '') floatingBannerHTML += '<div class=\"fb-img\"><img src=\"' + settings.fbImgSrc + '\" alt=""></div>';
-            //     floatingBannerHTML += '</div>';            
-            //     floatingBannerHTML += '</section>';
-            //     floatingBannerHTML += '</div>';
-            //     floatingBannerHTML += '<button class=\"btn-close\" data-action=\"close\"><span>닫기</span></button>';
-            //     floatingBannerHTML += '</div>';
 
             this.append(floatingBannerHTML);
         }
@@ -102,7 +82,7 @@ $('body')
         //바로 보여주기
         var cookieChecker = cookie.get(settings.fbFormName);
         if(settings.fbShow && !cookieChecker) gfn_layered.open(settings.fbName);
-        
+
         //return false;
     };
 
@@ -129,9 +109,9 @@ $('body')
         //     alert('px로 숫자만 넣어주세요.');
         //     return false;
         // }else{
-        //     settings.esImgSize = (settings.esImgSize / 10);//rem 으로 변환            
+        //     settings.esImgSize = (settings.esImgSize / 10);//rem 으로 변환
         // }
-        
+
         // if(settings.esCallLayered.length > 0 && settings.esLink.indexOf('/') > 0){
         //     alert('링크, 바텀시트 호출 중 하나만 입력하세요');
         //     return false;

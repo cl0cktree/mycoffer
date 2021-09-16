@@ -26,7 +26,7 @@
 				<!-- 저금통 거래내역 상단 // -->
 				<section class="kb-sec full trans-history-status">
 					<div class="inner">
-						<button class="btn-text"><u>관리</u></button> <!-- 2021-09-09 수정 -->
+						<a class="btn-text" href="@@webRoot/html/goal/mys_go_02_01_03_p3.html" title="계좌관리 이동"><u>관리</u></a> <!-- 추가 수정 -->
 						<div class="center-text">
 							<h2 class="title">저금통</h2>
 							<span class="amount"><span class="num" data-unit-after="원">1,700,000</span></span>
@@ -58,7 +58,7 @@
                     <div class="account-detail">
                         <div class="filter-area">
                             <div class="condition-area">
-                                <button class="btn-condition" data-call-layered="">
+                                <button class="btn-condition" data-call-layered="bsGoalChallengeSearch"> <!-- 추가 수정 -->
                                     <div>
                                         <div class="sorting-status">
                                             <span><em class="num">1</em>개월</span>
@@ -127,8 +127,11 @@
 
 		<!-- Layer (modal, bottom sheet) // -->
 		<div class="layered">
-			@@include('@@webRoot/html/goal/layered/mys_go_02_01_00_p1.html')
+			<!-- 추가 수정 // -->
+            @@include('@@webRoot/html/goal/layered/mys_go_06_06_00_p1.html')
 			@@include('@@webRoot/html/_layered/bs-calendar.html')
+			<!-- // 추가 수정 -->
+
 		</div>
 		<!-- // Layer (modal, bottom sheet) -->
 	</div>

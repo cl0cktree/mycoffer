@@ -10,7 +10,7 @@
 .h4 .num{@include heading($size: $heading04 + 1px)}
 
 .num{display:inline-block;font-family:'Roboto';font-size:17px;}
-.num[data-unit-after]:before,
+.num[data-unit-before]:before,
 .num[data-unit-after]:after{font-family:'KBFGText';font-size:16px;font-weight:normal;}
 .num[data-unit-after]:after{content:attr(data-unit-after);margin-left:2px;}
 .num[data-unit-before]:before{content:attr(data-unit-before);margin-right:2px;}
@@ -24,7 +24,7 @@
 .error-code{color:$color-red;font-size:$text03;font-weight:bold;}
 
 //버튼 Solid Type
-.btn-solid{display:inline-flex;justify-content:center;align-items:center;width:100%;height:48px;border-radius:2px;background-color:$color-yellow;color:$kb-ui02;font-size:$text02;}
+.btn-solid{display:inline-flex;justify-content:center;align-items:center;width:100%;height:48px;padding:0 1rem;border-radius:2px;background-color:$color-yellow;color:$kb-ui02;font-size:$text02;}
 .btn-solid > span{display:inline-block;}
 .btn-solid.md{height:44px;font-size:16px;line-height:44px;}
 .btn-solid.mm{height:40px;font-size:15px;line-height:40px;}
@@ -35,10 +35,8 @@
 .btn-solid:disabled,
 .btn-solid.is-disabled{background-color:$kb-ui08;color:$kb-ui06;}
 
-
-
 //버튼 LineType (amount:금액선택, table, form, segemented button : 탭형태)
-.btn-line{display:inline-flex;justify-content:center;align-items:center;width:100%;min-width:8.2rem;height:44px;padding:0 2rem;text-align:center;border:1px solid $kb-ui05;border-radius:2px;background-color:$kb-ui11;font-size:$text02;color:$kb-ui02;}
+.btn-line{display:inline-flex;justify-content:center;align-items:center;width:100%;min-width:8.2rem;height:44px;padding:0 1rem;text-align:center;border:1px solid $kb-ui05;border-radius:2px;background-color:$kb-ui11;font-size:$text02;color:$kb-ui02;}
 .btn-line > span{display:inline-block;}
 .btn-line.lg{height:48px;font-size:16px;line-height:52px;}
 .btn-line.mm{height:40px;font-size:15px;line-height:40px;}

@@ -39,6 +39,9 @@
                     <br>
                     <br>
                     <button type="button" class="c"><span>페이지 로딩 On (3초 후 자동꺼짐)</span></button>
+                    <br>
+                    <br>
+                    <button type="button" class="d"><span>스타뱅킹 페이지 로딩 On (4초 후 자동꺼짐)</span></button>
                 </section>
                 
             </main>
@@ -75,6 +78,15 @@
             gfn_pageLoader.show();
             setTimeout(function(){
                 gfn_pageLoader.hide();
+            },4000)
+        });
+
+        $('.d').on('click',function(){
+            $('html').attr('data-channel','ch_star');
+            gfn_pageLoader.show();
+            setTimeout(function(){
+                gfn_pageLoader.hide();
+                $('html').removeAttr('data-channel');
             },3000)
         });
 

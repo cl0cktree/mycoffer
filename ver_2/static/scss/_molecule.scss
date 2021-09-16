@@ -40,8 +40,8 @@
 .app-content.bg-gray-bottom .sticky-bottom{background-color:$kb-ui10;}
 .sticky-bottom:not(.popup_buttons) .btn-area,
 .app-content .sticky-bottom .btn-area{position:fixed;bottom:0;left:0;z-index:$level60;width:100%;}
-.sticky-bottom:not(.popup_buttons) .btn-area .btn-solid{height:64px;border-radius:0;font-weight:bold;font-size:20px;}
-.sticky-bottom:not(.popup_buttons) .btn-area .btn-solid > span{height:64px;line-height:64px}
+.sticky-bottom .btn-area .btn-solid{height:64px;border-radius:0;font-weight:bold;font-size:20px;}
+.sticky-bottom .btn-area .btn-solid > span{height:64px;line-height:64px}
 
 //Apple Homebar
 .ios.homebar .sticky-bottom .btn-solid,
@@ -50,7 +50,7 @@
 .ios.homebar .popup_buttons .btn-solid > span{height:96px;line-height:64px;}
 
 //바닥 고정 메뉴
-.other-login{position:fixed;bottom:0;left:0;z-index:$level40;width:100%;padding-bottom:12px;text-align:center;background-color:$kb-ui11;}
+.other-login{position:fixed;bottom:0;left:0;z-index:$level40;width:100%;padding-top:12px;padding-bottom:12px;text-align:center;background-color:$kb-ui11;}
 .other-login .btn-text span{@include text($size:$text03,$weight:bold);}
 .other-login .btn-text i{@include iconBullet($direction: 'up', $width: 13px, $thick: 2px, $color: #52565d);top:-3px;margin-left:10px;}
 .certificate-center{position:fixed;bottom:45px;left:0;z-index:$level40;width:100%;padding:12px 0 32px 0;text-align:center;background-color:$kb-ui11;}//20210818bhs수정
@@ -232,8 +232,8 @@ ul.radio-group > li + li{margin-top:20px;}
 .form-text input[inputmode=numeric].align-l,
 .form-text input[inputmode=decimal].align-l{text-align:left;}
 .form-text input[inputmode=numeric]::placeholder{text-align:right;}
-.form-text .unit{@include text($size:20px, $weight: bold);margin-top:4px;margin-left:2px;}/*position:absolute;left:4px;top:3px;max-width:calc(100% - 54px);*/
-.form-text .prefix{@include text($size:16px, $weight: bold);margin-top:4px;margin-right:2px;}/*position:absolute;left:4px;top:3px;max-width:calc(100% - 54px);*/
+.form-text .unit{@include text($size:20px, $weight: bold);margin-top:1px;margin-left:2px;}/*position:absolute;left:4px;top:3px;max-width:calc(100% - 54px);*/
+.form-text .prefix{@include text($size:16px, $weight: bold);margin-top:1px;margin-right:2px;}/*position:absolute;left:4px;top:3px;max-width:calc(100% - 54px);*/
 .form-text .btn-data-clear{display:none;flex:0 0 24px;margin-left:auto;}
 .form-text .btn-solid.form{font-weight:normal}
 .form-text .btn-solid.form,
@@ -834,9 +834,10 @@ ul.radio-group > li + li{margin-top:20px;}
 .btn-condition > div{float:left;}
 .btn-condition > div .sorting-status,
 .btn-condition > div .sorting-status > span{float:left;}
-.btn-condition > div .sorting-status > span{font-size:$text03;line-height:20px;color:$kb-ui02;font-weight:bold;}
-.btn-condition > div .sorting-status .num{font-size:$num03;vertical-align:top;position:relative;top:-1px;}
-.btn-condition > div .sorting-status > span + span:before{content:'\00B7';display:inline-block;margin-left:4px;margin-right:5px;}
+.btn-condition > div .sorting-status > span{position:relative;font-size:$text03;line-height:20px;color:$kb-ui02;font-weight:bold;}
+.btn-condition > div .sorting-status > span + span{margin-left:10px;padding-left:6px;}
+.btn-condition > div .sorting-status > span + span:before{content:'';position:absolute;top:7px;left:-4px;width:4px;height:4px;border-radius:50%;background-color:$kb-ui02;}
+.btn-condition > div .sorting-status .num{font-size:$num03;vertical-align:top;}
 .btn-condition > div .arrow{@include ir;float:left;width:20px;height:20px;margin-left:7px;background:url(../images/common/common.png) no-repeat -130px -45px / 160px;}
 .filter-area{@include flexBetween;flex-wrap:wrap;border-top:1px solid $kb-ui08;background-color:$kb-ui10;margin-left:-24px;margin-right:-24px;padding-left:24px;padding-right:24px;}
 .filter-area .condition-area{margin-left:0;margin-right:0;padding-left:0;padding-right:0;}

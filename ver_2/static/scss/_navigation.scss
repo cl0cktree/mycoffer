@@ -101,9 +101,9 @@ i[class*='icon-']{overflow:hidden;display:inline-block;white-space:nowrap;text-i
 .tab li{width:auto;padding-right:2.8rem;border-bottom:1px solid $kb-ui08;}
 .tab li:last-child{padding-right:2.4rem;}
 .tab li button,
-.tab li a{position:relative;display:block;min-width:3.2rem;padding:0.8rem 0.2rem 1.5rem 0.2rem;font-size:$text02;font-weight:bold;color:$kb-ui05;white-space:nowrap;text-align:center;line-height:1;}
+.tab li a{position:relative;z-index:1;display:block;min-width:3.2rem;padding:0.8rem 0.2rem 1.4rem 0.2rem;font-size:$text02;font-weight:bold;color:$kb-ui05;white-space:nowrap;text-align:center;line-height:1;}
 .tab li.is-active a:after,
-.tab li.is-active button:after{content:'';position:absolute;bottom:0;left:0;right:0;height:0.4rem;background-color:$kb-ui02;}
+.tab li.is-active button:after{content:'';position:absolute;z-index:2;bottom:-1px;left:0;right:0;height:0.4rem;background-color:$kb-ui02;}
 .tab li button {outline: none;}
 .tab li.is-active a,
 .tab li.is-active button{color:$kb-ui02;font-weight:bold}
@@ -122,7 +122,7 @@ i[class*='icon-']{overflow:hidden;display:inline-block;white-space:nowrap;text-i
 //.tab + .tab.depth2{margin-top:2.4rem}
 // .tab-swiper-wrap .tab {padding-bottom:2.4rem;}
 .tab .swiper-wrapper{width:auto;min-width:100%;}
-.tab .swiper-wrapper:after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background-color:$kb-ui08;}
+.tab .swiper-wrapper:after{content:'';position:absolute;z-index:-1;bottom:0;left:0;right:0;height:1px;background-color:$kb-ui08;}
 
 .tab_contents .swiper-container-horizontal>.swiper-pagination-progressbar, 
 .tab_contents .swiper-container-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite{top:auto;bottom:0;}
@@ -177,7 +177,7 @@ i[class*='icon-']{overflow:hidden;display:inline-block;white-space:nowrap;text-i
 .partitial-loader:before{content:'';flex:0 0 12px;display:block;width:54px;height:12px;margin:14px auto;animation:partitialLoader 1s steps(17) infinite alternate;background-image:url(../images/common/loader.png);background-size:54px;}
 .partitial-loader .msg{@include text;text-align:center;margin-top:20px;}
 
-.page-loader{display:none;position:fixed;top:0;bottom:0;left:0;right:0;z-index:$level100;display:flex;flex-direction:column;justify-content:center;align-items:center;background-color:rgba(0,0,0,0.05)}
+.page-loader{display:none;position:fixed;top:0;bottom:0;left:0;right:0;z-index:$level100;display:flex;flex-direction:column;justify-content:center;align-items:center;background-color:rgba(0,0,0,0.15)}
 .page-loader .animation{@include ir;display:block;width:66px;height:13px;margin:14px auto;animation:pageLoader02 2s steps(30) infinite alternate;background-image:url(../images/common/page-loader02@2x.png);background-size:66px;}
 
 [data-channel=ch_star] .page-loader,

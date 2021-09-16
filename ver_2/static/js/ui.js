@@ -76,6 +76,20 @@ function gfn_fnChkByte($target, maxByte){
     }
 }
 
+var focusA11Y = {
+    memory: function($this){
+        $this.addClass('focus-memory');
+    },
+    forget: function($this){
+        $this.removeClass('focus-memory');
+        if($this.is(':focusable')){
+            $this.focus();
+        }else{
+            $this.find(':focusable').eq(0).focus();
+        }
+    }
+};
+
 var st = $window.scrollTop();
 var $body = $('body');
 var $layered = $('.layered');
@@ -167,16 +181,23 @@ var gfn_layered = {
                 //DIM SHOW
                 gfn_dim.show($selectedLayer, layeredLevel, duration);
 
-                //Transform 50%, 50% blur issue
-                if($selectedLayer.hasClass('modal')){
-                    var modalWidth = $selectedLayer.outerWidth();
-                    var modalHeight = $selectedLayer.outerHeight();
-                    if(modalWidth % 2 != 0) modalWidth = modalWidth + 1;
-                    if(modalHeight % 2 != 0) modalHeight = modalHeight + 1;
-                    $selectedLayer.css({'width': modalWidth, 'height': modalHeight});
-                }
+                //Transform 50%, 50% blur issue                
             }
             $selectedLayer.addClass('is-active').css('z-index', layeredLevel);
+            $selectedLayer.find(':focusable').eq(0).focus();
+            
+            //Transform 50% : Blur Issue 발생시
+            // if($selectedLayer.hasClass('modal')){
+            //     $selectedLayer.one('animationend',function(){
+            //         if($(this).hasClass('is-active')){
+            //             var modalWidth = $selectedLayer.outerWidth();
+            //             var modalHeight = $selectedLayer.outerHeight();
+            //             if(modalWidth % 2 != 0) modalWidth = modalWidth - 1;
+            //             if(modalHeight % 2 != 0) modalHeight = modalHeight - 1;
+            //             $selectedLayer.css({'width': modalWidth, 'height': modalHeight});
+            //         }
+            //     });
+            // }
             gfn_body.hold(true);
 
             layeredLevel = layeredLevel + 10;
@@ -698,10 +719,11 @@ $body.on('click',function(e){
 if($('.textarea').length){
     $('.textarea').each(function(){
         var $textarea = $(this);
-        if($textarea.hasClass('is-disabled')) $textarea.find('textarea').prop('disabled',true);
+        if($textarea.hasClass('is-disabled')) $textarea.find('textarea').prop('disabled',true);        
+        $textarea.find('textarea').prop('maxlength',gfn_removeComma3Digit($textarea.find('.total').text()));
     });
     $('.textarea')
-    .on('keyup','textarea',function(){
+    .on('keyup mouseup','textarea',function(){
         var $textarea = $(this).parent('.textarea');
         var max = $textarea.find('.total').text();
         max = max.replace(/,/g, "");

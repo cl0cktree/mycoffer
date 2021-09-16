@@ -87,14 +87,17 @@
                 },
     
                 open: function() {
+                    focusA11Y.memory($('.is-focused'));
                     $body.addClass("is-hold");
                     $wrap.addClass("is-active").css('z-index', layeredLevel);
                     $dimm.fadeIn(settings.duration);
                     $wrap.fadeIn(settings.duration);
+                    $wrap.find(':focusable').eq(0).focus();
                 },
     
                 close: function() {
-                    $body.removeClass("is-hold");
+                    focusA11Y.forget($('.focus-memory'));
+                    $body.removeClass("is-hold");                    
                     $dimm.fadeOut(settings.duration);
                     $wrap.addClass('modal-out');
                     $wrap.one('animationend',function(){

@@ -1,10 +1,10 @@
-<!-- [mys_co_06_01_03_10] 계좌 인증 (작성자: 누리어 시스템 변혜선)// -->
+<!-- [mys_co_06_01_03_10] 타 마이데이터사업자 정보제공 요청 발생 > 인증방식선택(KB스타뱅킹 미설치 고객) > 다중인증거래 안내 > 휴대폰 본인인증 > 계좌인증 (작성자: 누리어 시스템 변혜선, 최선화) // -->
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
-        "title": "Last Depth | 1st Depth"
+        "title": "정보제공자_계좌인증 | 전송요구"
     })
 </head>
 
@@ -16,7 +16,6 @@
             'pageTit':'<span class="ci-kb">KB국민은행</span>',
             'type':'step'
         })
-        
 
         <!-- app-container //-->
         <script>
@@ -28,7 +27,7 @@
             <main class="app-content mobie-cetification">
                 <div class="page-step js-fixed">    
                     <div class="page-step-inner">
-                        <div class="step" aria-label="총 3단계 중 현재 5단계">
+                        <div class="step" aria-label="총 5단계 중 현재 3단계"><!-- 수정 2021-09-16 -->
                             <span class="current">3</span>                        
                             <span class="total">5</span>
                         </div>
@@ -40,7 +39,7 @@
 						<div class="kb-form" data-status="">
 							<label for="">계좌선택</label>
 							<div class="kb-form_inner form-select">
-								<button type="button" class="selected-option" data-call-layered="bsAccountSelect"></button>
+								<button type="button" class="selected-option" data-call-layered="bsSelectAccount"></button><!-- 수정(data-call-layered) 2021-09-16 -->
 								<select name="" id="" title="계좌 선택">
 									<option value="" selected>계좌선택</option>
 									<option value="bank01">010101-01-010101</option>
@@ -68,32 +67,7 @@
                         </div>     
 					</div>
 				</section>
-                <!-- <section class="kb-sec">  
-					<div class="account-link">
-                        <h3 class="is-hidden">계좌선택</h3>
-						<div class="kb-form" data-status="">
-							<label for="">계좌선택</label>
-							<div class="kb-form_inner form-select">
-								<button type="button" class="selected-option" data-call-layered="bsAccountSelect"></button>
-								<select name="" id="" title="계좌 선택">
-									<option value="" selected>계좌선택</option>
-									<option value="bank01">010101-01-010101 : 월급통장</option>
-									<option value="bank02">111111-00-000000 : 용돈통장</option>
-								</select>
-							</div>
-							<p class="validation">계좌를 선택해 주세요.</p>
-						</div>
-					</div>                               
-                    <div class="kb-form mt24" data-status="">                        
-                        <label for="certificationName">계좌비밀번호</label>
-                        <div class="kb-form_inner form-text">
-                            <input type="password" id="certificationName" value="" placeholder="계좌비밀번호">
-                            <button class="btn-data-clear"><i class="icon-data-clear_24">계좌비밀번호</i></button>
-                        </div>
-                        <em class="validation">계좌비밀번호를 입력해 주세요.</em>
-                        <em class="validation">비밀번호가 일치하지 않습니다.</em>
-                    </div>                     
-                </section> -->
+                
                 <div class="sticky-bottom">
                     <div class="btn-area">
                         <button class="btn-solid"><span>확인</span></button>
@@ -107,11 +81,6 @@
 
         <!-- Layer (modal, bottom sheet) // -->
         <div class="layered">
-            <!-- @@include('@@webRoot/html/_layered/popup-agree-unique-id-info.html')
-            @@include('@@webRoot/html/_layered/popup-agree-mobile-id-personal-info-collection.html')
-            @@include('@@webRoot/html/_layered/popup-agree-terms-of-use-of-telecommunications-company.html')
-            @@include('@@webRoot/html/_layered/popup-agree-mobile-id-personal-info-service.html') -->
-           
             @@include('@@webRoot/html/common/layered/mys_co_06_01_03_10_p1.html')
         </div>
         <!-- // Layer (modal, bottom sheet) -->
@@ -121,15 +90,7 @@
     @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
-    <!-- Add Script -->
-    <script>
-        $('button[data-action=sendCertificationNumber]').on('click',function(){
-            var top = $(this).offset().top;
-            $('.js-sended-number').removeAttr('style');
-            $('html,body').stop().animate({'scrollTop': top}, 10);
-        });
-    </script>
-
+    
 </body>
 
 </html>
