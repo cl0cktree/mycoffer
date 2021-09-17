@@ -1,10 +1,10 @@
-<!-- [MYS_CO_06_01_01_01] 전송요구방법 > 통합인증 > 기관 선택 (작성자: 누리어 시스템 변혜선)// -->
+<!-- [MYS_CO_06_01_01_01] 전송요구방법(통합인증) > 기관 선택 (작성자: 누리어 시스템 변혜선, 최선화) // -->
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
-        "title": "Last Depth | 1st Depth"
+        "title": "통합인증 기관선택 | 전송요구"
     })
 </head>
 
@@ -22,7 +22,7 @@
               
             <!-- app-content // -->
             <main class="app-content select-organization">
-                <h1 class="is-hidden">전송요구</h1>
+                <!-- <h1 class="is-hidden">전송요구</h1> --><!-- 수정 2021-09-17 -->
                 <div class="page-step js-fixed">    
                     <div class="page-step-inner">
                         <div class="step" aria-label="총 6단계 중 현재 2단계">
@@ -31,10 +31,10 @@
                         </div>
                         <h2 class="h1">기관선택</h2>
                     </div>
-                    <p class="page-step-desc">연결할 기관을 모두 선택해주세요.</p>
+                    <p class="page-step-desc">연결할 기관을 모두 선택해 주세요.</p><!-- 수정 2021-09-17 -->
                 </div> 
                 <section class="kb-sec agency-search">                    
-                    <p><a href="/html/common/mys_co_06_01_01_09.html" class="btn-text icon-arrow" role="button"><span>기관검색</span><i></i></a></p>                  
+                    <p><a href="@@webRoot/html/common/mys_co_06_01_01_09.html" class="btn-text icon-arrow" role="button"><span>기관검색</span><i></i></a></p>                  
                 </section>
                 <section class="kb-sec">
                     <strong class="h4">추천기관</strong>                    
@@ -219,6 +219,7 @@
     <!-- Add Script -->
     <script>
         $(document).ready(function(){
+            // 기획확인용
             $('.btn-cancel').on('click', function() {
                 modalPopup({
                     title: '',
@@ -233,4 +234,3 @@
 </body>
 
 </html>
-<!-- // [MYS_CO_06_01_01] 전송요구방법 > 통합인증 > 기관 선택 -->

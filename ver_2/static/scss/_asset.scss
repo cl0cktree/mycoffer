@@ -426,7 +426,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .txt-con .outlink {display: inline-block; margin-top: 5px; padding: 7px 8px; font-size: 14px; color: $kb-ui03; background-color: #fff; border: 1px solid #c7cbcf; border-radius: 2px;}
 .my-asset .p-list.agency{display:none;}
 .my-asset .p-list.agency.is-active{display:block;}
-.my-asset .p-list > dl > dt{border-bottom:1px solid $kb-ui04;}
+.my-asset .p-list > dl > dt{border-bottom:2px solid $kb-ui03;}
 .my-asset .p-list > dl > dt .type{display:inline-block;@include text($size: 16px,$weight:bold);line-height:1.4rem;}
 .my-asset .p-list > dl > dt .total{display:block;float:right;padding-right:30px;color:$kb-ui03;text-align:right;}
 .my-asset .p-list > dl > dt .total small{display:block;font-size:14px;margin-top:8px;}
@@ -457,6 +457,8 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .p-list > dl > dd .balance .amount .num{font-size:19px;}
 .my-asset .p-list > dl > dd .balance .amount .num:before{font-size:14px;font-weight:normal;}
 .my-asset .p-list > dl > dd .balance .amount .num:after{font-size:18px;font-weight:normal}
+.my-asset .p-list > dl > dd .balance .amount:not([data-unit-before]){margin-left:4px;}
+.my-asset .p-list > dl > dd .balance.amount .num:not([data-unit-before]){margin-left:4px;}
 .my-asset .p-list > dl > dd .count{display:block;text-align:right;}
 .my-asset .p-list > dl > dd .creat-date{display:block;text-align:right;color:$kb-ui04;}
 .my-asset .p-list > dl > dd .exchange{@include text($size:14px);display:block;text-align:right;color:$kb-ui03;}
@@ -1037,8 +1039,10 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset.wish-house-planer .wish-house-price .num{font-size:1.9rem;}
 .my-asset.wish-house-planer .wish-house-price .num:after{font-size:$text01;vertical-align:0;font-weight:bold;}
 .my-asset.wish-house-planer .my-money-list{padding:12px 0;}
-.my-asset.wish-house-planer .my-money-list > ul > li{display:flex;justify-content:space-between;align-items:center;}
-.my-asset.wish-house-planer .my-money-list > ul > li .txt{background-repeat:no-repeat;background-position:0 center;background-size:2rem 2rem;padding:1.2rem 0 1.2rem 2.9rem;color:$kb-ui04;}
+.my-asset.wish-house-planer .my-money-list > ul > li{@include clfix;}
+.my-asset.wish-house-planer .my-money-list > ul > li .sml{font-size:$text03;}
+.my-asset.wish-house-planer .my-money-list > ul > li .txt{float:left;background-repeat:no-repeat;background-position:0 center;background-size:2rem 2rem;padding:1.2rem 0 1.2rem 2.9rem;color:$kb-ui04;}
+.my-asset.wish-house-planer .my-money-list > ul > li .amount{float:right;padding:1.2rem 0}
 .my-asset.wish-house-planer .my-money-list > ul > li.mine .txt{background-image:url(../images/asset/i_wish_house_planer_1.png);}
 .my-asset.wish-house-planer .my-money-list > ul > li.cash .txt{background-image:url(../images/asset/i_wish_house_planer_2.png);}
 .my-asset.wish-house-planer .my-money-list > ul > li.loan .txt{background-image:url(../images/asset/i_wish_house_planer_3.png);}

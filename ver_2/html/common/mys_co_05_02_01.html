@@ -1,10 +1,10 @@
-<!-- [MYS_CO_05_02_01] 가입완료 작성자: 누리어 시스템 변혜선 -->
+<!-- [MYS_CO_05_02_01] 약관 동의_서비스 가입 (작성자: 누리어 시스템 변혜선, 최선화) -->
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
-        "title": "Last Depth | 1st Depth"
+        "title": "약관 동의_서비스 가입 | 전송요구"
     })
 </head>
 
@@ -13,9 +13,9 @@
     <div class="app">
         
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
-            'pageTit':'',
-            'type':'step'
-        })
+            'pageTit':'약관동의',
+            'type':'back'
+        })<!-- 수정 2021-09-17 -->
         
 
         <!-- app-container //-->
@@ -24,18 +24,16 @@
             <!-- app-content // -->
             <main class="app-content agree-term">
                 <section class="kb-sec full">
-                    <h1 class="h1">서비스 약관에 동의해 주세요.</h1>
+                    <h2 class="h1">서비스 약관에 동의해 주세요.</h2><!-- 수정(태그 변경) 2021-09-17 -->
                     <div class="employee-search-msg branch">
-                        <span>주의</span><br>
+                        <strong>주의</strong><br>
                         <p>무분별한 마이데이터 서비스 가입은 소중한 내 정보의 과도한 전송을 초래할 수 있습니다.<br>
-                            마이데이터 종합포털 홈페이지에서 고객님의<br>마이데이터 서비스 이용 현황을 확인하신 후 가입을
-                            진행해 주세요.</p>
-                        <a href="https://www.mydatacenter.or.kr" class="btn-text icon-arrow" role="button">마이데이터 종합포털 홈페이지 바로가기<span><i></i></span></a>
-                    </div>
+                            마이데이터 종합포털 홈페이지에서 고객님의 마이데이터 서비스 이용 현황을 확인하신 후 가입을 진행해 주세요.</p>
+                        <a href="https://www.mydatacenter.or.kr" class="btn-text" role="button">마이데이터 종합포털 홈페이지 바로가기<span class="link-arrow">바로가기</span></a>
+                    </div><!-- 수정 2021-09-17 -->
                 </section> 
                 <section class="kb-sec">
                     <!-- 동의하기(전체동의) // -->                                                                
-                    <!-- 수정 : 2021.06.25  // -->
                     <div class="agreement-to-terms">
                         <div class="header">
                             <span class="form-checkbox"><input type="checkbox" id="agreeAllCheck"><label for="agreeAllCheck">전체동의</label></span>
@@ -47,9 +45,8 @@
                             <span class="form-checkbox_20"><input type="checkbox" id="agreeCheck7"><label for="agreeCheck7">개인정보 수집&middot;이용 동의 [필수]</label><a href="@@webRoot/html/terms/agree-collection-use-personal-info03.html" class="alink"><span>전문보기</span></a></span>
                             <span class="form-checkbox_20"><input type="checkbox" id="agreeCheck5"><label for="agreeCheck5">개인(신용)정보 제공 동의 [필수]</label><a href="@@webRoot/html/terms/agree-use-personal-info.html" class="alink"><span>전문보기</span></a></span>
                             <span class="form-checkbox_20"><input type="checkbox" id="agreeCheck3"><label for="agreeCheck3">제3자 정보제공 동의 [선택]</label><a href="@@webRoot/html/terms/agree-provide-info.html" class="alink"><span>전문보기</span></a></span>                            
-                            <span class="form-checkbox_20 js-checkbox-selector-trigger" data-target="serviceSelector"><input type="checkbox" id="agreeCheck6"><label for="agreeCheck6">개인(신용)정보 수집·이용 동의<br>(상품서비스 안내 등) [선택]</label><a href="@@webRoot/html/terms/agree-collection-use-personal-info.html" class="alink"><span>전문보기</span></a></span><!-- 수정 : 2021.06.25  -->
+                            <span class="form-checkbox_20 js-checkbox-selector-trigger" data-target="serviceSelector"><input type="checkbox" id="agreeCheck6"><label for="agreeCheck6">개인(신용)정보 수집·이용 동의<br>(상품서비스 안내 등) [선택]</label><a href="@@webRoot/html/terms/agree-collection-use-personal-info.html" class="alink"><span>전문보기</span></a></span>
                         </div>
-                        <!-- 수정 2021-05-28 // -->
                         <dl class="agreement-service-choice js-checkbox-selector" data-target="serviceSelector">
                             <dt><span class="form-checkbox_20"><input type="checkbox" id="agreeCheck5All" disabled><label for="agreeCheck5All">전체동의</label></span></dt>
                             <dd>
@@ -61,14 +58,11 @@
                                 </ul>
                             </dd>
                         </dl>
-                        <!-- // 수정 2021-05-28 -->
                         <div class="checkbox-group st_list">
                             <span class="form-checkbox_20 link-arrow-after"><input type="checkbox" id="agreeCheck8"><label for="agreeCheck8">개인(신용)정보 수집이용·제공
-                                동의서(상품서비스 안내 등)[계열사정보 제공용] [선택]</label><a href="@@webRoot/html/terms/agree-collection-use-personal-info.html" class="link"></a></span><!-- 수정 : 2021.06.25  -->
+                                동의서(상품서비스 안내 등)[계열사정보 제공용] [선택]</label><a href="@@webRoot/html/terms/agree-collection-use-personal-info.html" class="link"></a></span>
                         </div>
-
                     </div>
-                    <!-- // 수정 : 2021.06.25  -->
                     <!-- // 동의하기(전체동의) -->
                      <div class="kb-form_multi kb-form_email" data-status="error">
                         <strong class="tit required">이메일 주소</strong>
@@ -106,11 +100,12 @@
                         <em class="validation">이메일 주소를 입력해 주세요.</em>
                         <em class="validation">이메일 주소를 다시 확인해 주세요.</em>
                     </div>
+                    <!-- 수정 2021-09-17 // -->
                     <div class="go-service-info">
-                        <a href="javascript:;" class="btn-text icon-arrow"><span>마이데이터서비스</span><i class="icon-link_24"></i></a><br>
-                        <a href="javascript:;" class="btn-text icon-arrow"><span>개인정보 처리방침</span><i class="icon-link_24"></i></a>
+                        <a href="javascript:;" class="btn-text link-arrow-after"><span>마이데이터 서비스 안내</span></a>
+                        <a href="javascript:;" class="btn-text link-arrow-after"><span>개인정보 처리방침</span></a>
                     </div>
-                    <!-- // 수정 : 2021.06.10 -->
+                    <!-- // 수정 2021-09-17 -->
                 </section>
                 <div class="sticky-bottom">
                     <div class="btn-area">
@@ -125,11 +120,6 @@
 
         <!-- Layer (modal, bottom sheet) // -->
         <div class="layered">
-            <!-- @@include('@@webRoot/html/_layered/popup-my-money-term.html')
-            @@include('@@webRoot/html/_layered/popup-my-money-manual.html')
-            @@include('@@webRoot/html/_layered/popup-agree-provide-info.html')
-            @@include('@@webRoot/html/_layered/popup-agree-push-notice.html')
-            @@include('@@webRoot/html/_layered/popup-agree-collection-use-personal-info.html') -->
         </div>
         <!-- // Layer (modal, bottom sheet) -->
     </div>
@@ -140,31 +130,6 @@
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
 
-    <!-- 수정 : 2021.06. 25 // -->
-    <script>
-        // modalPopup({
-        //     title: "서비스 이용 제한 안내",
-        //     message: "마이데이터 서비스는 마이데이터 사업자 앞 정보 전송 요청이 가능한 만 19세 이상 고객에 대해 제공됩니다."
-            
-        // })
-        // modalPopup({
-        //     title: "서비스 이용 제한 안내",
-        //     message: "마이데이터 서비스는 개인고객(임의단체 포함)에 대해 제공됩니다.(법인 및 개인사업자 제외)"
-            
-        // })
-        // modalPopup({
-        //     title: "서비스 이용 제한 안내",
-        //     message: "해당매뉴를 이용하시려면 <br>인증 관련 로그인이 필요합니다. 다시 로그인 해주시기 바랍니다."
-            
-        // })
-        // modalPopup({
-        //     title: "서비스 동의 안내",
-        //     message: "KB마이데이터가 새롭게 오픈했습니다. 개정된 신용정보법을 준수하여 더욱 안전한 방식(API)으로 고객님께 서비스를 제공합니다. 새로운 동의서에 동의해주세요."
-            
-        // })
-    </script>
-    <!-- // 수정 : 2021.06. 25 -->
-    
 </body>
 
 </html>

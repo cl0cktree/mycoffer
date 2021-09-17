@@ -62,18 +62,18 @@ var gnbMM = [
         "link": "#link",
         "sub": "mydataGift"
     },
-    {
-        "number" : "11",
-        "name": "마이데이터 관리",
-        "link": "#link",
-        "sub": "mydataManage"
-    },
-    {
-        "number" : "8",
-        "name": "슬그Money",
-        "link": "#link",
-        "sub": ""
-    },
+    // {
+    //     "number" : "11",
+    //     "name": "마이데이터 관리",
+    //     "link": "#link",
+    //     "sub": "mydataManage"
+    // },
+    // {
+    //     "number" : "8",
+    //     "name": "슬그Money",
+    //     "link": "#link",
+    //     "sub": ""
+    // },
     {
         "number" : "9",
         "name": "D플랜",

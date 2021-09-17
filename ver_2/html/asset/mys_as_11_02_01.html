@@ -75,21 +75,9 @@
 					</div>
 					<div class="graph-area">
 						<!-- [Chart Area] // -->
-						<!--
-							차트 디자인 정보
-							Grid 라인 색상 : #ebeef0
-							막대그래프 색상 : #ffba53
-							막대그래프 사이즈 : 6px
-							막대그래프 상단/하단 radius : 0  // 추가 수정
-							높이: 150px // 추가 수정
-							Tooltip 텍스트 사이즈/컬러 : 14px/#8c949e, #26282c
-							Y축 레이블 텍스트 사이즈/색상 : 14px/#8c949e
-							Legend 사이즈/컬러 : 14px/#26282c
-							※하이차트 가이드 샘플 추가  // 추가 수정
-						-->
-						<div class="chart-area" id="">
-							<img class="temp" src="@@webRoot/static/images/_temp/chart_as1102_4.png" alt="차트 예시 이미지">
-						</div>
+						<!--  추가 수정 // -->
+						<div class="chart-area mb40" id="columnChart01"></div>
+						<!-- // 추가 수정-->
 						<!-- // [chart area] -->
 					</div>
                 </section>
@@ -249,10 +237,40 @@
 	@@include('@@webRoot/html/_include/common-js.html')
 	<!-- Add Library (this page only)-->
 	<script src="@@webRoot/static/js/ui.js"></script>
+
+	
+    <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
+    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
+
 	<!-- Add Script -->
 	<script>
         $(document).ready(function(){ // 2021-09-02 추가
-				
+			// 추가 수정
+			function gfn_numKorean(number) {				
+				var regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi;
+				var inputNumber = String(number).replace(/(^\s*)|(\s*$)/gi, '').replace(regExp, '');
+				var unitWords = ["", "<span style='font-size:1.4rem'>만</span> ", "<span style='font-size:1.4rem'>억</span> ", "<span style='font-size:1.4rem'>조</span> ", "<span style='font-size:1.4rem'>경</span> "];
+				var splitUnit = 10000;
+				var splitCount = unitWords.length;
+				var resultArray = [];
+				var resultString = "";
+
+				for (var i = 0; i < splitCount; i++) {
+					var unitResult =
+						(inputNumber % Math.pow(splitUnit, i + 1)) / Math.pow(splitUnit, i);
+					unitResult = Math.floor(unitResult);
+					if (unitResult > 0) {
+						resultArray[i] = unitResult;
+					}
+				}
+				for (var i = 0; i < resultArray.length; i++) {
+					if (!resultArray[i]) continue;
+					resultString = String(resultArray[i]) + unitWords[i] + resultString;
+				}
+				return number > 0 ? resultString : '-' + resultString
+			}
+			// 추가 수정
+
 			//GNB 활성화 (번호:menu.js)
 			gfn_gnb.select(4);
 			
@@ -277,6 +295,82 @@
 					elem.text(t + txt);
 				}
 			});
+
+			// 추가 수정 //
+			Highcharts.setOptions({
+				title: { text: null },
+				subTitle: { text: null },
+				legend: { enabled: false },
+				credits: { enabled: false },
+				label : { fontFamily: 'KBFGText'},
+				credits: { enabled: false },
+				exporting: { enabled: false },
+			});
+        
+			var columnChart = new Highcharts.Chart({
+				chart: {
+					renderTo: 'columnChart01', // chart 삽입 target ID
+					type: "column",
+					height: 185,                
+					marginLeft: 0,
+					marginRight: 0
+				},
+				tooltip: {
+					formatter: function () { 
+						return "<span style='font-size:1.4rem'>자산 <span style='font-size:1.5rem;font-family:Roboto;'>" + gfn_numKorean(this.y) + "</span>원</span>"
+					},
+					padding: 8,
+					backgroundColor: "#FFF",
+					shadow: true,
+					borderRadius: 10,
+					verticalAlign: 'bottom',
+					borderColor: '#f3f3f3',
+					style: {
+						color:'#26282c',
+						fontWeight: 'normal',
+						fontSize: '1.4rem',
+						fontFamily: "KBFGText"
+					},
+					zIndex:100
+				},
+				xAxis: {
+					type: "category",
+					categories: ["1월", "2월", "3월", "4월", "5월", "6월"],
+					labels: {
+						style: {
+							color: "#26282c",
+							fontSize: '1.2rem',
+							fontFamily: 'KBFGText',
+						}
+					},
+					top:25
+				},
+				yAxis: {
+					enabled: false,  // 사용 안함
+					labels: { enabled: false },  // 축 lebel 사용 안함
+					title: { enabled: false }, // 축 title 사용 안함
+					tickWidth: 0,  // 그리드 라인 너비
+					gridLineColor: 'transparsnt',  // 그리드 라인 컬러
+					plotLines: [{
+						color: "#c6cbd0",
+						width: 1,
+						value: 0,
+						zIndex: 5,
+						dashStyle: 'dot'
+					}],
+					top: 25
+				},
+				plotOptions: {
+					series: {
+						color: '#c7ccd1', // 기본색상
+						pointWidth: 6,  // 막대그래프 너비
+					}
+				},
+				series: [{
+					data:[220002000, 680000000, -350000000, -680000000, 800000000, {y:660000000,color:'#ffba53'}]
+				}]
+			});
+			// 추가 수정 //
 
 		}) // 2021-09-02 추가
 	</script>

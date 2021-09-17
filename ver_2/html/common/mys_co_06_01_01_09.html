@@ -1,10 +1,10 @@
-<!-- [MYS_CO_06_01_01_09] 전송요구방법 > 통합인증 > 기관 선택_검색결과 (작성자: 누리어 시스템 변혜선)// -->
+<!-- [MYS_CO_06_01_01_09] 전송요구방법(통합인증) > 기관 선택_검색결과 (작성자: 누리어 시스템 변혜선, 최선화) // -->
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
-        "title": "Last Depth | 1st Depth"
+        "title": "통합인증 기관검색_검색결과 | 전송요구"
     })
 </head>
 
@@ -13,7 +13,7 @@
     <div class="app">
         
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
-            'pageTit':'검색기관',
+            'pageTit':'기관 검색',
             'type':'close'
         })
         
@@ -40,8 +40,7 @@
                         </ul>
                     </div>
                 </section>
-                <!-- SECTION //-->
-                <!--// SECTION -->
+
                 <section class="kb-sec search-result-list">
                     <strong class="h4 list-tit"><span>KB</span> 검색 결과입니다.</strong>
                     <strong class="h4">카드</strong>
@@ -69,7 +68,7 @@
                     </div>
                     <!--// [D]] 검색 결과 없을 때 -->
                 </section>
-                <!-- SECTION //-->
+
                 <div class="sticky-bottom">
                     <div class="btn-area">
                         <button type="button" class="btn-solid" data-action="close"><span>확인</span></button>
@@ -84,7 +83,6 @@
 
         <!-- Layer (modal, bottom sheet) // -->
         <div class="layered">
-            
         </div>
         <!-- // Layer (modal, bottom sheet) -->
     </div>
@@ -93,8 +91,9 @@
     @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
     <script>
-        //자동완성
+        // 자동완성
         $('.search-organization-form')
         .on('keypress', 'input[type=text]', function(){
             var autocompleteChk = $('.autocomplete-box').hasClass('is-active');
@@ -106,9 +105,7 @@
             $('.autocomplete-box').removeClass('is-active');
         });
     </script>
-    <!-- Add Script -->
 
 </body>
 
 </html>
-<!-- // [MYS_CO_06_01_01_09] 전송요구방법 > 통합인증 > 기관 선택_검색결과 -->

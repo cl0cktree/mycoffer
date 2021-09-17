@@ -1,10 +1,10 @@
-<!-- [mys_co_06_layered] 가입완료 작성자: 누리어 시스템 변혜선 -->
 <!DOCTYPE html>
 <html lang="ko">
-
+<!-- [mys_co_06_layered] 통합인증 (작성자: 누리어 시스템 변혜선, 최선화) -->
 <head>
+
     @@include('@@webRoot/html/_include/app-head.html',{
-        "title": "기관선택"
+        "title": "통합인증 | 전송요구"
     })
 </head>
 <style>
@@ -14,67 +14,60 @@
     .layer-call > button span{display:block;}
 </style>
 <body>
-    @@include('@@webRoot/html/_include/app-a11y.html')
     <div class="app">
-        <!-- app-header //-->
-        @@include('@@webRoot/html/_include/app-integrated-header.html',{
-            'pageTit':'기관선택', 
-        })
-        <!-- // app-header -->
+        <div class="layer-call">
+            <h2 class="h1">전송요구방법선택</h2>
+            <button type="button" class="btn-line" data-call-layered="mys_co_06_01_00_bs01" data-page-id="MYS_CO_06_01_00_BS01"><span>전송 요구 방법 선택_당행 고객이 아닌 경우</span></button>
+            
+            <h2 class="h1 mt20">통합인증_기관선택</h2>
+            <button type="button" class="btn-line" onclick="modalDemo1()"><span>기관선택(초과 선택시)</span></button>
+            <button type="button" class="btn-line" onclick="modalDemo2()"><span>기관선택(복수업종기관 선택시)</span></button>
+            <button type="button" class="btn-line" onclick="modalDemo3()"><span>통합인증 기관선택 <br>취소버튼 선택시</span></button>
 
-        <!-- app-container //-->
-        <div class="app-container">            
-            <!-- app-content // -->
-            <div class="layer-call">
-                <button type="button" class="btn-line" onclick="modalDemo1()" data-page-id="MYS_CO_06_01_01_01"><span>기관선택(alert)</span></button>
-                <button type="button" class="btn-line" onclick="modalDemo2()" data-page-id="MYS_CO_06_01_01_01"><span>기관선택(alert)</span></button>
-                <button type="button" class="btn-line" onclick="modalDemo4()" data-page-id="MYS_CO_06_01_01_07"><span>마이데이터취소확인</span></button>
-                <button type="button" class="btn-line" onclick="modalDemo1()" data-page-id="MYS_CO_06_01_02_01"><span>기관선택(alert)</span></button>
-                <button type="button" class="btn-line" onclick="modalDemo2()" data-page-id="MYS_CO_06_01_02_01"><span>기관선택(alert)</span></button>
-                <button type="button" class="btn-line" onclick="modalDemo5()" data-page-id="MYS_CO_06_01_01_05"><span>자산연동로딩페이지취소확인</span></button>
-                <button type="button" class="btn-line" onclick="modalDemo6()" data-page-id="MYS_CO_06_01_01_06"><span>전송요구방법 선택(alert)</span></button>                
-                <button type="button" class="btn-line" onclick="modalDemo7()" data-page-id="MYS_CO_06_01_01_16"><span>자산연동로딩페이지취소확인</span></button>
-                <button type="button" class="btn-line" onclick="modalDemo8()" data-page-id="MYS_CO_06_01_01_15"><span>개별인증자산연동로딩페이지취소확인</span></button>
-                <button type="button" class="btn-line" onclick="modalDemo8()" data-page-id="MYS_CO_06_01_02_15"><span>기관데이터연결방법</span></button>
-                <button type="button" class="btn-line" data-call-layered="mys_co_06_01_00_p2" data-page-id="MYS_CO_06_01_00"><span>마이데이터연결방법</span></button>
-                <button type="button" class="btn-line" onclick="modalDemo9()" data-page-id="MYS_CO_06_01_00"><span>데이터연결확인</span></button>
-                <button type="button" class="btn-line" data-call-layered="bsSetTransferRequirements_01" data-page-id="MYS_CO_06_01_01_07"><span>전송 요구 항목 설정 (3/6)</span></button>
-                <button type="button" class="btn-line" data-call-layered="select-engineering-industry" data-page-id="MYS_CO_06_01_02_01"><span>기관 업종 선택</span></button>                
-                <button type="button" class="btn-line" onclick="modalDemo3()" data-page-id="MYS_CO_06_01_03_04"><span>자산선택확인</span></button>
-                <button type="button" class="btn-line" onclick="modalDemo10()" data-page-id="mys_co_06_01_03_09"><span>개별인증자산연동로딩페이지취소확인</span></button>
-                <button type="button" class="btn-line" onclick="modalDemo11()" data-page-id="mys_co_06_01_03_09"><span>기관데이터연결방법</span></button>
-                <a href="@@webRoot/html/common/mys_co_05_02_02.html" class="btn-line"><span>직원조회</span></a> 
-                <a href="@@webRoot/html/common/mys_co_05_02_02_02.html" class="btn-line"><span>직원조회</span></a>            
-                
-            </div>
-            <!-- // app-content -->
-
+            <button type="button" class="btn-line" onclick="modalDemo4()" data-page-id="MYS_CO_06_01_01_07"><span>마이데이터취소확인</span></button>
+            <button type="button" class="btn-line" onclick="modalDemo1()" data-page-id="MYS_CO_06_01_02_01"><span>기관선택(alert)</span></button>
+            <button type="button" class="btn-line" onclick="modalDemo2()" data-page-id="MYS_CO_06_01_02_01"><span>기관선택(alert)</span></button>
+            <button type="button" class="btn-line" onclick="modalDemo5()" data-page-id="MYS_CO_06_01_01_05"><span>자산연동로딩페이지취소확인</span></button>
+            <button type="button" class="btn-line" onclick="modalDemo6()" data-page-id="MYS_CO_06_01_01_06"><span>전송요구방법 선택(alert)</span></button>                
+            <button type="button" class="btn-line" onclick="modalDemo7()" data-page-id="MYS_CO_06_01_01_16"><span>자산연동로딩페이지취소확인</span></button>
+            <button type="button" class="btn-line" onclick="modalDemo8()" data-page-id="MYS_CO_06_01_01_15"><span>개별인증자산연동로딩페이지취소확인</span></button>
+            <button type="button" class="btn-line" onclick="modalDemo8()" data-page-id="MYS_CO_06_01_02_15"><span>기관데이터연결방법</span></button>
+            <button type="button" class="btn-line" data-call-layered="mys_co_06_01_00_p2" data-page-id="MYS_CO_06_01_00"><span>마이데이터연결방법</span></button>
+            <button type="button" class="btn-line" onclick="modalDemo9()" data-page-id="MYS_CO_06_01_00"><span>데이터연결확인</span></button>
+            <button type="button" class="btn-line" data-call-layered="bsSetTransferRequirements_01" data-page-id="MYS_CO_06_01_01_07"><span>전송 요구 항목 설정 (3/6)</span></button>
+            <button type="button" class="btn-line" data-call-layered="select-engineering-industry" data-page-id="MYS_CO_06_01_02_01"><span>기관 업종 선택</span></button>                
+            <button type="button" class="btn-line" onclick="modalDemo3()" data-page-id="MYS_CO_06_01_03_04"><span>자산선택확인</span></button>
+            <button type="button" class="btn-line" onclick="modalDemo10()" data-page-id="mys_co_06_01_03_09"><span>개별인증자산연동로딩페이지취소확인</span></button>
+            <button type="button" class="btn-line" onclick="modalDemo11()" data-page-id="mys_co_06_01_03_09"><span>기관데이터연결방법</span></button>
+            <a href="@@webRoot/html/common/mys_co_05_02_02.html" class="btn-line"><span>직원조회</span></a> 
+            <a href="@@webRoot/html/common/mys_co_05_02_02_02.html" class="btn-line"><span>직원조회</span></a>            
         </div>
-        <!-- // app-container -->
 
-    </div>
-    <div class="layered">
-
-        <!-- Modal // -->
-        @@include('@@webRoot/html/common/layered/mys_co_06_01_01_07.html')
-        @@include('@@webRoot/html/common/layered/mys_co_06_01_01_07_step02.html')
-        @@include('@@webRoot/html/common/layered/mys_co_06_01_01_07_step03.html')
-        @@include('@@webRoot/html/common/layered/mys_co_06_01_01_07_step04.html')    
-        @@include('@@webRoot/html/common/layered/mys_co_06_01_00_p2.html')    
-        @@include('@@webRoot/html/common/layered/mys_co_06_01_02_01_p1.html')
-        <!-- @@include('@@webRoot/html/_layered/popup-employee-search.html')
-        @@include('@@webRoot/html/_layered/popup-employee-search02.html') -->
-        @@include('@@webRoot/html/common/layered/mys_co_06_01_01_08_bs01.html')
-        <!-- @@include('@@webRoot/html/common/layered/mys_co_05_03_01.html')
-        @@include('@@webRoot/html/common/layered/mys_co_05_03_02.html')
-        @@include('@@webRoot/html/common/layered/mys_co_05_04_00.html')
-        @@include('@@webRoot/html/common/layered/mys_co_05_04_00_bs01.html')
-        @@include('@@webRoot/html/_layered/popup-my-money-term.html')
-        @@include('@@webRoot/html/_layered/popup-my-money-manual.html')
-        @@include('@@webRoot/html/_layered/popup-agree-provide-info.html')
-        @@include('@@webRoot/html/_layered/popup-agree-push-notice.html')
-        @@include('@@webRoot/html/_layered/popup-agree-collection-use-personal-info.html') -->
-        <!-- // Modal -->
+        <div class="layered">
+            @@include('@@webRoot/html/common/layered/mys_co_06_01_00_bs01.html')    
+            
+            <!-- Modal // -->
+            @@include('@@webRoot/html/common/layered/mys_co_06_01_01_07.html')
+            @@include('@@webRoot/html/common/layered/mys_co_06_01_01_07_step02.html')
+            @@include('@@webRoot/html/common/layered/mys_co_06_01_01_07_step03.html')
+            @@include('@@webRoot/html/common/layered/mys_co_06_01_01_07_step04.html')    
+            @@include('@@webRoot/html/common/layered/mys_co_06_01_00_p2.html')    
+            <!-- @@include('@@webRoot/html/common/layered/mys_co_06_01_02_01_p1.html') -->
+            <!-- @@include('@@webRoot/html/_layered/popup-employee-search.html')
+            @@include('@@webRoot/html/_layered/popup-employee-search02.html') -->
+            @@include('@@webRoot/html/common/layered/mys_co_06_01_01_08_bs01.html')
+            <!-- @@include('@@webRoot/html/common/layered/mys_co_05_03_01.html')
+            @@include('@@webRoot/html/common/layered/mys_co_05_03_02.html')
+            @@include('@@webRoot/html/common/layered/mys_co_05_04_00.html')
+            @@include('@@webRoot/html/common/layered/mys_co_05_04_00_bs01.html')
+            @@include('@@webRoot/html/_layered/popup-my-money-term.html')
+            @@include('@@webRoot/html/_layered/popup-my-money-manual.html')
+            @@include('@@webRoot/html/_layered/popup-agree-provide-info.html')
+            @@include('@@webRoot/html/_layered/popup-agree-push-notice.html')
+            @@include('@@webRoot/html/_layered/popup-agree-collection-use-personal-info.html') -->
+            <!-- // Modal -->
+            
+        </div>
     </div>
 
     <!-- Script -->
@@ -82,36 +75,32 @@
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
-    
     <script>
         function modalDemo1() {
             modalPopup({
                 title: "",
                 message: "일괄 선택 가능한 기관수를 초과하였습니다. 추가하려는 기관을 건별로 선택해주세요."
-                
             })
         }
         function modalDemo2() {
             modalPopup({
                 title: "",
                 message: "선택한 기관 중 두개 이상 업종을 영위하는 기관(카드사 등)이 있습니다. 상세정보 요청 시 확인 가능합니다."
-                
             })
         }
         function modalDemo3() {
-            modalPopup({
-                title: "",
-                message: "자산을 선택해 주세요"
-            });
-        }
-        function modalDemo4() {
             modalPopup({
                 title: "",
                 message: "마이데이터 서비스 이용을 위한 자산 등록을 취소하시겠습니까?",
                 type: "confirm",
                 textCancelButton: "확인",
                 textOkButton: "취소",
-                
+            });
+        }
+        function modalDemo4() {
+            modalPopup({
+                title: "",
+                message: "자산을 선택해 주세요"
             });
         }
         function modalDemo5() {
@@ -154,13 +143,13 @@
                 
             });
         }
-        modalPopup({
-                title: "",
-                message: "데이터가 연결되지 않았습니다.<br>다시 시도하시겠습니까?",
-                type: "confirm",
-                textCancelButton: "취소",
-                textOkButton: "확인",
-            });
+        // modalPopup({
+        //         title: "",
+        //         message: "데이터가 연결되지 않았습니다.<br>다시 시도하시겠습니까?",
+        //         type: "confirm",
+        //         textCancelButton: "취소",
+        //         textOkButton: "확인",
+        //     });
         function modalDemo6() {
             modalPopup({
                 title: "",
@@ -257,21 +246,20 @@
                 }
             });
         });
-
-
-
+    </script>
+    <script>
 
         //레이어 확인용 스크립트 (개발시 삭제) [s]
-        // var url = window.location.href;
-        // var urlArr = url.split('#');
-        // var pageID = urlArr[urlArr.length - 1].toUpperCase();
+        var url = window.location.href;
+        var urlArr = url.split('#');
+        var pageID = urlArr[urlArr.length - 1].toUpperCase();
 
-        // $('.layer-call').on('click','button',function(){
-        //     var newUrl = url.replace(pageID, '');
-        //     window.location.href = urlArr[0] + '#' + $(this).data('page-id');
-        // });
+        $('.layer-call').on('click','button',function(){
+            var newUrl = url.replace(pageID, '');
+            window.location.href = urlArr[0] + '#' + $(this).data('page-id');
+        });
         
-        // if(pageID.indexOf('/HTML/') < 0) $('button[data-page-id=' + pageID + ']').click();
+        if(pageID.indexOf('/HTML/') < 0) $('button[data-page-id=' + pageID + ']').click();
         //레이어 확인용 스크립트 (개발시 삭제) [e]
 
     </script>

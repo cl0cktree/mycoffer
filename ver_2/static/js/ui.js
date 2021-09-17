@@ -449,7 +449,7 @@ var gfn_formSelect = {
                 var $options = $target.find('select').find('option');
                 $options.each(function(idx) {
                     var selectedClass = $(this).is(":selected") ? "is-selected" : "";
-                    if(idx != 0){
+                    if(idx != 0 && $(this).css('display') != 'none'){
                         $bsSelect.find('.bottom-sheet_select').append('<li class="'+selectedClass+'"><button type="button">'+$(this).text()+'</button></li>');
                     }
                 });
