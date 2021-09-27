@@ -1,10 +1,10 @@
-<!-- [MYS_CO_06_01_01_09] 전송요구방법(통합인증) > 기관 선택_검색결과 (작성자: 누리어 시스템 변혜선, 최선화) // -->
+<!-- [MYS_CO_06_01_01_09] 전송요구방법 선택(통합인증, 개별인증) > 기관선택 > 검색결과 (작성자: 누리어 시스템 변혜선, 최선화) // -->
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
-        "title": "통합인증 기관검색_검색결과 | 전송요구"
+        "title": "통합인증, 개별인증 기관검색_검색결과 | 전송요구"
     })
 </head>
 
@@ -31,8 +31,8 @@
                             <button type="button" class="btn-search"><i class="icon-search">검색</i></button>
                         </div>
                     </div>
-                    <div class="autocomplete-box">
-                        <p></p>
+                    <div class="autocomplete-box"><!-- .is-active -->
+                        <!-- <p></p> --><!-- 수정:2021-09-27 -->
                         <ul>
                             <li><span>KB</span>국민카드</li>
                             <li><span>KB</span>증권</li>
@@ -61,12 +61,12 @@
                         <li><span class="form-checkbox"><input type="checkbox" id="select18"><label for="select18">신한보험</label></span></li>
                         <li><span class="form-checkbox"><input type="checkbox" id="select19" disabled><label for="select19">NH보험 <span class="status">연결 중</span></label></span></li>
                     </ul>
-                    <!-- [D]] 검색 결과 없을 때 //-->
+                    <!-- [D] 검색 결과 없을 때 // -->
                     <div class="no-data">
                         <i class="icon-bang_60_gray"></i>
                         <p>검색 결과가 없습니다.</p>
                     </div>
-                    <!--// [D]] 검색 결과 없을 때 -->
+                    <!-- // [D] 검색 결과 없을 때 -->
                 </section>
 
                 <div class="sticky-bottom">
@@ -95,7 +95,7 @@
     <script>
         // 자동완성
         $('.search-organization-form')
-        .on('keypress', 'input[type=text]', function(){
+        .on('keydown', 'input[type=text]', function(){
             var autocompleteChk = $('.autocomplete-box').hasClass('is-active');
             if(!autocompleteChk){
                 $('.autocomplete-box').addClass('is-active');

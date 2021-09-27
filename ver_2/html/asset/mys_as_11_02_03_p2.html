@@ -31,8 +31,11 @@
 				<section class="kb-sec planer">
 					<div class="progress-wrap">
 						<span class="wish-gap"></span>	<!-- left : 0 고정, width : 100% 고정 ( 자산 초과시 스크립트 제어) -->
-						<span class="my-house"></span><!-- width : 자산비율 백분율표시 (스크립트 제어) -->
-						<span class="my-cash" style="left:20%;"></span><!-- left : 자산 , width : 준비자산비율 백분율표시 (스크립트 제어) -->
+						<!-- 수정:2021-09-24 // -->
+						<!-- 현금, 내집 순서 변경 // -->
+						<span class="my-cash"></span><!-- left : 자산 , width : 준비자산비율 백분율표시 (스크립트 제어) -->
+						<span class="my-house" style="left:20%;"></span><!-- width : 자산비율 백분율표시 (스크립트 제어) -->
+						<!-- // 수정:2021-09-24 -->
 					</div>
 					<div class="wish-house-price">
 						<h2 class="tit">Wish House KB시세</h2>
@@ -40,26 +43,36 @@
 					</div>
 					<div class="my-money-list">
 						<ul>
-							<li class="mine">
-								<p class="txt">My House 자산 <span class="sml">(대출금 제외)</span></p> <!-- 추가 수정 -->
-								<p class="amount"><span class="num" data-unit-after="억">5</span> <span class="num" data-unit-after="만원">6,000</span></p><!-- 추가 수정 -->
-							</li>
-							<li class="save yellow line"> <!-- 추가 수정 -->
-								<p class="txt">남는 금액</p>
-								<p class="amount"><span class="num" data-unit-after="억">5</span> <span class="num" data-unit-after="만원">6,000</span></p><!-- 추가 수정 -->
-							</li>
+							<!-- 추가 수정 li 순서 변경 // -->
 							<li class="cash">
 								<p class="txt">Wish House 준비자산</p>
 								<p class="amount"><span class="num" data-unit-after="억">5</span> <span class="num" data-unit-after="만원">6,000</span></p><!-- 추가 수정 -->
 							</li>
-							<li class="save line"> <!-- 추가 수정 -->
+							<!-- 수정:2021-09-24 // -->
+							<!-- 남는 금액 삭제
+							<li class="save line">
 								<p class="txt">남는 금액</p>
+								<p class="amount"><span class="num" data-unit-after="억">5</span> <span class="num" data-unit-after="만원">6,000</span></p>
+							</li>
+							-->
+							<!-- // 수정:2021-09-24 -->
+							<li class="mine">
+								<p class="txt">My House 자산 <span class="sml">(대출금 제외)</span></p> <!-- 추가 수정 -->
 								<p class="amount"><span class="num" data-unit-after="억">5</span> <span class="num" data-unit-after="만원">6,000</span></p><!-- 추가 수정 -->
 							</li>
+							<!-- 수정:2021-09-24 // -->
+							<!-- 남는 금액 삭제
+							<li class="save yellow line">
+								<p class="txt">남는 금액</p>
+								<p class="amount"><span class="num" data-unit-after="억">5</span> <span class="num" data-unit-after="만원">6,000</span></p>
+							</li>							
+							-->
+							<!-- // 수정:2021-09-24 -->
 							<li class="minus type2 line"> <!-- 추가 수정 -->
 								<p class="txt">부족한 금액</p>
 								<p class="amount"><span class="num" data-unit-after="억">5</span> <span class="num" data-unit-after="만원">6,000</span></p><!-- 추가 수정 -->
 							</li>
+							<!-- //추가 수정 li 순서 변경 -->
 							<!-- <li class="loan">
 								<p class="txt">My House 대출</p>
 								<p class="amount"><span class="num" data-unit-after="억">2</span> <span class="num" data-unit-after="만원">4,000</span></p>
@@ -107,14 +120,47 @@
 								<div class="swiper-pagination"></div>
 							</div>
 						</div>
+					</div>					
+					<div class="house-no-gap">
 					</div>
 					<p class="simple-message">
 						세금 및 부대비용(중개보수, 취득세)이 발생할 수 있습니다.
 						<button class="btn-text"><u>세금계산기 바로가기</u></button>
 					</p>
 				</section>
+				<!-- 추가 수정: gap 없음 // -->
+				<section class="kb-sec house-no-gap">
+					<h2 class="is-hidden">준비완료</h2>
+					<div class="complete-msg">
+						<i class="icon-complete_60"></i>
+						<strong class="tit">Wish House 매입을 위한<br>준비가 완료되었어요.</strong>
+					</div>
+					<!-- 수정:2021-09-27 // -->
+					<!-- 문구삭제
+					<p class="simple-message mt48">
+						세금 및 부대비용(중개보수, 취득세)이 발생할 수 있습니다.
+						<button class="btn-text"><u>세금계산기 바로가기</u></button>
+					</p>
+					-->
+				</section>
+				<section class="kb-sec house-no-gap">
+					<h2 class="is-hidden">준비완료</h2>
+					<div class="complete-msg">
+						<i class="icon-complete_60"></i>
+						<strong class="tit">Wish House로<br>이사하실 수 있어요!</strong>
+					</div>
+					<!-- 수정:2021-09-27 // -->
+					<!-- 문구삭제
+					<p class="simple-message mt48">
+						세금 및 부대비용(중개보수, 취득세)이 발생할 수 있습니다.
+						<button class="btn-text"><u>세금계산기 바로가기</u></button>
+					</p>
+					-->
+					<!-- // 수정:2021-09-27 -->
+				</section>
+				<!-- // 추가 수정: gap 없음 -->
 			
-				<div class="sticky-bottom">
+				<div class="sticky-bottom">	
 					<!-- 자금필요 // -->
 					<div class="btn-area">
 						<!-- <button type="button" class="btn-solid gray" data-action="close"><span>준비자산 수정</span></button> -->
@@ -125,17 +171,29 @@
 					<!--
 					<div class="btn-area">
 						<button type="button" class="btn-solid gray" data-action="close"><span>준비자산 수정</span></button>
-						<button type="button" class="btn-solid" data-action="goLiiv"><span>리브부동산에서 매물 확인</span></button>
+						<button type="button" class="btn-solid" data-action="goLiiv"><span>리브부동산 매물 확인</span></button>
 					</div>
 					-->
 					<!-- // 부동산준비자산 등록후 자산초과 -->
 					<!-- 부동산준비자산 등록전 자산초과 // -->
 					<!--
 					<div class="btn-area">
-						<button type="button" class="btn-solid" data-action="goLiiv"><span>리브부동산에서 매물 확인</span></button>
+						<button type="button" class="btn-solid" data-action="goLiiv"><span>리브부동산 매물 확인</span></button>
 					</div>
 					-->
-					<!-- // 부동산준비자산 등록전 자산초과 -->
+					<!-- gap 없음 추가 수정 // -->
+					<!-- 수정:2021-09-27 simple-message 추가 -->
+					<!--
+					<div class="btn-area">	
+						<p class="simple-message">
+							세금 및 부대비용(중개보수, 취득세)이 발생할 수 있습니다.
+							<button class="btn-text"><u>세금계산기 바로가기</u></button>
+						</p>						
+						<button type="button" class="btn-solid gray"><span>준비자산 수정</span></button>
+						<button type="button" class="btn-solid"><span>리브부동산 매물 확인</span></button>
+					</div>
+					-->
+					<!-- // gap 없음 추가 수정 -->
 				</div>
 			</main>
 			<!-- // app-content -->
@@ -194,33 +252,45 @@
 			
 			//start
 			var transitionEnd = 'transitionend webkitTransitionEnd oTransitionEnd transitionend';
+			var wid_wishGap = 0
+			var wid_myCash = 0
+			var wid_myHouse = 0
 
 			$('.my-asset.wish-house-planer .progress-wrap .wish-gap').css({
 					"width":"100%", //wish-gap
 					//"width":"80%", //wish-gap 자산 초과시
-
 				});
-
+			
 			$('.wish-gap').one(transitionEnd, function(){
 				$(this).addClass('is-active');
 				$(this).next().css({
 					"width":"20%",  // wish house 준비자산
 				})
 			});
-
-			$('.my-house').one(transitionEnd, function(){
+			// 수정:2021-09-24
+			// 현금, 내집 순서 변경	
+			$('.my-cash').one(transitionEnd, function(){
 				$(this).addClass('is-active');
 				$(this).next().css({
-					"width":"30%", // wish gap
+					"width":"30%", // my house 내집
 				})
 			});
 
-			$('.my-cash').one(transitionEnd, function(){
+			$('.my-house').one(transitionEnd, function(){
 				$(this).addClass('is-active');
 				// $(this).next().css({
 				// 	"width":"30%", // my house 대출
 				// })
+				wid_wishGap = $('.wish-gap').width()				
+				wid_myCash = $('.my-cash').width()							
+				wid_myHouse = $('.my-house').width()
+
+				var my_sum = wid_myCash + wid_myHouse + 25
+				if(wid_wishGap < my_sum){
+					$('.wish-gap').removeClass('is-active')
+				};	
 			});
+			// 수정:2021-09-24
 
 			//$('.my-loan').one(transitionEnd, function(){
 				//$(this).addClass('is-active'); 

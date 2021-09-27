@@ -474,7 +474,7 @@
 										<!-- <span class="status bad">없음</span> -->
 									</button>
 									<div class="more-content">
-										<!-- 등록한 부동산이 있는 경우 // -->
+										<!-- 등록한 부동산이 있는 경우 // -- >
 										<div class="gbox">
 											<dl>
 												<dt>시세(합계)</dt>
@@ -484,10 +484,10 @@
 										<!-- // 등록한 부동산이 있는 경우 -->
 	
 										<!-- 등록한 부동산이 없는 경우 // -->
-										<!-- <div class="no-data">
+										<div class="no-data">
 											<i class="icon-bang_48_gray"></i>
 											<p>MY House에<br>등록한 부동산이 없습니다.</p>
-										</div> -->
+										</div>
 										<!-- // 등록한 부동산이 없는 경우 -->
 									</div>								
 								</li>
@@ -495,8 +495,8 @@
 									<button type="button">
 										<i class="icon-asset-car"></i>
 										<span class="name">자동차</span>
-										<span class="status good">있음</span>
-										<!-- <span class="status bad">없음</span> -->
+										<!-- <span class="status good">있음</span> -->
+										<span class="status bad">없음</span>
 									</button>
 									<div class="more-content">
 										<!-- 등록한 자동차가 있는 경우 // -->
@@ -522,6 +522,9 @@
 							$("body").on("click", ".my-asset-more button", function() {
 								$(".my-asset-more li.on").removeClass("on");
 								$(this).parent().addClass("on");
+								// 수정:2021-09-27
+								// no-data 케이스 높이 조절을 위해 추가 
+								$(this).parent().parent().height(120 + $(this).parent().find(".more-content").height());
 							});
 						</script>
 					</div>

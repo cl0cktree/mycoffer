@@ -31,16 +31,17 @@
 .bottom-sheet_contents{@include text;flex:1;overflow:hidden;overflow-y:auto;padding-bottom:32px;}
 .bottom-sheet_contents .kb-sec:first-child{padding-top:0;}
 .bottom-sheet .not-today + .bottom-sheet_buttons{margin-top:0;}
-.bottom-sheet_buttons{display:flex;}
-.bottom-sheet_buttons .btn-solid{flex:1;border-radius:0;font-size:20px;font-weight:bold;height:auto;line-height:6rem;}
+.bottom-sheet_buttons{display:flex;flex:0 0 calc(60px + constant(safe-area-inset-bottom) / 2);flex:0 0 calc(60px + env(safe-area-inset-bottom) / 2);}
+.bottom-sheet_buttons .btn-solid{flex:1;}
 .bottom-sheet_buttons .btn-solid + .btn-solid{flex: 0 0 60%}
-.ios.homebar .bottom-sheet_buttons .btn-solid{padding-top:1rem;}
-.ios.homebar .bottom-sheet_buttons .btn-solid > span{line-height:6rem;padding-bottom:1.2rem;}
+// .ios.homebar .bottom-sheet_buttons .btn-solid{padding-top:1rem;}
+// .ios.homebar .bottom-sheet_buttons .btn-solid > span{line-height:6rem;padding-bottom:1.2rem;}
 
 .bottom-sheet_select{overflow:auto;max-height:100%;margin:0 24px;}
 .bottom-sheet_select li button{width:100%;padding:5px 25px 5px 0;text-align:left;font-size:16px;line-height:24px;}
 .bottom-sheet_select li + li{margin-top:6px;}
 .bottom-sheet_select li.is-selected button{background:url(../images/common/checkbox_20_on@2x.png) no-repeat right 0 top 50%;background-size:20px;}
+.bottom-sheet_select li.is-hidden{display:none;}
 .bottom-sheet .tab{flex:0 0 40px;}
 .bottom-sheet .tab + .bottom-sheet_contents{padding-top:32px;}
 .bottom-sheet > .btn-close{right: 16px;top: 15px;}
@@ -93,47 +94,7 @@
 //공통
 .popup[data-layered-name=popupAgreeCollectionUsePersonalInfo] .accordion > dt{padding-top:0;border-top:none;}
 .popup[data-layered-name=popupAgreeCollectionUsePersonalInfo] .accordion > dd{display:block;padding-top:24px;padding-bottom:24px;border-top-color:$kb-ui03}
-// .popup[data-layered-name^=popupEmployeeSearch] .employee-search-msg{@include text($text02);padding-top:28px;padding-bottom:28px;background-color:$kb-ui10;color:$kb-ui03;}
-// .popup[data-layered-name^=popupEmployeeSearch] .employee-search-msg .num{font-size:17px;color:$color-blue;}
-// .popup[data-layered-name^=popupEmployeeSearch] .employee-search-list > .tit,
-// .popup[data-layered-name^=popupEmployeeSearch] .branch-search-list > .tit{display:block;margin-top:48px;font-size:18px;font-weight:bold;}
-// .popup[data-layered-name^=popupEmployeeSearch] .employee-search-list li,
-// .popup[data-layered-name^=popupEmployeeSearch] .branch-search-list li{border-bottom:1px solid $kb-ui09;}
-// .popup[data-layered-name^=popupEmployeeSearch] .employee-search-list li button,
-// .popup[data-layered-name^=popupEmployeeSearch] .branch-search-list li button{display:block;width:100%;padding:20px 0;text-align:left;}
-// .popup[data-layered-name^=popupEmployeeSearch] .employee-search-list li button i,
-// .popup[data-layered-name^=popupEmployeeSearch] .branch-search-list li button i{float:right;}
-// .popup[data-layered-name^=popupEmployeeSearch] .employee-search-list li button span,
-// .popup[data-layered-name^=popupEmployeeSearch] .branch-search-list li button span{font-weight:bold;font-size:18px;}
-// .popup[data-layered-name^=popupEmployeeSearch] .employee-search-list .no-data,
-// .popup[data-layered-name^=popupEmployeeSearch] .branch-search-list .no-data{margin-top:100px;}
-// .popup[data-layered-name^=popupEmployeeSearch] .is-branch-search .employee-search-list,
-// .popup[data-layered-name^=popupEmployeeSearch] .is-branch-search .employee{display:none;}
-// .popup[data-layered-name^=popupEmployeeSearch] .is-employee-search .branch,
-// .popup[data-layered-name^=popupEmployeeSearch] .is-employee-search .branch-search-list{display:none;}
-
-[data-page-name^=employeeSearch] .employee-search-msg{@include text($text02);padding-top:28px;padding-bottom:28px;background-color:$kb-ui10;color:$kb-ui03;}
-[data-page-name^=employeeSearch] .employee-search-msg .num{font-size:17px;color:$color-blue;}
-[data-page-name^=employeeSearch] .employee-search-list > .tit,
-[data-page-name^=employeeSearch] .branch-search-list > .tit{display:block;margin-top:48px; margin-bottom:37px;font-size:18px;font-weight:bold;}
-[data-page-name^=employeeSearch] .employee-search-list li,
-[data-page-name^=employeeSearch] .branch-search-list li{border-bottom:1px solid $kb-ui09;}
-[data-page-name^=employeeSearch] .employee-search-list li button,
-[data-page-name^=employeeSearch] .branch-search-list li button{display:block;width:100%;padding:20px 0;text-align:left;}
-[data-page-name^=employeeSearch] .employee-search-list li button i,
-[data-page-name^=employeeSearch] .branch-search-list li button i{float:right;}
-[data-page-name^=employeeSearch] .employee-search-list li button span,
-[data-page-name^=employeeSearch] .branch-search-list li button span{font-weight:bold;font-size:18px;}
-[data-page-name^=employeeSearch] .employee-search-list .no-data,
-[data-page-name^=employeeSearch] .branch-search-list .no-data{margin-top:100px;}
-
-[data-page-name^=employeeSearch].is-branch-search .employee-search-list,
-[data-page-name^=employeeSearch].is-branch-search .employee{display:none;}
-[data-page-name^=employeeSearch].is-employee-search .branch,
-[data-page-name^=employeeSearch].is-employee-search .branch-search-list{display:none;}
-// .bottom-sheet[data-layered-name=bsCalendar] .bottom-sheet_contents{padding-bottom:36px;}
-
-
+// 직원조회 사용하지 않는 소스 삭제
 .bottom-sheet[data-layered-name=bsOtherLogin] .select-list li i:first-child{margin-right:10px;}
 
 //조회 조건의 상세보기

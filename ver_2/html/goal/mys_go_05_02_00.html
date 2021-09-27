@@ -37,13 +37,13 @@
                         <i><img src="@@webRoot/static/images/_temp/@goal_icon_2.png" alt="잠수부"></i>
                     </div>
                     <div class="align-r">
-                        <button type="button" class="btn-text icon-arrow"><span>챌린지만 미리 만들기</span><i></i></button>
+                        <button type="button" class="btn-text icon-arrow" data-call-layered="bsCreateChallenge1"><span>챌린지만 미리 만들기</span><i></i></button> <!-- 추가 수정 -->
                     </div>           
                 </section>
 
                 <div class="sticky-bottom">
                     <div class="btn-area">
-                        <button type="button" class="btn-solid" data-action="" onclick=""><span>적금 계좌 연결</span></button>
+                        <button type="button" class="btn-solid" data-call-layered="bsCreateChallenge2"><span>적금 계좌 연결</span></button> <!-- 추가 수정 -->
                     </div>
                 </div>
 			</main>
@@ -54,7 +54,10 @@
 
 		<!-- Layer (modal, bottom sheet) // -->
 		<div class="layered">
-            @@include('@@webRoot/html/asset/layered/mys_as_07_00_00_p1.html')
+             <!-- 추가 수정 // -->
+            @@include('@@webRoot/html/goal/layered/mys_go_05_01_00_p1.html')
+            @@include('@@webRoot/html/goal/layered/mys_go_05_01_00_p2.html')
+             <!-- // 추가 수정 -->
 		</div>
 		<!-- // Layer (modal, bottom sheet) -->
 	</div>
@@ -63,7 +66,7 @@
 	@@include('@@webRoot/html/_include/common-js.html')
 	<!-- Add Library (this page only)-->
 	<script src="@@webRoot/static/js/ui.js"></script>
-    <script src="@@webRoot/static/common/lib/swiper.min.js"></script>
+    <!-- <script src="@@webRoot/static/common/lib/swiper.min.js"></script> 추가 수정 -->
 </body>
 
 </html>

@@ -1,10 +1,10 @@
-<!-- [MYS_CO_06_01_01_02] 로그인 > 공동인증서 > 공동인증서 목록 (작성자: 누리어 시스템 변혜선)// -->
+<!-- [MYS_CO_06_01_01_02] 전송요구방법(통합인증) > 기관선택 > 전송요구 항목 설정(가입상품목록 조회 전송요구서) > 통합인증수단 선택 > 공동인증서 (작성자: 누리어 시스템 변혜선, 최선화) // -->
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
-        "title": "Last Depth | 1st Depth"
+        "title": "인증수단선택(공동인증서) | 전송요구"
     })
 </head>
 
@@ -61,14 +61,13 @@
                 </section>
             </main>
             <!-- // app-content -->
-
+        
+        </div><!-- 추가 2021-09-23 -->
         <!-- // app-container -->
     </div>
 
     <div class="layered">
-
         @@include('@@webRoot/html/_layered/bs-other-login.html')
-
     </div>
 
     <!-- Script -->
@@ -82,9 +81,7 @@
                 modalPopup({
                     title: '',
                     message: "마이데이터 서비스 이용을 위한 자산 등록을 취소하시겠습니까?",
-                    type: "confirm",
-                    textOkButton: "확인",
-                    textCancelButton: "취소"
+                    type: "confirm"
                 });
             });
         });

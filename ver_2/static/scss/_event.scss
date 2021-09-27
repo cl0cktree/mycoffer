@@ -1,8 +1,8 @@
 
 //Event Detail Popup
 .popup.promotion .popup_header{text-align:left;}
-.popup.promotion .popup_contents{padding-bottom:24px;}
-.ios.homebar .popup.promotion .popup_contents{padding-bottom:58px;}
+.popup.promotion .popup_contents{padding-bottom:calc(constant(safe-area-inset-bottom) / 2 + 24px);padding-bottom:calc(env(safe-area-inset-bottom) / 2 + 24px);}
+//.ios.homebar .popup.promotion .popup_contents{padding-bottom:58px;}
 
 .kb-sec.event-area{overflow:hidden;width:100%;padding:12px 0 0 0;}
 .event-area{position:relative;height:129.86vw;background:url(../images/event/roulette-bg.png) no-repeat;background-size:100%;}
@@ -46,6 +46,7 @@
 .event-sticker[data-animation=esLeftRight]{animation: esLeftRight .4s .1s forwards;}
 .event-sticker[data-animation=esRightLeft]{animation: esRightLeft .4s .1s forwards;}
 .event-sticker[data-animation=esFadeIn]{animation: esFadeIn .8s .1s forwards;}
+.event-sticker[data-animation=esShake]{animation: esShake .2s .1s 4 forwards;}
 
 @keyframes esBottomUp{
     0%{transform:translateY(calc(var(--vh, 1vh) * 100))}
@@ -67,9 +68,22 @@
     0%{opacity:0;transform:scalc(0)}
     100%{opacity:1;transform:scalc(1)}
 }
+@keyframes esShake{
+     0% { transform: translate(1px, 1px) rotate(0deg); opacity:1}
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); opacity:1}
+}
 
 //Event Floating Banner
-.floating-banner{position:fixed;left:0;right:0;bottom:-16px;z-index:$level90;max-height:95%;padding-top:32px;padding-bottom:32px;border-top-left-radius: 12px;border-top-right-radius: 12px;background-color: $kb-ui11;box-shadow: 0px -6px 8px rgba(0, 0, 0, 0.08);}
+.floating-banner{position:fixed;left:0;right:0;bottom:-16px;z-index:$level90;max-height:95%;padding-top:32px;padding-bottom:calc(constant(safe-area-inset-bottom) / 2 + 32px);padding-bottom:calc(env(safe-area-inset-bottom) / 2 + 32px);border-top-left-radius: 12px;border-top-right-radius: 12px;background-color: $kb-ui11;box-shadow: 0px -6px 8px rgba(0, 0, 0, 0.08);}
 .floating-banner .kb-sec:first-child{padding-top:0;}
 .floating-banner .not-today{margin-bottom:20px;}
 .floating-banner .floating-banner_contents,
@@ -86,8 +100,7 @@
 	right: 24px;top: 32px;
 }
 
-.ios.homebar .floating-banner{padding-bottom:58px;}
-
+//.ios.homebar .floating-banner{padding-bottom:58px;}
 
 .floating-banner[data-animation^=fb]{transition:transform .3s cubic-bezier(0.165, 0.84, 0.44, 1), opacity .3s cubic-bezier(0.165, 0.84, 0.44, 1);}
 .floating-banner[data-animation=fbBottomUp]{transform:translateY(110vh);}
@@ -102,9 +115,8 @@
 .floating-banner[data-type="1/4"]{height:218px;}
 .floating-banner[data-type="1/2"]{height:50%;}
 .floating-banner[data-type="1/1"]{height:100%;}
-
 .floating-banner[data-type="1/2"] .fb-img,
-.floating-banner[data-type="1/1"] .fb-img{margin-bottom:20px;}
+.floating-banner[data-type="1/1"] .fb-img{margin-bottom:10px;}
 
 //Event Roullete
 .event-roullete{height:134.66vw;background-image:url(../images/event/roulette-bg.png);}

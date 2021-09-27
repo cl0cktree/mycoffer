@@ -70,8 +70,9 @@
 
 .pdf-viewer{overflow:auto;display:flex;flex-flow:column;height:calc(var(--vh, 1vh) * 100 - 48px);padding:0;background-color:$kb-ui08;}
 .pdf-viewer .pdf-area{flex:1;}
-.pdf-viewer .sticky-bottom.sticky-bottom:not(.popup_buttons){padding-top:0;height:52px;}
-.ios.homebar .pdf-viewer > section + .sticky-bottom.sticky-bottom:not(.popup_buttons){height:86px;}
+.pdf-viewer .sticky-bottom:not(.popup_buttons){padding-top:0;}
+//.ios.homebar .pdf-viewer > section + .sticky-bottom:not(.popup_buttons){height:96px;}
+//padding-bottom:calc(constant(safe-area-inset-bottom) / 2 + 20px);padding-bottom:calc(env(safe-area-inset-bottom) / 2 + 20px);
 
 //404 등 에러페이지
 .kb-sec.error-page{padding-top:calc(var(--vh, 1vh) * 17.11);text-align:center;}

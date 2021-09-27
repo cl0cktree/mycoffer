@@ -28,29 +28,28 @@
                     <!-- 동의하기(전체동의) // -->
                     <div class="agreement-to-terms">
                         <div class="header">
-                            <span class="form-checkbox"><input type="checkbox" id="agreeAllCheck"><label for="agreeAllCheck">전체동의</label></span>
+                            <span class="form-checkbox"><input type="checkbox" id="agreeAllCheck"><label for="agreeAllCheck">전체 동의</label></span><!-- 수정:2021-09-24 -->
                         </div>
                         <div class="checkbox-group st_list">
-                            <span class="form-checkbox_20"><input type="checkbox" id="agreeCheck1"><label for="agreeCheck1">고유식별정보 처리 동의[필수]</label><a href="@@webRoot/html/terms/agree-unique-id-info.html" class="link"><span class="link-arrow">바로가기</span></a></span> <!-- 2021-06-10 수정 -->
-                            <span class="form-checkbox_20"><input type="checkbox" id="agreeCheck2"><label for="agreeCheck2">통신사 이용약관 동의[필수]</label><a href="@@webRoot/html/terms/agree-terms-of-use-of-telecommunications-company.html" class="link"><span class="link-arrow">바로가기</span></a></span> <!-- 2021-06-10 수정 -->
-                            <span class="form-checkbox_20"><input type="checkbox" id="agreeCheck3"><label for="agreeCheck3">휴대폰본인확인 개인정보 수집이용동의[필수]</label><a href="@@webRoot/html/terms/agree-mobile-id-personal-info-collection.html" class="link"><span class="link-arrow">바로가기</span></a></span> <!-- 2021-06-10 수정 -->
-                            <!-- <span class="form-checkbox_20"><input type="checkbox" id="agreeCheck4"><label for="agreeCheck4">[필수]휴대폰본인확인 서비스 이용약관 동의</label><button type="button" class="link" data-call-layered="popupAgreeMobileIDPersonalInfoService"><span>전문보기</span></button></span> -->
+                            <span class="form-checkbox_20"><input type="checkbox" id="agreeCheck1"><label for="agreeCheck1">고유식별정보 처리 동의[필수]</label><a href="@@webRoot/html/terms/agree-unique-id-info.html" class="link"><span class="link-arrow">전문보기</span></a></span>
+                            <span class="form-checkbox_20"><input type="checkbox" id="agreeCheck2"><label for="agreeCheck2">통신사 이용약관 동의[필수]</label><a href="@@webRoot/html/terms/agree-terms-of-use-of-telecommunications-company.html" class="link"><span class="link-arrow">전문보기</span></a></span>
+                            <span class="form-checkbox_20"><input type="checkbox" id="agreeCheck3"><label for="agreeCheck3">휴대폰본인확인 개인정보 수집이용동의[필수]</label><a href="@@webRoot/html/terms/agree-mobile-id-personal-info-collection.html" class="link"><span class="link-arrow">전문보기</span></a></span>
                             <span class="form-checkbox_20">
                                 <input type="checkbox" id="agreeCheck4"><label for="agreeCheck4">휴대폰본인확인 서비스 이용약관 동의[필수]</label>                                
-                                <a href="@@webRoot/html/terms/agree-mobile-id-personal-info-service.html" class="link" role="button"><span class="link-arrow">바로가기</span></a>
+                                <a href="@@webRoot/html/terms/agree-mobile-id-personal-info-service.html" class="link" role="button"><span class="link-arrow">전문보기</span></a><!-- 수정:2021-09-24 -->
                             </span>
                         </div>
                     </div>
                     <!-- // 동의하기(전체동의) -->                    
-                    <div class="kb-form" data-status="">                        
+                    <div class="kb-form" data-status="error">                        
                         <label for="certificationName">이름</label>
                         <div class="kb-form_inner form-text">
                             <input type="text" id="certificationName" value="" placeholder="이름">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
-                        <em class="validation"></em>
+                        <em class="validation">이름을 입력해 주세요</em><!-- 수정:2021-09-24 -->
                     </div>
-                    <div class="kb-form_multi kb-form_citizen" data-status="has-error">
+                    <div class="kb-form_multi kb-form_citizen" data-status=""><!-- 수정:2021-09-24 -->
                         <strong class="tit">주민등록번호</strong>
                         <div class="kb-form" data-status="">
                             <label for="citizenCode">주민등록번호 앞자리</label>
@@ -81,7 +80,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="kb-form" data-status="">
+                        <div class="kb-form" data-status="error">
                             <div class="kb-form_inner form-select">
                                 <button type="button" class="selected-option">010</button>
                                 <select name="" id="formMultiPhone02" title="휴대폰 앞자리 번호">
@@ -95,7 +94,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="kb-form" data-status="">
+                        <div class="kb-form" data-status="error">
                             <label for="formMultiPhone03">휴대폰번호</label>
                             <div class="kb-form_inner form-text">
                                 <input type="text" class="align-l" inputmode="numeric" maxlength="8" id="formMultiPhone03" placeholder="" title="휴대폰 뒷자리 번호">
@@ -106,32 +105,36 @@
                         <em class="validation">휴대폰 앞자리를 선택하세요.</em>
                         <em class="validation">휴대폰 뒷자리를 선택하세요.</em>
                     </div>                
-                    <!--ios용-->
-                    <div class="mt32"><button type="button" class="btn-line" data-action="sendCertificationNumber"><span>휴대폰 명의확인</span></button></div><!-- 수정 : 2021.06.24 -->
+                    <!-- ios용 // -->
+                    <div class="mt32"><button type="button" class="btn-line" data-action="sendCertificationNumber"><span>휴대폰 명의확인</span></button></div>
+                    <!-- 수정:2021-09-24 // -->
                     <ul class="authentication-number-notification">
-                        <li><p class="info-msg">입력하신 정보로 통신사와 휴대폰 명의를 확인합니다.</p></li>
-                        <li><p class="info-msg">[휴대폰 명의확인]을 눌러  SMS 인증번호를 <br>입력해주세요.</p></li>
+                        <li><p class="info-msg">입력하신 정보로 통신사의 휴대폰 명의를 확인합니다.</p></li>
+                        <li><p class="info-msg">[휴대폰 명의확인]을 눌러 인증을 위한 문자메시지를 전송해주세요.</p></li><!-- 수정(br 태그 삭제) 2021-09-16 -->
                     </ul>
-                    <!--ios용-->  
-                    <!--android용-->          
+                    <!-- // 수정:2021-09-24 -->
+                    <!-- // ios용 -->  
+                    <!-- android용 // -->          
                     <div class="mt32"><button type="button" class="btn-line" data-action="sendCertificationNumber"><span>인증번호 요청</span></button></div>
-                    <!--android용 재발송버튼-->
-                    <div class="mt32"><button type="button" class="btn-line" data-action="sendCertificationNumber"><span>인증번호 재발송</span></button></div>
-                    <!--android용 재발송버튼-->
+                    
+                    <div class="mt32"><button type="button" class="btn-line" data-action="sendCertificationNumber"><span>인증번호 재발송</span></button></div><!-- android용_재발송버튼 -->
+
                     <ul class="authentication-number-notification">
-                        <li><p class="info-msg">입력하신 휴대폰번호로 SMS 인증번호 전송합니다.</p></li>
-                        <li><p class="info-msg">[인증번호 요청]을 눌러  SMS 인증번호를 <br>입력해주세요.</p></li>
-                    </ul>
-                    <!--android용-->
+                        <li><p class="info-msg">입력하신 휴대폰번호로 SMS 인증번호를 전송합니다.</p></li><!-- 수정:2021-09-24 -->
+                        <li><p class="info-msg">[인증번호 요청]을 눌러 SMS 인증번호를 입력해주세요.</p></li>
+                    </ul><!-- 수정(br 태그 삭제) 2021-09-16 -->
+                    <!-- // android용 --> 
                 </section>
                 <!-- 인증번호 발송 후 // -->
                 <section class="kb-sec mt20 js-sended-number" style="display:none;">
                     <div class="kb-form" data-status="">
-                        <label for="certificationNumber">인증번호</label>
+                        <!-- 수정:2021-09-24 // -->
+                        <label for="kbFormCertificationNumber">인증번호</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" id="certificationNumber" value="" inputmode="numeric" placeholder="인증번호">
+                            <input class="align-l" type="text" inputmode="numeric" id="kbFormCertificationNumber" maxlength="6" value="" placeholder="인증번호">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
+                        <!-- // 수정:2021-09-24 -->
 						<div class="time-limit">
                             <div class="timer">
                                 <i class="icon-clock"></i>
@@ -149,7 +152,7 @@
                 <!-- // 인증번호 발송 후 -->
                 <div class="sticky-bottom">
                     <div class="btn-area">
-                        <button class="btn-solid" onclick="modalDemo1()"><span>확인</span></button>
+                        <button class="btn-solid""><span>확인</span></button><!-- 수정:2021-09-24 -->
                     </div>
                 </div>
             </main>
@@ -170,18 +173,28 @@
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
 	<script>
-        function modalDemo1() {
-            modalPopup({
-                title: "고객님 죄송합니다",
-                message: "본인인증에 실패하였습니다. <br>· 대표전화<br> 1588-9999, 1599-9999, 1644-9999"
+        $(document).ready(function(){
+            $('button[data-action=sendCertificationNumber]').on('click',function(){
+                var top = $(this).offset().top;
+                $('.js-sended-number').show();
+                $('html,body').stop().animate({'scrollTop': top}, 10);
             });
-        }
-    </script>
-    <script>
-        $('button[data-action=sendCertificationNumber]').on('click',function(){
-            var top = $(this).offset().top;
-            $('.js-sended-number').removeAttr('style');
-            $('html,body').stop().animate({'scrollTop': top}, 10);
+
+            // 기획확인용
+            $('.time-limit .help button').on('click', function(){
+                modalPopup({
+                    title: "고객님 죄송합니다",
+                    message: "1600-1522 번호가 스팸으로 등록되면, 인증번호를 받을 수 없습니다. 스팸등록을 해제 후 다시 시도해주세요."
+                });
+            });
+			
+			// 수정 2021-09-24
+            $('.sticky-bottom button').on('click', function(){
+                modalPopup({
+                    title: "고객님 죄송합니다",
+                    message: "본인인증에 실패하였습니다. <br>· 대표전화<br> 1588-9999, 1599-9999, 1644-9999"
+                });
+            });
         });
     </script>
 

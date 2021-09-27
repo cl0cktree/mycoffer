@@ -1,22 +1,29 @@
+<!-- [MYS_CO_04_01_05] 전송요구방법(통합인증) > 기관선택 > 전송요구 항목 설정(가입상품목록 조회 전송요구서) > 통합인증수단 선택 > 인증완료 > 자산 연동시 로딩 페이지 (작성자: 누리어 시스템 변혜선, 최선화) // -->
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
-        "title": "자산 연동 | 약관동의"
+        "title": "자산 연동시 로딩 페이지 | 전송요구"
     })
 </head>
 
 <body>
     @@include('@@webRoot/html/_include/app-a11y.html')
     <div class="app">
+        <!-- 수정:2021-09-24 // -->
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'<span class="is-hidden">전송요구</span>',
+            'type':'title'
+        })
+        <!-- // 수정:2021-09-24 -->
 
         <!-- app-container //-->
         <div class="app-container">
 
             <!-- app-content // -->
             <main class="app-content">
-                <h1 class="is-hidden">전송요구</h1>
+                <!-- <h1 class="is-hidden">전송요구</h1> --><!-- 수정:2021-09-24 -->
                 <section class="kb-sec asset-sync">
                     <div class="character-box">
                         <img src="@@webRoot/static/images/common/data_loading.png" alt="">
@@ -28,7 +35,7 @@
                         <li><span class="form-checkbox"><input type="checkbox" id="AssetSync01" checked><label for="AssetSync01">우체국</label></span></li>
                         <li><span class="form-checkbox"><input type="checkbox" id="AssetSync02" checked><label for="AssetSync02">IBK기업은행</label></span></li>
                         <li><span class="form-checkbox"><input type="checkbox" id="AssetSync03" checked><label for="AssetSync03">NH농협은행</label></span></li>
-                        <li><span class="form-checkbox"><input type="checkbox" id="AssetSync03" checked><label for="AssetSync03">SC제일은행</label></span></li>
+                        <li><span class="form-checkbox"><input type="checkbox" id="AssetSync04" checked><label for="AssetSync04">SC제일은행</label></span></li><!-- 수정:2021-09-24 -->
                     </ul>
                 </section>
             </main>

@@ -1,12 +1,10 @@
-
-<!-- [MYS_CO_05_02_02] 권유직원 선택 (작성자: 누리어 시스템 이진우)// -->
-
+<!-- [MYS_CO_05_02_02_02] 약관동의 > 가입완료 > 기관선택 > 전송요구 항목 설정 > 공동인증서 선택 > 인증서 비밀번호 입력 > 자산 선택  > 인증서 비밀번호 입력 > 완료 > 권유직원 검색 (작성자: 누리어 시스템 변혜선, 최선화) // -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-@@include('@@webRoot/html/_include/app-head.html',{
-"title": "Last Depth | 1st Depth"
-})
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "권유직원 검색_직원검색 | 전송요구"
+    })
 </head>
 <body>
     @@include('@@webRoot/html/_include/app-a11y.html')
@@ -22,20 +20,18 @@
         <div class="app-container">
 
             <!-- app-content // -->
-            <main class="app-content is-employee-search" data-page-name="employeeSearch02">
+            <main class="app-content employee-search"><!-- 수정 2021-09-23 -->
 
                 <section class="kb-sec full">
+                    <!-- 수정 2021-09-23 // -->
                     <div class="employee-search-msg employee-name">
-                        <span class="num">"김민국"</span>직원명 검색 결과입니다.<br>
+                        <span class="num">김민국</span>직원명 검색 결과입니다.
                         <p>해당 직원명을 선택해 주세요 </p>
                     </div>
-                    <div class="employee-search-msg employee-no">
-                        <span class="num">"12345"</span>직원번호 검색 결과입니다.<br>
-                        <p>해당 직원명을 선택해 주세요 </p>
-                    </div>
+                    <!-- // 수정 2021-09-23 -->
                 </section>
         
-                <!-- 직원 선택 //-->
+                <!-- 직원 선택(직원이름) // -->
                 <section class="kb-sec employee-search-list">
                     <strong class="tit">직원 선택</strong>
                     <ul>
@@ -48,7 +44,7 @@
                         <p>검색 결과가 없습니다.</p>
                     </div>
                 </section>          
-                <!-- // 직원 선택 -->
+                <!-- // 직원 선택(직원이름) -->
 
             </main>
             <!-- // app-content -->

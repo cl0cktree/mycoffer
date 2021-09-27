@@ -1,9 +1,9 @@
-<!-- [MYS_CO_06_01_02_01] 전송요구방법 > 통합인증 > 기관 선택 (작성자: 누리어 시스템 변혜선)// -->
+<!-- [MYS_CO_06_01_02_01] 전송요구방법 선택(개별인증) > 기관 선택 (작성자: 누리어 시스템 변혜선, 최선화) // -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
-        "title": "Last Depth | 1st Depth"
+        "title": "개별인증 기관 선택 | 전송요구"
     })
 </head>
 <body>
@@ -24,15 +24,15 @@
                             <span class="current">2</span>                        
                             <span class="total">3</span>
                         </div>
-                        <h2 class="h1">기관선택</h2>
+                        <h2 class="h1">기관 선택</h2><!-- 수정:2021-09-24 -->
                     </div>
                     <p class="page-step-desc">연결할 기관을 선택해주세요.</p>
                 </div>                 
                 <section class="kb-sec agency-search">                    
-                    <p><a href="/html/common/mys_co_06_01_01_09.html" class="btn-text icon-arrow" role="button"><span>기관검색</span><i></i></a></p>                  
+                    <p><a href="@@webRoot/html/common/mys_co_06_01_01_09.html" class="btn-text icon-arrow" role="button"><span>기관검색</span><i></i></a></p>                  
                 </section>                
                 <section class="kb-sec mt48">
-                    <strong class="h4">추천기관</strong>                    
+                    <strong class="h4">추천 기관</strong><!-- 수정:2021-09-24 -->
                     <dl class="accordion js-checkbox-selector mt20">
                         <dt class="is-active">
                             <strong>전체</strong>
@@ -44,7 +44,7 @@
                                     <span class="form-radio_icon">
                                         <input type="radio" id="org_option01" name="radioSample" data-call-layered="select-engineering-industry">
                                         <label for="org_option01">
-                                            <span class="img-resize_32"><img src="@@webRoot/static/images/ci/C1AADA0000.png" alt=""></span><!-- 수정 : 2021.06.25 -->
+                                            <span class="img-resize_32"><img src="@@webRoot/static/images/ci/C1AADA0000.png" alt=""></span>
                                             <strong>국민카드</strong>
                                         </label>
                                     </span>
@@ -53,7 +53,7 @@
                                     <span class="form-radio_icon">
                                         <input type="radio" id="org_option02" name="radioSample" data-call-layered="select-engineering-industry">
                                         <label for="org_option02">
-                                            <span class="img-resize_32"><img src="@@webRoot/static/images/ci/A1AAER0000.png" alt=""></span><!-- 수정 : 2021.06.25 -->
+                                            <span class="img-resize_32"><img src="@@webRoot/static/images/ci/A1AAER0000.png" alt=""></span>
                                             <strong>신한카드</strong>
                                         </label>
                                     </span>
@@ -62,7 +62,7 @@
                                     <span class="form-radio_icon">
                                         <input type="radio" id="org_option03" name="radioSample" data-call-layered="select-engineering-industry">
                                         <label for="org_option03">
-                                            <span class="img-resize_32"><img src="@@webRoot/static/images/ci/C1AAEY0000.png" alt=""></span><!-- 수정 : 2021.06.25 -->
+                                            <span class="img-resize_32"><img src="@@webRoot/static/images/ci/C1AAEY0000.png" alt=""></span>
                                             <strong>삼성카드</strong>
                                         </label>
                                     </span>
@@ -71,7 +71,7 @@
                                     <span class="form-radio_icon">
                                         <input type="radio" id="org_option04" name="radioSample" data-call-layered="select-engineering-industry">
                                         <label for="org_option04">
-                                            <span class="img-resize_32"><img src="@@webRoot/static/images/ci/D1AAFO0000.png" alt=""></span><!-- 수정 : 2021.06.25 -->
+                                            <span class="img-resize_32"><img src="@@webRoot/static/images/ci/D1AAFO0000.png" alt=""></span>
                                             <strong>현대카드</strong>
                                         </label>
                                     </span>
@@ -80,7 +80,7 @@
                                     <span class="form-radio_icon">
                                         <input type="radio" id="org_option05" name="radioSample" data-call-layered="select-engineering-industry">
                                         <label for="org_option05">
-                                            <span class="img-resize_32"><img src="@@webRoot/static/images/ci/D1AADO0000.png" alt=""></span><!-- 수정 : 2021.06.25 -->
+                                            <span class="img-resize_32"><img src="@@webRoot/static/images/ci/D1AADO0000.png" alt=""></span>
                                             <strong>롯데카드</strong>
                                         </label>
                                     </span>
@@ -89,7 +89,7 @@
                                     <span class="form-radio_icon">
                                         <input type="radio" id="org_option06" name="radioSample" data-call-layered="select-engineering-industry">
                                         <label for="org_option06">
-                                            <span class="img-resize_32"><img src="@@webRoot/static/images/ci/D1AABJ0000.png" alt=""></span><!-- 수정 : 2021.06.25 -->
+                                            <span class="img-resize_32"><img src="@@webRoot/static/images/ci/D1AABJ0000.png" alt=""></span>
                                             <strong>하나카드</strong>
                                         </label>
                                     </span>
@@ -109,7 +109,7 @@
                             <ul class="radio-group st-list">
                                 <li><span class="form-checkbox_20"><input type="radio" id="org_option08" name="org_option"><label for="org_option08">우리은행</label></span></li>
                                 <li><span class="form-checkbox_20"><input type="radio" id="org_option09" name="org_option"><label for="org_option09">신한은행</label></span></li>
-                                <li><span class="form-checkbox_20"><input type="radio" id="org_option10" name="org_option" disabled><label for="org_option10">NH농협은행</label></span><span class="status">연결 중</span><!-- 수정 : 2021.06.25 --></li>
+                                <li><span class="form-checkbox_20"><input type="radio" id="org_option10" name="org_option" disabled><label for="org_option10">NH농협은행</label></span><span class="status">연결 중</span></li>
                             </ul>
                         </dd>
                         <dt>
@@ -197,7 +197,7 @@
         <!-- // app-container -->
         <!-- Layer (modal, bottom sheet) // -->
         <div class="layered">
-            @@include('@@webRoot/html/common/layered/mys_co_06_01_02_01_p1.html')
+            @@include('@@webRoot/html/common/layered/mys_co_06_01_02_01_p1.html')<!-- 개별인증만 사용 --> 
         </div>
         <!-- // Layer (modal, bottom sheet) -->
     </div>
@@ -212,9 +212,7 @@
                 modalPopup({
                     title: '',
                     message: "마이데이터 서비스 이용을 위한 자산 등록을 취소하시겠습니까?",
-                    type: "confirm",
-                    textOkButton: "확인",
-                    textCancelButton: "취소"
+                    type: "confirm"
                 });
             });
         });
@@ -222,4 +220,3 @@
 </body>
 
 </html>
-<!-- // [MYS_CO_06_01_01] 전송요구방법 > 통합인증 > 기관 선택 -->

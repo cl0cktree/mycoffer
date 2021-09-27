@@ -3,6 +3,7 @@
 .img-box img{width:100%}
 .content-tit{display:block;font-size:16px}
 .my-fun-data .chart-area + .legend-unit{margin-top:2rem}
+.bottom-sheet_buttons a[type="button"]{outline:none} // bottom-sheet 하단 버튼 outline 제거
 // top summary area
 .my-fun-data .summary-area{padding-top:22px;padding-bottom:24px;background-color:#faf6f0}
 .my-fun-data .summary-area .summary-tit{display:flex;align-items:flex-start;justify-content:space-between}
@@ -35,7 +36,7 @@
 .storytelling-wrap .storytelling-content{display:flex;flex-direction:column;justify-content:space-between;text-align:center}
 .storytelling-wrap .storytelling-content span.h2{font-weight:normal}
 .storytelling-wrap .storytelling-content span.h2 strong{font-weight:bold}
-.storytelling-wrap .storytelling-content .item-box{position:relative;width:271px;height:271px;margin:40px auto;overflow:hidden}
+.storytelling-wrap .storytelling-content .item-box{position:relative;width:271px;height:271px;margin:2.4rem auto 4rem;overflow:hidden} // margin 수정 (4rem auto > 2.4rem auto 4rem)
 .storytelling-wrap .storytelling-content .item-box::before{content:'';display:block;width:100%;height:100%;border-radius:50%;background-color:$kb-ui10}
 .storytelling-wrap .storytelling-content p{margin-top:20px;font-size:16px;line-height:23px}
 .storytelling-wrap .storytelling-content p strong{display:block;font-weight:bold}
@@ -56,7 +57,10 @@
 .myfundata-menu-bs .kb-sec .img-box{width:15.9rem;height:auto}
 .myfundata-menu-bs .kb-sec .img-box img{width:100%;height:auto}
 //스토리텔링
-.my-fun-data .swiper-container{padding-bottom:5rem}
+.my-fun-data .swiper-container{padding-bottom:3rem} // 하단 여백 수정 (5rem > 3rem)
+@media screen and (min-width: 414px){  // 하단 여백 수정 (화면이 클 때)
+    .my-fun-data .swiper-container{padding-bottom:5rem}
+}
 
 /* [MYS_SP_02_00_02] 부자스토리텔링 */
 .rich-storytelling .swiper-container{padding-bottom:4rem}
@@ -102,15 +106,17 @@
 .portfolio-report.swiper-slide-active .coins img{opacity:1;transform:translateY(0);transition:all 0.6s ease-out 0.5s}
 
 /* [MYS_SP_02_00_03] 부자스토리텔링 시뮬레이션 */
-.rich-storytelling-simulation .simulate-list .tit-box{margin-bottom:28px;text-align:center}
-.rich-storytelling-simulation .simulate-list .tit-box strong{font-weight:bold}
+// 디자인 수정 반영
+.rich-storytelling-simulation .simulate-list .tit-box{margin-bottom:4.8rem;text-align:center;font-weight:normal}
+.rich-storytelling-simulation .simulate-list .tit-box .num{font-weight:normal}
+.rich-storytelling-simulation .simulate-list .tit-box .num::after{font-size:3rem}
 .rich-storytelling-simulation .simulate-list .tit-box > strong{display:block}
-.rich-storytelling-simulation .simulate-list .simulate-amount{margin-top:10px}
-.rich-storytelling-simulation .simulate-list .simulate-amount strong{display:inline-block;padding-bottom:5px;font-size:27px;line-height:1;border-bottom:2px solid $kb-ui09}
-.rich-storytelling-simulation .simulate-list .simulate-amount .num{margin-right:5px;font-size:30px;font-weight:bold;color:$color-blue}
-.rich-storytelling-simulation .simulate-list ul{display:grid;grid-template-columns:1fr 1fr;column-gap:0.8rem}
+.rich-storytelling-simulation .simulate-list .simulate-amount{margin-top:2rem;padding:2.4rem 0;line-height:1;border-top:1px solid $kb-ui09;border-bottom:1px solid $kb-ui09}
+.rich-storytelling-simulation .simulate-list .simulate-amount .num{font-size:30px;font-weight:bold;color:$color-blue;line-height:1} 
+.rich-storytelling-simulation .simulate-list .simulate-amount .num::after{margin-left:0.8rem;color:$kb-ui02;font-weight:bold}
+.rich-storytelling-simulation .simulate-list ul{display:grid;grid-template-columns:1fr 1fr;column-gap:1.9rem}
 .rich-storytelling-simulation .simulate-list li{margin-bottom:4rem}
-.rich-storytelling-simulation .simulate-list .info-box{position:relative;padding:2rem 0;text-align:center;overflow:hidden;border:1px solid $kb-ui08;border-radius:0.8rem}
+.rich-storytelling-simulation .simulate-list .info-box{position:relative;padding:2.6rem 0 2.8rem;text-align:center;overflow:hidden;background-color:$kb-ui10;border-radius:0.8rem}
 .rich-storytelling-simulation .simulate-list .info-box .img-icon{display:inline-block;width:48px;height:48px;margin-top:10px}
 .rich-storytelling-simulation .simulate-list .info-box + .list-name{margin-top:24px}
 .rich-storytelling-simulation .simulate-list .list-name{text-align:center}
@@ -118,10 +124,10 @@
 .rich-storytelling-simulation .simulate-list .list-name strong{font-size:18px;color:$kb-ui02;font-weight:bold}
 .rich-storytelling-simulation .simulate-list .info-box + .kb-form{margin-top:12px}
 .rich-storytelling-simulation .simulate-list .kb-form.select-bs{text-align:center}
-.rich-storytelling-simulation .simulate-list .kb-form.select-bs .kb-form_inner{max-width:75px;}
-.rich-storytelling-simulation .simulate-list .kb-form.select-bs .kb-form_inner input[role="button"]{display:inline-block;min-width:56px;max-width:min-content}
+.rich-storytelling-simulation .simulate-list .kb-form.select-bs .kb-form_inner input[role="button"]{text-align:center}
 
 /* [MYS_SP_02_00_04] 부자스토리탤링 시뷸레이션 완료 */
+.rich-simulation-complete .summary-desc{margin-top:1.4rem} // 여백 조정
 .rich-simulation-complete .summary-desc .summary-img{height:11rem}
 .rich-simulation-complete .rich-finance-compare{margin-top:32px}
 .rich-simulation-complete .rich-finance-compare > p{line-height:2.3rem}
@@ -129,11 +135,12 @@
 .rich-simulation-complete .rich-finance-compare .accordion dt{border:0}
 .rich-simulation-complete .rich-finance-compare .accordion dt{font-weight:bold;border-bottom:2px solid $kb-ui04}
 .rich-simulation-complete .rich-finance-compare .accordion dd{padding-top:0}
+.rich-simulation-complete .rich-finance-compare .accordion > dt.is-active + dd{padding-bottom:1.7rem;border-bottom:1px solid $kb-ui09}//디자인 수정 반영
 .more-view-box .btn-more-view.btn-line{padding:0}
 .more-view-box .btn-more-view i{vertical-align:middle}
-.comparison-list li+li{margin-top:25px}
+.comparison-list li+li{margin-top:3rem} // 간격 수정(25px > 3rem)
 .comparison-list .data-tit{display:block;width:100%;margin-bottom:16px}
-.comparison-list .data-tit [class*="icon-"]{margin-right:0.9rem}
+.comparison-list .data-tit [class*="icon-"]{margin-right:0.9rem;vertical-align:middle} // 정렬 수정 (vertical-align:middle 추가)
 .comparison-list .img{width:100px;height:90px;;margin-right:12px;background-color:$kb-ui09}
 .comparison-list .data{flex:1;display:flex;align-items:center;text-align:center}
 .comparison-list .data p{position:relative;flex:1;border:1px solid $kb-ui08;border-radius:8px;overflow:hidden}
@@ -143,6 +150,7 @@
 .comparison-list .data .amount+.amount{padding-top:0}
 .comparison-list .data .num{font-size:15px;font-weight:bold}
 .comparison-list .data .percent .num{font-size:17px}
+.rich-comparison-graphs .legend-unit ul li:nth-child(4n+1){width:auto;min-width:15%}// 범례 width 수정
 
 /* [MYS_SP_02_01_02]  나의 소비유형 > 소비유형선택 */
 .my-expense-type .summary-area{background:none}

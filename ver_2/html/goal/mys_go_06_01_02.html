@@ -214,7 +214,7 @@
                         color: "#c7ccd1",
                         width: 1,
                         value: 2500,
-                        zIndex: 50,
+                        // zIndex: 50, // 추가 수정
                         dashStyle: 'dot'
                     }],
                 },
@@ -224,15 +224,16 @@
                         return [''].concat(
                             this.points ?
                                 this.points.map(function (point) {
-                                    return gfn_comma3Digit(point.y) + ' 원';
+                                    return '<span style="font-size:1.5rem;font-family:Roboto">' + gfn_comma3Digit(point.y) + '</span>' + ' 원'; // 추가 수정
                                 }) : []
                         );
                     },
-                    padding: 4,
+                    padding: 8, // 추가 수정
                     shadow: true,
                     borderRadius: 5,
                     verticalAlign: 'top',
                     borderColor: '#fff',
+                    backgroundColor:'#fff', // 추가 수정
                     style: {
                         fontSize: '1.4rem',
                         fontFamily: "KBFGText",

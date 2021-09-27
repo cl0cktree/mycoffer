@@ -17,8 +17,8 @@
 .app-content[class*=login-certification] .kb-mobile-certification-msg p strong{font-weight:bold;}
 .app-content[class*=login-certification] .kb-mobile-certification-msg + ul{margin-bottom:24px;}
 .app-content[class*=login-certification] .starbank-automove{margin-top:32px;margin-bottom:72px; text-align: center;}
-.app-content[class*=login-certification] .other-login .btn-text span{@include text($size:$text03,$weight:bold); }
-.app-content[class*=login-certification] .other-login .btn-text i{@include iconBullet($direction: 'up', $width: 13px, $thick: 2px, $color: #52565d);top:0px;margin-left:10px;}
+
+
 .app-content[class*=login-certification] .certification-issued{margin-top:32px;text-align:center;}
 .certification-issued button{color:$kb-ui03; font-size: 14px;;}
 .certification-issued button:first-child::after{content: "|"; color:$kb-ui08; padding: 0 13px;}
@@ -89,16 +89,17 @@
 .agree-term .employee-search-msg strong{font-weight:bold;}
 .agree-term .employee-search-msg .btn-text{float:right;margin-top:18px;}
 .agree-term .employee-search-msg .btn-text i{margin-top:0.75rem;}
+.agree-term .agreement-service-choice label{font-weight:bold;}// 전송요구 약관 전체동의 폰트 볼드
 .kb-sec.asset-sync{padding-top:12vh;text-align:center;}
 .asset-sync .character-box{width:134px;height:134px;margin:0 auto;}
 .asset-sync .character-box img{width:100%;height:100%;}
 .asset-sync .character-box + p{@include text($size:$text01);margin-top:16px; color:$kb-ui03;}
 .asset-sync .loader{margin-top:40px;}
-.asset-sync02{position:absolute;bottom:24px;left:0;width:100%;}
+.asset-sync02{position:absolute;bottom:calc(constant(safe-area-inset-bottom) / 2 + 24px);bottom:calc(env(safe-area-inset-bottom) / 2 + 24px);left:0;width:100%;}
 .asset-sync02 .checkbox-group{overflow:auto;padding-top:28px;padding-bottom:28px;border-top:1px solid $kb-ui03;border-bottom:1px solid $kb-ui09;min-height:80px;max-height:206px}
 .asset-sync02 .checkbox-group .form-checkbox{display:block;}
 .asset-sync02 .checkbox-group label{display:block;color:$kb-ui04;text-align:left;}
-.ios.homebar .asset-sync02{bottom:58px;}
+// .ios.homebar .asset-sync02{bottom:58px;}
 
 //전송요구스탭서브문구
 .page-step + .transmission-request{margin-top:44px;}
@@ -109,6 +110,7 @@
 .transmission-request hr{height:10px; border:none; background-color: $kb-ui10; margin:0 -2.4rem 50px -2.4rem;}
 .transmission-request .agreement-to-terms{border-bottom: none;}
 .transmission-request .agreement-to-terms .st_list{border-bottom:1px solid $kb-ui10;}
+.kb-sec.confirm-agree .agreement-to-terms .header .text{font-weight:bold;} // 약관 헤더 볼드 처리
 .kb-sec.confirm-agree .agreement-to-terms > .checkbox-group:first-child{border-top:1px solid $kb-ui03;}
 .kb-sec.confirm-agree .agreement-to-terms .checkbox-group{padding:2rem 0 2.1rem;}
 .kb-sec.confirm-agree .agreement-to-terms .checkbox-group label{display:inline-block;width:auto;padding-right:0;margin-right:3rem;}
@@ -182,18 +184,23 @@
 .select-recommend-employee .tab ~ .tab_contents > div.is-active{display:block;}
 .select-recommend-employee .simple-message{margin-bottom: 17px;}
 
-[data-page-name^=employeeSearch] .employee-search-msg .txt{font-size:17px;color:$color-blue;}
-[data-page-name^=employeeSearch] .employee-search-list > .tit, [data-page-name^=employeeSearch] .branch-search-list > .tit{margin-bottom:20px;margin-bottom:20px}
+// 직원조회 수정
+.employee-search .kb-sec.full{padding-top:0rem;}
+.employee-search .employee-search-msg{font-size:1.5rem;line-height:2.2rem;padding:1.8rem 2.4rem;background-color:$kb-ui10;color:$kb-ui03;}
+.employee-search .employee-search-msg .txt{font-weight:bold;color:$color-blue;}
+.employee-search .employee-search-msg .num{font-size:inherit;font-weight:bold;color:$color-blue;}
+.employee-search .branch-search-list > .tit, 
+.employee-search .employee-search-list > .tit{display:block;margin:4rem 0 1.4rem;font-size:18px;font-weight:bold;}
+.employee-search .employee-search-list li,
+.employee-search .branch-search-list li{border-bottom:1px solid $kb-ui09;}
+.employee-search .employee-search-list li button,
+.employee-search .branch-search-list li button{display:flex;width:100%;padding:2rem 0;text-align:left;}
+.employee-search .employee-search-list li button span,
+.employee-search .branch-search-list li button span{flex:1 0 auto;font-weight: normal;}
+.employee-search .employee-search-list .no-data,
+.employee-search .branch-search-list .no-data{margin-top:4.8rem;}
 
-.is-branch-search .full{padding-top:0rem;}
-.is-branch-search .employee-search-msg{padding-top: 2rem; padding-bottom: 2rem;}
-.is-branch-search .branch-search-list .tit{margin-bottom:20px;}
-.is-employee-search .full{padding-top:0rem;}
-.is-employee-search .employee-search-msg{padding-top: 2rem; padding-bottom: 2rem;}
-.is-branch-search .branch-search-list li button span{font-weight: normal;}
-.is-employee-search .employee-search-list li button span{font-weight: normal;}
 // 기관선택 mys_co_06_01_01
-
 .select-organization .checkbox-group_icon{margin-top:0px}
 .select-organization .caution-txt{padding-bottom: 70px; display: block;}
 .select-organization .caution-txt p{font-size: 16px; margin-top:24px; line-height: 24px; margin-bottom: 19px;}
@@ -261,16 +268,16 @@
 .bottom-sheet .mobie-cetification .account-radio-list.sml-icon li label{padding-left:0px;}
 // 기관선택 > 검색결과 mys_co_06_01_01_09
 .search-organization-form{position:relative;}
-.search-organization-form .autocomplete-box{border-bottom:1px solid $kb-ui07;  position:absolute;top:70px;left:0;z-index:$level20;width:100%;padding:0 24px;background-color:$kb-ui11;display:none;}
-.search-organization-form .autocomplete-box p{height:2px; width:100%; background-color: $kb-ui02; left:25px;position:absolute;}
-.search-organization-form .autocomplete-box ul{width: 100%; border-top:2px solid $kb-ui02;}
+.search-organization-form .autocomplete-box{border-bottom:1px solid $kb-ui07;position:absolute;top:72px;left:0;z-index:$level20;width:100%;padding:0 24px;background-color:$kb-ui11;display:none;} // 검색 영역 빈태그 삭제로 인한 수정
+// .search-organization-form .autocomplete-box p{height:2px; width:100%; background-color: $kb-ui02; left:25px;position:absolute;} // 검색 영역 빈태그 삭제로 인한 수정
+.search-organization-form .autocomplete-box ul{width: 100%; /*border-top:2px solid $kb-ui02;*/} // 검색 영역 빈태그 삭제로 인한 수정
 .search-organization-form .autocomplete-box.is-active{display:block}
 .search-organization-form .autocomplete-box ul{padding:32px 0 16px;}
 .search-organization-form .autocomplete-box li{padding:10px 0}
 .search-organization-form .autocomplete-box li span{color:$color-blue;}
 .search-result-list{margin-top:40px}
-.search-result-list .list-tit{margin-top:40px; margin-bottom:40px;  display: block;}
-.search-result-list .list-tit span{color:$color-blue}
+.search-result-list .list-tit{margin-top:40px;margin-bottom:40px;display:block;font-weight:normal;} // 전송요구 폰트
+.search-result-list .list-tit span{color:$color-blue;font-weight:bold} // 전송요구 폰트
 .search-result-list .result-list{margin-top:20px; margin-bottom:48px;padding:35px 0;border-top:1px solid $kb-ui03;border-bottom:1px solid $kb-ui09}
 .search-result-list .result-list li{position:relative}
 .search-result-list .result-list li+li{margin-top:30px}
@@ -291,14 +298,17 @@
 .mydata-connection-info .mydata-connection-info-top .btn-area{margin-bottom:20px; margin-top:20px; }
 
 // 기관 선택 > 전송요구 항목 설정 mys_co_06_01_01_07
-.caution-txt_01 h4, .caution-txt_01 .tit{padding:2rem 2.4rem;margin:0 -2.4rem;background-color:$kb-ui10;}
-.caution-txt h4{padding: 30px 0;}
-.caution-txt_01 .h4{border-bottom: none; padding-bottom: 20px;}
-.caution-txt_01 .h5{background-color:$kb-ui11;}
-.caution-txt_01 .tit{margin:0 -2.4rem;}
+// 여백 조정 및 사용하지 않는 소스 삭제
+// .caution-txt_01 > h4, .caution-txt_01 .tit{padding:2rem 2.4rem;margin:0 -2.4rem;background-color:$kb-ui10;}
+// .caution-txt h4{padding: 30px 0;}
+// .caution-txt_01 .h4{border-bottom: none; padding-bottom: 20px;}
+// .caution-txt_01 .h5{background-color:$kb-ui11;}
+// .caution-txt_01 .tit{margin:0 -2.4rem;}
+.caution-txt_01 .tit{padding:2rem 2.4rem;margin:0 -2.4rem;background-color:$kb-ui10;}
 .caution-txt_01 .desc-box{padding:1.7rem 0 3.7rem;line-height:1.44;}
 .caution-txt_01 .desc-box p{font-size:1.6rem;line-height:1.44;}
 .caution-txt_01 .desc-box:last-of-type{padding-bottom:0;}
+.caution-txt_01 .desc-box strong{font-weight:bold;}
 .caution-txt_01 .desc-box [data-style=list] li{margin-top:1.4rem;}
 .caution-txt_01 .desc-box [data-style=list] span{font-weight: bold;}
 .caution-txt_01 .desc-box [data-style=list] li:first-child{margin-top:0;}
@@ -759,7 +769,7 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .reward-coupon .coupon-list li > a{display:block;border:1px solid #dde1e4;border-radius:0.8rem;box-shadow:0px 4px 6px rgba(0,0,0,0.07);}
 .coupon-list li .coupon-info{display:flex;flex-direction:column;justify-content:space-between;min-height:12.5rem;padding:2.6rem 6.0rem 2.4rem 2.2rem;}
 .coupon-list li .coupon-info .tit{font-size:1.8rem;letter-spacing:-0.036rem;font-weight:bold;color:$kb-ui02;}
-.coupon-list li .coupon-info .desc{flex:1 0 auto;margin-top:1.1rem;font-size:1.4rem;letter-spacing:-0.014rem;color:$kb-ui03}
+.coupon-list li .coupon-info .desc{flex:1 0 auto;margin-top:1.1rem;font-size:1.4rem;letter-spacing:-0.014rem;line-height:1.2;color:$kb-ui03}
 .coupon-list li .coupon-info .due-date{font-size:1.5rem;letter-spacing:-0.03rem;color:$kb-ui04;}
 .coupon-list li .use-status{display:none;}
 .coupon-list li.is-expired .use-status{display:block;}

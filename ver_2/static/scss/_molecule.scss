@@ -37,29 +37,31 @@
 
 //버튼 바닥 고정
 .sticky-bottom:not(.popup_buttons){width:100%;height:124px;padding-top:60px;}
-.app-content.bg-gray-bottom .sticky-bottom{background-color:$kb-ui10;}
+//.app-content.bg-gray-bottom .sticky-bottom{background-color:$kb-ui10;}
 .sticky-bottom:not(.popup_buttons) .btn-area,
 .app-content .sticky-bottom .btn-area{position:fixed;bottom:0;left:0;z-index:$level60;width:100%;}
-.sticky-bottom .btn-area .btn-solid{height:64px;border-radius:0;font-weight:bold;font-size:20px;}
-.sticky-bottom .btn-area .btn-solid > span{height:64px;line-height:64px}
+.bottom-sheet_buttons .btn-solid,
+.sticky-bottom .btn-area .btn-solid{height:auto;border-radius:0;font-weight:bold;font-size:20px;}
+.bottom-sheet_buttons .btn-solid > span,
+.sticky-bottom .btn-area .btn-solid > span{padding: 1.8rem 1rem;padding: 1.8rem 1rem calc(constant(safe-area-inset-bottom) / 2 + 18px);padding: 1.8rem 1rem calc(env(safe-area-inset-bottom) / 2 + 18px);line-height: 1.2;}
 
 //Apple Homebar
-.ios.homebar .sticky-bottom .btn-solid,
-.ios.homebar .popup_buttons .btn-solid{height:96px;padding-top:10px;}
-.ios.homebar .sticky-bottom .btn-solid > span,
-.ios.homebar .popup_buttons .btn-solid > span{height:96px;line-height:64px;}
+// .ios.homebar .sticky-bottom .btn-solid,
+// .ios.homebar .popup_buttons .btn-solid{height:96px;padding-top:10px;}
+// .ios.homebar .sticky-bottom .btn-solid > span,
+// .ios.homebar .popup_buttons .btn-solid > span{height:96px;line-height:64px;}
 
 //바닥 고정 메뉴
 .other-login{position:fixed;bottom:0;left:0;z-index:$level40;width:100%;padding-top:12px;padding-bottom:12px;text-align:center;background-color:$kb-ui11;}
-.other-login .btn-text span{@include text($size:$text03,$weight:bold);}
-.other-login .btn-text i{@include iconBullet($direction: 'up', $width: 13px, $thick: 2px, $color: #52565d);top:-3px;margin-left:10px;}
-.certificate-center{position:fixed;bottom:45px;left:0;z-index:$level40;width:100%;padding:12px 0 32px 0;text-align:center;background-color:$kb-ui11;}//20210818bhs수정
+.other-login .btn-text span{@include text($size:$text03,$weight:bold);padding:1px 0;}
+.other-login .btn-text i{width:2rem;height:2rem;background:url(../images/common/common.png) no-repeat -44px -20px;background-size:160px;transform:rotate(180deg);margin-left:4px;}
+.certificate-center{position:fixed;bottom:45px;left:0;z-index:$level40;width:100%;padding:12px 0;text-align:center;background-color:$kb-ui11;}
 .certificate-center .btn-text span{@include text($size:$text03,$line-height:1);color:$kb-ui03;}
 
 //사용시 sticky-bottom-menu 높이 + 48px 만큼 app-content에 padding-bottom을 줘야함
-.sticky-bottom-menu{position:fixed;bottom:0;left:0;width:100%;background-color:$kb-ui11;}
+.sticky-bottom-menu{position:fixed;bottom:0;left:0;width:100%;background-color:$kb-ui11;padding-bottom:calc(constant(safe-area-inset-bottom) + 34px);padding-bottom:calc(env(safe-area-inset-bottom) + 34px);}
 .sticky-bottom-menu p{position:static;}
-.ios.homebar .sticky-bottom-menu{bottom:34px;}
+// //.ios.homebar .sticky-bottom-menu{bottom:34px;}
 
 //툴팁
 .tooltip{display:none;position:absolute;left:20px;right:20px;z-index:$level30;transform:translateY(10px);padding:20px 20px 14px 20px;border-radius:2px;background-color:$kb-ui02;}
@@ -271,7 +273,7 @@ ul.radio-group > li + li{margin-top:20px;}
 
 //검색 (하단 보더 항상 검은색)
 .search .form-text{position:relative;border-color:$kb-ui02;}
-.search .form-text:after{content:'';position:absolute;bottom:-2px;right:-24px;height:2px;width:24px;background-color:$kb-ui02;}
+.search .form-text:after{content:'';position:absolute;bottom:-2px;right:-24px;width:24px;border-bottom:2px solid $kb-ui02;}
 .search[data-status=error] .form-text:after{background-color:$color-red;}
 
 //멀티폼
@@ -845,9 +847,9 @@ ul.radio-group > li + li{margin-top:20px;}
 .filter-area .filter-setting{display:flex;align-items:center;}
 .filter-area .filter-setting .btn-text i{margin-right:8px;}
 .filter-area .filter-setting .btn-more-dot{margin-left:16px;}
-.filter-area ul{width:100%;padding-top:1.5rem;padding-bottom:1.5rem;border-top:1px solid $kb-ui08}
-.filter-area ul li button{font-size:1.4rem}
-.filter-area ul li + li{margin-top:0.6rem}
+.filter-area ul{@include clfix;width:100%;padding-top:5px;padding-bottom:10px;border-top:1px solid $kb-ui08;font-size:0;}
+.filter-area ul li{float:left;margin-top:5px;margin-right:6px;}
+.filter-area ul li span{font-size:1.4rem}
 
 //rank list
 .rank-list{display:grid;grid-template-columns:1fr auto;counter-reset:ranking 0;align-items:flex-end}

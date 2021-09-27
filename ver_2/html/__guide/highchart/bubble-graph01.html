@@ -52,99 +52,121 @@
     <script>
         // highchart 공통 options        
         Highcharts.setOptions({
-            title: { text: null },
-            subTitle: { text: null },
-            legend: { enabled: false },
-            credits: { enabled: false },
-            label : { fontFamily: 'KBFGText'},
-            credits: { enabled: false },
-            exporting: { enabled: false }
-        });
-                
-        var bubbleChart = new Highcharts.Chart({
-            chart: {
-                renderTo: 'bubbleChart01', // chart 삽입 target ID                
-                plotBackgroundColor: null,
-                plotBorderWidth: 0,
-                plotShadow: false,
-                type: 'packedbubble',
-                //height: (3 / 4 * 100) + '%', // 4:3 비율로 설정               
-                margin:0, // 2021-06-25 수정
-                marginBottom:20 // 2021-06-25 수정
-            },            
-            tooltip: { enabled: false },
-            plotOptions: {
-                packedbubble: {
-                    minSize: '30%',
-                    maxSize: '175%',
-                    zMin: 0,
-                    zMax: 100,                       
-                    layoutAlgorithm: {
-                        splitSeries: false,
-                        gravitationalConstant: 0.005
-                    },
-                    dataLabels: {
-                        enabled: true,
-                        // format: '{point.name}<br>'+'<span style="font-size:5vw;fontFamily: Roboto;"><b>{point.value}</b></span>%',
-                        formatter: function () { 
-                            return this.point.name + "<br> <span style='font-size:5vw;font-family:Roboto;'><b style='font-size:6vw'>" + gfn_comma3Digit(this.point.value) + "</b>원"
-                        },              
-                        style: {
-                            color: '#26282c',
-                            textOutline: 'none',
-                            fontWeight: 'normal',
-                            textAlign:'center',    
-                            fontSize: '3.5vw',           
-                            fontFamily: "KBFGText"                            
-                        }
-                    }
-                }  
-            },
-            series: [{
-                name: null,
-                data: [{
-                    name: '식비',
-                    value: 56,
-                    color: {
-                        radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
-                        stops: [ [0, '#ffe381'], [1, '#fbc60a'] ]
-                    }
-                },{
-                    name: '여행',
-                    color: '#f8956d',
-                    value: 25,
-                    color: {
-                        radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
-                        stops: [ [0, '#fbb192'], [1, '#f8956d'] ]
-                    }
-                },{
-                    name: '통신비',
-                    color: '#edb7fd',
-                    value: 12,
-                    color: {
-                        radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
-                        stops: [ [0, '#edb7fd'], [1, '#e69afc'] ]
-                    }
-                },{
-                    name: '편의점',
-                    color: '#6cb7fa',
-                    value: 5,
-                    color: {
-                        radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
-                        stops: [ [0, '#89c6fc'], [1, '#6cb7fa'] ]
-                    }
-                },{
-                    name: '음주',
-                    color: '#88dada',
-                    value: 3,
-                    color: {
-                        radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
-                        stops: [ [0, '#9ef6f6'], [1, '#88dada'] ]
-                    }
-                }]
+                title: { text: null },
+                subTitle: { text: null },
+                legend: { enabled: false },
+                credits: { enabled: false },
+                label : { fontFamily: 'KBFGText'},
+                credits: { enabled: false },
+                exporting: { enabled: false }
+            });
             
-            }]
-        });
+            var bubbleChart = new Highcharts.Chart({
+                chart: {
+                    renderTo: 'bubbleChart01', // chart 삽입 target ID                
+                    plotBackgroundColor: null,
+                    plotBorderWidth: 0,
+                    plotShadow: false,
+                    type: 'packedbubble',
+                    height: 160,
+                    margin:0,
+                    marginTop:0
+                },            
+                tooltip: { 
+                    enabled: true, 
+                    headerFormat: '',     
+                    // pointFormat: '{point.x} 원',
+                    formatter: function () {
+                        return "<b style='font-size:1.5rem;font-family:Roboto;'>" + gfn_comma3Digit(this.point.x) + "</b><span style='font-size:1.5px;color:transparent;'>공백</span><span style='font-size:1.4rem;'>원</span>";
+                    },
+                    padding: 4,
+                    shadow: true,
+                    borderRadius: 5,
+                    verticalAlign: 'top',
+                    borderColor: '#fff',
+                    style: {
+                        fontSize: '1.4rem',
+                        fontFamily: "KBFGText",
+                        color:'#26282c'
+                    },
+                },
+                plotOptions: {
+                    packedbubble: {
+                        minSize: '40px',
+                        maxSize: '140px',
+                        zMin: 0,
+                        zMax: 100,                       
+                        layoutAlgorithm: {
+                            splitSeries: false,
+                            gravitationalConstant: 0.005,
+                            bubblePadding: 10
+                        },
+                        dataLabels: {
+                            enabled: true,
+                            formatter: function () { 
+                                return this.point.name + "<br> <span style='font-size:1.4rem;font-family:Roboto;'><b style='font-size:1.4rem'>" + gfn_comma3Digit(this.point.value) + "</b><span style='font-size:1.5px;color:transparent;'>공백</span>%"
+                            },    
+                            rotation:1,              
+                            style: {
+                                color: '#000',
+                                textOutline: 'none',
+                                fontWeight: 'normal',
+                                textAlign:'center',    
+                                fontSize: '1.4rem',                        
+                                fontFamily: "KBFGText",
+                                lineHeight: '20px'
+                            },
+                            y:-3
+                        }
+                    }  
+                },
+                series: [{
+                    name: null,
+                    data: [{
+                        name: '식비',
+                        value: 50,
+                        x:500000,
+                        color: {
+                            radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
+                            stops: [ [0, '#ffba53'], [1, '#ffba53'] ]
+                        }
+                    },{
+                        name: '여행',
+                        value: 25,
+                        x:250000,
+                        color: {
+                            radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
+                            stops: [ [0, '#ff8a71'], [1, '#ff8a71'] ]
+                        }
+                    },{
+                        name: "통신비",
+                        value: 12,
+                        x:120000,
+                        color: {
+                            radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
+                            stops: [ [0, '#ff6391'], [1, '#ff6391'] ]
+                        }
+                    },{
+                        name: "편의점",
+                        value: 5,
+                        x:50000,
+                        color: {
+                            radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
+                            stops: [ [0, '#ff445a'], [1, '#ff445a'] ]
+                        }
+                    },{
+                        name: "음주",
+                        value: 3,
+                        x:30000,
+                        color: {
+                            radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
+                            stops: [ [0, '#d090ee'], [1, '#d090ee'] ]
+                        }
+                    }]
+                
+                }]
+            });
+              
     </script>
 
 </body>

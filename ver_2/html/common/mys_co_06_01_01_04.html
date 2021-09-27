@@ -1,10 +1,10 @@
-<!-- [MYS_CO_04_01_02] 로그인 > 공동인증서 > 암호입력 (작성자: 누리어 시스템 변혜선)// -->
+<!-- [MYS_CO_04_01_04] 전송요구방법(통합인증) > 기관선택 > 전송요구 항목 설정 > 공동인증서 선택 > 공동인증서 비밀번호 입력 (작성자: 누리어 시스템 변혜선, 최선화) // -->
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
-        "title": "Last Depth | 1st Depth"
+        "title": "공동인증서 비밀번호 입력 | 전송요구"
     })
 </head>
 
@@ -25,12 +25,12 @@
 
             <!-- app-content // -->
             <main class="app-content">
-                <h1 class="is-hidden">전송요구</h1>
+                <!-- <h1 class="is-hidden">전송요구</h1> --><!-- 수정:2021-09-24 -->
                 <section class="kb-sec joint-certificate-password">   
                     <h2>인증서 암호 입력</h2>                 
                     <div class="kb-form" data-status="error">
                         <div class="kb-form_inner form-text">                            
-                            <input type="password" id="jointCertificatePassword" value="" placeholder="인증서 비밀번호">                            
+                            <input type="password" id="jointCertificatePassword" value="" title="인증서 비밀번호 입력" placeholder="인증서 비밀번호"><!-- 수정:2021-09-24 -->                            
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
                         <em class="validation">인증서 암호를 입력해주세요.</em>
@@ -46,11 +46,11 @@
             </main>
             <!-- // app-content -->
 
+        </div><!-- 추가 2021-09-23 -->    
         <!-- // app-container -->
     </div>
 
     <div class="layered">
-
     </div>
 
     <!-- Script -->

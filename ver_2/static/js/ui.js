@@ -1,3 +1,12 @@
+//touch Event
+var clickEvent = (function() {
+    if ('ontouchstart' in document.documentElement === true) {
+        return 'touchstart';
+    } else {
+        return 'click';
+    }
+})();
+
 //세자리수 콤마
 function gfn_comma3Digit(number){
     if (number === "") return;
@@ -9,6 +18,8 @@ function gfn_removeComma3Digit(number){
     if (number === "") return;
     return Number(number.replace(/,/g, ""));
 }
+
+//Format
 function gfn_dateFormatter(ydm){
     var dateVal;
     ydm = ydm.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
@@ -41,6 +52,7 @@ function gfn_timeFormatter(time){
     return timeVal;
 }
 
+//Textarea calc bytes
 function gfn_fnChkByte($target, maxByte){
     maxByte = maxByte.replace(/[\D\s\._\-]+/g, "");
     var str = $target.val();
@@ -65,29 +77,81 @@ function gfn_fnChkByte($target, maxByte){
     }
 
     if(rbyte > maxByte){
+        var errorMsg = "한글 "+(maxByte/2)+"자 / 영문 "+maxByte+"자를 초과 입력할 수 없습니다.";
         modalPopup({
-            message: "한글 "+(maxByte/2)+"자 / 영문 "+maxByte+"자를 초과 입력할 수 없습니다."
+            title: "",
+            message: errorMsg
         });
         str2 = str.substr(0,rlen);                                  //문자열 자르기
         $target.val(str2);
         gfn_fnChkByte($target, maxByte);
+        //$target.parents('.textarea').after("<p class='error-msg'>" + errorMsg + "</p>");
+
     }else{
         $target.parent('.textarea').find('.current').text(gfn_comma3Digit(rbyte));
+        //$target.parents('.textarea').next('.error-msg').remove();
     }
 }
 
+//WA focus
 var focusA11Y = {
-    memory: function($this){
-        $this.addClass('focus-memory');
+    memory: function($selector){
+        $selector.addClass('focus-memory');
     },
-    forget: function($this){
-        $this.removeClass('focus-memory');
-        if($this.is(':focusable')){
-            $this.focus();
+    forget: function(){
+        var $focusBack = $('.focus-memory');        
+        if(!$focusBack.is(':focusable')){
+            $focusBack.find(':focusable').eq(0).focus();
         }else{
-            $this.find(':focusable').eq(0).focus();
+            $focusBack.focus();
         }
+        $focusBack.removeClass('focus-memory');
+    },
+    focus: function($selector){
+        if(!$selector.is(':focusable')){
+            $selector.find(':focusable').eq(0).focus();
+        }else{
+            $selector.focus();
+        }            
+    },
+    blur: function($selector){
+        $selector.blur();
     }
+};
+
+
+//Foucs Trap (for WA)
+var focusTrap = function($target) {
+    var tabbable = $target.find('select, input, textarea, button, a').filter(':visible');
+
+    var firstTabbable = tabbable.first();
+    var lastTabbable = tabbable.last();
+
+    /*set focus on first input*/
+    firstTabbable.focus();
+
+    /*redirect last tab to first input*/
+    lastTabbable.on('keydown', function (e) {
+       if ((e.which === 9 && !e.shiftKey)) {
+           e.preventDefault();
+           firstTabbable.focus();
+       }
+    });
+
+    /*redirect first shift+tab to last input*/
+    firstTabbable.on('keydown', function (e) {
+        if ((e.which === 9 && e.shiftKey)) {
+            e.preventDefault();
+            lastTabbable.focus();
+        }
+    });
+
+    /* allow escape key to close insiders div */
+    $target.on('keyup', function(e){
+      if (e.keyCode === 27 ) {
+        $target.hide();
+      };
+    });
 };
 
 var st = $window.scrollTop();
@@ -108,9 +172,7 @@ var $layered = $('.layered');
     iPhone 6, SE2	            375*667	(0.56 / 0.63)
     iPhone 5, SE	            320*568	(0.56 / 0.65)
 */
-if((winH / winW) < 0.52 && $('html').hasClass('ios')) $('html').addClass('homebar');
-
-
+//if((winW / winH) < 0.52 && $('html').hasClass('ios')) $('html').addClass('homebar');
 
 
 var gfn_dim = {
@@ -136,31 +198,29 @@ var gfn_dim = {
 $('body').on('click','.dim',function(){
     if($(this).next('div').is('.bottom-sheet') || $(this).next('div').is('.floating-banner')){
         // gfn_dim.hide($(this));
-        gfn_layered.close($(this).next('div').attr('data-layered-name'));
+        gfn_layered.close($(this).next('div').attr('data-layered-name'));        
     }
 });
 
-
-
-var _btnTop = {
-    click : function(){
-        $('.btn-top').on('click',function(){
-            $('html,body').stop().animate({'scrollTop' : 0},200);
-        });
-    },
-    scroll : function(st){
-        var footerTop = $('.app-footer').offset().top;
-        if(st >= footerTop - winH){
-            $('.btn-top').addClass('no-fixed');
-        }else{
-            $('.btn-top').removeClass('no-fixed');
-        }
-    }
-};
-if($('.btn-top').length){
-    _btnTop.scroll(st);
-    _btnTop.click();
-}
+// var _btnTop = {
+//     click : function(){
+//         $('.btn-top').on('click',function(){
+//             $('html,body').stop().animate({'scrollTop' : 0},200);
+//         });
+//     },
+//     scroll : function(st){
+//         var footerTop = $('.app-footer').offset().top;
+//         if(st >= footerTop - winH){
+//             $('.btn-top').addClass('no-fixed');
+//         }else{
+//             $('.btn-top').removeClass('no-fixed');
+//         }
+//     }
+// };
+// if($('.btn-top').length){
+//     _btnTop.scroll(st);
+//     _btnTop.click();
+// }
 
 var layeredLevel = 301;
 var gfn_layered = {
@@ -169,9 +229,8 @@ var gfn_layered = {
         duration = duration == undefined ? 200 : duration;
         if(name != '' && name != undefined){
 
-            var $selectedLayer = $layered.children('div[data-layered-name=' + name + ']');
+            var $selectedLayer = $('div[data-layered-name=' + name + ']');
 
-            focusTrap($selectedLayer);
             if ($selectedLayer.length === 0) return;
 
             if(dim){
@@ -180,11 +239,10 @@ var gfn_layered = {
                
                 //DIM SHOW
                 gfn_dim.show($selectedLayer, layeredLevel, duration);
-
-                //Transform 50%, 50% blur issue                
             }
             $selectedLayer.addClass('is-active').css('z-index', layeredLevel);
-            $selectedLayer.find(':focusable').eq(0).focus();
+            focusTrap($selectedLayer);  //focus loop in layered
+            // $selectedLayer.find(':focusable').eq(0).focus();
             
             //Transform 50% : Blur Issue 발생시
             // if($selectedLayer.hasClass('modal')){
@@ -226,24 +284,26 @@ var gfn_layered = {
                     gfn_dim.hide($selectedLayer.prev('.dim'), duration);
                 });
             }
-            //$('[data-call-layered="' + name +'"]').focus(); (수정 : loop 문제)
-
         }else{
             gfn_dim.hide();
             $layered.children('div').removeClass('is-active is-expanded').removeAttr('style');
         }
+
+        focusA11Y.forget();
         
     }
 };
+//markup 상 is-active 가 있으면 호출
 $layered.children('div').each(function(){
     if($(this).hasClass('is-active')) gfn_layered.open($(this).attr('data-layered-name'));
 });
 
 //레이어 호출
 $('body').on('click','[data-call-layered]',function(){
+    
     var name = $(this).data('call-layered');
     gfn_layered.open(name);
-    if($(this).closest('.kb-form').length) $(this).closest('.kb-form').addClass('is-active');
+    //if($(this).closest('.kb-form').length) $(this).closest('.kb-form').addClass('is-active');    
 });
 
 //레이어 닫기
@@ -276,11 +336,6 @@ $('body').on('click','[data-action=close]',function(){
     //Cookie[e]
 
 });
-// .on('click','[data-action=initialize]',function(){
-//     //bottom 시트 초기화
-//     var thisFormID = $(this).closest('form').attr('id');
-//     $('#' + thisFormID)[0].reset();
-// });
 
 //modal 호출(data-call-modal 이름과 modal의 ID가 같아야함)
 $('body').on('click','button[data-call-modal]',function(){
@@ -347,6 +402,14 @@ var gfn_formText = {
 
         $this.val('');
         $this.closest('.kb-form').removeClass('is-active').addClass('not-ready');
+    },
+    //Warning
+    warning: function(id, status, msg) { // status  => '', 'success', 'error'
+        var $select = $('#'+id);        
+        var $thisForm = $select.parents('.kb-form');
+        status = status != undefined ? status : '';        
+        $thisForm.attr('data-status', status);
+        $thisForm.find('.validation').text(msg);
     }
 };
 
@@ -376,7 +439,7 @@ $('.form-text')
     //계산
     gfn_formText.calculate($(this));
 })
-.on('focus','input',function(){
+.on('click keypress','input',function(){
     var $thisForm = $(this).parents('.kb-form');
     var $thisFormSelect = $(this).parents('.kb-form_inner');
 
@@ -449,8 +512,12 @@ var gfn_formSelect = {
                 var $options = $target.find('select').find('option');
                 $options.each(function(idx) {
                     var selectedClass = $(this).is(":selected") ? "is-selected" : "";
-                    if(idx != 0 && $(this).css('display') != 'none'){
-                        $bsSelect.find('.bottom-sheet_select').append('<li class="'+selectedClass+'"><button type="button">'+$(this).text()+'</button></li>');
+                    if(idx != 0){
+                        if($(this).css('display') != 'none'){
+                            $bsSelect.find('.bottom-sheet_select').append('<li class="'+selectedClass+'"><button type="button">'+$(this).text()+'</button></li>');
+                        }else{
+                            $bsSelect.find('.bottom-sheet_select').append('<li class="is-hidden"><button type="button">'+$(this).text()+'</button></li>');
+                        }
                     }
                 });
                 
@@ -458,6 +525,7 @@ var gfn_formSelect = {
                 gfn_layered.open('bsSelect');
                 gfn_bsSelect.bind();
             }
+            focusA11Y.memory($thisForm);
         }
     },
     // form-select 의 선택 옵션 바꾸는 메소드
@@ -478,6 +546,14 @@ var gfn_formSelect = {
         var $selectedOption = $thisForm.find('.selected-option');
         $thisForm.addClass('not-ready');
         $selectedOption.text($options.eq(0).text());
+    },
+    //Warning
+    warning: function(id, status, msg) { // status  => '', 'success', 'error'
+        var $select = $('#'+id);        
+        var $thisForm = $select.parents('.kb-form');
+        status = status != undefined ? status : '';        
+        $thisForm.attr('data-status', status);
+        $thisForm.find('.validation').text(msg);
     }
 };
 
@@ -517,13 +593,13 @@ $('.select-list').on('click','button',function(){
     }
 });
 
-$('[data-action=text]').on('click',function(){
-    var txt = $(this).text();
-    var layeredName = $(this).closest('.popup').length ? $(this).closest('.popup').data('layered-name') : $(this).closest('.bottom-sheet').data('layered-name');
-    gfn_layered.close(layeredName);
-    $('.kb-form.is-active').find('input').val(txt);
-    $('[data-call-layered=' + layeredName + ']').closest('.kb-form').removeClass('is-active');
-});
+// $('[data-action=text]').on('click',function(){
+//     var txt = $(this).text();
+//     var layeredName = $(this).closest('.popup').length ? $(this).closest('.popup').data('layered-name') : $(this).closest('.bottom-sheet').data('layered-name');
+//     gfn_layered.close(layeredName);
+//     $('.kb-form.is-active').find('input').val(txt);
+//     $('[data-call-layered=' + layeredName + ']').closest('.kb-form').removeClass('is-active');
+// });
 
 //바텀시트에서 셀렉트 값 넣기
 $('.bottom-sheet').on('click','[data-action=select]',function(){
@@ -1680,39 +1756,7 @@ function currentTxtPosition(obj){
 }
 
 
-//Foucs Trap (for WA)
-var focusTrap = function($target) {
-    var tabbable = $target.find('select, input, textarea, button, a').filter(':visible');
 
-    var firstTabbable = tabbable.first();
-    var lastTabbable = tabbable.last();
-
-    /*set focus on first input*/
-    firstTabbable.focus();
-
-    /*redirect last tab to first input*/
-    lastTabbable.on('keydown', function (e) {
-       if ((e.which === 9 && !e.shiftKey)) {
-           e.preventDefault();
-           firstTabbable.focus();
-       }
-    });
-
-    /*redirect first shift+tab to last input*/
-    firstTabbable.on('keydown', function (e) {
-        if ((e.which === 9 && e.shiftKey)) {
-            e.preventDefault();
-            lastTabbable.focus();
-        }
-    });
-
-    /* allow escape key to close insiders div */
-    $target.on('keyup', function(e){
-      if (e.keyCode === 27 ) {
-        $target.hide();
-      };
-    });
-};
 
 
 //BS 조건 선택
@@ -1768,3 +1812,8 @@ if($('.order-change-list').length){
         }
     });
 }
+
+//filter button 제거 (버튼 제거가 필요하다고 하면...)
+// $('.filter-result').each(function(){
+//     $(this).find('button span').unwrap();
+// });

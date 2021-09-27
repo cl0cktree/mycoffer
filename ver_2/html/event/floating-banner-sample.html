@@ -6,6 +6,13 @@
     @@include('@@webRoot/html/_include/app-head.html',{
         "title": "Last Depth | 1st Depth"
     })
+
+    <style>
+        .select-sticker-img{display:flex;flex-wrap:wrap;margin-top:24px;}
+        .select-sticker-img > li{width:20%;padding:8px;}
+        .select-sticker-img button{position:relative;}
+        .select-sticker-img button.is-active:after{content:'';position:absolute;top:0;right:0;left:0;bottom:0;background-color:rgba(255,255,0,0.5)}
+    </style>
 </head>
 
 <body>
@@ -70,9 +77,96 @@
                     </div>
                     <button type="button" class="btn-solid mt12 js-make-fb" data-call-layered="fbSample"><span>플로팅 배너 생성</span></button>
                 </section>
+                <hr class="hr-divide_32">                
+                <section class="kb-sec js-viewsample">
+                    <h2 class="h3">완성 배너</h2>
+                    <button type="button" class="btn-solid mt12 js-make-fb01" data-call-layered="fbSample"><span>1/5, 21자</span></button>
+                    <button type="button" class="btn-solid mt12 js-make-fb02" data-call-layered="fbSample"><span>1/4, 42자</span></button>
+                    <button type="button" class="btn-solid mt12 js-make-fb03" data-call-layered="fbSample"><span>1/2, 245자</span></button>
+                    <button type="button" class="btn-solid mt12 js-make-fb04" data-call-layered="fbSample"><span>1/1, 661자</span></button>                    
+                </section>
+                <hr class="hr-divide_32">
+                <section class="kb-sec make-stickers">
+                    <h2 class="h3">스티커 샘플 생성</h2>
+                    <div class="kb-form" data-status="">
+                        <label for="esPosition">위치</label>
+                        <div class="kb-form_inner form-select">
+                            <button type="button" class="selected-option"></button>
+                            <select name="fbSize" id="esPosition" title="위치 선택">
+                                <option value="0">위치 선택</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="kb-form" data-status="">
+                        <label for="esEffect">나타나는 효과</label>
+                        <div class="kb-form_inner form-select">
+                            <button type="button" class="selected-option"></button>
+                            <select name="fbSize" id="esEffect" title="효과 선택">
+                                <option value="0">선택</option>
+                                <option value="esBottomUp">Bottom to Up</option>
+                                <option value="esUpBottom">Up to Bottom</option>
+                                <option value="esLeftRight">Left to Right</option>
+                                <option value="esRightLeft">Right to Left</option>
+                                <option value="esFadeIn">Fade In</option>
+                                <option value="esShake">Shake</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="kb-form" data-status="">
+                        <label for="esCallBanner">호출 배너</label>
+                        <div class="kb-form_inner form-select">
+                            <button type="button" class="selected-option"></button>
+                            <select name="fbSize" id="esCallBanner" title="호출 배너 선택">
+                                <option value="0">호출 배너 선택</option>
+                                <option value="fbBirthday">생일 배너(1/4, FadeIn)</option>
+                                <option value="fbBanner01">룰렛 배너(1/4, BottomUp)</option>
+                                <option value="fbBanner02">복권 배너(1/4, RightLeft)</option>
+                                <option value="fbBanner03">랜덤뽑기 배너(full, BottomUp)</option>
+                                <option value="fbBanner04">경품 복권 배너(1/4, LeftRight)</option>
+                                <option value="fbBanner05">설문조사 배너(긴텍스트)(1/4, LeftRight)</option>
+                                <option value="fbBanner06">초성퀴즈 배너(1/4, LeftRight)</option>
+                                <option value="fbBanner07">낱말찾기 배너(full, BottomUp)</option>
+                                <option value="fbBanner08">출석체크 배너(1/4, BottomUp)</option>
+                                <option value="fbBanner09">사다리 배너(1/4, BottomUp)</option>
+                                <option value="fbBanner10">주사위 배너(1/2, BottomUp)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="kb-form" data-status="">
+                        <label for="esLink">링크</label>
+                        <div class="kb-form_inner form-text">
+                            <input type="text" id="esLink" value="">
+                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                        </div>
+                        <em class="validation">Success Message</em>
+                    </div>
+                    <ul class="select-sticker-img">
+                        <li><button><img src="@@webRoot/static/images/event/event-sticker01.png" alt=""></button></li>
+                        <li><button><img src="@@webRoot/static/images/event/event-sticker02.png" alt=""></button></li>
+                        <li><button><img src="@@webRoot/static/images/event/event-sticker03.png" alt=""></button></li>
+                        <li><button><img src="@@webRoot/static/images/event/event-sticker04.png" alt=""></button></li>
+                        <li><button><img src="@@webRoot/static/images/event/event-sticker05.png" alt=""></button></li>
+                        <li><button><img src="@@webRoot/static/images/event/event-sticker06.png" alt=""></button></li>
+                        <li><button><img src="@@webRoot/static/images/event/event-sticker07.png" alt=""></button></li>
+                        <li><button><img src="@@webRoot/static/images/event/event-sticker08.png" alt=""></button></li>
+                        <li><button><img src="@@webRoot/static/images/event/event-sticker09.png" alt=""></button></li>
+                    </ul>
+                    <div class="btn-area mt12">
+                        <button type="button" class="btn-solid js-make-sticker"><span>스티커 보기</span></button>
+                    </div>                    
+                </section>
                 <hr class="hr-divide_32">
                 <section class="kb-sec">
-                    <h2 class="h3">스티커</h2>
+                    <h2 class="h3">완성 스티커</h2>
                     <div class="btn-area">
                         <button type="button" class="btn-line btn-view-sticker"><span>스티커 보기</span></button>
                         <button type="button" class="btn-line btn-hide-sticker"><span>스티커 숨기기</span></button>
@@ -81,15 +175,15 @@
                 <hr class="hr-divide_32">
                 <section class="kb-sec">
                     <h2 class="h3">이벤트 플로팅 배너</h2>
-                    <button type="button" class="btn-line" data-call-layered="fbBirthday"><span>생일 배너(1/5, FadeIn)</span></button>
+                    <button type="button" class="btn-line" data-call-layered="fbBirthday"><span>생일 배너(1/4, FadeIn)</span></button>
                     <button type="button" class="btn-line" data-call-layered="fbBanner01"><span>룰렛 배너(1/4, BottomUp)</span></button>
                     <button type="button" class="btn-line" data-call-layered="fbBanner02"><span>복권 배너(1/2, RightLeft)</span></button>
                     <button type="button" class="btn-line" data-call-layered="fbBanner03"><span>랜덤뽑기 배너(full, BottomUp)</span></button>
-                    <button type="button" class="btn-line" data-call-layered="fbBanner04"><span>경품 복권 배너(1/5, LeftRight)</span></button>
+                    <button type="button" class="btn-line" data-call-layered="fbBanner04"><span>경품 복권 배너(1/4, LeftRight)</span></button>
                     <button type="button" class="btn-line" data-call-layered="fbBanner05"><span>설문조사 배너(긴텍스트)(1/4, LeftRight)</span></button>
                     <button type="button" class="btn-line" data-call-layered="fbBanner06"><span>초성퀴즈 배너(1/2, LeftRight)</span></button>
                     <button type="button" class="btn-line" data-call-layered="fbBanner07"><span>낱말찾기 배너(full, BottomUp)</span></button>
-                    <button type="button" class="btn-line" data-call-layered="fbBanner08"><span>출석체크 배너(1/5, BottomUp)</span></button>
+                    <button type="button" class="btn-line" data-call-layered="fbBanner08"><span>출석체크 배너(1/4, BottomUp)</span></button>
                     <button type="button" class="btn-line" data-call-layered="fbBanner09"><span>사다리 배너(1/4, BottomUp)</span></button>
                     <button type="button" class="btn-line" data-call-layered="fbBanner10"><span>주사위 배너(1/2, BottomUp)</span></button>
                 </section>
@@ -146,35 +240,13 @@
         */
 
         $('.floating-sample')
-        .on('change','#fbSize',function(){
-            // var txtLen = 0;
-            // var value = String($(this).val());
-            // switch (value){
-            //     case '1/5':
-            //         txtLen = 42;
-            //         break;
-            //     case '1/4':
-            //         txtLen = 84;
-            //         break;
-            //     case '1/2':
-            //         txtLen = 420;
-            //         break;
-            //     case '1/1':
-            //         txtLen = 5000;
-            //         break;
-            //     default:
-            //         txtLen = 5000;
-            //         break;
-            // }
-            // $('.textarea').find('.total').text(txtLen);
-        })
         .on('click','.js-make-fb',function(){
             var size = $('#fbSize').val();
             var effect = $('#fbEffect').val();
             var text = $('#fbText').val();
             var link = $('#fbLink').val();
 
-            console.log(size, effect, text, link)
+            //console.log(size, effect, text, link)
             if(size != 0 && effect != 0 && text != '' && link != ''){
                 $('.layered').find('.floating-banner[data-layered-name=fbSample]').remove();
                 $('.layered').fb({
@@ -198,14 +270,59 @@
                     type: "alert"
                 });
             }
-
         });
+
+        $('.js-viewsample')
+        .on('click','button',function(){
+            var textSize;
+            var size;
+            var text = '팔';
+            var result = [];
+            var resultTxt = '';
+            $('.layered').find('.floating-banner[data-layered-name=fbSample]').remove();
+
+            if($(this).hasClass('js-make-fb01')){
+                size = '1/5';
+                textSize = 21;
+            }else if($(this).hasClass('js-make-fb02')){
+                size = '2/5';
+                textSize = 42;
+            }else if($(this).hasClass('js-make-fb03')){
+                size = '1/2';
+                textSize = 245;
+            }else if($(this).hasClass('js-make-fb04')){
+                size = '1/1';                
+                textSize = 661;
+            }
+            for(i=0; i < textSize; i++){
+                result[i] = text;                
+            }
+            resultTxt = resultTxt.concat(result);
+            resultTxt = resultTxt.replace(/,/g, '');
+            
+            // console.log(resultTxt)
+            
+            $('.layered').fb({
+                fbName: "fbSample",
+                fbAnimation: 'fbBottomUp',
+                fbType : size,
+                fbMsg: resultTxt,
+                fbFormId : 'notTday01',
+                fbImgSrc: "@@webRoot/static/images/event/fb-img01.png",
+                fbFormName: "sampleBanner",
+                fbLink: 'http://www.naver.com',
+                fbExpireDay: "1",
+                fbLinkMsg: '바로가기',
+                fbFormMsg: "오늘 하루 보지 않기",
+                fbShow: false,
+            });
+        })
 
 
         $('.layered').fb({
             fbName: "fbBirthday",
             fbAnimation: "fbFadeIn",
-            fbType : "1/5",
+            fbType : "1/4",
             fbMsg: "홍길동 고객님! <br>생일을 축하드립니다.",
             fbImgSrc: "@@webRoot/static/images/event/fb-img10.png",
             fbFormName: "birthdayBanner",
@@ -260,8 +377,8 @@
         $('.layered').fb({
             fbName: "fbBanner04",
             fbAnimation: "fbLeftRight",
-            fbType : "1/5",
-            fbMsg: "김국민 고객님, <br>마이데이터 통합인증, 전체동의 하시고 행운의 복권을 긁어보세요!",
+            fbType : "1/4",
+            fbMsg: "김국민 고객님, 마이데이터 통합인증, 전체동의 하시고 행운의 복권을 긁어보세요!",
             fbCallLayered: 'eventScratch02',
             fbFunction: 'fnScratchEvent02()',
             fbImgSrc: "@@webRoot/static/images/event/fb-img02.png",
@@ -313,8 +430,8 @@
         $('.layered').fb({
             fbName: "fbBanner08",
             fbAnimation: "fbBottomUp",
-            fbType : "1/5",
-            fbMsg: "KB마이데이터 8월 출석체크 이벤트를 <br>참여해 보세요.",
+            fbType : "1/4",
+            fbMsg: "KB마이데이터 8월 출석체크 이벤트를 참여해 보세요.",
             fbCallLayered: 'eventAttendance',
             fbImgSrc: "@@webRoot/static/images/event/fb-img07.png",
             fbFormName: "promotionBanner08",
@@ -364,7 +481,7 @@
                 //  7 8 9
                 esLink: '', : 링크로 연결될 경우
                 esCallLayered: '',  : 호출할 레이어 이름 (data-layered-name)
-                esAnimation: '',    : //나타나는 애니메이션 (esBottomUp, esUpBottom, esLeftRight, esRightLeft, esFadeIn)
+                esAnimation: '',    : //나타나는 애니메이션 (esBottomUp, esUpBottom, esLeftRight, esRightLeft, esFadeIn, esShake)
                 esImgSrc: '',   // 이미지 경로 (높이 75px 고정)
                 esImgAlt: '',   // 이미지 경로 대체 텍스트
                 esClose: true   //닫기 버튼 노출 여부
@@ -375,7 +492,7 @@
                 esPosition: "1",
                 esAnimation: 'esLeftRight',
                 esCallLayered: 'fbBanner01',
-                esImgSrc: '/static/images/event/event-sticker01.png',
+                esImgSrc: '@@webRoot/static/images/event/event-sticker01.png',
                 esImgAlt: '룰렛 이벤트 이미지',
                 esClose: true
             });
@@ -384,7 +501,7 @@
                 esPosition: "2",
                 esAnimation: 'esBottomUp',
                 esCallLayered: 'fbBanner02',
-                esImgSrc: '/static/images/event/event-sticker02.png',
+                esImgSrc: '@@webRoot/static/images/event/event-sticker02.png',
                 esImgAlt: '',
                 esClose: true
             });
@@ -393,7 +510,7 @@
                 esPosition: "3",
                 esAnimation: 'esUpBottom',
                 esCallLayered: 'fbBanner03',
-                esImgSrc: '/static/images/event/event-sticker03.png',
+                esImgSrc: '@@webRoot/static/images/event/event-sticker03.png',
                 esImgAlt: '',
                 esClose: true
             });
@@ -402,7 +519,7 @@
                 esPosition: "4",
                 esAnimation: 'esFadeIn',
                 esCallLayered: 'fbBanner04',
-                esImgSrc: '/static/images/event/event-sticker04.png',
+                esImgSrc: '@@webRoot/static/images/event/event-sticker04.png',
                 esImgAlt: '',
                 esClose: true
             });
@@ -411,7 +528,7 @@
                 esPosition: "5",
                 esAnimation: 'esLeftRight',
                 esCallLayered: 'fbBanner05',
-                esImgSrc: '/static/images/event/event-sticker05.png',
+                esImgSrc: '@@webRoot/static/images/event/event-sticker05.png',
                 esImgAlt: '',
                 esClose: true
             });
@@ -420,16 +537,16 @@
                 esPosition: "6",
                 esAnimation: 'esRightLeft',
                 esCallLayered: 'fbBanner06',
-                esImgSrc: '/static/images/event/event-sticker06.png',
+                esImgSrc: '@@webRoot/static/images/event/event-sticker06.png',
                 esImgAlt: '',
                 esClose: true
             });
 
             $('.layered').sticker({
                 esPosition: "7",
-                esAnimation: 'esFadeIn',
+                esAnimation: 'esShake',
                 esCallLayered: 'fbBanner07',
-                esImgSrc: '/static/images/event/event-sticker07.png',
+                esImgSrc: '@@webRoot/static/images/event/event-sticker07.png',
                 esImgAlt: '',
                 esClose: true
             });
@@ -438,7 +555,7 @@
                 esPosition: "8",
                 esAnimation: 'esBottomUp',
                 esCallLayered: 'fbBanner08',
-                esImgSrc: '/static/images/event/event-sticker08.png',
+                esImgSrc: '@@webRoot/static/images/event/event-sticker08.png',
                 esImgAlt: '',
                 esClose: true
             });
@@ -447,7 +564,7 @@
                 esPosition: "9",
                 esAnimation: 'esLeftRight',
                 esCallLayered: 'fbBanner09',
-                esImgSrc: '/static/images/event/event-sticker09.png',
+                esImgSrc: '@@webRoot/static/images/event/event-sticker09.png',
                 esImgAlt: '',
                 esClose: true
             });
@@ -456,6 +573,29 @@
         $('.btn-hide-sticker').on('click',function(){
             $('.layered').find('.event-sticker').remove();
         });
+
+        $('.select-sticker-img').on('click','button',function(){
+            $(this).addClass('is-active').parent('li').siblings('li').find('button').removeClass('is-active');
+        });
+
+        $('.make-stickers').on('click','.js-make-sticker',function(){
+            var position = $('#esPosition').val();
+            var effect = $('#esEffect').val();
+            var banner = $('#esCallBanner').val();
+            var link = $('#esLink').val();
+            var img = $('.select-sticker-img').find('button.is-active img').attr('src');
+
+            $('.layered').find('.event-sticker').remove();
+            $('.layered').sticker({
+                esPosition: position,
+                esAnimation: effect,
+                esCallLayered: banner,
+                esLink: link,
+                esImgSrc: img,
+                esImgAlt: '룰렛 이벤트 이미지',
+                esClose: true
+            });
+        })
 
         var getOddsOfWinning = function(chance1,chance2,chance3,chance4,chance5,chance6) {
             var cummprob = [chance1,chance2,chance3,chance4,chance5,chance6];

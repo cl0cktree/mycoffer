@@ -1,10 +1,10 @@
-<!-- [MYS_CO_06_01_02_12] 전송요구방법 > 통합인증 > 기관 선택 (작성자: 누리어 시스템 변혜선)// -->
+<!-- [MYS_CO_06_01_02_12] 전송요구방법 선택(개별인증) > 기관 선택 > 개별인증동의 (작성자: 누리어 시스템 변혜선, 최선화) // -->
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
-        "title": "Last Depth | 1st Depth"
+        "title": "개별인증동의 | 전송요구"
     })
 </head>
 
@@ -13,7 +13,7 @@
     <div class="app">
         
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
-            'pageTit':'',
+            'pageTit':'<span class="is-hidden">전송요구 개별인증동의</span>',
             'type':'step'
         })
         
@@ -33,7 +33,6 @@
                     </div>
                     <p class="page-step-desc">자산정보를 가져오기 위한 요구사항을 확인하시고, 동의해주세요.</p> 
                 </div> 
-                <!--// SECTION -->                
                 <section class="kb-sec">                    
                     <div class="kb-card">
                         <label for="org_option01">
@@ -43,8 +42,7 @@
                         <p>선택하신 기관에 정보 전송을 요청합니다.</p>
                     </div>                  
                 </section>
-                <!-- SECTION //-->                
-                <!--// SECTION -->
+
                 <section class="kb-sec confirm-agree">
                     <h3 class="is-hidden">약관 및 동의서 동의하기</h3>
                     <div class="agreement-to-terms">                        
@@ -66,10 +64,10 @@
                         </ul>
                     </div>
                 </section>
-                <!-- SECTION //-->
+
                 <div class="sticky-bottom">
                     <div class="btn-area">
-                        <button type="button" class="btn-solid"><span>확인</span></button><!-- 수정 : 2021.06.25 -->
+                        <button type="button" class="btn-solid"><span>확인</span></button>
                     </div>
                 </div>
             </main>
@@ -80,7 +78,6 @@
 
         <!-- Layer (modal, bottom sheet) // -->
         <div class="layered">
-            
         </div>
         <!-- // Layer (modal, bottom sheet) -->
     </div>
@@ -96,9 +93,7 @@
                 modalPopup({
                     title: '',
                     message: "마이데이터 서비스 이용을 위한 자산 등록을 취소하시겠습니까?",
-                    type: "confirm",
-                    textOkButton: "확인",
-                    textCancelButton: "취소"
+                    type: "confirm"
                 });
             });
         });
@@ -106,4 +101,3 @@
 </body>
 
 </html>
-<!-- // [MYS_CO_06_01_01] 전송요구방법 > 통합인증 > 기관 선택 -->

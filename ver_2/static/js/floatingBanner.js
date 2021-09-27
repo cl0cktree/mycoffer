@@ -38,7 +38,7 @@ $('body')
             fbTitle: "",
             fbMsg: "",
             fbLinkMsg: '바로가기',
-            fbLink: 'javascript:;',
+            fbLink: '',
             fbCallLayered: '',
             fbFunction: '',
             fbImgSrc: "",
@@ -65,17 +65,21 @@ $('body')
                 floatingBannerHTML += '<div class=\"fb-msg\">';
                 if(settings.fbImgSrc != '') floatingBannerHTML += '<img class=\"fb-img\" src=\"' + settings.fbImgSrc + '\" alt="">';
                 floatingBannerHTML += settings.fbMsg;
-                if(settings.fbLink.indexOf('/') > 0) floatingBannerHTML += '<br><a href=\"' + settings.fbLink + '\" class=\"link\"><span>' + settings.fbLinkMsg + '</span></a>';
-                if(settings.fbCallLayered != '') floatingBannerHTML += '<br><button class="link" data-action="close" data-call-layered="' + settings.fbCallLayered + '"';
-                if(settings.fbFunction != '') floatingBannerHTML += ' onclick="' + settings.fbFunction + '\;"';
-                if(settings.fbCallLayered != '' && settings.fbLinkMsg != '') floatingBannerHTML += '><span>' + settings.fbLinkMsg + '</span></button>';
+
+                if(settings.fbLink != ''){
+                    floatingBannerHTML += '<br><a href=\"' + settings.fbLink + '\" class=\"link\"><span>' + settings.fbLinkMsg + '111</span></a>';                    
+                }else if(settings.fbCallLayered != ''){
+                    floatingBannerHTML += '<br><button class="link" data-action="close" data-call-layered="' + settings.fbCallLayered + '"';
+                    if(settings.fbFunction != '') floatingBannerHTML += ' onclick="' + settings.fbFunction + '\;"';
+                    floatingBannerHTML += '><span>' + settings.fbLinkMsg + '</span></button>';
+                }
                 floatingBannerHTML += '</div>';
                 floatingBannerHTML += '</div>';
                 floatingBannerHTML += '</section>';
                 floatingBannerHTML += '</div>';
                 floatingBannerHTML += '<button class=\"btn-close\" data-action=\"close\"><span>닫기</span></button>';
                 floatingBannerHTML += '</div>';
-
+                
             this.append(floatingBannerHTML);
         }
 
@@ -121,12 +125,15 @@ $('body')
         // }
 
         var eventStickerHTML = '<div class=\"event-sticker\" data-animation=\"' + settings.esAnimation + '\" data-position=\"' + settings.esPosition + '\">'
-            if(settings.esLink != '') eventStickerHTML += '<a href=\"' + settings.esLink + '\">';
-            if(settings.esCallLayered != '') eventStickerHTML += '<a href=\"javascript:;\" role=\"button\" data-call-layered=\"'  + settings.esCallLayered +  '\">';
-            //eventStickerHTML += '<img src="' + settings.esImgSrc + '" alt="' + settings.esImgAlt + '" style="width:' + settings.esImgSize + 'rem;">';
-            eventStickerHTML += '<img src="' + settings.esImgSrc + '" alt="' + settings.esImgAlt + '">';
-            if(settings.esLink.indexOf('/') > 0) eventStickerHTML += '</a>';
-            if(settings.esCallLayered != '') eventStickerHTML += '</a>';
+            if(settings.esLink != ''){
+                eventStickerHTML += '<a href=\"' + settings.esLink + '\">';
+                eventStickerHTML += '<img src="' + settings.esImgSrc + '" alt="' + settings.esImgAlt + '">';
+                eventStickerHTML += '</a>';
+            }else if(settings.esCallLayered != ''){
+                eventStickerHTML += '<a href=\"javascript:;\" role=\"button\" data-call-layered=\"'  + settings.esCallLayered +  '\">';
+                eventStickerHTML += '<img src="' + settings.esImgSrc + '" alt="' + settings.esImgAlt + '">';
+                eventStickerHTML += '</a>';
+            }
             if(settings.esClose) eventStickerHTML += '<button class="btn-close"><i class=\"icon-sticker-close_20\">닫기</i></button>';
             eventStickerHTML += '</div>';
 
