@@ -853,6 +853,36 @@
                 </dd>
             </dl>
         </div>
+        <hr>
+        <div class="box" id="optional">
+            <h2>선택입력요소</h2>
+            <dl class="flex-dl">
+                <dt><pre><code></code></pre></dt>
+                <dd data-description=".kbform : 기본">
+					<div class="kb-form" data-status="">
+						<label for="formTextSample02" class="optional">이름</label>
+						<div class="kb-form_inner form-text">
+							<input type="text" id="formTextSample02" value="김국민">
+							<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+						</div>
+						<em class="validation">Success / Error Message</em><!-- 성공/에러 메세지 -->
+                        <p class="info-msg">(필요하면) 안내 메세지</p><!-- 안내 메세지 -->
+					</div>
+				</dd>
+                <dd data-description=".kbform : 기본">
+					<div class="kb-form">
+                        <strong class="label optional">거래유형</strong>
+                        <div class="lookup-period">
+                            <ul class="btn-segmented">
+                                <li><button><span>수입</span></button></li>
+                                <li><button><span>지출</span></button></li>
+                                <li><button class="is-selected"><span>이체</span></button></li>
+                            </ul>
+                        </div>
+                    </div>
+				</dd>
+            </dl>
+        </div>
     </div>
     @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->

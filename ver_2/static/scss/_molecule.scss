@@ -36,12 +36,14 @@
 .btn-divide .btn-text i[class*=icon-]:first-child{margin-right:10px;vertical-align:top;}
 
 //버튼 바닥 고정
-.sticky-bottom:not(.popup_buttons){width:100%;height:124px;padding-top:60px;}
+.sticky-bottom:not(.popup_buttons){width:100%;margin-top:40px;margin-bottom:-32px;height:calc(constant(safe-area-inset-bottom) / 2 + 60px);height:calc(env(safe-area-inset-bottom) / 2 + 60px);}
 //.app-content.bg-gray-bottom .sticky-bottom{background-color:$kb-ui10;}
 .sticky-bottom:not(.popup_buttons) .btn-area,
 .app-content .sticky-bottom .btn-area{position:fixed;bottom:0;left:0;z-index:$level60;width:100%;}
+.popup_buttons .btn-solid,
 .bottom-sheet_buttons .btn-solid,
 .sticky-bottom .btn-area .btn-solid{height:auto;border-radius:0;font-weight:bold;font-size:20px;}
+.popup_buttons .btn-solid > span,
 .bottom-sheet_buttons .btn-solid > span,
 .sticky-bottom .btn-area .btn-solid > span{padding: 1.8rem 1rem;padding: 1.8rem 1rem calc(constant(safe-area-inset-bottom) / 2 + 18px);padding: 1.8rem 1rem calc(env(safe-area-inset-bottom) / 2 + 18px);line-height: 1.2;}
 
@@ -144,11 +146,11 @@
 .checkbox-group.st_list span[class*=form-checkbox]{width:100%;margin-right:0;}
 ul.checkbox-group{display:flex;flex-direction:column;}
 ul.checkbox-group > li + li{margin-top:16px;}
-.checkbox-group_right:not(ul) .form-checkbox_20{@include checkbox($size: 20px, $align: right)}
-.checkbox-group_right span[class*="form-"]{display:block;width:100%;}
-.checkbox-group_right:not(ul) > span + span{margin-top:16px;}
-ul.checkbox-group_right > li .form-checkbox_20{@include checkbox($size: 20px, $align: right)}
-ul.checkbox-group_right > li + li{margin-top:16px;}
+// .checkbox-group_right:not(ul) .form-checkbox_20{@include checkbox($size: 20px, $align: right)}
+// .checkbox-group_right span[class*="form-"]{display:block;width:100%;}
+// .checkbox-group_right:not(ul) > span + span{margin-top:16px;}
+// ul.checkbox-group_right > li .form-checkbox_20{@include checkbox($size: 20px, $align: right)}
+// ul.checkbox-group_right > li + li{margin-top:16px;}
 
 
 //radio 모음
@@ -170,7 +172,8 @@ ul.radio-group > li + li{margin-top:20px;}
 .kb-form > label{@include text($size: 16px);display:block;position:relative;top:0;width:100%;min-height:26px;padding:7px 2px 0 2px;color:$kb-ui04;background-color:$kb-ui11;white-space:nowrap;}
 
 
-.kb-form_inner{display:flex;align-items:center;position:relative;width:100%;padding-top:5px;padding-left:2px;padding-right:2px;padding-bottom:5px;border-bottom:2px solid $kb-ui09;}
+.kb-form_inner{display:flex;align-items:center;position:relative;width:100%;padding-top:5px;padding-left:2px;padding-right:2px;padding-bottom:5px;border-bottom:2px solid #d4c3a6;}
+.kb-form_inner.is-filled{border-bottom-color:$kb-ui06;}
 .kb-form_inner.is-focused{border-bottom-color:$kb-ui02;}
 .kb-form .info-msg,
 .kb-form_multi .info-msg,
@@ -200,7 +203,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .kb-form.is-readonly .kb-form_inner button{background-color:$kb-ui10;color:$kb-ui02;cursor:default;}
 
 .kb-form.is-disabled .kb-form_inner,
-.kb-form.is-readonly .kb-form_inner{border-bottom-color:$kb-ui09;background-color:$kb-ui10;}
+.kb-form.is-readonly .kb-form_inner{border-bottom-color:$kb-ui06;background-color:$kb-ui10;}
 .kb-form.is-disabled .kb-form_inner .btn-data-clear,
 .kb-form.is-readonly .kb-form_inner .btn-data-clear{display:none;}
 //.kb-form.not-ready:not(.is-active):not(.multi-form):not(.no-transition) label{@include text($size:22px, $line-height:24px, $weight: bold);height:24px;top:36px;z-index:1;padding-top:0;padding-bottom:0;color:$kb-ui07;}
@@ -243,7 +246,8 @@ ul.radio-group > li + li{margin-top:20px;}
 .form-text .btn-search{position:relative;z-index:1;margin-left:4px;}
 .form-text .btn-search{flex:0 0 24px;width:24px;height:24px;padding:1px;margin-left:15px;}
 .form-text .measurement{@include number(24px);position:absolute;top:-9999px;opacity:0;max-width:calc(100% - 54px)}
-.form-text input:focus ~ .btn-data-clear{display:block;}
+.form-text input:focus ~ .btn-data-clear,
+.form-text input ~ .btn-data-clear:focus,
 .form-text.is-focused .btn-data-clear{display:block;}
 .form-text.is-focused .unit{color:$kb-ui02;}
 .not-ready:not(.is-active) .form-text .unit,
@@ -893,7 +897,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .account-card .number + .nickname{margin-top:20px;}
 
 //이벤트 더보기
-.btn-more-events{padding:2.5rem 0;}
+.btn-more-events{padding:2.4rem 0;} // 더보기 상단 여백 24px
 
 // 이미지 포함 라디오
 .form-image-radio {display: block;}

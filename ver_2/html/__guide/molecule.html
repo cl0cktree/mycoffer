@@ -241,7 +241,8 @@
 						<li><span class="form-checkbox_20"><input type="checkbox" id="checkboxSample34" checked disabled><label for="checkboxSample34">메뉴 04</label></span></li>
 					</ul>
 				</dd>
-				<dd data-description=".checkbox-group_right > ... : 우측 정렬(20px only)">
+				<!-- 디자인 변경으로 사용 X 
+                    <dd data-description=".checkbox-group_right > ... : 우측 정렬(20px only)">
 					<div class="checkbox-group_right">
 						<span class="form-checkbox_20"><input type="checkbox" id="checkboxSample21"><label for="checkboxSample21">메뉴 01</label></span>
 						<span class="form-checkbox_20"><input type="checkbox" id="checkboxSample22"><label for="checkboxSample22">메뉴 02</label></span>
@@ -249,7 +250,7 @@
 						<span class="form-checkbox_20"><input type="checkbox" id="checkboxSample24" checked disabled><label for="checkboxSample24">메뉴 04</label></span>
 					</div>
 				</dd>
-			</dl>
+			</dl> -->
 		</div>
 		<hr>
 		<!-- form (radio) -->
@@ -1155,24 +1156,35 @@
 						<span class="byte"><strong class="current">0</strong><span class="total">5,000</span></span>
 					</div>
 				</dd>
+				<dd data-description=".textarea : 내용이 있는 경우">
+					<div class="textarea">
+						<textarea name="" id="" title="타이틀">내용이 있는 경우</textarea>
+						<span class="byte"><strong class="current">0</strong><span class="total">2,000</span></span>
+					</div>
+				</dd>
+                <dd data-description=".textarea: 포커스가 있는 경우">
+					<div class="textarea is-focused">
+						<textarea name="" id="" title="타이틀"></textarea>
+						<span class="byte"><strong class="current">0</strong><span class="total">400</span></span>
+					</div>
+				</dd>
 				<dd data-description=".textarea.is-disabled">
 					<div class="textarea is-disabled">
 						<textarea name="" id="" title="타이틀" disabled>텍스트</textarea>
-						<span class="byte"><strong class="current">0</strong><span class="total">5,000</span></span>
+						<span class="byte"><strong class="current">0</strong><span class="total">1,000</span></span>
 					</div>
 				</dd>
 				<dd data-description=".textarea.is-readonly">
 					<div class="textarea is-readonly">
 						<textarea name="" id="" title="타이틀" readonly>텍스트</textarea>
-						<span class="byte"><strong class="current">0</strong><span class="total">5,000</span></span>
+						<span class="byte"><strong class="current">0</strong><span class="total">800</span></span>
 					</div>
-				</dd>
-				<dd data-description=".textarea.is-focused">
-					<div class="textarea is-focused">
-						<textarea name="" id="" title="타이틀"></textarea>
-						<span class="byte"><strong class="current">0</strong><span class="total">5,000</span></span>
+				</dd>		
+                <dd data-description=".textarea : Byte 계산이 없을때">
+					<div class="textarea">
+						<textarea name="" id="" title="타이틀">내용이 있는 경우</textarea>						
 					</div>
-				</dd>
+				</dd>		
 			</dl>
 		</div>
 		<hr>

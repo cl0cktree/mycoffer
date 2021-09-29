@@ -40,7 +40,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .no-data-wrap{padding-top:3.8rem;padding-bottom:10rem;}
 .detail-list-wrap .period-con{border-bottom:1px solid $kb-ui05;padding:24px 0 12px;}
 .detail-list-wrap .d-list li{border-bottom:1px solid $kb-ui09;padding:15px 0;}
-.detail-list-wrap .d-list + .btn-more-plus{display:block;margin-top:3.2rem;}
+.detail-list-wrap .d-list + .btn-more-plus{display:block;margin-top:2.4rem;}// 더보기 가이드 수정 2021-09-29 kek
 
 
 /* chart */
@@ -48,7 +48,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .chart-flex div{flex:1;}
 .chart-flex.type2 div:nth-child(odd){flex-grow:1.5;}
 .chart-flex.type2 div:nth-child(even){flex-grow:1;padding-left:24px;}
-.legend-unit{font-size:14px;color:#696e76;max-width:400px;margin:auto;}
+.legend-unit{font-size:14px;color:#696e76;max-width:400px;margin:auto;line-height:1.4;}//line-height:1.4 추가 2021-09-29 kek
 .legend-unit ul li{display:inline-block;width:calc(22% - 4px);padding:5px 3px 5px 12px;position:relative;vertical-align:top;line-height:1.4;white-space:nowrap;}
 .legend-unit ul li:nth-child(4n+1){width:calc(34% - 4px);}
 .legend-unit ul li:before{content:'';position:absolute;left:0;top:10px;width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:5px;}
@@ -86,9 +86,11 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .legend-unit.t03 ul li .tit{margin-top:5px;font-size:14px;}
 .legend-unit.t03 ul li .num{font-size:15px;}
 .legend-unit.t03 ul li .num:after{font-size:14px;}
-
-
-
+//하이차트관련 추가 2021-09-29 kek start
+.legend-unit.t04{text-align:center;}
+.legend-unit.t04 ul{display:inline-block;} 
+.legend-unit.t04 ul li{width: auto; margin-right: 16px;font-size:14px;}
+//하이차트관련 추가 2021-09-29 kek end
 /* 자산 공통 */
 .my-asset .asset-registration{margin-top:40px;}
 .my-asset .asset-registration .more-view-box .btn-area > button {text-align: inherit;}
@@ -149,7 +151,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .bg-gray > ul[data-style=list] > li + li {margin-top: 7px;}
 .my-asset .asset-summary .highcharts-box{padding-bottom:0;}
 .my-asset .asset-summary .highcharts-box .chart-area{margin-top:20px;}
-.my-asset .asset-summary .highcharts-box .highcharts-figure{padding-top:0;}
+.my-asset .asset-summary .highcharts-box .highcharts-figure{padding:0;}
 
 .my-asset .p-list .account-wrap .agency-con .title{font-size:16px;}
 .my-asset .p-list .account-wrap .agency-con .num{font-size:17px;}
@@ -207,9 +209,10 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .asset-summary .highcharts-box .graph-info>.h4>.btn-more{position:absolute;top:0;right:0;margin-top:0;}
 .my-asset .asset-summary .highcharts-box .graph-info .graph-msg{display:flex;justify-content:space-between;align-items:flex-start;}
 .my-asset .asset-summary .highcharts-box .graph-info .graph-msg .btn-more{margin-top:0;}
-.my-asset .asset-summary .highcharts-box .chart-area{/*height:calc((100vw - 56px) * 0.58);*/}
+.my-asset .asset-summary .highcharts-box .chart-area{/*height:calc((100vw - 56px) * 0.58);*/}//하이차트관련 수정 2021-09-29 kek
 .my-asset .asset-summary .highcharts-box .chart-area img{width:100%;}
-.my-asset .asset-summary .maturity-dday-circles{margin-top: 2rem;height:calc((100vw - 56px) * 0.58);}
+.my-asset .asset-summary .highcharts-box .legend-unit .basic{margin-top:0;padding:5px 0;}//하이차트관련 추가 2021-09-29 kek
+.my-asset .asset-summary .maturity-dday-circles{margin-top: 2rem;/*height:calc((100vw - 56px) * 0.58);*/}//하이차트관련 수정 2021-09-29 kek
 .my-asset .asset-summary .maturity-dday-circles .svg-area{margin-top:1.65rem;}
 .my-asset .asset-summary .maturity-dday-circles .dday{top:10rem;}
 .my-asset .asset-summary .maturity-dday-circles .dday.maturity{top:11.5rem;}
@@ -618,10 +621,10 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .due-to-expire .count{margin-top:18px;text-align:center;background-color:#f1f4ff;font-weight:bold;padding:15px;}
 
 .my-asset .due-to-expire .btn-area{margin-top:18px;float:right;}
-.my-asset .asset-summary .subscription-box{margin-top: 2rem;height: calc((100vw - 5.6rem) * 0.58);}
+.my-asset .asset-summary .subscription-box{margin-top: 2rem;/*height: calc((100vw - 5.6rem) * 0.58);*/}
 .my-asset .asset-summary .subscription-box .btm-text{text-align:center;margin-bottom:16px;padding-top:16px;}
-.my-asset .asset-summary .subscription-box .box-wrap{display:flex;justify-content:space-between;align-items:flex-start;}
-.my-asset .asset-summary .subscription-box .box{position:relative;width:calc(50% - 8px);background:$kb-ui10;border-radius:2px;padding:10px 14px;height:40vw;}
+.my-asset .asset-summary .subscription-box .box-wrap{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:8px;}//하이차트관련 수정 2021-09-29 kek
+.my-asset .asset-summary .subscription-box .box{position:relative;width:14.5rem;margin:0 auto;background:$kb-ui10;border-radius:8px;padding:10px 14px;height:14rem;}//하이차트관련 수정 2021-09-29 kek
 .my-asset .asset-summary .subscription-box .box .tit{@include text($size:20px,$weight:bold);position:absolute;right:14px;bottom:14px;text-align:right;line-height:1;}
 .my-asset .asset-summary .subscription-box .box .tit .num{@include number($size:28px);line-height:1;}
 .my-asset .asset-summary .subscription-box .box .txt{@include text($size:18px,$weight:bold);}
@@ -1306,7 +1309,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .insu-report-circles .btm .count .num {font-size: 17px; font-weight: bold;}
 .maturity-dday-circles {position: relative; display: flex; justify-content: space-between; align-items: flex-start;}
 .maturity-dday-circles .dday-circle {position: relative; flex: 1; text-align: center;}
-.maturity-dday-circles .dday-circle svg {display: block; margin: 0 auto 18px;}
+.maturity-dday-circles .dday-circle svg {display: block; margin: 0 auto 5px;}
 .maturity-dday-circles .dday {position: absolute; left: 0; right: 0; top: 45px; text-align: center; font-size: 16px; line-height: 23px; font-weight: bold; color: $kb-ui02;}
 .maturity-dday-circles .dday .num {font-size: 17px;}
 .maturity-dday-circles .btm-text {font-size: 16px; line-height: 1.4; color: $kb-ui03; text-align: center;}

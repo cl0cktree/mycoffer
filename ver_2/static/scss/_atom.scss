@@ -17,8 +17,9 @@
 .num + .unit{display:inline-block;margin-left:2px;vertical-align:-1px;}
 .text{@include text;}
 .label{display:block;margin-bottom:0.8rem;font-size:1.6rem;line-height:2rem;color:$kb-ui04;}
-.label.required{padding-left:26px;}
-.required:before{content:'';display:inline-block;width:20px;height:20px;background:url(../images/common/common.png) no-repeat -24px -20px;background-size:160px;vertical-align:top;}
+//.label.required{padding-left:26px;}
+ .required:before{content:'';display:inline-block;width:20px;height:20px;background:url(../images/common/common.png) no-repeat -24px -20px;background-size:160px;vertical-align:top;}
+.optional:before{content:'[선택] ';color:$color-blue;}
 
 //오류코드
 .error-code{color:$color-red;font-size:$text03;font-weight:bold;}
@@ -150,10 +151,11 @@ ul[data-style=list].sm li,
 
 .byte{font-size:1.4rem;font-family:'Roboto',sans-serif;color:$kb-ui06;}
 textarea:focus + .byte .current{color:$kb-ui02;}
-.textarea{position:relative;padding-bottom:3rem;border:1px solid $kb-ui09;border-radius:2px;}
+.textarea{position:relative;border:1px solid #d4c3a6;}
+.textarea.is-filled{border-color:$kb-ui06}
 .textarea.is-focused{border-color:$kb-ui02}
 .textarea.is-disabled,
-.textarea.is-readonly{background-color:$kb-ui10;}
+.textarea.is-readonly{background-color:$kb-ui10;border-color:$kb-ui10}
 .textarea.is-disabled textarea:disabled,
 .textarea.is-readonly textarea,
 .textarea textarea:disabled,
@@ -161,9 +163,11 @@ textarea:focus + .byte .current{color:$kb-ui02;}
 .textarea textarea:disabled,
 .textarea.is-disabled textarea{color:$kb-ui06}
 .textarea textarea{font-size:1.6rem;border:none;}
-.textarea .byte{position:absolute;bottom:1.6rem;right:1.6rem;line-height:1;}
+.textarea .byte{display:block;padding:8px 16px;font-family:'Roboto';line-height:1;color:$kb-ui06;text-align:right;}
 .textarea .byte .total:before{content:' / '}
 .textarea + .error-msg{margin-top:8px;}
+.textarea.is-filled .byte .current,
+.textarea.is-focused .byte .current{color:$kb-ui02;}
 
 
 

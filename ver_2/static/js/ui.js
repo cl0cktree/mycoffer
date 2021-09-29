@@ -354,7 +354,13 @@ var gfn_formText = {
     fill: function($target){
         var $thisForm = $target.parent('.kb-form');
         var value = $target.find('input').val();
-        value!='' ? $thisForm.removeClass('not-ready') : $thisForm.addClass('not-ready');
+        if(value!=''){
+            $thisForm.removeClass('not-ready');
+            $thisForm.find('.form-text').addClass('is-filled');
+        }else{
+            $thisForm.addClass('not-ready')
+            $thisForm.find('.form-text').removeClass('is-filled');
+        }
     },
     calculate: function($target){
         var $input = $target.find('input');
@@ -483,6 +489,8 @@ var gfn_bsSelect = {
             $activeFormSelect.find('option').eq(idx + 1).prop('selected',true);
             $activeFormSelect.find('.selected-option').text($activeFormSelect.find('option:selected').text());
             $activeFormSelect.parent('.kb-form').removeClass('is-active not-ready').find('.kb-form_inner').removeClass('is-focused');
+            // bsSelect 스크롤 위치를 $activeForm data-bsScroll에 저장
+            $activeForm.data("bsScroll", $bsSelect.find('.bottom-sheet_contents').scrollTop());
             gfn_layered.close('bsSelect');
             gfn_bsSelect.unbind();
             $activeFormSelect.find('select').trigger('change');
@@ -490,6 +498,11 @@ var gfn_bsSelect = {
     },
     unbind: function(){
         $bsSelect.find('.bottom-sheet_select').off('click','button');
+    },
+    // bsSelect 스크롤 위치 제어
+    scroll: function(n) {
+        n = n | 0;
+        $bsSelect.find('.bottom-sheet_contents').scrollTop(n);
     }
 };
 
@@ -524,6 +537,8 @@ var gfn_formSelect = {
                 //call bottom sheet
                 gfn_layered.open('bsSelect');
                 gfn_bsSelect.bind();
+                // data-bsScroll에 저장된 스크롤 위치 값으로 bsSelect의 스크롤 제어
+                gfn_bsSelect.scroll($thisForm.data("bsScroll"));
             }
             focusA11Y.memory($thisForm);
         }
@@ -795,15 +810,44 @@ $body.on('click',function(e){
 if($('.textarea').length){
     $('.textarea').each(function(){
         var $textarea = $(this);
-        if($textarea.hasClass('is-disabled')) $textarea.find('textarea').prop('disabled',true);        
-        $textarea.find('textarea').prop('maxlength',gfn_removeComma3Digit($textarea.find('.total').text()));
+        var textarea = $textarea.find('textarea');
+        var $byte = $textarea.find('.byte');
+        if($textarea.hasClass('is-disabled')) textarea.prop('disabled',true);        
+        textarea.prop('maxlength',gfn_removeComma3Digit($textarea.find('.total').text()));
+
+        //calc byte
+        if($byte.length){
+            var max = $textarea.find('.total').text();        
+            max = max.replace(/,/g, "");
+            gfn_fnChkByte(textarea, max);
+        }
+        
+        //filled
+        if(textarea.val() != ''){
+            $textarea.addClass('is-filled');
+        }else{
+            $textarea.removeClass('is-filled');
+        }
     });
+
     $('.textarea')
     .on('keyup mouseup','textarea',function(){
         var $textarea = $(this).parent('.textarea');
-        var max = $textarea.find('.total').text();
-        max = max.replace(/,/g, "");
-        gfn_fnChkByte($(this), max);
+        var $byte = $textarea.find('.byte');
+        
+        //calc byte
+        if($byte.length){
+            var max = $textarea.find('.total').text();        
+            max = max.replace(/,/g, "");
+            gfn_fnChkByte(textarea, max);
+        }
+        
+        //filled
+        if(textarea.val() != ''){
+            $textarea.addClass('is-filled');
+        }else{
+            $textarea.removeClass('is-filled');
+        }
     })
     .on('focus','textarea',function(){
         if(!$(this).prop('disabled') && !$(this).prop('readonly')){
@@ -812,6 +856,11 @@ if($('.textarea').length){
     })
     .on('focusout','textarea',function(){
         $(this).parent('.textarea').removeClass('is-focused');
+        if($(this).val() != ''){
+            $textarea.addClass('is-filled');
+        }else{
+            $textarea.removeClass('is-filled');
+        }
     });
 }
 

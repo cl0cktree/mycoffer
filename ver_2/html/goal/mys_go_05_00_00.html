@@ -679,7 +679,7 @@
                         dataLabels: {
                             enabled: true,
                             formatter: function () {
-                                return this.point.name + "<br><span style='font-size:1.5rem;font-family:Roboto;'><b style='font-size:1.5rem;'>" + gfn_comma3Digit(this.point.value) + "</b></span> 일"
+                                return this.point.name + "<br><span style='font-size:1.5rem;font-family:Roboto;'><b style='font-size:1.5rem;'>" + gfn_comma3Digit(this.point.value) + "</b></span> 원" // 수정:2021-09-29 원 수정 -->
                             },    
                             rotation:1,             
                             style: {
@@ -695,11 +695,13 @@
                         }
                     }  
                 },
+                //수정:2021-09-29 //
+                // series 수정
                 series: [{
                     name: null,
                     data: [{
                         name: '<tspan dy="-5">비교그룹</tspan>',
-                        value: 7,
+                        value: 700000,
                         color: {
                             radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
                             stops: [ [0, '#ff8a71'], [1, '#ff8a71'] ]
@@ -707,7 +709,7 @@
                     },{
                         name: '<tspan dy="-5">나</tspan>',
                         color: '#f8956d',
-                        value: 3,
+                        value: 500000,
                         color: {
                             radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
                             stops: [ [0, '#ffba53'], [1, '#ffba53'] ]
@@ -715,6 +717,8 @@
                     }]
                 
                 }]
+                
+                // //수정:2021-09-29
             });
         
         })
