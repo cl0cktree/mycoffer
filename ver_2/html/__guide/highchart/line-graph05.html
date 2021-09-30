@@ -38,32 +38,62 @@
 
     </div>
     <!-- Script -->
-    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- @@include('@@webRoot/html/_include/common-js.html') -->
     <!-- Add Library (this page only)-->
-    <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
-    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
+    <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>   
 
+    <script src="@@webRoot/static/js/menu.js"></script>
+    <script src="@@webRoot/static/js/navigation.js"></script>
     <script src="@@webRoot/static/js/ui.js"></script>
+    <style>
+        .chart-tooltip li:last-child > div:nth-of-type(1){color:#333 !important;}
+    </style>
     <!-- Add Script -->
     <script>
+        function gfn_numKorean(number) {		            
+            var regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi;
+            var inputNumber = String(number).replace(/(^\s*)|(\s*$)/gi, '').replace(regExp, '');            
+            var unitWords = ["", "<span style='font-size:1.2rem'>만</span> ", "<span style='font-size:1.2rem'>억</span> ", "<span style='font-size:1.2rem'>조</span> ", "<span style='font-size:1.2rem'>경</span> "];
+            var splitUnit = 10000;
+            var splitCount = unitWords.length;
+            var resultArray = [];
+            var resultString = "";
+
+            for (var i = 0; i < splitCount; i++) {
+                var unitResult =
+                    (inputNumber % Math.pow(splitUnit, i + 1)) / Math.pow(splitUnit, i);
+                unitResult = Math.floor(unitResult);
+                if (unitResult > 0) {
+                    resultArray[i] = unitResult;
+                }
+            }
+            for (var i = 0; i < resultArray.length; i++) {
+                if (!resultArray[i]) continue;
+                resultString = String(resultArray[i]) + unitWords[i] + resultString;
+            }
+
+            return resultString;            
+        }
+
         // highchart 공통 options
         Highcharts.setOptions({
             title: { text: null },
             subTitle: { text: null },
             legend: { enabled: false },
             credits: { enabled: false },
-            tooltip: { enabled: false },
             label : { fontFamily: 'KBFGText'},
             credits: { enabled: false },
-            tooltip: { enabled: false },
+            tooltip: { enabled: true },
             exporting: { enabled: false },
+            lang: {thousandsSep: ','}
         });
-        // spline chart 선언
-        var splineChart = new Highcharts.Chart({
+
+        // chart 선언
+        var scatterChart = new Highcharts.Chart({
             chart: {
-                renderTo: 'scatterChart', // chart 삽입 target ID
+                renderTo: 'scatterChart',
                 type: "spline",
-                height: (3 / 4 * 100) + '%' // 4:3 비율로 설정
+                height:250
             },
             xAxis: {
                 type: "category",
@@ -71,61 +101,83 @@
                 labels: {
                     style: {
                         color: "#aab0b8",
-                        fontSize: '3.733vw',
+                        fontSize: '1.3rem',
                         fontFamily: 'KBFGText',
                     }
                 },
             },
             yAxis: {
-                enabled: false,  // 사용 안함
                 labels: { 
                     formatter: function () {
-                        return (this.value/1000000) + ' 억';
+                        return gfn_numKorean(this.value);
                     },
                     style: {
                         color: "#aab0b8",
-                        fontSize: '3.733vw',
+                        fontSize: '1.3rem',
                         fontFamily: 'roboto',
                     }
-                 },  // 축 lebel 사용 안함
-                title: { enabled: false }, // 축 title 사용 안함
-                tickWidth: 1,  // 그리드 라인 너비
-                // gridLineColor: 'transparsnt',  // 그리드 라인 컬러
+                 },
+                title: { enabled: false },
+                tickWidth: 1,
+                //
             },
             plotOptions: {
                 series: {
                     color: '#c7ccd1', // 기본색상
-                    lineWidth: 4,
+                    lineWidth: 2,
                     marker: {
                         enabled: false,
+                        fillColor:"transparent",
+                        symbol:"circle",
+                        width:2,
+                        height:2
                     },
                 }
             },
-            series: [
-                {
-                    linkedTo: "main",
-                    color: "#ffd334",
-                    data: [480000, 680000, 665210, 600000, 720000, 800000]
+            tooltip: {                
+                shared: true,
+                useHTML: true,
+                headerFormat: '<div style="border-bottom:1px dotted #ccc;font-size:1.4rem;font-weight:bold;font-family:Roboto;padding-bottom:.5rem;margin-bottom:.5rem;">{point.key}</div>' + '<ul class="chart-tooltip">',
+                pointFormat: '<li style="padding:.2rem 0"><div style="color:{series.color};display:inline-block;width:10rem;">{series.name} </div> <div style="text-align:right;display:inline-block;width:10rem;"><b class="num" style="font-size:13px;">{point.y:,.0f}</b><span class="unit">원</span></div></li>',                                
+                footerFormat: '</ul>',
+                padding: 8,
+                shadow: true,
+                borderRadius: 5,
+                verticalAlign: 'top',
+                borderColor: '#fff',
+                backgroundColor:'#fff',
+                zIndex:9999,
+                style: {
+                    fontSize: '1.2rem',
+                    fontFamily: "KBFGText",
+                    color:'#26282c'
                 },
-                {
-                    id: 'main',
-                    color: '#ff9a00',
-                    data: [300000, 420000, 345210, 370000, 470000, 600000]
-                },
-                // {
-                //     name: 'Range',
-                //     data: ranges,
-                //     type: 'arearange',
-                //     lineWidth: 0,
-                //     linkedTo: ':main',
-                //     color: '#eef0f4',
-                //     fillOpacity: 0.8,
-                //     zIndex: 0,
-                //     marker: {
-                //         enabled: false
-                //     }
-            ]
+            },
+            series: [{
+                name: "매매 실거래가",
+                color: "#ffba53",
+                dashStyle: "ShortDot",
+                data: [50200000, 63500000, 80900000, 9470000, 140200000, 363400000]
+            },{
+                name: "매매 일반거래가",
+                color: '#ffba53',
+                data: [10600000, 10700000, 11100000, 13300000, 22100000, 76700000]
+            },{
+                name: "전세 실거래",
+                color: '#ff8a71',
+                dashStyle: 'ShortDot',
+                data: [30600000, 70700000, 1100000, 4330000, 52100000, 276700000]
+            },{
+                name: "전세 일반거래가",
+                color: '#ff8a71',
+                data: [80600000, 60700000, 51100000, 73300000, 12100000, 36700000]
+            },{
+                name: "공시가격",
+                color: '#dde1e4',
+                data: [70600000, 20700000, 91100000, 173300000, 212100000, 136700000]
+            }]
         });
+        
     </script>
 
 </body>

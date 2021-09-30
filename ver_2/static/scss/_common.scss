@@ -113,7 +113,8 @@
 .kb-sec.confirm-agree .agreement-to-terms .header .text{font-weight:bold;} // 약관 헤더 볼드 처리
 .kb-sec.confirm-agree .agreement-to-terms > .checkbox-group:first-child{border-top:1px solid $kb-ui03;}
 .kb-sec.confirm-agree .agreement-to-terms .checkbox-group{padding:2rem 0 2.1rem;}
-.kb-sec.confirm-agree .agreement-to-terms .checkbox-group label{display:inline-block;width:auto;padding-right:0;margin-right:3rem;}
+.kb-sec.confirm-agree .agreement-to-terms .checkbox-group label{margin-left:0;/*display:inline-block;width:auto;padding-right:0;margin-right:3rem;*/} // 공통수정(체크박스)으로 인한 여백 조정
+.kb-sec.confirm-agree .form-checkbox_20 input:checked + label:before{left:0;} // 공통수정(체크박스)으로 인한 여백 조정
 .kb-sec.confirm-agree .agreement-to-terms .link{width:3rem;height:3rem;padding:0.5rem;}
 // .kb-sec.confirm-agree .agreement-to-terms .link-arrow{width:2rem;height:2rem;background:none;}
 .kb-sec.confirm-agree > .tit{margin-top:4.3rem;}
@@ -887,4 +888,4 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .modal_contents h2{@include text($size: $text01, $weight:bold);}
 .modal_contents ul{padding-bottom:39px;}
 .modal_contents ul:last-child{padding-bottom:0px;}
-.modal_contents p{padding:13px 0;}
+.modal[data-layered-name="NotSeeCertificate"] .modal_contents p{padding:13px 0} //선택자 수정

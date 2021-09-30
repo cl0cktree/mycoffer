@@ -33,7 +33,7 @@
                 <!-- SECTION //-->
                 <section class="kb-sec asset-summary">
                     <div class="highcharts-box charts-type_square no-space">
-                        <div class="swiper-container t01 js-swiper" data-swiper-options="currencySummarySwiperOptions">
+                        <div class="swiper-container t01 js-swiper" data-swiper-options="currencySummarySwiperOptions" data-init-call="swiperFunc"> <!-- 하이차트 UI 추가 -->
                             <script>
                                 var currencySummarySwiperOptions = {
                                     "pagination": {
@@ -64,27 +64,12 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- [chart area] //-->
-                                            <!--
-                                                [차트 디자인 정보]
-                                                * 그래프(막대) 색상(컬러별)
-                                                - 노란색 :  #ffba53;
-                                                - 회색 :  #c6cbd0;
-
-                                                - 차트 텍스트 컬러/크기 : #26282c/14px
-                                                - X축 텍스트 컬러/크기 : #8c949e/14px
-												- data labels 텍스트 컬러/크기 : #696e76/14px
-                                            -->
-                                            <div class="chart-area" id="">
-                                                <img class="temp" src="@@webRoot/static/images/_temp/graph-as-06.png"
-                                                    alt="차트 예시 이미지">
-                                            </div>
+                                            <!-- [chart area] 하이차트 UI 추가 //-->
+                                            <div class="chart-area" id="columnChart01"></div>
                                             <!--// [chart area] -->
-                                            <!--
-											<div class="my-average">
-												<em>내 평균 <span class="num" data-unit-after="원">4,665,210</span></em> 
-											</div>
-                                            -->
+                                            <div class="legend-unit">
+                                                <span class="basic" data-type="dash">평균잔액 <em class="num" data-unit-after="원">4,665,210</em></span>
+                                            </div>
                                         </figure>
 
                                     </div>
@@ -543,27 +528,11 @@
                         <p class="bottom-msg">
                             예적금의 <b><span class="num" data-unit-after="%">25</span></b>(<span class="num" data-unit-after="원">000,000</span>)를 청약으로 관리하고 있습니다.
                         </p>
-                        <!-- [chart area] //-->
-                        <!--
-                            [차트 디자인 정보]
-
-                            - 예금 : #ffba53 ;
-                            - 적금 :  #ff8a71;
-                            - 청약 : #ff445a;
-                            - 회색 :  #c6cbd0;
-                            그래프(원) 크기 : 134px * 134px
-                            그래프(원) 굵기 : 33px / 33px
-
-                            - 차트 가운데 텍스트 컬러/크기 : #26282c/14px
-                            - 그외 텍스트 컬러/크기 : #26282c/14px
-                        -->
-                        <!-- 2021-09-15 수정 // -->
                         <div class="chart-box">
                             <div class="chart-flex type2">
-                                <div class="chart-area" id="">
-                                    <img class="temp" src="@@webRoot/static/images/_temp/chart_as0600_1.png" alt="차트 예시 이미지">
-                                    <!-- 차트샘플 /html/__guide/highchart/donut-graph01.html -->                                    
-                                </div>
+                                <!-- [chart area] 하이차트 UI 추가 //-->
+                                <div class="chart-area" id="donutChart01"></div>
+                                <!-- // [chart area] -->
                                 <div class="legend-unit t03">
                                     <ul>
                                         <li class="cate1">
@@ -574,7 +543,7 @@
                                             <span class="tit">적금</span>
                                             <span class="num" data-unit-after="%">00</span>
                                         </li>
-                                        <li class="cate3">
+                                        <li class="cate4"><!-- chart 수정 -->
                                             <span class="tit">청약</span>
                                             <span class="num" data-unit-after="%">00</span>
                                         </li>
@@ -587,7 +556,6 @@
                             </div>
                         </div>
                         <!-- // 2021-09-15 수정 -->
-                        <!--// [chart area] -->
                     </div>
                     <div class="content-box">
                         <div class="tit">비교그룹 보다 <button type="button" class="btn-question"><i
@@ -603,19 +571,8 @@
                         <div class="msg">
                             최근 6개월 평균 저축금액이 <b class="num" data-unit-after="만원">20</b> 부족해요.
                         </div>
-                        <!-- [chart area] //-->
-                        <!--
-                                [차트 디자인 정보]
-                                * 그래프(막대) 색상(컬러별)
-                                - 나 : #ffcc00 ;
-                                - 비교그룹 : #c6cbd0 ;
-                                - 차이 : #f7f7f8 ; 
-
-                                x축 텍스트 : 14px / #26282c
-                            -->
-                        <div class="chart-area" id="">
-                            <img class="temp" src="@@webRoot/static/images/_temp/chart_as0500_4.png" alt="차트 예시 이미지">
-                        </div>
+                        <!-- [chart area] 하이차트 UI 추가 //-->
+                        <div class="chart-area" id="columnChart02"></div>
                         <!--// [chart area] -->
                     </div>
                 </section>
@@ -804,7 +761,9 @@
 
     <!-- Script -->
     @@include('@@webRoot/html/_include/common-js.html')
-    <!-- Add Library (this page only)-->
+    <!-- Add Library (this page only)-->    
+    <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
+    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
     <script>
@@ -843,7 +802,262 @@
             currentTxtPosition('.my-asset.deposit .more-view-box .percentage-graph.type2');
         })//2021-09-16 수정
 
-        
+        // highchart 공통 options 하이차트 UI 추가 start
+    Highcharts.setOptions({
+        title: { text: null },
+        subTitle: { text: null },
+        credits: { enabled: false },
+        label : { fontFamily: 'KBFGText'},
+        credits: { enabled: false },
+        exporting: { enabled: false },
+        lang: {
+            thousandsSep: ','
+        }
+    });
+
+
+    //chart 선언
+    var doubleColumnChart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'columnChart01', // chart 삽입 target ID
+                type: "column",
+                marginLeft: 0,
+                marginRight: 0,
+                marginTop:0,
+                marginBottom: 35,
+                height: 165,
+                events: {
+                    load: function () {
+                        swiperFunc() // 그래프 로딩 후 하이차트 swiper 실행
+                    }
+                }
+            },
+            legend: { 
+                enabled: false,
+
+            },//html로 대체 
+            tooltip: {
+                useHTML: true,
+                headerFormat: '<div style="text-align:right;color:#696e76;font-size:1.4rem;">',
+                pointFormat: '<span style="color:#26282c;font-size:1.5rem;" class="num">{point.y:,.0f}</span>원<br>',
+                footerFormat: '</div>',
+                shared: true,
+                padding: 7,
+                backgroundColor: "#fff",
+                shadow: true,
+                borderRadius: 4,
+                verticalAlign: 'bottom',
+                borderColor: '#f3f3f3',                
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '1.4rem',
+                    fontFamily: "KBFGText",
+                },
+                crosshairs: false,
+            },
+            xAxis: {
+                type: "category",
+                max: 5,
+                categories: ["1월  ", "2월  ", "3월  ", "4월  ", "5월  ", "6.13"],
+                labels: {
+                    style: {
+                        color: "#26282c",
+                        fontSize: "1.2rem",
+                        fontFamily: 'KBFGText',
+                    }
+                }
+            },
+            yAxis: {
+                endOnTick: false,
+                enabled: false,  // 사용 안함
+                labels: { enabled: false },  // 축 lebel 사용 안함
+                title: { enabled: false }, // 축 title 사용 안함
+                tickWidth: 0,  // 그리드 라인 너비
+                gridLineColor: 'transparsnt',  // 그리드 라인 컬러
+                plotLines: [
+                    {
+                        color: "#c7ccd1",
+                        width: 1,
+                        value: 1000000,
+                        zIndex: 1,
+                        dashStyle: 'dash'
+                    },
+                ],
+            },
+            plotOptions: {
+                series: {
+                    grouping: false,
+                    borderWidth: 0,
+                    pointWidth: 6,  // 막대그래프 너비
+                    borderRadiusTopLeft: "50%",  // radius 값
+                    borderRadiusTopRight: "50%", // radius 값
+                    states: {
+                        hover: {
+                            enabled: true,
+                            color:'#ffba53'
+                        }
+                    }
+
+                }
+            },
+            series: [
+                {
+                    name: "월 납입금액",
+                    color: '#c6cbd0',
+                    pointPlacement: 0,
+                    data: [30000, 55000, 40000, 20000, 99000, 35000]
+                    
+                }
+            ],
+        });
+    
+        var donutChart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'donutChart01',
+                type: 'pie',
+                height: '100%',
+                margin: [0, 0, 0, 0]
+            },
+            title: {
+                text: '예적금 <br>비중',
+                align: 'center',
+                verticalAlign: 'middle',
+                style: {fontSize:'1.4rem',fontFamily: "KBFGText"},
+                y: 20,
+
+            },
+            tooltip: {
+                formatter: function () { 
+                    return this.y + "%"
+                },
+                padding: 10,
+                backgroundColor: "#FFF",
+                shadow: true,
+                borderRadius: 4,
+                verticalAlign: 'bottom',
+                borderColor: '#f3f3f3',
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '1.4rem',
+                    fontFamily: "KBFGText",
+                },
+                crosshairs: true
+            },
+            plotOptions: {
+                pie: {                    
+                    allowPointSelect: true,
+                    dataLabels: {
+                        enabled: false
+                    }
+                }
+            },
+            series: [{
+                innerSize: '50%',
+                borderWidth: 0,
+                data: [{
+                    name: '예금',
+                    color: "#ffba53",
+                    y: 30
+                },{
+                    name: '적금',
+                    color: "#ff8a71",
+                    y: 25
+                },{
+                    name: '청약',
+                    color: "#ff445a",
+                    y: 20
+                },{
+                    name: '기타',
+                    color: '#c6cbd0',
+                    y: 15
+                },]
+            }]
+        });
+        var columnChart02 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'columnChart02', // chart 삽입 target ID
+                type: "column",
+                marginLeft: 0,
+                marginRight: 0,
+                marginTop:0,
+                marginBottom: 25,
+                height: 115,
+                top:0,
+            },
+            legend: { enabled: false },
+            tooltip: {
+                useHTML: true,
+                headerFormat: '<div style="text-align:right;color:#696e76;font-size:1.4rem;">',
+                pointFormat: '<span style="color:#26282c;font-size:1.5rem;" class="num">{point.y:,.0f}</span>원<br>',
+                footerFormat: '</div>',
+                padding: 10,
+                backgroundColor: "#FFF",
+                shadow: true,
+                borderRadius: 4,
+                verticalAlign: 'bottom',
+                borderColor: '#f3f3f3',
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '1.4rem',
+                    fontFamily: "KBFGText",
+                }
+            },
+            xAxis: {
+                type: "category",
+                categories: ["나", "비교그룹"],
+                labels: {
+                    style: {
+                        color: "#212328",
+                        fontSize: "3.733vw",
+                        fontFamily: 'KBFGText'
+                    }
+                }
+            },
+            yAxis: {
+                endOnTick: false,
+                enabled: false,  // 사용 안함
+                labels: { enabled: false },  // 축 lebel 사용 안함
+                title: { enabled: false }, // 축 title 사용 안함
+                tickWidth: 0,  // 그리드 라인 너비
+                gridLineColor: 'transparsnt',  // 그리드 라인 컬러 (없음)
+                plotLines: [
+                    {
+                        color: "#c7ccd1",
+                        width: 1,
+                        value: 520000,
+                        zIndex: 2,
+                        dashStyle: 'dash'
+                    },
+                ],
+                plotBands: [{ // 두 데이터 간의 gap 생성
+                    from: 420000,
+                    to: 620000,
+                    zIndex: 1,
+                    color: '#f7f7f8'
+                }],
+
+            },
+            plotOptions: {
+                series: {
+                    color: '#ffd338', // 기본색상
+                    pointWidth: 40,  // 막대그래프 너비
+                    borderRadiusTopLeft: "7px",  // radius 값
+                    borderRadiusTopRight: "7px" // radius 값
+                }
+            },
+            series: [
+                {
+                    data: [420000, 
+                        {
+                            y: 620000,
+                            color: '#c7ccd1', // 강조할 data의 색상
+                        }
+                    ],
+                    pointPlacement: 0,
+                }
+            ]
+        });
+        //하이차트 UI 추가 end
     </script>
 </body>
 

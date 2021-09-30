@@ -45,22 +45,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- [chart area] //-->
-                            <!--
-                                [차트 디자인 정보]
-                                * 그래프(막대) 색상(컬러별)
-                                - 노란색 : #ffba53;
-                                - 주황색 : #ff8a71;
-                                - 핑크색 : #ff6391;
-
-                                - 차트 텍스트 컬러/크기 : #26282c/14px
-                                - X축 텍스트 컬러/크기 : #8c949e/14px
-                                - data labels 텍스트 컬러/크기 : #26282c/14px
-                            -->
-                            <div class="chart-area" id="">
-                                <img class="temp" src="@@webRoot/static/images/_temp/chart_as1400_1.png"
-                                    alt="차트 예시 이미지">
-                            </div>
+                            <!-- [chart area] 하이차트 UI 추가 //-->
+                            <div class="chart-area" id="columnChart01"></div>
                             <!--// [chart area] -->
                         </figure>
                     </div>
@@ -217,11 +203,129 @@
     <!-- Script -->
     @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
+    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
 
     <script>
+        // highchart 공통 options 하이차트 UI 추가 start
+        Highcharts.setOptions({
+            title: { text: null },
+            subTitle: { text: null },
+            credits: { enabled: false },
+            label : { fontFamily: 'KBFGText'},
+            credits: { enabled: false },
+            exporting: { enabled: false },
+            lang: {
+                thousandsSep: ','
+            }
+        });
+        //chart 선언
+        var ColumnChart01 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'columnChart01', // chart 삽입 target ID
+                type: "column",
+                marginLeft: 0,
+                marginRight: 0,
+                marginTop:0,
+                marginBottom: 55,
+                height: 165,
+            },
+            legend: { 
+                enabled: false,
 
+            },//html로 대체 
+            tooltip: {
+                useHTML: true,
+                headerFormat: '<div style="text-align:center;color:#696e76;font-size:1.4rem;">',
+                pointFormat: '{point.name}<br><span style="color:#26282c;font-size:1.5rem;" class="num">{point.y:,.0f}</span>원<br>',
+                footerFormat: '</div>',
+                shared: true,
+                padding: 7,
+                backgroundColor: "#fff",
+                shadow: true,
+                borderRadius: 4,
+                verticalAlign: 'bottom',
+                borderColor: '#f3f3f3',                
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '1.4rem',
+                    fontFamily: "KBFGText",
+                },
+                crosshairs: false,
+            },
+            xAxis: {
+                type: "category",
+                max: 2,
+                categories: ["<b>KB국민카드</b><br>KB포인트리", "<b>비씨카드</b><br>TOP", "<b>신한카드</b><br>마이신한포인트"],
+                labels: {
+                    style: {
+                        color: "#26282c",
+                        fontSize: "1.4rem",
+                        fontFamily: 'KBFGText',
+                    }
+                }
+            },
+            yAxis: {
+                endOnTick: false,
+                enabled: false,  // 사용 안함
+                labels: { enabled: false },  // 축 lebel 사용 안함
+                title: { enabled: false }, // 축 title 사용 안함
+                tickWidth: 0,  // 그리드 라인 너비
+                gridLineColor: 'transparsnt',  // 그리드 라인 컬러
+                plotLines: [
+                    {
+                        color: "#c7ccd1",
+                        width: 1,
+                        value: 30000,
+                        zIndex: 1,
+                        dashStyle: 'dash'
+                    },
+                ],
+            },
+            plotOptions: {
+                series: {
+                    grouping: false,
+                    borderWidth: 0,
+                    pointWidth: 6,  // 막대그래프 너비
+                    borderRadiusTopLeft: "50%",  // radius 값
+                    borderRadiusTopRight: "50%", // radius 값
+                    states: {
+                        hover: {
+                            enabled: true,
+                            color:'#ffba53'
+                        },
+                    }
+
+                }
+            },
+            series: [
+                {
+                    
+                    color: '#c6cbd0',
+                    pointPlacement: 0,
+                    data: [{
+                        name: "KB포인트리",
+                        y : 20000,
+                        color:'#ffba53',
+
+                    },{
+                        name: "TOP",
+                        y : 10000,
+                        color:'#ff8a71',
+
+                    },{
+                        name: "마이신한포인트",
+                        y : 15000,
+                        color:'#ff6391',
+
+                    }]
+                    
+                }
+            ],
+        });
+        //하이차트 UI 추가 end
     </script>
 </body>
 

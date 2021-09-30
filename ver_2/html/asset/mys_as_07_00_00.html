@@ -33,15 +33,17 @@
 				<section class="kb-sec asset-summary">
 					<div class="highcharts-box charts-type_square no-space">
 						<div class="swiper-container t01 js-swiper"
-							data-swiper-options="investmentSummarySwiperOptions">
+							data-swiper-options="investmentSummarySwiperOptions" data-init-call="swiperFunc"> <!-- 하이차트 UI 추가 -->
 							<script>
 								var investmentSummarySwiperOptions = {
 									"pagination": {
 										"el": ".swiper-pagination"
 									},
+									/* 2021-09-30 삭제
 									"autoplay": {
 										"delay": 5000,
 									},
+									*/
 									"autoHeight": true,
 									//"noSwipingClass" : "chart-area"
 								};
@@ -59,22 +61,12 @@
 													</div>
 												</div>
 											</div>
-											<!-- [chart area] //-->
-											<!--
-                                                [차트 디자인 정보]
-                                                * 그래프(라인) 색상(컬러별)
-                                                - 주황색 라인 : #ffba53
-                                                - 주황색 채우기 :  #fff1de;
-
-                                                - 차트 텍스트 컬러/크기 : #26282c/14px
-                                                - X축 텍스트 컬러/크기 : #8c949e/14px
-												- data labels 텍스트 컬러/크기 : #26282c/14px
-                                            -->
-											<div class="chart-area" id="">
-												<img class="temp" src="@@webRoot/static/images/_temp/chart_as0702.png"
-													alt="차트 예시 이미지">
-											</div>
-											<!--// [chart area] -->
+											<!-- [chart area] 하이차트 UI 추가 //-->
+                                            <div class="chart-area" id="areaSplineChart"></div>
+                                            <!--// [chart area] -->
+                                            <div class="legend-unit">
+                                                <span class="basic" data-type="dash">평균투자금액 <em class="num" data-unit-after="원">4,665,210</em></span>
+                                            </div>
 										</figure>
 
 									</div>
@@ -91,24 +83,14 @@
 													</div>
 												</div>
 											</div>
-											<!-- [chart area] //-->
-											<!--
-                                                [차트 디자인 정보]
-                                                * 그래프(도넛) 색상(컬러별)
-                                                - 적금 : #9f6edb;
-                                                - 예금 : #d676ca;
-												- 청약 : #f78756;
-												- 주식 : #ffd435;
-
-                                                - 차트 텍스트 컬러/크기 : #26282c/14px
-                                                - X축 텍스트 컬러/크기 : #8c949e/14px
-												- data labels 텍스트 컬러/크기 : #26282c/14px
-                                            -->
-											<div class="chart-area" id="">
-												<img class="temp" src="@@webRoot/static/images/_temp/chart_as0701.png"
-													alt="차트 예시 이미지">
+											<div class="highcharts_column" id="">
+												<img class="temp" src="@@webRoot/static/images/_temp/chart_as0701.png" alt="차트 예시 이미지">
 											</div>
-											<!--// [chart area] -->
+											<!-- [chart area] 
+											<div class="chart-flex">
+												<div class="chart-area" id="donutChart01"></div>
+											</div>
+											// [chart area] -->
 										</figure>
 
 									</div>
@@ -724,6 +706,9 @@
 	<!-- Script -->
 	@@include('@@webRoot/html/_include/common-js.html')
 	<!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    	
+    <script src="@@webRoot/static/common/lib/highcharts/variable-pie.js"></script>
+
 	<script src="@@webRoot/static/js/ui.js"></script>
 	<!-- Add Script -->
 	<script>
@@ -765,6 +750,201 @@
 			})
 
 		})
+
+
+		// highchart 공통 options 하이차트 UI 추가 start
+		Highcharts.setOptions({
+        title: { text: null },
+        subTitle: { text: null },
+        credits: { enabled: false },
+        label : { fontFamily: 'KBFGText'},
+        credits: { enabled: false },
+        exporting: { enabled: false },
+        lang: {
+            thousandsSep: ','
+        }
+    });
+   
+    var columnChart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'areaSplineChart', // chart 삽입 target ID
+                type: "area",
+                marginLeft: 0,
+                marginRight: 0,
+                marginTop:0,
+                marginBottom: 35,
+                height: 165,
+                events: {
+                        load: function () {
+                            swiperFunc() 
+                        }
+                }
+
+            },
+            legend: { 
+                enabled: false,
+            },
+            tooltip: {
+                useHTML: true,
+                formatter: function () { 
+                    return '<div style="color:#696e76;font-weight:normal;text-align:right">' + this.x+ '<br>' + '잔액 ' + '<strong style="color:#26282c;font-size:1.5rem;font-weight:normal;" class="num">' + gfn_comma3Digit(this.y)+ '</strong>' + "원</div>"
+                },
+                padding: 10,
+                backgroundColor: "#fff",
+                shadow: true,
+                borderRadius: 4,
+                verticalAlign: 'bottom',
+                borderColor: '#f3f3f3',
+                style: {
+                    fontWeight: 'bold',
+                    fontSize: '1.4rem',
+                    fontFamily: "KBFGText",
+                    zIndex: 10
+                },
+                crosshairs: {
+                    color: '#c7cbd0',
+                    dashStyle: 'dash',
+                    width: 1,
+                },
+                split: true,
+                shared: true,
+            },
+            
+            xAxis: {
+                type: "category",
+                categories: ["3월", "4월", "5월", "6월13일"],
+                labels: {
+                    style: {
+                        color: "#26282c",
+                        fontSize: '1.2rem',
+                        fontFamily: 'KBFGText',
+                    }
+                },   
+                
+            },
+            yAxis: {
+                endOnTick: false,
+                enabled: false,  // 사용 안함
+                labels: { enabled: false },  // 축 lebel 사용 안함
+                title: { enabled: false }, // 축 title 사용 안함
+                tickWidth: 0,  // 그리드 라인 너비
+                gridLineColor: 'transparsnt',  // 그리드 라인 컬러,
+                plotLines: [{
+                    color: '#c7cbd0',
+                    width: 1,
+                    value: 500000,
+                    zIndex: 1,
+                    dashStyle: 'dash'
+                }],
+            },
+            plotOptions: {
+                series: {
+                    color: '#ffba53', 
+                    lineWidth: 1,
+                    marker: {
+                        enabled: false
+                    },
+                    states: {
+                        hover: {
+                            enabled: true,
+                            color:'#ffba53',
+                            lineWidth: 1,
+                        }
+                    }
+                },
+            },
+            series: [{
+                marker: {
+                    fillColor: '#ffffff',
+                    lineWidth: 1,
+                    lineColor: '#ffba53', 
+                    radius: 1,
+                },
+                lineColor: '#ffba53',
+                color: '#fff1de',
+                data: [450000, 230000, 1185210, 350000],
+            }]
+        });
+
+		var donutChart1 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'donutChart01', // chart 삽입 target ID
+                type: 'variablepie',
+                marginLeft: 0,
+                marginRight: 0,
+                marginTop:0,
+                marginBottom: 0,
+                height: 195,
+            },
+            tooltip: { enabled: false },
+            plotOptions: {
+                variablepie: {
+                    dataLabels: {
+                        enabled: true,
+                        distance: 10,
+                        format: '{point.name}{point.percentage:.1f}%',
+                        connectorWidth:1,
+                        alignTo: 'plotEdges',
+                        connectorShape:'crookedLine',
+                        crookDistance: '100%',
+                        connectorPadding:0,
+                        style: { fontWeight: 'normal', color: '#484b51', fontSize:'1.4rem' }
+                    },                       
+                    allowPointSelect: true,
+                    size: '60%',
+					events: {
+					click: function (event) {
+						alert(
+							this.y + '{point.name} clicked\n' 
+						);
+					}
+            }
+                }
+            },
+            series: [{  
+                innerSize: '60%',
+                borderWidth:0,
+                zMin: 0,
+                minPointSize: 10,
+                data: [{
+                    name: '주식·채권',
+                    color: "#ffd435",
+                    y: 400,
+                    z: 10,
+                    dataLabels: {                      
+                        /*enabled: true, 
+                        pointFormat: '국내주식 25%<br>선진주식 25%<br>신흥주식 25%<br>해외채권 25%',
+                        padding: 7,
+                        backgroundColor: "#FFF",
+                        shadow: true,
+                        y: -20,
+                        x: -5,
+                        borderRadius: 2,*/
+                        style: {fontWeight: "bold",fontSize: '1.4rem',fontFamily: "KBFGText"}
+                    }
+                    
+                },{
+                    name: '청약 ',
+                    color: "#f7966c",
+                    y: 300,
+                    z: 10,
+                    dataLabels: {style:{fontFamily: "KBFGText"}}
+                },{
+                    name: '예금 ',
+                    color: "#d676ca",
+                    y: 250,
+                    z: 10,
+                    dataLabels: {style:{fontFamily: "KBFGText"}}
+                },{
+                    name: '적금 ',
+                    color: '#3d70d2',
+                    y: 125,
+                    z: 10,
+                    dataLabels: {style:{fontFamily: "KBFGText"}}
+                }]
+            }]
+        });
+		//하이차트 UI 추가 end
 	</script>
 </body>
 

@@ -107,9 +107,12 @@
 .expense-home .monthly-expense-guide .chart-tit strong{font-weight:bold}
 .expense-home .monthly-expense-guide .chart-tit .date{margin-top:0.5rem;font-size:1.5rem;color:$kb-ui11;font-weight:normal}
 .expense-home .monthly-expense-guide .content-box{padding:3.2rem 2rem;background-color:#6349a5}
+//--chart-- .expense-home .monthly-expense-guide .content-box{padding:3.2rem 0;background-color:#6349a5}
+//--chart-- .expense-home .monthly-expense-guide .chart-area{padding:0 2rem}
 .expense-home .monthly-expense-guide .highcharts-box{padding-bottom:0}
 .expense-home .monthly-expense-guide .highcharts-figure{padding:0;background-color:transparent}
 .expense-home .monthly-expense-guide .highcharts-figure .legend-unit .basic{color:$kb-ui11}
+//--chart-- .expense-home .monthly-expense-guide .highcharts-figure .legend-unit .basic{color:$kb-ui11;margin-top:0}
 .expense-home .notice-group .notice-item + .notice-item{margin-top:0.8rem}
 .expense-home .notice-group .notice-item{padding:2rem;background-color:$kb-ui10;border-radius:0.8rem}
 .expense-home .notice-group .notice-item .h4 .tag-label.round{margin-left:0.8rem}
@@ -161,6 +164,7 @@
 // main
 .expense-account-book-total{padding-bottom:0}
 .expense-account-book-total .graph-area .chart-tit{min-height:6.3rem;margin-bottom:2.7rem}
+//--chart-- .expense-account-book-total .graph-area .chart-tit{margin-bottom:2.7rem} 
 .expense-account-book-total .date-month{text-align:center}
 .expense-account-book-total .highcharts-box{padding:0}
 .content-box-tit + .compare-amount{margin-top:1rem}
@@ -192,6 +196,7 @@
 .expense-monthly-place .highcharts-figure{padding-top:0}
 .expense-monthly-place .h4 .date{display:inline-block;margin-left:0.8rem;font-size:1.5rem;color:$kb-ui05;font-weight:normal;vertical-align:middle}
 .monthly-expense-pattern .highcharts-figure{padding:0}
+// .monthly-expense-pattern .highcharts-figure{padding-top:0}
 .expense-management-goal .content-tit{text-align:center;padding:24px 0}
 // 가계부 > 캘린더로 보기
 .calendar-container .summary-amount{margin-top:2.5rem}
@@ -233,7 +238,7 @@
 .day-detail-list .credit-list dt i[class^="icon-"]{background-color:blue}
 .btn-more-view.center,
 .credit-list + .btn-more-view,
-.credit-list_link-type + .btn-more-view{width:100%;text-align:center;justify-content:center;margin-top:2.5rem;padding:1rem 0}
+.credit-list_link-type + .btn-more-view{width:100%;text-align:center;justify-content:center;margin-top:1.4rem;padding:1rem 0} // guide 수정 적용 (더보기 버튼 상단 여백 24px)
 // 가계부 > 수기등록
 .user-register-list .user-register-forms .kb-form_multi .tit{margin-bottom:1.2rem}
 .user-register-list .user-register-forms .form-tit{@include text($size:16px);flex:0 0 100%;display:block;position:relative;width:100%;min-height:26px;padding:8px 2px 0px 2px;color:$kb-ui04}
@@ -345,7 +350,7 @@
 .tit-area_icon-bg .btn-wrap{margin-left:42px;margin-top:4px;}
 .tit-area_icon-bg .btn-wrap .btn-text{font-size:14px;color:$kb-ui04;}
 .tit-area_icon-bg .btn-wrap .btn-text + .btn-text{margin-left:12px;}
-.tit-area_icon-bg .form-text{margin-top:46px}
+.tit-area_icon-bg .h3 + .kb-form{margin-top:4.6rem} //수기등록페이지 별명 입력 상단 여백 조정
 .tit-area_icon-bg .form-text input{background-color:transparent}
 .tit-area_icon-bg .icon-box_circle{display:inline-flex;margin-right:10px;margin-bottom:12px;background-color:$kb-ui11}
 .tit-area_icon-bg .btn-line{vertical-align:middle}
@@ -554,7 +559,7 @@
 .weekly-expense-summary .date-month .date,
 .monthly-asset-summary .date-month .date{margin-top:0.6rem}
 .monthly-asset-summary .compare-summary .amount .num[data-unit-after]::after{font-weight:bold}
-.weekly-expense-report .legend-unit{margin-top:4.8rem}
+.weekly-expense-report .legend-unit{margin-top:4.8rem} //--chart-- 삭제
 // Main
 .content-groups-type .group-tit,
 .content-groups-type .credit-list{border:0}

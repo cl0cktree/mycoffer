@@ -911,6 +911,8 @@ $('.tab.swiper-container').each(function(idx) {
     var $tabContents = $tab.nextUntil('.app-container','.tab_contents').find('> div');
     var isContentsTab = $tab.nextUntil('.app-container','.tab_contents');
     var isContentsSwiper = $tab.parent().hasClass('tab-swiper-wrap');
+    
+    
 
     //WAI-ARIA
     $tab.attr('role','tablist');
@@ -925,8 +927,16 @@ $('.tab.swiper-container').each(function(idx) {
             watchOverflow: true,
             on: {
                 init : function(swiper){
-                    var index = $('.tab.tab-'+idx).find('.is-active').index();
+                    var width = 0;
+                    var $swiper = $('.tab.tab-'+idx);
+                    var index = $swiper.find('.is-active').index();
                     swiper.slideTo(index);
+                    if($swiper.is(':visible')){
+                        $swiper.find('.swiper-slide').each(function(){
+                            width += $(this).width();
+                        });
+                        if(width <= $(window).outerWidth() - 24) swiper.allowTouchMove = false;                        
+                    }
                 },
                 click : function(swiper, event){
                     swiper.slideTo(swiper.clickedIndex);
