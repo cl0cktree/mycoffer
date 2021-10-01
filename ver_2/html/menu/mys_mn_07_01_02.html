@@ -1,0 +1,134 @@
+<!-- [MYS_MN_07_01_02] 배너 > 당첨툴_룰렛 > 마이데이터선물함 리워드혜택_팝업 > 피싱보험 약관동의 (작성자: 누리어 시스템 최선화) // -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "피싱보험 약관동의 | 마이데이터 선물함"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app"><!-- Liiv, Starbanking  앱 안에서  동작할 경우 data-page="submain" -->
+        
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'보험약관동의',
+            'type':'back'
+        })
+        
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content phishing-insurance">
+                <section class="kb-sec PI-info">
+                    <h2 class="h1">보험 약관에 동의해주세요.</h2>
+                    <h3 class="h4">피싱/해킹 금융사기 보상보험 무료 가입</h3>
+                    <dl class="terms-info">
+                        <dt class="dt">상품명</dt>
+                        <dd class="dd">(주)KB손해보험 피싱해킹금융사기 보상보험Ⅱ</dd>
+                        <dt class="dt">보상내용</dt>
+                        <dd class="dd">피싱 또는 해킹 금융사기로 예금이 부당인출 되거나, 신용카드가 부당하게 사용되어 발생한 금전적 손해를 보장</dd>
+                        <dt class="dt">보장금액</dt>
+                        <dd class="dd">최대 5백만원 한도(단, 자기부담금 10만원 적용)</dd>
+                        <dt class="dt">가입기간</dt>
+                        <dd class="dd">보험 가입 다음날부터 1년</dd>
+                        <dt class="dt">기타사항</dt>
+                        <dd class="dd">자세한 보험 보장내용이나 문의사항이 있으신 경우 KB손해보험 고객센터 1544-0114로 연락주시길 바랍니다.</dd>
+                    </dl>
+                </section>
+
+                <section class="kb-sec">
+                    <!-- 동의하기(전체동의) // -->                                                                
+                    <div class="agreement-to-terms">
+                        <div class="header">
+                            <span class="form-checkbox">
+                                <input type="checkbox" id="agreeAllCheck">
+                                <label for="agreeAllCheck">전체 동의</label>
+                            </span>
+                        </div>
+                        <div class="checkbox-group st_list">
+                            <span class="form-checkbox_20">
+                                <input type="checkbox" id="agreeCheck1">
+                                <label for="agreeCheck1">KB손해보험 피싱보험 이용약관 [필수]</label>
+                                <a href="#" class="alink"><span>전문보기</span></a>
+                            </span>
+                            <span class="form-checkbox_20">
+                                <input type="checkbox" id="agreeCheck2">
+                                <label for="agreeCheck2">KB손해보험 피싱보험 가입 신청서 [필수]</label>
+                                <a href="#" class="alink"><span>전문보기</span></a>
+                            </span>
+                            <span class="form-checkbox_20">
+                                <input type="checkbox" id="agreeCheck3">
+                                <label for="agreeCheck3">제3자 정보제공 동의 [필수]</label>
+                                <a href="#" class="alink"><span>전문보기</span></a>
+                            </span>
+                            <span class="form-checkbox_20">
+                                <input type="checkbox" id="agreeCheck4">
+                                <label for="agreeCheck4">Push 알림 수신동의 [선택]</label>
+                                <a href="#" class="alink"><span>전문보기</span></a>
+                            </span>
+                            <span class="form-checkbox_20 js-checkbox-selector-trigger" data-target="serviceSelector">
+                                <input type="checkbox" id="agreeCheck5">
+                                <label for="agreeCheck5">개인(신용)정보 수집&middot;이용&middot;제공 동의 [선택]</label>
+                                <a href="#" class="alink"><span>전문보기</span></a>
+                            </span>
+                        </div>
+                        <dl class="agreement-service-choice js-checkbox-selector" data-target="serviceSelector">
+                            <dt>
+                                <span class="form-checkbox_20">
+                                    <input type="checkbox" id="agreeCheck5All" disabled>
+                                    <label for="agreeCheck5All">전체 동의</label>
+                                </span>
+                            </dt>
+                            <dd>
+                                <ul class="checkbox-group">
+                                    <li><span class="form-checkbox_20"><input type="checkbox" id="agreeCheck51" disabled><label for="agreeCheck51">문자</label></span></li>
+                                    <li><span class="form-checkbox_20"><input type="checkbox" id="agreeCheck52" disabled><label for="agreeCheck52">이메일</label></span></li>
+                                    <li><span class="form-checkbox_20"><input type="checkbox" id="agreeCheck53" disabled><label for="agreeCheck53">전화</label></span></li>
+                                    <li><span class="form-checkbox_20"><input type="checkbox" id="agreeCheck54" disabled><label for="agreeCheck54">DM</label></span></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
+                    <!-- // 동의하기(전체동의) -->
+
+                    <p class="simple-message">KB국민은행은 상품서비스 안내 등 수집&middot;이용 목적을 달성하기 위하여 위의 동의한 안내수단으로 고객님께 연락할 수 있습니다.</p>
+                </section>
+
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid"><span>확인</span></button> <!--수정(onclick 삭제) 2021-09-16 -->
+                    </div>
+                </div>
+            </main>
+            <!-- // app-content -->
+        
+        </div>
+        <!-- // app-container -->
+    </div>
+
+    <div class="layered">
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    <script>
+        $(document).ready(function(){
+            $('.sticky-bottom button').on('click', function(){
+                modalPopup({
+                    title: "보험 가입 완료",
+                    message: "보험 효력은 익일부터 제공되며 상세 정보는 마이데이터 선물함에서 확인 하실 수 있습니다.",
+                    textOkButton: "선물함 바로가기"
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -65,12 +65,12 @@
 .upkeep-expenses-list .category-name strong {font-weight: bold;}
 .upkeep-expenses-list .category-name + .explist {margin-top: 15px;}
 .upkeep-expenses-list .category-name small {@include text($text03, normal); color: $kb-ui04;}
-.upkeep-expenses-list .explist {height: 290px; overflow: hidden; border-top: 1px solid $kb-ui07;}
+.upkeep-expenses-list .explist {height: 300px; overflow: hidden; border-top: 1px solid $kb-ui07;}
 .upkeep-expenses-list .explist dt {padding-left: 2px; padding-top: 20px; font-size: 15px; font-family: roboto; color: $kb-ui02;}
 .upkeep-expenses-list .explist dd {padding: 20px 2px 20px; border-bottom: 1px solid $kb-ui09; @include clfix;}
 .upkeep-expenses-list .explist dd .text {float: left; width: 50%; font-size: 16px; color: $kb-ui04;}
 .upkeep-expenses-list .explist dd .amount {float: right; width: 50%; font-size: 16px; color: $kb-ui02; text-align: right;}
-.upkeep-expenses-list .moreview-button {margin-top: 12px;}
+.upkeep-expenses-list .moreview-button {margin-top: 3px;}
 .upkeep-expenses-list .moreview-button button {display: block; width: 100%; height: 52px;}
 .upkeep-expenses-list .no-data {padding-top: 48px;}
 .upkeep-expenses-list.is-moreview-show .explist {height: auto;}
@@ -83,7 +83,7 @@
 .loan-tab-contents .visual-area .text .mtxt {@include text($text02, normal);}
 .loan-tab-contents .visual-area .text strong {font-weight: bold;}
 .loan-tab-contents .description-list {padding: 8px 2px; border-top: 1px solid $kb-ui09; border-bottom: 1px solid $kb-ui09;}
-.loan-tab-contents .no-data {margin-top: 34px;}
+.loan-tab-contents .no-data {margin-top: 84px;}
 
 // My Car 차고
 .mycar-content {margin-bottom: 50px;}
@@ -272,11 +272,15 @@
 .if-you-save .result-text.is-hide,
 .if-you-save .error-text.is-hide {display: none;}
 
-.wishcar-strategy .summary {padding-top: 8px; min-height: 54px; @include text($text02, normal);}
+.wishcar-strategy .summary {min-height: 54px; @include text($text01, bold);}
+.wishcar-strategy .summary .num {font-size: 19px;}
+.wishcar-strategy .summary .num::after {font-size: 18px;}
 .wishcar-strategy .summary strong {font-weight: bold;}
 .wishcar-strategy .description-list {padding: 48px 2px 15px;}
 .wishcar-strategy .description-list dt {@include text($text01, bold); color: $kb-ui02;}
-.wishcar-strategy .description-list dd {@include text($text02, bold); position: relative; top: 2px;}
+.wishcar-strategy .description-list dd {@include text($text01, bold); position: relative; top: 2px;}
+.wishcar-strategy .description-list dd .num {font-size: 19px;}
+.wishcar-strategy .description-list dd .num::after {font-size: 18px;}
 .wishcar-strategy .need {color: $kb-ui02; font-weight: bold;}
 .wishcar-strategy .num::after {font-weight: bold;}
 

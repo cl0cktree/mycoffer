@@ -96,6 +96,7 @@ function gfn_fnChkByte($target, maxByte){
 //WA focus
 var focusA11Y = {
     memory: function($selector){
+        $selector = $selector != undefined ? $selector : $(this);
         $selector.addClass('focus-memory');
     },
     forget: function(){
@@ -108,6 +109,7 @@ var focusA11Y = {
         $focusBack.removeClass('focus-memory');
     },
     focus: function($selector){
+        $selector = $selector != undefined ? $selector : $(this);
         if(!$selector.is(':focusable')){
             $selector.find(':focusable').eq(0).focus();
         }else{
@@ -115,6 +117,7 @@ var focusA11Y = {
         }            
     },
     blur: function($selector){
+        $selector = $selector != undefined ? $selector : $(this);
         $selector.blur();
     }
 };
@@ -492,6 +495,7 @@ var gfn_bsSelect = {
             // bsSelect 스크롤 위치를 $activeForm data-bsScroll에 저장
             $activeForm.data("bsScroll", $bsSelect.find('.bottom-sheet_contents').scrollTop());
             gfn_layered.close('bsSelect');
+            $activeForm.find('.kb-form_inner').addClass('is-selected');
             gfn_bsSelect.unbind();
             $activeFormSelect.find('select').trigger('change');
         });
@@ -551,6 +555,7 @@ var gfn_formSelect = {
         var $selectedOption = $thisForm.find('.selected-option');
         $options.eq(idx).prop('selected', true);
         $selectedOption.text($options.eq(idx).text());
+        $thisForm.find('.kb-form_inner').addClass('is-selected');
         $select.trigger('change');
     },
     // form-select 초기화
@@ -775,8 +780,13 @@ if($('.form-select').length){
     .each(function(){
         var $thisFormSelect = $(this);
         var $thisForm = $thisFormSelect.parent('.kb-form');
-        $thisFormSelect.find('option:selected').index() != 0 ? $thisForm.removeClass('not-ready') : $thisForm.addClass('not-ready');
-        $thisFormSelect.find('.selected-option').text($(this).find('option:selected').text());
+        if($thisFormSelect.find('option:selected').index() != 0){
+            $thisFormSelect.addClass('is-selected');
+            $thisForm.removeClass('not-ready')
+        }else{
+            $thisForm.addClass('not-ready')
+        }
+        $thisFormSelect.find('.selected-option').text($(this).find('option:selected').text());        
     })
     .on('click','button',function(e){
         //e.stopPropagation();
@@ -1838,6 +1848,10 @@ var jsFixed = {
     init: function(){
         $('.js-fixed').each(function(){
             var top = $(this).offset().top + $(this).outerHeight();
+            // GUI 수정 요청
+            if($(this).children('.page-step-desc')){
+                top -= $(this).find('.page-step-desc').outerHeight();
+            }
             $(this).attr('data-fix',top);
         });
     },
@@ -1859,6 +1873,7 @@ $(window).on('scroll',function(){
 
     jsFixed.scroll(st, $('.page-step'));
 });
+
 
 //순서 변경
 if($('.order-change-list').length){
