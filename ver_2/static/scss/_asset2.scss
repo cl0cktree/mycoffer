@@ -4,7 +4,7 @@
 .car-btns button {display: block; width: 176px; margin: 0 auto 24px;}
 
 .index-visual {display: flex; justify-content: center; align-items: center;}
-.index-visual > img {height: 135px;}
+.mycar-lists .index-visual > img {width: 156px;}
 
 .car-index .index-visual {margin: 100px 0 48px;}
 /* // 수정 2021-07-01 */
@@ -78,7 +78,7 @@
 
 // .loan-tab-contents:first-child {padding-top: 100px;}
 .loan-tab-contents .visual-area {margin-top: 34px; margin-bottom: 20px; padding-bottom: 25px; text-align: center;}
-.loan-tab-contents .visual-area img {display: block; width: 150px; margin: 0 auto 20px;}
+.loan-tab-contents .visual-area img {display: block; width: 156px; margin: 0 auto 20px;}
 .loan-tab-contents .visual-area .text .stxt {display: block; margin-bottom: 3px; @include text($text02, normal); color: $kb-ui04;}
 .loan-tab-contents .visual-area .text .mtxt {@include text($text02, normal);}
 .loan-tab-contents .visual-area .text strong {font-weight: bold;}
@@ -162,6 +162,7 @@
 .mycar-information .nickname {display: block; margin-bottom: 4px; color: $kb-ui04; font-size: 14px; word-break: break-all;}
 .mycar-information .model {color: $kb-ui02; @include text($text02, bold); word-break: break-all;}
 .mycar-information .model.link-arrow-after {display: inline-block; padding-right: 20px;}
+.mycar-information .model.link-arrow-after::after {top: calc(50% - 11px);}
 .mycar-information .model .manufacturer {display: inline; position: relative; padding-right: 8px; margin-right: 7px;}
 .mycar-information .model .manufacturer::after {content: ''; position: absolute; right: 0; top: 4px; bottom: 4px; width: 1px; background-color: $kb-ui08;}
 .mycar-information .subtxt {position: relative; z-index: 2; margin-top: 4px; color: $kb-ui04; font-size: 14px;}
@@ -217,9 +218,9 @@
 .mycar-quotes .title + .btn-question {position: relative; top: -1px;}
 .mycar-quotes dt .btn-question {position: relative; left: 2px;}
 .mycar-quotes dt .tooltip {transform: translateY(65px);}
-.mycar-quotes .chart-area {margin-bottom: 13px;}
+.mycar-quotes .chart-area {margin-bottom: 13px; margin-top: 16px; padding-top: 20px; padding-bottom: 10px; border-top: 1px solid $kb-ui07;}
 .mycar-quotes .content-box {margin-top: 16px;}
-.mycar-quotes .dlists {border-top: 0; margin-top: 0;}
+.mycar-quotes .dlists {margin-top: 0; border-top-color: $kb-ui09;}
 .mycar-insurance .description-list + .description-list {border-top: 1px solid $kb-ui09;}
 .mycar-insurance .description-list + .btn-area {margin-top: 5px;}
 
@@ -242,9 +243,9 @@
 .chart-area .temp {display: block; width: 100%;}
 
 .kbchachacha-banner {position: relative; margin-top: 40px;}
-.kbchachacha-banner a {display: block; padding: 24px; height: 120px; background-color: #eef1fa; border-radius: 2px;}
-.kbchachacha-banner a::before {content: ''; position: absolute; right: 24px; bottom: 0; width: 111px; height: 105px; background: url(../images/asset/kbchachacha_banner.png) no-repeat 0 0; background-size: 100% 100%;}
-.kbchachacha-banner strong {display: block; margin-bottom: 5px; font-size: 18px; font-weight: bold; color: $kb-ui02;}
+.kbchachacha-banner a {display: block; padding: 24px; height: 138px; background-color: $kb-ui10; border-radius: 2px;}
+.kbchachacha-banner a::before {content: ''; position: absolute; right: 24px; bottom: 12px; width: 128px; height: 111px; background: url(../images/asset/kbchachacha_banner.png) no-repeat 0 0; background-size: 100% 100%;}
+.kbchachacha-banner strong {display: block; margin-bottom: 14px; font-size: 18px; font-weight: bold; color: $kb-ui02;}
 .kbchachacha-banner span {display: block; width: 140px; font-size: 14px; font-weight: normal; color: $kb-ui04; line-height: 1.4;}
 
 .mycar-best-recommend .title {display: inline-block; padding-top: 25px; padding-bottom: 10px; @include text($text01, bold);}

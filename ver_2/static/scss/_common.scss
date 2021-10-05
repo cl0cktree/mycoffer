@@ -80,15 +80,17 @@
 .agree-term .go-service-info .btn-text{display:block;padding-right:2.6rem;margin-bottom:2.1rem;}
 .agree-term .go-service-info .btn-text span{vertical-align:-0.3rem;}
 // .agree-term .go-service-info .btn-text span{padding-right:6px}
+.agree-term .agreement-to-terms{margin-top:4rem;} // 2108
 .agree-term .agreement-to-terms .checkbox-group.st_list:last-child{padding-top:0;padding-bottom:20px;}
 .agree-term .h1{padding:16px 24px 0 24px; margin-bottom:47px;}
 .agree-term .caution-txt{padding-bottom: 118px; display: block;}
 .agree-term .caution-txt p{font-size: 15px; margin-top:67px; line-height: 20px; margin-bottom: 19px;}
 .agree-term .caution-txt p span{display: block; font-weight: bold;}
-.agree-term .employee-search-msg{@include text($text02);@include clfix;padding-top:28px;padding-bottom:28px;margin-bottom:53px;background-color:$kb-ui10;color:$kb-ui02;}
-.agree-term .employee-search-msg strong{font-weight:bold;}
-.agree-term .employee-search-msg .btn-text{float:right;margin-top:18px;}
-.agree-term .employee-search-msg .btn-text i{margin-top:0.75rem;}
+.agree-term .bg-box{@include text(15px);@include clfix;padding-top:28px;padding-bottom:28px;margin-top:5rem;background-color:$kb-ui10;color:$kb-ui02;} // 2108
+.agree-term .bg-box ul{margin:1.1rem 0;} // 2108
+.agree-term .bg-box strong{font-weight:bold;} // 2108
+.agree-term .bg-box .btn-text{float:right;margin-top:18px;} // 2108
+.agree-term .bg-box .btn-text i{margin-top:0.75rem;} // 2108
 .agree-term .agreement-service-choice label{font-weight:bold;}// 전송요구 약관 전체동의 폰트 볼드
 .kb-sec.asset-sync{padding-top:12vh;text-align:center;}
 .asset-sync .character-box{width:134px;height:134px;margin:0 auto;}
@@ -102,6 +104,9 @@
 // .ios.homebar .asset-sync02{bottom:58px;}
 
 //전송요구스탭서브문구
+.kb-sec.sec-tit:first-child [class^=h]{padding:0;margin:0;} // 2108
+.kb-sec.sec-tit:first-child .terms-desc{margin-top:2rem;line-height:1.44;} // 2108
+.kb-sec.sec-tit{} // 2108
 .page-step + .transmission-request{margin-top:44px;}
 .transmission-request .full h4, 
 .transmission-request .full .tit{margin-left: -24px; margin-right: -24px; padding-left:24px; }
@@ -110,6 +115,7 @@
 .transmission-request hr{height:10px; border:none; background-color: $kb-ui10; margin:0 -2.4rem 50px -2.4rem;}
 .transmission-request .agreement-to-terms{border-bottom: none;}
 .transmission-request .agreement-to-terms .st_list{border-bottom:1px solid $kb-ui10;}
+.transmission-request ~ .confirm-agree{margin-top:4rem;} // 2108
 .kb-sec.confirm-agree .agreement-to-terms .header .text{font-weight:bold;} // 약관 헤더 볼드 처리
 .kb-sec.confirm-agree .agreement-to-terms > .checkbox-group:first-child{border-top:1px solid $kb-ui03;}
 .kb-sec.confirm-agree .agreement-to-terms .checkbox-group{padding:2rem 0 2.1rem;}
@@ -158,6 +164,7 @@
 .select-transmission-method .visual-area .text .stxt {display: block; margin-top: 3px; margin-bottom: 3px; @include text($text02, normal); color: $kb-ui04;}
 .select-transmission-method .visual-area .text .mtxt {@include text($text02, normal);}
 .select-transmission-method .visual-area .text strong {font-weight: bold;}
+.select-transmission-method .simple-message.mt48{margin-top:48px;}
 .simple-message_02{padding-bottom:30px;}
 .search-organization-result .form-text .btn-search{margin-right:0px;}
 //마이데이터 연결안내
@@ -779,16 +786,27 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .coupon-list li .use-status .btn-text{position:absolute;right:1.15rem;bottom:1.35rem;padding:10px;letter-spacing:-0.032rem;color:#fff;z-index:1;}
 
 // 리워드 쿠폰 상세 2021-10-08
-.coupon-detail .accordion{margin-top:3.2rem;}
-.coupon-detail .caution-msg{font-size:1.6rem;letter-spacing:-0.032rem;line-height:1.44;color:$kb-ui02;}
-.coupon-detail-summary div:last-of-type{margin-bottom:4.8rem;}
-.coupon-detail-summary .event-img{margin:-1.6rem -2.4rem 3.2rem;text-align:center;}
-.coupon-detail-summary .tit-label{display:inline-block;height:2.4rem;padding:0 1.2rem;border:0.1rem solid #696e76;border-radius:0.2rem;font-size:1.4rem;line-height:2.4rem;color:$kb-ui02;}
-.coupon-detail-summary .company-name{display:block;margin-top:2rem;@include text($size: $text02);color:$kb-ui05}
-.coupon-detail-summary .tit{margin-top:0.5rem;@include text($size: $text01, $weight:bold);}
-.coupon-detail-summary .date{display:block;margin-top:1.4rem;@include number($size: 15px);color:$kb-ui04;}
-.coupon-detail-summary .bar-code{padding:2rem 4rem;margin-top:3.2rem;border:0.1rem solid $kb-ui08;border-radius:0.2rem;}
-.coupon-detail-summary .btn-solid{margin-top:3.2rem;margin-bottom:4.8rem;}
+// .coupon-detail .accordion{margin-top:3.2rem;}
+// .coupon-detail .caution-msg{font-size:1.6rem;letter-spacing:-0.032rem;line-height:1.44;color:$kb-ui02;}
+.coupon-detail .event-img{}
+// .coupon-detail-summary div:last-of-type{margin-bottom:4.8rem;}
+.kb-sec.coupon-detail-summary{padding-top:0;}
+.coupon-detail-summary .event-img{margin:0 -2.4rem;text-align:center;}
+.coupon-detail-summary .info-box{padding:3.2rem 0 2.7rem;}
+.coupon-detail-summary .info-box .tit-label{display:inline-block;height:2.4rem;padding:0 1.2rem;border:0.1rem solid #696e76;border-radius:0.2rem;font-size:1.4rem;line-height:2.4rem;color:$kb-ui02;}
+.coupon-detail-summary .info-box .company-name{display:block;margin-top:2rem;@include text($size: $text02);color:$kb-ui05}
+.coupon-detail-summary .info-box .tit{margin-top:0.5rem;@include text($size: $text01, $weight:bold);}
+.coupon-detail-summary .info-box .date{display:block;margin-top:1.2rem;@include number($size: 15px);color:$kb-ui04;}
+// .coupon-detail-summary .bar-code{padding:2rem 4rem;margin-top:3.2rem;border:0.1rem solid $kb-ui08;border-radius:0.2rem;}
+// .coupon-detail-summary .btn-solid{margin-top:3.2rem;margin-bottom:4.8rem;}
+.coupon-detail-summary .bg-box{padding:2.1rem 2.4rem;margin:0 -0.8rem;border-radius:0.8rem;background-color:#faf6f0;}
+.coupon-detail-summary .bg-box .tit{}
+.coupon-detail-summary .bg-box .tit span{font-weight:normal;}
+.coupon-detail-summary .bg-box .desc{margin-top:1.3rem;line-height:1.44;}
+.coupon-detail-summary .bg-box .dl{display:flex;flex-wrap:wrap;padding-top:0.4rem;margin-top:1.7rem;border-top:1px solid #d3d3d3;font-size:1.4rem;color:$kb-ui03;}
+.coupon-detail-summary .bg-box .dt{width:50%;margin-top:1.4rem;}
+.coupon-detail-summary .bg-box .dd{width:50%;margin-top:1.6rem;text-align:right;}
+
 
 .pointree .search-month{margin-top:7.3rem;}
 .pointree .no-data{margin-top:10rem;}

@@ -1849,7 +1849,7 @@ var jsFixed = {
         $('.js-fixed').each(function(){
             var top = $(this).offset().top + $(this).outerHeight();
             // GUI 수정 요청
-            if($(this).children('.page-step-desc')){
+            if($(this).children('.page-step-desc').length){
                 top -= $(this).find('.page-step-desc').outerHeight();
             }
             $(this).attr('data-fix',top);

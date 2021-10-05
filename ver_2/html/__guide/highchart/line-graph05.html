@@ -41,12 +41,19 @@
     <!-- @@include('@@webRoot/html/_include/common-js.html') -->
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>   
+    <script src="@@webRoot/static/common/lib/highcharts/highcharts-more.js"></script>
 
     <script src="@@webRoot/static/js/menu.js"></script>
     <script src="@@webRoot/static/js/navigation.js"></script>
     <script src="@@webRoot/static/js/ui.js"></script>
     <style>
-        .chart-tooltip li:last-child > div:nth-of-type(1){color:#333 !important;}
+        /* .chart-tooltip li:last-child > div:nth-of-type(1){color:#333 !important;} */
+        /* .chart-tooltip{background:red;display:table;} */
+        /* .chart-tooltip div{display:none;} */
+        /* .chart-tooltip li{background:red;} */
+        .chart-tooltip li{padding:.2rem 0;position:relative;}
+        .chart-tooltip li div:nth-of-type(1){width:7rem !important;display:block;position:absolute;top:.25rem;left:0}
+        .chart-tooltip li div:nth-of-type(2){display:block;text-align:right;margin-left:7rem;}
     </style>
     <!-- Add Script -->
     <script>
@@ -138,7 +145,7 @@
                 shared: true,
                 useHTML: true,
                 headerFormat: '<div style="border-bottom:1px dotted #ccc;font-size:1.4rem;font-weight:bold;font-family:Roboto;padding-bottom:.5rem;margin-bottom:.5rem;">{point.key}</div>' + '<ul class="chart-tooltip">',
-                pointFormat: '<li style="padding:.2rem 0"><div style="color:{series.color};display:inline-block;width:10rem;">{series.name} </div> <div style="text-align:right;display:inline-block;width:10rem;"><b class="num" style="font-size:13px;">{point.y:,.0f}</b><span class="unit">원</span></div></li>',                                
+                pointFormat: '<li><div style="color:{series.color};">{series.name}</div> <div><b class="num" style="font-size:13px;">{point.y:,.0f}</b><span class="unit">원</span></div></li>',                                               
                 footerFormat: '</ul>',
                 padding: 8,
                 shadow: true,
@@ -156,25 +163,36 @@
             series: [{
                 name: "매매 KB시세",
                 color: '#ffba53',
-                data: [10600000, 10700000, 11100000, 13300000, 22100000, 76700000]
+                zIndex: 1,
+                data: [106000000, 107000000, 111000000, 133000000, 221000000, 76700000]
             },{
                 name: "매매 실거래가",
                 color: "#ffba53",
                 dashStyle: "ShortDot",
-                data: [50200000, 63500000, 80900000, 9470000, 140200000, 363400000]
+                zIndex: 1,
+                data: [502000000, 635000000, 809000000, 94700000, 1402000000, 363400000]
             },{
                 name: "전세 KB시세",
                 color: '#ff8a71',
-                data: [80600000, 60700000, 51100000, 73300000, 12100000, 36700000]
+                zIndex: 1,
+                data: [806000000, 607000000, 511000000, 733000000, 121000000, 367000000]
             },{
                 name: "전세 실거래가",
                 color: '#ff8a71',
                 dashStyle: 'ShortDot',
-                data: [30600000, 70700000, 1100000, 4330000, 52100000, 276700000]
+                zIndex: 1,
+                data: [306000000, 707000000, 11000000, 43300000, 521000000, 276700000]
             },{
                 name: "공시가격",
                 color: '#dde1e4',
-                data: [70600000, 20700000, 91100000, 173300000, 212100000, 136700000]
+                type: 'arearange',
+                lineWidth: 0,
+                fillOpacity: .5,
+                zIndex: 0,
+                data: [[706000000,906000000], [507000000,707000000], [411000000,611000000], [633000000,833000000], [21000000,221000000], [267000000,467000000]],
+                tooltip: {
+                    pointFormat: '<li><div style="color#333;">{series.name} </div> <div><b class="num" style="font-size:13px;">{point.low:,.0f}~{point.high:,.0f}</b><span class="unit">원</span></div></li>',
+                }
             }]
         });
         

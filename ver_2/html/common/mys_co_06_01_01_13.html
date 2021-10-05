@@ -22,13 +22,15 @@
             <!-- app-content // -->
             <main class="app-content select-certificate">
                 <div class="page-step js-fixed">
+                    <!-- 수정:2021-10-08 // -->
                     <div class="page-step-inner">
-                        <div class="step" aria-label="총 6단계 중 현재 4단계">
-                            <span class="current">4</span>
-                            <span class="total">6</span>
+                        <div class="step" aria-label="총 5단계 중 현재 3단계">
+                            <span class="current">3</span>
+                            <span class="total">5</span>
                         </div>
                         <h2 class="h1">인증서 선택</h2>
                     </div>
+                    <!-- // 수정:2021-10-08 -->
                     <p class="page-step-desc">사용할 인증서를 선택해 주세요.</p> 
                 </div>
 
@@ -67,50 +69,7 @@
 
         <!-- Layer (modal, bottom sheet) // -->
         <div class="layered">
-            <!-- 통합인증거래 이용동의 // -->
-            <div class="bottom-sheet" data-layered-name="mys_mn_01_01_03_02_certificate">
-                <div class="bottom-sheet_header">
-                    <span class="tit">통합인증거래 이용동의</span>
-                </div>
-                <div class="bottom-sheet_contents">
-                    <section class="kb-sec confirm-agree">
-                        <div class="agreement-to-terms">
-                            <div class="header">
-                                <span class="form-checkbox">
-                                    <input type="checkbox" id="agreeAllCheck" checked="">
-                                    <label for="agreeAllCheck">전체 동의</label><!-- 수정:2021-09-27 -->
-                                </span>
-                            </div>
-                            <ul class="checkbox-group st_list">
-                                <li>
-                                    <span class="form-checkbox_20 align-top">
-                                        <input type="checkbox" id="agreeCheck1" checked="">
-                                        <label for="agreeCheck1">[필수]통합인증을 위한 인증서 본인확인 서비스 이용약관</label>
-                                        <a href="@@webRoot/html/common/mys_co_06_01_01_12.html" class="link"><span class="link-arrow">바로가기</span></a><!-- 수정:2021-10-01 -->
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="form-checkbox_20 align-top">
-                                        <input type="checkbox" id="agreeCheck2" checked="">
-                                        <label for="agreeCheck2">[필수]통합인증(인증서 본인확인)을 위한 개인정보 처리 동의</label>
-                                        <a href="@@webRoot/html/common/mys_co_06_01_01_18.html" class="link"><span class="link-arrow">바로가기</span></a><!-- 수정:2021-10-01 -->
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="form-checkbox_20 align-top">
-                                        <input type="checkbox" id="agreeCheck3" checked="">
-                                        <label for="agreeCheck3">[필수]통합인증(인증서 본인확인)을 위한 고유식별정보 수집・이용 및 위탁 동의</label>
-                                        <a href="@@webRoot/html/common/mys_co_06_01_01_19.html" class="link"><span class="link-arrow">바로가기</span></a><!-- 수정:2021-10-01 -->
-                                    </span>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </section>
-                </div>
-                <button class="btn-close" data-action="close"><span>닫기</span></button>
-            </div>
-            <!-- // 통합인증거래 이용동의 -->
+            @@include('@@webRoot/html/menu/layered/mys_mn_01_01_03_02_bs01.html')
         </div>
         <!-- // Layer (modal, bottom sheet) -->
     </div>

@@ -1,10 +1,10 @@
-<!-- [mys_co_06_01_02_13] 전송요구방법 선택(개별인증) > 기관 선택 > 개별인증동의 > 개별인증_상세정보 전송 수집이용동의 (작성자: 누리어 시스템 변혜선, 최선화) // -->
+<!-- [mys_co_06_01_02_13] 전송요구방법 선택(개별인증) > 기관 선택 > 개별인증동의 > 개별인증_상세정보 전송 수집이용동의_필수동의 (작성자: 누리어 시스템 변혜선, 최선화) // -->
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
-        "title": "개별인증_상세정보 전송 수집이용동의 | 전송요구"
+        "title": "개별인증_상세정보 전송 수집이용동의_필수동의 | 전송요구"
     })
 </head>
 
@@ -12,25 +12,31 @@
     @@include('@@webRoot/html/_include/app-a11y.html')
     <div class="app">
         
+        <!-- 수정:2021-10-08 // -->
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
-            'pageTit':'약관 및 상품설명서',
-            'type':'close'
+            'pageTit':'자산 등록',
+            'type':'step'
         })
+        <!-- // 수정:2021-10-08 -->
         
-
+        
         <!-- app-container //-->
         <div class="app-container">
-
+            
             <!-- app-content // -->
             <main class="app-content select-transmission-method">
-                <!-- <h1 class="is-hidden">약관 및 상품설명서</h1> --><!-- 삭제 2021-09-23 -->
-                <div class="terms-product-manuals">
-                    <h2 class="h1">개인(신용)정보 수집·이용 동의서(상세정보 전송)</h2>
-                    <p>KB국민은행은「신용정보의 이용 및 보호에 관한 법률」, 「개인정보보호법」 등 관련 법령에 따라 다음과 같이 귀하의 개인(신용)정보를 처리합니다.</p><!-- 수정:2021-09-24 -->
-                </div>
+                
+                <!-- 수정:2021-10-08 // -->
+                <section class="kb-sec sec-tit">
+                    <h2 class="h1">개인(신용)정보 수집&middot;이용 동의서(상세정보 전송)</h2>
+                    <div class="terms-desc">
+                        <p>KB국민은행은 「신용정보의 이용 및 보호에 관한 법률」, 「개인정보보호법」 등 관련 법령에 따라 다음과 같이 귀하의 개인(신용)정보를 처리합니다.</p>
+                    </div>
+                </section>
+                
                 <section class="kb-sec transmission-request">                    
                     <div class="caution-txt_01">
-                        <h3 class="tit">수집·이용목적</h3>
+                        <h3 class="tit">수집&middot;이용목적</h3>
                         <div class="desc-box">
                             <p>전송요구를 통한 본인신용정보 통합조회 서비스의 이용</p>
                         </div>  
@@ -40,16 +46,17 @@
                         </div>
                         <h3 class="tit">거부 권리 및 불이익</h3>
                         <div class="desc-box">
-                            <p>귀하는 개인(신용)정보 수집·이용에 관한 동의를 거부하실 수 있습니다. 다만, “수집·이용에 관한 동의”는 본인신용정보 통합조회 서비스의 제공을 위한 필수적 사항이므로 동의를 거부하실 경우 본인신용 정보 통합조희 서비스의 이용이 제한 될 수 있습니다.</p>
+                            <p>귀하는 개인(신용)정보 수집&middot;이용에 관한 동의를 거부하실 수 있습니다. 다만, "수집&middot;이용에 관한 동의"는 본인신용정보 통합조회 서비스의 제공을 위한 필수적 사항이므로 동의를 거부하실 경우 본인신용정보 통합조회 서비스의 이용이 제한될 수 있으며, "선택 항목에 대한 수집&middot;이용에 관한 동의"는 거부하실 경우 해당 선택항목에 대한 통합조회 서비스는 이용이 제한될 수 있습니다.</p>
                         </div>   
-                        <h3 class="tit">수집·이용항목</h3>
+                        <h3 class="tit">수집&middot;이용항목</h3>
                         <div class="desc-box">
                             <!-- 수정:2021-09-24 // -->
                             <h4 class="h4">개인(신용)정보</h4>
-                            <h5 class="h5 mt20">개인(식별)정보</h5>
+                            <h5 class="h5 mt20">개인(식별)정보 <span>(필수 항목)</span></h5>
                             <p class="mt16">: 접근토근</p>
-                            <h5 class="h5 mt20 mb12">신용거래정보</h5>
+                            <h5 class="h5 mt20 mb12">신용거래정보 <span>(필수 항목)</span></h5>
                             <!-- // 수정:2021-09-24 -->
+                            <!-- 상세정보 전송 시 업권별 신용거래정보 상세내용 참고 // -->
                             <ul data-style="list">
                                 <li>
                                     <p>은행</p>
@@ -61,14 +68,15 @@
                                     </ul>
                                 </li>
                             </ul>
+                            <!-- // 상세정보 전송 시 업권별 신용거래정보 상세내용 참고 -->
                         </div>               
                     </div>    
                 </section>
+
                 <section class="kb-sec confirm-agree">
-                    <h4 class="tit h4">상품구매 카테고리 정보</h4>
+                    <h4 class="is-hidden">동의하기</h4>
                     <div class="confirm-info">
-                        <p class="tit">가전 및 전자 / 도서 및 문구 / 패션 및 의류 / 스포츠 / 화장품 / 아동 및 유아 / 식품 / 생활 및 가구 / 여행 및 교통 / 문화 및 레저 / 음식 / E쿠폰 및 기타서비스 카테고리 정보</p><!-- 수정:2021-09-24 -->
-                        <p class="question">위 상품구매 정보 수집・이용에 동의 하십니까?</p>
+                        <p class="question">위 개인(신용)정보 제공에 동의하십니까?</p>
                         <ul class="radio-group">
                             <li>
                                 <span class="form-checkbox"><input type="radio" id="radioAgree1-1" name="radioAgree1" checked=""><label for="radioAgree1-1">동의하지 않음</label></span>
@@ -78,41 +86,14 @@
                             </li>    
                         </ul>
                     </div>
-                    
-                    <h4 class="tit h4">가맹점명 정보</h4>
-                    <div class="confirm-info">
-                        <p class="tit">가맹점명 정보</p>
-                        <p class="question">위 상품구매 정보 수집・이용에 동의 하십니까?</p>
-                        <ul class="radio-group">
-                            <li>
-                                <span class="form-checkbox"><input type="radio" id="radioAgree2-1" name="radioAgree2" checked=""><label for="radioAgree2-1">동의하지 않음</label></span>
-                            </li>
-                            <li>
-                                <span class="form-checkbox"><input type="radio" id="radioAgree2-2" name="radioAgree2"><label for="radioAgree2-2">동의함</label></span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <h4 class="tit h4">적요 또는 거래메모 정보</h4>
-                    <div class="confirm-info">
-                        <p class="tit">적요 또는 거래메모 정보</p>
-                        <p class="question">위 적요 또는 거래메모 정보 수집・이용에 동의 하십니까?</p>
-                        <ul class="radio-group">
-                            <li>
-                                <span class="form-checkbox"><input type="radio" id="radioAgree3-1" name="radioAgree3" checked=""><label for="radioAgree3-1">동의하지 않음</label></span>
-                            </li>
-                            <li>
-                                <span class="form-checkbox"><input type="radio" id="radioAgree3-2" name="radioAgree3"><label for="radioAgree3-2">동의함</label></span>
-                            </li>
-                        </ul>
-                    </div>
                 </section>
-                <!-- </div> --><!-- 삭제 2021-09-23 -->
+                
                 <div class="sticky-bottom">
                     <div class="btn-area">
-                        <button type="button" class="btn-solid"><span>확인</span></button>
+                        <button type="button" class="btn-solid"><span>다음</span></button>
                     </div>
                 </div>
+                <!-- 수정:2021-10-08 // -->
             </main>
             <!-- // app-content -->
 

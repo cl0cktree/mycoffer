@@ -12,10 +12,12 @@
     @@include('@@webRoot/html/_include/app-a11y.html')
     <div class="app">
         
+        <!-- 수정:2021-10-08 // -->
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
-            'pageTit':'약관 및 상품설명서',
-            'type':'close'
+            'pageTit':'자산 등록',
+            'type':'step'
         })
+        <!-- // 수정:2021-10-08 -->
         
 
         <!-- app-container //-->
@@ -23,12 +25,19 @@
 
             <!-- app-content // -->
             <main class="app-content select-transmission-method">
-                <!-- <h1 class="is-hidden">약관 및 상품설명서</h1> --><!-- 수정:2021-09-24 -->
-                <div class="terms-product-manuals">
-                    <h2 class="h1">개인(신용)정보 수집·이용 동의서 (가입상품목록조회) </h2>
-                    <p>KB국민은행「신용정보의 이용 및 보호에 관한 법률」, 「개인정보보호법」 등 관련 법령에 따라 다음과 같이 귀하의 개인(신용)정보를 처리합니다.</p><!-- 수정:2021-09-24 -->
+                <!-- 수정:2021-10-08 // -->
+                <div class="page-step js-fixed">
+                    <div class="page-step-inner">
+                        <div class="step" aria-label="총 5단계 중 현재 2단계">
+                            <span class="current">2</span>
+                            <span class="total">5</span>
+                        </div>
+                        <h2 class="h1">개인(신용)정보 수집&middot;이용 동의서 <span>(가입상품목록조회)</span></h2>
+                    </div>
+                    <p class="page-step-desc">KB국민은행 「신용정보의 이용 및 보호에 관한 법률」, 「개인정보보호법」 등 관련 법령에 따라 다음과 같이 귀하의 개인(신용)정보를 처리합니다.</p>
                 </div>
-
+                <!-- // 수정:2021-10-08 -->
+                
                 <section class="kb-sec transmission-request">                    
                     <div class="caution-txt_01">
                         <h3 class="tit">수집·이용목적</h3>
@@ -37,7 +46,7 @@
                         </div>                        
                         <h3 class="tit">보유 및 이용기간</h3>
                         <div class="desc-box">
-                            <strong>상세정보 전송요구 시를 또는 7일 중 짧은 기간</strong><!-- 수정:2021-09-24 -->
+                            <strong>상세정보 전송요구 시까지 또는 7일 중 짧은 기간</strong><!-- 수정:2021-10-08 -->
                         </div> 
                         <h3 class="tit">거부 권리 및 불이익</h3>
                         <div class="desc-box">
@@ -50,6 +59,7 @@
                             <h5 class="h5 mt20">개인(식별)정보</h5>
                             <p class="mt16">: 전자서명, 접근토근, 인증서, 전송요구서</p>
                             <h5 class="h5 h5_top_bottom">신용거래정보</h5>
+                            <!-- 가입상품목록 조회 시 업권별 신용거래정보 상세내용 // -->
                             <ul data-style="list">
                                 <li>은행 : 고객정보최초생성일, 보유계좌수, 보유계좌 목록, 계좌번호, 회차번호, 상품명, 마이너스약정여부, 외화계좌여부, 계좌구분, 계좌상태, 전송요구여부, 적요 전송요구여부</li>
                                 <li>카드 : 보유카드수, 선불카드수, 보유카드목록, 선불카드목록, 카드식별자, 선불카드식별자, 카드 구분, 카드번호, 카드상품명, 선불카드상품명, 발급일자(기명일자), 액면한도(최대충전한도), 본인/가족구분, 가맹점명 전송요구여부, 전송요구여부</li>
@@ -63,11 +73,35 @@
                                 <li>인수채권 : 채권수, 권면목록, 채권번호, 전송요구여부, 기관분류, 채권인수일(특수채권편입일/최초대출일), 최초대출기관</li>
                                 <li>대부업체 : 채권수, 권면목록, 채권번호, 전송요구여부, 기관분류, 채권인수일(특수채권편입일/최초대출일), 최초대출기관</li>
                             </ul>
+                            <!-- // 가입상품목록 조회 시 업권별 신용거래정보 상세내용 -->
                             <!-- // 수정:2021-09-24 -->
                         </div>
                     </div>
                 </section>
-                <!-- </div> --><!-- 삭제 2021-09-23 -->
+
+                <!-- 수정:2021-10-08 // -->
+                <section class="kb-sec confirm-agree">
+                    <h4 class="is-hidden">동의하기</h4>
+                    <div class="confirm-info">
+                        <p class="question">위 상품구매 정보 수집&middot;이용에 동의하십니까?</p>
+                        <ul class="radio-group">
+                            <li>
+                                <span class="form-checkbox"><input type="radio" id="radioAgree1-1" name="radioAgree1" checked=""><label for="radioAgree1-1">동의하지 않음</label></span>
+                            </li>
+                            <li>
+                                <span class="form-checkbox"><input type="radio" id="radioAgree1-2" name="radioAgree1"><label for="radioAgree1-2">동의함</label></span>
+                            </li>    
+                        </ul>
+                    </div>
+                </section>
+                
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid"><span>다음</span></button>
+                    </div>
+                </div>
+                <!-- // 수정:2021-10-08 -->
+
             </main>
             <!-- // app-content -->
 
@@ -85,6 +119,18 @@
     @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
+    <script>
+        $(document).ready(function(){
+			// 2021-10-08
+            $('.btn-cancel').on('click', function() {
+                modalPopup({
+                    title: '',
+                    message: "마이데이터 서비스 이용을 위한 자산 등록을 취소하시겠습니까?",
+                    type: "confirm"
+                });
+            });
+        });
+    </script>
 
 </body>
 
