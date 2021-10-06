@@ -12,22 +12,27 @@
         .layer-call > button span{display:block;}
     </style>
 </head>
-<body>    
-    <div class="layer-call">
-        <!-- 마이데이터 관리 // -->
-        <h1 class="h2">마이데이터 관리</h1>
-        <button type="button" class="btn-line" data-call-layered="mys_mn_01_01_02_06_search" data-page-id="MYS_MN_01_01_02_06_BS01"><span>이력정보 조회</span></button>
-        <button type="button" class="btn-line" data-call-layered="MYS_MN_01_02_03" data-page-id="MYS_MN_01_02_03"><span>마이데이터 탈퇴</span></button>
-        <button type="button" class="btn-line" data-call-layered="MYS_MN_01_01_02_04" data-page-id="MYS_MN_01_01_02_04"><span>전송요구해지</span></button>
-        <button type="button" class="btn-line" data-call-layered="MYS_MN_01_01_02_05" data-page-id="MYS_MN_01_01_02_05"><span>개인신용정보 삭제</span></button>
-        <!-- // 마이데이터 관리 -->
-    </div>
+<body> 
+    <div class="app">
+        <div class="layer-call">
+            <!-- 마이데이터 관리 // -->
+            <h1 class="h2">마이데이터 관리</h1>
+            <button type="button" class="btn-line" data-call-layered="mys_mn_01_01_02_06_search" data-page-id="MYS_MN_01_01_02_06_BS01"><span>이력정보 조회</span></button>
+            <button type="button" class="btn-line" data-call-layered="mys_co_06_01_01_01_bs01" data-page-id="MYS_MN_01_01_03_BS"><span>인증방법 선택하기(1개 기관 선택시)</span></button>
+            <button type="button" class="btn-line" data-call-layered="MYS_MN_01_02_03" data-page-id="MYS_MN_01_02_03"><span>마이데이터 탈퇴</span></button>
+            <button type="button" class="btn-line" data-call-layered="MYS_MN_01_01_02_04" data-page-id="MYS_MN_01_01_02_04"><span>전송요구해지</span></button>
+            <button type="button" class="btn-line" data-call-layered="MYS_MN_01_01_02_05" data-page-id="MYS_MN_01_01_02_05"><span>개인신용정보 삭제</span></button>
+            <button type="button" class="btn-line" onclick="modalDemo4()"><span>비활성화 상태에서 다음 버튼 선택시<br>(화면스크롤 확인)</span></button>
+            <!-- // 마이데이터 관리 -->
+        </div>
 
-    <div class="layered">
-        @@include('@@webRoot/html/menu/layered/mys_mn_01_01_02_06_bs01.html')
-        @@include('@@webRoot/html/menu/layered/mys_mn_01_01_02_04.html')
-        @@include('@@webRoot/html/menu/layered/mys_mn_01_01_02_05.html')
-        @@include('@@webRoot/html/menu/layered/MYS_MN_01_02_03.html')
+        <div class="layered">
+            @@include('@@webRoot/html/menu/layered/mys_mn_01_01_02_06_bs01.html')
+            @@include('@@webRoot/html/menu/layered/mys_mn_01_01_02_04.html')
+            @@include('@@webRoot/html/menu/layered/mys_mn_01_01_02_05.html')
+            @@include('@@webRoot/html/menu/layered/MYS_MN_01_02_03.html')
+            @@include('@@webRoot/html/common/layered/mys_co_06_01_01_01_bs01.html')
+        </div>
     </div>
     <!-- Script -->
     @@include('@@webRoot/html/_include/common-js.html')
@@ -36,6 +41,14 @@
     <!-- Add Script -->
 
     <script>
+        function modalDemo4(){
+            modalPopup({
+                title: "",
+                message: "화면을 스크롤하여 전송요구서/동의서 내용을 모두 확인해 주세요?"
+            });
+        }
+
+
         //레이어 확인용 스크립트 (개발시 삭제) [s]
         var url = window.location.href;
         var urlArr = url.split('#');

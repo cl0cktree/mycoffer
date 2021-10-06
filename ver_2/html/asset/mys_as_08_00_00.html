@@ -544,7 +544,7 @@
                             </div>
                         </h4>
                         <div class="highcharts-box charts-type_square no-space">
-                            <div class="swiper-container t01 js-swiper" data-swiper-options="paySummarySwiperOptions">
+                            <div class="swiper-container t01 js-swiper" data-swiper-options="paySummarySwiperOptions" data-init-call="swiperFunc2">
                                 <script>
                                     var paySummarySwiperOptions = {
                                         'autoHeight': true,
@@ -570,13 +570,8 @@
                                                 <div class="graph-info">
                                                     비슷한 자산규모 고객 보다<br>월 평균 납입보험료를 <b class="num" data-unit-after="%">50</b> <br>적게 내고 계시네요.
                                                 </div>
-                                                <!-- [chart area] //-->
-                                                <div class="chart-area" id="">
-                                                    <img class="temp"
-                                                        src="@@webRoot/static/images/_temp/graph_as_08_00_00-05.png"
-                                                        alt="차트 예시 이미지">
-                                                    <!-- 하단 텍스트  : 나 유사자산규모군 -->
-                                                </div>
+                                                <!-- [chart area] 하이차트 UI 추가 //-->
+                                                <div class="chart-area" id="columnChart04"></div>
                                                 <!--// [chart area] -->
                                             </figure>
 
@@ -588,13 +583,8 @@
                                                 <div class="graph-info">
                                                    같은 연령대 보다<br>월평균 납입보험료를 <b class="num" data-unit-after="%">20</b> <br>많이 내고 계시네요.
                                                 </div>
-                                                <!-- [chart area] //-->
-                                                <div class="chart-area" id="">
-                                                    <img class="temp"
-                                                        src="@@webRoot/static/images/_temp/graph_as_08_00_00-05.png"
-                                                        alt="차트 예시 이미지">
-                                                    <!-- 하단 텍스트  : 나 동일연령대 -->
-                                                </div>
+                                                <!-- [chart area] 하이차트 UI 추가 //-->
+                                                <div class="chart-area" id="columnChart05"></div>
                                                 <!--// [chart area] -->
                                             </figure>
                                         </div>
@@ -1126,6 +1116,180 @@
                     
                 }
             ],
+        });
+
+        var columnChart04 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'columnChart04', // chart 삽입 target ID
+                type: "column",
+                marginLeft: 0,
+                marginRight: 0,
+                marginTop:0,
+                marginBottom: 25,
+                height: 115,
+                top:0,
+            },
+            legend: { enabled: false },
+            tooltip: {
+                useHTML: true,
+                headerFormat: '<div style="text-align:right;color:#696e76;font-size:1.4rem;">',
+                pointFormat: '<span style="color:#26282c;font-size:1.5rem;" class="num">{point.y:,.0f}</span>원<br>',
+                footerFormat: '</div>',
+                padding: 10,
+                backgroundColor: "#FFF",
+                shadow: true,
+                borderRadius: 4,
+                verticalAlign: 'bottom',
+                borderColor: '#f3f3f3',
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '1.4rem',
+                    fontFamily: "KBFGText",
+                }
+            },
+            xAxis: {
+                type: "category",
+                categories: ["나", "비교그룹"],
+                labels: {
+                    style: {
+                        color: "#212328",
+                        fontSize: "1.4rem",
+                        fontFamily: 'KBFGText'
+                    }
+                }
+            },
+            yAxis: {
+                endOnTick: false,
+                enabled: false,  // 사용 안함
+                labels: { enabled: false },  // 축 lebel 사용 안함
+                title: { enabled: false }, // 축 title 사용 안함
+                tickWidth: 0,  // 그리드 라인 너비
+                gridLineColor: 'transparsnt',  // 그리드 라인 컬러 (없음)
+                plotLines: [
+                    {
+                        color: "#c7ccd1",
+                        width: 1,
+                        value: 520000,
+                        zIndex: 2,
+                        dashStyle: 'dash'
+                    },
+                ],
+                plotBands: [{ // 두 데이터 간의 gap 생성
+                    from: 420000,
+                    to: 620000,
+                    zIndex: 1,
+                    color: '#f7f7f8'
+                }],
+
+            },
+            plotOptions: {
+                series: {
+                    color: '#ffd338', // 기본색상
+                    pointWidth: 40,  // 막대그래프 너비
+                    borderRadiusTopLeft: "7px",  // radius 값
+                    borderRadiusTopRight: "7px" // radius 값
+                }
+            },
+            series: [
+                {
+                    data: [420000, 
+                        {
+                            y: 620000,
+                            color: '#c7ccd1', // 강조할 data의 색상
+                        }
+                    ],
+                    pointPlacement: 0,
+                }
+            ]
+        });
+        var columnChart05 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'columnChart05', // chart 삽입 target ID
+                type: "column",
+                marginLeft: 0,
+                marginRight: 0,
+                marginTop:0,
+                marginBottom: 25,
+                height: 115,
+                top:0,
+                events: {
+                    load: function () {
+                        swiperFunc2() // 그래프 로딩 후 하이차트 swiper 실행
+                    }
+                }
+            },
+            legend: { enabled: false },
+            tooltip: {
+                useHTML: true,
+                headerFormat: '<div style="text-align:right;color:#696e76;font-size:1.4rem;">',
+                pointFormat: '<span style="color:#26282c;font-size:1.5rem;" class="num">{point.y:,.0f}</span>원<br>',
+                footerFormat: '</div>',
+                padding: 10,
+                backgroundColor: "#FFF",
+                shadow: true,
+                borderRadius: 4,
+                verticalAlign: 'bottom',
+                borderColor: '#f3f3f3',
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '1.4rem',
+                    fontFamily: "KBFGText",
+                }
+            },
+            xAxis: {
+                type: "category",
+                categories: ["나", "비교그룹"],
+                labels: {
+                    style: {
+                        color: "#212328",
+                        fontSize: "1.4rem",
+                        fontFamily: 'KBFGText'
+                    }
+                }
+            },
+            yAxis: {
+                endOnTick: false,
+                enabled: false,  // 사용 안함
+                labels: { enabled: false },  // 축 lebel 사용 안함
+                title: { enabled: false }, // 축 title 사용 안함
+                tickWidth: 0,  // 그리드 라인 너비
+                gridLineColor: 'transparsnt',  // 그리드 라인 컬러 (없음)
+                plotLines: [
+                    {
+                        color: "#c7ccd1",
+                        width: 1,
+                        value: 520000,
+                        zIndex: 2,
+                        dashStyle: 'dash'
+                    },
+                ],
+                plotBands: [{ // 두 데이터 간의 gap 생성
+                    from: 420000,
+                    to: 620000,
+                    zIndex: 1,
+                    color: '#f7f7f8'
+                }],
+
+            },
+            plotOptions: {
+                series: {
+                    color: '#ffd338', // 기본색상
+                    pointWidth: 40,  // 막대그래프 너비
+                    borderRadiusTopLeft: "7px",  // radius 값
+                    borderRadiusTopRight: "7px" // radius 값
+                }
+            },
+            series: [
+                {
+                    data: [420000, 
+                        {
+                            y: 620000,
+                            color: '#c7ccd1', // 강조할 data의 색상
+                        }
+                    ],
+                    pointPlacement: 0,
+                }
+            ]
         });
         //하이차트 UI 추가 end
 

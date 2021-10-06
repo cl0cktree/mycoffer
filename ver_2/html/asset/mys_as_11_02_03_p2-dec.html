@@ -1,0 +1,268 @@
+<!-- [MYS_AS_11_02_03_P2] 작성자: 누리어 시스템 김홍범 -->
+<!DOCTYPE html>
+<html lang="ko" data-channel="ch_star">
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "Wish House 플래너 | 자산"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header //-->
+		@@include('@@webRoot/html/_include/app-integrated-header.html',{
+			'pageTit' :'Wish House 플래너',
+			'type':''
+		}) 
+		<!-- // app-header -->
+
+		<!-- app-container //-->
+		<div class="app-container">
+					
+			<!-- app-content // -->
+			<main class="app-content my-asset wish-house-planer">				
+				<!-- 주소입력 // -->
+				<section class="kb-sec full">
+					<div class="top-area">
+						<h2 class="msg">Wish House 매입을 위해 <br>약 <strong><span class="num" data-unit-after="억">5</span> <span class="num" data-unit-after="만원">9,000</span></strong>의 자금이 필요합니다.</h2><!-- 추가 수정 -->
+					</div>			
+				</section>
+				<section class="kb-sec planer">
+					<div class="progress-wrap">
+						<span class="wish-gap"></span>	<!-- left : 0 고정, width : 100% 고정 ( 자산 초과시 스크립트 제어) -->
+						<!-- 현금, 내집 순서 변경 // -->
+						<span class="my-cash"></span><!-- left : 자산 , width : 준비자산비율 백분율표시 (스크립트 제어) -->
+						<span class="my-house" style="left:20%;"></span><!-- width : 자산비율 백분율표시 (스크립트 제어) -->
+					</div>
+					<div class="wish-house-price">
+						<h2 class="tit">Wish House KB시세</h2>
+						<p class="price"><span class="num" data-unit-after="억">14</span> <span class="num" data-unit-after="만원">9,000</span></p>
+					</div>
+					<div class="my-money-list">
+						<ul>
+							<li class="cash">
+								<p class="txt">Wish House 준비자산</p>
+								<p class="amount"><span class="num" data-unit-after="억">5</span> <span class="num" data-unit-after="만원">6,000</span></p>
+							</li>
+							<li class="mine">
+								<p class="txt">My House 자산 <span class="sml">(대출금 제외)</span></p>
+								<p class="amount"><span class="num" data-unit-after="억">5</span> <span class="num" data-unit-after="만원">6,000</span></p>
+							</li>
+							<li class="minus type2 line"> <!-- 추가 수정 -->
+								<p class="txt">부족한 금액</p>
+								<p class="amount"><span class="num" data-unit-after="억">5</span> <span class="num" data-unit-after="만원">6,000</span></p>
+							</li>
+						</ul>
+					</div>
+					<div class="loan-card-list">	
+						<h2 class="tit">KB 스마트 대출</h2>	
+						 
+						<div class="challenge-box content-swiper-wrap">
+							<div class="swiper-container content-swiper t01 js-swiper" data-swiper-options="assetSmartLoan">
+								<script>
+									var assetSmartLoan = {
+										"pagination": {
+											"el": ".swiper-pagination"
+										},
+										"spaceBetween": 16,
+										"slidesPerView": "auto",
+										"autoHeight": "true"                                    
+									};
+								</script>
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<a href="#none" title="주택구입자금대출">
+											<span class="loan-desc">내 집 구입을 계획하신다면</span>
+											<span class="loan-tit">부동산담보대출</span>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="#none" title="전월세보증금대출">
+											<span class="loan-desc">전월세 고민 빠르게 해결</span>
+											<span class="loan-tit">전월세보증금대출</span>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="#none" title="신용대출">
+											<span class="loan-desc">복잡한 우대금리·중도상환수수료 NO</span>
+											<span class="loan-tit">신용대출</span>
+										</a>
+									</div>
+								</div>
+								<div class="swiper-pagination"></div>
+							</div>
+						</div>
+					</div>					
+					<div class="house-no-gap">
+					</div>
+					<p class="simple-message">
+						세금 및 부대비용(중개보수, 취득세)이 발생할 수 있습니다.
+					</p>
+				</section>
+				<section class="kb-sec house-no-gap">
+					<h2 class="is-hidden">준비완료</h2>
+					<div class="complete-msg">
+						<i class="icon-complete_60"></i>
+						<strong class="tit">Wish House 매입을 위한<br>준비가 완료되었어요.</strong>
+					</div>	
+					<div class="wish-house-price">
+						<h2 class="tit">Wish House KB시세</h2>
+						<p class="price"><span class="num" data-unit-after="억">14</span> <span class="num" data-unit-after="만원">9,000</span></p>
+					</div>
+					<div class="my-money-list">
+						<ul>
+							<li class="mine">
+								<p class="txt">My House 자산 <span class="sml">(대출금 제외)</span></p>
+								<p class="amount"><span class="num" data-unit-after="억">5</span> <span class="num" data-unit-after="만원">6,000</span></p>
+							</li>
+							<li class="minus type2 line">
+								<p class="txt">남는 금액</p>
+								<p class="amount"><span class="num" data-unit-after="억">5</span> <span class="num" data-unit-after="만원">6,000</span></p>
+							</li>
+						</ul>
+					</div>
+					<p class="simple-message mt48">
+						세금 및 부대비용(중개보수, 취득세)이 발생할 수 있습니다.
+					</p>
+				</section>
+				<section class="kb-sec house-no-gap">
+					<h2 class="is-hidden">준비완료</h2>
+					<div class="complete-msg">
+						<i class="icon-complete_60"></i>
+						<strong class="tit">Wish House로<br>이사하실 수 있어요!</strong>
+					</div>	
+					<div class="wish-house-price">
+						<h2 class="tit">Wish House KB시세</h2>
+						<p class="price"><span class="num" data-unit-after="억">14</span> <span class="num" data-unit-after="만원">9,000</span></p>
+					</div>
+					<div class="my-money-list">
+						<ul>
+							<li class="cash">
+								<p class="txt">Wish House 준비자산</p>
+								<p class="amount"><span class="num" data-unit-after="억">5</span> <span class="num" data-unit-after="만원">6,000</span></p>
+							</li>
+							<li class="mine">
+								<p class="txt">My House 자산 <span class="sml">(대출금 제외)</span></p>
+								<p class="amount"><span class="num" data-unit-after="억">5</span> <span class="num" data-unit-after="만원">6,000</span></p>
+							</li>
+							<li class="minus type2 line">
+								<p class="txt">남는 금액</p>
+								<p class="amount"><span class="num" data-unit-after="억">5</span> <span class="num" data-unit-after="만원">6,000</span></p>
+							</li>
+						</ul>
+					</div>
+					<p class="simple-message mt48">
+						세금 및 부대비용(중개보수, 취득세)이 발생할 수 있습니다.
+					</p>	
+				</section>
+			
+				<div class="sticky-bottom">	
+					<div class="btn-area">
+						<button type="button" class="btn-solid gray"><span>준비자산 등록</span></button>
+						<a href="@@webRoot/html/goal/mys_go_00_00_00.html" class="btn-solid"><span>부족한 자금 모으기</span></a>
+					</div>
+				</div>
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (modal, bottom sheet) // -->
+		<div class="layered">	
+		</div>
+		<!-- // Layer (modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+	<script>
+        $(document).ready(function(){
+			
+			$('button[data-action=kbSmartLoan]').on('click',function(){
+				modalPopup({
+					title: "",
+					message: "상세보기 페이지로 이동하시겠습니까?",
+					type: "confirm",
+					textOkButton: "확인",
+					textCancelButton: "취소",
+					onOk: function() {
+						
+					},
+					onCancel: function() {
+						
+					}
+				});
+			});
+			$('button[data-action=goLiiv]').on('click',function(){
+				modalPopup({
+					title: "",
+					message: "리브부동산으로 이동하시겠습니까?",
+					type: "confirm",
+					textOkButton: "확인",
+					textCancelButton: "취소",
+					onOk: function() {
+						
+					},
+					onCancel: function() {
+						
+					}
+				});
+			});
+			
+			
+			//start
+			var transitionEnd = 'transitionend webkitTransitionEnd oTransitionEnd transitionend';
+			var wid_wishGap = 0
+			var wid_myCash = 0
+			var wid_myHouse = 0
+
+			$('.my-asset.wish-house-planer .progress-wrap .wish-gap').css({
+					"width":"100%", //wish-gap
+					//"width":"80%", //wish-gap 자산 초과시
+				});
+			
+			$('.wish-gap').one(transitionEnd, function(){
+				$(this).addClass('is-active');
+				$(this).next().css({
+					"width":"20%",  // wish house 준비자산
+				})
+			});
+			// 현금, 내집 순서 변경	
+			$('.my-cash').one(transitionEnd, function(){
+				$(this).addClass('is-active');
+				$(this).next().css({
+					"width":"30%", // my house 내집
+				})
+			});
+
+			$('.my-house').one(transitionEnd, function(){
+				$(this).addClass('is-active');
+				// $(this).next().css({
+				// 	"width":"30%", // my house 대출
+				// })
+				wid_wishGap = $('.wish-gap').width()				
+				wid_myCash = $('.my-cash').width()							
+				wid_myHouse = $('.my-house').width()
+
+				var my_sum = wid_myCash + wid_myHouse + 25
+				if(wid_wishGap < my_sum){
+					$('.wish-gap').removeClass('is-active')
+				};	
+			});
+
+			//$('.my-loan').one(transitionEnd, function(){
+				//$(this).addClass('is-active'); 
+			//});
+			//end
+			
+		})
+	
+	</script>
+</body>
+
+</html>

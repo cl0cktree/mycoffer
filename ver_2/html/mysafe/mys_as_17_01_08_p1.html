@@ -57,7 +57,12 @@
                         <strong class="tit required">보유량</strong>
                         <div class="kb-form gold-input-num not-ready no-transition" data-status="info">
                             <div class="kb-form_inner form-text">
-                                <input type="text" class="gold-unit-input" id="mysafe_01" placeholder="0.00" value="">
+                                <input type="text" inputmode="numeric" class="gold-unit-input gold-unit-input-1" id="mysafe_01_01" placeholder="0" value="" data-unit="" data-action="autoSeperator" value="">
+                                <button class="btn-data-clear gold-unit-clear"><i class="icon-data-clear_24">지우기</i></button>
+                            </div>
+                            <div class="my-safe-dot">.</div>
+                            <div class="kb-form_inner form-text">
+                                <input type="text" inputmode="numeric" class="gold-unit-input gold-unit-input-2" id="mysafe_01_02" placeholder="00" value="" data-unit="" data-action="autoSeperator" maxlength="2" value="">
                                 <button class="btn-data-clear gold-unit-clear"><i class="icon-data-clear_24">지우기</i></button>
                             </div>
                         </div>
@@ -85,7 +90,7 @@
                 <section class="kb-sec mt24">
                     <label for="mysafe_04" class="required tit gold-trans-titlte empty-gold-unit-info mt24">환산금액</label>
                     <div class="button-area safe-flex100">
-                        <button class="btn-line my-gold-value" disabled=""><span>조회</span></button>
+                        <button class="btn-line my-gold-value"><span>조회</span></button>
                     </div>
                     <p class="my-gold-trans-info info-msg">보유중량 입력 후 조회 버튼을 누르시면 환산금액이 조회됩니다.</p>
                     <div class="kb-form gold-input-value safe-flex100 mt12 safe-display-none not-ready no-transition" data-status="info">
@@ -142,12 +147,16 @@
         var gold_input_num;
         var get_data_status; //data-status 값을 가져오거나 편집하기 위한 용도.
         var gold_shape_input; //금형태 직접 입력 시 공백여부 확인 및 값 확인용.
-        var currentVal=0;//값초기화
-        var bu_num=0; //금단위 바텀시트 선택 여부 확인용.
+        var currentVal=null;//값초기화
+        var currentVal_1=null;
+        var currentVal_2=null;
+        var bu_num=1; //금단위 바텀시트 선택 여부 확인용.
         var gs_num=0; //금형태 바텀시트 선택 여부 확인용.
         var gsi=0; //직접 입력 여부 확인용.
         var mgv=0; //조회버튼 클릭 여부 확인용.
         var $gold_unit_input=$('.gold-unit-input');//.gold-unit-input 선호출용.
+        var $gold_unit_input_1=$('.gold-unit-input-1');//.gold-unit-input 선호출용.
+        var $gold_unit_input_2=$('.gold-unit-input-2');//.gold-unit-input 선호출용.
         var $safe_flex_wrap=$('.safe-flex-wrap'); //.safe-flex-wrap 선호출용.
         var $my_gold_value=$('.my-gold-value'); //.my-gold-value 선호출용.
         var $my_gold_enrollment=$('.my-gold-enrollment'); //.my-gold-enrollment 선호출용.
@@ -222,14 +231,23 @@
             //     $my_gold_enrollment.attr('disabled','disabled');
             // }
         };
-        $gold_unit_input.on('propertychange change keyup paste input', function(event) {//금단위 입력시 변화 된 값 인식.
-            currentVal = $gold_unit_input.val();
+        $gold_unit_input_1.on('propertychange change keyup paste input', function(event) {//금단위 입력시 변화 된 값 인식.
+            currentVal_1 = $gold_unit_input_1.val();
             var oldVal;
-            if(currentVal == oldVal) {
+            if(currentVal_1 == oldVal) {
                 return;
             }
-            oldVal = currentVal;
-            change_check();
+            oldVal = currentVal_1;
+            // change_check();
+        });
+        $gold_unit_input_2.on('propertychange change keyup paste input', function(event) {//금단위 입력시 변화 된 값 인식.
+            currentVal_2 = $gold_unit_input_2.val();
+            var oldVal;
+            if(currentVal_2 == oldVal) {
+                return;
+            }
+            oldVal = currentVal_2;
+            // change_check();
         });
         $('.gold-unit-clear').on('click',function(){//보유 항목의 단위입력 삭제 버튼으로 클릭 시 관련된 기능들 리셋.
             $safe_flex_wrap.find('p').removeClass('error-msg');
@@ -270,7 +288,7 @@
             $my_gold_enrollment.attr('disabled','disabled');
         });
         $my_gold_value.on('click',function(){//조회버튼 클릭시 숨어 있던 가격 부분이 노출 되는 함수의 트리거.
-            if ((bu_num>0)&&(currentVal!=='')){
+            if ((bu_num>0)&&(currentVal_1!=='')&&(currentVal_2!=='')&&(currentVal_1!==null)&&(currentVal_2!==null)){
                 value_trans_ok();
                 mgv=1;
             }else{

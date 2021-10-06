@@ -15,7 +15,6 @@
 .safe-content-minus{color:$color-blue;}
 .safe-content-minus:before{content:'';display:inline-block;width:0rem;height:0rem;margin-right:0.4rem;border-left:0.7rem solid transparent;border-right:0.7rem solid transparent;border-bottom:1.1rem solid $color-blue;transform:rotate(180deg);}
 .safe-content-zero:before{content:'';display:inline-block;width:1.1rem;height:calc(0.5em - 0.2rem);margin-right:0.4rem;border-top:0.2rem solid $kb-ui04;}
-.optional:before{content:""!important;}
 
 /*히스토리백을 가진 풀팝업 공통*/
 .my-safe-back-top .btn-allmenu{display:none!important;}
@@ -166,7 +165,12 @@
 
 /* [MYS_AS_17_01_03_P1] 현금(원화/외화) 목록 */
 
+
+/* 현금/외화 공통 */
+.my-safe-pop-asset .optional:before{content:""!important;}
+
 /* 상품권 공통 */
+.my-safe-pop-gift .optional:before{content:""!important;}
 .my-safe-pop-gift>.kb-sec label{padding-top:0.4rem;}
 .my-safe-pop-gift>.kb-sec .pop-notice .h4{display:block;width:90%;min-width:23.1rem;line-height:2.3rem;}
 .my-safe-pop-gift>.kb-sec .pop-notice.wide .h4{width:100%;}
@@ -176,6 +180,7 @@
 .my-safe-pop-gift>.kb-sec p{margin-top:1rem;}
 
 /* 금 공통 */
+.my-safe-pop-gold .optional:before{content:""!important;}
 .my-safe-pop-gold>.kb-sec .empty-gold-unit-info{padding-left:0.2rem;color:$kb-ui04;}
 .my-safe-pop-gold>.kb-sec label{padding-top:0.4rem;}
 .my-safe-pop-gold>.kb-sec .pop-notice .h4{display:block;width:90%;min-width:23.1rem;line-height:2.3rem;}
@@ -187,8 +192,13 @@
 .my-safe-pop-gold>.kb-sec .tit {flex:100%;display:block;width:100%;font-size:1.6rem;font-weight:normal;line-height:2.4rem;}
 .my-safe-pop-gold>.kb-sec .my-gold-conversion{font-size:1.4rem;line-height:2rem;}
 .my-safe-pop-gold>.kb-sec .my-gold-conversion-position{position:absolute;right:0;bottom:0;font-size:1.4rem;line-height:2rem;}
-.my-safe-pop-gold>.kb-sec .gold-input-num{flex:1;max-width:69%;}
-.my-safe-pop-gold>.kb-sec .gold-unit-form{flex:1;max-width:27%;margin-top:0;}
+.my-safe-pop-gold>.kb-sec .gold-input-num{flex:1;max-width:calc(75% - 1rem);}
+.my-safe-pop-gold>.kb-sec .gold-input-num:after{content:"";display:block;width:100%;height:0;clear:both;}
+.my-safe-pop-gold>.kb-sec .gold-input-num>div{float:left;}
+.my-safe-pop-gold>.kb-sec .gold-input-num>div:nth-of-type(1){width:70%;}
+.my-safe-pop-gold>.kb-sec .gold-input-num>div:nth-of-type(2){display:flex;width:7%;height:44px;flex:1;justify-content:space-around;align-items:flex-end;text-align:center;}
+.my-safe-pop-gold>.kb-sec .gold-input-num>div:nth-of-type(3){width:23%;}
+.my-safe-pop-gold>.kb-sec .gold-unit-form{flex:1;max-width:25%;margin-top:0;}
 .my-safe-pop-gold>.kb-sec .button-area{margin-top:1rem;}
 .my-safe-pop-gold>.kb-sec p{margin-top:1rem;}
 .my-safe-pop-gold>.kb-sec .gold-input-shape{margin-top:1rem;}
@@ -198,6 +208,7 @@
 .my-safe-pop-gold>.kb-sec .safe-flex-wrap .tit{display:inherit;display:flex;flex:inherit;flex:27%;flex-direction:row-reverse;align-items:flex-end;width:15.2rem!important;padding-right:0.4rem;color:$kb-ui04;}
 
 /* 휴대폰 공통 */
+.my-safe-pop-phone .optional:before{content:""!important;}
 .my-safe-pop-phone>.kb-sec .phone-price-info{padding-left:0.2rem;color:$kb-ui04;}
 .my-safe-pop-phone>.kb-sec label{padding-top:0.4rem;}
 .my-safe-pop-phone>.kb-sec .pop-notice .h4{display:block;width:90%;min-width:23.1rem;line-height:2.3rem;}
@@ -209,6 +220,7 @@
 
 
 /* 기타자산 공통 */
+.my-safe-pop-etc .optional:before{content:""!important;}
 .my-safe-pop-etc>.kb-sec .empty-etc-unit-info{color:$kb-ui04;}
 .my-safe-pop-etc>.kb-sec .etc-input-form{width:100%;}
 .my-safe-pop-etc>.kb-sec label{padding-top:0.4rem;}
@@ -262,7 +274,7 @@
 .my-safe-list>.kb-sec .my-safe-asset-box>li>dl{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-align:center;align-items:center;width:100%;}
 .my-safe-list>.kb-sec .my-safe-asset-box>li>dl dt{color:$kb-ui04;}
 .my-safe-list>.kb-sec .my-safe-asset-box>li>dl dt .num{font-size:1.6rem;}
-.my-safe-list>.kb-sec .my-safe-asset-box>li>dl dd{font-weight:bold;}
+.my-safe-list>.kb-sec .my-safe-asset-box>li>dl dd{font-weight:normal;}
 
 .my-safe-list>.kb-sec .my-safe-asset-box .my-variance-value{display:none;padding-bottom:1.2rem;}
 .my-safe-list>.kb-sec .my-safe-asset-box .my-variance-value .description-list{height:1.6rem;padding:0;line-height:1.6rem;}
@@ -305,7 +317,7 @@
 .mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li:nth-of-type(5)>dl dt:after{background-image:url('../images/mysafe/phone_value_rank_icon.png');background-size:8rem 1.6rem;background-position:-6.4rem 0;}
 
 .mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li>dl dt .num{font-size:1.7rem;}
-.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li>dl dd{font-weight:bold;}
+.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li>dl dd{font-weight:normal;}
 
 
 .mysafe-phone-value> .safe-phone-rank .my-phone-rank-box .icon-my-safe{background-color:#f2f2f2;background-image:url('../images/mysafe/main_icon_img.png');background-size:9.6rem 6.4rem;width:3.2rem;height:3.2rem;border-radius:50%;margin-top:2rem;}

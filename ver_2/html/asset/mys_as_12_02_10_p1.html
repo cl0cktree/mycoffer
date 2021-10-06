@@ -69,8 +69,16 @@
 									<span class="dot asset"></span>
 									<span class="text">Wish Car 준비자산</span><!-- 추가 수정 -->
 									<span class="amount"><span class="num asset" data-unit-after="만원"></span></span>
-								</label>						
+								</label>
+								<a class="modify-link" href="#">수정</a><!-- 추가 수정 2021-10-06 -->
 							</span>
+							<!-- 추가 수정 2021-10-06 // -->
+							<script>
+								$(window).on("load resize", function() {
+									$(".modify-link").css("left", $("label[for=toggleMyAsset] .text").innerWidth() + 10);
+								});
+							</script>
+							<!-- // 추가 수정 2021-10-06 -->
 						</div>
 					</div>
 

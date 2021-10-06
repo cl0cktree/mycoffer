@@ -1,0 +1,135 @@
+<!-- [MYS_MN_01_01_03_19] 전체메뉴 > My Data 관리 > 연장 > 전송요구서 및 동의서_개인(신용)정보 수집·이용 동의서(상세정보 전송) (작성자: 누리어 시스템 최선화) // -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+    "title": "개인(신용)정보 수집·이용 동의서(상세정보 전송) | 마이데이터 관리"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+        'pageTit':'전송기간 연장',
+        'type':'step'
+        })
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content select-transmission-method">
+
+                <div class="page-step js-fixed">
+                    <div class="page-step-inner">
+                        <div class="step" aria-label="총 2단계 중 현재 1단계">
+                            <span class="current">1</span>
+                            <span class="total">2</span>
+                        </div>
+                        <h2 class="h1">개인(신용)정보 수집&middot;이용 동의서(상세정보 전송)</h2>
+                    </div>
+                    <p class="page-step-desc">KB국민은행은 「신용정보의 이용 및 보호에 관한 법률」, 「개인정보보호법」 등 관련 법령에 따라 다음과 같이 귀하의 개인(신용)정보를 처리합니다.</p>
+                </div>
+                
+                <section class="kb-sec transmission-request">                    
+                    <div class="caution-txt_01">
+                        <h3 class="tit">수집&middot;이용목적</h3>
+                        <div class="desc-box">
+                            <p>전송요구를 통한 본인신용정보 통합조회 서비스의 이용</p>
+                        </div>  
+                        <h3 class="tit">보유 및 이용기간</h3>
+                        <div class="desc-box">
+                            <strong>서비스 이용 종료 시 또는 삭제 요청시까지</strong>
+                        </div>
+                        <h3 class="tit">거부 권리 및 불이익</h3>
+                        <div class="desc-box">
+                            <p>귀하는 개인(신용)정보 수집&middot;이용에 관한 동의를 거부하실 수 있습니다. 다만, "필수 항목에 대한 수집&middot;이용에 관한 동의"는 본인신용정보 통합조회 서비스의 제공을 위한 필수적 사항이므로 동의를 거부하실 경우 본인신용정보 통합조회 서비스의 이용이 제한될 수 있으며, "선택 항목에 대한 수집&middot;이용에 관한 동의"는 거부하실 경우 해당 선택항목에 대한 통합조회 서비스는 이용이 제한될 수 있습니다.</p>
+                        </div>   
+                        <h3 class="tit">수집&middot;이용항목</h3>
+                        <div class="desc-box">
+                            <h4 class="h4">개인(신용)정보</h4>
+                            <h5 class="h5 mt20">개인(식별)정보 <span>(필수 항목)</span></h5>
+                            <p class="mt16">: 전자서명, 접근토큰, 인증서, 전송요구서</p>
+                            <h5 class="h5 mt20 mb12">신용거래정보 <span>(필수 항목)</span></h5>
+                            <!-- 상세정보 전송 시 업권별 신용거래정보 상세내용 참고 // -->
+                            <ul data-style="list">
+                                <li>
+                                    <p>은행</p>
+                                    <ul>
+                                        <li><span>수신상품정보</span> : 계좌번호, 회차번호, 외화계좌여부, 상품명, 마이너스약정여부, 계좌구분, 계좌상태, 통화코드, 저축방법, 계좌개설일자, 만기일, 약정액, 월납입액, 현재잔액, 출금가능액, 적용금리, 최종납입회차, 거래일시(일자), 거래번호, 거래유형, 거래구분, 거래금액, 거래후 잔액, 납입회차 적요</li>
+                                        <li><span>대출상품정보</span> : 계좌번호, 회차번호, 대출일, 만기일, 최종적용금리, 월상환일, 상환방식, 자동이체기관, 상환계좌번호, 통화코드, 대출잔액, 대출원금, 다음 이자상환일, 거래일시(일자), 거래번호, 거래유형, 거래금액, 거래후 대출잔액, 거래금액 중 원금, 거래금액 중 이자, 환출이자, 이자적용시작일, 이자적용 종료일, 적용이율, 이자금액, 이자종류</li>
+                                        <li><span>투자상품정보</span> : 계좌번호, 회차번호, 표준펀드코드, 납입유형, 개서일, 만기일, 통화코드, 잔액, 평가금액, 투자원금, 보유좌수, 거래일시(일자), 거래번호, 거래유형, 기준가, 거래좌수, 거래금액, 거래후잔고 평가금액</li>
+                                        <li><span>개인형IRP정보</span> : 계좌번호, 상품명, 계좌잔액, 계좌평가금액, 사용자부담금, 가입자부담금, 개설일, 최초입금일, 최초 제도 가입일, 연금개시시작(예정)일, 운용상품수, 운용상품목록, 개운운영상품명, 상품유형, 평가금액, 납입(투자)원금, 보유좌수, 신규일, 만기일, 약정이자율, 거래일시(일자), 거래번호, 거래구분, 거래금액</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <!-- // 상세정보 전송 시 업권별 신용거래정보 상세내용 참고 -->
+                        </div>               
+                    </div>    
+                </section>
+
+                <section class="kb-sec confirm-agree">
+                    <h4 class="is-hidden">동의하기</h4>
+                    <div class="confirm-info">
+                        <p class="question">위 개인(신용)정보 제공에 동의하십니까?</p>
+                        <ul class="radio-group">
+                            <li>
+                                <span class="form-checkbox"><input type="radio" id="radioAgree1-1" name="radioAgree1" checked=""><label for="radioAgree1-1">동의하지 않음</label></span>
+                            </li>
+                            <li>
+                                <span class="form-checkbox"><input type="radio" id="radioAgree1-2" name="radioAgree1"><label for="radioAgree1-2">동의함</label></span>
+                            </li>    
+                        </ul>
+                    </div>
+                </section>
+                
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid"><span>다음</span></button>
+                    </div>
+                </div>
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+    </div>
+
+    <div class="layered">
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    
+    <script>
+        $(document).ready(function(){
+            $('.btn-cancel').on('click', function() {
+                modalPopup({
+                    title: '',
+                    message: "마이데이터 서비스 이용을 위한 자산 등록을 취소하시겠습니까?",
+                    type: "confirm",
+                    textOkButton: "확인",
+                    textCancelButton: "취소"
+                });
+            });
+
+            // 추가 210917 
+            $('.sticky-bottom').on('click', function() {
+                modalPopup({
+                    title: '',
+                    message: "동의하지 않을 경우, 해당 정보를 확인할 수 없어 서비스 이용이 불편할 수 있습니다.<br>정보 수집&middot;이용에 동의하시겠습니까?",
+                    type: "confirm"
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

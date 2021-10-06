@@ -76,7 +76,7 @@ if($appMenu.length){
         default:
             $appHeader.find('.btn-notice-box, .btn-close, .btn-cancel').remove();
             $appHeader.attr('data-type','home');
-            console.log('There is no Type ' + headerType);
+            //console.log('There is no Type ' + headerType);
     }
 
     //header button
@@ -317,3 +317,9 @@ var gfn_pageLoader = {
         });
     },
 };
+
+//IE Browser Check
+var agent = navigator.userAgent.toLowerCase();
+if (agent.indexOf("trident") != -1) {
+    $('html').addClass('ie');
+}

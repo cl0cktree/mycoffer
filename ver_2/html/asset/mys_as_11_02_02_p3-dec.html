@@ -1,0 +1,220 @@
+<!-- [MYS_AS_11_02_02_P3] 작성자: 누리어 시스템 김홍범 -->
+<!DOCTYPE html>
+<html lang="ko" data-channel="ch_star">
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "My House 수정 | 자산"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header //-->
+		@@include('@@webRoot/html/_include/app-integrated-header.html',{
+			'pageTit' :'My House 수정',
+			'type':''
+		}) 
+		<!-- // app-header -->
+
+		<!-- app-container //-->
+		<div class="app-container">
+
+			<!-- app-content // -->
+			<main class="app-content my-asset">						
+				<section class="kb-sec selected-address">
+					<div class="require-txt">						
+						<p class="simple-message">표시된 항목은 필수 입력 사항입니다.</p>
+					</div>
+					<div class="my-address-box">
+						<div class="tag">
+							<span class="tag-label type2">자가</span>
+							<span class="tag-label type2">임대</span>
+						</div>
+						<h2 class="tit">송도 더샵센트럴 시티 1단지</h2>
+					</div>
+				</section>
+
+				<section class="kb-sec my-house">
+					<h2 class="is-hidden">기본정보</h2>
+					<!-- 자가 // -->
+					<div class="possession">
+						<div class="kb-form my-purchase-price" data-status="error">
+							<label for="purchasePrice2" class="required">나의 매입가</label>
+							<div class="kb-form_inner form-text">
+								<input type="text" inputmode="numeric" id="purchasePrice2" placeholder="" value="" data-unit="만원" data-action="autoSeperator" maxlength="9">
+								<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+							</div>
+							<em class="validation">나의 매입가를 입력해 주세요.</em>
+						</div>
+						<div class="kb-form datepicker" data-status="error">
+							<label for="purchaseDate2">매입일</label>
+							<div class="kb-form_inner form-text">
+								<input type="text" id="purchaseDate2" readonly="" value="2021.05.05">
+							</div>
+							<em class="validation">매입일을 정확하게 입력해 주세요</em>					
+							<em class="validation">매입일은 오늘 날짜까지만 가능합니다.</em>
+						</div>
+						<div class="kb-form" data-status="">
+							<label for="depositPrice2">세입자 보증금</label>
+							<div class="kb-form_inner form-text">
+								<input type="text" inputmode="numeric" id="depositPrice2" placeholder="" value="" data-unit="만원" data-action="autoSeperator" maxlength="9">
+								<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+							</div>
+						</div>
+						<div class="kb-form" data-status="">
+							<label for="monthlyPrice2">세입자 월세</label>
+							<div class="kb-form_inner form-text">
+								<input type="text" inputmode="numeric" id="monthlyPrice2" placeholder="" value="" data-unit="만원" data-action="autoSeperator" maxlength="9">
+								<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+							</div>
+						</div>
+					</div>
+					<!-- // 자가 -->
+					<!-- (전세/월세) // -->
+					<div class="rental" style="display:block;">
+						<div class="kb-form" data-status="error">
+							<label for="myDepositPrice2" class="required">나의 보증금</label>
+							<div class="kb-form_inner form-text">
+								<input type="text" inputmode="numeric" id="myDepositPrice2" placeholder="" value="" data-unit="만원" data-action="autoSeperator" maxlength="9">
+								<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+							</div>
+							<em class="validation">나의 보증금을 입력해 주세요.</em>
+						</div>
+						<div class="kb-form" data-status="">
+							<label for="myMonthlyPrice2">나의 월세</label>
+							<div class="kb-form_inner form-text">
+								<input type="text" inputmode="numeric" id="myMonthlyPrice2" placeholder="" value="" data-unit="만원" data-action="autoSeperator" maxlength="9">
+								<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+							</div>
+						</div>
+						<div class="kb-form datepicker" data-status="error">
+							<label for="contractDate2">계약일</label>
+							<div class="kb-form_inner form-text">
+								<input type="text" id="contractDate2" readonly="" value="2020.05.05">
+							</div>
+							<em class="validation">계약일을 입력해 주세요</em>
+							<em class="validation">계약일을 정확하게 입력해 주세요</em>
+							<em class="validation">계약일은 오늘 날짜까지만 입력할 수 있습니다</em>
+						</div>
+						<div class="kb-form datepicker" data-status="error">
+							<label for="maturityDate2">만기일</label>
+							<div class="kb-form_inner form-text">
+								<input type="text" id="maturityDate2" readonly="" value="2022.05.04">
+							</div>
+							<em class="validation">만기일을 입력해 주세요</em>
+							<em class="validation">만기일을 정확하게 입력해 주세요</em>
+							<em class="validation">만기일이 계약일보다 빠릅니다</em>
+						</div>
+					</div>
+					<!-- // (전세/월세) -->
+				</section>
+				<section class="kb-sec select-account">
+					<h2 class="h4">대출계좌 선택</h2>
+					<ul class="list">
+						<li>
+							<span class="form-checkbox"><input type="checkbox" id="loanAccount_1" name="radioSample02"><label for="loanAccount_1">KB국민은행 자동차대출</label></span>
+							<dl class="description-list">
+								<dt>
+									<strong class="account num">81691604111122</strong>
+								</dt>
+								<dd><strong class="amount"><span class="num" data-unit-after="원">13,000,000</span></strong></dd>
+							</dl>
+						</li>
+						<li>
+							<span class="form-checkbox"><input type="checkbox" id="loanAccount_2" name="radioSample02"><label for="loanAccount_2">신한은행 신용대출</label></span>
+							<dl class="description-list">
+								<dt>
+									<strong class="account num">81691604111122</strong>
+								</dt>
+								<dd><strong class="amount"><span class="num" data-unit-after="원">13,000,000</span></strong></dd>
+							</dl>
+						</li>
+					</ul>
+				</section>
+				<!-- 12월 오픈 // -->
+				<section class="kb-sec consent-area">
+					<h2 class="tit">마이데이터를 연결하면 Wish House 준비계좌를 선택할 수 있습니다.</h2>
+					<div class="btn-area">
+						<a href="@@webRoot/html/common/mys_co_06_01_00.html" class="btn-line" role="button"><span>마이데이터 연결</span></a>
+					</div>
+				</section>
+				<!-- // 12월 오픈-->
+				<section class="kb-sec nick-setting">
+					<h2 class="is-hidden">별명</h2>
+					<div class="kb-form" data-status="">
+						<label for="nickname">별명</label>
+						<div class="kb-form_inner form-text">
+							<input type="text" id="nickname" maxlength="10" value="" placeholder="최대 10자">
+							<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+						</div>
+					</div>
+				</section>
+				<section class="kb-sec check-management">
+					<h2 class="is-hidden">관리비</h2>
+					<span class="btn-switch label-front">
+						<input type="checkbox" id="checkManagement">
+						<label for="checkManagement"><span>관리비 확인하기</span></label>
+					</span>
+					<p class="info">이체내역이나 카드결제내역에서 관리비를 확인합니다.</p>
+				</section>
+			
+				<div class="sticky-bottom">
+					<div class="btn-area">
+						<button class="btn-solid gray" data-action="myHouseDelete"><span>삭제</span></button>
+						<button type="button" class="btn-solid" data-action="myHouseModify"><span>수정</span></button>
+					</div>
+				</div>
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (modal, bottom sheet) // -->
+		<div class="layered">
+			@@include('@@webRoot/html/_layered/bs-calendar.html')
+		</div>
+		<!-- // Layer (modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+	<script>
+        $(document).ready(function(){
+			
+			//삭제 컨펌
+			$('button[data-action=myHouseDelete]').on('click',function(){
+				modalPopup({
+					title: "",
+					message: "My House를 삭제하시겠습니까?<br>부동산 자산에서 해당 My House가 삭제됩니다.",
+					type: "confirm",
+					textOkButton: "확인",
+					textCancelButton: "취소",
+					onOk: function() {
+						
+					},
+					onCancel: function() {
+						
+					}
+				});
+			});
+
+			// 추가 수정 //
+			$('button[data-action=myHouseModify]').on('click',function(){
+				modalPopup({
+					title: "",
+					message: "오늘까지만 입력할 수 있습니다.",
+					type: "alert"
+				});
+			});
+			// 추가 수정 //
+
+		})
+	</script>
+</body>
+
+</html>

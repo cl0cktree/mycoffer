@@ -1,0 +1,117 @@
+<!-- [MYS_AS_11_02_03_P3] 작성자: 누리어 시스템 김홍범 -->
+<!DOCTYPE html>
+<html lang="ko" data-channel="ch_star">
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "Wish House 수정 | 자산"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header //-->
+		@@include('@@webRoot/html/_include/app-integrated-header.html',{
+			'pageTit' :'Wish House 수정',
+			'type':''
+		}) 
+		<!-- // app-header -->
+
+		<!-- app-container //-->
+		<div class="app-container">
+
+			<!-- app-content // -->
+			<main class="app-content my-asset">						
+				<section class="kb-sec selected-address">
+					<div class="my-address-box">
+						<h2 class="tit">송도 더샵센트럴 시티 1단지</h2>
+					</div>
+				</section>
+				<section class="kb-sec mt28">
+					<h2 class="is-hidden">별명</h2>
+					<div class="kb-form" data-status="">
+						<label for="nickname">별명</label>
+						<div class="kb-form_inner form-text">
+							<input type="text" id="nickname" maxlength="10" value="" placeholder="최대 10자">
+							<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+						</div>
+					</div>
+				</section>
+				<section class="kb-sec select-account">
+					<h2 class="h4">준비계좌 선택</h2>
+					<ul class="list">
+						<li>
+							<span class="form-checkbox"><input type="checkbox" id="loanAccount_1" name="radioSample02"><label for="loanAccount_1">KB국민은행 주택청약종합저축</label></span>
+							<dl class="description-list">
+								<dt>
+									<strong class="account num">81691604111122</strong>
+								</dt>
+								<dd><strong class="amount"><span class="num" data-unit-after="원">13,000,000</span></strong></dd>
+							</dl>
+						</li>
+						<li>
+							<span class="form-checkbox"><input type="checkbox" id="loanAccount_2" name="radioSample02"><label for="loanAccount_2">신한은행 리츠 부동산 종류형 투자신탁 (재간접형)-AE</label></span>
+							<dl class="description-list">
+								<dt>
+									<strong class="account num">81691604111122</strong>
+								</dt>
+								<dd><strong class="amount"><span class="num" data-unit-after="원">13,000,000</span></strong></dd>
+							</dl>
+						</li>
+					</ul>
+				</section>
+				<!-- 12월 오픈 // -->
+				<section class="kb-sec consent-area">
+					<h2 class="tit">마이데이터를 연결하면 Wish House 준비계좌를 선택할 수 있습니다.</h2>
+					<div class="btn-area">
+						<a href="@@webRoot/html/common/mys_co_06_01_00.html" class="btn-line" role="button"><span>마이데이터 연결</span></a>
+					</div>
+				</section>
+				<!-- // 12월 오픈-->
+				<div class="sticky-bottom">
+					<div class="btn-area">
+						<button class="btn-solid gray" data-action="wishHouseDelete"><span>삭제</span></button>
+						<button type="button" class="btn-solid" data-action="close"><span>수정</span></button>
+					</div>
+				</div>
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (modal, bottom sheet) // -->
+		<div class="layered">
+		</div>
+		<!-- // Layer (modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+	<script>
+        $(document).ready(function(){
+			
+			$('button[data-action=wishHouseDelete]').on('click',function(){
+				modalPopup({
+					title: "",
+					message: "Wish House를 삭제하시겠습니까?",
+					type: "confirm",
+					textOkButton: "확인",
+					textCancelButton: "취소",
+					onOk: function() {
+						
+					},
+					onCancel: function() {
+						
+					}
+				});
+			});
+
+		})
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  @@include('@@webRoot/html/_include/app-head.html',{
+  "title": "Last Depth | 1st Depth"
+  })
+</head>
+
+<body>    
+  @@include('@@webRoot/html/_include/app-a11y.html')
+  <div class="app">
+    <!-- app-header //-->
+    @@include('@@webRoot/html/_include/app-integrated-header.html',{
+    'pageTit' :'상담형 배너(샘플 바닥 페이지)'
+    })
+    <!-- // app-header -->
+
+    <!-- app-container //-->
+    <div class="app-container">
+
+      <!-- app-content // -->
+        <main class="app-content">
+
+        </main> 
+        <!-- // app-content -->
+
+    </div>
+    <!-- // app-container -->
+
+    <!-- Layer (modal, bottom sheet) // -->
+    <div class="layered">
+        <!-- [MYS_EVT_02_01_02] 상담형 배너 // -->
+		<div class="bottom-sheet" data-layered-name="bsEBM">
+            <div class="bottom-sheet_header">
+                <span class="tit">도움이 필요하신가요?</span>
+            </div>
+            <div class="bottom-sheet_contents">
+                <section class="kb-sec ebm">
+                    <div class="ebm-msg">
+                        <img src="@@webRoot/static/images/event/counseling.png" alt="">
+                        상담관련 안내 멘트<br>
+                        상담관련 안내 멘트<br>
+                        상담관련 안내 멘트<br>
+                        상담관련 안내 멘트
+                    </div>
+                    <ul class="ebm-link link-arrow-after">
+                        <li><button type="button" class="js-consult-chat"><span>채팅 상담</span></button></li>
+                        <li><button type="button" class="js-consult-phone"><span>유선 상담</span></button></li>
+                        <li><button type="button" class="js-consult-email"><span>이메일 상담</span></button></li>
+                    </ul>
+                </section>
+            </div>
+            <!-- <div class="bottom-sheet_buttons">
+                <button class="btn-solid" data-action="close"><span>확인</span></button>
+            </div> -->
+            <button class="btn-close" data-action="close"><span>닫기</span></button>
+        </div>
+        <!-- // [MYS_EVT_02_01_02] 상담형 배너 -->
+    </div>
+    <!-- // Layer (modal, bottom sheet) -->
+
+    </div>
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <script src="@@webRoot/static/js/floatingBanner.js"></script>
+    <!-- Add Script -->
+
+    <script>
+        gfn_layered.open('bsEBM');
+
+        $('.js-consult-chat').on('click',function(){
+            modalPopup({
+                title: "",
+                message: "상담 챗봇으로 <br>이동하시겠습니까?",
+                type: "confirm",
+                textOkButton: "확인",
+                textCancelButton: "취소",
+                onOk: function() {
+                    console.log('챗봇으로 이동');
+                },
+                onCancel: function() {
+                    
+                }
+            });
+        });
+        $('.js-consult-phone').on('click',function(){
+            modalPopup({
+                title: "",
+                message: "상담 센터 1588-1688",
+                type: "confirm",
+                textOkButton: "확인",
+                textCancelButton: "취소",
+                onOk: function() {
+                    console.log('전화연결');
+                },
+                onCancel: function() {
+                    
+                }
+            });
+        });
+        $('.js-consult-email').on('click',function(){
+            modalPopup({
+                title: "",
+                message: "이메일 작성폼으로 연결됩니다.",
+                type: "confirm",
+                textOkButton: "확인",
+                textCancelButton: "취소",
+                onOk: function() {
+                    console.log('이메일 작성폼으로 연결');
+                },
+                onCancel: function() {
+                    
+                }
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

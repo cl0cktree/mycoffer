@@ -114,12 +114,12 @@ var gnbStar = [
         "link": "#link",
         "sub": ""
     },
-    // {
-    //     "number" : "5",
-    //     "name": "금융플러스",
-    //     "link": "#link",
-    //     "sub": ""
-    // },
+    {
+        "number" : "5",
+        "name": "금융플러스",
+        "link": "#link",
+        "sub": ""
+    },
     {
         "number" : "6",
         "name": "Fun테크",

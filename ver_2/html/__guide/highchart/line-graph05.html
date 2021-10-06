@@ -76,7 +76,8 @@
             }
             for (var i = 0; i < resultArray.length; i++) {
                 if (!resultArray[i]) continue;
-                resultString = String(resultArray[i]) + unitWords[i] + resultString;
+                // resultString = String(resultArray[i]) + unitWords[i] + resultString;
+                resultString = String(resultArray[i]) + unitWords[i];
             }
 
             return resultString;            
@@ -109,7 +110,7 @@
                     style: {
                         color: "#aab0b8",
                         fontSize: '1.3rem',
-                        fontFamily: 'KBFGText',
+                        fontFamily: 'Roboto',
                     }
                 },
             },
@@ -125,7 +126,7 @@
                     }
                  },
                 title: { enabled: false },
-                tickWidth: 1,
+                tickWidth: 0,
                 //
             },
             plotOptions: {
@@ -170,7 +171,7 @@
                 color: "#ffba53",
                 dashStyle: "ShortDot",
                 zIndex: 1,
-                data: [502000000, 635000000, 809000000, 94700000, 1402000000, 363400000]
+                data: [502000000, 635000000, 809000000, 94700000, 402000000, 363400000]
             },{
                 name: "전세 KB시세",
                 color: '#ff8a71',

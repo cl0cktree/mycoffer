@@ -1,0 +1,93 @@
+<!-- [MYS_MN_01_01_03_16] 전체메뉴 > My Data 관리 > 다른기관 > 변경 > 개별인증 > 전송요구서 및 동의서_개인(신용)정보 제공 동의서 (작성자: 누리어 시스템 최선화) // -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+    "title": "개인(신용)정보 제공 동의서 | 마이데이터 관리"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+        'pageTit':'데이터 변경',
+        'type':'step'
+        })
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content select-transmission-method">
+                <section class="kb-sec sec-tit">
+                    <h2 class="h1">개인(신용)정보 제공 동의서</h2>
+                    <div class="terms-desc">
+                        <p>귀하는 개인(신용)정보 제공에 관한 동의를 거부하실 수 있습니다. 다만, 개인(신용)정보의 제공에 관한 동의는 본인신용정보 통합조회 서비스와 직접적으로 관련된 필수적 사항이므로 아래의 사항에 동의하셔야만 본인신용정보 통합조회 서비스 제공이 가능합니다.</p>
+                    </div>
+                </section>
+
+                <section class="kb-sec transmission-request">
+                    <div class="caution-txt_01">
+                        <h3 class="tit">제공받는 자</h3>
+                        <div class="desc-box">
+                            <strong>KB국민카드</strong>
+                        </div>                        
+                        <h3 class="tit">제공받는 자의 이용목적</h3>
+                        <div class="desc-box">
+                            <strong>본인확인 및 개인(신용)정보의 전송</strong>
+                        </div> 
+                        <h3 class="tit">보유 및 이용기간</h3>
+                        <div class="desc-box">
+                            <strong>본인확인 및 개인(신용) 정보의 전송 목적 달성 시까지</strong>
+                        </div> 
+                        <h3 class="tit">제공 항목</h3>
+                        <div class="desc-box">
+                            <h4 class="h4">개인(신용)정보</h4>
+                            <h5 class="h5 mt20">개인(식별)정보</h5>
+                            <p class="mt16">: CI</p>
+                        </div>
+                    </div>
+                </section> 
+
+                <section class="kb-sec confirm-agree">
+                    <h4 class="is-hidden">동의하기</h4>
+                    <div class="confirm-info">
+                        <p class="question">위 개인(신용)정보 제공에 동의하십니까?</p>
+                        <ul class="radio-group">
+                            <li>
+                                <span class="form-checkbox"><input type="radio" id="radioAgree1-1" name="radioAgree1" checked=""><label for="radioAgree1-1">동의하지 않음</label></span>
+                            </li>
+                            <li>
+                                <span class="form-checkbox"><input type="radio" id="radioAgree1-2" name="radioAgree1"><label for="radioAgree1-2">동의함</label></span>
+                            </li>    
+                        </ul>
+                    </div>
+                </section>
+                
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid"><span>다음</span></button>
+                    </div>
+                </div>
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+    </div>
+
+    <div class="layered">
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+
+</body>
+
+</html>

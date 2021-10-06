@@ -1,0 +1,131 @@
+<!-- [MYS_MN_01_01_03_20] 전체메뉴 > My Data 관리 > 연장 > 전송요구서 및 동의서_개인(신용)정보 수집·이용 동의서(상세정보 전송)_동의하기 (작성자: 누리어 시스템 최선화) // -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+    "title": "개인(신용)정보 수집·이용 동의서(상세정보 전송) | 마이데이터 관리"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+        'pageTit':'전송기간 연장',
+        'type':'step'
+        })
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content transmission-request-agree">
+
+                <div class="page-step js-fixed">
+                    <div class="page-step-inner">
+                        <div class="step" aria-label="총 2단계 중 현재 1단계">
+                            <span class="current">1</span>
+                            <span class="total">2</span>
+                        </div>
+                        <h2 class="h1">개인(신용)정보 수집&middot;이용 동의서<span>(상세정보 전송) (계속)</span></h2>
+                    </div>
+                </div>
+                
+                <section class="kb-sec confirm-agree">
+                    <h3 class="tit h4">상품구매 카테고리 정보 <span>(선택 항목)</span></h3>
+                    <div class="confirm-info">
+                        <p class="tit">가전 및 전자 / 도서 및 문구 / 패션 및 의류 / 스포츠 / 화장품 / 아동 및 유아 / 식품 / 생활 및 가구 / 여행 및 교통 / 문화 및 레저 / 음식 / E쿠폰 및 기타서비스 카테고리 정보</p>
+                        <p class="question">위 상품구매 정보 수집&middot;이용에 동의하십니까?</p>
+                        <ul class="radio-group">
+                            <li>
+                                <span class="form-checkbox"><input type="radio" id="radioAgree1-1" name="radioAgree1" checked=""><label for="radioAgree1-1">동의하지 않음</label></span>
+                            </li>
+                            <li>
+                                <span class="form-checkbox"><input type="radio" id="radioAgree1-2" name="radioAgree1"><label for="radioAgree1-2">동의함</label></span>
+                            </li>    
+                        </ul>
+                        <p class="simple-message">[선불전자지급수단의 상품구매정보 항목]에는 실제 구매한 상품이 아닌 해당 상품의 카테고리(13항목으로 구분)가 포함되어 있습니다.</p>
+                    </div>
+
+                    <h3 class="tit h4">가맹점명 및 사업자등록번호 정보 <span>(선택 항목)</span></h3>
+                    <div class="confirm-info">
+                        <p class="tit">가맹점명 및 사업자등록번호 정보</p>
+                        <p class="question">위 가맹점명 및 사업자등록번호 정보 수집&middot;이용에 동의하십니까?</p>
+                        <ul class="radio-group">
+                            <li>
+                                <span class="form-checkbox"><input type="radio" id="radioAgree2-1" name="radioAgree2" checked=""><label for="radioAgree2-1">동의하지 않음</label></span>
+                            </li>
+                            <li>
+                                <span class="form-checkbox"><input type="radio" id="radioAgree2-2" name="radioAgree2"><label for="radioAgree2-2">동의함</label></span>
+                            </li>    
+                        </ul>
+                        <p class="simple-message">[카드청구 및 결제정보의 가맹점명 및 사업자등록번호 항목]에는 본인의 소비생활 등에 관련된 상세한 정보가 포함되어 있습니다.</p>
+                    </div>
+
+                    <h3 class="tit h4">적요 또는 거래메모 정보 <span>(선택 항목)</span></h3>
+                    <div class="confirm-info">
+                        <p class="tit">적요 또는 거래메모 정보</p>
+                        <p class="question">위 적요 또는 거래메모정보 수집&middot;이용에 동의하십니까?</p>
+                        <ul class="radio-group">
+                            <li>
+                                <span class="form-checkbox"><input type="radio" id="radioAgree3-1" name="radioAgree3" checked=""><label for="radioAgree3-1">동의하지 않음</label></span>
+                            </li>
+                            <li>
+                                <span class="form-checkbox"><input type="radio" id="radioAgree3-2" name="radioAgree3"><label for="radioAgree3-2">동의함</label></span>
+                            </li>    
+                        </ul>
+                        <p class="simple-message">[계좌정보의 적요 항목]에는 송금인/수취인명정보 등 본인의 사생활 및 경제활동 등에 관련된 상세한 정보가 포함되어 있습니다.</p>
+                    </div>
+
+                    <p class="simple-message mt48">각 항목에 대한 정보 전송은 본인의 책임과 판단하에 신중하게 결정하여 주시기 바랍니다.</p>
+                </section>
+                
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid"><span>다음</span></button>
+                    </div>
+                </div>
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+    </div>
+
+    <div class="layered">
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    
+    <script>
+        $(document).ready(function(){
+            $('.btn-cancel').on('click', function() {
+                modalPopup({
+                    title: '',
+                    message: "마이데이터 서비스 이용을 위한 자산 등록을 취소하시겠습니까?",
+                    type: "confirm",
+                    textOkButton: "확인",
+                    textCancelButton: "취소"
+                });
+            });
+
+            // 추가 210917 
+            $('.sticky-bottom').on('click', function() {
+                modalPopup({
+                    title: '',
+                    message: "동의하지 않을 경우, 해당 정보를 확인할 수 없어 서비스 이용이 불편할 수 있습니다.<br>정보 수집&middot;이용에 동의하시겠습니까?",
+                    type: "confirm"
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

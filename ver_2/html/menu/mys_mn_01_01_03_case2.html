@@ -294,12 +294,14 @@
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
-
     <script>
-        $('button[data-action=extendedPeriod]').on('click',function(){
-            modalPopup({
-                title: '',
-                message: "연결된 전 기관의 정보 제공 기간을 일괄 연장합니다."
+        $(document).ready(function(){
+            // 2021-10-06
+            $('button[data-action=extendedPeriod]').on('click',function(){
+                modalPopup({
+                    title: '',
+                    message: "연결된 기관의 정보 제공 기간을 일괄 연장하시겠습니까?"
+                });
             });
         });
     </script>
