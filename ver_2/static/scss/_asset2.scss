@@ -118,7 +118,8 @@
 .mycar-content .new-data dt {margin-left: 5px;}
 .mycar-content .new-data dd {color: $kb-ui02;}
 .mycar-content .description-list {padding: 12px 2px; grid-template-columns: 1fr 2fr;}
-.mycar-content .description-list .dday {padding-right:4px;}
+.mycar-content .description-list .dday {margin-right:10px; font-size: 14px; color: $kb-ui04;}
+.mycar-content .description-list dt {white-space: nowrap;}
 // .mycar-content .description-list .dday {padding: 0 9px; margin-right: 7px; font-size: 12px; line-height: 20px; border: 1px solid $kb-ui06; border-radius: 2px; color: $kb-ui05;}
 // .mycar-content .description-list dt {align-items: flex-start;}
 // .mycar-content .description-list dd {margin: 8px 0;}
@@ -221,19 +222,24 @@
 .mycar-quotes .chart-area {margin-bottom: 13px; margin-top: 16px; padding-top: 20px; padding-bottom: 10px; border-top: 1px solid $kb-ui07;}
 .mycar-quotes .content-box {margin-top: 16px;}
 .mycar-quotes .dlists {margin-top: 0; border-top-color: $kb-ui09;}
-.mycar-insurance .description-list + .description-list {border-top: 1px solid $kb-ui09;}
+// .mycar-insurance .description-list + .description-list {border-top: 0px solid $kb-ui09;}
 .mycar-insurance .description-list + .btn-area {margin-top: 5px;}
 
 .mycar-insurance,
 .mycar-buttons,
 .mycar-agree-link {/* margin-top: 46px; */ padding-top: 15px;}
 
-.mycar-insurance .status {padding: 0 2px; margin-left: 6px; font-size: 14px; line-height: 23px; }
+.mycar-insurance .status {margin-right: 10px; font-size: 14px; line-height: 23px; }
 .mycar-insurance .status.normal {color: #287eff;}
 .mycar-insurance .status.effective {color: #ff5858;}
+.mycar-insurance .description-list {border-bottom: 0;}
+.mycar-insurance .more-wrap {border-bottom: 1px solid $kb-ui09;}
+.mycar-insurance .more-container {border-top: 1px dashed $kb-ui09;}
 
-.mycar-agree-link {position: relative; margin-top: -10px; @include text($text02, normal); color: $kb-ui02;}
+.mycar-agree-link {position: relative; margin-top: 8px; margin-bottom: 24px; @include text($text02, normal); color: $kb-ui02;}
+.mycar-agree-link .h4 {margin-bottom: 12px;}
 .mycar-agree-link p {margin-bottom: 20px;}
+.mycar-agree-link .btn-area {white-space: nowrap;}
 .mycar-agree-link + .mycar-buttons {padding-top: 16px;}
 
 .bottom-simple-link {margin-top: 34px;}
@@ -390,3 +396,11 @@
 .invest .account-top .account-wrap.bottom-line:after{display:block;position:absolute;bottom:0;left:0;width:calc(100% - 48px);margin:0 24px;content:'';height:1px;background-color:$kb-ui09;}//하단라인 들어가는 케이스 추가 2021-10-01 kek
 
 .my-asset.investment .p-list > dl > dd .btn-line.sm{margin-top:20px;}
+
+.more-wrap {@include clfix;}
+.more-wrap .more-container {clear: both; display: none;}
+.more-wrap .more-checkbox {position: absolute; left: -10000px;}
+.more-wrap .more-checkbox:checked + .more-label + .more-container {display: block;}
+.more-wrap .more-label {float: right; margin-bottom: 20px; line-height: 20px;}
+.more-wrap .more-label::after {transform: rotate(90deg) translateX(-2px);}
+.more-wrap .more-checkbox:checked + .more-label::after {transform: rotate(-90deg) translateX(1px);}

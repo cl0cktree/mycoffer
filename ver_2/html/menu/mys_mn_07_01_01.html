@@ -1,0 +1,99 @@
+<!-- [MYS_MN_07_01_01] 배너 > 당첨툴_룰렛 > 마이데이터선물함 리워드혜택_팝업 > 피싱보험안내 (작성자: 누리어 시스템 최선화) // -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "피싱보험안내 | 마이데이터 선물함"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app"><!-- Liiv, Starbanking  앱 안에서  동작할 경우 data-page="submain" -->
+        
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'이벤트 안내',
+            'type':'close'
+        })
+        
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content phishing-insurance">
+                <section class="kb-sec phishing-event">
+                    <div class="event-img">
+                        <img src="@@webRoot/static/images/menu/phishing-event.png" alt="">
+                    </div>
+                    <h2 class="h2">피싱/해킹 금융사기 보상보험 <br>무료 강비 이벤트 당첨!</h2>
+                </section>
+
+                <hr class="hr-divide_48">
+
+                <section class="kb-sec phishing-event-info">
+                    <h3 class="h4 tit">피싱/해킹 금융사기 보상보험이란?</h3>
+                    <p class="desc">피싱/해킹 금융사기로 예금이 부당인출 되거나 신용카드가 부당하게 사용되어 발생한 금전적 손해로 부터 보장해 드려요.</p>
+
+                    <ul class="event-list">
+                        <li>
+                            <i class="icon-phishing-insurance01"></i>
+                            <div class="text-wrap">
+                                <strong class="tit">상품명</strong>
+                                <span class="desc">(주)KB손해보험 <strong>피싱/해킹 금융사기 보상보험Ⅱ</strong></span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="icon-phishing-insurance02"></i>
+                            <div class="text-wrap">
+                                <strong class="tit">보장내용</strong>
+                                <span class="desc"><strong>최대 5백만원</strong> (자기부담금 10만원 적용시)</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="icon-phishing-insurance03"></i>
+                            <div class="text-wrap">
+                                <strong class="tit">가입기간</strong>
+                                <span class="desc">보험 가입 다음날부터 <strong>1년</strong></span> 
+                            </div>
+                        </li>
+                    </ul>
+
+                    <p class="simple-message">자세한 사항은 KB손해보험 고객센터 1544-0114로 연락주세요.</p>
+                </section>
+
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid"><span>보험 가입</span></button>
+                    </div>
+                </div>
+            </main>
+            <!-- // app-content -->
+        
+        </div>
+        <!-- // app-container -->
+    </div>
+
+    <div class="layered">
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    <script>
+        $(document).ready(function(){
+            $('.sticky-bottom button').on('click', function(){
+                modalPopup({
+                    title: "보험 가입 완료",
+                    message: "보험 효력은 익일부터 제공되며 상세 정보는 마이데이터 선물함에서 확인 하실 수 있습니다.",
+                    textOkButton: "선물함 바로가기"
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

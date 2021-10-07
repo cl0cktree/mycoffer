@@ -1848,7 +1848,7 @@ var jsFixed = {
     init: function(){
         $('.js-fixed').each(function(){
             var top = $(this).offset().top + $(this).outerHeight();
-            // GUI 수정 요청
+            // 전송요구 수정
             if($(this).children('.page-step-desc').length){
                 top -= $(this).find('.page-step-desc').outerHeight();
             }
@@ -1866,12 +1866,43 @@ var jsFixed = {
         }
     }
 };
+
 if($('.js-fixed').length) jsFixed.init();
+
+//Scroll 하단 체크
+var jsScrollDone = {
+    init: function(){
+        $('.js-scroll-done').each(function(){
+            $(this).addClass('scroll-done');
+            var $btnSticky = $(this).find('.sticky-bottom');
+            $btnSticky.find('button').prop('disabled', true);
+            $btnSticky.find('a').addClass('is-disabled');
+            $btnSticky.find('.btn-area').append('<button type="button" class="btn-transparent"><span>스크롤 체크</span></button>')
+        });
+
+        $('.js-scroll-done').on('click','.btn-transparent',function(){
+            modalPopup({
+                title: '',
+                message: "화면을 스크롤하여 전송요구서/동의서 내용을 모두 확인해 주세요.",
+            });
+        });
+    },
+    scroll : function(st, $this){
+        if (st >= $(document).outerHeight() - $this.outerHeight()) { 
+            var $btnSticky = $('.js-scroll-done .sticky-bottom');
+            $btnSticky.find('button').prop('disabled', false);
+            $btnSticky.find('a').removeClass('is-disabled');
+            $btnSticky.find('.btn-transparent').remove();
+        }         
+    }
+};
+
+if($('.js-scroll-done').length) jsScrollDone.init();
 
 $(window).on('scroll',function(){
     st = $(this).scrollTop();
-
     jsFixed.scroll(st, $('.page-step'));
+    jsScrollDone.scroll(st, $(this));
 });
 
 
@@ -1891,3 +1922,4 @@ if($('.order-change-list').length){
 // $('.filter-result').each(function(){
 //     $(this).find('button span').unwrap();
 // });
+

@@ -949,10 +949,11 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .address-search > .tab:after{content:'';position:absolute;right:-2.4rem;height:1px;background:#dde1e4;bottom:0;width:2.4rem;}
 .my-asset .address-search .kb-form{margin-top:1.8rem;}
 .my-asset .search-result{margin-top:30px;border-bottom:1px solid $kb-ui09;padding-bottom:10px;}
-.my-asset .search-result > li{@include ellipsis;display:block;padding:1.4rem 0;}
+.my-asset .search-result > li{/*@include ellipsis;*/display:block;padding:.5rem 0;} // padding 수정,한줄줄임 삭제
 .my-asset .h-category{@include text($size:1.3rem,$line-height:1);border:1px solid $kb-ui07;padding:.3rem .8rem;border-radius:2px;letter-spacing:-0.48px;color:$kb-ui03;}
 .my-asset .h-category + .h-category{margin-left:4px;}
-.my-asset .search-result > li .keyword{margin-left:5px}
+.my-asset .search-result > li .keyword{margin-left:5px;line-height:2;} // 행간 추가
+.my-asset .search-result > li .address{line-height:1.4;}// 행간 추가
 .my-asset .address-search .btn-more-plus{display: block;padding:15px 0;width:100%;margin-top:2.4rem;}
 .my-asset .selected-address{padding:0;}
 .my-asset .selected-address .my-address-box{padding:0 2.6rem;margin-top:4rem;}
@@ -1216,15 +1217,15 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .menu-push .top-info .push-setting{display:flex;justify-content:space-between;padding-right:1px;margin-top:0.6rem;}
 .menu-push .top-info .push-setting + .txt{@include text($size:16px,$line-height:1.56);margin-top:2rem;}
 .menu-push .push-list .condition-area{border-top:0.1rem solid $kb-ui08;}
-.push-time-line .list-item{display:flex;flex-direction:column;margin-top:2rem;}
-.push-time-line .list-item:first-child{margin-top:2.8rem;}
-.push-time-line .list-item .col.date{@include text($size:14px);display:inline-block;padding:0 2rem;margin-bottom:0.1rem;border-radius:1.5rem;align-self:center;text-align:center;line-height:3rem;$color:$kb-ui03;background-color:$kb-ui09;}
-.push-time-line .list-item .col.date .num{font-size:1.5rem;$color:$kb-ui03;}
+.push-time-line .list{display:flex;flex-direction:column;margin-top:2.8rem;} // 알림함 타입 추가 2021-10-08
+// .push-time-line .list-item:first-child{margin-top:2.8rem;} // 알림함 타입 추가 2021-10-08
+.push-time-line .list .col.date{@include text($size:14px);display:inline-block;padding:0 2rem;margin-top:2rem;margin-bottom:0.1rem;border-radius:1.5rem;align-self:center;text-align:center;line-height:3rem;$color:$kb-ui03;background-color:$kb-ui09;} // 알림함 타입 추가 2021-10-08
+.push-time-line .list .col.date .num{font-size:1.5rem;$color:$kb-ui03;} // 알림함 타입 추가 2021-10-08
 .push-time-line .list-item .col.tit{position:relative;display:flex;justify-content:space-between;align-items:flex-start;margin-left:1rem;margin-top:2.2rem;}
 .push-time-line .list-item .col.tit.new::before{content:'';position:absolute;top:-0.5rem;left:-0.8rem;width:0.6rem;height:0.6rem;border-radius:50%;background-color:$color-red;}
-.push-time-line .list-item .col.tit i:first-child{position:relative;margin-right:1.1rem;}
-.push-time-line .list-item .col.tit .txt{@include text($size:14px,$weight:bold);line-height:1.6rem;flex:1 0 auto;}
-.push-time-line .list-item .col.tit .time{@include text($size:12px,$line-height:16px);color:$kb-ui05;}
+.push-time-line .list-item .col.tit i:first-child{position:relative;margin-right:1.1rem;flex:0 1 auto;width:1.7rem;flex:0 0 auto;} // 알림함 타입 추가 2021-10-08
+.push-time-line .list-item .col.tit .txt{@include text($size:14px,$weight:bold);line-height:1.6rem;flex:1 1 auto;} // 알림함 타입 추가 2021-10-08
+.push-time-line .list-item .col.tit .time{@include text($size:12px,$line-height:16px);color:$kb-ui05;flex:0 0 auto;} // 알림함 타입 추가 2021-10-08
 .push-time-line .list-item .col.tit .num{display:inline-block;line-height:16px;font-size:1.3rem;font-weight:normal;}
 .push-time-line .list-item .col.desc{padding:1.8rem 2rem 2rem;margin:0.8rem -0.6rem 0;border:1px solid $kb-ui08;border-radius:0.8rem;}
 .push-time-line .list-item .col.desc .txt{@include text;}
@@ -1234,6 +1235,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .push-time-line .list-item .product-info{@include text($size:14px);}
 .push-time-line .list-item .product-info .dt{margin:3rem 0 0.6rem;font-weight:bold;}
 .push-time-line .list-item .product-info .dd ~ .dd{margin-top:1rem;}
+.push-time-line .list-item .product-info ul.dd{margin-top:1.6rem;} // 타입 추가 2021-10-08
 .push-time-line .list-item .product-info [data-style=list] li{@include text($size:14px);margin-top:0;color:$kb-ui03}
 .push-time-line .list-item .product-info [data-style=list] li::before{width:0.6rem;height:0.1rem;left:0;background-color:$kb-ui04;}
 .push-time-line .list-item .product-info [data-style=list] .num{@include text($size:14px);}

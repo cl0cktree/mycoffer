@@ -21,7 +21,7 @@
         <div class="app-container">
 
             <!-- app-content // -->
-            <main class="app-content select-transmission-method">
+            <main class="app-content select-transmission-method js-scroll-done"><!-- 수정:2021-10-08 -->
                 <section class="kb-sec sec-tit">
                     <h2 class="h1">개인(신용)정보 제공 동의서</h2>
                     <div class="terms-desc">
@@ -87,6 +87,18 @@
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
+    <script>
+        $(document).ready(function(){
+			// 수정 2021-10-08
+            $('.btn-cancel').on('click', function() {
+                modalPopup({
+                    title: '',
+                    message: "마이데이터 서비스 이용을 위한 자산 등록을 취소하시겠습니까?",
+                    type: "confirm"
+                });
+            });
+        });
+    </script>
 
 </body>
 

@@ -41,7 +41,7 @@
                             </li>    
                         </ul>
                         <p class="simple-message">고객이 상품구매 카테고리 정보를 선택하는 경우에 한함</p>
-                        <p class="simple-message">[선불전자지급수단의 상품구매정보 항목]에는 실제 구매한 상품이 아닌 해당 상품의 카테고리(13항목으로 구분)가 포함되어 있습니다.</p>
+                        <p class="simple-message sq-bracket">[선불전자지급수단의 상품구매정보 항목]에는 실제 구매한 상품이 아닌 해당 상품의 카테고리(13항목으로 구분)가 포함되어 있습니다.</p>
                     </div>
 
                     <h3 class="tit h4">가맹점명 및 사업자등록번호 정보 <span>(선택 항목)</span></h3>
@@ -57,7 +57,7 @@
                             </li>    
                         </ul>
                         <p class="simple-message">고객이 가맹점명 및 사업자등록번호 정보를 선택하는 경우에 한함</p>
-                        <p class="simple-message">[카드청구 및 결제정보의 가맹점명 및 사업자등록번호 항목]에는 본인의 소비생활 등에 관련된 상세한 정보가 포함되어 있습니다.</p>
+                        <p class="simple-message sq-bracket">[카드청구 및 결제정보의 가맹점명 및 사업자등록번호 항목]에는 본인의 소비생활 등에 관련된 상세한 정보가 포함되어 있습니다.</p>
                     </div>
 
                     <h3 class="tit h4">적요 또는 거래메모 정보 <span>(선택 항목)</span></h3>
@@ -73,7 +73,7 @@
                             </li>    
                         </ul>
                         <p class="simple-message">고객이 적요 또는 거래메모 정보를 선택하는 경우에 한함</p>
-                        <p class="simple-message">[계좌정보의 적요 항목]에는 송금인/수취인명정보 등 본인의 사생활 및 경제활동 등에 관련된 상세한 정보가 포함되어 있습니다.</p>
+                        <p class="simple-message sq-bracket">[계좌정보의 적요 항목]에는 송금인/수취인명정보 등 본인의 사생활 및 경제활동 등에 관련된 상세한 정보가 포함되어 있습니다.</p>
                     </div>
 
                     <p class="simple-message mt48">각 항목에 대한 정보 전송은 본인의 책임과 판단하에 신중하게 결정하여 주시기 바랍니다.</p>
@@ -105,6 +105,14 @@
     <!-- Add Script -->
     <script>
         $(document).ready(function(){
+			// 수정:2021-10-08
+            $('.btn-cancel').on('click', function() {
+                modalPopup({
+                    title: '',
+                    message: "마이데이터 서비스 이용을 위한 자산 등록을 취소하시겠습니까?",
+                    type: "confirm"
+                });
+            });
             $('.sticky-bottom').on('click', function() {
                 modalPopup({
                     title: '',

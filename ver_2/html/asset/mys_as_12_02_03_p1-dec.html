@@ -1,0 +1,249 @@
+<!-- [MYS_AS_12_02_03_P1] 작성자: 누리어 시스템 황철민 -->
+<!DOCTYPE html>
+<html lang="ko" data-channel="">
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "자동차관리 | 자동차"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header //-->
+		@@include('@@webRoot/html/_include/app-integrated-header.html',{
+			'pageTit' :'My Car 상세',
+			'type': 'close'
+		}) 
+		<!-- // app-header -->
+
+		<!-- app-container //-->
+		<div class="app-container">
+
+			<!-- app-content // -->
+			<main class="app-content mycar-content mycar-detail">
+
+				<!-- 차량정보 // -->
+				<section class="kb-sec mycar-information">
+					<h2 class="is-hidden">My Car 차량정보</h2>
+					<div class="content-box">
+						<a class="link-modify" href="#">수정</a>
+						<div class="infobox">
+							<span class="nickname">내차별명</span>
+							<span class="model"><span class="manufacturer">한국GM</span>쉐보레 말리부</span><!-- 추가 수정 -->
+							<span class="subtxt">2.0터보 LTZ(2016)</span><!-- 추가 수정 -->
+							<span class="photo">
+								<!-- <img src="@@webRoot/static/images/_temp/car04.png" alt="한국GM 쉐보레 말리부"> -->
+								<img src="@@webRoot/static/images/asset/car_default.png" alt="등록한 차량 이미지"><!-- 추가 수정 -->
+							</span>							
+						</div>
+					</div>
+				</section>
+				<!-- // 차량정보 -->
+
+				<!-- My Car 시세 // -->
+				<section class="kb-sec mycar-quotes">
+					<h2 class="title">My Car 시세 <small>(KB 차차차)</small></h2>
+					<!-- 추가 수정 // -->
+					<button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+					<div class="tooltip">
+						<strong class="tit">My Car 시세란?</strong>
+						<div class="cont">
+							KB차차차에 등록된 동일 모델의 판매가 기반으로 산출한 AI시세 예측 가격이자 소비자구매가격입니다.
+						</div>
+						<button class="btn-close"><span>닫기</span></button>
+					</div>
+					<!-- // 추가 수정 -->
+					<!-- [Chart Area] // -->
+					<!--
+						[차트 디자인 정보]
+						Grid 라인 색상 : #ebeef0
+						꺽은선 색상 : #ffba53
+						꺽은선 Area 색상 : #f7f7f8
+						X축, Y축 레이블 텍스트 크기/색상 : 14px / #696e76
+						tooltip 텍스트 크기/색상 : 14px / #26282c
+					-->
+					<!-- 추가 수정 // -->
+					<div class="chart-area">
+						<img class="temp" src="@@webRoot/static/images/_temp/chart_as1201.png" alt="차트 예시 이미지">
+					</div>
+					<!-- // 추가 수정 -->
+					<div class="dlists">
+						<dl class="description-list type2">
+							<dt>시세금액</dt>
+							<dd class="amount"><span class="num" data-unit-after="만원">859</span></dd>
+							<dt>지난달대비</dt>
+							<dd class="amount up"><span class="num" data-unit-after="만원">5</span></dd>
+							<!-- 추가 수정 2021-10-06 // -->
+							<dt>
+								출고가
+								<button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+								<div class="tooltip">
+									<strong class="tit">출고가란?</strong>
+									<div class="cont">
+										선택 옵션 및 할인이 포함된 최초 취득가(부가세 제외)입니다.
+									</div>
+									<button class="btn-close"><span>닫기</span></button>
+								</div>
+							</dt>
+							<!-- // 추가 수정 2021-10-06 -->
+							<dd class="amount"><span class="num" data-unit-after="만원">2,500</span></dd>
+							<dt>잔존가치</dt>
+							<dd class="amount"><span class="num" data-unit-after="%">32</span></dd>
+						</dl>
+					</div>
+					<div class="kbchachacha-banner">
+						<a href="https://m.kbchachacha.com/public/web/sellme/submain.kbc">
+							<strong>KB차차차</strong>
+							<span>KB캐피탈이 만든 중고차 국민시세</span>
+						</a>
+					</div>
+				</section>
+				<!-- // My Car 시세 -->
+
+				<!-- My Car 유지비관리 // -->
+				<section class="kb-sec mycar-maintain">
+					<h2 class="title">유지비관리 <small>(2월)</small></h2><!-- 추가 수정 -->
+					<div class="dlists">
+						<dl class="description-list type2">
+							<dt>유지비금액</dt>
+							<dd class="amount"><span class="num" data-unit-after="원">370,000</span></dd><!-- 2021-09-02 수정 -->
+							<dt>지난달대비</dt>
+							<dd class="amount up"><span class="num" data-unit-after="원">70,000</span></dd>
+							<dt>주유비</dt>
+							<dd class="amount"><span class="num" data-unit-after="원">300,000</span></dd>
+							<dt>기타</dt>
+							<dd class="amount"><span class="num" data-unit-after="원">70,000</span></dd>
+						</dl>
+					</div>
+					<div class="link-area">
+						<a href="#" class="link-arrow-after">유지비 자세히보기</a>
+					</div>
+				</section>
+				<!-- // My Car 유지비관리 -->
+
+				<!-- My Car 대출관리 // -->
+				<section class="kb-sec mycar-loan">
+					<h2 class="title">대출관리</h2><!-- 추가 수정 -->
+					<div class="dlists">
+						<dl class="description-list type2">
+							<dt>상품명</dt>
+							<dd>국민은행 신용대출</dd>
+							<dt>신규일</dt>
+							<dd class="date">2020.10.23</dd>
+							<dt>만기일</dt>
+							<dd class="date">2023.09.23</dd>
+							<dt>금리</dt>
+							<dd>연&nbsp;<span class="num" data-unit-after="%">2.3</span></dd>
+							<dt>대출잔액</dt>
+							<dd class="amount"><span class="num" data-unit-after="원">1,700,000</span></dd>
+						</dl>
+						<dl class="description-list type2">
+							<dt>상품명</dt>
+							<dd>애니카자동차 대출</dd>
+							<dt>신규일</dt>
+							<dd class="date">2020.10.23</dd>
+							<dt>만기일</dt>
+							<dd class="date">2023.09.23</dd>
+							<dt>금리</dt>
+							<dd>연&nbsp;<span class="num" data-unit-after="%">2.3</span></dd>
+							<dt>대출잔액</dt>
+							<dd class="amount"><span class="num" data-unit-after="원">700,000</span></dd>
+						</dl>
+					</div>
+					<div class="link-area">
+						<a href="#" class="link-arrow-after">대출이 부담되시나요?</a>
+					</div>
+				</section>
+				<!-- // My Car 대출관리 -->
+
+				<!-- My Car 보험관리 // -->
+				<section class="kb-sec mycar-insurance">
+					<h2 class="title">보험관리</h2>
+					<div class="dlists">
+						<div class="more-wrap">
+							<dl class="description-list type2">
+								<dt>상품명</dt>
+								<dd><span class="status normal">정상</span>현대해상 자동차보험</dd>
+								<dt>신규일</dt>
+								<dd class="date">2020.10.23</dd>
+								<dt>만기일</dt>
+								<dd class="date"><span class="dday">30일 남음</span>2023.09.23</dd>
+							</dl>
+							<input class="more-checkbox" type="checkbox" id="moreCheck1">
+							<label class="more-label link-arrow-after" for="moreCheck1">자세히보기</label>
+							<div class="more-container">
+								<dl class="description-list type2">
+									<dt>운전자한정특약</dt>
+									<dd>기명1인</dd>
+									<dt>자기차량손해(여부)</dt>
+									<dd>가입</dd>
+									<dt>자기부담금 구분</dt>
+									<dd><span class="num" data-unit-after="%">20</span></dd>
+									<dt>자기부담금 금액</dt>
+									<dd class="amount"><span class="num" data-unit-after="원">200,000</span></dd>
+								</dl>
+							</div>
+						</div>
+						<div class="more-wrap">
+							<dl class="description-list type2">
+								<dt>상품명</dt>
+								<dd><span class="status effective">실효</span>애니카 운전자보험</dd>
+								<dt>신규일</dt>
+								<dd class="date">2020.10.23</dd>
+								<dt>만기일</dt>
+								<dd class="date"><span class="dday">365일 남음</span>2023.09.23</dd>
+							</dl>
+							<input class="more-checkbox" type="checkbox" id="moreCheck2">
+							<label class="more-label link-arrow-after" for="moreCheck2">자세히보기</label>
+							<div class="more-container">
+								<dl class="description-list type2">
+									<dt>운전자한정특약</dt>
+									<dd>기명1인</dd>
+									<dt>자기차량손해(여부)</dt>
+									<dd>가입</dd>
+									<dt>자기부담금 구분</dt>
+									<dd><span class="num" data-unit-after="%">20</span></dd>
+									<dt>자기부담금 금액</dt>
+									<dd class="amount"><span class="num" data-unit-after="원">200,000</span></dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div class="link-area">
+						<a href="#" class="link-arrow-after">보험료 확인하기</a>
+					</div>
+				</section>
+				<!-- // My Car 보험관리 -->
+
+				<!-- My Car 마이데이터 동의 링크 // -->
+				<section class="kb-sec mycar-agree-link">
+					<h2 class="h4">마이데이터 연결하기</h2>
+					<p>마이데이터를 연결하면 My Car(자동차 유지비, 할부금 대출, 보험 정보)를 알 수 있습니다.</p>
+					<div class="btn-area">
+						<a href="#" class="btn-line"><span>마이데이터 연결</span></a>
+					</div>
+				</section>
+				<!-- // My Car 마이데이터 동의 링크 -->
+
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (modal, bottom sheet) // -->
+		<div class="layered">
+		</div>
+		<!-- // Layer (modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+
+</body>
+
+</html>

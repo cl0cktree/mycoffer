@@ -35,7 +35,7 @@
                     <div class="kb-form not-ready no-transition phone-kind-form safe-flex100 mt28" data-status="">
                         <label for="mysafe_21" class="phone-kind-title required">제조사</label>
                         <div class="kb-form_inner form-select mt4">
-                            <button type="button" class="selected-option" data-call-layered="MYS_AS_17_01_17_BS1" id="mysafe_20"></button>
+                            <button type="button" class="selected-option" id="mysafe_20"></button>
                             <select name="" id="mysafe_21" title="제조사 선택">
                                 <option value="">제조사선택</option>
                                 <option value="phonManufacturer01" selected>삼성</option>
@@ -59,7 +59,7 @@
                     <div class="kb-form not-ready no-transition phone-kind-form safe-flex100 mt28" data-status="">
                         <label for="mysafe_27" class="phone-kind-title required">시리즈</label>
                         <div class="kb-form_inner form-select mt4">
-                            <button type="button" class="selected-option" data-call-layered="MYS_AS_17_01_17_BS4" id="mysafe_26"></button>
+                            <button type="button" class="selected-option" id="mysafe_26"></button>
                             <select name="" id="mysafe_27" title="시리즈 선택">
                                 <option value="">시리즈선택</option>
                                 <option value="phoneSeries01" selected>갤럭시 S</option>
@@ -83,7 +83,7 @@
                     <div class="kb-form not-ready no-transition phone-kind-form safe-flex100 mt28" data-status="">
                         <label for="mysafe_24" class="phone-kind-title required">모델</label>
                         <div class="kb-form_inner form-select mt4">
-                            <button type="button" class="selected-option" data-call-layered="MYS_AS_17_01_17_BS2" id="mysafe_23"></button>
+                            <button type="button" class="selected-option" id="mysafe_23"></button>
                             <select name="" id="mysafe_24" title="모델 선택">
                                 <option value="">모델선택</option>
                                 <option value="phonModel01" selected>갤럭시 S20</option>
@@ -108,18 +108,18 @@
                     <div class="button-area safe-flex100">
                         <button class="btn-line my-phone-value"><span>조회</span></button>
                     </div>
-                    <div class="kb-form phone-input-value safe-flex100 mt12 not-ready no-transition" data-status="info">
+                    <div class="kb-form phone-input-value safe-flex100 not-ready no-transition" data-status="info">
                         <!-- <label for="mysafe_04">금액</label> -->
-                        <div class="kb-form_inner form-text">
+                        <div class="kb-form_inner mt12 form-text">
                             <input type="text" inputmode="numeric" class="phone-value-input" id="mysafe_29" placeholder="" value="10000000" data-unit="" data-action="autoSeperator" readonly=""><span class="unit" style="left: 75.7031px;">원</span>
                         </div>
+                        <p class="my-phone-trans-info info-msg">
+                            휴대폰 시세는 (주)민팃에서 제공하는
+                            <span class="safe-color">
+                                해당 단말기의 S급 시세로 시간이 지남에 따라 감가상각으로 실제 시세와는 차이가 있을 수 있습니다.
+                            </span>
+                        </p>
                     </div>
-                    <p class="my-phone-trans-info info-msg">
-                        휴대폰 시세는 (주)민팃에서 제공하는
-                        <span class="safe-color">
-                            해당 단말기의 S급 시세로 시간이 지남에 따라 감가상각으로 실제 시세와는 차이가 있을 수 있습니다.
-                        </span>
-                    </p>
                 </section>
                 <section class="kb-sec mt28">
                     <div class="kb-form" data-status="">
@@ -139,6 +139,9 @@
                             <input type="text" class="phone-memo-input" id="mysafe_31" placeholder="최대 10자 입력 가능" value="나의 소중한 첫 폰" maxlength="10">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
+                        <p class="info-msg safe-display-none">
+                            최대 10자리(띄어쓰기 포함) 입력가능합니다.
+                        </p>
                     </div>
                 </section>
                 <section class="kb-sec sticky-bottom">
@@ -156,9 +159,6 @@
 
 		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
 		<div class="layered">
-            @@include('@@webRoot/html/mysafe/layered/MYS_AS_17_01_17_BS1.html')
-            @@include('@@webRoot/html/mysafe/layered/MYS_AS_17_01_17_BS2.html')
-            @@include('@@webRoot/html/mysafe/layered/MYS_AS_17_01_17_BS4.html')
             @@include('@@webRoot/html/_layered/bs-calendar.html')
 		</div>
 		<!-- // Layer (fullpage popup, modal, bottom sheet) -->

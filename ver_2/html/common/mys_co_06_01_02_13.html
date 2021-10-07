@@ -24,7 +24,7 @@
         <div class="app-container">
             
             <!-- app-content // -->
-            <main class="app-content select-transmission-method">
+            <main class="app-content select-transmission-method js-scroll-done"><!-- 수정:2021-10-08 -->
                 
                 <!-- 수정:2021-10-08 // -->
                 <section class="kb-sec sec-tit">
@@ -54,6 +54,7 @@
                             <h4 class="h4">개인(신용)정보</h4>
                             <h5 class="h5 mt20">개인(식별)정보 <span>(필수 항목)</span></h5>
                             <p class="mt16">: 접근토근</p>
+                            <p class="simple-message">고객이 해당 정보를 선택하는 경우에 한함</p><!-- 수정:2021-10-08 -->
                             <h5 class="h5 mt20 mb12">신용거래정보 <span>(필수 항목)</span></h5>
                             <!-- // 수정:2021-09-24 -->
                             <!-- 상세정보 전송 시 업권별 신용거래정보 상세내용 참고 // -->
@@ -114,6 +115,14 @@
     <!-- Add Script -->
     <script>
         $(document).ready(function(){
+			// 수정:2021-10-08
+            $('.btn-cancel').on('click', function() {
+                modalPopup({
+                    title: '',
+                    message: "마이데이터 서비스 이용을 위한 자산 등록을 취소하시겠습니까?",
+                    type: "confirm"
+                });
+            });
             // 추가 210917 
             $('.sticky-bottom').on('click', function() {
                 modalPopup({

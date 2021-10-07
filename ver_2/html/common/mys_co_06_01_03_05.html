@@ -24,7 +24,7 @@
         <div class="app-container">
 
             <!-- app-content // -->
-            <main class="app-content select-transmission-method">
+            <main class="app-content select-transmission-method js-scroll-done"><!-- 수정:2021-10-08 -->
                 <!-- <h2 class="is-hidden">전송요구</h2> --><!-- 수정 2021-09-16 -->
                 <div class="page-step js-fixed">    
                     <div class="page-step-inner">
@@ -35,6 +35,7 @@
                         <h2 class="h1">상세 정보 전송 요구</h2>
                     </div>
                 </div> 
+
                 <section class="kb-sec transmission-request">                    
                     <div class="caution-txt_01">
                         <h3 class="tit">정보제공자(기관)</h3>
@@ -42,25 +43,16 @@
                             <p>KB국민은행</p>
                         </div>                        
                         <h3 class="tit">전송을 요구하는 개인신용정보</h3>
+                        <!-- 수정:2021-10-08 // -->
                         <div class="desc-box">
                             <ul data-style="list">                                   
-                                <li><span>수신상품정보</span> : 계좌번호, 회차번호, 외화계좌여부,
-                                    상품명, 마이너스약정여부, 계좌구분, 계좌상태,
-                                    통화코드, 저축방법, 계좌개설t일자, 만기일, 약정액,
-                                    월납입액, 현재잔액, 출금가능액, 적용금리,
-                                    최종납입회차, 거래일시(일자), 거래번호, 거래유형,
-                                    거래구분, 거래금액, 거래후 잔액, 납입회차 적요   
+                                <li><span>은행</span> : 수신계좌 정보, 투자상품 정보, 대출상품 정보, 개인형IRP정보
                                 </li>
-                                <li><span>대출상품정보</span> : 계좌번호, 회차번호, 대출일, 만기일,
-                                    최종적용금리, 월상환일, 상환방식, 자동이체기관,
-                                    상환계좌번호, 통화코드, 대출잔액, 대출원금, 다음
-                                    이자상환일, 거래일시(일자), 거래번호, 거래유형, 
-                                    거래금액, 거래후 대출잔액, 거래금액 중 원금, 거래
-                                    금액 중 이자, 환출이자, 이자적용시작일, 이자적용
-                                    종료일, 적용이율, 이자금액, 이자종류
+                                <li><span>통신</span> : 통신 정보
                                 </li>
                             </ul>
                         </div> 
+                        <!-- // 수정:2021-10-08 -->
                         <h3 class="tit">개인신용정보를 제공받는 자</h3>
                         <div class="desc-box">
                             <p>상대기관명</p>
@@ -115,11 +107,12 @@
 
                 <hr class="hr-divide_48">
                 
+                <!-- 수정:2021-10-08 // -->
                 <section class="kb-sec confirm-agree">
-                    <h4 class="tit h4">적요 또는 거래메모 정보</h4>
+                    <h4 class="tit h4">적요 또는 거래메모 정보 <span>(선택 항목)</span></h4>
                     <div class="confirm-info">
                         <p class="tit">적요 또는 거래메모 정보</p>
-                        <p class="question">위 적요 또는 거래메모 정보 수집・이용에 동의하십니까?</p><!-- 수정:2021-10-08 -->
+                        <p class="question">위 적요 또는 거래메모 정보 수집&middot;이용에 동의하십니까?</p>
                         <ul class="radio-group">
                             <li>
                                 <span class="form-checkbox"><input type="radio" id="radioAgree2-1" name="radioAgree2" checked=""><label for="radioAgree2-1">동의하지 않음</label></span>
@@ -128,9 +121,13 @@
                                 <span class="form-checkbox"><input type="radio" id="radioAgree2-2" name="radioAgree2"><label for="radioAgree2-2">동의함</label></span>
                             </li>
                         </ul>
+                        <p class="simple-message">고객이 적요 또는 거래메모 정보를 선택하는 경우에 한함</p>
+                        <p class="simple-message sq-bracket">[계좌정보의 적요 항목]에는 송금인/수취인명정보 등 본인의 사생활 및 경제활동 등에 관련된 상세한 정보가 포함되어 있습니다.</p>
                     </div>
+                    <p class="simple-message mt48">해당 항목에 대한 정보 전송은 본인의 책임과 판단 하에 신중하게 결정하여 주시기 바랍니다.</p>
                 </section> 
-                </div>
+                <!-- // 수정:2021-10-08 -->
+
                 <div class="sticky-bottom">
                     <div class="btn-area">
                         <button type="button" class="btn-solid"><span>확인</span></button>

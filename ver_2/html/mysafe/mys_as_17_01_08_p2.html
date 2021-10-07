@@ -34,7 +34,7 @@
                     <div class="kb-form not-ready no-transition gold-shape-form safe-flex100 mt28" data-status="">
                         <label for="mysafe_06" class="gold-unit-title required">형태</label>
                         <div class="kb-form_inner form-select mt4">
-                            <button type="button" class="selected-option" data-call-layered="MYS_AS_17_01_08_BS1" id="mysafe_05"></button>
+                            <button type="button" class="selected-option" id="mysafe_05"></button>
                             <select name="" id="mysafe_06" title="금 형태선택">
                                 <option value="">형태선택</option>
                                 <option value="goldShape01">골드바</option>
@@ -69,7 +69,7 @@
                         <div class="kb-form not-ready no-transition gold-unit-form" data-status="">
                             <!-- <label for="" class="gold-unit-title"></label> -->
                             <div class="kb-form_inner form-select">
-                                <button type="button" class="selected-option btn-glod-unit" data-call-layered="MYS_AS_17_01_08_BS2" id="mysafe_02"></button>
+                                <button type="button" class="selected-option btn-glod-unit" id="mysafe_02"></button>
                                 <select class="gold-unit" name="" id="mysafe_03" title="금 단위선택">
                                     <option value="">그램</option>
                                     <option value="goldUnit01" selected>그램</option>
@@ -92,10 +92,10 @@
                     <div class="button-area safe-flex100">
                         <button class="btn-line my-gold-value"><span>조회</span></button>
                     </div>
-                    <p class="my-gold-trans-info info-msg safe-display-none">보유중량 입력 후 조회 버튼을 누르시면 환산금액이 조회됩니다.</p>
-                    <div class="kb-form not-ready no-transition gold-input-value safe-flex100 mt12" data-status="info">
+                    <div class="kb-form not-ready no-transition gold-input-value safe-flex100" data-status="info">
+                        <p class="my-gold-trans-info info-msg safe-display-none">보유중량 입력 후 조회 버튼을 누르시면 환산금액이 조회됩니다.</p>
                         <!-- <label for="mysafe_04">금액</label> -->
-                        <div class="kb-form_inner form-text">
+                        <div class="kb-form_inner mt12 form-text">
                             <input type="text" inputmode="numeric" class="gold-value-input" id="mysafe_04" placeholder="" value="10000000" data-unit="" data-action="autoSeperator" readonly=""><span class="unit" style="left: 75.7031px;">원</span>
                         </div>
                         <em class="validation">
@@ -111,6 +111,9 @@
                             <input type="text" class="gold-memo-input" id="mysafe_08" placeholder="최대 10자 입력 가능" value="행복한 기억" maxlength="10">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
+                        <p class="info-msg safe-display-none">
+                            최대 10자리(띄어쓰기 포함) 입력가능합니다.
+                        </p>
                     </div>
                 </section>
                 <section class="kb-sec sticky-bottom">
@@ -128,8 +131,6 @@
 
 		<!-- Layer (fullpage popup, modal, bottom sheet) // -->
 		<div class="layered">
-            @@include('@@webRoot/html/mysafe/layered/MYS_AS_17_01_08_BS2.html')
-            @@include('@@webRoot/html/mysafe/layered/MYS_AS_17_01_08_BS1.html')
 		</div>
 		<!-- // Layer (fullpage popup, modal, bottom sheet) -->
 	</div>
