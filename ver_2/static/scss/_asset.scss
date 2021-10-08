@@ -291,11 +291,12 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .asset-main-top {padding: 28px 0 30px;}
 .asset-main-top:first-child {padding-top: 28px;}
 .asset-main-top .swiper-slide {padding: 0 24px;}
-.asset-main-top .summary-text {min-height: 130px; font-size: 24px; line-height: 33px; color: $kb-ui02;}
+.asset-main-top .summary-text {min-height: 110px; margin-bottom: 20px; font-size: 24px; line-height: 33px; color: $kb-ui02;}
 .asset-main-top .summary-text strong {font-weight: bold;}
 .asset-main-top .summary-text .num {font-size: 25px; font-weight: bold;}
 .asset-main-top .summary-text .num:after{font-size:24px;}
 .asset-main-top .summary-text sub {display: block; font-size: 16px; margin-top: 10px;}
+.asset-main-top .btn-question {position: relative; top: -2px;}
 .asset-main-top .content-box {position: relative; padding-top: 30px; min-height: 315px; border: 0; background-color: #6349a5; color: $kb-ui11;}
 .asset-main-top .box-tit {@include text($text01, bold);}
 .asset-main-top .icon-tooltip-que_20 {filter: brightness(2);}
@@ -335,7 +336,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 
 .asset-main-sec {position: relative;}
 .asset-main-sec .title h2 {display: inline-block;}
-.asset-main-sec .title h2 + .btn-question {vertical-align: 2px;}
+.asset-main-sec .title h2 + .btn-question {position: relative; top: -3px;}
 .asset-main-sec .title .btn-text.icon-arrow {position: absolute; right: 24px; top: 1px;}
 .asset-main-sec .title .btn-text.icon-arrow i {padding: 12px; margin: 0;}
 .asset-main-sec .section-text {margin: 10px 0 15px; @include text($text02, normal); color: $kb-ui02;}
@@ -751,6 +752,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .bottom-prod-info .account-detail .fund-care li .low{color:$color-blue;}
 .bottom-prod-info .account-detail .fund-care li .amount{display:block;text-align:right;font-size:28px;margin-top:1rem;}
 .bottom-prod-info .account-detail .fund-care li .amount .num{font-size:29px;font-weight:bold;}
+.bottom-prod-info .account-detail > p[data-style=list] + p[data-style=list]{margin-top:1.6rem;} // bottom시트내 p[data-style=list] 간격 확보
 /* 자산직접등록 */
 .pop-my-asset .tit{@include text($size: 18px,$weight : bold);}
 .pop-my-asset .pop-notice{@include text;color:$kb-ui02;}
@@ -975,6 +977,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .my-house .selected .kb-form_multi .dbl-line{display:flex;}
 .my-asset .my-house .selected .kb-form_multi .dbl-line > .kb-form{flex:1;margin-top:0;}
 .my-asset .my-house .selected .kb-form_multi .dbl-line > .kb-form + .kb-form{margin-left:2rem;}
+.my-asset .my-house .selected .kb-form_multi + .kb-form{margin-top:2.8rem;} //마진 확보
 // .my-asset .my-house .selected .kb-form + .kb-form{margin-top:1.6rem;}
 .my-asset .my-house .possession{margin-top:2.8rem;}
 .my-asset .my-house .rental{margin-top:2.8rem;}
@@ -1487,6 +1490,14 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .btn-segmented.type2 .is-selected:after{/*border:3px solid $kb-ui09;*/display:none;}
 .my-asset .loan-card-list{margin-top:4rem;}
 .my-asset .loan-card-list .tit{font-size:$text01;}
+.my-asset .loan-card-list button{display:block;width:100%;background:#6349a5;border-radius:.8rem;text-align:left;padding:2rem 2.2rem;color:#fff;}
+.my-asset .loan-card-list button .loan-tit{display:block;font-weight:bold;line-height:1;font-size:2rem;}
+.my-asset .loan-card-list button .loan-desc{display:block;margin-bottom:1.2rem;font-size:$text02;line-height:1;}
+.my-asset .loan-card-list button .loan-amount{display:block;margin-top:1.9rem;font-size:$text02;line-height:1;}
+.my-asset .loan-card-list button .loan-amount > .num:after{vertical-align:0;}
+.my-asset .loan-card-list button .loan-amount > strong{font-size:$text01;font-weight:bold;}
+.my-asset .loan-card-list button .loan-amount > strong .num{font-size:1.9rem;font-weight:bold;}
+.my-asset .loan-card-list button + button{margin-top:2rem;}
 .my-asset .loan-card-list a{display:block;width:100%;background:#6349a5;border-radius:.8rem;text-align:left;padding:2rem 2.2rem;color:#fff;}
 .my-asset .loan-card-list a .loan-tit{display:block;font-weight:bold;line-height:1;font-size:2rem;}
 .my-asset .loan-card-list a .loan-desc{display:block;margin-bottom:1.2rem;font-size:$text02;line-height:1;}

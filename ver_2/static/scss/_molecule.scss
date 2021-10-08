@@ -79,7 +79,7 @@
 // //.ios.homebar .sticky-bottom-menu{bottom:34px;}
 
 //툴팁
-.tooltip{display:none;position:absolute;left:20px;right:20px;z-index:$level30;transform:translateY(10px);padding:20px 20px 14px 20px;border-radius:2px;background-color:$kb-ui02;}
+.tooltip{display:none;position:absolute;left:24px;right:24px;z-index:$level30;transform:translateY(10px);padding:20px 20px 14px 20px;border-radius:2px;background-color:$kb-ui02;}
 .tooltip > .tit{display:block;margin-bottom:14px;font-size:$text02;color:$kb-ui08;line-height:1;font-weight:bold;}
 .tooltip > .tit ~ .cont{padding-right:0;}
 .tooltip > .tit ~ .cont .num{font-size:1.5rem;}
@@ -184,6 +184,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .kb-form > .label,
 .kb-form > label{@include text($size: 16px);display:block;position:relative;top:0;width:100%;min-height:26px;padding:7px 2px 0 2px;color:$kb-ui04;background-color:$kb-ui11;white-space:nowrap;}
 .kb-form > label.inline{display:inline;}
+//.kb-form > label ~ .tooltip{left:0;right:0;}
 
 .kb-form_inner{display:flex;align-items:center;position:relative;width:100%;padding-top:5px;padding-left:2px;padding-right:2px;padding-bottom:5px;border-bottom:2px solid #d4c3a6;}
 .kb-form_inner.is-filled,
@@ -235,6 +236,11 @@ ul.radio-group > li + li{margin-top:20px;}
 .kb-form.select-bs.is-active .kb-form_inner::after{margin-top:5px;transform:rotate(-135deg)}
 .kb-form.select-bs.t01 .kb-form_inner{padding-bottom:0}
 .kb-form.select-bs.t01 .form-text input[type=text]{font-size:18px}
+
+.kb-form .all-hangul,
+.kb-form .hangul{margin-top:10px;color:#707070;text-align:right;font-size:14px;}
+.kb-form .hangul .num{@include number($size:14px, $line-height:14px);vertical-align:top;}
+.kb-form .hangul .unit{font-size:13px;line-height:14px;vertical-align:top;}
 
 .form-text input[type=text],
 .form-text input[type=password],
@@ -672,13 +678,14 @@ ul.radio-group > li + li{margin-top:20px;}
 .credit-list dd .amount .num{color:$kb-ui02;font-weight:bold}
 .credit-list dd .amount.expense .num{color:$color-red}
 .credit-list dd .amount.income .num{color:$color-blue}
-.credit-list dd .amount .num{display:inline-block;margin-right:0.5rem;font-size:1.7rem}
+.credit-list dd .amount .num{display:inline-block;font-size:1.7rem}// 결제내역 금액 margin-right 제거
 .credit-list dd .amount ~ .info{font-size:1.4rem;color:$kb-ui03}
 .credit-list dd .amount ~ .info{color:$kb-ui05}
 .credit-list dd .amount ~ .info[data-state="warning"]{color:$color-red}
 .credit-list dd .amount ~ .info[data-state="safety"]{color:$color-blue}
 .credit-list dd .amount ~ .info span{color:$kb-ui06}
 .credit-list dd .amount ~ .info .num{font-size:15px}
+.credit-list dd .amount ~ .info .num[data-unit-after]::after{font-size:1.4rem}// 결제내역 금액 단위 font-size 수정
 .credit-list dd .btn-switch .amount{margin-right:12px}
 .credit-list dd .btn-switch label::before{top:0;margin-top:6px}
 .credit-list dd .btn-switch label::after{top:0;margin-top:0}
@@ -888,12 +895,13 @@ ul.radio-group > li + li{margin-top:20px;}
 .rank-list dt.rank::before,
 .rank-list li.rank::before{color:$kb-ui02;background-color:$color-yellow}
 .rank-list dt strong,
-.rank-list li strong{font-size:1.6rem;font-weight:bold}
+.rank-list li strong{display:inline-block;padding-top:0.8rem;font-size:1.6rem;font-weight:bold} //rank list title display, padding-top 수정
 .rank-list dt span,
 .rank-list li span{display:block;margin-top:12px;font-size:14px}
 .rank-list dt span{color:$kb-ui04}
 .rank-list dd{display:flex;align-items:flex-end;justify-content:flex-end;height:100%;font-size:14px;color:$color-red;text-align:right}
 .rank-list dd::after{content:'';display:inline-block;width:0px;height:0px;margin-left:7px;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:11px solid $color-red;}
+.rank-list .link-box_block{text-align:left}// rank-list link text-align 조정
 .rank-list .num{font-size:15px}
 .rank-list.t01{display:block}
 .rank-list.t01 li{position:relative}
@@ -988,7 +996,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .page-step.is-fixed:before{content:'';display:block;height:72px;}
 .page-step.is-fixed h2:before{content:attr(data-step);}
 .page-step + .kb-sec{margin-top:48px;}
-.page-step.is-fixed .h1 span{display:none;} // 2108
+.page-step.is-fixed .h1 span{display:none;} // 전송요구 요건변경 수정
 
 // 인증번호 잔여시간
 .time-limit {margin-top: 10px; @include clfix;}

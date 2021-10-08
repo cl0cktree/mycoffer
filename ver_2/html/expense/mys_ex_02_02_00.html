@@ -34,9 +34,9 @@
                         <em>정기지출 항목명</em>
                     </h3>
                     <div class="kb-form" data-status="">
-                        <label for="regularExpenseUserRegisterPeriod" class="optional"></label><!-- 수정:2021-09-30 --><!-- label 추가 -->
+                        <label for="regularExpenseUserRegisterName">별명</label><!-- 수정:2021-10-08 --><!-- 별명 label 수정 -->
                         <div class="kb-form_inner form-text">
-                            <input type="text" id="regularExpenseUserRegisterName" value="" title="별명" placeholder="별명을 입력해 주세요 (최대 10자)">
+                            <input type="text" id="regularExpenseUserRegisterName" value="" title="별명" placeholder="별명(최대10자)"><!-- 수정:2021-10-08 --><!-- 별명 placeholder 수정 -->
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
                     </div>
@@ -53,10 +53,20 @@
                         </div>
                         <em class="validation">Message</em>
                     </div>
-                    <div class="kb-form" data-status="">
+                    <div class="kb-form select-period" data-status="">
                         <label for="regularExpenseUserRegisterPeriod" class="required">이용주기</label>
+                        <!-- 수정:2021-10-08 -->
+                        <!-- 이용주기 라디오 선택 추가 //-->
+                        <div class="kb-form_inner form-radio-set">
+                            <ul class="flex-box" data-col="3">
+                                <li><span class="form-radio"><input type="radio" id="regularExpenseUserRegisterPeriodYear" name="regularExpenseUserRegisterPeriod" data-period-value="년"><label for="regularExpenseUserRegisterPeriodYear">연단위</label></span></li>
+                                <li><span class="form-radio"><input type="radio" id="regularExpenseUserRegisterPeriodMonth" name="regularExpenseUserRegisterPeriod" data-period-value="개월" checked=""><label for="regularExpenseUserRegisterPeriodMonth">월단위</label></span></li>
+                                <li><span class="form-radio"><input type="radio" id="regularExpenseUserRegisterPeriodDay" name="regularExpenseUserRegisterPeriod" data-period-value="일"><label for="regularExpenseUserRegisterPeriodDay">일단위</label></span></li>
+                            </ul>
+                        </div>
+                        <!--// 이용주기 라디오 선택 추가 -->
                         <div class="kb-form_inner form-text">
-                                <input type="text" id="regularExpenseUserRegisterPeriod" value="1개월" placeholder="">
+                                <input type="text" inputmode="numeric" data-unit="개월" data-numeric-type="number" id="regularExpenseUserRegisterPeriod" value="1" role="button" placeholder=""><!-- 수정:2021-10-08 --><!-- 단순텍스트 -> 숫자로 수정 -->
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
                         <em class="validation">Success Message</em>
@@ -84,7 +94,7 @@
                     <div class="kb-form" data-status="">
                         <label for="regularExpenseUserRegisterPayDate" class="required">결제일</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" id="regularExpenseUserRegisterPayDate" value="12일" placeholder="">
+                            <input type="text" inputmode="numeric" placeholder="" data-unit="일" data-numeric-type="number" id="regularExpenseUserRegisterPayDate" value="12" role="button" placeholder="">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
                         <em class="validation">Success Message</em>
@@ -106,6 +116,8 @@
         <!-- Layer (modal, bottom sheet) // -->
         <div class="layered">
             @@include('@@webRoot/html/expense/layered/mys_ex_02_02_01_p.html')
+            <!-- 공통 -->
+            @@include('@@webRoot/html/_layered/bs-calendar.html') <!-- 수정:2021-10-08 --><!-- 달력 팝업 추가 -->
         </div>
         <!-- // Layer (modal, bottom sheet) -->
     </div>
@@ -114,6 +126,19 @@
     @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- 수정:2021-10-08 -->
+    <!-- 이용주기 단위 변경 스크립트 추가 -->
+    <script>
+        $( function(){
+            $selectPeriod = $('.select-period');
+            $selectPeriod.find('input').on('change', function(){
+                var periodVal = $selectPeriod.find('input[type=radio]:checked').data('period-value');
+                var $periodUnit = $(this).closest('.kb-form').find('.form-text input');
+                $periodUnit.attr('data-unit', periodVal);
+                $periodUnit.siblings('.unit').text(periodVal);
+            });
+        });
+    </script>
     <!-- Add Script -->
 
 </body>

@@ -36,13 +36,13 @@
                         <label for="mysafe_21" class="phone-kind-title required">제조사</label>
                         <div class="kb-form_inner form-select mt4">
                             <button type="button" class="selected-option" id="mysafe_20"></button>
-                            <select name="" id="mysafe_21" title="제조사 선택">
+                            <select name="" class="phoneManufacturer" id="mysafe_21" title="제조사 선택">
                                 <option value="">제조사선택</option>
-                                <option value="phonManufacturer01" selected>삼성</option>
-                                <option value="phonManufacturer02">애플</option>
-                                <option value="phonManufacturer03">LG</option>
-                                <option value="phonManufacturer04">샤오미</option>
-                                <option value="phonManufacturer05">. . .</option>
+                                <option value="phoneManufacturer01" selected>삼성</option>
+                                <option value="phoneManufacturer02">애플</option>
+                                <option value="phoneManufacturer03">LG</option>
+                                <option value="phoneManufacturer04">샤오미</option>
+                                <option value="phoneManufacturer05">. . .</option>
                             </select>
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                         <label for="mysafe_27" class="phone-kind-title required">시리즈</label>
                         <div class="kb-form_inner form-select mt4">
                             <button type="button" class="selected-option" id="mysafe_26"></button>
-                            <select name="" id="mysafe_27" title="시리즈 선택">
+                            <select name="" class="phoneSeries" id="mysafe_27" title="시리즈 선택">
                                 <option value="">시리즈선택</option>
                                 <option value="phoneSeries01" selected>갤럭시 S</option>
                                 <option value="phoneSeries02">갤럭시 J</option>
@@ -84,13 +84,13 @@
                         <label for="mysafe_24" class="phone-kind-title required">모델</label>
                         <div class="kb-form_inner form-select mt4">
                             <button type="button" class="selected-option" id="mysafe_23"></button>
-                            <select name="" id="mysafe_24" title="모델 선택">
+                            <select name="" class="phoneModel" id="mysafe_24" title="모델 선택">
                                 <option value="">모델선택</option>
-                                <option value="phonModel01" selected>갤럭시 S20</option>
-                                <option value="phonModel02">갤럭시 S20+</option>
-                                <option value="phonModel03">갤럭시 노트</option>
-                                <option value="phonModel04">갤럭시 플립</option>
-                                <option value="phonModel05">. . .</option>
+                                <option value="phoneModel01" selected>갤럭시 S20</option>
+                                <option value="phoneModel02">갤럭시 S20+</option>
+                                <option value="phoneModel03">갤럭시 노트</option>
+                                <option value="phoneModel04">갤럭시 플립</option>
+                                <option value="phoneModel05">. . .</option>
                             </select>
                         </div>
                     </div>
@@ -253,15 +253,15 @@
 
         function value_trans_ok(){//조회버튼 클릭 시 입력창(가격-readonly)노출 됨.
             $('.my-phone-trans-info').addClass('safe-display-none');
-            $('.phone-input-value').removeClass('safe-display-none');
+            $('.phone-input-value').children('.kb-form_inner').removeClass('safe-display-none');
         };
         function value_trans_cancle(){//value_trans_ok() 함수의 반대 동작.
             $('.my-phone-trans-info').removeClass('safe-display-none');
-            $('.phone-input-value').addClass('safe-display-none');
+            $('.phone-input-value').children('.kb-form_inner').addClass('safe-display-none');
         };
 
         $my_phone_value.on('click',function(){//조회버튼 클릭시 숨어 있던 가격 부분이 노출 되는 함수의 트리거.
-            if ((safe_phon_sel_1>0)&&(safe_phon_sel_2>0)&&(safe_phon_sel_3>0)){
+            if ((safe_phon_sel_1>1)&&(safe_phon_sel_2>1)&&(safe_phon_sel_3>1)){
                 value_trans_ok();
                 price_check=1;
             }else{
@@ -288,10 +288,10 @@
         //     $(this).parent().parent().prev('.tit').addClass('empty-phone-unit-info');
         //     $(this).parent().parent().prev('.tit').prev('.tit').addClass('empty-phone-unit-info');
         // });
-        $('.phonManufacturer').on('click',function(){//기타자산 형태선택 바텀시트 선택 시 동작부분.
+        $('.phoneManufacturer').on('change',function(){//기타자산 형태선택 바텀시트 선택 시 동작부분.
             // document.getElementById('mysafe_16').value='';
             // safe_phon_sel_2=0;
-            if ($(this).is('.phonManufacturer06')){
+            if (this.value=='phoneManufacturer06'){
                 $('.phone-input-kind-1').removeClass('safe-display-none');
                 safe_phon_sel_1=1;
             }else{
@@ -302,10 +302,10 @@
             // safe_btn_on();
             // all_on_fun();
         });
-        $('.phonModel').on('click',function(){//기타자산 형태선택 바텀시트 선택 시 동작부분.
+        $('.phoneModel').on('change',function(){//기타자산 형태선택 바텀시트 선택 시 동작부분.
             // document.getElementById('mysafe_16').value='';
             // safe_phon_sel_2=0;
-            if ($(this).is('.phonModel06')){
+            if (this.value=='phoneModel06'){
                 $('.phone-input-kind-2').removeClass('safe-display-none');
                 safe_phon_sel_2=1;
             }else{
@@ -315,10 +315,10 @@
             }
             // all_on_fun();
         });
-        $('.phonStorage').on('click',function(){//기타자산 형태선택 바텀시트 선택 시 동작부분.
+        $('.phoneSeries').on('change',function(){//기타자산 형태선택 바텀시트 선택 시 동작부분.
             // document.getElementById('mysafe_16').value='';
             // safe_phon_sel_2=0;
-            if ($(this).is('.phonStorage04')){
+            if (this.value=='phoneSeries04'){
                 $('.phone-input-kind-3').removeClass('safe-display-none');
                 safe_phon_sel_3=1;
             }else{

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" data-channel="ch_star">
+<html lang="ko">
 <!-- [MYS_EX_04_04_00] 지출 > 주간 소비 리포트  (작성자: 누리어 시스템 김삼희)// -->
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
@@ -86,7 +86,10 @@
                                     </dt>
                                     <dd>
                                         <strong class="amount"><span class="num" data-unit-after="원">15,000</span></strong>
-                                        <!-- [D] 2차 오픈 <span class="info">잔액 <em class="num" data-unit-after="원">+30,000</em></span> //-->
+                                        <!-- 수정:2021-10-08 -->
+                                        <!-- 잔액 정보 추가 (.info, .tag-label) -->
+                                        <span class="info">잔액 <em class="num" data-unit-after="원">+30,000</em></span>
+                                        <span class="tag-label t02" data-state="inprogress">잔액여유</span>
                                     </dd>
                                 </dl>
                             </a>
@@ -101,7 +104,10 @@
                                     </dt>
                                     <dd>
                                         <strong class="amount"><span class="num" data-unit-after="원">70,000</span></strong>
-                                        <!-- [D] 2차 오픈 <span class="info">잔액 <em class="num" data-unit-after="원">-30,000</em></span> -->
+                                        <!-- 수정:2021-10-08 -->
+                                        <!-- 잔액 정보 추가 (.info, .tag-label) -->
+                                        <span class="info">잔액 <em class="num" data-unit-after="원">-45,000</em></span>
+                                        <span class="tag-label t02" data-state="danger">잔액부족</span>
                                     </dd>
                                 </dl>
                             </a>
@@ -211,7 +217,7 @@
                 </section>
                 <!--// 주간 총 지출액 분석 -->
                 <!-- 주간 카드별 이용 현황 //-->
-                <section class="kb-sec weekly-card-credit-list">
+                <section class="kb-sec weekly-card-credit-list dividing-space-bottom"> <!-- 수정:2021-10-08 --><!-- class 추가 (dividing-space-bottom) -->
                     <div class="content-tit">
                         <strong class="h1">아직 기준 실적을<br>충족하지 못한 카드가<br><em class="c-blue">2</em>개 있어요.</strong>
                     </div>
@@ -272,10 +278,158 @@
                         <!--// [D] 2021-08-31 수정 : tag-label 위치 수정 -->
                         <button class="btn-more-plus btn-more-view center"><span>더보기</span></button><!-- [D] 2021-08-31 수정 : 더보기 버튼 수정 -->
                     </div>
+                </section>
+
+                <!-- 수정:2021-10-08 -->
+                <!-- 추천 챌린지 영역 추가 -->
+                <!-- 추천 챌린지 //-->
+                <section class="kb-sec goals-challenge">                       
+                    <!-- [Chart Area] // -->                        
+                    <div class="chart-area mt40" id="bubbleChart01"></div>
+                    <!-- // [Chart Area] -->
+                    <div class="flex-box">
+                        <a href="@@webRoot/html/goal/mys_go_00_00_00.html" class="link-box_block link-arrow-after">
+                            <strong class="h4">김국민님에게 추천하는 챌린지 TOP3</strong>
+                        </a>
+                    </div>
+                    <div class="challenge-box content-swiper-wrap">
+                        <div class="swiper-container content-swiper t01 js-swiper" data-swiper-options="goalBestChallSwiperOptions">
+                            <script>
+                                var goalBestChallSwiperOptions = {
+                                    "pagination": {
+                                        "el": ".swiper-pagination"
+                                    },
+                                    "spaceBetween": 16,
+                                    "slidesPerView": "auto"
+                                };
+                            </script>
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide content-box">
+                                    <a href="@@webRoot/html/goal/mys_go_03_01_00.html" class="link-box_block challenge-tit">
+                                        <h3 class="h3">외식비 줄이기</h3>
+                                        <button type="button" class=""><span><i class="icon-link_24"></i></span></button>
+                                    </a>
+                                    <div class="challenge-info type2">
+                                        <div class="tit flex-box goals-desc">
+                                            <div class="left-cont">
+                                                <h4 class="spend-desc">남들보다 무려 두배이상!! 쓰고 있어요.<br><strong>소비를 줄여보세요.</strong></h4>
+                                                <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                                <div class="tooltip">
+                                                    <strong class="tit">비교그룹</strong>
+                                                    <div class="cont">나와 같은 연령대&amp;소득군의 사람들은?<br><br>연령대: 30대<br>월 소득: <span class="num" data-unit-after="만원">300</span>~<span class="num" data-unit-after="만원">500</span><br>성별: 남성</div>
+                                                    <button class="btn-close"><span>닫기</span></button>
+                                                </div>  
+                                            </div>  
+                                        </div>
+                                        <!-- 추가 수정 // -->
+                                        <div class="goals-now">
+                                            <p>목표기간<i></i>일주일</p>
+                                            <p>도전자<i></i><span class="num">1000</span>명</p>
+                                        </div>
+                                        <!-- // 추가 수정 -->
+                                        <div class="character-graph type2" data-theme="pay">
+                                            <div class="graph-area">
+                                                <span data-goal="80"><i><img src="@@webRoot/static/images/_temp/@progress_coffee.png" alt="커피"></i></span>
+                                            </div>
+                                            <div class="graph-txt">
+                                                <p class="start-txt">나 <strong class="num" data-unit-after="원">150,000</strong></p>
+                                            </div>
+                                            <div class="graph-area sub">
+                                                <span data-goal="50"></span>
+                                            </div>
+                                            <div class="graph-txt">
+                                                <p class="start-txt">다른사람 <strong class="num" data-unit-after="원">100,000</strong></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide content-box">
+                                    <a href="@@webRoot/html/goal/mys_go_03_01_00.html" class="link-box_block challenge-tit">
+                                        <h3 class="h3">홈쇼핑 줄이기</h3>
+                                        <button type="button" class=""><span><i class="icon-link_24"></i></span></button>
+                                    </a>
+                                    <div class="challenge-info type2">
+                                        <div class="tit flex-box goals-desc">
+                                            <div class="left-cont">
+                                                <h4 class="spend-desc">남들보다 꽤 많이 쓰고 있어요.<br><strong>소비를 줄여보세요.</strong></h4>
+                                                <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                                <div class="tooltip">
+                                                    <strong class="tit">비교그룹</strong>
+                                                    <div class="cont">나와 같은 연령대&amp;소득군의 사람들은?<br><br>연령대: 30대<br>월 소득: <span class="num" data-unit-after="만원">300</span>~<span class="num" data-unit-after="만원">500</span><br>성별: 남성</div>
+                                                    <button class="btn-close"><span>닫기</span></button>
+                                                </div>  
+                                            </div>  
+                                        </div>
+                                        <!-- 추가 수정 // -->
+                                        <div class="goals-now">
+                                            <p>목표기간<i></i>일주일</p>
+                                            <p>도전자<i></i><span class="num">1000</span>명</p>
+                                        </div>
+                                        <!-- // 추가 수정 -->
+                                        <div class="character-graph type2" data-theme="pay">
+                                            <div class="graph-area">
+                                                <span data-goal="50"><i><img src="@@webRoot/static/images/_temp/@progress_shopping.png" alt="쇼핑백"></i></span>
+                                            </div>
+                                            <div class="graph-txt">
+                                                <p class="start-txt">나는 <strong class="num" data-unit-after="원">150,000</strong></p>
+                                            </div>
+                                            <div class="graph-area sub">
+                                                <span data-goal="20"></span>
+                                            </div>
+                                            <div class="graph-txt">
+                                                <p class="start-txt">비교그룹은 <strong class="num" data-unit-after="원">100,000</strong></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide content-box">
+                                    <a href="@@webRoot/html/goal/mys_go_03_01_00.html" class="link-box_block challenge-tit">
+                                        <h3 class="h3">통신비 줄이기</h3>
+                                        <button type="button" class=""><span><i class="icon-link_24"></i></span></button>
+                                    </a>
+                                    <div class="challenge-info type2">
+                                        <div class="tit flex-box goals-desc">
+                                            <div class="left-cont">
+                                                <h4 class="spend-desc">남들보다 적게 쓰고 있지만<br>불필요한 지출은 <strong>줄여보세요.</strong></h4>
+                                                <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                                <div class="tooltip">
+                                                    <strong class="tit">비교그룹</strong>
+                                                    <div class="cont">나와 같은 연령대&amp;소득군의 사람들은?<br><br>연령대: 30대<br>월 소득: <span class="num" data-unit-after="만원">300</span>~<span class="num" data-unit-after="만원">500</span><br>성별: 남성</div>
+                                                    <button class="btn-close"><span>닫기</span></button>
+                                                </div>  
+                                            </div>   
+                                        </div>
+                                        <!-- 추가 수정 // -->
+                                        <div class="goals-now">
+                                            <p>목표기간<i></i>일주일</p>
+                                            <p>도전자<i></i><span class="num">1000</span>명</p>
+                                        </div>
+                                        <!-- // 추가 수정 -->
+                                        <div class="character-graph type2" data-theme="pay">
+                                            <div class="graph-area">
+                                                <span data-goal="50"><i><img src="@@webRoot/static/images/_temp/@progress_mobile.png" alt="휴대전화"></i></span>
+                                            </div>
+                                            <div class="graph-txt">
+                                                <p class="start-txt">나는 <strong class="num" data-unit-after="원">150,000</strong></p>
+                                            </div>
+                                            <div class="graph-area sub">
+                                                <span data-goal="50"></span>
+                                            </div>
+                                            <div class="graph-txt">
+                                                <p class="start-txt">비교그룹은 <strong class="num" data-unit-after="원">100,000</strong></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
                     <div class="btn-area mt20">
                         <p class="simple-message">최신 정보가 반영된 리포트를 원하시면 하단의 ‘리포트 새로고침’을 눌러주세요</p>
                     </div>
                 </section>
+                <!--// 추천 챌린지 -->
                 <!--// 주간 카드별 이용 현황 -->
                 <div class="sticky-bottom">
                     <div class="btn-area">

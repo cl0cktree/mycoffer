@@ -80,7 +80,7 @@
 .agree-term .go-service-info .btn-text{display:block;padding-right:2.6rem;margin-bottom:2.1rem;}
 .agree-term .go-service-info .btn-text span{vertical-align:-0.3rem;}
 // .agree-term .go-service-info .btn-text span{padding-right:6px}
-.agree-term .agreement-to-terms{margin-top:4rem;} // 전송요구 요건변경 수정 2021-10-06
+.agree-term .agreement-to-terms{margin-top:4rem;} // 전송요구 요건변경 수정 2021-10-08
 .agree-term .agreement-to-terms .checkbox-group.st_list:last-child{padding-top:0;padding-bottom:20px;}
 .agree-term .agreement-to-terms .form-checkbox_20 label{margin-left:0;} // 체크박스 공통변경으로 인한 수정
 .agree-term .agreement-to-terms .form-checkbox_20 label::before{left:0;} // 체크박스 공통변경으로 인한 수정
@@ -88,26 +88,27 @@
 .agree-term .caution-txt{padding-bottom: 118px; display: block;}
 .agree-term .caution-txt p{font-size: 15px; margin-top:67px; line-height: 20px; margin-bottom: 19px;}
 .agree-term .caution-txt p span{display: block; font-weight: bold;}
-.agree-term .bg-box{@include text(15px);@include clfix;padding-top:28px;padding-bottom:28px;margin-top:5rem;background-color:$kb-ui10;color:$kb-ui02;} // 전송요구 요건변경 수정 2021-10-06
-.agree-term .bg-box ul{margin:1.1rem 0;} // 전송요구 요건변경 수정 2021-10-06
-.agree-term .bg-box strong{font-weight:bold;} // 전송요구 요건변경 수정 2021-10-06
-.agree-term .bg-box .btn-text{float:right;margin-top:18px;} // 전송요구 요건변경 수정 2021-10-06
-.agree-term .bg-box .btn-text i{margin-top:0.75rem;} // 전송요구 요건변경 수정 2021-10-06
+.agree-term .bg-box{@include text(15px);@include clfix;padding-top:2rem;padding-bottom:2.4rem;margin-top:5rem;background-color:$kb-ui10;color:$kb-ui02;} // 여백수정 2021-10-12
+.agree-term .bg-box ul{margin:1.1rem 0;} // 전송요구 요건변경 수정 2021-10-08
+.agree-term .bg-box strong{font-weight:bold;} // 전송요구 요건변경 수정 2021-10-08
+.agree-term .bg-box .btn-text{float:right;margin-top:1.2rem;} // 여백수정 2021-10-12
+.agree-term .bg-box .btn-text i{margin-top:0.75rem;} // 전송요구 요건변경 수정 2021-10-08
 .agree-term .agreement-service-choice label{font-weight:bold;}// 전송요구 약관 전체동의 폰트 볼드
-.kb-sec.asset-sync{padding-top:12vh;text-align:center;}
-.asset-sync .character-box{width:134px;height:134px;margin:0 auto;}
-.asset-sync .character-box img{width:100%;height:100%;}
-.asset-sync .character-box + p{@include text($size:$text01);margin-top:16px; color:$kb-ui03;}
+.kb-sec.asset-sync{/*padding-top:12vh;*/text-align:center;} // 패딩 탑 삭제 2021-10-12
+.asset-sync .character-box{max-width:327px;margin:0 auto;} // 여백수정 2021-10-12
+.asset-sync .character-box img{width:100%;height:auto;} // 여백수정 2021-10-12
+.asset-sync .character-box + p{@include text($size:$text01);margin-top:2.5rem; color:$kb-ui03;} // 여백수정 2021-10-12
 .asset-sync .loader{margin-top:40px;}
 .asset-sync02{position:absolute;bottom:calc(constant(safe-area-inset-bottom) / 2 + 24px);bottom:calc(env(safe-area-inset-bottom) / 2 + 24px);left:0;width:100%;}
-.asset-sync02 .checkbox-group{overflow:auto;padding-top:28px;padding-bottom:28px;border-top:1px solid $kb-ui03;border-bottom:1px solid $kb-ui09;min-height:80px;max-height:206px}
+.asset-sync02 .checkbox-group{overflow:auto;padding-top:1.7rem;padding-bottom:1.7rem;border-top:1px solid $kb-ui03;border-bottom:1px solid $kb-ui09;min-height:80px;max-height:206px} // 리스트 변경  2021-10-12
+.asset-sync02 .checkbox-group li ~ li{margin-top:1.2rem;} // 여백수정 2021-10-12
 .asset-sync02 .checkbox-group .form-checkbox{display:block;}
 .asset-sync02 .checkbox-group label{display:block;color:$kb-ui04;text-align:left;}
 // .ios.homebar .asset-sync02{bottom:58px;}
 
 //전송요구스탭서브문구
-.kb-sec.sec-tit:first-child [class^=h]{padding:0;margin:0;} // 전송요구 요건변경 수정 2021-10-06
-.kb-sec.sec-tit:first-child .terms-desc{margin:2rem 0 4rem;line-height:1.44;} // 전송요구 요건변경 수정 2021-10-06
+.kb-sec.sec-tit:first-child [class^=h]{padding:0;margin:0;} // 전송요구 요건변경 수정 2021-10-08
+.kb-sec.sec-tit:first-child .terms-desc{margin:2rem 0 4rem;line-height:1.44;} // 전송요구 요건변경 수정 2021-10-08
 .page-step + .transmission-request{margin-top:44px;}
 .transmission-request .full h4, 
 .transmission-request .full .tit{margin-left: -24px; margin-right: -24px; padding-left:24px; }
@@ -116,7 +117,7 @@
 .transmission-request hr{height:10px; border:none; background-color: $kb-ui10; margin:0 -2.4rem 50px -2.4rem;}
 .transmission-request .agreement-to-terms{border-bottom: none;}
 .transmission-request .agreement-to-terms .st_list{border-bottom:1px solid $kb-ui10;}
-.transmission-request ~ .confirm-agree{margin-top:4rem;} // 전송요구 요건변경 수정 2021-10-06
+.transmission-request ~ .confirm-agree{margin-top:4rem;} // 전송요구 요건변경 수정 2021-10-08
 .kb-sec.confirm-agree .agreement-to-terms .header .text{font-weight:bold;} // 약관 헤더 볼드 처리
 .kb-sec.confirm-agree .agreement-to-terms > .checkbox-group:first-child{border-top:1px solid $kb-ui03;}
 .kb-sec.confirm-agree .agreement-to-terms .checkbox-group{padding:2rem 0 2.1rem;}
@@ -130,6 +131,7 @@
 .kb-sec.confirm-agree .radio-group{flex-direction:row;margin-top:1.4rem;}
 .kb-sec.confirm-agree .radio-group li{margin-top:0;width:50%;}
 .bottom-sheet .confirm-agree .agreement-to-terms .header{padding-top:0;}
+.kb-sec.confirm-agree .confirm-info p.simple-message.sq-bracket{margin-top:0.6rem;} // 여백수정 2021-10-12
 
 
 .select-organization .kb-sec.confirm-agree .agreement-to-terms .checkbox-group{padding:2rem 0 2.1rem;}
@@ -161,11 +163,11 @@
 .select-transmission-method .visual-area {margin-top:55px;margin-bottom: 20px; padding-bottom: 25px; text-align: center;}
 .select-transmission-method .visual-area img {display: block; width: 200px; margin: 0 auto 20px;}
 .select-transmission-method .visual-area .mydata{margin: 0 auto 23px;}
-.select-transmission-method .visual-area .mydata_01{margin: 94px auto 23px auto;}
+.select-transmission-method .visual-area .mydata_01{margin:-2rem auto 2.3rem auto;} // 여백수정 2021-10-12
 .select-transmission-method .visual-area .text .stxt {display: block; margin-top: 3px; margin-bottom: 3px; @include text($text02, normal); color: $kb-ui04;}
 .select-transmission-method .visual-area .text .mtxt {@include text($text02, normal);}
 .select-transmission-method .visual-area .text strong {font-weight: bold;}
-.select-transmission-method .simple-message.mt48, .transmission-request-agree .simple-message.mt48{margin-top:48px;} // 전송요구 요건변경 수정 2021-10-06
+.select-transmission-method .simple-message.mt48, .transmission-request-agree .simple-message.mt48{margin-top:46px;} // 여백수정 2021-10-12
 .simple-message_02{padding-bottom:30px;}
 .search-organization-result .form-text .btn-search{margin-right:0px;}
 //마이데이터 연결안내
@@ -292,10 +294,8 @@
 .search-result-list .result-list li+li{margin-top:30px}
 .search-result-list .checkbox-group .form-checkbox_20,
 .search-result-list .checkbox-group label{width:100%}
-
 .search-result-list .checkbox-group .form-checkbox,
 .search-result-list .checkbox-group label{width:100%}
-
 .search-result-list .checkbox-group label{@include flexBetween}
 .search-result-list .checkbox-group input:disabled + label{color:$kb-ui08}
 .search-result-list .checkbox-group .status{font-size:14px;color:$kb-ui04}
@@ -305,6 +305,8 @@
 .mydata-connection-info .mydata-connection-info-top p{color:$kb-ui04;}
 .mydata-connection-info .mydata-connection-info-top .line{border-top:1px solid $kb-ui09;padding-top: 16px; }
 .mydata-connection-info .mydata-connection-info-top .btn-area{margin-bottom:20px; margin-top:20px; }
+.mydata-connection-info .mydata-connection-info-top .btn-area:first-child{margin-bottom:0.8rem;} // 여백수정 2021-10-12
+.mydata-connection-info .mydata-connection-info-top .btn-area + .btn-area{margin-top:0.8rem;} // 여백수정 2021-10-12
 
 // 기관 선택 > 전송요구 항목 설정 mys_co_06_01_01_07
 // 여백 조정 및 사용하지 않는 소스 삭제
@@ -346,7 +348,7 @@
 .select-assets .kb-sec [class^=h] .num{padding-left:0.7rem;font-size:19px;}
 .select-assets .kb-sec > .accordion{margin:1.4rem 0 4.2rem;}
 .select-assets .accordion .num{@include number($size: 17px);display:block;font-weight:bold;}
-.select-assets .accordion > dt{padding:2rem 0 2rem 0.2rem;font-weight:normal;}
+.select-assets .accordion > dt{padding:2rem 0 2rem;font-weight:normal;} // 여백수정 2021-10-12
 .select-assets .accordion > dt.is-active{font-weight: bold;}
 .select-assets .accordion > dt:first-child{border-top:1px solid $kb-ui03;}
 .select-assets .accordion > dd{padding-top:0;padding-bottom:0;}
@@ -355,7 +357,7 @@
 .select-assets .checkbox-group li{margin-top:0;border-top:1px solid $kb-ui09;}
 .select-assets .checkbox-group li:first-child{padding-top:10px;border-top:0;}
 .select-assets .checkbox-group li:last-child{border-bottom:1px solid $kb-ui09;}
-.select-assets .checkbox-group .form-checkbox_20{display:block;}
+.select-assets .checkbox-group .form-checkbox_20{display:block;margin-left:0.2rem;} // 여백수정 2021-10-12
 .select-assets .checkbox-group .form-checkbox_20 label{display:block;padding-top:18px;padding-bottom:16px;}
 .select-assets .checkbox-group .form-checkbox_20 label::before{top:2rem;} // 체크박스 수정 2021-10-08
 .select-assets .checkbox-group .form-checkbox_20 label::after{top:2.7rem;} // 체크박스 수정 2021-10-08
@@ -567,7 +569,7 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .select-certificate .certificate-list li .txt{flex: 1 0 auto;font-size:1.8rem;font-weight:bold;line-height:1.1;}
 .select-certificate .tag-label.t03{margin-left:1rem;vertical-align:top;}
 
-.loading-msg{display:flex;flex-direction:column;align-items:center;margin-top:0.4rem;}
+.loading-msg{display:flex;flex-direction:column;align-items:center;margin-top:1.9rem;} // 여백수정 2120-10-12
 .loading-msg img{width:15rem;height:15rem;}
 .loading-msg .tit{margin-top:2.8rem;font-size:1.8rem;text-align:center;line-height:1.39;color:$kb-ui03;}
 
@@ -908,8 +910,7 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .phishing-event-info .event-list li .tit{@include text($size: $text02, $line-height:1, $weight:bold);display:block;margin-bottom:0.5rem;}
 .phishing-event-info .event-list li .desc{@include text($size: $text03, $line-height:1);color:$kb-ui03;}
 .phishing-event-info .event-list li .desc strong{font-weight:bold;}
-.phishing-event-info .event-list li [class^=icon]:first-child{margin-right:1.6rem;}
-.phishing-event-info .event-list li [class^=icon]:first-child{width:32px;height:32px;background:yellow;} // temp
+.phishing-event-info .event-list li [class^=icon]:first-child{width:32px;height:32px;margin-top:0.3rem;margin-right:1.6rem;}
 
 //마이데이터 서비스 소개
 .mydata-service .img{width:100%;}

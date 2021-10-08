@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" data-channel="ch_star">
+<html lang="ko">
 <!-- [MYS_EX_01_02_00] 지출 > 가계부 > 캘린더 보기 (작성자: 누리어 시스템 김삼희)// -->
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
@@ -43,6 +43,8 @@
                         </div>
                         <!-- //calendar-header -->
                         <!-- calendar // -->
+                        <!-- 수정:2021-10-08 -->
+                        <!-- 거래내역건 있는 날짜 표기 아이콘 추가 -->
                         <div class="calendar">
                             <!-- tbl-calender // -->
                             <table class="tbl-calender">
@@ -80,7 +82,7 @@
                                             <a href="javascript:;" class="link-box_block">
                                                 <strong>4</strong>
                                                 <ul class="day-list">
-                                                    <li class="income"><em class="number">3</em></li>
+                                                    <li class="income"><i class="icon-credit-income">수입 아이콘</i><em class="number">3</em></li>
                                                 </ul>
                                             </a>
                                         </td>
@@ -108,9 +110,9 @@
                                             <a href="javascript:;" class="link-box_block">
                                                 <strong>11</strong>
                                                 <ul class="day-list">
-                                                    <li class="expense"><em class="number">3</em></li>
-                                                    <li class="income"><em class="number">8</em></li>
-                                                    <li class="transfer"><em class="number">12</em></li>
+                                                    <li class="expense"><i class="icon-credit-expense">지출 아이콘</i><em class="number">3</em></li>
+                                                    <li class="income"><i class="icon-credit-income">수입 아이콘</i><em class="number">8</em></li>
+                                                    <li class="transfer"><i class="icon-credit-trans">이체 아이콘</i><em class="number">12</em></li>
                                                 </ul>
                                             </a>
                                         </td>
@@ -132,8 +134,8 @@
                                             <a href="javascript:;" class="link-box_block">
                                                 <strong>16</strong>
                                                 <ul class="day-list">
-                                                    <li class="expense"><em class="number">1</em></li>
-                                                    <li class="income"><em class="number">13</em></li>
+                                                    <li class="expense"><i class="icon-credit-expense">지출 아이콘</i><em class="number">1</em></li>
+                                                    <li class="income"><i class="icon-credit-income">수입 아이콘</i><em class="number">13</em></li>
                                                 </ul>
                                             </a>
                                         </td>
@@ -191,11 +193,13 @@
                                 </tbody>
                             </table>
                             <!-- // tbl-calender -->
+                            <!-- 수정:2021-10-08 -->
+                            <!-- 범례 아이콘 추가 -->
                             <ul class="tbl-calender-label">
-                                <li><span class="income">수입</span></li>
-                                <li><span class="expense">지출</span></li>
-                                <li><span class="transfer">이체</span></li>
-                                <li><span class="pay">카드결제&sol;정기지출예정일</span></li>
+                                <li><i class="icon-credit-income">수입 아이콘</i><span class="income">수입</span></li>
+                                <li><i class="icon-credit-expense">지출 아이콘</i><span class="expense">지출</span></li>
+                                <li><i class="icon-credit-trans">이체 아이콘</i><span class="transfer">이체</span></li>
+                                <li>span class="pay">카드결제&sol;정기지출예정일</span></li>
                             </ul>
                         </div>
                         <!-- // calender -->

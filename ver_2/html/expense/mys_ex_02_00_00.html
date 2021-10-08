@@ -1,6 +1,6 @@
 <!-- [MYS_EX_02_00_00] 지출 > 정기지출 (작성자: 누리어 시스템 김삼희)// -->
 <!DOCTYPE html>
-<html lang="ko" data-channel="ch_star">
+<html lang="ko">
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
         "title": "정기지출 | 지출"
@@ -48,7 +48,7 @@
                                 <!-- [D] 2021-09-07 수정 : 각 버튼 data-value, data-positional-number 삭제 //-->
                                 <div class="markup-chart lollipop">
                                     <ul>
-                                        <li>
+                                        <li class="less"><!-- 수정:2021-10-08 --><!-- 클래스 추가(less) -->
                                             <p>
                                                 <button type="button" class="data" ata-call-layered="bsRegularExpenseDetailList"><strong><em class="num">30</em>건</strong></button>
                                                 <span class="label"><em class="num">10</em>일</span>
@@ -372,45 +372,56 @@
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
 
-    <!-- [D] 2021-09-07 수정 : 스크립트 수정 //-->
+    <!-- 수정:2021-10-08 -->
+    <!-- 스크립트 수정 //-->
     <script>
-        // lollipop chart
-        $lollipop = $('.lollipop');
-        if($lollipop){
-            var chartHt = function(){
-                var targets = [];
-                var total = $lollipop.height();
-                $lollipop.find('.data').each( function(){
-                    // find max
-                    var $this = $(this);
-                    var numVal = $this.find('.num').text(); 
-                    var number = Number(numVal);
-                    targets.push(number);
-                    var max = Math.max.apply(null, targets);
-                    // control size
-                    if(numVal.length > 1) {
-                        $this.attr('data-positional-number', 2);
-                    }
-                    if(number == max) {
-                        $this.attr('data-positional-number', 3);
-                    }
-                    // add padding
-                    var step = Math.floor(total/max);
-                    var rst = (number*step) - $this.height();
-                    var limit = total - $this.height() - $this.siblings('.label').outerHeight();
-                    if(rst < 0) {
-                        rst = 7;
-                    }
-                    if(rst > limit) {
-                        rst = limit;
-                    }
-                    $this.css('margin-bottom', (rst/10) + 'rem');
-                });
+        $( function(){
+            // lollipop chart
+            $lollipop = $('.lollipop');
+            if($lollipop){
+                var chartHt = function(){
+                    var targets = [];
+                    var total = $lollipop.height();
+                    $lollipop.find('.data').each( function(){
+                        // find max
+                        var $this = $(this);
+                        var numVal = $this.find('.num').text(); 
+                        var number = Number(numVal);
+                        targets.push(number);
+                        var max = Math.max.apply(null, targets);
+                        // control size
+                        if(numVal.length > 1) {
+                            $this.attr('data-positional-number', 2);
+                        }
+                        if(number == max) {
+                            $this.attr('data-positional-number', 3);
+                        }
+                        // add padding
+                        var step = Math.floor(total/max);
+                        var rst = (number*step) - $this.height();
+                        var limit = total - $this.height() - $this.siblings('.label').outerHeight();
+                        if(rst < 0) {
+                            rst = 7;
+                        }
+                        if(rst > limit) {
+                            rst = limit;
+                        }
+                        $this.css('margin-bottom', (rst/10) + 'rem');
+
+                        var $lessTarget = $this.closest('li');
+                        var chk_dataLess = $lessTarget.hasClass('less');
+                        var noticeLess = '<strong class="notice"><span>잔액부족</span></strong>';
+                        if(chk_dataLess){
+                            $lessTarget.prepend(noticeLess);
+                            console.log('is');
+                        }else{console.log('isnt');}
+                    });
+                }
+                chartHt();
             }
-            chartHt();
-        }
+        })
     </script>
-    <!--// [D] 2021-09-07 수정 : 스크립트 수정 -->
+    <!--// 스크립트 수정 -->
     <!-- Add Script -->
     
 </body>

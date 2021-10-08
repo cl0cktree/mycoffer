@@ -83,14 +83,14 @@
 													</div>
 												</div>
 											</div>
-											<div class="highcharts_column" id="">
+											<!--<div class="highcharts_column" id="">
 												<img class="temp" src="@@webRoot/static/images/_temp/chart_as0701.png" alt="차트 예시 이미지">
-											</div>
-											<!-- [chart area] 
+											</div>-->
+											<!-- [chart area] -->
 											<div class="chart-flex">
 												<div class="chart-area" id="donutChart01"></div>
 											</div>
-											// [chart area] -->
+											<!--// [chart area] -->
 										</figure>
 
 									</div>
@@ -706,8 +706,8 @@
 	<!-- Script -->
 	@@include('@@webRoot/html/_include/common-js.html')
 	<!-- Add Library (this page only)-->
-    <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    	
-    <script src="@@webRoot/static/common/lib/highcharts/variable-pie.js"></script>
+    <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/drilldown.js"></script>
 
 	<script src="@@webRoot/static/js/ui.js"></script>
 	<!-- Add Script -->
@@ -761,7 +761,8 @@
         credits: { enabled: false },
         exporting: { enabled: false },
         lang: {
-            thousandsSep: ','
+            thousandsSep: ',',
+			drillUpText: '< back'
         }
     });
    
@@ -869,80 +870,131 @@
 		var donutChart1 = new Highcharts.Chart({
             chart: {
                 renderTo: 'donutChart01', // chart 삽입 target ID
-                type: 'variablepie',
+                type: 'pie',
                 marginLeft: 0,
                 marginRight: 0,
                 marginTop:0,
                 marginBottom: 0,
                 height: 195,
             },
-            tooltip: { enabled: false },
+            tooltip: {
+				headerFormat: '<span style="font-size:1.2rem">{series.name}</span><br>',
+				pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+			},
+			accessibility: {
+				announceNewData: {
+					enabled: true
+				},
+				point: {
+					valueSuffix: '%'
+				}
+			},
             plotOptions: {
-                variablepie: {
-                    dataLabels: {
-                        enabled: true,
-                        distance: 10,
-                        format: '{point.name}{point.percentage:.1f}%',
-                        connectorWidth:1,
-                        alignTo: 'plotEdges',
-                        connectorShape:'crookedLine',
-                        crookDistance: '100%',
-                        connectorPadding:0,
-                        style: { fontWeight: 'normal', color: '#484b51', fontSize:'1.4rem' }
-                    },                       
-                    allowPointSelect: true,
-                    size: '60%',
-					events: {
-					click: function (event) {
-						alert(
-							this.y + '{point.name} clicked\n' 
-						);
+				series: {
+					dataLabels: {
+						enabled: true,
+						format: '{point.name}: {point.y}%',
+						style: {
+							color: '#26282c',
+							fontSize: '1.2rem',
+                        	fontFamily: 'KBFGText',
+
+						},
+						distance: '-1'
 					}
-            }
-                }
+				},
+				pie: {
+            		center: ['50%', '50%'],
+					size: 155,
+				}
             },
             series: [{  
+				name: "보유상품군별",
                 innerSize: '60%',
                 borderWidth:0,
-                zMin: 0,
-                minPointSize: 10,
+				
                 data: [{
-                    name: '주식·채권',
+                    name: '주식',
                     color: "#ffd435",
-                    y: 400,
-                    z: 10,
-                    dataLabels: {                      
-                        /*enabled: true, 
-                        pointFormat: '국내주식 25%<br>선진주식 25%<br>신흥주식 25%<br>해외채권 25%',
-                        padding: 7,
-                        backgroundColor: "#FFF",
-                        shadow: true,
-                        y: -20,
-                        x: -5,
-                        borderRadius: 2,*/
-                        style: {fontWeight: "bold",fontSize: '1.4rem',fontFamily: "KBFGText"}
-                    }
+                    y: 35,
+					drilldown: "주식",
                     
                 },{
+                    name: '펀드',
+                    color: "#1544bc",
+                    y: 25,
+					drilldown: "펀드",
+                }
+				,{
                     name: '청약 ',
                     color: "#f7966c",
-                    y: 300,
-                    z: 10,
-                    dataLabels: {style:{fontFamily: "KBFGText"}}
+                    y: 10,
+					drilldown: null,
                 },{
                     name: '예금 ',
                     color: "#d676ca",
-                    y: 250,
-                    z: 10,
-                    dataLabels: {style:{fontFamily: "KBFGText"}}
+                    y: 15,
+					drilldown: null,
                 },{
                     name: '적금 ',
                     color: '#3d70d2',
-                    y: 125,
-                    z: 10,
-                    dataLabels: {style:{fontFamily: "KBFGText"}}
+                    y: 20,
+					drilldown: null,
                 }]
-            }]
+            }],
+			drilldown: {
+				activeAxisLabelStyle: {
+					textDecoration: 'none',
+					color: '#26282c',
+				},
+				activeDataLabelStyle: {
+					textDecoration: 'none',
+					color: '#26282c',
+				},
+				series: [
+					{
+						name: "주식",
+						id: "주식",
+						data: [
+							[
+								"국내주식",
+								50
+							],
+							[
+								"해외주식",
+								50
+							],
+						]
+					},
+					{
+						name: "펀드",
+						id: "펀드",
+						data: [
+							[
+								"국내주식",
+								50
+							],
+							[
+								"국내채권",
+								10
+							],
+							[
+								"선진주식",
+								13
+							],
+							[
+								"신흥주식",
+								17
+							],
+							[
+								"해외채권",
+								10
+							],
+						]
+					},
+				]
+			}
+
         });
 		//하이차트 UI 추가 end
 	</script>

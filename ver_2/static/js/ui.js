@@ -93,6 +93,76 @@ function gfn_fnChkByte($target, maxByte){
     }
 }
 
+function gfn_koreanUnit(number, unit) {				
+    var unit = unit;
+    var regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi;
+    var inputNumber = String(number).replace(/(^\s*)|(\s*$)/gi, '').replace(regExp, '');
+    var unitWords = ["<span class='unit'>원</span>", "<span class='unit'>만&nbsp;</span>", "<span class='unit'>억&nbsp;</span>", "<span class='unit'>조&nbsp;</span> ", "<span class='unit'>경&nbsp;</span>", "<span class='unit'>해&nbsp;</span>"];
+    var splitUnit = 10000;
+    var splitCount = unitWords.length;
+    var resultArray = [];
+    var resultString = "";
+
+    if(unit == '만원') unitWords[1] = "<span class='unit'>만원</span>";
+
+    for (var i = 0; i < splitCount; i++) {
+        var unitResult =
+            (inputNumber % Math.pow(splitUnit, i + 1)) / Math.pow(splitUnit, i);
+        unitResult = Math.floor(unitResult);
+        if (unitResult > 0) {
+            resultArray[i] = '<span class="num">'+ unitResult +'</span>';
+        }
+    }
+    for (var i = 0; i < resultArray.length; i++) {
+        if (!resultArray[i]) continue;
+        
+        if(unit == '만원') {        
+            resultString = String(gfn_comma3Digit(resultArray[i])) + unitWords[i + 1] + resultString;            
+        }else if(unit == '억'){
+            resultString = String(gfn_comma3Digit(resultArray[i])) + unitWords[i + 2] + resultString;            
+        }else{
+            resultString = String(gfn_comma3Digit(resultArray[i])) + unitWords[i] + resultString;
+        }
+        
+    }
+    
+    return resultString;
+}
+
+function gfn_NumberToKorean(number, unit){ 
+    var regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi;
+    var number = String(number).replace(/(^\s*)|(\s*$)/gi, '').replace(regExp, '');
+    var numKor = ["", "일", "이", "삼", "사","오","육","칠","팔","구","십"]; // 숫자 문자 
+    var unitKor = ["", "십", "백", "천", "", "십", "백", "천", "", "십", "백", "천", "", "십", "백", "천","", "십", "백", "천", "", "십", "백", "천", "", "십", "백", "천", "", "십", "백", "천"]; // 만위 문자열 
+    var unitSlice = ["만","억","조","경","해","자"]
+
+    if(unit == '만원'){
+        unitKor.splice(0,4);
+        unitSlice.splice(0,1);
+    }else if(unit == '억'){
+        unitKor.splice(0,8);
+        unitSlice.splice(0,2);
+    }
+    var result = ""; 
+    if(number && !isNaN(number)){ // CASE: 금액이 공란/NULL/문자가 포함된 경우가 아닌 경우에만 처리         
+        for(i=0; i < number.length; i++) { 
+            var str = ""; 
+            var num = numKor[number.charAt(number.length - (i + 1))]; 
+            if(num != "") str += num + unitKor[i]; // 숫자가 0인 경우 텍스트를 표현하지 않음 
+            switch(i){ 
+                case 4: str += String(unitSlice[0]); break;
+                case 8: str += String(unitSlice[1]); break;
+                case 12: str += String(unitSlice[2]); break;
+            } 
+            result = str + result; 
+        } 
+        result = result + String(unit); 
+    } 
+    return result ; 
+}
+
+
+
 //WA focus
 var focusA11Y = {
     memory: function($selector){
@@ -366,12 +436,22 @@ var gfn_formText = {
         }
     },
     calculate: function($target){
+        var $thisForm = $target.parent('.kb-form');
         var $input = $target.find('input');
+        var unit = $target.find('.unit').text();
+        
+        
+        if($thisForm.find('.hangul').length) {            
+            $thisForm.find('.hangul').html(gfn_koreanUnit($input.val(), unit));         //단위 한글 변환
+        }else if($thisForm.find('.all-hangul').length) {
+            $thisForm.find('.all-hangul').text(gfn_NumberToKorean($input.val(), unit));   //전체 한글 변환
+        }
+
         //세자리수 콤마 실행
         if($input.data('action') == 'autoSeperator'){
             $input.val(gfn_comma3Digit($input.val()));
         }
-
+        
         //unit 위치 (정렬 변경으로 불필요)
         // if($target.find('.measurement').length){
         //     $target.find('.measurement').text($input.val());

@@ -25,8 +25,8 @@
                 <!-- 월간 자산 요약 // -->
                 <section class="kb-sec expense-guide monthly-asset-summary dividing-space-bottom">
                     <div class="date-month">
-                        <h4 class="h4">2021년 금융리포트</h4>
-                        <span class="date">발행일 <em class="num">21.5.25</em> | 기준일 <em class="num">2020 ~ 2021</em></span>
+                        <h4 class="h4">2020년 연간 금융리포트</h4> <!-- 수정:2021-10-08 --><!--제목 텍스트 수정-->
+                        <span class="date">발행일 <em class="num">21.5.25</em></span><!-- 수정:2021-10-08 --><!-- 제목 영역에서 기준일 삭제 -->
                     </div>
                     <div class="content-box shadow compare-summary">
                         <div class="content-box-info">
@@ -84,7 +84,7 @@
                         <dl class="description-list credit-list-amount">
                             <dt>총자산</dt>
                             <dd class="amount"><span class="num" data-unit-after="원">531,345,235</span></dd>
-                            <dt>총부채</dt>
+                            <dt>총 부채</dt>
                             <dd class="amount"><span class="num" data-unit-after="원">531,345,235</span></dd>
                             <dt>순 자산</dt>
                             <dd class="amount"><span class="num" data-unit-after="원">531,345,235</span></dd>
@@ -96,12 +96,13 @@
                                         <h4 class="h4">자산&sol;부채 추이 <span class="tag-label t02" data-state="wait">최근 3개년</span></h4>
                                     </div>
                                 </div>
+                                <!-- 수정:2021-10-08 --><!--차트 정보 수정-->
                                 <!-- [chart area] //-->
                                 <!--
                                     [차트 디자인 정보]
                                     * 라인 색상(컬러별)
-                                    - 노란색 :  #ffba53
-                                    - 살구색 :  #ff8a71
+                                    - 노란색 :  #ffba53 / opacity 0.6
+                                    - 파란색 :  #609df8 / opacity 0.6
 
                                     - 차트 중앙 텍스트 컬러/크기 : #26282c/14px
                                 -->
@@ -111,7 +112,7 @@
                                 <div class="legend-unit align-c">
                                     <ul>
                                         <li><i class="icon-legend_circle_yellow">My 자산 그래프 범례</i><span>My자산</span></li>
-                                        <li><i class="icon-legend_square_apricot">My 부채 그래프 범례</i><span>My부채</span></li>
+                                        <li><i class="icon-legend_square_blue">My 부채 그래프 범례</i><span>My부채</span></li> <!-- 수정:2021-10-08 --><!-- 범례 아이콘 수정 -->
                                     </ul>
                                 </div>
                                 <!--// [chart area] -->
@@ -302,8 +303,8 @@
                                 <div class="legend-unit align-c">
                                     <ul>
                                         <li><i class="icon-legend_circle_yellow">그래프 범례 : 현대카드</i><span>현대카드</span></li>
-                                        <li><i class="icon-legend_square_apricot">그래프 범례 : 우리카드</i><span>우리카드</span></li>
-                                        <li><i class="icon-legend_triangle_pink">그래프 범례 : KB국민카드</i><span>KB국민카드</span></li>
+                                        <li><i class="icon-legend_square_blue">그래프 범례 : 우리카드</i><span>우리카드</span></li><!-- 수정:2021-10-08 --><!-- 범례 아이콘 수정 -->
+                                        <li><i class="icon-legend_triangle_cherry">그래프 범례 : KB국민카드</i><span>KB국민카드</span></li><!-- 수정:2021-10-08 --><!-- 범례 아이콘 수정 -->
                                     </ul>
                                 </div>
                                 <!--// [chart area] -->
@@ -371,20 +372,164 @@
                     </div>
                 </section>
                 <!-- // 월간 지출 요약 -->
-                <!-- 목표관리가 필요한 지출 //-->
-                <section class="kb-sec management-expense-goal">
-                    <h4 class="h4">목표관리가 필요한 지출</h4>
-                    <div class="content-box mt24 mb24 pb20 align-c">커피 줄이기 챌린지 영역</div>
+                
+
+                <!-- 수정:2021-10-08 -->
+                <!-- 추천 챌린지 영역 추가, 목표관리가 필요한 지출 영역 삭제 -->
+                <!-- 추천 챌린지 //-->
+                <section class="kb-sec goals-challenge management-expense-goal">                       
+                    <!-- [Chart Area] // -->                        
+                    <div class="chart-area mt40" id="bubbleChart01"></div>
+                    <!-- // [Chart Area] -->
+                    <div class="flex-box">
+                        <a href="@@webRoot/html/goal/mys_go_00_00_00.html" class="link-box_block link-arrow-after">
+                            <strong class="h4">김국민님에게 추천하는 챌린지 TOP3</strong>
+                        </a>
+                    </div>
+                    <div class="challenge-box content-swiper-wrap">
+                        <div class="swiper-container content-swiper t01 js-swiper" data-swiper-options="goalBestChallSwiperOptions">
+                            <script>
+                                var goalBestChallSwiperOptions = {
+                                    "pagination": {
+                                        "el": ".swiper-pagination"
+                                    },
+                                    "spaceBetween": 16,
+                                    "slidesPerView": "auto"
+                                };
+                            </script>
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide content-box">
+                                    <a href="@@webRoot/html/goal/mys_go_03_01_00.html" class="link-box_block challenge-tit">
+                                        <h3 class="h3">외식비 줄이기</h3>
+                                        <button type="button" class=""><span><i class="icon-link_24"></i></span></button>
+                                    </a>
+                                    <div class="challenge-info type2">
+                                        <div class="tit flex-box goals-desc">
+                                            <div class="left-cont">
+                                                <h4 class="spend-desc">남들보다 무려 두배이상!! 쓰고 있어요.<br><strong>소비를 줄여보세요.</strong></h4>
+                                                <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                                <div class="tooltip">
+                                                    <strong class="tit">비교그룹</strong>
+                                                    <div class="cont">나와 같은 연령대&amp;소득군의 사람들은?<br><br>연령대: 30대<br>월 소득: <span class="num" data-unit-after="만원">300</span>~<span class="num" data-unit-after="만원">500</span><br>성별: 남성</div>
+                                                    <button class="btn-close"><span>닫기</span></button>
+                                                </div>  
+                                            </div>  
+                                        </div>
+                                        <!-- 추가 수정 // -->
+                                        <div class="goals-now">
+                                            <p>목표기간<i></i>일주일</p>
+                                            <p>도전자<i></i><span class="num">1000</span>명</p>
+                                        </div>
+                                        <!-- // 추가 수정 -->
+                                        <div class="character-graph type2" data-theme="pay">
+                                            <div class="graph-area">
+                                                <span data-goal="80"><i><img src="@@webRoot/static/images/_temp/@progress_coffee.png" alt="커피"></i></span>
+                                            </div>
+                                            <div class="graph-txt">
+                                                <p class="start-txt">나 <strong class="num" data-unit-after="원">150,000</strong></p>
+                                            </div>
+                                            <div class="graph-area sub">
+                                                <span data-goal="50"></span>
+                                            </div>
+                                            <div class="graph-txt">
+                                                <p class="start-txt">다른사람 <strong class="num" data-unit-after="원">100,000</strong></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide content-box">
+                                    <a href="@@webRoot/html/goal/mys_go_03_01_00.html" class="link-box_block challenge-tit">
+                                        <h3 class="h3">홈쇼핑 줄이기</h3>
+                                        <button type="button" class=""><span><i class="icon-link_24"></i></span></button>
+                                    </a>
+                                    <div class="challenge-info type2">
+                                        <div class="tit flex-box goals-desc">
+                                            <div class="left-cont">
+                                                <h4 class="spend-desc">남들보다 꽤 많이 쓰고 있어요.<br><strong>소비를 줄여보세요.</strong></h4>
+                                                <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                                <div class="tooltip">
+                                                    <strong class="tit">비교그룹</strong>
+                                                    <div class="cont">나와 같은 연령대&amp;소득군의 사람들은?<br><br>연령대: 30대<br>월 소득: <span class="num" data-unit-after="만원">300</span>~<span class="num" data-unit-after="만원">500</span><br>성별: 남성</div>
+                                                    <button class="btn-close"><span>닫기</span></button>
+                                                </div>  
+                                            </div>  
+                                        </div>
+                                        <!-- 추가 수정 // -->
+                                        <div class="goals-now">
+                                            <p>목표기간<i></i>일주일</p>
+                                            <p>도전자<i></i><span class="num">1000</span>명</p>
+                                        </div>
+                                        <!-- // 추가 수정 -->
+                                        <div class="character-graph type2" data-theme="pay">
+                                            <div class="graph-area">
+                                                <span data-goal="50"><i><img src="@@webRoot/static/images/_temp/@progress_shopping.png" alt="쇼핑백"></i></span>
+                                            </div>
+                                            <div class="graph-txt">
+                                                <p class="start-txt">나는 <strong class="num" data-unit-after="원">150,000</strong></p>
+                                            </div>
+                                            <div class="graph-area sub">
+                                                <span data-goal="20"></span>
+                                            </div>
+                                            <div class="graph-txt">
+                                                <p class="start-txt">비교그룹은 <strong class="num" data-unit-after="원">100,000</strong></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide content-box">
+                                    <a href="@@webRoot/html/goal/mys_go_03_01_00.html" class="link-box_block challenge-tit">
+                                        <h3 class="h3">통신비 줄이기</h3>
+                                        <button type="button" class=""><span><i class="icon-link_24"></i></span></button>
+                                    </a>
+                                    <div class="challenge-info type2">
+                                        <div class="tit flex-box goals-desc">
+                                            <div class="left-cont">
+                                                <h4 class="spend-desc">남들보다 적게 쓰고 있지만<br>불필요한 지출은 <strong>줄여보세요.</strong></h4>
+                                                <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                                <div class="tooltip">
+                                                    <strong class="tit">비교그룹</strong>
+                                                    <div class="cont">나와 같은 연령대&amp;소득군의 사람들은?<br><br>연령대: 30대<br>월 소득: <span class="num" data-unit-after="만원">300</span>~<span class="num" data-unit-after="만원">500</span><br>성별: 남성</div>
+                                                    <button class="btn-close"><span>닫기</span></button>
+                                                </div>  
+                                            </div>   
+                                        </div>
+                                        <!-- 추가 수정 // -->
+                                        <div class="goals-now">
+                                            <p>목표기간<i></i>일주일</p>
+                                            <p>도전자<i></i><span class="num">1000</span>명</p>
+                                        </div>
+                                        <!-- // 추가 수정 -->
+                                        <div class="character-graph type2" data-theme="pay">
+                                            <div class="graph-area">
+                                                <span data-goal="50"><i><img src="@@webRoot/static/images/_temp/@progress_mobile.png" alt="휴대전화"></i></span>
+                                            </div>
+                                            <div class="graph-txt">
+                                                <p class="start-txt">나는 <strong class="num" data-unit-after="원">150,000</strong></p>
+                                            </div>
+                                            <div class="graph-area sub">
+                                                <span data-goal="50"></span>
+                                            </div>
+                                            <div class="graph-txt">
+                                                <p class="start-txt">비교그룹은 <strong class="num" data-unit-after="원">100,000</strong></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
                     <a href="mys_ex_04_00_00.html" class="link-banner link-box_block">
-                        <i class="icon-finance-report"></i>
                         <dl>
-                            <dt>금융리포트</dt>
                             <dd>나도 모르는 나의 지출 패턴을 분석한 주간, 월간, 연간 금융리포트도 지금 확인하세요.</dd>
+                            <dt>금융리포트</dt>
                         </dl>
+                        <div><img src="@@webRoot/static/images/expense/expense-finance-report.png" alt=""></div>
+                        <!-- 수정:2021-10-08 --><!-- 아이콘 삭제, 이미지 추가 -->
                     </a>
                     <p class="simple-message">최신 정보가 반영된 리포트를 원하시면 하단의 ‘리포트 새로고침’을 눌러주세요</p>
                 </section>
-                <!-- //목표관리가 필요한 지출 -->
+                <!--// 추천 챌린지 -->
                 <div class="sticky-bottom">
                     <div class="btn-area">
                         <button type="button" class="btn-solid" data-call-modal="refreshReport"><span>리포트 새로고침</span></button>

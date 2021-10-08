@@ -35,7 +35,7 @@
                         <label for="mysafe_06" class="gold-unit-title required">형태</label>
                         <div class="kb-form_inner form-select mt4">
                             <button type="button" class="selected-option" id="mysafe_05"></button>
-                            <select name="" id="mysafe_06" title="금 형태선택">
+                            <select name="" class="goldShape" id="mysafe_06" title="금 형태선택">
                                 <option value="" selected>형태선택</option>
                                 <option value="goldShape01">골드바</option>
                                 <option value="goldShape02">돌반지</option>
@@ -208,11 +208,11 @@
         };
         function value_trans_ok(){//조회버튼 클릭 시 조회버튼 하단의 경고문구가 입력창(가격-readonly)으로 변경 됨.
             $('.my-gold-trans-info').addClass('safe-display-none');
-            $('.gold-input-value').removeClass('safe-display-none');
+            $('.gold-input-value').children('.kb-form_inner').removeClass('safe-display-none');
         };
         function value_trans_cancle(){//value_trans_ok() 함수의 반대 동작.
             $('.my-gold-trans-info').removeClass('safe-display-none');
-            $('.gold-input-value').addClass('safe-display-none');
+            $('.gold-input-value').children('.kb-form_inner').addClass('safe-display-none');
         };
         function all_on_fun(){//최종 등록 버튼 활성화 함수-금보유 항목의 단위입력 완료/조회버튼 클릭/금형태 선택이 선결 되면 활성화.
             gold_shape_input=document.getElementById('mysafe_07').value;
@@ -268,9 +268,9 @@
             // safe_btn_on();
             // all_on_fun();
         });
-        $('.goldShape').on('click',function(){//금 형태선택 바텀시트 선택 시 동작부분.
+        $('.goldShape').on('change',function(){//금 형태선택 바텀시트 선택 시 동작부분.
             document.getElementById('mysafe_07').value='';
-            if ($(this).is('.goldShape04')){
+            if (this.value=='goldShape04'){
                 $('.gold-input-shape').removeClass('safe-display-none');
                 gs_num=1;
             }else{
@@ -278,6 +278,7 @@
                 $('.gold-input-shape').addClass('safe-display-none');
                 gs_num=2;
             }
+            console.log(gs_num);
            // all_on_fun();
         });
         $('.gold-shape-clear').on('click',function(){//금 형태 직접입력 삭제 버튼으로 클릭 시 관련된 기능들 리셋.
@@ -286,11 +287,13 @@
             $my_gold_enrollment.attr('disabled','disabled');
         });
         $my_gold_value.on('click',function(){//조회버튼 클릭시 숨어 있던 가격 부분이 노출 되는 함수의 트리거.
-            if ((bu_num>0)&&(currentVal_1!=='')&&(currentVal_2!=='')&&(currentVal_1!==null)&&(currentVal_2!==null)){
-                value_trans_ok();
-                mgv=1;
+            gold_shape_input=document.getElementById('mysafe_07').value;
+            if ((bu_num>0)&&(currentVal_1!=='')&&(currentVal_2!=='')&&(currentVal_1!==null)&&(currentVal_2!==null)&&(bu_num>0)){
+                if(((gs_num==1)&&(gold_shape_input!==null)&&(gold_shape_input!==''))||(gs_num>1)){
+                    value_trans_ok();
+                    mgv=1;
+                }
             }else{
-                // value_trans_cancle();
                 mgv=0;
             }
            // all_on_fun();

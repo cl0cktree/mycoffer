@@ -1,6 +1,6 @@
 <!-- [MYS_EX_00_00_00] 지출 > 홈 (작성자: 누리어 시스템 김삼희) -->
 <!DOCTYPE html>
-<html lang="ko" data-channel="ch_star">
+<html lang="ko">
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
         "title": "홈 | 지출"
@@ -9,11 +9,13 @@
 
 <body>
     @@include('@@webRoot/html/_include/app-a11y.html')
-    <div class="app" data-page="bridge">
+    <!-- 수정:2021-10-08 -->
+    <!-- data-page 수정 (bridge -> submain : 스뱅 -> 마이머니 맞춤으로 수정)-->
+    <div class="app" data-page="submain">
         <!-- app-header //-->
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
             'pageTit':'홈',
-            'type':''
+            'type':'submain'
         })
         <!-- // app-header -->
 
@@ -42,14 +44,6 @@
                                             </h4>
                                         </div>
                                         <!-- [chart area] //-->
-                                        <!--
-                                            [차트 디자인 정보]
-                                            * 그래프(막대) 색상(컬러별)
-                                            - 노란색 :  #ffba53;
-                                            - 회색 :  #c6cbd0;
-
-                                            - 차트 텍스트 컬러/크기 : #26282c/14px
-                                        -->
                                         <div class="chart-area" id="">
                                             <img class="temp" src="../../static/images/_temp/chart_ex0410.png" alt="차트 예시 이미지">
                                         </div>
@@ -101,7 +95,7 @@
                         <!-- [D] 2021-08-31 수정 : 아이콘 수정 //-->
                         <div class="swiper-wrapper">
                             <div class="swiper-slide card-item">
-                                <span class="tag-label t03 round" data-state="today">오늘</span>
+                                <span class="tag-label t03 round" data-state="today">오늘</span><span class="tag-label t03 round" data-state="less">잔액부족</span><!-- 수정:2021-10-08 --><!-- tag-label 추가 -->
                                 <strong class="card-tit"><span class="icon-type-img"><img src="@@webRoot/static/images/expense/icon-tele-fee.png" alt=""></span>통신비-SKT</strong>
                                 <dl>
                                     <dt>예정금액</dt>
@@ -110,7 +104,7 @@
                             </div>
                             <div class="swiper-slide card-item">
                                 <span class="tag-label t03 round" data-state="today">오늘</span>
-                                <strong class="card-tit"><span class="icon-type-img"><img src="@@webRoot/static/images/expense/icon-tele-fee.png" alt=""></span>통신비-SKT</strong>
+                                <strong class="card-tit"><span class="icon-type-img"><img src="@@webRoot/static/images/expense/icㄴon-tele-fee.png" alt=""></span>통신비-SKT</strong>
                                 <dl>
                                     <dt>예정금액1</dt>
                                     <dd><em class="num" data-unit-after="원">234,000</em></dd>
@@ -137,7 +131,7 @@
                                 <strong class="card-tit"><span class="icon-type-img"><img src="@@webRoot/static/images/expense/icon-tele-fee.png" alt=""></span>통신비-SKT</strong>
                                 <dl>
                                     <dt>예정금액4</dt>
-                                    <dd><em class="num" data-unit-after="원">234,000</em></dd>
+                                    <dd><em class="num" data-unit-after="원">234,000</em></dd>ㄴ
                                 </dl>
                             </div>
                         </div>
@@ -146,9 +140,158 @@
                     </div>
                 </section>
                 <!--// 다가오는 정기지출 -->
+
+                <!-- 수정:2021-10-08 -->
+                <!-- 추천 챌린지 영역 추가 -->
+                <!-- 추천 챌린지 //-->
+                <section class="kb-sec goals-challenge dividing-space-bottom">                       
+                    <!-- [Chart Area] // -->                        
+                    <div class="chart-area mt40" id="bubbleChart01"></div>
+                    <!-- // [Chart Area] -->
+                    <div class="flex-box">
+                        <a href="@@webRoot/html/goal/mys_go_00_00_00.html" class="link-box_block link-arrow-after">
+                            <strong class="h4">김국민님에게 추천하는 챌린지 TOP3</strong>
+                        </a>
+                    </div>
+                    <div class="challenge-box content-swiper-wrap">
+                        <div class="swiper-container content-swiper t01 js-swiper" data-swiper-options="goalBestChallSwiperOptions">
+                            <script>
+                                var goalBestChallSwiperOptions = {
+                                    "pagination": {
+                                        "el": ".swiper-pagination"
+                                    },
+                                    "spaceBetween": 16,
+                                    "slidesPerView": "auto"
+                                };
+                            </script>
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide content-box">
+                                    <a href="@@webRoot/html/goal/mys_go_03_01_00.html" class="link-box_block challenge-tit">
+                                        <h3 class="h3">외식비 줄이기</h3>
+                                        <button type="button" class=""><span><i class="icon-link_24"></i></span></button>
+                                    </a>
+                                    <div class="challenge-info type2">
+                                        <div class="tit flex-box goals-desc">
+                                            <div class="left-cont">
+                                                <h4 class="spend-desc">남들보다 무려 두배이상!! 쓰고 있어요.<br><strong>소비를 줄여보세요.</strong></h4>
+                                                <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                                <div class="tooltip">
+                                                    <strong class="tit">비교그룹</strong>
+                                                    <div class="cont">나와 같은 연령대&amp;소득군의 사람들은?<br><br>연령대: 30대<br>월 소득: <span class="num" data-unit-after="만원">300</span>~<span class="num" data-unit-after="만원">500</span><br>성별: 남성</div>
+                                                    <button class="btn-close"><span>닫기</span></button>
+                                                </div>  
+                                            </div>  
+                                        </div>
+                                        <!-- 추가 수정 // -->
+                                        <div class="goals-now">
+                                            <p>목표기간<i></i>일주일</p>
+                                            <p>도전자<i></i><span class="num">1000</span>명</p>
+                                        </div>
+                                        <!-- // 추가 수정 -->
+                                        <div class="character-graph type2" data-theme="pay">
+                                            <div class="graph-area">
+                                                <span data-goal="80"><i><img src="@@webRoot/static/images/_temp/@progress_coffee.png" alt="커피"></i></span>
+                                            </div>
+                                            <div class="graph-txt">
+                                                <p class="start-txt">나 <strong class="num" data-unit-after="원">150,000</strong></p>
+                                            </div>
+                                            <div class="graph-area sub">
+                                                <span data-goal="50"></span>
+                                            </div>
+                                            <div class="graph-txt">
+                                                <p class="start-txt">다른사람 <strong class="num" data-unit-after="원">100,000</strong></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide content-box">
+                                    <a href="@@webRoot/html/goal/mys_go_03_01_00.html" class="link-box_block challenge-tit">
+                                        <h3 class="h3">홈쇼핑 줄이기</h3>
+                                        <button type="button" class=""><span><i class="icon-link_24"></i></span></button>
+                                    </a>
+                                    <div class="challenge-info type2">
+                                        <div class="tit flex-box goals-desc">
+                                            <div class="left-cont">
+                                                <h4 class="spend-desc">남들보다 꽤 많이 쓰고 있어요.<br><strong>소비를 줄여보세요.</strong></h4>
+                                                <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                                <div class="tooltip">
+                                                    <strong class="tit">비교그룹</strong>
+                                                    <div class="cont">나와 같은 연령대&amp;소득군의 사람들은?<br><br>연령대: 30대<br>월 소득: <span class="num" data-unit-after="만원">300</span>~<span class="num" data-unit-after="만원">500</span><br>성별: 남성</div>
+                                                    <button class="btn-close"><span>닫기</span></button>
+                                                </div>  
+                                            </div>  
+                                        </div>
+                                        <!-- 추가 수정 // -->
+                                        <div class="goals-now">
+                                            <p>목표기간<i></i>일주일</p>
+                                            <p>도전자<i></i><span class="num">1000</span>명</p>
+                                        </div>
+                                        <!-- // 추가 수정 -->
+                                        <div class="character-graph type2" data-theme="pay">
+                                            <div class="graph-area">
+                                                <span data-goal="50"><i><img src="@@webRoot/static/images/_temp/@progress_shopping.png" alt="쇼핑백"></i></span>
+                                            </div>
+                                            <div class="graph-txt">
+                                                <p class="start-txt">나는 <strong class="num" data-unit-after="원">150,000</strong></p>
+                                            </div>
+                                            <div class="graph-area sub">
+                                                <span data-goal="20"></span>
+                                            </div>
+                                            <div class="graph-txt">
+                                                <p class="start-txt">비교그룹은 <strong class="num" data-unit-after="원">100,000</strong></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide content-box">
+                                    <a href="@@webRoot/html/goal/mys_go_03_01_00.html" class="link-box_block challenge-tit">
+                                        <h3 class="h3">통신비 줄이기</h3>
+                                        <button type="button" class=""><span><i class="icon-link_24"></i></span></button>
+                                    </a>
+                                    <div class="challenge-info type2">
+                                        <div class="tit flex-box goals-desc">
+                                            <div class="left-cont">
+                                                <h4 class="spend-desc">남들보다 적게 쓰고 있지만<br>불필요한 지출은 <strong>줄여보세요.</strong></h4>
+                                                <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                                <div class="tooltip">
+                                                    <strong class="tit">비교그룹</strong>
+                                                    <div class="cont">나와 같은 연령대&amp;소득군의 사람들은?<br><br>연령대: 30대<br>월 소득: <span class="num" data-unit-after="만원">300</span>~<span class="num" data-unit-after="만원">500</span><br>성별: 남성</div>
+                                                    <button class="btn-close"><span>닫기</span></button>
+                                                </div>  
+                                            </div>   
+                                        </div>
+                                        <!-- 추가 수정 // -->
+                                        <div class="goals-now">
+                                            <p>목표기간<i></i>일주일</p>
+                                            <p>도전자<i></i><span class="num">1000</span>명</p>
+                                        </div>
+                                        <!-- // 추가 수정 -->
+                                        <div class="character-graph type2" data-theme="pay">
+                                            <div class="graph-area">
+                                                <span data-goal="50"><i><img src="@@webRoot/static/images/_temp/@progress_mobile.png" alt="휴대전화"></i></span>
+                                            </div>
+                                            <div class="graph-txt">
+                                                <p class="start-txt">나는 <strong class="num" data-unit-after="원">150,000</strong></p>
+                                            </div>
+                                            <div class="graph-area sub">
+                                                <span data-goal="50"></span>
+                                            </div>
+                                            <div class="graph-txt">
+                                                <p class="start-txt">비교그룹은 <strong class="num" data-unit-after="원">100,000</strong></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </section>
+                <!--// 추천 챌린지 -->
+
                 <!-- 카드 추천 //-->
-                <section class="kb-sec full customized-card-list dividing-space-bottom">
-                    <div class="trend-card">
+                <section class="kb-sec full customized-card-list"><!-- 수정:2021-10-08 --><!-- 클래스 제거 (dividing-space-bottom) -->
+                    <div class="trend-card no-space">
                         <div class="content-tit">
                             <strong class="h1">온라인쇼핑, 커피/음료, <br>백화점/아울렛</strong>
                             <p>지출이 많은 김국민님을 위한 <span class="c-blue">추천 카드</span></p>
@@ -156,48 +299,101 @@
                         <div class="content-tit flex-box">
                             <div class="tooltip-box"><strong class="h4">KB추천카드 Top<em class="num">5</em></strong> <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
                                 <!-- Tooltip (With title)-->
+                                <!-- 수정:2021-10-08 -->
+                                <!-- 툴팁 텍스트 수정 //-->
                                 <div class="tooltip">
-                                    <strong class="tit">KB추천카드란?</strong>
-                                    <div class="cont">고객님의 지출 소비 패턴을 분석해 가장 적합한 KB국민카드를 1위~5위까지 추천해드립니다. <br>매 월 1일, 지난달 지출 통계 기준으로 순위는 업데이트욉니다.</div>
+                                    <strong class="tit">KB추천카드기준</strong>
+                                    <div class="cont">고객님의 지출 소비 패턴과 선호 브랜드를 분석해 가장 적합한 KB국민카드를 1위~5위까지 추천드립니다. <br>매 월 1일, 지난달 지출 통계 기준으로 업데이트욉니다.</div>
                                     <button class="btn-close"><span>닫기</span></button>
                                 </div>
+                                <!--// 툴팁 텍스트 수정 -->
                             </div>
                             <a href="mys_ex_03_00_00.html" role="button" class="btn-text btn-more_link">더보기<span class="link-arrow">바로가기</span></a>
                         </div>
-                        <ul class="rank-list t01">
-                            <li class="rank">
-                                <a href="" class="link-box_block link-arrow-after">
-                                    <strong>KB국민 심플라이트 카드</strong>
-                                    <p class="tags"><span>#추천사유</span><span>#추천사유</span></p>
-                                </a>
-                            </li>
-                            <li class="rank">
-                                <a href="" class="link-box_block link-arrow-after">
-                                    <strong>KB국민 심플라이트 카드</strong>
-                                    <p class="tags"><span>#추천사유</span><span>#추천사유</span></p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="link-box_block link-arrow-after">
-                                    <strong>KB국민 심플라이트 카드</strong>
-                                    <p class="tags"><span>#추천사유</span><span>#추천사유</span></p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="link-box_block link-arrow-after">
-                                    <strong>KB국민 심플라이트 카드</strong>
-                                    <p class="tags"><span>#추천사유</span><span>#추천사유</span></p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="link-box_block link-arrow-after">
-                                    <strong>KB국민 심플라이트 카드</strong>
-                                    <p class="tags"><span>#추천사유</span><span>#추천사유</span></p>
-                                </a>
-                            </li>
-                        </ul>
+
+                        <!-- 수정:2021-10-08 -->
+                        <!-- tab 추가, tab content 추가 -->
+                        <div class="tab swiper-container">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide is-active"><a href="#target01">지출소비패턴별</a></li>
+                                <li class="swiper-slide"><a href="#target02">선호브랜드별</a></li>
+                            </ul>
+                        </div>
+                        <div class="tab_contents">
+                            <!-- 수정:2021-10-08 -->
+                            <!-- link-box_block 수정 (a -> button, data-call-modal값 추가) -->
+                            <div class="is-active">
+                                <ul class="rank-list t01">
+                                    <li class="rank">
+                                        <button class="link-box_block link-arrow-after" data-call-modal="obligationToNotify">
+                                            <strong>KB국민 심플라이트 카드</strong>
+                                            <p class="tags"><span>#추천사유</span><span>#추천사유</span></p>
+                                        </button>
+                                    </li>
+                                    <li class="rank">
+                                        <button class="link-box_block link-arrow-after" data-call-modal="obligationToNotify">
+                                            <strong>KB국민 심플라이트 카드</strong>
+                                            <p class="tags"><span>#추천사유</span><span>#추천사유</span></p>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="link-box_block link-arrow-after" data-call-modal="obligationToNotify">
+                                            <strong>KB국민 심플라이트 카드</strong>
+                                            <p class="tags"><span>#추천사유</span><span>#추천사유</span></p>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="link-box_block link-arrow-after" data-call-modal="obligationToNotify">
+                                            <strong>KB국민 심플라이트 카드</strong>
+                                            <p class="tags"><span>#추천사유</span><span>#추천사유</span></p>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="link-box_block link-arrow-after" data-call-modal="obligationToNotify">
+                                            <strong>KB국민 심플라이트 카드</strong>
+                                            <p class="tags"><span>#추천사유</span><span>#추천사유</span></p>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul class="rank-list t01">
+                                    <li class="rank">
+                                        <button class="link-box_block link-arrow-after" data-call-modal="obligationToNotify">
+                                            <strong>KB국민 심플라이트 카드1</strong>
+                                            <p class="tags"><span>#추천사유</span><span>#추천사유</span></p>
+                                        </button>
+                                    </li>
+                                    <li class="rank">
+                                        <button class="link-box_block link-arrow-after" data-call-modal="obligationToNotify">
+                                            <strong>KB국민 심플라이트 카드1</strong>
+                                            <p class="tags"><span>#추천사유</span><span>#추천사유</span></p>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="link-box_block link-arrow-after" data-call-modal="obligationToNotify">
+                                            <strong>KB국민 심플라이트 카드1</strong>
+                                            <p class="tags"><span>#추천사유</span><span>#추천사유</span></p>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="link-box_block link-arrow-after" data-call-modal="obligationToNotify">
+                                            <strong>KB국민 심플라이트 카드1</strong>
+                                            <p class="tags"><span>#추천사유</span><span>#추천사유</span></p>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="link-box_block link-arrow-after" data-call-modal="obligationToNotify">
+                                            <strong>KB국민 심플라이트 카드1</strong>
+                                            <p class="tags"><span>#추천사유</span><span>#추천사유</span></p>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- tab 추가, tab content 추가 -->
                     </div>
-                <!-- 서비스 배너 영역 //-->
+                    <!-- 서비스 배너 영역 //-->
                     <div class="notice-group">
                         <a href="mys_ex_03_00_00.html" rolee="button" class="link-box_block link-arrow-after notice-item">
                             <strong class="h4">나의 카드관리<span class="tag-label t03 round" data-state="less">부족</span></strong>
@@ -214,15 +410,18 @@
                             </p>
                         </a>
                     </div>
-                <!--// 서비스 배너 영역 -->
+                    <!--// 서비스 배너 영역 -->
                 </section>
                 <!--// 카드 추천 -->
+                
+                <!-- 수정:2021-10-08 -->
+                <!-- 개인정보동의 영역 삭제 -->
                 <!-- 개인정보동의 //-->
-                <section class="kb-sec link-to-agree">
+                <!-- <section class="kb-sec link-to-agree">
                     <a href="mys_ex_00_00_01.html" class="link-box_block link-arrow-after" role="button">
                         <i class="icon-check-agreement"></i>개인(신용)정보 제3자 제공 동의 관리
                     </a>
-                </section>
+                </section> -->
                 <!--// 개인정보동의 -->
             </main>
             <!-- // app-content -->
@@ -231,19 +430,11 @@
         <!-- // app-container -->
         <div class="layered">
             <!-- Modal // -->
-            <div class="modal" id="noticeAgreeToProvide">
-                <div class="modal_header">
-                    <strong class="tit">제3자(KB국민카드) 정보제공 동의 안내</strong>
-                </div>
-                <div class="modal_contents">
-                    <p>국민카드 보유고객님은 국민카드 내역을 포함한 지출관리 서비스를 이용하실 수 있습니다.</p>
-                    <p class="simple-message">마이데이터 시행 시, 전송요구권 행사를 통해 더욱 정교한 서비스를 제공할 예정입니다.<br>(2021년 12월 1일 예정)</p>
-                </div>
-                <div class="modal_buttons btn-area">
-                    <button class="btn-solid gray cancel" data-action="close"><span>취소</span></button>
-                    <a href="mys_ex_00_00_01_p.html" role="button" class="btn-solid ok"><span>확인</span></a>
-                </div>
-            </div>
+            <!-- 수정:2021-10-08 -->
+            <!-- 서비스 동의 안내 팝업 수정 -->
+            @@include('@@webRoot/html/expense/layered/mys_ex_00_00_01_p.html')
+            <!-- 금소법 안내문구 팝업 추가 -->
+            @@include('@@webRoot/html/expense/layered/mys_ex_03_00_01_p.html')
             <!-- // Modal -->
         </div>
     </div>
