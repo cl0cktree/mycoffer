@@ -335,8 +335,8 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .asset-lists .list-container i:last-child {@include iconBullet($direction: 'right', $width: 7px, $thick: 2px, $color: $kb-ui05);position: absolute; right: 26px; top: 50%; transform: translateY(-50%);}
 
 .asset-main-sec {position: relative;}
-.asset-main-sec .title h2 {display: inline-block;}
-.asset-main-sec .title h2 + .btn-question {position: relative; top: -3px;}
+.asset-main-sec .title h2 {display: inline-block; vertical-align: middle;}
+.asset-main-sec .title h2 + .btn-question {vertical-align: middle;}
 .asset-main-sec .title .btn-text.icon-arrow {position: absolute; right: 24px; top: 1px;}
 .asset-main-sec .title .btn-text.icon-arrow i {padding: 12px; margin: 0;}
 .asset-main-sec .section-text {margin: 10px 0 15px; @include text($text02, normal); color: $kb-ui02;}
@@ -400,6 +400,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .asset-total-solution .my-asset-more {margin-bottom: 0; padding-bottom: 0; border-bottom: 0;}
 .asset-total-solution .my-asset-more .more-container {min-height: 180px;}
 .asset-total-solution .my-asset-more .no-data {margin-top: 0;}
+.asset-total-solution .section-text em {color: $color-blue;}
 
 
 .asset-button {margin-bottom: 48px; padding-top: 0; padding-bottom: 0; border-bottom: 0; }
@@ -767,7 +768,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .register-box .r-wrap em {display: block; @include text($size: $text02,$weight : bold);}
 .register-box .r-wrap .btn-text {float: right; margin-top: 10px;}
 .register-box .r-wrap .btn-text span {font-size:14px;color:$kb-ui03;}
-.register-box .r-wrap .btn-text i {margin-right: 4px;}
+.register-box .r-wrap .btn-text i {margin-right: 4px; opacity: .5;}
 .register-box .register-type {margin: 0 -6px;}
 .register-box .register-type li {padding: 0 6px;}
 .register-box .register-type li i {margin-bottom: 4px;}
@@ -1414,8 +1415,8 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset-more button span {display: block; @include text($text03, normal); color: $kb-ui02;}
 .my-asset-more button .status {font-size: 12px;}
 .my-asset-more button .status.good {color: $color-blue;} // 많음, (자동차, 부동산)있음, (부채비중)없음
-.my-asset-more button .status.suitable {color: #009edd;} // (부채비중)적정
-.my-asset-more button .status.normal {color: #00a596;} // (부채비중)보통
+.my-asset-more button .status.suitable {color: #4abeff;} // (부채비중)적정
+.my-asset-more button .status.normal {color: #25ac16;} // (부채비중)보통
 .my-asset-more button .status.bad {color: $color-red;} // 적음, (자동차, 부동산)없음, (부채비중)주의
 .my-asset-more button i[class*=icon] {margin: 0 auto 4px;}
 .my-asset-more .more-content {display: none; position: absolute; left: 0; right: 0; top: 120px;}
@@ -1436,15 +1437,15 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset-more .emoti-msg {margin: 16px 0;}
 .my-asset-more .emoti-msg > span {display: inline-block; height: 24px; font-size: $text02; font-weight: bold; line-height: 24px; color: $kb-ui02;}
 .my-asset-more .emoti-msg > span .num {font-size: 17px;}
-.my-asset-more .emoti-msg > span::before {content: ''; display: inline-block; width: 24px; height: 24px; margin-right: 8px; background: url(../../static/images/asset/sp_emoti.png) no-repeat 0 0; background-size: 100px 25px; vertical-align: middle;}
-.my-asset-more .emoti-msg > span.lv1 {color: #4abeff;}
+.my-asset-more .emoti-msg > span::before {content: ''; display: inline-block; width: 32px; height: 32px; margin-right: 8px; background: url(../../static/images/asset/sp_emoti.png) no-repeat 0 0; background-size: 128px 32px; vertical-align: middle;}
+.my-asset-more .emoti-msg > span.lv1 {color: $color-blue;}
 .my-asset-more .emoti-msg > span.lv1::before {background-position: 0 0;}
-.my-asset-more .emoti-msg > span.lv2 {color: #31c09e;}
-.my-asset-more .emoti-msg > span.lv2::before {background-position: -25px 0;}
-.my-asset-more .emoti-msg > span.lv3 {color: #ffc107;}
-.my-asset-more .emoti-msg > span.lv3::before {background-position: -50px 0;}
-.my-asset-more .emoti-msg > span.lv4 {color: #ff5858;}
-.my-asset-more .emoti-msg > span.lv4::before {background-position: -75px 0;}
+.my-asset-more .emoti-msg > span.lv2 {color: #4abeff;}
+.my-asset-more .emoti-msg > span.lv2::before {background-position: -32px 0;}
+.my-asset-more .emoti-msg > span.lv3 {color: #25ac16;}
+.my-asset-more .emoti-msg > span.lv3::before {background-position: -64px 0;}
+.my-asset-more .emoti-msg > span.lv4 {color: $color-red;}
+.my-asset-more .emoti-msg > span.lv4::before {background-position: -96px 0;}
 .my-asset-more .no-data {margin-top: 24px;}
 
 .my-asset.solution .key-point{padding-bottom:48px;margin-bottom: 48px; border-bottom:10px solid $kb-ui10;}
@@ -1540,7 +1541,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 // 펀드케어 서비스
 .about-fund-care {padding-top: 12px;}
 .about-fund-care h2 {margin-bottom: 13px; font-size: 28px; line-height: 39px; font-weight: normal;}
-.about-fund-care p {margin-bottom: 22px; font-size: 16px; line-height: 22px;}
+.about-fund-care p {/* margin-bottom: 22px; */ font-size: 16px; line-height: 22px;}
 .about-fund-care .visual img {display: block; width: 327px; margin: 0 auto;}
 
 .my-fund-lists {position: relative;}
@@ -1589,7 +1590,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 
 .kb-fund-tv {margin-bottom: 24px;}
 .kb-fund-tv-banner {position: relative; display: block; padding: 24px; color: $kb-ui02; background-color: $kb-ui10; border-radius: 8px;}
-.kb-fund-tv-banner::after {content: ''; position: absolute; right: 20px; bottom: 26px; width: 132px; height: 65px; background-image: url(../images/asset/kb_fund_tv.png); background-size: 100% 100%;}
+.kb-fund-tv-banner::after {content: ''; position: absolute; right: 0; bottom: 0; width: 149px; height: 101px; background-image: url(../images/asset/kb_fund_tv.png); background-size: 100% 100%;}
 .kb-fund-tv-banner .title {display: block; @include text($text01, bold);}
 .kb-fund-tv-banner .subtxt {display: block; @include text($text02, normal);}
 

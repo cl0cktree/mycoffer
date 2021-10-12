@@ -146,7 +146,7 @@
                 shared: true,
                 useHTML: true,
                 headerFormat: '<div style="border-bottom:1px dotted #ccc;font-size:1.4rem;font-weight:bold;font-family:Roboto;padding-bottom:.5rem;margin-bottom:.5rem;">{point.key}</div>' + '<ul class="chart-tooltip">',
-                pointFormat: '<li><div style="color:{series.color};">{series.name}</div> <div><b class="num" style="font-size:13px;">{point.y:,.0f}</b><span class="unit">원</span></div></li>',                                               
+                pointFormat: '<li><div style="color:{series.color};">{series.name}</div> <div><b class="num" style="font-size:13px;">{point.y:,.0f}</b><span class="unit" style="vertical-align:0">원</span></div></li>',                                               
                 footerFormat: '</ul>',
                 padding: 8,
                 shadow: true,
@@ -186,13 +186,14 @@
             },{
                 name: "공시가격",
                 color: '#dde1e4',
-                type: 'arearange',
+                type: 'areasplinerange',
                 lineWidth: 0,
                 fillOpacity: .5,
+                
                 zIndex: 0,
                 data: [[706000000,906000000], [507000000,707000000], [411000000,611000000], [633000000,833000000], [21000000,221000000], [267000000,467000000]],
                 tooltip: {
-                    pointFormat: '<li><div style="color#333;">{series.name} </div> <div><b class="num" style="font-size:13px;">{point.low:,.0f}~{point.high:,.0f}</b><span class="unit">원</span></div></li>',
+                    pointFormat: '<li><div style="color#333;">{series.name} </div> <div><b class="num" style="font-size:13px;">{point.low:,.0f}~{point.high:,.0f}</b><span class="unit" style="vertical-align:0">원</span></div></li>',
                 }
             }]
         });

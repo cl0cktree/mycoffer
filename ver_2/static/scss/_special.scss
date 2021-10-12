@@ -104,7 +104,7 @@
 .credit-score-up .keyvisual {position: relative;}
 .credit-score-up .keyvisual span {display: block; color: $kb-ui03; @include text($text02, normal);}
 .credit-score-up .keyvisual strong {display: block; padding: 0; margin-bottom: 10px; font-size: 28px; line-height: 39px; font-weight: bold; color: $kb-ui02;}
-.credit-score-up .keyvisual::after {content: ''; display: block; margin: 23px auto 20px; width: 199px; height: 153px; background: url(../images/special/img_up.png) no-repeat 0 0 / 100% 100%;}
+.credit-score-up .keyvisual::after {content: ''; display: block; margin: 23px auto 32px; width: 327px; height: 180px; background: url(../images/special/img_up.png) no-repeat 0 0 / 100% 100%;}
 .credit-score-up + .toggle-notice {margin-top: 50px;}
 
 .credit-score-complete {position: relative;}
@@ -295,6 +295,7 @@
 .credit-compare .btn-question {position: relative; top: -2px;}
 .credit-compare .summary {margin: 10px 0 15px; @include text($text02, normal);}
 .credit-compare .summary .num {font-size: 17px;}
+.credit-compare .summary .num::after {font-weight: bold;}
 .credit-compare .summary .amount {color: $color-blue; font-weight: bold;}
 .credit-compare + .kb-sec > .simple-message {margin-top: -25px;}
 
@@ -304,6 +305,7 @@
 .compare-bar-area .row .num::after {font-size: 13px;}
 .compare-bar-area .row .text {position: absolute; font-size: 13px; line-height: 32px;}
 .compare-bar-area .row .bar-zone {margin: 0 45px 0 70px; padding-top: 10px;}
+.compare-bar-area .row .bar-zone::before {content: ''; display: block; margin-bottom: -12px; left: 70px; right: 45px; height: 12px; background-color: $kb-ui09; border-top-right-radius: 12px; border-bottom-right-radius: 12px;}
 .compare-bar-area.has-suffix .row .bar-zone {margin-right: 65px;}
 .compare-bar-area .row .bar {display: block; height: 12px; border-top-right-radius: 12px; border-bottom-right-radius: 12px;}
 .compare-bar-area .row .value {position: absolute; top: 50%; right: 2px; transform: translateY(-50%); font-size: 13px;}
@@ -311,15 +313,15 @@
 .compare-bar-area .row.me {color: $kb-ui02;}
 .compare-bar-area .row.avg {color: $kb-ui02;}
 .compare-bar-area .row.all {color: $kb-ui05;}
-.compare-bar-area .row.me .bar {background-color: #ffba53;}
-.compare-bar-area .row.avg .bar {background-color: #ff8a71;}
-.compare-bar-area .row.all .bar {background-color: #c6cbd0;}
+.compare-bar-area .row.me .bar {background-color: #ffcf53;}
+.compare-bar-area .row.avg .bar {background-color: #ffab53;}
+.compare-bar-area .row.all .bar {background-color: #fa844e;}
 .compare-bar-area .row.me .value {font-weight: bold;}
 
 .credit-point .button-area {margin-top: 28px;}
 .credit-point .compare-bar-area .row.avg {color: $kb-ui05;}
-.credit-point .compare-bar-area .row.me .bar {background-color: #ffba53;}
-.credit-point .compare-bar-area .row.avg .bar {background-color: $kb-ui07;}
+.credit-point .compare-bar-area .row.me .bar {background-color: #ffcf53;}
+.credit-point .compare-bar-area .row.avg .bar {background-color: #ffab53;}
 
 .my-credit-power {margin-bottom: 48px;}
 .my-credit-power h2 {float: left; display: inline-block; margin-bottom: 15px;}

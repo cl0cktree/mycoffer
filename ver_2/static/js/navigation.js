@@ -1,4 +1,7 @@
 
+//Swiper fix 6 - 7
+$('.swiper').addClass('swiper-container');
+
 var $window = $(window);
 var winW = $window.outerWidth();
 var winH = $window.outerHeight();
