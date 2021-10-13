@@ -1,0 +1,158 @@
+<!-- [MYS_AS_11_01_02_P2] 작성자: 누리어 시스템 김홍범 -->
+<!DOCTYPE html>
+<html lang="ko" data-channel="ch_star">
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "Wish House 등록 | 자산"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header //-->
+		@@include('@@webRoot/html/_include/app-integrated-header.html',{
+			'pageTit' :'Wish House 등록',
+			'type':''
+		}) 
+		<!-- // app-header -->
+
+		<!-- app-container //-->
+		<div class="app-container">
+
+			<!-- app-content // -->
+			<main class="app-content my-asset">						
+				<section class="kb-sec selected-address">
+					<div class="require-txt">						
+						<p class="simple-message">표시된 항목은 필수 입력 사항입니다.</p>
+					</div>
+					<div class="my-address-box">
+						<h2 class="tit">송도 더샵센트럴 시티 1단지</h2>
+						<p class="address">인천 연수구 송도국제대로 261</p>
+					</div>
+				</section>
+				<section class="kb-sec my-house">
+					<h2 class="is-hidden">기본정보</h2>
+					<div class="selected">
+						<div class="kb-form_multi" data-status="">
+							<strong class="tit">동호</strong>
+							<div class="dbl-line">
+								<div class="kb-form">
+									<label for="aptNumber">동호</label>
+									<div class="kb-form_inner form-select">
+										<button type="button" class="selected-option">동 선택</button>
+										<select name="" id="aptNumber" title="동 선택">
+											<option value="">동 선택</option>
+											<option value="">1</option>
+											<option value="">2</option>
+											<option value="">3</option>
+											<option value="">4</option>
+										</select>
+									</div>
+								</div>
+								<!-- api 정보 있음 //
+								<div class="kb-form">
+									<div class="kb-form_inner form-select">
+										<button type="button" class="selected-option">호 선택</button>
+										<select name="" id="aptNumber_2" title="호 선택">
+											<option value="">호 선택</option>
+											<option value="">1</option>
+											<option value="">2</option>
+											<option value="">3</option>
+											<option value="">4</option>
+										</select>
+									</div>
+								</div>
+								// api 정보 있음 -->
+
+								<!-- api 정보 없음 // -->
+								<div class="kb-form" data-status="">
+									<label for="addedFnc01">호 입력</label>
+									<div class="kb-form_inner form-text">
+										<input type="text" inputmode="numeric" id="addedFnc01" placeholder="" maxlength="6" value="" data-unit="호">
+										<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+									</div>
+								</div>
+								<!-- // api 정보 없음 -->
+							</div>
+						</div>
+						<div class="kb-form" data-status="">
+							<label for="formSelectSample02" class="required inline">면적</label>
+							<button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+							<div class="tooltip">
+                                <strong class="tit">면적이란?</strong>
+                                <div class="cont">
+									면적정보는 공급면적/전용면적 기준입니다.
+                                </div>
+                                <button class="btn-close"><span>닫기</span></button>
+                            </div>
+							<div class="kb-form_inner form-select">
+								<button type="button" class="selected-option">선택 option 1</button>
+								<select name="" id="formSelectSample02" title="면적">
+									<option value="">면적</option>
+									<option value="" selected="">46.28㎡ 방1개, 욕실1개</option>
+									<option value="">46.28㎡ 방1개, 욕실1개</option>
+									<option value="">46.28㎡ 방1개, 욕실1개</option>
+									<option value="">46.28㎡ 방1개, 욕실1개</option>
+								</select>
+							</div>
+						</div>
+						<div class="kb-form" data-status="">
+							<label for="nickname">별명</label>
+							<div class="kb-form_inner form-text">
+								<input type="text" id="nickname" maxlength="10" value="" placeholder="최대 10자">
+								<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="kb-sec select-account">
+					<h2 class="h4">준비계좌 선택</h2>
+					<ul class="list">
+						<li>
+							<span class="form-checkbox"><input type="checkbox" id="loanAccount_1" name="radioSample02"><label for="loanAccount_1">KB국민은행 주택청약종합저축</label></span>
+							<dl class="description-list">
+								<dt>
+									<strong class="account num">81691604111122</strong>
+								</dt>
+								<dd><strong class="amount"><span class="num" data-unit-after="원">13,000,000</span></strong></dd>
+							</dl>
+						</li>
+						<li>
+							<span class="form-checkbox"><input type="checkbox" id="loanAccount_2" name="radioSample02"><label for="loanAccount_2">신한은행 리츠 부동산 종류형 투자신탁(재간접형)-AE</label></span>
+							<dl class="description-list">
+								<dt>
+									<strong class="account num">81691604111122</strong>
+								</dt>
+								<dd><strong class="amount"><span class="num" data-unit-after="원">13,000,000</span></strong></dd>
+							</dl>
+						</li>
+					</ul>
+				</section>
+				<div class="sticky-bottom">
+					<div class="btn-area">
+						<button class="btn-solid gray"><span>이전</span></button>
+						<button type="button" class="btn-solid" data-action="close"><span>등록</span></button>
+					</div>
+				</div>
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (modal, bottom sheet) // -->
+		<div class="layered">
+		</div>
+		<!-- // Layer (modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+
+</body>
+
+</html>

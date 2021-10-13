@@ -87,7 +87,20 @@
                             <dd class="amount"><span class="num" data-unit-after="원">531,345,235</span></dd>
                             <dt>총부채</dt>
                             <dd class="amount"><span class="num" data-unit-after="원">531,345,235</span></dd>
-                            <dt>순 자산</dt>
+                            <!-- 수정:2021-10-13 -->
+                            <!-- 툴팁 추가 //-->
+                            <dt>
+                                <div>
+                                    순 자산 <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                                    <!-- Tooltip (With title)-->
+                                    <div class="tooltip">
+                                        <strong class="tit">순 자산</strong>
+                                        <div class="cont">나의 전체 자산에서 부채(대출, 카드이용금액 등)를 차감한 금액입니다.</div>
+                                        <button class="btn-close"><span>닫기</span></button>
+                                    </div>
+                                </div>
+                            </dt>
+                            <!-- //툴팁 추가 -->
                             <dd class="amount"><span class="num" data-unit-after="원">531,345,235</span></dd>
                         </dl>
                         <div class="graph-area line-type">
@@ -141,6 +154,12 @@
                     <div class="highcharts-box mt16">
                         <div class="graph-area">
                             <figure class="highcharts-figure">
+                                <!-- 수정:2021-10-13 --><!-- 타이틀 추가 -->
+                                <div class="content-box-info">
+                                    <div class="content-box-tit">
+                                        <h4 class="h4">지출금액 분석 <span class="tag-label t02" data-state="wait">최근 6개월</span></h4>
+                                    </div>
+                                </div>
                                 <!-- [chart area] //-->
                                 <!--
                                     [차트 디자인 정보]
@@ -155,7 +174,9 @@
                                 <div class="chart-area" id="">
                                     <img class="temp" src="../../static/images/_temp/chart_ex0405.png" alt="차트 예시 이미지">
                                 </div>
-                                <div class="legend-unit"><span class="basic" data-type="dash">평균지출금액 <em class="num" data-unit-after="원">2,720,000</em></span></div>
+                                <!-- 수정:2021-10-13 -->
+                                <!-- legend 텍스트 수정 (평균지출금액 > 월평균지출금액) -->
+                                <div class="legend-unit"><span class="basic" data-type="dash">월평균지출금액 <em class="num" data-unit-after="원">2,720,000</em></span></div>
                                 <!--// [chart area] -->
                             </figure>
                         </div>
@@ -180,28 +201,30 @@
                                     <img class="temp" src="../../static/images/_temp/chart_ex0401.png" alt="차트 예시 이미지">
                                 </div>
                                 <div class="legend-unit t01 more-view-box">
+                                    <!-- 수정:2021-10-13 -->
+                                    <!-- legend 색상 변경을 위한 class 수정 //-->
                                     <dl>
-                                        <dt class="yellow" class="more-view-item" data-view-option="show"><span><em class="num">1</em>위</span>식비</dt>
+                                        <dt class="cate1" class="more-view-item" data-view-option="show"><span><em class="num">1</em>위</span>식비</dt>
                                         <dd class="more-view-item" data-view-option="show">
                                             <span class="amount"><em class="num" data-unit-after="원">1,000,000</em></span> &sol;
                                             <span><em class="num">24</em>건</span>
                                         </dd>
-                                        <dt class="apricot" class="more-view-item" data-view-option="show"><span><em class="num">2</em>위</span>여행</dt>
+                                        <dt class="cate2" class="more-view-item" data-view-option="show"><span><em class="num">2</em>위</span>여행</dt>
                                         <dd class="more-view-item" data-view-option="show">
                                             <span class="amount"><em class="num" data-unit-after="원">600,000</em></span> &sol; 
                                             <span><em class="num">24</em>건</span>
                                         </dd>
-                                        <dt class="pink" class="more-view-item" data-view-option="show"><span><em class="num">3</em>위</span>술&sol;유흥</dt>
+                                        <dt class="cate3" class="more-view-item" data-view-option="show"><span><em class="num">3</em>위</span>술&sol;유흥</dt>
                                         <dd class="more-view-item" data-view-option="show">
                                             <span class="amount"><em class="num" data-unit-after="원">250,000</em></span> &sol; 
                                             <span><em class="num">24</em>건</span>
                                         </dd>
-                                        <dt class="cherryred" class="more-view-item" data-view-option="show"><span><em class="num">4</em>위</span>반려동물</dt>
+                                        <dt class="cate4" class="more-view-item" data-view-option="show"><span><em class="num">4</em>위</span>반려동물</dt>
                                         <dd class="more-view-item" data-view-option="show">
                                             <span class="amount"><em class="num" data-unit-after="원">120,000</em></span> &sol; 
                                             <span><em class="num">24</em>건</span>
                                         </dd>
-                                        <dt class="lightpurple" class="more-view-item" data-view-option="show"><span><em class="num">5</em>위</span>뷰티</dt>
+                                        <dt class="cate5" class="more-view-item" data-view-option="show"><span><em class="num">5</em>위</span>뷰티</dt>
                                         <dd class="more-view-item" data-view-option="show">
                                             <span class="amount"><em class="num" data-unit-after="원">120,000</em></span> &sol; 
                                             <span><em class="num">24</em>건</span>
@@ -272,6 +295,7 @@
                                             <span><em class="num">7</em>건</span>
                                         </dd>
                                     </dl>
+                                    <!--// legend 색상 변경을 위한 class 수정 -->
                                     <div class="btn-area center mt20">
                                         <button class="btn-more-plus btn-more-view center"><span>더보기</span></button><!-- [D] 2021-09-06 수정 : 더보기 버튼 수정 -->
                                     </div>
@@ -279,6 +303,36 @@
                                 <!--// [chart area] -->
                             </figure>
                         </div>
+                        
+                        <!-- 수정:2021-10-13 -->
+                        <!-- 정기지출 분석 영역 추가 //-->
+                        <div class="graph-area">
+                            <figure class="highcharts-figure">
+                                <div class="content-box-info">
+                                    <div class="content-box-tit">
+                                        <h4 class="h4">정기지출 분석 <span class="tag-label t02" data-state="wait">최근 6개월</span></h4>
+                                    </div>
+                                </div>
+                                <!-- [chart area] //-->
+                                <!--
+                                    [차트 디자인 정보]
+                                    * 그래프(막대) 색상(컬러별)
+                                    - 노랑 : #ffba53;
+                                    - 회색 : #c6cbd0;
+
+                                    - 차트 텍스트 컬러/크기 : #8c949e/16px
+                                    - legend 텍스트 컬러/크기 : #26282c/14px
+                                    - dataLabel 텍스트 컬러/크기 : #26282c/14px
+                                -->
+                                <div class="chart-area" id="">
+                                    <img class="temp" src="../../static/images/_temp/chart_ex0409.png" alt="차트 예시 이미지">
+                                </div>
+                                <div class="legend-unit"><span class="basic" data-type="dash">월평균정기지출금액 <em class="num" data-unit-after="원">5,200,000</em></span></div>
+                                <!--// [chart area] -->
+                            </figure>
+                        </div>
+                        <!--// 정기지출 분석 영역 추가 -->
+
                         <div class="graph-area">
                             <figure class="highcharts-figure">
                                 <div class="content-box-info">

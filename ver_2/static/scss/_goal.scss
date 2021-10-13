@@ -279,7 +279,7 @@
 .challenge-box .challenge-info .tit .tit-area .hash span{display:inline-block;}
 .challenge-box .challenge-info .tit .tit-area .hash span + span{margin-left:5px;}
 .challenge-box .challenge-info .tit .tit-area .tit{@include text($size:$text02,$weight:bold);color:$color-blue;width:calc(100% - 10rem);} // 텍스트 영역 수정
-.challenge-box .challenge-info .tit .tit-area > i{position:absolute;bottom:0;right:0;width:10rem;height:10rem;} // top -> bottom 변경
+.challenge-box .challenge-info .tit .tit-area > i{position:absolute;bottom:-1rem;right:-1rem;width:10rem;height:10rem;} // top -> bottom 변경
 .challenge-box .challenge-info > strong{position:relative;}
 .challenge-box .challenge-info strong{font-weight:bold;}
 .challenge-box .challenge-info strong .num:after{font-size:$text03;vertical-align:0;font-weight:inherit;}
@@ -363,7 +363,9 @@
 .goals-state li{position:relative;display:flex;justify-content:space-between;padding:1.4rem 1.5rem 1.4rem 5.5rem;border:1px solid $kb-ui08;border-radius:2px;font-size:14px;line-height:22px;border-radius:.8rem;}
 .goals-state li + li{margin-top:10px;}
 .goals-state li .info > i{position:absolute;top:50%;left:1.5rem;transform:translateY(-50%);}
-.goals-state li .list-tit{display:block;font-weight:bold;font-size:$text02;}
+.goals-state li .info{width:calc(100% - 7rem);}
+.goals-state li .info .tag-name{display:block;}
+.goals-state li .list-tit{display:block;font-weight:bold;font-size:$text02;@include ellipsis();}
 // .goals-state li > a{position:absolute;width:100%;height:100%;top:0;left:0}
 .goals-state li .stamp{display:block;height:2.4rem;line-height:2.4rem;padding:0 1.2rem;font-size:1.3rem;border-radius:5rem;position:absolute;background:$color-blue;color:#fff;right:20px;top:50%;transform:translateY(-50%);}
 .goals-state li .stamp[data-status=fail]{background:$kb-ui05;}

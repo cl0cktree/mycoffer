@@ -701,6 +701,58 @@
                         </ul>
                     </div>
                 </section>
+                <!-- 2021-10-14 추가 // -->
+                <section class="kb-sec prod-has-not">
+                    <h4 class="h4">미보유 상품추천</h4>
+                    <p class="annotation-txt">
+                        고객님께서 가입하지 않은 보험상품 중 <br>
+                        온라인으로 가입하실 수 있는 상품입니다.<br>
+                        (KB국민은행 온라인 방카슈랑스상품)
+                    </p>
+                    <div class="guarantee-traffic-light">
+                        <ul class="grid-list" data-col="3">
+                            <li data-status="possession">
+                                <!-- data-status= possession(보유)/not_possessed(미보유) -->
+                                <span>상해보험</span>
+                            </li>
+                            <li data-status="not_possessed">
+                                <button type="button" title="미보유" data-action="moveKBStarBanking"><!-- 스타뱅킹이동 -->
+                                    <span>치아보험</span>
+                                </button>
+                            </li>
+                            <li data-status="not_possessed">
+                                <button type="button" title="미보유" data-action="moveDetailPage"><!-- 상세페이지이동 -->
+                                    <span>암보험</span>
+                                </button>
+                            </li>
+                            <li data-status="not_possessed">
+                                <button type="button" title="미보유">
+                                    <span>어린이보험</span>
+                                </button>
+                            </li>
+                            <li data-status="possession">
+                                <span>여행자보험</span>
+                            </li>
+                            <li data-status="possession">
+                                <span>화재/재물보험</span>
+                            </li>
+                            <li data-status="possession">
+                                <span>연금저축보험</span>
+                            </li>
+                            <li data-status="not_possessed">
+                                <button type="button" title="미보유">
+                                    <span>연금보험</span>
+                                </button>
+                            </li>
+                            <li data-status="not_possessed">
+                                <button type="button" title="미보유">
+                                    <span>저축보험</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- // 2021-10-14 추가 -->
             </main>
             <!-- // app-content -->
 
@@ -781,6 +833,24 @@
                 }
             });
         });
+        // 2021-10-14 start
+        $('button[data-action=moveDetailPage]').on('click', function () {
+            modalPopup({
+                title: "",
+                message: "선택한 상품의 상세 페이지로 이동합니다.",
+                type: "confirm",
+                textOkButton: "확인",
+                textCancelButton: "취소",
+                onOk: function () {
+
+                },
+                onCancel: function () {
+
+                }
+            });
+        });
+        // 2021-10-14 end
+
         $('button[data-action=chartShow]').on('click', function () {
             $(this).hide();
             gfn_layered.open('bsPersonInfoCollection');
@@ -812,6 +882,8 @@
         $('body').on('click', '.more-view-box .btn-more-view, .list-area .tab button', function () {
             currentTxtPosition('.my-asset .more-view-box .percentage-graph.type2');
         })//2021-09-16 수정
+    
+        
 
 
         // highchart 공통 options 하이차트 UI 추가 start

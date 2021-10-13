@@ -52,34 +52,33 @@
 					</dl>
 
 					<div class="asset-selector">
+						<!-- 추가 수정 2021-10-13 // -->
 						<div class="asset-item">
+							<span class="label-txt">
+								<span class="dot car"></span>
+								<span class="text">My Car 자산</span>
+							</span>
 							<span class="btn-switch label-front">
 								<input type="checkbox" id="toggleMyCar" checked="">
 								<label for="toggleMyCar">
-									<span class="dot car"></span>
-									<span class="text">My Car 자산</span>
 									<span class="amount"><span class="num car" data-unit-after="만원"></span></span>
 								</label>
 							</span>
 						</div>
 						<div class="asset-item">
+							<span class="label-txt">
+								<span class="dot asset"></span>
+								<span class="text">Wish Car 준비자산</span>
+								<a class="modify-link" href="#">수정</a>
+							</span>
 							<span class="btn-switch label-front">
 								<input type="checkbox" id="toggleMyAsset" checked="">
 								<label for="toggleMyAsset">
-									<span class="dot asset"></span>
-									<span class="text">Wish Car 준비자산</span><!-- 추가 수정 -->
 									<span class="amount"><span class="num asset" data-unit-after="만원"></span></span>
 								</label>
-								<a class="modify-link" href="#">수정</a><!-- 추가 수정 2021-10-06 -->
 							</span>
-							<!-- 추가 수정 2021-10-06 // -->
-							<script>
-								$(window).on("load resize", function() {
-									$(".modify-link").css("left", $("label[for=toggleMyAsset] .text").innerWidth() + 10);
-								});
-							</script>
-							<!-- // 추가 수정 2021-10-06 -->
 						</div>
+						<!-- // 추가 수정 2021-10-13 -->
 					</div>
 
 					<p class="simple-message">실제 중고차 시세는 달라질 수 있습니다.</p>

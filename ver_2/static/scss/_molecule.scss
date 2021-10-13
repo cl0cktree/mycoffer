@@ -69,7 +69,7 @@
 //바닥 고정 메뉴
 .other-login{position:fixed;bottom:0;left:0;z-index:$level40;width:100%;padding-top:12px;padding-bottom:12px;text-align:center;background-color:$kb-ui11;}
 .other-login .btn-text span{@include text($size:$text03,$weight:bold);padding:1px 0;}
-.other-login .btn-text i{width:2rem;height:2rem;background:url(../images/common/common.png) no-repeat -44px -20px;background-size:160px;transform:rotate(180deg);margin-left:4px;}
+.other-login .btn-text i{width:2rem;height:2rem;background:url(../images/common/common.png) no-repeat -44px -20px;background-size:160px;transform:scale(0.8) rotate(180deg);margin-left:4px;}
 .certificate-center{position:fixed;bottom:45px;left:0;z-index:$level40;width:100%;padding:12px 0;text-align:center;background-color:$kb-ui11;}
 .certificate-center .btn-text span{@include text($size:$text03,$line-height:1);color:$kb-ui03;}
 
@@ -183,7 +183,10 @@ ul.radio-group > li + li{margin-top:20px;}
 
 .kb-form > .label,
 .kb-form > label{@include text($size: 16px);display:block;position:relative;top:0;width:100%;min-height:26px;padding:7px 2px 0 2px;color:$kb-ui04;background-color:$kb-ui11;white-space:nowrap;}
-.kb-form > label.inline{display:inline;}
+.kb-form > label.inline{float:left;width:auto;}
+.kb-form > label.inline + .btn-question{margin-top:8px}
+.kb-form > label.inline ~ .kb-form_inner{clear:both;}
+//.kb-form > label.inline{display:inline;}
 //.kb-form > label ~ .tooltip{left:0;right:0;}
 
 .kb-form_inner{display:flex;align-items:center;position:relative;width:100%;padding-top:5px;padding-left:2px;padding-right:2px;padding-bottom:5px;border-bottom:2px solid #d4c3a6;}
@@ -628,13 +631,10 @@ ul.radio-group > li + li{margin-top:20px;}
 
 // 거래내역
 .credit-list-tit{display:block;padding-bottom:1.6rem;border-bottom:1px solid $kb-ui04}
-.credit-list-tit + .credit-list-amount{margin-top:0.4rem;border-top:0;border-bottom-color:$kb-ui07}
+.credit-list-tit + .credit-list-amount{border-top:0;border-bottom-color:$kb-ui07} // credit-list-amount margin->padding 수정
 .credit-list + .credit-list-tit{margin-top:4.8rem}
-.credit-list-amount{padding-top:1rem}
-.credit-list-amount{padding:0.5rem 0;border-top:1px solid $kb-ui09;border-bottom:1px solid $kb-ui09}
-.credit-list-amount dt{margin:0.6rem 0}
+.credit-list-amount{padding:1.4rem 0;border-top:1px solid $kb-ui09;border-bottom:1px solid $kb-ui09}
 .credit-list-amount .amount{line-height:1.8}
-// .credit-list-amount .amount .num[data-unit-after]::after{font-size:1.8rem}
 .credit-list-amount .amount span{font-size:1.9rem;font-weight:bold}
 .credit-list-amount .income .num,
 .credit-list-amount .num.income{color:$color-blue}

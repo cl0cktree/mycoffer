@@ -1,0 +1,1231 @@
+<!-- 지출 > highchart samples (작성자: 누리어 시스템 김삼희) -->
+<!-- 패턴 디자인 미적용 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "highchart samples | 지출"
+    })
+    <style>
+        .app h1{margin-top:20px;padding:20px 0;font-weight:bold;text-align:center;background-color:#ffcf53}
+        .app h2{margin-bottom:20px;padding:20px;font-weight:bold;background-color:#eaeaea}
+        .app section + h2{margin-top:20px}
+    </style>
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-container //-->
+        <div class="app-container">
+            <!-- app-content // -->
+            <main class="app-content expense-home">
+
+<!-- [MYS_EX_00_00_00] 지출 > 홈 //-->
+                <h1>[MYS_EX_00_00_00]</h1>
+                <h2>지출 > 홈</h2>
+                <!-- 지출 요약 영역 //-->
+                <section class="kb-sec monthly-expense-guide">
+                    <a href="mys_ex_01_00_00.html" class="link-box_block">
+                        <div class="content-box no-shadow">
+                            <div class="highcharts-box">
+                                <div class="graph-area">
+                                    <figure class="highcharts-figure">
+                                        <div class="chart-tit">
+                                            <h4 class="h4"><strong>김국민</strong>님의 월간지출추이
+                                                <span class="date num">(2021.08.01 ~ 2021.08.10)</span>
+                                            </h4>
+                                        </div>
+                                        <!-- [chart area] //-->
+                                        <div class="chart-area" id="expenseHomeColumnChart"></div>
+                                        <div class="legend-unit">
+                                            <span class="basic" data-type="dash">월평균지출금액 <em class="num" data-unit-after="원">3,200,000</em></span>
+                                        </div>
+                                        <!--// [chart area] -->
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </section>
+                <!--// 지출 요약 영역 -->
+<!--// [MYS_EX_00_00_00] 지출 > 홈 -->
+
+<!-- [MYS_EX_01_00_00] 지출 > 가계부 //-->
+                <h1>[MYS_EX_01_00_00]</h1>
+                <h2>지출 > 가계부 > 월간 지출 추이</h2>
+                <section class="kb-sec">
+                    <div class="highcharts-box">
+                        <div class="graph-area">
+                            <figure class="highcharts-figure">
+                                <div class="chart-tit">
+                                    <h4 class="h4">월간 지출 추이</h4>
+                                </div>
+                                <!-- [chart area] //-->
+                                <div class="chart-area" id="expenseAccountbookHomeColumn"></div>
+                                <div class="legend-unit">
+                                    <span class="basic" data-type="dash">월평균지출금액 <em class="num" data-unit-after="원">4,665,210</em></span>
+                                </div>
+                                <!--// [chart area] -->
+                            </figure>
+                        </div>
+                    </div>
+                </section>
+
+                <h2>지출 > 가계부 > 이번달 소비 패턴</h2>
+                <section class="kb-sec">
+                    <div class="highcharts-box">
+                        <div class="graph-area">
+                            <figure class="highcharts-figure">
+                                <div class="chart-tit">
+                                    <h4 class="h4">이번달 소비 패턴</h4>
+                                    <p class="total-summary">이번달 항목명항목명항목명항목명 지출이 많았어요</p>
+                                </div>
+                                <!-- [Chart Area] // -->
+                                <div class="chart-area" id="expenseAccountbookHomeBubble"></div>
+                                <!--// [chart area] -->
+                            </figure>
+                        </div>
+                    </div>
+                </section>
+<!--// [MYS_EX_01_00_00] 지출 > 가계부 -->
+
+<!-- [MYS_EX_02_00_00] 지출 > 정기지출 //-->
+                <h1>[MYS_EX_02_00_00]</h1>
+                <h2>지출 > 정기지출 > 월간 정기지출 추이</h2>
+                <section class="kb-sec">
+                    <div class="graph-area">
+                        <figure class="highcharts-figure">
+                            <h4 class="h4">월간 정기지출 추이</h4>
+                            <p class="total-summary"><strong class="emphasis">김국민</strong>님 이번달 정기지출이 많네요.<br>조금 줄여보는 건 어떨까요?</p>
+                            <!-- [chart area] //-->
+                            <div class="chart-area" id="regularExpenseHomeColumn"></div>
+                            <div class="legend-unit">
+                                <span class="basic" data-type="dash">월평균정기지출금액 <em class="num" data-unit-after="원">4,665,210</em></span>
+                            </div>
+                            <!--// [chart area] -->
+                        </figure>
+                    </div>
+                </section>
+
+                <h2>지출 > 정기지출 > 가장 많이 이용하는 인기구독 서비스는?</h2>
+                <section class="kb-sec">
+                    <h4 class="h4">가장 많이 이용하는 인기구독 서비스는? <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                        <!-- Tooltip (With title)-->
+                        <div class="tooltip">
+                            <div class="cont">&#8251; 같은 연령대&sol;성별을 기준으로 사용자 수가 가장 많은 구독 서비스는 1위~3위 입니다.</div>
+                            <button class="btn-close"><span>닫기</span></button>
+                        </div>
+                    </h4>
+                    <div class="kb-form" data-status="">
+                        <label for="simulationOption01">연령 성별 선택</label>
+                        <div class="kb-form_inner form-text" data-role="popup">
+                            <input type="text" id="simulationOption01" value="35~39세 여성" role="button" placeholder="" data-call-layered="bsSelectAgeAndGenter" readonly="">
+                        </div>
+                    </div>
+                    <div class="highcharts-box mt28 full-type no-space">
+                        <div class="graph-area">
+                            <figure class="highcharts-figure">
+                                <!-- [chart area] //-->
+                                <div class="chart-area" id="regularExpenseHomeColumn01"></div>
+                                <!--// [chart area] -->
+                            </figure>
+                        </div>
+                    </div>
+                </section>
+<!-- [MYS_EX_02_00_00] 지출 > 정기지출 -->
+
+<!-- [MYS_EX_04_01_00] 지출 > 금융 리포트 월간 //-->
+                <h1>[MYS_EX_04_01_00]</h1>
+                <h2>지출 > 금융리포트 월간 > 월간 자산 요약</h2>
+                <!-- 월간 자산 요약 // -->
+                <section class="kb-sec">
+                    <div class="highcharts-box mt12">
+                        <div class="graph-area doughnut-type">
+                            <figure class="highcharts-figure">
+                                <!-- [chart area] //-->
+                                <div class="chart-area" id="financeMonthlyReportDoughnut01"></div>
+                                <div class="legend-unit">
+                                    <ul class="flex-box" data-col="3">
+                                        <li class="cate1">입출금 <em class="num">10%</em></li>
+                                        <li class="cate2">예적금 <em class="num">30%</em></li>
+                                        <li class="cate3">투자 <em class="num">30%</em></li>
+                                        <li class="cate4">보험 <em class="num">40%</em></li>
+                                        <li class="cate5">외화 <em class="num">30%</em></li>
+                                        <li class="cate6">부동산 <em class="num">30%</em></li>
+                                        <li class="cate7">자동차 <em class="num">30%</em></li>
+                                        <li class="cate8">대출·부채 <em class="num">6%</em></li>
+                                        <li class="cate9">페이 <em class="num">30%</em></li>
+                                    </ul>
+                                </div>
+                                <!--// [chart area] -->
+                            </figure>
+                        </div>
+                        <h2>지출 > 금융리포트 월간 > 자산/부채 추이</h2>
+                        <div class="graph-area line-type">
+                            <figure class="highcharts-figure">
+                                <div class="content-box-info">
+                                    <div class="content-box-tit">
+                                        <h4 class="h4">자산&sol;부채 추이 <span class="tag-label t02" data-state="wait">최근 6개월</span></h4>
+                                    </div>
+                                </div>
+                                <!-- [chart area] //-->
+                                <div class="chart-area" id="financeMonthlyReportSpline01"></div>
+                                <div class="legend-unit align-c">
+                                    <ul>
+                                        <li><i class="icon-legend_circle_yellow">My 자산 그래프 범례</i><span>My자산</span></li>
+                                        <li><i class="icon-legend_square_blue">My 부채 그래프 범례</i><span>My부채</span></li>
+                                    </ul>
+                                </div>
+                                <!--// [chart area] -->
+                            </figure>
+                        </div>
+                    </div>
+                </section>
+                <!-- // 월간 자산 요약 -->
+
+                <!-- 월간 지출 요약 // -->
+                <h2>지출 > 금융리포트 월간 > 월간 지출 요약</h2>
+                <section class="kb-sec">
+                    <div class="highcharts-box">
+                        <div class="graph-area">
+                            <figure class="highcharts-figure">
+                                <!-- [chart area] //-->
+                                <div class="chart-area" id="financeMonthlyReportColumn"></div>
+                                <div class="legend-unit"><span class="basic" data-type="dash">평균지출금액 <em class="num" data-unit-after="원">2,720,000</em></span></div>
+                                <!--// [chart area] -->
+                            </figure>
+                        </div>
+                        <h2>지출 > 금융리포트 월간 > 이번달 카테고리 유형별 지출 분석</h2>
+                        <div class="graph-area doughnut-type">
+                            <figure class="highcharts-figure">
+                                <div class="chart-tit"><h4 class="h4">이번달 카테고리 유형별 지출 분석</h4></div>
+                                <!-- [chart area] //-->
+                                <div class="chart-area" id="financeMonthlyReportDoughnut02"></div>
+                                <div class="legend-unit t01 more-view-box">
+                                    <dl>
+                                        <dt class="yellow" class="more-view-item" data-view-option="show"><span><em class="num">1</em>위</span>식비</dt>
+                                        <dd class="more-view-item" data-view-option="show">
+                                            <span class="amount"><em class="num" data-unit-after="원">1,000,000</em></span> &sol;
+                                            <span><em class="num">24</em>건</span>
+                                        </dd>
+                                        <dt class="apricot" class="more-view-item" data-view-option="show"><span><em class="num">2</em>위</span>여행</dt>
+                                        <dd class="more-view-item" data-view-option="show">
+                                            <span class="amount"><em class="num" data-unit-after="원">600,000</em></span> &sol; 
+                                            <span><em class="num">24</em>건</span>
+                                        </dd>
+                                        <dt class="pink" class="more-view-item" data-view-option="show"><span><em class="num">3</em>위</span>술&sol;유흥</dt>
+                                        <dd class="more-view-item" data-view-option="show">
+                                            <span class="amount"><em class="num" data-unit-after="원">250,000</em></span> &sol; 
+                                            <span><em class="num">24</em>건</span>
+                                        </dd>
+                                        <dt class="cherryred" class="more-view-item" data-view-option="show"><span><em class="num">4</em>위</span>반려동물</dt>
+                                        <dd class="more-view-item" data-view-option="show">
+                                            <span class="amount"><em class="num" data-unit-after="원">120,000</em></span> &sol; 
+                                            <span><em class="num">24</em>건</span>
+                                        </dd>
+                                        <dt class="lightpurple" class="more-view-item" data-view-option="show"><span><em class="num">5</em>위</span>뷰티</dt>
+                                        <dd class="more-view-item" data-view-option="show">
+                                            <span class="amount"><em class="num" data-unit-after="원">120,000</em></span> &sol; 
+                                            <span><em class="num">24</em>건</span>
+                                        </dd>
+                                        <dt class="more-view-item" data-view-option="hide"><span><em class="num">6</em>위</span>문화&sol;여가</dt>
+                                        <dd class="more-view-item" data-view-option="hide">
+                                            <span class="amount"><em class="num" data-unit-after="원">10,000</em></span> &sol; 
+                                            <span><em class="num">3</em>건</span>
+                                        </dd>
+                                        <dt class="more-view-item" data-view-option="hide"><span><em class="num">7</em>위</span>주고&sol;공과금</dt>
+                                        <dd class="more-view-item" data-view-option="hide">
+                                            <span class="amount"><em class="num" data-unit-after="원">10,000</em></span> &sol; 
+                                            <span><em class="num">8</em>건</span>
+                                        </dd>
+                                        <dt class="more-view-item" data-view-option="hide"><span><em class="num">8</em>위</span>의료&sol;건강</dt>
+                                        <dd class="more-view-item" data-view-option="hide">
+                                            <span class="amount"><em class="num" data-unit-after="원">10,000</em></span> &sol; 
+                                            <span><em class="num">24</em>건</span>
+                                        </dd>
+                                        <dt class="more-view-item" data-view-option="hide"><span><em class="num">9</em>위</span>생활</dt>
+                                        <dd class="more-view-item" data-view-option="hide">
+                                            <span class="amount"><em class="num" data-unit-after="원">10,000</em></span> &sol; 
+                                            <span><em class="num">1</em>건</span>
+                                        </dd>
+                                        <dt class="more-view-item" data-view-option="hide"><span><em class="num">10</em>위</span>패션&sol;쇼핑</dt>
+                                        <dd class="more-view-item" data-view-option="hide">
+                                            <span class="amount"><em class="num" data-unit-after="원">10,000</em></span> &sol; 
+                                            <span><em class="num">4</em>건</span>
+                                        </dd>
+                                        <dt class="more-view-item" data-view-option="hide"><span><em class="num">11</em>위</span>카페&sol;간식</dt>
+                                        <dd class="more-view-item" data-view-option="hide">
+                                            <span class="amount"><em class="num" data-unit-after="원">10,000</em></span> &sol; 
+                                            <span><em class="num">5</em>건</span>
+                                        </dd>
+                                        <dt class="more-view-item" data-view-option="hide"><span><em class="num">12</em>위</span>자동차</dt>
+                                        <dd class="more-view-item" data-view-option="hide">
+                                            <span class="amount"><em class="num" data-unit-after="원">10,000</em></span> &sol; 
+                                            <span><em class="num">5</em>건</span>
+                                        </dd>
+                                        <dt class="more-view-item" data-view-option="hide"><span><em class="num">13</em>위</span>온라인쇼핑</dt>
+                                        <dd class="more-view-item" data-view-option="hide">
+                                            <span class="amount"><em class="num" data-unit-after="원">10,000</em></span> &sol; 
+                                            <span><em class="num">8</em>건</span>
+                                        </dd>
+                                        <dt class="more-view-item" data-view-option="hide"><span><em class="num">14</em>위</span>경조사</dt>
+                                        <dd class="more-view-item" data-view-option="hide">
+                                            <span class="amount"><em class="num" data-unit-after="원">10,000</em></span> &sol; 
+                                            <span><em class="num">3</em>건</span>
+                                        </dd>
+                                        <dt class="more-view-item" data-view-option="hide"><span><em class="num">15</em>위</span>미분류</dt>
+                                        <dd class="more-view-item" data-view-option="hide">
+                                            <span class="amount"><em class="num" data-unit-after="원">10,000</em></span> &sol; 
+                                            <span><em class="num">1</em>건</span>
+                                        </dd>
+                                        <dt class="more-view-item" data-view-option="hide"><span><em class="num">16</em>위</span>교통</dt>
+                                        <dd class="more-view-item" data-view-option="hide">
+                                            <span class="amount"><em class="num" data-unit-after="원">10,000</em></span> &sol; 
+                                            <span><em class="num">1</em>건</span>
+                                        </dd>
+                                        <dt class="more-view-item" data-view-option="hide"><span><em class="num">17</em>위</span>교육</dt>
+                                        <dd class="more-view-item" data-view-option="hide">
+                                            <span class="amount"><em class="num" data-unit-after="원">10,000</em></span> &sol; 
+                                            <span><em class="num">5</em>건</span>
+                                        </dd>
+                                        <dt class="more-view-item" data-view-option="hide"><span><em class="num">18</em>위</span>금융</dt>
+                                        <dd class="more-view-item" data-view-option="hide">
+                                            <span class="amount"><em class="num" data-unit-after="원">10,000</em></span> &sol; 
+                                            <span><em class="num">7</em>건</span>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <!--// [chart area] -->
+                            </figure>
+                        </div>
+                        <h2>지출 > 금융리포트 월간 > 카드 결제 금액</h2>
+                        <div class="graph-area">
+                            <figure class="highcharts-figure">
+                                <div class="content-box-info">
+                                    <div class="content-box-tit">
+                                        <h4 class="h4">카드 결제 금액 <span class="tag-label t02" data-state="wait">최근 6개월</span></h4>
+                                    </div>
+                                </div>
+                                <!-- [chart area] //-->
+                                <div class="chart-area" id="financeMonthlyReportSpline02"></div>
+                                <div class="legend-unit align-c">
+                                    <ul>
+                                        <li><i class="icon-legend_circle_yellow">그래프 범례 : 현대카드</i><span>현대카드</span></li>
+                                        <li><i class="icon-legend_square_blue">그래프 범례 : 우리카드</i><span>우리카드</span></li>
+                                        <li><i class="icon-legend_triangle_cherry">그래프 범례 : KB국민카드</i><span>KB국민카드</span></li>
+                                    </ul>
+                                </div>
+                                <!--// [chart area] -->
+                            </figure>
+                        </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- // 월간 지출 요약 -->
+<!--// [MYS_EX_04_01_00] 지출 > 금융 리포트 월간 -->
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+    </div>
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    
+    <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
+    <script src="@@webRoot/static/common/lib/highcharts/highcharts-more.js"></script>
+    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
+    <!-- Add Script -->
+    <script>
+        gfn_gnb.select(2);
+        $('#noticeAgreeToProvide').modalPopup('open');
+
+        //highchart
+        // highchart 공통 options
+        Highcharts.setOptions({
+            title: { text: null },
+            subTitle: { text: null },
+            legend: { enabled: false },
+            credits: { enabled: false },
+            label : { fontFamily: 'KBFGText'},
+            credits: { enabled: false },
+            exporting: { enabled: false },
+        });
+
+// 지출 > 홈
+        var columnChart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'expenseHomeColumnChart', // chart 삽입 target ID
+                type: "column",
+                backgroundColor: "transparent",
+                height: 160,
+                margin:0,
+                marginBottom:25
+            },
+            tooltip: {
+                formatter: function () { 
+                    return gfn_comma3Digit(this.y) + "원"
+                },
+                padding: 8,
+                borderRadius: 5,
+                backgroundColor: "#ffffff",
+                shadow: true,
+                verticalAlign: 'top',
+                borderColor: 'transparent',
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '1.4rem',
+                    fontFamily: "KBFGText",
+                    color:'#000'
+                }
+            },
+            xAxis: {
+                type: "category",
+                categories: ["3월", "4월", "5월", "6월", "7월", "8월"],
+                labels: {
+                    style: {
+                        color: "#ffffff",
+                        fontSize: '1.2rem',
+                        fontFamily: 'KBFGText',
+                    }
+                },
+                lineColor: '#8071b3',
+            },
+            yAxis: {
+                enabled: false, 
+                labels: { enabled: false },  // 축 lebel 사용 안함
+                title: { enabled: false }, // 축 title 사용 안함
+                tickWidth: 0,  // 그리드 라인 너비
+                gridLineColor: 'transparent',  // 그리드 라인 컬러
+                plotLines: [
+                    {
+                        color: "#c6cbd0",
+                        width: 1,
+                        value: 500000,
+                        zIndex: 4,
+                        dashStyle: 'dash'
+                    }
+                ]
+            },
+            plotOptions: {
+                series: {
+                    color: '#ffcf53', // 기본색상
+                    pointWidth: 6,  // 막대그래프 너비
+                    borderRadiusTopLeft: "50%",  // radius 값
+                    borderRadiusTopRight: "50%", // radius 값
+                    borderWidth: 0
+                }
+            },
+            series: [
+                {data:
+                    [200000, 680000, 350000, 680000, 860000, 665210]
+                }
+            ]
+        });
+
+// 지출 > 가계부 > 월간 지출 추이
+        var columnChart1 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'expenseAccountbookHomeColumn', // chart 삽입 target ID
+                type: "column",
+                backgroundColor: "#ffffff",
+                height: 160,
+                margin:0,
+                marginBottom:25
+            },
+            tooltip: {
+                formatter: function () { 
+                    return gfn_comma3Digit(this.y) + "원"
+                },
+                padding: 8,
+                borderRadius: 5,
+                backgroundColor: "#ffffff",
+                shadow: true,
+                verticalAlign: 'top',
+                borderColor: 'transparent',
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '1.4rem',
+                    fontFamily: "KBFGText",
+                    color:'#000'
+                }
+            },
+            xAxis: {
+                type: "category",
+                categories: ["3월", "4월", "5월", "6월", "7월", "8월"],
+                labels: {
+                    style: {
+                        color: "#26282c",
+                        fontSize: '1.2rem',
+                        fontFamily: 'KBFGText',
+                    }
+                },
+                lineColor: '#c6cbd0',
+            },
+            yAxis: {
+                enabled: false, 
+                labels: { enabled: false },  // 축 lebel 사용 안함
+                title: { enabled: false }, // 축 title 사용 안함
+                tickWidth: 0,  // 그리드 라인 너비
+                gridLineColor: 'transparent',  // 그리드 라인 컬러
+                plotLines: [
+                    {
+                        color: "#c6cbd0",
+                        width: 1,
+                        value: 500000,
+                        zIndex: 4,
+                        dashStyle: 'dash'
+                    }
+                ]
+            },
+            plotOptions: {
+                series: {
+                    color: '#c6cbd0', // 기본색상
+                    pointWidth: 6,  // 막대그래프 너비
+                    borderRadiusTopLeft: "50%",  // radius 값
+                    borderRadiusTopRight: "50%", // radius 값
+                    borderWidth: 0
+                }
+            },
+            series: [
+                {data:
+                    [200000, 680000, 350000, 680000, 860000,
+                        { // 특정 data값에 대하여 dataLabel을 붙임
+                            y: 665210,
+                            color: '#ffcf53', // 강조할 data의 색상
+                        }
+                    ]
+                }
+            ]
+        });
+
+// 지출 > 가계부 > 이번달 소비 패턴
+        var bubbleChart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'expenseAccountbookHomeBubble', // chart 삽입 target ID                
+                plotBackgroundColor: null,
+                plotBorderWidth: 0,
+                plotShadow: false,
+                type: 'packedbubble',
+                height: 160,
+                margin:0,
+                marginTop:0
+            },            
+            tooltip: { enabled: false },
+            plotOptions: {
+                packedbubble: {
+                    minSize: '40px',
+                    maxSize: '140px',
+                    zMin: 0,
+                    zMax: 100,                       
+                    layoutAlgorithm: {
+                        splitSeries: false,
+                        gravitationalConstant: 0.005,
+                        bubblePadding: 10
+                    },
+                    dataLabels: {
+                        enabled: true,
+                        formatter: function () { 
+                            return this.point.name + "<br> <span style='font-size:1.4rem;font-family:Roboto;'><b style='font-size:1.4rem'>" + gfn_comma3Digit(this.point.value) + "</b><span style='font-size:1.5px;color:transparent;'>공백</span>%"
+                        },    
+                        rotation:1,              
+                        style: {
+                            color: '#000',
+                            textOutline: 'none',
+                            fontWeight: 'normal',
+                            textAlign:'center',    
+                            fontSize: '1.4rem',                        
+                            fontFamily: "KBFGText",
+                            lineHeight: '20px'
+                        },
+                        y:-3
+                    }
+                }  
+            },
+            series: [{
+                name: null,
+                data: [{
+                    name: '식비',
+                    value: 40,
+                    x:500000,
+                    color: {
+                        radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
+                        stops: [ [0, '#ffcf53'], [1, '#ffcf53'] ]
+                    }
+                },{
+                    name: '여행',
+                    value: 25,
+                    x:250000,
+                    color: {
+                        radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
+                        stops: [ [0, '#ffab53'], [1, '#ffab53'] ]
+                    }
+                },{
+                    name: "통신비",
+                    value: 12,
+                    x:120000,
+                    color: {
+                        radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
+                        stops: [ [0, '#fa844e'], [1, '#fa844e'] ]
+                    }
+                },{
+                    name: "편의점",
+                    value: 5,
+                    x:50000,
+                    color: {
+                        radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
+                        stops: [ [0, '#5b75ce'], [1, '#5b75ce'] ]
+                    }
+                },{
+                    name: "음주",
+                    value: 3,
+                    x:30000,
+                    color: {
+                        radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
+                        stops: [ [0, '#7f97ea'], [1, '#7f97ea'] ]
+                    }
+                }]
+            
+            }]
+        });
+
+// 지출 > 정기지출 > 월간 정기지출 추이
+        var columnChart2 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'regularExpenseHomeColumn', // chart 삽입 target ID
+                type: "column",
+                backgroundColor: "#ffffff",
+                height: 160,
+                margin:0,
+                marginBottom:25
+            },
+            tooltip: {
+                formatter: function () { 
+                    return gfn_comma3Digit(this.y) + "원"
+                },
+                padding: 8,
+                borderRadius: 5,
+                backgroundColor: "#ffffff",
+                shadow: true,
+                verticalAlign: 'top',
+                borderColor: 'transparent',
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '1.4rem',
+                    fontFamily: "KBFGText",
+                    color:'#000',
+                }
+            },
+            xAxis: {
+                type: "category",
+                categories: ["1월", "2월", "3월", "4월", "5월", "6월13일"],
+                labels: {
+                    style: {
+                        color: "#26282c",
+                        fontSize: '1.2rem',
+                        fontFamily: 'KBFGText',
+                    }
+                },
+                lineColor: '#c6cbd0',
+            },
+            yAxis: {
+                enabled: false, 
+                labels: { enabled: false },  // 축 lebel 사용 안함
+                title: { enabled: false }, // 축 title 사용 안함
+                tickWidth: 0,  // 그리드 라인 너비
+                gridLineColor: 'transparent',  // 그리드 라인 컬러
+                plotLines: [
+                    {
+                        color: "#c6cbd0",
+                        width: 1,
+                        value: 500000,
+                        zIndex: 4,
+                        dashStyle: 'dash'
+                    }
+                ]
+            },
+            plotOptions: {
+                series: {
+                    color: '#c6cbd0', // 기본색상
+                    pointWidth: 6,  // 막대그래프 너비
+                    borderRadiusTopLeft: "50%",  // radius 값
+                    borderRadiusTopRight: "50%", // radius 값
+                    borderWidth: 0
+                }
+            },
+            series: [
+                {data:
+                    [200000, 680000, 350000, 680000, 860000,
+                        { // 특정 data값에 대하여 dataLabel을 붙임
+                            y: 665210,
+                            color: '#ffcf53', // 강조할 data의 색상
+                        }
+                    ]
+                }
+            ]
+        });
+
+// 지출 > 정기지출 > 가장 많이 이용하는 인기구독 서비스는?
+        var columnChart3 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'regularExpenseHomeColumn01', // chart 삽입 target ID
+                type: "column",
+                backgroundColor: "#ffffff",
+                height: 160,
+                margin:0,
+                marginBottom:25
+            },
+            tooltip: {
+                formatter: function () { 
+                    return gfn_comma3Digit(this.y) + "원"
+                },
+                padding: 8,
+                borderRadius: 5,
+                backgroundColor: "#ffffff",
+                shadow: true,
+                verticalAlign: 'top',
+                borderColor: 'transparent',
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '1.4rem',
+                    fontFamily: "KBFGText",
+                    color:'#000',
+                }
+            },
+            xAxis: {
+                type: "category",
+                labels: {
+                    formatter: function () {
+                        return "<strong>" + this.value + "</strong>";
+                    },
+                    style: {
+                        color: "#26282c",
+                        fontSize: '1.2rem',
+                        fontFamily: 'KBFGText',
+                    }
+                },
+                lineColor: '#ebeef0',
+            },
+            yAxis: {
+                enabled: false, 
+                labels: { enabled: false },
+                title: { enabled: false },
+                tickWidth: 0,
+                gridLineColor: 'transparent',
+            },
+            plotOptions: {
+                series: {
+                    color: '#c6cbd0', // 기본색상
+                    pointWidth: 6,  // 막대그래프 너비
+                    borderRadiusTopLeft: "50%", 
+                    borderRadiusTopRight: "50%",
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                data:
+                    [
+                        {
+                            name: '넷플릭스<br>1위',
+                            y: 665210,
+                            color: '#ffba53',
+                        },
+                        {
+                            name: '쿠팡·정기배송<br>2위',
+                            y: 500000,
+                            color: '#ff8a71',
+                        },
+                        {
+                            name: '멜론<br>3위',
+                            y: 300000,
+                            color: '#ff6391',
+                        }
+                    ]
+                }]
+        });
+
+
+// 지출 > 금융리포트 월간 > 월간 자산 요약
+        var doughnutChart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'financeMonthlyReportDoughnut01',
+                type: 'pie',
+                height: 134,
+                margin: [0, 0, 0, 0]
+            },
+            title: {
+                text: '자산<br>비용',
+                align: 'center',
+                verticalAlign: 'middle',
+                style: {fontSize:'1.4rem',fontFamily: "KBFGText"}
+            },
+            tooltip: {
+                formatter: function () { 
+                    return this.y + "%"
+                },
+                padding: 10,
+                backgroundColor: "#FFF",
+                shadow: true,
+                borderRadius: 4,
+                verticalAlign: 'bottom',
+                borderColor: '#f3f3f3',
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '1.8rem',
+                    fontFamily: "KBFGText",
+                },
+                crosshairs: true
+            },
+            plotOptions: {
+                pie: {                    
+                    allowPointSelect: true,
+                    dataLabels: {
+                        enabled: false
+                    }
+                }
+            },
+            series: [{
+                innerSize: '50%',
+                borderWidth: 0,
+                data: [{
+                    name: '입출금',
+                    color: "#ffcf53",
+                    y: 30
+                },{
+                    name: '예적금',
+                    color: "#ffab53",
+                    y: 20
+                },{
+                    name: '투자',
+                    color: "#fa844e",
+                    y: 12
+                },{
+                    name: '보험',
+                    color: '#5b75ce',
+                    y: 12
+                },{
+                    name: '외화',
+                    color: '#7f97ea',
+                    y: 8
+                },{
+                    name: '부동산',
+                    color: '#8fd171',
+                    y: 7
+                },{
+                    name: '자동차',
+                    color: '#66aa76',
+                    y: 5
+                },{
+                    name: '대출·부채',
+                    color: '#ff445a',
+                    y: 3
+                },{
+                    name: '페이',
+                    color: '#7155c8',
+                    y: 3
+                }]
+            }]
+        });
+
+// 지출 > 금융리포트 월간 > 자산/부채 추이
+        var splineChart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'financeMonthlyReportSpline01', // chart 삽입 target ID
+                type: "line",
+                height: 210,
+                marginBottom:25,
+                marginTop: 50
+            },
+            xAxis: {
+                type: "category",
+                categories: ["1월", "2월", "3월", "4월", "5월", "6월"],
+                crosshair: {
+                    width: 1,
+                    color: '#c6cbd0',
+                    dashStyle: 'dash'
+                },
+                labels: {
+                    style: {
+                        color: "#26282c",
+                        fontSize: '1.2rem',
+                        fontFamily: 'KBFGText',
+                    }
+                },
+            },
+            yAxis: {
+                labels: {
+                    formatter: function () {
+                        return this.value/1000000;
+                    },
+                    style: {
+                        color: "#8c949e",
+                        fontSize: '1.3rem',
+                        fontFamily: 'roboto',
+                    }
+                },
+                title: {
+                    text: '천만원',
+                    align: 'high',
+                    offset: 0,
+                    rotation: 0,
+                    y: -14,
+                    x: -8
+                },
+                tickWidth: 1,
+                tickInterval: 20000000,
+                gridLineColor: '#ebeef0',
+            },
+            plotOptions: {
+                series: {
+                    color: '#609df8',
+                    lineWidth: 1,
+                    states: {
+                        hover: {
+                            enabled: true,
+                            color:'#ffcf53',
+                            lineWidth: 1,
+                        }
+                    }
+                },
+            },
+            tooltip: {
+                formatter: function () {
+                    // points
+                    return [''].concat(
+                        this.points ?
+                            this.points.map(function (point) {
+                                return point.y + '원';
+                            }) : []
+                    );
+                },
+                split: true,
+                padding: 8,
+                borderRadius: 5,
+                backgroundColor: "#ffffff",
+                shadow: true,
+                verticalAlign: 'top',
+                borderColor: 'transparent',
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '1.4rem',
+                    fontFamily: "KBFGText",
+                    color:'#000'
+                },
+            },
+            series: [
+                {
+                    linkedTo: "main",
+                    marker: {
+                            symbol: 'square',
+                            fillColor:'#ffffff',
+                            lineWidth: 1,
+                            lineColor:'#609df8',
+                            radius:2
+                    },
+                    data: [48000000, 30000000, 65000000, 11000000, 41000000, 57000000]
+                },
+                {
+                    id: 'main',
+                    marker: {
+                            symbol: 'circle',
+                            fillColor:'#ffffff',
+                            lineWidth: 1,
+                            lineColor:'#ffcf53',
+                            radius:2
+                    },
+                    color: '#ffcf53',
+                    data: [59000000, 19000000, 39000000, 42000000, 17000000, 21000000]
+                }
+            ]
+        });
+    
+        
+// 지출 > 금융리포트 월간 > 이번달 카테고리 유형별 지출 분석
+        var doughnutChart1 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'financeMonthlyReportDoughnut02',
+                type: 'pie',
+                height: 134,
+                margin:0
+            },
+            title: { enabled: false },
+            tooltip: {
+                formatter: function () { 
+                    return this.y + "%"
+                },
+                padding: 10,
+                backgroundColor: "#FFF",
+                shadow: true,
+                borderRadius: 4,
+                verticalAlign: 'bottom',
+                borderColor: '#f3f3f3',
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '1.8rem',
+                    fontFamily: "KBFGText",
+                },
+                crosshairs: true
+            },
+            plotOptions: {
+                pie: {                    
+                    allowPointSelect: true,
+                    dataLabels: {
+                        enabled: false
+                    }
+                }
+            },
+            series: [{
+                innerSize: '50%',
+                borderWidth: 0,
+                data: [{
+                    name: '식비',
+                    color: "#ffcf53",
+                    y: 30
+                },{
+                    name: '여행',
+                    color: "#ffab53",
+                    y: 25
+                },{
+                    name: '술/유흥',
+                    color: "#fa844e",
+                    y: 20
+                },{
+                    name: '반려동물',
+                    color: '#5b75ce',
+                    y: 15
+                },{
+                    name: '뷰티',
+                    color: '#7f97ea',
+                    y: 10
+                }]
+            }]
+        });
+
+// 지출 > 금융리포트 월간 > 월간 지출 요약
+        var columnChart4 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'financeMonthlyReportColumn', // chart 삽입 target ID
+                type: "column",
+                backgroundColor: "transparent",
+                height: 210,
+                marginBottom:25,
+                marginTop: 50
+            },
+            tooltip: {
+                formatter: function () { 
+                    return gfn_comma3Digit(this.y) + "원"
+                },
+                padding: 8,
+                borderRadius: 5,
+                backgroundColor: "#ffffff",
+                shadow: true,
+                verticalAlign: 'top',
+                borderColor: 'transparent',
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '1.4rem',
+                    fontFamily: "KBFGText",
+                    color:'#000'
+                },
+                crosshairs: {
+                    color: '#c7cbd0',
+                    dashStyle: 'dash',
+                    width: 1,
+                },
+            },
+            xAxis: {
+                type: "category",
+                categories: ["1월", "2월", "3월", "4월", "5월", "6월"],
+                labels: {
+                    style: {
+                        color: "#26282c",
+                        fontSize: '1.2rem',
+                        fontFamily: 'KBFGText',
+                    }
+                },
+                lineColor: '#c6cbd0',
+            },
+            yAxis: {
+                labels: {
+                    formatter: function () {
+                        return this.value/10000;
+                    },
+                    style: {
+                        color: "#8c949e",
+                        fontSize: '1.3rem',
+                        fontFamily: 'roboto',
+                    }
+                },
+                title: {
+                    text: '만원',
+                    align: 'high',
+                    offset: 0,
+                    rotation: 0,
+                    y: -14,
+                    x: -10
+                },
+                tickWidth: 1,
+                tickInterval: 500000,
+                gridLineColor: '#ebeef0',
+                plotLines: [
+                    {
+                        color: "#c6cbd0",
+                        width: 1,
+                        value: 1050000,
+                        zIndex: 4,
+                        dashStyle: 'dotted'
+                    }
+                ]
+            },
+            plotOptions: {
+                series: {
+                    color: '#c6cbd0', // 기본색상
+                    pointWidth: 6,  // 막대그래프 너비
+                    borderRadiusTopLeft: "50%",  // radius 값
+                    borderRadiusTopRight: "50%", // radius 값
+                    borderWidth: 0
+                }
+            },
+            series: [
+                {data:
+                    [450000, 1800000, 200000, 1200000, 500000,
+                        { // 특정 data값에 대하여 dataLabel을 붙임
+                            y: 800000,
+                            color: '#ffba53', // 강조할 data의 색상
+                        }
+                    ]
+                }
+            ]
+        });
+    
+// 지출 > 금융리포트 월간 > 카드 결제 금액
+        var splineChart1 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'financeMonthlyReportSpline02', // chart 삽입 target ID
+                type: "line",
+                height: 210,
+                marginBottom:25,
+                marginTop: 50
+            },
+            xAxis: {
+                type: "category",
+                categories: ["1월", "2월", "3월", "4월", "5월", "6월"],
+                labels: {
+                    style: {
+                        color: "#26282c",
+                        fontSize: '1.2rem',
+                        fontFamily: 'KBFGText',
+                    }
+                },
+            },
+            yAxis: {
+                labels: {
+                    formatter: function () {
+                        return this.value/10000;
+                    },
+                    style: {
+                        color: "#8c949e",
+                        fontSize: '1.3rem',
+                        fontFamily: 'roboto',
+                    }
+                },
+                title: {
+                    text: '만원',
+                    align: 'high',
+                    offset: 0,
+                    rotation: 0,
+                    y: -14,
+                    x: -11
+                },
+                tickWidth: 1,
+                tickInterval: 500000,
+                gridLineColor: '#ebeef0',
+            },
+            plotOptions: {
+                series: {
+                    color: '#609df8',
+                    lineWidth: 1,
+                    states: {
+                        hover: {
+                            enabled: true,
+                            color:'#ffba53',
+                            lineWidth: 1,
+                        }
+                    },
+                },
+            },
+            tooltip: {
+                pointFormatter: function(){
+                    var point = this,
+                        series = point.series,
+                        idx = point.index-1,
+                        prevData = series.data[idx].y,
+                        prepareData = point.y - prevData;
+                        if(prepareData<0){
+                            prepareData = '<span style="color:#609df8">-' + gfn_comma3Digit(prepareData) + '원</span>';
+                        }else{
+                            prepareData = '<span style="color:#e02a61">+' + gfn_comma3Digit(prepareData) + '원</span>';
+                        }
+                        if(idx<-2){
+                            prepareData = null;
+                            
+                        }
+                    return prepareData +'<br/>' + gfn_comma3Digit(point.y)+'원';
+                },
+                padding: 8,
+                borderRadius: 5,
+                backgroundColor: "#ffffff",
+                shadow: true,
+                verticalAlign: 'top',
+                borderColor: 'transparent',
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '1.4rem',
+                    fontFamily: "KBFGText",
+                    color:'#000',
+                    align:'right',
+                },
+            },
+            series: [
+                {
+                    marker: {
+                        symbol: 'square',
+                        fillColor:'#ffffff',
+                        lineWidth: 1,
+                        lineColor:'#609df8',
+                        radius:2
+                    },
+                    data: [1200000, 600000, 1250000, 380000, 550000, 250000]
+                },
+                {
+                    marker: {
+                        symbol: 'triangle',
+                        fillColor:'#ffffff',
+                        lineWidth: 1,
+                        lineColor:'#e02a61',
+                        radius:3
+                    },
+                    color: '#e02a61',
+                    data: [1000000, 1050000, 1500000, 1100000, 1250000, 1600000]
+                },
+                {
+                    id: 'main',
+                    marker: {
+                        symbol: 'circle',
+                        fillColor:'#ffffff',
+                        lineWidth: 1,
+                        lineColor:'#ffcf53',
+                        radius:2
+                    },
+                    color: '#ffcf53',
+                    data: [200000, 750000, 650000, 500000, 900000, 700000]
+                }
+            ]
+        });
+    </script>
+</body>
+
+</html>

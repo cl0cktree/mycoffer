@@ -22,14 +22,14 @@
         <div class="app-container">
             <!-- app-content // -->            
             <main class="app-content login-certification01">
-                <!-- // 공동 인증서 없을 때 -->
                 <section class="kb-sec">
+                    <!-- 수정:2021-10-13 -->
+                    <!-- 각 인증서 목록에서 인증번호 삭제 -->
                     <ul class="joint-certificate-list">
                         <li>
                             <a href="javascript:;" class="link-arrow-after">
                                 <i class="icon-certificate-active"></i><!-- 인증서 활성화 icon -->                                
                                 <strong class="name">김민국</strong>
-                                <h2 class="login-certification01-h2">202234567890</h2>
                                 <p><span>은행개인</span><strong>yessign</strong></p>
                                 <p><span>발급일</span><strong class="num c-red">2021.04.14</strong></p>
                                 <p><span>만료일</span><strong class="num c-red">2022.04.14</strong></p>
@@ -39,7 +39,6 @@
                             <a href="javascript:;" class="link-arrow-after">
                                 <i class="icon-certificate-expire"></i><!-- 인증서 만료 icon -->
                                 <strong class="name">김민국</strong>
-                                <h2 class="login-certification01-h2">202234567890</h2>
                                 <p><span>은행개인</span><strong>yessign</strong></p>
                                 <p><span>발급일</span><strong class="num">2021.04.14</strong></p>
                                 <p><span>만료일</span><strong class="num">2022.04.14</strong></p>                                
@@ -49,21 +48,43 @@
                             <a href="javascript:;" class="link-arrow-after">
                                 <i class="icon-certificate-expire"></i><!-- 인증서 만료 icon -->
                                 <strong class="name">김민국</strong>
-                                <h2 class="login-certification01-h2">202234567890</h2>
                                 <p><span>은행개인</span><strong>yessign</strong></p>
                                 <p><span>발급일</span><strong class="num">2021.04.14</strong></p>
                                 <p><span>만료일</span><strong class="num">2022.04.14</strong></p>
                             </a>
                         </li>
                     </ul>
-                    <div class="no-data">
-                        <i class="icon-bang_60_red"></i>
-                        <p>선택 가능한 공동인증서가 없습니다.</p>
-                    </div>
                 </section>
                 <!-- 공동 인증서 없을 때 // -->
+                <hr class="hr-divide_48"/>
+                <section class="kb-sec">
+                    <!-- 수정:2021-10-13 -->
+                    <!-- 제목 수정 및 버튼 추가 //-->
+                    <div class="no-data">
+                        <i class="icon-bang_60_red"></i>
+                        <h2 class="h2 mt24">유효한 공동인증서가<br>없습니다.</h2>
+                        <button class="btn-text mt40" type="button" data-call-layered="NotSeeCertificate"><u>공동인증서가 안보이세요?</u></button>
+                    </div>
+                    <!--// 제목 수정 및 버튼 추가 -->
+                </section>
+                <!--// 공동 인증서 없을 때 -->
+                <hr class="hr-divide_48">
+                <!-- 수정:2021-10-13 -->
+                <!-- 공동인증서 관리 메뉴 추가 //-->
+                <section class="kb-sec mm-manage-certificate">
+                    <h2 class="h4">공동인증서 가져오기</h2>
+                    <ul class="manage-certificate">
+                        <li><a href="javascript:;">PC에서 가져오기<span class="link-arrow">바로가기</span></a></li>
+                        <li><a href="javascript:;">스마트폰에서 가져오기<span class="link-arrow">바로가기</span></a></li>                        
+                    </ul>
+                    <h2 class="h4">공동인증서 발급하기</h2>
+                    <ul class="manage-certificate">
+                        <li><a href="javascript:;" onclick="modalDemo3()">KB스타뱅킹 인증센터<span class="link-arrow">바로가기</span></a></li>                       
+                    </ul>
+                </section> 
+                <!--// 공동인증서 관리 메뉴 추가 --> 
+
                 <div class="sticky-bottom-menu">
-                    <p class="certificate-center"><a href="javascript:;" class="btn-text" role="button"><span>공동인증서 관리</span></a></p>
                     <p class="other-login"><button type="button" class="btn-text" data-call-layered="bsOtherLogin"><span>다른 로그인 방법</span><i></i></button></p>
                 </div>
             </main>
@@ -73,7 +94,9 @@
     </div>
 
     <div class="layered">
+        <!-- 수정:2021-10-13 --><!-- 공동인증서가 안보이세요 안내 팝업 추가 //-->
 
+        @@include('@@webRoot/html/common/layered/mys_co_04_04_01_p1.html')
         @@include('@@webRoot/html/common/layered/mys_co_04_05_00_p1.html')
 
     </div>

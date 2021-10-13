@@ -30,6 +30,18 @@
 .legend-unit .skyblue:before{background-color:#7f97ea;}
 .legend-unit .mint::before{background-color:#55c1e3;}
 .legend-unit .green::before{background-color:#4dac8a;}
+// legend color case 추가
+.legend-unit dt.cate0:before{background-color:#c6cbd0;}
+.legend-unit dt.cate1:before{background-color:#ffcf53;}
+.legend-unit dt.cate2:before{background-color:#ffab53;}
+.legend-unit dt.cate3:before{background-color:#fa844e;}
+.legend-unit dt.cate4:before{background-color:#5b75ce;}
+.legend-unit dt.cate5:before{background-color:#7f97ea;}
+.legend-unit dt.cate6:before{background-color:#8fd171;}
+.legend-unit dt.cate7:before{background-color:#66aa76;}
+.legend-unit dt.cate8:before{background-color:#ff445a;}
+.legend-unit dt.cate9:before{background-color:#7155c8;}
+
 .legend-unit dd{text-align:right;color:$kb-ui02}
 .legend-unit dd .num{font-size:1.5rem}
 .legend-unit .basic{display:block;margin-top:20px;font-size:14px;text-align:center;color:$kb-ui02}
@@ -137,7 +149,7 @@
 .expense-home .notice-group.flex-box .notice-item + .notice-item{margin-left:0.8rem;margin-top:0}
 .expense-home .notice-group.flex-box .notice-item .desc{margin-top:0.3rem}
 .expense-home .swiper-card-list{overflow:visible}
-.expense-home .swiper-card-list .swiper-container{margin-top:1.5rem;}
+.expense-home .swiper-card-list > .flex-box{margin-bottom:1.5rem;} // swiper 버전 수정 관련 적용
 .expense-home .swiper-card-list .swiper-pagination{padding-left:2.4rem;padding-right:2.4rem} // swiper pagination 정렬 수정
 .expense-home .swiper-card-list .card-item{padding:2rem;border:1px solid $kb-ui08;border-radius:0.8rem}
 .expense-home .swiper-card-list .card-item .tag-label{margin-left:4rem}
@@ -583,7 +595,7 @@
 .weekly-expense-summary .date-month .date,
 .monthly-asset-summary .date-month .date{margin-top:0.6rem}
 .monthly-asset-summary .compare-summary .amount .num[data-unit-after]::after{font-weight:bold}
-.weekly-expense-report .legend-unit{margin-top:4.8rem} //--chart-- 삭제
+.weekly-expense-report .legend-unit{margin-top:1.6rem} // chart legend unit 상단 margin 조정
 // Main
 .content-groups-type .group-tit,
 .content-groups-type .credit-list{border:0}
@@ -617,6 +629,7 @@
 .management-expense-goal .link-banner + .simple-message{margin-top:1.1rem}
 
 // 금융리포트
+.content-box .credit-list-amount{padding:0}
 .expense-finance-report .content-box .credit-list-amount{border:0}
 .expense-finance-report .content-box-info + .chart-area{margin-top:2.8rem}
 .expense-finance-report .legend-unit{margin-top:1.6rem}
@@ -625,7 +638,8 @@
 .expense-finance-report .monthly-asset-summary .doughnut-type .legend-unit{width:100%;max-width:none;margin-left:0;margin-right:0}
 .expense-finance-report .monthly-asset-summary .doughnut-type .legend-unit .num{font-size:1.5rem;color:$kb-ui02}
 .monthly-asset-summary .doughnut-type .legend-unit .flex-box li{padding-top:0.25rem;padding-bottom:0.25rem}
-.monthly-asset-summary .doughnut-type .legend-unit .flex-box li::before{top:calc(50% - 0.4rem)}
+.monthly-asset-summary .doughnut-type + .credit-list-amount dt,
+.monthly-asset-summary .doughnut-type + .credit-list-amount dd{margin:0.5rem 0}
 .monthly-asset-summary .btn-area{padding-bottom:0}
 .monthly-expense-summary .doughnut-type .legend-unit{margin-top:4.8rem}
 .monthly-expense-summary .doughnut-type .btn-area{border-top:1px solid $kb-ui09}

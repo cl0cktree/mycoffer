@@ -1,0 +1,292 @@
+<!-- [MYS_AS_11_01_01_P2] 작성자: 누리어 시스템 김홍범 -->
+<!DOCTYPE html>
+<html lang="ko" data-channel="ch_star">
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "My House 등록 | 자산"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app">
+		<!-- app-header //-->
+		@@include('@@webRoot/html/_include/app-integrated-header.html',{
+			'pageTit' :'My House 등록',
+			'type':''
+		}) 
+		<!-- // app-header -->
+
+		<!-- app-container //-->
+		<div class="app-container">
+
+			<!-- app-content // -->
+			<main class="app-content my-asset">						
+				<section class="kb-sec selected-address">
+					<div class="require-txt">						
+						<p class="simple-message">표시된 항목은 필수 입력 사항입니다.</p>
+					</div>
+					<div class="my-address-box">
+						<h2 class="tit">송도 더샵센트럴 시티 1단지</h2>
+						<p class="address">인천 연수구 송도국제대로 261</p>
+					</div>
+				</section>
+				<section class="kb-sec my-house">
+					<h2 class="is-hidden">기본정보</h2>
+					<div class="kb-form" data-status="">
+						<label for="housingTypeRadio1" class="required">주거 형태</label>
+						<div class="kb-form_inner form-radio-set">
+							<ul class="btn-segmented_radio">
+								<li>
+									<input type="radio" name="btnradioHouseType" id="btnradioHouseType1" checked="">
+									<label for="btnradioHouseType1">자가</label>
+								</li>
+								<li>
+									<input type="radio" name="btnradioHouseType" id="btnradioHouseType2">
+									<label for="btnradioHouseType2">전세/월세</label>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="selected">
+						<div class="kb-form_multi" data-status="">
+							<strong class="tit">동호</strong>
+							<div class="dbl-line">
+								<div class="kb-form">
+									<label for="aptNumber">동호</label>
+									<div class="kb-form_inner form-select">
+										<button type="button" class="selected-option">동 선택</button>
+										<select name="" id="aptNumber" title="동 선택">
+											<option value="">동 선택</option>
+											<option value="">1</option>
+											<option value="">2</option>
+											<option value="">3</option>
+											<option value="">4</option>
+										</select>
+									</div>
+								</div>
+								<!-- api 정보 있음 //
+								<div class="kb-form">
+									<div class="kb-form_inner form-select">
+										<button type="button" class="selected-option">호 선택</button>
+										<select name="" id="aptNumber_2" title="호 선택">
+											<option value="">호 선택</option>
+											<option value="">1</option>
+											<option value="">2</option>
+											<option value="">3</option>
+											<option value="">4</option>
+										</select>
+									</div>
+								</div>
+								// api 정보 있음 -->
+
+								<!-- api 정보 없음 // -->
+								<div class="kb-form" data-status="">
+									<label for="addedFnc01">호 입력</label>
+									<div class="kb-form_inner form-text">
+										<input type="text" inputmode="numeric" id="addedFnc01" placeholder="" maxlength="6" value="" data-unit="호">
+										<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+									</div>
+								</div>
+								<!-- // api 정보 없음 -->
+							</div>
+						</div>
+						<div class="kb-form" data-status="error">	
+							<label for="formSelectSample02" class="required inline">면적</label>
+							<button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+							<div class="tooltip">
+                                <strong class="tit">면적이란?</strong>
+                                <div class="cont">
+									면적정보는 공급면적/전용면적 기준입니다.
+                                </div>
+                                <button class="btn-close"><span>닫기</span></button>
+                            </div>
+							<div class="kb-form_inner form-select">
+								<button type="button" class="selected-option">선택 option 1</button>
+								<select name="" id="formSelectSample02" title="면적">
+									<option value="">면적</option>
+									<option value="" selected="">46.28㎡ 방1개, 욕실1개</option>
+									<option value="">46.28㎡ 방1개, 욕실1개</option>
+									<option value="">46.28㎡ 방1개, 욕실1개</option>
+									<option value="">46.28㎡ 방1개, 욕실1개</option>
+								</select>
+							</div>
+							<em class="validation">면적을 선택해주세요.</em>
+							<em class="validation">KB시세 정보가 존재하지 않습니다.</em>
+						</div>
+					</div>
+					<div class="possession">
+						<div class="kb-form my-purchase-price" data-status="error">
+							<label for="purchasePrice" class="required">나의 매입가</label>
+							<div class="kb-form_inner form-text">
+								<input type="text" inputmode="numeric" id="purchasePrice" placeholder="" maxlength="7" value="" data-unit="만원" data-action="autoSeperator"> <!-- 수정:2021-10-14 최대 글자수 수정 -->
+								<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+							</div>			
+							<p class="hangul">-</p>
+							<em class="validation">나의 매입가를 입력해 주세요.</em>
+							<p class="info-msg">시세(KB부동산 평균가 <span class="num">2021.04.30</span> 기준)<br><span class="c-blue"><span class="num" data-unit-after="억">12</span> <span class="num" data-unit-after="만원">1,000</span></span></p> <!-- 2021-09-09` 수정 -->
+						</div>
+						<div class="kb-form datepicker" data-status="error">
+							<label for="purchaseDate">매입일</label>
+							<div class="kb-form_inner form-text">
+								<input type="text" id="purchaseDate" readonly="" placeholder="날짜입력">
+							</div>						
+							<em class="validation">매입일을 정확하게 입력해 주세요.</em>						
+							<em class="validation">매입일은 오늘 날짜까지만 가능합니다.</em>
+						</div>
+						<div class="kb-form" data-status="">
+							<label for="depositPrice">세입자 보증금</label>
+							<div class="kb-form_inner form-text">
+								<input type="text" inputmode="numeric" id="depositPrice" placeholder="" maxlength="7" value="" data-unit="만원" data-action="autoSeperator"> <!-- 수정:2021-10-14 최대 글자수 수정 -->
+								<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+							</div>											
+							<p class="hangul">-</p>
+						</div>
+						<div class="kb-form" data-status="">
+							<label for="monthlyPrice">세입자 월세</label>
+							<div class="kb-form_inner form-text">
+								<input type="text" inputmode="numeric" id="monthlyPrice" placeholder="" maxlength="7" value="" data-unit="만원" data-action="autoSeperator"> <!-- 수정:2021-10-14 최대 글자수 수정 -->
+								<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+							</div>											
+							<p class="hangul">-</p>
+						</div>
+					</div>
+					<div class="rental">
+						<div class="kb-form" data-status="error">
+							<label for="myDepositPrice" class="required">나의 보증금</label>
+							<div class="kb-form_inner form-text">
+								<input type="text" inputmode="numeric" id="myDepositPrice" placeholder="" value="" data-unit="만원" data-action="autoSeperator">
+								<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+							</div>											
+							<p class="hangul">-</p>
+							<em class="validation">나의 보증금을 입력해 주세요.</em>
+						</div>
+						<div class="kb-form" data-status="">
+							<label for="myMonthlyPrice">나의 월세</label>
+							<div class="kb-form_inner form-text">
+								<input type="text" inputmode="numeric" id="myMonthlyPrice" placeholder="" maxlength="7" value="" data-unit="만원" data-action="autoSeperator"> <!-- 수정:2021-10-14 최대 글자수 수정 -->
+								<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+							</div>											
+							<p class="hangul">-</p>
+						</div>
+						<div class="kb-form datepicker" data-status="error">
+							<label for="contractDate">계약일</label>
+							<div class="kb-form_inner form-text">
+								<input type="text" id="contractDate" readonly="">
+							</div>
+							<em class="validation">계약일을 입력해 주세요</em>
+							<em class="validation">계약일을 정확하게 입력해 주세요</em>
+							<em class="validation">계약일은 오늘 날짜까지만 입력할 수 있습니다</em>
+						</div>
+						<div class="kb-form datepicker" data-status="error">
+							<label for="maturityDate">만기일</label>
+							<div class="kb-form_inner form-text">
+								<input type="text" id="maturityDate" readonly="">
+							</div>
+							<em class="validation">만기일을 입력해 주세요</em>
+							<em class="validation">만기일을 정확하게 입력해 주세요</em>
+							<em class="validation">만기일이 계약일보다 빠릅니다</em>
+						</div>
+					</div>
+				</section>
+				<section class="kb-sec select-account">
+					<h2 class="h4">대출계좌 선택</h2>
+					<ul class="list">
+						<li>
+							<span class="form-checkbox"><input type="checkbox" id="loanAccount_1" name="radioSample02"><label for="loanAccount_1">KB국민은행 자동차대출</label></span>
+							<dl class="description-list">
+								<dt>
+									<strong class="account num">81691604111122</strong>
+								</dt>
+								<dd><strong class="amount"><span class="num" data-unit-after="원">13,000,000</span></strong></dd>
+							</dl>
+						</li>
+						<li>
+							<span class="form-checkbox"><input type="checkbox" id="loanAccount_2" name="radioSample02"><label for="loanAccount_2">신한은행 신용대출</label></span>
+							<dl class="description-list">
+								<dt>
+									<strong class="account num">81691604111122</strong>
+								</dt>
+								<dd><strong class="amount"><span class="num" data-unit-after="원">13,000,000</span></strong></dd>
+							</dl>
+						</li>
+					</ul>
+				</section>
+				<section class="kb-sec nick-setting">
+					<h2 class="is-hidden">별명</h2>
+					<div class="kb-form" data-status="">
+						<label for="nickname">별명</label>
+						<div class="kb-form_inner form-text">
+							<input type="text" id="nickname" maxlength="10" value="" placeholder="최대 10자">
+							<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+						</div>
+					</div>
+				</section>
+				<section class="kb-sec check-management">
+					<h2 class="is-hidden">관리비</h2>
+					<span class="btn-switch label-front">
+						<input type="checkbox" id="checkManagement">
+						<label for="checkManagement"><span>관리비 확인하기</span></label>
+					</span>
+					<p class="info">이체내역이나 카드결제내역에서 관리비를 확인합니다.</p>
+				</section>
+				<div class="sticky-bottom">
+					<div class="btn-area">
+						<button class="btn-solid gray"><span>이전</span></button>
+						<button type="button" class="btn-solid" data-action="btnApply"><span>등록</span></button>
+					</div>
+				</div>
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (modal, bottom sheet) // -->
+		<div class="layered">
+			@@include('@@webRoot/html/_layered/bs-calendar.html')
+		</div>
+		<!-- // Layer (modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+	<script>
+        $(document).ready(function(){
+			
+			// 주거형태 항목 변경
+			var $myHouseWrap = $('.my-house');
+			if($myHouseWrap){
+				$('input[name=housingType]').on('change',function(){
+					let val = $(this).val();
+					switch(val){
+						case '전세/월세': 
+							$myHouseWrap.find('.possession').hide();
+							$myHouseWrap.find('.rental').show();
+						break
+						default:
+							$myHouseWrap.find('.rental').hide();
+							$myHouseWrap.find('.possession').show();
+						break
+					}
+				});  
+			}
+
+			
+			//alert
+			$('button[data-action=btnApply]').on('click',function(){
+				modalPopup({
+					title: "",
+					message: "나의 보증금을 입력해 주세요.<br>계약일을 입력해 주세요.<br>오늘까지만 입력할 수 있습니다.<br>계약일을 정확하게 입력해 주세요.<br>만기일을 입력해 주세요.<br>만기일을 정확하게 입력해 주세요.<br>만기일이 계약일보다 빠릅니다.",
+					type: "alert"
+				});
+			});
+		
+		})
+	</script>
+</body>
+
+</html>

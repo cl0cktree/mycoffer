@@ -35,6 +35,13 @@
         .chart-sample ul{display:flex;flex-wrap:wrap;}
         .chart-sample li{flex:0 1 320px;margin:10px;padding:10px;text-align:center;border:1px solid #ddd;background-color:#fff;}
         .chart-sample li .tit{display:block;font-weight:bold;}
+        .pattern-sample{width:100%;}
+        .pattern-sample > li{flex:0 0 100%;}
+
+        .pattern{display:flex;flex-wrap:wrap;}
+        .pattern li{flex:none;width:calc(100% / 8);margin-bottom:10px;text-align:center;font-size:12px;}
+        .pattern li span{display:block;width:calc(100% - 4px);margin:0 auto 8px;padding-top:calc(100% - 4px);}
+        
     </style>
 </head>
 
@@ -199,6 +206,12 @@
             </ul>
         </div>
         <hr>
+        <div class="box chart-sample">
+            <h2>[웹접근성] Chart 패턴 BG</h2>
+            <div class="annotation"><a href="./highchart/bar-graph_patterned.html" target="_blank"><span>상세보기(새창)</span></a></div>
+            <ul class="pattern"></ul>
+        </div>
+        <hr>
 
         <div class="box fold mt20">
             <h2>Swiper Chart 샘플</h2>
@@ -254,8 +267,15 @@
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- <script src="@@webRoot/static/common/lib/swiper.min.js"></script> -->
     <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>
+    <script src="@@webRoot/static/common/lib/highcharts/pattern-fill.js"></script>
     <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
     <script>
+
+        //pattern sample
+        chartBg.forEach(function(element, index){            
+            $('.pattern').append('<li><span style="background:url(' + element.pattern + ')"></span>chartBg[' + index  + ']</li>')
+        });
+
         // highchart 공통 options
         Highcharts.setOptions({
             title: { text: null },

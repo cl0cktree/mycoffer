@@ -38,7 +38,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .btn-add-data i{vertical-align:middle;}
 .bottom-sheet[data-layered-name=mys_as_04_02_00_p1] .grid-list li img{width:24px;height:24px;}
 .no-data-wrap{padding-top:3.8rem;padding-bottom:10rem;}
-.detail-list-wrap .period-con{border-bottom:1px solid $kb-ui05;padding:24px 0 12px;}
+.detail-list-wrap .period-con{border-bottom:1px solid $kb-ui05;padding:24px 0 12px;text-align:right;}
 .detail-list-wrap .d-list li{border-bottom:1px solid $kb-ui09;padding:15px 0;}
 .detail-list-wrap .d-list + .btn-more-plus{display:block;margin-top:2.4rem;}// 더보기 가이드 수정 2021-09-29 kek
 
@@ -139,6 +139,8 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .account-top.bottom-line{border-bottom:1px solid $kb-ui07;}
 .my-asset .account-top .account-wrap{padding:20px 24px;}
 .my-asset .account-top .account-wrap .btn-hide-account{top:32px;right:24px;z-index:2;}
+.my-asset .account-wrap .prod-kind.maturity{margin-bottom:8px;}//보험상세 뱃지 추가 2021-10-14 kek
+.my-asset .account-wrap .bank-book{display:block;}//보험상세 뱃지 추가 2021-10-14 kek
 .my-asset .account-wrap .agency-con{display:table;margin-top:10px;}
 .my-asset .account-wrap .agency-con .agency-logo{display:table-cell;width:24px;margin-right:7px;}
 .my-asset .account-wrap .agency-con .agency{display:table-cell;font-weight:normal;line-height:24px;font-size:18px;vertical-align:middle;padding-left:5px;}
@@ -492,10 +494,10 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .recommend-prod .list button .hash-tag{@include text($size:14px);color:$kb-ui04;margin-top:7px;}
 .my-asset .btn-similar{border-bottom:2px solid $kb-ui09;padding-bottom:6px;margin-bottom:4px;margin-right:4px;}
 .my-asset .btn-similar .arrow{display:block;position:absolute;top:50%;right:0;margin-top:-14px;overflow:hidden;text-indent:200%;width:2rem;height:2rem;background:url(../images/common/common.png) no-repeat  -4.4rem -2rem/16rem;}
-.my-asset .best-list-con{padding-top:44px;padding-bottom:48px;}
+.my-asset .best-list-con{padding-top:44px;padding-bottom:0;}
 .my-asset .best-list-con .top-area{vertical-align:top;}
 .my-asset .best-list-con .top-area .info{font-size:1.6rem;font-weight:normal;}
-.my-asset .best-list-con .top-area .btn-similar{@include text($size: 19px);display:block;position:relative;width:100%;vertical-align:top;text-align:left;margin:8px 0 0;padding-left:2px;border-color:#eceff0;}
+.my-asset .best-list-con .top-area .btn-similar{@include text($size: 19px);display:block;position:relative;width:100%;vertical-align:top;text-align:left;margin:8px 0 0;padding-left:2px;border-color:$kb-ui06;}//border 컬러 변경 2021-10-14 kek 
 .my-asset .best-list-con .top-area .btn-wrap{margin-top:20px;}
 .my-asset .best-list-con .top-area .s-tit{display:block;color:$kb-ui04;font-size:16px;font-weight:normal;}
 .my-asset .best-tit-con .tit{margin-bottom:15px;}
@@ -519,7 +521,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .best-list-con .list .account-wrap .user-info em{color:$kb-ui02;}
 
 /* 계좌세부조회 */
-.my-asset.pop-account-detail{margin-bottom:0;padding-bottom:60px;}
+.my-asset.pop-account-detail{margin-bottom:0;padding-bottom:30px;}//하단 여백수정 2021-10-14 kek
 .my-asset.pop-account-detail .account-top{position:relative;padding:0;margin-top:-10px;}
 .my-asset .account-top .account-wrap .agency-con .title,
 .my-asset .account-top .account-wrap .agency-con .num,
@@ -642,7 +644,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .exchange-Rate .swiper-slide .tit{font-size:14px;color:$kb-ui04;}
 .my-asset .exchange-Rate .swiper-slide .num{color:$kb-ui02;}
 .my-asset .exchange-Rate .chart-area{margin-right:24px;}
-.my-asset.foreign-currency .recommend-prod{border-bottom:none;}
+.my-asset.foreign-currency .recommend-prod{border-bottom:none;padding-bottom:0;}//하단 여백 수정 2021-10-14 kek
 .my-asset .exchange-Rate .icon-con img{width:24px;height:24px;}
 .my-asset .exchange-Rate .graph-notice{@include text($size:14px);color:$kb-ui04;text-align:right;margin-top:1rem;padding-right: 2.4rem;}
 .my-asset .exchange-Rate .graph-notice .plus{color:$color-blue;}
@@ -810,7 +812,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .asset-modify + .bottom-sheet_buttons {margin-top: 0;}
 
 /* 입출금 관리 */
-.my-asset.pay .list-area{border-bottom:0;}
+.my-asset.pay .list-area{border-bottom:0;padding-bottom:0;}
 .my-asset.pay .smart-loan-banner{margin-top:0;}
 .my-asset.pay .recommend-prod .list  .smart-loan-banner button{border:none;background:url(../../static/images/asset/banner_smart_loan2.png) no-repeat right center $kb-ui10;background-size:106px auto;}
 .my-asset .smart-fund-banner button{display:block;width:100%;text-align:left;background:url(../../static/images/asset/banner_smart_loan.png) no-repeat right center $kb-ui10;background-size:75px auto;padding:20px 26px;}
@@ -842,6 +844,13 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .monthly-amount dd{font-size:20px;text-align:right;}
 .monthly-amount dd .num{font-size:24px;font-weight:bold;}
 .monthly-amount dd .num:after{font-size:20px;font-weight:bold;}
+.my-asset.asset-insurance .best-list-con{border-bottom: 1rem solid #f7f7f8;padding-bottom:48px;}//하단 여백 수정 2021-10-14 kek
+// 미보유상품 추가 kek 2021-10-14 start
+.asset-insurance .prod-has-not{padding-top:44px;}//하단 여백 수정 2021-10-14 kek
+.asset-insurance .prod-has-not .annotation-txt{margin-top:20px;line-height:1.4;}
+.asset-insurance .prod-has-not .guarantee-traffic-light{border-top:1px solid $kb-ui03;border-bottom:1px solid $kb-ui09;padding-bottom:0;}
+.asset-insurance .prod-has-not .guarantee-traffic-light .grid-list > li:nth-child(n + 4){margin-top:0;}
+// 미보유상품 추가 kek 2021-10-14 end
 /* 연금 */
 
 /* 대출·부채 */
@@ -904,7 +913,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset.point .asset-summary .highcharts-box .graph-info > .h4{padding-right:30px;}
 .my-asset.point .p-list > dl > dd .simple-message{margin-top:5px;}
 .my-asset.point .p-list > dl > dd .simple-message .num{font-size:15px;}
-.my-asset.point .list-area{border-bottom:0;}
+.my-asset.point .list-area{border-bottom:0;padding-bottom:0;}//하단 여백 수정 2021-10-14 kek
 .my-asset.point .list-area .btn-area{margin-top:24px;}
 .my-asset.point .list-area .card-info{margin-top:10px;padding:0 24px;font-size:15px;color:$kb-ui03;}
 .my-asset.point .list-area .card-info li{position: relative; padding-left: 2.4rem; color:$kb-ui03;  font-size: 1.4rem; font-weight: normal; line-height: 2.0rem; letter-spacing: -0.01em;}
@@ -924,7 +933,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .pop-notice{line-height:1.4;font-weight:normal;}
 /* 수정 2021-07-01 // */ 
 .my-asset .realty-index .index-visual{display: flex;flex-direction: column;margin-top:6rem;}
-.my-asset .realty-index .index-visual img{height:auto;max-width:20rem;;}
+.my-asset .realty-index .index-visual img{height:auto;width:20rem;;} //이미지 크기 변경
 .my-asset .realty-index .index-visual [class^=info_type]{margin:2.8rem 0 4.8rem;text-align:center;color:$kb-ui04;line-height:1.4;font-weight:normal;}
 .my-asset .realty-index .index-visual .info_type2{margin: 24px 0 20%;}
 .kb-sec.index-area{background-color: $kb-ui11;height: calc(var(--vh, 1vh) * 100 - 132px);}

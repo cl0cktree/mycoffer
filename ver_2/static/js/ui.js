@@ -1790,7 +1790,7 @@ function drawInsuranceGauge(selector, current) {
 }
 
 function drawCreditGauge(selector, current, max) {
-    setGauge(selector, current, max, "#ffba53");
+    setGauge(selector, current, max, "#ffcf53");
 }
 
 function drawDdayGauge(selector, current, max) {

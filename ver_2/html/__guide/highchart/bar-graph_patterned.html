@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+@@include('@@webRoot/html/_include/app-head.html',{
+"title": "Last Depth | 1st Depth"
+})
+<style>
+    .pattern{display:flex;flex-wrap:wrap;}
+    .pattern li{width:calc(100% / 5);margin-bottom:10px;text-align:center;font-size:12px;}
+    .pattern li span{display:block;width:calc(100% - 4px);margin:0 auto 8px;padding-top:calc(100% - 4px);}
+    .pattern-src-desc{line-height:1.5;}
+    .h2 + .h3{margin-top:24px;}
+</style>
+</head>
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header //-->
+        t@@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit' :'Pattern Sample'
+        })
+        <!-- // app-header -->
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content">        
+                <section class="kb-sec">
+                    <h1 class="h2">웹접근성을 위한 차트 BG 패턴</h1>
+                    <h2 class="h3">차트 BG 패턴 소스 구성</h2>
+                    <div class="pattern-src-desc">
+                        <p>필요한 소스</p>                    
+                        <p>/static/common/lib/highcharts/pattern-fill.js</p>                    
+                        <p>pattern-fill.js 파일 안에 <span class="c-red">배열로 33가지 패턴</span>을 추가로 구성</p>
+                    </div>
+                </section>        
+
+                <hr class="hr-divide_24">
+
+                <section class="kb-sec">                    
+                    <h2 class="h3">차트 BG 패턴 목록</h2>
+                    <ul class="pattern mt8"></ul>
+                </section>
+
+                <hr class="hr-divide_24">
+
+                <section class="kb-sec">
+                    <h2 class="h3">차트 BG 샘플</h2>
+                    <div class="chart-area mt8" id="columnChart01"></div>                
+                    <div class="chart-area" id="barChart02"></div>
+                    <div class="chart-area" id="donutChart01"></div>
+                    <div class="chart-area" id="areaSplineChart"></div>
+                </section>
+
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+    </div>
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
+    <script src="@@webRoot/static/common/lib/highcharts/pattern-fill.js"></script>
+    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
+    <script src="https://code.highcharts.com/modules/variable-pie.js"></script>
+
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    <script>
+
+        //pattern sample
+        chartBg.forEach(function(element, index){            
+            $('.pattern').append('<li><span style="background:url(' + element.pattern + ')"></span>chartBg[' + index  + ']</li>')
+        });
+        
+        
+        // highchart 공통 options
+        Highcharts.setOptions({
+            title: { text: null },
+            subTitle: { text: null },
+            legend: { enabled: false },
+            credits: { enabled: false },
+            label : { fontFamily: 'KBFGText'},
+            credits: { enabled: false },
+            exporting: { enabled: false },
+        });
+        // column chart 선언
+        var columnChart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'columnChart01', // chart 삽입 target ID
+                type: "column",
+            },
+            title: {
+                text: 'column chart',
+                align: 'left',
+                style: {fontSize:'4vw',fontFamily: "KBFGText"}
+            },
+            tooltip: {
+                formatter: function () { 
+                    return gfn_comma3Digit(this.y) + "원"
+                },
+                padding: 10,
+                backgroundColor: "#FFF",
+                shadow: true,
+                borderRadius: 4,
+                verticalAlign: 'bottom',
+                borderColor: '#f3f3f3',
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '4vw',
+                    fontFamily: "KBFGText",
+                }
+            },
+            xAxis: {
+                type: "category",
+                categories: ["1월", "2월", "3월", "4월", "5월", "6월 13일"],
+                labels: {
+                    style: {
+                        color: "#aab0b8",
+                        fontSize: '2.4vw',
+                        fontFamily: 'KBFGText',
+                    }
+                }
+            },
+            yAxis: {
+                enabled: false,  // 사용 안함
+                labels: { enabled: false },  // 축 lebel 사용 안함
+                title: { enabled: false }, // 축 title 사용 안함
+                tickWidth: 0,  // 그리드 라인 너비
+                gridLineColor: 'transparsnt',  // 그리드 라인 컬러
+                plotLines: [
+                    {
+                        color: "#c7ccd1",
+                        width: 1,
+                        value: 500000,
+                        zIndex: 50,
+                        dashStyle: 'dash',
+                        //라인에 텍스트 있을 경우
+                        label: {
+                            text: "<span>평균지출금액 </span><b>1,000,000원</b>",
+                            align: "justify",
+                            y: -10,
+                            x: -5
+                        }
+                    }
+                ]
+            },
+            plotOptions: {
+                series: {
+                    color: '#c7ccd1', // 기본색상
+                    pointWidth: 16,  // 막대그래프 너비
+                    borderRadiusTopLeft: "50%",  // radius 값
+                    borderRadiusTopRight: "50%" // radius 값
+                }
+            },
+            series: [{
+                type: 'column',
+                data: [148.5, 216.4, 194.1, 95.6, 54.4,
+                        { // 특정 data값에 대하여 dataLabel을 붙임
+                            y: 29.9,
+                            //color: '#ffd338', // 강조할 data의 색상
+                            color: chartBg[0]
+                        }],
+                color: chartBg[26]  
+            }]
+        });
+
+        // bar chart 선언
+        var barChart2 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'barChart02', // chart 삽입 target ID                
+                type: 'bar',
+                height: '30%',
+                margin: [28,0,15,0]
+            },
+            title: {
+                text: 'barchart',
+                align: 'left',
+                style: {fontSize:'4vw',fontFamily: "KBFGText"}
+            },
+            subTitle: {
+                text: null
+            },
+            legend: {
+                enabled: false
+            },
+            credits: {
+                enabled: false
+            },
+            exporting: {
+                enabled: false
+            },
+            xAxis: {
+                visible: false
+            },
+            yAxis: {
+                visible: false,
+                max : 100, // 총 합이 100%
+            },
+            tooltip: {
+                formatter: function () { 
+                    return this.series.name + " " + this.y + "%"
+                },
+                shape: 'rect',
+                padding: 5,
+                backgroundColor: "#FFF",
+                shadow: true,
+                borderRadius: 4,
+                borderColor: '#f3f3f3',
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '4vw',
+                    fontFamily: "KBFGText",
+                }
+            },
+            accessibility: {
+                point: { valueSuffix: '%' }
+            },
+            plotOptions: {
+                series: {
+                    pointWidth: 22,  // 막대그래프 너비
+                    stacking: 'normal',
+                    borderWidth: 1,
+                }
+            },
+            colors: [chartBg[3],chartBg[4],chartBg[5],chartBg[6],chartBg[7],chartBg[8],chartBg[9],chartBg[10],chartBg[12]].reverse(),
+            series: [{
+                name: '입출금',
+                data: [35,0]
+            }, {
+                name: '예적금',
+                data: [16,0]
+            }, {
+                name: '투자',
+                data: [12,0]
+            }, {
+                name: '보험',
+                data: [7,0]
+            }, {
+                name: '외화',
+                data: [8,0]
+            }, {
+                name: '부동산',
+                data: [10,0]
+            }, {
+                name: '자동차',
+                data: [7,0]
+            }, {
+                name: '페이',
+                data: [5,0]
+            }, {
+                name: '대출&middot부채',
+                data: [0,25]
+            }].reverse()
+        });
+    
+        // donut chart 선언
+        var donutChart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'donutChart01',
+                type: 'pie',
+                height: '100%',
+                margin: [0, 0, 0, 0]
+            },
+            title: {
+                text: 'donut chart',
+                align: 'center',
+                verticalAlign: 'middle',
+                style: {fontSize:'4vw',fontFamily: "KBFGText"}
+            },
+            tooltip: {
+                formatter: function () { 
+                    return this.y + "%"
+                },
+                padding: 10,
+                backgroundColor: "#FFF",
+                shadow: true,
+                borderRadius: 4,
+                verticalAlign: 'bottom',
+                borderColor: '#f3f3f3',
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '4vw',
+                    fontFamily: "KBFGText",
+                },
+                crosshairs: true
+            },
+            plotOptions: {
+                pie: {                    
+                    allowPointSelect: true,
+                    dataLabels: {
+                        enabled: false
+                    }
+                }
+            },
+            series: [{
+                innerSize: '50%',
+                borderWidth: 0,
+                data: [{
+                    name: '입출금',
+                    color: chartBg[13],
+                    y: 30
+                },{
+                    name: '예적금',
+                    color: chartBg[14],
+                    y: 25
+                },{
+                    name: '투자',
+                    color: chartBg[15],
+                    y: 20
+                },{
+                    name: '보험',
+                    color: chartBg[16],
+                    y: 15
+                },{
+                    name: '외화',
+                    color: chartBg[17],
+                    y: 5
+                },{
+                    name: '페이',
+                    color: chartBg[18],
+                    y: 5
+                }]
+            }]
+        });
+
+        // spline chart 선언
+        var areaSplineChart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'areaSplineChart', // chart 삽입 target ID
+                type: "areaspline",
+                height: (3 / 4 * 100) + '%' // 4:3 비율로 설정
+            },
+            tooltip: {
+                formatter: function () { 
+                    return '잔액 ' + gfn_comma3Digit(this.y) + "원"
+                },
+                padding: 10,
+                backgroundColor: "#FFF",
+                shadow: true,
+                borderRadius: 4,
+                verticalAlign: 'bottom',
+                borderColor: '#f3f3f3',
+                style: {
+                    fontWeight: 'bold',
+                    fontSize: '4vw',
+                    fontFamily: "KBFGText",
+                },
+                crosshairs: true,
+            },
+            xAxis: {
+                type: "category",
+                categories: ["3월", "4월", "5월", "6.13"],
+                labels: {
+                    style: {
+                        color: "#aab0b8",
+                        fontSize: '3.733vw',
+                        fontFamily: 'KBFGText',
+                    }
+                },
+            },
+            yAxis: {
+                enabled: false,  // 사용 안함
+                labels: { enabled: false },  // 축 lebel 사용 안함
+                title: { enabled: false }, // 축 title 사용 안함
+                tickWidth: 0,  // 그리드 라인 너비
+                gridLineColor: 'transparsnt',  // 그리드 라인 컬러,
+                plotLines: [{
+                    color: '#c7cbd0',
+                    width: 1,
+                    value: 300000,
+                    zIndex: 50,
+                    dashStyle: 'dot'
+                }]
+            },
+            plotOptions: {
+                series: {
+                    color: '#c7ccd1', // 기본색상
+                    lineWidth: 4,
+                    marker: {
+                        symbol: 'circle',
+                        enabled: true,
+                        radius: 4,
+                        fillColor: chartBg[28],
+                    },
+                },
+            },
+            series: [{
+                lineColor: '#d575c9',
+                color: chartBg[20],
+                data: [450000, 230000, 185210, 350000],
+            }]
+        });
+    </script>
+
+</body>
+</html>
