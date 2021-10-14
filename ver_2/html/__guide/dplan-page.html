@@ -3,31 +3,26 @@
 
 <head>
 	@@include('@@webRoot/html/_include/app-head-dplan.html',{
-		"title": "Last Depth | 1st Depth"
+		"title": "D플랜(은퇴자금 기록장)"
 	})
 </head>
 
 <body>
 	@@include('@@webRoot/html/_include/app-a11y.html')
-	<div class="app" data-page="submain" data-theme=""><!-- submain일때 (BG + GNB ) theme에 다라 이미지 변경-->
+	<div class="app">
 		<!-- app-header //-->
 		@@include('@@webRoot/html/_include/app-integrated-header.html',{
-			'pageTit' :'페이지 타이틀'
+			'pageTit' :'D플랜(은퇴자금 기록장)',
+			'type': 'home'
 		}) 
 		<!-- // app-header -->
 
 		<!-- app-container //-->
 		<div class="app-container">
 
-			<!-- app-lnb //-->
-			<div class="app-lnb">
-				
-			</div>
-			<!-- //app-lnb -->
 
 			<!-- dplan-area-in-mydata // -->
 			<main class="dplan-area-in-mydata">
-
 			</main>
 			<!-- // dplan-area-in-mydata -->
 
@@ -38,7 +33,7 @@
 
 	<!-- Script -->
 	@@include('@@webRoot/html/_include/common-js.html')
-
+	<!-- <script src="@@webRoot/static/js/ui.js"></script> -->
 	<!-- Add Script -->
 	<script>
 		function dplanLink(url) {

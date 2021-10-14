@@ -1989,6 +1989,8 @@ $(window).on('scroll',function(){
 //순서 변경
 if($('.order-change-list').length){
     $('.order-change-list').find('.order-change > button').on('click',function(){
+        var isDisabled = $(this).parents("li").hasClass("disabled");
+        if (isDisabled) return;
         var $eachList = $(this).parents('li');
         if($(this).hasClass('btn-order-next')){
             $eachList.insertAfter($eachList.next('li'));

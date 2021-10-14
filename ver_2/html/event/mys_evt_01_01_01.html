@@ -1,0 +1,122 @@
+<!-- [MYS_MN_06_01_04] 전체메뉴 > >마이데이터 선물함 > 리워드 혜택 (작성자: 누리어 시스템 이진우)// -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Last Depth | 1st Depth"
+    })
+
+    <style>
+        .select-sticker-img{display:flex;flex-wrap:wrap;margin-top:24px;}
+        .select-sticker-img > li{width:20%;padding:8px;}
+        .select-sticker-img button{position:relative;}
+        .select-sticker-img button.is-active:after{content:'';position:absolute;top:0;right:0;left:0;bottom:0;background-color:rgba(255,255,0,0.5)}
+    </style>
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header //-->
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'배너, 스티커 예제'
+        })
+        <!-- // app-header -->
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content">
+
+               
+
+
+            </main>
+            <!-- // app-content -->
+        </div>
+        <!-- // app-container -->
+    </div>
+
+    <div class="layered">
+        @@include('@@webRoot/html/event/layered/roullete.html')
+
+        <!-- 준회원 가입 동의 //-->
+        <div class="bottom-sheet" data-layered-name="bsAssociateMember">            
+            <div class="bottom-sheet_contents">
+                <section class="kb-sec">
+                    고객님은 KB국민카드 미회원 고객이시며, 포인트리를 포함한 이벤트 참여를 위해 아래 임시로 준회원 가입에 동의해주시기 바랍니다.                    
+                </section>
+            </div>            
+            <div class="not-today">
+                <span class="form-checkbox"><input type="checkbox" id="associateMember"><label for="associateMember">(임시)준회원 가입 동의</label></span>
+                <button type="button" class="btn-text sm btn-detail"><u>자세히보기</u></button>
+            </div>
+            <button class="btn-close" data-action="close"><span>닫기</span></button>
+        </div>
+        <!-- // 준회원 가입 동의 -->
+
+    </div>
+
+
+
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <script src="@@webRoot/static/js/floatingBanner.js"></script>
+
+    <script>
+        //샘플용 확률
+        var getOddsOfWinning = function(chance1,chance2,chance3,chance4,chance5,chance6) {
+            var cummprob = [chance1,chance2,chance3,chance4,chance5,chance6];
+            var x = Math.random();
+            var y = 0;
+            for (y = 0; y < cummprob.length; y++) {
+                if (cummprob[y] >= x) break;
+            }
+            return y;
+        };
+        
+        //룰렛 팝업 호출
+        gfn_layered.open('eventRoullete');
+        fnEventRoullete(4);
+
+        //회원이 아닐때 준회원 가입 동의 BS 호출
+        gfn_layered.open('bsAssociateMember');
+
+        //준회원 가입 관련 안내 모달 호출
+        $('.bottom-sheet[data-layered-name=bsAssociateMember]').on('click','.btn-text',function(){
+            modalPopup({
+                title: "",
+                message: "KB국민카드 미회원 고객의 경우 실시간 KB포인트리 지급이 어려우므로 임시적으로 준회원처리가 필요합니다.<br><br>(임시)준회원 가입에 동의하신 후 룰렛을 돌리실 수 있고, 포인트리 당첨시 리브메이트 앱에서 회원 가입하시거나 향후 KB국민카드 발급시 포인트리 사용이 가능합니다!"
+            });
+
+        });
+
+        //준회원 가입 동의 체크박스 checked
+        $('.bottom-sheet[data-layered-name=bsAssociateMember]').on('click','#associateMember',function(){                        
+            var $checkbox = $(this);
+            if($checkbox.prop('checked')){
+                modalPopup({
+                    title: "",
+                    message: "(임시)준회원 가입에 동의 하시겠습니까?",
+                    type: "confirm",
+                    textOkButton: "확인",
+                    textCancelButton: "취소",
+                    onOk: function() {
+                        gfn_layered.close('bsAssociateMember');
+                    },
+                    onCancel: function() {
+                        $checkbox.prop('checked', false)
+                    }
+                });
+            }
+        });
+
+        
+    </script>
+</body>
+</html>

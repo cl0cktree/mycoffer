@@ -4,7 +4,7 @@
     </div>
     <div class="popup_contents">
         <section class="kb-sec event-area event-roullete">
-            <strong class="event-tit">KB마이데이터 전체동의 <br>룰렛 이벤트</strong>
+            <strong class="event-tit">마이데이터동의 <br>룰렛 이벤트</strong>
             <div class="roulette">
                 <ul class="wheel" data-percentage="6"></ul>
                 <button type="button" class="btn-run-wheel"><span>룰렛돌리기<strong>START</strong></span></button>
@@ -68,13 +68,32 @@
     </div>
     <button class="btn-close" data-action="close"><span>닫기</span></button>
 </div>
+<div class="bottom-sheet" data-layered-name="bsPhishingInsurance">
+    <div class="bottom-sheet_header"><strong class="tit">마이데이터동의 룰렛 이벤트</strong></div>
+    <div class="bottom-sheet_contents">
+        <section class="kb-sec event-result">
+            <img src="@@webRoot/static/images/event/img-pointre.png" alt="">
+            <dl>
+                <dt>피싱/해킹 금융사기 보상보험 무료가입</dt>
+                <dd>
+                    참여해 주셔서 감사합니다. <br>
+                    피싱 금융사기(전화/메신저/이메일 등)와 해킹 금융사기로부터 고객님의 소중한 자산을 보호해 드립니다.
+                </dd>
+            </dl>
+        </section>
+    </div>
+    <div class="bottom-sheet_buttons">
+        <button type="button" class="btn-solid" data-action="close"><span>보험 가입</span></button>
+    </div>
+    <button class="btn-close" data-action="close"><span>닫기</span></button>
+</div>
 
 <script>
     var promotionData = [
         {
-            "title" : '피싱해킹 금융사기 보상보험',            
-            "prizeText" : '무료가입', //text일 경우           
-            "thumb" : '@@webRoot/static/images/event/img-insurance.png',
+            "title" : '피싱/해킹 금융사기 보상보험 무료가입',            
+            "prizeText" : '무료가입', //단순 text일 경우           
+            "layerName" : "bsPhishingInsurance"     //(레이어 구성이 달라)서 마크업을 직접 했을 경우 
         },
         {
             "title" : 'KB 포인트리',
@@ -151,37 +170,41 @@
 
                     //Callback
                     //bottom sheet make                    
-                    roullete.result('bsNewEvent01');//bsNewEvent01 (임의의 이름 중복되지 않게 사용)
+                    roullete.result('bsNewEvent01',10);//bsNewEvent01 (임의의 이름 중복되지 않게 사용)
                 });
             },
             result : function(id, delay){
-                $('.bottom-sheet[data-layered-name="' + id + '"]').remove();
-                var resultHTML = '<div class=\"bottom-sheet\" data-layered-name=\"' + id + '\">';
-                    resultHTML += '<div class=\"bottom-sheet_header\">';
-                    resultHTML += '<span class=\"tit\">' + eventName + '</span>';
-                    resultHTML += '</div>';
-                    resultHTML += '<div class=\"bottom-sheet_contents\">';
-                    resultHTML += '<section class=\"kb-sec event-result\">';
-                    resultHTML += '<img src=\"' + promotionData[winningNum].thumb + '\" alt=\"' + promotionData[winningNum].prizeAmount + promotionData[winningNum].prizeUnit + '\">';
-                    resultHTML += '<dl>';
-                    if(promotionData[winningNum].prizeAmount != undefined) resultHTML += '<dt>' + promotionData[winningNum].title + ' <span class=\"num\" data-unit-after=\"' + promotionData[winningNum].prizeUnit + '\">' + promotionData[winningNum].prizeAmount + '</span>' + '</dt>';
-                    if(promotionData[winningNum].prizeText != undefined) resultHTML += '<dt>' + promotionData[winningNum].title + ' <span>' + promotionData[winningNum].prizeText + '</span>' + '</dt>';
-                    resultHTML += '<dd>';
-                    resultHTML += '참여해 주셔서 감사합니다.<br>피싱 금융사기(전화/메신저/이메일 등)와 해킹 금융 사기로부터 고객님의 소중한 자산을 보호해 드립니다.';
-                    resultHTML += '</dd>';
-                    resultHTML += '</dl>';
-                    resultHTML += '</section>';
-                    resultHTML += '</div>';
-                    resultHTML += '<div class=\"bottom-sheet_buttons\">';
-                    resultHTML += '<a href=\"javascript:;\" class=\"btn-solid\" role=\"button\"><span>마이데이터 선물함</span></a>';
-                    resultHTML += '</div>';
-                    resultHTML += '<button class=\"btn-close\" data-action=\"close\"><span>닫기</span></button>';
-                    resultHTML += '</div>';
 
-                    delay = delay == undefined ? 200 : delay ;
-                    //console.log(delay)
-                $('.layered').append(resultHTML);
-                //show result
+                //기 제작된 바텀 시트를 띄우는 경우 추가 
+                if(promotionData[winningNum].layerName != undefined && promotionData[winningNum].layerName != ''){
+                    id = promotionData[winningNum].layerName;
+                }else{                
+                    $('.bottom-sheet[data-layered-name="' + id + '"]').remove();
+                    var resultHTML = '<div class=\"bottom-sheet\" data-layered-name=\"' + id + '\">';
+                        resultHTML += '<div class=\"bottom-sheet_header\">';
+                        resultHTML += '<span class=\"tit\">' + eventName + '</span>';
+                        resultHTML += '</div>';
+                        resultHTML += '<div class=\"bottom-sheet_contents\">';
+                        resultHTML += '<section class=\"kb-sec event-result\">';
+                        resultHTML += '<img src=\"' + promotionData[winningNum].thumb + '\" alt=\"' + promotionData[winningNum].prizeAmount + promotionData[winningNum].prizeUnit + '\">';
+                        resultHTML += '<dl>';
+                        resultHTML += '<dt>' + promotionData[winningNum].title + ' <span class=\"num\" data-unit-after=\"' + promotionData[winningNum].prizeUnit + '\">' + promotionData[winningNum].prizeAmount + '</span>' + '</dt>';
+                        resultHTML += '<dd>';
+                        resultHTML += '참여해 주셔서 감사합니다.<br>자세한 사항은 마이데이터 선물함에서 확인하세요.';
+                        resultHTML += '</dd>';
+                        resultHTML += '</dl>';
+                        resultHTML += '</section>';
+                        resultHTML += '</div>';
+                        resultHTML += '<div class=\"bottom-sheet_buttons\">';
+                        resultHTML += '<a href=\"javascript:;\" class=\"btn-solid\" role=\"button\"><span>마이데이터 선물함</span></a>';
+                        resultHTML += '</div>';
+                        resultHTML += '<button class=\"btn-close\" data-action=\"close\"><span>닫기</span></button>';
+                        resultHTML += '</div>';
+                        
+                    $('.layered').append(resultHTML);
+                }
+
+                //show result                
                 setTimeout(function () {
                     gfn_layered.open(id);
                 }, delay);
@@ -198,5 +221,6 @@
         roullete.init();
     };
        
+    
 </script>
 

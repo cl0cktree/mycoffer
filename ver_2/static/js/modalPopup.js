@@ -187,7 +187,8 @@
         onOk: function() {},
         onCancel: function() {},
         autoDestroy: false,
-        duration: 300
+        duration: 300,
+        commonUse : ''  //개발요청(공통 모달 사용 확인)
     }
     
     var modalPopupIdx = 0;
@@ -199,7 +200,8 @@
             type: "alert",	// alert , confirm
             textOkButton: "확인",
             textCancelButton: "취소",
-            onOk: undefined
+            onOk: undefined,
+            commonUse : ''
         }
     
         var settings = ($.isPlainObject(parameters))
@@ -232,7 +234,11 @@
         // html += `			</div>`;
         // html += `		</div>`;
         // html += `	</div>`;
-        html += `	<div class="modal" id="${id}" style="z-index:${zIdex}">`;
+        if(settings.commonUse != ''){
+            html += `	<div class="modal" id="${id}" style="z-index:${zIdex}" data-common-use="${settings.commonUse}">`;
+        }else{
+            html += `	<div class="modal" id="${id}" style="z-index:${zIdex}">`;
+        }        
         if (settings.title != "") {
             html += `		<div class="modal_header">`;
             html += `			<strong class="tit">${settings.title}</strong>`;

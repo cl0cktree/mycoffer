@@ -4,6 +4,56 @@
 .content-tit{display:block;font-size:16px}
 .my-fun-data .chart-area + .legend-unit{margin-top:2rem}
 .bottom-sheet_buttons a[type="button"]{outline:none} // bottom-sheet 하단 버튼 outline 제거
+// 211015 : 스토리텔링 모션 공통 s
+.storytelling-wrap .item-box .item::after,
+.storytelling-wrap .item-box .item::before,
+.storytelling-wrap .item-box .item .item-img::before,
+.storytelling-wrap .item-box .item .item-img::after{position:absolute;content:'';display:block;background-size:100% auto;background-repeat:no-repeat;opacity:0;transform-origin:center}
+.storytelling-wrap .item-box .item.ybbs::before{width:1.6rem;height:1.6rem;background-image:url(../images/special/img_motion_item-circle_yb.png)}
+.storytelling-wrap .item-box .item.ybbs::after{width:1.2rem;height:1.2rem;background-image:url(../images/special/img_motion_item-circle_bs.png)}
+.storytelling-wrap .item-box .item.ysbb::before{width:1.2rem;height:1.2rem;background-image:url(../images/special/img_motion_item-circle_ys.png)}
+.storytelling-wrap .item-box .item.ysbb::after{width:1.6rem;height:1.6rem;background-image:url(../images/special/img_motion_item-circle_bb.png)}
+.storytelling-wrap .item-box .item .item-img{position:relative;width:100%;height:100%}
+.storytelling-wrap .item-box .item .item-img::before{width:3.2rem;height:1.7rem;background-image:url(../images/special/img_motion_item_line.png)}
+.storytelling-wrap .item-box .item .item-img::after{width:5.3rem;height:3.5rem;background-image:url(../images/special/img_motion_item_shadow.png)}
+//일반 page
+.storytelling-wrap .my-expense-type .item-box::before{animation:enterPop 1s cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards}
+.storytelling-wrap .my-expense-type .item-box .item{position:absolute;transform:scale(0);animation:enterPop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards 0.3s}
+.storytelling-wrap .my-expense-type .item-box .item::before{animation:fadeIn 0.3s linear 1 0.6s forwards, floating 3s linear infinite}
+.storytelling-wrap .my-expense-type .item-box .item::after{animation:fadeIn 0.3s linear 1 1s forwards, floating 3s linear infinite 0.3s}
+.storytelling-wrap .my-expense-type .item-box .item .item-img::before{animation:fadeIn 0.3s linear 1 0.8s forwards, floating 3s ease-in-out infinite}
+.storytelling-wrap .my-expense-type .item-box .item .item-img::after{animation:floatingShadow 3s ease-in-out infinite 0.8s}
+// swiper 내부
+.swiper-slide-active .item-box::before{animation:enterPop 1s cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards}
+.swiper-slide-active .item-box .item{position:absolute;transform:scale(0);animation:enterPop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards 0.3s}
+.swiper-slide-active .item-box .item::before{animation:fadeIn 0.3s linear 1 0.8s forwards, floating 3s linear infinite}
+.swiper-slide-active .item-box .item::after{animation:fadeIn 0.3s linear 1 1.2s forwards, floating 3s linear infinite 0.3s}
+.swiper-slide-active .item-box .item .item-img::before{animation:fadeIn 0.3s linear 1 1s forwards, floating 3s ease-in-out infinite}
+.swiper-slide-active .item-box .item .item-img::after{animation:floatingShadow 3s ease-in-out infinite 1s}
+@keyframes enterPop {
+    0%{transform:scale(0)}
+    100%{transform:scale(1)}
+}
+@keyframes fadeIn {
+	0%{opacity:0}
+	100%{opacity:1}
+}
+@keyframes floating {
+	0%{transform:translatey(0px)}
+	50%{transform:translatey(-10px)}
+	100%{transform:translatey(0px)}
+}
+@keyframes floatingRotate {
+	0%{transform:rotate(-55deg) translate(0, 0)}
+	50%{transform:rotate(-55deg) translate(1rem, -0.5rem)}
+	100%{transform:rotate(-55deg) translate(0, 0)}
+}
+@keyframes floatingShadow {
+	0%{opacity:0.5}
+	50%{opacity:1}
+	100%{opacity:0.5}
+}
+// 211015 : 스토리텔링 모션 공통 e
 // top summary area
 .my-fun-data .summary-area{padding-top:22px;padding-bottom:24px;background-color:#faf6f0}
 .my-fun-data .summary-area .summary-tit{display:flex;align-items:flex-start;justify-content:space-between}
@@ -21,7 +71,7 @@
 .my-fun-data .summary-desc dd:first-of-type{margin-top:0}
 .my-fun-data .summary-desc dd{text-align:right;font-weight:bold}
 .my-fun-data .summary-desc dd .num{display:inline-block;margin-left:10px;font-weight:bold}
-.my-fun-data .summary-desc .summary-img{width:auto;height:12.6rem}
+.my-fun-data .summary-desc .summary-img{width:auto;height:12.4rem} // 이미지 변경되어 크기 수정
 .my-fun-data .summary-desc .summary-img img{width:auto;height:100%}
 .my-fun-data .comment-box{font-size:1.6rem}
 
@@ -47,63 +97,46 @@
 .myfundata-menu li+li{margin-top:2.4rem}
 .myfundata-menu li a{display:flex;justify-content:space-between}
 .myfundata-menu li .tit + span{display:block;margin-top:1.3rem;font-size:14px;line-height:20px;color:$kb-ui03}
-.myfundata-menu li .img-box{width:13rem} // 아이콘 변경되어 크기 수정
+.myfundata-menu li .img-box{width:13rem} // 이미지 변경되어 크기 수정
 /* MY FUN DATA > menu bottom sheet */
 .myfundata-menu-bs{padding-bottom:0}
 .myfundata-menu-bs .kb-sec{display:flex;align-items:flex-start;justify-content:space-between;margin-top:32px}
 .myfundata-menu-bs .kb-sec:first-child{margin-top:0;padding-bottom:2.4rem}
 .myfundata-menu-bs .kb-sec .tit{font-weight:normal}
 .myfundata-menu-bs .kb-sec .tit strong{font-weight:bold}
-.myfundata-menu-bs .kb-sec .img-box{width:auto;height:11.9rem} // 아이콘 변경되어 크기 수정
-.myfundata-menu-bs .kb-sec .img-box img{width:auto;height:100%} // 아이콘 변경되어 크기 수정
+.myfundata-menu-bs .kb-sec .img-box{width:auto;height:11.9rem} // 이미지 변경되어 크기 수정
+.myfundata-menu-bs .kb-sec .img-box img{width:auto;height:100%} // 이미지 변경되어 크기 수정
 //스토리텔링
 .my-fun-data .swiper-container{padding-bottom:3rem} // 하단 여백 수정 (5rem > 3rem)
 @media screen and (min-width: 414px){  // 하단 여백 수정 (화면이 클 때)
     .my-fun-data .swiper-container{padding-bottom:5rem}
 }
 
+// 211015 : 전체 일러스트 및 모션 수정 s
 /* [MYS_SP_02_00_02] 부자스토리텔링 */
 .rich-storytelling .swiper-container{padding-bottom:4rem}
 .storytelling-wrap .item-box{border-radius:50%}
 .storytelling-wrap .item{position:absolute}
-//동전들
-.storytelling-wrap .coins{bottom:6.3rem;left:0;display:flex;align-items:flex-end;justify-content:center;width:100%}
-.storytelling-wrap .coins li{position:relative}
-.storytelling-wrap .coins li img{opacity:0;transform:translateY(-50px)}
-.storytelling-wrap.swiper-slide-active .coins li img{opacity:1;transform:translateY(0);transition:all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.7s}
-.storytelling-wrap .coins li:nth-child(1){width:7.1rem;}
-.storytelling-wrap .coins li:nth-child(2){width:3.2rem;}
-.storytelling-wrap .coins li:nth-child(2) img{transition-delay:0.75s}
-.storytelling-wrap .coins li:nth-child(3){width:7.3rem;}
-.storytelling-wrap .coins li:nth-child(3) img{transition-delay:0.8s}
 // 어느날 나에게 50억이 생긴다면 01
-.falling-moneybag .cloud{top:4.5rem;left:0;width:100%;padding:0 3.3rem 0 4.5rem}
-.falling-moneybag .cloud p{width:100%}
-.falling-moneybag .cloud p img{width:auto;height:100%}
-.falling-moneybag .cloud p:first-child{height:4.9rem;margin:0;text-align:left}
-.falling-moneybag .cloud p:first-child img{transform:translateX(-150%)}
-.falling-moneybag .cloud p:last-child{height:2.2rem;margin-top:1.6rem;text-align:right}
-.falling-moneybag .cloud p:last-child img{transform:translateX(180%)}
-.falling-moneybag.swiper-slide-active .cloud p img,
-.falling-moneybag.swiper-slide-active .cloud p img{transform:translateX(0);transition:transform 0.6s ease-out}
-.falling-moneybag .bag{bottom:7.8rem;left:calc(50% - 51px);width:93px;height:110px}
-.falling-moneybag .bag img{opacity:0;transform:translateY(-50px)}
-.falling-moneybag.swiper-slide-active .bag img{opacity:1;transform:translateY(0);transition:all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s}
+.falling-moneybag .item{top:7rem;left:3.1rem;width:21.3rem;height:14.7rem}
+.falling-moneybag .item::before{top:6rem;right:1.3rem}
+.falling-moneybag .item::after{top:6rem;left:2rem}
+.falling-moneybag .item .item-img::before{top:2.7rem;left:0.5rem}
+.falling-moneybag .item .item-img::after{top:3rem;left:-0.8rem}
 // 어느날 나에게 50억이 생긴다면 02
-.bulb-on .bulb{left:calc(50% - 4rem);bottom:7rem;width:8rem;height:13rem}
-.bulb-on .bulb::after{position:absolute;left:3rem;bottom:2.6rem;content:'';display:block;width:2.3rem;height:6.9rem;margin:0 auto;opacity:0;background:url(../images/special/img_motion_item_bulb_light.png) no-repeat;background-size:100% auto}
-.bulb-on.swiper-slide-active .bulb::after{opacity:1;transition:opacity 0.5s ease 0.8s}
-.bulb-on.swiper-slide-active .coins li img{transition-delay:0.3s}
-.bulb-on.swiper-slide-active .coins li:nth-child(2) img{transition-delay:0.35s}
-.bulb-on.swiper-slide-active .coins li:nth-child(3) img{transition-delay:0.4s}
+.bulb-on .item{top:6.7rem;left:4.5rem;width:18.9rem;height:14.8rem}
+.bulb-on .item::before{top:0rem;right:4rem}
+.bulb-on .item::after{top:1.4rem;right:2rem}
+.bulb-on .item .item-img::before{top:5rem;left:-0.5rem}
+.bulb-on .item .item-img::after{top:5rem;left:-1.2rem}
 // 어느날 나에게 50억이 생긴다면 03
-.portfolio-report .money{right:4.2rem;top:10rem;width:7.9rem;height:7.8rem}
-.portfolio-report .money img{opacity:0;transform:rotate(-20deg);transform-origin:left bottom}
-.portfolio-report .paper{top:7.3rem;left:8rem;width:12.2rem;height:12.4rem}
-.portfolio-report .coins{left:4.7rem;bottom:6.7rem;width:7.1rem;height:9.4rem}
-.portfolio-report .coins img{opacity:0;transform:translateY(3rem)}
-.portfolio-report.swiper-slide-active .money img{opacity:1;transform:rotate(0);transition:all 0.6s ease 0.5s}
-.portfolio-report.swiper-slide-active .coins img{opacity:1;transform:translateY(0);transition:all 0.6s ease-out 0.5s}
+.portfolio-report .item{top:6.5rem;left:7.1rem;width:15.7rem;height:15.4rem}
+.portfolio-report .item::before{top:5rem;right:1.9rem}
+.portfolio-report .item::after{top:6.5rem;right:0}
+.portfolio-report .item .item-img::before{bottom:1rem;left:-2.5rem}
+.portfolio-report .item .item-img::after{bottom:-0.7rem;left:-3.8rem;transform:rotate(-55deg)}
+.portfolio-report .item-box .item .item-img::before{animation:fadeIn 0.3s linear 1 0.8s forwards, floatingRotate 3s ease-in-out infinite}
+// 211015 : 전체 일러스트 및 모션 수정 e
 
 /* [MYS_SP_02_00_03] 부자스토리텔링 시뮬레이션 */
 // 디자인 수정 반영
@@ -129,18 +162,18 @@
 
 /* [MYS_SP_02_00_04] 부자스토리탤링 시뷸레이션 완료 */
 .rich-simulation-complete .summary-desc{margin-top:1.4rem} // 여백 조정
-.rich-simulation-complete .summary-desc .summary-img{height:11rem}
-.rich-simulation-complete .rich-finance-compare{margin-top:32px}
+.rich-simulation-complete .summary-desc .summary-img{height:14.1rem}// 이미지 변경되어 크기 수정
+.rich-simulation-complete .rich-finance-compare{margin-top:4.2rem} // 상단 여백 조정
 .rich-simulation-complete .rich-finance-compare > p{line-height:2.3rem}
 .rich-simulation-complete .rich-finance-compare .accordion,
 .rich-simulation-complete .rich-finance-compare .accordion dt{border:0}
-.rich-simulation-complete .rich-finance-compare .accordion dt{font-weight:bold;border-bottom:2px solid $kb-ui04}
+.rich-simulation-complete .rich-finance-compare .accordion dt{font-weight:bold;border-bottom:2px solid $kb-ui07} // border-color 수정
 .rich-simulation-complete .rich-finance-compare .accordion dd{padding-top:0}
 .rich-simulation-complete .rich-finance-compare .accordion > dt.is-active + dd{padding-bottom:1.7rem;border-bottom:1px solid $kb-ui09}//디자인 수정 반영
 .more-view-box .btn-more-view.btn-line{padding:0}
 .more-view-box .btn-more-view i{vertical-align:middle}
 .comparison-list li+li{margin-top:3rem} // 간격 수정(25px > 3rem)
-.comparison-list .data-tit{display:block;width:100%;margin-bottom:16px}
+.comparison-list .data-tit{display:block;width:100%;margin-bottom:1rem} // 리스트 하단 여백 조정
 .comparison-list .data-tit [class*="icon-"]{margin-right:0.9rem;vertical-align:middle} // 정렬 수정 (vertical-align:middle 추가)
 .comparison-list .img{width:100px;height:90px;;margin-right:12px;background-color:$kb-ui09}
 .comparison-list .data{flex:1;display:flex;align-items:center;text-align:center}
@@ -152,6 +185,7 @@
 .comparison-list .data .num{font-size:15px;font-weight:bold}
 .comparison-list .data .percent .num{font-size:17px}
 .rich-comparison-graphs .legend-unit ul li:nth-child(4n+1){width:auto;min-width:15%}// 범례 width 수정
+.rich-comparison-graphs + .rich-finance-compare{margin-top:5rem} // margin-top 추가
 
 /* [MYS_SP_02_01_02]  나의 소비유형 > 소비유형선택 */
 .my-expense-type .summary-area{background:none}
@@ -166,127 +200,34 @@
 .my-expense-type .image-radio-group .img-icon img{width:100%;height:auto}
 .my-expense-type .image-radio-group .txt+.img-icon{margin-top:1rem}
 
+// 211015 : 전체 일러스트 및 모션 수정 s
 /* [MYS_SP_02_01_03]  나의 소비유형 > 소비유형선택 > 소비유형스토리텔링 */
 // car moving :뚜벅이싫어형
-// 일러스트 및 모션 수정 적용 s
-.storytelling-wrap .car-moving::before{animation:enterPop 1s cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards}
-.storytelling-wrap .car-moving .item{position:absolute;top:6.2rem;left:4.5rem;width:19.7rem;height:17rem;transform:scale(0);animation:enterPop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards 0.3s}
-.storytelling-wrap .car-moving .item::before,
-.storytelling-wrap .car-moving .item::after,
-.storytelling-wrap .car-moving .item .car::before,
-.storytelling-wrap .car-moving .item .car::after{position:absolute;content:'';display:block;background-size:100% auto;background-repeat:no-repeat}
-.storytelling-wrap .car-moving .item::before{top:6rem;left:4.9rem;width:1.6rem;height:1.6rem;background-image:url(../images/special/img_motion_item_circle.png);animation:floating 3s linear infinite 0.6s}
-.storytelling-wrap .car-moving .item::after{top:3rem;right:2.2rem;width:1.2rem;height:1.2rem;background-image:url(../images/special/img_motion_item_circle_sm.png);animation:floating 3s linear infinite 0.8s}
-.storytelling-wrap .car-moving .item .car{position:relative;width:100%;height:100%}
-.storytelling-wrap .car-moving .item .car::before{top:5.7rem;left:0.8rem;width:3.2rem;height:1.7rem;background-image:url(../images/special/img_motion_item_line.png);animation:floating 3s ease-in-out infinite 0.9s}
-.storytelling-wrap .car-moving .item .car::after{top:6rem;left:0.2rem;width:5.3rem;height:3.5rem;background-image:url(../images/special/img_motion_item_shadow.png);animation:floatingShadow 3s ease-in-out infinite 0.9s}
-// .storytelling-wrap .car-moving .item{position:absolute;top:70px;right:100%;width:17.6rem;height:11.9rem;animation:carRunning 1.8s linear 1 forwards}
-// .storytelling-wrap .car-moving .item .car{position:relative;width:100%;height:100%;animation:carStopMove 1.8s linear infinite forwards}
-// .storytelling-wrap .car-moving .item .car::before,
-// .storytelling-wrap .car-moving .item .car::after{position:absolute;content:'';display:block;width:3.3rem;height:3.3rem;border-radius:50%;background:url(../images/special/img_motion_item_wheel01.png) no-repeat;background-size:100% auto;animation:wheel 1s linear infinite forwards}
-// .storytelling-wrap .car-moving .item .car::before{left:0.95rem;bottom:-1.85rem;}
-// .storytelling-wrap .car-moving .item .car::after{right:2.75rem;bottom:-1.85rem;}
-@keyframes carRunning{
-    0%{transform:translateX(0)}
-    100%{transform:translateX(130%)}
-}
-@keyframes carRunningLt{
-    0%{transform:translateX(0)}
-    100%{transform:translateX(-120%)}
-}
-@keyframes carStopMove{
-    0%{transform:translateY(0)}
-    25%{transform:translateY(-5px)}
-    50%{transform:translateY(0)}
-    100%{transform:translateY(0)}
-}
-@keyframes wheel{
-    from{transform:rotate(0deg)}
-    to{transform:rotate(360deg)}
-}
-@keyframes enterPop {
-    0%{transform:scale(0)}
-    100%{transform:scale(1)}
-}
-@keyframes floating {
-	0%{transform:translatey(0px)}
-	50%{transform:translatey(-10px)}
-	100%{transform:translatey(0px)}
-}
-@keyframes floatingShadow {
-	0%{opacity:1}
-	50%{opacity:0.5}
-	100%{opacity:1}
-}
-// 일러스트 및 모션 수정 적용 e
+.storytelling-wrap .car-moving .item{top:6.2rem;left:4.5rem;width:19.7rem;height:17rem}
+.storytelling-wrap .car-moving .item::before{top:6rem;left:4.9rem}
+.storytelling-wrap .car-moving .item::after{top:3rem;right:2.2rem}
+.storytelling-wrap .car-moving .item .item-img::before{top:5.7rem;left:0.8rem}
+.storytelling-wrap .car-moving .item .item-img::after{top:6rem;left:0.2rem}
+
 // coffee-shower :커피샤워형
-.storytelling-wrap .coffee-shower{border-bottom-left-radius:50%;border-bottom-right-radius:50%;overflow:hidden}
-.storytelling-wrap .coffee-shower .coffee{left:10.5rem;top:9rem;width:8.8rem;height:11rem;opacity:0;animation:fadeDown 0.6s ease 1 forwards}
-.storytelling-wrap .coffee-shower .paper{left:7rem;top:14.5rem;width:6.2rem;height:6.3rem;opacity:0;animation:fadeUp 0.6s ease 1 forwards}
-.storytelling-wrap .coffee-shower .coin{top:0;left:0;width:100%;height:100%}
-.storytelling-wrap .coffee-shower .coin li{position:absolute}
-.storytelling-wrap .coffee-shower .coin li:nth-child(1){top:6.2rem;left:7.3rem;width:4rem;height:4rem;opacity:0;animation:fadeDown 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards 0.25s}
-.storytelling-wrap .coffee-shower .coin li:nth-child(2){top:5rem;right:8rem;width:2.8rem;height:1.1rem;opacity:0;animation:fadeDown 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards 0.45s}
-.storytelling-wrap .coffee-shower .coin li:nth-child(3){top:12.5rem;right:6.5rem;width:2.7rem;height:2.2rem;opacity:0;animation:fadeDown 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards 0.35s}
-@keyframes fadeDown{
-    0%{transform:translateY(-50px);opacity:0}
-    100%{transform:translateY(0);opacity:1}
-}
-@keyframes fadeUp{
-    0%{transform:translateY(50px);opacity:0}
-    100%{transform:translateY(0);opacity:1}
-}
+.storytelling-wrap .coffee-shower .item{top:7.1rem;left:6.1rem;width:17rem;height:15.2rem}
+.storytelling-wrap .coffee-shower .item::before{top:4rem;right:3.9rem}
+.storytelling-wrap .coffee-shower .item::after{top:5rem;right:2rem}
+.storytelling-wrap .coffee-shower .item .item-img::before{top:3.7rem;left:-2.5rem}
+.storytelling-wrap .coffee-shower .item .item-img::after{top:4rem;left:-3.8rem}
+
 // delivery :외식이좋아형
-.storytelling-wrap .delivery .item{position:absolute;top:50%;left:50%;transform:translate(-55%, -40%)}
-.storytelling-wrap .delivery .item::after{position:absolute;bottom:4.2rem;right:-2.5rem;content:'';display:block;width:3.2rem;height:2.1rem;background:url(../images/special/img_motion_item_wind.png) no-repeat;background-size:100% auto;transform:scaleX(-1)}
-.storytelling-wrap .delivery .motocycle{position:relative;left:123%;width:14.4rem;height:12.8rem;animation:carRunningLt 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards}
-.storytelling-wrap .delivery .motocycle img{position:relative;z-index:10}
-.storytelling-wrap .delivery .motocycle::before,
-.storytelling-wrap .delivery .motocycle::after{position:absolute;content:'';display:block;width:3.3rem;height:3.3rem;border-radius:50%;background:url(../images/special/img_motion_item_wheel.png) no-repeat;background-size:100% auto;animation:wheel 0.8s linear infinite forwards}
-.storytelling-wrap .delivery .motocycle::before{left:1rem;bottom:0}
-.storytelling-wrap .delivery .motocycle::after{right:0.8rem;bottom:0}
-.storytelling-wrap .delivery .food{position:absolute;transform:translateX(200px);animation:foodFollow 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards 0.1s}
-.storytelling-wrap .delivery .food01{top:0.7rem;right:1.2rem;width:6.1rem;height:5.6rem;z-index:10}
-.storytelling-wrap .delivery .food02{top:-2rem;right:-0.1rem;width:4.8rem;height:5.5rem;animation-delay:0.25s}
-.storytelling-wrap .delivery .food02::after{position:absolute;top:0.3rem;right:-3rem;content:'';display:block;width:2.8rem;height:2.6rem;background:url(../images/special/img_motion_item_chip_stick.png) no-repeat;background-size:100% auto}
-@keyframes foodFollow {
-    0%{transform:translateX(200px)}
-    100%{transform:translateX(0)}
-}
+.storytelling-wrap .delivery .item{top:7.7rem;left:5rem;width:18.1rem;height:13.4rem}
+.storytelling-wrap .delivery .item::before{top:1.5rem;right:0.2rem}
+.storytelling-wrap .delivery .item::after{top:3rem;right:2rem}
+.storytelling-wrap .delivery .item .item-img::before{top:1.7rem;left:-0.5rem}
+.storytelling-wrap .delivery .item .item-img::after{top:1.6rem;left:-1.8rem}
 // culture life :문화생활형
-.storytelling-wrap .culture-life{border-radius:50%}
-.storytelling-wrap .culture-life .cinema{position:absolute;top:54px;left:7.2rem}
-.storytelling-wrap .culture-life .ticket{position:absolute;top:7.6rem;right:-3.4rem;width:7.9rem;height:6.2rem}
-.storytelling-wrap .culture-life .ticket img{transform:translate(-55px, 10px);opacity:0;animation:slideIn_rtop 0.6s ease 1 forwards 0.9s}
-.storytelling-wrap .culture-life .film{width:12.6rem;height:12.6rem}
-.storytelling-wrap .culture-life .film::before{position:absolute;top:4.3rem;left:-3.9rem;content:'';display:block;width:14.1rem;height:9.7rem;background:url(../images/special/img_motion_item_roll_film.png) no-repeat;background-size:100% auto;opacity:0;;animation:fadeIn 0.4s linear 1 forwards 0.7s}
-.storytelling-wrap .culture-life .film img{position:relative;z-index:10;transform:translateX(170%) rotate(0);animation:tumbleInto 0.7s linear 1 forwards}
-.storytelling-wrap .culture-life .popcorn{position:absolute;top:calc(50% - 10px);left:50%;z-index:10;width:6.7rem;height:8.5rem}
-.storytelling-wrap .culture-life .popcorn::before,
-.storytelling-wrap .culture-life .popcorn::after{position:absolute;content:'';display:block;transform:translateY(20px) scale(0);animation:popInto 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards 1.2s}
-.storytelling-wrap .culture-life .popcorn::before{top:-11px;left:calc(50% + 1.8rem);width:1.6rem;height:1.6rem;background:url(../images/special/img_motion_item_corn.png) no-repeat;background-size:100% auto}
-.storytelling-wrap .culture-life .popcorn::after{top:0;left:calc(50% + 37px);width:1rem;height:1rem;background:url(../images/special/img_motion_item_corn-small.png) no-repeat;background-size:100% auto;animation-delay:1.4s}
-.storytelling-wrap .culture-life .popcorn img{opacity:0;transform:translateY(50px);animation:fallingBounce 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 1 forwards 1s}
-@keyframes tumbleInto{
-    0%{transform:translateX(170%) rotate(0)}
-    100%{transform:translateX(0) rotate(-360deg)}
-}
-@keyframes fadeIn{
-    0%{opacity:0}
-    100%{opacity:1}
-}
-@keyframes slideIn_rtop{
-    0%{opacity:1;transform:translate(-2rem, 1rem)}
-    100%{opacity:1;transform:translate(0, 0)}
-}
-@keyframes fallingBounce{
-    0%{opacity:0;transform:translateY(50px)}
-    100%{opacity:1;transform:translateY(0)}
-}
-@keyframes popInto{
-    0%{transform:translateY(20px) scale(0)}
-    100%{transform:translateY(0) scale(1)}
-}
+.storytelling-wrap .culture-life .item{top:7.2rem;left:6rem;width:17.7rem;height:12.8rem}
+.storytelling-wrap .culture-life .item::before{top:0.5rem;right:6.5rem}
+.storytelling-wrap .culture-life .item::after{top:2rem;right:4rem}
+.storytelling-wrap .culture-life .item .item-img::before{top:4.7rem;left:-3.2rem}
+.storytelling-wrap .culture-life .item .item-img::after{top:4.6rem;left:-4rem}
 
 /* [MYS_SP_02_01_03]  나의 소비유형 > 나의 소비유형 > 분석완료 */
 .my-expense-type-complete .recently-expense{margin-top:40px}
@@ -295,72 +236,26 @@
 
 /* [MYS_SP_02_02_02] MY FUN DATA > 숨은내돈찾기_스토리텔링 */
 //숨은내돈찾기01
-.find-point .item,
-.find-point .points li{position:absolute}
-.find-point .item p{margin:0}
-.find-point .card{top:10rem;left:7rem;width:12rem;height:95rem;transform:translateY(-5rem);opacity:0}
-.find-point .points .item{top:0;left:0;width:100%;height:100%}
-.find-point .points li img{transform:translateY(3rem) scale(0)}
-.find-point .points li:nth-child(1){top:5.7rem;right:6.9rem;width:5.7rem;height:3.3rem}
-.find-point .points li:nth-child(2){top:13.4rem;left:3.5rem;width:4.3rem;height:2.7rem}
-.find-point .points li:nth-child(3){bottom:6.4rem;right:5rem;width:5.7rem;height:5.6rem}
-.find-point.swiper-slide-active .card{transform:translateY(0);opacity:1;transition:all 0.5s ease}
-.find-point.swiper-slide-active .points li img{transform:translateY(0) scale(1);transition:transform 0.5s cubic-bezier(0.34, 1.56, 0.52, 1.39) 0.5s}
-.find-point.swiper-slide-active .points li:nth-child(1) img{transition-delay:0.6s}
-.find-point.swiper-slide-active .points li:nth-child(3) img{transition-delay:0.7s}
+.find-hidden-money .find-point .item{top:8.4rem;left:5.6rem;width:16.5rem;height:11.9rem}
+.find-hidden-money .find-point .item::before{top:-0.5rem;right:5.9rem}
+.find-hidden-money .find-point .item::after{top:0.5rem;right:-0.5rem}
+.find-hidden-money .find-point .item .item-img::before{top:6.7rem;left:-2.5rem}
+.find-hidden-money .find-point .item .item-img::after{top:6.5rem;left:-2.8rem;transform:rotate(-55deg)}
+.find-hidden-money .find-point .item .item-img::before{animation:fadeIn 0.3s linear 1 0.8s forwards, floatingRotate 3s ease-in-out infinite}
 //숨은내돈찾기02
-.alarm-clock .item p{margin:0}
-.alarm-clock .clock{position:absolute;top:9.6rem;left:9rem;width:9.2rem;height:10.5rem}
-.alarm-clock .clock::before,
-.alarm-clock .clock::after{position:absolute;content:'';display:block;height:auto;background-size:100% auto;background-repeat:no-repeat;opacity:0}
-.alarm-clock .clock::before{top:-1.8rem;left:-0.9rem;width:10.9rem;height:1.4rem;background-image:url(../images/special/img_motion_item_alarm_ring-big.png)}
-.alarm-clock .clock::after{top:-1.3rem;left:-0.4rem;width:9.8rem;height:0.9rem;background-image:url(../images/special/img_motion_item_alarm_ring.png)}
-.alarm-clock .clock p{position:relative}
-.alarm-clock .clock .body img{position:relative}
-.alarm-clock .clock .body::before{position:absolute;top:1.8rem;left:calc(50% - 1.1rem);content:'';display:block;width:1.9rem;height:0.6rem;background:url(../images/special/img_motion_item_clock-bell.png) no-repeat;background-size:100% auto;transform-origin:center bottom}
-.alarm-clock .clock .hand span{position:absolute;left:4.5rem;content:'';display:block;height:auto;transform-origin:center bottom}
-.alarm-clock .clock .hand span:first-child{bottom:4.8rem;width:0.4rem;transform:rotate(-15deg)}
-.alarm-clock .clock .hand span:last-child{bottom:5.1rem;width:0.4rem;transform:rotate(45deg)}
-.alarm-clock .coins{left:5.7rem;bottom:6rem;width:6rem;height:8rem}
-.alarm-clock .bankbook{bottom:9.4rem;right:4rem;width:9.9rem;height:5.9rem;opacity:0;transform:translateX(-3rem)}
-.alarm-clock.swiper-slide-active .clock::before,
-.alarm-clock.swiper-slide-active .clock::after{animation:blink 1s ease infinite forwards 2s}
-.alarm-clock.swiper-slide-active .clock::before{animation-delay:2.3s}
-.alarm-clock.swiper-slide-active .clock .body::before{top:0.22rem;transition:all 0.5s ease 1.8s}
-.alarm-clock.swiper-slide-active .hand span:first-child{transform:rotate(0);transition:transform 1.6s ease 0.2s}
-.alarm-clock.swiper-slide-active .hand span:last-child{transform:rotate(360deg);transition:transform 1.6s ease 0.2s}
-.alarm-clock.swiper-slide-active .bankbook{opacity:1;transform:translateX(0);transition:all 0.6s ease 1.8s}
-.alarm-clock.swiper-slide-active .drop-coin{top:0;left:0}
-.alarm-clock.swiper-slide-active .drop-coin p{position:absolute;opacity:0;transform:translateY(100px);animation:jump 0.6s cubic-bezier(0.34, 1.56, 0.52, 1.39) forwards 1.8s}
-.alarm-clock.swiper-slide-active .drop-coin p:first-child{top:5.6rem;left:12.1rem;width:2.5rem;height:2.3rem}
-.alarm-clock.swiper-slide-active .drop-coin p:last-child{top:13.3rem;left:16.7rem;width:1.9rem;height:1.2rem;animation-delay:2s}
-@keyframes blink{
-    0%{opacity:0}
-    30%{opacity:1}
-    60%{opacity:1}
-    100%{opacity:0}
-}
-@keyframes jump {
-    0%{opacity:0;transform:translateY(100px);}
-    100%{opacity:1;transform:translateY(0);}
-}
+.find-hidden-money .alarm-clock .item{top:7.5rem;left:3.4rem;width:18.5rem;height:14.4rem}
+.find-hidden-money .alarm-clock .item::before{top:10.5rem;left:1.5rem}
+.find-hidden-money .alarm-clock .item::after{top:12rem;left:3rem}
+.find-hidden-money .alarm-clock .item .item-img::before{top:4.2rem;right:-2rem}
+.find-hidden-money .alarm-clock .item .item-img::after{top:4.6rem;right:-3.8rem}
 //숨은내돈찾기03
-.find-money .item{position:absolute}
-.find-money .item p{margin:0}
-.find-money .safebox{top:7.7rem;left:4.7rem;width:17.7rem;height:16.6rem}
-.find-money .coins{top:11.9rem;left:10.3rem;width:7.1rem;height:9.4rem}
-.find-money .find-view{top:9.7rem;left:13.6rem;width:9.7rem;height:9.7rem}
-.find-money .find-view > img{opacity:0;position:absolute;top:0.8rem;left:0.6rem;width:2.8rem;height:4.7rem}
-.find-money.swiper-slide-active .find-view > img{opacity:1;transition:opacity 0.3s ease-in 1.4s}
-.find-money.swiper-slide-active .find-view p{animation:findMove 1.8s ease forwards 0.2s}
-@keyframes findMove {
-    0%{transform:translate(0, 0)}
-    25%{transform:translate(-90px, 30px)}
-    35%{transform:translate(-90px, 30px)}
-    60%{transform:translate(40px, -20px)}
-    70%{transform:translate(40px, -20px)}
-    100%{transform:translate(0,0)}
-}
+.find-hidden-money .find-money .item{top:8.6rem;left:4.3rem;width:17.2rem;height:13.7rem}
+.find-hidden-money .find-money .item::before{bottom:1rem;right:3.9rem}
+.find-hidden-money .find-money .item::after{top:4rem;left:0rem}
+.find-hidden-money .find-money .item .item-img::before{top:0.2rem;right:-2rem}
+.find-hidden-money .find-money .item .item-img::after{top:0.8rem;right:-3.8rem;transform:rotate(-55deg)}
+.find-hidden-money .find-money .item .item-img::before{animation:fadeIn 0.3s linear 1 0.8s forwards, floatingRotate 3s ease-in-out infinite}
+// 211015 : 전체 일러스트 및 모션 수정 e
 
 /* [MYS_SP_02_02_01] MY FUN DATA > 숨은내돈찾기 데이터분석완료 */
 .find-finance-list{margin-top:50px}
@@ -388,48 +283,44 @@
 .find-finance-list .content-tit dd .num{font-size:1.9rem}
 .find-finance-list .simple-message .link-arrow-after{margin-top:1.7rem;padding-right:2rem;text-align:right}
 .find-finance-list .no-data{padding-top:4.4rem;padding-bottom:4.4rem}
+.find-my-finance-complete .summary-area{background-color:$kb-ui10} // 211015 : 숨은내돈찾기 summary-area bg color 변경 
 .find-my-finance-complete .accordion dd{padding-bottom:2rem}
 .find-my-finance-complete .accordion dd .link-arrow-after{margin-top:24px;padding-right:2rem;text-align:right;font-size:1.4rem;color:$kb-ui04}
 
+// 211015 : 전체 일러스트 및 모션 수정 s
 /* [MYS_SP_02_05_02] MY FUN DATA > 나혼자스토리_스토리텔링 */
-.single-households .item p{margin:0}
 // 나혼자스토리01
-.single-households .home-wallet .home{left:7.6rem;bottom:5.9rem;width:7.2rem;height:6.9rem}
-.single-households .home-wallet .wallet{top:8.7rem;right:5.6rem;width:10.3rem;height:11.3rem;opacity:0;transform:translateX(-5rem)}
-.single-households .home-wallet .coin01{top:5.6rem;left:7.6rem;width:4.9rem;height:4.9rem;opacity:0;transform:translateY(5rem)}
-.single-households .home-wallet .coin02{top:10.5rem;left:4.4rem;width:3.6rem;height:3.4rem;opacity:0;transform:translateY(5rem)}
-.single-households .home-wallet.swiper-slide-active .wallet{opacity:1;transform:translateY(0);transition:all 0.8s ease}
-.single-households .home-wallet.swiper-slide-active .coin01,
-.single-households .home-wallet.swiper-slide-active .coin02{opacity:1;transform:translateY(0);transition:all 0.6s cubic-bezier(0.34, 1.56, 0.52, 1.39)}
-.single-households .home-wallet.swiper-slide-active .coin01{transition-delay:0.15s}
+.single-households .home-wallet .item{top:8.1rem;left:3.1rem;width:19.3rem;height:14.7rem}
+.single-households .home-wallet .item::before{bottom:3rem;left:2.9rem}
+.single-households .home-wallet .item::after{top:0.5rem;right:3rem}
+.single-households .home-wallet .item .item-img::before{top:1.7rem;right:-0.5rem;animation:fadeIn 0.3s linear 1 0.8s forwards, floatingRotate 3s ease-in-out infinite}
+.single-households .home-wallet .item .item-img::after{top:1.9rem;right:-2.5rem;transform:rotate(-55deg)}
 // 나혼자스토리02
-// .single-households .analyze{}
-.single-households .analyze .chart{top:8.5rem;left:5.3rem;width:12.1rem;height:10rem}
-.single-households .analyze .line{top:9.7rem;right:4.5rem;width:8.4rem;height:4.1rem}
-.single-households .analyze .line p{position:relative;width:0;height:100%;overflow:hidden}
-.single-households .analyze .line img{position:absolute;top:0;left:0;width:8.4rem;min-width:8.4rem;height:4.1rem}
-.single-households .analyze .column{right:4.6rem;bottom:7.2rem;width:8.2rem;height:6.1rem;overflow:hidden}
-.single-households .analyze .column img{transform:translateY(100%)}
-.single-households .analyze.swiper-slide-active .line p{width:100%;transition:width 0.6s ease 0.2s}
-.single-households .analyze.swiper-slide-active .column img{transform:translateY(0);transition:transform 0.6s ease 0.2s}
+.single-households .analyze .item{top:7.9rem;left:4.1rem;width:19.2rem;height:14.6rem}
+.single-households .analyze .item::before{top:1.5rem;right:2.3rem}
+.single-households .analyze .item::after{top:0.5rem;right:4rem}
+.single-households .analyze .item .item-img::before{top:3rem;left:-0.5rem}
+.single-households .analyze .item .item-img::after{top:3rem;left:-1.4rem}
 // 나혼자스토리03
-// .single-households .report{}
-.single-households .report .home{top:5.2rem;left:8.1rem;width:12.8rem;height:15.5rem}
-.single-households .report .check{top:11.7rem;right:4.2rem;width:3.8rem;height:3.8rem}
-.single-households .report .check img{transform:scale(0)}
-.single-households .report .graph{left:5.6rem;bottom:8.3rem;width:5.6rem;height:5.7rem;overflow:hidden}
-.single-households .report .graph img{transform:translateY(100%)}
-.single-households .report.swiper-slide-active .graph img{transform:translateY(0);transition:transform 0.6s ease 0.2s}
-.single-households .report.swiper-slide-active .check img{transform:scale(1);transition:transform 0.6s cubic-bezier(0.34, 1.56, 0.52, 1.39) 0.5s}
+.single-households .report .item{top:8.5rem;left:1.5rem;width:24.9rem;height:14.3rem}
+.single-households .report .item::before{top:-2rem;right:8.9rem}
+.single-households .report .item::after{top:-1rem;right:6.5rem}
+.single-households .report .item .item-img::before{top:2.7rem;left:3rem}
+.single-households .report .item .item-img::after{top:3rem;left:2.2rem}
+// 211015 : 전체 일러스트 및 모션 수정 e
 
 /* [MYS_SP_02_05_01] MY FUN DATA > 나혼자스토리_분석완료 */
+// 나혼자산다면 지출현황 순위 추가 및 디자인 수정
 .expenditure-status ul{@include flexBetween}
 .expenditure-status ul li{flex:1}
-.expenditure-status ul li span{display:block;min-height:7.4rem;padding-top:1.5rem;padding-bottom:1.2rem;border:1px solid $kb-ui08;border-radius:0.8rem;text-align:center;font-size:1.4rem;box-sizing:border-box}
-.expenditure-status ul li span [class*="icon"]{display:block;margin:0 auto 1.2rem}
-.expenditure-status ul li strong{display:block;margin-top:1.2rem;text-align:center;font-weight:bold}
+.expenditure-status ul li span{display:block;width:4rem;height:4rem;margin:0 auto 0.8rem;border-radius:50%;background-color:#edf1ff;font-size:1.4rem;text-align:center;line-height:4rem}
+.expenditure-status ul li span .num{font-size:1.5rem}
+.expenditure-status ul li > div{display:block;min-height:7.4rem;padding-top:1.5rem;padding-bottom:1.2rem;border:1px solid $kb-ui08;border-radius:0.8rem;text-align:center;font-size:1.4rem;box-sizing:border-box}
+.expenditure-status ul li > div [class*="icon"]{display:block;margin:0 auto 1.2rem}
+.expenditure-status ul li strong{display:block;margin-top:1.2rem;text-align:center}
+.expenditure-status ul li strong i[class*='icon-']{margin-left:0.9rem;vertical-align:bottom}
 .expenditure-status ul li+li{margin-left:0.9rem}
-.expenditure-status .total-summary{margin-top:2.3rem;padding:2rem;background-color:$kb-ui10}
+.expenditure-status .total-summary{margin-top:2.8rem;padding:2rem;background-color:$kb-ui10}
 .expenditure-status .total-summary span{display:inline-block}
 .expenditure-status .total-summary strong{font-weight:bold}
 .expenditure-status .btn-area > [class*="btn-"]{flex:none}
