@@ -1044,6 +1044,9 @@ $('.tab.swiper-container').each(function(idx) {
                 if ($tabContents.eq(idx).data('swiper')) {
                     $tabContents.eq(idx).data('swiper').update();
                 }
+                if ($tabContents.eq(idx).find(".swiper-container").data('swiper')) {
+                    $tabContents.eq(idx).find(".swiper-container").data('swiper').update();
+                }
                 //return false;
             }
         });

@@ -72,7 +72,7 @@
     <div class="bottom-sheet_header"><strong class="tit">마이데이터동의 룰렛 이벤트</strong></div>
     <div class="bottom-sheet_contents">
         <section class="kb-sec event-result">
-            <img src="@@webRoot/static/images/event/img-pointre.png" alt="">
+            <img src="@@webRoot/static/images/event/img-phishing.png" alt=""><!-- 수정:2021-10-15 -->
             <dl>
                 <dt>피싱/해킹 금융사기 보상보험 무료가입</dt>
                 <dd>
@@ -91,7 +91,7 @@
 <script>
     var promotionData = [
         {
-            "title" : '피싱/해킹 금융사기 보상보험 무료가입',            
+            "title" : '피싱/해킹 금융사기 보상보험',            
             "prizeText" : '무료가입', //단순 text일 경우           
             "layerName" : "bsPhishingInsurance"     //(레이어 구성이 달라)서 마크업을 직접 했을 경우 
         },
@@ -188,7 +188,11 @@
                         resultHTML += '<section class=\"kb-sec event-result\">';
                         resultHTML += '<img src=\"' + promotionData[winningNum].thumb + '\" alt=\"' + promotionData[winningNum].prizeAmount + promotionData[winningNum].prizeUnit + '\">';
                         resultHTML += '<dl>';
-                        resultHTML += '<dt>' + promotionData[winningNum].title + ' <span class=\"num\" data-unit-after=\"' + promotionData[winningNum].prizeUnit + '\">' + promotionData[winningNum].prizeAmount + '</span>' + '</dt>';
+                        if(promotionData[winningNum].prizText != undefined){//단순 text일 경우
+                            resultHTML += '<dt>' + promotionData[winningNum].title + promotionData[winningNum].prizText + '</dt>';
+                        }else{
+                            resultHTML += '<dt>' + promotionData[winningNum].title + ' <span class=\"num\" data-unit-after=\"' + promotionData[winningNum].prizeUnit + '\">' + promotionData[winningNum].prizeAmount + '</span>' + '</dt>';
+                        }                        
                         resultHTML += '<dd>';
                         resultHTML += '참여해 주셔서 감사합니다.<br>자세한 사항은 마이데이터 선물함에서 확인하세요.';
                         resultHTML += '</dd>';
