@@ -87,6 +87,7 @@
 .my-safe .safe-asset-list-data .my-safe-asset-box .description-list .num{font-size:1.8rem;}
 .my-safe .safe-asset-list-data .my-safe-asset-box>li:last-of-type{border-top:0.1rem solid $kb-ui09;}
 .my-safe .safe-asset-list-data .my-safe-asset-box>li a{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-align:center;align-items:center;width:100%;height:auto;padding-bottom:1.2rem;}
+.my-safe .safe-asset-list-data .my-safe-asset-box>li a:after{right:-0.5rem;}
 .my-safe .safe-asset-list-data .my-safe-asset-box>li a .h4{flex:calc(100% - 1.8rem);font-size:1.8rem;line-height:1.8rem;}
 .my-safe .safe-asset-list-data .my-safe-asset-box>li a .my-safe-right-icon{flex:1;}
 .my-safe .safe-asset-list-data .my-safe-asset-box>li>dl{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-align:center;align-items:center;width:100%;}
@@ -155,6 +156,7 @@
 .my-safe-enrollments .my-safe-asset-box>li:last-of-type{border-bottom:0rem solid $kb-ui09;}
 .my-safe-enrollments .my-safe-asset-box .h4{height:1.5rem;margin-left:1.4rem;font-size:1.5rem;line-height:1.5rem;}
 .my-safe-enrollments .my-safe-asset-box a{display:block;position:relative;width:100%;height:100%;}
+.my-safe-enrollments .my-safe-asset-box a:after{right:-0.5rem;}
 .my-safe-enrollments .my-safe-asset-box .icon-my-safe{background-color:transparent;background-image:url('../images/mysafe/main_icon_img_newb_64.png');background-size:9.6rem 6.4rem;width:3.2rem;height:3.2rem;border-radius:0%;margin-top:0rem;vertical-align:middle;}
 .my-safe-enrollments .my-safe-asset-box .icon-my-safe-01{background-position:0rem 0rem;}
 .my-safe-enrollments .my-safe-asset-box .icon-my-safe-02{background-position:6.4rem 0rem;}
@@ -295,6 +297,7 @@
 .my-safe-list>.kb-sec .my-safe-asset-box>li .icon-arrow-right:before {border-top:0.1rem solid $kb-ui03;border-right: 0.1rem solid $kb-ui03;}
 // .my-safe-list>.kb-sec .my-safe-asset-box>li:nth-of-type(2){padding-top:1rem;padding-bottom:1rem;border-top:0rem solid $kb-ui09;}
 .my-safe-list>.kb-sec .my-safe-asset-box>li a{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-align:center;align-items:center;width:100%;height:auto;}
+.my-safe-list>.kb-sec .my-safe-asset-box>li a:after{right:-0.5rem;}
 .my-safe-list>.kb-sec .my-safe-asset-box>li .h4{flex:calc(100% - 1.8rem);font-size:1.6rem;line-height:1.6rem;}
 .my-safe-list>.kb-sec .my-safe-asset-box>li a .my-safe-right-icon{flex:1;}
 .my-safe-list>.kb-sec .my-safe-asset-box>li>dl{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-align:center;align-items:center;width:100%;}
@@ -315,7 +318,7 @@
 .my-safe-list>.kb-sec .my-safe-asset-box .description-list{padding:0;}
 .my-safe-list>.kb-sec .my-safe-asset-box .my-variance-date dl dt{position:relative;padding-left:0em;margin:0;}
 .my-safe-list>.kb-sec .my-safe-asset-box .my-variance-date dl dt:before{content:'*';display:none;position:absolute;left:0;top:0.2em;}
-.my-safe-list>.kb-sec .my-safe-asset-box .my-variance-date-last{padding:0.6rem 0 0.6rem;border-top:0.1rem solid $kb-ui09;}
+.my-safe-list>.kb-sec .my-safe-asset-box .my-variance-date-last{display:none;padding:0.6rem 0 0.6rem;border-top:0.1rem solid $kb-ui09;}
 
 /* [MYS_AS_17_01_18_P1] 휴대폰 시세조회 */
 .mysafe-phone-value .myphone-value-title .myphone-value-title-factory{display:block;padding-bottom:1rem;}
@@ -323,13 +326,22 @@
 
 .mysafe-phone-value>.asset-my-phone{padding-bottom:1.6rem;font-weight:400;}
 .mysafe-phone-value>.asset-my-phone>ul{display:block;}
-.mysafe-phone-value>.asset-my-phone>ul>li{display:block;height:auto;background-color:$kb-ui10;padding:2.4rem 2rem;font-size:1.6rem;font-weight:normal;line-height:inherit;}
-.mysafe-phone-value>.asset-my-phone>ul>li>dl{height:2.2rem;line-height:2.2rem;}
+.mysafe-phone-value>.asset-my-phone>ul>li{display:block;height:auto;padding:1.4rem 2rem;font-size:1.6rem;font-weight:normal;line-height:inherit;}
+.mysafe-phone-value>.asset-my-phone>ul>li:first-of-type{background-color:$kb-ui10;padding:1.8rem 2rem;}
+.mysafe-phone-value>.asset-my-phone>ul>li>dl{height:1.6rem;line-height:1.6rem;}
 .mysafe-phone-value>.asset-my-phone>ul>li>dl:after{content:"";display:block;height:0;clear:both;}
 .mysafe-phone-value>.asset-my-phone>ul>li>dl dt{width:50%;padding-left:1rem;float:left;}
 .mysafe-phone-value>.asset-my-phone>ul>li>dl dd{width:50%;padding-right:1rem;font-weight:bold;float:right;}
 .mysafe-phone-value>.asset-my-phone>ul>li .num{font-size:1.8rem;font-weight:bold;}
 .mysafe-phone-value>.asset-my-phone>ul>li .unit{font-weight:bold;}
+
+.mysafe-phone-value>.asset-my-phone>div{height:auto;background-color:$kb-ui10;padding:1.6rem 2rem;font-size:1.6rem;font-weight:normal;line-height:inherit;}
+.mysafe-phone-value>.asset-my-phone>div>dl{height:2rem;line-height:2rem;}
+.mysafe-phone-value>.asset-my-phone>div>dl:after{content:"";display:block;height:0;clear:both;}
+.mysafe-phone-value>.asset-my-phone>div>dl dt{width:50%;padding-left:1rem;float:left;}
+.mysafe-phone-value>.asset-my-phone>div>dl dd{width:50%;padding-right:1rem;font-weight:bold;float:right;}
+.mysafe-phone-value>.asset-my-phone>div .num{font-size:2rem;font-weight:bold;}
+.mysafe-phone-value>.asset-my-phone>div .unit{font-size:1.8rem;font-weight:bold;}
 
 .index-visual img{width:10.9rem;height:auto;}
 
@@ -337,13 +349,13 @@
 .mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li{height:4.5rem;border-bottom:0.1rem solid $kb-ui09;line-height:4.5rem;}
 .mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li:last-of-type{border-bottom:0rem solid $kb-ui09;}
 .mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li>dl{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-align:center;align-items:center;width:100%;}
-.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li>dl dt{position:relative;padding-left:2.6rem;color:$kb-ui04;}
-.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li>dl dt:after{content:"";display:block;position:absolute;width:1.6rem;height:1.6rem;background-repeat:no-repeat;left:0;top:1.2rem;}
-.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li:nth-of-type(1)>dl dt:after{background-image:url('../images/mysafe/phone_value_rank_icon.png');background-size:8rem 1.6rem;background-position:0 0;}
-.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li:nth-of-type(2)>dl dt:after{background-image:url('../images/mysafe/phone_value_rank_icon.png');background-size:8rem 1.6rem;background-position:-1.6rem 0;}
-.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li:nth-of-type(3)>dl dt:after{background-image:url('../images/mysafe/phone_value_rank_icon.png');background-size:8rem 1.6rem;background-position:-3.2rem 0;}
-.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li:nth-of-type(4)>dl dt:after{background-image:url('../images/mysafe/phone_value_rank_icon.png');background-size:8rem 1.6rem;background-position:-4.8rem 0;}
-.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li:nth-of-type(5)>dl dt:after{background-image:url('../images/mysafe/phone_value_rank_icon.png');background-size:8rem 1.6rem;background-position:-6.4rem 0;}
+.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li>dl dt{position:relative;padding-left:3.7rem;color:$kb-ui04;}
+.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li>dl dt:after{content:"";display:block;position:absolute;width:2.5rem;height:2.2rem;background-repeat:no-repeat;left:0;top:1rem;}
+.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li:nth-of-type(1)>dl dt:after{background-image:url('../images/mysafe/phone_value_rank_icon_newb.png');background-size:12.5rem 2.2rem;background-position:0 0;}
+.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li:nth-of-type(2)>dl dt:after{background-image:url('../images/mysafe/phone_value_rank_icon_newb.png');background-size:12.5rem 2.2rem;background-position:-2.5rem 0;}
+.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li:nth-of-type(3)>dl dt:after{background-image:url('../images/mysafe/phone_value_rank_icon_newb.png');background-size:12.5rem 2.2rem;background-position:-5rem 0;}
+.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li:nth-of-type(4)>dl dt:after{background-image:url('../images/mysafe/phone_value_rank_icon_newb.png');background-size:12.5rem 2.2rem;background-position:-7.5rem 0;}
+.mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li:nth-of-type(5)>dl dt:after{background-image:url('../images/mysafe/phone_value_rank_icon_newb.png');background-size:12.5rem 2.2rem;background-position:-10rem 0;}
 
 .mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li>dl dd .num{font-size:1.8rem;}
 .mysafe-phone-value> .safe-phone-rank .my-phone-rank-box>li>dl dd{font-weight:normal;}
@@ -372,12 +384,13 @@
 .mysafe-phone-status .mysafe-img-box .mysafe-img-list li img{width:96%;}
 
 .mysafe-phone-status .mysafe-phone-check{display:block;border-bottom:0.1rem solid $kb-ui09;padding-bottom:0.8rem;}
+.mysafe-phone-status .mysafe-phone-check:nth-of-type(3){border:none;}
 .mysafe-phone-status .mysafe-phone-check>li{min-height:2.8rem;line-height:2.8rem;overflow:hidden;}
 .mysafe-phone-status .mysafe-phone-check>li dt{float:left;}
 .mysafe-phone-status .mysafe-phone-check>li:nth-of-type(2){color:$kb-ui04;}
 .mysafe-phone-status .mysafe-phone-check>li dd{float:right;}
 
-.mysafe-phone-status .mysafe-phone-check>li .mysafe-img-list{display:block;padding:1.6rem 0rem 0.8rem;}
+.mysafe-phone-status .mysafe-phone-check>li .mysafe-img-list{display:block;padding:1.6rem 0rem 2.2rem;}
 .mysafe-phone-status .mysafe-phone-check>li .mysafe-img-list:after{content:"";display:block;width:100%;height:0;clear:both;}
 .mysafe-phone-status .mysafe-phone-check>li .mysafe-img-list li{display:block;width:50%;float:left;}
 // .mysafe-phone-status .mysafe-phone-check>li .mysafe-img-list li:nth-of-type(1){text-align:left;}
@@ -385,7 +398,7 @@
 .mysafe-phone-status .mysafe-phone-check>li .mysafe-img-list li img{width:98%;}
 
 .mysafe-phone-status .mysafe-phone-check:last-of-type{border-bottom:none;padding-bottom:0;}
-.mysafe-phone-status .mysafe-phone-check:last-of-type>li{height:4.5rem;border-bottom:0.1rem solid $kb-ui09;line-height:4.5rem;color:$kb-ui01;overflow:hidden;}
+.mysafe-phone-status .mysafe-phone-check:last-of-type>li{height:4.5rem;border-bottom:0.1rem solid $kb-ui09;line-height:4.5rem;color:$kb-ui04;overflow:hidden;}
 .mysafe-phone-status .mysafe-phone-check:last-of-type>li:last-of-type{border-bottom:none;}
 
 /* [MYS_AS_17_01_13_P1] 자산등록완료 */

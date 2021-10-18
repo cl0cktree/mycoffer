@@ -690,12 +690,12 @@ h1 + .joint-certificate-list{margin-top:28px;}
 // .mn-agreements .kb-sec + .kb-sec{padding-top:4.8rem;margin-top:4.8rem;border-top:1rem solid $kb-ui10;}
 .mn-agreements h2{padding-bottom:1.65rem;line-height:1;border-bottom:1px solid $kb-ui02;}
 .mn-agreements .mn-agreements-list{padding:20px 0;border-bottom:1px solid $kb-ui09;}
-.mn-agreements .mn-agreements-list a{@include text;position:relative;display:block;padding-right:32px;}
+.mn-agreements .mn-agreements-list a{@include text;position:relative;display:block;} // 체크박스수정 2021-10-18
 .mn-agreements .mn-agreements-list > li + li{margin-top:1.75rem;}
 .mn-agreements .mn-agreements-list02{padding:20px 0;}
 .mn-agreements .mn-agreements-list02 p{position:relative;}
 
-.mn-agreements .mn-agreements-list02 label{font-weight:bold;}
+.mn-agreements .mn-agreements-list .form-checkbox label,.mn-agreements .mn-agreements-list02 label{font-weight:bold;} // 체크박스수정 2021-10-18
 .mn-agreements .mn-agreements-list02 dl{padding:1.8rem 0;margin-top:2rem;margin-left:3.6rem;border:0.1rem solid $kb-ui08;border-width:1px 0;}
 .mn-agreements .mn-agreements-list02 .checkbox-group{flex-flow:row;flex-wrap:wrap;}
 .mn-agreements .mn-agreements-list02 .checkbox-group li{width:50%;}
@@ -704,8 +704,8 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .mn-agreements .mn-agreements-list02 .checkbox-group li:nth-child(2){margin-top:16px;}
 .mn-agreements .mn-agreements-list02 .checkbox-group li:nth-child(3),
 .mn-agreements .mn-agreements-list02 .checkbox-group li:nth-child(4){margin-top:20px;}
-.mn-agreements .mn-agreements-list ~ .checkbox-group label{padding-right:30px;}
-.mn-agreements .mn-agreements-list ~ .checkbox-group .link{position:absolute;right:0;top:50%;transform:translateY(-50%)}
+.mn-agreements .mn-agreements-list .form-checkbox label, .mn-agreements .mn-agreements-list ~ .checkbox-group label{padding-right:30px;} // 체크박스수정 2021-10-18
+.mn-agreements .mn-agreements-list .form-checkbox .link, .mn-agreements .mn-agreements-list ~ .checkbox-group .link{position:absolute;right:0;top:50%;transform:translateY(-50%)} // 체크박스수정 2021-10-18
 // .mn-agreements .mn-agreements-list ~ .checkbox-group .link span:before {
 //     content: '';
 //     position: absolute;
@@ -832,7 +832,7 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .pointree-list + .btn-view-more{width:100%;margin-top:32px;padding:4px 0;}
 
 .bottom-sheet .event-result{text-align:center;}
-.bottom-sheet .event-result img{max-height:120px;}
+.bottom-sheet .event-result img{max-height:13rem;} // 사이즈 변경 2021-10-18 
 .bottom-sheet .event-result dl{margin-top:20px;}
 .bottom-sheet .event-result dt{font-weight:bold;}
 .bottom-sheet .event-result dd{@include text;margin-top:28px;text-align:left;}
@@ -901,12 +901,12 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .phishing-event-info .event-list{margin-top:1rem;margin-bottom:2rem;}
 .phishing-event-info .event-list li{border-bottom:0.1rem solid $kb-ui09;}
 .phishing-event-info .event-list li{display:flex;justify-content:space-between;padding:2.3rem 0 1.6rem;}
-.phishing-event-info .event-list li .text-wrap{flex:1 0 auto;align-self:center;margin-top:0.8rem;}
+.phishing-event-info .event-list li .text-wrap{flex:1 1 auto;align-self:center;margin-top:0.8rem;}
 .phishing-event-info .event-list li [class^=icon]:last-child{align-self:center;}
 .phishing-event-info .event-list li .tit{@include text($size: $text02, $line-height:1, $weight:bold);display:block;margin-bottom:0.5rem;}
 .phishing-event-info .event-list li .desc{@include text($size: $text03, $line-height:1);color:$kb-ui03;}
 .phishing-event-info .event-list li .desc strong{font-weight:bold;}
-.phishing-event-info .event-list li [class^=icon]:first-child{width:32px;height:32px;margin-top:0.3rem;margin-right:1.6rem;}
+.phishing-event-info .event-list li [class^=icon]:first-child{width:32px;height:32px;margin-top:0.3rem;margin-right:1.6rem;flex:0 0 auto;}
 
 //마이데이터 서비스 소개
 .mydata-service .img{width:100%;}
