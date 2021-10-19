@@ -20,7 +20,6 @@
 		<!-- app-container //-->
 		<div class="app-container">
 
-
 			<!-- dplan-area-in-mydata // -->
 			<main class="dplan-area-in-mydata">
 			</main>
@@ -33,32 +32,52 @@
 
 	<!-- Script -->
 	@@include('@@webRoot/html/_include/common-js.html')
-	<!-- <script src="@@webRoot/static/js/ui.js"></script> -->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<script src="@@webRoot/static/js/floatingBanner.js"></script>
 	<!-- Add Script -->
 	<script>
-		function dplanLink(url) {
-			// $.ajax({
-			// 	url: url
-			// }).done(function(response) {
-			// 	$("main.dplan-area-in-mydata").html(response);
-			// 	$(window).scrollTop(0);
-			// });
+		function getParameter(name) {
+			name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+			var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+				results = regex.exec(location.search);
+			return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+		}
+
+		$(document).ready(function() {
+			loadLink(getParameter("svcPath"));
+		})
+
+		function loadLink(url) {
+			gfn_loading.start();
 			$.ajax({
 				url: url,
 				async: false,
 				success: function(response, textStatus, jqXHR) {
-					console.log("===== ajax success =====");
+					// console.log("===== ajax success =====");
+					// response = response.replace('<script src="http://localhost:4000/dplan/static/js/jquery-3.4.1.min.js"><\/script>', '');
 					$("main.dplan-area-in-mydata").html(response);
 					$(window).scrollTop(0);
 				},
 				error: function(jqXHR, textStatus, errorThrown) {
-					console.log("===== ajax error =====");
+					// console.log("===== ajax error =====");
+				},
+				complete: function(jqXHR, textStatus) {
+					$(".dplan-area-in-mydata").show();
+					gfn_loading.stop();
 				}
 			});
 		}
-		dplanLink("http://localhost:3000/html/retirementFunds.html");
+		
+		var gfn_loading = {
+			start: function() {
+				gfn_pageLoader.show();
+			},
+			stop: function() {
+				gfn_pageLoader.hide();
+			}
+		}
 	</script>
-	<script>        
+	<script>
 			//GNB 활성화 (번호:menu.js)
 			gfn_gnb.select(9,0);
 	</script>

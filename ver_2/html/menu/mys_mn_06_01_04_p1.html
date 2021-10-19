@@ -1,79 +1,120 @@
+<!-- [MYS_MN_06_01_04_p1] 배너 > 당첨툴_룰렛 > 마이데이터선물함 리워드혜택_팝업 > 피싱보험안내 (작성자: 누리어 시스템 최선화) // -->
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
-  @@include('@@webRoot/html/_include/app-head.html',{
-  "title": "Last Depth | 1st Depth"
-  })
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "피싱보험안내 | 마이데이터 선물함"
+    })
 </head>
 
-<body>    
-  @@include('@@webRoot/html/_include/app-a11y.html')
-  <div class="app">
-    <!-- app-header //-->
-    @@include('@@webRoot/html/_include/app-integrated-header.html',{
-    'pageTit' :'이벤트 레이어 모음'
-    })
-    <!-- // app-header -->
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app"><!-- Liiv, Starbanking  앱 안에서  동작할 경우 data-page="submain" -->
+        
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'이벤트 안내',
+            'type':'close'
+        })
+        
+        <!-- app-container //-->
+        <div class="app-container">
 
-    <!-- app-container //-->
-    <div class="app-container">
+            <!-- app-content // -->
+            <main class="app-content phishing-insurance">
+                <section class="kb-sec phishing-event">
+                    <div class="img-wrap">
+                        <div class="event-img">
+                            <img src="@@webRoot/static/images/menu/phishing-event.png" alt="">
+                        </div>
+                        <h2 class="h2">피싱&middot;해킹 금융사기 보상보험 <br>무료 가입 이벤트 당첨!</h2>
+                    </div>
+                    <div class="desc-wrap">
+                        <h3 class="mt48">KB국민은행 X KB손해보험</h3>
+                        <h3 class="mt8">피싱&middot;해킹 금융사기 보상보험 가입혜택</h3>
+                        <p class="desc">든든한 KB마이데이터와 함께 <br>소중한 내 정보 똑똑하게 활용하고 <br>피싱&middot;해킹 금융사기도 예방하세요!</p>
+                    </div>
+                    <div class="border-box">
+                        <h4 class="tit">피싱&middot;해킹 금융사기 보상보험이란?</h4>
+                        <p class="desc">피싱 또는 해킹 금융사기에 의해 피보험자의 예금이 부당인출 되거나, 신용카드가 부당하게 사용되어 발생한 금전적 손해를 보상하는 보험입니다.</p>
+                    </div>
+                    <p class="simple-message">보험료는 (주)KB국민은행에서 제공합니다.</p>
+                </section>    
 
-      <!-- app-content // -->
-        <main class="app-content">
-            <section class="kb-sec">
-                <button type="button" class="btn-line btn-event-roullete" data-roullete-size="4"><span>룰렛 이벤트 (4칸)</span></button>            
-                <button type="button" class="btn-line btn-event-roullete" data-roullete-size="5"><span>룰렛 이벤트 (5칸)</span></button>            
-                <button type="button" class="btn-line btn-event-roullete" data-roullete-size="6"><span>룰렛 이벤트 (6칸)</span></button>
-                <button type="button" class="btn-line btn-event-random"><span>랜덤뽑기 이벤트</span></button>
-                <button type="button" class="btn-line btn-event-scratch"><span>스크래치 이벤트</span></button>
-                <button type="button" class="btn-line btn-event-scratch02"><span>경품 선택 후 스크래치 이벤트</span></button>
-                <button type="button" class="btn-line btn-event-attendance"><span>출석체크 이벤트</span></button>
-                <button type="button" class="btn-line btn-event-word"><span>낱말찾기 이벤트</span></button>
-                <button type="button" class="btn-line btn-event-initial"><span>초성퀴즈 이벤트</span></button>
-                <button type="button" class="btn-line btn-event-dice"><span>주사위</span></button>
-                <button type="button" class="btn-line btn-event-research"><span>설문조사 이벤트</span></button>
-                <button type="button" class="btn-line btn-event-ladder"><span>사다리 이벤트</span></button>
-            </section>
+                <hr class="hr-divide_48">
 
-        </main> 
-        <!-- // app-content -->
+                <section class="kb-sec phishing-event-info">
+                    <ul class="event-list">
+                        <li>
+                            <i class="icon-phishing-insurance02_32"></i>
+                            <div class="text-wrap">
+                                <strong class="tit">상품명</strong>
+                                <span class="desc">(주)KB손해보험 피싱해킹 금융사기 보상보험Ⅱ</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="icon-phishing-insurance03_32"></i>
+                            <div class="text-wrap">
+                                <strong class="tit">보험기간</strong>
+                                <span class="desc">보험 가입 다음날부터 1년</span> 
+                            </div>
+                        </li>
+                        <li>
+                            <i class="icon-phishing-insurance01_32"></i>
+                            <div class="text-wrap">
+                                <strong class="tit">보장내용</strong>
+                                <span class="desc">최대 5백만원</span>
+                                <p class="simple-message">단, 자기부담금 10만원 적용(사고당)</p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
 
+                <section class="kb-sec terms-info">
+                    <dl class="accordion">
+                        <dt>
+                            <div>상품안내</div>
+                            <button type="button" class="accordion-trigger"></button>
+                        </dt>
+                        <dd>피싱 또는 해킹 금융사기로 예금이 부당인출 되거나, 신용카드가 부당하게 사용되어 발생한 금전적 손해를 보장</dd>
+                        <dt>
+                            <div>보장내용</div>
+                            <button type="button" class="accordion-trigger"></button>
+                        </dt>
+                        <dd>최대 5백만원 한도(단, 자기부담금 10만원 적용)</dd>
+                        <dt>
+                            <div>유의사항</div>
+                            <button type="button" class="accordion-trigger"></button>
+                        </dt>
+                        <dd>보험 가입 다음날부터 1년</dd>
+                        <dt>
+                            <div>알아두실 사항</div>
+                            <button type="button" class="accordion-trigger"></button>
+                        </dt>
+                        <dd>자세한 보험 보장내용이나 문의사항이 있으신 경우 KB손해보험 고객센터 1544-0114로 연락주시길 바랍니다.</dd>
+                    </dl>
+                </section>
+
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid"><span>무료 가입하기</span></button>
+                    </div>
+                </div>
+            </main>
+            <!-- // app-content -->
+        
+        </div>
+        <!-- // app-container -->
     </div>
-    <!-- // app-container -->
 
-    <!-- Layer (modal, bottom sheet) // -->
     <div class="layered">
-		@@include('@@webRoot/html/menu/layered/roullete-phishing.html')
     </div>
-    <!-- // Layer (modal, bottom sheet) -->
 
-    </div>
     <!-- Script -->
     @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
-    <script src="@@webRoot/static/js/floatingBanner.js"></script>
     <!-- Add Script -->
-
-    <script>
-
-    var getOddsOfWinning = function(chance1,chance2,chance3,chance4,chance5,chance6) {
-        var cummprob = [chance1,chance2,chance3,chance4,chance5,chance6];        
-        var x = Math.random();
-        var y = 0;
-        for (y = 0; y < cummprob.length; y++) {
-            if (cummprob[y] >= x) break;
-        }
-        return y;
-    }; 
-
-    
-    gfn_layered.open('eventRoullete');
-    fnEventRoullete(4);
-      
-  </script>
-
 
 </body>
 
