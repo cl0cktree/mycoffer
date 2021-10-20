@@ -9,7 +9,7 @@
 .dashboard-section .sec-amount .num::after {font-size: 18px; font-weight: normal; vertical-align: middle;}
 
 .dashboard-asset,
-.dashboard-expense {position: relative; padding: 37px 20px 32px; margin: 0 16px 20px; background-color: #f3eefe; border-radius: 8px; text-align: center;}
+.dashboard-expense {position: relative; padding: 37px 20px 32px; margin: 0 16px 20px; background-color: $kb-ui10; border-radius: 8px; text-align: center;}
 .dashboard-asset .sec-amount,
 .dashboard-expense .sec-amount {display: block; text-align: center; font-size: 18px; line-height: 1;}
 .dashboard-asset .sec-amount .num,
@@ -17,13 +17,13 @@
 .dashboard-asset .sub-text,
 .dashboard-expense .sub-text {display: block; margin-top: 10px; text-align: center; font-size: 16px; line-height: 1; color: $kb-ui04;}
 .dashboard-asset .sub-text .num,
-.dashboard-expense .sub-text .num {font-size: 17px;}
+.dashboard-expense .sub-text .num {font-size: 17px; font-weight: bold;}
 .dashboard-asset .sub-text .num[data-unit-after]::after,
 .dashboard-expense .sub-text .num[data-unit-after]::after {vertical-align: 0; color: $kb-ui04;}
 .dashboard-asset .sub-text .num.up,
-.dashboard-expense .sub-text .num.down {color: $color-red;}
+.dashboard-expense .sub-text .num.down {color: #d20b0b;}
 .dashboard-asset .sub-text .num.down,
-.dashboard-expense .sub-text .num.up {color: $color-blue;}
+.dashboard-expense .sub-text .num.up {color: #0058dc;}
 .dashboard-asset .sub-text .num.up::before,
 .dashboard-expense .sub-text .num.up::before {content: '▲';}
 .dashboard-asset .sub-text .num.down::before,
@@ -40,9 +40,11 @@
 
 .dashboard-asset .link,
 .dashboard-expense .link {display: block;}
+.dashboard-asset .link {margin-bottom: 15px;}
 
 .dashboard-goal {padding: 0; margin: 0 16px 48px; background-color: #6349a5; border-radius: 8px;}
-.dashboard-goal .swiper-pagination-bullet-active {background-color: $kb-ui02;}
+.dashboard-goal .swiper-container .swiper-pagination .swiper-pagination-bullet {background-color: $kb-ui02; opacity: .2;}
+.dashboard-goal .swiper-container .swiper-pagination .swiper-pagination-bullet-active {opacity: 1;}
 .dashboard-goal .swiper-horizontal>.swiper-pagination-bullets,
 .dashboard-goal .swiper-container-horizontal>.swiper-pagination-bullets,
 .dashboard-goal .swiper-pagination-custom,
@@ -62,8 +64,8 @@
 .dashboard-goal .character-graph {padding-top:80px;}
 .dashboard-goal .character-graph strong {font-weight: bold;}
 .dashboard-goal .character-graph .graph-area {height: 20px; border-radius: 20px;}
-.dashboard-goal .character-graph .graph-area > span {background-color: #ffdd6c; border: 0;}
-.dashboard-goal .character-graph .graph-area > span i {transform: scale(.875); transform-origin: 50% 100%;}
+// .dashboard-goal .character-graph .graph-area > span {background-color: #ffdd6c; border: 0;}
+.dashboard-goal .character-graph .graph-area > span i {/* transform: scale(.875); */ transform-origin: 50% 100%;}
 .dashboard-goal .character-graph .graph-area .flag {right: -10px;}
 .dashboard-goal .character-graph .graph-area i.icon-flag-dashboard {display: inline-block; width: 18px; height: 35px; background: url(../images/common/dash_flag.png) no-repeat 0 0; background-size: 100% 100%;}
 .dashboard-goal .character-graph .graph-txt {color: $kb-ui11; margin-top: 15px;}
@@ -72,24 +74,45 @@
 .dashboard-goal .character-graph .graph-txt .start-txt, 
 .dashboard-goal .character-graph .graph-txt .end-txt {font-size:14px;}
 
-.dashboard-goal .character-graph[data-theme=coffee] .graph-area > span i {background-image:url(../images/common/dash_icon_coffee.png);width:71px;height:64px;}
-.dashboard-goal .character-graph[data-theme=alcohol] .graph-area > span i {background-image:url(../images/common/dash_icon_alcohol.png);width:62px;height:71px;}
-.dashboard-goal .character-graph[data-theme=store] .graph-area > span i {background-image:url(../images/common/dash_icon_store.png);width:69px;height:67px;}
-.dashboard-goal .character-graph[data-theme=taxi] .graph-area > span i {background-image:url(../images/common/dash_icon_taxi.png);width:85px;height:64px;}
-.dashboard-goal .character-graph[data-theme=delivery] .graph-area > span i {background-image:url(../images/common/dash_icon_delivery.png);width:78px;height:73px;}
-.dashboard-goal .character-graph[data-theme=shopping] .graph-area > span i {background-image:url(../images/common/dash_icon_shopping.png);width:87px;height:75px;}
-.dashboard-goal .character-graph[data-theme=oil] .graph-area > span i {background-image:url(../images/common/dash_icon_oil.png);width:74px;height:67px;}
-.dashboard-goal .character-graph[data-theme=mobile] .graph-area > span i {background-image:url(../images/common/dash_icon_mobile.png);width:71px;height:68px;}
-.dashboard-goal .character-graph[data-theme=fastfood] .graph-area > span i {background-image:url(../images/common/dash_icon_fastfood.png);width:66px;height:66px;}
-.dashboard-goal .character-graph[data-theme=eatout] .graph-area > span i {background-image:url(../images/common/dash_icon_eatout.png);width:75px;height:47px;}
+// .dashboard-goal .character-graph[data-theme=coffee] .graph-area > span i {background-image:url(../images/common/dash_icon_coffee.png);width:71px;height:64px;}
+// .dashboard-goal .character-graph[data-theme=alcohol] .graph-area > span i {background-image:url(../images/common/dash_icon_alcohol.png);width:62px;height:71px;}
+// .dashboard-goal .character-graph[data-theme=store] .graph-area > span i {background-image:url(../images/common/dash_icon_store.png);width:69px;height:67px;}
+// .dashboard-goal .character-graph[data-theme=taxi] .graph-area > span i {background-image:url(../images/common/dash_icon_taxi.png);width:85px;height:64px;}
+// .dashboard-goal .character-graph[data-theme=delivery] .graph-area > span i {background-image:url(../images/common/dash_icon_delivery.png);width:78px;height:73px;}
+// .dashboard-goal .character-graph[data-theme=shopping] .graph-area > span i {background-image:url(../images/common/dash_icon_shopping.png);width:87px;height:75px;}
+// .dashboard-goal .character-graph[data-theme=oil] .graph-area > span i {background-image:url(../images/common/dash_icon_oil.png);width:74px;height:67px;}
+// .dashboard-goal .character-graph[data-theme=mobile] .graph-area > span i {background-image:url(../images/common/dash_icon_mobile.png);width:71px;height:68px;}
+// .dashboard-goal .character-graph[data-theme=fastfood] .graph-area > span i {background-image:url(../images/common/dash_icon_fastfood.png);width:66px;height:66px;}
+// .dashboard-goal .character-graph[data-theme=eatout] .graph-area > span i {background-image:url(../images/common/dash_icon_eatout.png);width:75px;height:47px;}
 
-.dashboard-goal .character-graph[data-theme=kiki] .graph-area > span i {background-image:url(../images/common/dash_kiki.png);width:48px;height:87px;}
-.dashboard-goal .character-graph[data-theme=ago] .graph-area > span i {background-image:url(../images/common/dash_ago.png);width:113.5px;height:86.5px;}
-.dashboard-goal .character-graph[data-theme=bb] .graph-area > span i {background-image:url(../images/common/dash_bb.png);width:89px;height:87.5px;}
-.dashboard-goal .character-graph[data-theme=lamu] .graph-area > span i {background-image:url(../images/common/dash_lamu.png);width:56px;height:99.5px;}
-.dashboard-goal .character-graph[data-theme=kolly] .graph-area > span i {background-image:url(../images/common/dash_kolly.png);width:61px;height:72px;}
+.dashboard-goal .character-graph[data-theme=coffee] .graph-area > span i,
+.dashboard-goal .character-graph[data-theme=alcohol] .graph-area > span i,
+.dashboard-goal .character-graph[data-theme=store] .graph-area > span i,
+.dashboard-goal .character-graph[data-theme=taxi] .graph-area > span i,
+.dashboard-goal .character-graph[data-theme=delivery] .graph-area > span i,
+.dashboard-goal .character-graph[data-theme=shopping] .graph-area > span i,
+.dashboard-goal .character-graph[data-theme=oil] .graph-area > span i,
+.dashboard-goal .character-graph[data-theme=mobile] .graph-area > span i,
+.dashboard-goal .character-graph[data-theme=fastfood] .graph-area > span i,
+.dashboard-goal .character-graph[data-theme=eatout] .graph-area > span i {background: transparent; width: auto; height: auto;}
+.dashboard-goal .character-graph[data-theme=coffee] .graph-area > span i img,
+.dashboard-goal .character-graph[data-theme=alcohol] .graph-area > span i img,
+.dashboard-goal .character-graph[data-theme=store] .graph-area > span i img,
+.dashboard-goal .character-graph[data-theme=taxi] .graph-area > span i img,
+.dashboard-goal .character-graph[data-theme=delivery] .graph-area > span i img,
+.dashboard-goal .character-graph[data-theme=shopping] .graph-area > span i img,
+.dashboard-goal .character-graph[data-theme=oil] .graph-area > span i img,
+.dashboard-goal .character-graph[data-theme=mobile] .graph-area > span i img,
+.dashboard-goal .character-graph[data-theme=fastfood] .graph-area > span i img,
+.dashboard-goal .character-graph[data-theme=eatout] .graph-area > span i img {max-width: 39px; max-height: 39px;}
 
-.dashboard-goal .character-graph[data-theme=coin] .graph-area > span i {background-image:url(../images/common/dash_coin.png);width:63.5px;height:52px;}
+// .dashboard-goal .character-graph[data-theme=kiki] .graph-area > span i {background-image:url(../images/common/dash_kiki.png);width:48px;height:87px;}
+// .dashboard-goal .character-graph[data-theme=ago] .graph-area > span i {background-image:url(../images/common/dash_ago.png);width:113.5px;height:86.5px;}
+// .dashboard-goal .character-graph[data-theme=bb] .graph-area > span i {background-image:url(../images/common/dash_bb.png);width:89px;height:87.5px;}
+// .dashboard-goal .character-graph[data-theme=lamu] .graph-area > span i {background-image:url(../images/common/dash_lamu.png);width:56px;height:99.5px;}
+// .dashboard-goal .character-graph[data-theme=kolly] .graph-area > span i {background-image:url(../images/common/dash_kolly.png);width:61px;height:72px;}
+
+// .dashboard-goal .character-graph[data-theme=coin] .graph-area > span i {background-image:url(../images/common/dash_coin.png);width:63.5px;height:52px;}
 
 .dashboard-items {padding-top: 35px; padding-bottom: 45px; background-color: #f7f7f8;}
 .dashboard-items .items {margin: 12px -8px 0;}
@@ -116,3 +139,6 @@
 .dashboard-items .item a .tit + .error-msg {margin-top: 11px;}
 .dashboard-items .last-update {margin: 28px 0; text-align: center; font-size: 14px; color: $kb-ui05;}
 .dashboard-items .last-update .datetime {margin-right: 5px; font-size: 15px; font-family: 'Roboto', sans-serif;}
+.dashboard-items .last-update .btn-refresh {position: relative; left: 2px; top: -2px;}
+
+.dashboard-section.goals-challenge {margin-bottom: 24px;}

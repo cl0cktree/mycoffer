@@ -55,7 +55,11 @@
 				success: function(response, textStatus, jqXHR) {
 					// console.log("===== ajax success =====");
 					// response = response.replace('<script src="http://localhost:4000/dplan/static/js/jquery-3.4.1.min.js"><\/script>', '');
-					$("main.dplan-area-in-mydata").html(response);
+					var $response = $(response).not('[src$="current-device.min.js"]')
+					                           .not('[src$="jquery-3.4.1.min.js"]')
+					                           .not('[src$="swiper-bundle.min.js"]');
+
+					$("main.dplan-area-in-mydata").html($response);
 					$(window).scrollTop(0);
 				},
 				error: function(jqXHR, textStatus, errorThrown) {
@@ -75,6 +79,10 @@
 			stop: function() {
 				gfn_pageLoader.hide();
 			}
+		}
+
+		function responseFilter() {
+
 		}
 	</script>
 	<script>
@@ -130,6 +138,19 @@
 			gfn_layered.open('modalLoginExtension');
 		}
 	</script>
+
+	<!-- Promotion 테스트용 추가 -->
+    <div class="layered">
+        @@include('@@webRoot/html/event/layered/roullete.html')
+		@@include('@@webRoot/html/event/layered/random.html')
+		@@include('@@webRoot/html/event/layered/lottery.html')
+		@@include('@@webRoot/html/event/layered/attendance.html')
+		@@include('@@webRoot/html/event/layered/find-word.html')
+		@@include('@@webRoot/html/event/layered/initial-quiz.html')
+        @@include('@@webRoot/html/event/layered/research.html')
+        @@include('@@webRoot/html/event/layered/dice.html')
+		@@include('@@webRoot/html/event/layered/ladder.html')
+    </div>
 
 </body>
 

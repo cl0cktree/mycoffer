@@ -53,94 +53,48 @@
 					</div>
 					<!-- // 지출 -->
 
-					<!-- 목표 // -->
-					<div class="dashboard-section dashboard-goal">
-
-						<div class="swiper-container js-swiper" data-swiper-options="dashboardGoalSwiperOptions">
-							<script>
-								var dashboardGoalSwiperOptions = {
-									"pagination": {
-										"el": ".swiper-pagination"
-									}
-								};
-							</script>
-							<div class="swiper-wrapper">
-								<!-- 아낀만큼 : 커피 줄이기 // -->
-								<div class="swiper-slide goal-slide">
-									<a href="#" class="link-area">
-										<span class="dday"><span>D</span>7</span>
-										<span class="text-wrap">
-											<span class="title">커피 줄이기</span>
-											<span class="subtxt">목표금액까지 <span class="num" data-unit-after="원">50,000</span> 더 쓸 수 있어요.</span>
-											<span class="period">21.07.01~21.08.04</span>
-										</span>
-										<div class="challenge-info">
-											<div class="character-graph" data-theme="coffee"><!-- 2021-10-20 class 삭제 : goal icon -->
-												<!-- coffee(커피), alcohol(음주), store(편의점), taxi(택시비), delivery(배달음식), shopping(홈쇼핑), oil(주유비), mobile(통신비), fastfood(패스트푸드), eatout(외식비) -->
-												<div class="graph-area">
-													<span data-goal="0"><i><img src="@@webRoot/static/images/_temp/@progress_coffee.png" alt="커피"></i></span><!-- data-goal로 그래프 넓이값(%) 제어 --><!-- 2021-10-20 img 추가 -->
-													<div class="flag"><i class="icon-flag-dashboard"></i></div>
-												</div>
-												<div class="graph-txt">
-													<p class="start-txt">현재지출금액<span class="num" data-unit-after="만원">10</span></p><!-- 시작부분 텍스트 -->
-													<p class="end-txt">목표금액<span class="num" data-unit-after="만원">15</span></p><!-- 마지막부분 텍스트 -->
-												</div>
-											</div>
+					<!-- 남들만큼 추천 // -->
+					<div class="dashboard-section goals-challenge">
+						<h2 class="h3">남들만큼 추천</h2>
+						<div class="challenge-box content-swiper-wrap">
+							<div class="swiper-container content-swiper t01 js-swiper" data-swiper-options="goalGraphSwiperOptions">
+								<script>
+									var goalGraphSwiperOptions = {
+										"pagination": {
+											"el": ".swiper-pagination"
+										},
+										"spaceBetween": 16,
+										"autoHeight": "true"                                        
+									};
+								</script>
+								<div class="content-box shadow">
+									<div class="challenge-tit">
+										<h3 class="h3">소액저축 챌린지</h3>
+										<button type="button" class="type2"><span><i class="icon-link_24"></i></span></button>
+									</div>
+									<div class="challenge-info type2">
+										<div class="tit flex-box goals-desc">
+											<div class="left-cont">
+												<h4 class="spend-desc">나와 같은 연령대&소득군의 사람들은<br><strong>나보다 저축을 더 많이 하고 있어요.</strong></h4>
+												<button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+												<div class="tooltip">
+													<strong class="tit">비교그룹</strong>
+													<div class="cont">나와 같은 연령대&amp;소득군의 사람들은?<br><br>연령대: <span class="num">30</span>대<br>월 소득: <span class="num" data-unit-after="만원">300</span>~<span class="num" data-unit-after="만원">500</span><br>성별: 남성</div>
+													<button class="btn-close"><span>닫기</span></button>
+												</div>  
+											</div>  
 										</div>
-									</a>
-								</div>
-								<!-- // 아낀만큼 : 커피 줄이기 -->
-								<!-- 쓰는만큼 : 커피 결제 시 자동저축 // -->
-								<div class="swiper-slide goal-slide">
-									<a href="#" class="link-area">
-										<span class="text-wrap">
-											<span class="title">커피 벌칙형 챌린지</span>
-											<span class="subtxt">커피 마실 때마다 <span class="num" data-unit-after="원">4,000</span> 자동 저축중</span>
-											<span class="period">21.05.15~도전중</span>
-										</span>
-										<div class="challenge-info">
-											<div class="character-graph" data-theme="lamu"><!-- 2021-10-20 class 삭제 : goal icon -->
-												<!-- kiki(술집), ago(택시), bb(배달음식), lamu(커피), kolly(편의점) -->
-												<div class="graph-area">
-													<span data-goal="50"><i><img src="@@webRoot/static/images/_temp/progress_lamu.png" alt="커피들고 있는 라무"></i></span><!-- data-goal로 그래프 넓이값(%) 제어 --><!-- 2021-10-20 img 추가 -->
-												</div>
-												<div class="graph-txt">
-													<p class="start-txt">커피 <strong>총 <span class="num">5</span>회, <span class="num" data-unit-after="원">20,000</span></strong> 모았어요.</p><!-- 시작부분 텍스트 -->
-												</div>
-											</div>
+										<div class="goals-now">
+											<p>목표기간<i></i><span class="num">6</span>개월</p> <!-- 2021-09-09 수정 -->
+											<p>도전자<i></i><span class="num">1000</span>명</p> <!-- 2021-09-09 수정 -->
 										</div>
-									</a>
+										<div class="chart-area mt16" id="bubbleChart01"></div>
+									</div>
 								</div>
-								<!-- // 쓰는만큼 : 커피 결제 시 자동저축 -->
-								<!-- 남들만큼 -->
-								<div class="swiper-slide goal-slide">
-									<a href="#" class="link-area">
-										<span class="dday"><span>D</span>530</span>
-										<span class="text-wrap">
-											<span class="title">Flex 제주한달살이</span>
-											<span class="subtxt">제주도 애월 바닷가 근처에서 힐링하기</span>
-											<span class="period">2022.04.01</span>
-										</span>
-										<div class="challenge-info">
-											<div class="character-graph goal icon" data-theme="coin">
-												<div class="graph-area">
-													<span data-goal="50"><i></i></span><!-- data-goal로 그래프 넓이값(%) 제어 -->
-													<div class="flag"><i class="icon-flag-dashboard"></i></div>
-												</div>
-												<div class="graph-txt">
-													<p class="start-txt">모은금액<span class="num" data-unit-after="만원">85</span></p><!-- 시작부분 텍스트 -->
-													<p class="end-txt">목표금액<span class="num" data-unit-after="만원">300</span></p><!-- 마지막부분 텍스트 -->
-												</div>
-											</div>
-										</div>
-									</a>
-								</div>
-								<!-- // 남들만큼 -->
 							</div>
-							<div class="swiper-pagination"></div>
-						</div>
+						</div>						
 					</div>
-					<!-- // 목표 -->
+					<!-- // 남들만큼 추천 -->
 
 					<!-- 내 자산 한눈에 관리하기 // -->
 					<div class="dashboard-section dashboard-items">
@@ -248,6 +202,95 @@
 	<script>        
 		//GNB 활성화 (번호:menu.js)
 		gfn_gnb.select(0);
+	</script>
+
+	<script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
+	<script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>    
+	<script src="@@webRoot/static/common/lib/highcharts/highcharts-more.js"></script>
+	<script>                     
+	$(document).ready(function(){
+
+		// highchart 공통 options
+		Highcharts.setOptions({
+			title: { text: null },
+			subTitle: { text: null },
+			credits: { enabled: false },
+			tooltip: { enabled: false },
+			label : { fontFamily: 'KBFGText'},
+			credits: { enabled: false },
+			exporting: { enabled: false },
+			legend: { enabled: false }, // 2021-09-02 추가
+		});
+
+		
+		var bubbleChart = new Highcharts.Chart({
+			chart: {
+				renderTo: 'bubbleChart01', // chart 삽입 target ID                
+				plotBackgroundColor: null,
+				plotBorderWidth: 0,
+				plotShadow: false,
+				type: 'packedbubble',
+				margin:0,
+				marginTop:0,
+				marginBottom:0,
+				height: 125
+			},
+			plotOptions: {
+				packedbubble: {
+					minSize: '60px',
+					maxSize: '120px',
+					zMin: 0,
+					layoutAlgorithm: {
+						splitSeries: false,
+						gravitationalConstant: 0.005,
+						bubblePadding: 20
+					},
+					dataLabels: {
+						enabled: true,
+						formatter: function () {
+							return this.point.name + "<br><span style='font-size:1.5rem;font-family:Roboto;'><b style='font-size:1.5rem;'>" + gfn_comma3Digit(this.point.value) + "</b></span> 원" // 수정:2021-09-29 원 수정 -->
+						},    
+						rotation:1,             
+						style: {
+							color: '#000',
+							textOutline: 'none',
+							fontWeight: 'normal',
+							textAlign:'center',    
+							fontSize: '1.4rem',                        
+							fontFamily: "KBFGText",
+							lineHeight: '20px'
+						},
+						y:-3
+					}
+				}  
+			},
+			//수정:2021-09-29 //
+			// series 수정
+			series: [{
+				name: null,
+				data: [{
+					name: '<tspan dy="-5">비교그룹</tspan>',
+					value: 700000,
+					color: {
+						radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
+						stops: [ [0, '#ff8a71'], [1, '#ff8a71'] ]
+					}
+				},{
+					name: '<tspan dy="-5">나</tspan>',
+					color: '#f8956d',
+					value: 500000,
+					color: {
+						radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
+						stops: [ [0, '#ffba53'], [1, '#ffba53'] ]
+					}
+				}]
+			
+			}]
+			
+			// //수정:2021-09-29
+		});
+	
+	})
 	</script>
 </body>
 

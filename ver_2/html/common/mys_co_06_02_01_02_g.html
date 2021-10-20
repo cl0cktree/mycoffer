@@ -53,94 +53,46 @@
 					</div>
 					<!-- // 지출 -->
 
-					<!-- 목표 // -->
-					<div class="dashboard-section dashboard-goal">
-
-						<div class="swiper-container js-swiper" data-swiper-options="dashboardGoalSwiperOptions">
-							<script>
-								var dashboardGoalSwiperOptions = {
-									"pagination": {
-										"el": ".swiper-pagination"
-									}
-								};
-							</script>
-							<div class="swiper-wrapper">
-								<!-- 아낀만큼 : 커피 줄이기 // -->
-								<div class="swiper-slide goal-slide">
-									<a href="#" class="link-area">
-										<span class="dday"><span>D</span>7</span>
-										<span class="text-wrap">
-											<span class="title">커피 줄이기</span>
-											<span class="subtxt">목표금액까지 <span class="num" data-unit-after="원">50,000</span> 더 쓸 수 있어요.</span>
-											<span class="period">21.07.01~21.08.04</span>
-										</span>
-										<div class="challenge-info">
-											<div class="character-graph" data-theme="coffee"><!-- 2021-10-20 class 삭제 : goal icon -->
-												<!-- coffee(커피), alcohol(음주), store(편의점), taxi(택시비), delivery(배달음식), shopping(홈쇼핑), oil(주유비), mobile(통신비), fastfood(패스트푸드), eatout(외식비) -->
-												<div class="graph-area">
-													<span data-goal="0"><i><img src="@@webRoot/static/images/_temp/@progress_coffee.png" alt="커피"></i></span><!-- data-goal로 그래프 넓이값(%) 제어 --><!-- 2021-10-20 img 추가 -->
-													<div class="flag"><i class="icon-flag-dashboard"></i></div>
-												</div>
-												<div class="graph-txt">
-													<p class="start-txt">현재지출금액<span class="num" data-unit-after="만원">10</span></p><!-- 시작부분 텍스트 -->
-													<p class="end-txt">목표금액<span class="num" data-unit-after="만원">15</span></p><!-- 마지막부분 텍스트 -->
-												</div>
-											</div>
-										</div>
-									</a>
+					<!-- 아낀만큼 인기 // -->
+					<div class="dashboard-section goals-challenge">
+						<h2 class="h3">아낀만큼 인기</h2>
+						<div class="challenge-box">
+							<div class="content-box">
+								<div class="challenge-tit">
+									<h3 class="h3">커피 줄이기</h3>
+									<button type="button" class=""><span><i class="icon-link_24"></i></span></button>
 								</div>
-								<!-- // 아낀만큼 : 커피 줄이기 -->
-								<!-- 쓰는만큼 : 커피 결제 시 자동저축 // -->
-								<div class="swiper-slide goal-slide">
-									<a href="#" class="link-area">
-										<span class="text-wrap">
-											<span class="title">커피 벌칙형 챌린지</span>
-											<span class="subtxt">커피 마실 때마다 <span class="num" data-unit-after="원">4,000</span> 자동 저축중</span>
-											<span class="period">21.05.15~도전중</span>
-										</span>
-										<div class="challenge-info">
-											<div class="character-graph" data-theme="lamu"><!-- 2021-10-20 class 삭제 : goal icon -->
-												<!-- kiki(술집), ago(택시), bb(배달음식), lamu(커피), kolly(편의점) -->
-												<div class="graph-area">
-													<span data-goal="50"><i><img src="@@webRoot/static/images/_temp/progress_lamu.png" alt="커피들고 있는 라무"></i></span><!-- data-goal로 그래프 넓이값(%) 제어 --><!-- 2021-10-20 img 추가 -->
-												</div>
-												<div class="graph-txt">
-													<p class="start-txt">커피 <strong>총 <span class="num">5</span>회, <span class="num" data-unit-after="원">20,000</span></strong> 모았어요.</p><!-- 시작부분 텍스트 -->
-												</div>
-											</div>
+								<div class="challenge-info type2">
+									<!-- 수정:2021-09-27 // -->
+									<!-- txt 추가 -->
+									<div class="tit flex-box goals-desc">
+										<div class="left-cont">
+											<h4 class="spend-desc">도전자가 많은 인기 챌린지에<br>참여해 보세요!</h4>
 										</div>
-									</a>
-								</div>
-								<!-- // 쓰는만큼 : 커피 결제 시 자동저축 -->
-								<!-- 남들만큼 -->
-								<div class="swiper-slide goal-slide">
-									<a href="#" class="link-area">
-										<span class="dday"><span>D</span>530</span>
-										<span class="text-wrap">
-											<span class="title">Flex 제주한달살이</span>
-											<span class="subtxt">제주도 애월 바닷가 근처에서 힐링하기</span>
-											<span class="period">2022.04.01</span>
+									</div>                                        
+									<!-- // 수정:2021-09-27 -->
+									
+									<!-- 추가 수정 // -->
+									<div class="goals-now"> <!-- 수정:2021-09-27 type2 삭제 -->
+										<p>목표기간<i></i>일주일</p>
+										<p>도전자<i></i><span class="num">1000</span>명</p>
+									</div>
+									<!-- // 추가 수정 -->
+									<div class="content">
+										<span class="img-character">
+											<img class="temp" src="@@webRoot/static/images/_temp/@icon_coffee.png" alt="커피">
 										</span>
-										<div class="challenge-info">
-											<div class="character-graph goal icon" data-theme="coin">
-												<div class="graph-area">
-													<span data-goal="50"><i></i></span><!-- data-goal로 그래프 넓이값(%) 제어 -->
-													<div class="flag"><i class="icon-flag-dashboard"></i></div>
-												</div>
-												<div class="graph-txt">
-													<p class="start-txt">모은금액<span class="num" data-unit-after="만원">85</span></p><!-- 시작부분 텍스트 -->
-													<p class="end-txt">목표금액<span class="num" data-unit-after="만원">300</span></p><!-- 마지막부분 텍스트 -->
-												</div>
-											</div>
-										</div>
-									</a>
+										<!-- <span class="txt">도전자가 많은 인기 챌린지에 참여해보세요!</span> 수정:2021-09-27 삭제 -->
+									</div>
 								</div>
-								<!-- // 남들만큼 -->
 							</div>
-							<div class="swiper-pagination"></div>
 						</div>
+						<!-- 
+							아낀만큼 전체 챌린지 참고
+							html/goal/mys_go_07_01_01.html
+						-->					
 					</div>
-					<!-- // 목표 -->
+					<!-- // 아낀만큼 인기 -->
 
 					<!-- 내 자산 한눈에 관리하기 // -->
 					<div class="dashboard-section dashboard-items">

@@ -1254,6 +1254,10 @@ if($('.toggle-notice').length){
                 $list.slideUp(300);
             }
         });
+        // default가 is-closed인 경우
+        if ($this.hasClass('is-closed')) {
+            $list.slideUp(0);
+        }
     });
 }
 
@@ -1352,7 +1356,7 @@ if($('[data-action=moreViewList]').length) {
 }
 
 // 전체동의
-if($('.agreement-to-terms').length) {
+var gfn_agreementToTerms = function(){
     $('.agreement-to-terms').each(function(){
         var $this = $(this);
         var $allCheck = $this.find('.header input[type=checkbox]');
@@ -1360,7 +1364,7 @@ if($('.agreement-to-terms').length) {
         var $childCheckboxs = $this.find('.agreement-service-choice input[type=checkbox]'); //하위 서비스
         var isExpansionMode = $this.hasClass("expansion-mode");
 
-        $allCheck.on('click', allCheckCange);
+        $allCheck.on('click', allCheckChange);
         $checkboxs.on('change', function() {
             var isAllCheck = true;
             $checkboxs.each(function(){
@@ -1374,7 +1378,7 @@ if($('.agreement-to-terms').length) {
             $allCheck.trigger('change');
         });
 
-        function allCheckCange() {
+        function allCheckChange() {
             if ($allCheck.is(':checked')) {
                 $checkboxs.prop('checked', true);
                 if($childCheckboxs.length) $childCheckboxs.prop({'checked': true, 'disabled': false});
@@ -1396,7 +1400,7 @@ if($('.agreement-to-terms').length) {
                 $checkbox.prop("checked", true);
                 $checkbox.trigger('change');
                 if (isAllCheckbox) {
-                    allCheckCange();
+                    allCheckChange();
                 }
             });
 
@@ -1424,6 +1428,7 @@ if($('.agreement-to-terms').length) {
         }
     });
 }
+if($('.agreement-to-terms').length) gfn_agreementToTerms();
 
 //Tooltip
 if($('.btn-question').length){
@@ -1958,9 +1963,15 @@ var jsScrollDone = {
         $('.js-scroll-done').each(function(){
             $(this).addClass('scroll-done');
             var $btnSticky = $(this).find('.sticky-bottom');
-            $btnSticky.find('button').prop('disabled', true);
-            $btnSticky.find('a').addClass('is-disabled');
-            $btnSticky.find('.btn-area').append('<button type="button" class="btn-transparent"><span>스크롤 체크</span></button>')
+            if($('body').hasScrollBar()){
+                $btnSticky.find('button').prop('disabled', true);
+                $btnSticky.find('a').addClass('is-disabled');
+                $btnSticky.find('.btn-area').append('<button type="button" class="btn-transparent"><span>스크롤 체크</span></button>');
+            }else{
+                $btnSticky.find('button').prop('disabled', false);
+                $btnSticky.find('a').removeClass('is-disabled');
+                $btnSticky.find('.btn-area .btn-transparent').remove();
+            }
         });
 
         $('.js-scroll-done').on('click','.btn-transparent',function(){
