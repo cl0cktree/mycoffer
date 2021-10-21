@@ -103,10 +103,10 @@
                                 </div>
                             </div>
                             <!--그래프영역//-->
-                            <div class="percentage-graph type2" data-state="safety">
-                                <div class="graph-area">
-                                    <span style="width:100%"></span><!-- style로 그래프 넓이값 제어 -->
-                                </div>
+                            <!-- 수정:2021-10-20 -->
+                            <!-- percentage-graph에 data-percent 추가 , graph-area > span과 current-txt에 style 값 삭제 (script로 조정) -->
+                            <div class="percentage-graph type2" data-state="safety" data-percent="100">
+                                <div class="graph-area"><span></span></div>
                                 <div class="graph-txt">
                                     <dl class="description-list">
                                         <dt>이용금액</dt>
@@ -114,7 +114,7 @@
                                         <dt>기준실적</dt>
                                         <dd><button class="btn-record-edit"><em class="num" data-unit-after="원">180,000</em></button></dd>
                                     </dl>
-                                    <p class="current-txt" style="left:88%;">기준실적충족</p><!-- 현재 텍스트 (style로 텍스트 위치값 제어) -->
+                                    <p class="current-txt">기준실적충족</p>
                                 </div>
                             </div> 
                             <!--//그래프영역-->
@@ -143,10 +143,10 @@
                                 </div>
                             </div>
                             <!--그래프영역//-->
-                            <div class="percentage-graph type2" data-state="">
-                                <div class="graph-area">
-                                    <span style="width:20%"></span><!-- style로 그래프 넓이값 제어 -->
-                                </div>
+                            <!-- 수정:2021-10-20 -->
+                            <!-- percentage-graph에 data-percent 추가 , graph-area > span과 current-txt에 style 값 삭제 (script로 조정) -->
+                            <div class="percentage-graph type2" data-state="" data-percent="5">
+                                <div class="graph-area"><span></span></div>
                                 <div class="graph-txt">
                                     <dl class="description-list">
                                         <dt>이용금액</dt>
@@ -154,7 +154,7 @@
                                         <dt>기준실적</dt>
                                         <dd><button class="btn-record-edit"><em class="num" data-unit-after="원">180,000</em></button></dd>
                                     </dl>
-                                    <p class="current-txt" style="left:15%;">12만원 부족</p><!-- 현재 텍스트 (style로 텍스트 위치값 제어) -->
+                                    <p class="current-txt">12만원 부족</p><!-- 현재 텍스트 (style로 텍스트 위치값 제어) -->
                                 </div>
                             </div> 
                             <!--//그래프영역-->
@@ -184,10 +184,10 @@
                                 </div>
                             </div>
                             <!--그래프영역//-->
-                            <div class="percentage-graph type2" data-state="">
-                                <div class="graph-area">
-                                    <span style="width:0%"></span><!-- style로 그래프 넓이값 제어 -->
-                                </div>
+                            <!-- 수정:2021-10-20 -->
+                            <!-- percentage-graph에 data-percent 추가 , graph-area > span과 current-txt에 style 값 삭제 (script로 조정) -->
+                            <div class="percentage-graph type2" data-state="" data-percent="0">
+                                <div class="graph-area"><span></span></div>
                                 <div class="graph-txt">
                                     <dl class="description-list">
                                         <dt>이용금액</dt>
@@ -412,16 +412,41 @@
     @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
+    
+    <!-- 수정:2021-10-20 -->
+    <!-- 그래프 조정 스크립트 추가 -->
     <script>
-        
-        // 기준 실적 편집
-        $('.card-list .btn-record-edit').on('click', function(){
-            var stateChk = $(this).closest('li').attr('data-state');
-            if(stateChk){
-                $(this).closest('li').attr('data-state', '');
-            }else{
-                $(this).closest('li').attr('data-state', 'edit');
-            }
+        $( function(){
+            var $cardList = $('.card-list');
+            // 기준 실적 편집
+            $cardList.find('.btn-record-edit').on('click', function(){
+                var stateChk = $(this).closest('li').attr('data-state');
+                if(stateChk){
+                    $(this).closest('li').attr('data-state', '');
+                }else{
+                    $(this).closest('li').attr('data-state', 'edit');
+                }
+            });
+            // graph control
+            $cardList.find('li').each( function(){
+                // setting
+                var value = $(this).find('.percentage-graph').attr('data-percent');
+                var $graph = $(this).find('.graph-area > span');
+                var $txt = $(this).find('.current-txt');
+                $graph.width(value+'%');
+                $txt.css('left', value+'%');
+                // control pos
+                var standard = parseInt($(this).find('.graph-area').width());
+                var objWd = parseInt($txt.css('left')) + parseInt($txt.outerWidth());
+                var objMg = parseInt($txt.css('margin-left'));
+                var objPos = parseInt($txt.css('left')) + parseInt($txt.css('margin-left'));
+                if(objWd > standard){
+                    $txt.css('margin-left', -(objWd-standard)+'px');
+                }
+                if(objPos < 0){
+                    $txt.css('margin-left', (objMg-objPos)+ 'px');
+                }
+            });
         });
     </script>
     <!-- Add Script -->

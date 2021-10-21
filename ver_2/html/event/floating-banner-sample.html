@@ -75,6 +75,13 @@
                         </div>
                         <em class="validation">Success Message</em>
                     </div>
+                    <div class="kb-form">
+                        <strong class="label">새창 여부</strong>
+                        <div class="radio-group">
+                            <span class="form-radio"><input type="radio" id="window01" name="window" checked><label for="window01">내부</label></span>
+                            <span class="form-radio"><input type="radio" id="window02" name="window"><label for="window02">외부</label></span>
+                        </div>
+                    </div>
                     <button type="button" class="btn-solid mt12 js-make-fb" data-call-layered="fbSample"><span>플로팅 배너 생성</span></button>
                 </section>
                 <hr class="hr-divide_32">                
@@ -225,6 +232,7 @@
             fbMsg: "",  //출력되는 문구
             fbLinkMsg: '바로가기',  //링크 문구 (기본 "바로 가기")
             fbLink: 'javascript:;', //링크일 경우 경로
+            fbTarget: false, //기본 본창, true 일 경우 새창
             fbCallLayered: '',  //호출되는 레이어 이름
             fbFunction: '', //레이어호출될때 실행해야하는 function 이름
             fbImgSrc: "",   //배너 우측 이미지 경로
@@ -245,6 +253,7 @@
             var effect = $('#fbEffect').val();
             var text = $('#fbText').val();
             var link = $('#fbLink').val();
+            var target = $('#window02').prop('checked');
 
             //console.log(size, effect, text, link)
             if(size != 0 && effect != 0 && text != '' && link != ''){
@@ -259,7 +268,8 @@
                     fbFormName: "sampleBanner",
                     fbLink: 'http://www.naver.com',
                     fbExpireDay: "1",
-                    fbLinkMsg: '바로가기',
+                    fbLinkMsg: link,
+                    fbTarget: target,
                     fbFormMsg: "오늘 하루 보지 않기",
                     fbShow: false,
                 });

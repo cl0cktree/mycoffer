@@ -39,6 +39,7 @@ $('body')
             fbMsg: "",
             fbLinkMsg: '바로가기',
             fbLink: '',
+            fbTarget: false,
             fbCallLayered: '',
             fbFunction: '',
             fbImgSrc: "",
@@ -67,7 +68,11 @@ $('body')
                 floatingBannerHTML += settings.fbMsg;
 
                 if(settings.fbLink != ''){
-                    floatingBannerHTML += '<br><a href=\"' + settings.fbLink + '\" class=\"link\"><span>' + settings.fbLinkMsg + '111</span></a>';                    
+                    if(!settings.fbTarget){
+                        floatingBannerHTML += '<br><a href=\"' + settings.fbLink + '\" class=\"link\"><span>' + settings.fbLinkMsg + '</span></a>';                    
+                    }else{
+                        floatingBannerHTML += '<br><a href=\"' + settings.fbLink + '\" target="_blank" class=\"link\"><span>' + settings.fbLinkMsg + '</span></a>';
+                    }
                 }else if(settings.fbCallLayered != ''){
                     floatingBannerHTML += '<br><button class="link" data-action="close" data-call-layered="' + settings.fbCallLayered + '"';
                     if(settings.fbFunction != '') floatingBannerHTML += ' onclick="' + settings.fbFunction + '\;"';

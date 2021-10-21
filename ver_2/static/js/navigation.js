@@ -6,6 +6,8 @@ var $window = $(window);
 var winW = $window.outerWidth();
 var winH = $window.outerHeight();
 var st = $window.scrollTop();
+var $body = $('body');
+
 
 var gfn_body = {
     hold: function(tf){

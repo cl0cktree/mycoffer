@@ -337,7 +337,7 @@ var gfn_layered = {
     close: function(name, duration){
         duration = duration == undefined ? 200 : duration;
         if(name != '' && name != undefined){
-            var $selectedLayer = $layered.children('div[data-layered-name=' + name + ']');
+            var $selectedLayer = $('div[data-layered-name=' + name + ']');
             gfn_body.hold(false);            
             //$selectedLayer.removeClass('is-active is-expanded').removeAttr('style');
             if($selectedLayer.hasClass('popup') || $selectedLayer.hasClass('floating-banner')){
@@ -923,6 +923,7 @@ if($('.textarea').length){
     $('.textarea')
     .on('keyup mouseup','textarea',function(){
         var $textarea = $(this).parent('.textarea');
+        var textarea = $(this);
         var $byte = $textarea.find('.byte');
         
         //calc byte
@@ -945,6 +946,7 @@ if($('.textarea').length){
         }
     })
     .on('focusout','textarea',function(){
+        var $textarea = $(this).parent('.textarea');
         $(this).parent('.textarea').removeClass('is-focused');
         if($(this).val() != ''){
             $textarea.addClass('is-filled');
@@ -1065,6 +1067,9 @@ $('.tab.swiper-container').each(function(idx) {
                         if ($(this).find(".swiper-pagination").data("type") !== undefined) {
                             options.pagination.type = $(this).find(".swiper-pagination").data("type");
                         }
+                    }
+                    if ($(this).data("swiper-options") != "") {
+                        options = window[$(this).data("swiper-options")];
                     }
                     $content.data('swiper', new Swiper('.'+swiperClass, options));
                 });
@@ -1993,10 +1998,12 @@ var jsScrollDone = {
 
 if($('.js-scroll-done').length) jsScrollDone.init();
 
+
 $(window).on('scroll',function(){
     st = $(this).scrollTop();
     jsFixed.scroll(st, $('.page-step'));
     jsScrollDone.scroll(st, $(this));
+    jsScrollAction.scroll(st, $('[data-scroll-fn]'));
 });
 
 
@@ -2018,4 +2025,23 @@ if($('.order-change-list').length){
 // $('.filter-result').each(function(){
 //     $(this).find('button span').unwrap();
 // });
+
+//동작해야하는 부분이 화면 안으로 들어왔을때 동작
+var jsScrollAction = {
+    scroll: function(st, $target){
+        var winH = $(window).outerHeight();
+        $target.each(function(){
+            var fnName = $(this).data('scroll-fn');
+            // console.log(st + winH >= $(this).offset().top + $(this).outerHeight())
+            if (st + winH >= $(this).offset().top + $(this).outerHeight()) {                                    
+                if(!$(this).hasClass('is-finished')) window[fnName]();
+                $(this).addClass('is-finished');
+            }
+        });
+    }
+}
+$(window).on('load',function(){
+    if('[data-scroll-fn]'.length) jsScrollAction.scroll(st, $('[data-scroll-fn]'));
+});
+
 

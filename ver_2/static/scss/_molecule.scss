@@ -454,19 +454,20 @@ ul.radio-group > li + li{margin-top:20px;}
 
 //TABLE
 .table{overflow:hidden;}/*임시*/
+.table table{border-collapse:separate;} // GUI수정 2021-10-22
 .table .tbl-annotation{margin-top:10px;text-align:right;font-size:13px;color:$kb-ui05}
 .table .tbl-annotation .num{@include number($size: 13px)}
-.table table{border-bottom:1px solid $kb-ui09;}
+.table table{border-top:1px solid $kb-ui05;border-bottom:1px solid $kb-ui09;} // GUI수정 2021-10-22
 .table table th,
-.table table td{@include text($size: $text03);height:40px;padding:12px;vertical-align:middle;border-top:1px solid $kb-ui09;}
+.table table td{@include text($size: $text03);height:40px;padding:12px;vertical-align:middle;/*border-top:1px solid $kb-ui09;*/} // GUI수정 2021-10-22
 .table table th.border-top,
 .table table td.border-top{border-top:1px solid $kb-ui09;}
 .table table th .num,
 .table table td .num{font-size:15px;}
 .table table th{background-color:$kb-ui10;color:$kb-ui03}
 .table table thead th{background-color:$kb-ui10;}
-.table table thead tr:first-child th{border-top:1px solid $kb-ui05;}
-.table table tbody td{background-color:$kb-ui11;}
+// .table table thead tr:first-child th{border-top:1px solid $kb-ui05;} // GUI수정 2021-10-22
+.table table tbody td{background-color:$kb-ui11;border-top:1px solid $kb-ui09;} // GUI수정 2021-10-22
 .table table th,
 .table table td,
 .table table th.border-right,
@@ -477,13 +478,15 @@ ul.radio-group > li + li{margin-top:20px;}
 .table table [data-style=list]:not(ul){color:$kb-ui02;}
 .table table ul[data-style=list] > li li,
 .table table [data-style=list]:not(ul) li{color:$kb-ui05;}
-.tbl-v01 tbody th{text-align:left;color:$kb-ui03;font-weight:bold;}
-.tbl-v01 tbody tr:first-child th,
-.tbl-v01 tbody tr:first-child td{border-top:1px solid $kb-ui05;}
+.tbl-v01 tbody th{text-align:left;color:$kb-ui03;font-weight:bold;border-top:1px solid $kb-ui09;} // GUI수정 2021-10-22
+.tbl-v01 tbody tr:first-child th, .tbl-v01 tbody tr:first-child td{border-top:1px none;} // GUI수정 2021-10-22
+// .tbl-v01 tbody tr:first-child th,
+// .tbl-v01 tbody tr:first-child td{border-top:1px solid $kb-ui05;} // GUI수정 2021-10-22
 .tbl-m01 th{background-color:$kb-ui10;}
 .tbl-m01 thead th{font-weight:bold;color:$kb-ui03}
 .tbl-m01 tbody th{text-align:left;color:$kb-ui05}
-.tbl-m01 thead tr:first-child th{border-top:1px solid $kb-ui05;}
+.tbl-m01 tbody tr th:first-child{border-top:1px solid $kb-ui09;} // GUI수정 2021-10-22
+// .tbl-m01 thead tr:first-child th{border-top:1px solid $kb-ui05;} // GUI수정 2021-10-22
 
 .accordion{border-bottom:1px solid $kb-ui09;}
 .accordion > dt{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;padding:18px 0 18px 2px;border-top:1px solid $kb-ui09;@include text($text02, normal);}
