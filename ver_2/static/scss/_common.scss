@@ -88,19 +88,20 @@
 .agree-term .caution-txt{padding-bottom: 118px; display: block;}
 .agree-term .caution-txt p{font-size: 15px; margin-top:67px; line-height: 20px; margin-bottom: 19px;}
 .agree-term .caution-txt p span{display: block; font-weight: bold;}
-.agree-term .bg-box{@include text(15px);@include clfix;padding-top:2rem;padding-bottom:2.4rem;margin-top:5rem;background-color:$kb-ui10;color:$kb-ui02;} // 여백수정 2021-10-12
-.agree-term .bg-box ul{margin:1.1rem 0;} // 전송요구 요건변경 수정 2021-10-08
-.agree-term .bg-box strong{font-weight:bold;} // 전송요구 요건변경 수정 2021-10-08
-.agree-term .bg-box .btn-text{float:right;margin-top:1.2rem;} // 여백수정 2021-10-12
-.agree-term .bg-box .btn-text i{margin-top:0.75rem;} // 전송요구 요건변경 수정 2021-10-08
+.agree-term .box-info{@include text(15px);@include clfix;padding-top:1.5rem;padding-bottom:1.6rem;margin-top:5rem;border:1px solid $kb-ui09;border-width:1px 0 1px;/*background-color:$kb-ui10;*/color:$kb-ui02;} // GUI수정 2021-10-25
+.agree-term .box-info ul{margin:2.7rem 0;} // GUI수정 2021-10-25
+.agree-term .box-info strong{font-weight:bold;} // GUI수정 2021-10-25
+.agree-term .box-info .btn-text{float:right;margin-top:1.2rem;} // GUI수정 2021-10-25
+.agree-term .box-info .btn-text i{margin-top:0.75rem;} // GUI수정 2021-10-25
 .agree-term .agreement-service-choice label{font-weight:bold;}// 전송요구 약관 전체동의 폰트 볼드
 .kb-sec.asset-sync{/*padding-top:12vh;*/text-align:center;} // 패딩 탑 삭제 2021-10-12
 .asset-sync .character-box{max-width:327px;margin:0 auto;} // 여백수정 2021-10-12
 .asset-sync .character-box img{width:100%;height:auto;} // 여백수정 2021-10-12
 .asset-sync .character-box + p{@include text($size:$text01);margin-top:2.5rem; color:$kb-ui03;} // 여백수정 2021-10-12
 .asset-sync .loader{margin-top:40px;}
-.asset-sync02{position:absolute;bottom:calc(constant(safe-area-inset-bottom) / 2 + 24px);bottom:calc(env(safe-area-inset-bottom) / 2 + 24px);left:0;width:100%;}
-.asset-sync02 .checkbox-group{overflow:auto;padding-top:1.7rem;padding-bottom:1.7rem;border-top:1px solid $kb-ui03;border-bottom:1px solid $kb-ui09;min-height:80px;max-height:206px} // 리스트 변경  2021-10-12
+// .asset-sync02{position:absolute;bottom:calc(constant(safe-area-inset-bottom) / 2 + 24px);bottom:calc(env(safe-area-inset-bottom) / 2 + 24px);left:0;width:100%;} // GUI수정 2021-10-25
+.asset-sync02{margin-top:4.8rem;bottom:calc(constant(safe-area-inset-bottom) / 2 + 24px);bottom:calc(env(safe-area-inset-bottom) / 2 + 24px);} // GUI수정 2021-10-25
+.asset-sync02 .checkbox-group{padding-top:1.7rem;padding-bottom:1.7rem;border-top:1px solid $kb-ui03;border-bottom:1px solid $kb-ui09;min-height:80px;max-height:206px} // 리스트 변경  2021-10-12
 .asset-sync02 .checkbox-group li ~ li{margin-top:1.2rem;} // 여백수정 2021-10-12
 .asset-sync02 .checkbox-group .form-checkbox{display:block;}
 .asset-sync02 .checkbox-group label{display:block;color:$kb-ui04;text-align:left;}
@@ -594,7 +595,7 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .mydata-notie .notice-list{border-top:1px solid $kb-ui09;}
 .mydata-notie .notice-list li>a{padding:1.6rem 0;}
 .mydata-notie .notice-list li>a span{display:block;margin-top:0.9rem;color:$kb-ui05;}
-// .mydata-notie .notice-view{margin-top:12px;}
+.mydata-notie .notice-view{margin-top:0.6rem;} // GUI수정 2021-10-22
 .notice-list{border-top:1px solid $kb-ui09;}
 .notice-list > li{border-bottom:1px solid $kb-ui09;}
 .notice-list > li > a{display:block;padding:20px 0;}
@@ -602,8 +603,8 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .notice-list > li p{@include text}
 .notice-list > li .date{@include number($size: 15px);color:$kb-ui05;margin-top:16px;}
 .notice-view dt .tit{@include text($size: $text01, $weight:bold);display:block;}
-.notice-view dt .date{@include number($size: 15px);display:block;margin-top:1.6rem;line-height:1;color:$kb-ui05}
-.notice-view dt + dd{@include text;color:$kb-ui02;margin-top:24px;padding-top:32px;border-top:1px solid $kb-ui09;}
+.notice-view dt .date{@include number($size: 15px);display:block;margin-top:1.2rem;line-height:1;color:$kb-ui05} // GUI수정 2021-10-22
+.notice-view dt + dd{@include text;color:$kb-ui02;margin-top:24px;padding-top:2.2rem;border-top:1px solid $kb-ui09;} // GUI수정 2021-10-22
 
 
 //FAQ
@@ -752,8 +753,7 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .approval-number .kb-form_multi + .list-decimal{margin-top:48px;}
 .approval-number .list-decimal li{list-style-type: decimal; margin-left:20px; color:$kb-ui02; font-size: 16px; padding-bottom: 20px; line-height:24px;}
 .approval-number .list-decimal li p{font-weight: normal; padding-left:10px;}
-.approval-number .list-decimal .simple-message{color:$color-red; margin-top:0px;}
-.approval-number .list-decimal .simple-message::before{content:'*';position: absolute;left:0;top:5px;width:20px;height:20px;background:none; font-size: 24px;}
+.approval-number .list-decimal .simple-message{margin-top:0px;}// 211022 : 특정 simple message color 설정 삭제
 
 .approval-number .qrscan{ width:120px; height:120px; background-color: $kb-ui07; margin:24px auto 48px auto; text-align: center; line-height:120px; color:$kb_ui11; }
 .pc-import .qrscan-datail-dim{position:fixed;top:0;left:0;bottom:0;right:0;background-color:rgba(0,0,0,0.7);z-index:0;}

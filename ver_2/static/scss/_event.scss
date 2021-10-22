@@ -101,6 +101,9 @@
 	right: 24px;top: 32px;
 }
 
+.floating-banner .floating-banner_header {flex:0 0 28px;padding:0 48px 0 24px;margin-bottom:20px;}
+.floating-banner .floating-banner_header .tit {font-size:20px;font-weight: bold;line-height: 28px;color:$kb-ui01;letter-spacing:-0.02em}
+
 //.ios.homebar .floating-banner{padding-bottom:58px;}
 
 .floating-banner[data-animation^=fb]{transition:transform .3s cubic-bezier(0.165, 0.84, 0.44, 1), opacity .3s cubic-bezier(0.165, 0.84, 0.44, 1);}
@@ -365,7 +368,7 @@
 .ladder.started .cover {opacity: 0;}
 .ladder .cover > span {font-size: 18px; font-weight: bold; color: $kb-ui02;}
 
-.ebm .ebm-msg{position:relative;padding-right:100px;}
+.ebm .ebm-msg{@include text;position:relative;padding-right:100px;}
 .ebm .ebm-msg > img{position:absolute;right:0;top:calc(50% - 40px);width:80px;height:80px;}
 .ebm .ebm-msg + .ebm-link{margin-top:14px;}
 .ebm .ebm-link li{border-bottom:1px solid $kb-ui09;padding-right:0;}

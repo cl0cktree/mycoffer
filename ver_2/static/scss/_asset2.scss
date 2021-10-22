@@ -41,6 +41,10 @@
 .mycar-add-forms .agreement-to-terms {margin-bottom: 30px; border-bottom: 0;}
 .mycar-add-forms .agreement-to-terms .checkbox-group.st_list {padding: 0; margin-top: -6px;}
 .mycar-add-forms .agreement-to-terms .form-checkbox label {font-size: 16px;}
+.mycar-add-forms + .mycar-agree-link,
+.wishcar-add-forms + .mycar-agree-link,
+.mycar-add-forms + .select-account + .mycar-agree-link,
+.wishcar-add-forms + .select-account + .mycar-agree-link {margin-top: 33px;}
 
 .car-quotes {margin-top: 30px;}
 .car-quotes p {margin-bottom: 20px; @include text($text02, normal);}
@@ -215,6 +219,11 @@
 // .mycar-insurance::after {content: ''; position: absolute; left: 24px; right: 24px; bottom: 0; height: 0; border-bottom: 1px solid $kb-ui09;}
 .mycar-loan .summary,
 .mycar-insurance .summary {padding-bottom: 0;}
+.mycar-loan .title {display: inline-block;}
+.mycar-loan .btn-question {vertical-align: baseline;}
+.mycar-loan > .btn-text {float: right;}
+.mycar-loan > .btn-text span,
+.mycar-loan > .btn-text u {line-height: 25px;}
 
 .mycar-quotes .title {display: inline-block;}
 .mycar-quotes .title + .btn-question {position: relative; top: -1px;}
@@ -240,6 +249,7 @@
 .mycar-agree-link {position: relative; margin-top: 8px; margin-bottom: 24px; @include text($text02, normal); color: $kb-ui02;}
 .mycar-agree-link .h4 {margin-bottom: 12px;}
 .mycar-agree-link p {margin-bottom: 20px;}
+.mycar-agree-link em {color: $color-blue;}
 .mycar-agree-link .btn-area {white-space: nowrap;}
 .mycar-agree-link + .mycar-buttons {padding-top: 16px;}
 
@@ -294,11 +304,11 @@
 .wishcar-strategy .simple-message {margin-top: 0; padding-top: 20px; border-top: 1px solid $kb-ui09;}
 .wishcar-strategy .simple-message::before {top: 20px;}
 
-.mydata-agree {margin: 48px 0; text-align: center;}
+.mydata-agree {padding: 28px 0; text-align: center; border-top: 1px solid $kb-ui07;}
 .mydata-agree strong {font-size: 20px; font-weight: bold;}
-.mydata-agree p {margin: 30px 0; @include text($text02, normal); color: $kb-ui04;}
-.mydata-agree a {position: relative; @include text($text02, normal); color: $kb-ui04;}
-.mydata-agree a::after {content: ''; position: absolute; left: 0; right: 0; bottom: 2px; height: 1px; background-color: $kb-ui04;}
+.mydata-agree p {margin-bottom: 18px; @include text($text02, normal); color: $kb-ui02;}
+.mydata-agree a {display: inline-block; width: auto; padding: 0 20px;}
+.mydata-agree a span {font-size: 15px;}
 
 .asset-selector {display: table; width: 100%; padding: 12px 2px; border-top: 1px solid $kb-ui07;}
 .asset-selector .asset-item {display: table-row;}
@@ -414,3 +424,8 @@
 .more-wrap .more-label {float: right; margin-bottom: 20px; line-height: 20px;}
 .more-wrap .more-label::after {transform: rotate(90deg) translateX(-2px);}
 .more-wrap .more-checkbox:checked + .more-label::after {transform: rotate(-90deg) translateX(1px);}
+
+.plain-txt-link {margin-top: 16px;}
+.plain-txt-link p {font-size: 18px; font-weight: bold; line-height: 25px;}
+.plain-txt-link em {font-weight: bold; color: $color-blue;}
+.plain-txt-link .btn-area {margin-top: 24px;}

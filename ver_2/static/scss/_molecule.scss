@@ -19,7 +19,8 @@
 .btn-area.v-align a + a,
 .btn-area.v-align a + button,
 .btn-area.v-align button + a,
-.btn-area.v-align button + button{margin-top:8px;}
+.btn-area.v-align button + button,
+.btn-area.v-align [class*=btn-line] + [class*=btn-line]{margin-top:8px;margin-left:0;} // GUI수정 2021-10-25
 
 //금액 선택기 
 .btn-amount{display:flex;}
@@ -29,14 +30,15 @@
 
 .btn-amount.t01{flex-wrap:wrap}
 .btn-amount.t01 > button{width:33.3%;border-radius:0;height:44px;line-height:44px;border-bottom:0;border-color:$kb-ui02}
-.btn-amount.t01 > button span,
-.btn-amount.t01 > button em{color:$kb-ui02}
+.btn-amount.t01 > button em,
+.btn-amount.t01 > button em::after{color:$kb-ui02;font-weight:bold} // font color, weight 수정
 .btn-amount.t01 > button em{font-size:17px;}
-.btn-amount.t01 > button span{font-size:16px;}
+.btn-amount.t01 > button em::after{font-size:16px;} // font size 수정
 .btn-amount.t01 > button + button{margin:0}
 .btn-amount.t01 > button + button:not(:nth-child(4n)){border-left:0}
 .btn-amount.t01 > button:nth-last-child(4n) ~ button{border-bottom:1px solid $kb-ui02}
 .btn-amount.t01 + .kb-form{margin-top:24px}
+.btn-amount.t01 > button .num:after{font-size:16px;}
 
 .btn-divide{display:flex;}
 .btn-divide li{flex:1;text-align:center;}
@@ -88,6 +90,8 @@
 .tooltip .cont li{color:$kb-ui08;}
 .tooltip .cont li + li{margin-top:0.25em;}
 .tooltip .cont p + ul {margin-top: 10px;}
+.tooltip .cont .btn-text span,
+.tooltip .cont .btn-text u {font-size: inherit;}
 .tooltip .btn-close{@include iconCancel($size: 12px, $padding: 10px,$thick: 1px, $color: $kb-ui10, $position: absolute);right:2px;top:2px;}
 .tooltip [data-style=list] li,
 .tooltip [data-style=list]:not(ul){padding-left:1em;@include text($size: $text03)}
@@ -360,7 +364,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .timepicker .form-text input[inputmode=numeric]::placeholder {font-size: 17px;}
 
 .date-time-picker .kb-form + .kb-form{margin-top:8px;}
-.date-time-picker .kb-form_inner{border:1px solid $kb-ui09;border-radius:2px;}
+.date-time-picker .kb-form_inner{padding-top:6px;padding-bottom:6px;border:1px solid $kb-ui09;border-radius:2px;}
 .date-time-picker[data-status=error] .kb-form_inner,
 .date-time-picker [data-status=error] .kb-form_inner{border-bottom-width:2px;}
 .date-time-picker .kb-form input[type=text]{padding-left:16px;}
@@ -399,7 +403,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .grid-list[data-col="4"] > li:nth-child(n + 5){margin-top:32px;}
 
 //기간선택
-.period-selector{@include number($size: 17px);display:flex;align-items:center;padding:10px 0;border:1px solid $kb-ui08;border-radius:2px;}
+.period-selector{@include number($size: 17px);display:flex;align-items:center;padding:6px 0;border:1px solid $kb-ui08;border-radius:2px;}
 .period-selector > span{flex:0 0 12px;margin-left:16px;text-align:center;}
 .period-selector input{flex:1;min-width:40px;height:34px;line-height:34px;padding:0 8px 0 16px;font-size:17px;border:none;}
 .period-selector input + .btn-datepicker{flex:0 0 34px;}
@@ -528,19 +532,21 @@ ul.radio-group > li + li{margin-top:20px;}
 .no-data [class*=icon],
 .complete-msg i[class*=icon]{display:block;margin:0 auto;}
 .complete-msg p,
-.no-data p{@include text($size: $text02);margin-top:2rem}
+.no-data p{@include text($size: $text02);margin-top:1.8rem}
 .complete-msg .tit{display: block; margin-top: 28px; font-size: 24px; line-height: 33px; font-weight: bold; color: $kb-ui02;}
 .complete-msg .tit .num{font-size: 25px;}
 .complete-msg .tit .num:after{font-size: 24px;font-weight:bold;}
 .no-data .no-data-tit{@include heading($size: $heading04);display:block;margin-top:16px;font-weight:normal}
 .complete-msg .tit + p,
-.no-data .no-data-tit + p{margin-top:12px;color:$kb-ui04;font-size:1.4rem;line-height:2rem;color:$kb-ui04;}
+.no-data .no-data-tit + p{margin-top:14px;color:$kb-ui04;font-size:1.6rem;line-height:2rem;color:$kb-ui04;}
+.complete-msg .caption,
+.no-data .caption{@include text($size:14px);}
 .no-data.margin{margin:4.8rem 2.4rem}
 
 // 전체동의
 .agreement-to-terms {border-bottom: 1px solid $kb-ui09;}
 .agreement-to-terms .header {padding-bottom: 16px; color: $kb-ui02; font-weight: bold; border-bottom: 1px solid $kb-ui03;}
-.agreement-to-terms .checkbox-group.st_list {padding: 28px 0 24px;}
+.agreement-to-terms .checkbox-group.st_list {padding:2.8rem 0 2rem;} // GUI수정 2021-10-22
 .agreement-to-terms .form-checkbox_20 label {padding-right: 30px; @include text($size:$text02);}
 //.agreement-to-terms .form-checkbox_20 input + label:before {left: 7px;} 
 .agreement-to-terms .form-checkbox label {padding-right: 30px; font-size: $text01; font-weight: bold; line-height: 22px;}
@@ -560,7 +566,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .agreement-to-terms .agreement-service-choice .checkbox-group li:nth-child(1),
 .agreement-to-terms .agreement-service-choice .checkbox-group li:nth-child(2){margin-top:16px;}
 .agreement-to-terms .agreement-service-choice .checkbox-group li:nth-child(n + 3){margin-top:20px;}
-
+.agreement-to-terms .agreement-service-choice{border-top:1px solid $kb-ui08;padding-top:2rem} // GUI수정 2021-10-22
 // .agreement-to-terms {border-bottom: 1px solid $kb-ui09;}
 // .agreement-to-terms .header {padding-bottom: 20px; color: $kb-ui02; font-weight: bold; border-bottom: 1px solid $kb-ui03;}
 // .agreement-to-terms .checkbox-group.st_list {padding: 28px 0 24px;}
@@ -692,8 +698,9 @@ ul.radio-group > li + li{margin-top:20px;}
 .credit-list dd .btn-switch .amount{margin-right:12px}
 .credit-list dd .btn-switch label::before{top:0;margin-top:6px}
 .credit-list dd .btn-switch label::after{top:0;margin-top:0}
-.credit-list [data-state="cancel"] .amount .num{text-decoration:line-through}
-.credit-list [data-state="cancel"] .amount + .info{color:$color-red}
+.credit-list .amount[data-state="cancel"] .num,
+.credit-list .amount.income[data-state="cancel"] .num,
+.credit-list .amount.expense[data-state="cancel"] .num{color:$kb-ui02;text-decoration:line-through} // 승인취소 style 변경
 .credit-list.line dt:last-of-type,
 .credit-list.line dd:last-of-type{border-bottom:1px solid $kb-ui09}
 

@@ -132,6 +132,19 @@
 				<!-- My Car 대출관리 // -->
 				<section class="kb-sec mycar-loan">
 					<h2 class="title">대출관리</h2><!-- 추가 수정 -->
+					<!-- 2021-10-21 추가 // -->
+					<button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+					<div class="tooltip">
+						<strong class="tit">대출관리란?</strong>
+						<div class="cont">
+							My Car 등록/수정 화면에서 선택한 국민은행 또는 마이데이터 다른 금융 대출계좌가 나옵니다. 대출계좌 추가/삭제는 My Car 수정화면에서 하실 수 있습니다.
+							<a href="javascript:;" class="btn-text" role="button"><u>수정</u></a>
+						</div>
+						<button class="btn-close"><span>닫기</span></button>
+					</div>
+
+					<a href="javascript:;" class="btn-text" role="button"><u>수정</u></a>
+					<!-- // 2021-10-21 추가 -->
 					<div class="dlists">
 						<dl class="description-list type2">
 							<dt>상품명</dt>
@@ -159,8 +172,19 @@
 						</dl>
 					</div>
 					<div class="link-area">
-						<button type="button" class="link-arrow-after" data-call-layered="bsCustomizedProduct">대출이 부담되시나요?</button><!-- 추가 수정 -->
+						<button type="button" class="link-arrow-after" data-call-layered="mys_sp_01_02_05_p4">대출이 부담되시나요?</button><!-- 2021-10-21 수정 -->
 					</div>
+
+					<!-- 2021-10-21 추가 // -->
+					<!-- 대출계좌 있는데 미선택한 경우 // -->
+					<div class="plain-txt-link">
+						<p>대출계좌를 선택하면 My Car <em>대출정보</em>를 확인할 수 있습니다.</p>
+						<div class="btn-area">
+							<a href="mys_as_12_02_02_p1.html" class="btn-line" role="button"><span>대출계좌 선택</span></a>
+						</div>
+					</div>
+					<!-- // 대출계좌 있는데 미선택한 경우 -->
+					<!-- // 2021-10-21 추가 -->
 				</section>
 				<!-- // My Car 대출관리 -->
 
@@ -172,31 +196,9 @@
 
 		<!-- Layer (modal, bottom sheet) // -->
 		<div class="layered">
-
-			<!-- 추가 수정 : 맞춤상품안내 바텀시트 // -->
-			<div class="bottom-sheet" data-layered-name="bsCustomizedProduct">
-				<div class="bottom-sheet_header">
-					<span class="tit">맞춤상품안내</span>
-				</div>
-				<div class="bottom-sheet_contents bottom-prod-info">
-					<section class="kb-sec">
-						<div class="account-area">
-							<span class="tit">자동차대출 맞춤상품은</span>
-						</div>
-						<div class="account-detail">
-							<p data-style="list">상품별 한도와 금리를 한눈에 비교하여, 내게 꼭 맞는 상품을 선택하도록 제안해 드립니다.</p>
-                            <p data-style="list">쉽고 빠르고 간편하게 서비스를 이용하실 수 있습니다.</p>
-                            <p data-style="list">은행 시간에 맞춰 서두르지 않아도 24시간 365일 언제나 열려있습니다.</p>
-						</div>
-					</section>
-				</div>
-				<div class="bottom-sheet_buttons">
-					<button class="btn-solid"><span>자세히보기</span></button>
-				</div>
-				<button class="btn-close" data-action="close"><span>닫기</span></button>
-			</div>
-			<!-- // 추가 수정 : 맞춤상품안내 바텀시트  -->
-
+			<!-- 2021-10-21 수정 // -->
+			@@include('@@webRoot/html/special/layered/mys_sp_01_02_05_p4.html')
+			<!-- // 2021-10-21 수정 -->
 		</div>
 		<!-- // Layer (modal, bottom sheet) -->
 	</div>

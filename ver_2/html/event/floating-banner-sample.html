@@ -156,6 +156,13 @@
                         </div>
                         <em class="validation">Success Message</em>
                     </div>
+                    <div class="kb-form">
+                        <strong class="label">새창 여부</strong>
+                        <div class="radio-group">
+                            <span class="form-radio"><input type="radio" id="window03" name="window2" checked><label for="window03">내부</label></span>
+                            <span class="form-radio"><input type="radio" id="window04" name="window2"><label for="window04">외부</label></span>
+                        </div>
+                    </div>                    
                     <ul class="select-sticker-img">
                         <li><button><img src="@@webRoot/static/images/event/event-sticker01.png" alt=""></button></li>
                         <li><button><img src="@@webRoot/static/images/event/event-sticker02.png" alt=""></button></li>
@@ -490,6 +497,7 @@
                 //  4 5 6
                 //  7 8 9
                 esLink: '', : 링크로 연결될 경우
+                esTarget: false,    : 새창여부
                 esCallLayered: '',  : 호출할 레이어 이름 (data-layered-name)
                 esAnimation: '',    : //나타나는 애니메이션 (esBottomUp, esUpBottom, esLeftRight, esRightLeft, esFadeIn, esShake)
                 esImgSrc: '',   // 이미지 경로 (높이 75px 고정)
@@ -593,7 +601,10 @@
             var effect = $('#esEffect').val();
             var banner = $('#esCallBanner').val();
             var link = $('#esLink').val();
+            var target = $('#window04').prop('checked');
             var img = $('.select-sticker-img').find('button.is-active img').attr('src');
+
+            console.log(target)
 
             $('.layered').find('.event-sticker').remove();
             $('.layered').sticker({
@@ -601,6 +612,7 @@
                 esAnimation: effect,
                 esCallLayered: banner,
                 esLink: link,
+                esTarget: target,
                 esImgSrc: img,
                 esImgAlt: '룰렛 이벤트 이미지',
                 esClose: true

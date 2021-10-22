@@ -31,6 +31,34 @@
     <!-- Layer (modal, bottom sheet) // -->
     <div class="layered">
         <!-- [MYS_EVT_02_01_02] 상담형 배너 // -->
+		<div class="floating-banner" data-layered-name="fbEBM" data-animation="fbLeftRight">
+            <div class="floating-banner_header">
+                <span class="tit">도움이 필요하신가요?</span>
+            </div>
+            <div class="floating-banner_contents">
+                <section class="kb-sec ebm">
+                    <div class="ebm-msg">
+                        <img src="@@webRoot/static/images/event/counseling.png" alt="">
+                        상담관련 안내 멘트<br>
+                        상담관련 안내 멘트<br>
+                        상담관련 안내 멘트<br>
+                        상담관련 안내 멘트
+                    </div>
+                    <ul class="ebm-link link-arrow-after">
+                        <li><button type="button" class="js-consult-chat"><span>채팅 상담</span></button></li>
+                        <li><button type="button" class="js-consult-phone"><span>유선 상담</span></button></li>
+                        <li><button type="button" class="js-consult-email"><span>이메일 상담</span></button></li>
+                    </ul>
+                </section>
+            </div>
+            <!-- <div class="floating-banner_buttons">
+                <button class="btn-solid" data-action="close"><span>확인</span></button>
+            </div> -->
+            <button class="btn-close" data-action="close"><span>닫기</span></button>
+        </div>
+        <!-- // [MYS_EVT_02_01_02] 상담형 배너 -->
+
+        <!-- [MYS_EVT_02_01_02] 상담형 배너 // -->
 		<div class="bottom-sheet" data-layered-name="bsEBM">
             <div class="bottom-sheet_header">
                 <span class="tit">도움이 필요하신가요?</span>
@@ -69,7 +97,8 @@
     <!-- Add Script -->
 
     <script>
-        gfn_layered.open('bsEBM');
+        //gfn_layered.open('bsEBM');
+        gfn_layered.open('fbEBM');
 
         $('.js-consult-chat').on('click',function(){
             modalPopup({

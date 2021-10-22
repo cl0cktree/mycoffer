@@ -19,7 +19,7 @@ div.percentage-graph.mint .graph-area > span{background-color:#67d3d3;border:1px
 // .percentage-graph.type1 .graph-area > span:after{border:1px solid #ffbc00;}
 div.percentage-graph.cobalt .graph-area > span{background-color:#4dabff;border:1px solid transparent} 
 div.percentage-graph.orange .graph-area > span{background-color:#fa7b4e;border:1px solid transparent}  
-div.percentage-graph.blue .graph-area > span{background-color:#7fa2ed;border:1px solid transparent}   
+div.percentage-graph.blue .graph-area > span{background-color:#5b75cf;border:1px solid transparent}   // 컬러변경
 div.percentage-graph.pink .graph-area > span{background-color:#ff6391;border:1px solid transparent}     
 div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-negative;border:1px solid $color-yellow-positive;}  
 .percentage-graph.red .graph-area > span{background-color:#ff445a;border:1px solid transparent}
@@ -42,7 +42,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .detail-list-wrap .period-con{border-bottom:1px solid $kb-ui05;padding:24px 0 12px;text-align:right;}
 .detail-list-wrap .d-list li{border-bottom:1px solid $kb-ui09;padding:15px 0;}
 .detail-list-wrap .d-list + .btn-more-plus{display:block;margin-top:2.4rem;}// 더보기 가이드 수정 2021-09-29 kek
-
+.my-asset .no-data .icon-info_24{ background: url(../images/common/result_nodata.gif) 0 0/cover no-repeat;}//no-data 이미지 수정 2021-10-22 kek
 
 /* chart */
 .chart-flex{display:flex;}
@@ -998,8 +998,9 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .house-add-complete .sticky-bottom .btn-area{position:fixed;bottom:0;left:0;z-index:$level60;width:100%;}
 .my-asset .house-add-complete .btn-line{padding:0;}
 .my-asset .house-add-complete .btn-line span{font-size:1.5rem;letter-spacing: -0.64px;} /* 추가 2021-07-01 */ 
-.my-asset .consent-area{margin-bottom:24px;margin-top: 2rem;}
+.my-asset .consent-area{margin-bottom:4.8rem;margin-top: 2rem;} // margin 수정
 .my-asset .consent-area .tit{@include text($size:18px,$weight:bold);}
+.my-asset .consent-area .tit em{font-weight:bold;color:$color-blue;} // 블루 컬러 추가
 .my-asset .consent-area .btn-area{margin-top:24px;}
 .my-asset .conditions-con{@include text($size:14px);margin:2rem auto 4.8rem;width:25rem;}
 .my-asset .conditions-con dl + dl{margin-top:1rem;}
@@ -1047,17 +1048,17 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset.wish-house-planer .progress-wrap>span.is-active:after{opacity:1;margin-right:0;}
 .my-asset.wish-house-planer .progress-wrap>span.stop:after{opacity:0;}
 .my-asset.wish-house-planer .progress-wrap .total{width:100%;left:0;z-index:1;background-color:#287eff;}
-.my-asset.wish-house-planer .progress-wrap .my-house{left:0;background-color:#ffba53;z-index:2;}
+.my-asset.wish-house-planer .progress-wrap .my-house{left:0;background-color:#ffcf53;z-index:2;} // 컬러변경
 .my-asset.wish-house-planer .progress-wrap .my-house:after{content:'';width:2.9rem;height:2.7rem;background:url(../../static/images/asset/ico_my_house.png) no-repeat 0 0;background-size:cover;margin-top:-3.4rem;}
 .my-asset.wish-house-planer .progress-wrap span.stop{width:0 !important;}
 // .my-asset.wish-house-planer .progress-wrap .my-cash{background-color:#ff8a71;z-index:4}
 // .my-asset.wish-house-planer .progress-wrap .my-cash:after{content:'';width:20px;height:20px;background:url(../../static/images/asset/ico_my_cash.png) no-repeat 0 0;background-size:cover;margin-top:-2.8rem;}
 .my-asset.wish-house-planer .progress-wrap .wish-gap{background-color:$kb-ui07;z-index:0;}
-.my-asset.wish-house-planer .progress-wrap .wish-gap:after{content:'';width:2.5rem;height:2.7rem;background:url(../../static/images/asset/ico_wish_house.png) no-repeat 0 0;background-size:cover;margin-left:-20px;margin-top:-3.5rem;}
-.my-asset.wish-house-planer .progress-wrap .my-cash{background-color:#ff8a71;z-index:4}
-.my-asset.wish-house-planer .progress-wrap .my-cash:after{content:'';width:2.9rem;height:2.4rem;background:url(../../static/images/asset/ico_my_cash.png) no-repeat 0 0;background-size:cover;margin-top:-3.2rem;}
+.my-asset.wish-house-planer .progress-wrap .wish-gap:after{content:'';width:3.2rem;height:3.2rem;background:url(../../static/images/asset/ico_wish_house.png) no-repeat 0 0;background-size:cover;margin-left:-20px;margin-top:-3.5rem;}
+.my-asset.wish-house-planer .progress-wrap .my-cash{background-color:#ffab53;z-index:4} // 컬러변경
+.my-asset.wish-house-planer .progress-wrap .my-cash:after{content:'';width:3.2rem;height:3.2rem;background:url(../../static/images/asset/ico_my_cash.png) no-repeat 0 0;background-size:cover;margin-top:-3.2rem;}
 .my-asset.wish-house-planer .progress-wrap .my-loan{background-color:#ff445a;z-index:3;}
-.my-asset.wish-house-planer .progress-wrap .my-loan:after{content:'';width:2.4rem;height:2.8rem;background:url(../../static/images/asset/ico_my_loan.png) no-repeat 0 0;background-size:cover;margin-top:-3.5rem;}
+.my-asset.wish-house-planer .progress-wrap .my-loan:after{content:'';width:3.2rem;height:3.2rem;background:url(../../static/images/asset/ico_my_loan.png) no-repeat 0 0;background-size:cover;margin-top:-3.5rem;}
 .my-asset.wish-house-planer .progress-wrap .wish-house{width:23px;height:20px;border-radius:20px;bottom:-8px;z-index:5;text-align:center;margin-left:-23px;}
 .my-asset.wish-house-planer .progress-wrap .wish-house:after{content:'';width:23px;height:30px;background:url(../../static/images/asset/ico_wish_house.png) no-repeat 0 0;background-size:cover;margin-left:-20px;}
 .my-asset.wish-house-planer .progress-wrap .wish-house.is-active:after{margin-left:0;}
@@ -1123,7 +1124,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset.house-view .top-area .nick-name{color:$kb-ui03;margin-top:12px;}
 .my-asset .house-data-list{padding:1.6rem 0 4.8rem;}
 .my-asset .house-data-list + .hr-divide_48{margin:0;}
-.my-asset .house-data-list + .hr-divide_48 + .consent-area{margin:4.8rem 0 0;}
+.my-asset .house-data-list + .hr-divide_48 + .consent-area{margin:4.8rem 0;}
 .my-asset .house-data-list.expens{border-bottom:none;}
 .my-asset .house-data-list.wish{border-bottom:none;}
 .my-asset .house-data-list .house-data-tit{padding:2.4rem 0 0;margin:0 24px;}
@@ -1174,6 +1175,8 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset.house-view .my-house-loan .description-list dt{margin:6px 0;}
 .my-asset.house-view .percentage-graph{margin-top:14px;}
 .my-asset.house-view .my-house-loan .btn-area{margin-top:28px;}
+.my-asset.house-view .house-loan{position:relative;}
+.my-asset.house-view .house-loan .h4 .btn-text.sm{position:absolute;right:2.4rem;top:.3rem;}
 .my-asset.house-view .other-conditions{padding-bottom:38px;}
 .my-asset.house-view .other-conditions .h4{margin-bottom:12px;}
 .my-asset.house-view .other-conditions .average-box{display:none;position:absolute;top:46px;left:0;text-align:center;}
@@ -1201,8 +1204,8 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset.house-view .other-expenses{padding-top:2.4rem;padding-bottom:3.8rem;}
 .my-asset.house-view .other-expenses .h4{margin-bottom:12px;}
 .my-asset .liiv-banner{margin-top:4rem;}
-.my-asset .liiv-banner button{display:block;width:100%;text-align:left;background:#eef1fa;padding:20px 26px;position:relative;}
-.my-asset .liiv-banner button img{position:absolute;width:6.9rem;height:6.9rem;right:2.8rem;top:2rem;}
+.my-asset .liiv-banner button{display:block;width:100%;text-align:left;background:#f7f7f8;padding:2.5rem 2.5rem 4.8rem;position:relative;}
+.my-asset .liiv-banner button img{position:absolute;width:10.9rem;height:10.4rem;right:2.5rem;top:2rem;}
 .my-asset .liiv-banner .tit{display:block;@include text($size:18px,$weight:bold);}
 .my-asset .liiv-banner .s-txt{display:block;@include text($size:14px);color:$kb-ui04;margin-top:4px;}
 .my-asset .smart-loan-banner{margin-top:24px;}
@@ -1230,7 +1233,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 /* menu 페이지 */
 .menu-push .top-info .push-setting{display:flex;justify-content:space-between;padding-right:1px;margin-top:0.6rem;}
 .menu-push .top-info .push-setting + .txt{@include text($size:16px,$line-height:1.56);margin-top:2rem;}
-.menu-push .top-info .no-data p{font-size:1.8rem;} // GUI수정 2021-10-22
+.menu-push .top-info .no-data p{font-size:1.8rem;margin-top:1.4rem;} // GUI수정 2021-10-22
 .menu-push .push-list .condition-area{border-top:0.1rem solid $kb-ui08;}
 .push-time-line .list{display:flex;flex-direction:column;margin-top:2.8rem;} // 알림함 타입 추가 2021-10-08
 // .push-time-line .list-item:first-child{margin-top:2.8rem;} // 알림함 타입 추가 2021-10-08
@@ -1259,7 +1262,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .push-time-line .list-item .btn-solid{margin-top:2rem;}
 
 .menu-push .top-info .btn-text{display:inline-block;margin-top:7px;}
-.menu-push .top-info .no-data{margin-top:100px;margin-bottom:4.5rem;}
+.menu-push .top-info .no-data{margin-top:7.6rem;margin-bottom:4.7rem;} // GUI수정 2021-10-22
 .menu-push .line-box > .date{@include number($size: 15px);color:$kb-ui06}
 .menu-push .price-wrap{margin-top:12px;}
 .menu-push .price-wrap .type{font-weight:bold;}

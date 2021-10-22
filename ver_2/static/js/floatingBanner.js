@@ -101,6 +101,7 @@ $('body')
             // 옵션의 기본 값입니다.
             esPosition: "1",
             esLink: '',
+            esTarget: false,
             esCallLayered: '',
             esAnimation: '',
             esImgSrc: '',
@@ -131,7 +132,11 @@ $('body')
 
         var eventStickerHTML = '<div class=\"event-sticker\" data-animation=\"' + settings.esAnimation + '\" data-position=\"' + settings.esPosition + '\">'
             if(settings.esLink != ''){
-                eventStickerHTML += '<a href=\"' + settings.esLink + '\">';
+                if(!settings.esTarget){
+                    eventStickerHTML += '<a href=\"' + settings.esLink + '\">';
+                }else{
+                    eventStickerHTML += '<a href=\"' + settings.esLink + '\" target=\"_blank\">';
+                }
                 eventStickerHTML += '<img src="' + settings.esImgSrc + '" alt="' + settings.esImgAlt + '">';
                 eventStickerHTML += '</a>';
             }else if(settings.esCallLayered != ''){
