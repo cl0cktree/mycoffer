@@ -57,7 +57,7 @@
 .popup_buttons .btn-solid > span,
 .bottom-sheet_buttons .btn-solid > span,
 .sticky-bottom .btn-area .btn-solid > span,
-.sticky-bottom .btn-area .btn-transparent > span{padding: 1.8rem 1rem;padding: 1.8rem 1rem calc(constant(safe-area-inset-bottom) / 2 + 18px);padding: 1.8rem 1rem calc(env(safe-area-inset-bottom) / 2 + 18px);line-height: 1.2;}
+.sticky-bottom .btn-area .btn-transparent > span{padding: 1.8rem .1rem;padding: 1.8rem .1rem calc(constant(safe-area-inset-bottom) / 2 + 18px);padding: 1.8rem .1rem calc(env(safe-area-inset-bottom) / 2 + 18px);line-height: 1.2;} // 좌추 패딩 수정 1rem -> .1rem
 
 .scroll-done .sticky-bottom{position:relative;}
 .scroll-done .sticky-bottom .btn-transparent{position:absolute;top:0;bottom:0;left:0;width:100%;opacity:0;}
@@ -532,13 +532,17 @@ ul.radio-group > li + li{margin-top:20px;}
 .no-data [class*=icon],
 .complete-msg i[class*=icon]{display:block;margin:0 auto;}
 .complete-msg p,
-.no-data p{@include text($size: $text02);margin-top:1.8rem}
-.complete-msg .tit{display: block; margin-top: 28px; font-size: 24px; line-height: 33px; font-weight: bold; color: $kb-ui02;}
+.no-data p{margin-top:1.8rem}
+.no-data p{@include text($size: $text03);}
+.complete-msg p{@include text($size: $text02);}
+.complete-msg .tit{display: block; margin-top: 26px; font-size: 24px; line-height: 33px; font-weight: bold; color: $kb-ui02;}
 .complete-msg .tit .num{font-size: 25px;}
 .complete-msg .tit .num:after{font-size: 24px;font-weight:bold;}
 .no-data .no-data-tit{@include heading($size: $heading04);display:block;margin-top:16px;font-weight:normal}
 .complete-msg .tit + p,
-.no-data .no-data-tit + p{margin-top:14px;color:$kb-ui04;font-size:1.6rem;line-height:2rem;color:$kb-ui04;}
+.no-data .no-data-tit + p{margin-top:14px;color:$kb-ui04;line-height:2rem;color:$kb-ui04;}
+.complete-msg .tit + p{font-size:1.6rem;}
+.no-data .no-data-tit + p{font-size:1.4rem;}
 .complete-msg .caption,
 .no-data .caption{@include text($size:14px);}
 .no-data.margin{margin:4.8rem 2.4rem}

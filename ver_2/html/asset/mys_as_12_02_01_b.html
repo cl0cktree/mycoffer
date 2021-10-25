@@ -9,22 +9,14 @@
 
 <body>
 	@@include('@@webRoot/html/_include/app-a11y.html')
-	<div class="app" data-page="submain">
+	<div class="app">
 		<!-- app-header //-->
 		@@include('@@webRoot/html/_include/app-integrated-header.html', {
 			'pageTit': '자동차관리',
-			'type': ''
+			'type': 'back'
 		})
 		<!-- // app-header -->
 
-        <script>
-            //chnannel 별 header 타입이 다름
-            if($('html').data('channel') != 'ch_star'){
-                $('.app-header').attr('data-type','submain');
-            }else{
-                $('.app-header').attr('data-type','');
-            }
-        </script>
 		<!-- app-container //-->
 		<div class="app-container">
 
@@ -42,8 +34,7 @@
 				</section>
 
 				<section class="kb-sec mycar-top-message">
-					<strong class="name">김국민</strong> 님의 자동차 총 자산은 <span class="amount"><span class="num" data-unit-after="만원">859</span></span>입니다.<br>
-					지난달보다 <span class="amount down"><span class="num" data-unit-after="만원">159</span></span> 감소했습니다.
+					<strong class="name">김국민</strong> 님의 자동차 총 자산은 <span class="amount"><span class="num" data-unit-after="만원">6,700</span></span>입니다.
 					<!-- 2021-08-26 추가 // -->
 					<button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
 					<div class="tooltip">
@@ -57,93 +48,35 @@
 					<!-- // 2021-08-26 추가 -->
 				</section>
 
-				<!-- 차량정보 // -->
+				<!-- 차량정보 (직접입력한경우) // -->
 				<section class="kb-sec mycar-information">
 					<h2 class="is-hidden">My Car 차량정보</h2>
 					<div class="content-box">
 						<a class="link-modify" href="#">수정</a>
 						<div class="infobox">
 							<span class="nickname">내차별명</span>
-							<span class="model"><span class="manufacturer">한국GM</span>쉐보레 말리부</span><!-- 추가 수정 -->
-							<span class="subtxt">2.0터보 LTZ(2016)</span><!-- 추가 수정 -->
-							<span class="photo">
-								<!-- <img src="@@webRoot/static/images/_temp/car04.png" alt="한국GM 쉐보레 말리부"> -->
-                                <img src="@@webRoot/static/images/asset/car_default.png" alt="등록한 차량 이미지"><!-- 추가 수정 -->
-							</span>							
+							<span class="model">쉐보레 말리브</span>
+							<span class="photo default-photo"></span>
+						</div>
+						<div class="infolist">
+							<dl class="description-list">
+								<dt>가격</dt>
+								<dd class="amount"><span class="num" data-unit-after="만원">6,700</span></dd>
+							</dl>
 						</div>
 					</div>
 				</section>
-				<!-- // 차량정보 -->
+				<!-- // 차량정보 (직접입력한경우) -->
 
-				<!-- My Car 시세 // -->
-				<section class="kb-sec mycar-quotes">
-					<h2 class="title">My Car 시세 <small>(KB 차차차)</small></h2>
-					<!-- 추가 수정 // -->
-					<button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
-					<div class="tooltip">
-						<strong class="tit">My Car 시세란?</strong>
-						<div class="cont">
-							KB차차차에 등록된 동일 모델의 판매가 기반으로 산출한 AI시세 예측 가격이자 소비자구매가격입니다.
-						</div>
-						<button class="btn-close"><span>닫기</span></button>
-					</div>
-					<!-- // 추가 수정 -->
-					<!-- [Chart Area] // -->
-					<!--
-						[차트 디자인 정보]
-						Grid 라인 색상 : #ebeef0
-						꺽은선 색상 : #ffba53
-						꺽은선 Area 색상 : #f7f7f8
-						X축, Y축 레이블 텍스트 크기/색상 : 14px / #696e76
-						tooltip 텍스트 크기/색상 : 14px / #26282c
-					-->
-					<!-- 추가 수정 // -->
-					<div class="chart-area">
-						<img class="temp" src="@@webRoot/static/images/_temp/chart_as1201.png" alt="차트 예시 이미지">
-					</div>
-					<!-- // 추가 수정 -->
-					<div class="dlists">
-						<dl class="description-list type2">
-							<dt>시세금액</dt>
-							<dd class="amount"><span class="num" data-unit-after="만원">859</span></dd>
-							<dt>지난달대비</dt>
-							<dd class="amount up"><span class="num" data-unit-after="만원">5</span></dd>
-							<!-- 추가 수정 2021-10-06 // -->
-							<dt>
-								출고가
-								<button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
-								<div class="tooltip">
-									<strong class="tit">출고가란?</strong>
-									<div class="cont">
-										선택 옵션 및 할인이 포함된 최초 취득가(부가세 제외)입니다.
-									</div>
-									<button class="btn-close"><span>닫기</span></button>
-								</div>
-							</dt>
-							<!-- // 추가 수정 2021-10-06 -->
-							<dd class="amount"><span class="num" data-unit-after="만원">2,500</span></dd>
-							<dt>잔존가치</dt>
-							<dd class="amount"><span class="num" data-unit-after="%">32</span></dd>
-						</dl>
-					</div>
-					<div class="kbchachacha-banner">
-						<a href="https://m.kbchachacha.com/public/web/sellme/submain.kbc">
-							<strong>KB차차차</strong>
-							<span>KB캐피탈이 만든 중고차 국민시세</span>
-						</a>
-					</div>
-				</section>
-				<!-- // My Car 시세 -->
-
-				<!-- My Car 마이데이터 동의 링크 // -->
+				<!-- 2021-10-25 마이데이터 연결 수정 // -->
 				<section class="kb-sec mycar-agree-link">
-					<h2 class="h4">마이데이터 연결하기</h2>
-					<p>마이데이터를 연결하면 My Car 다른금융 자동차 유지비, 보험 정보를 알 수 있습니다.</p><!-- 2021-10-18 : 문구 수정 -->
+					<!-- 삭제 <h2 class="h4">마이데이터 연결하기</h2> -->
+					<p>마이데이터를 연결하면 My Car 다른금융 <em>자동차 유지비, 보험</em> 정보를 알 수 있습니다.</p>
 					<div class="btn-area">
 						<a href="#" class="btn-line"><span>마이데이터 연결</span></a>
 					</div>
 				</section>
-				<!-- // My Car 마이데이터 동의 링크 -->
+				<!-- // 2021-10-25 마이데이터 연결 수정 -->
 
 				<!-- My Car 등록하기 버튼 // -->
 				<section class="kb-sec mycar-buttons">

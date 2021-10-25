@@ -1987,6 +1987,7 @@ var jsScrollDone = {
         });
     },
     scroll : function(st, $this){
+        st = Math.ceil(st) + 10;    // 수정 2021-10-25 : 하단 여백
         if (st >= $(document).outerHeight() - $this.outerHeight()) { 
             var $btnSticky = $('.js-scroll-done .sticky-bottom');
             $btnSticky.find('button').prop('disabled', false);

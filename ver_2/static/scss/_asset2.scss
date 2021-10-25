@@ -246,12 +246,16 @@
 .mycar-insurance .more-wrap {border-bottom: 1px solid $kb-ui09;}
 .mycar-insurance .more-container {border-top: 1px dashed $kb-ui09;}
 
+.plain-txt-link {margin-top: 16px;}
 .mycar-agree-link {position: relative; margin-top: 8px; margin-bottom: 24px; @include text($text02, normal); color: $kb-ui02;}
-.mycar-agree-link .h4 {margin-bottom: 12px;}
-.mycar-agree-link p {margin-bottom: 20px;}
-.mycar-agree-link em {color: $color-blue;}
-.mycar-agree-link .btn-area {white-space: nowrap;}
+.plain-txt-link p,
+.mycar-agree-link p {font-size: 18px; font-weight: bold; line-height: 25px;}
+.plain-txt-link em,
+.mycar-agree-link em {font-weight: bold; color: $color-blue;}
+.plain-txt-link .btn-area,
+.mycar-agree-link .btn-area {margin-top: 24px; white-space: nowrap;}
 .mycar-agree-link + .mycar-buttons {padding-top: 16px;}
+.mycar-agree-link .h4 {display: none;}
 
 .bottom-simple-link {margin-top: 34px;}
 .bottom-simple-link .tit {display: block; margin-bottom: 15px; @include text($text01, bold);}
@@ -425,7 +429,3 @@
 .more-wrap .more-label::after {transform: rotate(90deg) translateX(-2px);}
 .more-wrap .more-checkbox:checked + .more-label::after {transform: rotate(-90deg) translateX(1px);}
 
-.plain-txt-link {margin-top: 16px;}
-.plain-txt-link p {font-size: 18px; font-weight: bold; line-height: 25px;}
-.plain-txt-link em {font-weight: bold; color: $color-blue;}
-.plain-txt-link .btn-area {margin-top: 24px;}

@@ -97,20 +97,28 @@
 .pgbank-rules .character-selection .swiper-slide input[type=checkbox],
 .pgbank-rules .character-selection .swiper-slide input[type=radio] {position: absolute; left: -10000px; visibility: hidden;}
 .pgbank-rules .character-selection .swiper-slide label {position:relative;display:block;width:inherit;height:inherit;text-align:center;border-radius:.6rem;overflow:hidden;background-size:cover;box-shadow:0 .2rem .2rem 0 rgba(0,0,0,.11);}
+
 // .pgbank-rules .character-selection .swiper-slide[data-theme='lamu'] label {background-image:url(../images/goal/card_lamu.png);}
 // .pgbank-rules .character-selection .swiper-slide[data-theme='kolly'] label{background-image:url(../images/goal/card_kolly.png);}
 // .pgbank-rules .character-selection .swiper-slide[data-theme='ago'] label  {background-image:url(../images/goal/card_ago.png);}
 // .pgbank-rules .character-selection .swiper-slide[data-theme='bb'] label   {background-image:url(../images/goal/card_bb.png);}
 // .pgbank-rules .character-selection .swiper-slide[data-theme='kiki'] label {background-image:url(../images/goal/card_kiki.png);}
+
+.pgbank-rules .character-selection .swiper-slide[data-theme='lamu'] label:before {background-image:url(../images/goal/card_lamu_on.png);} // 카드 수정
+.pgbank-rules .character-selection .swiper-slide[data-theme='kolly'] label:before{background-image:url(../images/goal/card_kolly_on.png);} // 카드 수정
+.pgbank-rules .character-selection .swiper-slide[data-theme='ago'] label:before  {background-image:url(../images/goal/card_ago_on.png);} // 카드 수정
+.pgbank-rules .character-selection .swiper-slide[data-theme='bb'] label:before   {background-image:url(../images/goal/card_bb_on.png);} // 카드 수정
+.pgbank-rules .character-selection .swiper-slide[data-theme='kiki'] label:before {background-image:url(../images/goal/card_kiki_on.png);} // 카드 수정
+
 .pgbank-rules .character-selection .swiper-slide label .card-img{position:absolute;top:0;z-index:-1;}
-.pgbank-rules .character-selection .swiper-slide label::before {display: none; content: '선택완료'; position: absolute; z-index: 1; left: -1px; right: -1px; top: -1px; bottom: -1px; background-color: rgba(0,0,0,.6); font-size: 24px; font-weight: bold; color: #fff; text-align: center; padding-top: 142px;}
+.pgbank-rules .character-selection .swiper-slide label::before {display:none;content:'';position:absolute;z-index:1;left:0;right:0;top:0;bottom:0;background-size:contain;} // 카드 수정
 .pgbank-rules .character-selection .swiper-slide label i {display: none; position: absolute; z-index: 2; left: 50%; top: 52px; margin-left: -30px;}
 .pgbank-rules .character-selection .swiper-slide input[type=checkbox]:checked + label::before,
 .pgbank-rules .character-selection .swiper-slide input[type=radio]:checked + label::before,
 .pgbank-rules .character-selection .swiper-slide input[type=checkbox]:checked + label i {display:block;}
 .pgbank-rules .character-selection .swiper-slide input[type=radio]:checked + label i {display:block;}
-.pgbank-rules .character-selection .swiper-slide input[type=checkbox]:checked + label i {background-image:url(../images/goal/complete_icon.png);background-position:center center;background-repeat:no-repeat;background-size:6rem 6rem;} // 체크 아이콘 변경에 따른 추가
-.pgbank-rules .character-selection .swiper-slide .desc {display: block; padding-top: 30px;}
+.pgbank-rules .character-selection .swiper-slide input[type=checkbox]:checked + label i {display:none;/*background-image:url(../images/goal/complete_icon.png);background-position:center center;background-repeat:no-repeat;background-size:6rem 6rem;*/} // 체크 아이콘 변경에 따른 추가
+.pgbank-rules .character-selection .swiper-slide .desc {display: block; padding-top: 30px;position:absolute;z-index:1;width:100%;}
 .pgbank-rules .character-selection .swiper-slide .name {display: block; margin-bottom: 102px; font-size: 16px; line-height: 23px; color: #26282c; font-weight: bold;}
 .pgbank-rules .character-selection .swiper-slide .text {display: block; font-size: 14px; line-height: 20px; color: #696e76;}
 .pgbank-rules .character-selection .swiper-slide .text span {color: #26282c;}
@@ -384,14 +392,14 @@
 .input-img-box{width:100%;}
 .input-img-box .input-tit{display:block;margin-bottom:24px;@include text($size:$text02);color:$kb-ui04;}
 .input-img-box .img-box{width:100px;height:90px;}
-.icon-sel:not(ul) .icon-type[class*=form-checkbox]{height:90px;border:1px solid #e3e6e8;border-radius:10px;width:calc(33% - 8px);margin:5px 0;overflow:hidden;}
+.icon-sel:not(ul) .icon-type[class*=form-checkbox]{height:90px;border:1px solid #e3e6e8;border-radius:.6rem;width:calc(33% - 8px);margin:5px 0;overflow:hidden;} // border-radius 수정
 .icon-sel:not(ul) .icon-type[class*=form-checkbox]:nth-child(3n-1){margin-left:12px;margin-right:12px;}
 .icon-sel:not(ul) .icon-type[class*=form-checkbox]{overflow:visible;}
-.icon-sel .icon-type label{padding-left:0;width:100%;height:100%;position:relative;background:#f7f7f8;border-radius:1rem;}
+.icon-sel .icon-type label{padding-left:0;width:100%;height:100%;position:relative;background:#f7f7f8;border-radius:.6rem;} // border-radius 수정
 .icon-sel .icon-type label i{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:6rem;height:auto;}
 .icon-sel .icon-type input + label:before{display:none;}
 .icon-sel .icon-type input:checked + label{background:#fff;}
-.icon-sel .icon-type input:checked + label:after{content:'';display:block;position:absolute;left:50%;top:50%;transform:translate(-50%, -50%);z-index:1;width:calc(100% + .2rem);height:calc(100% + .2rem);border:.3rem solid #ffd338;border-radius:1rem;}
+.icon-sel .icon-type input:checked + label:after{content:'';display:block;position:absolute;left:50%;top:50%;transform:translate(-50%, -50%);z-index:1;width:calc(100% + .2rem);height:calc(100% + .2rem);border:.2rem solid $color-yellow-positive;border-radius:.6rem;} // border 두께, 컬러 수정, border-radius 수정
 // .icon-sel .icon-type input:checked + label:before{content:'선택완료';font-weight:bold;color:#fff;text-align:center;display:block;background:none;z-index:2;width:100%;margin-top:4.8rem;transform:none;height:auto;border:none;top:auto;left:0;}
 // .icon-sel .icon-type input:checked + label:after{content:'';background:red;width:100%;height:100%;display:block;}
 .icon-sel .icon-type .dim-area{position:absolute;width:100%;height:100%;background:rgba(0, 0, 0, 0.6);} // 체크표시 삭제
@@ -403,7 +411,7 @@
 .my-bucket-list-complete .description-list dd.amount .num{font-size:1.5rem;}
 .my-bucket-list-complete .description-list dd.amount .num:after{font-size:1.4rem;vertical-align:0;}
 .my-bucket-list-complete .description-list .v-top{align-items:flex-start;}
-.my-bucket-list-complete .img-unit{width:100px;height:90px;border:1px solid #e3e6e8;border-radius:10px;position:relative;margin:8px 0;}
+.my-bucket-list-complete .img-unit{width:100px;height:90px;border:1px solid #e3e6e8;border-radius:.6rem;position:relative;margin:8px 0;}// border-radius 수정
 .my-bucket-list-complete .img-unit i{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:6rem;height:auto;}
 
 .goals-char{position:relative;}
@@ -619,6 +627,7 @@
 
 .goals-pay-info{margin-top:3.2rem;}
 .goals-pay-info .tit{font-weight:normal;margin-bottom:1rem;}
+.goals-pay-info .pay-info .tit{font-weight:bold;}
 // .goals-pay-info [data-style=list] li{@include text($text03);}
 
 .goal-fin-challenge .kb-sec.bg-gray{background:$kb-ui10;}
