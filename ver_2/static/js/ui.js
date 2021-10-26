@@ -170,7 +170,7 @@ var focusA11Y = {
         $selector.addClass('focus-memory');
     },
     forget: function(){
-        var $focusBack = $('.focus-memory');        
+        var $focusBack = $('.focus-memory');
         if(!$focusBack.is(':focusable')){
             $focusBack.find(':focusable').eq(0).focus();
         }else{
@@ -371,43 +371,18 @@ $layered.children('div').each(function(){
     if($(this).hasClass('is-active')) gfn_layered.open($(this).attr('data-layered-name'));
 });
 
-//레이어 호출
-$('body').on('click','[data-call-layered]',function(){
-    
-    var name = $(this).data('call-layered');
-    gfn_layered.open(name);
-    //if($(this).closest('.kb-form').length) $(this).closest('.kb-form').addClass('is-active');    
-});
 
-//레이어 닫기
-$('body').on('click','[data-action=close]',function(){
+//레이어 닫기, 호출(순서변경)
+$('body')
+.on('click','[data-action=close]',function(){
     var name = $(this).parents('div[data-layered-name]').data('layered-name');
     var duration = $(this).data('call-layered') != undefined ? 0 : undefined;
     gfn_layered.close(name, duration);
-
-    //Cookie[s] // jsp로 이동
-    //Checkbox 형태일때
-    // var cookieChecker = $(this).closest('.floating-banner').find('.cookie-hidden');
-    // if(cookieChecker.length && cookieChecker.is(':checkbox')){
-    //     var cookieValue = cookieChecker.prop('checked');
-    //     var cookieName = cookieChecker.attr('name');
-    //     var cookieDay = cookieChecker.data('expire-day');
-    //     if(!cookieValue){
-    //         cookie.delete(cookieName);
-    //     }else{
-    //         cookie.set(cookieName, cookieValue, cookieDay);
-    //     }
-    // }
-
-    // //button 형태일 때
-    // var $buttonWithCookie = $(this);
-    // if($buttonWithCookie.hasClass('cookie-hidden')){
-    //     var buttonWithCookieName = $buttonWithCookie.attr('name');
-    //     var buttonWithCookieDay = $buttonWithCookie.data('expire-day');
-    //     cookie.set(buttonWithCookieName, true, buttonWithCookieDay);
-    // }
-    //Cookie[e]
-
+})
+.on('click','[data-call-layered]',function(){    
+    var name = $(this).data('call-layered');
+    gfn_layered.open(name);
+    //if($(this).closest('.kb-form').length) $(this).closest('.kb-form').addClass('is-active');    
 });
 
 //modal 호출(data-call-modal 이름과 modal의 ID가 같아야함)

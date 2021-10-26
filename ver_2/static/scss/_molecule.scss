@@ -504,6 +504,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .accordion > dt.is-active > strong,
 .accordion > dt.is-active > em {font-weight:bold;}
 .accordion > dt.is-active + dd{z-index:2;display:block;border-bottom-color:$kb-ui03;}
+.accordion + .accordion > dt{border-top:0} // 아코디언 border 2021-10-25
 
 .btn-more{margin-top:32px;text-align:center;}
 .lookup-period .period-selector,
@@ -516,7 +517,10 @@ ul.radio-group > li + li{margin-top:20px;}
 
 //더보기(상세보기)
 .more-view-box .btn-more-view{display:inline-block;padding:10px 0}
-.more-view-box .btn-more-view .icon-arrow-down{@include iconBullet($direction: 'down', $width: 16px, $thick: 2px, $color: $kb-ui05);}
+// .more-view-box .btn-more-view .icon-arrow-down{@include iconBullet($direction: 'down', $width: 16px, $thick: 2px, $color: $kb-ui05);}
+.more-view-box .btn-more-view .icon-arrow-down{display:inline-block;overflow:hidden;white-space:nowrap;text-indent:200%;width:2rem;height:2rem;margin-left: 0.7rem;background:url(../images/common/common.png) no-repeat -13rem -4.5rem/16rem;vertical-align: middle;}
+.more-view-box .btn-more-view .icon-arrow-down::before {display:none;}
+.more-view-box .btn-more-view i{transform:translateY(-2px) rotate(0deg)}
 .more-view-box.is-show .btn-more-view i{transform:translateY(-2px) rotate(180deg)}
 .more-view-box .more-view-item[data-view-option="hide"]{display:none}
 .more-view-box.is-show .more-view-item[data-view-option="hide"]{display:block}
@@ -895,6 +899,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .filter-area ul{@include clfix;width:100%;padding-top:5px;padding-bottom:10px;border-top:1px solid $kb-ui08;font-size:0;}
 .filter-area ul li{float:left;margin-top:5px;margin-right:6px;}
 .filter-area ul li span{font-size:1.4rem}
+.filter-result{color:$kb-ui03;}
 
 //rank list
 .rank-list{display:grid;grid-template-columns:1fr auto;counter-reset:ranking 0;align-items:flex-end}

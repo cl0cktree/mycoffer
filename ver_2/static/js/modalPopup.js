@@ -96,7 +96,7 @@
                 },
     
                 close: function() {
-                    focusA11Y.forget($('.focus-memory'));
+                    focusA11Y.forget();
                     $body.removeClass("is-hold");                    
                     $dimm.fadeOut(settings.duration);
                     $wrap.addClass('modal-out');

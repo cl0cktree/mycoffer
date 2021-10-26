@@ -261,7 +261,8 @@
 .find-finance-list{margin-top:50px}
 .find-finance-list dl + .content-box{margin-top:1.5rem}
 .find-finance-list dl .num{margin-left:0.8rem}
-.find-finance-list dt > span,
+.find-finance-list dt > .tag-label{border-radius:0.2rem;font-size:1.4rem;border-color:$kb-ui07} // 211026 : find-finance-list tag-label border,font 수정
+.find-finance-list dt > span:not(.tag-label), // 211026 : find-finance-list tag-label border,font 수정
 .find-finance-list dt > strong{display:block}
 .find-finance-list dt .tit .img-resize_24{margin-right:1rem;vertical-align:text-bottom}
 .find-finance-list dt .tit .num{font-weight:bold}
@@ -313,7 +314,7 @@
 // 나혼자산다면 지출현황 순위 추가 및 디자인 수정
 .expenditure-status ul{@include flexBetween}
 .expenditure-status ul li{flex:1}
-.expenditure-status ul li span{display:block;width:4rem;height:4rem;margin:0 auto 0.8rem;border-radius:50%;background-color:#edf1ff;font-size:1.4rem;text-align:center;line-height:4rem}
+.expenditure-status ul li span{display:block;width:4rem;height:4rem;margin:0 auto 0.8rem;border-radius:50%;background-color:#3f3f42;font-size:1.4rem;text-align:center;line-height:4rem;color:$color-yellow} // 211026 : 나혼자산다면 순위 표기 스타일 변경
 .expenditure-status ul li span .num{font-size:1.5rem}
 .expenditure-status ul li > div{display:block;min-height:7.4rem;padding-top:1.5rem;padding-bottom:1.2rem;border:1px solid $kb-ui08;border-radius:0.8rem;text-align:center;font-size:1.4rem;box-sizing:border-box}
 .expenditure-status ul li > div [class*="icon"]{display:block;margin:0 auto 1.2rem}
@@ -334,7 +335,7 @@
 .compare-graph tbody td:last-child{text-align:right}
 .compare-graph .graph{position:relative;display:inline-block;width:100%;height:1.2rem;margin-top:1rem;text-indent:-5000px;color:transparent;background-color:$kb-ui10}
 .compare-graph .graph .bar{position:absolute;display:block;width:auto;height:100%}
-.compare-graph .graph .value{position:absolute;top:0;display:none;width:auto;min-width:max-content;padding:0.4rem 0.7rem;color:$kb-ui02;text-indent:0;border-radius:0.4rem;background-color:$kb-ui11;box-shadow:0px 1px 0.5rem 0 rgba(0,0,0,0.2);transform:translateY(-125%)}
+.compare-graph .graph .value{position:absolute;top:0;width:auto;min-width:max-content;padding:0.4rem 0.7rem;color:$kb-ui02;text-indent:0;border-radius:0.4rem;background-color:$kb-ui11;box-shadow:0px 1px 0.5rem 0 rgba(0,0,0,0.2);transform:translateY(-125%)}
 .compare-graph .graph .value::after{position:absolute;bottom:-0.5rem;left:50%;margin-left:-0.6rem;content:'';display:block;width:1.2rem;height:0.5rem;background:url(../../static/images/asset/bg_d_day.png) no-repeat 0 0;background-size:contain}
 .compare-graph .graph.is-active .value{display:block}
 .compare-graph .graph[data-direction="left"]{border-top-left-radius:0.6rem;border-bottom-left-radius:0.6rem}

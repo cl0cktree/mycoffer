@@ -40,6 +40,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .bottom-sheet[data-layered-name=mys_as_04_02_00_p1] .grid-list li img{width:24px;height:24px;}
 .no-data-wrap{padding-top:3.8rem;padding-bottom:10rem;}
 .detail-list-wrap .period-con{border-bottom:1px solid $kb-ui05;padding:24px 0 12px;text-align:right;}
+.detail-list-wrap .period-con .num{font-size:15px;}//font-size 수정
 .detail-list-wrap .d-list li{border-bottom:1px solid $kb-ui09;padding:15px 0;}
 .detail-list-wrap .d-list + .btn-more-plus{display:block;margin-top:2.4rem;}// 더보기 가이드 수정 2021-09-29 kek
 .my-asset .no-data .icon-info_24{ background: url(../images/common/result_nodata.gif) 0 0/cover no-repeat;}//no-data 이미지 수정 2021-10-22 kek
@@ -663,10 +664,12 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset.recommend-portfolio .recommend-container .investment-amount .tit {font-size: 18px;}
 .my-asset.recommend-portfolio .recommend-container .investment-amount .amount {font-size: 22px;}
 .my-asset.recommend-portfolio .recommend-container .investment-amount .num {font-size: 24px;}
+.my-asset.recommend-portfolio .recommend-container .investment-amount .num::after {font-size: 22px; font-weight: bold;}
 .my-asset.recommend-portfolio .recommend-container .rate-of-return {display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-top: 10px; margin-bottom: 45px; padding: 8px 2px; border-bottom: 1px solid $kb-ui09;}
 .my-asset.recommend-portfolio .recommend-container .rate-of-return dt {width: 50%; padding: 8px 0; font-size: 16px; color: $kb-ui04;}
 .my-asset.recommend-portfolio .recommend-container .rate-of-return dd {width: 50%; padding: 8px 0; font-size: 16px; color: $color-red; font-weight: bold; text-align: right;}
-.my-asset.recommend-portfolio .recommend-container .rate-of-return .num {font-size: 17px; font-weight: bold}
+.my-asset.recommend-portfolio .recommend-container .rate-of-return .num {font-size: 16px; font-weight: bold}
+.my-asset.recommend-portfolio .recommend-container .rate-of-return .num::after {font-size: 15px; font-weight: bold;}
 .my-asset.recommend-portfolio .recommend-container .tab {margin: 0 -24px;}
 .my-asset.recommend-portfolio .recommend-container .recomm-detail .kb-card {padding-bottom: 10px; margin: 0 -8px;}
 .my-asset.recommend-portfolio .recommend-container .recomm-detail .kb-card .name {display: block; margin-bottom: 20px; @include text($text02, bold);}
@@ -735,11 +738,11 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .prod-kind.maturity{background-color:#fff;color:$kb-ui03;border:1px solid $kb-ui07;padding:3px 9px;}
 
 
-.bottom-prod-info .account-area .tit{display:block;@include text($size: 18px, $weight:bold);margin-top:10px;}
+.bottom-prod-info .account-area .tit{display:block;@include text($size: 16px, $weight:bold);margin-top:10px;}
 .bottom-prod-info .account-area .s-txt{display:block;margin-top:6px;}
 .bottom-prod-info .account-detail{margin-top:10px;}
 .bottom-prod-info .account-detail li{display:table;padding:20px 0;width:100%;box-sizing:border-box;}
-.bottom-prod-info .account-detail li:last-child{padding-bottom:0;}
+.bottom-prod-info .account-detail li:last-child{border-bottom:1px solid $kb-ui09;}
 .bottom-prod-info .account-detail li+li{border-top:1px solid $kb-ui09;}
 .bottom-prod-info .account-detail .icon-con{display:table-cell;width:48px;}
 .bottom-prod-info .account-detail .icon-con span{display:block;width:32px;height:32px;border-radius:24px;/*background-color:$kb-ui10;*/}
@@ -1239,9 +1242,9 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 // .push-time-line .list-item:first-child{margin-top:2.8rem;} // 알림함 타입 추가 2021-10-08
 .push-time-line .list .col.date{@include text($size:14px);display:inline-block;padding:0 2rem;margin-top:2rem;margin-bottom:0.1rem;border-radius:1.5rem;align-self:center;text-align:center;line-height:3rem;$color:$kb-ui03;background-color:$kb-ui09;} // 알림함 타입 추가 2021-10-08
 .push-time-line .list .col.date .num{font-size:1.5rem;$color:$kb-ui03;} // 알림함 타입 추가 2021-10-08
-.push-time-line .list-item .col.tit{position:relative;display:flex;justify-content:space-between;align-items:flex-start;margin-left:1rem;margin-top:2.2rem;}
-.push-time-line .list-item .col.tit.new::before{content:'';position:absolute;top:-0.5rem;left:-0.8rem;width:0.6rem;height:0.6rem;border-radius:50%;background-color:$color-red;}
-.push-time-line .list-item .col.tit i:first-child{position:relative;margin-right:1.1rem;flex:0 1 auto;width:1.7rem;flex:0 0 auto;} // 알림함 타입 추가 2021-10-08
+.push-time-line .list-item .col.tit{position:relative;display:flex;justify-content:space-between;align-items:flex-start;margin-top:2.2rem;} // GUI수정 2021-10-27
+.push-time-line .list-item .col.tit.new::before{content:'';position:absolute;top:-0.5rem;left:2.2rem;width:0.6rem;height:0.6rem;border-radius:50%;background-color:$color-red;} // GUI수정 2021-10-27
+.push-time-line .list-item .col.tit i:first-child{position:relative;margin-right:1.3rem;flex:0 1 auto;width:1.7rem;flex:0 0 auto;} // 알림함 타입 추가 2021-10-08 // GUI수정 2021-10-27
 .push-time-line .list-item .col.tit .txt{@include text($size:14px,$weight:bold);line-height:1.6rem;flex:1 1 auto;} // 알림함 타입 추가 2021-10-08
 .push-time-line .list-item .col.tit .time{@include text($size:12px,$line-height:16px);color:$kb-ui05;flex:0 0 auto;} // 알림함 타입 추가 2021-10-08
 .push-time-line .list-item .col.tit .num{display:inline-block;line-height:16px;font-size:1.3rem;font-weight:normal;}

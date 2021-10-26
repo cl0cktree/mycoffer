@@ -2,12 +2,16 @@
 <html lang="ko">
 
 <head>
-	@@include('@@webRoot/html/_include/app-head-dplan.html',{
+	<link rel="stylesheet" href="/dplan/static/css/style.css" id="dplan-css">
+	@@include('@@webRoot/html/_include/app-head.html',{
 		"title": "D플랜(은퇴자금 기록장)"
 	})
 </head>
 
 <body>
+
+	<button type="button" class="btn-view-sticker" style="position:absolute; z-index: 1000; left: 24px; top: 40px; padding: .2em .5em; font-size: 12px; border: 2px dotted rgb(255, 51, 51);"><span>테스트용 Sticker</span></button>
+
 	@@include('@@webRoot/html/_include/app-a11y.html')
 	<div class="app">
 		<!-- app-header //-->
@@ -51,7 +55,7 @@
 				url: url,
 				async: false,
 				success: function(response, textStatus, jqXHR) {
-					// console.log("===== ajax success =====");
+					console.log("===== ajax success =====");
 					var $response = $(response);
 					var notSelector = [
 						'meta',
@@ -59,6 +63,7 @@
 						'link[href$="jquery-ui.min.css"]',
 						'link[href$="swiper.min.css"]',
 						'link[href$="reset.css"]',
+						'link[href$="style.css"]',
 						'script[src$="current-device.min.js"]',
 						'script[src$="jquery-3.4.1.min.js"]',
 						'script[src$="swiper-bundle.min.js"]'
@@ -94,10 +99,6 @@
 		function responseFilter() {
 
 		}
-	</script>
-	<script>
-			//GNB 활성화 (번호:menu.js)
-			gfn_gnb.select(9,0);
 	</script>
 
 	<div class="layered">
@@ -379,13 +380,123 @@
 				}
 				return y;
 			};
+
+
+
+			//시연용 버튼 click (내부만 사용)
+			$('.btn-view-sticker').on('click',function(){
+				/*
+					$('.layered').sticker(options); :삽입될 위치
+					// options 설명
+					esPosition: "1", : 위치
+					//esPosition(위치 : 화면 기준)
+					//  1 2 3
+					//  4 5 6
+					//  7 8 9
+					esLink: '', : 링크로 연결될 경우
+					esTarget: false,    : 새창여부
+					esCallLayered: '',  : 호출할 레이어 이름 (data-layered-name)
+					esAnimation: '',    : //나타나는 애니메이션 (esBottomUp, esUpBottom, esLeftRight, esRightLeft, esFadeIn, esShake)
+					esImgSrc: '',   // 이미지 경로 (높이 75px 고정)
+					esImgAlt: '',   // 이미지 경로 대체 텍스트
+					esClose: true   //닫기 버튼 노출 여부
+
+					기타 : 링크나 레이어 호출 둘중 하나만 사용가능
+				*/
+				$('.layered.promotion').sticker({
+					esPosition: "1",
+					esAnimation: 'esLeftRight',
+					esCallLayered: 'fbBanner01',
+					esImgSrc: '@@webRoot/static/images/event/event-sticker01.png',
+					esImgAlt: '룰렛 이벤트 이미지',
+					esClose: true
+				});
+
+				$('.layered.promotion').sticker({
+					esPosition: "2",
+					esAnimation: 'esBottomUp',
+					esCallLayered: 'fbBanner02',
+					esImgSrc: '@@webRoot/static/images/event/event-sticker02.png',
+					esImgAlt: '',
+					esClose: true
+				});
+
+				$('.layered.promotion').sticker({
+					esPosition: "3",
+					esAnimation: 'esUpBottom',
+					esCallLayered: 'fbBanner03',
+					esImgSrc: '@@webRoot/static/images/event/event-sticker03.png',
+					esImgAlt: '',
+					esClose: true
+				});
+
+				$('.layered.promotion').sticker({
+					esPosition: "4",
+					esAnimation: 'esFadeIn',
+					esCallLayered: 'fbBanner04',
+					esImgSrc: '@@webRoot/static/images/event/event-sticker04.png',
+					esImgAlt: '',
+					esClose: true
+				});
+
+				$('.layered.promotion').sticker({
+					esPosition: "5",
+					esAnimation: 'esLeftRight',
+					esCallLayered: 'fbBanner05',
+					esImgSrc: '@@webRoot/static/images/event/event-sticker05.png',
+					esImgAlt: '',
+					esClose: true
+				});
+
+				$('.layered.promotion').sticker({
+					esPosition: "6",
+					esAnimation: 'esRightLeft',
+					esCallLayered: 'fbBanner06',
+					esImgSrc: '@@webRoot/static/images/event/event-sticker06.png',
+					esImgAlt: '',
+					esClose: true
+				});
+
+				$('.layered.promotion').sticker({
+					esPosition: "7",
+					esAnimation: 'esShake',
+					esCallLayered: 'fbBanner07',
+					esImgSrc: '@@webRoot/static/images/event/event-sticker07.png',
+					esImgAlt: '',
+					esClose: true
+				});
+
+				$('.layered.promotion').sticker({
+					esPosition: "8",
+					esAnimation: 'esBottomUp',
+					esCallLayered: 'fbBanner08',
+					esImgSrc: '@@webRoot/static/images/event/event-sticker08.png',
+					esImgAlt: '',
+					esClose: true
+				});
+
+				$('.layered.promotion').sticker({
+					esPosition: "9",
+					esAnimation: 'esLeftRight',
+					esCallLayered: 'fbBanner09',
+					esImgSrc: '@@webRoot/static/images/event/event-sticker09.png',
+					esImgAlt: '',
+					esClose: true
+				});
+
+			});
 		</script>
+		
 	</div>
 
 	<!-- Script -->
 	@@include('@@webRoot/html/_include/common-js.html')
 	<script src="@@webRoot/static/js/ui.js"></script>
 	<!-- Add Script -->
+    <script>
+        //GNB 활성화 (번호:menu.js)
+			gfn_gnb.select(9,0);
+    </script>
 
 </body>
 
