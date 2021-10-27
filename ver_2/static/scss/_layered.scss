@@ -10,7 +10,8 @@
 .popup.is-active{top:0;}
 .popup.is-active .popup_buttons{display:block;flex:0 0 calc(60px + constant(safe-area-inset-bottom) / 2);flex:0 0 calc(60px + env(safe-area-inset-bottom) / 2);}
 .popup_header{flex:0 0 48px;padding:12px 48px 11px 24px;text-align:left;}
-.popup_header .tit{@include text($size: $text01);display:inline-block;}
+.popup_header .tit{@include text($size: $text01);display:inline-block;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;max-width:calc(100% - 72px);vertical-align: middle;}
+.popup_header .btn-history-back{vertical-align: middle;}
 .popup_contents{position:relative;overflow:auto;flex:1;padding-bottom:32px;}
 .popup_contents.is-hold{overflow:hidden;height:calc(var(--vh, 1vh) * 100 - 48px)};
 .with-button .popup_contents{padding-bottom:60px;}

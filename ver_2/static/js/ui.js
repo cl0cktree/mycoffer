@@ -245,7 +245,7 @@ var $layered = $('.layered');
     iPhone 6, SE2	            375*667	(0.56 / 0.63)
     iPhone 5, SE	            320*568	(0.56 / 0.65)
 */
-//if((winW / winH) < 0.52 && $('html').hasClass('ios')) $('html').addClass('homebar');
+//if((winW / winH) <div 0.52 && $('html').hasClass('ios')) $('html').addClass('homebar');
 
 
 var gfn_dim = {
@@ -2019,5 +2019,4 @@ var jsScrollAction = {
 $(window).on('load',function(){
     if('[data-scroll-fn]'.length) jsScrollAction.scroll(st, $('[data-scroll-fn]'));
 });
-
 

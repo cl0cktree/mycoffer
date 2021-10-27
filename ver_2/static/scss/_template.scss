@@ -1,23 +1,34 @@
 
 //NATIVE
-
+// indicator, image size, sticky button, motion 2021-10-27
 .tutorial{padding-bottom:0;}
-.tutorial .swiper-container{background-color:$kb-ui10;}
-.tutorial .swiper-slide{overflow:hidden;height:calc(var(--vh, 1vh) * 100);padding-top:8vh;background-color:$kb-ui10;}
-.tutorial h2{@include heading($size: 24px);width:250px;margin:0 auto;}
-.tutorial h2 + p{@include text;width:250px;margin:20px auto 0 auto;}
+.tutorial .swiper-container{background-color:$kb-ui11;}
+.tutorial .swiper-slide{overflow:hidden;height:calc(var(--vh, 1vh) * 100);padding-top:4vh;}
+.tutorial h2{@include heading($size: 26px);width:100%;padding:0 1rem;margin:calc(13.6vh - 1vh) auto 0;}
+.tutorial h2 + p{@include text;margin:2.1vh auto 0 auto;}
 .tutorial h2,
-.tutorial h2 + p{position:relative;z-index:1;}
-.tutorial .img{position:absolute;left:0;top:0px;z-index:0;}
-.tutorial .img img{width:100%;}
-.tutorial .sticky-bottom{position:absolute;bottom:9999px;}
-.tutorial .sticky-bottom .btn-area{opacity:0;transition:opacity .2s;}
-.tutorial .pagination{position:absolute;z-index:1;top:calc(8vh + 175px);left:50%;width:250px;transform:translate(-50%);font-size:0;}
+.tutorial h2 + p{position:relative;z-index:1;text-align:center;letter-spacing:-0.032rem;}
+.tutorial h2 > span{color:$color-yellow-positive}
+// .tutorial .img{position:absolute;left:0;top:0px;right:0;text-align:center;z-index:0;}
+// .tutorial .img img{width:auto;height:100vh;}
+
+.tutorial .img{padding-top:calc(20vh + 90px);margin-top:calc(-20vh - 90px);position:absolute;left:0;top:0px;right:0;bottom:0;display:flex;align-items:center;justify-content:center;z-index:0;}
+.tutorial .img img{width:auto;max-width:41.4rem;height:auto;max-height:100vh;}
+.tutorial .pagination{position:absolute;z-index:1;top:calc(13.3vh - 1vh);left:50%;width:250px;transform:translate(-50%);text-align:center;font-size:0;}
 .tutorial .pagination span{display:inline-block;width:6px;height:6px;border-radius:50%;background-color:$kb-ui08;}
 .tutorial .pagination span + span{margin-left:10px;}
-.tutorial .pagination span.is-active{background-color:$color-yellow-negative;}
-.tutorial.is-complete .sticky-bottom{position:relative;bottom:0;padding-top:0;height:auto;}
-.tutorial.is-complete .sticky-bottom .btn-area{opacity:1;}
+.tutorial .pagination span.is-active{width:2rem;border-radius:0.6rem;background-color:$kb-ui05;}
+.tutorial .sticky-bottom{bottom:0;padding-top:0;margin-top:0;height:auto;}
+.tutorial .sticky-bottom .btn-area{width:200%}
+.tutorial .sticky-bottom .btn-area [class^=btn]{flex:1 1 50%;}
+.tutorial .sticky-bottom .btn-close{display:flex;justify-content:flex-end;}
+.tutorial .sticky-bottom .btn-close a{@include iconCancel($size: 16px, $thick: 2px, $color: $kb-ui02, $padding: 4px);display:block;width:auto;height:auto;flex:none;padding:1.5rem 4.2rem 1.5rem 3.4rem;margin-bottom:2rem;background-color:$kb-ui11;}
+.tutorial .sticky-bottom .btn-close a::before,
+.tutorial .sticky-bottom .btn-close a::after{left:2rem}
+.tutorial .sticky-bottom .btn-close a span{font-size:1.6rem;font-weight:bold;text-indent:0;}    
+.tutorial .sticky-bottom .btn-area .btn-solid{opacity:0;transition:opacity .1s;}
+.tutorial.is-complete .sticky-bottom .btn-area .btn-solid{opacity:1;}
+
 
 .auth-access{padding-top:68px;}
 .auth-access h2{@include heading($size: 24px);}
@@ -28,6 +39,3 @@
 .auth-access .auth-access-list li strong{display:block;font-weight:bold;line-height:32px;}
 .auth-access .auth-access-list li p{@include text($size: $text03);color:$kb-ui03;}
 .auth-access .sticky-bottom-menu{position:static;margin-top:100px;}
-
-
-
