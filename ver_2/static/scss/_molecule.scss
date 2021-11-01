@@ -76,7 +76,7 @@
 .certificate-center .btn-text span{@include text($size:$text03,$line-height:1);color:$kb-ui03;}
 
 //사용시 sticky-bottom-menu 높이 + 48px 만큼 app-content에 padding-bottom을 줘야함
-.sticky-bottom-menu{position:fixed;bottom:0;left:0;width:100%;background-color:$kb-ui11;padding-bottom:calc(constant(safe-area-inset-bottom) + 34px);padding-bottom:calc(env(safe-area-inset-bottom) + 34px);}
+.sticky-bottom-menu{position:fixed;bottom:0;left:0;width:100%;background-color:$kb-ui11;}
 .sticky-bottom-menu p{position:static;}
 // //.ios.homebar .sticky-bottom-menu{bottom:34px;}
 
@@ -403,15 +403,18 @@ ul.radio-group > li + li{margin-top:20px;}
 .grid-list[data-col="4"] > li:nth-child(n + 5){margin-top:32px;}
 
 //기간선택
-.period-selector{@include number($size: 17px);display:flex;align-items:center;padding:6px 0;border:1px solid $kb-ui08;border-radius:2px;}
-.period-selector > span{flex:0 0 12px;margin-left:16px;text-align:center;}
-.period-selector input{flex:1;min-width:40px;height:34px;line-height:34px;padding:0 8px 0 16px;font-size:17px;border:none;}
+.period-selector{@include number($size: 17px);display:flex;align-items:center;padding:6px 10px;border:1px solid $kb-ui08;border-radius:2px;}
+.period-selector > span{flex:0 0 46px;text-align:center;font-weight:normal;}
+.period-selector input{flex:1;min-width:40px;height:34px;line-height:34px;padding:0 0 0 16px;font-size:16px;border:none;}
 .period-selector input + .btn-datepicker{flex:0 0 34px;}
 .period-selector.is-disabled{position:relative;background-color:$kb-ui10;}
 .period-selector.is-disabled:after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;}
 .period-selector.is-disabled input,
 .period-selector.is-disabled span{color:$kb-ui04;background-color:$kb-ui10;}
 .period-selector + .error-msg{margin-top:8px;}
+@media screen and (max-width:359px){
+    .period-selector{padding:6px 0;}
+}
 
 //임시(개발요청)
 .period-selector_manual{@include number($size: 17px);display:flex;align-items:center;border:1px solid $kb-ui08;border-radius:2px;}
@@ -437,7 +440,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .tab_button > button + button,
 .tab_button > a + a{margin-left:1px;}
 .tab_button > button span,
-.tab_button > a span{display:inline-block;line-height:38px;font-size:16px;color:$kb-ui05;letter-spacing:-0.02em;}
+.tab_button > a span{display:inline-block;line-height:38px;font-size:15px;color:$kb-ui05;letter-spacing:-0.02em;}
 .tab_button > a:not(.is-active) + a:not(.is-active),
 .tab_button > button:not(.is-active) + button:not(.is-active){position:relative;}
 .tab_button > a:not(.is-active) + a:not(.is-active):before,

@@ -297,7 +297,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .asset-main-top .summary-text {min-height: 110px; margin-bottom: 20px; font-size: 24px; line-height: 33px; color: $kb-ui02;}
 .asset-main-top .summary-text strong {font-weight: bold;}
 .asset-main-top .summary-text .num {font-size: 25px; font-weight: bold;}
-.asset-main-top .summary-text .num:after{font-size:24px;}
+.asset-main-top .summary-text .num:after{font-size:24px; font-weight: bold;}
 .asset-main-top .summary-text sub {display: block; font-size: 16px; margin-top: 10px;}
 .asset-main-top .btn-question {position: relative; top: -2px;}
 .asset-main-top .content-box {position: relative; padding-top: 30px; min-height: 315px; border: 0; background-color: #6349a5; color: $kb-ui11;}
@@ -306,7 +306,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .asset-main-top .chart-area {margin-top: 10px; height: 49.6vw;}
 .asset-main-top .legend-unit,
 .asset-main-top .legend-unit .basic {color: $kb-ui11;}
-.asset-main-top .legend-unit .basic {padding: 2px 0 7px;}
+.asset-main-top .legend-unit .basic {padding: 2px 0 7px; margin-top: 14px;}
 .asset-main-top .legend-unit ul {margin-top: 15px; text-align: center;}
 .asset-main-top .legend-unit ul li {width: auto; margin-left: 20px;}
 .asset-main-top .legend-unit ul li:first-child {margin-left: 0;}
@@ -335,13 +335,14 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .asset-lists .list-container .amount {float: right; font-size: 16px; line-height: 32px;}
 .asset-lists .list-container .amount .num {font-size: 17px; margin-right: 2px;}
 .asset-lists .list-container i:first-child {margin-right: 10px;}
-.asset-lists .list-container i:last-child {@include iconBullet($direction: 'right', $width: 7px, $thick: 1px, $color: $kb-ui05);position: absolute; right: 26px; top: 50%; transform: translateY(-50%);}
+.asset-lists .list-container i:last-child {position: absolute; right: 20px; top: 50%; transform: translateY(-50%);}
+.asset-lists .list-container i:last-child {vertical-align:middle;display:inline-block;width:20px;height:20px;background:url(../images/common/common.png) no-repeat -90px -20px;background-size:160px;}
 
 .asset-main-sec {position: relative;}
 .asset-main-sec .title h2 {display: inline-block; vertical-align: middle;}
 .asset-main-sec .title h2 + .btn-question {vertical-align: middle;}
 .asset-main-sec .title .btn-text.icon-arrow {position: absolute; right: 24px; top: 1px;}
-.asset-main-sec .title .btn-text.icon-arrow i {padding: 12px; margin: 0;}
+.asset-main-sec .title .btn-text.icon-arrow i {margin: 0;background:url(../images/common/common.png) no-repeat -120px -95px;background-size:160px;transform:translate(2px, 0);}
 .asset-main-sec .section-text {margin: 10px 0 15px; @include text($text02, normal); color: $kb-ui02;}
 .asset-main-sec .section-text em.num,
 .asset-main-sec .section-text em.num:after{font-weight: bold;}
@@ -350,7 +351,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .asset-proportion .form-checkbox {margin-bottom: 20px;}
 .asset-proportion .chart-flex-column,
 .asset-proportion .chart-flex {min-height: 48vw;}
-.asset-proportion .chart-wrap .chart-area {margin-top: 7px; margin-bottom: 27px;}
+// .asset-proportion .chart-wrap .chart-area {margin-top: 7px; margin-bottom: 27px;}
 .asset-proportion .chart-wrap[data-cwidx='1'] .chart-area {margin-top: 0; margin-bottom: 0;}
 .asset-proportion .chart-wrap[data-cwidx='1'] .chart-area + .chart-area {margin-bottom: 0;}
 @include smallDevice{
@@ -359,6 +360,9 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 
 .asset-flow:last-child {margin-bottom: 48px;}
 .asset-flow .form-checkbox {margin-bottom: 20px;}
+.asset-flow .legend-unit ul {margin-top: 15px; text-align: center;}
+.asset-flow .legend-unit ul li {width: auto; margin-left: 20px;}
+.asset-flow .legend-unit ul li:first-child {margin-left: 0;}
 
 .asset-future-design .box-tit {display: block; margin-bottom: 16px; @include text($text02, normal);}
 .asset-future-design .compare {position: relative; display: flex; margin-bottom: 12px; height: 66px; border-radius: 3px; background-color: $kb-ui10; overflow: hidden;}
@@ -740,7 +744,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 
 .bottom-prod-info .account-area .tit{display:block;@include text($size: 16px, $weight:bold);margin-top:10px;}
 .bottom-prod-info .account-area .s-txt{display:block;margin-top:6px;}
-.bottom-prod-info .account-detail{margin-top:10px;}
+.bottom-prod-info .account-detail{margin-top:20px;}//margin 수정
 .bottom-prod-info .account-detail li{display:table;padding:20px 0;width:100%;box-sizing:border-box;}
 .bottom-prod-info .account-detail li:last-child{border-bottom:1px solid $kb-ui09;}
 .bottom-prod-info .account-detail li+li{border-top:1px solid $kb-ui09;}
@@ -830,10 +834,16 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 
 /* 투자 */
 .my-asset.investment .recommend-prod{border-bottom:none;}
+//툴팁추가 start
+.my-asset.investment .p-list .account-wrap a{display:block;}
+.my-asset.investment .p-list .account-wrap a + .s-txt{margin-top:1rem;}
+//툴팁추가 end
 .my-asset.investment .p-list .account-wrap .s-txt .plus{color:$color-red;}
 .my-asset.investment .p-list .account-wrap .s-txt .minus{color:$color-blue;}
+.my-asset.investment .p-list .account-wrap .tooltip{left:0;width:100%;}
 .asset-insurance .asset-summary{padding-bottom:48px;}
 .warranty-details{border-top:10px solid $kb-ui10;}
+
 
 /* 주식,펀드 */
 .my-asset .account-top .btn-area{margin:0 24px;}
@@ -1052,7 +1062,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset.wish-house-planer .progress-wrap>span.stop:after{opacity:0;}
 .my-asset.wish-house-planer .progress-wrap .total{width:100%;left:0;z-index:1;background-color:#287eff;}
 .my-asset.wish-house-planer .progress-wrap .my-house{left:0;background-color:#ffcf53;z-index:2;} // 컬러변경
-.my-asset.wish-house-planer .progress-wrap .my-house:after{content:'';width:2.9rem;height:2.7rem;background:url(../../static/images/asset/ico_my_house.png) no-repeat 0 0;background-size:cover;margin-top:-3.4rem;}
+.my-asset.wish-house-planer .progress-wrap .my-house:after{content:'';width:3.2rem;height:3.2rem;background:url(../../static/images/asset/ico_my_house.png) no-repeat 0 0;background-size:cover;margin-top:-3.4rem;} // width, height 수정
 .my-asset.wish-house-planer .progress-wrap span.stop{width:0 !important;}
 // .my-asset.wish-house-planer .progress-wrap .my-cash{background-color:#ff8a71;z-index:4}
 // .my-asset.wish-house-planer .progress-wrap .my-cash:after{content:'';width:20px;height:20px;background:url(../../static/images/asset/ico_my_cash.png) no-repeat 0 0;background-size:cover;margin-top:-2.8rem;}
@@ -1237,7 +1247,8 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .menu-push .top-info .push-setting{display:flex;justify-content:space-between;padding-right:1px;margin-top:0.6rem;}
 .menu-push .top-info .push-setting + .txt{@include text($size:16px,$line-height:1.56);margin-top:2rem;}
 .menu-push .top-info .no-data p{font-size:1.8rem;margin-top:1.4rem;} // GUI수정 2021-10-22
-.menu-push .push-list .condition-area{border-top:0.1rem solid $kb-ui08;}
+.menu-push .push-list{padding-top:0;background-color:$kb-ui10;} // GUI수정 2021-10-29
+.menu-push .push-list .condition-area{border-top:0.1rem solid $kb-ui08;} 
 .push-time-line .list{display:flex;flex-direction:column;margin-top:2.8rem;} // 알림함 타입 추가 2021-10-08
 // .push-time-line .list-item:first-child{margin-top:2.8rem;} // 알림함 타입 추가 2021-10-08
 .push-time-line .list .col.date{@include text($size:14px);display:inline-block;padding:0 2rem;margin-top:2rem;margin-bottom:0.1rem;border-radius:1.5rem;align-self:center;text-align:center;line-height:3rem;$color:$kb-ui03;background-color:$kb-ui09;} // 알림함 타입 추가 2021-10-08
@@ -1248,7 +1259,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .push-time-line .list-item .col.tit .txt{@include text($size:14px,$weight:bold);line-height:1.6rem;flex:1 1 auto;} // 알림함 타입 추가 2021-10-08
 .push-time-line .list-item .col.tit .time{@include text($size:12px,$line-height:16px);color:$kb-ui05;flex:0 0 auto;} // 알림함 타입 추가 2021-10-08
 .push-time-line .list-item .col.tit .num{display:inline-block;line-height:16px;font-size:1.3rem;font-weight:normal;}
-.push-time-line .list-item .col.desc{padding:1.8rem 2rem 2rem;margin:0.8rem -0.6rem 0;border:1px solid $kb-ui08;border-radius:0.8rem;}
+.push-time-line .list-item .col.desc{padding:1.8rem 2rem 2rem;margin:0.8rem -0.6rem 0;border:1px solid $kb-ui08;border-radius:0.8rem;background-color:$kb_ui11;} // GUI수정 2021-10-29
 .push-time-line .list-item .col.desc .txt{@include text;}
 .push-time-line .list-item .expiry-date{margin-top:2rem;text-align:center;}
 .push-time-line .list-item .expiry-date .dt{@include text($size:14px,$weight:bold);margin-bottom:1rem;}

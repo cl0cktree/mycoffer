@@ -15,10 +15,11 @@
         <!-- app-container //-->
         <div class="app-container">
 
-            <!-- app-content // -->
-            <!-- 수정:2021-10-27 // -->
+            <!-- app-content // -->            
             <main class="app-content tutorial">
+                <!-- 수정:2021-10-28 // -->
                 <div class="swiper-container">
+                    <div class="swiper-pagination"></div>
                     <ul class="swiper-wrapper">
                         <li class="swiper-slide">
                             <h2>쉽고 편리한 <span>자산관리</span></h2>
@@ -26,7 +27,8 @@
                                 금융자산은 물론 부동산, 외화까지 <br>
                                 내 자산을 한눈에!
                             </p>
-                            <div class="img"><img src="@@webRoot/static/images/common/tutorial01.png" alt=""></div>
+                            <div class="img"><figure><img src="@@webRoot/static/images/common/tutorial01.png" alt=""></figure></div>
+                            <div class="skip-tutorial"><a href="javascript:;" role="button"><i class="icon-close"></i><span>닫기</span></a></div>
                         </li>
                         <li class="swiper-slide">
                             <h2>심플하고 스마트한 <span>지출관리</span></h2>
@@ -34,7 +36,8 @@
                                 자동 완성 가계부로 소비습관을 점검하고<br>
                                 스마트한 지출관리 시작!
                             </p>
-                            <div class="img"><img src="@@webRoot/static/images/common/tutorial02.png" alt=""></div>
+                            <div class="img"><figure><img src="@@webRoot/static/images/common/tutorial02.png" alt=""></figure></div>
+                            <div class="skip-tutorial"><a href="javascript:;" role="button"><i class="icon-close"></i><span>닫기</span></a></div>
                         </li>
                         <li class="swiper-slide">
                             <h2>재미있고 간편한 <span>목표챌린지</span></h2>
@@ -42,7 +45,8 @@
                                 커피 줄이기부터 목돈 만들기까지<br>
                                 목표 설계를 쉽고 즐겁게!
                             </p>
-                            <div class="img"><img src="@@webRoot/static/images/common/tutorial03.png" alt=""></div>
+                            <div class="img"><figure><img src="@@webRoot/static/images/common/tutorial03.png" alt=""></figure></div>
+                            <div class="skip-tutorial"><a href="javascript:;" role="button"><i class="icon-close"></i><span>닫기</span></a></div>
                         </li>
                         <li class="swiper-slide">
                             <h2>건강한 자산관리, <span>KB마이머니</span></h2>
@@ -50,59 +54,47 @@
                                 흩어진 내 자산을 한 곳에 모아 <br>
                                 안전하고 편리하게!
                             </p>
-                            <div class="img"><img src="@@webRoot/static/images/common/tutorial04.png" alt=""></div>
+                            <div class="img"><figure><img src="@@webRoot/static/images/common/tutorial04.png" alt=""></figure></div>
+                            <div class="skip-tutorial"></div>
                         </li>
                     </ul>
                 </div>
-                <div class="pagination"></div>
+                
                 <div class="sticky-bottom">
                     <div class="btn-area">
-                        <span class="btn-close"><a href="javascript:;" class="" role="button"><span>닫기</span></a></span>
                         <a href="javascript:;" class="btn-solid" role="button"><span>시작하기</span></a>
                     </div>
                 </div>                
-            </main>
-            <!-- // 수정:2021-10-27 -->
+                <!-- // 수정:2021-10-28 -->
+            </main>            
             <!-- // app-content -->
             
-        </div><!-- 수정:2021-10-27 -->
+        </div>
         <!-- // app-container -->
     </div>
     <!-- Script -->
     @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
-    <!-- Add Script -->
+    <!-- Add Script -->    
     <script>
         var $tutorial = $('.tutorial');
-        var tutorialSize = $tutorial.find('.swiper-slide').length;
-        var $tutorialPagination = $tutorial.find('.pagination');
-        $tutorialPagination.empty();
-        for(i=0;i<tutorialSize;i++){
-            $tutorialPagination.append("<span></span>");
-        }
-        $tutorialPagination.find('span:first-child').addClass('is-active');
+        var tutorialSize = $tutorial.find('.swiper-slide').length;        
         
-		// 수정:2021-10-27 
-        var tutorialSwiper = new Swiper('.swiper-container',{                        
+		// 수정:2021-10-28
+        var tutorialSwiper = new Swiper('.swiper-container',{
+            slideActiveClass: 'is-active',
+            pagination: {
+                el:'.swiper-pagination'
+            },
             on: {
                 slideChangeTransitionEnd : function(swiper){
-                    var step = swiper.activeIndex;                    
-                    $('.pagination span').removeClass('is-active');
-                    $('.pagination span').eq(step).addClass('is-active');
+                    var step = swiper.activeIndex;
 
                     if(step < tutorialSize -1){
                         $tutorial.removeClass('is-complete');
                     }else{
                         $tutorial.addClass('is-complete');
-                    }
-                },
-                setTranslate : function(swiper, t){
-                    if(t <= swiper.size * -2){
-                        t += swiper.size * 2;
-                        $('.sticky-bottom .btn-area').css('left', t + 'px')
-                    }else{
-                        $('.sticky-bottom .btn-area').css('left', 0)
                     }
                 }
             }

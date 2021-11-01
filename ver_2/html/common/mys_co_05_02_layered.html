@@ -23,7 +23,8 @@
             <button type="button" class="btn-line" onclick="modalDemo3()"><span>서비스 이용 제한 안내_개인사업자 및 법인</span></button>
             <button type="button" class="btn-line" onclick="modalDemo4()"><span>서비스 이용 제한 안내_ID+Password로 로그인</span></button>
             <button type="button" class="btn-line" onclick="modalDemo5()"><span>마케팅 수신 동의 시</span></button>
-            <button type="button" class="btn-line" onclick="modalDemo6()"><span>마케팅 수신 미동의 시</span></button>
+            <button type="button" class="btn-line" onclick="modalDemo7()"><span>마케팅 수신 미동의 시 step1</span></button><!-- 수정:2021-10-29 --><!-- 마케팅 수신 미 동의시 얼럿(1/2) 추가 -->
+            <button type="button" class="btn-line" onclick="modalDemo6()"><span>마케팅 수신 미동의 시 step2</span></button>
 
             <button type="button" class="btn-line" data-call-layered="mys_co_06_01_00_bs01" data-page-id="MYS_CO_05_02_01_BS01"><span>전송 요구 방법 선택_당행 고객이 아닌 경우</span></button>
         </div>
@@ -42,7 +43,7 @@
         function modalDemo1() {
             modalPopup({
                 title: "서비스 동의 안내",
-            message: "KB마이데이터가 새롭게 오픈했습니다. 개정된 신용정보법을 준수하여 더욱 안전한 방식(API)으로 고객님께 서비스를 제공합니다. 새로운 동의서에 동의해주세요."
+                message: "KB마이데이터가 새롭게 오픈했습니다. 개정된 신용정보법을 준수하여 더욱 안전한 방식(API)으로 고객님께 서비스를 제공합니다. 새로운 동의서에 동의해주세요."
             })
         };
         function modalDemo2() {
@@ -66,13 +67,21 @@
         function modalDemo5() {
             modalPopup({
                 title: "",
-                message: "(국민은행) 2021년 4월 7일 상품서비스 안내 수신에 동의했습니다."
+                message: "(KB국민은행) 2021년 4월 7일 상품서비스 안내 수신에 동의했습니다."
             });
         };
         function modalDemo6() {
             modalPopup({
                 title: "",
-                message: "(국민은행) 2021년 4월 7일 상품서비스 안내 수신을 거절했습니다."
+                message: "(KB국민은행) 2021년 4월 7일 상품서비스 안내 수신을 거절했습니다."
+            });
+        };
+        // 수정 2021-10-29 // 마케팅 수신 미 동의시 얼럿(1/2) 추가
+        function modalDemo7() {
+            modalPopup({
+                title: "",
+                message: "마케팅 수신 동의(선택)를 하지 않으시는 경우 KB국민은행에서 제공하는 다양한 혜택 및 이벤트, 상품 등에 대한 유용한 정보를 받으실 수 없습니다.",
+                type: "confirm"
             });
         };
     </script>

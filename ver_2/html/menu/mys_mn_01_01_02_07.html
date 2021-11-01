@@ -30,7 +30,6 @@
                     </div>
                 </section>
                 
-
                 <section class="kb-sec">
                     <h3 class="h4">정보 제공 요청일</h3>
                     <div class="table">
@@ -77,6 +76,8 @@
                             </tbody>
                         </table>
                     </div>
+                    <p class="mt16"><button class="btn-text"><u>개인신용정보 삭제</u></button></p><!-- 수정:2021-10-28 -->
+                    
                 </section>
 
             </main>
@@ -101,6 +102,15 @@
             modalPopup({
                 title: '',
                 message: "마이데이터 서비스의 계속적인 이용을 위해 선택하신 기관의 정보제공기간을 1년 더 연장하시겠습니까?"
+            });
+        });
+        // 2021-10-28
+        $('.mydata-kbinfo-detail .btn-text').on('click',function(){
+            modalPopup({
+                title: '',
+                message: "보존 중인 개인신용정보를 삭제하시겠습니까?",
+                type: "confirm"
+                
             });
         });
     </script>

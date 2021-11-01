@@ -53,11 +53,15 @@
 //다른로그인 방법
 .login-certification01{padding-bottom:148px;}
 .login-certification01 .login-certification01-h2{font-size: 15px; color:$kb-ui02; font-weight: normal; padding-top:2px; padding-bottom:8px;}
+.simple-password .other-login,
+.login-certification01 .other-login,
+.login-certification02 .other-login{padding-bottom:calc(constant(safe-area-inset-bottom) / 2 + 12px);padding-bottom:calc(env(safe-area-inset-bottom) / 2 + 12px);}
 //가입완료(mys_co_05_04_00)
 .join-complete .service-join-status-msg{@include text($size: $text02);margin-top:16px;color:$kb-ui04;}
 .join-complete .service-join-status-msg02{@include text($size: $text02);margin-top:48px;color:$kb-ui04;}
 .join-complete .service-join-status-msg02 strong{@include heading($size: $heading04);display:block;margin-bottom:16px;color:$kb-ui02;}
 .join-complete .service-join-status-msg02 + ul{margin-top:16px;}
+
 
 //금융인증서비스 화면을 불러오는 중
 .popup[data-layered-name=popupCertificationLoading] .popup_contents{display:flex;justify-content:center;/*align-items:center;*/ margin-top:96px;}
@@ -84,6 +88,17 @@
 .agree-term .agreement-to-terms .checkbox-group.st_list:last-child{padding-top:0;padding-bottom:20px;}
 .agree-term .agreement-to-terms .form-checkbox_20 label{margin-left:0;} // 체크박스 공통변경으로 인한 수정
 .agree-term .agreement-to-terms .form-checkbox_20 label::before{left:0;} // 체크박스 공통변경으로 인한 수정
+
+// 요건추가 2021-10-29
+.agreement-to-terms.form-simul-mode [class^=form-simul-list]{margin-top:1.6rem;border-top:1px solid $kb-ui08;}
+.agreement-to-terms.form-simul-mode .form-simul-list01 [class^=form-checkbox]{margin-left:3.3rem;}
+.agreement-to-terms.form-simul-mode .form-simul-list01 [class^=form-checkbox]:first-child{margin-left:0;}
+.agreement-to-terms.form-simul-mode .terms-option{padding:1.6rem 0;margin-bottom:1.6rem;border:0.1rem solid $kb-ui08;border-width:0.1rem 0 0.1rem;@include text($weight:bold);}
+.agreement-to-terms.form-simul-mode .agreement-service-choice{margin-left:3.4rem;border-bottom:1px solid $kb-ui08;margin-bottom:1.6rem;}
+.form-simul-mode .agreement-service-choice{display:none;}
+.form-simul-mode .agreement-service-choice.is-expand {display:block;}
+.form-simul-mode .agreement-service-choice dt .title{display:block;margin-bottom:1.6rem;font-weight:bold;}
+
 .agree-term .h1{padding:16px 24px 0 24px; margin-bottom:47px;}
 .agree-term .caution-txt{padding-bottom: 118px; display: block;}
 .agree-term .caution-txt p{font-size: 15px; margin-top:67px; line-height: 20px; margin-bottom: 19px;}
@@ -126,14 +141,20 @@
 .kb-sec.confirm-agree .form-checkbox_20 input:checked + label:before{left:0;} // 공통수정(체크박스)으로 인한 여백 조정
 .kb-sec.confirm-agree .agreement-to-terms .link{width:3rem;height:3rem;padding:0.5rem;}
 // .kb-sec.confirm-agree .agreement-to-terms .link-arrow{width:2rem;height:2rem;background:none;}
-.kb-sec.confirm-agree > .tit{margin-top:4.3rem;}
-.kb-sec.confirm-agree .confirm-info{margin-top:1.5rem;line-height:1.44;}
-.kb-sec.confirm-agree .confirm-info .question{margin-top:1rem;font-weight:bold;}
+.kb-sec.confirm-agree > .tit,
+.transmission-request .confirm-agree.no-sec > .tit{margin-top:4.3rem;} // 전송요구 항목선택 추가 2021-11-01
+.kb-sec.confirm-agree .confirm-info,
+.transmission-request .confirm-agree.no-sec .confirm-info{margin-top:1.5rem;line-height:1.44;} // 전송요구 항목선택 추가 2021-11-01
+.kb-sec.confirm-agree .confirm-info .question,
+.transmission-request .confirm-agree.no-sec .confirm-info .question{margin-top:1rem;font-weight:bold;} // 전송요구 항목선택 추가 2021-11-01
 .kb-sec.confirm-agree .radio-group{flex-direction:row;margin-top:1.4rem;}
 .kb-sec.confirm-agree .radio-group li{margin-top:0;width:50%;}
 .bottom-sheet .confirm-agree .agreement-to-terms .header{padding-top:0;}
-.kb-sec.confirm-agree .confirm-info p.simple-message.sq-bracket{margin-top:0.6rem;} // 여백수정 2021-10-12
-
+.kb-sec.confirm-agree .confirm-info p.simple-message.sq-bracket,
+.transmission-request .confirm-agree.no-sec .confirm-info p.simple-message.sq-bracket{margin-top:0.6rem;} // 전송요구 항목선택 추가 2021-11-01
+// 전송요구 항목선택 추가 2021-11-01
+.transmission-request .confirm-agree.no-sec{margin-bottom:4rem;}
+.transmission-request .confirm-agree.no-sec .confirm-info .wrap-checkbox.alone{margin-top:1.4rem;}
 
 .select-organization .kb-sec.confirm-agree .agreement-to-terms .checkbox-group{padding:2rem 0 2.1rem;}
 .select-organization .kb-sec.confirm-agree .agreement-to-terms .checkbox-group label{display:inline-block;width:auto;padding-left:35px;padding-right:0;margin-right:3rem; font-weight: normal;font-size: 16px;}
@@ -529,7 +550,9 @@
 .mydata-kbinfo-detail .mydata-kbinfo-detail-summary .expiration .num{font-weight:bold;}
 .mydata-kbinfo-detail [class^=h]{margin-top:4.3rem;}
 .mydata-kbinfo-detail [class^=h] + .table{margin-top:1.3rem;}
-.mydata-kbinfo-detail p:last-child{margin-top:32px;text-align:right;}
+.mydata-kbinfo-detail p:last-child{margin-top:32px;text-align:right;font-size:1.4rem;}
+.mydata-kbinfo-detail p.mt16:last-child{margin-top:1.6rem;} // 적합성심사 2021-10-28
+.mydata-kbinfo-detail p.mt16:last-child > .btn-text u{font-size:1.4rem;} // 적합성심사 2021-10-28
 .mydata-kbinfo-detail p .btn-text{@include btnText($size: 16px);}
 .mydata-kbinfo-detail p .btn-text .icon-link_20{margin-top:-1px;}
 .mydata-kbinfo-detail .tbl-v01 tbody th{font-weight:normal;}
@@ -697,7 +720,10 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .mn-agreements .mn-agreements-list > li + li{margin-top:1.75rem;}
 .mn-agreements-list > li > a{padding-right:2rem;} // 여백수정 2021-10-21
 .mn-agreements .mn-agreements-list02{padding:20px 0;}
-.mn-agreements .mn-agreements-list02 p{position:relative;}
+.mn-agreements .mn-agreements-list02 p{position:relative;} // 요건추가 2021-10-29
+.mn-agreements .mn-agreements-list02 .form-simul-list01{margin-left:3.3rem;} // 요건추가 2021-10-29
+.mn-agreements .mn-agreements-list02 .form-simul-list01 [class^=form-checkbox]{display:block;margin-top:1.6rem;} // 요건추가 2021-10-29
+.mn-agreements .mn-agreements-list02 .agreement-service-choice{padding-left:3rem;} // 요건추가 2021-10-29
 
 .mn-agreements .mn-agreements-list .form-checkbox label,.mn-agreements .mn-agreements-list02 label{font-weight:bold;} // 체크박스수정 2021-10-18
 .mn-agreements .mn-agreements-list02 dl{padding:1.8rem 0;margin-top:2rem;margin-left:3.6rem;border:0.1rem solid $kb-ui08;border-width:1px 0;}
@@ -753,7 +779,8 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .approval-number .kb-form_multi + .list-decimal{margin-top:48px;}
 .approval-number .list-decimal li{list-style-type: decimal; margin-left:20px; color:$kb-ui02; font-size: 16px; padding-bottom: 20px; line-height:24px;}
 .approval-number .list-decimal li p{font-weight: normal; padding-left:10px;}
-.approval-number .list-decimal .simple-message{margin-top:0px;}// 211022 : 특정 simple message color 설정 삭제
+.approval-number .list-decimal .simple-message{margin-top:0px;color:$color-red}// 211027 : 특정 simple message color 설정 재추가
+.approval-number .list-decimal .simple-message::before{background-position:-13.2rem -7.1rem}// 211027 : simple message 별표 이미지 수정 (sprite position)
 
 .approval-number .qrscan{ width:120px; height:120px; background-color: $kb-ui07; margin:24px auto 48px auto; text-align: center; line-height:120px; color:$kb_ui11; }
 .pc-import .qrscan-datail-dim{position:fixed;top:0;left:0;bottom:0;right:0;background-color:rgba(0,0,0,0.7);z-index:0;}
@@ -914,23 +941,19 @@ h1 + .joint-certificate-list{margin-top:28px;}
 //마이데이터 서비스 소개
 .mydata-service .img{width:100%;}
 .mydata-service dl{margin-top:25px;}
-.mydata-service-introduction h2{@include heading($size: 28px, $weight:normal);}
-.mydata-service-introduction .desc{margin-top:20px;}
-.mydata-service-introduction .desc dt{@include text($size: $text01, $weight:bold)}
-.mydata-service-introduction .desc dd{@include text($size: $text02);margin-top:12px;}
-.mydata-service-introduction ul{margin-top:24px;}
-.mydata-service-introduction li{position:relative;padding-top:2px;padding-left:49px;}
-.mydata-service-introduction li + li{margin-top:26px;}
-.mydata-service-introduction li i{position:absolute;left:0;top:0;}
-.mydata-service-introduction li .tit{@include text($size: $text02, $weight:bold);display:block;}
-.mydata-service-introduction li p{@include text($size: $text03);margin-top:8px;color:$kb-ui04;}
-.mydata-service-specialty h2{@include heading($size: 28px, $weight:normal);}
-.mydata-service-specialty h3{@include heading($size: 18px);margin-top:20px;}
-.mydata-service-specialty h3 + p{@include text($size: $text02);margin-top:16px;}
-.mydata-service-specialty dt{@include text($size: $text02, $weight:bold);}
-.mydata-service-specialty dd{@include text($size: $text03);margin-top:12px;}
-.mydata-service-specialty .desc{margin-top:24px;}
-.mydata-service-specialty .desc + .desc{margin-top:40px;}
+.mydata-service h2{@include heading($size: 28px, $weight:normal);}
+.mydata-service .desc{margin-top:20px;}
+.mydata-service .desc dt{@include text($size: $text01, $weight:bold)}
+.mydata-service .desc dd{@include text($size: $text02);margin-top:12px;}
+.mydata-service ul{margin-top:24px;}
+.mydata-service li{position:relative;padding-top:2px;padding-left:49px;}
+.mydata-service li + li{margin-top:26px;}
+.mydata-service li i{position:absolute;left:0;top:0;}
+.mydata-service li .tit{@include text($size: $text02, $weight:bold);display:block;}
+.mydata-service li p{@include text($size: $text03);margin-top:8px;color:$kb-ui04;}
+
+
+
 
 
 //공동안증서안보이세요 팝업 04_01_01_p1

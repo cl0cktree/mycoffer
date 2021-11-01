@@ -29,6 +29,7 @@
             <button type="button" class="btn-line" onclick="modalDemo10()"><span>휴대폰 본인인증 <br>(인증번호 불일치/시간초과)</span></button>
             <button type="button" class="btn-line" onclick="modalDemo11()"><span>휴대폰 본인인증 <br>(인증번호미수신)</span></button>
             <button type="button" class="btn-line" onclick="modalDemo4()"><span>비활성화 상태에서 다음 버튼 선택시<br>(화면스크롤 확인)</span></button>
+            <button type="button" class="btn-line" onclick="modalDemo13()"><span>상세정보 전송요구서 화면에서 요청한 내용 변경 시</span></button><!-- 수정:2021-11-01 -->
 
             <button type="button" class="btn-line" data-call-layered="select-engineering-industry" data-page-id="MYS_CO_06_01_02_01_p1"><span>개별인증 기관선택(기관 업종 선택)</span></button>
             <button type="button" class="btn-line" data-call-layered="mys_mn_01_01_03_02_certificate" data-page-id="MYS_CO_06_01_01_13_BS01"><span>통합인증수단 선택(통합인증거래 이용동의)</span></button>
@@ -105,6 +106,13 @@
             modalPopup({
                 title: "",
                 message: "자산을 선택해 주세요."
+            });
+        }
+        // 요건추가 2021-11-01
+        function modalDemo13() {
+            modalPopup({
+                title: "",
+                message: "상세정보 전송 요청을 위한 요구사항도 같이 변경됩니다. 변경하시겠습니까?"
             });
         }
     </script>

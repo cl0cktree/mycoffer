@@ -44,7 +44,7 @@
                 <hr class="hr-divide_48">
 
                 <!-- 선택 항목 // -->
-                <section class="kb-sec">
+                <section class="kb-sec form-simul-mode"><!-- 수정:2021-10-29 -->
                     <h2 class="h4">선택항목</h2>
                     <!-- 수정:2021-10-18 // -->
                     <div class="mn-agreements-list">
@@ -56,23 +56,44 @@
                         <!-- <li><a href="@@webRoot/html/terms/agree-collection-use-personal-info.html"><span>[선택] 제3자 정보제공 동의</span><span class="link-arrow">바로가기</span></a></li> -->
                     </div>
                     <!-- // 수정:2021-10-18 -->
+
+                    <!-- 수정:2021-10-29 // -->
                     <div class="mn-agreements-list02">
                         <p>
-                            <span class="form-checkbox js-checkbox-selector-trigger" data-target="serviceSelector"><input type="checkbox" id="agreeDefault"><label for="agreeDefault">개인(신용)정보 수집&middot;이용 동의<br>(상품서비스 안내 등)</label></span>
+                            <span class="form-checkbox  form-simul" data-check-simul="all01">
+                                <input type="checkbox" id="agreeDefault">
+                                <label for="agreeDefault">[선택] 개인(신용)정보 수집&middot;이용 동의서<br>(상품서비스 안내 등)</label>
+                            </span>
                             <a href="@@webRoot/html/terms/agree-collection-use-personal-info.html" class="link"><span class="link-arrow">바로가기</span></a>
                         </p>
-                        <dl class="js-checkbox-selector" data-target="serviceSelector">
-                            <dt><span class="form-checkbox_20"><input type="checkbox" id="agreeAll" disabled><label for="agreeAll">전체 선택</label></span></dt>
+                        
+                        <div class="form-simul-list01">
+                            <span class="form-checkbox form-simul" data-check-simul="all01">
+                                <input type="checkbox" id="agreeCheck61">
+                                <label for="agreeCheck61">수집&middot;이용 동의</label>
+                            </span>
+                            <span class="form-checkbox form-simul" data-check-simul="all01">
+                                <input type="checkbox" id="agreeCheck62">
+                                <label for="agreeCheck62">광고성정보 수신 동의</label>
+                            </span>
+                        </div>    
+                        
+                        <dl class="agreement-service-choice js-checkbox-selector02" data-check-simul="all01" >
+                            <dt>
+                                <span class="title">상품 서비스 안내수단</span>
+                                <span class="form-checkbox_20 checkbox-selector-all"><input type="checkbox" id="agreeCheckAll" disabled><label for="agreeCheckAll">전체동의</label></span>
+                            </dt>
                             <dd>
-                                <ul class="checkbox-group">
-                                    <li><span class="form-checkbox_20"><input type="checkbox" id="agree01" disabled><label for="agree01">문자</label></span></li>
-                                    <li><span class="form-checkbox_20"><input type="checkbox" id="agree02" disabled><label for="agree02">이메일</label></span></li>
-                                    <li><span class="form-checkbox_20"><input type="checkbox" id="agree03" disabled><label for="agree03">전화</label></span></li>
-                                    <li><span class="form-checkbox_20"><input type="checkbox" id="agree04" disabled><label for="agree04">DM</label></span></li>
+                                <ul class="checkbox-group checkbox-selector-items">
+                                    <li><span class="form-checkbox_20"><input type="checkbox" id="agreeCheck01" disabled><label for="agreeCheck01">문자</label></span></li>
+                                    <li><span class="form-checkbox_20"><input type="checkbox" id="agreeCheck02" disabled><label for="agreeCheck02">이메일</label></span></li>
+                                    <li><span class="form-checkbox_20"><input type="checkbox" id="agreeCheck03" disabled><label for="agreeCheck03">전화</label></span></li>
+                                    <li><span class="form-checkbox_20"><input type="checkbox" id="agreeCheck04" disabled><label for="agreeCheck04">DM</label></span></li>
                                 </ul>
                             </dd>
                         </dl>
                     </div>
+                    <!-- // 수정:2021-10-29 -->
                     <div class="checkbox-group st_list">
                         <!-- 수정:2021-10-18 // -->
                         <span class="form-checkbox"><input type="checkbox" id="agreeCheck7"><label for="agreeCheck7">개인(신용)정보 수집&middot;이용 동의 (상품서비스 안내 등) [계열사정보 제공용]</label><a href="@@webRoot/html/terms/agree-collection-use-personal-info.html" class="link"><span class="link-arrow">바로가기</span></a></span>

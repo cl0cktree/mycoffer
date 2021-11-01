@@ -1408,6 +1408,211 @@ var gfn_agreementToTerms = function(){
         }
     });
 }
+
+// 동일 data 값 체크박스 동시 변경, 전체동의 타입2, CO_05_02_01, MN_03_03_01_01
+function simultaneousCheckbox(){
+    var $simulContainer = $('.form-simul-mode');
+    var $simulCheckboxes = $simulContainer.find('.form-simul');    
+    var t = 0; 
+    
+    // 전체동의 타입2
+    var $checkContainer = $('.js-checkbox-selector02');
+    var $checkAll = $checkContainer.find('.checkbox-selector-all');
+    var $checkboxWrap = $checkContainer.find('.checkbox-selector-items');
+    var $checkboxLength;
+    var $checkboxUncheckedLength;
+
+    // util
+    function toggleCheckbox(item, tf, dis){
+        item.find('input:checkbox').prop('checked', tf);
+
+        if(dis !== undefined && !dis){
+            item.find('input:checkbox').prop({'checked':tf, 'disabled': false});
+        }else if(dis !== undefined && dis){
+            item.find('input:checkbox').prop({'checked':tf, 'disabled': true});
+        }
+    }
+
+    // 동일 데이터 값을 가진 체크박스 찾기
+    function checkDataValue(e){
+        $this = $(e.currentTarget);
+        var thisDataValue = $this.data('check-simul');
+        var simulTF = $this.find('input:checkbox').prop('checked');
+
+        $simulCheckboxes.each(function(idx, item){
+            var temp = $(item).eq(0).data('check-simul');
+            
+            if(thisDataValue == temp){
+                toggleCheckbox($(item), simulTF);
+            }
+        });
+        findCheckboxAllWidthData(thisDataValue, simulTF);
+    }
+
+    // 전체동의 타입2의 데이터값과 동일한 데이터 값을 가진 체크박스 찾아서 연동하기
+    function findCheckboxAllWidthData(dataValue, tf){
+        var selector02TF = $simulContainer.find('[data-check-simul=' + dataValue + ']').hasClass('js-checkbox-selector02');
+        if(selector02TF){
+            toggleCheckbox($checkAll, tf, !tf);
+            toggleCheckbox($checkboxWrap, tf, !tf);
+        }
+        
+        // 연동되는 체크박스 전체 토글 
+        if(tf){
+            $simulContainer.find('[data-check-simul=' + dataValue + ']').addClass('is-expand');
+        } 
+        else{
+            $simulContainer.find('[data-check-simul=' + dataValue + ']').removeClass('is-expand');
+        }
+        
+    }
+    
+    // 전체동의 타입2 : 전체동의 선택시
+    function checkAllType2(e){
+        $this = $(e.currentTarget);
+        var tf = $checkAll.find('input:checkbox').prop('checked');
+        toggleCheckbox($checkContainer, tf);
+
+        var dataValue = $this.closest('.js-checkbox-selector02').data('check-simul');
+        if(dataValue !== ''){
+            var $thisSimulCheckboses = $simulContainer.find('[data-check-simul=' + dataValue + ']');
+            toggleCheckbox($thisSimulCheckboses, tf);
+            // toggleCheckbox($checkContainer, tf, !tf);
+
+            // 연동되는 체크박스 전체 토글 
+            console.log(tf)
+            if(tf)
+            {
+                $simulContainer.find('[data-check-simul=' + dataValue + ']').addClass('is-expand');
+            }
+            else if(!tf && t > 0){
+                $simulContainer.find('[data-check-simul=' + dataValue + ']').removeClass('is-expand');
+            } 
+            else{
+                if($checkboxUncheckedLength > 0){
+                    $simulContainer.find('[data-check-simul=' + dataValue + ']').addClass('is-expand');
+                }
+                else{
+                    console.log(999)
+                    $simulContainer.find('[data-check-simul=' + dataValue + ']').removeClass('is-expand');
+                }
+            }
+        }
+    }
+    
+    // 전체동의 타입2 개별선택 
+    function checkItemsType2(e){
+        ++t;
+        var $this = $(e.currentTarget);
+        var $checkboxes = $checkboxWrap.find('input:checkbox');
+        $checkboxLength = $checkboxes.length;
+        $checkboxUncheckedLength = $checkboxes.not(':checked').length;
+
+        // 전부 체크된것 : 체크 안된 갯수 == 0
+        if($checkboxUncheckedLength == 0){
+            toggleCheckbox($checkAll, true);
+        }
+        // 전부 안됐을 때 : 체크 안된 갯수 == 체크리스트 갯수
+        else if($checkboxUncheckedLength == $checkboxLength){
+            toggleCheckbox($checkAll, false);
+        }
+        // 체크 안된 갯수 > 0
+        else{
+            toggleCheckbox($checkAll, false);
+        }
+
+        // 동일 데이터값을 가진 체크박스 연동 
+        var dataValue = $this.closest('.js-checkbox-selector02').data('check-simul');
+        if(dataValue !== '' && $checkboxUncheckedLength == $checkboxLength){
+            var $thisSimulCheckboses = $simulContainer.find('[data-check-simul=' + dataValue + ']');
+            toggleCheckbox($thisSimulCheckboses, false);
+            toggleCheckbox($checkAll, false, true);
+            toggleCheckbox($checkboxWrap, false, true);
+            $simulContainer.find('[data-check-simul=' + dataValue + ']').removeClass('is-expand');
+        }
+    }
+
+    // 약관 전체동의하기가 있을 경우 세부 조건 전체 동의하기 토글 
+    function findAgreementTermsTotal(e){
+        var $this = $(e.currentTarget);
+        var tf = $this.prop('checked');
+        if(tf){
+            $simulContainer.find('.js-checkbox-selector02').addClass('is-expand')
+        }else{
+            $simulContainer.find('.js-checkbox-selector02').removeClass('is-expand')
+        }
+    }
+
+    // .agreement-to-terms.form-simul-mode 인 경우 헤더의 전체동의 이벤터 하단 체크박스와 연동하기
+    // TBD
+    function init(){
+        var tf = $simulContainer.is('.agreement-to-terms');
+        if(tf){
+            $simulContainer.find('.header input:checkbox');
+        }
+    }
+    init();
+    
+    // event handler
+    $simulCheckboxes.on('click', checkDataValue);
+    $checkAll.on('click', checkAllType2);
+    $checkboxWrap.on('click', 'input:checkbox', checkItemsType2);
+    $simulContainer.on('click', '.header input:checkbox', findAgreementTermsTotal);
+}
+simultaneousCheckbox();
+
+// let checkTogether = function(){
+//     var $checkTogetherWrap = $('.mode-optional');
+//     var $checkTogether = $checkTogetherWrap.find('[data-check-together]');
+    
+//     var togetherTF;
+//     $checkTogether.on('click', function(e){
+//         var dataValue = $(this).data('check-together');
+//         togetherTF = $(this).find('input').prop('checked'); 
+        
+//         $checkTogether.each(function(){
+//             var temp = $(this).data('check-together');
+            
+//             if(temp == dataValue){
+//                 $(this).find('input').prop('checked', togetherTF);
+                
+//                 if($(this).hasClass('js-checkbox-selector-trigger02')){
+//                     var targetName = $('.js-checkbox-selector-trigger02').data('target');
+//                     var $target = $('.js-checkbox-selector[data-target=' + targetName + ']');
+//                     if(!togetherTF){
+//                         $target.find('input:checkbox').prop({'checked':false, 'disabled':true});
+//                     }else{
+//                         $target.find('input:checkbox').prop({'checked':true, 'disabled':false});
+//                     }
+//                 }
+//             }
+//         });
+//     });
+    
+//     $('.js-checkbox-selector').on('click', 'dt input:checkbox', function(){
+//         var tf = $(this).prop('checked');
+//         if(!tf){
+//             $checkTogether.find('input').prop('checked', false);
+//             $('.js-checkbox-selector').find('input:checkbox').prop({'checked':false, 'disabled':true});
+//         }
+//     });
+
+//     $('.js-checkbox-selector').on('click', 'dd input:checkbox', function(){
+//         var tf = $(this).prop('checked');
+//         if(!tf){
+//             if($('.js-checkbox-selector dd input:checkbox').not(':checked').length == $('.js-checkbox-selector dd input:checkbox').length){
+//                 $checkTogether.find('input').prop('checked', false);
+//                 $('.js-checkbox-selector').find('input:checkbox').prop({'checked':false, 'disabled':true});
+//             }
+//         }else{
+//             $checkTogether.find('input').prop('checked', true)
+//         }
+//     });
+    
+// }
+// checkTogether();
+
+
 if($('.agreement-to-terms').length) gfn_agreementToTerms();
 
 //Tooltip
@@ -2020,3 +2225,4 @@ $(window).on('load',function(){
     if('[data-scroll-fn]'.length) jsScrollAction.scroll(st, $('[data-scroll-fn]'));
 });
 
+console.log("ui.js");

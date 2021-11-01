@@ -323,7 +323,8 @@
 .challenge-box .add-card{height:246px;text-align:center;}
 .challenge-box .add-card button{@include text($size:$text02,$weight:bold);color:$kb-ui02;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);}
 .challenge-box .add-card button i{display:block;margin:0 auto 20px;}
-.challenge-box .challenge-tit > button{width:calc(100% + 10px);position:absolute;text-align:right;}
+.challenge-box .challenge-tit > button,
+.challenge-box .challenge-tit > a[role="button"]{width:calc(100% + 10px);position:absolute;text-align:right;} // a 버튼 포함
 .challenge-box .challenge-tit > button.type2{width:calc(100% + 10px);}
 .challenge-box .list-up .content-box{margin-left:0;margin-right:0;}
 .challenge-box .list-up .content-box + .content-box{margin-top:2.8rem;}
@@ -455,9 +456,13 @@
 .goals-noti h2 + ul li .num:after,
 .goals-noti h3 + ul li .num:after{vertical-align:0;}
 .goals-noti h2 + dl,
-.goals-noti h3 + dl{margin-top:2rem;padding-top:2rem;border-top:1px solid $kb-ui09;}
-.goals-noti h2 + dl dd,
-.goals-noti h3 + dl dd{display:block;}
+.goals-noti h3 + dl{margin-top:2rem;padding-top:1.6rem;border-top:1px solid $kb-ui09;} // 늘어나 dt margin값 만큼 padding 값 수정 2rem -> 1.6rem
+// .goals-noti h2 + dl dd,
+// .goals-noti h3 + dl dd{display:block;} // block 요소 삭제
+.goals-noti h2 + dl dd.account span.num[data-unit-after="원"],
+.goals-noti h3 + dl dd.account span.num[data-unit-after="원"]{margin-right:.5rem;} // flex 내 우측 간격 확보
+.goals-noti h2 + dl dt,
+.goals-noti h3 + dl dt{margin:.6rem 0} // dt 간격 수정 .2rem -> .6rem
 .goals-noti h2 + dl dd.big .num,
 .goals-noti h3 + dl dd.big .num{font-size:2.1rem;color:$color-blue;}
 .goals-noti .num:after{vertical-align:0;color:$kb-ui02;}

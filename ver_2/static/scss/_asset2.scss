@@ -165,7 +165,10 @@
 .mycar-information .infobox > a {display: block; height: inherit; margin-bottom: -36px;}
 .mycar-information .infobox .amount {margin-top: 15px; font-size: 23px; font-weight: bold; color: $kb-ui02;}
 .mycar-information .infobox .amount .num {font-size: 24px;}
-.mycar-information .nickname {display: block; margin-bottom: 4px; color: $kb-ui04; font-size: 14px; word-break: break-all;}
+.mycar-information .nick-label-area {display: block; margin-bottom: 4px;}
+.mycar-information .nick-label-area span + span {margin-left: 6px;}
+.mycar-information .nickname {display: inline-block; color: $kb-ui04; font-size: 14px; word-break: break-all; line-height: 24px;}
+.mycar-information .tag-label {display: inline-block; padding: 4px 6px; font-size: 13px; border-color: #c6cbd0;}
 .mycar-information .model {color: $kb-ui02; @include text($text02, bold); word-break: break-all;}
 .mycar-information .model.link-arrow-after {display: inline-block; padding-right: 20px;}
 .mycar-information .model.link-arrow-after::after {top: calc(50% - 11px);}
@@ -349,8 +352,11 @@
 
 .my-asset.investment .p-list .description-list {margin-top: 15px; padding: 10px 20px; background-color: #f7f7f8;}
 .my-asset.investment .more-view-box dt {position: relative;}
-.my-asset.investment .more-view-box dt .btn-tooltip-stock {position: absolute; top: 50%; left: 36px;margin-top:-6px;}
+.my-asset.investment .more-view-box dt .btn-tooltip-stock {position: absolute; top: 50%; left: 36px;margin-top:-5px;}
 .my-asset.investment .more-view-box dt .tooltip-stock {left: 0; right: 0; top: 32px;}
+.my-asset.investment .more-view-box dt .btn-tooltip-invest {position: absolute; top: 50%; left: 36px;margin-top:-5px;}
+.my-asset.investment .more-view-box dt .tooltip-invest {left: 0; right: 0; top: 32px;}
+.my-asset.investment .more-view-box dt.etc .btn-tooltip-invest{left:9.2rem;}
 
 .solution-banners {padding-top: 44px; padding-bottom:0; border-bottom: 10px solid #f7f7f8}//하단 여백 수정 2021-10-14 kek
 .solution-banners .banners {display: flex; flex-wrap: wrap; /* gap: 15px; */ margin-top: 20px;}

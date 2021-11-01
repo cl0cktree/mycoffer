@@ -1,41 +1,31 @@
 
 //NATIVE
 // indicator, image size, sticky button, motion 2021-10-27
-.tutorial{padding-bottom:0;}
+.tutorial{padding-bottom:0;overflow:hidden;height:calc(var(--vh, 1vh) * 100);}
 .tutorial .swiper-container{background-color:$kb-ui11;}
-.tutorial .swiper-slide{overflow:hidden;height:calc(var(--vh, 1vh) * 100);padding-top:4vh;}
-.tutorial h2{@include heading($size: 26px);width:100%;padding:0 1rem;margin:calc(13.6vh - 1vh) auto 0;}
-.tutorial h2 + p{@include text;margin:2.1vh auto 0 auto;}
-.tutorial h2,
-.tutorial h2 + p{position:relative;z-index:1;text-align:center;letter-spacing:-0.032rem;}
-.tutorial h2 > span{color:$color-yellow-positive}
-// .tutorial .img{position:absolute;left:0;top:0px;right:0;text-align:center;z-index:0;}
-// .tutorial .img img{width:auto;height:100vh;}
-
-.tutorial .img{padding-top:calc(20vh + 90px);margin-top:calc(-20vh - 90px);position:absolute;left:0;top:0px;right:0;bottom:0;display:flex;align-items:center;justify-content:center;z-index:0;}
-.tutorial .img img{width:auto;max-width:41.4rem;height:auto;max-height:100vh;}
-.tutorial .pagination{position:absolute;z-index:1;top:calc(13.3vh - 1vh);left:50%;width:250px;transform:translate(-50%);text-align:center;font-size:0;}
-.tutorial .pagination span{display:inline-block;width:6px;height:6px;border-radius:50%;background-color:$kb-ui08;}
-.tutorial .pagination span + span{margin-left:10px;}
-.tutorial .pagination span.is-active{width:2rem;border-radius:0.6rem;background-color:$kb-ui05;}
-.tutorial .sticky-bottom{bottom:0;padding-top:0;margin-top:0;height:auto;}
-.tutorial .sticky-bottom .btn-area{width:200%}
-.tutorial .sticky-bottom .btn-area [class^=btn]{flex:1 1 50%;}
-.tutorial .sticky-bottom .btn-close{display:flex;justify-content:flex-end;}
-.tutorial .sticky-bottom .btn-close a{@include iconCancel($size: 16px, $thick: 2px, $color: $kb-ui02, $padding: 4px);display:block;width:auto;height:auto;flex:none;padding:1.5rem 4.2rem 1.5rem 3.4rem;margin-bottom:2rem;background-color:$kb-ui11;}
-.tutorial .sticky-bottom .btn-close a::before,
-.tutorial .sticky-bottom .btn-close a::after{left:2rem}
-.tutorial .sticky-bottom .btn-close a span{font-size:1.6rem;font-weight:bold;text-indent:0;}    
-.tutorial .sticky-bottom .btn-area .btn-solid{opacity:0;transition:opacity .1s;}
-.tutorial.is-complete .sticky-bottom .btn-area .btn-solid{opacity:1;}
+.tutorial .swiper-pagination{bottom:auto;top:36px;font-size:0;}
+.tutorial .swiper-slide{display:flex;flex-flow:column;text-align:center;height:calc(var(--vh, 1vh) * 100);padding-top:36px;padding-bottom:calc(constant(safe-area-inset-bottom) / 2 + 50px);padding-bottom:calc(env(safe-area-inset-bottom) / 2 + 50px);}
+.tutorial .swiper-slide h2{@include heading($size: 26px);width:100%;line-height:1;flex:0 0 62px;display:flex;align-items:flex-end;justify-content:center;}
+.tutorial .swiper-slide h2 + p{@include text;flex:0 0 76px;display:flex;align-items:flex-end;justify-content:center;}
+.tutorial .swiper-slide h2,
+.tutorial .swiper-slide h2 + p{position:relative;z-index:1;text-align:center;letter-spacing:-0.032rem;}
+.tutorial .swiper-slide h2 > span{color:$color-yellow-positive}
+.tutorial .swiper-slide .img{flex:1;position:relative;width:100%;max-width:616px;margin:0 auto;}
+.tutorial .swiper-slide .img figure{position:absolute;top:0;left:25px;right:25px;bottom:0;display:flex;align-items:flex-end;justify-content: center;}
+.tutorial .swiper-slide .img img{max-width:auto;max-height:100%;}
+.tutorial .skip-tutorial{flex:0 0 60px;padding:0 40px;display:flex;align-items:flex-end;justify-content:flex-end;width:100%;max-width:546px;margin:0 auto;font-weight:bold;line-height:1;}
+.tutorial .skip-tutorial a{padding:5px;}
+.tutorial .skip-tutorial .icon-close{@include iconCancel($size: 16px, $thick: 2px, $color: $kb-ui02, $padding: 2px);}
+.tutorial .skip-tutorial span{line-height:20px;margin-left:8px;}
+.tutorial .sticky-bottom{display:none;}
+.tutorial.is-complete .sticky-bottom{display:block;}
 
 
 .auth-access{padding-top:68px;}
-.auth-access h2{@include heading($size: 24px);}
-.auth-access .auth-access-list{margin-top:40px;}
-.auth-access .auth-access-list li{position:relative;padding-left:42px;}
-.auth-access .auth-access-list li + li{margin-top:32px;}
-.auth-access .auth-access-list li i{position:absolute;left:0;}
+.auth-access h2{@include heading($size: 28px);}
+.auth-access .auth-access-list{margin-top:54px;margin-bottom:16px;}
+.auth-access .auth-access-list li{position:relative;padding-left:60px;padding-bottom:18px;border-bottom:1px solid $kb-ui09;}
+.auth-access .auth-access-list li + li{margin-top:22px;}
+.auth-access .auth-access-list li i{position:absolute;left:0;top:-6px}
 .auth-access .auth-access-list li strong{display:block;font-weight:bold;line-height:32px;}
 .auth-access .auth-access-list li p{@include text($size: $text03);color:$kb-ui03;}
-.auth-access .sticky-bottom-menu{position:static;margin-top:100px;}
