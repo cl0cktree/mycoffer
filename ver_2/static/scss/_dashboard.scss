@@ -42,13 +42,22 @@
 .dashboard-expense .link {display: block;}
 .dashboard-asset .link {margin-bottom: 15px;}
 
-.dashboard-goal {padding: 0; margin: 0 16px 48px; background-color: #6349a5; border-radius: 8px;}
-.dashboard-goal .swiper-container .swiper-pagination .swiper-pagination-bullet {background-color: $kb-ui02; opacity: .2;}
+.dashboard-goal {padding: 48px 0 28px; margin: 0 16px 48px; background-color: #6349a5; border-radius: 8px; text-align: center;}
+.dashboard-goal h2 {display: inline-block; padding: 6px 12px; margin-bottom: 3px; font-size: 13px; line-height: 1; font-weight: bold; color: $kb-ui02; text-align: center; background-color: #ffdd6c; border-radius: 12px;}
+.dashboard-goal .swiper-container {text-align: left;}
+.dashboard-goal .swiper-container .swiper-pagination {position: relative; bottom: 0;}
+.dashboard-goal .swiper-container .swiper-pagination .swiper-pagination-bullet {background-color: $kb-ui11; opacity: .4;}
 .dashboard-goal .swiper-container .swiper-pagination .swiper-pagination-bullet-active {opacity: 1;}
 .dashboard-goal .swiper-horizontal>.swiper-pagination-bullets,
 .dashboard-goal .swiper-container-horizontal>.swiper-pagination-bullets,
-.dashboard-goal .swiper-pagination-custom,
-.dashboard-goal .swiper-pagination-fraction {bottom: 25px;}
+.dashboard-goal .challenge-box {margin: 0;}
+.dashboard-goal .challenge-box .content-box {color: $kb-ui11; margin: 0; border: none; background-color: transparent; box-shadow: 0 0 0  rgba(0, 0, 0, 0);}
+.dashboard-goal.goals-challenge .goals-now {min-height: 36px;}
+.dashboard-goal.goals-challenge .goals-now > p {color: $kb-ui11;}
+.dashboard-goal.goals-challenge .goals-now > p::before {background-color: $kb-ui11;}
+.dashboard-goal.goals-challenge .goals-now > p i {position: relative; top: 1px;}
+.dashboard-goal.goals-challenge .icon-link_24 {filter: brightness(200%);}
+.dashboard-goal.goals-challenge .goal-slide .challenge-info {margin: 0;}
 
 .dashboard-goal .goal-slide {overflow: hidden;}
 .dashboard-goal .goal-slide .link-area {position: relative; display: block; height: 395px; text-align: center;}
@@ -116,6 +125,7 @@
 
 // .dashboard-goal .character-graph[data-theme=coin] .graph-area > span i {background-image:url(../images/common/dash_coin.png);width:63.5px;height:52px;}
 
+
 .dashboard-items {padding-top: 35px; padding-bottom: 45px; background-color: #f7f7f8;}
 .dashboard-items .items {margin: 12px -8px 0;}
 .dashboard-items .item {margin-bottom: 20px;}
@@ -142,5 +152,3 @@
 .dashboard-items .last-update {margin: 28px 0; text-align: center; font-size: 14px; color: $kb-ui05;}
 .dashboard-items .last-update .datetime {margin-right: 5px; font-size: 15px; font-family: 'Roboto', sans-serif;}
 .dashboard-items .last-update .btn-refresh {position: relative; left: 2px; top: -2px;}
-
-.dashboard-section.goals-challenge {margin-bottom: 24px;}

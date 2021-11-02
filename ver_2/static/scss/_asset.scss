@@ -189,6 +189,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 #pageErrorMessage .tel-info{margin-top:20px;}
 #pageErrorMessage .error-code{margin-top:0;}//margin 변경
 #pageErrorMessage .modal_header .tit{color:#000;}//color 변경
+.my-asset .asset-summary .highcharts-box .graph-info > .h4 .tooltip{left:0;width:100%;}
 
 /* 대상선택 */
 .btn-segmented_check[data-grid]{display:grid;}
@@ -1217,8 +1218,10 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset.house-view .other-expenses{padding-top:2.4rem;padding-bottom:3.8rem;}
 .my-asset.house-view .other-expenses .h4{margin-bottom:12px;}
 .my-asset .liiv-banner{margin-top:4rem;}
-.my-asset .liiv-banner button{display:block;width:100%;text-align:left;background:#f7f7f8;padding:2.5rem 2.5rem 4.8rem;position:relative;}
-.my-asset .liiv-banner button img{position:absolute;width:10.9rem;height:10.4rem;right:2.5rem;top:2rem;}
+.my-asset .liiv-banner button,
+.my-asset .liiv-banner a{display:block;width:100%;text-align:left;background:#f7f7f8;padding:2.5rem 2.5rem 4.8rem;position:relative;} // a 태그 추가
+.my-asset .liiv-banner button img,
+.my-asset .liiv-banner a img{position:absolute;width:10.9rem;height:10.4rem;right:2.5rem;top:2rem;} // a 태그 추가
 .my-asset .liiv-banner .tit{display:block;@include text($size:18px,$weight:bold);}
 .my-asset .liiv-banner .s-txt{display:block;@include text($size:14px);color:$kb-ui04;margin-top:4px;}
 .my-asset .smart-loan-banner{margin-top:24px;}

@@ -229,10 +229,11 @@
 .monthly-expense-pattern .highcharts-figure{padding:0}
 .expense-management-goal .content-tit{text-align:center;padding:24px 0}
 // 가계부 > 캘린더로 보기
+.view-expense-calendar .view-calendar{padding-top:2rem} // 211101 : 캘린더 상단 padding 조정
 .calendar-container .summary-amount{margin-top:2.5rem}
 .calendar-container .summary span::before{display:inline-block;width:1.5rem;height:1.5rem;margin-right:4px;border-radius:50%;border-radius:50%;border:1px solid;line-height:14px;text-align:center;vertical-align:middle}
 //header
-.calendar-header{width:100%;margin-bottom:2.5rem}
+.calendar-header{width:100%;margin-bottom:2.4rem} // 211101 : 캘린더 header margin-bottom 조정
 .calendar-header .summary-date{display:flex;justify-content:center;text-align:center}
 .calendar-header .summary-date p{display:inline-block;margin:0 2.4rem;font-size:1.8rem}
 .calendar-header .summary-date p .num{font-size:1.9rem;font-weight:normal}
@@ -241,11 +242,12 @@
 .calendar-header .summary:last-of-type{border-bottom:1px solid $kb-ui09}
 .calendar-header .summary span{display:block;margin-bottom:7px}
 .calendar-header .summary span{font-weight:bold}
-.calendar-header .description-list.credit-list-amount{margin:2rem -2.4rem 0;padding:1.5rem 2.4rem;background-color:$kb-ui10;border-bottom:0}
+.calendar-header .description-list.credit-list-amount{margin:1.6rem -2.4rem 0;padding:1.5rem 2.4rem;background-color:$kb-ui10;border-bottom:0}  // 211101 : 캘린더 상단 margin 조정
 //calendar
 .calendar{position:relative}
 .tbl-calender .day-name{padding-bottom:1.2rem;text-align:center;font-size:1.4rem;color:$kb-ui04}
-.tbl-calender .day{height:80px;text-align:center}
+.tbl-calender .day{height:8.4rem;padding-bottom:0.8rem;text-align:center} // 211102 : 캘린더 칸 높이 조정
+.tbl-calender tr:last-child .day{padding-bottom:0} // 211102 : 캘린더 마지막줄 여백 조정
 .tbl-calender .day .link-box_block{height:100%}
 .tbl-calender .day strong{display:inline-block;width:3.6rem;height:3.6rem;border-radius:50%;font-size:1.7rem;line-height:3.6rem;font-weight:bold;font-family:'roboto';color:$kb-ui02;text-align:center}
 .tbl-calender .day.is-list strong{background-color:$kb-ui09}
@@ -255,7 +257,7 @@
 .tbl-calender .day-list li.income{color:$color-blue}
 .tbl-calender .day-list li.expense{color:$color-red}
 .tbl-calender .day-list li [class*="icon-"]{margin-right:0.4rem;vertical-align:middle} // 달력보기 표기 아이콘 수정
-.tbl-calender-label{display:flex;justify-content:flex-end;width:100%;flex-wrap:wrap} // flex 옵션 수정
+.tbl-calender-label{display:flex;justify-content:flex-end;width:100%;flex-wrap:wrap;margin-top:1.2rem} // flex 옵션 수정
 .tbl-calender-label li+li{margin-left:1.5rem}
 .tbl-calender-label li span{font-size:1.4rem}
 .tbl-calender-label li [class*="icon-"]{margin-right:0.8rem;vertical-align:middle} // 달력보기 표기 아이콘 수정
@@ -362,6 +364,8 @@
 .filter-category-setting .arrange-amount + div{margin-top:2.7rem}
 .filter-category-setting .st-list .form-checkbox_20 label{font-size:16px}
 .filter-category-setting .accordion dt.is-active .form-checkbox input + label{font-weight:bold}
+.filter-category-setting .kb-form_inner.form-text{padding-top:0}
+.filter-category-setting .checkbox-group:not(ul) span[class*="form-checkbox"]{min-height:auto}
 // 숨긴 지출 보기
 .view-hidden-expense .list-controls{margin-top:4rem;margin-bottom:2rem}
 .view-hidden-expense .credit-list dt .info + .tit{margin-top:1rem}

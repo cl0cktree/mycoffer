@@ -86,7 +86,7 @@
                         <div class="recommend-employees-form">
                             <!-- 지점명 // -->
                             <div class="kb-form js-recommend-employees01 outline lg" data-status="">
-                                <div class="kb-form_inner form-select" >
+                                <div class="kb-form_inner form-select">
                                     <button type="button" class="selected-option"></button>
                                     <select name="" id="recommendEmployees01" title="지점명">
                                         <option value="">지점명</option>
@@ -96,7 +96,7 @@
                                 </div>
                                 <!-- <em class="validation">Message</em> --><!-- 수정:2021-09-24 -->
                             </div>
-                            <div class="kb-form js-recommend-employees02" data-status="">
+                            <div class="kb-form js-recommend-employees01" data-status=""><!-- 수정:2021-11-02 --><!-- 클래스명 변경 -->
                                 <div class="kb-form_inner form-text">
                                     <input type="text" id="recommendEmployees02" value="" title="지점명 검색" placeholder="지점명"><!-- 수정:2021-09-24 -->
                                     <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
@@ -107,7 +107,7 @@
                             </div>
                             <!-- // 지점명 -->
                             <!-- 직원이름 // -->
-                            <div class="kb-form js-recommend-employees04" data-status="">
+                            <div class="kb-form js-recommend-employees02" data-status=""><!-- 수정:2021-11-02 --><!-- 클래스명 변경 -->
                                 <div class="kb-form_inner form-text">
                                     <input type="text" id="recommendEmployees04" value="" title="직원이름 검색" placeholder="직원이름"><!-- 수정:2021-09-24 -->
                                     <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
@@ -126,17 +126,22 @@
                                 <!-- <em class="validation">Success Message</em> --><!-- 수정:2021-09-24 -->
                             </div>
                             <!-- // 직원번호 -->
-                            <!-- 없음 // -->
-                            <div class="kb-form is-active is-readonly">
-                                <p>추천인코드:<span>KBstar1</span></p>
-                            </div>
-                            <!-- // 없음 -->
-                            
                         </div>
                     </div>
-                    <div class="kb-form is-active is-readonly">
-                        <p>추천인코드:<span>KBstar1</span></p>
-                    </div>
+                    
+                    <!-- 수정:2021-11-02 // -->
+                    <div class="recommend-code-area">
+                        <div class="kb-form" data-status="error">
+                            <label for="recommendEmployeeCode">추천인코드</label>
+                            <div class="kb-form_inner form-text">
+                                <input type="text" id="recommendEmployeeCode" value="KBstar1">
+                                <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                                <button type="button" class="btn-solid form"><span>확인</span></button>
+                            </div>
+                            <em class="validation">유하지 않은 코드입니다.</em><!-- 에러 메세지 -->
+                        </div>
+                    </div> 
+                    <!-- // 수정:2021-11-02 -->
                 </section>
 
                 <section class="kb-sec recommend-mydata-service">

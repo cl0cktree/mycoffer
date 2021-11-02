@@ -1889,22 +1889,27 @@ if($recommendEmployees.length){
         var idx = $(this).parent('li').index();        
         //$(this).addClass('is-selected').parent('li').siblings('li').find('button').removeClass('is-selected');
 
+        // 직원 검색 선택항목 수정
         var $recommendEmployeesFrom = $recommendEmployees.find('.recommend-employees-form');
-        
-        $recommendEmployeesFrom.children('.kb-form').hide();
-        if(idx == 3){
-            $recommendEmployeesFrom.find('p').hide();
-        }else{
-            $recommendEmployeesFrom.find('p').show();
-            if(idx == 2){
-                $recommendEmployeesFrom.children('.kb-form:eq(3)').show();
-            }else if(idx == 1){
-                $recommendEmployeesFrom.children('.kb-form:eq(2)').show();
-            }else if(idx == 0){
-                $recommendEmployeesFrom.children('.kb-form:eq(1)').show();
-                $recommendEmployeesFrom.children('.kb-form:eq(0)').show();
-            }
-        }
+        var formChild = `.js-recommend-employees0${idx+1}`;
+
+        $recommendEmployeesFrom.find('.kb-form').hide();
+        $recommendEmployeesFrom.find($(formChild)).show();
+
+        // $recommendEmployeesFrom.children('.kb-form').hide();
+        // if(idx == 3){
+        //     $recommendEmployeesFrom.find('p').hide();
+        // }else{
+        //     $recommendEmployeesFrom.find('p').show();
+        //     if(idx == 2){
+        //         $recommendEmployeesFrom.children('.kb-form:eq(3)').show();
+        //     }else if(idx == 1){
+        //         $recommendEmployeesFrom.children('.kb-form:eq(2)').show();
+        //     }else if(idx == 0){
+        //         $recommendEmployeesFrom.children('.kb-form:eq(1)').show();
+        //         $recommendEmployeesFrom.children('.kb-form:eq(0)').show();
+        //     }
+        // }
     });
 }
 

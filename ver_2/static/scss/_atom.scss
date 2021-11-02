@@ -64,13 +64,16 @@
 .btn-text.sm.icon-arrow i{transform:translate(1px,-1px);}
 
 .btn-datepicker{display:inline-block;width:34px;height:34px;text-align:center;}
-.btn-datepicker span{@include ir;width:20px;height:20px;margin:0 auto;background:url(../images/common/common.png) no-repeat -130px -20px;background-size:160px;}
+.btn-datepicker span{@include ir;width:20px;height:20px;margin:0 auto;background:url(../images/common/common.png) no-repeat -82px -115px;background-size:160px;}
+.btn-datepicker:disabled span{background-position:-110px -20px}
 .btn-timepicker{display:inline-block;width:34px;height:34px;text-align:center;}
-.btn-timepicker span{@include ir;width:20px;height:20px;margin:0 auto;background:url(../images/common/common.png) no-repeat -110px -20px;background-size:160px;}
+.btn-timepicker span{@include ir;width:20px;height:20px;margin:0 auto;background:url(../images/common/common.png) no-repeat -105px -115px;background-size:160px;}
+.btn-timepicker:disabled span{background-position:-110px -20px}
 .btn-more-dot{@include ir;position:relative;display:inline-block;width:24px;height:24px;}
 .btn-more-dot:before{content:'';position:absolute;top:calc(50% - 2px);right:0;width:4px;height:4px;border-radius:50%;background-color:$kb-ui06;box-shadow:0 -8px 0 $kb-ui06, 0 8px 0 $kb-ui06;}
 .btn-more-plus{display:inline-block;width:100%;height:34px;color:$kb-ui02;font-size:16px;text-align:center;}
 .btn-more-plus:before{content:'+';font-family:serif;font-size:18px;margin-right:5px;}
+.period-selector.is-disabled span{background-position:-130px -20px;}
 
 //버튼 내 아이콘 간격
 [class*=btn-solid] i[class*=icon-]:first-child,
@@ -312,14 +315,14 @@ p.simple-message .num:after{font-size:$text03;font-weight:inherit;}
 
 .tag-label.t01{font-size:1.6rem;color:$kb-ui04;border-color:$kb-ui09}
 .tag-label.t02{padding:0;border:0;background-color:transparent;font-weight:normal;border-radius:0;}
-.tag-label.t03{font-size:1.3rem;color:$kb-ui11;height:2.4rem;padding:0 0.8rem;line-height:2.4rem;border:none;border-radius:0.2rem}
+.tag-label.t03{font-size:1.3rem;color:$kb-ui11;height:2.4rem;padding:0.6rem 0.8rem 0 0.8rem;line-height:1;border:none;border-radius:0.2rem}
 .tag-label.t03[data-state="active"],
 .tag-label.t03[data-state="today"]{background-color:$color-blue}
 .tag-label.t03[data-state="non-active"],
 .tag-label.t03[data-state="new"]{background-color:$kb-ui04}
 .tag-label.t03[data-state="less"]{background-color:$color-red}
 .tag-label.t03[data-state="inactive"]{background-color:$kb-ui05}
-.tag-label.t03.round{padding:0 1rem;height:2rem;line-height:2rem;border-radius:1rem;vertical-align:middle;font-weight:normal}
+.tag-label.t03.round{padding:0.4rem 1rem 0 1rem;height:2rem;border-radius:1rem;vertical-align:middle;font-weight:normal}
 .tag-label.t02 + .tag-label.t02{margin-left:0.4rem;padding-left:0.7rem;border-left:1px solid $kb-ui08}
 
 //링크 요소
