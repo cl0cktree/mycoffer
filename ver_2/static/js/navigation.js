@@ -27,6 +27,15 @@ var vhFix = function(){
 };
 vhFix();
 
+//layered check
+var openLayeredCheck = function(){
+    if($('.modal-popup-dimm:visible').length || $('.bottom-sheet-dimm:visible').length || $('.dim').length){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 
 var $appHeader = $('.app-header');
 var $appMenu = $('.app-menu');

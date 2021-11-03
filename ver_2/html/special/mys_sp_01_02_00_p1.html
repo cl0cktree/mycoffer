@@ -61,6 +61,17 @@
 
 					<div class="push-check">
 						<span class="form-checkbox"><input type="checkbox" id="creditPushCheck2"><label for="creditPushCheck2">신용관리 서비스이용 문자 수신여부</label></span>
+						<!-- 2021-11-03 추가 // -->
+						<button class="btn-text icon-arrow" onclick="modalSMS()"><span>문자가 오지않나요?</span><i></i></button>
+						<script>
+							function modalSMS() {
+								modalPopup({
+									title: "",
+									message: "1588-2486 번호가 스팸으로 등록되면, 문자를 받을 수 없습니다. 스팸 등록을 해제해 주세요."
+								});
+							}
+						</script>
+						<!-- // 2021-11-03 추가 -->
 					</div>
 				</section>
 

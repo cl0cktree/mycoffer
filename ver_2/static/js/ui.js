@@ -1480,7 +1480,6 @@ function simultaneousCheckbox(){
             // toggleCheckbox($checkContainer, tf, !tf);
 
             // 연동되는 체크박스 전체 토글 
-            console.log(tf)
             if(tf)
             {
                 $simulContainer.find('[data-check-simul=' + dataValue + ']').addClass('is-expand');
@@ -1493,7 +1492,6 @@ function simultaneousCheckbox(){
                     $simulContainer.find('[data-check-simul=' + dataValue + ']').addClass('is-expand');
                 }
                 else{
-                    console.log(999)
                     $simulContainer.find('[data-check-simul=' + dataValue + ']').removeClass('is-expand');
                 }
             }
@@ -1560,57 +1558,6 @@ function simultaneousCheckbox(){
     $simulContainer.on('click', '.header input:checkbox', findAgreementTermsTotal);
 }
 simultaneousCheckbox();
-
-// let checkTogether = function(){
-//     var $checkTogetherWrap = $('.mode-optional');
-//     var $checkTogether = $checkTogetherWrap.find('[data-check-together]');
-    
-//     var togetherTF;
-//     $checkTogether.on('click', function(e){
-//         var dataValue = $(this).data('check-together');
-//         togetherTF = $(this).find('input').prop('checked'); 
-        
-//         $checkTogether.each(function(){
-//             var temp = $(this).data('check-together');
-            
-//             if(temp == dataValue){
-//                 $(this).find('input').prop('checked', togetherTF);
-                
-//                 if($(this).hasClass('js-checkbox-selector-trigger02')){
-//                     var targetName = $('.js-checkbox-selector-trigger02').data('target');
-//                     var $target = $('.js-checkbox-selector[data-target=' + targetName + ']');
-//                     if(!togetherTF){
-//                         $target.find('input:checkbox').prop({'checked':false, 'disabled':true});
-//                     }else{
-//                         $target.find('input:checkbox').prop({'checked':true, 'disabled':false});
-//                     }
-//                 }
-//             }
-//         });
-//     });
-    
-//     $('.js-checkbox-selector').on('click', 'dt input:checkbox', function(){
-//         var tf = $(this).prop('checked');
-//         if(!tf){
-//             $checkTogether.find('input').prop('checked', false);
-//             $('.js-checkbox-selector').find('input:checkbox').prop({'checked':false, 'disabled':true});
-//         }
-//     });
-
-//     $('.js-checkbox-selector').on('click', 'dd input:checkbox', function(){
-//         var tf = $(this).prop('checked');
-//         if(!tf){
-//             if($('.js-checkbox-selector dd input:checkbox').not(':checked').length == $('.js-checkbox-selector dd input:checkbox').length){
-//                 $checkTogether.find('input').prop('checked', false);
-//                 $('.js-checkbox-selector').find('input:checkbox').prop({'checked':false, 'disabled':true});
-//             }
-//         }else{
-//             $checkTogether.find('input').prop('checked', true)
-//         }
-//     });
-    
-// }
-// checkTogether();
 
 
 if($('.agreement-to-terms').length) gfn_agreementToTerms();
@@ -2230,4 +2177,4 @@ $(window).on('load',function(){
     if('[data-scroll-fn]'.length) jsScrollAction.scroll(st, $('[data-scroll-fn]'));
 });
 
-console.log("ui.js");
+//console.log("ui.js");
