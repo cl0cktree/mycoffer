@@ -531,6 +531,9 @@ $('.form-text')
     var $this = $(this).parent('.form-text');
     gfn_formText.fill($this);
     gfn_formText.calculate($this);
+})
+.on('focus','input',function(){
+    formFocusScroll($(this));
 });
 
 //form select
@@ -699,9 +702,10 @@ if($('.bottom-sheet').length){
     var startY = 0;
     var endY = 0;
     $('.bottom-sheet').each(function(i){
-        if($(this).find('.tab').length) {
-            $(this).addClass('bs-tab');     //TAB이 있는 바텀시트 구분 (스크롤시 확장이 되야함)
-            $(this).find('.bottom-sheet_contents').attr('id','bsTabScroll' + i);            
+        var $bottomSheet = $(this);
+        if($bottomSheet.find('.tab').length) {
+            $bottomSheet.addClass('bs-tab');     //TAB이 있는 바텀시트 구분 (스크롤시 확장이 되야함)
+            $bottomSheet.find('.bottom-sheet_contents').attr('id','bsTabScroll' + i);            
             var $bsCont = document.getElementById('bsTabScroll' + i);
 
             $bsCont.addEventListener("touchstart", touchStart, false);
@@ -714,6 +718,8 @@ if($('.bottom-sheet').length){
                 }
             }, false);
         }
+
+        if(!$bottomSheet.find('.bottom-sheet_buttons').length) $bottomSheet.addClass('no-btn');
     });
 
     //Tab 이 있는 바텀시트는 스크롤시 확장됨
@@ -855,8 +861,10 @@ if($('.form-select').length){
 
             //Multi form
             $thisFormSelect.siblings('.kb-form_inner').removeClass('is-focused');
-
         }
+    })
+    .on('focus','button, select',function(){
+        formFocusScroll($(this));
     });
 }
 $('.kb-form')
@@ -940,6 +948,21 @@ $('input[type=checkbox], input[type=radio]').on('change',function(){
     if(tf && name) gfn_layered.open(name);
 });
 
+function formFocusScroll($this){
+    var $form;
+    if(!$this.parents('.kb-form_multi').length){
+        $form = $this.parents('.kb-form');
+    }else{
+        $form = $this.parents('.kb-form_multi');
+    }
+    if($form.data('status') != undefined && $form.data('status').length){                
+        var $validation = $form.find('.validation');
+        if($validation.length){
+            var top = $form.offset().top;
+            $('html,body').scrollTop(top - 60); //60 header Height + a
+        }
+    }
+}
 
 
 //TAB
@@ -1245,7 +1268,7 @@ if($('.toggle-notice').length){
 $('.js-checkbox-selector').not("dl").each(function(){
     var $checkboxSelector = $(this);
     var $checkbox = $checkboxSelector.find('input:checkbox');
-    var $exception = $checkboxSelector.find('.exception');
+    var $exception = $checkboxSelector.find('.js-exception');
     var checkboxLen = $checkbox.length;
     var exceptionLen = $exception.length;
 
@@ -1261,15 +1284,15 @@ $('.js-checkbox-selector').not("dl").each(function(){
                 var tf = $(this).prop('checked');
                 if($this.data('index') == 0){   //상단 전체 선택 checkbox
                     if(tf){
-                        $checkbox.not('.exception').prop('checked',true);
+                        $checkbox.not('.js-exception').prop('checked',true);
                     }else{
-                        $checkbox.not('.exception').prop('checked',false);
+                        $checkbox.not('.js-exception').prop('checked',false);
                     }
                 }else{  //하단 개별 선택
                     if(tf){
-                        if($checkboxSelector.find('input:checkbox:checked').length == (checkboxLen - exceptionLen - 1)) $allSelector.not('.exception').prop('checked',true);
+                        if($checkboxSelector.find('input:checkbox:checked').length == (checkboxLen - exceptionLen - 1)) $allSelector.not('.js-exception').prop('checked',true);
                     }else{
-                        $allSelector.not('.exception').prop('checked',false);
+                        $allSelector.not('.js-exception').prop('checked',false);
                     }
                 }
             }
@@ -1277,31 +1300,31 @@ $('.js-checkbox-selector').not("dl").each(function(){
     });
 });
 //체크박스 하위 선택 (DL 구성)
-$('dl.js-checkbox-selector').on('change','input:checkbox',function(){
+$('dl.js-checkbox-selector').on('change','input:checkbox:not(.js-exception)',function(){
     var tf = $(this).prop('checked');
 
     if($(this).closest('dt').length){   //상단 전체 선택
         if(tf){
-            $(this).closest('dt').next('dd').find('input:checkbox').prop('checked',true);
+            $(this).closest('dt').next('dd').find('input:checkbox').not('.js-exception').prop('checked',true);
         }else{
-            $(this).closest('dt').next('dd').find('input:checkbox').prop('checked',false);
+            $(this).closest('dt').next('dd').find('input:checkbox').not('.js-exception').prop('checked',false);
         }
     }else{  //하단 개별 선택
         if(tf){
-            if($(this).closest('dd').find('input:checkbox').not(':checked').length == 0){
-                $(this).closest('dd').prev('dt').find('input:checkbox').prop('checked',true);
+            if($(this).closest('dd').find('input:checkbox').not('.js-exception').not(':checked').length == 0){
+                $(this).closest('dd').prev('dt').find('input:checkbox').not('.js-exception').prop('checked',true);
             }
         }else{
-            $(this).closest('dd').prev('dt').find('input:checkbox').prop('checked',false);
+            $(this).closest('dd').prev('dt').find('input:checkbox').not('.js-exception').prop('checked',false);
         }
     }
     // btn-switch 분리되어있을 때
     if($(this).closest('.list-controls').length){
         var targetName = $(this).closest('.js-checkbox-selector').data('target');
         if(tf){
-            $(this).closest('section').find('dl[data-target="' + targetName + '"]').find('input:checkbox').prop('checked',true);
+            $(this).closest('section').find('dl[data-target="' + targetName + '"]').find('input:checkbox').not('.js-exception').prop('checked',true);
         }else{
-            $(this).closest('section').find('dl[data-target="' + targetName + '"]').find('input:checkbox').prop('checked',false);
+            $(this).closest('section').find('dl[data-target="' + targetName + '"]').find('input:checkbox').not('.js-exception').prop('checked',false);
         }
     }
 });
@@ -1311,9 +1334,9 @@ $('.js-checkbox-selector-trigger').on('change','input:checkbox',function(){
     var tf = $(this).prop('checked');
     var $target = $('.js-checkbox-selector[data-target=' + targetName + ']');
     if(!tf){
-        $target.find('input:checkbox').prop({'checked':false, 'disabled': true});
+        $target.find('input:checkbox').not('.js-exception').prop({'checked':false, 'disabled': true});
     }else{
-        $target.find('input:checkbox').prop({'checked':false, 'disabled': false});
+        $target.find('input:checkbox').not('.js-exception').prop({'checked':false, 'disabled': false});
     }
     // console.log(targetName);
 });
@@ -1340,8 +1363,8 @@ var gfn_agreementToTerms = function(){
     $('.agreement-to-terms').each(function(){
         var $this = $(this);
         var $allCheck = $this.find('.header input[type=checkbox]');
-        var $checkboxs = $this.find('.checkbox-group input[type=checkbox]');
-        var $childCheckboxs = $this.find('.agreement-service-choice input[type=checkbox]'); //하위 서비스
+        var $checkboxs = $this.find('.checkbox-group input[type=checkbox]:not(.js-exception)');
+        var $childCheckboxs = $this.find('.agreement-service-choice input[type=checkbox]:not(.js-exception)'); //하위 서비스
         var isExpansionMode = $this.hasClass("expansion-mode");
 
         $allCheck.on('click', allCheckChange);
@@ -1409,7 +1432,8 @@ var gfn_agreementToTerms = function(){
     });
 }
 
-// 동일 data 값 체크박스 동시 변경, 전체동의 타입2, CO_05_02_01, MN_03_03_01_01
+// 동일 data 값을 가진 체크박스 동시 변경, 전체동의 타입2
+// CO_05_02_01, MN_03_03_01_01
 function simultaneousCheckbox(){
     var $simulContainer = $('.form-simul-mode');
     var $simulCheckboxes = $simulContainer.find('.form-simul');    
@@ -1420,30 +1444,38 @@ function simultaneousCheckbox(){
     var $checkAll = $checkContainer.find('.checkbox-selector-all');
     var $checkboxWrap = $checkContainer.find('.checkbox-selector-items');
     var $checkboxLength;
-    var $checkboxUncheckedLength;
+    var $uncheckedCheckboxLength;
 
     // util
-    function toggleCheckbox(item, tf, dis){
-        item.find('input:checkbox').prop('checked', tf);
+    function findItemAndToggle(item, tf, dis){
+        item.find('input:checkbox').not('.js-exception').prop('checked', tf);
 
         if(dis !== undefined && !dis){
-            item.find('input:checkbox').prop({'checked':tf, 'disabled': false});
+            item.find('input:checkbox').not('.js-exception').prop({'checked':tf, 'disabled': false});
         }else if(dis !== undefined && dis){
-            item.find('input:checkbox').prop({'checked':tf, 'disabled': true});
+            item.find('input:checkbox').not('.js-exception').prop({'checked':tf, 'disabled': true});
         }
+    }
+
+    function findItemAddClass(container, item, className){
+        container.find(item).addClass(className);
+    }
+    
+    function findItemRemoveClass(container, item, className){
+        container.find(item).removeClass(className);
     }
 
     // 동일 데이터 값을 가진 체크박스 찾기
     function checkDataValue(e){
         $this = $(e.currentTarget);
         var thisDataValue = $this.data('check-simul');
-        var simulTF = $this.find('input:checkbox').prop('checked');
+        var simulTF = $this.find('input:checkbox').not('.js-exception').prop('checked');
 
         $simulCheckboxes.each(function(idx, item){
             var temp = $(item).eq(0).data('check-simul');
             
             if(thisDataValue == temp){
-                toggleCheckbox($(item), simulTF);
+                findItemAndToggle($(item), simulTF);
             }
         });
         findCheckboxAllWidthData(thisDataValue, simulTF);
@@ -1452,17 +1484,18 @@ function simultaneousCheckbox(){
     // 전체동의 타입2의 데이터값과 동일한 데이터 값을 가진 체크박스 찾아서 연동하기
     function findCheckboxAllWidthData(dataValue, tf){
         var selector02TF = $simulContainer.find('[data-check-simul=' + dataValue + ']').hasClass('js-checkbox-selector02');
+        // .is-expand 토글 하지 않고 disabled 할 경우
         if(selector02TF){
-            toggleCheckbox($checkAll, tf, !tf);
-            toggleCheckbox($checkboxWrap, tf, !tf);
+            findItemAndToggle($checkAll, tf, !tf);
+            findItemAndToggle($checkboxWrap, tf, !tf);
         }
         
         // 연동되는 체크박스 전체 토글 
         if(tf){
-            $simulContainer.find('[data-check-simul=' + dataValue + ']').addClass('is-expand');
+            findItemAddClass($simulContainer, $checkContainer, 'is-expand');
         } 
         else{
-            $simulContainer.find('[data-check-simul=' + dataValue + ']').removeClass('is-expand');
+            findItemRemoveClass($simulContainer, $checkContainer, 'is-expand');
         }
         
     }
@@ -1471,61 +1504,62 @@ function simultaneousCheckbox(){
     function checkAllType2(e){
         $this = $(e.currentTarget);
         var tf = $checkAll.find('input:checkbox').prop('checked');
-        toggleCheckbox($checkContainer, tf);
+        findItemAndToggle($checkContainer, tf);
+        findItemAndToggle($simulContainer.find('.header'), tf); // 추가 2021-11-04
+
 
         var dataValue = $this.closest('.js-checkbox-selector02').data('check-simul');
         if(dataValue !== ''){
             var $thisSimulCheckboses = $simulContainer.find('[data-check-simul=' + dataValue + ']');
-            toggleCheckbox($thisSimulCheckboses, tf);
-            // toggleCheckbox($checkContainer, tf, !tf);
+            findItemAndToggle($thisSimulCheckboses, tf);
+            // findItemAndToggle($checkContainer, tf, !tf);
 
             // 연동되는 체크박스 전체 토글 
-            if(tf)
-            {
-                $simulContainer.find('[data-check-simul=' + dataValue + ']').addClass('is-expand');
+            if(tf){
+                findItemAddClass($simulContainer, $checkContainer, 'is-expand');
             }
             else if(!tf && t > 0){
-                $simulContainer.find('[data-check-simul=' + dataValue + ']').removeClass('is-expand');
+                findItemRemoveClass($simulContainer, $checkContainer, 'is-expand');
             } 
             else{
-                if($checkboxUncheckedLength > 0){
-                    $simulContainer.find('[data-check-simul=' + dataValue + ']').addClass('is-expand');
+                if($uncheckedCheckboxLength > 0){
+                    findItemAddClass($simulContainer, $checkContainer, 'is-expand');
                 }
                 else{
-                    $simulContainer.find('[data-check-simul=' + dataValue + ']').removeClass('is-expand');
+                    findItemRemoveClass($simulContainer, $checkContainer, 'is-expand');
                 }
             }
         }
     }
     
-    // 전체동의 타입2 개별선택 
+    // 전체동의 타입2 개별선택 .js-checkbox-selector02 
     function checkItemsType2(e){
         ++t;
         var $this = $(e.currentTarget);
-        var $checkboxes = $checkboxWrap.find('input:checkbox');
+        var $checkboxes = $checkboxWrap.find('input:checkbox').not('.js-exception');
         $checkboxLength = $checkboxes.length;
-        $checkboxUncheckedLength = $checkboxes.not(':checked').length;
+        $uncheckedCheckboxLength = $checkboxes.not(':checked').length;
 
         // 전부 체크된것 : 체크 안된 갯수 == 0
-        if($checkboxUncheckedLength == 0){
-            toggleCheckbox($checkAll, true);
+        if($uncheckedCheckboxLength == 0){
+            findItemAndToggle($checkAll, true);
         }
         // 전부 안됐을 때 : 체크 안된 갯수 == 체크리스트 갯수
-        else if($checkboxUncheckedLength == $checkboxLength){
-            toggleCheckbox($checkAll, false);
+        else if($uncheckedCheckboxLength == $checkboxLength){
+            findItemAndToggle($checkAll, false);
         }
         // 체크 안된 갯수 > 0
         else{
-            toggleCheckbox($checkAll, false);
+            findItemAndToggle($checkAll, false);
         }
 
         // 동일 데이터값을 가진 체크박스 연동 
         var dataValue = $this.closest('.js-checkbox-selector02').data('check-simul');
-        if(dataValue !== '' && $checkboxUncheckedLength == $checkboxLength){
+        if(dataValue !== '' && $uncheckedCheckboxLength == $checkboxLength){
             var $thisSimulCheckboses = $simulContainer.find('[data-check-simul=' + dataValue + ']');
-            toggleCheckbox($thisSimulCheckboses, false);
-            toggleCheckbox($checkAll, false, true);
-            toggleCheckbox($checkboxWrap, false, true);
+            findItemAndToggle($thisSimulCheckboses, false);
+            findItemAndToggle($checkAll, false, true);
+            findItemAndToggle($checkboxWrap, false, true);
             $simulContainer.find('[data-check-simul=' + dataValue + ']').removeClass('is-expand');
         }
     }
@@ -1535,21 +1569,21 @@ function simultaneousCheckbox(){
         var $this = $(e.currentTarget);
         var tf = $this.prop('checked');
         if(tf){
-            $simulContainer.find('.js-checkbox-selector02').addClass('is-expand')
+            findItemAddClass($simulContainer, $checkContainer, 'is-expand');
         }else{
-            $simulContainer.find('.js-checkbox-selector02').removeClass('is-expand')
+            findItemRemoveClass($simulContainer, $checkContainer, 'is-expand');
         }
     }
 
     // .agreement-to-terms.form-simul-mode 인 경우 헤더의 전체동의 이벤터 하단 체크박스와 연동하기
     // TBD
-    function init(){
-        var tf = $simulContainer.is('.agreement-to-terms');
-        if(tf){
-            $simulContainer.find('.header input:checkbox');
-        }
-    }
-    init();
+    // function init(){
+    //     var tf = $simulContainer.is('.agreement-to-terms');
+    //     if(tf){
+    //         $simulContainer.find('.header input:checkbox');
+    //     }
+    // }
+    // init();
     
     // event handler
     $simulCheckboxes.on('click', checkDataValue);

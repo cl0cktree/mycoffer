@@ -882,20 +882,20 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .recommend-to-friend .rtf-detail {margin-top:48px;padding-bottom:4.8rem;margin-bottom:3rem;border-bottom:1px solid $kb-ui09;}
 .recommend-to-friend .rtf-detail > li + li{margin-top:4.5rem;} // 선택영역 2021-11-04
 .recommend-to-friend .rtf-detail .tit{margin-bottom:1.6rem;font-size:1.8rem;font-weight:bold;}
-.recommend-to-friend .rtf-detail .tit + div{@include text;color:$kb-ui04}
+.recommend-to-friend .rtf-detail .tit + div{@include text;color:$kb-ui02} // 컬러변경 2021-11-04
 .recommend-to-friend .no-data{margin-top:10rem;}
-// visual 2021-11-04
+// event-visual 2021-11-04
 .recommend-to-friend .event-visual{position:relative;}
 .recommend-to-friend .event-visual .text{position:absolute;top:4rem;right:0;left:50%;width:100%;margin-left:-50%;text-align:center;font-size:2rem;}
 .recommend-to-friend .event-visual .text strong{margin-top:1rem;font-weight:bold;font-size:2rem;}
 .recommend-to-friend .event-visual .text strong.big{display:block;font-size:2.8rem;}
 .recommend-to-friend .event-visual .text span{display:block;margin-top:2rem;font-size:1.6rem;}
 .recommend-to-friend .event-visual .event-img{text-align:center;}
-.recommend-to-friend .event-visual .event-img img{max-width:41.4rem;}
+.recommend-to-friend .event-visual .event-img img{width:100%;max-width:41.4rem;}
 .recommend-to-friend ol[data-style=number] li~li{margin-top:0.8rem;}
 // ordered list 2021-11-04
 ol[data-style=number]{counter-reset:list-number;}
-ol[data-style=number] li{counter-increment:list-number;}
+ol[data-style=number] li{display:flex;counter-increment:list-number;}
 ol[data-style=number] li~li{margin-top:0.8rem;}
 ol[data-style=number] li::before{content:counter(list-number)'.';margin-right:0.8rem;font-size:1.8rem;font-family:roboto;font-weight:bold;}
 

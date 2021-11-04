@@ -35,6 +35,7 @@
 .bottom-sheet_buttons{display:flex;flex:0 0 calc(60px + constant(safe-area-inset-bottom) / 2);flex:0 0 calc(60px + env(safe-area-inset-bottom) / 2);}
 .bottom-sheet_buttons .btn-solid{flex:1;}
 .bottom-sheet_buttons .btn-solid + .btn-solid{flex: 0 0 60%}
+.no-btn .bottom-sheet_contents{padding-bottom:calc(constant(safe-area-inset-bottom) / 2 + 32px);padding-bottom:calc(env(safe-area-inset-bottom) / 2 + 32px);}
 // .ios.homebar .bottom-sheet_buttons .btn-solid{padding-top:1rem;}
 // .ios.homebar .bottom-sheet_buttons .btn-solid > span{line-height:6rem;padding-bottom:1.2rem;}
 //For Admin IE
@@ -61,7 +62,7 @@
     100%{transform:translateY(100%);}
 }
 
-.modal{display:none;position:fixed;left:50%;top:50%;width:calc(100vw - 48px);max-width:340px;max-height:calc(100% - 100px);padding-top:26px;background-color:$kb-ui11;border-radius:2px;}
+.modal{display:none;position:fixed;left:50%;top:50%;width:calc(100vw - 48px);max-width:340px;max-height:calc(var(--vh, 1vh)*100 - 100px);padding-top:26px;background-color:$kb-ui11;border-radius:2px;}
 .modal.is-active{display:flex;flex-flow:column;animation: modalIn .2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;}
 .modal.modal-out{animation: modalOut .2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;}
 .modal_header{min-height:28px;padding:0 24px;}
