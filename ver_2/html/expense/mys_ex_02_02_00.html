@@ -45,6 +45,15 @@
                 <!-- 이용정보//-->
                 <section class="kb-sec">
                     <h4 class="h4">이용정보</h4>
+                    <!-- 수정:2021-11-05 -->
+                    <!-- 이용정보 통화 추가 //-->
+                    <div class="kb-form" data-status="">
+                        <label for="regularExpenseUserRegisterCurrency" class="required">통화</label>
+                        <div class="kb-form_inner form-text" data-role="popup">
+                            <input type="text" id="regularExpenseUserRegisterCurrency" value="KRW (한국)" role="button" placeholder="" data-call-layered="mys_as_04_02_00_p1" readonly="">
+                        </div>
+                    </div>
+                    <!--// 이용정보 통화 추가 -->
                     <div class="kb-form" data-status="">
                         <label for="regularExpenseUserRegisterAmount" class="required">이용요금</label>
                         <div class="kb-form_inner form-text">
@@ -116,6 +125,7 @@
         <!-- Layer (modal, bottom sheet) // -->
         <div class="layered">
             @@include('@@webRoot/html/expense/layered/mys_ex_02_02_01_p.html')
+            @@include('@@webRoot/html/asset/layered/mys_as_04_02_00_p1.html')
             <!-- 공통 -->
             @@include('@@webRoot/html/_layered/bs-calendar.html') <!-- 수정:2021-10-08 --><!-- 달력 팝업 추가 -->
         </div>

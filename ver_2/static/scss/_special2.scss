@@ -6,7 +6,6 @@
 .finance-plus .top-info .img-area img{width:9.5rem;} // 2021-10-20 디자인 변경에 따른 수정
 .finance-plus .card-content{margin-top:4.2rem;}
 .finance-plus .card-content .content-box + .content-box{margin-top:1.2rem;}
-.finance-plus .card-content .content-box + .content-box.banner-list{margin-top:3.2rem;}
 .finance-plus .card-content .tit{font-size:$text01;margin-bottom:1.6rem;}
 .finance-plus .card-content .tit button{display:flex;width:100%;justify-content:space-between;}
 .finance-plus .card-content .card-list{padding-left:6rem;position:relative;}
@@ -31,11 +30,12 @@
 .finance-plus .card-content .status-msg .tit{@include text($size:$text02,$weight:normal);display:block;margin-bottom:0} // margin-bottom 추가 
 .finance-plus .card-content .status-msg .tit + .desc{margin-top:.3rem;} // margin-top 수정 .8rem -> .3rem
 .finance-plus .card-content .status-msg .desc{@include text($size:$text03,$weight:normal);color:$kb-ui04;display:block;}
-// 수정:2021-11-04 배너 추가 //
-.finance-plus .card-content .banner-list{background:$kb-ui10;border:none;padding:0;border-radius:0;}
-.finance-plus .card-content .banner-list button,
-.finance-plus .card-content .banner-list a{text-align:left;padding:2.4rem;width:100%;position:relative;display:block;}
-.finance-plus .card-content .banner-list .tit{font-size:$text01;margin-bottom:1.2rem;}
-.finance-plus .card-content .banner-list .desc{font-size:$text03;line-height:1.4;}
-.finance-plus .card-content .banner-list .img{position:absolute;right:1rem;top:calc(50% + 1rem);transform:translateY(-50%);width:11.4rem;}
-// 수정:2021-11-04 배너 추가 //
+// 수정:2021-11-05 배너 추가,분리 //
+.finance-plus .card-content + .banner-content{margin-top:3.2rem;}
+.finance-plus .banner-content .banner-list{background:$kb-ui10;border:none;padding:0;border-radius:0;}
+.finance-plus .banner-content .banner-list button,
+.finance-plus .banner-content .banner-list a{text-align:left;padding:2.4rem;width:100%;position:relative;display:block;}
+.finance-plus .banner-content .banner-list .tit{font-size:$text01;margin-bottom:1.2rem;}
+.finance-plus .banner-content .banner-list .desc{font-size:$text03;line-height:1.4;}
+.finance-plus .banner-content .banner-list .img{position:absolute;right:1rem;top:calc(50% + 1rem);transform:translateY(-50%);width:11.4rem;}
+// 수정:2021-11-05 배너 추가,분리 //

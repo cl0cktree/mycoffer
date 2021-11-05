@@ -93,7 +93,7 @@ function gfn_fnChkByte($target, maxByte){
     }
 }
 
-function gfn_koreanUnit(number, unit) {				
+function gfn_koreanUnit(number, unit) {
     var unit = unit;
     var regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi;
     var inputNumber = String(number).replace(/(^\s*)|(\s*$)/gi, '').replace(regExp, '');
@@ -115,25 +115,25 @@ function gfn_koreanUnit(number, unit) {
     }
     for (var i = 0; i < resultArray.length; i++) {
         if (!resultArray[i]) continue;
-        
-        if(unit == '만원') {        
-            resultString = String(gfn_comma3Digit(resultArray[i])) + unitWords[i + 1] + resultString;            
+
+        if(unit == '만원') {
+            resultString = String(gfn_comma3Digit(resultArray[i])) + unitWords[i + 1] + resultString;
         }else if(unit == '억'){
-            resultString = String(gfn_comma3Digit(resultArray[i])) + unitWords[i + 2] + resultString;            
+            resultString = String(gfn_comma3Digit(resultArray[i])) + unitWords[i + 2] + resultString;
         }else{
             resultString = String(gfn_comma3Digit(resultArray[i])) + unitWords[i] + resultString;
         }
-        
+
     }
-    
+
     return resultString;
 }
 
-function gfn_NumberToKorean(number, unit){ 
+function gfn_NumberToKorean(number, unit){
     var regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi;
     var number = String(number).replace(/(^\s*)|(\s*$)/gi, '').replace(regExp, '');
-    var numKor = ["", "일", "이", "삼", "사","오","육","칠","팔","구","십"]; // 숫자 문자 
-    var unitKor = ["", "십", "백", "천", "", "십", "백", "천", "", "십", "백", "천", "", "십", "백", "천","", "십", "백", "천", "", "십", "백", "천", "", "십", "백", "천", "", "십", "백", "천"]; // 만위 문자열 
+    var numKor = ["", "일", "이", "삼", "사","오","육","칠","팔","구","십"]; // 숫자 문자
+    var unitKor = ["", "십", "백", "천", "", "십", "백", "천", "", "십", "백", "천", "", "십", "백", "천","", "십", "백", "천", "", "십", "백", "천", "", "십", "백", "천", "", "십", "백", "천"]; // 만위 문자열
     var unitSlice = ["만","억","조","경","해","자"]
 
     if(unit == '만원'){
@@ -143,22 +143,22 @@ function gfn_NumberToKorean(number, unit){
         unitKor.splice(0,8);
         unitSlice.splice(0,2);
     }
-    var result = ""; 
-    if(number && !isNaN(number)){ // CASE: 금액이 공란/NULL/문자가 포함된 경우가 아닌 경우에만 처리         
-        for(i=0; i < number.length; i++) { 
-            var str = ""; 
-            var num = numKor[number.charAt(number.length - (i + 1))]; 
-            if(num != "") str += num + unitKor[i]; // 숫자가 0인 경우 텍스트를 표현하지 않음 
-            switch(i){ 
+    var result = "";
+    if(number && !isNaN(number)){ // CASE: 금액이 공란/NULL/문자가 포함된 경우가 아닌 경우에만 처리
+        for(i=0; i < number.length; i++) {
+            var str = "";
+            var num = numKor[number.charAt(number.length - (i + 1))];
+            if(num != "") str += num + unitKor[i]; // 숫자가 0인 경우 텍스트를 표현하지 않음
+            switch(i){
                 case 4: str += String(unitSlice[0]); break;
                 case 8: str += String(unitSlice[1]); break;
                 case 12: str += String(unitSlice[2]); break;
-            } 
-            result = str + result; 
-        } 
-        result = result + String(unit); 
-    } 
-    return result ; 
+            }
+            result = str + result;
+        }
+        result = result + String(unit);
+    }
+    return result ;
 }
 
 
@@ -184,7 +184,7 @@ var focusA11Y = {
             $selector.find(':focusable').eq(0).focus();
         }else{
             $selector.focus();
-        }            
+        }
     },
     blur: function($selector){
         $selector = $selector != undefined ? $selector : $(this);
@@ -250,13 +250,13 @@ var $layered = $('.layered');
 
 var gfn_dim = {
     show : function($target, level, duration){
-        duration = duration != undefined ? duration : 20;
+        duration = duration != undefined ? duration : 200;
         if(!$target.prev('.dim').length) $('<div class="dim"/>').insertBefore($target);
         $target.prev('.dim').fadeIn(duration).css('z-index',(level - 1));
     },
     hide : function($target, duration){
         var $dim = $(".dim");
-        duration = duration != undefined ? duration : 20;
+        duration = duration != undefined ? duration : 200;
         if($target != undefined){
             $target = !$target.is('.dim') ? $dim : $target;
         }else{
@@ -271,7 +271,7 @@ var gfn_dim = {
 $('body').on('click','.dim',function(){
     if($(this).next('div').is('.bottom-sheet') || $(this).next('div').is('.floating-banner')){
         // gfn_dim.hide($(this));
-        gfn_layered.close($(this).next('div').attr('data-layered-name'));        
+        gfn_layered.close($(this).next('div').attr('data-layered-name'));
     }
 });
 
@@ -297,26 +297,47 @@ $('body').on('click','.dim',function(){
 
 var layeredLevel = 301;
 var gfn_layered = {
-    open: function(name, dim, duration){
-        dim = dim == undefined ? true : dim;
-        duration = duration == undefined ? 200 : duration;
+    open: function(name, type){
+        // dim = dim == undefined ? true : dim;
+        // duration = duration == undefined ? 200 : duration;
         if(name != '' && name != undefined){
 
             var $selectedLayer = $('div[data-layered-name=' + name + ']');
 
             if ($selectedLayer.length === 0) return;
 
-            if(dim){
-                //스크롤 원위치
-                $selectedLayer.find('.popup_contents, .botttom-sheet_contents, .modal_contents').scrollTop(0);
-               
-                //DIM SHOW
-                gfn_dim.show($selectedLayer, layeredLevel, duration);
+            // if(dim){
+            //     //스크롤 원위치
+            //     $selectedLayer.find('.popup_contents, .botttom-sheet_contents, .modal_contents').scrollTop(0);
+
+            //     //DIM SHOW
+            //     gfn_dim.show($selectedLayer, layeredLevel, duration);
+            // }
+
+            var zLv;
+            if(type == 'operation'){
+                zLv = layeredLevel + 600;
+            }else if(type == 'admin'){
+                zLv = layeredLevel + 400;
+            }else if(type == 'event'){
+                zLv = layeredLevel + 200;
+            }else{
+                zLv = layeredLevel;
             }
-            $selectedLayer.addClass('is-active').css('z-index', layeredLevel);
+
+            //스크롤 원위치
+            $selectedLayer.find('.popup_contents, .botttom-sheet_contents, .modal_contents').scrollTop(0);
+
+            //DIM SHOW
+            gfn_dim.show($selectedLayer, zLv);
+
+            //level
+            $selectedLayer.addClass('is-active').css('z-index', zLv);
+
+            //a11y
             focusTrap($selectedLayer);  //focus loop in layered
             // $selectedLayer.find(':focusable').eq(0).focus();
-            
+
             //Transform 50% : Blur Issue 발생시
             // if($selectedLayer.hasClass('modal')){
             //     $selectedLayer.one('animationend',function(){
@@ -338,7 +359,7 @@ var gfn_layered = {
         duration = duration == undefined ? 200 : duration;
         if(name != '' && name != undefined){
             var $selectedLayer = $('div[data-layered-name=' + name + ']');
-            gfn_body.hold(false);            
+            gfn_body.hold(false);
             //$selectedLayer.removeClass('is-active is-expanded').removeAttr('style');
             if($selectedLayer.hasClass('popup') || $selectedLayer.hasClass('floating-banner')){
                 $selectedLayer.removeClass('is-active').removeAttr('style');
@@ -349,7 +370,7 @@ var gfn_layered = {
                 $selectedLayer.one('animationend',function(){
                     if($selectedLayer.hasClass('bs-out')) $selectedLayer.removeClass('is-active is-expanded bs-out').removeAttr('style');
                     gfn_dim.hide($selectedLayer.prev('.dim'), duration);
-                });                
+                });
             }else if($selectedLayer.hasClass('modal')){
                 $selectedLayer.addClass('modal-out');
                 $selectedLayer.one('animationend',function(){
@@ -363,7 +384,7 @@ var gfn_layered = {
         }
 
         focusA11Y.forget();
-        
+
     }
 };
 //markup 상 is-active 가 있으면 호출
@@ -379,10 +400,10 @@ $('body')
     var duration = $(this).data('call-layered') != undefined ? 0 : undefined;
     gfn_layered.close(name, duration);
 })
-.on('click','[data-call-layered]',function(){    
+.on('click','[data-call-layered]',function(){
     var name = $(this).data('call-layered');
     gfn_layered.open(name);
-    //if($(this).closest('.kb-form').length) $(this).closest('.kb-form').addClass('is-active');    
+    //if($(this).closest('.kb-form').length) $(this).closest('.kb-form').addClass('is-active');
 });
 
 //modal 호출(data-call-modal 이름과 modal의 ID가 같아야함)
@@ -414,9 +435,9 @@ var gfn_formText = {
         var $thisForm = $target.parent('.kb-form');
         var $input = $target.find('input');
         var unit = $target.find('.unit').text();
-        
-        
-        if($thisForm.find('.hangul').length) {            
+
+
+        if($thisForm.find('.hangul').length) {
             $thisForm.find('.hangul').html(gfn_koreanUnit($input.val(), unit));         //단위 한글 변환
         }else if($thisForm.find('.all-hangul').length) {
             $thisForm.find('.all-hangul').text(gfn_NumberToKorean($input.val(), unit));   //전체 한글 변환
@@ -426,7 +447,7 @@ var gfn_formText = {
         if($input.data('action') == 'autoSeperator'){
             $input.val(gfn_comma3Digit($input.val()));
         }
-        
+
         //unit 위치 (정렬 변경으로 불필요)
         // if($target.find('.measurement').length){
         //     $target.find('.measurement').text($input.val());
@@ -469,9 +490,9 @@ var gfn_formText = {
     },
     //Warning
     warning: function(id, status, msg) { // status  => '', 'success', 'error'
-        var $select = $('#'+id);        
+        var $select = $('#'+id);
         var $thisForm = $select.parents('.kb-form');
-        status = status != undefined ? status : '';        
+        status = status != undefined ? status : '';
         $thisForm.attr('data-status', status);
         $thisForm.find('.validation').text(msg);
     }
@@ -595,7 +616,7 @@ var gfn_formSelect = {
                         }
                     }
                 });
-                
+
                 //call bottom sheet
                 gfn_layered.open('bsSelect');
                 gfn_bsSelect.bind();
@@ -627,9 +648,9 @@ var gfn_formSelect = {
     },
     //Warning
     warning: function(id, status, msg) { // status  => '', 'success', 'error'
-        var $select = $('#'+id);        
+        var $select = $('#'+id);
         var $thisForm = $select.parents('.kb-form');
-        status = status != undefined ? status : '';        
+        status = status != undefined ? status : '';
         $thisForm.attr('data-status', status);
         $thisForm.find('.validation').text(msg);
     }
@@ -705,7 +726,7 @@ if($('.bottom-sheet').length){
         var $bottomSheet = $(this);
         if($bottomSheet.find('.tab').length) {
             $bottomSheet.addClass('bs-tab');     //TAB이 있는 바텀시트 구분 (스크롤시 확장이 되야함)
-            $bottomSheet.find('.bottom-sheet_contents').attr('id','bsTabScroll' + i);            
+            $bottomSheet.find('.bottom-sheet_contents').attr('id','bsTabScroll' + i);
             var $bsCont = document.getElementById('bsTabScroll' + i);
 
             $bsCont.addEventListener("touchstart", touchStart, false);
@@ -847,7 +868,7 @@ if($('.form-select').length){
         }else{
             $thisForm.addClass('not-ready')
         }
-        $thisFormSelect.find('.selected-option').text($(this).find('option:selected').text());        
+        $thisFormSelect.find('.selected-option').text($(this).find('option:selected').text());
     })
     .on('click','button',function(e){
         //e.stopPropagation();
@@ -885,16 +906,16 @@ if($('.textarea').length){
         var $textarea = $(this);
         var textarea = $textarea.find('textarea');
         var $byte = $textarea.find('.byte');
-        if($textarea.hasClass('is-disabled')) textarea.prop('disabled',true);        
+        if($textarea.hasClass('is-disabled')) textarea.prop('disabled',true);
         textarea.prop('maxlength',gfn_removeComma3Digit($textarea.find('.total').text()));
 
         //calc byte
         if($byte.length){
-            var max = $textarea.find('.total').text();        
+            var max = $textarea.find('.total').text();
             max = max.replace(/,/g, "");
             gfn_fnChkByte(textarea, max);
         }
-        
+
         //filled
         if(textarea.val() != ''){
             $textarea.addClass('is-filled');
@@ -908,14 +929,14 @@ if($('.textarea').length){
         var $textarea = $(this).parent('.textarea');
         var textarea = $(this);
         var $byte = $textarea.find('.byte');
-        
+
         //calc byte
         if($byte.length){
-            var max = $textarea.find('.total').text();        
+            var max = $textarea.find('.total').text();
             max = max.replace(/,/g, "");
             gfn_fnChkByte(textarea, max);
         }
-        
+
         //filled
         if(textarea.val() != ''){
             $textarea.addClass('is-filled');
@@ -949,15 +970,10 @@ $('input[type=checkbox], input[type=radio]').on('change',function(){
 });
 
 function formFocusScroll($this){
-    var $form;
-    if(!$this.parents('.kb-form_multi').length){
-        $form = $this.parents('.kb-form');
-    }else{
-        $form = $this.parents('.kb-form_multi');
-    }
-    if($form.data('status') != undefined && $form.data('status').length){                
+    var $form = $this.parents('.kb-form');
+    if($form.data('status') != undefined && $form.data('status').length){
         var $validation = $form.find('.validation');
-        if($validation.length){
+        if($validation.length && $validation.is(':visible')){
             var top = $form.offset().top;
             $('html,body').scrollTop(top - 60); //60 header Height + a
         }
@@ -1001,8 +1017,8 @@ $('.tab.swiper-container').each(function(idx) {
     var $tabContents = $tab.nextUntil('.app-container','.tab_contents').find('> div');
     var isContentsTab = $tab.nextUntil('.app-container','.tab_contents');
     var isContentsSwiper = $tab.parent().hasClass('tab-swiper-wrap');
-    
-    
+
+
 
     //WAI-ARIA
     $tab.attr('role','tablist');
@@ -1025,7 +1041,7 @@ $('.tab.swiper-container').each(function(idx) {
                         $swiper.find('.swiper-slide').each(function(){
                             width += $(this).width();
                         });
-                        if(width <= $(window).outerWidth() - 24) swiper.allowTouchMove = false;                        
+                        if(width <= $(window).outerWidth() - 24) swiper.allowTouchMove = false;
                     }
                 },
                 click : function(swiper, event){
@@ -1099,7 +1115,7 @@ if($('.js-slider').length){
             orientation: "horizontal",
             range: "min",
             animate: true,
-            create: function(event, ui) {                
+            create: function(event, ui) {
                 var val = defaultNum;
                 var $value = $handle.find('.value');
 
@@ -1113,13 +1129,13 @@ if($('.js-slider').length){
             slide: function(event, ui) {
                 var val;
                 var $value = $handle.find('.value');
-                var value_width = Math.floor((1 - ((graph_width - $value.outerWidth()) / graph_width)) * 100);                
-                
+                var value_width = Math.floor((1 - ((graph_width - $value.outerWidth()) / graph_width)) * 100);
+
                 if($value.hasClass('integer')){
                     val = Math.floor((max - min) * ui.value * 0.01);
                 }else{
                     val = gfn_comma3Digit((max - min) * ui.value * 0.01);
-                }                
+                }
                 $handle.find('.value').text( val );
                 if(ui.value >= (100 - max_width - value_width)){
                     $(this).removeClass('left').addClass('right');
@@ -1436,9 +1452,9 @@ var gfn_agreementToTerms = function(){
 // CO_05_02_01, MN_03_03_01_01
 function simultaneousCheckbox(){
     var $simulContainer = $('.form-simul-mode');
-    var $simulCheckboxes = $simulContainer.find('.form-simul');    
-    var t = 0; 
-    
+    var $simulCheckboxes = $simulContainer.find('.form-simul');
+    var t = 0;
+
     // 전체동의 타입2
     var $checkContainer = $('.js-checkbox-selector02');
     var $checkAll = $checkContainer.find('.checkbox-selector-all');
@@ -1460,7 +1476,7 @@ function simultaneousCheckbox(){
     function findItemAddClass(container, item, className){
         container.find(item).addClass(className);
     }
-    
+
     function findItemRemoveClass(container, item, className){
         container.find(item).removeClass(className);
     }
@@ -1473,7 +1489,7 @@ function simultaneousCheckbox(){
 
         $simulCheckboxes.each(function(idx, item){
             var temp = $(item).eq(0).data('check-simul');
-            
+
             if(thisDataValue == temp){
                 findItemAndToggle($(item), simulTF);
             }
@@ -1489,17 +1505,17 @@ function simultaneousCheckbox(){
             findItemAndToggle($checkAll, tf, !tf);
             findItemAndToggle($checkboxWrap, tf, !tf);
         }
-        
-        // 연동되는 체크박스 전체 토글 
+
+        // 연동되는 체크박스 전체 토글
         if(tf){
             findItemAddClass($simulContainer, $checkContainer, 'is-expand');
-        } 
+        }
         else{
             findItemRemoveClass($simulContainer, $checkContainer, 'is-expand');
         }
-        
+
     }
-    
+
     // 전체동의 타입2 : 전체동의 선택시
     function checkAllType2(e){
         $this = $(e.currentTarget);
@@ -1514,13 +1530,13 @@ function simultaneousCheckbox(){
             findItemAndToggle($thisSimulCheckboses, tf);
             // findItemAndToggle($checkContainer, tf, !tf);
 
-            // 연동되는 체크박스 전체 토글 
+            // 연동되는 체크박스 전체 토글
             if(tf){
                 findItemAddClass($simulContainer, $checkContainer, 'is-expand');
             }
             else if(!tf && t > 0){
                 findItemRemoveClass($simulContainer, $checkContainer, 'is-expand');
-            } 
+            }
             else{
                 if($uncheckedCheckboxLength > 0){
                     findItemAddClass($simulContainer, $checkContainer, 'is-expand');
@@ -1531,8 +1547,8 @@ function simultaneousCheckbox(){
             }
         }
     }
-    
-    // 전체동의 타입2 개별선택 .js-checkbox-selector02 
+
+    // 전체동의 타입2 개별선택 .js-checkbox-selector02
     function checkItemsType2(e){
         ++t;
         var $this = $(e.currentTarget);
@@ -1553,7 +1569,7 @@ function simultaneousCheckbox(){
             findItemAndToggle($checkAll, false);
         }
 
-        // 동일 데이터값을 가진 체크박스 연동 
+        // 동일 데이터값을 가진 체크박스 연동
         var dataValue = $this.closest('.js-checkbox-selector02').data('check-simul');
         if(dataValue !== '' && $uncheckedCheckboxLength == $checkboxLength){
             var $thisSimulCheckboses = $simulContainer.find('[data-check-simul=' + dataValue + ']');
@@ -1564,7 +1580,7 @@ function simultaneousCheckbox(){
         }
     }
 
-    // 약관 전체동의하기가 있을 경우 세부 조건 전체 동의하기 토글 
+    // 약관 전체동의하기가 있을 경우 세부 조건 전체 동의하기 토글
     function findAgreementTermsTotal(e){
         var $this = $(e.currentTarget);
         var tf = $this.prop('checked');
@@ -1584,7 +1600,7 @@ function simultaneousCheckbox(){
     //     }
     // }
     // init();
-    
+
     // event handler
     $simulCheckboxes.on('click', checkDataValue);
     $checkAll.on('click', checkAllType2);
@@ -1866,8 +1882,8 @@ $('body').on('click','.btn-segmented button, .btn-segmented a',function(){
 var $recommendEmployees = $('.recommend-employees');
 if($recommendEmployees.length){
     $recommendEmployees.find('.btn-segmented_radio').on('change','input:radio',function(){
-        
-        var idx = $(this).parent('li').index();        
+
+        var idx = $(this).parent('li').index();
         //$(this).addClass('is-selected').parent('li').siblings('li').find('button').removeClass('is-selected');
 
         // 직원 검색 선택항목 수정
@@ -1921,18 +1937,18 @@ function jsSwiperInit($elem) {
 //Page Step
 var $pageStepWrap = $('.page-step-wrap');
 var $pageStepSwiper = $('.page-step-swiper');
-if($pageStepSwiper.length){    
-    
+if($pageStepSwiper.length){
+
     var pageStepSwiper = new Swiper('.page-step-swiper', {
         allowTouchMove : false,
         on: {
-            init : function(swiper){                
+            init : function(swiper){
                 pageStepFn(swiper.activeIndex);
             },
             slideChangeTransitionStart: function(swiper){
                 pageStepFn(swiper.activeIndex);
             }
-        }        
+        }
     });
 
     function pageStepFn(idx){
@@ -2036,7 +2052,7 @@ if($('.character-graph').length > 0){
         var item = $this.find(".graph-area > span > i");
         var itemBar = item.parent();
 
-        
+
         if(itemBar.width() - 8 < item.width()){
             itemBar.addClass('min-size');
             if(itemBar.width() < 10){
@@ -2154,12 +2170,12 @@ var jsScrollDone = {
     },
     scroll : function(st, $this){
         st = Math.ceil(st) + 10;    // 수정 2021-10-25 : 하단 여백
-        if (st >= $(document).outerHeight() - $this.outerHeight()) { 
+        if (st >= $(document).outerHeight() - $this.outerHeight()) {
             var $btnSticky = $('.js-scroll-done .sticky-bottom');
             $btnSticky.find('button').prop('disabled', false);
             $btnSticky.find('a').removeClass('is-disabled');
             $btnSticky.find('.btn-transparent').remove();
-        }         
+        }
     }
 };
 
@@ -2200,7 +2216,7 @@ var jsScrollAction = {
         $target.each(function(){
             var fnName = $(this).data('scroll-fn');
             // console.log(st + winH >= $(this).offset().top + $(this).outerHeight())
-            if (st + winH >= $(this).offset().top + $(this).outerHeight()) {                                    
+            if (st + winH >= $(this).offset().top + $(this).outerHeight()) {
                 if(!$(this).hasClass('is-finished')) window[fnName]();
                 $(this).addClass('is-finished');
             }

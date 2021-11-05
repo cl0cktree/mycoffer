@@ -11,12 +11,12 @@
 <body>
     @@include('@@webRoot/html/_include/app-a11y.html')
     <div class="app">
-        
+
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
             'pageTit':'기관 검색',
             'type':'close'
         })
-        
+
 
         <!-- app-container //-->
         <div class="app-container">
@@ -26,19 +26,12 @@
                 <section class="kb-sec search-organization-form">
                     <div class="kb-form mt12 search" data-status="">
                         <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="search" id="formTextSample0555" value="" placeholder="기관명" title="기관명">
+                            <input type="text" inputmode="search" id="companyName" value="" placeholder="기관명" title="기관명"><!-- 수정 : ID 수정-->
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                             <button type="button" class="btn-search"><i class="icon-search">검색</i></button>
                         </div>
                     </div>
-                    <div class="autocomplete-box"><!-- .is-active -->
-                        <!-- <p></p> --><!-- 수정:2021-09-27 -->
-                        <ul>
-                            <li><span>KB</span>국민카드</li>
-                            <li><span>KB</span>증권</li>
-                            <li><span>KB</span>손해보험</li>
-                        </ul>
-                    </div>
+                    <div class="autocomplete-box" id="autocompleteBox"></div><!-- 수정 : ID 추가, ul 제거-->
                 </section>
 
                 <section class="kb-sec search-result-list">
@@ -93,17 +86,61 @@
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
     <script>
-        // 자동완성
-        $('.search-organization-form')
-        .on('keydown', 'input[type=text]', function(){
-            var autocompleteChk = $('.autocomplete-box').hasClass('is-active');
-            if(!autocompleteChk){
-                $('.autocomplete-box').addClass('is-active');
-            }
-        })
-        .on('focusout', 'input[type=text]', function(){
-            $('.autocomplete-box').removeClass('is-active');
-        });
+        // 자동완성 (https://api.jqueryui.com/autocomplete/)
+        $( function() {
+
+            $( "#companyName" ).autocomplete({
+                minLength: 0,
+                autoFocus: true,
+                appendTo: "#autocompleteBox",
+                position: {
+                    my: 'left top'
+                },
+                classes: {
+                    "ui-autocomplete": "highlight"
+                },
+                source: [
+                    {
+                        value: "금융",
+                        label: "KB"
+                    },
+                    {
+                        value: "증권",
+                        label: "KB",
+                    },
+                    {
+                        value: "손해보험",
+                        label: "KB",
+                    },
+                ],
+                open: function( event, ui ) {
+                    $('.autocomplete-box').addClass('is-active');                
+                },
+                close: function( event, ui ) {
+                    $('.autocomplete-box').removeClass('is-active');                
+                },
+                focus: function( event, ui ) {
+                    
+                    return false;
+                },
+                select: function( event, ui ) {
+                    // 선택 했을 때 동작
+                    console.log('select!!')
+                    $( "#companyName" ).val( ui.item.label + ui.item.value );
+
+                    return false;
+                }
+            })
+            .autocomplete( "instance" )._renderItem = function( ul, item ) {
+                
+                return $( "<li>" ).append( "<span>" + item.label + "</span>" + item.value ).appendTo(ul);
+            };
+        } );
+
+        setInterval(function(){
+            console.log($('.autocomplete-box ul').html())
+
+        },5000);
     </script>
 
 </body>

@@ -93,6 +93,7 @@
                     $dimm.fadeIn(settings.duration);
                     $wrap.fadeIn(settings.duration);
                     $wrap.find(':focusable').eq(0).focus();
+                    layeredLevel = layeredLevel + 10;
                 },
     
                 close: function() {

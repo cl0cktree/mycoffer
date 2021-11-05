@@ -48,7 +48,7 @@
 .simple-password-input04 p{@include text($size: $text03);margin-top:12px;color:$kb-ui04;}
 
 //로그인연장
-.modal[data-layered-name=modalLoginExtension] .login-extension-time{margin-bottom:12px; margin-top:8px; padding-top:22px; padding-bottom:22px;text-align:center;font-weight:bold;}
+.modal[data-layered-name=modalLoginExtension] .login-extension-time{padding-top:22px; padding-bottom:22px;text-align:center;font-weight:bold;} //211105 : margin 삭제
 .modal[data-layered-name=modalLoginExtension] .login-extension-time strong{font-size:$heading01; font-weight:bold;display:inline-block;margin-right:8px;color:$color-blue;}
 //다른로그인 방법
 .login-certification01{padding-bottom:148px;}
@@ -91,8 +91,8 @@
 
 // 요건추가 2021-10-29
 .agreement-to-terms.form-simul-mode [class^=form-simul-list]{width:100%;margin-top:1.6rem;border-top:1px solid $kb-ui08;} // 넓이추가 2021-11-02
-.agreement-to-terms.form-simul-mode .form-simul-list01 [class^=form-checkbox]{margin-left:3.3rem;}
-.agreement-to-terms.form-simul-mode .form-simul-list01 [class^=form-checkbox]:first-child{margin-left:0;}
+.agreement-to-terms.form-simul-mode .form-simul-list01 [class^=form-checkbox]{width:auto;margin-left:3.3rem;}// width 2021-11-05
+.agreement-to-terms.form-simul-mode .form-simul-list01 [class^=form-checkbox]:first-child{width:100%;margin-left:0;}// width 2021-11-05
 .agreement-to-terms.form-simul-mode .terms-option{padding:1.6rem 0;margin-bottom:1.6rem;border:0.1rem solid $kb-ui08;border-width:0.1rem 0 0.1rem;@include text($weight:bold);}
 .agreement-to-terms.form-simul-mode .agreement-service-choice{margin-left:3.4rem;border-bottom:1px solid $kb-ui08;margin-bottom:1.6rem;}
 .form-simul-mode .agreement-service-choice{display:none;}
@@ -303,11 +303,12 @@
 .search-organization-form{position:relative;}
 .search-organization-form .autocomplete-box{border-bottom:1px solid $kb-ui07;position:absolute;top:72px;left:0;z-index:$level20;width:100%;padding:0 24px;background-color:$kb-ui11;display:none;} // 검색 영역 빈태그 삭제로 인한 수정
 // .search-organization-form .autocomplete-box p{height:2px; width:100%; background-color: $kb-ui02; left:25px;position:absolute;} // 검색 영역 빈태그 삭제로 인한 수정
-.search-organization-form .autocomplete-box ul{width: 100%; /*border-top:2px solid $kb-ui02;*/} // 검색 영역 빈태그 삭제로 인한 수정
+.search-organization-form .autocomplete-box ul{position:static !important;width: 100%;border:none !important; /*border-top:2px solid $kb-ui02;*/} // 검색 영역 빈태그 삭제로 인한 수정
 .search-organization-form .autocomplete-box.is-active{display:block}
-.search-organization-form .autocomplete-box ul{padding:32px 0 16px;}
-.search-organization-form .autocomplete-box li{padding:10px 0}
-.search-organization-form .autocomplete-box li span{color:$color-blue;}
+.search-organization-form .autocomplete-box ul{@include text;padding:32px 0 16px;}
+.search-organization-form .autocomplete-box li{padding:10px 0;}
+.search-organization-form .autocomplete-box li span{display:inline;padding:0;color:$color-blue;}
+.search-organization-form .autocomplete-box li span.ui-state-active{background:none !important;border:none !important;margin:0 !important;}
 .search-result-list{margin-top:40px}
 .search-result-list .list-tit{margin-top:40px;margin-bottom:40px;display:block;font-weight:normal;} // 전송요구 폰트
 .search-result-list .list-tit span{color:$color-blue;font-weight:bold} // 전송요구 폰트
@@ -723,7 +724,7 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .mn-agreements-list > li > a{padding-right:2rem;} // 여백수정 2021-10-21
 .mn-agreements .mn-agreements-list02{padding:20px 0;}
 .mn-agreements .mn-agreements-list02 p{position:relative;} // 요건추가 2021-10-29
-.mn-agreements .mn-agreements-list02 .form-simul-list01{width:100%;margin-left:3.3rem;} // 요건추가 2021-11-02
+.mn-agreements .mn-agreements-list02 .form-simul-list01{width:auto;margin-left:3.3rem;} // width 2021-11-05
 .mn-agreements .mn-agreements-list02 .form-simul-list01 [class^=form-checkbox]{display:block;margin-top:1.6rem;} // 요건추가 2021-10-29
 .mn-agreements .mn-agreements-list02 .agreement-service-choice{padding-left:3rem;} // 요건추가 2021-10-29
 
@@ -779,7 +780,8 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .approval-number .kb-form_multi .kb-form{flex:1;}
 .approval-number .kb-form_multi .kb-form + .kb-form{margin-left:16px;margin-top:0;}
 .approval-number .kb-form_multi + .list-decimal{margin-top:48px;}
-.approval-number .list-decimal li{list-style-type: decimal; margin-left:20px; color:$kb-ui02; font-size: 16px; padding-bottom: 20px; line-height:24px;}
+.approval-number .list-decimal li{list-style-type: decimal;margin-left:20px;padding-left:0.7rem;color:$kb-ui02; font-size: 16px; padding-bottom: 20px; line-height:24px;} // 211105 : list padding-left 조정
+.approval-number .list-decimal li::marker{font-family:'roboto';font-weight:bold} // 211105 : list marker font style 수정
 .approval-number .list-decimal li p{font-weight: normal; padding-left:10px;}
 .approval-number .list-decimal .simple-message{margin-top:0px;color:$color-red}// 211027 : 특정 simple message color 설정 재추가
 .approval-number .list-decimal .simple-message::before{background-position:-13.2rem -7.1rem}// 211027 : simple message 별표 이미지 수정 (sprite position)
@@ -930,12 +932,17 @@ ol[data-style=number] li::before{content:counter(list-number)'.';margin-right:0.
 .reward-benefit .reward-benefit-list li .application-available-number .num{font-size:1.5rem;}
 .reward-benefit-detail .kb-sec:first-child{margin-top:3.2rem;}
 
-// 피싱보험 2021-10-19
+// 피싱보험 2021-11-05
 .kb-sec:first-child.PI-info [class^=h]{margin-top:0;}
 .kb-sec.PI-info [class^=h] + [class^=h]{margin-top:3.8rem;}
-.phishing-insurance .terms-info{margin-top:3rem;}
+.phishing-insurance .terms-info{margin-top:5rem;}
+.phishing-insurance .terms-info [data-style=list] li ~ li{margin-top:1.6rem;}
+.phishing-insurance .terms-info [data-style=list] li > strong{color:$kb-ui02;}
+.phishing-insurance .terms-info [data-style=list] li > .desc{margin-top:0.3rem;color:$kb-ui04;}
+.phishing-insurance .terms-info [data-style=list] li > .desc + .simple-message{margin-top:0.8rem;}
 .phishing-insurance .terms-info .dt{margin-top:1.1rem;font-weight:bold;line-height:1.56;}
 .phishing-insurance .terms-info .dd{margin-top:0.8rem;line-height:1.44;}
+.phishing-insurance .terms-info .simple-message.compliance-check{margin-top:0;}
 .phishing-insurance .agreement-to-terms{margin-top:4.5rem;}
 .phishing-event .img-wrap{text-align:center;}
 .phishing-event .event-img{padding:6rem 0 2rem;}
@@ -944,15 +951,16 @@ ol[data-style=number] li::before{content:counter(list-number)'.';margin-right:0.
 .phishing-event .desc{margin-top:1.4rem;@include text($size:24px);line-height:1.44;}
 .phishing-event .border-box{padding:1.9rem 2rem 1.7rem;margin:1.9rem -0.8rem 0;border:1px solid $kb-ui08;border-radius:0.8rem;}
 .phishing-event .border-box .desc{font-size:1.6rem;margin-top:0.4rem;}
-.phishing-event-info .event-list{margin-top:-1rem;}
-.phishing-event-info .event-list li{display:flex;justify-content:space-between;padding:0.7rem 0;}
-.phishing-event-info .event-list li .text-wrap{flex:1 1 auto;align-self:center;margin-top:0.8rem;}
-.phishing-event-info .event-list li [class^=icon]:last-child{align-self:center;}
-.phishing-event-info .event-list li .tit{@include text($size: $text02, $line-height:1, $weight:bold);display:block;margin-bottom:0.5rem;}
-.phishing-event-info .event-list li .desc{@include text($size: $text03, $line-height:1);color:$kb-ui03;}
-.phishing-event-info .event-list li .desc strong{font-weight:bold;}
-.phishing-event-info .event-list li [class^=icon]:first-child{width:32px;height:32px;margin-top:0.3rem;margin-right:1.6rem;flex:0 0 auto;}
-.phishing-event-info .event-list .simple-message{margin-top:0.5rem;}
+
+// .phishing-event-info .event-list{margin-top:-1rem;}
+// .phishing-event-info .event-list li{display:flex;justify-content:space-between;padding:0.7rem 0;}
+// .phishing-event-info .event-list li .text-wrap{flex:1 1 auto;align-self:center;margin-top:0.8rem;}
+// .phishing-event-info .event-list li [class^=icon]:last-child{align-self:center;}
+// .phishing-event-info .event-list li .tit{@include text($size: $text02, $line-height:1, $weight:bold);display:block;margin-bottom:0.5rem;}
+// .phishing-event-info .event-list li .desc{@include text($size: $text03, $line-height:1);color:$kb-ui03;}
+// .phishing-event-info .event-list li .desc strong{font-weight:bold;}
+// .phishing-event-info .event-list li [class^=icon]:first-child{width:32px;height:32px;margin-top:0.3rem;margin-right:1.6rem;flex:0 0 auto;}
+// .phishing-event-info .event-list .simple-message{margin-top:0.5rem;}
 
 //마이데이터 서비스 소개
 .mydata-service .img{width:100%;}

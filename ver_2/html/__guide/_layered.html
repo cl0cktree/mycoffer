@@ -1,0 +1,142 @@
+<!-- [MYS_MN_05_00_00] 전체메뉴 > 앱설정 상세 (작성자: 누리어 시스템 이진우)// -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "Last Depth | 1st Depth"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'테스트',
+            'type':'back'
+        })
+        
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content">
+                <section class="kb-sec">
+                    <button type="button" class="btn-line" onclick="gfn_layered.open('adminLayer', 'operation')"><span>Operation Layer</span></button>
+                    <button type="button" class="btn-line" onclick="gfn_layered.open('modalEmergency02', 'admin')"><span>Admin Layer</span></button>
+                    <button type="button" class="btn-line" onclick="gfn_layered.open('fbBanner02', 'event')"><span>Event Layer</span></button>
+                    <button type="button" class="btn-line" onclick="gfn_layered.open('bsCalendar')"><span>Normal Layer</span></button>
+                </section>
+
+            </main>
+            <!-- // app-content -->
+
+        <!-- // app-container -->
+    </div>
+
+    <div class="layered">
+        <div class="modal" data-layered-name="modalEmergency02">    
+            <div class="modal_header">
+                <strong class="tit">시스템 점검</strong>
+            </div>
+            <div class="modal_contents">
+                <ul data-style="list">
+                    <li>앱에 문제가 발생해 긴급 점검에 있으며 신속하게 끝내겠습니다.</li>
+                    <li>중단시간 : <span class="num">2021.05.01 00:00</span></li>
+                    <li>재개시간 : <span class="num">2021.05.01 00:00</span></li>
+                    <li>사용에 불편을 드려 죄송합니다.</li>
+                </ul>
+            </div>
+            <div class="modal_buttons btn-area">
+                <button class="btn-solid" data-action="close"><span>닫기</span></button>
+            </div>
+        </div>
+
+        <div class="bottom-sheet" data-layered-name="adminLayer">
+            <div class="bottom-sheet_header">
+                <span class="tit">어드민 등록 바텀시트</span>
+            </div>
+            <div class="bottom-sheet_contents">                    
+                <section class="kb-sec">
+                    <div class="editor-view" style="height:1000px;background-color:bisque;"><!-- 임시 스타일-->
+                        <!-- 에디터 내용 노출 -->
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                        에디터 내용 노출 영역<br>
+                    </div>
+                    <a href="javascript:;">[자세히 보기]</a><!-- 자세히 보기 링크가 있을 때 -->       
+                </section>     
+            </div>
+            <div class="not-today"><span class="form-checkbox"><input type="checkbox" id="notToday02"><label for="notToday02">오늘 하루 보지 않기</label></span></div>                    
+            <div class="bottom-sheet_buttons">
+                <button class="btn-solid gray" data-action="close"><span>취소</span></button>
+                <button class="btn-solid"><span>확인</span></button>
+            </div>
+            <button class="btn-close" data-action="close"><span>닫기</span></button>
+        </div>
+
+        <!-- 날짜 선택 //-->
+        <div class="bottom-sheet" data-layered-name="bsCalendar">
+            <div class="bottom-sheet_header">
+                <span class="tit">날짜 선택</span>
+            </div>
+            <div class="bottom-sheet_contents">
+                <section class="kb-sec">
+                    <div class="calendar-nav">
+                        <button type="button" class="btn-first">지난해</button>
+                        <button type="button" class="btn-prev">지난달</button>
+                        <strong></strong>
+                        <button type="button" class="btn-next">다음달</button>
+                        <button type="button" class="btn-last">다음해</button>
+                        <button type="button" class="btn-text"><span>오늘</span></button>
+                    </div>
+                    <div class="calendar-area" id="datepicker"></div>
+                </section>
+            </div>
+            <div class="bottom-sheet_buttons">
+                <button class="btn-solid gray" data-action="close"><span>취소</span></button>
+                <button class="btn-solid" data-action="close"><span>확인</span></button>
+            </div>
+            <button class="btn-close" data-action="close"><span>닫기</span></button>
+        </div>
+        <!-- //날짜 선택  -->
+
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/floatingBanner.js"></script>
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+
+    <script>
+        $('.layered').fb({
+            fbName: "fbBanner02",
+            fbAnimation: "fbRightLeft",
+            fbType : "1/2",
+            fbMsg: "마이데이터 (최초)계좌 추가할 때마다<br>꽝 없는 복권 증정 v(*_*)v",
+            fbCallLayered: 'eventScratch',
+            fbFunction: 'fnScratchEvent()',
+            fbImgSrc: "@@webRoot/static/images/event/fb-img02.png",
+            fbFormName: "promotionBanner02",
+            fbExpireDay: "1",
+            fbFormMsg: "하루동안 보지 않기",
+            fbShow: false,
+        });
+    </script>
+
+</body>
+
+</html>

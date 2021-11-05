@@ -151,7 +151,7 @@
 .expense-home .notice-group .notice-item:after{right:1.8rem}
 .expense-home .notice-group.flex-box .notice-item{flex:1}
 .expense-home .notice-group.flex-box .notice-item + .notice-item{margin-left:1.6rem;margin-top:0} // 211025 : 여백 조정
-.expense-home .notice-group.flex-box .notice-item .desc{margin-top:0.3rem}
+.expense-home .notice-group.flex-box .notice-item .desc{min-height:6rem;margin-top:0.3rem} // 211105 : desc 높이 조정
 .expense-home .swiper-card-list{overflow:visible}
 .expense-home .swiper-card-list > .flex-box{margin-bottom:1.5rem;} // swiper 버전 수정 관련 적용
 .expense-home .swiper-card-list .swiper-pagination{padding-left:2.4rem;padding-right:2.4rem} // swiper pagination 정렬 수정
@@ -190,8 +190,21 @@
 #obligationToNotify .terms-conditions ul + p{margin-top:0}
 #obligationToNotify .terms-conditions p:first-of-type{margin-top:0}
 
-// rkxd서비스동의안내
+
+// 211105 : 서비스동의안내 관련 스타일 추가
+/* 서비스동의안내 */
 #noticeAgreeToProvide .modal_contents ul{padding-bottom:0}
+
+/* 서비스 동의 변경 순서 안내 */
+.service-tutorial .kb-sec{padding-top:0}
+.service-tutorial li{padding:4.8rem 0;text-align:center}
+.service-tutorial li:nth-child(even){background-color:$kb-ui10}
+.service-tutorial li:last-child{padding-bottom:0}
+.service-tutorial li .list-tit .num{display:block;width:2.8rem;height:2.8rem;margin:0 auto 1.8rem;border-radius:50%;background-color:$color-yellow;text-align:center;line-height:2.8rem;color:$kb-ui11}
+.service-tutorial li figure{padding:0 4.8rem}
+.service-tutorial li figure+figure{margin-top:1.7rem}
+.service-tutorial li .list-tit + figure{margin-top:4rem}
+.service-tutorial li:last-child figure+figure::before{content:'';display:block;margin:2.4rem auto;width:2.2rem;height:4rem;background:url(../images/expense/service-tutorial_arrow.png) no-repeat;background-size:100%}
 
 /***** 지출 > 가계부 *****/
 // main
@@ -605,6 +618,7 @@
 .expense-card-management-detail{padding-bottom:125px}
 .expense-card-management-detail .detail-tit{margin-bottom:3.2rem;padding-bottom:1.3rem;border-bottom:1px solid $kb-ui09} // 211021 : 상세보기 컨텐츠 타이틀 여백 조정
 .expense-card-management-detail .detail-content{width:100%;height:auto;min-height:400px;background-color:$kb-ui02}
+.expense-card-management-detail .detail-content img{width:100%} // 211105 : 상세보기 컨텐츠 이미지 채우기
 .expense-card-management-detail .detail-content ~ .btn-line{margin-top:0.8rem} // 211021 : 상세보기 컨텐츠 버튼 여백 조정
 
 /***** 지출 > 소비리포트  *****/

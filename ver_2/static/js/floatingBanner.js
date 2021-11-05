@@ -90,7 +90,7 @@ $('body')
 
         //바로 보여주기
         var cookieChecker = cookie.get(settings.fbFormName);
-        if(settings.fbShow && !cookieChecker) gfn_layered.open(settings.fbName);
+        if(settings.fbShow && !cookieChecker) gfn_layered.open(settings.fbName, 'event');   //수정: 2021-11-05 레이어 우선순위
 
         //return false;
     };
