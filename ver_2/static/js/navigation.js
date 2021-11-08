@@ -136,7 +136,7 @@ if(channel == "ch_star" && pageType == 'bridge'){
     if(!$('.app-lnb').length) $('.app-container').prepend('<div class="app-lnb"></div>');
     $('.app-lnb').empty().html(nav);
 
-}else if(channel != "ch_star" && pageType == 'submain' || pageType == 'bridge'){
+}else if(channel != "ch_star" && (pageType == 'submain' || pageType == 'bridge')){
     //My Money Submain Page
     if(!$('.app-lnb').length) $('.app-container').prepend('<div class="app-lnb"></div>');
     $('.app-lnb').empty().html(nav);
@@ -258,6 +258,7 @@ $(window)
     }
     //remove unneccessary LNB
     if($('.app-lnb').is(':empty')) $('.app-lnb').remove();
+    if($('.app-sub-wrap').length) $('.app-sub-wrap').remove();
 })
 .on('resize',function(){
     if($gnb.length){

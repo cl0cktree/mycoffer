@@ -766,10 +766,11 @@ section.gray-line + section{border-top:1rem solid $kb-ui10;}
 .goal-calendar .bottom-txt span{position:relative;}
 .goal-calendar .bottom-txt span:before{content:'';position:absolute;display:block;width:.8rem;height:.8rem;border-radius:50%;background:$color-yellow;left:-1.6rem;top:50%;transform:translateY(-50%);}
 
-.goals-img-status{background:$kb-ui10;padding:2.4rem 2rem;margin:4rem 2.4rem 0;position:relative;}
+.goals-img-status{background:$kb-ui10;min-height:10rem;padding:2.4rem 2rem;margin:4rem 2.4rem 0;border-radius:8px;position:relative;}
 .goals-img-status strong{font-weight:bold;}
 .goals-img-status h2{font-size:$text02;font-weight:normal;}
-.goals-img-status p{@include text($size:2.4rem);line-height:1.4;margin-top:1rem;}
+.goals-img-status h2.lg,
+.goals-img-status h2 + p{@include text($size:2.4rem);line-height:1.4;margin-top:1rem;}
 .goals-img-status p .lg{font-size:$text01;}
 .goals-img-status img{position:absolute;top:-2rem;right:0;width:7.6rem;}
 .goals-img-status.type2 p{@include text($size:$text02);line-height:1.4;margin-top:0;letter-spacing: -.075rem;}

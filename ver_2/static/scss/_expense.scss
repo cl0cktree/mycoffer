@@ -204,13 +204,14 @@
 .service-tutorial li figure{padding:0 4.8rem}
 .service-tutorial li figure+figure{margin-top:1.7rem}
 .service-tutorial li .list-tit + figure{margin-top:4rem}
+.service-tutorial li:nth-last-child(2) figure+figure::before, // 211108 : 이미지 사이 화살표 추가
 .service-tutorial li:last-child figure+figure::before{content:'';display:block;margin:2.4rem auto;width:2.2rem;height:4rem;background:url(../images/expense/service-tutorial_arrow.png) no-repeat;background-size:100%}
 
 /***** 지출 > 가계부 *****/
 // main
 .expense-account-book-total{padding-bottom:0}
 .expense-account-book-total .graph-area .chart-tit{min-height:6.3rem;margin-bottom:2.7rem} // 211019 : 그래프 상단 여백 수정
-//--chart-- .expense-account-book-total .graph-area .chart-tit{margin-bottom:2.7rem} 
+//--chart-- .expense-account-book-total .graph-area .chart-tit{margin-bottom:2.7rem}
 .expense-account-book-total .date-month{text-align:center}
 .expense-account-book-total .highcharts-box{padding:0}
 .expense-account-book-total .goals-challenge{padding-bottom:3.2rem} // 가계부 최하단 영역 padding-bottom 추가
@@ -608,7 +609,7 @@
 .thumb-list-group + .btn-area{padding:24px 0 16px}
 .thumb-list-group + .btn-area button{padding:8px 0}
 .thumb-list-group + .btn-area button i{margin-right:4px}
-.thumb-list-group.t01{display:grid;grid-template-columns:repeat(3, auto);grid-gap:1.3rem}
+.thumb-list-group.t01{display:grid;grid-template-columns:repeat(3, 1fr);grid-gap:1.3rem} // 211108 : thumb-list 너비 조정
 .thumb-list-group.t01 li{border-bottom:0;padding-bottom:0;margin-bottom:3.2rem}// thumb-list-group t01 스타일 수정(margin)
 .thumb-list-group.t01 li:first-child{padding:0;border:0}// thumb-list-group t01 스타일 수정(padding,border)
 .thumb-list-group.t01 li .thumb{width:100%;margin:0;border-radius:0.5rem;overflow:hidden}// thumb-list-group t01 스타일 수정(widtn,margin)
