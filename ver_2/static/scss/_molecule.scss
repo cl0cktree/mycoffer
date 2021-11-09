@@ -266,7 +266,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .form-text input[inputmode=numeric]::placeholder{text-align:right;}
 .form-text .unit{@include text($size:20px, $weight: bold);margin-top:1px;margin-left:2px;}/*position:absolute;left:4px;top:3px;max-width:calc(100% - 54px);*/
 .form-text .prefix{@include text($size:16px, $weight: bold);margin-top:1px;margin-right:2px;}/*position:absolute;left:4px;top:3px;max-width:calc(100% - 54px);*/
-.form-text .btn-data-clear{display:none;flex:0 0 24px;margin-left:auto;}
+.form-text .btn-data-clear{/* display:none;*/flex:0 0 24px;margin-left:auto;opacity: 0;transform: scale(0);transition: all .1s ease-in-out;}
 .form-text .btn-solid.form{font-weight:normal}
 .form-text .btn-solid.form,
 .form-text .btn-line.form,
@@ -275,7 +275,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .form-text .measurement{@include number(24px);position:absolute;top:-9999px;opacity:0;max-width:calc(100% - 54px)}
 .form-text input:focus ~ .btn-data-clear,
 .form-text input ~ .btn-data-clear:focus,
-.form-text.is-focused .btn-data-clear{display:block;}
+.form-text.is-focused .btn-data-clear{/*display:block;*/opacity: 1; transform: scale(1);}
 .form-text.is-focused .unit{color:$kb-ui02;}
 .not-ready:not(.is-active) .form-text .unit,
 .is-disabled .form-text .prefix,

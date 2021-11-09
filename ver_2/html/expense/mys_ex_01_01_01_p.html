@@ -70,6 +70,9 @@
                             <li><span class="btn-switch label-front"><input type="checkbox" name="radioSwitch1" id="includeSum" checked=""><label for="includeSum"><span>지출 합계 포함</span></label></span></li>
                             <li><span class="btn-switch label-front"><input type="checkbox" name="radioSwitch2" id="hideExpenseList" data-call-modal="hideList"><label for="hideExpenseList"><span>내역 숨기기</span></label></span></li>
                             <li class="delete"><span>내역삭제</span><button class="btn-line sm btn-delete" data-call-modal="deleteHistory"><span>삭제</span></button></li> <!-- [D] 2021-08-31 수정 : 버튼 class 추가 //-->
+                            <!-- 수정:2021-11-09 -->
+                            <!-- 삭제 선택 완료 후의 case : 클래스 추가 (is-completed) -->
+                            <li class="delete"><span>내역삭제</span><button class="btn-line sm btn-delete is-completed"><span>삭제</span></button></li>
                         </ul>
                     </div>
                 </section>
@@ -118,7 +121,7 @@
                 </div>
                 <div class="modal_contents">
                     <p>[김국민 통장적요내용출력] {지출 or 이체}을(를) 제외하시겠습니까?</p>
-                    <p class="simple-message">지출&gt;가계부&gt;숨긴 지출 보기 화면에서 조회 및 복원할 수 있습니다.</p>
+                    <p class="simple-message">지출&gt;가계부&gt;숨긴 내역 보기 화면에서 조회 및 복원할 수 있습니다.</p><!-- 수정:2021-11-09--><!-- 문구 수정 (숨긴 지출 보기 -> 숨긴 내역 보기)-->
                     <ul class="radio-group">
                         <li><span class="form-radio"><input type="radio" id="hideOptionOnce" name="hideListType" checked=""><label for="hideOptionOnce">이번만 변경</label></span></li>
                         <li><span class="form-radio"><input type="radio" id="hideOptionAlways" name="hideListType"><label for="hideOptionAlways">항상 변경</label></span></li>

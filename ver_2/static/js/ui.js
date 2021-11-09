@@ -524,7 +524,7 @@ $('.form-text')
     //계산
     gfn_formText.calculate($(this));
 })
-.on('click keypress','input',function(){
+.on('focus','input',function(){
     var $thisForm = $(this).parents('.kb-form');
     var $thisFormSelect = $(this).parents('.kb-form_inner');
 
@@ -895,10 +895,10 @@ $('.kb-form')
 });
 
 //form 공통 (상대적 비활성화, body 클릭시 비활성화)
-$body.on('click',function(e){
-    if($('.kb-form').hasClass('is-active') && !$('.kb-form').has(e.target).length){
+$body.on('focusout',function(e){
+    // if($('.kb-form').hasClass('is-active') && !$('.kb-form').has(e.target).length){
         $('.kb-form').removeClass('is-active').find('.kb-form_inner').removeClass('is-focused');
-    }
+    // }
 });
 
 if($('.textarea').length){
