@@ -1826,18 +1826,13 @@ $.datepicker.formatDate = function (format, value) {
 
 $('#datepicker').datepicker({
     dateFormat: "yyyy.MM.DD",
-    regional: 'ko',
-    beforeShow: function(){
-        var date = $('#datepicker').datepicker('getDate');
-        calendarDateSet(date);
-    }
+    regional: 'ko'    
 });
 
 var date = $('#datepicker').datepicker('getDate');
 calendarDateSet(date);
 
 var now = moment();
-var today = now.format('yyyy.MM.DD');
 $('.calendar-nav').on('click','button',function(){
     var cls = $(this).attr('class');
     if(cls == 'btn-text'){
@@ -1859,6 +1854,7 @@ $('.calendar-nav').on('click','button',function(){
 
 function calendarDateSet(date){
     $('.calendar-nav').find('strong').text($.datepicker.formatDate("yyyy", date) + '.' + $.datepicker.formatDate("MM", date));
+    now = moment(date);
     //console.log($.datepicker.formatDate("yyyy", date) + '년 ' + $.datepicker.formatDate("MM", date) + '월')
 }
 
@@ -2227,4 +2223,8 @@ $(window).on('load',function(){
     if('[data-scroll-fn]'.length) jsScrollAction.scroll(st, $('[data-scroll-fn]'));
 });
 
+
+$('.view-detail-link').each(function(){
+    $(this).parent().addClass('view-detail-wrap');
+});
 //console.log("ui.js");

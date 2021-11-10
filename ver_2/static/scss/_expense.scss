@@ -46,7 +46,7 @@
 .legend-unit dd .num{font-size:1.5rem}
 .legend-unit .basic{display:block;margin-top:20px;font-size:14px;text-align:center;color:$kb-ui02}
 .legend-unit .basic .num{font-size:15px}
-.legend-unit .basic .num:after{font-size:14px;font-weight:bold}
+.legend-unit .basic .num:after{font-size:14px;/*font-weight:bold*/}
 .legend-unit .basic[data-type="dash"]::before{content:'';display:inline-block;width:20px;height:1px;margin-right:12px;border-bottom:2px dotted $kb-ui07;vertical-align:middle}
 .legend-unit.align-c li:first-child,
 .legend-unit.align-c li~li{width:auto}
@@ -604,7 +604,7 @@
 .thumb-list-group li:first-child{padding-top:24px;border-top:1px solid $kb-ui09}
 .thumb-list-group li{margin-bottom:24px;padding-bottom:26px;border-bottom:1px solid $kb-ui09}
 .thumb-list-group li > a{display:flex}
-.thumb-list-group li .thumb{width:100px;height:100%;min-height:83px;margin-right:12px;background-color:$kb-ui02}
+.thumb-list-group li .thumb{width:100px;height:8.3rem;margin-right:12px;background-color:$kb-ui02} // 211110 : thumbs height 수정
 .thumb-list-group li .thumb img{width:100%}
 .thumb-list-group li .tit{flex:1;display:block;padding-top:8px;line-height:1.4}
 .thumb-list-group + .btn-area{padding:24px 0 16px}
@@ -613,7 +613,7 @@
 .thumb-list-group.t01{display:grid;grid-template-columns:repeat(3, 1fr);grid-gap:1.3rem} // 211108 : thumb-list 너비 조정
 .thumb-list-group.t01 li{border-bottom:0;padding-bottom:0;margin-bottom:3.2rem}// thumb-list-group t01 스타일 수정(margin)
 .thumb-list-group.t01 li:first-child{padding:0;border:0}// thumb-list-group t01 스타일 수정(padding,border)
-.thumb-list-group.t01 li .thumb{width:100%;margin:0;border-radius:0.5rem;overflow:hidden}// thumb-list-group t01 스타일 수정(widtn,margin)
+.thumb-list-group.t01 li .thumb{width:100%;height:auto;max-height:8.3rem;margin:0;border-radius:0.5rem;overflow:hidden}// thumb-list-group t01 스타일 수정(widtn,margin)
 .thumb-list-group.t01 li > a{display:block}
 .thumb-list-group.t01 li .tit{margin-top:1.4rem;padding:0 0.8rem;background-color:$kb-ui11;font-size:1.4rem;line-height:2rem;@include ellipsisMulti($width:100%,$line:3,$size:14px);height:auto}// thumb-list-group t01 스타일 수정(height)
 //라이프컨텐츠 - 상세

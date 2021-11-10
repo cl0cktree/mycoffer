@@ -810,8 +810,8 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .condition-area.type-total .tit{display:block;margin:2.5rem 0 1.5rem;font-size:1.4rem;letter-spacing:-0.028rem;float:none;}
 .condition-area.type-total .tit .num{padding-right:0.15rem;font-size:1.5rem;font-weight:normal;}
 
-.app-lnb + .reward-coupon.app-content .kb-sec:first-of-type .tab_button, 
-.reward-coupon.app-content .kb-sec:first-of-type .tab_button{margin-top:1rem;}
+// .app-lnb + .reward-coupon.app-content .kb-sec:first-of-type .tab_button, 
+// .reward-coupon.app-content .kb-sec:first-of-type .tab_button{margin-top:1rem;} // 삭제 2021-11-10
 .reward-coupon .no-data{margin-top:10.3rem;}
 .reward-coupon .no-data p{margin-top:2rem;line-height:1.17;}
 .reward-coupon .coupon-list li{position:relative;}
@@ -994,7 +994,8 @@ ol[data-style=number] li::before{content:counter(list-number)'.';margin-right:0.
 
 
 //공동안증서안보이세요 팝업 04_01_01_p1
-.modal_contents h2{@include text($size: $text01, $weight:bold);}
-.modal_contents ul{padding-bottom:39px;}
-.modal_contents ul:last-child{padding-bottom:0px;}
+// 211110 : 선택자 수정
+.modal[data-layered-name="NotSeeCertificate"] .modal_contents h2{@include text($size: $text01, $weight:bold);}
+.modal[data-layered-name="NotSeeCertificate"] ul{padding-bottom:39px;}
+.modal[data-layered-name="NotSeeCertificate"] ul:last-child{padding-bottom:0px;}
 .modal[data-layered-name="NotSeeCertificate"] .modal_contents p{padding:13px 0} //선택자 수정

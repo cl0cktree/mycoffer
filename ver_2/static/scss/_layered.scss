@@ -68,7 +68,7 @@
 .modal_header{min-height:28px;padding:0 24px;}
 .modal_header .tit{@include heading($size: 20px);display:inline-block;padding:0 2px;}
 .modal_header  + .modal_contents{margin-top:15px;}
-.modal_contents{@include text($size: $text02);overflow:auto;margin-top:3px;margin-bottom:28px;padding:0 24px;}
+.modal_contents{@include text($size: $text02);overflow:auto;position:relative;margin-top:3px;margin-bottom:28px;padding:0 24px;}
 .modal-not-today{flex:1 0 76px;padding:28px 24px 24px;background-color:$kb-ui11;}
 .modal_contents ul[data-style=list] li{color:$kb-ui03;}
 .modal .not-today + .modal_buttons {margin-top:0;}
@@ -80,10 +80,16 @@
 .modal_buttons .btn-area button:last-child{border-radius:0;}
 
 //오늘하루 보지 않기
+.popup .detail-link,
+.bottom-sheet .detail-link,
+.modal .detail-link{flex:0 0 21px;padding:0 24px;background-color:$kb-ui11;}
 .popup .not-today,
 .bottom-sheet .not-today,
 .modal .not-today{flex:0 0 24px;padding:0 24px 24px;background-color:$kb-ui11;}
-.popup .not-today{padding-top:8px;}
+.popup .not-today,
+.bottom-sheet .not-today,
+.modal .detail-link + .not-today{padding-top:8px;}
+.modal .detail-link{margin-top:-28px;}
 
 @keyframes modalIn {
     0%{transform:translate(-50%,-50%) scale(0.8);opacity:0.8;}
