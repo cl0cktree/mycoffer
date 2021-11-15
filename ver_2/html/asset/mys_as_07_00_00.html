@@ -83,14 +83,43 @@
 													</div>
 												</div>
 											</div>
-											<!--<div class="highcharts_column" id="">
-												<img class="temp" src="@@webRoot/static/images/_temp/chart_as0701.png" alt="차트 예시 이미지">
-											</div>-->
-											<!-- [chart area] -->
-											<div class="chart-flex">
-												<div class="chart-area" id="donutChart01"></div>
+											<!-- 2021-11-16 차트 수정 // -->
+											<div class="chart-box">
+												<div class="chart-flex type2">
+													<!-- [chart area] //-->
+													<div class="chart-area" id="donutChart01"></div>
+													<!-- // [chart area] -->
+													<div class="legend-unit t05">
+														<ul>
+															<li class="cate10">
+																<span class="tit">주식</span>
+																<span class="num" data-unit-after="%">00</span>
+															</li>
+															<li class="cate11">
+																<span class="tit">펀드</span>
+																<span class="num" data-unit-after="%">00</span>
+															</li>
+															<li class="cate12">
+																<span class="tit">신탁</span>
+																<span class="num" data-unit-after="%">00</span>
+															</li>
+															<li class="cate13">
+																<span class="tit">ISA</span>
+																<span class="num" data-unit-after="%">00</span>
+															</li>
+															<li class="cate14">
+																<span class="tit">IRP</span>
+																<span class="num" data-unit-after="%">00</span>
+															</li>
+															<li class="cate17">
+																<span class="tit">기타</span>
+																<span class="num" data-unit-after="%">00</span>
+															</li>
+														</ul>
+													</div>
+												</div>
 											</div>
-											<!--// [chart area] -->
+											<!-- // 2021-11-16 차트 수정 -->
 										</figure>
 
 									</div>
@@ -909,134 +938,80 @@
             }]
         });
 
-		var donutChart1 = new Highcharts.Chart({
+		var donutChart = new Highcharts.Chart({
             chart: {
-                renderTo: 'donutChart01', // chart 삽입 target ID
+                renderTo: 'donutChart01',
                 type: 'pie',
-                marginLeft: 0,
-                marginRight: 0,
-                marginTop:0,
-                marginBottom: 0,
-                height: 195,
+                height: 134,
+                margin: [0, 0, 0, 0]
+            },
+            title: {
+                text: '',
+                align: 'center',
+                verticalAlign: 'middle',
+                style: {fontSize:'1.4rem',fontFamily: "KBFGText"},
+                y: 20,
+
             },
             tooltip: {
-				headerFormat: '<span style="font-size:1.2rem">{series.name}</span><br>',
-				pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
-			},
-			accessibility: {
-				announceNewData: {
-					enabled: true
-				},
-				point: {
-					valueSuffix: '%'
-				}
-			},
-            plotOptions: {
-				series: {
-					dataLabels: {
-						enabled: true,
-						format: '{point.name}: {point.y}%',
-						style: {
-							color: '#26282c',
-							fontSize: '1.2rem',
-                        	fontFamily: 'KBFGText',
-
-						},
-						distance: '-1'
-					}
-				},
-				pie: {
-            		center: ['50%', '50%'],
-					size: 155,
-				}
+				useHTML: true,
+                headerFormat: '<div style="text-align:right;color:#696e76;font-size:1.4rem;">',
+                pointFormat: '{point.name}:'+'<span style="color:#26282c;font-size:1.5rem;" class="num">{point.percentage:.0f}</span>%<br>',
+                footerFormat: '</div>',
+				/*
+                formatter: function () { 
+                    return this.y + "%"
+                },*/
+                padding: 10,
+                backgroundColor: "#FFF",
+                shadow: true,
+                borderRadius: 4,
+                verticalAlign: 'bottom',
+                borderColor: '#f3f3f3',
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '1.4rem',
+                    fontFamily: "KBFGText",
+                },
+                crosshairs: true
             },
-            series: [{  
-				name: "보유상품군별",
-                innerSize: '60%',
-                borderWidth:0,
-				
-                data: [{
-                    name: '주식',
-                    color: "#ffd435",
-                    y: 35,
-					drilldown: "주식",
-                    
-                },{
-                    name: '펀드',
-                    color: "#1544bc",
-                    y: 25,
-					drilldown: "펀드",
+            plotOptions: {
+                pie: {                    
+                    allowPointSelect: true,
+                    dataLabels: {
+                        enabled: false
+                    }
                 }
-				,{
-                    name: '청약 ',
-                    color: "#f7966c",
-                    y: 10,
-					drilldown: null,
+            },
+            series: [{
+                innerSize: '50%',
+                borderWidth: 0,
+                data: [{
+                    name: '펀드',
+                    color: "#ffad52",
+                    y: 30
                 },{
-                    name: '예금 ',
-                    color: "#d676ca",
-                    y: 15,
-					drilldown: null,
+                    name: 'IRP',
+                    color: "#90d272",
+                    y: 25
                 },{
-                    name: '적금 ',
-                    color: '#3d70d2',
-                    y: 20,
-					drilldown: null,
-                }]
-            }],
-			drilldown: {
-				activeAxisLabelStyle: {
-					textDecoration: 'none',
-					color: '#26282c',
-				},
-				activeDataLabelStyle: {
-					textDecoration: 'none',
-					color: '#26282c',
-				},
-				series: [
-					{
-						name: "주식",
-						id: "주식",
-						data: [
-							[
-								"국내주식",
-								50
-							],
-							[
-								"해외주식",
-								50
-							],
-						]
-					},
-					{
-						name: "펀드",
-						id: "펀드",
-						data: [
-							[
-								"국내주식",
-								50
-							],
-							[
-								"국내채권",
-								10
-							],
-							[
-								"선진주식",
-								13
-							],
-							[
-								"신흥주식",
-								17
-							],
-							[
-								"해외채권",
-								10
-							],
-						]
-					},
-				]
-			}
-
+                    name: '주식',
+                    color: "#ffd052",
+                    y: 20
+                },{
+                    name: 'ISA',
+                    color: "#8098eb",
+                    y: 25
+                },{
+                    name: '신탁',
+                    color: "#fa854d",
+                    y: 15
+                },{
+                    name: '기타',
+                    color: '#c7ccd1',
+                    y: 15
+                },]
+            }]
         });
 		//하이차트 UI 추가 end
 	</script>

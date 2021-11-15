@@ -436,7 +436,6 @@ var gfn_formText = {
         var $input = $target.find('input');
         var unit = $target.find('.unit').text();
 
-
         if($thisForm.find('.hangul').length) {
             $thisForm.find('.hangul').html(gfn_koreanUnit($input.val(), unit));         //단위 한글 변환
         }else if($thisForm.find('.all-hangul').length) {
@@ -534,7 +533,9 @@ $('.form-text')
         if($(this).data('call-layered') != '' && $(this).data('call-layered') != undefined){
             gfn_layered.open($(this).data('call-layered'));
         }else{
-            $thisForm.addClass('is-active').find('.kb-form_inner').addClass('is-focused');
+            setTimeout(function(){
+                $thisForm.addClass('is-active').find('.kb-form_inner').addClass('is-focused');
+            }, 0);
         }
     }
     //Multi form
@@ -545,6 +546,7 @@ $('.form-text')
     var $thisForm = $(this).parents('.kb-form');
     var $thisFormText = $(this).parent('.form-text');
     gfn_formText.empty($thisFormText);
+    gfn_formText.fill($thisFormText);
     gfn_formText.calculate($thisFormText);
     $thisForm.addClass('is-active').find('.kb-form_inner').addClass('is-focused');
 })
@@ -564,6 +566,7 @@ var gfn_bsSelect = {
             e.stopPropagation();
             var idx = $(this).parent('li').index();
             var $activeForm = $('.kb-form.is-active');
+
             var $activeFormSelect = $activeForm.find('.form-select');
             $(this).parent('li').addClass('is-active').siblings('li').removeClass('is-active');
 
@@ -661,11 +664,9 @@ if($('.kb-form_email').length){
     $('.kb-form_email')
     .on('change','select',function(){
         if($(this).val() != 'writingemail'){
-            $('.kb-form_email').find('.add-email-input').hide();
-            //$('.kb-form_email').find('.add-email-input').addClass('is-disabled').find('input').prop('disabled',true)
+            $(this).parents('.kb-form_email').find('.add-email-input').hide();
         }else{
-            $('.kb-form_email').find('.add-email-input').show();
-            //$('.kb-form_email').find('.add-email-input').removeClass('is-disabled').find('input').prop('disabled',false)
+            $(this).parents('.kb-form_email').find('.add-email-input').show();
         }
     })
     .on('change','input[type=checkbox]',function(){
@@ -895,10 +896,10 @@ $('.kb-form')
 });
 
 //form 공통 (상대적 비활성화, body 클릭시 비활성화)
-$body.on('focusout',function(e){
-    // if($('.kb-form').hasClass('is-active') && !$('.kb-form').has(e.target).length){
+$body.on('click',function(e){
+    if($('.kb-form').hasClass('is-active') && !$('.kb-form').has(e.target).length){
         $('.kb-form').removeClass('is-active').find('.kb-form_inner').removeClass('is-focused');
-    // }
+    }
 });
 
 if($('.textarea').length){
@@ -2223,8 +2224,26 @@ $(window).on('load',function(){
     if('[data-scroll-fn]'.length) jsScrollAction.scroll(st, $('[data-scroll-fn]'));
 });
 
-
-$('.view-detail-link').each(function(){
-    $(this).parent().addClass('view-detail-wrap');
-});
+//Toast Message
+var toastAni;
+var gfn_toastMsg = {
+    'show' : function(msg, duration){
+        duration ? duration : 2000;
+        $('.toast-popup').remove();
+        $('.app').append('<div class="toast-popup">' + msg + '</div>');
+        $('.toast-popup').addClass('toast-in');
+        if($('.toast-popup.toast-in').length){
+            toastAni = setTimeout(function(){
+                gfn_toastMsg.hide();                
+            }, duration);
+        }    
+    },
+    'hide' : function(){
+        $('.toast-popup').removeClass('toast-in').addClass('toast-out');
+        $('.toast-popup').one('animationend',function(){
+            $(this).remove();
+        });
+        clearTimeout(toastAni);
+    }
+};
 //console.log("ui.js");

@@ -55,6 +55,54 @@
                 <iframe src="./loader.html" frameborder="0"></iframe>
             </div>     
         </div>
+        <div class="box" id="toastMsg">
+            <h2 class="h2">토스트 메세지</h2>
+            <div class="guide-desc">
+                <div>
+                    토스트 메세지 호출 : gfn_toastMsg.show(msg, duration);<br>
+                    토스트 메세지 숨기기 : gfn_toastMsg.hide();
+                </div>
+                <p class="simple-message">
+                    토스트 메세지는 페이지당 1개만 존재 가능<br>
+                </p>                
+            </div>
+            <dl class="flex-dl">
+                <dt>
+                    <pre>
+                    </pre>
+                </dt>
+                <dd>
+                    <div class="kb-form" data-status="">
+                        <label for="toastTest">토스트 메세지</label>
+                        <div class="kb-form_inner form-text">
+                            <input type="text" id="toastTest" value="" placeholder="샘플 텍스트 입력">
+                            <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
+                        </div>
+                        <em class="validation">Success Message</em>
+                    </div>
+                    <button type="button" class="btn-line mt12" onclick="toastTest()"><span>토스트 메시지 호출</span></button>
+                    <script>
+                        function toastTest(){
+                            if($('#toastTest').val()){
+                                gfn_toastMsg.show($('#toastTest').val(), 2000);
+                            }else{
+                                modalPopup({
+                                    title: "",
+                                    message: "메세지를 입력하세요",
+                                    type: "alert",
+                                    onOk: function() {
+                                        $('#toastTest').focus();                                        
+                                    }
+                                });
+
+                            }
+                        }
+                    </script>
+                </dd>
+            </dl>
+
+            
+        </div>
         <div class="box">
             <h2 class="h2">Botom Sheets (in _layered) <a href="../_layered/_bottom-sheets.html" target="_blank">샘플페이지 바로가기 &gt;</a></h2>
             <div class="table">

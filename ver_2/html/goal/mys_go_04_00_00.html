@@ -27,15 +27,15 @@
 			<main class="app-content goals-challenge bg-gray-bottom">
 				<!-- 목표 요약 // -->
 				<section class="kb-sec goals-summary">                    
-                   <!-- <a href="#none" class="btn-trans"> 추가 수정 -->
+                   <!-- <a href="#none" class="btn-trans"> 추가 수정 -->                    
                     <dl class="summary-piggymoeny content-box shadow">
                         <dt>
-                            <h2 class="pig-tit">저금통</h2>
+                            <h2 class="pig-tit">My 저금통</h2> <!-- 수정:2021-11-15 문구수정 -->
                             <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
                             <!-- Tooltip (With title)-->
                             <div class="tooltip">
-                                <strong class="tit">저금통이란?</strong>
-                                <div class="cont">목표 달성 이후 모은 금액과 절약한 금액을 적립하거나 지출할 때마다 지정한 금액만큼 자동으로 저축할 수 있는 나만의 개인금고</div>
+                                <strong class="tit">My 저금통이란?</strong>
+                                <div class="cont">목표 달성 이후 절약하거나 모은 금액, 지출할 때마다 일정 금액 등이 나의 소비내역을 바탕으로 자동으로 저축되는 똑똑한 통장</div> <!-- 수정:2021-11-15 문구수정 -->
                                 <button class="btn-close"><span>닫기</span></button>
                             </div>
                         </dt>
@@ -261,13 +261,32 @@
                                 </select>
                             </div>
                             <em class="validation">Message</em>
-                        </div>
-                        <p class="simple-message">[저금통 상세 > 관리 > 저금통 규칙 수정하기]에서 금액을 수정할 수 있어요.</p>
-                        <p class="simple-message">쓰는만큼 모으기(길티플레져) 챌린지의 자동저축 기능은 저금통이 있어야 이용할 수 있습니다. 먼저 저금통에 가입해 주세요.</p>
-                        <p class="simple-message">쓰는만큼 챌린지의 이체 날짜는 도전을 시작한 날로부터 매주 7일 저녁 ~~~에 자동이체 처리됩니다.</p>
+                        </div>                        
+                        <!-- 수정:2021-11-15 //-->
+                        <!-- 문구수정 -->
+                        <p class="simple-message">[My 저금통 거래내역 > 계좌관리 > 관리하기 > My 저금통 규칙 수정하기]에서 금액을 수정할 수 있어요.</p>
+                        <p class="simple-message">쓰는만큼 모으기(길티플레져) 챌린지의 자동저축 기능은 My 저금통이 있어야 이용할 수 있습니다. 먼저 My 저금통에 가입해 주세요.</p>
+                        <!-- // 수정:2021-11-15-->
                     </div>
-                    <button class="btn-solid mt32"><span>도전</span></button>                    
+                    <button class="btn-solid mt32" data-action=btnChallenge><span>도전</span></button> <!-- 수정:2021-11-15 얼랏 추가 //-->
                 </section>
+
+                <!-- 수정:2021-11-15 //-->
+                <!-- 유의사항 추가 -->
+                <section class="kb-sec goals-pay-info">
+                    <div class="pay-info">
+                        <h3 class="tit">유의사항</h3>
+                        <ul class="sm" data-style="list">
+                            <li>본 서비스는 전송요구권 행사에 따라 수집된 데이터를 기반으로 실행됩니다.</li>
+                            <li>데이터 수집일에 거래내역을 집계하여 익영업일에 카테고리별 적립된 금액이 자동으로 My 저금통에 입금됩니다.</li>
+                            <li>적립주기는 데이터 수집일에 따라 달라질 수 있습니다.(최소 매영업일 ~ 최대 주 1회)</li>
+                            <li>KB스타뱅킹 로그인시 데이터가 자동 수집되며 다음 영업일에 자동으로 입금됩니다.(매일 접속할 경우 매영업일 입금)</li>
+                            <li>KB스타뱅킹 미접속 시 주 1회 데이터가 수집되며 정기전송일 다음영업일에 자동으로 입금됩니다.(주 1회 입금)</li>
+                            <li>카드 결제 후 승인이 취소된 경우라도 입금계좌로 적립 된 금액은 취소되지 않습니다.</li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- // 2021-11-15 수정 -->
 			</main>
 			<!-- // app-content -->
 
@@ -292,6 +311,19 @@
             
             //GNB 활성화 (번호:menu.js)
             gfn_gnb.select(3);
+
+
+            // 수정:2021-11-15 //
+            // 스크립트 추가 
+            //alert
+			$('button[data-action=btnChallenge]').on('click',function(){
+				modalPopup({
+					title: "",
+					message: "쓰는만큼 모으기(길티플레저)의 자동저축 기능은 My 저금통 있어야 이용할 수 있습니다.<br>먼저 My 저금통에 가입해 주세요.",
+					type: "alert"
+				});
+			});
+            // //수정:2021-11-15
 
         })
     </script>

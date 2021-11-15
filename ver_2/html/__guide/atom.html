@@ -3,17 +3,27 @@
 
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
-        "title": "Atom"
+    "title": "Atom"
     })
 
     <link rel="stylesheet" href="./resources/guide.css">
     <link rel="stylesheet" href="./resources/jquery-ui.css">
     <link rel="stylesheet" href="./resources/a11y-dark.min.css">
     <script src="./resources/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
+    <script>
+        hljs.highlightAll();
+    </script>
     <style>
-        [class*=btn-]:not(.btn-switch){margin-bottom:8px;}
-        .icon-20{display:inline-block;width:2rem;height:2rem;background-color:greenyellow}
+        [class*=btn-]:not(.btn-switch) {
+            margin-bottom: 8px;
+        }
+
+        .icon-20 {
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            background-color: greenyellow
+        }
     </style>
 </head>
 
@@ -77,7 +87,9 @@
                     <p><span class="num" data-unit-after="만원">4</span></p>
                     <p><span class="num" data-unit-after="%">20</span></p>
                     <p><span class="num" data-unit-after="P">200</span></p>
-                    <p><span class="num" data-unit-after="억">2</span>&nbsp;<!-- 억단위 뒤에 한칸--><span class="num" data-unit-after="천">3</span><span class="num" data-unit-after="백">4</span><span class="num" data-unit-after="십원">9</span></p>
+                    <p><span class="num" data-unit-after="억">2</span>&nbsp;
+                        <!-- 억단위 뒤에 한칸--><span class="num" data-unit-after="천">3</span><span class="num"
+                            data-unit-after="백">4</span><span class="num" data-unit-after="십원">9</span></p>
                     <p>(.num + .unit) : data-unit-after 사용불가시</p>
                     <p><span class="num" data-unit-after="억">20</span><span class="unit"></span></p>
                     <hr>
@@ -90,9 +102,10 @@
                     <p>매월&nbsp;<span class="num">20</span>일</p>
                     <p>&nbsp;<span class="num">20</span>개월</p>
                     <p><span class="num">201</span>동&nbsp;<span class="num">302</span>호</p>
-                    <p><span class="num">2011</span>년&nbsp;<span class="num">12</span>월&nbsp;<span class="num">27</span>일</p>
-                    <p><span class="num">2011.09.10</span></p>                    
-                    <p><span class="num">123-0000-123456</span></p>                    
+                    <p><span class="num">2011</span>년&nbsp;<span class="num">12</span>월&nbsp;<span
+                            class="num">27</span>일</p>
+                    <p><span class="num">2011.09.10</span></p>
+                    <p><span class="num">123-0000-123456</span></p>
                 </dd>
             </dl>
         </div>
@@ -139,7 +152,8 @@
                     <hr>
                     <!--input +link-->
                     <a href="javascript:;" class="btn-solid form" role="button"><span>폼요소에 사용되는 링크</span></a>
-                    <a href="javascript:;" class="btn-solid form is-disabled" role="button"><span>폼요소에 사용되는 링크(disabled)</span></a>
+                    <a href="javascript:;" class="btn-solid form is-disabled" role="button"><span>폼요소에 사용되는
+                            링크(disabled)</span></a>
                 </dd>
             </dl>
         </div>
@@ -162,7 +176,8 @@
                     <hr>
                     <!-- link -->
                     <a href="javascript:;" class="btn-line" role="button"><span>라인형 링크 버튼</span></a>
-                    <a href="javascript:;" class="btn-line is-disabled" role="button"><span>라인형 링크 버튼(disabled)</span></a>
+                    <a href="javascript:;" class="btn-line is-disabled" role="button"><span>라인형 링크
+                            버튼(disabled)</span></a>
                 </dd>
                 <dd data-description=".btn-line : 일반 라인형 버튼">
                     <!-- button -->
@@ -186,7 +201,8 @@
                     <hr>
                     <!-- input + link-->
                     <a href="javascript:;" class="btn-line form" role="button"><span>폼요소에 사용되는 링크</span></a>
-                    <a href="javascript:;" class="btn-line form is-disabled" role="button"><span>폼요소에 사용되는 링크(disabled)</span></a>
+                    <a href="javascript:;" class="btn-line form is-disabled" role="button"><span>폼요소에 사용되는
+                            링크(disabled)</span></a>
                 </dd>
                 <dd data-description=".btn-line.table : Table 안에 사용되는 라인버튼">
                     <!-- button in table-->
@@ -195,16 +211,20 @@
                     <hr>
                     <!-- link in table-->
                     <a href="javascript:;" class="btn-line table" role="button"><span>폼요소에 사용되는 링크</span></a>
-                    <a href="javascript:;" class="btn-line table is-disabled" role="button"><span>폼요소에 사용되는 링크(disabled)</span></a>
+                    <a href="javascript:;" class="btn-line table is-disabled" role="button"><span>폼요소에 사용되는
+                            링크(disabled)</span></a>
                 </dd>
                 <dd data-description=".btn-line.icon : icon을 포함한 라인버튼">
                     <!-- button with icon -->
                     <button class="btn-line icon"><i class="icon-pencil"></i><span>button in table</span></button>
-                    <button class="btn-line icon" disabled><i class="icon-pencil"></i><span>button in table(disabled)</span></button>
+                    <button class="btn-line icon" disabled><i class="icon-pencil"></i><span>button in
+                            table(disabled)</span></button>
                     <hr>
                     <!-- link  with icon -->
-                    <a href="javascript:;" class="btn-line icon" role="button"><i class="icon-pencil"></i><span>폼요소에 사용되는 링크</span></a>
-                    <a href="javascript:;" class="btn-line icon is-disabled" role="button"><i class="icon-pencil"></i><span>폼요소에 사용되는 링크(disabled)</span></a>
+                    <a href="javascript:;" class="btn-line icon" role="button"><i class="icon-pencil"></i><span>폼요소에
+                            사용되는 링크</span></a>
+                    <a href="javascript:;" class="btn-line icon is-disabled" role="button"><i
+                            class="icon-pencil"></i><span>폼요소에 사용되는 링크(disabled)</span></a>
                 </dd>
             </dl>
         </div>
@@ -237,7 +257,8 @@
                 <dd data-description=".btn-text > span + i.icon-name : 텍스트 버튼 + icon">
                     <button class="btn-text"><span>텍스트버튼</span><i class="icon-"></i></button>
                     <hr>
-                    <a href="javascript:;" class="btn-text" role="button"></i><span>텍스트버튼</span><i class="icon-"></i></a>
+                    <a href="javascript:;" class="btn-text" role="button"></i><span>텍스트버튼</span><i
+                            class="icon-"></i></a>
                 </dd>
                 <dd data-description=".btn-text.icon-arrow > span + i : 텍스트 버튼 &gt;">
                     <button class="btn-text icon-arrow"><span>텍스트버튼</span><i></i></button>
@@ -270,49 +291,69 @@
                     <button type="button" class="btn-more-dot"><span>설정</span></button>
                 </dd>
                 <dd data-description=".btn-switch : 토글버튼">
-                    <span class="btn-switch"><input type="checkbox" id="toggleBtn1A"><label for="toggleBtn1A"></label></span>
+                    <span class="btn-switch"><input type="checkbox" id="toggleBtn1A"><label
+                            for="toggleBtn1A"></label></span>
                     <hr>
-                    <span class="btn-switch"><input type="checkbox" id="toggleBtn2A" disabled><label for="toggleBtn2A"></label></span>
+                    <span class="btn-switch"><input type="checkbox" id="toggleBtn2A" disabled><label
+                            for="toggleBtn2A"></label></span>
                     <hr>
-                    <span class="btn-switch"><input type="checkbox" id="toggleBtn3A" checked><label for="toggleBtn3A"></label></span>
+                    <span class="btn-switch"><input type="checkbox" id="toggleBtn3A" checked><label
+                            for="toggleBtn3A"></label></span>
                     <hr>
-                    <span class="btn-switch"><input type="checkbox" id="toggleBtn4A" checked disabled><label for="toggleBtn4A"></label></span>
+                    <span class="btn-switch"><input type="checkbox" id="toggleBtn4A" checked disabled><label
+                            for="toggleBtn4A"></label></span>
                 </dd>
                 <dd data-description=".btn-switch.label-front : 텍스트 + 토글버튼 (체크박스)">
-                    <span class="btn-switch label-front"><input type="checkbox" id="toggleBtn1B"><label for="toggleBtn1B"><span>체크박스 옵션</span></label></span>
+                    <span class="btn-switch label-front"><input type="checkbox" id="toggleBtn1B"><label
+                            for="toggleBtn1B"><span>체크박스 옵션</span></label></span>
                     <hr>
-                    <span class="btn-switch label-front"><input type="checkbox" id="toggleBtn2B"><label for="toggleBtn2B"><span>체크박스 옵션</span></label></span>
+                    <span class="btn-switch label-front"><input type="checkbox" id="toggleBtn2B"><label
+                            for="toggleBtn2B"><span>체크박스 옵션</span></label></span>
                     <hr>
-                    <span class="btn-switch label-front"><input type="checkbox" id="toggleBtn3B"><label for="toggleBtn3B"><span>체크박스 옵션</span></label></span>
+                    <span class="btn-switch label-front"><input type="checkbox" id="toggleBtn3B"><label
+                            for="toggleBtn3B"><span>체크박스 옵션</span></label></span>
                     <hr>
-                    <span class="btn-switch label-front"><input type="checkbox" id="toggleBtn4B"><label for="toggleBtn4B"><span>체크박스 옵션</span></label></span>
+                    <span class="btn-switch label-front"><input type="checkbox" id="toggleBtn4B"><label
+                            for="toggleBtn4B"><span>체크박스 옵션</span></label></span>
                 </dd>
                 <dd data-description=".btn-switch : 토글버튼 + 텍스트 (체크박스)">
-                    <span class="btn-switch"><input type="checkbox" id="toggleBtn1C"><label for="toggleBtn1C"><span>체크박스 옵션</span></label></span>
+                    <span class="btn-switch"><input type="checkbox" id="toggleBtn1C"><label for="toggleBtn1C"><span>체크박스
+                                옵션</span></label></span>
                     <hr>
-                    <span class="btn-switch"><input type="checkbox" id="toggleBtn2C"><label for="toggleBtn2C"><span>체크박스 옵션</span></label></span>
+                    <span class="btn-switch"><input type="checkbox" id="toggleBtn2C"><label for="toggleBtn2C"><span>체크박스
+                                옵션</span></label></span>
                     <hr>
-                    <span class="btn-switch"><input type="checkbox" id="toggleBtn3C"><label for="toggleBtn3C"><span>체크박스 옵션</span></label></span>
+                    <span class="btn-switch"><input type="checkbox" id="toggleBtn3C"><label for="toggleBtn3C"><span>체크박스
+                                옵션</span></label></span>
                     <hr>
-                    <span class="btn-switch"><input type="checkbox" id="toggleBtn4C"><label for="toggleBtn4C"><span>체크박스 옵션</span></label></span>
+                    <span class="btn-switch"><input type="checkbox" id="toggleBtn4C"><label for="toggleBtn4C"><span>체크박스
+                                옵션</span></label></span>
                 </dd>
                 <dd data-description=".btn-switch : 토글버튼 + 텍스트 (라디오)">
-                    <span class="btn-switch"><input type="radio" name="radioSwitch" id="toggleBtn1D" checked><label for="toggleBtn1D"><span>라디오 옵션</span></label></span>
+                    <span class="btn-switch"><input type="radio" name="radioSwitch" id="toggleBtn1D" checked><label
+                            for="toggleBtn1D"><span>라디오 옵션</span></label></span>
                     <hr>
-                    <span class="btn-switch"><input type="radio" name="radioSwitch" id="toggleBtn2D"><label for="toggleBtn2D"><span>라디오 옵션</span></label></span>
+                    <span class="btn-switch"><input type="radio" name="radioSwitch" id="toggleBtn2D"><label
+                            for="toggleBtn2D"><span>라디오 옵션</span></label></span>
                     <hr>
-                    <span class="btn-switch"><input type="radio" name="radioSwitch" id="toggleBtn3D"><label for="toggleBtn3D"><span>라디오 옵션</span></label></span>
+                    <span class="btn-switch"><input type="radio" name="radioSwitch" id="toggleBtn3D"><label
+                            for="toggleBtn3D"><span>라디오 옵션</span></label></span>
                     <hr>
-                    <span class="btn-switch"><input type="radio" name="radioSwitch" id="toggleBtn4D"><label for="toggleBtn4D"><span>라디오 옵션</span></label></span>
+                    <span class="btn-switch"><input type="radio" name="radioSwitch" id="toggleBtn4D"><label
+                            for="toggleBtn4D"><span>라디오 옵션</span></label></span>
                 </dd>
                 <dd data-description=".btn-switch.label-front : 텍스트 + 토글버튼  (라디오)">
-                    <span class="btn-switch label-front"><input type="radio" name="radioSwitch2" id="toggleBtn1E" checked><label for="toggleBtn1E"><span>라디오 옵션</span></label></span>
+                    <span class="btn-switch label-front"><input type="radio" name="radioSwitch2" id="toggleBtn1E"
+                            checked><label for="toggleBtn1E"><span>라디오 옵션</span></label></span>
                     <hr>
-                    <span class="btn-switch label-front"><input type="radio" name="radioSwitch2" id="toggleBtn2E"><label for="toggleBtn2E"><span>라디오 옵션</span></label></span>
+                    <span class="btn-switch label-front"><input type="radio" name="radioSwitch2" id="toggleBtn2E"><label
+                            for="toggleBtn2E"><span>라디오 옵션</span></label></span>
                     <hr>
-                    <span class="btn-switch label-front"><input type="radio" name="radioSwitch2" id="toggleBtn3E"><label for="toggleBtn3E"><span>라디오 옵션</span></label></span>
+                    <span class="btn-switch label-front"><input type="radio" name="radioSwitch2" id="toggleBtn3E"><label
+                            for="toggleBtn3E"><span>라디오 옵션</span></label></span>
                     <hr>
-                    <span class="btn-switch label-front"><input type="radio" name="radioSwitch2" id="toggleBtn4E"><label for="toggleBtn4E"><span>라디오 옵션</span></label></span>
+                    <span class="btn-switch label-front"><input type="radio" name="radioSwitch2" id="toggleBtn4E"><label
+                            for="toggleBtn4E"><span>라디오 옵션</span></label></span>
                 </dd>
             </dl>
         </div>
@@ -330,43 +371,59 @@
                 </dt>
                 <dd data-description=".form-checkbox : 체크박스 (24px)">
                     <!-- Size 24px -->
-                    <span class="form-checkbox"><input type="checkbox" id="checkboxSample11"><label for="checkboxSample11">Default</label></span>
+                    <span class="form-checkbox"><input type="checkbox" id="checkboxSample11"><label
+                            for="checkboxSample11">Default</label></span>
                     <hr>
-                    <span class="form-checkbox"><input type="checkbox" id="checkboxSample12" disabled><label for="checkboxSample12">Default(Disabled)</label></span>
+                    <span class="form-checkbox"><input type="checkbox" id="checkboxSample12" disabled><label
+                            for="checkboxSample12">Default(Disabled)</label></span>
                     <hr>
-                    <span class="form-checkbox"><input type="checkbox" id="checkboxSample13" checked><label for="checkboxSample13">Selected</label></span>
+                    <span class="form-checkbox"><input type="checkbox" id="checkboxSample13" checked><label
+                            for="checkboxSample13">Selected</label></span>
                     <hr>
-                    <span class="form-checkbox"><input type="checkbox" id="checkboxSample14" checked disabled><label for="checkboxSample14">Selected(Disabled)</label></span>
+                    <span class="form-checkbox"><input type="checkbox" id="checkboxSample14" checked disabled><label
+                            for="checkboxSample14">Selected(Disabled)</label></span>
                 </dd>
                 <dd data-description=".form-checkbox.align-mid : 상하 중앙 정렬">
                     <!-- Size 24px -->
-                    <span class="form-checkbox align-mid"><input type="checkbox" id="checkboxSample15"><label for="checkboxSample15">Default<br>2nd Line</label></span>
+                    <span class="form-checkbox align-mid"><input type="checkbox" id="checkboxSample15"><label
+                            for="checkboxSample15">Default<br>2nd Line</label></span>
                     <hr>
-                    <span class="form-checkbox align-mid"><input type="checkbox" id="checkboxSample16" disabled><label for="checkboxSample16">Default(Disabled)<br>2nd Line</label></span>
+                    <span class="form-checkbox align-mid"><input type="checkbox" id="checkboxSample16" disabled><label
+                            for="checkboxSample16">Default(Disabled)<br>2nd Line</label></span>
                     <hr>
-                    <span class="form-checkbox align-mid"><input type="checkbox" id="checkboxSample17" checked><label for="checkboxSample17">Selected<br>2nd Line</label></span>
+                    <span class="form-checkbox align-mid"><input type="checkbox" id="checkboxSample17" checked><label
+                            for="checkboxSample17">Selected<br>2nd Line</label></span>
                     <hr>
-                    <span class="form-checkbox align-mid"><input type="checkbox" id="checkboxSample18" checked disabled><label for="checkboxSample18">Selected(Disabled)<br>2nd Line</label></span>
+                    <span class="form-checkbox align-mid"><input type="checkbox" id="checkboxSample18" checked
+                            disabled><label for="checkboxSample18">Selected(Disabled)<br>2nd Line</label></span>
                 </dd>
                 <dd data-description=".form-checkbox_20 : 체크박스 (20px)">
                     <!-- Size 20px : no text-->
-                    <span class="form-checkbox_20"><input type="checkbox" id="checkboxSample21"><label for="checkboxSample21">Default</label></span>
+                    <span class="form-checkbox_20"><input type="checkbox" id="checkboxSample21"><label
+                            for="checkboxSample21">Default</label></span>
                     <hr>
-                    <span class="form-checkbox_20"><input type="checkbox" id="checkboxSample22" disabled><label for="checkboxSample22">Default(Disabled)</label></span>
+                    <span class="form-checkbox_20"><input type="checkbox" id="checkboxSample22" disabled><label
+                            for="checkboxSample22">Default(Disabled)</label></span>
                     <hr>
-                    <span class="form-checkbox_20"><input type="checkbox" id="checkboxSample23" checked><label for="checkboxSample23">Selected</label></span>
+                    <span class="form-checkbox_20"><input type="checkbox" id="checkboxSample23" checked><label
+                            for="checkboxSample23">Selected</label></span>
                     <hr>
-                    <span class="form-checkbox_20"><input type="checkbox" id="checkboxSample24" checked disabled><label for="checkboxSample24">Selected(Disabled)</label></span>
+                    <span class="form-checkbox_20"><input type="checkbox" id="checkboxSample24" checked disabled><label
+                            for="checkboxSample24">Selected(Disabled)</label></span>
                 </dd>
                 <dd data-description=".form-checkbox_20.align-mid : 상하 중앙 정렬)">
                     <!-- Size 20px : no text-->
-                    <span class="form-checkbox_20 align-mid"><input type="checkbox" id="checkboxSample21"><label for="checkboxSample21">Default<br>2nd Line</label></span>
+                    <span class="form-checkbox_20 align-mid"><input type="checkbox" id="checkboxSample21"><label
+                            for="checkboxSample21">Default<br>2nd Line</label></span>
                     <hr>
-                    <span class="form-checkbox_20 align-mid"><input type="checkbox" id="checkboxSample22" disabled><label for="checkboxSample22">Default(Disabled)<br>2nd Line</label></span>
+                    <span class="form-checkbox_20 align-mid"><input type="checkbox" id="checkboxSample22"
+                            disabled><label for="checkboxSample22">Default(Disabled)<br>2nd Line</label></span>
                     <hr>
-                    <span class="form-checkbox_20 align-mid"><input type="checkbox" id="checkboxSample23" checked><label for="checkboxSample23">Selected<br>2nd Line</label></span>
+                    <span class="form-checkbox_20 align-mid"><input type="checkbox" id="checkboxSample23" checked><label
+                            for="checkboxSample23">Selected<br>2nd Line</label></span>
                     <hr>
-                    <span class="form-checkbox_20 align-mid"><input type="checkbox" id="checkboxSample24" checked disabled><label for="checkboxSample24">Selected(Disabled)<br>2nd Line</label></span>
+                    <span class="form-checkbox_20 align-mid"><input type="checkbox" id="checkboxSample24" checked
+                            disabled><label for="checkboxSample24">Selected(Disabled)<br>2nd Line</label></span>
                 </dd>
             </dl>
         </div>
@@ -383,22 +440,30 @@
                     </pre>
                 </dt>
                 <dd data-description=".form-radio : 라디오 기본">
-                    <span class="form-radio"><input type="radio" id="radioSample01"><label for="radioSample01">Default<br>2nd Line</label></span>
+                    <span class="form-radio"><input type="radio" id="radioSample01"><label
+                            for="radioSample01">Default<br>2nd Line</label></span>
                     <hr>
-                    <span class="form-radio"><input type="radio" id="radioSample02" disabled><label for="radioSample02">Default(Disabled)<br>2nd Line</label></span>
+                    <span class="form-radio"><input type="radio" id="radioSample02" disabled><label
+                            for="radioSample02">Default(Disabled)<br>2nd Line</label></span>
                     <hr>
-                    <span class="form-radio"><input type="radio" id="radioSample03" checked><label for="radioSample03">Selected<br>2nd Line</label></span>
+                    <span class="form-radio"><input type="radio" id="radioSample03" checked><label
+                            for="radioSample03">Selected<br>2nd Line</label></span>
                     <hr>
-                    <span class="form-radio"><input type="radio" id="radioSample04" checked  disabled><label for="radioSample04">Selected(Disabled)<br>2nd Line</label></span>
+                    <span class="form-radio"><input type="radio" id="radioSample04" checked disabled><label
+                            for="radioSample04">Selected(Disabled)<br>2nd Line</label></span>
                 </dd>
                 <dd data-description=".form-radio align-mid : 상하 중앙 정렬">
-                    <span class="form-radio align-mid"><input type="radio" id="radioSample11"><label for="radioSample11">Default<br>2nd Line</label></span>
+                    <span class="form-radio align-mid"><input type="radio" id="radioSample11"><label
+                            for="radioSample11">Default<br>2nd Line</label></span>
                     <hr>
-                    <span class="form-radio align-mid"><input type="radio" id="radioSample12" disabled><label for="radioSample12">Default(Disabled)<br>2nd Line</label></span>
+                    <span class="form-radio align-mid"><input type="radio" id="radioSample12" disabled><label
+                            for="radioSample12">Default(Disabled)<br>2nd Line</label></span>
                     <hr>
-                    <span class="form-radio align-mid"><input type="radio" id="radioSample13" checked><label for="radioSample13">Selected<br>2nd Line</label></span>
+                    <span class="form-radio align-mid"><input type="radio" id="radioSample13" checked><label
+                            for="radioSample13">Selected<br>2nd Line</label></span>
                     <hr>
-                    <span class="form-radio align-mid"><input type="radio" id="radioSample14" checked  disabled><label for="radioSample14">Selected(Disabled)<br>2nd Line</label></span>
+                    <span class="form-radio align-mid"><input type="radio" id="radioSample14" checked disabled><label
+                            for="radioSample14">Selected(Disabled)<br>2nd Line</label></span>
                 </dd>
             </dl>
         </div>
@@ -539,11 +604,13 @@
                     <div class="terms-conditions">
                         <strong class="title">제1장 총칙</strong>
                         <p class="sub-title">제 1조 (목적)</p>
-                        <p>본 약관은 NICE평가정보(이하 "회사")가 제공하는 온라인 상의 인터넷 서비스인 NICE 지키미(이하 "사이트")에 회원으로 가입하고 이를 이용함에 있어 회사와 회원의 권리·의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.</p>
+                        <p>본 약관은 NICE평가정보(이하 "회사")가 제공하는 온라인 상의 인터넷 서비스인 NICE 지키미(이하 "사이트")에 회원으로 가입하고 이를 이용함에 있어 회사와
+                            회원의 권리·의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.</p>
                         <p class="sub-title">제 2조 (정의)</p>
                         <p>이 약관에서 사용하는 용어의 정의는 다음과 같습니다.</p>
                         <ul>
-                            <li>① 서비스: 구현되는 단말기(PC, 모바일 기기, ARS 등 각종 유무선 장치 포함)의 종류와 상관없이, 신용관리 및 명의보호서비스 등 회원이 이용할 수 있는 NICE 지키미와 관련된 제반 서비스를 의미합니다.</li>
+                            <li>① 서비스: 구현되는 단말기(PC, 모바일 기기, ARS 등 각종 유무선 장치 포함)의 종류와 상관없이, 신용관리 및 명의보호서비스 등 회원이 이용할 수 있는
+                                NICE 지키미와 관련된 제반 서비스를 의미합니다.</li>
                             <li>② 회원: 회사의 사이트에 접속하여 이 약관에 따라 회사와 이용계약을 체결하고, 회사가 제공하는 서비스를 이용하는 고객을 말합니다. </li>
                         </ul>
                     </div>
@@ -791,12 +858,17 @@
         <hr>
         <!-- 별점 -->
         <style>
-            .star-point {display: block; margin-bottom: 5px;}
+            .star-point {
+                display: block;
+                margin-bottom: 5px;
+            }
         </style>
         <div class="box">
             <h2>별점</h2>
             <dl class="flex-dl">
-                <dt><pre><code></code></pre></dt>
+                <dt>
+                    <pre><code></code></pre>
+                </dt>
                 <dd>
                     <span class="star-point" data-point="0"><span>별점 : 5점 만점에 0점</span><i></i></span>
                     <span class="star-point" data-point="1"><span>별점 : 5점 만점에 1점</span><i></i></span>
@@ -811,7 +883,9 @@
         <div class="box" id="linkArrow">
             <h2>Link(화살표)</h2>
             <dl class="flex-dl">
-                <dt><pre><code></code></pre></dt>
+                <dt>
+                    <pre><code></code></pre>
+                </dt>
                 <dd>
                     <span class="link-arrow">바로가기</span>
                 </dd>
@@ -835,7 +909,9 @@
         <div class="box" id="hr">
             <h2>hr (구분선)</h2>
             <dl class="flex-dl">
-                <dt><pre><code></code></pre></dt>
+                <dt>
+                    <pre><code></code></pre>
+                </dt>
                 <dd data-description=".hr-divide_48 : 상하 48px 구분선" style="padding-left:0;padding-right:0;">
                     <section class="kb-sec">컨텐츠 01</section>
                     <hr class="hr-divide_48">
@@ -862,7 +938,7 @@
             </dl>
         </div>
         <hr>
-        <div class="box" id="optional">
+        <!-- <div class="box" id="optional">
             <h2>선택입력요소</h2>
             <dl class="flex-dl">
                 <dt><pre><code></code></pre></dt>
@@ -873,8 +949,8 @@
 							<input type="text" id="formTextSample02" value="김국민">
 							<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
 						</div>
-						<em class="validation">Success / Error Message</em><!-- 성공/에러 메세지 -->
-                        <p class="info-msg">(필요하면) 안내 메세지</p><!-- 안내 메세지 -->
+						<em class="validation">Success / Error Message</em>
+                        <p class="info-msg">(필요하면) 안내 메세지</p>
 					</div>
 				</dd>
                 <dd data-description=".kbform : 기본">
@@ -890,6 +966,44 @@
                     </div>
 				</dd>
             </dl>
+        </div> -->
+        <div class="box chart-sample" id="graphBg">
+            <h2>[웹접근성] 그래프 패턴 BG</h2>
+            <ul class="pattern">
+                <li><span class="pattern01"></span>.pattern01</li>
+                <li><span class="pattern02"></span>.pattern02</li>
+                <li><span class="pattern03"></span>.pattern03</li>
+                <li><span class="pattern04"></span>.pattern04</li>
+                <li><span class="pattern05"></span>.pattern05</li>
+                <li><span class="pattern06"></span>.pattern06</li>
+                <li><span class="pattern07"></span>.pattern07</li>
+                <li><span class="pattern08"></span>.pattern08</li>
+                <li><span class="pattern09"></span>.pattern09</li>
+                <li><span class="pattern10"></span>.pattern10</li>
+                <li><span class="pattern11"></span>.pattern11</li>
+                <li><span class="pattern12"></span>.pattern12</li>
+                <li><span class="pattern13"></span>.pattern13</li>
+                <li><span class="pattern14"></span>.pattern14</li>
+                <li><span class="pattern15"></span>.pattern15</li>
+                <li><span class="pattern16"></span>.pattern16</li>
+                <li><span class="pattern17"></span>.pattern17</li>
+                <li><span class="pattern18"></span>.pattern18</li>
+                <li><span class="pattern19"></span>.pattern19</li>
+                <li><span class="pattern20"></span>.pattern20</li>
+                <li><span class="pattern21"></span>.pattern21</li>
+                <li><span class="pattern22"></span>.pattern22</li>
+                <li><span class="pattern23"></span>.pattern23</li>
+                <li><span class="pattern24"></span>.pattern24</li>
+                <li><span class="pattern25"></span>.pattern25</li>
+                <li><span class="pattern26"></span>.pattern26</li>
+                <li><span class="pattern27"></span>.pattern27</li>
+                <li><span class="pattern28"></span>.pattern28</li>
+                <li><span class="pattern29"></span>.pattern29</li>
+                <li><span class="pattern30"></span>.pattern30</li>
+                <li><span class="pattern31"></span>.pattern31</li>
+                <li><span class="pattern32"></span>.pattern32</li>
+                <li><span class="pattern33"></span>.pattern33</li>
+            </ul>
         </div>
     </div>
     @@include('@@webRoot/html/_include/common-js.html')

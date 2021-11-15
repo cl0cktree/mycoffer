@@ -6,10 +6,13 @@
 })
 <style>
     .pattern{display:flex;flex-wrap:wrap;}
-    .pattern li{width:calc(100% / 5);margin-bottom:10px;text-align:center;font-size:12px;}
+    .pattern li{width:calc((100% / 8) - 10px);margin-left:5px;margin-right:5px;margin-bottom:10px;text-align:center;font-size:12px;}
     .pattern li span{display:block;width:calc(100% - 4px);margin:0 auto 8px;padding-top:calc(100% - 4px);}
     .pattern-src-desc{line-height:1.5;}
     .h2 + .h3{margin-top:24px;}
+    @media screen and (max-width:720px){
+        .pattern li{width:calc((100% / 4) - 10px);}
+    }
 </style>
 </head>
 <body>
@@ -73,8 +76,11 @@
     <script>
 
         //pattern sample
-        chartBg.forEach(function(element, index){            
-            $('.pattern').append('<li><span style="background:url(' + element.pattern + ')"></span>chartBg[' + index  + ']</li>')
+        chartBg.forEach(function(element, index){
+            if(index != 0){
+                index = String(index).length != 1 ? index : "0" + index;
+                $('.pattern').append('<li><span style="background-image:url(' + element.pattern + ');" class="pattern' + index + '"></span>chartBg[' + index  + ']</li>')
+            }
         });
         
         
@@ -163,7 +169,7 @@
                         { // 특정 data값에 대하여 dataLabel을 붙임
                             y: 29.9,
                             //color: '#ffd338', // 강조할 data의 색상
-                            color: chartBg[0]
+                            color: chartBg[1]
                         }],
                 color: chartBg[26]  
             }]
@@ -377,23 +383,44 @@
                     dashStyle: 'dot'
                 }]
             },
-            plotOptions: {
-                series: {
-                    color: '#c7ccd1', // 기본색상
-                    lineWidth: 4,
-                    marker: {
-                        symbol: 'circle',
-                        enabled: true,
-                        radius: 4,
-                        fillColor: chartBg[28],
-                    },
+            series: [
+                {
+                    name: 'test1',
+                    lineColor: lineBg[1],
+                    color: 'transparent',
+                    data: [450000, 230000, 185210, 350000],
+                    marker: lineMarker[1],
                 },
-            },
-            series: [{
-                lineColor: '#d575c9',
-                color: chartBg[20],
-                data: [450000, 230000, 185210, 350000],
-            }]
+                {
+                    name: 'test2',
+                    lineColor: lineBg[2],
+                    color: 'transparent',
+                    data: [400000, 210000, 285210, 450000],
+                    marker: lineMarker[2],
+                },
+                {
+                    name: 'test3',
+                    lineColor: lineBg[3],
+                    color: 'transparent',
+                    data: [300000, 610000, 185210, 350000],
+                    marker: lineMarker[3],
+                },
+                {
+                    name: 'test4',
+                    lineColor: lineBg[4],
+                    color: 'transparent',
+                    data: [30000, 61000, 18210, 30000],
+                    marker: lineMarker[4],
+                },
+                {
+                    name: 'test5',
+                    lineColor: lineBg[5],
+                    color: 'transparent',
+                    data: [100000, 110000, 385210, 450000],
+                    marker: lineMarker[5],
+                },
+            ]
+
         });
     </script>
 

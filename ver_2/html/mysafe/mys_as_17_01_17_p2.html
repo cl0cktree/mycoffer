@@ -105,9 +105,13 @@
 
                 <section class="kb-sec mt24">
                     <label for="mysafe_29" class="required tit phone-trans-titlte phone-price-info mt24">휴대폰 시세</label>
+                    <!-- 2021-11-15 수정 -->
+                    <!--
                     <div class="button-area safe-flex100">
                         <button class="btn-line my-phone-value"><span>조회</span></button>
                     </div>
+                    -->
+                    <!-- --------------- -->
                     <div class="kb-form phone-input-value safe-flex100 not-ready no-transition" data-status="info">
                         <!-- <label for="mysafe_04">금액</label> -->
                         <div class="kb-form_inner mt12 form-text">
@@ -253,11 +257,13 @@
         };
 
         function value_trans_ok(){//조회버튼 클릭 시 입력창(가격-readonly)노출 됨.
-            $('.my-phone-trans-info').addClass('safe-display-none');
+            // 2021-11-15 수정
+            // $('.my-phone-trans-info').addClass('safe-display-none');
             $('.phone-input-value').children('.kb-form_inner').removeClass('safe-display-none');
         };
         function value_trans_cancle(){//value_trans_ok() 함수의 반대 동작.
-            $('.my-phone-trans-info').removeClass('safe-display-none');
+            // 2021-11-15 수정
+            // $('.my-phone-trans-info').removeClass('safe-display-none');
             $('.phone-input-value').children('.kb-form_inner').addClass('safe-display-none');
         };
 

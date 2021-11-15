@@ -33,30 +33,37 @@
             <main class="app-content expense-home">
                 <!-- 지출 요약 영역 //-->
                 <section class="kb-sec monthly-expense-guide dividing-space-bottom">
-                    <a href="mys_ex_01_00_00.html" class="link-box_block">
-                        <div class="content-box no-shadow">
-                            <div class="highcharts-box">
-                                <div class="graph-area">
-                                    <figure class="highcharts-figure">
-                                        <div class="chart-tit">
-                                            <h4 class="h4"><strong>김국민</strong>님의 월간지출추이
-                                                <span class="date num">(2021.08.01 ~ 2021.08.10)</span>
-                                            </h4>
-                                        </div>
-                                        <!-- [chart area] //-->
-                                        <div class="chart-area" id="">
-                                            <img class="temp" src="../../static/images/_temp/chart_ex0410.png" alt="차트 예시 이미지">
-                                        </div>
-                                        <div class="legend-unit">
-                                            <span class="basic" data-type="dash">월평균지출금액 <em class="num" data-unit-after="원">3,200,000</em></span>
-                                        </div>
-                                        <!--// [chart area] -->
-                                    </figure>
-                                </div>
+                    <!-- 수정:2021-11-15 -->
+                    <!-- a 링크 제거 -->
+                    <div class="content-box no-shadow">
+                        <div class="highcharts-box">
+                            <div class="graph-area">
+                                <figure class="highcharts-figure">
+                                    <!-- 수정:2021-11-15 -->
+                                    <!-- 마크업 수정 : div -> a , 링크+클래스 추가 : link-box_block -->
+                                    <a href="@@webRoot/html/expense/mys_ex_01_00_00.html" class="link-box_block chart-tit">
+                                        <h4 class="h4"><strong>김국민</strong>님의 월간지출추이
+                                            <span class="date num">(2021.08.01 ~ 2021.08.10)</span>
+                                        </h4>
+                                    </a>
+                                    <!-- [chart area] //-->
+                                    <div class="chart-area" id="">
+                                        <img class="temp" src="../../static/images/_temp/chart_ex0410.png" alt="차트 예시 이미지">
+                                    </div>
+                                    <div class="legend-unit">
+                                        <span class="basic" data-type="dash">월평균지출금액 <em class="num" data-unit-after="원">3,200,000</em></span>
+                                    </div>
+                                    <!--// [chart area] -->
+                                </figure>
                             </div>
                         </div>
-                    </a>
-                    <div class="notice-group flex-box mt24">
+                    </div>
+                    <div class="chart-update-info">
+                        <span>최근접속일 : <em class="num">2021.10.30 16:48</em><button type="button" class="btn-refresh"><i class="icon-refresh"></i></button></span>
+                        <p class="error-msg"><button class="btn-text"><u>연동오류 (4)</u></button></p>
+                    </div>
+                    <!-- </a> -->
+                    <div class="notice-group flex-box"> <!-- 수정:2021-11-15 --><!-- 클래스 제거 (mt24) -->
                         <div class="notice-item">
                             <strong class="h4">지출가이드</strong>
                             <p class="desc">오늘까지<strong><em class="num" data-unit-after="원">2,300,000</em> </strong>지출했어요</p>

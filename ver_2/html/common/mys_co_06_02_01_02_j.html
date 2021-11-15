@@ -1,0 +1,270 @@
+<!-- [MYS_CO_06_02_01_02] My NOW (작성자: 누리어 시스템 황철민) -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "My NOW"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app" data-page="submain">
+
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'KB마이머니',
+            'type':'submain'
+        })
+
+		<!-- app-container //-->
+		<div class="app-container">
+			<!-- app-content // -->
+			<main class="app-content">
+
+				<!-- My Now : 대시보드 // -->
+				<section class="kb-sec dashboard">
+
+					<!-- 자산 // -->
+					<div class="dashboard-section dashboard-asset">
+						<a href="#" class="link">
+							<h2 class="sec-title">나의 순자산</h2>
+							<div class="key-visual">
+								<img src="@@webRoot/static/images/common/mynow_asset.png" alt="">
+							</div>
+							<span class="sec-amount"><span class="num" data-unit-after="원">136,100,136</span></span>
+							<div class="sub-text">전일보다 <span class="num up" data-unit-after="원">1,600,000</span> 증가</div>
+						</a>
+					</div>
+					<!-- // 자산 -->
+
+					<!-- 지출 // -->
+					<div class="dashboard-section dashboard-expense">
+						<a href="#" class="link">
+							<h2 class="sec-title"><span class="num">7</span>월 지출금액</h2>
+							<div class="key-visual">
+								<img src="@@webRoot/static/images/common/mynow_expense.png" alt="">
+							</div>
+							<span class="sec-amount"><span class="num" data-unit-after="원">1,806,400</span></span>
+							<div class="sub-text">목표액 보다 <span class="num up" data-unit-after="원">526,000</span> 더 사용했어요.</div>
+						</a>
+						<div class="button-area">
+							<a href="#" class="btn-line">예정지출 3건</a>
+						</div>
+					</div>
+					<!-- // 지출 -->
+
+					<!-- 2021-11-02 수정 // -->
+					<!-- 목표 // -->
+					<div class="dashboard-section dashboard-goal goals-challenge">
+
+						<h2>인기 챌린지 TOP3</h2>
+
+						<div class="swiper-container js-swiper" data-swiper-options="dashboardGoalSwiperOptions">
+							<script>
+								var dashboardGoalSwiperOptions = {
+									"pagination": {
+										"el": ".swiper-pagination"
+									}
+								};
+							</script>
+							<div class="swiper-wrapper challenge-box">
+								<!-- 커피 줄이기 // -->
+								<div class="swiper-slide goal-slide">
+									<div class="content-box">
+										<div class="challenge-tit">
+											<h3 class="h3">커피 줄이기</h3>
+											<button type="button" class=""><span><i class="icon-link_24"></i></span></button>
+										</div>
+										<div class="challenge-info type2">
+											<div class="tit flex-box goals-desc">
+												<div class="left-cont">
+													<h4 class="spend-desc">도전자가 많은 인기 챌린지에<br>참여해 보세요!</h4>
+												</div>
+											</div>                                        
+											<div class="goals-now">
+												<p>목표기간<i></i>일주일</p>
+											</div>
+											<div class="content">
+												<span class="img-character">
+													<img class="temp" src="@@webRoot/static/images/_temp/@icon_coffee.png" alt="커피">
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- // 커피 줄이기 -->
+								<!-- 배달음식 줄이기 // -->
+								<div class="swiper-slide goal-slide">
+									<div class="content-box">
+										<div class="challenge-tit">
+											<h3 class="h3">배달음식 줄이기</h3>
+											<button type="button" class=""><span><i class="icon-link_24"></i></span></button>
+										</div>
+										<div class="challenge-info type2">
+											<div class="tit flex-box goals-desc">
+												<div class="left-cont">
+													<h4 class="spend-desc">도전자가 많은 인기 챌린지에<br>참여해 보세요!</h4>
+												</div>
+											</div>                                        
+											<div class="goals-now">
+												<p>목표기간<i></i>일주일</p>
+											</div>
+											<div class="content">
+												<span class="img-character">
+													<img class="temp" src="@@webRoot/static/images/_temp/@icon_delivery.png" alt="배달음식">
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- // 배달음식 줄이기 -->
+								<!-- 택시비 줄이기 -->
+								<div class="swiper-slide goal-slide">
+									<div class="content-box">
+										<div class="challenge-tit">
+											<h3 class="h3">택시비 줄이기</h3>
+											<button type="button" class=""><span><i class="icon-link_24"></i></span></button>
+										</div>
+										<div class="challenge-info type2">
+											<div class="tit flex-box goals-desc">
+												<div class="left-cont">
+													<h4 class="spend-desc">도전자가 많은 인기 챌린지에<br>참여해 보세요!</h4>
+												</div>
+											</div>                                        
+											<div class="goals-now">
+												<p>목표기간<i></i>일주일</p>
+											</div>
+											<div class="content">
+												<span class="img-character">
+													<img class="temp" src="@@webRoot/static/images/_temp/@icon_taxi.png" alt="택시">
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- // 택시비 줄이기 -->
+							</div>
+							<div class="swiper-pagination"></div>
+						</div>
+					</div>
+					<!-- // 목표 -->
+					<!-- // 2021-11-02 수정 -->
+
+					<!-- 내 자산 한눈에 관리하기 // -->
+					<div class="dashboard-section dashboard-items">
+						<h2 class="sec-title">내 자산 한눈에 관리하기</h2>
+						<ul class="items">
+							<!-- 신용점수 : Data 연동 되었을 경우 // -->
+							<li class="item item-credit">
+								<a href="#">
+									<span class="tit">신용점수</span>
+									<span class="value"><span class="num" data-unit-after="점">909</span></span>
+									<span class="desc">지난달보다 <span class="num" data-unit-after="점">20</span> 상승</span>
+								</a>
+							</li>
+							<!-- // 신용점수 : Data 연동 되었을 경우 -->
+							<!-- 신용점수 : Data 연동 안되었을 경우 // -->
+							<li class="item item-credit">
+								<a href="#">
+									<span class="tit">신용점수</span>
+									<span class="desc">내 신용점수를 알아보고, 신용관리를 시작해보세요.</span>
+								</a>
+							</li>
+							<!-- // 신용점수 : Data 연동 안되었을 경우 -->
+
+							<!-- My Car : Data 연동 되었을 경우 // -->
+							<li class="item item-mycar">
+								<a href="#">
+									<span class="tit">My Car 차량유지비</span>
+									<span class="value"><span class="num" data-unit-after="원">806,000</span></span>
+									<span class="desc">지난달보다 <span class="num" data-unit-after="원">50,000</span> 상승</span>
+								</a>
+							</li>
+							<li class="item item-mycar">
+								<a href="#">
+									<span class="tit">Wish Car<span class="vbar">볼보 XC90</span></span>
+									<span class="value"><span class="num" data-unit-after="원">81,800,000</span></span>
+									<span class="desc">등록일보다 <span class="num" data-unit-after="만원">100</span> 하락</span>
+								</a>
+							</li>
+							<!-- // My Car : Data 연동 되었을 경우 -->
+							<!-- My Car : Data 연동 안되었을 경우 // -->
+							<li class="item item-mycar">
+								<a href="#">
+									<span class="tit">My Car</span>
+									<span class="desc">보유중인 자동차 정보를 입력하고 차량유지비등 내 자동차 지출을 관리해 보세요.</span>
+								</a>
+							</li>
+							<!-- // My Car : Data 연동 안되었을 경우 -->
+
+							<!-- My House : Data 연동 되었을 경우 // -->
+							<li class="item item-myhouse">
+								<a href="#">
+									<span class="tit">My House</span>
+									<span class="value"><span class="num" data-unit-after="원">1,220,000,000</span></span>
+									<span class="desc">매입가보다 <span class="num" data-unit-after="만원">1,000</span> 하락<br>지난달보다 <span class="num" data-unit-after="만원">100</span> 하락</span>
+								</a>
+							</li>
+							<li class="item item-myhouse">
+								<a href="#">
+									<span class="tit">Wish House<span class="vbar">대치오피스텔</span></span>
+									<span class="value"><span class="num" data-unit-after="원">1,020,000,000</span></span>
+									<span class="desc">등록일보다 <span class="num" data-unit-after="만원">100</span> 하락</span>
+								</a>
+							</li>
+							<!-- // My House : Data 연동 되었을 경우 -->
+							<!-- My House : Data 연동 안되었을 경우 // -->
+							<li class="item item-myhouse">
+								<a href="#">
+									<span class="tit">My House</span>
+									<span class="desc">보유중인 부동산 정보를 입력하고<br>시세를 확인해보세요.</span>
+								</a>
+							</li>
+							<!-- // My House : Data 연동 안되었을 경우 -->
+						</ul>
+						<!-- 2021-11-11 수정 // -->
+						<div class="last-update">
+							<span class="datetime">2021.07.06 21:08</span>
+							<button type="button" class="btn-refresh"><span><i class="icon-refresh">내 자산 새로고침</i></span></button>
+							<div class="result">
+								<span class="error-msg"><button type="button" data-call-layered="mys_co_06_02_01_02_bs">연동오류 (<span class="num">2</span>)</button></span>
+							</div>
+						</div>
+						<!-- // 2021-11-11 수정 -->
+
+						<div class="btn-area">
+							<button type="button" class="btn-solid"><span>내 자산 추가</span></button>
+						</div>
+					</div>
+					<!-- // 내 자산 한눈에 관리하기 -->
+
+				</section>
+
+
+				<!-- // My Now : 대시보드 -->
+
+			</main>
+			<!-- // app-content -->
+
+		<!-- // app-container -->
+	</div>
+
+	<div class="layered">
+		<!-- 2021-11-05 추가 // -->
+		@@include('@@webRoot/html/common/layered/mys_co_06_02_01_02_bs.html')
+		<!-- // 2021-11-05 추가 -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+    
+	<script>        
+		//GNB 활성화 (번호:menu.js)
+		gfn_gnb.select(0);
+	</script>
+</body>
+
+</html>

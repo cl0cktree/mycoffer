@@ -69,7 +69,9 @@
                     <div class="kb-form more-view-item" data-status="error" data-view-option="show">
                         <strong class="form-tit required">금액</strong>
                         <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" id="userRegisterExpenseFormsAccount" placeholder="금액입력(할부인 경우 총 금액 입력)" value="" data-unit="원" data-action="autoSeperator">
+                            <!-- 수정:2021-11-11 -->
+                            <!-- 금액입력 placeholder 수정 (괄호 텍스트 삭제)-->
+                            <input type="text" inputmode="numeric" id="userRegisterExpenseFormsAccount" placeholder="금액입력" value="" data-unit="원" data-action="autoSeperator">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
                         <em class="validation">{필수입력항목}을 입력해 주세요.</em>
@@ -91,13 +93,10 @@
                         </div>
                         <em class="validation">Success Message</em>
                     </div>
-                    <!-- 할부개월수//-->
-                    <div class="kb-form more-view-item" data-status="" data-view-option="hide">
-                        <strong class="form-tit optional">할부개월수</strong><!-- 수정:2021-09-30 --><!-- class 추가 (optional) -->
-                        <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" placeholder="" value="1" data-unit="개월" data-numeric-type="number" id="userRegisterExpenseFormsInstallment" value="" role="button" placeholder="일시불">
-                        </div>
-                    </div>
+                    
+                    <!-- 수정:2021-11-11 -->
+                    <!-- 할부개월수 항목 삭제 -->
+
                     <!-- 거래수단//-->
                     <div class="kb-form more-view-item" data-status="" data-view-option="hide">
                         <strong class="form-tit optional">거래수단</strong><!-- 수정:2021-09-30 --><!-- class 추가 (optional) -->

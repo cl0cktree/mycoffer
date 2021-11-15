@@ -141,7 +141,7 @@ body.guide .guide-template-list iframe{display:block;width:100%;margin-top:10px;
 h2 + .iframe-view{margin-top:10px;}
 h2 + .iframe-view-group{margin-top:20px;}
 
-.box h2 + .guide-desc{margin:10px 0;padding:10px;background-color:#fff;line-height:1.4;}
+.box h2 ~ .guide-desc{margin:10px 0;padding:10px;background-color:#fff;line-height:1.4;}
 
 .native-bar{display:flex;justify-content:space-between;align-items:center;height:48px;background-color:rgb(42, 198, 245);padding:12px 24px;font-weight:bold;}
 .native-bar .btn-close{overflow:hidden;white-space:nowrap;text-indent:100%;width:24px;height:24px;background:url(../resources/images/icon-close.png) no-repeat;background-size:cover;}
@@ -149,8 +149,21 @@ h2 + .iframe-view-group{margin-top:20px;}
 /* 가이드 페이지에서 position 제거 */
 .box .page-step.is-fixed .page-step-inner{position:relative;top:0;}
 
+.chart-sample{position:relative;margin-top:30px;}
+.chart-sample .annotation{position:absolute;right:15px;top:15px;color:#fff;}
+.chart-sample h2{color:#fff;}
+.chart-sample ul{display:flex;flex-wrap:wrap;}
+.chart-sample li{flex:0 1 320px;margin:10px 5px;padding:10px;text-align:center;border:1px solid #ddd;background-color:#fff;}
+.chart-sample li .tit{display:block;font-weight:bold;}
+.pattern-sample{width:100%;}
+.pattern-sample > li{flex:0 0 100%;}
+
+.pattern{display:flex;flex-wrap:wrap;}
+.pattern li{position:relative;flex:none;width:calc((100% / 6) - 10px);margin-bottom:10px;text-align:center;font-size:12px;}
+.pattern li span{display:block;width:calc(100% - 4px);margin:0 auto 8px;padding-top:calc(100% - 4px);}
 
 
-
-
+@media screen and (max-width:720px){
+    .pattern li{width:calc((100% / 4) - 10px)}
+}
 

@@ -26,27 +26,29 @@
                 <h2>지출 > 홈</h2>
                 <!-- 지출 요약 영역 //-->
                 <section class="kb-sec monthly-expense-guide">
-                    <a href="mys_ex_01_00_00.html" class="link-box_block">
-                        <div class="content-box no-shadow">
-                            <div class="highcharts-box">
-                                <div class="graph-area">
-                                    <figure class="highcharts-figure">
-                                        <div class="chart-tit">
-                                            <h4 class="h4"><strong>김국민</strong>님의 월간지출추이
-                                                <span class="date num">(2021.08.01 ~ 2021.08.10)</span>
-                                            </h4>
-                                        </div>
-                                        <!-- [chart area] //-->
-                                        <div class="chart-area" id="expenseHomeColumnChart"></div>
-                                        <div class="legend-unit">
-                                            <span class="basic" data-type="dash">월평균지출금액 <em class="num" data-unit-after="원">3,200,000</em></span>
-                                        </div>
-                                        <!--// [chart area] -->
-                                    </figure>
-                                </div>
+                    <!-- 수정:2021-11-15 -->
+                    <!-- a 링크 제거 -->
+                    <div class="content-box no-shadow">
+                        <div class="highcharts-box">
+                            <div class="graph-area">
+                                <figure class="highcharts-figure">
+                                    <!-- 수정:2021-11-15 -->
+                                    <!-- 마크업 수정 : div -> a , 링크+클래스 추가 : link-box_block -->
+                                    <a href="@@webRoot/html/expense/mys_ex_01_00_00.html" class="link-box_block chart-tit">
+                                        <h4 class="h4"><strong>김국민</strong>님의 월간지출추이
+                                            <span class="date num">(2021.08.01 ~ 2021.08.10)</span>
+                                        </h4>
+                                    </a>
+                                    <!-- [chart area] //-->
+                                    <div class="chart-area" id="expenseHomeColumnChart"></div>
+                                    <div class="legend-unit">
+                                        <span class="basic" data-type="dash">월평균지출금액 <em class="num" data-unit-after="원">3,200,000</em></span>
+                                    </div>
+                                    <!--// [chart area] -->
+                                </figure>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </section>
                 <!--// 지출 요약 영역 -->
 <!--// [MYS_EX_00_00_00] 지출 > 홈 -->
@@ -148,14 +150,14 @@
                                 <div class="legend-unit">
                                     <ul class="flex-box" data-col="3">
                                         <li class="cate1">입출금 <em class="num">10%</em></li>
-                                        <li class="cate2">예적금 <em class="num">30%</em></li>
-                                        <li class="cate3">투자 <em class="num">30%</em></li>
-                                        <li class="cate4">보험 <em class="num">40%</em></li>
-                                        <li class="cate5">외화 <em class="num">30%</em></li>
-                                        <li class="cate6">부동산 <em class="num">30%</em></li>
-                                        <li class="cate7">자동차 <em class="num">30%</em></li>
-                                        <li class="cate8">대출·부채 <em class="num">6%</em></li>
-                                        <li class="cate9">페이 <em class="num">30%</em></li>
+                                        <li class="cate18">예적금 <em class="num">30%</em></li>
+                                        <li class="cate19">투자 <em class="num">30%</em></li>
+                                        <li class="cate20">보험 <em class="num">40%</em></li>
+                                        <li class="cate21">외화 <em class="num">30%</em></li>
+                                        <li class="cate23">부동산 <em class="num">30%</em></li>
+                                        <li class="cate24">자동차 <em class="num">30%</em></li>
+                                        <li class="cate4">대출·부채 <em class="num">6%</em></li>
+                                        <li class="cate25">페이 <em class="num">30%</em></li>
                                     </ul>
                                 </div>
                                 <!--// [chart area] -->
@@ -336,6 +338,7 @@
     <script src="@@webRoot/static/js/ui.js"></script>
     
     <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
+    <script src="@@webRoot/static/common/lib/highcharts/pattern-fill.js"></script> <!-- 211111 : chart pattern 적용 -->
     <script src="@@webRoot/static/common/lib/highcharts/highcharts-more.js"></script>
     <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
     <!-- Add Script -->
@@ -412,11 +415,11 @@
             },
             plotOptions: {
                 series: {
-                    color: '#ffcf53', // 기본색상
                     pointWidth: 6,  // 막대그래프 너비
                     borderRadiusTopLeft: "50%",  // radius 값
                     borderRadiusTopRight: "50%", // radius 값
-                    borderWidth: 0
+                    borderWidth: 0,
+                    color: chartBg[0] // 211111 : chart pattern 적용
                 }
             },
             series: [
@@ -483,11 +486,11 @@
             },
             plotOptions: {
                 series: {
-                    color: '#c6cbd0', // 기본색상
                     pointWidth: 6,  // 막대그래프 너비
                     borderRadiusTopLeft: "50%",  // radius 값
                     borderRadiusTopRight: "50%", // radius 값
-                    borderWidth: 0
+                    borderWidth: 0,
+                    color: chartBg[32] // 211111 : chart pattern 적용
                 }
             },
             series: [
@@ -495,7 +498,7 @@
                     [200000, 680000, 350000, 680000, 860000,
                         { // 특정 data값에 대하여 dataLabel을 붙임
                             y: 665210,
-                            color: '#ffcf53', // 강조할 data의 색상
+                            color: chartBg[0] // 211111 : chart pattern 적용
                         }
                     ]
                 }
@@ -649,7 +652,7 @@
             },
             plotOptions: {
                 series: {
-                    color: '#c6cbd0', // 기본색상
+                    color: chartBg[32],  // 211111 : chart pattern 적용
                     pointWidth: 6,  // 막대그래프 너비
                     borderRadiusTopLeft: "50%",  // radius 값
                     borderRadiusTopRight: "50%", // radius 값
@@ -661,7 +664,7 @@
                     [200000, 680000, 350000, 680000, 860000,
                         { // 특정 data값에 대하여 dataLabel을 붙임
                             y: 665210,
-                            color: '#ffcf53', // 강조할 data의 색상
+                            color: chartBg[0], // 강조할 data의 색상  // 211111 : chart pattern 적용
                         }
                     ]
                 }
@@ -1082,7 +1085,7 @@
             },
             plotOptions: {
                 series: {
-                    color: '#c6cbd0', // 기본색상
+                    color: chartBg[32],  // 211111 : chart pattern 적용
                     pointWidth: 6,  // 막대그래프 너비
                     borderRadiusTopLeft: "50%",  // radius 값
                     borderRadiusTopRight: "50%", // radius 값
@@ -1094,7 +1097,7 @@
                     [450000, 1800000, 200000, 1200000, 500000,
                         { // 특정 data값에 대하여 dataLabel을 붙임
                             y: 800000,
-                            color: '#ffba53', // 강조할 data의 색상
+                            color: chartBg[0] // 강조할 data의 색상  // 211111 : chart pattern 적용
                         }
                     ]
                 }

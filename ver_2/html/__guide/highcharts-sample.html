@@ -29,18 +29,7 @@
 
         
 
-        .chart-sample{position:relative;margin-top:30px;}
-        .chart-sample .annotation{position:absolute;right:15px;top:15px;color:#fff;}
-        .chart-sample h2{color:#fff;}
-        .chart-sample ul{display:flex;flex-wrap:wrap;}
-        .chart-sample li{flex:0 1 320px;margin:10px;padding:10px;text-align:center;border:1px solid #ddd;background-color:#fff;}
-        .chart-sample li .tit{display:block;font-weight:bold;}
-        .pattern-sample{width:100%;}
-        .pattern-sample > li{flex:0 0 100%;}
-
-        .pattern{display:flex;flex-wrap:wrap;}
-        .pattern li{flex:none;width:calc(100% / 8);margin-bottom:10px;text-align:center;font-size:12px;}
-        .pattern li span{display:block;width:calc(100% - 4px);margin:0 auto 8px;padding-top:calc(100% - 4px);}
+        
         
     </style>
 </head>
@@ -209,12 +198,30 @@
         <div class="box chart-sample">
             <h2>[웹접근성] Chart 패턴 BG</h2>
             <div class="annotation"><a href="./highchart/bar-graph_patterned.html" target="_blank"><span>상세보기(새창)</span></a></div>
-            <ul class="pattern"></ul>
+            <div class="guide-desc">
+                pattern은 chartBg Arrary를 사용 1 ~ 33번까지 존재<br>
+                1번부터 순차적으로 사용하고<br>
+                1개의 그래프만 돋보이는 구조라면 나머지 그래프를 chartBg[33]을 사용<br>
+                패턴이 필요없을 때는 solidBg Array 사용
+            </div>
+            <ul class="pattern js-pattern"></ul>
+        </div>
+        <hr>
+        <div class="box chart-sample">
+            <h2>[웹접근성] Line Chart Marker</h2>
+            <div class="annotation"><a href="./highchart/bar-graph_patterned.html" target="_blank"><span>상세보기(새창)</span></a></div>
+            <div class="guide-desc">
+                라인 그래프는 lineBg Arrary를 사용 1 ~ 10번까지 존재<br>
+                1번부터 순차적으로 사용하고<br>
+                1개의 그래프만 돋보이는 구조라면 나머지 그래프를 lineBg[10]을 사용<br><br>
+                lineMarker Array를 lineBg와 같은 색이며 10X10 사이즈의 이미지                
+            </div>
+            <ul class="pattern js-marker"></ul>
         </div>
         <hr>
 
         <div class="box fold mt20">
-            <h2>Swiper Chart 샘플</h2>
+            <h2>Swiper Chart 샘플</h2>            
             <dl class="flex-dl">
                 <dt>
                     <pre>
@@ -272,8 +279,20 @@
     <script>
 
         //pattern sample
-        chartBg.forEach(function(element, index){            
-            $('.pattern').append('<li><span style="background:url(' + element.pattern + ')"></span>chartBg[' + index  + ']</li>')
+        chartBg.forEach(function(element, index){
+            if(index != 0){
+                index = String(index).length != 1 ? index : "0" + index;
+                $('.js-pattern').append('<li><span style="background-image:url(' + element.pattern + ');" class="pattern' + index + '"></span>chartBg[' + index  + ']</li>')
+            }
+        });
+        
+        //pattern sample
+        lineMarker.forEach(function(element, index){
+            var linebg = lineBg[index];
+            if(index != 0){
+                index = String(index).length != 1 ? index : "0" + index;
+                $('.js-marker').append('<li><i style="position:absolute;top:14px;left:50%;transform:translateX(-50%);width:20px;height:2px;background:' + linebg + ';"></i><span style="width:10px;height:10px;padding-top:0;background:' + element.symbol + ';background-size:10px;"></span>lineMarker[' + index  + ']</li>')
+            }
         });
 
         // highchart 공통 options

@@ -77,6 +77,31 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .legend-unit ul li.cate7:before{background-color:#7fa2ed;}
 .legend-unit ul li.cate8:before{background-color:#55c1e3;}
 .legend-unit ul li.cate9:before{background-color:#4dac8a;}
+//투자그래프 수정 start
+.legend-unit ul li.cate10:before{background-color:#ffd052;}
+.legend-unit ul li.cate11:before{background-color:#ffad52;}
+.legend-unit ul li.cate12:before{background-color:#fa854d;}
+.legend-unit ul li.cate13:before{background-color:#8098eb;}
+.legend-unit ul li.cate14:before{background-color:#90d272;}
+.legend-unit ul li.cate15:before{background-color:#66ac77;}
+.legend-unit ul li.cate16:before{background-color:#ff425a;}
+.legend-unit ul li.cate17:before{background-color:#c7ccd1;}
+//투자그래프수정 end
+
+// ksh 211115 : 범례 color case 18~25 추가
+.legend-unit ul li.cate18:before{background-color:#ffab53}
+.legend-unit ul li.cate19:before{background-color:#fa844e}
+.legend-unit ul li.cate20:before{background-color:#5b75ce}
+.legend-unit ul li.cate21:before{background-color:#7f97ea}
+.legend-unit ul li.cate22:before{background-color:#55c1e3}
+.legend-unit ul li.cate23:before{background-color:#8fd171}
+.legend-unit ul li.cate24:before{background-color:#66aa76}
+.legend-unit ul li.cate25:before{background-color:#7155c8}
+
+
+
+
+
 
 .legend-unit.t02 {color: $kb-ui02; margin-right: -20px;}
 .legend-unit.t02 ul li {width: auto; margin-right: 16px;}
@@ -91,8 +116,14 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 //하이차트관련 추가 2021-09-29 kek start
 .legend-unit.t04{text-align:center;}
 .legend-unit.t04 ul{display:inline-block;} 
-.legend-unit.t04 ul li{width: auto; margin-right: 16px;font-size:14px;}
+.legend-unit.t04 ul li{width: auto;margin-right: 16px;font-size:14px;}
 //하이차트관련 추가 2021-09-29 kek end
+//하이차트관련 추가 2021-11-16 kek start
+.legend-unit.t05{padding-left:0;}
+.legend-unit.t05 ul{margin-right:2.4rem;}
+.legend-unit.t05 ul li{display:flex;width:auto;justify-content:space-between;align-items:center;padding:0 3px 0 15px;}
+.legend-unit.t05 ul li:before{top:7px;}
+//하이차트관련 추가 2021-11-16 kek end
 /* 자산 공통 */
 .my-asset .asset-registration{margin-top:40px;}
 .my-asset .asset-registration .more-view-box .btn-area > button {text-align: inherit;}
@@ -296,11 +327,11 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .asset-main-top {padding: 28px 0 30px;}
 .asset-main-top:first-child {padding-top: 28px;}
 .asset-main-top .swiper-slide {padding: 0 24px;}
-.asset-main-top .summary-text {min-height: 110px; margin-bottom: 20px; font-size: 24px; line-height: 33px; color: $kb-ui02;}
+.asset-main-top .summary-text {min-height:110px;font-size: 20px; line-height: 28px; color: $kb-ui02;padding-bottom:18px;}
 .asset-main-top .summary-text strong {font-weight: bold;}
-.asset-main-top .summary-text .num {font-size: 25px; font-weight: bold;}
-.asset-main-top .summary-text .num:after{font-size:24px; font-weight: bold;}
-.asset-main-top .summary-text sub {display: block; font-size: 16px; margin-top: 10px;}
+.asset-main-top .summary-text .num {font-size: 21px; font-weight: bold;}
+.asset-main-top .summary-text .num:after{font-size:20px; font-weight: bold;}
+.asset-main-top .summary-text sub {@include text;display: block;margin-top:13px;}
 .asset-main-top .btn-question {position: relative; top: -2px;}
 .asset-main-top .content-box {position: relative; padding-top: 30px; min-height: 315px; border: 0; background-color: #6349a5; color: $kb-ui11;}
 .asset-main-top .box-tit {@include text($text01, bold);}
@@ -835,7 +866,11 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 
 
 /* 투자 */
+.my-asset.investment .highcharts-box .graph-area{min-height:320px;}//투자그래프수정
+.my-asset.investment .highcharts-box .graph-area .chart-flex.type2{margin-top:30px;}
+.my-asset.investment .highcharts-box .graph-area .chart-flex.type2 .chart-area{margin-top:10px;}
 .my-asset.investment .recommend-prod{border-bottom:none;}
+.my-asset.investment .legend-unit.t05{margin-top:10px;}//투자그래프수정
 //툴팁추가 start
 .my-asset.investment .p-list .account-wrap a{display:block;}
 .my-asset.investment .p-list .account-wrap a + .s-txt{margin-top:1rem;}
@@ -1248,6 +1283,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-item-edit .my-item-list .accordion > dd > ul >li .nick-name{color:$kb-ui04;margin-top:4px;}
 
 /* menu 페이지 */
+.app-content.menu-push .push-list{padding-bottom:calc(constant(safe-area-inset-bottom) / 2 + 32px);padding-bottom:calc(env(safe-area-inset-bottom) / 2 + 32px);margin-bottom:calc(constant(safe-area-inset-bottom) / -2 - 3.2rem);margin-bottom:calc(env(safe-area-inset-bottom) / -2 - 3.2rem)} // 배경영역변경 2021-11-11
 .menu-push .top-info .push-setting{display:flex;justify-content:space-between;padding-right:1px;margin-top:0.6rem;}
 .menu-push .top-info .push-setting + .txt{@include text($size:16px,$line-height:1.56);margin-top:2rem;}
 .menu-push .top-info .no-data p{font-size:1.8rem;margin-top:1.4rem;} // GUI수정 2021-10-22
@@ -1424,7 +1460,9 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .asset-graph-lists .bar-area {position: absolute; top: 50%; margin-top: -6px; height: 12px; background-color: $kb-ui10;}
 .asset-graph-lists .bar-area.ages {left: 0; right: calc(50% + 58px); border-top-left-radius: 12px; border-bottom-left-radius: 12px;}
 .asset-graph-lists .bar-area.me {right: 0; left: calc(50% + 58px); border-top-right-radius: 12px; border-bottom-right-radius: 12px;}
-.asset-graph-lists .bar-area .bar {position: absolute; top: 0; bottom: 0; background-color: #ffba53;}
+.asset-graph-lists .bar-area .bar {position: absolute; top: 0; bottom: 0; background-color: #ffba53; min-width: 2px;}
+.asset-graph-lists .bar-area .bar[style="width:0%"],
+.asset-graph-lists .bar-area .bar[style="width: 0%"] {min-width: 0;}
 .asset-graph-lists .bar-area.ages .bar {right: 0; border-top-left-radius: 12px; border-bottom-left-radius: 12px;}
 .asset-graph-lists .bar-area.me .bar {left: 0; border-top-right-radius: 12px; border-bottom-right-radius: 12px;}
 .asset-graph-lists .group-a .bar-area.ages .bar {background-color: #ff8a71;}

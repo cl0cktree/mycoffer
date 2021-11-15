@@ -3,7 +3,7 @@
 <html lang="ko">
 <head>
 	@@include('@@webRoot/html/_include/app-head.html',{
-		"title": "저금통 거래내역 | 목표"
+		"title": "My 저금통 거래내역 | 목표"
 	})
 </head>
 
@@ -12,7 +12,7 @@
 	<div class="app">
 		<!-- app-header //-->
 		@@include('@@webRoot/html/_include/app-integrated-header.html', {
-            pageTit:'저금통 거래내역',
+            pageTit:'My 저금통 거래내역',
             type: ''
         })
 		<!-- // app-header -->
@@ -28,7 +28,7 @@
 					<div class="inner">
 						<a class="btn-text" href="@@webRoot/html/goal/mys_go_02_01_03_p3.html" title="계좌관리 이동"><u>관리</u></a> <!-- 추가 수정 -->
 						<div class="center-text">
-							<h2 class="title">저금통</h2>
+							<h2 class="title">My 저금통</h2> <!-- 수정:2021-11-15 문구수정 -->
 							<span class="amount"><span class="num" data-unit-after="원">1,700,000</span></span>
 						</div>
 						<div class="character-graph" data-theme="character">
@@ -54,7 +54,7 @@
 				
 				<!-- 저금통 거래내역 목록 // -->
 				<section class="kb-sec trans-history-bank">
-					<h2 class="is-hidden">저금통 거래내역 목록</h2>
+					<h2 class="is-hidden">My 저금통 거래내역 목록</h2> <!-- 수정:2021-11-15 문구수정 -->
                     <div class="account-detail">
                         <div class="filter-area">
                             <div class="condition-area">
@@ -105,7 +105,7 @@
                                             <span class="num">2020.10.12 10:10</span>
                                             <em>출금</em>
                                         </div>
-                                        <div class="type">저금통 비우기</div>
+                                        <div class="type">My 저금통 비우기</div> <!-- 수정:2021-11-15 문구수정 -->
                                         <div class="txt-con type2">
                                             <div class="amount">출금 <span class="num minus" data-unit-after="원">9,800</span></div>
                                             <div class="balance">잔액 <span class="num" data-unit-after="원">300,000</span></div>
@@ -114,8 +114,18 @@
                                 </li>
                             </ul>
                             <button type="button" class="btn-more-plus"><span>더보기</span></button>
+                        </div>      					
+
+                        <!-- 수정:2021-11-12// -->
+                        <!-- no-dat 추가 -->
+                        <div class="no-data-wrap">
+                            <div class="no-data">
+                                <i class="icon-info_24"></i>
+                                <p>조회내역이 없습니다.</p>
+                            </div>
                         </div>
-                    </div>                
+                        <!-- //수정:2021-11-12 -->    
+                    </div>     
                 </section>
 				<!-- // 저금통 거래내역 목록 -->
 
