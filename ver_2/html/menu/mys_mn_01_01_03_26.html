@@ -1,0 +1,67 @@
+<!-- [MYS_MN_01_01_03_26] 전체메뉴 > My Data 관리 > 다른기관 > 연장 > 개별인증 > 개별인증동의 > 거래실패 (작성자: 누리어 시스템 최선화) // -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+    "title": "개인(신용)정보 제공 동의서 | 마이데이터 관리"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'<span class="is-hidden">전송요구 개별인증 정보수신결과</span>',
+            'type':'complete'
+        })
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content select-transmission-method">
+                <section class="kb-sec transmission-request">
+                    <div class="complete-msg mt68">
+                        <i class="icon-bang_60_red"></i>
+                        <!-- 실패인 경우 -->
+                        <strong class="tit">
+                            선택하신 기관에서의 본인 인증거래가 <br>
+                            실패하였습니다.<br>
+                            다시 거래해주시기 바랍니다.
+                        </strong>
+                        <!-- 취소인 경우 -->
+                        <strong class="tit">
+                            선택하신 기관에서의 정보 제공 요청거래가<br>
+                            중단 되었습니다.<br>
+                            다시 거래해주시기 바랍니다.
+                        </strong>
+                    </div>
+                </section> 
+
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid"><span>확인</span></button>
+                    </div>
+                </div>
+                <!-- // 수정:2021-10-08 -->
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+    </div>
+
+    <div class="layered">
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+
+</body>
+
+</html>

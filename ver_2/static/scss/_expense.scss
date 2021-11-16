@@ -3,7 +3,7 @@
 .kb-form[data-type="icon"] > div{flex:1}
 .kb-form_inner[data-role="popup"]:after{position:absolute;right:0;top:0.6rem;z-index:1;content:'';width:2rem;height:2rem;background:url(../images/common/common.png) no-repeat -4.4rem -2rem;background-size:16rem}
 .kb-sec.bg-gray.page-info{padding-top:1.6rem;padding-bottom:1.6rem}
-.kb-sec.bg-gray.page-info .simple-message{margin-top:0}
+.kb-sec.bg-gray.page-info .simple-message{margin-top:0;font-size:1.5rem;color:$kb-ui03} // 211116 : 상단 안내문구 style
 .kb-form_multi.date-time{@include flexBetween;flex-wrap:wrap}
 .kb-form_multi.date-time .kb-form{flex:1}
 .kb-form_multi.date-time .kb-form input[type="text"]{text-align:left}
@@ -103,7 +103,7 @@
 .expense-list-detail .detail-info > h4 strong span{display:block;margin-top:0.5rem;font-size:1.4rem;color:$kb-ui04;font-weight:normal}
 .expense-list-detail .detail-info dl{margin-top:1.8rem}
 .expense-list-detail .detail-edit .btn-segmented_radio + .kb-form{margin-top:3.5rem}
-.expense-list-detail .detail-edit .edit-option{margin-top:2.7rem}
+.expense-list-detail .detail-edit .edit-option{margin-top:4.5rem} // 211116 : margin-top 수정
 .expense-list-detail .detail-edit .edit-option li{margin-bottom:3rem}
 .expense-list-detail .detail-edit .edit-option li,
 .expense-list-detail .detail-edit .edit-option label span{font-size:1.6rem;color:$kb-ui04}
@@ -301,10 +301,12 @@
 .credit-list + .btn-more-view,
 .credit-list_link-type + .btn-more-view{width:100%;text-align:center;justify-content:center;margin-top:1.4rem;padding:1rem 0} // guide 수정 적용 (더보기 버튼 상단 여백 24px)
 // 가계부 > 수기등록
+.user-register-list .page-info + .user-register-option{margin-top:4rem} // 211116 : 수기등록 상단 안내문구 있을 때 margin 추가
 .user-register-list .user-register-forms .kb-form_multi .tit{margin-bottom:1.2rem}
 .user-register-list .user-register-forms .form-tit{@include text($size:16px);flex:0 0 100%;display:block;position:relative;width:100%;min-height:26px;padding:8px 2px 0px 2px;color:$kb-ui04}
 .user-register-list .user-register-forms > .kb-form + .kb-form{margin-top:2rem}
 .user-register-list .user-register-forms .btn-area.center{margin-top:20px}
+.user-register-list .user-register-forms .kb-form + .btn-area{margin-top:3rem}
 .user-register-list .user-register-forms .btn-more-view .icon-arrow-down::before{border-right-color:$kb-ui03;border-bottom-color:$kb-ui03}
 // 가계부 > 카테고리 설정
 .bottom-sheet_header .bs_subtit{margin-top:2.5rem;font-size:1.6rem}

@@ -207,7 +207,7 @@
             <ul class="pattern js-pattern"></ul>
         </div>
         <hr>
-        <div class="box chart-sample">
+        <div class="box chart-sample" id="lineChartMarker">
             <h2>[웹접근성] Line Chart Marker</h2>
             <div class="annotation"><a href="./highchart/bar-graph_patterned.html" target="_blank"><span>상세보기(새창)</span></a></div>
             <div class="guide-desc">
@@ -291,7 +291,7 @@
             var linebg = lineBg[index];
             if(index != 0){
                 index = String(index).length != 1 ? index : "0" + index;
-                $('.js-marker').append('<li><i style="position:absolute;top:14px;left:50%;transform:translateX(-50%);width:20px;height:2px;background:' + linebg + ';"></i><span style="width:10px;height:10px;padding-top:0;background:' + element.symbol + ';background-size:10px;"></span>lineMarker[' + index  + ']</li>')
+                $('.js-marker').append('<li><i style="position:absolute;top:14px;left:50%;transform:translateX(-50%);width:20px;height:2px;background:' + linebg + ';"></i><span style="position:relative;width:10px;height:10px;padding-top:0;background:' + element.symbol + ';background-size:10px;"></span>lineMarker[' + index  + ']</li>')
             }
         });
 

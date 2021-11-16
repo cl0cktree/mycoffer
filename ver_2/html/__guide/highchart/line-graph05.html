@@ -62,8 +62,8 @@
         /* .highcharts-legend.customLegend{transform:translateX(40) translateY(225);} */
         .highcharts-legend.customLegend > g > g{transform:translateX(3rem);}
         .highcharts-legend.customLegend .highcharts-legend-title text{transform:translateX(-1rem) translateY(6rem);}
-        .highcharts-legend.customLegend .highcharts-legend-item .highcharts-graph,
-        .highcharts-legend.customLegend .highcharts-legend-item .highcharts-point{transform:translateY(-.2rem);}
+        /* .highcharts-legend.customLegend .highcharts-legend-item .highcharts-graph,
+        .highcharts-legend.customLegend .highcharts-legend-item .highcharts-point{transform:translateY(-.2rem);} */
     </style>
     <!-- Add Script -->
     <script>
@@ -147,7 +147,7 @@
                     marker: {
                         enabled: false,
                         fillColor:"transparent",
-                        symbol:"circle",
+                        // symbol:"circle",
                         width:2,
                         height:2
                     },
@@ -175,7 +175,12 @@
             legend: {
                 // floating:'true',
                 // align:'bottom',
-                width:220,
+                // labelFormatter: function() {
+                //     var name = this.name;
+                //     var img = '<img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Check_Box_Noun_project_10759.svg/2000px-Check_Box_Noun_project_10759.svg.png" width = "10px" height = "10px">';
+                //     return img + '	' + name;
+                // },
+                width:230,
                 title:{
                     text: '매매<br>전세',
                     style:{
@@ -194,10 +199,10 @@
                 // lineHeight:30,
                 itemMarginTop:8,
                 itemDistance:5,
-                symbolPadding: 3,
-                symbolWidth: 12,
-                symbolHeight:8,
-                className:"customLegend"
+                symbolPadding: 0,
+                // symbolWidth: 38,
+                // // symbolHeight:24,
+                className:"customLegend",
 
             },
             series: [{
@@ -215,15 +220,23 @@
                 //         opacity: 1
                 //     }
                 // },
-                color: '#ffcf53',
+                color: '#ffcf53',            
                 zIndex: 1,
-                data: [806000000, 607000000, 511000000, 733000000, 881000000, 567000000]
+                data: [806000000, 607000000, 511000000, 733000000, 881000000, 567000000,],    
+                marker: {
+                    enabled:true,
+                    symbol:'url(@@webRoot/static/images/asset/chart_realty_line_01.png)',
+                }
             },{
                 name: "실거래가",
                 color: "#ffcf53",
                 dashStyle: "ShortDot", //Dash' | 'DashDot' | 'Dot' | 'LongDash' | 'LongDashDot' | 'LongDashDotDot' | 'ShortDash' | 'ShortDashDot' | 'ShortDashDotDot' | 'ShortDot' | 'Solid'
                 zIndex: 1,
-                data: [502000000, 335000000, 209000000, 394700000, 502000000, 263400000]
+                data: [502000000, 335000000, 209000000, 394700000, 502000000, 263400000],    
+                marker: {
+                    enabled:true,
+                    symbol:'url(@@webRoot/static/images/asset/chart_realty_line_02.png)',
+                }
             },{
                 name: "공시가격",
                 color: 'rgba(255, 207, 83, .5)',
@@ -235,6 +248,10 @@
                 data: [[706000000,906000000], [507000000,707000000], [411000000,611000000], [633000000,833000000], [781000000,981000000], [467000000,667000000]],
                 tooltip: {
                     pointFormat: '<li><span class="dot" style="background:{series.color};"></span><div style="color#333;">{series.name}</div> <div><b class="num" style="font-size:13px;">{point.low:,.0f}~{point.high:,.0f}</b><span class="unit" style="vertical-align:0">원</span></div></li>',
+                },    
+                marker: {
+                    enabled:true,
+                    symbol:'url(@@webRoot/static/images/asset/chart_realty_line_03.png)',
                 }
             },{
                 name: "KB시세",
@@ -253,13 +270,21 @@
                 // },
                 color: '#5b75cf',
                 zIndex: 1,
-                data: [606000000, 407000000, 311000000, 533000000, 681000000, 367000000]
+                data: [606000000, 407000000, 311000000, 533000000, 681000000, 367000000],    
+                marker: {
+                    enabled:true,
+                    symbol:'url(@@webRoot/static/images/asset/chart_realty_line_04.png)',
+                }
             },{
                 name: "실거래가",
                 color: '#5b75cf',
                 dashStyle: 'ShortDot',
                 zIndex: 1,
-                data: [402000000, 235000000, 99000000, 254700000, 402000000, 163400000]
+                data: [402000000, 235000000, 99000000, 254700000, 402000000, 163400000],    
+                marker: {
+                    enabled:true,
+                    symbol:'url(@@webRoot/static/images/asset/chart_realty_line_05.png)',
+                }
             }]
         });
         

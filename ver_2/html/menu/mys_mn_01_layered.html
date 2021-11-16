@@ -24,6 +24,8 @@
             <button type="button" class="btn-line" data-call-layered="MYS_MN_01_01_02_05" data-page-id="MYS_MN_01_01_02_05"><span>개인신용정보 삭제</span></button>
             <button type="button" class="btn-line" onclick="modalDemo4()"><span>비활성화 상태에서 다음 버튼 선택시<br>(화면스크롤 확인)</span></button>
             <button type="button" class="btn-line" onclick="modalDemo13()"><span>상세정보 전송요구서 화면에서 요청한 내용 변경 시</span></button><!-- 수정:2021-11-01 -->
+            <button type="button" class="btn-line" onclick="modalDemo5()"><span>자산연동시 로딩 페이지<br>(30초 이상 1개 기관도 연동되지 않은 경우)</span></button><!-- 추가:2021-11-18 -->
+            <button type="button" class="btn-line" onclick="modalDemo14()"><span>자산연동시 로딩 페이지<br>(상대기관에서의 응답메시지가 모두 재처리 진행 필요 없는 에러코드인 경우)</span></button><!-- 추가:2021-11-18 -->
             <!-- // 마이데이터 관리 -->
         </div>
 
@@ -55,7 +57,22 @@
                 message: "상세정보 전송 요청을 위한 요구사항도 같이 변경됩니다. 변경하시겠습니까?"
             });
         }
-
+        // 요건추가 2021-11-18
+        function modalDemo5() {
+            modalPopup({
+                title: "",
+                message: "데이터가 연결되지 않았습니다. <br>다시 시도하시겠습니까?",
+                type: "confirm"
+            });
+        }
+        // 요건추가 2021-11-18
+        function modalDemo14() {
+            modalPopup({
+                title: "",
+                message: "선택하신 기관에 대한 정보 제공 요청이 모두 실패하였습니다. <br>다시 거래하시겠습니까?",
+                type: "confirm"
+            });
+        }
 
         //레이어 확인용 스크립트 (개발시 삭제) [s]
         var url = window.location.href;

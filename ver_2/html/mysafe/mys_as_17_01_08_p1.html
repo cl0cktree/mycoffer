@@ -60,11 +60,14 @@
                                 <input type="text" inputmode="numeric" class="gold-unit-input gold-unit-input-1" id="mysafe_01_01" placeholder="0" value="" data-unit="" data-action="autoSeperator" value="">
                                 <button class="btn-data-clear gold-unit-clear"><i class="icon-data-clear_24">지우기</i></button>
                             </div>
+                            <!-- 2021-11-16 수정 -->
+                            <!--
                             <div class="my-safe-dot">.</div>
                             <div class="kb-form_inner form-text">
                                 <input type="text" inputmode="numeric" class="gold-unit-input gold-unit-input-2" id="mysafe_01_02" placeholder="00" value="" data-unit="" data-action="autoSeperator" maxlength="2" value="">
                                 <button class="btn-data-clear gold-unit-clear"><i class="icon-data-clear_24">지우기</i></button>
                             </div>
+                            -->
                         </div>
                         <div class="kb-form gold-unit-form not-ready no-transition" data-status="">
                             <!-- <label for="" class="gold-unit-title"></label> -->
@@ -158,6 +161,8 @@
         var $safe_flex_wrap=$('.safe-flex-wrap'); //.safe-flex-wrap 선호출용.
         var $my_gold_value=$('.my-gold-value'); //.my-gold-value 선호출용.
         var $my_gold_enrollment=$('.my-gold-enrollment'); //.my-gold-enrollment 선호출용.
+        var regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi;
+        var number = String(number).replace(/(^\s*)|(\s*$)/gi, '').replace(regExp, '');
         /*-----input에 대한 바른 데이터 입력, 활성 및 비활성, 틀린 데이터 입력에 대한
                동작 예시 함수로 본격적인 검증식 및 계산식은 프로그램밍이 필요함.-------*/
 
@@ -229,13 +234,35 @@
             //     $my_gold_enrollment.attr('disabled','disabled');
             // }
         };
+
         $gold_unit_input_1.on('propertychange change keyup paste input', function(event) {//금단위 입력시 변화 된 값 인식.
+            // 2021-11-16 수정 - data-action="" 로 만든 후 하기 스크립트 주석제거
             currentVal_1 = $gold_unit_input_1.val();
             var oldVal;
-            if(currentVal_1 == oldVal) {
-                return;
-            }
-            oldVal = currentVal_1;
+            var dot_gold_1_val;
+            var find_dot_gold = currentVal_1.indexOf('.');
+            var dot_gold = currentVal_1.split('.');
+            var dot_gold_0;
+            var dot_gold_1 = dot_gold[1];
+            var currentVal_1_dot;
+            // var currentVal_1_dot_locale;
+            
+            // if(find_dot_gold!==-1){
+            //     console.log(dot_gold.length);
+            //     if(((dot_gold_1.length>2)&&(dot_gold_1!=='')&&(dot_gold_1!=='undefined'))||(dot_gold.length!==2)){
+            //         dot_gold_0 = parseInt(dot_gold[0]).toLocaleString(undefined, {maximumFractionDigits: 2});
+            //         dot_gold_1_val =  dot_gold_1.substring(0,2);
+            //         currentVal_1_dot = dot_gold_0+'.'+dot_gold_1_val;
+            //         console.log(currentVal_1_dot+' / '+dot_gold.length+' / '+dot_gold_1_val);
+            //     }else{
+            //         currentVal_1_dot = currentVal_1;
+            //     }
+            // }
+            // if(currentVal_1_dot == oldVal) {
+            //     return;
+            // }
+            // oldVal = currentVal_1_dot;
+            // $gold_unit_input_1.val(currentVal_1_dot);
             // change_check();
         });
         $gold_unit_input_2.on('propertychange change keyup paste input', function(event) {//금단위 입력시 변화 된 값 인식.

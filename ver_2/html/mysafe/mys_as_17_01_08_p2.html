@@ -57,14 +57,17 @@
                         <strong class="tit required">보유량</strong>
                         <div class="kb-form gold-input-num not-ready no-transition" data-status="info">
                             <div class="kb-form_inner form-text">
-                                <input type="text" inputmode="numeric" class="gold-unit-input gold-unit-input-1" id="mysafe_01_01" placeholder="0" value="37" data-unit="" data-action="autoSeperator" value="">
+                                <input type="text" inputmode="numeric" class="gold-unit-input gold-unit-input-1" id="mysafe_01_01" placeholder="0" value="37.15" data-unit="" data-action="autoSeperator" value="">
                                 <button class="btn-data-clear gold-unit-clear"><i class="icon-data-clear_24">지우기</i></button>
                             </div>
+                            <!-- 2021-11-16 수정 -->
+                            <!--
                             <div class="my-safe-dot">.</div>
                             <div class="kb-form_inner form-text">
                                 <input type="text" inputmode="numeric" class="gold-unit-input gold-unit-input-2" id="mysafe_01_02" placeholder="00" value="5" data-unit="" data-action="autoSeperator" maxlength="2" value="">
                                 <button class="btn-data-clear gold-unit-clear"><i class="icon-data-clear_24">지우기</i></button>
                             </div>
+                            -->
                         </div>
                         <div class="kb-form not-ready no-transition gold-unit-form" data-status="">
                             <!-- <label for="" class="gold-unit-title"></label> -->
@@ -229,12 +232,31 @@
             }
         };
         $gold_unit_input_1.on('propertychange change keyup paste input', function(event) {//금단위 입력시 변화 된 값 인식.
+            // 2021-11-16 수정 - data-action="" 로 만든 후 하기 스크립트 주석제거
             currentVal_1 = $gold_unit_input_1.val();
             var oldVal;
-            if(currentVal_1 == oldVal) {
-                return;
-            }
-            oldVal = currentVal_1;
+            var dot_gold_1_val;
+            var find_dot_gold = currentVal_1.indexOf('.');
+            var dot_gold = currentVal_1.split('.');
+            var dot_gold_0 = dot_gold[0];
+            var dot_gold_1 = dot_gold[1];
+            var currentVal_1_dot = dot_gold_0+'.'+dot_gold_1;
+
+            // if(find_dot_gold!==-1){
+            //     console.log(dot_gold.length);
+            //     if(((dot_gold_1.length>2)&&(dot_gold_1!=='')&&(dot_gold_1!=='undefined'))||(dot_gold.length!==2)){
+            //         dot_gold_1_val = dot_gold_1.substring(0,2);
+            //         currentVal_1_dot = dot_gold_0+'.'+dot_gold_1_val;
+            //         $gold_unit_input_1.val(currentVal_1_dot);
+            //         console.log(currentVal_1_dot+' / '+dot_gold.length);
+            //     }else{
+            //         currentVal_1_dot = currentVal_1;
+            //     }
+            // }
+            // if(currentVal_1_dot == oldVal) {
+            //     return;
+            // }
+            // oldVal = currentVal_1_dot;
             // change_check();
         });
         $gold_unit_input_2.on('propertychange change keyup paste input', function(event) {//금단위 입력시 변화 된 값 인식.

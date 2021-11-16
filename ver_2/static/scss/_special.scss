@@ -33,7 +33,8 @@
 
 .credit-transaction-graph {position: relative; margin-top: 46px;}
 .credit-transaction-graph .per {position: absolute; right: 24px; top: 2px; font-size: 19px; font-weight: bold;}
-.credit-transaction-graph .bar-wrapper {position: relative; height: 12px; margin-bottom: 10px; border-radius: 12px; background-color: $kb-ui10; box-shadow: inset 0 0 1px 1px $kb-ui08; overflow: hidden;}
+.credit-transaction-graph .bar-wrapper {position: relative; height: 12px; margin-bottom: 10px; border-radius: 12px; background-color: $kb-ui10; /* box-shadow: inset 0 0 1px 1px $kb-ui08; */ overflow: hidden;}
+.credit-transaction-graph .bar-wrapper::after {content: ''; position: absolute; left: 0; right: 0; top: 0; bottom: 0; border: 1px solid $kb-ui08; border-radius: 12px;}
 .credit-transaction-graph .bar-wrapper .bar {height: 12px; border-radius: 12px; background-color: $color-yellow-negative; border: 1px solid $color-yellow-positive; transition: width .5s ease-in-out;}
 .credit-transaction-graph .values {@include text($text03, normal); color: $kb-ui04;}
 .credit-transaction-graph .values::after {content: ''; display: block; clear: both;}

@@ -53,3 +53,6 @@ if(!$container.find('.guide-history').length && !$container.find('.guide-index')
         $(this).parent('li').addClass('is-active').siblings('li').removeClass('is-active');
     });
 }
+
+//새로운 로그 등록시
+$('.gnb').find('li:eq(1)').addClass('new');

@@ -71,7 +71,7 @@
 							</script>
 						</div>
 						<div class="button-area">
-							<a href="javascript:;" class="btn-solid sm gray">신용평점 분석 상세보기</a>
+							<a href="javascript:;" class="btn-solid mm gray">신용평점 분석 상세보기</a><!-- 2021-11-16 class sm을 mm으로 수정-->
 						</div>
 					</div>
 				</section>
@@ -87,8 +87,8 @@
 							Tooltip 텍스트 사이즈/색상 : 14px/#26282c
 							X축, Y축 레이블 텍스트 사이즈/색상 : 13px/#8c949e (오늘 : #26282c)
 						-->
-						<div class="chart-area">
-							<img class="temp" src="@@webRoot/static/images/_temp/chart_sp0106.png" alt="차트 예시 이미지">
+						<div class="chart-area" id="lineChart">
+							<!-- <img class="temp" src="@@webRoot/static/images/_temp/chart_sp0106.png" alt="차트 예시 이미지"> -->
 						</div>
 						<!-- // [Chart Area] -->
 						<div class="links">
@@ -129,7 +129,7 @@
 							</div>
 						</div>
 						<div class="button-area">
-							<a href="javascript:;" class="btn-solid sm gray" role="button"><span>신용 비교분석 상세보기</span></a>
+							<a href="javascript:;" class="btn-solid mm gray" role="button"><span>신용 비교분석 상세보기</span></a><!-- 2021-11-16 class sm을 mm으로 수정-->
 						</div>
 					</div>
 				</section>
@@ -175,6 +175,9 @@
 	<!-- Script -->
 	@@include('@@webRoot/html/_include/common-js.html')
 	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
+    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
+	<script src="@@webRoot/static/common/lib/highcharts/pattern-fill.js"></script>
 	<script src="@@webRoot/static/js/ui.js"></script>
 	<!-- Add Script -->
 	<script>
@@ -192,6 +195,104 @@
 				}
 			});
 		}
+
+		var mainChart = Highcharts.chart("lineChart", {
+			chart: {
+				type: "area",
+				height: (3 / 4 * 100) + '%', // 4:3 비율로 설정
+				events: {
+					load: function() {
+						this.tooltip.refresh(this.series[0].points[5]);
+					}
+				},
+				marginRight: 0	// 2021-11-16 추가
+			},
+			title: {
+				text: ""
+			},
+			legend: {
+				enabled: false,
+				align: "left",
+				verticalAlign: "top"
+			},
+			xAxis: {
+				type: "category",
+				categories: ["6월", "7월", "8월", "9월", "10월", "오늘"],
+				labels: {
+					style: {
+						color: "#8c949e",
+						fontSize: "3.733vw",
+						fontFamily: "KBFGText",
+						fontWeight: "normal"
+					}
+				}
+			},
+			yAxis: {
+				gridLineColor: "#ebeef0",
+				title: {
+					enabled: false
+				},
+				visible: true,
+				tickWidth: 0,
+				plotLines: [{
+					color: "#ffba53",
+					width: 1,
+					value: 400000,
+					zIndex: 50,
+					dashStyle: "dot"
+				}],
+				labels: {
+					format: '{value}점',
+					style: {
+						color: "#8c949e",
+						fontSize: "3.733vw",
+						fontFamily: "KBFGText",
+						fontWeight: "normal"
+					}
+				}
+			},
+			plotOptions: {
+				series: {
+					color: "#ffcf53",
+					lineWidth: 4,
+					marker: {
+						symbol: "circle",
+						enabled: true,
+						radius: 4,
+						fillColor: "#ffcf53"
+					}
+				}
+			},
+			series: [{
+				lineColor: "#ffcf53",
+				data: [505, 700, 687, 687, 650, 690],
+				fillOpacity: 0
+			}],
+			credits: {
+				enabled: false
+			},
+			tooltip: {
+				formatter: function() {
+					var x = this.point.index;
+					var y = this.y;
+					var tooltipMarkup = y + "점";
+					return tooltipMarkup;
+				},
+				padding: 10,
+				backgroundColor: "#fff",
+				shadow: true,
+				borderRadius: 4,
+				verticalAlign: "bottom",
+				borderColor: "#f3f3f3",
+				style: {
+					color: "#26282c",
+					fontWeight: "normal",
+					fontSize: "4vw",
+					fontFamily: "KBFGText",
+				},
+				crosshairs: true
+			}
+		});
 	</script>
 
 </body>

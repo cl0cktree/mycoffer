@@ -1,0 +1,50 @@
+<!-- [MYS_MN_04_01_00] 전체메뉴 > 공지사항 목록 (작성자: 누리어 시스템 최선화) // -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "공지사항 | 마이머니앱공통"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'공지사항',
+            'type':''
+        })
+        
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content mydata-notie">
+                <section class="kb-sec">
+                    <div class="no-data">
+						<i class="icon-bang_60_gray"></i>
+						<strong class="no-data-tit">등록된 데이터가 없습니다.</strong>
+					</div>
+                </section>    
+
+            </main>
+            <!-- // app-content -->
+        
+        </div>
+        <!-- // app-container -->
+    </div>
+
+    <div class="layered">
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+
+</body>
+
+</html>
