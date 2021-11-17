@@ -183,6 +183,7 @@
 .expense-home .customized-card-list{padding-bottom:0} // expense-home 카드 리스트 padding 조정
 .expense-home .customized-card-list > div:not(.tab){padding-left:2.4rem;padding-right:2.4rem} // expense-home 카드 리스트 padding 조정
 .expense-home .customized-card-list .notice-item{background:#f6eddc}
+.expense-home .link-to-asset i{margin-right:1.4rem;vertical-align:middle} // 211117 : expense-home linked-asset 영역 추가
 .expense-home .content-tit .btn-more_link{font-size:1.4rem;color:$kb-ui04}
 .expense-home .kb-sec.dividing-space-bottom{margin-bottom:3.2rem}
 .agree-to-provide-information .agree-group+.agree-group{margin-top:4.8rem}
@@ -200,7 +201,6 @@
 /* KB카드 판매대리/중개업자의 고지 의무 및 설명의무 */
 #obligationToNotify .modal_header{min-height:auto}
 #obligationToNotify .terms-conditions{color:$kb-ui02}
-#obligationToNotify .terms-conditions ul + p{margin-top:0}
 #obligationToNotify .terms-conditions p:first-of-type{margin-top:0}
 
 
@@ -549,6 +549,7 @@
 //Main
 .card-management-total{padding-bottom:0}
 .card-management-total .border-tit + .card-list li:first-child{border-top:0}
+.card-management-total .h4 .tit{margin-left:0;margin-right:0.5rem} // 211116 : 카드관리 타이틀 우측 툴팁 관련 여백 수정
 .card-management-total .estimated-payment-amount .date-month{text-align:center}
 .card-management-total .estimated-payment-amount .content-box-tit{text-align:center}
 .card-management-total .estimated-payment-amount .description-list dd{font-size:1.4rem}
@@ -596,7 +597,7 @@
 .card-management-total .card-list li[data-state="edit"] .btn-record-edit::after{transform:translateY(0.2rem) rotate(225deg)}
 .card-management-total .card-list li[data-state="edit"]:last-child{padding-bottom:0} // 211025 : 카드관리 카드목록 padding 조정
 .card-management-total .content-box .card-list li:last-child{padding-bottom:0}
-.customized-card-list{padding-bottom:4.8rem}
+// .customized-card-list{padding-bottom:4.8rem}
 .customized-card-list .tab{margin-top:4rem;padding-left:0} // 카드 리스트 tab margin 조정
 .customized-card-list .tab_contents .rank-list li:first-child{border-top:0}// tab rank-list border 조정
 .customized-card-list .tab_contents .rank-list li strong{line-height:1} // tab rank-list border line-height 조정
@@ -607,8 +608,9 @@
 .card-management-total .recommend-card .rank-list li{padding-top:2.7rem}
 .card-management-total .recommend-card .rank-list li:first-child{border-top:0}
 .card-management-total .recommend-card .tab{margin-top:22px}
-.customized-card-list > div ~ div{margin-top:34px}
+.customized-card-list .tab_contents{margin-top:0;padding-bottom:3rem} // 211116 : tab-contents margin 조정 & 라이프컨텐츠 일시 숨김 처리로 인한 여백 추가
 .customized-card-list > div ~ div .content-box{margin-top:0}
+.customized-card-list .hr-divide_48{margin-left:-2.4rem;margin-right:-2.4rem}
 .percentage-graph.type2[data-state="safety"] .graph-area > span{background-color:#609df8;border-color:#405ab5} // 카드관리 그래프 색상 변경
 .percentage-graph.type2[data-state="warning"] .graph-area > span{background-color:#ffcf53;border-color:#ffab53} // 카드관리 그래프 색상 변경
 .percentage-graph.type2 .graph-txt .description-list{margin-top:10px}

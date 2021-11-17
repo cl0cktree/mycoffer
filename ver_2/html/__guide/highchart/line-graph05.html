@@ -61,7 +61,10 @@
 
         /* .highcharts-legend.customLegend{transform:translateX(40) translateY(225);} */
         .highcharts-legend.customLegend > g > g{transform:translateX(3rem);}
-        .highcharts-legend.customLegend .highcharts-legend-title text{transform:translateX(-1rem) translateY(6rem);}
+        .highcharts-legend.customLegend .highcharts-legend-title text{transform:translateX(-1rem) translateY(6.2rem);}
+        .highcharts-legend.customLegend > g > g .highcharts-legend-item > path.highcharts-graph{display:none;}
+        .highcharts-legend.customLegend > g > g .highcharts-legend-item > image.highcharts-point{width:1.9rem;height:1.2rem;}
+        .highcharts-legend.customLegend > g > g .highcharts-legend-item > rect.highcharts-point{width:.8rem;height:.8rem;transform:translateX(.5rem) translateY(.2rem);}
         /* .highcharts-legend.customLegend .highcharts-legend-item .highcharts-graph,
         .highcharts-legend.customLegend .highcharts-legend-item .highcharts-point{transform:translateY(-.2rem);} */
     </style>
@@ -177,8 +180,10 @@
                 // align:'bottom',
                 // labelFormatter: function() {
                 //     var name = this.name;
+                //     var symbol = this.symbol;
                 //     var img = '<img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Check_Box_Noun_project_10759.svg/2000px-Check_Box_Noun_project_10759.svg.png" width = "10px" height = "10px">';
-                //     return img + '	' + name;
+                //     return img + name;
+                //     // return console.log(this)
                 // },
                 width:230,
                 title:{
@@ -195,11 +200,13 @@
                     fontFamily: "KBFGText",
                     color:'#696e76',
                 },
+                
+                // squareSymbol:false,
                 padding:0,
                 // lineHeight:30,
                 itemMarginTop:8,
                 itemDistance:5,
-                symbolPadding: 0,
+                symbolPadding: 5,
                 // symbolWidth: 38,
                 // // symbolHeight:24,
                 className:"customLegend",
@@ -225,7 +232,7 @@
                 data: [806000000, 607000000, 511000000, 733000000, 881000000, 567000000,],    
                 marker: {
                     enabled:true,
-                    symbol:'url(@@webRoot/static/images/asset/chart_realty_line_01.png)',
+                    symbol:'url(@@webRoot/static/images/asset/chart_realty_line_01.png)',                    
                 }
             },{
                 name: "실거래가",
@@ -242,8 +249,7 @@
                 color: 'rgba(255, 207, 83, .5)',
                 type: 'areasplinerange',
                 lineWidth: 0,
-                fillOpacity: .2,
-                
+                fillOpacity: .2,                
                 zIndex: 0,
                 data: [[706000000,906000000], [507000000,707000000], [411000000,611000000], [633000000,833000000], [781000000,981000000], [467000000,667000000]],
                 tooltip: {
@@ -252,6 +258,7 @@
                 marker: {
                     enabled:true,
                     symbol:'url(@@webRoot/static/images/asset/chart_realty_line_03.png)',
+                    x:6,
                 }
             },{
                 name: "KB시세",
