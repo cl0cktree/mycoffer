@@ -104,11 +104,22 @@
 // .pgbank-rules .character-selection .swiper-slide[data-theme='bb'] label   {background-image:url(../images/goal/card_bb.png);}
 // .pgbank-rules .character-selection .swiper-slide[data-theme='kiki'] label {background-image:url(../images/goal/card_kiki.png);}
 
-.pgbank-rules .character-selection .swiper-slide[data-theme='lamu'] label:before {background-image:url(../images/goal/card_lamu_on.png);} // 카드 수정
-.pgbank-rules .character-selection .swiper-slide[data-theme='kolly'] label:before{background-image:url(../images/goal/card_kolly_on.png);} // 카드 수정
-.pgbank-rules .character-selection .swiper-slide[data-theme='ago'] label:before  {background-image:url(../images/goal/card_ago_on.png);} // 카드 수정
-.pgbank-rules .character-selection .swiper-slide[data-theme='bb'] label:before   {background-image:url(../images/goal/card_bb_on.png);} // 카드 수정
-.pgbank-rules .character-selection .swiper-slide[data-theme='kiki'] label:before {background-image:url(../images/goal/card_kiki_on.png);} // 카드 수정
+// .pgbank-rules .character-selection .swiper-slide[data-theme='lamu'] label:before{background-image:url(../images/goal/card_lamu_on.png);}
+// .pgbank-rules .character-selection .swiper-slide[data-theme='kolly'] label:before{background-image:url(../images/goal/card_kolly_on.png);}
+// .pgbank-rules .character-selection .swiper-slide[data-theme='ago'] label:before  {background-image:url(../images/goal/card_ago_on.png);}
+// .pgbank-rules .character-selection .swiper-slide[data-theme='bb'] label:before   {background-image:url(../images/goal/card_bb_on.png);}
+// .pgbank-rules .character-selection .swiper-slide[data-theme='kiki'] label:before {background-image:url(../images/goal/card_kiki_on.png);}
+
+/* 캐릭터 카드이미지 1장으로 수정// */
+.pgbank-rules .character-selection .swiper-slide label .card-img{position:relative;}
+.pgbank-rules .character-selection .swiper-slide[data-theme='lamu'] label .card-img{background-color:#fff5c6;}
+.pgbank-rules .character-selection .swiper-slide[data-theme='kolly'] label .card-img{background-color:#e6f2b0;}
+.pgbank-rules .character-selection .swiper-slide[data-theme='ago'] label .card-img{background-color:#e2f6ff;}
+.pgbank-rules .character-selection .swiper-slide[data-theme='bb'] label .card-img{background-color:#ffebe6;}
+.pgbank-rules .character-selection .swiper-slide[data-theme='kiki'] label .card-img{background-color:#ffe3ef;}
+.pgbank-rules .character-selection .swiper-slide input:checked + label .card-img{background-color:#fff;}
+.pgbank-rules .character-selection .swiper-slide input:checked + label .card-img:before{content:'';position:absolute;display:block;width:100%;height:100%;border:2px solid #ffcc00;border-radius:.5rem;}
+/* //캐릭터 카드이미지 1장으로 수정 */
 
 .pgbank-rules .character-selection .swiper-slide label .card-img{position:absolute;top:0;z-index:-1;}
 .pgbank-rules .character-selection .swiper-slide label::before {display:none;content:'';position:absolute;z-index:1;left:0;right:0;top:0;bottom:0;background-size:contain;} // 카드 수정
@@ -616,6 +627,7 @@
 .goals-pay-list .accordion > dt{border-top:none;font-size:$text01;font-weight:bold;}
 .goals-pay-list .accordion > dt.is-active + dd{border-bottom:none;}
 .goals-pay-list .accordion > dd{@include text($text01);padding:0;}
+.goals-pay-list .accordion > dd .no-data{margin-top:2.4rem;margin-bottom:2.4rem;} // no-data 추가
 .goals-pay-list .credit-list{padding:0;}
 .goals-pay-list .credit-list dt{padding:2rem 0 0;}
 .goals-pay-list .credit-list dt:last-child{display:none;}
@@ -686,7 +698,7 @@ section.gray-line + section{border-top:1rem solid $kb-ui10;}
 .character-graph:not(.js-slider) .graph-txt .start-txt{margin-left:0;line-height:1.4;}
 .character-graph:not(.js-slider) .graph-txt .end-txt{margin-right:0;line-height:1.4;}
 .character-graph:not(.js-slider) .graph-area{height:2rem;}
-.character-graph:not(.js-slider) .graph-area > span{background-color:#ffcc00;border:1px solid #ffbc00;}
+.character-graph:not(.js-slider) .graph-area > span{background-color:#ffcc00;border:1px solid #ffbc00;min-width:2rem;} // 그래프 min-width 추가
 .character-graph:not(.js-slider) .graph-area > span i{display:block;position:absolute;bottom:5px;right:8px;background-size:contain;z-index:1;}
 .character-graph:not(.js-slider) .graph-area .flag{position:absolute;right:-10px;bottom:10px;}
 .character-graph.goal{padding-top:10.4rem;}

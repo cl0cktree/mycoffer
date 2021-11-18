@@ -123,6 +123,7 @@
 // .ios.homebar .asset-sync02{bottom:58px;}
 
 //전송요구스탭서브문구
+.app-content .kb-sec.sec-tit:first-child{padding-top:2.8rem} // 패딩탑변경 2021-11-18
 .kb-sec.sec-tit:first-child [class^=h]{padding:0;margin:0;} // 전송요구 요건변경 수정 2021-10-08
 .kb-sec.sec-tit:first-child .terms-desc{margin:2rem 0 4rem;line-height:1.44;} // 전송요구 요건변경 수정 2021-10-08
 .page-step + .transmission-request{margin-top:44px;}
@@ -142,16 +143,18 @@
 .kb-sec.confirm-agree .agreement-to-terms .link{width:3rem;height:3rem;padding:0.5rem;}
 // .kb-sec.confirm-agree .agreement-to-terms .link-arrow{width:2rem;height:2rem;background:none;}
 .kb-sec.confirm-agree > .tit,
-.transmission-request .confirm-agree.no-sec > .tit{margin-top:4.3rem;} // 전송요구 항목선택 추가 2021-11-01
+.transmission-request .confirm-agree.no-sec > .tit{margin-top:3.9rem;} // 마이데이터서비스 가이드라인변경 2021-11-18
 .kb-sec.confirm-agree .confirm-info,
 .transmission-request .confirm-agree.no-sec .confirm-info{margin-top:1.5rem;line-height:1.44;} // 전송요구 항목선택 추가 2021-11-01
 .kb-sec.confirm-agree .confirm-info .question,
 .transmission-request .confirm-agree.no-sec .confirm-info .question{margin-top:1rem;font-weight:bold;} // 전송요구 항목선택 추가 2021-11-01
-.kb-sec.confirm-agree .radio-group{flex-direction:row;margin-top:1.4rem;}
-.kb-sec.confirm-agree .radio-group li{margin-top:0;width:50%;}
+.kb-sec.confirm-agree .radio-group,
+.transmission-request .confirm-agree.no-sec .radio-group{flex-direction:row;margin-top:1.4rem;} // 마이데이터서비스 가이드라인변경 2021-11-18
+.kb-sec.confirm-agree .radio-group li,
+.transmission-request .confirm-agree.no-sec .radio-group li{margin-top:0;width:50%;} // 마이데이터서비스 가이드라인변경 2021-11-18
 .bottom-sheet .confirm-agree .agreement-to-terms .header{padding-top:0;}
-.kb-sec.confirm-agree .confirm-info p.simple-message.sq-bracket,
-.transmission-request .confirm-agree.no-sec .confirm-info p.simple-message.sq-bracket{margin-top:0.6rem;} // 전송요구 항목선택 추가 2021-11-01
+.kb-sec.confirm-agree .confirm-info p.simple-message ~ p.simple-message.sq-bracket,
+.transmission-request .confirm-agree.no-sec .confirm-info p.simple-message ~ p.simple-message.sq-bracket{margin-top:0.6rem;} // 마이데이터서비스 가이드라인변경 2021-11-18
 // 전송요구 항목선택 추가 2021-11-01
 .transmission-request .confirm-agree.no-sec{margin-bottom:4rem;}
 .transmission-request .confirm-agree.no-sec .confirm-info .wrap-checkbox.alone{margin-top:1.4rem;}
@@ -519,7 +522,9 @@
 .mydata-kbinfo .mydata-kbinfo-summary-list li .tit{@include text($size:$text01, $line-height:1, $weight:bold);}
 .mydata-kbinfo .mydata-kbinfo-summary-list li .btn-text{margin-top:2px;}
 .mydata-kbinfo .mydata-kbinfo-summary-list li .btn-text .link-arrow{margin-top:-0.1rem;}
-.mydata-kbinfo .withdraw{margin-top:32px;text-align:right;}
+.mydata-kbinfo .withdraw{display:flex;flex-direction:column;margin-top:2rem;text-align:right;} // 마이데이터서비스 가이드라인변경 2021-11-18
+// .mydata-kbinfo .withdraw .btn-text{display:flex;justify-content:flex-end;} // 마이데이터서비스 가이드라인변경 2021-11-18
+.mydata-kbinfo .withdraw .btn-text{margin-bottom:1.8rem;display:flex;justify-content:flex-end;} // 마이데이터서비스 가이드라인변경 2021-11-18
 .mydata-kbinfo .withdraw .btn-text u{color:$kb-ui03;}
 
 .mydata-kbinfo .mydata-kbinfo-summary-list02{padding-top:4.6rem;}

@@ -269,7 +269,7 @@ var gfn_dim = {
 };
 
 $('body').on('click','.dim',function(){
-    if($(this).next('div').is('.bottom-sheet') || $(this).next('div').is('.floating-banner')){
+    if($(this).next('div').is('.bottom-sheet')){// || $(this).next('div').is('.floating-banner')
         // gfn_dim.hide($(this));
         gfn_layered.close($(this).next('div').attr('data-layered-name'));
     }
