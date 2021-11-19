@@ -544,14 +544,16 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .best-tit-con .tit .btn-question{display:inline-block;}
 .my-asset .best-list-con .except_kb{margin-top:32px;}
 .my-asset .btn-question span{display:block;width:0;height:0;overflow:hidden;text-indent:-9999px;}
-.my-asset .best-list-con .list{margin-top:12px;border-bottom:1px solid $kb-ui08;}
-.my-asset .best-list-con .list li{position:relative;border-top:1px solid $kb-ui09;}//border color 변경
-.my-asset .best-list-con .list li:first-child{margin-top:0;}
-.my-asset .best-list-con .list li + li {border-top:1px solid $kb-ui08;}
+.my-asset .best-list-con .list{margin-top:12px;border-bottom:1px solid $kb-ui09;}//border color 변경
+.my-asset .best-list-con .list li{position:relative;}//border color 변경
+.my-asset .best-list-con .list li + li{border-top:1px solid $kb-ui09;}
+.my-asset .best-list-con .list li:first-child{margin-top:0;border-top:1px solid $kb-ui07;}//border color 변경
 .my-asset .best-list-con .list .flag{width:32px;height:32px;text-align:center;border-radius:4px;background-color:$kb-ui07;}
 .my-asset .best-list-con .list .flag.top{background-color:$color-yellow;}
 .my-asset .best-list-con .list .flag .num{display:block;font-weight:normal;line-height:32px;margin-top:0;}
-.my-asset .best-list-con .list button{display:block;width:100%;padding:24px 0 20px;text-align:left;}
+.my-asset .best-list-con .list>ul>li>button{display:block;width:100%;padding:24px 0 20px;text-align:left;}
+.my-asset .best-list-con .list>ul>li>button:after{content: '';position: absolute;right: 0;top: calc(50% - 1rem);overflow: hidden;white-space: nowrap;text-indent: 200%;display: inline-block;width: 2rem;height: 2rem;background: url(../images/common/common.png) no-repeat -9rem -2rem;background-size: 16rem;}
+.my-asset .best-list-con .list .prod_wrap{padding:24px 0 20px;text-align:left;}
 .my-asset .best-list-con .list .account-wrap .agency{margin-bottom:0;line-height:32px;}
 .my-asset .best-list-con .list .account-wrap .agency .num{font-size:15px;}
 .my-asset .best-list-con .list .account-wrap .user-info{@include text($size: 14px);margin-top:10px;color:$kb-ui04;}
@@ -1447,6 +1449,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset-summary .title {margin-bottom: 15px; @include text($text01, normal);}
 .my-asset-summary p {@include text($text02, normal); color: $kb-ui02;}
 .my-asset-summary .num {font-size: 17px; font-weight: bold;}
+.my-asset-summary .num::after {font-weight: bold;}
 .my-asset-compare {padding-bottom: 20px; margin-bottom: 48px; border-bottom: 10px solid $kb-ui10;}
 .asset-graph-head {position: relative; height: 60px; margin-bottom: 18px;}
 .asset-graph-head > div {position: absolute; top: 0; bottom: 0; @include text($text02, normal); color: $kb-ui04;}
