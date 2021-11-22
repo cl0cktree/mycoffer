@@ -38,7 +38,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .btn-add-data{display:block;width:100%;text-align:center;color:$kb-ui05;padding:10px;margin-top:10px;}
 .btn-add-data i{vertical-align:middle;}
 .bottom-sheet[data-layered-name=mys_as_04_02_00_p1] .grid-list li img{width:24px;height:24px;}
-.no-data-wrap{padding-top:3.8rem;padding-bottom:10rem;}
+.no-data-wrap{padding-bottom:10rem;}
 .detail-list-wrap .period-con{border-bottom:1px solid $kb-ui05;padding:24px 0 12px;text-align:right;}
 .detail-list-wrap .period-con .num{font-size:15px;}//font-size 수정
 .detail-list-wrap .d-list li{border-bottom:1px solid $kb-ui09;padding:15px 0;}
@@ -215,7 +215,6 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .p-list > dl > dd .balance.exchange .amount{@include text($size:14px);}
 .my-asset .p-list > dl > dd .balance.exchange .amount .num{@include number($size:15px);}
 .my-asset .p-list > dl > dd .balance.exchange .amount .num:after{font-size:14px;}
-.kb-sec.have-not-data{padding-top:100px;}
 #pageErrorMessage .tel-info{margin-top:20px;}
 #pageErrorMessage .error-code{margin-top:0;}//margin 변경
 #pageErrorMessage .modal_header .tit{color:#000;}//color 변경
@@ -438,10 +437,11 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .asset-future-design .compare[data-compare-value=equal]::after {display: block;}
 
 .asset-total-solution {margin-bottom: 40px;}
-.asset-total-solution .my-asset-more {margin-bottom: 0; padding-bottom: 0; border-bottom: 0;}
-.asset-total-solution .my-asset-more .more-container {min-height: 180px;}
-.asset-total-solution .my-asset-more .no-data {margin-top: 0;}
 .asset-total-solution .section-text em {color: $color-blue;}
+.asset-total-solution .my-asset-more {margin-bottom: 0; padding-bottom: 0; border-bottom: 0;}
+.my-asset-more .more-container {min-height: 180px;}
+.my-asset-more .no-data .icon-bang_48_gray {margin-top: 28px;}
+.my-asset-more .no-data .icon-bang_48_gray + p {margin-bottom: 8px;}
 
 
 .asset-button {margin-bottom: 48px; padding-top: 0; padding-bottom: 0; border-bottom: 0; }
@@ -920,7 +920,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .credit-score .box-area .num:after{font-weight:bold;}
 .my-asset .credit-score .box-area .score{text-align:right;padding-right:10px;}
 .my-asset .credit-score .box-area .percent:before{display:inline-block;content:'|';padding-right:10px;}
-.my-asset .credit-score .error .no-data-wrap{padding-bottom:3.8rem;}
+
 .my-asset .credit-score .error .box-area{grid-template-columns:1fr;text-align:center;font-weight:normal;margin-top:1.2rem;background-color:$kb-ui09;font-size:16px;}
 .my-asset .credit-score .after{overflow:hidden;}
 .my-asset .credit-score .after .btn-text{float:right;margin-top:1.4rem;vertical-align:middle;}
@@ -942,7 +942,11 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .loan-interest-rate .btn-text{@include text($size:14px);display:inline-block;margin-top:10px;line-height:20px;float:right;}
 .my-asset .loan-interest-rate .btn-text i{vertical-align:middle;}
 .my-asset.loan .recommend-prod{padding-top:42px;}
-
+//대출 추천상품 수정 start
+.my-asset.loan .recommend-prod .list button .info{margin-top:0;}
+.my-asset.loan .recommend-prod .list button .s-txt{display:block;margin-top:21px;@include text($size:14px);color:$kb-ui04;}
+.my-asset.loan .recommend-prod .list button .hash-tag{margin-top:5px;}
+//대출 추천상품 수정 end
 .my-asset .best-list-con .tab{padding-left:0;padding-right:0;margin-right:-24px;}
 .my-asset .best-list-con .tab_contents .list{margin-top:0;}
 .my-asset .best-list-con .tab_contents .list .except_kb{margin-top:10px;margin-bottom:0;border-bottom:0;}
@@ -1170,7 +1174,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset.my-house-expens .expens-list > ul > li{padding:20px 0;border-bottom:1px solid $kb-ui09;}
 .my-asset.my-house-expens .expens-list > ul > li .tit{@include text($size:1.5rem);color:$kb-ui02;margin-bottom:1.2rem;}
 .my-asset.my-house-expens .expens-list > ul > li .date{color:$kb-ui04;}
-.my-asset.my-house-expens .expens-list .no-data{padding-top:4.8rem;border-top:1px solid $kb-ui07;margin-top:1.5rem;} // margin-top 추가
+.my-asset.my-house-expens .expens-list .no-data{/*padding-top:4.8rem;*/border-top:1px solid $kb-ui07;margin-top:1.5rem;} // margin-top 추가, no-data padding-top 삭제
 
 /* My house, Wish House 상세페이지 */
 .my-asset.house-view .top-area{padding-bottom:20px;border-bottom:1px solid $kb-ui09;}
@@ -1257,13 +1261,13 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset.house-view .other-conditions .btn-more-plus{display:block;text-align:center;width:100%;padding:3.6rem 0 0;margin-top:2rem;border-top:1px solid $kb-ui09;height:auto;} // 높이값 추가
 .my-asset.house-view .other-expenses{padding-top:2.4rem;padding-bottom:3.8rem;}
 .my-asset.house-view .other-expenses .h4{margin-bottom:12px;}
-.my-asset .liiv-banner{margin-top:4rem;}
+.my-asset .liiv-banner{margin-top:3.2rem;} // 배너 간격 수정
 .my-asset .liiv-banner button,
-.my-asset .liiv-banner a{display:block;width:100%;text-align:left;background:#f7f7f8;padding:2.5rem 2.5rem 4.8rem;position:relative;} // a 태그 추가
+.my-asset .liiv-banner a{display:block;width:100%;text-align:left;background:#f7f7f8;padding:2.4rem 2.4rem 4.8rem;position:relative;} // a 태그 추가, 배너 padding 수정
 .my-asset .liiv-banner button img,
-.my-asset .liiv-banner a img{position:absolute;width:10.9rem;height:10.4rem;right:2.5rem;top:2rem;} // a 태그 추가
-.my-asset .liiv-banner .tit{display:block;@include text($size:18px,$weight:bold);}
-.my-asset .liiv-banner .s-txt{display:block;@include text($size:14px);color:$kb-ui04;margin-top:4px;}
+.my-asset .liiv-banner a img{position:absolute;width:10rem;height:10rem;right:2.4rem;top:2rem;} // a 태그 추가, 배너 이미지 크기 수정, 배너 이미지 right 수정
+.my-asset .liiv-banner .tit{display:block;@include text($size:18px,$weight:bold);line-height:1;} // 배너 line-height 수정
+.my-asset .liiv-banner .s-txt{display:block;@include text($size:14px);color:$kb-ui04;margin-top:1rem;} // 배너 txt 간격 수정
 .my-asset .smart-loan-banner{margin-top:24px;}
 .my-asset .smart-loan-banner button{display:block;width:100%;text-align:left;background:url(../../static/images/asset/banner_smart_loan.png) no-repeat right center $kb-ui10;background-size:75px auto;padding:20px 26px;}
 .my-asset .smart-loan-banner .tit{display:block;@include text($size:18px,$weight:bold);}
@@ -1522,7 +1526,6 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset-more .emoti-msg > span.lv3::before {background-position: -64px 0;}
 .my-asset-more .emoti-msg > span.lv4 {color: $color-red;}
 .my-asset-more .emoti-msg > span.lv4::before {background-position: -96px 0;}
-.my-asset-more .no-data {margin-top: 24px;}
 
 .my-asset.solution .key-point{padding-bottom:48px;margin-bottom: 48px; border-bottom:10px solid $kb-ui10;}
 .my-asset.solution .key-point h2 {margin-bottom: 12px;}
@@ -1685,13 +1688,13 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 
 .fund-recommand {margin-bottom: 24px;}
 .fund-recommand .maincopy {margin-bottom: 22px; @include text($text01, bold);}
-.fund-recommand .fund-lists {padding-bottom: 20px;}
+// .fund-recommand .fund-lists {padding-bottom: 20px;}
 .fund-recommand .fund-lists .swiper-container {margin: 0 -24px; padding: 0 130px 30px 24px;}
 .fund-recommand .fund-lists .kb-fund {padding: 0;}
 .fund-recommand .fund-lists .kb-fund > a {display: block; padding: 20px;}
 .fund-recommand .fund-lists .kb-fund .name {overflow: hidden; height: 95px;}
 .fund-recommand .error-msg {font-size: 15px; line-height: 21px;}
-.fund-recommand .no-data {margin: 60px 0;}
+// .fund-recommand .no-data {margin: 60px 0;}
 
 // 금융기관 선택
 .financial-institution-accordion .radio-group .form-radio,

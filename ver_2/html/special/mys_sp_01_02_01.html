@@ -47,7 +47,8 @@
 							X,Y축 레이블 텍스트 사이즈/색상 : 14px/#8c949e
 						-->
 						<div class="chart-area">
-							<img class="temp" src="@@webRoot/static/images/_temp/chart_sp0108.png" alt="차트 예시 이미지">
+							<div class="highcharts_column" id="columnChart01"></div>
+							<!-- <img class="temp" src="@@webRoot/static/images/_temp/chart_sp0108.png" alt="차트 예시 이미지"> -->
 						</div>
 						<!-- // [Chart Area] -->
 						<p class="simple-message">전 국민과 비교하는 나의 신용평점 위치 입니다.</p>
@@ -70,8 +71,8 @@
 								그래프(원) 크기 : 150px * 150px
 								그래프(원) 굵기 : 40px'
 							-->
-							<div class="chart-area">
-								<img class="temp" src="@@webRoot/static/images/_temp/chart_sp0107.png" alt="차트 예시 이미지">
+							<div class="chart-area" id="donutChart03">
+								<!-- <img class="temp" src="@@webRoot/static/images/_temp/chart_sp0107.png" alt="차트 예시 이미지"> -->
 							</div>
 							<!-- // [Chart Area] -->
 						</div>
@@ -79,7 +80,7 @@
 							<li class="cate1"><span class="label">상환이력</span><span class="num">20%</span></li>
 							<li class="cate2"><span class="label">거래기간</span><span class="num">30%</span></li>
 							<li class="cate3"><span class="label">신용형태</span><span class="num">10%</span></li>
-							<li class="cate4"><span class="label">부채수준</span><span class="num">60%</span></li>
+							<li class="cate4"><span class="label">부채수준</span><span class="num">40%</span></li>
 						</ul>
 					</div>
 				</section>
@@ -184,9 +185,218 @@
 	<!-- Script -->
 	@@include('@@webRoot/html/_include/common-js.html')
 	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
+	<script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
+	<script src="@@webRoot/static/common/lib/highcharts/pattern-fill.js"></script>
 	<script src="@@webRoot/static/js/ui.js"></script>
 	<!-- Add Script -->
-	
+	<script>
+		drawChart1();
+		drawChart2();
+
+		function drawChart1(){
+			var fontSize = '12px';
+			if($(window).width() < 360){
+				fontSize = '11px';
+			}
+			Highcharts.setOptions({
+				title: {
+					text: null
+				},
+				subTitle: {
+					text: null
+				},
+				legend: {
+					enabled: false
+				},
+				credits: {
+					enabled: false
+				},
+				label: {
+					fontFamily: 'KBFGText'
+				},
+				credits: {
+					enabled: false
+				},
+				exporting: {
+					enabled: false
+				},
+			});
+			// 첫번째 column chart 선언
+			var columnChart = new Highcharts.Chart({
+				chart: {
+					renderTo: 'columnChart01', // chart 삽입 target ID
+					type: "column",
+					height: (3 / 4 * 100) + '%' // 4:3 비율로 설정
+				},
+				tooltip: {
+					formatter: function() {
+						return gfn_comma3Digit(this.y) + "점";
+					},
+					padding: 10,
+					backgroundColor: "#FFF",
+					shadow: true,
+					borderRadius: 4,
+					verticalAlign: 'bottom',
+					borderColor: '#f3f3f3',
+					style: {
+						fontWeight: 'normal',
+						fontSize: fontSize,
+						fontFamily: "KBFGText",
+					}
+				},
+				xAxis: {
+					type: "category",
+					categories: ['<span style="color:#8c949e;">나</span>','<span style="color:#8c949e;">전체<br>평균</span>', '60대<br>평균', '남성<br>평균','상위<br>20%','하위<br>20%'],
+					labels: {
+						style: {
+							color: "#aab0b8",
+							fontSize: fontSize,
+							fontFamily: 'KBFGText',
+						}
+					}
+				},
+				yAxis: {
+					enabled: false, // 사용 안함
+					labels: {
+						enabled: false
+					}, // 축 lebel 사용 안함
+					visible : true, // 축 lebel 사용 안함
+					title: {
+						enabled: false
+					}, // 축 title 사용 안함
+					labels: {
+						formatter :function(){
+							return gfn_comma3Digit(this.value) + "점";
+						},
+						style: {
+							color: "#696e76",
+							fontSize: fontSize,
+							fontFamily: 'KBFGText',
+						}
+					},
+					tickWidth: 0, // 그리드 라인 너비
+					gridLineColor: '#ebeef0', // 그리드 라인 컬러
+					max:1000,
+				},
+				plotOptions: {
+					series: {
+						color: '#c7ccd1', // 기본색상
+						pointWidth: 16, // 막대그래프 너비
+						borderRadiusTopLeft: "50%", // radius 값
+						borderRadiusTopRight: "50%" // radius 값
+					}
+				},
+				series: [{
+					data: [
+						{y:342, color:'#ffba53'},
+						{y:835, color:'#ff8a71'},
+						830, 
+						825, 
+						947,
+						751
+					]
+				}]
+			});
+		}
+
+		function drawChart2() {
+			Highcharts.setOptions({
+				title: {
+					text: null
+				},
+				subTitle: {
+					text: null
+				},
+				legend: {
+					enabled: false
+				},
+				credits: {
+					enabled: false
+				},
+				label: {
+					fontFamily: 'KBFGText'
+				},
+				credits: {
+					enabled: false
+				},
+				// tooltip: { enabled: false },
+				exporting: {
+					enabled: false
+				}
+			});
+			
+			var donutChart = new Highcharts.Chart({
+				chart: {
+					renderTo: 'donutChart03',
+					type: 'pie',
+					height: '100%',
+					margin: [0, 0, 0, 0]
+				},
+				title: {
+					text: '',
+					align: 'center',
+					verticalAlign: 'middle',
+					style: {
+						fontSize: '4vw',
+						fontFamily: "KBFGText"
+					}
+				},
+				tooltip: {
+					formatter: function() {
+						return this.key+ ' ' + this.y + "%"
+					},
+					padding: 10,
+					backgroundColor: "#FFF",
+					shadow: true,
+					borderRadius: 4,
+					verticalAlign: 'bottom',
+					borderColor: '#f3f3f3',
+					style: {
+						fontWeight: 'normal',
+						fontSize: '4vw',
+						fontFamily: "KBFGText",
+					},
+					crosshairs: true
+				},
+				plotOptions: {
+					pie: {
+						allowPointSelect: true,
+						dataLabels: {
+							enabled: false
+						}
+					}
+				},
+				series: [{
+					innerSize: '50%',
+					borderWidth: 0,
+					data: [
+						{
+							name: '상환이력',
+							color: "#ffcf53",
+							y: 20
+						},
+						{
+							name: '거래기간',
+							color: "#ffab53",
+							y: 30
+						},
+						{
+							name: '신용형태',
+							color: "#fa844e",
+							y: 10
+						},
+						{
+							name: '부채수준',
+							color: "#5b75ce",
+							y: 40
+						},
+					]
+				}]
+			});
+		}
+
+	</script>
 
 </body>
 

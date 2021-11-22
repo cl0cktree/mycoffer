@@ -55,4 +55,4 @@ if(!$container.find('.guide-history').length && !$container.find('.guide-index')
 }
 
 //새로운 로그 등록시
-$('.gnb').find('li:eq(1)').addClass('new');
+//$('.gnb').find('li:eq(1)').addClass('new');

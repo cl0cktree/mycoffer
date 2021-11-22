@@ -320,6 +320,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .kb-form_email .between{margin:0 16px;font-size:22px;font-weight:bold;line-height:42px;}
 .kb-form_email .add-email-input{display:none;}
 .kb-form_email p:last-of-type{flex:0 0 100%;margin-top:12px;}
+.kb-form_email .form-text .btn-data-clear{display:none;}
 
 //주민등록번호
 .kb-form_citizen{display:flex;flex-wrap:wrap;align-items:center;}
@@ -556,6 +557,16 @@ ul.radio-group > li + li{margin-top:20px;}
 .complete-msg .caption,
 .no-data .caption{@include text($size:14px);}
 .no-data.margin{margin:4.8rem 2.4rem}
+//No Data 상하 공통 마진
+.no-data .icon-bang_60_gray{margin-top:84px;}
+.kb-sec:first-of-type .no-data .icon-bang_60_gray{margin-top:68px;}
+.no-data .icon-info_24,
+.no-data .icon-bang_48_gray{margin-top:48px;}
+.no-data .icon-bang_60_gray ~ :last-child,
+.kb-sec.kb-form:first-of-type .no-data .icon-bang_60_gray ~ :last-child,
+.no-data .icon-info_24 ~ :last-child,
+.no-data .icon-bang_48_gray ~ :last-child{margin-bottom:48px;}
+
 
 // 전체동의
 .agreement-to-terms {border-bottom: 1px solid $kb-ui09;}

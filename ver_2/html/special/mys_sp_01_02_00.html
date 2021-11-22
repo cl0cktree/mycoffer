@@ -196,16 +196,20 @@
 			});
 		}
 
+		var fontSize = '12px';
+		if ($(window).width() < 360) {
+			fontSize = '11px';
+		}
 		var mainChart = Highcharts.chart("lineChart", {
 			chart: {
 				type: "area",
 				height: (3 / 4 * 100) + '%', // 4:3 비율로 설정
+				marginRight: 0, // 2021-11-16 추가
 				events: {
 					load: function() {
 						this.tooltip.refresh(this.series[0].points[5]);
 					}
-				},
-				marginRight: 0	// 2021-11-16 추가
+				}
 			},
 			title: {
 				text: ""
@@ -221,9 +225,8 @@
 				labels: {
 					style: {
 						color: "#8c949e",
-						fontSize: "3.733vw",
-						fontFamily: "KBFGText",
-						fontWeight: "normal"
+						fontSize: fontSize,
+						fontFamily: "KBFGText"
 					}
 				}
 			},
@@ -245,11 +248,12 @@
 					format: '{value}점',
 					style: {
 						color: "#8c949e",
-						fontSize: "3.733vw",
+						fontSize: fontSize,
 						fontFamily: "KBFGText",
 						fontWeight: "normal"
 					}
-				}
+				},
+				max: 1000
 			},
 			plotOptions: {
 				series: {
@@ -287,7 +291,7 @@
 				style: {
 					color: "#26282c",
 					fontWeight: "normal",
-					fontSize: "4vw",
+					fontSize: fontSize,
 					fontFamily: "KBFGText",
 				},
 				crosshairs: true

@@ -178,13 +178,12 @@
 .expense-home .swiper-card-list .card-item dd .num::after{font-size:1.4rem} // card-item 금액 font-size 수정
 .expense-home .link-to-agree button{text-align:left}
 .expense-home .link-to-agree i{margin-right:1.2rem;vertical-align:middle}
-.expense-home .goals-challenge{padding-bottom:3.2rem}  // expense-home 목표 영역 padding 조정
 .expense-home .customized-card-list{padding-bottom:0} // expense-home 카드 리스트 padding 조정
 .expense-home .customized-card-list > div:not(.tab){padding-left:2.4rem;padding-right:2.4rem} // expense-home 카드 리스트 padding 조정
 .expense-home .customized-card-list .notice-item{background:#f6eddc}
 .expense-home .link-to-asset i{margin-right:1.4rem;vertical-align:middle} // 211117 : expense-home linked-asset 영역 추가
 .expense-home .content-tit .btn-more_link{font-size:1.4rem;color:$kb-ui04}
-.expense-home .kb-sec.dividing-space-bottom{margin-bottom:3.2rem}
+.expense-home .kb-sec.dividing-space-bottom{margin-bottom:3.2rem;padding: bottom 3.2rem}  // 211122 : expense-home 영역간 padding 조정
 .agree-to-provide-information .agree-group+.agree-group{margin-top:4.8rem}
 
 /* 제3자정보제공동의 */
@@ -230,7 +229,7 @@
 .expense-account-book-total .highcharts-box{padding:0}
 .expense-account-book-total .goals-challenge{padding-bottom:3.2rem} // 가계부 최하단 영역 padding-bottom 추가
 .content-box-tit + .compare-amount{margin-top:1rem}
-.compare-amount{display:grid;grid-template-columns:1fr 1fr;background-color:$kb-ui10;border-radius:2px;}
+.compare-amount{display:grid;grid-template-columns:1fr 1fr;background-color:$kb-ui10;border-radius:2px;overflow:hidden} // 211119 : overflow hidden 추가
 .compare-amount dl{position:relative;flex:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;height:6.7rem;padding:0 1.4rem}
 .compare-amount dt{margin-bottom:0.4rem;font-size:1.2rem;color:$kb-ui05}
 .compare-amount dd,
@@ -421,12 +420,16 @@
 .tit-area_icon-bg .icon-box_circle{display:inline-flex;margin-right:10px;margin-bottom:12px;background-color:$kb-ui11}
 .tit-area_icon-bg .btn-line{vertical-align:middle}
 .tit-area_icon-bg .btn-line + .btn-line{margin-left:10px}
-.regulaer-expense-layered .dividing-line-bottom{padding-bottom:10px;margin-bottom:44px;}
-.regulaer-expense-layered .dividing-line-bottom h4{padding-bottom:12px;text-indent:2px;border-bottom:1px solid $kb-ui07;}
-.regulaer-expense-layered .dividing-line-bottom:after{height:1px;}
-.regulaer-expense-layered .dividing-line-bottom .h4 + dl{margin-top:8px;}
-.regulaer-expense-layered .dividing-line-bottom .description-list dt{margin:5px 0}
+// 211122 : 정기지출 리스트 관련 선택자 수정
+.regulaer-expense-layered .tit-area_icon-bg ~ .kb-sec{padding-bottom:10px;margin-bottom:44px;}
+.regulaer-expense-layered .tit-area_icon-bg ~ .kb-sec h4{padding-bottom:12px;text-indent:2px;border-bottom:1px solid $kb-ui07;}
+.regulaer-expense-layered .tit-area_icon-bg ~ .kb-sec:after{height:1px;}
+.regulaer-expense-layered .tit-area_icon-bg ~ .kb-sec .h4 + dl{margin-top:8px;}
+.regulaer-expense-layered .tit-area_icon-bg ~ .kb-sec .description-list dt{margin:5px 0}
+.regulaer-expense-layered .tit-area_icon-bg ~ .kb-sec .description-list dd{flex-wrap:wrap}
+.regulaer-expense-layered .tit-area_icon-bg ~ .kb-sec .description-list dd .num{display:block;width:100%}
 .regulaer-expense-layered input[role="button"]{position:relative;z-index:10;background-color:transparent} // 211118 : input button area 조정
+.regulaer-expense-layered .description-list.type2{grid-template-columns:0.6fr auto} // 211122 : 정기지출 결제수단 관련 grid-template-columns 수정
 // Main
 .regular-expense-summary .btn-more{margin-top:0}
 .regular-expense-summary .date-month .date{margin-top:0;margin-bottom:1rem}
@@ -498,7 +501,7 @@
 .pay-use-list li .num{font-size:1.7rem}
 .pay-use-list li .num[data-unit-after]::after{font-size:1.8rem;font-weight:bold}
 .pay-use-list li+li{margin-top:16px}
-.pay-use-list li .tag-label.round{height:2.4rem;line-height:2.4rem;border-radius:1.2rem}
+.pay-use-list li .tag-label.round{height:2.4rem;padding-top:0;line-height:2.4rem;border-radius:1.2rem} // 211118 : tag-label 상단 여백 조절
 .regulaer-expense-layered .h4 span{color:$kb-ui05;font-size:14px;}
 //직접등록
 .regulaer-expense-layered .h4 + .kb-form{margin-top:15px;}
@@ -531,7 +534,6 @@
 .services-management-list dd{margin-top:0.7rem}
 .services-management-list dd ul{display:flex;flex-wrap:wrap}
 .services-management-list dd ul li{margin-bottom:8px;margin-right:8px}
-.services-management .no-data{margin-top:10rem}
 .select-regular-expense-list .accordion + .accordion{margin-top:-1px;}
 .select-regular-expense-list .accordion{border-bottom:0;}
 .select-regular-expense-list .accordion > dt{border:0;background:$kb-ui10;margin-left:-2.4rem;margin-right:-2.4rem;padding-left:2.4rem;padding-right:2.4rem;margin-top:10px;}
@@ -561,7 +563,7 @@
 .card-management-total .estimated-payment-amount .description-list dd:not(.date) .num{font-weight:bold;color:$color-blue;font-size:1.5rem}
 .card-management-total .estimated-payment-amount .description-list .num[data-unit-after]::after{font-size:1.4rem;color:$kb-ui02}
 .card-management-total .estimated-payment-amount .description-list dt{font-size:1.4rem;color:$kb-ui05}
-.card-management-total .estimated-payment-amount .content-box .no-data .btn-line{width:auto;margin-top:2rem;padding:0 2.1rem} //211115 : no-data case
+.card-management-total .estimated-payment-amount .content-box .no-data .btn-line{width:auto;margin-top:2rem;margin-bottom:0;padding:0 2.1rem} // 211122 : no-data margin 수정
 .card-management-total .my-card-list .content-box{align-items:center}
 .card-management-total .my-card-list .content-box .btn-area{padding:1.6rem}
 .card-management-total .my-card-list .content-box.is-show .btn-area{border-top:0}
@@ -569,6 +571,7 @@
 .card-management-total .my-card-list .description-list dd{align-items:baseline}
 .card-management-total .my-card-list .description-list dd,
 .card-management-total .my-card-list .description-list dd .num{font-size:1.7rem;color:$kb-ui02}
+.card-management-total .my-card-list .description-list dd .num::after{font-size:1.6rem} // 211119 : 그래프 하단 금액 단위 font-size 수정
 .card-management-total .my-card-list .tag-list .tag-label{margin-bottom:1.1rem;margin-right:0.3rem;padding-right:0.7rem;border-right:1px solid #dde1e4;color:$kb-ui04}
 .card-management-total .my-card-list .tag-list .tag-label + .tag-label{margin-left:0;padding-left:0;border-left:0}
 .card-management-total .my-card-list .tag-list .tag-label:last-child{border-right:0}
@@ -576,8 +579,9 @@
 .card-management-total .card-list{width:100%}
 .card-management-total .card-list li{display:flex;align-items:center;padding:20px 0;border-top:1px solid $kb-ui09}
 .card-management-total .card-list .card-info{flex:1}
-.card-management-total .card-list .list-tit{display:block;margin-bottom:1rem;font-weight:bold;color:$kb-ui02}
-.card-management-total .card-list .list-tit .img-resize_24{margin-right:0.8rem;vertical-align:middle}
+// 211122 : 보유카드 목록 텍스트 정렬을 위한 스타일 변경 (position, padding, line-height 등)
+.card-management-total .card-list .list-tit{position:relative;display:block;margin-bottom:1rem;padding-left:3.2rem;line-height:2.4rem;font-weight:bold;color:$kb-ui02}
+.card-management-total .card-list .list-tit .img-resize_24{position:absolute;top:0;left:0}
 .card-management-total .card-list .list-tit + dl li:first-child{border-top:0}
 .card-management-total .card-list .description-list dt{margin:0}
 .card-management-total .card-list .description-list .date,
@@ -588,6 +592,8 @@
 .card-management-total .card-list.t01 li{flex-wrap:wrap}
 .card-management-total .card-list.t01 .percentage-graph{width:100%;margin-top:2.6rem;padding-top:2.2rem}
 .card-management-total .card-list.t01 .percentage-graph .graph-area{height:1.2rem;border:1px solid $kb-ui08;background-color:#f6f7f8}
+.card-management-total .card-list.t01 .percentage-graph[data-percent="0"] .graph-area span,
+.card-management-total .card-list.t01 .percentage-graph[data-percent="0.0"] .graph-area span{border:0}  // 211122 : graph width:0일때 border 제거
 .card-management-total .card-list .edit-user{display:none;justify-content:space-between;flex-wrap:wrap;width:100%;margin-top:30px}
 .card-management-total .card-list .edit-user.kb-form .radio-group{width:100%;margin-bottom:2.7rem}
 .card-management-total .card-list .edit-user.kb-form .radio-group span{flex:1;margin-right:0}
