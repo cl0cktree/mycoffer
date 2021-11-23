@@ -85,7 +85,7 @@
 .content-tit .emphasis{display:block}
 .content-tit .emphasis.color-blue{color:$color-blue}
 .expense-guide .compare-summary .content-box-tit .h4{font-size:1.6rem}
-.expense-guide .content-box-tit .date{margin-top:0;font-size:1.4rem;font-weight:normal}
+.expense-guide .content-box-tit .date{margin-top:0;font-size:1.4rem;font-weight:normal;font-family:'KBFGText',sans-serif}
 .expense-guide .content-box-tit .date .num{font-size:1.5rem;font-weight:normal}
 .expense-guide .date-month strong{margin:0 0.9rem;font-size:1.8rem;font-weight:bold}
 .expense-guide .date-month strong .num{font-size:1.9rem;font-weight:bold}
@@ -93,7 +93,7 @@
 .expense-guide .date-month i::before,
 .expense-guide .date-month i::after{width:1rem;height:1rem;margin-top:-0.2rem} // 211015 : 좌우버튼 화살표 라인 수정
 .expense-guide .date-month .date{display:block;margin:1.2rem 0 1.5rem;font-size:1.5rem;color:$kb-ui05}
-.icon-type-img{display:inline-block;box-sizing:content-box;width:3.2rem;height:3.2rem;vertical-align:middle;overflow:hidden}
+.icon-type-img{display:inline-block;box-sizing:content-box;width:3.2rem;min-width:3.2rem;height:3.2rem;vertical-align:middle;overflow:hidden} // 211122 : icon-type-img min-width 속성 추가
 .icon-type-img img{width:100%;height:auto}
 /* 지출 공통 :상세보기 */
 .expense-list-detail .detail-info > h4{margin-bottom:2rem}
@@ -119,6 +119,8 @@
 /*------------- 지출 > 홈 -------------*/
 .expense-home{margin-top:1.2rem} // 211111 : tab 하단 첫번째 컨텐츠 여백 가이드 준수
 .expense-home .monthly-expense-guide .chart-tit{color:$kb-ui11;text-align:center}
+.expense-home .monthly-expense-guide .chart-tit .link-arrow-after{padding-right:2rem} // 211123 : 지출 홈 상단 그래프 타이틀에 링크 아이콘 추가
+.expense-home .monthly-expense-guide .chart-tit .link-arrow-after::after{background-position:-13.6rem -9.6rem}  // 211123 : 지출 홈 상단 그래프 타이틀에 링크 아이콘 추가
 .expense-home .monthly-expense-guide .chart-tit .h4{font-weight:normal}
 //.expense-home .monthly-expense-guide .chart-tit .h4 button{display:inline-block;margin-left:0.7rem;vertical-align:baseline} 
 .expense-home .monthly-expense-guide .chart-tit strong{font-weight:bold}
@@ -170,7 +172,7 @@
 .expense-home .swiper-card-list .card-item{padding:2rem;border:1px solid $kb-ui08;border-radius:0.8rem}
 .expense-home .swiper-card-list .card-item .tag-label{height:2.4rem;line-height:2.4rem;margin-left:4rem;margin-bottom:0.2rem;padding:0 1.2rem;border-radius:2rem} // 211019 : tag-label t03 round가 solo일때
 .expense-home .swiper-card-list .card-item .tag-label + .tag-label{margin-left:0.6rem} // card-item tag-label margin 조정
-.expense-home .swiper-card-list .card-item .card-tit{display:block;font-size:1.6rem;font-weight:bold}
+.expense-home .swiper-card-list .card-item .card-tit{@include ellipsis;display:block;font-size:1.6rem;font-weight:bold;} // 211112 : card-tit 한줄 말줄임 추가
 .expense-home .swiper-card-list .card-item .card-tit [class*="icon-"]{margin-right:0.8rem;vertical-align:middle}
 .expense-home .swiper-card-list .card-item dl{@include flexBetween;margin-top:1.6rem;font-size:1.4rem}
 .expense-home .swiper-card-list .card-item dt{color:$kb-ui04}
@@ -183,7 +185,7 @@
 .expense-home .customized-card-list .notice-item{background:#f6eddc}
 .expense-home .link-to-asset i{margin-right:1.4rem;vertical-align:middle} // 211117 : expense-home linked-asset 영역 추가
 .expense-home .content-tit .btn-more_link{font-size:1.4rem;color:$kb-ui04}
-.expense-home .kb-sec.dividing-space-bottom{margin-bottom:3.2rem;padding: bottom 3.2rem}  // 211122 : expense-home 영역간 padding 조정
+.expense-home .kb-sec.dividing-space-bottom{margin-bottom:3.2rem;padding-bottom:4.2rem}  // 211122 : expense-home 영역간 padding 조정
 .agree-to-provide-information .agree-group+.agree-group{margin-top:4.8rem}
 
 /* 제3자정보제공동의 */
@@ -360,7 +362,7 @@
 .user-register-category .edit-user[data-status="normal"] .form-text .btn-edit-cancel{display:none}
 .user-register-category .accordion dt.is-active strong{font-weight:bold}
 // 가계부 > 카테고리 추가 (대분류)
-.bottom-sheet[data-layered-name="bsUserRegisterSetCategory"]{padding-bottom:70px}
+// .bottom-sheet[data-layered-name="bsUserRegisterSetCategory"]{padding-bottom:70px} // 211122 : 카테고리 설정 padding 삭제
 .kb-form[data-type="icon"]{align-items:flex-start;padding-top:12px}
 .kb-form[data-type="icon"] > button,
 .kb-form[data-type="icon"] > span,
@@ -411,10 +413,12 @@
 .icon-box_circle{@include flexCenter;width:48px;height:48px;border-radius:50%;background-color:$kb-ui10}
 .icon-box_circle_32{@include flexCenter;width:32px;height:32px;border-radius:50%;background-color:$kb-ui10}
 .icon-box_circle_line{@include flexCenter;width:40px;height:40px;border-radius:50%;background-color:$kb-ui11;border:1px solid $kb-ui09}
-.tit-area_icon-bg em{display:inline-block;margin-left:5px;font-size:16px;font-weight:bold;color:$kb-ui02;}
+.tit-area_icon-bg em{display:inline-block;font-size:16px;font-weight:bold;color:$kb-ui02;} // 211122 : margin-right 수정
 .tit-area_icon-bg .btn-wrap{margin-left:42px;margin-top:4px;}
 .tit-area_icon-bg .btn-wrap .btn-text{font-size:14px;color:$kb-ui04;}
 .tit-area_icon-bg .btn-wrap .btn-text + .btn-text{margin-left:12px;}
+.tit-area_icon-bg .h3{display:flex} // 211122 : flex 속성 추가
+.tit-area_icon-bg .h3 .icon-type-img{margin-right:5px} // 211122 : margin-right 수정
 .tit-area_icon-bg .h3 + .kb-form{margin-top:2em} // 수기등록페이지 별명 입력 상단 여백 조정
 .tit-area_icon-bg .form-text input{background-color:transparent}
 .tit-area_icon-bg .icon-box_circle{display:inline-flex;margin-right:10px;margin-bottom:12px;background-color:$kb-ui11}
@@ -445,7 +449,7 @@
 .regular-expense-total .content-box ~ .no-data,
 .regular-expense-total .content-box ~ .no-data .btn-line{margin-top:4rem} // 211115 : no-data case
 .regular-expense-list .more-view-box + .more-view-box{margin-top:4.8rem}
-.regular-expense-list .credit-list .tag-label.round{margin-bottom:1rem;height:2.4rem;line-height:2.4rem;padding:0 1.2rem;border-radius:2rem} // 211019 : tag-label t03 round가 solo일때
+.regular-expense-list .credit-list .tag-label.round{margin-bottom:0.7rem;height:2.4rem;line-height:2.4rem;padding:0 1.2rem;border-radius:2rem} // 211019 : tag-label t03 round가 solo일때
 .regular-expense-trend .tab{padding-left:0}.regular-expense-trend .tab_contents > div{padding-top:2.8rem} // 211111 : tab 하단 첫번째 컨텐츠 여백 가이드 준수
 .regular-expense-trend .tab_contents > div h4{margin-bottom:1.5rem}
 .regular-expense-trend .kb-form.select-bs{margin-top:14px}
@@ -530,7 +534,7 @@
 .services-management-list > div{display:flex;padding-bottom:33px;margin-bottom:28px;border-bottom:1px solid $kb-ui09}
 .services-management-list > div > span{margin-right:0.8rem}
 .services-management-list dl{flex:1}
-.services-management-list dt strong{font-weight:bold;line-height:32px;}
+.services-management-list dt strong{display:block;padding:0.5rem 0;font-weight:bold;line-height:normal}// 211122 : display, padding, line-height 추가
 .services-management-list dd{margin-top:0.7rem}
 .services-management-list dd ul{display:flex;flex-wrap:wrap}
 .services-management-list dd ul li{margin-bottom:8px;margin-right:8px}
@@ -572,6 +576,8 @@
 .card-management-total .my-card-list .description-list dd,
 .card-management-total .my-card-list .description-list dd .num{font-size:1.7rem;color:$kb-ui02}
 .card-management-total .my-card-list .description-list dd .num::after{font-size:1.6rem} // 211119 : 그래프 하단 금액 단위 font-size 수정
+.card-management-total .my-card-list .description-list dd .count{display:inline-block;padding-left:0.5rem;font-size:1.4rem;color:$kb-ui04} // 211122 : 보유카드 그래프 건수 관련 style 추가
+.card-management-total .my-card-list .description-list dd .count .num{font-size:1.5rem;color:$kb-ui04} // 211122 : 보유카드 그래프 건수 관련 style 추가
 .card-management-total .my-card-list .tag-list .tag-label{margin-bottom:1.1rem;margin-right:0.3rem;padding-right:0.7rem;border-right:1px solid #dde1e4;color:$kb-ui04}
 .card-management-total .my-card-list .tag-list .tag-label + .tag-label{margin-left:0;padding-left:0;border-left:0}
 .card-management-total .my-card-list .tag-list .tag-label:last-child{border-right:0}
@@ -610,8 +616,9 @@
 .card-management-total .content-box .card-list li:last-child{padding-bottom:0}
 // .customized-card-list{padding-bottom:4.8rem}
 .customized-card-list .tab{margin-top:4rem;padding-left:0} // 카드 리스트 tab margin 조정
+.card-management-total .customized-card-list .tab_contents{margin-top:0;padding-bottom:3rem} // 211116 : tab-contents margin 조정 & 라이프컨텐츠 일시 숨김 처리로 인한 여백 추가
 .customized-card-list .tab_contents .rank-list li:first-child{border-top:0}// tab rank-list border 조정
-.customized-card-list .tab_contents .rank-list li strong{line-height:1} // tab rank-list border line-height 조정
+.customized-card-list .tab_contents .rank-list .tags span{margin-top:0.7rem} // 211122 : rank-list tit padding-top 조정
 .customized-card-list .trend-card .content-tit + .content-tit{margin-top:4rem}
 .customized-card-list .trend-card .content-tit + .rank-list{margin-top:1.5rem} // tit + list margin 조정
 .customized-card-list .trend-card .content-tit + .rank-list li:first-child{border-top-color:$kb-ui07}
@@ -619,7 +626,6 @@
 .card-management-total .recommend-card .rank-list li{padding-top:2.7rem}
 .card-management-total .recommend-card .rank-list li:first-child{border-top:0}
 .card-management-total .recommend-card .tab{margin-top:22px}
-.customized-card-list .tab_contents{margin-top:0;padding-bottom:3rem} // 211116 : tab-contents margin 조정 & 라이프컨텐츠 일시 숨김 처리로 인한 여백 추가
 .customized-card-list > div ~ div .content-box{margin-top:0}
 .customized-card-list .hr-divide_48{margin-left:-2.4rem;margin-right:-2.4rem}
 .percentage-graph.type2[data-state="safety"] .graph-area > span{background-color:#609df8;border-color:#405ab5} // 카드관리 그래프 색상 변경
@@ -686,7 +692,7 @@
 .weekly-card-credit-list .description-list-group li .list-tit .tag-label{margin-left:0.8rem;padding-left:0.8rem;font-size:1.6rem;vertical-align:top;border-left:0.1rem solid $kb-ui08}
 .weekly-card-credit-list .description-list-group li dl.type3{margin-top:1.4rem;padding-bottom:1.8rem;border-top:0;grid-row-gap:0}
 .weekly-card-credit-list .description-list-group li dl.type3 dt{color:$kb-ui04}
-.management-expense-goal .link-banner{display:flex;align-items:center;justify-content:space-between;margin-top:3rem;padding:2rem 2.2rem;border-radius:0.8rem;background-color:$kb-ui10} // 금융리포트 배너 margin 추가 // 211022 : 금융리포트배너 size, 정렬 조정
+.management-expense-goal .link-banner{display:flex;align-items:center;justify-content:space-between;margin-top:3rem;padding:2rem 2.2rem;background-color:$kb-ui10} // 금융리포트 배너 margin 추가 // 211022 : 금융리포트배너 size, 정렬 조정
 .management-expense-goal .link-banner dt{font-size:1.8rem;font-weight:bold} // 금융리포트 배너 제목 font-size 수정
 .management-expense-goal .link-banner dd{margin-bottom:1.1rem;font-size:1.4rem;line-height:2.2rem} // 금융리포트 배너 본문 margin 수정
 .management-expense-goal .link-banner + .simple-message{margin-top:1.1rem}

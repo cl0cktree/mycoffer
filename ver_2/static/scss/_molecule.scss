@@ -521,7 +521,6 @@ ul.radio-group > li + li{margin-top:20px;}
 
 //더보기(상세보기)
 .more-view-box .btn-more-view{display:inline-block;padding:10px 0}
-// .more-view-box .btn-more-view .icon-arrow-down{@include iconBullet($direction: 'down', $width: 16px, $thick: 2px, $color: $kb-ui05);}
 .more-view-box .btn-more-view .icon-arrow-down{display:inline-block;overflow:hidden;white-space:nowrap;text-indent:200%;width:2rem;height:2rem;margin-left: 0.7rem;background:url(../images/common/common.png) no-repeat -13rem -4.5rem/16rem;vertical-align: middle;}
 .more-view-box .btn-more-view .icon-arrow-down::before {display:none;}
 .more-view-box .btn-more-view i{transform:translateY(-2px) rotate(0deg)}
@@ -532,6 +531,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .more-view-box.is-show .btn-more-view .show-status{display:inline-block}
 .more-view-box .btn-more-view .show-status,
 .more-view-box.is-show .btn-more-view .hide-status{display:none}
+.more-view-box.is-show .btn-more-view{display:none} // 211123 : 더보기 is-show에서 버튼 감춤
 
 .no-data{text-align:center;}
 .no-data .icon-info_24{display:block;margin:0 auto;}
@@ -692,13 +692,13 @@ ul.radio-group > li + li{margin-top:20px;}
 .credit-list dt label::before{top:0;transform:none}
 .credit-list dt .info em{font-size:1.4rem;color:$kb-ui03}
 .credit-list dt .info .num{font-size:1.5rem;color:$kb-ui03}
-.credit-list dt .info .num+em{display:inline-block;margin-left:0.8rem;padding-left:0.8rem;font-size:1.4rem;border-left:1px solid $kb-ui09}
+.credit-list dt .info .num ~ em{display:inline-block;margin-left:0.8rem;padding-left:0.8rem;font-size:1.4rem;border-left:1px solid $kb-ui09} // 211123 : 선택자 수정
 .credit-list dt .info .tag{margin-left:10px}
-.credit-list dt .info + .tit{margin-top:12px}
-.credit-list dt .tit{font-weight:bold;color:$kb-ui02}
+.credit-list dt .info + .tit{margin-top:1rem;line-height:normal} // 211122 : credit-list tit margin, line-height 수정
+.credit-list dt .tit{font-weight:bold;color:$kb-ui02;line-height:normal} // 211122 : line-height 수정
 .credit-list dt .date{font-family:'Roboto';font-size:14px;color:$kb-ui05}
 .credit-list dt .daycount{font-weight:bold}
-.credit-list dt .tag{margin-top:1.2rem;font-size:1.3rem;color:$kb-ui05}
+.credit-list dt .tag{margin-top:1rem;font-size:1.3rem;color:$kb-ui05}// 211122 : credit-list tag margin 수정
 .credit-list dt .tag[data-state="warning"]{color:$color-red}
 .credit-list dt .tag[data-state="safety"]{color:$color-blue}
 .credit-list dt .tag em{color:$kb-ui05}
@@ -933,7 +933,7 @@ ul.radio-group > li + li{margin-top:20px;}
 .rank-list dt.rank::before,
 .rank-list li.rank::before{color:$kb-ui02;background-color:$color-yellow}
 .rank-list dt strong,
-.rank-list li strong{display:inline-block;padding-top:0.8rem;font-size:1.6rem;font-weight:bold} //rank list title display, padding-top 수정
+.rank-list li strong{display:inline-block;padding-top:0.6rem;font-size:1.6rem;font-weight:bold;line-height:normal} // 211122 : rank list padding, line-height 수정
 .rank-list dt span,
 .rank-list li span{display:block;margin-top:12px;font-size:14px}
 .rank-list dt span{color:$kb-ui04}

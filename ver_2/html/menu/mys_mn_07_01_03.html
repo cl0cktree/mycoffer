@@ -1,9 +1,9 @@
-<!-- [MYS_MN_07_01_02] 배너 > 당첨툴_룰렛 > 마이데이터선물함 리워드혜택_팝업 > 피싱보험 약관동의> 피싱해킹금융사기보상보험(Ⅱ) 보통약관 (작성자: 누리어 시스템 최선화) // -->
+<!-- [MYS_MN_07_01_03] 배너 > 당첨툴_룰렛 > 마이데이터선물함 리워드혜택_팝업 > 피싱보험 약관동의 > 보험서비스 약관 보기 : 피싱해킹금융사기보상보험(Ⅱ) 보통약관 (작성자: 누리어 시스템 최선화) // -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 @@include('@@webRoot/html/_include/app-head.html',{
-    "title": "Last Depth | 1st Depth"
+    "title": "보험서비스 약관 보기 | 피싱"
 })
 </head>
 <body>
@@ -12,7 +12,7 @@
         
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
             'pageTit':'보험서비스 약관 보기',
-            'type':'back'
+            'type':'close'
         })
         
 
@@ -20,18 +20,16 @@
         <div class="app-container">
 
             <!-- app-content // -->
-            <main class="app-content">
-
-                <section class="kb-sec">
-                    @@include('@@webRoot/html/_include/agree-phishing-insurance.html')
+            <main class="app-content pdf-viewer"><!-- 수정 : pdf 삽입되는 영역 -->
+                <section class="pdf-area">
+                    <!-- PDF 삽입 영역 -->
                 </section>
                 
                 <div class="sticky-bottom">
                     <div class="btn-area">
-                        <button type="button" class="btn-solid"><span>동의</span></button>
+                        <button type="button" class="btn-solid" data-action="close" data-confirm="true"><span>동의</span></button>
                     </div>
-                </div>
-
+                </div> 
             </main>
             <!-- // app-content -->
 

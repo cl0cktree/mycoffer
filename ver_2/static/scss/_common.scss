@@ -119,8 +119,8 @@
 .asset-sync .character-box + p{@include text($size:$text01);margin-top:2.5rem; color:$kb-ui03;} // 여백수정 2021-10-12
 .asset-sync .loader{margin-top:40px;}
 // .asset-sync02{position:absolute;bottom:calc(constant(safe-area-inset-bottom) / 2 + 24px);bottom:calc(env(safe-area-inset-bottom) / 2 + 24px);left:0;width:100%;} // GUI수정 2021-10-25
-.asset-sync02{margin-top:4.8rem;bottom:calc(constant(safe-area-inset-bottom) / 2 + 24px);bottom:calc(env(safe-area-inset-bottom) / 2 + 24px);} // GUI수정 2021-10-25
-.asset-sync02 .checkbox-group{padding-top:1.7rem;padding-bottom:1.7rem;border-top:1px solid $kb-ui03;border-bottom:1px solid $kb-ui09;min-height:80px;max-height:206px} // 리스트 변경  2021-10-12
+// .asset-sync02{margin-top:4.8rem;bottom:calc(constant(safe-area-inset-bottom) / 2 + 24px);bottom:calc(env(safe-area-inset-bottom) / 2 + 24px);} // GUI수정 2021-10-25
+.asset-sync02 .checkbox-group{min-height:4rem;max-height:20rem;padding-top:1.7rem;padding-bottom:1.7rem;border-top:1px solid $kb-ui03;border-bottom:1px solid $kb-ui09;margin-top:4.8rem;overflow-y:auto;} // max-height  2021-11-23
 .asset-sync02 .checkbox-group li ~ li{margin-top:1.2rem;} // 여백수정 2021-10-12
 .asset-sync02 .checkbox-group .form-checkbox{display:block;}
 .asset-sync02 .checkbox-group label{display:block;color:$kb-ui04;text-align:left;}
@@ -244,8 +244,9 @@
 .select-organization .checkbox-group_icon{margin-top:0px}
 .select-organization .caution-txt{padding-bottom: 70px; display: block;}
 .select-organization .caution-txt p{font-size: 16px; margin-top:24px; line-height: 24px; margin-bottom: 19px;}
-.select-organization .kb-sec a{float: right;}
-.select-organization .agency-search{margin-top:24px; margin-bottom:90px; clear: both;}
+// .select-organization .kb-sec a{float: right;} // 플롯수정 2021-11-23
+.select-organization .kb-sec.agency-search {text-align:right;} // 플롯수정 2021-11-23
+.select-organization .agency-search{margin-top:1.6rem;margin-bottom:4.3rem;} // 플롯수정 2021-11-23
 .select-organization .accordion dt{padding-left:0;} // 패딩수정 2021-11-20
 .select-organization .accordion dd{padding-left:0.2rem;} // 패딩수정 2021-11-20
 
