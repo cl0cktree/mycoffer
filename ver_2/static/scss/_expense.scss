@@ -446,6 +446,7 @@
 .regular-expense-summary .highcharts-figure{background:transparent}
 .regular-expense-total{padding-bottom:0}
 .regular-expense-total .regular-expense-list{padding-bottom:4rem} // 211118 : section간 여백 조정
+.regular-expense-total .regular-expense-list .more-view-box.is-show{padding-bottom:1.8rem} // 211123 : 더보기 버튼 숨길 때 여백 조정
 .regular-expense-total .content-box ~ .no-data,
 .regular-expense-total .content-box ~ .no-data .btn-line{margin-top:4rem} // 211115 : no-data case
 .regular-expense-list .more-view-box + .more-view-box{margin-top:4.8rem}
@@ -665,6 +666,7 @@
 .monthly-asset-summary .compare-summary .amount .num[data-unit-after]::after{font-weight:bold}
 .weekly-expense-report .legend-unit{margin-top:1.6rem} // chart legend unit 상단 margin 조정
 .weekly-regular-expense-list{margin-top:3.2rem}// 211118 : section간 여백 조정
+.weekly-expense-report .dividing-space-bottom{padding-bottom:4.4rem} // 211123 : divide간 여백 조정
 // Main
 .content-groups-type .group-tit,
 .content-groups-type .credit-list{border:0}
@@ -736,6 +738,9 @@
 .monthly-expense-summary .description-list.type3 .amount.expense::before{content:'-';display:inline}
 .monthly-expense-summary .description-list.type3 .amount .num{font-size:1.3rem}
 .monthly-expense-summary .doughnut-type + .graph-area{margin-top:0} // 211118 : section간 여백 조정
+.monthly-expense-summary .more-view-box.is-show{padding-bottom:1.6rem} // 211123 : divide간 여백 조정
+.monthly-expense-summary .doughnut-type .more-view-box.is-show{padding-bottom:0} // 211123 : divide간 여백 조정
+.monthly-expense-summary .doughnut-type .more-view-box.is-show .btn-area{border:0} // 211123 : divide간 여백 조정
 
 // 금융리포트 목록
 .finance-report-list .kb-form.select-bs .kb-form_inner{width:100%;padding-bottom:26px}
@@ -744,3 +749,6 @@
 
 /* 임시 아이콘 */
 .icon-expense-28{width:2.8rem;height:2.8rem;background-color:aqua}
+
+/* 더보기 컨텐츠에 dividing-space가 들어가 있을 때 */
+.more-view-box.dividing-space-bottom.is-show{padding-bottom:5.8rem}

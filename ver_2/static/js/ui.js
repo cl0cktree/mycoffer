@@ -1191,7 +1191,7 @@ if($('.accordion').length){
 
 //btn-more-view
 $('body').on('click','.more-view-box .btn-more-view',function(){
-    $(this).closest('.more-view-box').addClass('is-show');
+    $(this).closest('.more-view-box').toggleClass('is-show');
 })
 
 

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko"> <!--2021-10-05 마이머니앱 기준 / 뉴스뱅 data-channel="ch_star" -->
+<!-- [MYS_AS_07_09_00_P1] 작성자: 누리어 시스템 김은경 -->
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+    "title": "CMA 상세조회 | 자산"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+        <!-- app-header //-->
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+        'pageTit' :'CMA 상세조회',
+        'type':'home' //2021-10-05 마이머니앱 기준 / 뉴스뱅 'close'
+        })
+        <!-- // app-header -->
+
+        <!-- app-container //-->
+        <div class="app-container">
+
+            <!-- app-content // -->
+            <main class="app-content my-asset pop-account-detail">
+
+
+                <section class="kb-sec full invest">
+                    <div class="account-top">
+                        <ul>
+                            <li class="account-wrap">
+                                <div class="txt-con">
+                                    <span class="bank-book">상품명이들어갑니다</span>
+                                    <div class="agency-con">
+                                        <span class="agency-logo"><img src="@@webRoot/static/images/ci/A1AAEO0000.png" alt="은행별 아이콘"></span>
+                                        <em class="agency"><span class="title">국민은행</span><span class="num">302-61680-96-002</span></em>
+                                    </div>
+                                    <p class="balance">
+                                        <span>평가금액 <b class="amount"><span class="num" data-unit-after="원">3,000,000</span></b></span>
+                                    </p> 
+                                </div>
+                            </li>
+                            <li class="investment-desc">
+                                <dl class="description-list type2">
+                                    <dt>투자원금</dt>
+                                    <dd class="amount"><em class="num" data-unit-after="원">49,000</em></dd>
+                                    <dt>투자수익률
+                                        <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i><span>투자수익률</span></button>
+                                        <!-- Tooltip (With title)-->
+                                        <div class="tooltip">
+                                            <div class="cont">
+                                                마이데이터 표준 API를 통해 타사로부터 제공받는 평가금액과 투자원금을 기준으로 (평가금액-투자원금)/투자원금*100으로 계산하여 제공해드리는 수익률로 각 기관별 수익률 산정방식에 따라 약간의 오차가 발생할 수 있습니다. 
+                                            </div>
+                                            <button class="btn-close"><span>닫기</span></button>
+                                        </div>
+                                    </dt>
+                                    <dd class="amount"><em class="num" data-unit-after="%">2.8</em></dd>
+                                    <dt>신규일</dt>
+                                    <dd class="date">2021.10.30</dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="account-detail">
+                        <div class="condition-area">
+                            <button class="btn-condition" data-call-layered="mys_as_07_01_02_p1">
+                                <div>
+                                    <div class="sorting-status">
+                                        <span>1개월</span>
+                                        <span>전체</span>
+                                        <span>최신순</span>
+                                    </div>
+                                    <i class="arrow">조회조건 선택</i>
+                                </div>
+                            </button>
+                        </div>
+                        <!-- no-data 추가 // -->
+                        <div class="no-data-wrap">
+                            <div class="no-data">
+                                <i class="icon-info_24"></i>
+                                <p>조회내역이 없습니다.</p>
+                            </div>
+                        </div>
+                        <!-- // no-data 추가 -->
+                        <div class="detail-list-wrap">
+                            <div class="period-con"><span class=" num">2021.01.27 ~ 2021.04.26</span></div>
+                            <ul class="d-list">
+                                <li>
+                                    <div class="price-wrap">
+                                        <div class="date-con">
+                                            <span>2020.10.12 10:10</span>
+                                            <em>입금</em>
+                                        </div>
+                                        <div class="txt-con">
+                                            <dl class="description-list">
+                                                <dt>입금금액</dt>
+                                                <dd class="amount"><b class="num plus" data-unit-after="원">1,200,000</b></dd>
+                                                <dt>잔액</dt>
+                                                <dd class="total"><span class="num" data-unit-after="원">1,747,538</span></dd>
+                                            </dl>
+                                            <span class="memo">적요</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="price-wrap">
+                                        <div class="date-con">
+                                            <span>2020.10.12 10:10</span>
+                                            <em>출금</em>
+                                        </div>
+                                        <div class="txt-con">
+                                            <dl class="description-list">
+                                                <dt>출금금액</dt>
+                                                <dd class="amount"><b class="num minus" data-unit-after="원">1,200,000</b></dd>
+                                                <dt>잔액</dt>
+                                                <dd class="total"><span class="num" data-unit-after="원">1,747,538</span></dd>
+                                            </dl>
+                                            <span class="memo">적요</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn-more-plus"><span>더보기</span></button>
+                        </div>
+
+                    </div>
+                </section>
+
+
+
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+        <!-- Layer (modal, bottom sheet) // -->
+        <div class="layered">
+            
+            @@include('@@webRoot/html/asset/layered/mys_as_07_01_02_p1.html')
+
+        </div>
+        <!-- // Layer (modal, bottom sheet) -->
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+
+</body>
+
+</html>

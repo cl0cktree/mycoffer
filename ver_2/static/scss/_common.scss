@@ -240,6 +240,12 @@
 .employee-search .employee-search-list .no-data,
 .employee-search .branch-search-list .no-data{margin-top:8.4rem;} // 마진수정 2021-11-12
 
+// 마이데이터 정보 수신 결과 2021-11-24
+.mydata-result-wrap .list-tit{margin-bottom:1.4rem;color:$kb-ui02;font-size:1.8rem;font-weight:bold;}
+.mydata-result-wrap .list-tit .num{font-size:1.9rem;}
+.mydata-result-wrap .result-list{max-height:16.8rem;overflow-y:auto;margin:1.4rem 0 4.8rem;border-top:0.1rem solid $kb-ui03;border-bottom:0.1rem solid $kb-ui09;font-size:1.6rem;}
+.mydata-result-wrap .result-list li{margin:1.5rem 0;}
+
 // 기관선택 mys_co_06_01_01
 .select-organization .checkbox-group_icon{margin-top:0px}
 .select-organization .caution-txt{padding-bottom: 70px; display: block;}
@@ -751,8 +757,13 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .mn-agreements .mn-agreements-list02 .checkbox-group li:nth-child(2){margin-top:16px;}
 .mn-agreements .mn-agreements-list02 .checkbox-group li:nth-child(3),
 .mn-agreements .mn-agreements-list02 .checkbox-group li:nth-child(4){margin-top:20px;}
-.mn-agreements .mn-agreements-list .form-checkbox label, .mn-agreements .mn-agreements-list ~ .checkbox-group label{padding-right:30px;} // 체크박스수정 2021-10-18
-.mn-agreements .mn-agreements-list .form-checkbox .link, .mn-agreements .mn-agreements-list ~ .checkbox-group .link{position:absolute;right:0;top:50%;transform:translateY(-50%)} // 체크박스수정 2021-10-18
+.mn-agreements .mn-agreements-list .form-checkbox label, 
+.mn-agreements .mn-agreements-list02 .form-checkbox label, 
+.mn-agreements .mn-agreements-list02 + .checkbox-group.st_list label, 
+.mn-agreements .mn-agreements-list ~ .checkbox-group label{padding-right:30px;} // 조건추가 2021-11-24
+.mn-agreements .mn-agreements-list .form-checkbox .link, 
+.mn-agreements .mn-agreements-list02 ~ .checkbox-group .link,
+.mn-agreements .mn-agreements-list ~ .checkbox-group .link{position:absolute;right:0;top:50%;transform:translateY(-50%)} // 조건추가 2021-11-24
 // .mn-agreements .mn-agreements-list ~ .checkbox-group .link span:before {
 //     content: '';
 //     position: absolute;
@@ -880,8 +891,8 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .pointree .banner-about-pointree{position:relative;padding:2.4rem 2.2rem;margin:2rem -0.8rem 2rem;border-radius:0.8rem;background-color:#faf6f0;}
 .pointree .banner-about-pointree::after{content:'';position:absolute;right:0;bottom:-1.3rem;display:block;width:15rem;height:8.5rem;background:url(../images/menu/pointree.png) no-repeat 0 0;background-size:100% 100%;} // 선물_포인트리 2021-10-15
 .pointree .banner-about-pointree .tit{font-size:2rem;font-weight:bold;}
-.pointree .banner-about-pointree .tit + p{@include text($size:16px);margin-top:2rem;color:$kb-ui03;}
-.pointree .banner-about-pointree .btn-text{@include btnText($size:16px);margin-top:3rem;color:$kb-ui02;} // 선물_포인트리 2021-10-15
+.pointree .banner-about-pointree .tit + p{@include text($size:16px);margin-top:1.7rem;color:$kb-ui03;} // 여백수정 2021-11-23
+.pointree .banner-about-pointree .btn-text{@include btnText($size:16px);margin-top:2.4rem;color:$kb-ui02;} // 여백수정 2021-11-23
 
 // 포인트리 수정 2021-11-22 
 .pointree-list li{display:grid;grid-template-columns:1fr auto;position:relative;padding:1.8rem 0.2rem;border-bottom:1px solid $kb-ui08;line-height:1.44;}
