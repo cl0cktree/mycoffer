@@ -119,7 +119,7 @@
 /*------------- 지출 > 홈 -------------*/
 .expense-home{margin-top:1.2rem} // 211111 : tab 하단 첫번째 컨텐츠 여백 가이드 준수
 .expense-home .monthly-expense-guide .chart-tit{color:$kb-ui11;text-align:center}
-.expense-home .monthly-expense-guide .chart-tit .link-arrow-after{padding-right:2rem} // 211123 : 지출 홈 상단 그래프 타이틀에 링크 아이콘 추가
+.expense-home .monthly-expense-guide .chart-tit .link-arrow-after{display:inline-block;width:auto;padding-right:2rem} // 211125 : 지출 홈 상단 그래프 타이틀 링크 아이콘 관련 수정
 .expense-home .monthly-expense-guide .chart-tit .link-arrow-after::after{background-position:-13.6rem -9.6rem}  // 211123 : 지출 홈 상단 그래프 타이틀에 링크 아이콘 추가
 .expense-home .monthly-expense-guide .chart-tit .h4{font-weight:normal}
 //.expense-home .monthly-expense-guide .chart-tit .h4 button{display:inline-block;margin-left:0.7rem;vertical-align:baseline} 
@@ -434,6 +434,7 @@
 .regulaer-expense-layered .tit-area_icon-bg ~ .kb-sec .description-list dd .num{display:block;width:100%}
 .regulaer-expense-layered input[role="button"]{position:relative;z-index:10;background-color:transparent} // 211118 : input button area 조정
 .regulaer-expense-layered .description-list.type2{grid-template-columns:0.6fr auto} // 211122 : 정기지출 결제수단 관련 grid-template-columns 수정
+.regulaer-expense-layered[data-layered-name="popupRegularExpenseUserRegister"] .tit-area_icon-bg ~ .kb-sec h4{border:0;padding-bottom:0} // 211125 : 직접등록 페이지에서만 삭제
 // Main
 .regular-expense-summary .btn-more{margin-top:0}
 .regular-expense-summary .date-month .date{margin-top:0;margin-bottom:1rem}
@@ -636,6 +637,7 @@
 .percentage-graph.type2 .graph-txt .description-list dd ~ dd{padding-top:1.8rem}
 .percentage-graph.type2 .graph-txt .description-list dd .amount,
 .percentage-graph.type2 .graph-txt .description-list dd .amount em{font-size:17px;font-weight:bold;color:$kb-ui02}
+.card-management-total .kb-sec:last-child.my-card-list{padding-bottom:2.4rem} // 211125 : 보유카드 영역이 마지막 section일때
 //라이프컨텐츠 - 목록
 .thumb-list-group{padding-top:20px}
 .thumb-list-group li:first-child{padding-top:24px;border-top:1px solid $kb-ui09}
@@ -752,3 +754,11 @@
 
 /* 더보기 컨텐츠에 dividing-space가 들어가 있을 때 */
 .more-view-box.dividing-space-bottom.is-show{padding-bottom:5.8rem}
+
+// bottom-sheet 조치 (test)
+.ios .bottom-sheet[data-layered-name="bsRegularExpenseDetailList"],
+.ios .bottom-sheet[data-layered-name="bsAddRegularExpenseList"],
+.ios .bottom-sheet[data-layered-name="bsShareRegularExpenseList"],
+.ios .bottom-sheet[data-layered-name="bsSelectRegularExpenseList"],
+.ios .bottom-sheet[data-layered-name="bsSelectRegularExpenseList01"],
+.ios .bottom-sheet[data-layered-name="bsSelectOrganization"]{margin-bottom:-1px}

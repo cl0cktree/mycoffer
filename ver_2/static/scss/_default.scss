@@ -84,9 +84,9 @@ button:disabled{cursor:default;}
 .pl2{padding-left: 0.2rem;}
 
 //Default
-html,body{height:100vh;min-height:-webkit-fill-available;}
+html,body{height:calc(var(--vh, 1vh) * 100);min-height:-webkit-fill-available;}
 body{min-width:320px;font-family:'KBFGText',sans-serif;font-size:1.6rem;line-height:1;color:$kb-ui02;letter-spacing:-0.02em;word-break:keep-all;word-wrap:break-word;}
-body.is-hold{overflow:hidden;}
+body.is-hold{overflow:hidden;position:fixed;}
 .dim{position:fixed;top:0;left:0;bottom:0;right:0;background-color:$dim-color;z-index:$level70;}
 
 input[type=text],
@@ -99,14 +99,13 @@ input[type=number]::placeholder,
 input[inputmode=numeric]::placeholder{@include text($size : 22px, $weight : bold, $line-height: 31px);font-family:'KBFGText';color:$kb-ui07;}
 textarea{width:100%;padding:1.6rem;font-size:1.6rem;}
 
-
 //Web Accessibility
 .skip-nav{position:fixed;top:-6rem;left:0;z-index:$level50;width:100%;height:6rem;}
 .skip-nav a{position:absolute;top:0;left:0;width:100%;height:6rem;line-height:6rem;font-weight:500;background-color:#000;color:#fff;text-align:center;  }
 .skip-nav a:focus{top:6rem;}
 
 //layout
-.app{display:flex;flex-flow:column;min-height:100vh}/*min-height:calc(var(--vh, 1vh) * 100);*/
+.app{display:flex;flex-flow:column;min-height:calc(var(--vh, 1vh) * 100);}/*min-height:calc(var(--vh, 1vh) * 100);*/
 .app-container{flex:1;}
 // .app-lnb{padding-top:16px;}
 .app-lnb .tab:first-child{margin-top:16px;}

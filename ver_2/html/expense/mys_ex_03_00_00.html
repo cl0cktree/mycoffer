@@ -88,7 +88,7 @@
                 </section>
                 <!--// 카드 결제 예정 금액 -->
                 <!-- 보유카드 // -->
-                <section class="kb-sec my-card-list shadow more-view-box mt48 dividing-space-bottom">
+                <section class="kb-sec my-card-list shadow more-view-box mt48"><!-- 수정:2021-11-25 --><!-- 디바이더 분리를 위한 클래스 삭제 (dividing-space-bottom)-->
                     <div class="content-tit flex-box border-tit">
                         <!-- 수정:2021-11-16 -->
                         <!-- 타이틀 내부 툴팁 추가 -->
@@ -236,6 +236,9 @@
                     </div>
                 </section>
                 <!--// 보유카드 -->
+                
+                <hr class="hr-divide_48"><!-- 수정:2021-11-25 --><!-- 디바이더 삽입 : 하단 인기카드 및 추천카드 영역 안나올 시 함께 제거 -->
+
                 <!-- 인기카드 //-->
                 <section class="kb-sec full customized-card-list"><!-- 수정:2021-11-16 --><!-- class 제거 (dividing-space-bottom) -->
                     <div class="trend-card">
@@ -475,6 +478,14 @@
                 if(objPos < 0){
                     $txt.css('margin-left', (objMg-objPos)+ 'px');
                 }
+            });
+
+            // 211125 : 동일 section 내의 툴팁 겹치지 않게 처리 (카드관리페이지 예외)
+            var $btnQuestion = $('.btn-question');
+            $btnQuestion.on('click', function(){
+                var $exct = $(this).siblings('.tooltip');
+                var $target = $(this).closest('.kb-sec').find('.tooltip').not($exct);
+                $target.hide();
             });
         });
     </script>

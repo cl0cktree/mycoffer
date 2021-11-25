@@ -9,10 +9,16 @@ var clickEvent = (function() {
 
 //세자리수 콤마
 function gfn_comma3Digit(number){
-    if (number === "") return;
-    if (typeof number === "number") number = String(number);
+    if(number === "") return;
+    var minus = false;
+    if(typeof number === "number") number = String(number);
+    if(number < 0) minus = true;
     number = number.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
-    return Number(number).toLocaleString();
+    if(minus){
+        return '-' + Number(number).toLocaleString();
+    }else{
+        return Number(number).toLocaleString();
+    }
 }
 function gfn_removeComma3Digit(number){
     if (number === "") return;

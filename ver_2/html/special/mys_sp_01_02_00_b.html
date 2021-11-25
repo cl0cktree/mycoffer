@@ -1,0 +1,313 @@
+<!-- [MYS_SP_01_02_00] 작성자: 누리어 시스템 황철민 -->
+<!DOCTYPE html>
+<html lang="ko" data-channel="ch_star">
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "신용관리 | 신용"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app" data-page="">
+
+		@@include('@@webRoot/html/_include/app-integrated-header.html', {
+			'pageTit': '신용관리',
+			'type': ''
+		})
+
+		<!-- app-container //-->
+		<div class="app-container">
+
+			<!-- app-content // -->
+			<main class="app-content credit-management">
+				<section class="kb-sec credit-alarm">
+					<a href="#" class="alarm-message">
+						<span class="bell"><i class="icon-bell4_24"></i></span>
+						<span class="text">신용정보 변동내역이 있습니다!<i></i></span>
+					</a>					
+				</section>
+
+				<section class="kb-sec credit-gauge">
+					<h2 class="title"><strong>김국민</strong> 님의 신용평점</h2>
+					<button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+					<div class="tooltip">
+						<strong class="tit">신용평점이란?</strong>
+						<div class="cont">
+							<ul data-style="list">
+								<li>신용평점은 1,000점 만점 기준으로 산정되며, 상위 %가 낮을수록 신용도가 좋습니다.</li>
+							</ul>
+						</div>
+						<button class="btn-close"><span>닫기</span></button>
+					</div>
+					<div class="content-box">
+						<div class="credit-my-position">
+							<span class="toppos">상위 <span class="num" data-unit-after="%">21</span></span>
+							<span class="point"><span class="num">809</span> 점</span>
+							<div class="svg-area svg-gauge-half">
+								<svg class="defs">
+									<defs><path id="creCirclePath" d="M 10 120 A 1 1 0 0 1 222 120"></path></defs>
+								</svg>
+								<svg class="credit-gauge-svg1" viewBox="0 0 232 120">
+									<use class="bar-bg" xlink:href="#creCirclePath"></use>
+									<use class="bar-fg" xlink:href="#creCirclePath"></use>
+								</svg>
+								<span class="is-hidden">최소</span>
+								<span class="min">0</span>
+								<span class="is-hidden">점, 최대</span>
+								<span class="max">1,000</span>
+								<span class="is-hidden">점</span>
+							</div>
+							<script>
+								window.addEventListener('load', function() {
+									/**
+									 * drawCreditGauge function
+									 * @param {string} selector - 선택자
+									 * @param {number} current - 점수
+									 * @param {number} max - 최대 값
+									 */
+									drawCreditGauge(".credit-gauge-svg1", 809, 1000);
+								});
+							</script>
+						</div>
+						<div class="button-area">
+							<a href="javascript:;" class="btn-solid mm gray">신용평점 분석 상세보기</a><!-- 2021-11-16 class sm을 mm으로 수정-->
+						</div>
+					</div>
+				</section>
+
+				<section class="kb-sec credit-logs">
+					<h2 class="title">신용평점 변동내역</h2>
+					<div class="content-box">
+						<!-- [Chart Area] // -->
+						<!--
+							[차트 디자인 정보]
+							Grid 라인 색상 : #ebeef0
+							꺽은선 색상 : #ffba53
+							Tooltip 텍스트 사이즈/색상 : 14px/#26282c
+							X축, Y축 레이블 텍스트 사이즈/색상 : 13px/#8c949e (오늘 : #26282c)
+						-->
+						<div class="chart-area" id="lineChart">
+							<!-- <img class="temp" src="@@webRoot/static/images/_temp/chart_sp0106.png" alt="차트 예시 이미지"> -->
+						</div>
+						<!-- // [Chart Area] -->
+						<div class="links">
+							<a class="btn-text sm icon-arrow" href="javascript:;"><span>조회내역 <span class="num">13</span></span><i></i></a>
+							<a class="btn-text sm icon-arrow" href="javascript:;"><span>변동내역 <span class="num">3</span></span><i></i></a>
+						</div>
+					</div>
+				</section>
+
+				<section class="kb-sec credit-point">
+					<h2 class="is-hidden">신용평점 비교</h2>
+					<div class="summary">
+						<strong>김국민</strong> 님의 신용평점은 <span class="num">30</span>대 평균보다<br>
+						<strong><span class="num">80</span>점 높습니다.</strong>
+					</div>
+					<div class="content-box">
+						<!--
+							[개발]
+							나, 평균 중 큰 쪽의 .bar 는 100% , 다른 쪽은  %계산하여 width 지정
+							ex) 나 945 , 평균 810 : 나 : width: 100% , 평균 : width: {(810 / 945) * 100}%
+						-->
+						<div class="compare-bar-area">
+							<div class="row me">
+								<div class="text">나</div>
+								<div class="bar-zone">
+									<span class="bar" style="width: 100%;">
+										<span class="value"><span class="num">945</span></span>
+									</span>
+								</div>
+							</div>
+							<div class="row avg">
+								<div class="text">30대 평균</div>
+								<div class="bar-zone">
+									<span class="bar" style="width: 85.7%;">
+										<span class="value"><span class="num">810</span></span>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="button-area">
+							<a href="javascript:;" class="btn-solid mm gray" role="button"><span>신용 비교분석 상세보기</span></a><!-- 2021-11-16 class sm을 mm으로 수정-->
+						</div>
+					</div>
+				</section>
+
+				<section class="kb-sec my-credit-mng">
+					<h2 class="h4">My 신용평점 관리</h2>
+					<ul class="icon-text-links">
+						<li><a class="link" href="javascript:;"><i class="icon-credit-chart"></i>신용평점 올리기<i></i></a></li>
+						<li><a class="link" href="javascript:;"><i class="icon-credit-tip"></i>신용관리 꿀팁 보기<i></i></a></li>
+						<li><a class="link" href="javascript:;"><i class="icon-credit-board"></i>신용 거래내역 보기<i></i></a></li>
+					</ul>
+					<div class="button-area">
+						<a href="javascript:;" class="btn-line"><span>나만의 대출상품 확인하기</span></a>
+					</div>
+				</section>
+
+				<section class="kb-sec toggle-notice">
+					<div class="header">
+						<button type="button"><span class="tit">알려드립니다.</span></button>
+					</div>
+					<div class="notice-list">
+						<ul data-style="list">
+							<li>위 정보는 국내 신용평가사인 NICE평가정보(주)에서 제공하는 데이터로, KB국민은행에서 제공되는 금융정보와 다를 수 있습니다.</li>
+							<li>신용평점은 매월 15일과 말일에 정기적으로 산출하며, 내 신용정보를 조회하는 시점에 실시간으로 산출합니다.</li>
+							<li>NICE평가정보(주)에 등록된 이메일주소와 문자수신여부를 수정할 수 있습니다.<br><a href="mys_sp_01_02_00_p1.html">정보수정</a></li>
+							<li>서비스 이용을 원하지 않으면 서비스를 해지할 수 있습니다.<br><button type="button" onclick="termination2()">서비스 이용해지</button></li>
+						</ul>
+					</div>
+				</section>
+
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+		
+		<!-- Layer (modal, bottom sheet) // -->
+		<div class="layered">
+		</div>
+		<!-- // Layer (modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
+    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
+	<script src="@@webRoot/static/common/lib/highcharts/pattern-fill.js"></script>
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+	<script>
+		// 신용관리
+		gfn_gnb.select(7);
+	</script>
+	<script>
+		function termination() {
+			modalPopup({
+				title: "서비스 이용해지",
+				message: "서비스를 해지하시겠습니까?<br>해지 후 신용관리 서비스를 다시 이용하시려면 동의 후 이용할 수 있습니다.",
+				type: "confirm",
+				onOk: function() {
+					console.log('서비스 이용해지 [확인] 클릭');
+				}
+			});
+		}
+		function termination2() {
+			modalPopup({
+				title: "서비스 이용 제한 안내",
+				message: "해당 메뉴를 이용하시려면 인증 관련 로그인이 필요합니다. 다시 로그인 해주시기 바랍니다.",
+				onOk: function() {
+					// To do... 
+				}
+			});
+		}
+
+		var fontSize = '12px';
+		if ($(window).width() < 360) {
+			fontSize = '11px';
+		}
+		var mainChart = Highcharts.chart("lineChart", {
+			chart: {
+				type: "area",
+				height: (3 / 4 * 100) + '%', // 4:3 비율로 설정
+				marginRight: 0, // 2021-11-16 추가
+				events: {
+					load: function() {
+						this.tooltip.refresh(this.series[0].points[5]);
+					}
+				}
+			},
+			title: {
+				text: ""
+			},
+			legend: {
+				enabled: false,
+				align: "left",
+				verticalAlign: "top"
+			},
+			xAxis: {
+				type: "category",
+				categories: ["6월", "7월", "8월", "9월", "10월", "오늘"],
+				labels: {
+					style: {
+						color: "#8c949e",
+						fontSize: fontSize,
+						fontFamily: "KBFGText"
+					}
+				}
+			},
+			yAxis: {
+				gridLineColor: "#ebeef0",
+				title: {
+					enabled: false
+				},
+				visible: true,
+				tickWidth: 0,
+				plotLines: [{
+					color: "#ffba53",
+					width: 1,
+					value: 400000,
+					zIndex: 50,
+					dashStyle: "dot"
+				}],
+				labels: {
+					format: '{value}점',
+					style: {
+						color: "#8c949e",
+						fontSize: fontSize,
+						fontFamily: "KBFGText",
+						fontWeight: "normal"
+					}
+				},
+				max: 1000
+			},
+			plotOptions: {
+				series: {
+					color: "#ffcf53",
+					lineWidth: 4,
+					marker: {
+						symbol: "circle",
+						enabled: true,
+						radius: 4,
+						fillColor: "#ffcf53"
+					}
+				}
+			},
+			series: [{
+				lineColor: "#ffcf53",
+				data: [505, 700, 687, 687, 650, 690],
+				fillOpacity: 0
+			}],
+			credits: {
+				enabled: false
+			},
+			tooltip: {
+				formatter: function() {
+					var x = this.point.index;
+					var y = this.y;
+					var tooltipMarkup = y + "점";
+					return tooltipMarkup;
+				},
+				padding: 10,
+				backgroundColor: "#fff",
+				shadow: true,
+				borderRadius: 4,
+				verticalAlign: "bottom",
+				borderColor: "#f3f3f3",
+				style: {
+					color: "#26282c",
+					fontWeight: "normal",
+					fontSize: fontSize,
+					fontFamily: "KBFGText",
+				},
+				crosshairs: true
+			}
+		});
+	</script>
+
+</body>
+
+</html>

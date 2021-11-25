@@ -1,0 +1,87 @@
+<!-- [MYS_SP_01_01_00] 작성자: 누리어 시스템 황철민 -->
+<!DOCTYPE html>
+<html lang="ko" data-channel="ch_star">
+<head>
+	@@include('@@webRoot/html/_include/app-head.html',{
+		"title": "약관동의 | 신용관리"
+	})
+</head>
+
+<body>
+	@@include('@@webRoot/html/_include/app-a11y.html')
+	<div class="app" data-page="">
+
+		@@include('@@webRoot/html/_include/app-integrated-header.html', {
+			'pageTit': '신용관리',
+			'type': ''
+		})
+
+		<!-- app-container //-->
+		<div class="app-container">
+
+			<!-- app-content // -->
+			<main class="app-content">
+
+				<!-- 신용관리 약관동의 // -->
+				<section class="kb-sec credit-management-agree">
+					<div class="descriptions">
+						<ul class="sm" data-style="list">
+							<li>"신용관리서비스"는 국내 신용평가사 "NICE평가정보(주)"의 신용정보를 바탕으로 서비스를 제공하며, 원활한 신용관리서비스 이용을 위해 고객님의 동의가 필요합니다.</li>
+							<li>서비스를 신청하는 휴대폰이 본인명의이고 KB국민은행에 등록된 정보와 일치하는 경우 신용관리서비스에 가입할 수 있습니다.</li>
+						</ul>
+					</div>
+					<div class="agreement-to-terms expansion-mode">
+						<div class="header">
+							<span class="form-checkbox"><input type="checkbox" id="agreeAllCheck"><label for="agreeAllCheck">전체동의</label><a class="alink" href="@@webRoot/html/special/mys_sp_01_01_00_p4.html"><span>전문보기</span></a></span>
+						</div>
+						<div class="checkbox-group st_list">
+							<span class="form-checkbox_20"><input type="checkbox" id="agreeCheck1"><label for="agreeCheck1">[필수]신용관리서비스 이용약관 및 서비스설명서</label><a class="alink" href="@@webRoot/html/special/mys_sp_01_01_00_p1.html"><span>전문보기</span></a></span><!-- 2021-11-15 약관명수정 -->
+							<span class="form-checkbox_20"><input type="checkbox" id="agreeCheck2"><label for="agreeCheck2">[필수]개인(신용)정보 수집·이용·제공 동의서(신용관리서비스용)</label><a class="alink" href="@@webRoot/html/special/mys_sp_01_01_00_p2.html"><span>전문보기</span></a></span>
+							<span class="form-checkbox_20"><input type="checkbox" id="agreeCheck3"><label for="agreeCheck3">[필수]NICE신용관리서비스 이용약관</label><a class="alink" href="@@webRoot/html/special/mys_sp_01_01_00_p3.html"><span>전문보기</span></a></span>
+						</div>
+					</div>
+					<p class="info-msg">본인은 위 항목에 대한 내용을 충분히 이해하고 확인하였습니다.</p>
+				</section>
+
+				<div class="sticky-bottom">
+					<div class="btn-area">
+						<button type="button" class="btn-solid"><span>확인</span></button>
+					</div>
+				</div>
+				<!-- // 신용관리 약관동의 -->
+
+			</main>
+			<!-- // app-content -->
+
+		</div>
+		<!-- // app-container -->
+
+		<!-- Layer (modal, bottom sheet) // -->
+		<div class="layered">
+		</div>
+		<!-- // Layer (modal, bottom sheet) -->
+	</div>
+
+	<!-- Script -->
+	@@include('@@webRoot/html/_include/common-js.html')
+	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/js/ui.js"></script>
+	<!-- Add Script -->
+	<script>
+		// 신용관리
+		gfn_gnb.select(7);
+
+		$(function() {
+			modalPopup({
+				title: "서비스 이용 제한 안내",
+				message: "해당 메뉴를 이용하시려면 인증 관련 로그인이 필요합니다. 다시 로그인 해주시기 바랍니다.",
+				onOk: function() {
+					// To do... 
+				}
+			});
+		})
+	</script>
+
+</body>
+
+</html>

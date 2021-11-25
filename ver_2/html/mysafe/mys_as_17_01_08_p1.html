@@ -57,7 +57,7 @@
                         <strong class="tit required">보유량</strong>
                         <div class="kb-form gold-input-num not-ready no-transition" data-status="info">
                             <div class="kb-form_inner form-text">
-                                <input type="text" inputmode="numeric" class="gold-unit-input gold-unit-input-1" id="mysafe_01_01" placeholder="0" value="" data-unit="" data-action="autoSeperator" value="">
+                                <input type="text" inputmode="numeric" class="gold-unit-input gold-unit-input-1" id="mysafe_01_01" maxlength="10" placeholder="0" value="" data-unit="" data-action="">
                                 <button class="btn-data-clear gold-unit-clear"><i class="icon-data-clear_24">지우기</i></button>
                             </div>
                             <!-- 2021-11-16 수정 -->
@@ -161,8 +161,8 @@
         var $safe_flex_wrap=$('.safe-flex-wrap'); //.safe-flex-wrap 선호출용.
         var $my_gold_value=$('.my-gold-value'); //.my-gold-value 선호출용.
         var $my_gold_enrollment=$('.my-gold-enrollment'); //.my-gold-enrollment 선호출용.
-        var regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi;
-        var number = String(number).replace(/(^\s*)|(\s*$)/gi, '').replace(regExp, '');
+        // var regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi;
+        // var number = String(number).replace(/(^\s*)|(\s*$)/gi, '').replace(regExp, '');
         /*-----input에 대한 바른 데이터 입력, 활성 및 비활성, 틀린 데이터 입력에 대한
                동작 예시 함수로 본격적인 검증식 및 계산식은 프로그램밍이 필요함.-------*/
 
@@ -237,43 +237,67 @@
 
         $gold_unit_input_1.on('propertychange change keyup paste input', function(event) {//금단위 입력시 변화 된 값 인식.
             // 2021-11-16 수정 - data-action="" 로 만든 후 하기 스크립트 주석제거
-            currentVal_1 = $gold_unit_input_1.val();
-            var oldVal;
-            var dot_gold_1_val;
-            var find_dot_gold = currentVal_1.indexOf('.');
-            var dot_gold = currentVal_1.split('.');
-            var dot_gold_0;
-            var dot_gold_1 = dot_gold[1];
-            var currentVal_1_dot;
+            // currentVal_1 = $gold_unit_input_1.val();
+            // var pattern_1 = /\d*[.]\d{3}$/;
+            // var pattern=currentVal_1.match(pattern_1);
+            // var oldVal;
+            // var find_dot_gold = currentVal_1.indexOf('.');
+            // var dot_gold = currentVal_1.split('.');
+            // var dot_gold_0 = parseInt(dot_gold[0]).toLocaleString(undefined, {maximumFractionDigits: 2});
+            // var dot_gold_1_val;
+            // // var dot_pattern = parseInt(currentVal_1).toLocaleString(undefined, {maximumFractionDigits: 2});
+            // var currentVal_1_dot;
             // var currentVal_1_dot_locale;
             
+            // if (pattern_1.test(currentVal_1)){
+                
+            //     console.log('wave-1 : '+pattern);
+            //     // oldVal = dot_pattern;
+            //     // $gold_unit_input_1.val(dot_pattern);
+            //     // dot_gold_1_val =  dot_gold_1.substring(0,2);
+            //     // oldVal = currentVal_1;
+            //     $gold_unit_input_1.val('');
+            // }else{
+            //     if((event.keyCode<48)||(event.keyCode>57)&&((event.keyCode!==46))){
+
+            //             var dot_gold_1 = dot_gold[1];
+            //             console.log('wave-2 : '+pattern);
+            //             // dot_gold_1_val =  dot_gold_1.substring(0,2);
+            //             oldVal = currentVal_1;
+            //             $gold_unit_input_1.val(currentVal_1);
+            //             // oldVal = dot_pattern;
+            //             // $gold_unit_input_1.val(dot_pattern);
+            //             // $gold_unit_input_1.val('');
+
+            //     }
+                
+            // }
             // if(find_dot_gold!==-1){
             //     console.log(dot_gold.length);
             //     if(((dot_gold_1.length>2)&&(dot_gold_1!=='')&&(dot_gold_1!=='undefined'))||(dot_gold.length!==2)){
-            //         dot_gold_0 = parseInt(dot_gold[0]).toLocaleString(undefined, {maximumFractionDigits: 2});
             //         dot_gold_1_val =  dot_gold_1.substring(0,2);
-            //         currentVal_1_dot = dot_gold_0+'.'+dot_gold_1_val;
+            //         currentVal_1_dot = dot_gold_0;
             //         console.log(currentVal_1_dot+' / '+dot_gold.length+' / '+dot_gold_1_val);
             //     }else{
-            //         currentVal_1_dot = currentVal_1;
+            //         currentVal_1_dot = dot_gold_0;
             //     }
             // }
             // if(currentVal_1_dot == oldVal) {
             //     return;
             // }
-            // oldVal = currentVal_1_dot;
-            // $gold_unit_input_1.val(currentVal_1_dot);
+            
+            // $gold_unit_input_1.textContent = currentVal_1_dot;
             // change_check();
         });
-        $gold_unit_input_2.on('propertychange change keyup paste input', function(event) {//금단위 입력시 변화 된 값 인식.
-            currentVal_2 = $gold_unit_input_2.val();
-            var oldVal;
-            if(currentVal_2 == oldVal) {
-                return;
-            }
-            oldVal = currentVal_2;
-            // change_check();
-        });
+        // $gold_unit_input_2.on('propertychange change keyup paste input', function(event) {//금단위 입력시 변화 된 값 인식.
+        //     currentVal_2 = $gold_unit_input_2.val();
+        //     var oldVal;
+        //     if(currentVal_2 == oldVal) {
+        //         return;
+        //     }
+        //     oldVal = currentVal_2;
+        //     // change_check();
+        // });
         $('.gold-unit-clear').on('click',function(){//보유 항목의 단위입력 삭제 버튼으로 클릭 시 관련된 기능들 리셋.
             $safe_flex_wrap.find('p').removeClass('error-msg');
             $safe_flex_wrap.find('p').removeClass('success-msg');

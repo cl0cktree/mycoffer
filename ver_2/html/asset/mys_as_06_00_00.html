@@ -74,9 +74,7 @@
                                             <!-- [chart area] 하이차트 UI 추가 //-->
                                             <div class="chart-area" id="columnChart01"></div>
                                             <!--// [chart area] -->
-                                            <div class="legend-unit">
-                                                <span class="basic" data-type="dash">평균잔액 <em class="num" data-unit-after="원">4,665,210</em></span>
-                                            </div>
+                                            <!-- 2021-11-25 평균잔액삭제 -->
                                         </figure>
 
                                     </div>
@@ -834,7 +832,7 @@
                 marginRight: 0,
                 marginTop:0,
                 marginBottom: 35,
-                height: 165,
+                height: 197,
                 events: {
                     load: function () {
                         swiperFunc() // 그래프 로딩 후 하이차트 swiper 실행
@@ -883,15 +881,7 @@
                 title: { enabled: false }, // 축 title 사용 안함
                 tickWidth: 0,  // 그리드 라인 너비
                 gridLineColor: 'transparsnt',  // 그리드 라인 컬러
-                plotLines: [
-                    {
-                        color: "#c7ccd1",
-                        width: 1,
-                        value: 50000,
-                        zIndex: 1,
-                        dashStyle: 'dash'
-                    },
-                ],
+                
             },
             plotOptions: {
                 series: {

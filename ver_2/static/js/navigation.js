@@ -9,13 +9,18 @@ var st = $window.scrollTop();
 var $body = $('body');
 
 
+var stMemory;
 var gfn_body = {
     hold: function(tf){
         tf = tf != undefined ? tf : true;
         if(tf){
-            $body.addClass('is-hold');
+            $body.addClass('is-hold').css({'left':'0','top': (st * -1)});
+            stMemory = st;
+
         }else{
-            $body.removeClass('is-hold');
+            st = stMemory;
+            $body.removeClass('is-hold').removeAttr('style');
+            $('html,body').animate({'scrollTop': st}, 0);            
         }
     }
 };
