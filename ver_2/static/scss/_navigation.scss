@@ -170,7 +170,7 @@ i[class*='icon-']{overflow:hidden;display:inline-block;white-space:nowrap;text-i
 .all-menu-list > li > a{@include text($size: 15px);position:relative;z-index:1;display:flex;align-items:center;height:4.4rem;padding:0 2rem;color:$kb-ui03;}
 .all-menu-list > li.is-active > a{font-weight:bold;background-color:$kb-ui11;color:$kb-ui02;}
 .all-menu-list > li:first-child > a{margin-top:0.8rem;}
-.all-menu-list > li > a + ul{display:none;overflow:auto;position:absolute;top:58px;left:13.6rem;right:0;bottom:0;padding-left:2rem;padding-right:2.4rem;padding-bottom:calc(constant(safe-area-inset-bottom) / 2 + 20px);padding-bottom:calc(env(safe-area-inset-bottom) / 2 + 20px);background-color:$kb-ui11;}
+.all-menu-list > li > a + ul{display:none;overflow:auto;position:absolute;top:57px;left:13.6rem;right:0;bottom:0;padding-left:2rem;padding-right:2.4rem;padding-bottom:calc(constant(safe-area-inset-bottom) / 2 + 20px);padding-bottom:calc(env(safe-area-inset-bottom) / 2 + 20px);background-color:$kb-ui11;}
 //.all-menu-list > li > a + ul:before{content:'';position:absolute;bottom:100%;height:5.6rem;left:0;right:0;background-color:$kb-ui11;}
 .all-menu-list > li > a + ul a{@include text($size: 15px, $line-height:22px);display:block;padding:4px 0;}
 .all-menu-list > li > a + ul > li{margin-top:12px;}
@@ -183,8 +183,9 @@ i[class*='icon-']{overflow:hidden;display:inline-block;white-space:nowrap;text-i
 .partitial-loader:before{content:'';flex:0 0 12px;display:block;width:54px;height:12px;margin:14px auto;animation:partitialLoader 1s steps(17) infinite alternate;background-image:url(../images/common/loader.png);background-size:54px;}
 .partitial-loader .msg{@include text;text-align:center;margin-top:20px;}
 
-.page-loader{display:none;position:fixed;top:0;bottom:0;left:0;right:0;z-index:$level100;display:flex;flex-direction:column;justify-content:center;align-items:center;background-color:rgba(0,0,0,0.15)}
+.page-loader{display:none;position:fixed;top:0;bottom:0;left:0;right:0;z-index:$level100;display:flex;flex-direction:column;justify-content:center;align-items:center;background-color:rgba(0,0,0,0.5)}
 .page-loader .animation{@include ir;display:block;width:66px;height:13px;margin:14px auto;animation:pageLoader02 2s steps(30) infinite alternate;background-image:url(../images/common/page-loader02@2x.png);background-size:66px;}
+.page-loader .page-loader-msg{@include text($size:$text03);color:$kb-ui11;margin-top:6px;}
 
 [data-channel=ch_star] .page-loader,
 [data-channel=ch_liiv] .page-loader{display:none;position:fixed;top:0;bottom:0;left:0;right:0;z-index:$level100;display:flex;flex-direction:column;justify-content:center;align-items:center;background-color:rgba(0,0,0,0.7)}

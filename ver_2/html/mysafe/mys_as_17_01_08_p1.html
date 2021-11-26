@@ -237,18 +237,25 @@
 
         $gold_unit_input_1.on('propertychange change keyup paste input', function(event) {//금단위 입력시 변화 된 값 인식.
             // 2021-11-16 수정 - data-action="" 로 만든 후 하기 스크립트 주석제거
-            // currentVal_1 = $gold_unit_input_1.val();
-            // var pattern_1 = /\d*[.]\d{3}$/;
-            // var pattern=currentVal_1.match(pattern_1);
-            // var oldVal;
-            // var find_dot_gold = currentVal_1.indexOf('.');
-            // var dot_gold = currentVal_1.split('.');
-            // var dot_gold_0 = parseInt(dot_gold[0]).toLocaleString(undefined, {maximumFractionDigits: 2});
-            // var dot_gold_1_val;
-            // // var dot_pattern = parseInt(currentVal_1).toLocaleString(undefined, {maximumFractionDigits: 2});
-            // var currentVal_1_dot;
-            // var currentVal_1_dot_locale;
-            
+            currentVal_1 = $gold_unit_input_1.val();
+            var pattern_1 = currentVal_1.replace(/([^0-9^.])/g,"");
+            var pattern=pattern_1.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+            var oldVal;
+            var find_dot_gold = currentVal_1.indexOf('.');
+            var dot_gold = currentVal_1.split('.');
+            var dot_gold_0 = parseInt(dot_gold[0]).toLocaleString(undefined, {maximumFractionDigits: 2});
+            var dot_gold_1_val;
+            // var dot_pattern = parseInt(currentVal_1).toLocaleString(undefined, {maximumFractionDigits: 2});
+            var currentVal_1_dot;
+            var currentVal_1_dot_locale;
+
+            $gold_unit_input_1.val(pattern);
+            console.log(pattern);
+            if(event.type=='change'){
+                $gold_unit_input_1.val(pattern);
+                console.log(pattern);
+                
+            }
             // if (pattern_1.test(currentVal_1)){
                 
             //     console.log('wave-1 : '+pattern);

@@ -41,7 +41,7 @@
     
             module = {
                 initialize: function() {
-                    $module.before('<div class="dim" style="z-index:' + (layeredLevel - 1) + ';display:none;"></div>');
+                    if(!$module.prev('.dim').length) $module.before('<div class="dim" style="z-index:' + (layeredLevel - 1) + ';display:none;"></div>');
                     $dimm = $module.prev();                
                     module.bind.events();
                     module.instantiate();
@@ -88,9 +88,11 @@
     
                 open: function() {
                     focusA11Y.memory($('.is-focused'));
-                    $body.addClass("is-hold");
+                    //$body.addClass("is-hold");
+                    gfn_body.hold(true);
+                    if(!$module.prev('.dim').length) $module.before('<div class="dim" style="z-index:' + (layeredLevel - 1) + ';display:none;"></div>');                    
                     $wrap.addClass("is-active").css('z-index', layeredLevel);
-                    $dimm.fadeIn(settings.duration);
+                    $module.prev('.dim').fadeIn(settings.duration);
                     $wrap.fadeIn(settings.duration);
                     $wrap.find(':focusable').eq(0).focus();
                     layeredLevel = layeredLevel + 10;
@@ -98,8 +100,11 @@
     
                 close: function() {
                     focusA11Y.forget();
-                    $body.removeClass("is-hold");                    
-                    $dimm.fadeOut(settings.duration);
+                    //$body.removeClass("is-hold");                    
+                    gfn_body.hold(false);
+                    $module.prev('.dim').fadeOut(settings.duration,function(){
+                        $(this).remove();
+                    });
                     $wrap.addClass('modal-out');
                     $wrap.one('animationend',function(){
                         if($wrap.hasClass('modal-out')) $wrap.removeClass('is-active is-expanded modal-out').removeAttr('style');
@@ -107,11 +112,6 @@
                             module.destroy();
                         }
                     });
-                    // $wrap.fadeOut(settings.duration, function() {
-                    // 	if (settings.autoDestroy) {
-                    // 		module.destroy();
-                    // 	}
-                    // });
                 },
     
                 invoke: function(query, passedArguments, context) {

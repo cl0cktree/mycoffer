@@ -327,8 +327,14 @@ var gfn_partitialLoader = {
 
 //Page Loader
 var gfn_pageLoader = {
-    show : function(){
-        $('body').append('<div class="page-loader"><div class="animation"><span>로딩중</span></div></div>');
+    show : function(msg){
+        
+        if(msg != undefined){
+            console.log(msg)
+            $('body').append('<div class="page-loader"><div class="animation"><span>로딩중</span></div><div class="page-loader-msg">' + msg + '</div></div>');
+        }else{
+            $('body').append('<div class="page-loader"><div class="animation"><span>로딩중</span></div></div>');
+        }
         $('.page-loader').fadeIn();
     },
     hide : function($target){
