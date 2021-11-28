@@ -240,58 +240,46 @@
             currentVal_1 = $gold_unit_input_1.val();
             var pattern_1 = currentVal_1.replace(/([^0-9^.])/g,"");
             var pattern=pattern_1.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+            var pattern_int;
             var oldVal;
-            var find_dot_gold = currentVal_1.indexOf('.');
-            var dot_gold = currentVal_1.split('.');
-            var dot_gold_0 = parseInt(dot_gold[0]).toLocaleString(undefined, {maximumFractionDigits: 2});
+            var find_dot_gold = pattern.indexOf('.');
+            var dot_gold = pattern.split('.');
+            var dot_gold_0 = dot_gold[0];
+            var dot_gold_1;
             var dot_gold_1_val;
             // var dot_pattern = parseInt(currentVal_1).toLocaleString(undefined, {maximumFractionDigits: 2});
             var currentVal_1_dot;
             var currentVal_1_dot_locale;
 
-            $gold_unit_input_1.val(pattern);
-            console.log(pattern);
-            if(event.type=='change'){
-                $gold_unit_input_1.val(pattern);
-                console.log(pattern);
+            // if(event.type=='keyup'){
                 
-            }
-            // if (pattern_1.test(currentVal_1)){
-                
-            //     console.log('wave-1 : '+pattern);
-            //     // oldVal = dot_pattern;
-            //     // $gold_unit_input_1.val(dot_pattern);
-            //     // dot_gold_1_val =  dot_gold_1.substring(0,2);
-            //     // oldVal = currentVal_1;
-            //     $gold_unit_input_1.val('');
-            // }else{
-            //     if((event.keyCode<48)||(event.keyCode>57)&&((event.keyCode!==46))){
+            // }
 
-            //             var dot_gold_1 = dot_gold[1];
-            //             console.log('wave-2 : '+pattern);
-            //             // dot_gold_1_val =  dot_gold_1.substring(0,2);
-            //             oldVal = currentVal_1;
-            //             $gold_unit_input_1.val(currentVal_1);
-            //             // oldVal = dot_pattern;
-            //             // $gold_unit_input_1.val(dot_pattern);
-            //             // $gold_unit_input_1.val('');
+            console.log('lv1 = '+find_dot_gold);
+                if(find_dot_gold!==-1){
+                    dot_gold_1 = dot_gold[1];
+                    console.log('lv2 = '+dot_gold_1.length);
+                    if(((dot_gold_1.length>2)&&(dot_gold_1!=='')&&(dot_gold_1!=='undefined'))||(dot_gold.length>2)){
+                        dot_gold_1_val =  dot_gold_1.substring(0,2);
+                        $gold_unit_input_1.val('');
+                        currentVal_1_dot = dot_gold_0+'.'+dot_gold_1_val;
+                        $gold_unit_input_1.val(currentVal_1_dot);
+                        console.log('lv3 = '+currentVal_1_dot+' / '+dot_gold.length+' / '+dot_gold_1_val);
+                    }else{
+                        // pattern = dot_gold_0;
+                        $gold_unit_input_1.val(pattern);
+                    }
+                }else{
+                    console.log('fal = '+dot_gold.length);
+                    // pattern = dot_gold_0;
+                    $gold_unit_input_1.val(pattern);
+                }
+                if(currentVal_1_dot == oldVal) {
+                    return;
+                    $gold_unit_input_1.val(pattern);
+                }
+                console.log('lv0 = '+pattern);
 
-            //     }
-                
-            // }
-            // if(find_dot_gold!==-1){
-            //     console.log(dot_gold.length);
-            //     if(((dot_gold_1.length>2)&&(dot_gold_1!=='')&&(dot_gold_1!=='undefined'))||(dot_gold.length!==2)){
-            //         dot_gold_1_val =  dot_gold_1.substring(0,2);
-            //         currentVal_1_dot = dot_gold_0;
-            //         console.log(currentVal_1_dot+' / '+dot_gold.length+' / '+dot_gold_1_val);
-            //     }else{
-            //         currentVal_1_dot = dot_gold_0;
-            //     }
-            // }
-            // if(currentVal_1_dot == oldVal) {
-            //     return;
-            // }
             
             // $gold_unit_input_1.textContent = currentVal_1_dot;
             // change_check();
