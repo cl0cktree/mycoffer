@@ -57,7 +57,7 @@
                         <strong class="tit required">보유량</strong>
                         <div class="kb-form gold-input-num not-ready no-transition" data-status="info">
                             <div class="kb-form_inner form-text">
-                                <input type="text" inputmode="numeric" class="gold-unit-input gold-unit-input-1" id="mysafe_01_01" placeholder="0" value="37.15" data-unit="" data-action="autoSeperator" value="">
+                                <input type="text" inputmode="numeric" class="gold-unit-input gold-unit-input-1" id="mysafe_01_01" placeholder="0" value="37.15" data-unit="" data-action="" value="">
                                 <button class="btn-data-clear gold-unit-clear"><i class="icon-data-clear_24">지우기</i></button>
                             </div>
                             <!-- 2021-11-16 수정 -->
@@ -231,32 +231,45 @@
                 $my_gold_enrollment.attr('disabled','disabled');
             }
         };
-        $gold_unit_input_1.on('propertychange change keyup paste input', function(event) {//금단위 입력시 변화 된 값 인식.
+        $gold_unit_input_1.on('propertychange change keyup paste input', function(event) {//금단위 입력시 변화 된 값 인식 및 3세자리 마다 콤마, 소수점 2자리까지만 적용 - 필요 이벤트에만 적용할 시 이벤트 타입 설정 후 아래 스크립트 적용.
             // 2021-11-16 수정 - data-action="" 로 만든 후 하기 스크립트 주석제거
             currentVal_1 = $gold_unit_input_1.val();
+            var pattern_1 = currentVal_1.replace(/([^0-9^.])/g,"");
+            var pattern=pattern_1.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+            var pattern_int;
             var oldVal;
-            var dot_gold_1_val;
-            var find_dot_gold = currentVal_1.indexOf('.');
-            var dot_gold = currentVal_1.split('.');
+            var find_dot_gold = pattern.indexOf('.');
+            var dot_gold = pattern.split('.');
             var dot_gold_0 = dot_gold[0];
-            var dot_gold_1 = dot_gold[1];
-            var currentVal_1_dot = dot_gold_0+'.'+dot_gold_1;
+            var dot_gold_1;
+            var dot_gold_1_val;
+            // var dot_pattern = parseInt(currentVal_1).toLocaleString(undefined, {maximumFractionDigits: 2});
+            var currentVal_1_dot;
+            var currentVal_1_dot_locale;
 
-            // if(find_dot_gold!==-1){
-            //     console.log(dot_gold.length);
-            //     if(((dot_gold_1.length>2)&&(dot_gold_1!=='')&&(dot_gold_1!=='undefined'))||(dot_gold.length!==2)){
-            //         dot_gold_1_val = dot_gold_1.substring(0,2);
-            //         currentVal_1_dot = dot_gold_0+'.'+dot_gold_1_val;
-            //         $gold_unit_input_1.val(currentVal_1_dot);
-            //         console.log(currentVal_1_dot+' / '+dot_gold.length);
-            //     }else{
-            //         currentVal_1_dot = currentVal_1;
-            //     }
-            // }
-            // if(currentVal_1_dot == oldVal) {
-            //     return;
-            // }
-            // oldVal = currentVal_1_dot;
+            // console.log('lv1 = '+find_dot_gold);
+            if(find_dot_gold!==-1){
+                dot_gold_1 = dot_gold[1];
+                // console.log('lv2 = '+dot_gold_1.length);
+                if(((dot_gold_1.length>2)&&(dot_gold_1!=='')&&(dot_gold_1!=='undefined'))||(dot_gold.length>2)){
+                    dot_gold_1_val =  dot_gold_1.substring(0,2);
+                    $gold_unit_input_1.val('');
+                    currentVal_1_dot = dot_gold_0+'.'+dot_gold_1_val;
+                    $gold_unit_input_1.val(currentVal_1_dot);
+                    // console.log('lv3 = '+currentVal_1_dot+' / '+dot_gold.length+' / '+dot_gold_1_val);
+                }else{
+                    $gold_unit_input_1.val(pattern);
+                }
+            }else{
+                // console.log('fal = '+dot_gold.length);
+                $gold_unit_input_1.val(pattern);
+            }
+            if(currentVal_1_dot == oldVal) {
+                return;
+                $gold_unit_input_1.val(pattern);
+            }
+            // console.log('lv0 = '+pattern);
+            return false;
             // change_check();
         });
         $gold_unit_input_2.on('propertychange change keyup paste input', function(event) {//금단위 입력시 변화 된 값 인식.

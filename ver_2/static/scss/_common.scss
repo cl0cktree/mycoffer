@@ -257,16 +257,16 @@
 .select-organization .accordion dd{padding-left:0.2rem;} // 패딩수정 2021-11-20
 
 //기관선택체크박스일때
-.checkbox-group_icon{display:grid;grid-template-columns:repeat(3, 1fr);grid-auto-rows:110px;padding-top:0px; }
+.checkbox-group_icon{display:grid;grid-template-columns:repeat(3, 1fr);grid-auto-rows:96px;padding-top:0px; } // 여백수정 2021-11-29
 .checkbox-group_icon li{border:1px solid $kb-ui08;}
 .checkbox-group_icon li:nth-child(n + 4){border-top:none;}
 .checkbox-group_icon li:nth-child(3n + 2),
 .checkbox-group_icon li:nth-child(3n + 3){border-left:none;}
 .form-checkbox_icon input{overflow:hidden;position:absolute;width:1px;height:1px;padding:0;margin:-1px;clip:rect(0, 0, 0, 0);border:0}
-.form-checkbox_icon label{@include flexCenter;flex-wrap:wrap;width:100%;height:100%;padding:24px 5px;background-color:$kb-ui11}
+.form-checkbox_icon label{@include flexCenter;flex-wrap:wrap;width:100%;height:100%;padding:20px 5px;background-color:$kb-ui11} // 여백수정 2021-11-29
 .form-checkbox_icon label[data-status="inprogress"]{background-color:$kb-ui10}
 .form-checkbox_icon label[data-status="inprogress"] .status{display:inline-block;line-height:32px;color:$color-blue;font-size:12px;}
-.form-checkbox_icon label strong{display:block;width:100%;margin-top:12px;font-size:15px;color:$kb-ui02;text-align:center}
+.form-checkbox_icon label strong{display:block;width:100%;margin-top:6px;font-size:15px;color:$kb-ui02;text-align:center} // 여백수정 2021-11-29
 .form-checkbox_icon input:checked + label{position:relative;color:$kb-ui02;font-weight:bold}
 .form-checkbox_icon input:checked + label:after{content:'';position:absolute;left:-1px;right:-1px;bottom:-1px;top:-1px;border:1px solid $kb-ui02;}
 .form-checkbox_icon input:checked + label strong{font-weight:bold;color:$kb-ui02}
@@ -630,9 +630,10 @@ h1 + .joint-certificate-list{margin-top:28px;}
 .select-infouser .certificate-list li{border-bottom:1px solid $kb-ui09;}
 .select-infouser .certificate-list li a{display:flex;justify-content:space-between;align-items:center;padding:2.4rem 0;}
 .select-infouser .certificate-list li i{margin-top:-50px}
-.select-infouser .certificate-list li i:first-child{margin-right:1.5rem;}
-.select-infouser .certificate-list li .txt{flex: 1 0 auto;font-size:1.8rem;font-weight:bold;line-height:1.1;}
+.select-infouser .certificate-list li i:first-child{margin-right:1.5rem;flex:0 0 auto;} // 조건추가 2021-11-29
+.select-infouser .certificate-list li .txt{flex: 1 1 auto;font-size:1.8rem;font-weight:bold;line-height:1.1;} // 조건추가 2021-11-29
 .select-infouser .certificate-list li .txt span{display:block;color:$kb-ui04;font-size:14px;font-weight: normal;line-height:20px;padding-top:10px;}
+.select-infouser .certificate-list li .link-arrow{flex:0 0 auto;} // 조건추가 2021-11-29
 
 //공지사항
 .mydata-notie .msg{margin-top:24px;color:$kb-ui03;}

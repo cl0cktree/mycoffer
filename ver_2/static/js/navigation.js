@@ -327,21 +327,20 @@ var gfn_partitialLoader = {
 
 //Page Loader
 var gfn_pageLoader = {
-    show : function(msg){
-        
+    show : function(msg){        
+        $('.page-loader').remove();
         if(msg != undefined){
-            console.log(msg)
             $('body').append('<div class="page-loader"><div class="animation"><span>로딩중</span></div><div class="page-loader-msg">' + msg + '</div></div>');
         }else{
             $('body').append('<div class="page-loader"><div class="animation"><span>로딩중</span></div></div>');
         }
-        $('.page-loader').fadeIn();
+        $('.page-loader').fadeIn(200);
     },
-    hide : function($target){
+    hide : function(){
         $('body').find('.page-loader').fadeOut(200, function(){
             $(this).remove();
         });
-    },
+    }, 
 };
 
 //IE Browser Check
