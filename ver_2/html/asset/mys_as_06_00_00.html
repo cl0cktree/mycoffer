@@ -629,7 +629,13 @@
                     </div>
                     <div class="count">만기상품 <span class="num">2</span>건</div>
                     <div class="btn-area">
+                        <!-- 2021-12-02 수정
                         <a href="@@webRoot/html/asset/mys_as_06_00_00_p3.html" class="btn-text icon-arrow" role="button"><span>추천 포트폴리오 보기</span><i></i></a>
+                        -->
+                        <!-- 2021-12-02 투자성향안내체크 추가 // -->
+                        <button type="button" class="btn-text icon-arrow" role="button"  data-call-modal="resultYesPop"><span>추천 포트폴리오 보기</span><i></i></button><!-- 2021-12-01 no일경우 :   data-call-modal="resultNoPop" 호출 -->
+                       <!-- // 2021-12-02 투자성향안내체크 추가 -->
+
                     </div>
                 </section>
                 <section class="kb-sec recommend-prod">
@@ -805,6 +811,40 @@
         @@include('@@webRoot/html/_layered/bs-calendar.html')
         @@include('@@webRoot/html/_layered/bs-age-asset.html')
 
+        <!-- 투자성향안내체크 : yes 팝업 2021-12-01 // -->
+        <div class="modal" id="resultYesPop">
+            <div class="modal_contents">
+                <!--
+                    <span class="remark risk1">안정형</span>
+                    <span class="remark risk2">안정추구형</span>
+                    <span class="remark risk3">위험중립형</span>
+                    <span class="remark risk4">적극투자형</span>
+                    <span class="remark risk5">공격투자형</span>
+                -->
+                <p>김국민님의 2년 이내 투자성향은 <br>(<b><span class="remark risk5">공격투자형</span>, 2021.10.02</b>)입니다.</p><br>
+                <p>가입목적, 재산상황, 투자경험 등 <br>투자자정보가 변경된 경우 투자성향분석을 <br>다시 진행해주세요.</p><br>
+                <p>이전 결과로 포트폴리오를 <br>확인해보시겠습니까?</p>
+            </div>
+            <div class="modal_buttons btn-area">
+                <button class="btn-solid gray cancel"><span>취소</span></button>
+                <button class="btn-solid ok"><span>확인</span></button>
+            </div>
+        </div>
+        <!-- // 투자성향안내체크 : yes 팝업 -->
+
+        <!-- 투자성향안내체크 : no 팝업 2021-12-01  // -->
+        <div class="modal" id="resultNoPop">
+            <div class="modal_contents">
+                <p>김국민님의 2년 이내 투자성향은 <br>(<b>결과없음</b>)입니다.</p><br>
+                <p>투자성향분석 화면으로 이동하시겠습니까?</p>
+            </div>
+            <div class="modal_buttons btn-area">
+                <button class="btn-solid gray cancel"><span>취소</span></button>
+                <button class="btn-solid ok"><span>확인</span></button>
+            </div>
+        </div>
+        <!-- // 투자성향안내체크 : yes 팝업 -->
+
     </div>
 
     <!-- Script -->
@@ -816,6 +856,24 @@
     <!-- Add Script -->
     <script>
         $(document).ready(function () {
+            //투자성향안내체크 팝업 추가 2021-12-01
+            $("#resultNoPop").modalPopup({
+                onOk: function() {
+                    //console.log('DEMO 1 ok');
+                },
+                onCancel: function() {
+                    //console.log('DEMO 1 cancel');
+                }
+            });
+            $("#resultYesPop").modalPopup({
+                onOk: function() {
+                    //console.log('DEMO 1 ok');
+                },
+                onCancel: function() {
+                    //console.log('DEMO 1 cancel');
+                }
+            });
+            
             let $wrap = $('.my-asset');
             
             $wrap.find('.sort-area .type-agency').on('click', function () {
