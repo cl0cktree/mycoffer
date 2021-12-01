@@ -138,15 +138,29 @@
 							<li class="swiper-slide"><button type="button">정기예금</button></li>
 						</ul>
 					</div>
+					<!-- 2021-12-01 추가 [12/01 이후 적용건] // -->
+					<!--
+						<span class="remark risk1">안정형</span>
+						<span class="remark risk2">안정추구형</span>
+						<span class="remark risk3">위험중립형</span>
+						<span class="remark risk4">적극투자형</span>
+						<span class="remark risk5">공격투자형</span>
+					-->
+					<div class="investment-propensity">
+						<span class="remark risk5">공격투자형</span> 전문가 펀드포트폴리오와<br>예&middot;적금을 함께 투자하세요.
+					</div>
+					<!-- // 2021-12-01 추가 [12/01 이후 적용건] -->
 					<div class="tab_contents">
 						<!-- 포트폴리오 // -->
 						<div class="recomm-detail is-active">
+							<!-- 2021-12-01 삭제 [12/01 이후 적용건] // --
 							<dl class="rate-of-return">
 								<dt>기대 수익률</dt>
-								<dd><span class="num" data-unit-after="%">3.8</span></dd><!-- 2021-10-26 수정 -->
+								<dd><span class="num" data-unit-after="%">3.8</span></dd>
 								<dt>변동성</dt>
-								<dd><span class="num" data-unit-after="%">5.55</span></dd><!-- 2021-10-26 수정 -->
+								<dd><span class="num" data-unit-after="%">5.55</span></dd>
 							</dl>
+							<!-- // 2021-12-01 삭제 [12/01 이후 적용건] -->
 							<div class="recomm-rating-chart">
 								<div class="graph">
 									<!-- [Chart Area] // -->
@@ -166,6 +180,11 @@
 									<li class="cate2"><span class="label">포트폴리오</span><span class="num" data-unit-after="%">75</span></li><!-- 2021-10-26 수정 -->
 								</ul>
 							</div>
+							<!-- 2021-12-01 추가 [12/01 이후 적용건] // -->
+							<div class="investment-propensity-link">
+								<button class="btn-text icon-arrow" data-call-layered="bsInvestmentPropensity"><span>투자성향별 투자전략</span><i></i></button>
+							</div>
+							<!-- // 2021-12-01 추가 [12/01 이후 적용건] -->
 							<div class="kb-card">
 								<strong class="name">KB Star 정기예금</strong>
 								<dl class="description-list type2">
@@ -193,16 +212,35 @@
 									<dd class="amount"><span class="num" data-unit-after="원">4,000,000</span></dd>
 								</dl>
 							</div>
+							<!-- 2021-12-01 추가 [12/01 이후 적용건] // -->
+							<div class="btn-area">
+								<button class="btn-line" onclick="modalLink1()"><span>바로가기</span></button>
+							</div>
+							<script>
+								function modalLink1() {
+									modalPopup({
+										title: "",
+										message: "KB스타뱅킹으로 이동하시겠습니까?",
+										type: "confirm",
+										onOk: function() {
+											// KB 스타뱅킹으로 이동처리
+										}
+									});
+								}
+							</script>
+							<!-- // 2021-12-01 추가 [12/01 이후 적용건] -->
 						</div>
 						<!-- // 포트폴리오 -->
 						<!-- 정기예금 // -->
 						<div class="recomm-detail">
+							<!-- 2021-12-01 삭제 [12/01 이후 적용건] // --
 							<dl class="rate-of-return">
 								<dt>기대 수익률</dt>
-								<dd><span class="num" data-unit-after="%">0.7</span></dd><!-- 2021-10-26 수정 -->
+								<dd><span class="num" data-unit-after="%">0.7</span></dd>
 								<dt>변동성</dt>
-								<dd><span class="num" data-unit-after="%">0</span></dd><!-- 2021-10-26 수정 -->
+								<dd><span class="num" data-unit-after="%">0</span></dd>
 							</dl>
+							<!-- // 2021-12-01 삭제 [12/01 이후 적용건] -->
 							<div class="recomm-rating-chart">
 								<div class="graph">
 									<!-- [Chart Area] // -->
@@ -221,6 +259,11 @@
 									<li class="cate1"><span class="label">정기예금</span><span class="num" data-unit-after="%">100</span></li><!-- 2021-10-26 수정 -->
 								</ul>
 							</div>
+							<!-- 2021-12-01 추가 [12/01 이후 적용건] // -->
+							<div class="investment-propensity-link">
+								<button class="btn-text icon-arrow" data-call-layered="bsInvestmentPropensity"><span>투자성향별 투자전략</span><i></i></button>
+							</div>
+							<!-- // 2021-12-01 추가 [12/01 이후 적용건] -->
 							<div class="kb-card">
 								<strong class="name">KB Star 정기예금</strong>
 								<dl class="description-list type2">
@@ -230,6 +273,23 @@
 									<dd class="amount"><span class="num" data-unit-after="원">10,000,000</span></dd>
 								</dl>
 							</div>
+							<!-- 2021-12-01 추가 [12/01 이후 적용건] // -->
+							<div class="btn-area">
+								<button class="btn-line" onclick="modalLink2()"><span>바로가기</span></button>
+							</div>
+							<script>
+								function modalLink2() {
+									modalPopup({
+										title: "",
+										message: "KB스타뱅킹으로 이동하시겠습니까?",
+										type: "confirm",
+										onOk: function() {
+											// KB 스타뱅킹으로 이동처리
+										}
+									});
+								}
+							</script>
+							<!-- // 2021-12-01 추가 [12/01 이후 적용건] -->
 						</div>
 						<!-- // 정기예금 -->
 					</div>
@@ -250,7 +310,9 @@
 									<span class="remark risk4">적극투자형</span>
 									<span class="remark risk5">공격투자형</span>
 								-->
-								<li>최근 2년이내 투자성향분석 결과(<span class="remark risk3">위험중립형</span>, 20211005)를 바탕으로 예시로 알려드리는 자료로써 참고자료로만 활용하시기 바랍니다.<br>(※ 투자성향분석 결과가 없는경우 위험중립형(예시)으로 제공하며 실제 가입은 KB스타뱅킹 &gt; 자산관리 &gt; 케이봇쌤에서 투자성향분석 결과 진행 후에 가능합니다.)</li>
+								<!-- 2021-12-01 문구수정 [12/01 이후 적용건] // -->
+								<li>최근 2년이내 투자성향분석 결과(<span class="remark risk3">위험중립형</span>, 20211005)를 바탕으로 예시로 알려드리는 자료로써 참고자료로만 활용하시기 바랍니다.<br>(※ 실제 가입은 KB스타뱅킹 &gt; 마이자산관리 &gt; 투자 &gt; 케이봇쌤 포트폴리오에서 투자성향분석 결과 진행 후에 가능합니다.)</li>
+								<!-- // 2021-12-01 문구수정 [12/01 이후 적용건] -->
 								<li>본 자료는 업계에서 신뢰할 만한 예측정보를 반영하여 준비된 것이나, KB국민은행은 그 정확성이나 완전성을 보장할 수 없습니다. 따라서 투자의 최종결정은 투자자 자신의 판단으로 하시기 바라며, 어떠한 경우에도 본 자료는 고객의 투자결과에 대한 법적 책임소재에 대한 증빙자료로 사용될 수 없습니다.</li>
 								<li>본 자료에 포함된 내용은 투자환경과 전략의 변화, 고객님의 자산구성변화에 따라 변경될 수 있습니다.</li>
 								<li>본 자료에 사용되는 각종 기대수익률, 변동성 등의 정보는 포트폴리오 모델을 사용하여 수학적/통계적 가정하에 가상으로 산출된 결과(케이봇쌤 전문가 포트폴리오)로서 미래의 수익을 보장하는 것은 아닙니다.</li>
@@ -273,6 +335,39 @@
 
 		<!-- Layer (modal, bottom sheet) // -->
 		<div class="layered">
+			<!-- 2021-12-01 추가 [12/01 이후 적용건] // -->
+			<div class="bottom-sheet" data-layered-name="bsInvestmentPropensity">
+				<div class="bottom-sheet_header">
+					<span class="tit">투자성향별 포트폴리오 투자전략</span>
+				</div>
+				<div class="bottom-sheet_contents">
+					<section class="kb-sec investment-propensity-desc">
+						<dl>
+							<dt>안정형</dt>
+							<dd>예적금 수준의 수익률을 기대하며, 투자원금에 손실이 발생하는 것을 원하지 않는 유형입니다.</dd>
+							<dt>안전추구형</dt>
+							<dd>원금 손실위험은 최소화하고, 예적금보다 높은 수익을 목표로 하는 유형</dd>
+							<dt>위험중립형</dt>
+							<dd>투자원금의 보전보다는 위험을 감내 하더라도 높은 수준의 투자수익 실현을 추구하는 유형</dd>
+							<dt>적극투자형</dt>
+							<dd>높은 수준의 투자수익을 위해 원금 손실을 감내할 수 있는 유형</dd>
+							<dt>공격투자형</dt>
+							<dd>포트폴리오의 대부분을 위험자산에 투자하여 시장평균 수익을 넘어서는 투자 수익을 추구하는 유형</dd>
+						</dl>
+
+						<strong class="tit">추천펀드 선정 및 제공기준</strong>
+						<p>
+							장단기 성과, 위험지표, 운용사 평가 등을 고려한 정량평가를 바탕으로 시장전망 및 자산배분 전략등을 종합적으로 판단하여 선정한 펀드입니다.<br>
+							KB금융그룹 자산전략위원회의 시장전망 및 자산배분 전략을 바탕으로 WM추천펀드 선정회의에 참여한 전문가들이 매월 추천펀드를 선정합니다.
+						</p>
+					</section>
+				</div>
+				<div class="bottom-sheet_buttons">
+					<button class="btn-solid" data-action="close"><span>확인</span></button>
+				</div>
+				<button class="btn-close" data-action="close"><span>닫기</span></button>
+			</div>
+			<!-- // 2021-12-01 추가 [12/01 이후 적용건] -->
 		</div>
 		<!-- // Layer (modal, bottom sheet) -->
 	</div>
