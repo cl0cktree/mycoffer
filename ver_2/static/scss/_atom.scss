@@ -254,9 +254,10 @@ textarea:focus + .byte .current{color:$kb-ui02;}
 .terms-conditions p.terms-desc{@include text($text03, normal);}
 .terms-conditions .dl-box{display:flex;flex-wrap:wrap;font-size:1.4rem;}
 .terms-conditions .dl-box strong{font-size:1.6rem;}
-.terms-conditions .dl-box .dt{display:inline-flex;flex-wrap:wrap;align-items:center;justify-content:center;width:30%;padding:1rem 0.5rem;border-top:1px solid $kb-ui11;font-weight:bold;text-align:center;word-break:keep-all;font-size:1.6rem;}
+.terms-conditions .dl-box .dt{display:inline-flex;flex-wrap:wrap;align-items:center;justify-content:center;width:30%;padding:1rem 0.5rem;margin:0;border-top:1px solid $kb-ui11;font-weight:bold;text-align:center;word-break:keep-all;font-size:1.6rem;color:inherit;line-height:inherit;} // 피싱수정 2021-12-02
+.terms-conditions .dl-box .dt::before{content:none;} // 피싱수정 2021-12-02
 .terms-conditions .dl-box .dt:first-child{border-top:0;}
-.terms-conditions .dl-box .dd{width:70%;padding:1rem 0.5rem;align-self:flex-start;border-top:0.1rem solid $kb-ui09;}
+.terms-conditions .dl-box .dd{width:70%;padding:1rem 0.5rem;margin:0;color:inherit;align-self:flex-start;border-top:0.1rem solid $kb-ui09;font-size:inherit;color:inherit;line-height:inherit;} // 피싱수정 2021-12-02
 .terms-conditions .dl-box .dd:first-child{border-top:0;}
 .terms-conditions .dl-box .dd p{margin:0 0 0.5rem;font-size:inherit;}
 .terms-conditions .dl-box .dd .bg-box{padding:0.5rem;font-size:inherit;background-color:#feedd3;}
@@ -264,16 +265,13 @@ textarea:focus + .byte .current{color:$kb-ui02;}
 .terms-conditions .dl-box.type-yellow .dt{background-color:$color-yellow;}
 .terms-conditions .tit.type-bg{display:inline-block;width:30%;padding:0.5rem;margin-top:3rem;text-align:center;background-color:$kb-ui09;}
 .terms-conditions .dl-box.type-yellow .dt.alone{width:100%;}
-// 구조 변경 가능성(현업 컨펌 전)
-// .terms-conditions .dl-box.type-yellow .dt.alone{width:100%;padding:0;display:flex;justify-content:flex-start;background-color:$kb-ui11;}
-// .terms-conditions .dl-box.type-yellow .dt.alone span{width:30%;padding:1rem 0.5rem;background-color:$color-yellow;}
 .terms-conditions .terms-agree-box .right{text-align:right;}
 .terms-conditions .terms-agree-box .right span{padding-left:2rem;}
 .terms-conditions .terms-bottom-area{display:flex;flex-direction:column;align-items:flex-end;margin-top:4rem;}
 .terms-conditions .terms-bottom-area .img-area{align-self:flex-start;}
-.terms-conditions .terms-bottom-area .img-area img{width:100%;max-width:250px;margin:2rem 0;}
+.terms-conditions .terms-bottom-area .img-area img{width:100%;max-width:19rem;margin:2rem 0;} // 피싱수정 2021-12-02
 .terms-conditions .terms-bottom-area .date-area{display:flex;width:100%;margin-top:1rem;justify-content:flex-end;}
-.terms-conditions .terms-bottom-area .date-area span{display:inline-block;width:24%;min-width:8rem;text-align:right;}
+.terms-conditions .terms-bottom-area .date-area span{display:inline-block;width:24%;min-width:8rem;max-width:10rem;text-align:right;} // 피싱수정 2021-12-02
 .terms-conditions .terms-bottom-area .sign-area{display:flex;flex-direction:column;width:100%;margin-top:1rem;text-align:right;}
 .terms-conditions .terms-bottom-area .sign-area div{margin-top:0.5rem;}
 .terms-conditions .terms-bottom-area .sign-area div strong{display:inline-block;width:40%;min-width:10rem;}

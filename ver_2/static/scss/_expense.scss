@@ -224,12 +224,12 @@
 /***** 지출 > 가계부 *****/
 // main
 .expense-account-book-total{padding-bottom:0}
-.expense-account-book-total .expense-account-book-list{padding-bottom:2.5rem}// 211118 : section간 여백 조정
 .expense-account-book-total .expense-guide .highcharts-figure{padding-top:3.2rem;padding-bottom:0}// 211118 : section간 여백 조정
 .expense-account-book-total .graph-area .chart-tit{margin-bottom:2.7rem} // 211112 : 그래프 상단 여백 수정
 //--chart-- .expense-account-book-total .graph-area .chart-tit{margin-bottom:2.7rem}
 .expense-account-book-total .date-month{text-align:center}
 .expense-account-book-total .highcharts-box{padding:0}
+.expense-account-book-total .expense-account-book-list .btn-more-view{margin-bottom:-2rem} // 211201 : 여백 조정
 .expense-account-book-total .goals-challenge{padding-bottom:3.2rem} // 가계부 최하단 영역 padding-bottom 추가
 .content-box-tit + .compare-amount{margin-top:1rem}
 .compare-amount{display:grid;grid-template-columns:1fr 1fr;background-color:$kb-ui10;border-radius:2px;overflow:hidden} // 211119 : overflow hidden 추가
@@ -262,6 +262,8 @@
 .expense-monthly-place .h4 .date{display:inline-block;margin-left:0.8rem;font-size:1.5rem;color:$kb-ui05;font-weight:normal;vertical-align:middle}
 .monthly-expense-pattern .highcharts-figure{padding:0}
 .expense-management-goal .content-tit{text-align:center;padding:24px 0}
+// 가계부 > 일지출액추이그래프
+.bottom-sheet[data-layered-name="bsDailyExpenseGraph"] .content-box{margin:0;padding:0;box-shadow:none;border:none} //211202 box style 제거
 // 가계부 > 캘린더로 보기
 .view-expense-calendar .view-calendar{padding-top:2rem} // 211101 : 캘린더 상단 padding 조정
 .calendar-container .summary-amount{margin-top:2.5rem}
@@ -297,7 +299,7 @@
 .tbl-calender-label li [class*="icon-"]{margin-right:0.8rem;vertical-align:middle} // 달력보기 표기 아이콘 수정
 .tbl-calender-label li .pay::before{content:'';display:inline-block;width:0.8rem;height:0.8rem;margin-right:0.8rem;border-radius:50%;background-color:$color-yellow} // 달력보기 표기 아이콘 수정
 .tbl-calender-label li:last-child{width:100%;margin-top:1.4rem;text-align:right} // 예정일 option 수정
-.day-detail-list{display:none}
+.day-detail-list{display:none;padding-bottom:6rem}
 .day-detail-list .day-list{display:none}
 .day-detail-list .day-list.is-active{display:block}
 .day-detail-list .credit-list dt i[class^="icon-"]{background-color:blue}
@@ -310,7 +312,7 @@
 .user-register-list .user-register-forms .form-tit{@include text($size:16px);flex:0 0 100%;display:block;position:relative;width:100%;min-height:26px;padding:8px 2px 0px 2px;color:$kb-ui04}
 .user-register-list .user-register-forms > .kb-form + .kb-form{margin-top:2rem}
 .user-register-list .user-register-forms .btn-area.center{margin-top:20px}
-.user-register-list .user-register-forms .kb-form + .btn-area{margin-top:3rem}
+.user-register-list .user-register-forms .kb-form + .btn-area{margin-top:2.5rem} // 211201 : 여백 조정
 .user-register-list .user-register-forms .btn-more-view .icon-arrow-down::before{border-right-color:$kb-ui03;border-bottom-color:$kb-ui03}
 .user-register-list .user-register-forms input[role="button"]{position:relative;z-index:10;background-color:transparent} // 211118 : input button area 조정
 // 가계부 > 카테고리 설정
@@ -433,6 +435,8 @@
 .regulaer-expense-layered .tit-area_icon-bg ~ .kb-sec .description-list dt{margin:5px 0}
 .regulaer-expense-layered .tit-area_icon-bg ~ .kb-sec .description-list dd{flex-wrap:wrap}
 .regulaer-expense-layered .tit-area_icon-bg ~ .kb-sec .description-list dd span.num{display:block;width:100%} // 211129 : 선택자 수정
+.regulaer-expense-layered .description-list dd{font-family:'KBFGText',sans-serif} // 211202 : font-family 수정
+.regulaer-expense-layered .amount ~ dd.date{font-family:'Roboto', sans-serif}// 211202 : font-family 수정
 .regulaer-expense-layered input[role="button"]{position:relative;z-index:10;background-color:transparent} // 211118 : input button area 조정
 .regulaer-expense-layered .description-list.type2{grid-template-columns:0.6fr auto} // 211122 : 정기지출 결제수단 관련 grid-template-columns 수정
 .regulaer-expense-layered[data-layered-name="popupRegularExpenseUserRegister"] .tit-area_icon-bg ~ .kb-sec h4{border:0;padding-bottom:0} // 211125 : 직접등록 페이지에서만 삭제
@@ -447,8 +451,7 @@
 .regular-expense-summary .content-box strong + span .num{font-size:1.5rem}
 .regular-expense-summary .highcharts-figure{background:transparent}
 .regular-expense-total{padding-bottom:0}
-.regular-expense-total .regular-expense-list{padding-bottom:4rem} // 211118 : section간 여백 조정
-.regular-expense-total .regular-expense-list .more-view-box.is-show{padding-bottom:1.8rem} // 211123 : 더보기 버튼 숨길 때 여백 조정
+.regular-expense-total .regular-expense-list .btn-more-view{margin-bottom:-1.8rem} // 211201 : 여백 조정
 .regular-expense-total .content-box ~ .no-data,
 .regular-expense-total .content-box ~ .no-data .btn-line{margin-top:4rem} // 211115 : no-data case
 .regular-expense-list .more-view-box + .more-view-box{margin-top:4.8rem}
@@ -584,9 +587,11 @@
 .card-management-total .my-card-list .tag-list .tag-label{margin-bottom:1.1rem;margin-right:0.3rem;padding-right:0.7rem;border-right:1px solid #dde1e4;color:$kb-ui04}
 .card-management-total .my-card-list .tag-list .tag-label + .tag-label{margin-left:0;padding-left:0;border-left:0}
 .card-management-total .my-card-list .tag-list .tag-label:last-child{border-right:0}
-.card-management-total .my-card-list .btn-area{border-top:1px solid $kb-ui09} // 211025 : 카드관리 카드목록 더보기 버튼 border 추가
+.card-management-total .my-card-list .btn-area{margin-top:2rem;border-top:1px solid $kb-ui09} // 211201 : 여백조정
+.card-management-total .my-card-list .btn-area .btn-more-view{margin-bottom:-2rem} // 211201 : 여백조정
 .card-management-total .card-list{width:100%}
 .card-management-total .card-list li{display:flex;align-items:center;padding:20px 0;border-top:1px solid $kb-ui09}
+.card-management-total .card-list li:last-child{padding-bottom:0} //211201 : 여백 조정
 .card-management-total .card-list .card-info{flex:1}
 // 211122 : 보유카드 목록 텍스트 정렬을 위한 스타일 변경 (position, padding, line-height 등)
 .card-management-total .card-list .list-tit{position:relative;display:block;margin-bottom:1rem;padding-left:3.2rem;line-height:2.4rem;font-weight:bold;color:$kb-ui02}
@@ -669,7 +674,7 @@
 .monthly-asset-summary .compare-summary .amount .num[data-unit-after]::after{font-weight:bold}
 .weekly-expense-report .legend-unit{margin-top:1.6rem} // chart legend unit 상단 margin 조정
 .weekly-regular-expense-list{margin-top:3.2rem}// 211118 : section간 여백 조정
-.weekly-expense-report .dividing-space-bottom{padding-bottom:4.4rem} // 211123 : divide간 여백 조정
+.weekly-expense-report .btn-more-view{margin-bottom:-1.4rem} // 211201 : 여백조정
 // Main
 .content-groups-type .group-tit,
 .content-groups-type .credit-list{border:0}
@@ -718,7 +723,6 @@
 .monthly-asset-summary .doughnut-type + .credit-list-amount dt,
 .monthly-asset-summary .doughnut-type + .credit-list-amount dd{margin:0.5rem 0}
 .monthly-asset-summary .btn-area{padding-bottom:0}
-.monthly-expense-summary{padding-bottom:2.2rem} // 211118 : section간 여백 조정
 .monthly-expense-summary .doughnut-type .legend-unit{margin-top:4.8rem}
 .monthly-expense-summary .doughnut-type .btn-area{border-top:1px solid $kb-ui09}
 .monthly-expense-summary .credit-list dt,
@@ -740,10 +744,13 @@
 .monthly-expense-summary .description-list.type3 .amount.expense{color:$color-red}
 .monthly-expense-summary .description-list.type3 .amount.expense::before{content:'-';display:inline}
 .monthly-expense-summary .description-list.type3 .amount .num{font-size:1.3rem}
+.monthly-expense-summary .highcharts-box{padding-bottom:0}
+.monthly-expense-summary .doughnut-type{padding-bottom:2.2rem}
 .monthly-expense-summary .doughnut-type + .graph-area{margin-top:0} // 211118 : section간 여백 조정
 .monthly-expense-summary .more-view-box.is-show{padding-bottom:1.6rem} // 211123 : divide간 여백 조정
 .monthly-expense-summary .doughnut-type .more-view-box.is-show{padding-bottom:0} // 211123 : divide간 여백 조정
 .monthly-expense-summary .doughnut-type .more-view-box.is-show .btn-area{border:0} // 211123 : divide간 여백 조정
+.monthly-expense-summary .more-view-box:last-child .btn-area{margin-bottom:-2.2rem}
 
 // 금융리포트 목록
 .finance-report-list .kb-form.select-bs .kb-form_inner{width:100%;padding-bottom:26px}
