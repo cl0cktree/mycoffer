@@ -75,6 +75,25 @@
     <!-- Add Script -->
     <script>
 
+        
+
+        //경로 변경 (테스트서버용)
+        var locationFlag = window.location.href.split('/')[3];
+        if(locationFlag == 'view-test' || locationFlag == 'mydata_newsb'){        
+            chartBg.forEach(function(element, index){            
+                if(index != 0){                
+                    if(String(index).length == 1) index = '0' + String(index);
+                    element.pattern = '../../..' + patternPath + 'pattern_' + index + '.png';                
+                }
+            });
+            lineMarker.forEach(function(element, index){            
+                if(index != 0){                
+                    if(String(index).length == 1) index = '0' + String(index);                
+                    element.symbol = 'url(../../..' + patternPath + 'line-marker_' + index + '.png)';
+                }
+            });
+        }
+
         //pattern sample
         chartBg.forEach(function(element, index){
             if(index != 0){
@@ -82,6 +101,8 @@
                 $('.pattern').append('<li><span style="background-image:url(' + element.pattern + ');" class="pattern' + index + '"></span>chartBg[' + index  + ']</li>')
             }
         });
+        
+        
         
         
         // highchart 공통 options

@@ -57,7 +57,7 @@
 												<div class="graph-msg">
 													<div class="txt">
 														김국민님<br>
-														투자자산 평가금액은 <b class="num" data-unit-after="원">300,000</b>(투자수익금 +<span class="num" data-unit-after="원">100,000</span>) 투자자산 변동추이를 확인하세요.
+														투자자산 평가금액은 <b class="num" data-unit-after="원">300,000</b>(투자수익금 +<span class="num" data-unit-after="원">100,000</span>) 투자자산 변동추이를 ㄴ확인하세요.
 													</div>
 												</div>
 											</div>
@@ -207,28 +207,7 @@
 								</dd>
 								<!-- // 펀드 -->
 								<!-- 2021-11-30 (12/01 이후 적용건) 마이데이터 전송요구 철회 //-->
-								<dd data-status="disabled"><!-- 2021-11-30  data-status="disabled" 추가 -->
-									<a href="@@webRoot/html/asset/mys_as_07_01_00_p1.html" class="btn-account-detail">
-										<div class="account-wrap">
-                                            <div class="txt-con">
-                                                <span class="p-name">피델리티글로벌배당인컴증권자투자신탁</span>
-                                                <div class="agency-con">
-                                                    <span class="agency-logo"><img
-                                                            src="@@webRoot/static/images/ci/A1AAEO0000.png"
-                                                            alt="은행별 아이콘"></span>
-                                                    <em class="agency"><span class="title">기관명</span><span class="num">3711002041400990</span></em>
-                                                </div>
-												<div class="s-txt">투자원금 <span class="num" data-unit-after="원">200,000</span></div>
-												<div class="s-txt">투자수익률 <em class="plus">▲<span class="num" data-unit-after="%">12.27</span></em></div>
-												<div class="s-txt">신규일 <span class="num">2021.12.03</span></div>
-                                            </div>
-                                        </div>
-                                        <span class="balance">평가액 <em class="amount"><b class="num" data-unit-after="원">50,000</b></em></span>
-									</a>
-									<div class="link simple-message">
-                                        <a href="javascript:;" class="btn-text" role="button"><span>계좌관리하기</span><i class="icon-link-arrow-bk"></i></a>
-                                    </div>
-								</dd>
+								<!-- 마이데이터 전송요구 철회 미노출(삭제) -->
 								<!-- // 2021-11-30 (12/01 이후 적용건) 마이데이터 전송요구 철회 -->
 							</dl>
 							<!-- // 펀드 목록 -->
@@ -866,7 +845,7 @@
 	<!-- Add Library (this page only)-->
     <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>
 	<script src="https://code.highcharts.com/modules/drilldown.js"></script>
-
+    <script src="@@webRoot/static/common/lib/highcharts/pattern-fill.js"></script><!-- 패턴적용 -->
 	<script src="@@webRoot/static/js/ui.js"></script>
 	<!-- Add Script -->
 	<script>
@@ -999,28 +978,20 @@
             plotOptions: {
                 series: {
                     color: '#ffba53', 
-                    lineWidth: 1,
-                    marker: {
-                        enabled: false
-                    },
+                    lineWidth: 2,
                     states: {
                         hover: {
                             enabled: true,
                             color:'#ffba53',
-                            lineWidth: 1,
+                            lineWidth: 2,
                         }
                     }
                 },
             },
             series: [{
-                marker: {
-                    fillColor: '#ffffff',
-                    lineWidth: 1,
-                    lineColor: '#ffba53', 
-                    radius: 1,
-                },
-                lineColor: '#ffba53',
-                color: '#fff1de',
+                marker: lineMarker[1], //패턴적용
+                lineColor: '#ffcf53',
+                color: 'transparent',
                 data: [450000, 230000, 1185210, 350000],
             }]
         });
@@ -1075,27 +1046,27 @@
                 borderWidth: 0,
                 data: [{
                     name: '펀드',
-                    color: "#ffad52",
+                    color: chartBg[1],
                     y: 30
                 },{
                     name: 'IRP',
-                    color: "#90d272",
+                    color: chartBg[2],
                     y: 25
                 },{
                     name: '주식',
-                    color: "#ffd052",
+                    color: chartBg[3],
                     y: 20
                 },{
                     name: 'ISA',
-                    color: "#8098eb",
+                    color: chartBg[5],
                     y: 25
                 },{
                     name: '신탁',
-                    color: "#fa854d",
+                    color: chartBg[6],
                     y: 15
                 },{
                     name: '기타',
-                    color: '#c7ccd1',
+                    color: chartBg[33],
                     y: 15
                 },]
             }]

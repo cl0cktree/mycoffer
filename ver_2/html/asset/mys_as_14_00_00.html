@@ -133,7 +133,9 @@
                                 </a>
                             </dd>
                             <!-- 2021-11-30 (12/01 이후 적용건) 마이데이터 전송요구 철회 //-->
-                            <dd data-status="disabled"><!-- 2021-11-30  data-status="disabled" 추가 -->
+                            <!--마이데이터 전송요구 철회 미노출(삭제)-->
+                            <!--
+                            <dd data-status="disabled">
                                 <a href="@@webRoot/html/asset/mys_as_05_01_00_p1.html" class="btn-account-detail">
                                     <div class="account-wrap">
                                         <div class="txt-con">
@@ -147,6 +149,7 @@
                                     <a href="javascript:;" class="btn-text" role="button"><span>계좌관리하기</span><i class="icon-link-arrow-bk"></i></a>
                                 </div>
                             </dd>
+                            -->
                             <!-- // 2021-11-30 (12/01 이후 적용건) 마이데이터 전송요구 철회 -->
                         </dl>
                         <dl>
@@ -233,6 +236,7 @@
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
     <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
+    <script src="@@webRoot/static/common/lib/highcharts/pattern-fill.js"></script>
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
 
@@ -336,17 +340,17 @@
                     data: [{
                         name: "KB포인트리",
                         y : 20000,
-                        color:'#ffba53',
+                        color:chartBg[1],//'#ffba53',
 
                     },{
                         name: "TOP",
                         y : 10000,
-                        color:'#ff8a71',
+                        color:chartBg[2],//'#ff8a71',
 
                     },{
                         name: "마이신한포인트",
                         y : 15000,
-                        color:'#ff6391',
+                        color:chartBg[3],//'#ff6391',
 
                     }]
                     

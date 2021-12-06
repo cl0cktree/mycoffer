@@ -15,7 +15,7 @@ $('.box .flex-dl > dd').not('.guide-description')
     var $code = $(this).siblings('dt').find('code');            
     if(!$iframe.length){         
         var sample = escapeHtml(String($(this).html()));
-        console.log(sample)       
+        // console.log(sample)       
         $code.append(sample);
     }else{
         var src = $iframe.attr('src');

@@ -50,7 +50,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .chart-flex{display:flex;}
 .chart-flex div{flex:1;}
 .chart-flex.type2 div:nth-child(odd){flex-grow:1.5;}
-.chart-flex.type2 div:nth-child(even){flex-grow:1;padding-left:24px;}
+.chart-flex.type2 div:nth-child(even){flex-grow:1;padding-left:24px;}hjbn ,  
 .legend-unit{font-size:14px;color:#696e76;max-width:400px;margin:auto;line-height:1.4;}//line-height:1.4 추가 2021-09-29 kek
 .legend-unit ul li{display:inline-block;width:calc(22% - 4px);padding:5px 3px 5px 12px;position:relative;vertical-align:top;line-height:1.4;white-space:nowrap;}
 .legend-unit ul li:nth-child(4n+1){width:calc(34% - 4px);}
@@ -471,7 +471,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .txt-con .agency
 .my-asset .txt-con .bank-book{display:block;margin-bottom:5px;word-break:break-all;line-height: 1.4;}
 .my-asset .txt-con .stock-item{display:block;margin:5px 0;font-weight:bold;}
-.my-asset .txt-con .p-name{display:block;font-weight:normal;}
+.my-asset .txt-con .p-name{display:block;font-weight:normal;word-break:break-word;line-height:1.4;}//줄바꿈 추가 
 .my-asset .txt-con .outlink {display: inline-block; margin-top: 5px; padding: 7px 8px; font-size: 14px; color: $kb-ui03; background-color: #fff; border: 1px solid #c7cbcf; border-radius: 2px;}
 .my-asset .p-list.agency{display:none;}
 .my-asset .p-list.agency.is-active{display:block;}
@@ -1096,16 +1096,16 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .consent-area .tit{@include text($size:18px,$weight:bold);}
 .my-asset .consent-area .tit em{font-weight:bold;color:$color-blue;} // 블루 컬러 추가
 .my-asset .consent-area .btn-area{margin-top:24px;}
-.my-asset .conditions-con{@include text($size:14px);margin:2rem auto 4.8rem;width:25rem;}
+.my-asset .conditions-con{@include text($size:14px);margin:2rem auto 4.8rem;width:26rem;} //범례 수정 width  수정
 .my-asset .conditions-con dl + dl{margin-top:1rem;}
-.my-asset .conditions-con dt{font-weight:bold;display:inline-block;}
-.my-asset .conditions-con dd{display:inline-block;margin-right:.3rem;color:$kb-ui04}
+.my-asset .conditions-con dt{font-weight:bold;display:inline-block;margin-right:.5rem;} // 범례 수정 margin 수정
+.my-asset .conditions-con dd{display:inline-block;margin-right:.5rem;color:$kb-ui04}
 .my-asset .conditions-con .btn-line{@include text($size:14px);}
 .my-asset .conditions-con .btn-line.disabled{background-color:#fff;border-color:$kb-ui08;color:$kb-ui06;}
-.my-asset .conditions-con .tit{display:inline-block;padding-left:1.9rem;background-repeat:no-repeat;background-position:0 center;background-size:1.9rem auto;}
+.my-asset .conditions-con .tit{display:inline-block;padding-left:2.4rem;background-repeat:no-repeat;background-position:0 center;background-size:1.9rem auto;} // 범례 수정 간격수정
 .my-asset .conditions-con .tit.kb{background-image:url(../../static/images/asset/chart_realty_line_01.png);}
 .my-asset .conditions-con .tit.selling{background-image:url(../../static/images/asset/chart_realty_line_02.png);}
-.my-asset .conditions-con .tit.publish{background-image:url(../../static/images/asset/chart_realty_line_03.png);}
+.my-asset .conditions-con .tit.publish{background-image:url(../../static/images/asset/chart_realty_line_03.png);background-position:-.5rem center;padding-left:1.4rem;}  // 범례 수정 간격수정
 .my-asset .conditions-con .tit.kb.lent{background-image:url(../../static/images/asset/chart_realty_line_04.png);}
 .my-asset .conditions-con .tit.selling.lent{background-image:url(../../static/images/asset/chart_realty_line_05.png);}
 /* My House 상세 */
@@ -1192,7 +1192,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset.my-house-expens .top-area .info .num{font-size:1.5rem;}
 .my-asset.my-house-expens .top-area + .kb-card{margin-top:1.4rem;}
 .my-asset.my-house-expens .graph-area{margin-top:20px;}
-.my-asset.my-house-expens .add-legend{font-size:1.4rem;text-align:center;margin-top:1.6rem;color:$kb-ui02}
+.my-asset.my-house-expens .add-legend{font-size:1.4rem;text-align:center;margin-top:.8rem;color:$kb-ui02} // 상단 간격수정
 .my-asset.my-house-expens .add-legend i{display:inline-block;width:2rem;height:.8rem;vertical-align:middle;margin-right:.8rem;}
 .my-asset.my-house-expens .add-legend p{display:inline-block;}
 .my-asset.my-house-expens .add-legend .num{font-size:1.5rem;}

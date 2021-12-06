@@ -362,7 +362,7 @@
                     headerFormat: '',     
                     // pointFormat: '{point.x} 원',
                     formatter: function () {
-                        return "<b style='font-size:1.5rem;font-family:Roboto;'>" + gfn_comma3Digit(this.point.x) + "</b><span style='font-size:1.5px;color:transparent;'>공백</span><span style='font-size:1.4rem;'>원</span>";
+                        return "<span style='color:" + this.point.color + "'>•" + "</span><span style='font-size:1.2rem;font-family:Roboto;'>지출</span><br><b style='font-size:1.5rem;font-family:Roboto;'>" + gfn_comma3Digit(this.point.x) + "</b><span style='font-size:1.5px;color:transparent;'>공백</span><span style='font-size:1.4rem;'>원</span>"; // 2021-12-06 수정 [12/01 이후 적용건]
                     },
                     padding: 4,
                     shadow: true,
@@ -380,7 +380,7 @@
                         minSize: '40px',
                         maxSize: '140px',
                         zMin: 0,
-                        zMax: 100,                       
+                        zMax: 100,                 
                         layoutAlgorithm: {
                             splitSeries: false,
                             gravitationalConstant: 0.005,
@@ -413,7 +413,7 @@
                         x:500000,
                         color: {
                             radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
-                            stops: [ [0, '#ffba53'], [1, '#ffba53'] ]
+                            stops: [ [0, '#ffcf53'], [1, '#ffcf53'] ] // 2021-12-06 수정 [12/01 이후 적용건]
                         }
                     },{
                         name: '여행',
@@ -421,7 +421,7 @@
                         x:250000,
                         color: {
                             radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
-                            stops: [ [0, '#ff8a71'], [1, '#ff8a71'] ]
+                            stops: [ [0, '#ffab53'], [1, '#ffab53'] ] // 2021-12-06 수정 [12/01 이후 적용건]
                         }
                     },{
                         name: "통신비",
@@ -429,7 +429,7 @@
                         x:120000,
                         color: {
                             radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
-                            stops: [ [0, '#ff6391'], [1, '#ff6391'] ]
+                            stops: [ [0, '#fa844e'], [1, '#fa844e'] ] // 2021-12-06 수정 [12/01 이후 적용건]
                         }
                     },{
                         name: "편의점",
@@ -437,7 +437,7 @@
                         x:50000,
                         color: {
                             radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
-                            stops: [ [0, '#ff445a'], [1, '#ff445a'] ]
+                            stops: [ [0, '#5b75ce'], [1, '#5b75ce'] ] // 2021-12-06 수정 [12/01 이후 적용건]
                         }
                     },{
                         name: "음주",
@@ -445,7 +445,7 @@
                         x:30000,
                         color: {
                             radialGradient: { cx: 0.1, cy: 0.1, r: 0.9 },
-                            stops: [ [0, '#d090ee'], [1, '#d090ee'] ]
+                            stops: [ [0, '#7f97ea'], [1, '#7f97ea'] ] // 2021-12-06 수정 [12/01 이후 적용건]
                         }
                     }]
                 

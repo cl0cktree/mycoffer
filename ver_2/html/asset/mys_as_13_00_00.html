@@ -222,7 +222,9 @@
                                     </a>
                                 </dd>
                                 <!-- 2021-11-30 (12/01 이후 적용건) 마이데이터 전송요구 철회 //-->
-                                <dd data-status="disabled"><!-- 2021-11-30  data-status="disabled" 추가 -->
+                                <!-- 마이데이터 전송요구 철회 미노출(삭제) -->
+                                <!-- 
+                                <dd data-status="disabled">
                                     <a href="@@webRoot/html/asset/mys_as_13_01_00_p1.html" class="btn-account-detail">
                                         <div class="account-wrap">
                                             <div class="txt-con">
@@ -241,7 +243,7 @@
                                     <div class="link">
                                         <a href="javascript:;" class="btn-text" role="button"><span>계좌관리하기</span><i class="icon-link-arrow-bk"></i></a>
                                     </div>
-                                </dd>
+                                </dd>-->
                                 <!-- // 2021-11-30 (12/01 이후 적용건) 마이데이터 전송요구 철회 -->
                             </dl>
                             <dl class="more-view-box">
@@ -396,7 +398,9 @@
                                     <!-- // 통화목록 3개 초과일 경우 -->
                                 </dd>
                                 <!-- 2021-11-30 (12/01 이후 적용건) 마이데이터 전송요구 철회 //-->
-                                <dd data-status="disabled"><!-- 2021-11-30  data-status="disabled" 추가 -->
+                                <!-- 마이데이터 전송요구 철회 미노출(삭제) -->
+                                <!--
+                                <dd data-status="disabled">
                                     <a href="@@webRoot/html/asset/mys_as_13_01_00_p1.html" class="btn-account-detail">
                                         <div class="account-wrap">
                                             <div class="txt-con">
@@ -404,7 +408,7 @@
                                                 <span class="account num">1234-5678-1234</span>
                                             </div>
                                         </div>
-                                        <!-- 통화목록 3개 초과일 경우 // -->
+                                        !-- 통화목록 3개 초과일 경우 // --
                                         <ul class="balance">
                                             <li><span class="amount"><b class="num" data-unit-before="USD">700.00</b></span></li>
                                             <li><span class="amount"><b class="num" data-unit-before="JPY">10,000.00</b></span></li>
@@ -414,13 +418,14 @@
                                             <li><span class="amount"><b class="num" data-unit-before="CNY">500.00</b></span></li>
                                         </ul>
                                     </a>
-                                    <!-- // 통화목록 3개 초과일 경우 -->
-                                    <div class="link simple-message"><!-- 통화목록 3개 초과일 경우에만 simple-message 사용 / 
+                                    !-- // 통화목록 3개 초과일 경우 --
+                                    <div class="link simple-message">!-- 통화목록 3개 초과일 경우에만 simple-message 사용 / 
                                     아닐경우 <div class="link"> 사용 
-                                    -->
+                                    --
                                         <a href="javascript:;" class="btn-text" role="button"><span>계좌관리하기</span><i class="icon-link-arrow-bk"></i></a>
                                     </div>
                                 </dd>
+                                -->
                                 <!-- // 2021-11-30 (12/01 이후 적용건) 마이데이터 전송요구 철회 -->
                                 <dd>
                                     <a href="@@webRoot/html/asset/mys_as_13_01_00_p1.html" class="btn-account-detail">
@@ -504,7 +509,8 @@
                                     </a>
                                 </dd>
                                  <!-- 2021-11-30 (12/01 이후 적용건) 마이데이터 전송요구 철회 //-->
-                                 <dd data-status="disabled"><!-- 2021-11-30  data-status="disabled" 추가 -->
+                                 <!-- 마이데이터 전송요구 철회 미노출(삭제)
+                                 <dd data-status="disabled">
                                     <a href="@@webRoot/html/asset/mys_as_13_01_00_p1.html" class="btn-account-detail">
                                         <div class="account-wrap">
                                             <div class="txt-con">
@@ -521,7 +527,7 @@
                                     <div class="link">
                                         <a href="javascript:;" class="btn-text" role="button"><span>계좌관리하기</span><i class="icon-link-arrow-bk"></i></a>
                                     </div>
-                                </dd>
+                                </dd> -->
                                 <!-- // 2021-11-30 (12/01 이후 적용건) 마이데이터 전송요구 철회 -->
                             </dl>                            
                         </div>
@@ -693,6 +699,7 @@
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
     <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
+    <script src="@@webRoot/static/common/lib/highcharts/pattern-fill.js"></script>
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
     <script>
@@ -885,7 +892,7 @@
                     states: {
                         hover: {
                             enabled: true,
-                            color:'#ffba53'
+                            color:chartBg[1],//'#ffba53'
                         },
                     }
 
@@ -894,7 +901,7 @@
             series: [
                 {
                     name: "월 납입금액",
-                    color: '#c6cbd0',
+                    color: chartBg[33],//'#c6cbd0',
                     pointPlacement: 0,
                     data: [3000, 5500, 4000, 2000, 9900, 3500]
                     
@@ -973,7 +980,7 @@
                     states: {
                         hover: {
                             enabled: true,
-                            color:'#ffba53'
+                            color:chartBg[1],//'#ffba53'
                         },
                     }
 
@@ -982,7 +989,7 @@
             series: [
                 {
                     name: "월 납입금액",
-                    color: '#c6cbd0',
+                    color: chartBg[33],//'#c6cbd0',
                     pointPlacement: 0,
                     data: [3000, 5500, 4000, 2000, 9900, 3500]
                     
@@ -1067,7 +1074,7 @@
                     states: {
                         hover: {
                             enabled: true,
-                            color:'#ffba53'
+                            color:chartBg[1],//'#ffba53'
                         },
                     }
 
@@ -1076,7 +1083,7 @@
             series: [
                 {
                     name: "월 납입금액",
-                    color: '#c6cbd0',
+                    color: chartBg[33],//'#c6cbd0',
                     pointPlacement: 0,
                     data: [3000, 5500, 4000, 2000, 9900, 3500]
                     

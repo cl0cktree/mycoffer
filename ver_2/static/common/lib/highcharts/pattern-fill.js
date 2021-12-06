@@ -80,7 +80,7 @@
 })();
 
 
-var patternPath = '../../static/images/pattern/'
+var patternPath = '/static/images/pattern/'
 var chartBg = [
     '',
     {

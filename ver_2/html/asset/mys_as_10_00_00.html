@@ -190,28 +190,7 @@
                                     </a>
                                 </dd>
                                  <!-- 2021-11-30 (12/01 이후 적용건) 마이데이터 전송요구 철회 //-->
-                                <dd data-status="disabled"><!-- 2021-11-30  data-status="disabled" 추가 -->
-                                    <a href="@@webRoot/html/asset/mys_as_10_01_00_p1.html" class="btn-account-detail">
-                                        <div class="account-wrap">
-                                            <div class="txt-con">
-                                                <span class="prod-kind loan">신용대출</span>
-                                                <span class="p-name">상품명</span>
-                                                <div class="agency-con">
-                                                    <span class="agency-logo"><img
-                                                            src="@@webRoot/static/images/ci/A1AAEO0000.png"
-                                                            alt="은행별 아이콘"></span>
-                                                    <em class="agency"><span class="title">국민은행</span><span
-                                                            class="num">9912801-00-285003</span></em>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <span class="balance">대출잔액 <em class="amount"><b
-                                                    class="num" data-unit-after="원">3,000,000</b></em></span>
-                                    </a>
-                                    <div class="link">
-                                        <a href="javascript:;" class="btn-text" role="button"><span>계좌관리하기</span><i class="icon-link-arrow-bk"></i></a>
-                                    </div>
-                                </dd>
+                                 <!-- 마이데이터 전송요구 철회 미노출(삭제) -->
                                 <!-- // 2021-11-30 (12/01 이후 적용건) 마이데이터 전송요구 철회 -->
                                 <dd>
                                     <a href="@@webRoot/html/asset/mys_as_10_01_00_p1.html" class="btn-account-detail">
@@ -482,21 +461,7 @@
                                     </a>
                                 </dd>
                                 <!-- 2021-11-30 (12/01 이후 적용건) 마이데이터 전송요구 철회 //-->
-                                <dd data-status="disabled"><!-- 2021-11-30  data-status="disabled" 추가 -->
-                                    <a href="@@webRoot/html/asset/mys_as_05_01_00_p1.html" class="btn-account-detail">
-                                        <div class="account-wrap">
-                                            <div class="txt-con">
-                                                <span class="prod-kind loan">신용대출</span>
-                                                <span class="p-name">상품명</span>
-                                                <span class="account num">1234-5678-1234</span>
-                                            </div>
-                                        </div>
-                                        <span class="balance amount">대출잔액 <b class="num" data-unit-after="원">3,000,000</b></span>
-                                    </a>
-                                    <div class="link">
-                                        <a href="javascript:;" class="btn-text" role="button"><span>계좌관리하기</span><i class="icon-link-arrow-bk"></i></a>
-                                    </div>
-                                </dd>
+                                <!-- 마이데이터 전송요구 철회 미노출(삭제) -->
                                 <!-- // 2021-11-30 (12/01 이후 적용건) 마이데이터 전송요구 철회 -->
                                 <dd>
                                     <a href="@@webRoot/html/asset/mys_as_05_01_00_p1.html" class="btn-account-detail">
@@ -949,6 +914,7 @@
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
     <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
+    <script src="@@webRoot/static/common/lib/highcharts/pattern-fill.js"></script>
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
     <script>
@@ -1095,7 +1061,7 @@
                     states: {
                         hover: {
                             enabled: true,
-                            color:'#ffba53'
+                            color:chartBg[1],//'#ffba53'
                         },
                     }
 
@@ -1104,7 +1070,7 @@
             series: [
                 {
                     name: "월 납입금액",
-                    color: '#c6cbd0',
+                    color: chartBg[33],//'#c6cbd0',
                     pointPlacement: 0,
                     data: [30000, 55000, 40000, 20000, 99000, 35000]
                     
@@ -1184,7 +1150,7 @@
                     states: {
                         hover: {
                             enabled: true,
-                            color:'#ffba53'
+                            color:chartBg[1],//'#ffba53'
                         },
                     }
 
@@ -1193,7 +1159,7 @@
             series: [
                 {
                     name: "월 납입금액",
-                    color: '#c6cbd0',
+                    color: chartBg[33],//'#c6cbd0',
                     pointPlacement: 0,
                     data: [30000, 55000, 40000, 20000, 99000, 35000]
                     
@@ -1278,7 +1244,7 @@
                     states: {
                         hover: {
                             enabled: true,
-                            color:'#ffba53'
+                            color:chartBg[1],//'#ffba53'
                         },
                     }
 
@@ -1287,7 +1253,7 @@
             series: [
                 {
                     name: "월 납입금액",
-                    color: '#c6cbd0',
+                    color: chartBg[33],//'#c6cbd0',
                     pointPlacement: 0,
                     data: [30000, 55000, 40000, 20000, 99000, 35000]
                     
@@ -1362,7 +1328,7 @@
             },
             plotOptions: {
                 series: {
-                    color: '#ffd338', // 기본색상
+                    color: chartBg[1],//'#ffd338', // 기본색상
                     pointWidth: 40,  // 막대그래프 너비
                     borderRadiusTopLeft: "7px",  // radius 값
                     borderRadiusTopRight: "7px" // radius 값
@@ -1373,7 +1339,7 @@
                     data: [420000, 
                         {
                             y: 620000,
-                            color: '#c7ccd1', // 강조할 data의 색상
+                            color: chartBg[33],//'#c7ccd1', // 강조할 data의 색상
                         }
                     ],
                     pointPlacement: 0,
