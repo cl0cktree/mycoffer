@@ -80,7 +80,14 @@
 })();
 
 
-var patternPath = '/static/images/pattern/'
+var patternPath = '/static/images/pattern/';
+
+//경로 변경 (테스트서버용)
+var locationFlag = window.location.href.split('/')[3];
+if(locationFlag == 'view-test' || locationFlag == 'mydata_newsb'){        
+    patternPath = '../../static/images/pattern/';
+}
+
 var chartBg = [
     '',
     {
@@ -307,3 +314,4 @@ var lineMarker = [
         height: 10
     }
 ];
+
