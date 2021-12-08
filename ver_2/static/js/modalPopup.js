@@ -236,9 +236,9 @@
         // html += `		</div>`;
         // html += `	</div>`;
         if(settings.commonUse != ''){
-            html += `	<div class="modal" id="${id}" style="z-index:${zIdex}" data-common-use="${settings.commonUse}">`;
+            html += `	<div class="modal" data-layered-name="${id}" id="${id}" style="z-index:${zIdex}" data-common-use="${settings.commonUse}">`;
         }else{
-            html += `	<div class="modal" id="${id}" style="z-index:${zIdex}">`;
+            html += `	<div class="modal" data-layered-name="${id}" id="${id}" style="z-index:${zIdex}">`;
         }        
         if (settings.title != "") {
             html += `		<div class="modal_header">`;
@@ -271,6 +271,11 @@
         
         $id.modalPopup(opts);
         $id.modalPopup("open");
+
+        //Ntm Log
+        var logTitle = $id.find('[class*=_header]').text();
+        var logContent = $id.find('[class*=_content]').text();
+        //console.log(logTitle, logContent);
     }
     
     window.modalPopup = modalPopup;

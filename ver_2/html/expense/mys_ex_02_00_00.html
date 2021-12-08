@@ -45,42 +45,64 @@
                     <div class="highcharts-box">
                         <div class="graph-area">
                             <figure class="highcharts-figure">
-                                <!-- [D] 2021-09-07 수정 : 각 버튼 data-value, data-positional-number 삭제 //-->
-                                <div class="markup-chart lollipop">
-                                    <ul>
-                                        <li class="less"><!-- 수정:2021-10-08 --><!-- 클래스 추가(less) -->
+                                <!-- 수정:2021-11-08 --><!-- swiper 적용 //-->
+                                <div class="markup-chart lollipop swiper-container js-swiper" data-swiper-options="lollipopSwiperOptions">
+                                    <script>
+                                        var lollipopSwiperOptions = {
+                                            "slidesPerView": "5",
+                                            "freeMode": "true",
+                                            "scrollbar": {
+                                                "el": ".swiper-scrollbar",
+                                            },
+                                        };
+                                    </script>
+                                    <ul class="swiper-wrapper">
+                                        <li class="less swiper-slide"><!-- 수정:2021-10-08 --><!-- 클래스 추가(less) -->
                                             <p>
                                                 <button type="button" class="data" ata-call-layered="bsRegularExpenseDetailList"><strong><em class="num">30</em>건</strong></button>
                                                 <span class="label"><em class="num">10</em>일</span>
                                             </p>
                                         </li>
-                                        <li>
+                                        <li class="swiper-slide">
                                             <p>
                                                 <button type="button"class="data" data-call-layered="bsRegularExpenseDetailList"><strong><em class="num">10</em>건</strong></button>
                                                 <span class="label"><em class="num">20</em>일</span>
                                             </p>
                                         </li>
-                                        <li>
+                                        <li class="swiper-slide">
                                             <p>
                                                 <button type="button"class="data" data-call-layered="bsRegularExpenseDetailList"><strong><em class="num">20</em>건</strong></button>
                                                 <span class="label"><em class="num">25</em>일</span>
                                             </p>
                                         </li>
-                                        <li>
+                                        <li class="swiper-slide">
                                             <p>
                                                 <button type="button"class="data" data-call-layered="bsRegularExpenseDetailList"><strong><em class="num">5</em>건</strong></button>
                                                 <span class="label"><em class="num">30</em>일</span>
                                             </p>
                                         </li>
-                                        <li>
+                                        <li class="swiper-slide">
                                             <p>
-                                                <button type="button"class="data" data-call-layered="bsRegularExpenseDetailList"><strong><em class="num">1</em>건</strong></button>
+                                                <button type="button"class="data" data-call-layered="bsRegularExpenseDetailList"><strong><em class="num">13</em>건</strong></button>
                                                 <span class="label"><em class="num">3</em>일</span>
                                             </p>
                                         </li>
+                                        <li class="swiper-slide">
+                                            <p>
+                                                <button type="button"class="data" data-call-layered="bsRegularExpenseDetailList"><strong><em class="num">5</em>건</strong></button>
+                                                <span class="label"><em class="num">30</em>일</span>
+                                            </p>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <p>
+                                                <button type="button"class="data" data-call-layered="bsRegularExpenseDetailList"><strong><em class="num">15</em>건</strong></button>
+                                                <span class="label"><em class="num">25</em>일</span>
+                                            </p>
+                                        </li>
                                     </ul>
+                                    <div class="swiper-scrollbar"></div>
                                 </div>
-                                <!--// [D] 2021-09-07 수정 : 각 버튼 data-value, data-positional-number 삭제 -->
+                                <!-- 수정:2021-11-08 --><!--// swiper 적용 -->
                             </figure>
                         </div>
                     </div>

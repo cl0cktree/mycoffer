@@ -337,7 +337,7 @@
                     <!-- // 2021-06-22 수정 -->
                     <ul class="list">
                         <li>
-                            <button type="button" data-call-layered="mys_as_05_00_01_p2">
+                            <button type="button" data-call-layered="mys_as_05_00_01_bs01"><!-- 2021-12-09 상품서비스 안내 선택 동의 팝업 추가 -->
                                 <!-- 
                                     - 중첩클래스 
                                     입출금 :deposit-withdrawal
@@ -369,6 +369,22 @@
                                 </p>
                             </button>
                         </li>
+                        <!-- 서비스 이용제한 안내 2021-12-09 // -->
+                        <li>
+                            <button type="button" data-action="serviceInformation">
+                                <span class="prod-kind deposit-savings">예금&middot;적금</span>
+                                <em class="tit">KB맑은하늘 적금</em>
+                                <span class="info">맑은하늘을 만들고 금리도 UP</span>
+                                <div class="hash-tag">
+                                    <span>#추천코드</span>
+                                    <span>#고객성향분석</span>
+                                </div>
+                                <p class="rate">
+                                    <span>최고 연 <b class="num" data-unit-after="%">3.1</b></span>
+                                </p>
+                            </button>
+                        </li>
+                        <!-- // 서비스 이용제한 안내 2021-12-09 -->
                     </ul>
                 </section>
                 <section class="kb-sec best-list-con">
@@ -487,6 +503,7 @@
         @@include('@@webRoot/html/asset/layered/mys_as_05_00_01_p2.html')
         @@include('@@webRoot/html/asset/layered/mys_as_05_01_01_p1.html')
         @@include('@@webRoot/html/asset/layered/mys_as_07_00_00_p1.html')
+        @@include('@@webRoot/html/asset/layered/mys_as_05_00_01_bs01.html')
         @@include('@@webRoot/html/_layered/bs-calendar.html')
         @@include('@@webRoot/html/_layered/bs-age-asset.html')
 
@@ -527,6 +544,34 @@
                 modalPopup({
                     title: "",
                     message: "KB스타뱅킹으로 이동하시겠습니까?",
+                    type: "confirm",
+                    textOkButton: "확인",
+                    textCancelButton: "취소",
+                    onOk: function () {
+
+                    },
+                    onCancel: function () {
+
+                    }
+                });
+            });
+            //서비스 이용 제한 안내 모달 2021-12-09
+            $('button[data-action="serviceInformation"]').on('click', function () {
+                modalPopup({
+                    title: "",
+                    message: "자동로그인, ID/PW 등 인증서 외 방식으로 로그인한 고객이 해당 메뉴를 이용하려면 인증서(모바일인증서 포함) 로그인이 필요합니다.",
+                    type: "alert",
+                    textOkButton: "확인",
+                    onOk: function () {
+
+                    },
+                });
+            });
+            //선택동의 확인버튼 클릭시 멘트 출력 2021-12-09
+            $('button[data-action="agreeInformation"]').on('click', function () {
+                modalPopup({
+                    title: "",
+                    message: "마케팅 수신 동의(선택)을 하지 않으시는 경우 KB국민은행에서 제공하는 다양한 혜택 및 이벤트, 상품 등에 대한 유용한 정보를 받으실 수 없습니다.",
                     type: "confirm",
                     textOkButton: "확인",
                     textCancelButton: "취소",

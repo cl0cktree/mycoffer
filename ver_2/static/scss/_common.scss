@@ -259,20 +259,21 @@
 .select-organization .accordion dd{padding-left:0.2rem;} // 패딩수정 2021-11-20
 
 //기관선택체크박스일때
-.checkbox-group_icon{display:grid;grid-template-columns:repeat(3, 1fr);grid-auto-rows:96px;padding-top:0px; } // 여백수정 2021-11-29
+.checkbox-group_icon{display:grid;grid-template-columns:repeat(3, 1fr);grid-auto-rows : minmax(9.8rem, auto);padding-top:0px; } // 추천자산선택(연결중) 2021-12-08
 .checkbox-group_icon li{border:1px solid $kb-ui08;}
 .checkbox-group_icon li:nth-child(n + 4){border-top:none;}
 .checkbox-group_icon li:nth-child(3n + 2),
 .checkbox-group_icon li:nth-child(3n + 3){border-left:none;}
 .form-checkbox_icon input{overflow:hidden;position:absolute;width:1px;height:1px;padding:0;margin:-1px;clip:rect(0, 0, 0, 0);border:0}
-.form-checkbox_icon label{@include flexCenter;flex-wrap:wrap;width:100%;height:100%;padding:20px 5px;background-color:$kb-ui11} // 여백수정 2021-11-29
+.form-checkbox_icon label{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;position:relative;flex-wrap:wrap;width:100%;height:100%;padding:20px 5px;background-color:$kb-ui11} // 추천자산선택(연결중) 2021-12-08
 .form-checkbox_icon label[data-status="inprogress"]{background-color:$kb-ui10}
 .form-checkbox_icon label[data-status="inprogress"] .status{display:inline-block;line-height:32px;color:$color-blue;font-size:12px;}
-.form-checkbox_icon label strong{display:block;width:100%;margin-top:6px;font-size:15px;color:$kb-ui02;text-align:center} // 여백수정 2021-11-29
-.form-checkbox_icon input:checked + label{position:relative;color:$kb-ui02;font-weight:bold}
-.form-checkbox_icon input:checked + label:after{content:'';position:absolute;left:-1px;right:-1px;bottom:-1px;top:-1px;border:1px solid $kb-ui02;}
+.form-checkbox_icon label strong{display:block;width:100%;margin-top:6px;font-size:15px;color:$kb-ui02;text-align:center;word-break:break-all;line-height:1.2;} // 추천자산선택(연결중) 2021-12-08
+.form-checkbox_icon input:checked + label{color:$kb-ui02;font-weight:bold} // 추천자산선택(연결중) 2021-12-08
+.form-checkbox_icon input:checked + label::after{content:'';position:absolute;left:-1px;right:-1px;bottom:-1px;top:-1px;border:1px solid $kb-ui02;} // 추천자산선택(연결중) 2021-12-08
 .form-checkbox_icon input:checked + label strong{font-weight:bold;color:$kb-ui02}
-
+.form-checkbox_icon input:disabled + label::after{content:'';position:absolute;left:-1px;right:-1px;bottom:-1px;top:-1px;background-color:$kb-ui08;opacity:0.5;} // 추천자산선택(연결중) 2021-12-08
+.checkbox-group_icon .form-checkbox_icon .connecting{font-size:1.3rem;color:$color-blue;line-height:1;padding-top:0.6rem;} // 추천자산선택(연결중) 2021-12-08
 
 //기관선택라디오박스일때
 .radio-group_icon{display:grid;grid-template-columns:repeat(3, 1fr);grid-auto-rows:110px;padding-top:0px; }
@@ -288,8 +289,6 @@
 .form-radio_icon input:checked + label{position:relative;color:$kb-ui02;font-weight:bold}
 .form-radio_icon input:checked + label:after{content:'';position:absolute;left:-1px;right:-1px;bottom:-1px;top:-1px;border:1px solid $kb-ui02;}
 .form-radio_icon input:checked + label strong{font-weight:bold;color:$kb-ui02}
-
-
 
 .select-organization .accordion dd{padding-top:20px; padding-bottom:20px;  border-bottom:1px solid $kb-ui09;}
 .select-organization .dividing-line-bottom::after{background-color: transparent;}

@@ -332,7 +332,7 @@ var gfn_layered = {
             }
 
             //스크롤 원위치
-            $selectedLayer.find('.popup_contents, .botttom-sheet_contents, .modal_contents').scrollTop(0);
+            $selectedLayer.find('[class*=_contents]').scrollTop(0);
 
             //DIM SHOW
             gfn_dim.show($selectedLayer, zLv);
@@ -359,6 +359,11 @@ var gfn_layered = {
             gfn_body.hold(true);
 
             layeredLevel = layeredLevel + 10;
+
+            //Ntm Log
+            var logTitle = $selectedLayer.find('[class*=_header]').text();
+            var logContent = $selectedLayer.find('[class*=_contents]').text();
+            //console.log(logTitle, logContent);
         }
     },
     close: function(name, duration){
@@ -1315,13 +1320,14 @@ $('.js-checkbox-selector').not("dl").each(function(){
                     if(tf){
                         if($checkboxSelector.find('input:checkbox:checked').length == (checkboxLen - exceptionLen - 1)) $allSelector.not('.js-exception').prop('checked',true);
                     }else{
-                        $allSelector.not('.js-exception').prop('checked',false);
+                        if(!$(this).is('.js-exception')) $allSelector.prop('checked',false);
                     }
                 }
             }
         });
     });
 });
+
 //체크박스 하위 선택 (DL 구성)
 $('dl.js-checkbox-selector').on('change','input:checkbox:not(.js-exception)',function(){
     var tf = $(this).prop('checked');
@@ -1330,7 +1336,9 @@ $('dl.js-checkbox-selector').on('change','input:checkbox:not(.js-exception)',fun
         if(tf){
             $(this).closest('dt').next('dd').find('input:checkbox').not('.js-exception').prop('checked',true);
         }else{
-            $(this).closest('dt').next('dd').find('input:checkbox').not('.js-exception').prop('checked',false);
+			// .js-exception && disabled : 예외처리. 그 외 전체선택 해제시 개별선택 해제됨
+            // $(this).closest('dt').next('dd').find('input:checkbox').not('.js-exception').prop('checked',false);
+            $(this).closest('dt').next('dd').find('input:checkbox').not('.js-exception:disabled').prop('checked',false);
         }
     }else{  //하단 개별 선택
         if(tf){
@@ -2147,7 +2155,7 @@ var jsFixed = {
 
 if($('.js-fixed').length) jsFixed.init();
 
-//Scroll 하단 체크
+//Scroll 하단 체크 // 스크롤 다운 추가(수정예정) 2021-12-08
 var jsScrollDone = {
     init: function(){
         $('.js-scroll-done').each(function(){
@@ -2164,6 +2172,12 @@ var jsScrollDone = {
             }
         });
 
+        // .js-scroll-done 클래스 가 있을 경우 버튼 추가하기
+        if($('body').hasScrollBar() && $('.js-scroll-done').hasClass('js-scroll-down')){
+            $('.js-scroll-down').append(this.scrollDownValues.$btn);
+            this.scrollDownValues.$btn.one('click', this.scrollDown);
+        }
+
         $('.js-scroll-done').on('click','.btn-transparent',function(){
             modalPopup({
                 title: '',
@@ -2179,10 +2193,41 @@ var jsScrollDone = {
             $btnSticky.find('a').removeClass('is-disabled');
             $btnSticky.find('.btn-transparent').remove();
         }
+        // 스크롤최대일 경우 버튼 사라짐 
+        if (st >= $(document).outerHeight() - $this.outerHeight()*1.1) {
+            this.scrollDownValues.$btn.animate({opacity:0}, 300, () => {this.scrollDownValues.$btn.css('display', 'none');});
+        }
+    },
+    // 스크롤다운 메소드
+    scrollDown : function(){
+        // const s = event.currentTarget.className !== this.scrollDownValues.$btn.attr('class')
+        const th = jsScrollDone;
+        const scrollValue =  th.scrollDownValues.$pointOption.length ? th.scrollDownValues.$pointOption.offset().top - th.scrollDownValues.exceptH  : th.scrollDownValues.dh - th.scrollDownValues.wh;
+
+        $('html, body').animate({scrollTop : scrollValue}, th.scrollDownValues.scrollT);
+        th.scrollDownValues.$btn.animate({opacity:0}, th.scrollDownValues.btnT, function(){th.scrollDownValues.$btn.css('display', 'none');});
+    },
+    // scroll down options 
+    scrollDownValues : {
+        $btn : $('<button class="btn-scroll-down" style="position:sticky;bottom:400px;"><span>scrolldown</span></button>'),
+        scrollT : 600,
+        btnT : 300,
+        wh : $(window).outerHeight(),
+        dh : $(document).outerHeight(),
+        pointOption : '.confirm-agree',
+        $pointOption : $('.confirm-agree'),
+        exceptH : 42 + 48,
     }
 };
 
 if($('.js-scroll-done').length) jsScrollDone.init();
+
+// jsScrollDone.scrollDownValues.$btn.on('click', jsScrollDone.scrollDown);
+// 스크롤다운 버튼 변경시
+$('.btn-scroll-down2').on('click', function(){
+    // jsScrollDone.scrollDownValues.$btn = $(this);
+    jsScrollDone.scrollDown();
+});
 
 
 $(window).on('scroll',function(){
