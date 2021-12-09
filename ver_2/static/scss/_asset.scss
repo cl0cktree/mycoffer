@@ -336,11 +336,11 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .asset-main-top .content-box {position: relative; padding-top: 30px; min-height: 315px; border: 0; background-color: #6349a5; color: $kb-ui11;}
 .asset-main-top .box-tit {@include text($text01, bold);}
 .asset-main-top .icon-tooltip-que_20 {filter: brightness(2);}
-.asset-main-top .chart-area {margin-top: 10px; height: 49.6vw;}
+.asset-main-top .chart-area {margin-top: 23px; height: 49.6vw;}
 .asset-main-top .legend-unit,
 .asset-main-top .legend-unit .basic {color: $kb-ui11;}
-.asset-main-top .legend-unit .basic {padding: 2px 0 7px; margin-top: 14px;}
-.asset-main-top .legend-unit ul {margin-top: 15px; text-align: center;}
+.asset-main-top .legend-unit .basic {padding: 2px 0 7px; margin-top: 0;}
+.asset-main-top .legend-unit ul {margin-top: 0; text-align: center;}
 .asset-main-top .legend-unit ul li {width: auto; margin-left: 20px;}
 .asset-main-top .legend-unit ul li:first-child {margin-left: 0;}
 .asset-main-top .legend-unit ul li.cate1:before{background-color:#8768cb;}
@@ -395,7 +395,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 
 .asset-flow:last-child {margin-bottom: 48px;}
 .asset-flow .form-checkbox {margin-bottom: 20px;}
-.asset-flow .legend-unit ul {margin-top: 15px; text-align: center;}
+.asset-flow .legend-unit ul {margin-top: 8px; text-align: center;}
 .asset-flow .legend-unit ul li {width: auto; margin-left: 20px;}
 .asset-flow .legend-unit ul li:first-child {margin-left: 0;}
 
@@ -457,6 +457,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .sort-area .btn-line{padding:0 14px;}
 .my-asset .sort-area .btn-line.is-active{border-color:$kb-ui02;}
 .my-asset .account-detail>.condition-area{border-top:1px solid $kb-ui08;}
+.my-asset .account-detail.divider{border-top:10px solid $kb-ui10;}//라인 추가 
 .badge-my-data{display:inline-block;@include text($size: 12px);color:$color-blue;vertical-align:middle;margin-left:7px;}
 .my-asset .account-wrap{position:relative;display:flex;justify-content:space-between;align-items:flex-start;}
 .my-asset .icon-con{width:42px;}
@@ -539,6 +540,11 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .btn-hide-account{position:absolute;top:0;right:0;}
 .my-asset .btn-hide-account span{display:block;width:0;height:0;overflow:hidden;text-indent:-9999px;}
 .my-asset .list-area .no-data{margin-top:0;padding-top:67px;padding-bottom:67px;}
+.my-asset .recommend-prod .banner{background:url(../images/asset/ico_recommend_banner.png) no-repeat 100% 100% $kb-ui10;background-size:auto 109px;height:138px;padding:20px 25px;border-radius:8px;margin:18px -8px 0;}
+.my-asset .recommend-prod .banner button{display:block;width:100%;height:100%;text-align:left;}
+.my-asset .recommend-prod .banner .subtxt{display:block;font-size:16px;}
+.my-asset .recommend-prod .banner .title{display:block;margin-top:5px;@include text($size: 18px, $weight:bold);}
+.my-asset .recommend-prod .banner .hash-tag{margin-top:16px;@include text($size:14px);color:$kb-ui04;}
 .my-asset .recommend-prod{padding-top:44px;padding-bottom:48px;border-bottom:10px solid $kb-ui10;}
 .my-asset .recommend-prod .tit{@include text($size: 16px);color:$kb-ui02;margin-top:10px;}
 .my-asset .recommend-prod .list>li{margin-top:18px;}
@@ -1743,7 +1749,9 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .financial-institution-accordion .radio-group .form-radio label {display: block;}
 
 //약관동의 추가 
+.bottom-sheet[data-layered-name=mys_as_05_00_01_bs01] .agreement-to-terms{border-bottom:none;}
 .bottom-sheet[data-layered-name=mys_as_05_00_01_bs01] .agreement-to-terms.form-simul-mode .form-simul-list01{border-top:none;padding-top:0;}
 .bottom-sheet[data-layered-name=mys_as_05_00_01_bs01] .agreement-to-terms.form-simul-mode .form-simul-list01 .form-simul{display:block;}
 .bottom-sheet[data-layered-name=mys_as_05_00_01_bs01] .agreement-to-terms.form-simul-mode .checkbox-selector-items{padding:0;}
 .bottom-sheet[data-layered-name=mys_as_05_00_01_bs01] .agreement-to-terms.form-simul-mode .st_list{padding-top:0;padding-bottom:16px;}
+.bottom-sheet[data-layered-name=mys_as_05_00_01_bs01] .agreement-to-terms.form-simul-mode .st_list:last-child{padding-bottom:0;}

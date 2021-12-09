@@ -1,18 +1,20 @@
 // 금융플러스
 .finance-plus .top-info{background:#6349a5;margin-left:1.6rem;margin-right:1.6rem;margin-top:2.8rem;padding:2rem;border-radius:1.2rem;position:relative;} // bg 변경
-.finance-plus .top-info .tit{@include text($size:1.6rem,$weight:normal);line-height:1.4;word-break:keep-all;color:$kb-ui11;width:22rem;margin-bottom:5.6rem;} // 2021-10-20 디자인 변경에 따른 수정
+.finance-plus .top-info .tit{@include text($size:1.6rem,$weight:normal);line-height:1.4;word-break:keep-all;color:$kb-ui11;width:22rem;margin-bottom:0;} // 하단 간격수정
+.finance-plus .top-info + .banner-content{margin-top:3.2rem;}
 .finance-plus .top-info .tit strong{font-size:2rem;font-weight:bold;margin-bottom:1rem;display:block;} // 2021-10-20 디자인 변경에 따른 수정
 .finance-plus .top-info .img-area{position:absolute;right:2rem;bottom:2rem;} // 2021-10-20 디자인 변경에 따른 수정
-.finance-plus .top-info .img-area img{width:9.5rem;} // 2021-10-20 디자인 변경에 따른 수정
-.finance-plus .card-content{margin-top:4.2rem;}
-.finance-plus .card-content .content-box + .content-box{margin-top:1.2rem;}
-.finance-plus .card-content .tit{font-size:$text01;margin-bottom:1.6rem;}
+.finance-plus .top-info .img-area img{width:7.5rem;} // 이미지크기 수정
+.finance-plus .card-content{margin-top:3.2rem;}
+.finance-plus .card-content + .card-content{margin-top:.8rem;}
+.finance-plus .card-content .content-box + .content-box{margin-top:.8rem;} // 카드간 간격수정
+.finance-plus .card-content .tit{font-size:$text01;margin-bottom:.6rem;} // 타이틀 간격수정
 .finance-plus .card-content .tit button{display:flex;width:100%;justify-content:space-between;}
 .finance-plus .card-content .card-list{padding-left:6rem;position:relative;}
 .finance-plus .card-content .card-list > i{position:absolute;left:2rem;top:2rem;}
-.finance-plus .card-content .card-list .desc{@include text($size:$text02,$weight:normal);letter-spacing:-.06rem;}
-.finance-plus .card-content .card-list .desc strong{font-weight:bold;}
-.finance-plus .card-content .card-list .desc strong span::after{font-weight:bold;}
+.finance-plus .card-content .card-list .desc{@include text($size:$text03,$weight:normal);color:$kb-ui04;letter-spacing:-.06rem;padding-left:4rem;} // 설명 폰트크기, 컬러 수정
+.finance-plus .card-content .card-list .desc strong{font-weight:normal;} // 폰트 두께 수정
+.finance-plus .card-content .card-list .desc strong span::after{font-weight:normal;} // 폰트 두께 수정
 .finance-plus .card-content .card-list .desc .plus{color:$color-red;}
 .finance-plus .card-content .card-list .desc .plus:before{content:'▲ ';font-size:1.3rem;}
 .finance-plus .card-content .card-list .desc .minus{color:$color-blue;}
@@ -20,9 +22,11 @@
 .finance-plus .card-content .card-list .desc .sml{font-size:$text03;}
 .finance-plus .card-content .card-list .desc .sml .num{font-size:1.5rem;}
 .finance-plus .card-content .card-list .desc .sml .num:after{font-size:$text03;}
+.finance-plus .card-content .card-list .desc .num{font-size:1.5rem;}
 .finance-plus .card-content .card-list .desc .num:before{font-family:'KBFGText';}
-.finance-plus .card-content .card-list .desc .num:after{vertical-align:0;}
-.finance-plus .card-content .card-list button{margin-top:1.6rem;width:100%;}
+.finance-plus .card-content .card-list .desc .num:after{vertical-align:0;font-size:$text03;}
+.finance-plus .card-content .card-list .desc.fail{color:$color-red;}
+.finance-plus .card-content .card-list button{margin-top:1.4rem;width:100%;}
 .finance-plus .card-content .card-list button span{font-size:$text03;color:$kb-ui04;}
 .finance-plus .card-content .status-msg{text-align:center;padding-top:4.8rem;padding-bottom:4.4rem;}
 .finance-plus .card-content .status-msg button{width:100%;}
@@ -40,3 +44,14 @@
 .finance-plus .banner-content .banner-list .desc{font-size:$text03;line-height:1.4;}
 .finance-plus .banner-content .banner-list .img{position:absolute;right:1rem;top:calc(50% + 1rem);transform:translateY(-50%);width:11.4rem;}
 // 수정:2021-11-05 배너 추가,분리 //
+
+// 2021-12-09~ 전체수정
+.finance-plus .card-content .card-list.type2{padding-left:2rem;}
+.finance-plus .card-content .card-list.type2 .tit{padding-left:4rem;}
+.finance-plus .card-content .card-list.type2 button {margin-top:.4rem;}
+.finance-plus .card-content .card-list.type2 button span{font-size:1.6rem;font-weight:bold;color:$kb-ui02;} //폰트 크기 수정
+.finance-plus .card-content .card-list.type2 .tit.type2 button span{color:$kb-ui04;}
+
+.finance-plus .top-btn{position:relative;margin-bottom:3.2rem;}
+.finance-plus .top-btn i{position:absolute;}
+.finance-plus .top-btn button{display:flex;justify-content:space-between;align-items:center;padding-left:4.4rem;height:3.2rem;width:100%;}

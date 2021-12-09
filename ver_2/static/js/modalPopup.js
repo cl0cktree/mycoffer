@@ -273,9 +273,15 @@
         $id.modalPopup("open");
 
         //Ntm Log
+        var name = id;
         var logTitle = $id.find('[class*=_header]').text();
         var logContent = $id.find('[class*=_content]').text();
-        //console.log(logTitle, logContent);
+        
+        try {
+            Ntm.Event.fireUserDefined('popup',{ccMapId : name, ccMapName: logTitle, pageName: logContent});
+        } catch(excption_var){
+            console.log('Ntm 파일 없음',name, logTitle, logContent);
+        }
     }
     
     window.modalPopup = modalPopup;
