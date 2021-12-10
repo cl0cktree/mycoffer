@@ -9,6 +9,8 @@ var st = $window.scrollTop();
 var $body = $('body');
 
 
+
+
 var stMemory;
 var gfn_body = {
     hold: function(tf){
@@ -270,6 +272,8 @@ $(window)
         gnbMenuSwiper.update();
         //subMenuSwiper.update();
         //console.log('resized')
+        winW = $window.outerWidth();
+        winH = $window.outerHeight();
     }
 });
 

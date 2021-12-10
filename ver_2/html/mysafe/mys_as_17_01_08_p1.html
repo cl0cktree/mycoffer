@@ -57,7 +57,7 @@
                         <strong class="tit required">보유량</strong>
                         <div class="kb-form gold-input-num not-ready no-transition" data-status="info">
                             <div class="kb-form_inner form-text">
-                                <input type="text" inputmode="numeric" class="gold-unit-input gold-unit-input-1" id="mysafe_01_01" maxlength="10" placeholder="0" value="" data-unit="" data-action="">
+                                <input type="text" inputmode="numeric" class="gold-unit-input gold-unit-input-1" id="mysafe_01_01" maxlength="8" placeholder="0" value="" data-unit="" data-action="">
                                 <button class="btn-data-clear gold-unit-clear"><i class="icon-data-clear_24">지우기</i></button>
                             </div>
                             <!-- 2021-11-16 수정 -->
@@ -246,19 +246,20 @@
             var dot_gold = pattern.split('.');
             var dot_gold_0 = dot_gold[0];
             var dot_gold_1;
+            var dot_gold_0_val = dot_gold_0.substring(0,3);
             var dot_gold_1_val;
             // var dot_pattern = parseInt(currentVal_1).toLocaleString(undefined, {maximumFractionDigits: 2});
             var currentVal_1_dot;
             var currentVal_1_dot_locale;
 
-            // console.log('lv1 = '+find_dot_gold);
+            console.log('lv1 = '+dot_gold_0_val);
             if(find_dot_gold!==-1){
                 dot_gold_1 = dot_gold[1];
                 // console.log('lv2 = '+dot_gold_1.length);
                 if(((dot_gold_1.length>2)&&(dot_gold_1!=='')&&(dot_gold_1!=='undefined'))||(dot_gold.length>2)){
                     dot_gold_1_val =  dot_gold_1.substring(0,2);
                     $gold_unit_input_1.val('');
-                    currentVal_1_dot = dot_gold_0+'.'+dot_gold_1_val;
+                    currentVal_1_dot = dot_gold_0_val+'.'+dot_gold_1_val;
                     $gold_unit_input_1.val(currentVal_1_dot);
                     // console.log('lv3 = '+currentVal_1_dot+' / '+dot_gold.length+' / '+dot_gold_1_val);
                 }else{

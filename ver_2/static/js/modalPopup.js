@@ -41,8 +41,8 @@
     
             module = {
                 initialize: function() {
-                    if(!$module.prev('.dim').length) $module.before('<div class="dim" style="z-index:' + (layeredLevel - 1) + ';display:none;"></div>');
-                    $dimm = $module.prev();                
+                    //if(!$module.prev('.dim').length) $module.before('<div class="dim" style="z-index:' + (layeredLevel - 1) + ';display:none;"></div>');
+                    $dimm = $module.prev();
                     module.bind.events();
                     module.instantiate();
                 },
@@ -90,11 +90,20 @@
                     focusA11Y.memory($('.is-focused'));
                     //$body.addClass("is-hold");
                     gfn_body.hold(true);
-                    if(!$module.prev('.dim').length) $module.before('<div class="dim" style="z-index:' + (layeredLevel - 1) + ';display:none;"></div>');                    
-                    $wrap.addClass("is-active").css('z-index', layeredLevel);
+
+                    
+                    if(!settings.autoDestroy){
+                        if(!$module.prev('.dim').length) $module.before('<div class="dim" style="z-index:' + (layeredLevel - 1) + ';"></div>');                    
+                        $wrap.addClass("is-active").css('z-index', layeredLevel);                        
+                    }else{
+                        if(!$module.prev('.dim').length) $module.before('<div class="dim" style="z-index:999999;"></div>');                    
+                        $wrap.addClass("is-active").css('z-index', 1000000);
+                    }
+
                     $module.prev('.dim').fadeIn(settings.duration);
                     $wrap.fadeIn(settings.duration);
                     $wrap.find(':focusable').eq(0).focus();
+
                     layeredLevel = layeredLevel + 10;
                 },
     
@@ -236,9 +245,9 @@
         // html += `		</div>`;
         // html += `	</div>`;
         if(settings.commonUse != ''){
-            html += `	<div class="modal" data-layered-name="${id}" id="${id}" style="z-index:${zIdex}" data-common-use="${settings.commonUse}">`;
+            html += `	<div class="modal" data-layered-name="${id}" id="${id}" data-common-use="${settings.commonUse}">`;
         }else{
-            html += `	<div class="modal" data-layered-name="${id}" id="${id}" style="z-index:${zIdex}">`;
+            html += `	<div class="modal" data-layered-name="${id}" id="${id}">`;
         }        
         if (settings.title != "") {
             html += `		<div class="modal_header">`;
@@ -276,11 +285,13 @@
         var name = id;
         var logTitle = $id.find('[class*=_header]').text();
         var logContent = $id.find('[class*=_content]').text();
+
+        
         
         try {
             Ntm.Event.fireUserDefined('popup',{ccMapId : name, ccMapName: logTitle, pageName: logContent});
         } catch(excption_var){
-            console.log('Ntm 파일 없음',name, logTitle, logContent);
+            //console.log('Ntm 파일 없음',name, logTitle, logContent);
         }
     }
     

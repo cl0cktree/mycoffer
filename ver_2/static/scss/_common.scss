@@ -1047,111 +1047,16 @@ ol[data-style=number] li::before{content:counter(list-number)'.';margin-right:0.
 
 
 
-
-// 2021-12-08 suna test
-.desc-box P{
-    // padding:0 2px;
+// text highlight 2021-12-10
+.desc-box P strong,
+.desc-box > strong,
+.desc-box > h3
+{
     display:inline;
     position:relative;
-    background-image: linear-gradient(90deg, lightyellow,lightyellow);
-    background-size:100% 10px;
+    background-image: linear-gradient(90deg, rgba(255,211,56,0.4), rgba(255,211,56,0.4));
+    background-size:100% 11px;
     background-repeat:no-repeat;
     background-position: left bottom;
 }
-
-.btn-scroll-down{background-color:violet;position: sticky ;bottom:100px !important;}
-
-.btn-scroll-down span{position:relative;}
-.btn-scroll-down span{
-    font-size:0;color:#fff;display:block;width:20px;height:40px;
-}
-.btn-scroll-down::after
-,.btn-scroll-down span::after
-,.btn-scroll-down span::before{
-    // content:'';
-    position:absolute;
-    right:0;
-    width:20px;
-    height:12px;
-    // transform: rotate(90deg);
-    background:url(../images/common/move.png) no-repeat;
-    background-size:contain;
-}
-.btn-scroll-down span::after{
-    content:'';
-    // border:1px solid red;
-    // top:0;
-    // opacity:0;
-    animation: moveBtn 3s linear infinite;
-}
-.btn-scroll-down span::before{
-    content:'';
-    // border:1px solid green;
-    // top:5px;
-    // opacity:1;
-    animation: moveBtn2 3s linear infinite;
-}
-.btn-scroll-down::after{
-    content:'';
-    // border:1px solid blue;
-    animation: moveBtn3 3s linear infinite;
-}
-@keyframes moveBtn{
-    0%{
-        top:0;
-        opacity:0;
-    }
-    15%,40%{
-        top:5px;
-        opacity:1;
-    }
-    55%,75%{
-        top:10px;
-        opacity:1;
-    }
-    100%{
-        top:15px;
-        opacity:0;
-    }
-}
-
-@keyframes moveBtn2{
-    0%{
-        top:5px;
-        opacity:1;
-    }
-    15%,40%{
-        top:10px;
-        opacity:1;
-    }
-    55%,100%{
-        top:15px;
-        opacity:0;
-    }
-    // 100%{
-    //     top:0px;
-    //     opacity:0;
-    // }
-}
-
-@keyframes moveBtn3{
-    0%{
-        top:-5px;
-        opacity:0;
-    }
-    15%,40%{
-        top:0px;
-        opacity:0.5;
-    }
-    55%,75%{
-        top:5px;
-        opacity:1;
-    }
-    100%{
-        top:10px;
-        opacity:0;
-    }
-}
-
-
 

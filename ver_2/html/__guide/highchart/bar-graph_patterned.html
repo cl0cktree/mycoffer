@@ -80,13 +80,7 @@
         //경로 변경 (테스트서버용)
         var locationFlag = window.location.href.split('/')[3];
         
-        if(locationFlag == 'view-test' || locationFlag == 'mydata_newsb'){        
-            chartBg.forEach(function(element, index){            
-                if(index != 0){                
-                    if(String(index).length == 1) index = '0' + String(index);
-                    element.pattern = '../' + patternPath + 'pattern_' + index + '.png';                
-                }
-            });
+        if(locationFlag == 'view-test' || locationFlag == 'mydata_newsb'){
             lineMarker.forEach(function(element, index){            
                 if(index != 0){                
                     if(String(index).length == 1) index = '0' + String(index);                
@@ -99,12 +93,9 @@
         chartBg.forEach(function(element, index){
             if(index != 0){
                 index = String(index).length != 1 ? index : "0" + index;
-                $('.pattern').append('<li><span style="background-image:url(' + element.pattern + ');" class="pattern' + index + '"></span>chartBg[' + index  + ']</li>')
+                $('.pattern').append('<li><span class="pattern' + index + '"></span>chartBg[' + index  + ']</li>')
             }
-        });
-        
-        
-        
+        });        
         
         // highchart 공통 options
         Highcharts.setOptions({
