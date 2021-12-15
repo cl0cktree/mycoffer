@@ -53,33 +53,37 @@
                             <div class="total-summary"><strong class="emphasis">평소보다 아껴쓰고 있어요.</strong> 이대로 직진!</div>
                         </div>
                     </div>
-                    <!-- [D] 2021-09-06 수정 : swiper 삭제. 이번달 소비 패턴 하단으로 이동 //-->
-                    <div class="highcharts-box">
+                    <!-- 수정:2021-12-15 -->
+                    <!-- 월간 지출 추이 column 차트 삭제, 이번달 소비 패턴 영역 위치 이동 (.monthly-expense-pattern 클래스 이동) //-->
+                    <div class="monthly-expense-pattern highcharts-box">
                         <div class="graph-area">
                             <figure class="highcharts-figure">
                                 <div class="chart-tit">
-                                    <h4 class="h4">월간 지출 추이</h4>
+                                    <h4 class="h4">이번달 소비 패턴</h4>
+                                    <p class="total-summary">이번달 항목명항목명항목명항목명 지출이 많았어요</p>
                                 </div>
-                                <!-- [chart area] //-->
+                                <!-- [Chart Area] // -->
                                 <!--
                                     [차트 디자인 정보]
-                                    * 그래프(막대) 색상(컬러별)
-                                    - 노란색 :  #ffba53;
-                                    - 회색 :  #c6cbd0;
+                                    * 그래프(원) 크기/색상(컬러별)
+                                    - 분홍색 :  80*80px / #ff6391
+                                    - 다홍색 :  58*58px / #ff445a
+                                    - 노란색 :  110*110px / #ffba53
+                                    - 살구색 :  100*100px / #ff8a71
+                                    - 보라색 :  48*48px / #d090ee
 
-                                    - 차트 텍스트 컬러/크기 : #26282c/14px
+                                    텍스트 컬러 : #26282c
+                                    이름 텍스트 크기 : 14px
+                                    값 텍스트 크기 : 12px/bold
                                 -->
                                 <div class="chart-area" id="">
-                                    <img class="temp" src="../../static/images/_temp/chart_ex0103.png" alt="차트 예시 이미지">
-                                </div>
-                                <div class="legend-unit">
-                                    <span class="basic" data-type="dash">월평균지출금액 <em class="num" data-unit-after="원">4,665,210</em></span>
+                                    <img class="temp" src="../../static/images/_temp/chart_ex0203.png" alt="차트 예시 이미지">
                                 </div>
                                 <!--// [chart area] -->
                             </figure>
                         </div>
                     </div>
-                    <!--// [D] 2021-09-06 수정 : swiper 삭제. 이번달 소비 패턴 하단으로 이동 -->
+                    <!--// 월간 지출 추이 column 차트 삭제, 이번달 소비 패턴 영역 위치 이동 -->
                 </section>
                 <!--// 지출 가계부 그래프 요약 영역 -->
                 <!-- 지출 가계부 상세 내역 //-->
@@ -199,39 +203,6 @@
                     <button class="btn-more-plus btn-more-view center"><span>더보기</span></button><!-- [D] 2021-08-31 수정 : 더보기 버튼 수정 -->
                 </section>
                 <!--// 지출 가계부 상세 내역 -->
-                <!-- [D] 2021-09-06 수정 : 이번달 자주 찾은 곳 영역 삭제. 이번달 소비 패턴 영역 이동 //-->
-                <section class="kb-sec monthly-expense-pattern dividing-space-bottom">
-                    <div class="highcharts-box">
-                        <div class="graph-area">
-                            <figure class="highcharts-figure">
-                                <div class="chart-tit">
-                                    <h4 class="h4">이번달 소비 패턴</h4>
-                                    <p class="total-summary">이번달 항목명항목명항목명항목명 지출이 많았어요</p>
-                                </div>
-                                <!-- [Chart Area] // -->
-                                <!--
-                                    [차트 디자인 정보]
-                                    * 그래프(원) 크기/색상(컬러별)
-                                    - 분홍색 :  80*80px / #ff6391
-                                    - 다홍색 :  58*58px / #ff445a
-                                    - 노란색 :  110*110px / #ffba53
-                                    - 살구색 :  100*100px / #ff8a71
-                                    - 보라색 :  48*48px / #d090ee
-
-                                    텍스트 컬러 : #26282c
-                                    이름 텍스트 크기 : 14px
-                                    값 텍스트 크기 : 12px/bold
-                                -->
-                                <div class="chart-area" id="">
-                                    <img class="temp" src="../../static/images/_temp/chart_ex0203.png" alt="차트 예시 이미지">
-                                </div>
-                                <!--// [chart area] -->
-                            </figure>
-                        </div>
-                    </div>
-                    <!--// [D] 2021-09-06 수정 : 이번달 자주 찾은 곳 영역 삭제. 이번달 소비 패턴 영역 이동 -->
-                </section>
-
 
                 <!-- 수정:2021-10-26 -->
                 <!-- 추천 챌린지 영역 수정 (추천 챌린지 -> 인기 챌린지) -->

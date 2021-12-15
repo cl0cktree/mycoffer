@@ -23,21 +23,136 @@
             <!-- app-content // -->
             <main class="app-content select-organization">
                 <section class="kb-sec mt48"><!--  2021-12-07 복구 -->
-                    <strong class="h4">기관 선택</strong>
-                    
-                    <div class="tab swiper-container01">
+                    <dl class="accordion js-checkbox-selector mt20">
+    <dt class="is-active">
+        <span class="form-checkbox"><input type="checkbox" id="accrdianCheck01"><label for="accrdianCheck01">전체</label></span>
+        <button type="button" class="accordion-trigger"></button>
+    </dt>
+    <dd class="swiper-container02" style="height:300px">
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-pagination"></div>
+        <ul class="swiper-wrapper checkbox-group_icon">
+            <!-- 수정:2021-12-08 // -->
+            <li class="swiper-slide">
+                <span class="form-checkbox_icon">
+                    <input type="checkbox" id="org_option01" class="js-exception" disabled><!-- 연결 중 & 전체선택 제외 : .js-exception disabled -->
+                    <label for="org_option01">
+                        <span class="img-resize_32"><img src="@@webRoot/static/images/ci/C1AADA0000.png" alt=""></span>
+                        <strong>KB국민카드</strong><!-- 수정:2021-10-08 -->
+                        <span class="connecting">연결중</span><!-- 연결 중일 경우 -->
+                    </label>
+                </span>
+                <span class="form-checkbox_icon">
+                    <input type="checkbox" id="org_option02">
+                    <label for="org_option02">
+                        <span class="img-resize_32"><img src="@@webRoot/static/images/ci/A1AAER0000.png" alt=""></span>
+                        <strong>신한카드</strong>
+                    </label>
+                </span>
+            </li>
+            <!-- // 수정:2021-12-08 -->
+            <li class="swiper-slide">
+                <span class="form-checkbox_icon">
+                    <input type="checkbox" id="org_option03">
+                    <label for="org_option03">
+                        <span class="img-resize_32"><img src="@@webRoot/static/images/ci/C1AAEY0000.png" alt=""></span>
+                        <strong>삼성카드</strong>
+                    </label>
+                </span>
+                <span class="form-checkbox_icon">
+                    <input type="checkbox" id="org_option04">
+                    <label for="org_option04">
+                        <span class="img-resize_32"><img src="@@webRoot/static/images/ci/D1AAFO0000.png" alt=""></span>
+                        <strong>현대카드</strong>
+                    </label>
+                </span>
+            </li>
+            <li class="swiper-slide">
+                <span class="form-checkbox_icon">
+                    <input type="checkbox" id="org_option05">
+                    <label for="org_option05">
+                        <span class="img-resize_32"><img src="@@webRoot/static/images/ci/D1AADO0000.png" alt=""></span>
+                        <strong>롯데카드</strong>
+                    </label>
+                </span>
+                <span class="form-checkbox_icon">
+                    <input type="checkbox" id="org_option06">
+                    <label for="org_option06">
+                        <span class="img-resize_32"><img src="@@webRoot/static/images/ci/D1AABJ0000.png" alt=""></span>
+                        <strong>하나카드</strong>
+                    </label>
+                </span>
+            </li>
+            <li class="swiper-slide">
+                <span class="form-checkbox_icon">
+                    <input type="checkbox" id="org_option01" class="js-exception" disabled><!-- 연결 중 & 전체선택 제외 : .js-exception disabled -->
+                    <label for="org_option01">
+                        <span class="img-resize_32"><img src="@@webRoot/static/images/ci/C1AADA0000.png" alt=""></span>
+                        <strong>KB국민카드</strong><!-- 수정:2021-10-08 -->
+                        <span class="connecting">연결중</span><!-- 연결 중일 경우 -->
+                    </label>
+                </span>
+                <span class="form-checkbox_icon">
+                    <input type="checkbox" id="org_option02">
+                    <label for="org_option02">
+                        <span class="img-resize_32"><img src="@@webRoot/static/images/ci/A1AAER0000.png" alt=""></span>
+                        <strong>신한카드</strong>
+                    </label>
+                </span>
+            </li>
+            <!-- // 수정:2021-12-08 -->
+            <li class="swiper-slide">
+                <span class="form-checkbox_icon">
+                    <input type="checkbox" id="org_option03">
+                    <label for="org_option03">
+                        <span class="img-resize_32"><img src="@@webRoot/static/images/ci/C1AAEY0000.png" alt=""></span>
+                        <strong>삼성카드</strong>
+                    </label>
+                </span>
+                <span class="form-checkbox_icon">
+                    <input type="checkbox" id="org_option04">
+                    <label for="org_option04">
+                        <span class="img-resize_32"><img src="@@webRoot/static/images/ci/D1AAFO0000.png" alt=""></span>
+                        <strong>현대카드</strong>
+                    </label>
+                </span>
+            </li>
+            <li class="swiper-slide">
+                <span class="form-checkbox_icon">
+                    <input type="checkbox" id="org_option05">
+                    <label for="org_option05">
+                        <span class="img-resize_32"><img src="@@webRoot/static/images/ci/D1AADO0000.png" alt=""></span>
+                        <strong>롯데카드</strong>
+                    </label>
+                </span>
+                <span class="form-checkbox_icon">
+                    <input type="checkbox" id="org_option06">
+                    <label for="org_option06">
+                        <span class="img-resize_32"><img src="@@webRoot/static/images/ci/D1AABJ0000.png" alt=""></span>
+                        <strong>하나카드</strong>
+                    </label>
+                </span>
+            </li>
+        </ul>
+    </dd>
+</dl> 
+                    <div class="tab swiper-container01 js-fixed">
                         <ul class="swiper-wrapper">
-                            <li class="swiper-slide is-active"><a href="#target01">홈</a></li>
-                            <li class="swiper-slide trigger"><a href="#target02">메뉴명2</a></li>
-                            <li class="swiper-slide"><a href="#target03">메뉴명3</a></li>
-                            <li class="swiper-slide"><a href="#target04">메뉴명4</a></li>
-                            <li class="swiper-slide"><a href="#target05">메뉴명5</a></li>
-                            <li class="swiper-slide"><a href="#target06">메뉴명6</a></li>
-                            <li class="swiper-slide"><a href="#target07">메뉴명7</a></li>
+                            <li class="swiper-slide is-active"><a href="javascript:;">홈</a></li>
+                            <li class="swiper-slide trigger"><a href="javascript:;">메뉴명2</a></li>
+                            <li class="swiper-slide"><a href="javascript:;">메뉴명3</a></li>
+                            <li class="swiper-slide"><a href="javascript:;">메뉴명4</a></li>
+                            <li class="swiper-slide"><a href="javascript:;">메뉴명5</a></li>
+                            <li class="swiper-slide"><a href="javascript:;">메뉴명6</a></li>
+                            <li class="swiper-slide"><a href="javascript:;">메뉴명7</a></li>
                         </ul>
                     </div>
                     
-                    <div class="spy-scroll-wrapper">
+                    <div class="spy-scroll-wrapper" >
                         <div class="spy-scroll js-spy-scroll">
                             <ul class="slide-wrapper">
                                 <li class="slide is-active">
@@ -811,6 +926,198 @@
                                                 <!-- // 수정:2021-12-03 -->
                                             </span>
                                         </li>
+                                        <li>
+                                            <span class="form-checkbox_20">
+                                                <!-- ci 추가 -->
+                                                <!-- 수정:2021-12-03 // -->
+                                                <input type="checkbox" id="org_option12">
+                                                <label for="org_option12">
+                                                    <span class="img-resize_24"><img src="../../static/images/ci/F1AAJD0000.png" alt=""></span><!-- ci 없을 경우 -->
+                                                    카드
+                                                </label>
+                                                <!-- // 수정:2021-12-03 -->
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="form-checkbox_20">
+                                                <!-- ci 추가 -->
+                                                <!-- 수정:2021-12-03 // -->
+                                                <input type="checkbox" id="org_option12">
+                                                <label for="org_option12">
+                                                    <span class="img-resize_24"><img src="../../static/images/ci/F1AAJD0000.png" alt=""></span><!-- ci 없을 경우 -->
+                                                    카드
+                                                </label>
+                                                <!-- // 수정:2021-12-03 -->
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="form-checkbox_20">
+                                                <!-- ci 추가 -->
+                                                <!-- 수정:2021-12-03 // -->
+                                                <input type="checkbox" id="org_option12">
+                                                <label for="org_option12">
+                                                    <span class="img-resize_24"><img src="../../static/images/ci/F1AAJD0000.png" alt=""></span><!-- ci 없을 경우 -->
+                                                    카드
+                                                </label>
+                                                <!-- // 수정:2021-12-03 -->
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="form-checkbox_20">
+                                                <!-- ci 추가 -->
+                                                <!-- 수정:2021-12-03 // -->
+                                                <input type="checkbox" id="org_option12">
+                                                <label for="org_option12">
+                                                    <span class="img-resize_24"><img src="../../static/images/ci/F1AAJD0000.png" alt=""></span><!-- ci 없을 경우 -->
+                                                    카드
+                                                </label>
+                                                <!-- // 수정:2021-12-03 -->
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="form-checkbox_20">
+                                                <!-- ci 추가 -->
+                                                <!-- 수정:2021-12-03 // -->
+                                                <input type="checkbox" id="org_option12">
+                                                <label for="org_option12">
+                                                    <span class="img-resize_24"><img src="../../static/images/ci/F1AAJD0000.png" alt=""></span><!-- ci 없을 경우 -->
+                                                    카드
+                                                </label>
+                                                <!-- // 수정:2021-12-03 -->
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="form-checkbox_20">
+                                                <!-- ci 추가 -->
+                                                <!-- 수정:2021-12-03 // -->
+                                                <input type="checkbox" id="org_option12">
+                                                <label for="org_option12">
+                                                    <span class="img-resize_24"><img src="../../static/images/ci/F1AAJD0000.png" alt=""></span><!-- ci 없을 경우 -->
+                                                    카드
+                                                </label>
+                                                <!-- // 수정:2021-12-03 -->
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="form-checkbox_20">
+                                                <!-- ci 추가 -->
+                                                <!-- 수정:2021-12-03 // -->
+                                                <input type="checkbox" id="org_option12">
+                                                <label for="org_option12">
+                                                    <span class="img-resize_24"><img src="../../static/images/ci/F1AAJD0000.png" alt=""></span><!-- ci 없을 경우 -->
+                                                    카드
+                                                </label>
+                                                <!-- // 수정:2021-12-03 -->
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="form-checkbox_20">
+                                                <!-- ci 추가 -->
+                                                <!-- 수정:2021-12-03 // -->
+                                                <input type="checkbox" id="org_option12">
+                                                <label for="org_option12">
+                                                    <span class="img-resize_24"><img src="../../static/images/ci/F1AAJD0000.png" alt=""></span><!-- ci 없을 경우 -->
+                                                    카드
+                                                </label>
+                                                <!-- // 수정:2021-12-03 -->
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="form-checkbox_20">
+                                                <!-- ci 추가 -->
+                                                <!-- 수정:2021-12-03 // -->
+                                                <input type="checkbox" id="org_option12">
+                                                <label for="org_option12">
+                                                    <span class="img-resize_24"><img src="../../static/images/ci/F1AAJD0000.png" alt=""></span><!-- ci 없을 경우 -->
+                                                    카드
+                                                </label>
+                                                <!-- // 수정:2021-12-03 -->
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="form-checkbox_20">
+                                                <!-- ci 추가 -->
+                                                <!-- 수정:2021-12-03 // -->
+                                                <input type="checkbox" id="org_option12">
+                                                <label for="org_option12">
+                                                    <span class="img-resize_24"><img src="../../static/images/ci/F1AAJD0000.png" alt=""></span><!-- ci 없을 경우 -->
+                                                    카드
+                                                </label>
+                                                <!-- // 수정:2021-12-03 -->
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="form-checkbox_20">
+                                                <!-- ci 추가 -->
+                                                <!-- 수정:2021-12-03 // -->
+                                                <input type="checkbox" id="org_option12">
+                                                <label for="org_option12">
+                                                    <span class="img-resize_24"><img src="../../static/images/ci/F1AAJD0000.png" alt=""></span><!-- ci 없을 경우 -->
+                                                    카드
+                                                </label>
+                                                <!-- // 수정:2021-12-03 -->
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="form-checkbox_20">
+                                                <!-- ci 추가 -->
+                                                <!-- 수정:2021-12-03 // -->
+                                                <input type="checkbox" id="org_option12">
+                                                <label for="org_option12">
+                                                    <span class="img-resize_24"><img src="../../static/images/ci/F1AAJD0000.png" alt=""></span><!-- ci 없을 경우 -->
+                                                    카드
+                                                </label>
+                                                <!-- // 수정:2021-12-03 -->
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="form-checkbox_20">
+                                                <!-- ci 추가 -->
+                                                <!-- 수정:2021-12-03 // -->
+                                                <input type="checkbox" id="org_option12">
+                                                <label for="org_option12">
+                                                    <span class="img-resize_24"><img src="../../static/images/ci/F1AAJD0000.png" alt=""></span><!-- ci 없을 경우 -->
+                                                    카드
+                                                </label>
+                                                <!-- // 수정:2021-12-03 -->
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="form-checkbox_20">
+                                                <!-- ci 추가 -->
+                                                <!-- 수정:2021-12-03 // -->
+                                                <input type="checkbox" id="org_option12">
+                                                <label for="org_option12">
+                                                    <span class="img-resize_24"><img src="../../static/images/ci/F1AAJD0000.png" alt=""></span><!-- ci 없을 경우 -->
+                                                    카드
+                                                </label>
+                                                <!-- // 수정:2021-12-03 -->
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="form-checkbox_20">
+                                                <!-- ci 추가 -->
+                                                <!-- 수정:2021-12-03 // -->
+                                                <input type="checkbox" id="org_option12">
+                                                <label for="org_option12">
+                                                    <span class="img-resize_24"><img src="../../static/images/ci/F1AAJD0000.png" alt=""></span><!-- ci 없을 경우 -->
+                                                    카드
+                                                </label>
+                                                <!-- // 수정:2021-12-03 -->
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="form-checkbox_20">
+                                                <!-- ci 추가 -->
+                                                <!-- 수정:2021-12-03 // -->
+                                                <input type="checkbox" id="org_option12">
+                                                <label for="org_option12">
+                                                    <span class="img-resize_24"><img src="../../static/images/ci/F1AAJD0000.png" alt=""></span><!-- ci 없을 경우 -->
+                                                    카드
+                                                </label>
+                                                <!-- // 수정:2021-12-03 -->
+                                            </span>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
@@ -855,7 +1162,7 @@
             padding: 0;
             z-index: 1;
         }
-        .spy-scroll{height:400px;overflow-y:scroll;}
+        /* .spy-scroll{height:400px;overflow-y:scroll;} */
         .spy-scroll .slide-wrapper{width:100%;height:100%;position:relative;}
 
 
@@ -863,18 +1170,28 @@
         .spy-scroll .slide-wrapper{word-break: break-all;}
         .spy-scroll .slide{border:1px solid rgb(22, 22, 43);}
         .spy-scroll .slide.is-active{background:rgb(243, 243, 209)}
+        .js-fixed.is-fixed + .spy-scroll-wrapper .slide.is-active{margin-top:80px;} /*스크립트로 변경하기*/
+        .js-fixed.is-fixed.swiper-container01{position:fixed;top:48px;left:0;z-index:100;width:100%;} /*$level40 = 100*/
 
+        .swiper-container02{height:300px;overflow:hidden;}
+        .checkbox-group_icon{display:flex;}
+        .checkbox-group_icon .swiper-slide{width:auto;min-width:100px;height:auto;height:120px;border:1px solid red;}
+        /* .checkbox-group_ico .swiper-slide{width:100px;height:auto;} */
+        .swiper-container-multirow-column > .swiper-wrapper {
+            flex-direction: inherit;
+        }
     </style>
     <script>
+    $(document).ready(function(){
         // 스와이퍼슬라이드 탭 형태
-        let TabSpySwiper = new Swiper('.swiper-container01', {
+        const TabSpySwiper = new Swiper('.swiper-container01', {
             slidesPerView: 'auto',
             watchOverflow: true,
             on: {
                 init : function(swiper){
-                    var width = 0;
-                    var $swiper = $('.tabswiper-container01');
-                    var index = $swiper.find('.is-active').index();
+                    let width = 0;
+                    let $swiper = $('.tabswiper-container01');
+                    let index = $swiper.find('.is-active').index();
                     if($swiper.is(':visible')){
                         $swiper.find('.swiper-slide').each(function(){
                             width += $(this).width();
@@ -886,16 +1203,12 @@
                     swiper.slideTo(swiper.clickedIndex);
                 },
             },
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'progressbar',
-            },
         });
 
 
         // TabSpySwiper(.tab.swiper-container01)와 연동
-        function jsSpyScroll ({
-            $tabContent : $tabContent = $('.swiper-container01'), // 탭컨테이너
+        function jsScrollSpy ({
+            $tabContent : $tabContent = $('.swiper-container01'), // 탭컨테이너 top: 607
             $tabLinks : $tabLinks = $tabContent.find("a, button"), // 탭
             $container : $container = $('.spy-scroll'), // 연동될 슬라이드
             $slides : $slides = $container.find('.slide'),
@@ -903,26 +1216,46 @@
         }={}) {
             let st = 0;
             let slidePositionTopArray = []; // 스파이스크롤 슬라이드 포지션탑 배열
+            const tabHeight = $tabContent.outerHeight(); //
+            const tabTop = $tabContent.offset().top; //
+            const winH = $(window).outerHeight(); 
+            const wrapperTop = $container.parent().offset().top; 
+           
 
-            // 탭 클릭시 스크롤 이동 및 is-active 클래스 추가
-            $tabLinks.on('click', function() {
-                var $link = $(this);
-                var idx = $link.parent('li').index();
-                moveScroll(idx);
-                addClass(idx)
-            });
-
+            
             // 스파스크롤 슬라이드 탑 배열 
             function init(){
                 slidePositionTopArray = $slides.map(function(idx, item){
-                    return Math.ceil($(item).position().top);
+                    // return Math.ceil($(item).offset().top - 48 - (tabHeight*2));
+                    return Math.ceil($(item).offset().top - 48 );
                 });
             }
             
+            // 탭 클릭시 스크롤 이동 및 is-active 클래스 추가
+            $tabLinks.on('click', function() {
+                let $link = $(this);
+                let idx = $link.parent('li').index();
+                // 
+                if(!$tabContent.is('.is-fixed')){
+                    // $('html, body').stop().animate({'scrollTop':slidePositionTopArray[0]}, 500);
+                    moveScroll(idx, 300);
+                    console.log(999)
+                }else{
+                    moveScroll(idx, 0); // 탭선택시 스크롤 duration : 0 으로 변경
+                    addClass(idx);
+                }
+                    
+            });
+            
             // 스크롤 이동
-            function moveScroll(idx){
-                var duration = (slidePositionTopArray[idx] - slidePositionTopArray[idx-1]) * 0.5;   
-                $container.animate({'scrollTop': slidePositionTopArray[idx]}, duration);
+            function moveScroll(idx, duration){
+                // duration = duration == undefined ?(slidePositionTopArray[idx] - slidePositionTopArray[idx-1]) * 0.5 : 0;
+                duration = (duration == 'undefined') ?  duration = 0 : duration = duration;
+                console.log(duration)
+                // let firstClick = slidePositionTopArray[idx];
+                // firstClick = duration == undefined ?  slidePositionTopArray[idx] : firstClick - tabHeight;
+                // $('html, body').stop().animate({'scrollTop': slidePositionTopArray[idx]-tabHeight}, duration);
+                $('html, body').stop().animate({'scrollTop': slidePositionTopArray[idx]}, duration);
             }
 
             // 탭 이동
@@ -940,20 +1273,45 @@
                 // $slides.eq(idx).triggerHandler('click');
             }
 
-            // 스파이슬라이드에 스크롤이 생길때 클래스 추가 및 탭 이동
-            $container.on('scroll', function(){
-                st = $container.scrollTop();
+            // 스크롤 스파이에 스크롤이 생길때 클래스 추가 및 탭 이동
+            // 스크롤 여역이 탭 위치에 왔을때 스크롤 이벤트 발생
+            $(window).on('scroll', function(){
+                let st = Math.ceil($(window).scrollTop())
                 for(var i = 0; i < slidePositionTopArray.length; i++){
-                    if(slidePositionTopArray[i+1] <= st + 50) {
-                        addClass(i+1);
-                        moveTab(i+1);
+                    // 0
+                    if(i==0 && slidePositionTopArray[1] > st){
+                        // addClass(0);
+                        // moveTab(0);
+                    }
+                    // length-1
+                    else if(slidePositionTopArray.length-1 == i && slidePositionTopArray[slidePositionTopArray.length-1] < st && slidePositionTopArray[slidePositionTopArray.length-1] + $slides.eq(slidePositionTopArray.length-1).outerHeight() > st){
+                        addClass(slidePositionTopArray.length-1);
+                        moveTab(slidePositionTopArray.length-1);
+                    }
+                    // 1 ~ length-1
+                    else if(slidePositionTopArray[i] <= st && slidePositionTopArray[i+1] > st) {
+                        addClass(i);
+                        moveTab(i);
+                    }
+                    // ~0
+                    else if(slidePositionTopArray[0] > st){
+                        addClass(0);
+                        moveTab(0);
                     }
                 }
+                console.log('scrollTop'+st)
             })
+            
             init();
         };
-        jsSpyScroll();
+        jsScrollSpy();
 
+
+        // ui.js 옮길 것 
+        $(window).on('scroll',function(){
+            jsFixed.scroll(st +48, $('.tab.swiper-container01'));
+        });
+    });
     </script>
 </body>
 </html>

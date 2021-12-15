@@ -569,7 +569,7 @@
                         <button type="button" class="btn-text"
                             data-call-layered="mys_as_13_00_00_p1"><u>외화편집</u></button><!-- 2021-08-05 수정 -->
                     </h4>
-                    <div class="swiper-container t01 js-swiper" data-swiper-options="exchangeSwiperOptions">
+                    <div class="swiper-container js-swiper" data-swiper-options="exchangeSwiperOptions"><!-- 2021-12-16 t01 삭제 -->
                         <script>
                             var exchangeSwiperOptions = {
                                 "slidesPerView": "auto",
@@ -628,24 +628,31 @@
                             </div>
                         </div>
                         <div class="swiper-pagination"></div>
-                    </div>
-                    <!-- [chart area] //-->
-                    <!--
-                                [차트 디자인 정보]
-                                * 그래프(라인) 색상(컬러별)
-                                - 갈색 : #ad7d43 ;  //2021-07-29 수정
-                                - 연회색 : #ebeef0 ;
-
-                                - 타이틀 : #26282c/14px
-                                - X축 텍스트 컬러/크기 : #26282c/14px
-								- data labels 텍스트 컬러/크기 : #26282c/14px
-                                - 추가설명 : #696e76/14px
-                                
-                            -->
+                    </div>  
+                    <!-- [chart area] 2021-12-16 그래프 수정//-->                 
+                    <div class="chart-tit">USD(미국 달러)실시간</div>
                     <div class="chart-area" id="">
                         <img class="temp" src="@@webRoot/static/images/_temp/chart_as1300_3.png" alt="차트 예시 이미지">
+                        
+                            <!--
+                                [차트 디자인 정보]
+                                * 그래프(라인) 색상(컬러별)
+                            
+                                - 패턴 : chartBg[01],
+                                - 연회색가로라인 : color : '#ebeef0',
+                                - y축 텍스트 컬러/크기 : #8c949e/13px,
+                                     fontFamily: "Roboto",
+                                - x축 텍스트 컬러/크기 : #26282c/13px,
+                                     fontFamily: "Roboto",
+                                - 세로점선라인 : color: '#c7cbd0',
+                                                dashStyle: 'dash',
+                                                width: 1,
+								- tooltip 마크업 
+                                    '<div style="color:#696e76;font-weight:normal;text-align:right">6월 10일<br>' + '<strong style="color:#26282c;font-size:1.5rem;font-weight:normal;" class="num">' + '1,106.87'+ '</strong>' + '</div>'
+                                
+                            -->
                     </div>
-                    <!--// [chart area] -->
+                    <!--// [chart area] 2021-12-16 그래프 수정 -->
                     <div class="graph-notice">
                         최신고시정보 : <span class="plus">96회차 17:03:34</span>
                     </div>
@@ -889,12 +896,12 @@
                     pointWidth: 6,  // 막대그래프 너비
                     borderRadiusTopLeft: "50%",  // radius 값
                     borderRadiusTopRight: "50%", // radius 값
-                    states: {
+                    /*states: {
                         hover: {
                             enabled: true,
                             color:chartBg[1],//'#ffba53' 패턴적용
                         },
-                    }
+                    }*///2021-12-16 수정
 
                 }
             },
@@ -903,7 +910,10 @@
                     name: "월 납입금액",
                     color: chartBg[33],//'#c6cbd0', 패턴적용
                     pointPlacement: 0,
-                    data: [3000, 5500, 4000, 2000, 9900, 3500]
+                    data: [3000, 5500, 4000, 2000, 9900, {
+                                y:3500,
+                                color: chartBg[01],
+                            }]//2021-12-16 수정
                     
                 }
             ],
@@ -977,12 +987,12 @@
                     pointWidth: 6,  // 막대그래프 너비
                     borderRadiusTopLeft: "50%",  // radius 값
                     borderRadiusTopRight: "50%", // radius 값
-                    states: {
+                    /*states: {
                         hover: {
                             enabled: true,
                             color:chartBg[1],//'#ffba53' 패턴적용
                         },
-                    }
+                    }*///2021-12-16 수정
 
                 }
             },
@@ -991,7 +1001,10 @@
                     name: "월 납입금액",
                     color: chartBg[33],//'#c6cbd0', 패턴적용
                     pointPlacement: 0,
-                    data: [3000, 5500, 4000, 2000, 9900, 3500]
+                    data: [3000, 5500, 4000, 2000, 9900, {
+                                y:3500,
+                                color: chartBg[01],
+                            }]//2021-12-16 수정
                     
                 }
             ],
@@ -1071,12 +1084,12 @@
                     pointWidth: 6,  // 막대그래프 너비
                     borderRadiusTopLeft: "50%",  // radius 값
                     borderRadiusTopRight: "50%", // radius 값
-                    states: {
+                    /*states: {
                         hover: {
                             enabled: true,
                             color:chartBg[1],//'#ffba53' 패턴적용
                         },
-                    }
+                    }*///2021-12-16 수정
 
                 }
             },
@@ -1085,7 +1098,10 @@
                     name: "월 납입금액",
                     color: chartBg[33],//'#c6cbd0', 패턴적용
                     pointPlacement: 0,
-                    data: [3000, 5500, 4000, 2000, 9900, 3500]
+                    data: [3000, 5500, 4000, 2000, 9900, {
+                                y:3500,
+                                color: chartBg[01],
+                            }]//2021-12-16 수정
                     
                 }
             ],

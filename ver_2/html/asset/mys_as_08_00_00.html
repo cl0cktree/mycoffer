@@ -197,8 +197,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="balance">누적 납입 금액 <em class="amount"><b class="num"
-                                                    data-unit-after="원">3,000,000</b></em></div>
+                                        <div class="balance">월 납입 보험료<em class="amount"><b class="num"
+                                                    data-unit-after="원">3,000,000</b></em></div><!-- 2021-12-15 수정 -->
 
                                     </a>
                                     <!-- 그래프 // -->
@@ -231,8 +231,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="balance">누적 납입 금액 <em class="amount"><b class="num"
-                                                    data-unit-before="USD">2,256.62</b></em></div>
+                                        <div class="balance">월 납입 보험료<em class="amount"><b class="num"
+                                                    data-unit-before="USD">2,256.62</b></em></div><!-- 2021-12-15 수정 -->
                                         <div class="balance exchange">원화환산액 <em class="amount"><b class="num"
                                                     data-unit-after="원">3,000,000</b></em></div>
                                     </a>
@@ -280,7 +280,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="balance">누적 납입 금액 <em class="amount"><b class="num"
+                                        <div class="balance">월 납입 보험료<em class="amount"><b class="num"
                                                     data-unit-after="원">3,000,000</b></em></div>
 
                                     </a>
@@ -314,7 +314,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="balance">누적 납입 금액 <em class="amount"><b class="num"
+                                        <div class="balance">월 납입 보험료<em class="amount"><b class="num"
                                                     data-unit-after="원">3,000,000</b></em></div>
 
                                     </a>
@@ -359,7 +359,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="balance">누적 납입 금액 <em class="amount"><b class="num"
+                                        <div class="balance">납입 보험료<em class="amount"><b class="num"
                                                     data-unit-after="원">3,000,000</b></em></div>
 
                                     </a>
@@ -433,7 +433,7 @@
                                                 <span class="account num">1234-5678-1234</span>
                                             </div>
                                         </div>
-                                        <div class="balance">누적 납입 금액 <em class="amount"><b class="num"
+                                        <div class="balance">월 납입 보험료<em class="amount"><b class="num"
                                                     data-unit-after="원">3,000,000</b></em></div>
                                     </a>
                                     <!--그래프영역//-->
@@ -461,7 +461,7 @@
                                                 <span class="account num">1234-5678-1234</span>
                                             </div>
                                         </div>
-                                        <div class="balance">누적 납입 금액 <em class="amount"><b class="num"
+                                        <div class="balance">월 납입 보험료<em class="amount"><b class="num"
                                                     data-unit-after="원">3,000,000</b></em></div>
                                     </a>
                                     <!--그래프영역//-->
@@ -489,7 +489,7 @@
                                                 <span class="account num">1234-5678-1234</span>
                                             </div>
                                         </div>
-                                        <div class="balance">누적 납입 금액 <em class="amount"><b class="num"
+                                        <div class="balance">월 납입 보험료<em class="amount"><b class="num"
                                                     data-unit-before="USD">2,256.62</b></em></div>
                                         <div class="balance exchange">원화환산액 <em class="amount"><b class="num"
                                                     data-unit-after="원">3,000,000</b></em></div>
@@ -556,7 +556,7 @@
                                                 <span class="account num">1234-5678-1234</span>
                                             </div>
                                         </div>
-                                        <div class="balance">누적 납입 금액 <em class="amount"><b class="num"
+                                        <div class="balance">월 납입 보험료<em class="amount"><b class="num"
                                                     data-unit-after="원">3,000,000</b></em></div>
                                     </a>
                                     <!--그래프영역//-->
@@ -1024,12 +1024,12 @@
                     pointWidth: 6,  // 막대그래프 너비
                     borderRadiusTopLeft: "50%",  // radius 값
                     borderRadiusTopRight: "50%", // radius 값
-                    states: {
+                    /*states: {
                         hover: {
                             enabled: true,
                             color: chartBg[1],//'#ffba53' 패턴적용
                         },
-                    }
+                    }*///2021-12-16 수정
 
                 }
             },
@@ -1038,7 +1038,15 @@
                     name: "월 납입금액",
                     color: chartBg[33],//'#c6cbd0', 패턴적용
                     pointPlacement: 0,
-                    data: [30000, 55000, 40000, 20000, 99000, 35000]
+                    data: [30000, 
+                            55000, 
+                            40000, 
+                            20000, 
+                            99000, 
+                            {
+                                y:35000,
+                                color: chartBg[01],
+                            }]//2021-12-16 수정
                     
                 }
             ],
@@ -1122,12 +1130,12 @@
                     pointWidth: 6,  // 막대그래프 너비
                     borderRadiusTopLeft: "50%",  // radius 값
                     borderRadiusTopRight: "50%", // radius 값
-                    states: {
+                    /*states: {
                         hover: {
                             enabled: true,
                             color: chartBg[1],//'#ffba53' 패턴적용
                         },
-                    }
+                    }*///2021-12-16 수정
 
                 }
             },
@@ -1136,7 +1144,11 @@
                     name: "월 납입금액",
                     color: chartBg[33],//'#c6cbd0', 패턴적용
                     pointPlacement: 0,
-                    data: [30000, 55000, 40000, 20000, 99000, 35000]
+                    data: [30000, 55000, 40000, 20000, 99000, 
+                            {
+                                y:35000,
+                                color: chartBg[01],
+                            }]//2021-12-16 수정
                     
                 }
             ],
@@ -1225,12 +1237,12 @@
                     pointWidth: 6,  // 막대그래프 너비
                     borderRadiusTopLeft: "50%",  // radius 값
                     borderRadiusTopRight: "50%", // radius 값
-                    states: {
+                    /*states: {
                         hover: {
                             enabled: true,
                             color: chartBg[1],//'#ffba53' 패턴적용
                         },
-                    }
+                    }*///2021-12-16 수정
 
                 }
             },
@@ -1239,7 +1251,11 @@
                     name: "월 납입금액",
                     color: chartBg[33],//'#c6cbd0', 패턴적용
                     pointPlacement: 0,
-                    data: [30000, 55000, 40000, 20000, 99000, 35000]
+                    data: [30000, 55000, 40000, 20000, 99000, 
+                            {
+                                y:35000,
+                                color: chartBg[01],
+                            }]//2021-12-16 수정
                     
                 }
             ],

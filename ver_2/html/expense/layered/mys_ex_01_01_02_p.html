@@ -145,13 +145,35 @@
                         <p class="info-msg">가맹점명&sol;받는분 입력 시 한글 또는 영문 2자 이상 입력해주세요.</p> <!-- 수정:2021-10-19 --><!-- 안내 문구 c-red 폰트 컬러 삭제 (span) -->
                     </div>
                     <!--// 가맹점명/받는분 -->
+                    
+                    <!-- 수정:2021-12-15 -->
+                    <!-- 영역 추가 -->
+                    <!-- 체크카드/입출금통장 //-->
+                    <div class="kb-form" data-status="">
+                        <strong class="label-tit">체크카드&sol;입출금통장</strong>
+                        <div>
+                            <ul class="btn-segmented_check">
+                                <li>
+                                    <input type="radio" name="payMethodRadio" id="payMethod01" checked>
+                                    <label for="payMethod01">중복없이 보기</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="payMethod" id="payMethod02">
+                                    <label for="payMethod02">모두 보기</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <p class="info-msg">체크카드로 결제 시, 입출금 통장 출금이 발생하여 동일한 내역이 중복하여 조회될 수 있습니다. 이를 원하지 않을 경우 ‘중복 없이 보기’를 선택해 주세요.</p>
+                    </div>
+                    <!--// 체크카드/입출금통장 -->
                 </div>
             </div>
         </section>
     </div>
     <div class="bottom-sheet_buttons">
-        <button class="btn-solid gray" data-action="close"><span>취소</span></button>
-        <button class="btn-solid"><span>확인</span></button>
+        <!-- 수정:2021-12-15 -->
+        <!-- 취소 버튼 삭제, 확인 -> 조회 로 텍스트 변경 -->
+        <button class="btn-solid"><span>조회</span></button>
     </div>
     <button class="btn-close" data-action="close"><span>닫기</span></button>
 </div>

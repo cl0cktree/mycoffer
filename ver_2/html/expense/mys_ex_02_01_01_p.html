@@ -29,41 +29,45 @@
                 </section>
                 <!-- //타이틀 -->
                 <!-- 관리 중인 서비스//-->
-                <!-- [D] 2021-09-06 수정 : 내역 없을 떄 및 하단 플로팅 버튼 추가 수정 //-->
-                <section class="kb-sec services-management mt48">
-                    <h4 class="h4">관리 중인 서비스</h4>
+                
+                <!-- 수정:2021-12-15 -->
+                <!-- 정기지출항목 목록 마크업 수정 //-->
+                <section class="kb-sec services-management mf_v01">
                     <div class="services-management-list">
-                        <div>
-                            <span class="icon-type-img"><img src="@@webRoot/static/images/expense/icon-living.png" alt=""></span><!-- [D] 2021-09-01 수정 : 아이콘 변경 //-->
-                            <dl>
-                                <dt><strong>생활서비스</strong></dt>
-                                <dd>
-                                    <!-- [D] 2021-08-31 수정 : 각 tag-label의 data-state 삭제 -->
-                                    <div class="tag-list">
-                                        <a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" class="tag-label t02">통신요금</a>
-                                        <a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" class="tag-label t02">아파트 관리비</a>
-                                        <a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" class="tag-label t02">도시가스</a>
-                                    </div>
-                                    <!--// [D] 2021-08-31 수정 : 각 tag-label의 data-state 삭제 -->
-                                </dd>
-                            </dl>
-                        </div>
-                        <div>
-                            <span class="icon-type-img"><img src="@@webRoot/static/images/expense/icon-calendar.png" alt=""></span><!-- [D] 2021-09-01 수정 : 아이콘 변경 //-->
-                            <dl>
-                                <dt><strong>구독 서비스</strong></dt>
-                                <dd>
-                                    <!-- [D] 2021-08-31 수정 : 각 tag-label의 data-state 삭제 //-->
-                                    <div class="tag-list">
-                                        <a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" class="tag-label t02">월세</a>
-                                        <a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" class="tag-label t02">VOD/음원</a>
-                                        <a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html" class="tag-label t02">렌탈</a>
-                                    </div>
-                                    <!--// [D] 2021-08-31 수정 : 각 tag-label의 data-state 삭제 -->
-                                </dd>
-                            </dl>
-                        </div>
+                        <dl>
+                            <dt>
+                                <strong><span class="icon-type-img"><img src="@@webRoot/static/images/expense/icon-living.png" alt=""></span>생활 서비스</strong>
+                                <button type="button" class="link-arrow-after" data-call-layered="bsSelectRegularExpenseList">항목추가</button>
+                            </dt>
+                            <dd>
+                                <ul data-style="list">
+                                    <li><a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html">4대보험 <span>(받지못할내월급10%)</span></a></li>
+                                    <li><a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html">관리비 <span>(이름뿐인 내 대출집)</span></a></li>
+                                    <li><a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html">공과금 <span>(물좀아끼지않을래?)</span></a></li>
+                                    <li><a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html">기부금 <span>(북극곰살리기ㅜ)</span></a></li>
+                                    <li><a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html">저축</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
                     </div>
+                    <div class="services-management-list">
+                        <dl>
+                            <dt>
+                                <strong><span class="icon-type-img"><img src="@@webRoot/static/images/expense/icon-calendar.png" alt=""></span>구독 서비스</strong>
+                                <a href="" class="link-arrow-after">항목추가</a>
+                            </dt>
+                            <dd>
+                                <ul data-style="list">
+                                    <li><a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html">VOD/음원 <span>(멜론)</span></a></li>
+                                    <li><a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html">VOD/음원 <span>(스포티파이)</span></a></li>
+                                    <li><a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html">온라인쇼핑</a></li>
+                                    <li><a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html">정기배송 <span>(꾸까)</span></a></li>
+                                    <li><a href="@@webRoot/html/expense/mys_ex_02_01_04_p.html">VOD/음원 </a><span>(넷플릭스)</span></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
+                    
                     <!-- [D] 내역이 없을 때 //-->
                     <h3 class="h1">관리중인 항목이 없습니다.</h3>
                     <p class="mt12">매 월, 정기적으로 나가는 지출을 관리해보세요.</p> <!-- [D] 2021-08-31 수정 : 클래스 수정 -->
@@ -72,14 +76,14 @@
                         <strong class="no-data-tit">내역이 존재하지 않습니다.</strong>
                     </div>
                     <!--// [D] 내역이 없을 때 -->
-                    <div class="btn-area mt48">
-                        <button type="button" class="btn-line" data-call-layered="bsSelectRegularExpenseList"><span>정기지출 항목 추가</span></button>
-                    </div>
+                    <!-- 수정:2021-12-15 --><!-- 정기지출항목 추가하기 버튼 삭제 -->
                 </section>
+                <!-- 정기지출항목 목록 마크업 수정 //-->
+
                 <!--// [D] 2021-09-06 수정 : 내역 없을 떄 및 하단 플로팅 버튼 추가 수정 -->
                 <div class="sticky-bottom">
                     <div class="btn-area">
-                        <a href="@@webRoot/html/expense/mys_ex_02_02_00.html" role="button" class="btn-solid"><span>정기지출 직접등록</span></a>
+                        <a href="@@webRoot/html/expense/mys_ex_02_02_00.html" role="button" class="btn-solid"><span>직접등록</span></a><!-- 수정:2021-12-15 --><!-- 버튼명 텍스트 수정 -->
                     </div>
                 </div>
             </main>
@@ -90,8 +94,8 @@
 
         <!-- Layer (modal, bottom sheet) // -->
         <div class="layered">
-            @@include('@@webRoot/html/expense/layered/mys_ex_02_01_02_p.html')
-            <!-- @@include('@@webRoot/html/expense/layered/mys_ex_02_01_07_p.html') -->
+            <!-- 수정:2021-12-15 --><!-- 불러오기 팝업 교체 -->
+            @@include('@@webRoot/html/expense/layered/mys_ex_02_01_07_p.html')
         </div>
         <!-- // Layer (modal, bottom sheet) -->
     </div>

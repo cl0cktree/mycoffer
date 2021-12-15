@@ -189,6 +189,17 @@
 .expense-home .kb-sec.dividing-space-bottom{margin-bottom:3.2rem;padding-bottom:4.2rem}  // 211122 : expense-home 영역간 padding 조정
 .agree-to-provide-information .agree-group+.agree-group{margin-top:4.8rem}
 
+// mf_v01 (modified version 01) // 211215 : 지출 홈 UI 수정
+.expense-home.mf_v01 .link-to-asset{padding-bottom:3.2rem}
+.expense-home.mf_v01 .monthly-expense-guide .content-box{padding-bottom:2.7rem}
+.expense-home.mf_v01 .monthly-expense-guide .btn-refresh{margin-left:0.6rem;vertical-align:text-bottom}
+.expense-home.mf_v01 .monthly-expense-guide .highcharts-figure .legend-unit{text-align:center}
+.expense-home.mf_v01 .monthly-expense-guide .highcharts-figure .legend-unit .basic,
+.expense-home.mf_v01 .monthly-expense-guide .highcharts-figure .legend-unit .btn-text{display:inline-block}
+.expense-home.mf_v01 .monthly-expense-guide .highcharts-figure .legend-unit .basic + .btn-text{margin-left:0.8rem}
+.expense-home.mf_v01 .monthly-expense-guide .highcharts-figure .legend-unit .btn-text u{color:$kb-ui11;font-size:1.4rem;vertical-align:text-bottom;}
+.expense-home.mf_v01 .monthly-expense-guide + .goals-challenge{margin-top:3.3rem}
+
 /* 제3자정보제공동의 */
 .agree-group + .agree-group{margin-top:1.5rem}
 .agree-group .h4{display:block;padding-bottom:1.5rem;border-bottom:1px solid $kb-ui03}
@@ -399,13 +410,14 @@
 // 필터설정 > 기간/유형
 .filter-period-setting .kb-form{margin-top:1.5rem}
 .filter-period-setting .checkbox-group{margin-top:4px}
+.expense-layered .filter-period-setting .checkbox-group li:last-child .form-checkbox{margin-right:0} // 211215 : margin 수정
 .filter-category-setting .arrange-amount{margin-top:2rem}
-.filter-category-setting .arrange-amount + div{margin-top:2.7rem}
+.filter-category-setting .arrange-amount ~ div{margin-top:2.5rem} // 211215 : margin 수정
 .filter-category-setting .st-list .form-checkbox_20 label{font-size:16px}
 .filter-category-setting .accordion dt.is-active .form-checkbox input + label{font-weight:bold}
 .filter-category-setting .kb-form_inner.form-text{padding-top:0}
 .filter-category-setting .checkbox-group:not(ul) span[class*="form-checkbox"]{min-height:auto}
-// 숨긴 지출 보기
+// 숨긴 지출 보기 
 .view-hidden-expense .list-controls{margin-top:4rem;margin-bottom:2rem}
 .view-hidden-expense .credit-list dt .info + .tit{margin-top:1rem}
 .view-hidden-expense .credit-list dt .tag{margin-top:0.5rem;line-height:1.437}
@@ -429,7 +441,7 @@
 .tit-area_icon-bg .btn-line + .btn-line{margin-left:10px}
 // 211122 : 정기지출 리스트 관련 선택자 수정
 .regulaer-expense-layered .tit-area_icon-bg ~ .kb-sec{padding-bottom:10px;margin-bottom:44px;}
-.regulaer-expense-layered .tit-area_icon-bg ~ .kb-sec h4{padding-bottom:12px;text-indent:2px;border-bottom:1px solid $kb-ui07;}
+.regulaer-expense-layered .tit-area_icon-bg ~ .kb-sec h4:not(.type-icon){padding-bottom:12px;text-indent:2px;border-bottom:1px solid $kb-ui07;} // 211215 : 선택자 수정
 .regulaer-expense-layered .tit-area_icon-bg ~ .kb-sec:after{height:1px;}
 .regulaer-expense-layered .tit-area_icon-bg ~ .kb-sec .h4 + dl{margin-top:8px;}
 .regulaer-expense-layered .tit-area_icon-bg ~ .kb-sec .description-list dt{margin:5px 0}
@@ -461,6 +473,7 @@
 .regular-expense-trend .tab_contents > div input{z-index:10;background:transparent} // 211206 : touch 영역 조정
 .regular-expense-trend .kb-form.select-bs{margin-top:14px}
 .regular-expense-trend div + .content-box{margin-top:26px}
+.regular-expense-trend .rank-list dt:first-child{border-top-color:$kb-ui07} // 211215 : border-color 변경
 .trendy-service{text-align:center;padding:0}
 .rising-service{padding-top:0;padding-bottom:0;border-radius:0.2rem}
 //Lollipop
@@ -545,6 +558,26 @@
 .services-management-list dd{margin-top:0.7rem}
 .services-management-list dd ul{display:flex;flex-wrap:wrap}
 .services-management-list dd ul li{margin-bottom:8px;margin-right:8px}
+
+
+// 정기지출 항목 설정 mfv01(modified version 01) // 211215 : 디자인 변경으로 인한 수정
+.services-management.mf_v01{margin-top:4rem}
+.services-management.mf_v01 [class*="icon-box"]{margin-right:8px}
+.services-management.mf_v01 .services-management-list{margin:0;padding:2rem;border:1px solid $kb-ui08;border-radius:0.8rem}
+.services-management.mf_v01 .services-management-list dl{flex:none}
+.services-management.mf_v01 .services-management-list dt{@include flexBetween}
+.services-management.mf_v01 .services-management-list dt span,
+.services-management.mf_v01 .services-management-list dt .icon-type-img{display:inline-block;margin-right:0.7rem}
+.services-management.mf_v01 .services-management-list dt strong{padding:0;font-size:1.6rem;font-weight:bold}
+.services-management.mf_v01 .services-management-list dt .link-arrow-after{padding-right:2rem;color:$kb-ui04}
+.services-management.mf_v01 .services-management-list dd{margin:0}
+.services-management.mf_v01 .services-management-list dd ul{display:block;margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid $kb-ui08}
+.services-management.mf_v01 .services-management-list dd ul li{font-size:1.6rem}
+.services-management.mf_v01 .services-management-list dd ul li:last-child{margin-bottom:0}
+.services-management.mf_v01 .services-management-list dd ul li span{font-size:1.4rem;color:$kb-ui06}
+.services-management.mf_v01 .services-management-list ~ div,
+.services-management.mf_v01 .services-management-list ~ h3{margin-top:1.6rem}
+// 정기지출 항목 선택
 .select-regular-expense-list .accordion + .accordion{margin-top:-1px;}
 .select-regular-expense-list .accordion{border-bottom:0;}
 .select-regular-expense-list .accordion > dt{border:0;background:$kb-ui10;margin-left:-2.4rem;margin-right:-2.4rem;padding-left:2.4rem;padding-right:2.4rem;margin-top:10px;}

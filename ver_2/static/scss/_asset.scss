@@ -715,11 +715,12 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .exchange-Rate .swiper-slide .tit{font-size:14px;color:$kb-ui04;}
 .my-asset .exchange-Rate .swiper-slide .num{color:$kb-ui02;}
 .my-asset .exchange-Rate .chart-area{margin-right:24px;}
+.my-asset .exchange-Rate .chart-tit + .chart-area{margin-top:0;}//타이틀 추가
 .my-asset.foreign-currency .recommend-prod{border-bottom:none;padding-bottom:0;}//하단 여백 수정 2021-10-14 kek
 .my-asset .exchange-Rate .icon-con img{width:24px;height:24px;}
-.my-asset .exchange-Rate .graph-notice{@include text($size:14px);color:$kb-ui04;text-align:right;margin-top:1rem;padding-right: 2.4rem;}
+.my-asset .exchange-Rate .graph-notice{@include text($size:14px);color:$kb-ui04;text-align:right;margin-top:20px;padding-right: 2.4rem;}//여백수정
 .my-asset .exchange-Rate .graph-notice .plus{color:$color-blue;}
-
+.my-asset .exchange-Rate .chart-tit{@include text($size:16px);padding:20px 0 6px;border-bottom:1px solid $kb-ui07;margin-right:24px;margin-bottom:20px;}//타이틀 추가
 /*포트폴리오 분석*/
 .my-asset.recommend-portfolio .maturity-top {padding-top: 20px; padding-bottom: 20px; margin-bottom: 40px; font-size: 16px; color: $kb-ui03;}
 .my-asset.recommend-portfolio .maturity-prod-lists {margin-bottom: 48px;}
@@ -1047,6 +1048,8 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset.house .asset-summary .btn-segmented + .top-area{margin-top:4.8rem;}
 // .my-asset.house .asset-summary .graph-area{padding-bottom:0;}
 
+
+
 .realty-index .btn-area{margin-bottom:20px;}
 .my-asset .my-address-list{margin-top:40px;}
 .my-asset .my-address-list > ul{padding:0;border-top:1px solid $kb-ui07;margin-top:1.6rem;}
@@ -1303,6 +1306,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset.house-view .other-conditions .btn-more-plus{display:block;text-align:center;width:100%;padding:3.6rem 0 0;margin-top:2rem;border-top:1px solid $kb-ui09;height:auto;} // 높이값 추가
 .my-asset.house-view .other-expenses{padding-top:2.4rem;padding-bottom:3.8rem;}
 .my-asset.house-view .other-expenses .h4{margin-bottom:12px;}
+.my-asset.house-view .other-expenses + .hr-divide_48{margin:1rem 0 3.6rem;}
 .my-asset .liiv-banner{margin-top:4rem} // 배너 간격 수정
 .my-asset .liiv-banner + .liiv-banner{margin-top:3.2rem;} // 배너간 간격 수정
 .my-asset .liiv-banner button,
@@ -1599,7 +1603,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .btn-segmented_radio.type2 label{font-size:1.5rem;height:3.8rem;line-height:3.2rem;font-weight:bold;color:$kb-ui04;border:3px solid $kb-ui09;background-color:$kb-ui09;border-radius:0;}
 .my-asset .btn-segmented_radio.type2 input:checked + label{background:$kb-ui11;color:$kb-ui02;}
 .my-asset .btn-segmented_radio.type2 input:checked + label:after{border:none;}
-.my-asset .loan-detail{margin-top:2.4rem;border-top:1px solid $kb-ui07;border-bottom:1px solid $kb-ui09;padding:.7rem 0;}
+.my-asset .loan-detail{margin-top:2.4rem;border-top:1px solid $kb-ui07;padding:.7rem 0;}
 .my-asset .loan-detail + .loan-detail{margin-top:-1px;border-top:1px solid $kb-ui09;}
 .my-asset .loan-detail .description-list dd, .my-asset.house-view .description-list dt{margin:1rem 0;}
 .my-asset .loan-detail .description-list dd.amount .ellipsis{@include ellipsis($width:20rem);}
@@ -1659,6 +1663,18 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .asset-tabUnit .btn-segmented button{letter-spacing:-.1rem;@include ellipsis($width:100%)}
 .asset-tabUnit .btn-segmented button.is-selected{font-weight:bold;}
 .asset-tabUnit + .house-data-list{margin-top:-2rem}
+
+// 2021-12-15 이후 수정: hbk 
+.my-asset.dec15 .spendLink{position:relative;padding:3rem 2.4rem 0;}
+.my-asset.dec15 .spendLink i{position:absolute;}
+.my-asset.dec15 .spendLink em{color:$color-blue}
+.my-asset.dec15 .spendLink button{display:flex;justify-content:space-between;align-items:center;padding-left:4.4rem;height:3.2rem;width:100%;}
+.my-asset.dec15 .select-account + .spendLink{padding:0 2.4rem;margin-top:-1.8rem;}
+.my-asset.dec15 .spendLink.type2{padding:4.8rem 2.4rem 0;}
+.my-asset.dec15 .select-account + .spendLink.type2{padding:0 2.4rem;margin-top:-1.8rem;}
+.my-asset.dec15.house-view.my .spendLink{padding:1.2rem 2.4rem 0;}
+.my-asset.dec15.house .spendLink{padding:4.8rem 2.4rem;}
+.my-asset.dec15 .loan-detail{margin-top:2.4rem;border-top:1px solid $kb-ui07;padding:.7rem 0;}
 
 
 // 펀드케어 서비스

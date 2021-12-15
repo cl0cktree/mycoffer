@@ -30,9 +30,18 @@
             </div>
             <!-- //app-lnb -->
             <!-- app-content // -->
-            <main class="app-content expense-home">
+            <main class="app-content expense-home mf_v01"><!-- 수정:2021-12-15 --><!-- 버전 클래스 추가 : mf_v01 -->
+                <!-- 수정:2021-12-15 -->
+                <!-- 위치 이동, 디바이드(회색줄) 삭제, 아이콘 변경 -->
+                <!-- 자산 연결 영역 //-->
+                <section class="kb-sec link-to-asset">
+                    <a href="@@webRoot/html/menu/mys_mn_01_01_03.html" role="button" class="link-box_block link-arrow-after">
+                        <i class="icon-finance-link"></i><span>관리하고 싶은 내 자산 연결하기</span>
+                    </a>
+                </section>
+                <!--// 자산 연결 영역 -->
                 <!-- 지출 요약 영역 //-->
-                <section class="kb-sec monthly-expense-guide dividing-space-bottom">
+                <section class="kb-sec monthly-expense-guide"> <!-- 수정:2021-12-15 --><!-- 클래스 제거 : dividing-space-bottom -->
                     <!-- 수정:2021-11-15 -->
                     <!-- a 링크 제거 -->
                     <div class="content-box no-shadow">
@@ -44,115 +53,37 @@
                                     <a href="@@webRoot/html/expense/mys_ex_01_00_00.html" class="link-box_block chart-tit">
                                         <h4 class="h4">
                                             <span class="link-arrow-after"><strong>김국민</strong>님의 월간지출추이</span><!-- 수정:2021-11-23 --><!-- 마크업 수정 : span.link-arrow-after -->
-                                            <span class="date num">(2021.08.01 ~ 2021.08.10)</span>
+                                            <!-- 수정:2021-12-15 --><!-- 기간 삭제 -->
                                         </h4>
                                     </a>
                                     <!-- [chart area] //-->
                                     <div class="chart-area" id="">
+                                        <!-- 수정:2021-12-15 --><!-- 차트 높이 수정 : 160 -> 100 -->
                                         <img class="temp" src="../../static/images/_temp/chart_ex0410.png" alt="차트 예시 이미지">
                                     </div>
                                     <div class="legend-unit">
-                                        <span class="basic" data-type="dash">월평균지출금액 <em class="num" data-unit-after="원">3,200,000</em></span>
+                                        <span class="basic" data-type="dash">월평균지출금액 <em class="num" data-unit-after="원">3,200,000</em><button type="button" class="btn-refresh"><i class="icon-refresh_wh"></i></button></span>
+                                        <button class="btn-text error-msg"><u>실패</u></button>
                                     </div>
                                     <!--// [chart area] -->
                                 </figure>
                             </div>
                         </div>
                     </div>
-                    <div class="chart-update-info">
-                        <span>최근접속일 : <em class="num">2021.10.30 16:48</em><button type="button" class="btn-refresh"><i class="icon-refresh"></i></button></span>
-                        <p class="error-msg"><button class="btn-text"><u>연동오류 (4)</u></button></p>
-                    </div>
-                    <!-- </a> -->
-                    <div class="notice-group flex-box"> <!-- 수정:2021-11-15 --><!-- 클래스 제거 (mt24) -->
-                        <div class="notice-item">
-                            <strong class="h4">지출가이드</strong>
-                            <p class="desc">오늘까지<strong><em class="num" data-unit-after="원">2,300,000</em> </strong>지출했어요</p>
-                            <div class="amount" data-value="up">
-                                <span>추천지출금액보다</span>
-                                <strong><em class="num" data-unit-after="원">20,000,000</em></strong><!-- 수정:2021-10-19 --><!-- 지출 가이드 금액 추가 -->
-                            </div>
-                        </div>
-                        <div class="notice-item">
-                            <strong class="h4">카테고리 분석</strong>
-                            <p class="desc">지출이<br>가장많은<strong>주거&sol;공과금</strong></p>
-                            <div class="amount">
-                                <span>지출금액</span>
-                                <strong><em class="num" data-unit-after="원">200,000</em></strong>
-                            </div>
-                        </div>
-                    </div>
+
+                    <!-- 수정:2021-12-15 -->
+                    <!-- 최근접속일 영역 삭제, 새로고침 및 연동오류 에러 확인 버튼 위치 이동 -->
+                    <!-- 지출가이드 및 카테고리 분석 영역 삭제 -->
                 </section>
                 <!--// 지출 요약 영역 -->
-                <!-- 다가오는 정기지출 //-->
-                <section class="kb-sec full swiper-card-list dividing-space-bottom">
-                    <div class="flex-box">
-                        <a href="mys_ex_02_00_00.html" class="link-box_block link-arrow-after">
-                            <strong class="h4">다가오는 정기지출 </strong>
-                        </a>
-                    </div>
-                    <div class="swiper-container t01 js-swiper" data-swiper-options="cardListSwiperOptions">
-                        <script>
-                            var cardListSwiperOptions = {
-                                "spaceBetween": 8,
-                                "pagination": {
-                                    "el": ".swiper-pagination"
-                                }
-                            };
-                        </script>
-                        <!-- [D] 2021-08-31 수정 : 아이콘 수정 //-->
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide card-item">
-                                <span class="tag-label t03 round" data-state="today">오늘</span><span class="tag-label t03 round" data-state="less">잔액부족</span><!-- 수정:2021-10-08 --><!-- tag-label 추가 -->
-                                <strong class="card-tit"><span class="icon-type-img"><img src="@@webRoot/static/images/expense/icon-tele-fee.png" alt=""></span>통신비-SKT</strong>
-                                <dl>
-                                    <dt>예정금액</dt>
-                                    <dd><em class="num" data-unit-after="원">234,000</em></dd>
-                                </dl>
-                            </div>
-                            <div class="swiper-slide card-item">
-                                <span class="tag-label t03 round" data-state="today">오늘</span>
-                                <strong class="card-tit"><span class="icon-type-img"><img src="@@webRoot/static/images/expense/icon-tele-fee.png" alt=""></span>통신비-SKT</strong>
-                                <dl>
-                                    <dt>예정금액1</dt>
-                                    <dd><em class="num" data-unit-after="원">234,000</em></dd>
-                                </dl>
-                            </div>
-                            <div class="swiper-slide card-item">
-                                <span class="tag-label t03 round" data-state="today">오늘</span>
-                                <strong class="card-tit"><span class="icon-type-img"><img src="@@webRoot/static/images/expense/icon-tele-fee.png" alt=""></span>통신비-SKT</strong>
-                                <dl>
-                                    <dt>예정금액2</dt>
-                                    <dd><em class="num" data-unit-after="원">234,000</em></dd>
-                                </dl>
-                            </div>
-                            <div class="swiper-slide card-item">
-                                <span class="tag-label t03 round" data-state="today">오늘</span>
-                                <strong class="card-tit"><span class="icon-type-img"><img src="@@webRoot/static/images/expense/icon-tele-fee.png" alt=""></span>통신비-SKT</strong>
-                                <dl>
-                                    <dt>예정금액3</dt>
-                                    <dd><em class="num" data-unit-after="원">234,000</em></dd>
-                                </dl>
-                            </div>
-                            <div class="swiper-slide card-item">
-                                <span class="tag-label t03 round" data-state="today">오늘</span>
-                                <strong class="card-tit"><span class="icon-type-img"><img src="@@webRoot/static/images/expense/icon-tele-fee.png" alt=""></span>통신비-SKT</strong>
-                                <dl>
-                                    <dt>예정금액4</dt>
-                                    <dd><em class="num" data-unit-after="원">234,000</em></dd>
-                                </dl>
-                            </div>
-                        </div>
-                        <!--// [D] 2021-08-31 수정 : 아이콘 수정 -->
-                        <div class="swiper-pagination"></div>
-                    </div>
-                </section>
-                <!--// 다가오는 정기지출 -->
 
-                <!-- 수정:2021-10-26 -->
-                <!-- 추천 챌린지 영역 수정 (추천 챌린지 -> 인기 챌린지) -->
+                <!-- 수정:2021-12-15 -->
+                <!-- 인기 챌린지 영역 위치 이동 -->
+
                 <!-- 수정:2021-11-01 -->
                 <!-- 챌린지 카드 순서 및 내용 재배치, 각 카드 내부 도전자 영역 삭제, link 관련 마크업 수정 및 페이지 연결 //-->
+                <!-- 수정:2021-10-26 -->
+                <!-- 추천 챌린지 영역 수정 (추천 챌린지 -> 인기 챌린지) -->
                 <!-- 인기 챌린지// -->
                 <section class="kb-sec goals-challenge dividing-space-bottom"><!-- 수정:2021-11-01 --><!-- 구분선 class 추가 -->
                     <div class="flex-box">
@@ -242,6 +173,74 @@
                 </section>
                 <!-- //인기 챌린지 -->
                 <!--// 챌린지 카드 순서 및 내용 재배치, 각 카드 내부 도전자 영역 삭제, link 관련 마크업 수정 및 페이지 연결 -->
+
+
+                <!-- 다가오는 정기지출 //-->
+                <section class="kb-sec full swiper-card-list dividing-space-bottom">
+                    <div class="flex-box">
+                        <a href="mys_ex_02_00_00.html" class="link-box_block link-arrow-after">
+                            <strong class="h4">다가오는 정기지출 </strong>
+                        </a>
+                    </div>
+                    <div class="swiper-container t01 js-swiper" data-swiper-options="cardListSwiperOptions">
+                        <script>
+                            var cardListSwiperOptions = {
+                                "spaceBetween": 8,
+                                "pagination": {
+                                    "el": ".swiper-pagination"
+                                }
+                            };
+                        </script>
+                        <!-- [D] 2021-08-31 수정 : 아이콘 수정 //-->
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide card-item">
+                                <!-- 수정:2021-12-15 --><!-- tag-label 텍스트 수정 (data-state="less"일 때, '결제금액부족') -->
+                                <!-- 수정:2021-10-08 --><!-- tag-label 추가 -->
+                                <span class="tag-label t03 round" data-state="today">오늘</span><span class="tag-label t03 round" data-state="less">결제금액부족</span>
+                                <strong class="card-tit"><span class="icon-type-img"><img src="@@webRoot/static/images/expense/icon-tele-fee.png" alt=""></span>통신비-SKT</strong>
+                                <dl>
+                                    <dt>예정금액</dt>
+                                    <dd><em class="num" data-unit-after="원">234,000</em></dd>
+                                </dl>
+                            </div>
+                            <div class="swiper-slide card-item">
+                                <span class="tag-label t03 round" data-state="today">오늘</span>
+                                <strong class="card-tit"><span class="icon-type-img"><img src="@@webRoot/static/images/expense/icon-tele-fee.png" alt=""></span>통신비-SKT</strong>
+                                <dl>
+                                    <dt>예정금액1</dt>
+                                    <dd><em class="num" data-unit-after="원">234,000</em></dd>
+                                </dl>
+                            </div>
+                            <div class="swiper-slide card-item">
+                                <span class="tag-label t03 round" data-state="today">오늘</span>
+                                <strong class="card-tit"><span class="icon-type-img"><img src="@@webRoot/static/images/expense/icon-tele-fee.png" alt=""></span>통신비-SKT</strong>
+                                <dl>
+                                    <dt>예정금액2</dt>
+                                    <dd><em class="num" data-unit-after="원">234,000</em></dd>
+                                </dl>
+                            </div>
+                            <div class="swiper-slide card-item">
+                                <span class="tag-label t03 round" data-state="today">오늘</span>
+                                <strong class="card-tit"><span class="icon-type-img"><img src="@@webRoot/static/images/expense/icon-tele-fee.png" alt=""></span>통신비-SKT</strong>
+                                <dl>
+                                    <dt>예정금액3</dt>
+                                    <dd><em class="num" data-unit-after="원">234,000</em></dd>
+                                </dl>
+                            </div>
+                            <div class="swiper-slide card-item">
+                                <span class="tag-label t03 round" data-state="today">오늘</span>
+                                <strong class="card-tit"><span class="icon-type-img"><img src="@@webRoot/static/images/expense/icon-tele-fee.png" alt=""></span>통신비-SKT</strong>
+                                <dl>
+                                    <dt>예정금액4</dt>
+                                    <dd><em class="num" data-unit-after="원">234,000</em></dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <!--// [D] 2021-08-31 수정 : 아이콘 수정 -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </section>
+                <!--// 다가오는 정기지출 -->
 
                 <!-- 카드 추천 //-->
                 <section class="kb-sec full customized-card-list"><!-- 수정:2021-10-08 --><!-- 클래스 제거 (dividing-space-bottom) -->
@@ -367,15 +366,6 @@
                     <!--// 서비스 배너 영역 -->
                 </section>
                 <!--// 카드 추천 -->
-                <!-- 수정:2021-11-17 -->
-                <!-- 자산 연결 영역 추가 //-->
-                <hr class="hr-divide_32"> <!-- 수정:2021-11-25 --> <!-- 인기카드 영역 안나올 때 함께 삭제 -->
-                <section class="kb-sec link-to-asset">
-                    <a href="@@webRoot/html/menu/mys_mn_01_01_03.html" role="button" class="link-box_block link-arrow-after">
-                        <i class="icon-add_type4_32"></i><span>관리하고 싶은 내 자산 연결하기</span>
-                    </a>
-                </section>
-                <!--// 자산 연결 영역 추가  -->
             </main>
             <!-- // app-content -->
 
