@@ -57,7 +57,7 @@
                         <strong class="tit required">보유량</strong>
                         <div class="kb-form gold-input-num not-ready no-transition" data-status="info">
                             <div class="kb-form_inner form-text">
-                                <input type="text" inputmode="numeric" class="gold-unit-input gold-unit-input-1" id="mysafe_01_01" placeholder="0" value="37.15" data-unit="" data-action="" value="">
+                                <input type="text" inputmode="decimal" class="gold-unit-input gold-unit-input-1" id="mysafe_01_01" placeholder="0" value="37.15" data-unit="" data-action="" value="">
                                 <button class="btn-data-clear gold-unit-clear"><i class="icon-data-clear_24">지우기</i></button>
                             </div>
                             <!-- 2021-11-16 수정 -->
@@ -243,18 +243,20 @@
             var dot_gold_0 = dot_gold[0];
             var dot_gold_1;
             var dot_gold_1_val;
-            // var dot_pattern = parseInt(currentVal_1).toLocaleString(undefined, {maximumFractionDigits: 2});
+            var dot_pattern_num = dot_gold_0.replace(/([^0-9^.])/g,"");
+            var dot_pattern_com=dot_pattern_num.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+            var dot_gold_0_val = dot_pattern_com.substring(0,5);
             var currentVal_1_dot;
             var currentVal_1_dot_locale;
 
-            // console.log('lv1 = '+find_dot_gold);
+            console.log('lv1 = '+dot_gold_0_val);
             if(find_dot_gold!==-1){
                 dot_gold_1 = dot_gold[1];
                 // console.log('lv2 = '+dot_gold_1.length);
                 if(((dot_gold_1.length>2)&&(dot_gold_1!=='')&&(dot_gold_1!=='undefined'))||(dot_gold.length>2)){
                     dot_gold_1_val =  dot_gold_1.substring(0,2);
                     $gold_unit_input_1.val('');
-                    currentVal_1_dot = dot_gold_0+'.'+dot_gold_1_val;
+                    currentVal_1_dot = dot_gold_0_val+'.'+dot_gold_1_val;
                     $gold_unit_input_1.val(currentVal_1_dot);
                     // console.log('lv3 = '+currentVal_1_dot+' / '+dot_gold.length+' / '+dot_gold_1_val);
                 }else{
@@ -262,11 +264,11 @@
                 }
             }else{
                 // console.log('fal = '+dot_gold.length);
-                $gold_unit_input_1.val(pattern);
+                $gold_unit_input_1.val(dot_gold_0_val);
             }
             if(currentVal_1_dot == oldVal) {
                 return;
-                $gold_unit_input_1.val(pattern);
+                $gold_unit_input_1.val(dot_gold_0_val);
             }
             // console.log('lv0 = '+pattern);
             return false;
