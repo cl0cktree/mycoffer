@@ -61,7 +61,7 @@
                                                         <strong class="tit">외화</strong>
                                                         <div class="cont">
                                                             <ul data-style="list">
-                                                                <li>전일은 마지막 회차 기준, 당일은 최신 고시환율 기준으로 단순히 계산한 값으로 실제 평가금액과 다를 수 있습니다.</li>
+                                                                <li>외화에서 제공되는 자산의 원화환산 평가금액은 해당 영업일 1회차 고시환율 및 공휴일은 전영업일 마지막 회차 고시환율을 기준으로 단순계산한 금액으로, 실제 평가금액과는 차이가 있을 수 있습니다.</li>
                                                                 <li>본 콘텐츠는 당행 금융정보, 당행에 등록된 오픈뱅킹정보, 마이데이터 전송요구권 동의 정보를 이용하여 제공합니다.</li>
                                                             </ul>
                                                         </div>
@@ -96,7 +96,7 @@
                                                         <!-- 2021-11-03 툴팁수정 // -->
                                                         <strong class="tit">외화</strong>
                                                         <div class="cont">
-                                                            전일은 마지막 회차 기준, 당일은 최신 고시환율 기준으로 단순히 계산한 값으로 실제 평가금액과 다를 수 있습니다.
+                                                            외화에서 제공되는 자산의 원화환산 평가금액은 해당 영업일 1회차 고시환율 및 공휴일은 전영업일 마지막 회차 고시환율을 기준으로 단순계산한 금액으로, 실제 평가금액과는 차이가 있을 수 있습니다.
                                                         </div>
                                                         <!-- // 2021-11-03 툴팁수정 -->
                                                         <button class="btn-close"><span>닫기</span></button>
@@ -129,7 +129,7 @@
                                                         <!-- 2021-11-03 툴팁수정 // -->
                                                         <strong class="tit">외화</strong>
                                                         <div class="cont">
-                                                            전일은 마지막 회차 기준, 당일은 최신 고시환율 기준으로 단순히 계산한 값으로 실제 평가금액과 다를 수 있습니다.
+                                                            외화에서 제공되는 자산의 원화환산 평가금액은 해당 영업일 1회차 고시환율 및 공휴일은 전영업일 마지막 회차 고시환율을 기준으로 단순계산한 금액으로, 실제 평가금액과는 차이가 있을 수 있습니다.
                                                         </div>
                                                         <!-- // 2021-11-03 툴팁수정 -->
                                                         <button class="btn-close"><span>닫기</span></button>
@@ -541,7 +541,7 @@
                             <!-- 2021-11-03 수정 // -->
                             <div class="cont">
                                 <ul data-style="list">
-                                    <li>전일은 마지막 회차 기준, 당일은 최종 고시환율 기준으로 단순히 계산한 값으로 실제 평가금액과 다를 수 있습니다.</li>
+                                    <li>외화에서 제공되는 자산의 원화환산 평가금액은 해당 영업일 1회차 고시환율 및 공휴일은 전영업일 마지막 회차 고시환율을 기준으로 단순계산한 금액으로, 실제 평가금액과는 차이가 있을 수 있습니다.</li>
                                     <li>보유금액 변동에 따른 차이가 반영됩니다.</li>
                                 </ul>
                             </div>
@@ -704,9 +704,7 @@
     <!-- Script -->
     @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
-    <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
-    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
-    <script src="@@webRoot/static/common/lib/highcharts/pattern-fill.js"></script><!--패턴적용-->
+    
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
     <script>
@@ -908,11 +906,11 @@
             series: [
                 {
                     name: "월 납입금액",
-                    color: chartBg[33],//'#c6cbd0', 패턴적용
+                    color: '#c6cbd0',
                     pointPlacement: 0,
                     data: [3000, 5500, 4000, 2000, 9900, {
                                 y:3500,
-                                color: chartBg[01],
+                                color: '#ffd052',
                             }]//2021-12-16 수정
                     
                 }
@@ -999,11 +997,11 @@
             series: [
                 {
                     name: "월 납입금액",
-                    color: chartBg[33],//'#c6cbd0', 패턴적용
+                    color: '#c6cbd0',
                     pointPlacement: 0,
                     data: [3000, 5500, 4000, 2000, 9900, {
                                 y:3500,
-                                color: chartBg[01],
+                                color: '#ffd052',
                             }]//2021-12-16 수정
                     
                 }
@@ -1096,11 +1094,11 @@
             series: [
                 {
                     name: "월 납입금액",
-                    color: chartBg[33],//'#c6cbd0', 패턴적용
+                    color: '#c6cbd0',
                     pointPlacement: 0,
                     data: [3000, 5500, 4000, 2000, 9900, {
                                 y:3500,
-                                color: chartBg[01],
+                                color: '#ffd052',
                             }]//2021-12-16 수정
                     
                 }

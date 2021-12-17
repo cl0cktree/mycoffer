@@ -18,7 +18,7 @@
 		<!-- app-container //-->
 		<div class="app-container">
 			<!-- app-content // -->
-			<main class="app-content goals-challenge"><!-- 2021-09-09 수정 -->			
+			<main class="app-content goals-challenge chartPatt"><!-- 2021-12-17 수정 -->			
 				<!-- 목표 요약 // -->
 				<section class="kb-sec goals-summary">
                     <!-- <a href="#none" class="btn-trans"> 추가 수정 -->
@@ -148,10 +148,12 @@
                 <section class="kb-sec goals-others">
                     <div class="content-box shadow">
                         <!-- [Chart Area] // -->
-                        <div class="chart-area">
+                        <div class="chart-area">     
                             <div class="no-mar" id="columnChart01"></div>
-                            <p class="txt-gray mt28">나와 같은 비교그룹의<br>월 평균 납임금액: <strong class="num" data-unit-after="원">700,000</strong></p> <!-- 수정:2021-09-27 문구수정 -->
-                            <p class="txt-yellow">김국민 님의 월 평균 납입금액: <strong class="num" data-unit-after="원">500,000</strong></p> <!-- 2021-09-09 수정 -->
+                             <!-- 수정:2021-12-17 수정// -->
+                            <p class="txt-gray mt28"><i class="icon-legend_dot_gray"></i>나와 같은 비교그룹의<br>월 평균 납임금액: <strong class="num" data-unit-after="원">700,000</strong></p>
+                            <p class="txt-yellow"><i class="icon-legend_dot_yellow"></i>김국민 님의 월 평균 납입금액: <strong class="num" data-unit-after="원">500,000</strong></p>
+                            <!-- //수정:2021-12-17 수정 -->
                         </div>
                         <!-- // [Chart Area] -->
                     </div>
@@ -540,7 +542,7 @@
     
     <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
     <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>    
-    <script src="@@webRoot/static/common/lib/highcharts/highcharts-more.js"></script>
+    <script src="@@webRoot/static/common/lib/highcharts/highcharts-more.js"></script>    
 
     <style>
         .highcharts-tooltip-box:first-child .highcharts-label-box {
@@ -647,11 +649,11 @@
                     }
                 },
                 series: [{
-                    color: "#ffd338",
+                    color: chartBg[01], // 수정:2021-12-17 수정
                     pointPlacement: -0.12,
                     data: [1000, 2000, 3000, 5000, 1500, 8000]
                 },{
-                    color: '#c6cbd0',
+                    color: chartBg[33], // 수정:2021-12-17 수정
                     pointPlacement: 0.12,
                     dataSorting: {
                         enabled: true,

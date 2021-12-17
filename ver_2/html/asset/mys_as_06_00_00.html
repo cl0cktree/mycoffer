@@ -815,9 +815,7 @@
     <!-- Script -->
     @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->    
-    <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
-    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
-    <script src="@@webRoot/static/common/lib/highcharts/pattern-fill.js"></script><!--패턴적용-->
+    
 
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
@@ -968,12 +966,12 @@
             series: [
                 {
                     name: "월 납입금액",
-                    color: chartBg[33],//'#c6cbd0', 패턴적용
+                    color: '#c6cbd0',//'#c6cbd0', 패턴적용
                     pointPlacement: 0,
                     data: [30000, 55000, 40000, 20000, 99000, 
                             {
                                 y:35000,
-                                color: chartBg[01],
+                                color: '#ffd052',
                             }]//2021-12-16 수정
                     
                 }
@@ -1025,19 +1023,19 @@
                 borderWidth: 0,
                 data: [{
                     name: '예금',
-                    color: chartBg[1],//"#ffba53", 패턴적용
+                    color: "#ffba53",
                     y: 30
                 },{
                     name: '적금',
-                    color: chartBg[3],//"#ff8a71", 패턴적용
+                    color: "#ff8a71",
                     y: 25
                 },{
                     name: '청약',
-                    color: chartBg[8],//"#ff445a", 패턴적용
+                    color: "#ff445a",
                     y: 20
                 },{
                     name: '기타',
-                    color: chartBg[33],//'#c6cbd0', 패턴적용
+                    color: '#c6cbd0',
                     y: 15
                 },]
             }]
@@ -1108,7 +1106,7 @@
             },
             plotOptions: {
                 series: {
-                    color: chartBg[1],//'#ffd338', 패턴적용
+                    color: '#ffd338',
                     pointWidth: 40,  // 막대그래프 너비
                     borderRadiusTopLeft: "7px",  // radius 값
                     borderRadiusTopRight: "7px" // radius 값
@@ -1119,7 +1117,7 @@
                     data: [420000, 
                         {
                             y: 620000,
-                            color: chartBg[33],//'#c7ccd1', 패턴적용
+                            color: '#c7ccd1',//
                         }
                     ],
                     pointPlacement: 0,

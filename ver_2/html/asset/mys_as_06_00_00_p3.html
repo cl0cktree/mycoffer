@@ -170,8 +170,8 @@
 										그래프(원) 크기 : 140px * 140px
 										그래프(원) 굵기 : 33px'
 									-->
-									<div class="chart-area">
-										<img class="temp" src="@@webRoot/static/images/_temp/chart_as0601.png" alt="차트 예시 이미지">
+									<div class="chart-area" id="portfolioChart">
+										<!-- <img class="temp" src="@@webRoot/static/images/_temp/chart_as0601.png" alt="차트 예시 이미지"> -->
 									</div>
 									<!-- // [Chart Area] -->
 								</div>
@@ -250,8 +250,8 @@
 										그래프(원) 크기 : 140px * 140px
 										그래프(원) 굵기 : 33px'
 									-->
-									<div class="chart-area">
-										<img class="temp" src="@@webRoot/static/images/_temp/chart_as0601_2.png" alt="차트 예시 이미지">
+									<div class="chart-area" id="depositChart">
+										<!-- <img class="temp" src="@@webRoot/static/images/_temp/chart_as0601_2.png" alt="차트 예시 이미지"> -->
 									</div>
 									<!-- // [Chart Area] -->
 								</div>
@@ -375,8 +375,195 @@
 	<!-- Script -->
 	@@include('@@webRoot/html/_include/common-js.html')
 	<!-- Add Library (this page only)-->
+	<script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>
+	<script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
+	<script src="@@webRoot/static/common/lib/highcharts/pattern-fill.js"></script>
 	<script src="@@webRoot/static/js/ui.js"></script>
 	<!-- Add Script -->
+	<script>
+
+        // highchart 공통 options 하이차트 UI 추가 start
+		Highcharts.setOptions({
+			title: { text: null },
+			subTitle: { text: null },
+			credits: { enabled: false },
+			label : { fontFamily: 'KBFGText'},
+			credits: { enabled: false },
+			exporting: { enabled: false },
+			lang: {
+				thousandsSep: ','
+			}
+		});
+
+		var donutChart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'portfolioChart',
+                type: 'pie',
+                height: '100%',
+                margin: [0, 0, 0, 0]
+            },
+            tooltip: {
+                formatter: function () { 
+                    return this.y + "%"
+                },
+                padding: 10,
+                backgroundColor: "#FFF",
+                shadow: true,
+                borderRadius: 4,
+                verticalAlign: 'bottom',
+                borderColor: '#f3f3f3',
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '1.4rem',
+                    fontFamily: "KBFGText",
+                },
+                crosshairs: true
+            },
+            plotOptions: {
+                pie: {                    
+                    allowPointSelect: true,
+                    dataLabels: {
+                        enabled: false
+                    }
+                }
+            },
+            series: [{
+                innerSize: '50%',
+                borderWidth: 0,
+                data: [{
+                    name: '정기예금',
+                    color: "#ffba53",
+                    y: 25
+                },{
+                    name: '포트폴리오',
+                    color: "#ff8a71",
+                    y: 75
+                }]
+            }]
+        });
+
+		var donutChart2 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'depositChart',
+                type: 'pie',
+                height: '100%',
+                margin: [0, 0, 0, 0]
+            },
+            tooltip: {
+                formatter: function () { 
+                    return this.y + "%"
+                },
+                padding: 10,
+                backgroundColor: "#FFF",
+                shadow: true,
+                borderRadius: 4,
+                verticalAlign: 'bottom',
+                borderColor: '#f3f3f3',
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '1.4rem',
+                    fontFamily: "KBFGText",
+                },
+                crosshairs: true
+            },
+            plotOptions: {
+                pie: {                    
+                    allowPointSelect: true,
+                    dataLabels: {
+                        enabled: false
+                    }
+                }
+            },
+            series: [{
+                innerSize: '50%',
+                borderWidth: 0,
+                data: [{
+                    name: '정기예금',
+                    color: "#ffba53",
+                    y: 100
+                }]
+            }]
+        });
+
+		/*
+		var donutChart = new Highcharts.chart({
+			chart: {
+				renderTo: 'portfolioChart', // chart 삽입 target ID
+				type: 'pie',
+				height: '100%',
+				margin: [0, 0, 0, 0]
+			},
+			title: {
+				text: '',
+				align: 'center',
+				verticalAlign: 'middle',
+				style: {
+					fontSize: '4vw',
+					fontFamily: 'KBFGText'
+				}
+			},
+			tooltip: {
+				formatter: function() {
+					return this.key + '<br />' + this.y + '%';
+				},
+				padding: 10,
+				backgroundColor: '#fff',
+				shadow: true,
+				borderRadius: 4,
+				verticalAlign: 'bottom',
+				// borderColor: '#f3f3f3', // tooltip 테두리 선택한 영역의 borderColor 적용
+				style: {
+					fontWeight: 'normal',
+					fontSize: '4vw',
+					fontFamily: 'KBFGText'
+				},
+				crosshairs: true
+			},
+			plotOptions: {
+				pie: {
+					allowPointSelect: false,
+					dataLabels: {
+						enabled: false
+					},
+					shadow: false,
+					center: ['50%', '50%']
+				},
+				series: {
+					states: {
+						hover: {
+							enabled: true,
+							halo: {
+								size: 0
+							}
+						}
+					}
+				}
+			},
+			credits: {
+				enabled: false
+			},
+			series: [{
+				innerSize: '50%',
+				borderWidth: 0,
+				// zMin: 0,
+				// minPointSize: 50,
+				data: [
+					{
+						color: '#ffba53',
+						y: 25,
+						name: '정기예금'
+					},
+					{
+						color: '#ff8a71',
+						y: 75,
+						name: '포트폴리오'
+					}
+				]
+			}]
+		});
+		*/
+
+	</script>
 </body>
 
 </html>

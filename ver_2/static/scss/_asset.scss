@@ -174,7 +174,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .account-top .account-wrap{padding:20px 24px;}
 .my-asset .account-top .account-wrap .btn-hide-account{top:32px;right:24px;z-index:2;}
 .my-asset .account-wrap .prod-kind.maturity{margin-bottom:8px;}//보험상세 뱃지 추가 2021-10-14 kek
-.my-asset .account-wrap .bank-book{display:block;}//보험상세 뱃지 추가 2021-10-14 kek
+.my-asset .account-wrap .bank-book{display:block;word-wrap: break-word;}//줄바꿈
 .my-asset .account-wrap .agency-con{display:table;margin-top:10px;}
 .my-asset .account-wrap .agency-con .agency-logo{display:table-cell;width:24px;margin-right:7px;}
 .my-asset .account-wrap .agency-con .agency{display:table-cell;font-weight:normal;line-height:24px;font-size:18px;vertical-align:middle;padding-left:5px;}
@@ -707,7 +707,8 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .exchange-Rate .h4{position:relative;margin-bottom:12px;margin-right:24px;}
 .my-asset .exchange-Rate .h4 .btn-text{position:absolute;right:0;top:0;}
 .my-asset .exchange-Rate .h4 .btn-text u{color:$kb-ui03;}
-.my-asset .exchange-Rate .swiper-slide{width:132px;height:60px;}
+.my-asset .exchange-Rate .swiper-container{padding-bottom:2px;}
+.my-asset .exchange-Rate .swiper-slide{width:132px;height:60px;padding-bottom:5px;}//여백수정
 .my-asset .exchange-Rate .swiper-slide button{display:flex;justify-content:space-between;align-items:center;border:1px solid $kb-ui08;padding:8px 15px;width:100%;border-radius:8px;}
 .my-asset .exchange-Rate .swiper-slide button .icon-con{text-align:left;width:2.8rem;}
 .my-asset .exchange-Rate .swiper-slide button .txt-con{text-align:right;width:calc( 100% - 2.8rem)}
@@ -718,9 +719,9 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .exchange-Rate .chart-tit + .chart-area{margin-top:0;}//타이틀 추가
 .my-asset.foreign-currency .recommend-prod{border-bottom:none;padding-bottom:0;}//하단 여백 수정 2021-10-14 kek
 .my-asset .exchange-Rate .icon-con img{width:24px;height:24px;}
-.my-asset .exchange-Rate .graph-notice{@include text($size:14px);color:$kb-ui04;text-align:right;margin-top:20px;padding-right: 2.4rem;}//여백수정
+.my-asset .exchange-Rate .graph-notice{@include text($size:14px);color:$kb-ui04;text-align:right;margin-top:10px;padding-right: 2.4rem;}//여백수정
 .my-asset .exchange-Rate .graph-notice .plus{color:$color-blue;}
-.my-asset .exchange-Rate .chart-tit{@include text($size:16px);padding:20px 0 6px;border-bottom:1px solid $kb-ui07;margin-right:24px;margin-bottom:20px;}//타이틀 추가
+.my-asset .exchange-Rate .chart-tit{@include text($size:16px);padding:15px 0 6px;border-bottom:1px solid $kb-ui07;margin-right:24px;margin-bottom:20px;}//타이틀 추가
 /*포트폴리오 분석*/
 .my-asset.recommend-portfolio .maturity-top {padding-top: 20px; padding-bottom: 20px; margin-bottom: 40px; font-size: 16px; color: $kb-ui03;}
 .my-asset.recommend-portfolio .maturity-prod-lists {margin-bottom: 48px;}
@@ -1517,14 +1518,14 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .asset-graph-lists .bar-area {position: absolute; top: 50%; margin-top: -6px; height: 12px; background-color: $kb-ui10;}
 .asset-graph-lists .bar-area.ages {left: 0; right: calc(50% + 58px); border-top-left-radius: 12px; border-bottom-left-radius: 12px;}
 .asset-graph-lists .bar-area.me {right: 0; left: calc(50% + 58px); border-top-right-radius: 12px; border-bottom-right-radius: 12px;}
-.asset-graph-lists .bar-area .bar {position: absolute; top: 0; bottom: 0; background-color: #ffba53; min-width: 2px;}
+.asset-graph-lists .bar-area .bar {position: absolute; top: 0; bottom: 0; background: #ffcf53 url(../images/pattern/pattern_01.png) repeat; background-size: 8px; min-width: 2px;}
 .asset-graph-lists .bar-area .bar[style="width:0%"],
 .asset-graph-lists .bar-area .bar[style="width: 0%"] {min-width: 0;}
 .asset-graph-lists .bar-area.ages .bar {right: 0; border-top-left-radius: 12px; border-bottom-left-radius: 12px;}
 .asset-graph-lists .bar-area.me .bar {left: 0; border-top-right-radius: 12px; border-bottom-right-radius: 12px;}
-.asset-graph-lists .group-a .bar-area.ages .bar {background-color: #ff8a71;}
-.asset-graph-lists .group-b .bar-area.ages .bar {background-color: #ff6391;}
-.asset-graph-lists .group-c .bar-area.ages .bar {background-color: #ff445a;}
+.asset-graph-lists .group-a .bar-area.ages .bar {background: #ffab53 url(../images/pattern/pattern_02.png) repeat; background-size: 9px;}
+.asset-graph-lists .group-b .bar-area.ages .bar {background: #fa844e url(../images/pattern/pattern_03.png) repeat; background-size: 4px;}
+.asset-graph-lists .group-c .bar-area.ages .bar {background: #5b75ce url(../images/pattern/pattern_04.png) repeat; background-size: 9px;}
 .asset-graph-lists .val {display: none; position: absolute; top: -28px; background-color: #fff; box-shadow: 0px 1px 5px 0 rgba(0, 0, 0, 0.2); border-radius: 3px; line-height: 1.2; padding: 4px 7px; text-overflow: ellipsis; white-space: nowrap;}
 .asset-graph-lists .val::after{position: absolute; bottom: -5px; left: 50%; margin-left: -6px; content: ''; display: block; width: 12px; height: 5px; background: url(../../static/images/asset/bg_d_day.png) no-repeat 0 0; background-size: contain;}
 .asset-graph-lists .is-active .val {display: block;}

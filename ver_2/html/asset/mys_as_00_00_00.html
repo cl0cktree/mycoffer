@@ -85,8 +85,10 @@
 									<!--// [chart area] -->
 									<div class="legend-unit">
 										<ul>
-											<li class="cate1">금융자산</li>
-											<li class="cate2">부채</li>
+											<!-- 2021-12-20 범례 패턴 적용 // -->
+											<li class="pattern01">금융자산</li>
+											<li class="pattern02">부채</li>
+											<!-- // 2021-12-20 범례 패턴 적용 -->
 										</ul>
 									</div>
 								</div>
@@ -255,15 +257,17 @@
 							<!-- 차트샘플 /html/__guide/highchart/bar-graph05.html -->
 							<div class="legend-unit t02">
 								<ul>
-									<li class="cate1">입출금</li>
-									<li class="cate2">예적금</li>
-									<li class="cate3">투자</li>
-									<li class="cate4">보험</li>
-									<li class="cate5">외화</li>
-									<li class="cate6">부동산</li>
-									<li class="cate7">자동차</li>
-									<li class="cate8">페이</li>
-									<li class="cate0">대출&middot;부채</li>
+									<!-- 2021-12-20 범례 패턴 적용 // -->
+									<li class="pattern01">입출금</li>
+									<li class="pattern02">예적금</li>
+									<li class="pattern03">투자</li>
+									<li class="pattern04">보험</li>
+									<li class="pattern05">외화</li>
+									<li class="pattern06">부동산</li>
+									<li class="pattern07">자동차</li>
+									<li class="pattern08">페이</li>
+									<li class="pattern33">대출&middot;부채</li>
+									<!-- // 2021-12-20 범례 패턴 적용 -->
 								</ul>
 							</div>
 						</div>
@@ -272,17 +276,19 @@
 						<div class="chart-wrap" data-cwidx="2">
 							<div class="chart-flex">
 								<div class="chart-area" id="donutChart01"></div>
-                            	<div class="chart-area" id="donutChart02"></div>
+								<div class="chart-area" id="donutChart02"></div>
 							</div>
 							<!-- 차트샘플 /html/__guide/highchart/donut-graph01.html -->
 							<div class="legend-unit t02">
 								<ul>
-									<li class="cate1">입출금</li>
-									<li class="cate2">예적금</li>
-									<li class="cate3">투자</li>
-									<li class="cate4">보험</li>
-									<li class="cate5">외화</li>
-									<li class="cate6">페이</li>
+									<!-- 2021-12-20 범례 패턴 적용 // -->
+									<li class="pattern01">입출금</li>
+									<li class="pattern02">예적금</li>
+									<li class="pattern03">투자</li>
+									<li class="pattern04">보험</li>
+									<li class="pattern05">외화</li>
+									<li class="pattern06">페이</li>
+									<!-- // 2021-12-20 범례 패턴 적용 -->
 								</ul>
 							</div>
 						</div>
@@ -341,8 +347,10 @@
 							<!--// [chart area] -->
 							<div class="legend-unit">
 								<ul>
-									<li class="cate1">나</li>
-									<li class="cate2">비교그룹</li>
+									<!-- 2021-12-20 범례 패턴 적용 // -->
+									<li class="pattern01">나</li>
+									<li class="pattern02">비교그룹</li>
+									<!-- // 2021-12-20 범례 패턴 적용 -->
 								</ul>
 							</div>
 						</div>
@@ -540,8 +548,6 @@
 	<!-- Script -->
 	@@include('@@webRoot/html/_include/common-js.html')
 	<!-- Add Library (this page only)-->
-	<script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
-    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
 	<script src="@@webRoot/static/js/ui.js"></script>
 	<!-- Add Script -->
 	<script>
@@ -574,7 +580,6 @@
 				thousandsSep: ','
 			}
 		});
-
 
 		// 순자산 chart 선언
 		var columnChart1 = new Highcharts.Chart({
@@ -659,7 +664,7 @@
 			series: [
 				{
 					name: '',
-					color: '#ffcf53',
+					color: chartBg[1],
 					data: [300000, 550000, 300000, 550000, 590000, 300000]
 					
 				}
@@ -742,13 +747,13 @@
 			series: [
 				{
 					name: "금융자산",
-					color: "#8768cb",
+					color: chartBg[1],
 					pointPlacement: -0.1,
 					data: [235670, 500000, 150000, 130000, 150000, 235670],
 				},
 				{
 					name: "부채",
-					color: '#ffd338',
+					color: chartBg[2],
 					pointPlacement: 0.1,
 					data: [300000, 550000, 300000, 550000, 590000, 300000]
 					
@@ -814,34 +819,42 @@
                     borderWidth: 1,
                 }
             },
-            colors: ['#ffba53','#ff8a71','#ff6391','#ff445a','#d090ee','#bc63e5','#7fa2ed','#55c1e3','#c6cbd0'].reverse(),
             series: [{
                 name: '입출금',
-                data: [30,0]
+                data: [30,0],
+				color: chartBg[1]
             }, {
                 name: '예적금',
-                data: [23,0]
+                data: [23,0],
+				color: chartBg[2]
             }, {
                 name: '투자',
-                data: [10,0]
+                data: [10,0],
+				color: chartBg[3]
             }, {
                 name: '보험',
-                data: [10,0]
+                data: [10,0],
+				color: chartBg[4]
             }, {
                 name: '외화',
-                data: [5,0]
+                data: [5,0],
+				color: chartBg[5]
             }, {
                 name: '부동산',
-                data: [9,0]
+                data: [9,0],
+				color: chartBg[6]
             }, {
                 name: '자동차',
-                data: [5,0]
+                data: [5,0],
+				color: chartBg[7]
             }, {
                 name: '페이',
-                data: [8,0]
+                data: [8,0],
+				color: chartBg[8]
             }, {
                 name: '대출&middot부채',
-                data: [0,20]
+                data: [0,20],
+				color: chartBg[33]
             }].reverse()
         });
 
@@ -903,34 +916,42 @@
                     borderWidth: 1,
                 }
             },
-            colors: ['#ffba53','#ff8a71','#ff6391','#ff445a','#d090ee','#bc63e5','#7fa2ed','#55c1e3','#c6cbd0'].reverse(),
             series: [{
                 name: '입출금',
-                data: [35,0]
+                data: [35,0],
+				color: chartBg[1]
             }, {
                 name: '예적금',
-                data: [16,0]
+                data: [16,0],
+				color: chartBg[2]
             }, {
                 name: '투자',
-                data: [12,0]
+                data: [12,0],
+				color: chartBg[3]
             }, {
                 name: '보험',
-                data: [7,0]
+                data: [7,0],
+				color: chartBg[4]
             }, {
                 name: '외화',
-                data: [8,0]
+                data: [8,0],
+				color: chartBg[5]
             }, {
                 name: '부동산',
-                data: [10,0]
+                data: [10,0],
+				color: chartBg[6]
             }, {
                 name: '자동차',
-                data: [7,0]
+                data: [7,0],
+				color: chartBg[7]
             }, {
                 name: '페이',
-                data: [5,0]
+                data: [5,0],
+				color: chartBg[8]
             }, {
                 name: '대출&middot부채',
-                data: [0,25]
+                data: [0,25],
+				color: chartBg[33]
             }].reverse()
         });
 
@@ -979,27 +1000,27 @@
                 borderWidth: 0,
                 data: [{
                     name: '입출금',
-                    color: "#ffba53",
+                    color: chartBg[1],
                     y: 30
                 },{
                     name: '예적금',
-                    color: "#ff8a71",
+                    color: chartBg[2],
                     y: 25
                 },{
                     name: '투자',
-                    color: "#ff6391",
+                    color: chartBg[3],
                     y: 20
                 },{
                     name: '보험',
-                    color: '#ff445a',
+                    color: chartBg[4],
                     y: 15
                 },{
                     name: '외화',
-                    color: '#d090ee',
+                    color: chartBg[5],
                     y: 5
                 },{
                     name: '페이',
-                    color: '#bc63e5',
+                    color: chartBg[6],
                     y: 5
                 }]
             }]
@@ -1047,27 +1068,27 @@
                 borderWidth: 0,
                 data: [{
                     name: '입출금',
-                    color: "#ffba53",
+                    color: chartBg[1],
                     y: 35
                 },{
                     name: '예적금',
-                    color: "#ff8a71",
+                    color: chartBg[2],
                     y: 22
                 },{
                     name: '투자',
-                    color: "#ff6391",
+                    color: chartBg[3],
                     y: 15
                 },{
                     name: '보험',
-                    color: '#ff445a',
+                    color: chartBg[4],
                     y: 10
                 },{
                     name: '외화',
-                    color: '#d090ee',
+                    color: chartBg[5],
                     y: 10
                 },{
                     name: '페이',
-                    color: '#bc63e5',
+					color: chartBg[6],
                     y: 8
                 }]
             }]
@@ -1149,13 +1170,13 @@
 			series: [
 				{
 					name: "나",
-					color: "#ffba53",
+					color: chartBg[1],
 					data: [235670, 500000, 150000],
 					pointPlacement: -0.05,
 				},
 				{
 					name: "비교그룹",
-					color: '#ff8a71',
+					color: chartBg[2],
 					data: [300000, 550000, 300000],
 					pointPlacement: 0.05,
 					

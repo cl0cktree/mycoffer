@@ -1995,6 +1995,13 @@ if($pageStepSwiper.length){
 
 
 // SVG Gauge Functions
+var defsPattern = [''];
+
+for (var c = 1; c < chartBg.length; c++) {
+    var cbg = chartBg[c];
+    defsPattern.push('<pattern id="svgPattern'+c+'" patternUnits="userSpaceOnUse" patternContentUnits="userSpaceOnUse" width="'+cbg.pattern.width+'" height="'+cbg.pattern.height+'" x="0" y="0"><rect x="0" y="0" width="'+cbg.pattern.width+'" height="'+cbg.pattern.height+'" fill="'+cbg.pattern.backgroundColor+'"></rect><path d="'+cbg.pattern.path.d+'" stroke="'+cbg.pattern.color+'" stroke-width="'+cbg.pattern.path.strokeWidth+'" fill="none"></path></pattern>');
+}
+
 function drawInsuranceGauge(selector, current) {
     var status = $(selector).parents(".report-circle").data("status");
     var colors = {
@@ -2006,11 +2013,21 @@ function drawInsuranceGauge(selector, current) {
 }
 
 function drawCreditGauge(selector, current, max) {
+    // var patternIdx = 1;
+    // if ($("svg.defs.patterns").length === 0) $("body").append('<svg class="defs patterns"><defs></defs></svg>');
+    // var $defs = $("svg.defs.patterns > defs");
+    // $defs.html($defs.html() + defsPattern[patternIdx]);
+    // setGauge(selector, current, max, "url(#svgPattern"+patternIdx+")");
     setGauge(selector, current, max, "#ffcf53");
 }
 
 function drawDdayGauge(selector, current, max) {
-    setGauge(selector, current, max, "#ffba53");
+    // var patternIdx = 1;
+    // if ($("svg.defs.patterns").length === 0) $("body").append('<svg class="defs patterns"><defs></defs></svg>');
+    // var $defs = $("svg.defs.patterns > defs");
+    // $defs.html($defs.html() + defsPattern[patternIdx]);
+    // setGauge(selector, current, max, "url(#svgPattern"+patternIdx+")");
+    setGauge(selector, current, max, "#ffcf53");
 }
 
 function setGauge(selector, current, max, strokeColor) {
@@ -2154,7 +2171,18 @@ var jsFixed = {
     scroll : function(st, $this){
         if($('.js-fixed').length){
             var fixedTop = $this.data('fix');
-            if(st >= fixedTop - 48){//fixed header
+            if(st >= fixedTop - 48){// fixed header
+                $this.addClass('is-fixed');
+            }else{
+                $this.removeClass('is-fixed');
+            }
+        }
+        // .js-fixed 추가시 TBD
+        if(2 == $('.js-fixed').length && $('.js-fixed').eq(0).hasClass('is-fixed')){
+            let prevFixedHeight = $('.js-fixed').eq(1).outerHeight(); // 추가 높이 더해지도록 수정하기 
+            $('.js-fixed').eq(1).attr('data-add-height', prevFixedHeight);
+            var fixedTop = $this.data('fix');
+            if(st >= fixedTop - prevFixedHeight - 48){// fixed header
                 $this.addClass('is-fixed');
             }else{
                 $this.removeClass('is-fixed');
@@ -2202,11 +2230,179 @@ var jsScrollDone = {
 
 if($('.js-scroll-done').length) jsScrollDone.init();
 
+
+// 스크롤 다운 
+var jsScrollDown = {
+    // Default Setting
+    init: function({
+        $jsScrollDown = $('.js-scroll-down'),
+        $btn : $btn = $('<button class="btn-scroll-down"><span>스크롤내리기</span></button>'),
+        $breakPoint : $breakPoint = $('.js-break-point'),
+        exceptH : exceptH = 48, // TBD 헤더 높이
+    }={}){
+        this.options.$btn = $btn;
+        this.options.$breakPoint = $breakPoint;
+        this.options.tf = 0;
+        this.options.exceptH = exceptH;
+        let scrollValue = 0;
+        
+        // 브레이크 포인트가 있는 경우 사용할 스크롤 값 저장
+        if($jsScrollDown.find($breakPoint).length){
+            this.options.breakPointTop = $breakPoint.offset().top;
+            scrollValue = this.options.breakPointTop - exceptH; // TBD
+        }else{
+            scrollValue = this.options.dh - this.options.wh;
+        }       
+        scrollValue = Math.ceil(scrollValue);
+
+        // 스크롤이 생길 경우 버튼 추가 & 이벤트 등록
+        if($('body').hasScrollBar()){
+            $jsScrollDown.append($btn);
+            $btn.on('click', () => {this.moveScrollDown(scrollValue)});
+        }
+
+        // 브레이크 포인트가 1개이상 있고 동의하기 라디오박스 중 동의함 인풋이 있는 경우
+        if($('body').hasScrollBar() && $jsScrollDown.find($breakPoint).length > 1 && $breakPoint.find('.radio-group input')){
+            jsScrollDown.options.$breakPointRadioAgree = $breakPoint.find('.radio-group input.btn-radio-agree1');
+            jsScrollDown.options.$breakPointRadioAgree.on('click', jsScrollDown.moveNextInput);
+        }
+    },
+    moveScrollDown: function(scrollValue){
+        var duration = (scrollValue - st) * 0.5;                
+        $('html, body').stop().animate({scrollTop : scrollValue}, duration);
+        this.disappear();
+    },
+    disappear: function(){
+        this.options.$btn.fadeOut(300);
+    },
+    moveNextInput: function(e){
+        let thisIndex = jsScrollDown.options.$breakPointRadioAgree.index($(this)); // 이벤트 대상 선택자
+        let $remainRadio = jsScrollDown.options.$breakPointRadioAgree.not(':checked');
+
+        // 선택자 다음 라디오박스 높이 값 찾기
+        // 선택되지 않은 동의함 체크박스가 남아 있고, 다음 라디오박스의 동의함 인풋이 체크 되지 않은 경우
+        if ($remainRadio.length !== 0 && jsScrollDown.options.$breakPointRadioAgree.eq(thisIndex + 1).prop('checked') == false){
+            let nextIndexTop = jsScrollDown.options.$breakPoint.eq(thisIndex + 1).offset().top - jsScrollDown.options.exceptH;
+            jsScrollDown.moveScrollDown(nextIndexTop);
+        }
+
+        // 선택되지 않은 동의함 체크박스가 남아 있고, 다음 라디오박스의 동의함 인풋이 체크 되어 있을 경우
+        // 남아있는 체크되지 않은 동의함 인풋 박스로 스크롤 이동
+        if($remainRadio.length !== 0 && jsScrollDown.options.$breakPointRadioAgree.eq(thisIndex + 1).prop('checked') == true){
+            let nextIndex = jsScrollDown.options.$breakPointRadioAgree.index($remainRadio);
+            let nextIndexTop = jsScrollDown.options.$breakPoint.eq(nextIndex).offset().top - jsScrollDown.options.exceptH;
+            jsScrollDown.moveScrollDown(nextIndexTop);
+        }
+
+        // 마지막 라디오가 체크 되었을 때
+        if ($remainRadio.length !== 0 && thisIndex + 1 == jsScrollDown.options.$breakPointRadioAgree.length){
+            let nextIndex = jsScrollDown.options.$breakPointRadioAgree.index($remainRadio);
+            let nextIndexTop = jsScrollDown.options.$breakPoint.eq(nextIndex).offset().top - jsScrollDown.options.exceptH;
+            jsScrollDown.moveScrollDown(nextIndexTop);
+        }
+
+        // 라디오 전체 체크 됐을 때
+        if ($remainRadio.length == 0){
+            jsScrollDown.moveScrollDown(jsScrollDown.options.dh - jsScrollDown.options.wh);
+        }
+        
+    },
+    scroll: function(st){
+        st = Math.ceil(st) + 50;
+
+        if (st >= this.options.dh - this.options.wh) {
+            this.disappear();
+        }
+        if (!!this.options.breakPointTop && st >= this.options.breakPointTop) {
+            this.disappear();
+        }
+
+    },
+    options: {
+        $btn: {},
+        $breakPoint: {},
+        tf : 0,
+        // $breakPointArray : [],
+        $breakPointRadioAgree : {},
+        tfArray : [],
+        breakPointTop : 0, 
+        dh : $(document).outerHeight(),
+        wh : $(window).outerHeight(),
+    }
+}
+
+// 전송요구 동의하기 버튼이 있을 경우 스크롤 다운
+// jsScrollDown.init({$breakPoint : $('.confirm-agree')});
+
+// scroll down default 
+// jsScrollDown.init();
+
+// scroll down custom
+// jsScrollDown.init({
+//     $jsScrollDown : 스크롤다운시킬 컨테이너용 제이쿼리 선택자 ,
+//     $btn : 스크롤다운버튼 제이쿼리 선택자
+// });
+
+jsScrollDown.init({
+    $btn : $('<button class="btn-scroll-down" id="closeArrowAni"><span>스크롤내리기</span></button>')
+});
+
+// 스크롤업
+var jsScrollUp = {
+    // Default Setting
+    init: function(){
+        if(this.options.$jsScrollUp.length){
+            this.options.$jsScrollUp.append(this.options.$btn);
+            this.options.$btn.on('click', () => {this.moveScrollUp(300)});
+        }
+    },
+    moveScrollUp: function(duration){
+        $('html, body').stop().animate({scrollTop : 0}, st*0.3);
+    },
+    scroll: function(st){
+        st = Math.ceil(st);
+        if (st >= this.options.wh * 0.4) {
+            this.options.$btn.fadeIn(300);
+        }else{
+            this.options.$btn.fadeOut(300);
+        }
+    },
+    options: {
+        $jsScrollUp : $('.js-scroll-up'),
+        $btn : $('<button class="btn-scroll-up" style="display:none;"><i class="icon-btn-top">위로가기</i></button>'),
+        dh : $(document).outerHeight(),
+        wh : $(window).outerHeight(),
+    }
+}
+jsScrollUp.init();
+
+if(window.lottie){
+    // 로티: 스크롤 다운 
+    var lottiePath = '/static/lottie/';        
+    // 경로 변경 (테스트서버용)
+    var locationFlag = window.location.href.split('/')[3];
+    if(locationFlag == 'view-test' || locationFlag == 'mydata_newsb'){        
+        lottiePath = '../../static/lottie/';
+    }
+    
+    // lottie.json
+    var closeCate = lottie.loadAnimation({
+        container: document.getElementById('closeArrowAni'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: lottiePath + 'pdt_arrow.json'
+    });
+}
+
 $(window).on('scroll',function(){
     st = $(this).scrollTop();
     jsFixed.scroll(st, $('.page-step'));
     jsScrollDone.scroll(st, $(this));
     jsScrollAction.scroll(st, $('[data-scroll-fn]'));
+    jsFixed.scroll(st, $('.tab.swiper-container-spy')); // 스크롤 스파이 연동 탭
+    jsScrollDown.scroll(st); 
+    jsScrollUp.scroll(st);
 });
 
 //순서 변경

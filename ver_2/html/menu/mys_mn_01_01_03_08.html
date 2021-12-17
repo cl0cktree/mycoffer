@@ -13,7 +13,7 @@
     <div class="app">
         
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
-            'pageTit':'전송기간 연장',
+            'pageTit':'연결기간 연장',
             'type':'step'
         })
 
@@ -26,17 +26,24 @@
                 <!-- <h1 class="is-hidden">전송기간 연장</h1> --><!-- 수정:2021-09-28 -->        
                 <div class="page-step js-fixed">  
                     <div class="page-step-inner">
-                        <div class="step" aria-label="총 2단계 중 현재 2단계">
+                        <!-- <div class="step" aria-label="총 2단계 중 현재 2단계">
                             <span class="current">2</span>                        
                             <span class="total">2</span>
-                        </div>
+                        </div> -->
                         <h2 class="h1">인증서 선택</h2>
                     </div>
                     <p class="page-step-desc">사용할 인증서를 선택해 주세요.</p> 
                 </div>  
 
                 <section class="kb-sec">
-                    <div class="caution-txt">
+                    <!-- 수정 : UI개선 // -->
+                    <div class="certificate-lists">
+                        <button type="button" data-state="active"><i class="icon-certificate-kb_40"></i><span>KB모바일인증서</span></button>
+                        <button type="button" data-state="inactive" data-call-layered="mys_mn_01_01_03_02_certificate"><span>공동인증서</span></button>
+                        <button type="button" data-state="preparing"><span>금융인증서</span></button>
+                    </div>
+                    <!-- // 수정 : UI개선 -->
+                    <!-- <div class="caution-txt">
                         <ul class="certificate-list">
                             <li>
                                 <a href="javascript:;">
@@ -60,7 +67,7 @@
                                 </a>
                             </li> 
                         </ul>
-                    </div>
+                    </div> -->
                 </section>
                 
             </main>

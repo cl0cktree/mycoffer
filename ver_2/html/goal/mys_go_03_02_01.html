@@ -69,7 +69,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide content-box shadow">
-                                    <div class="challenge-info non-tit">
+                                    <div class="challenge-info non-tit">       
                                         <div class="chart-area" id="columnChart01"></div>
                                     </div>
                                 </div>
@@ -79,8 +79,11 @@
                     </div>
                 </section>               
                 
-                <section class="kb-sec goals-img-status type2">
-                    <p>목표예산보다 <span class="num" data-unit-after="원"><strong>2,500,000</strong></span> 절약에 성공했어요.<br>절약에 성공한 금액은 My 저금통에 자동저축됩니다.</p><!-- 수정:2021-11-15 문구수정 -->
+                <section class="kb-sec goals-img-status type3"><!-- 수정:2021-12-17 type3 변경 -->
+                    <!-- 수정:2021-12-17 문구 수정// -->
+                    <h2>축하합니다.</h2>
+                    <p>절약에 성공했습니다.</p>
+                    <!-- //수정:2021-12-17 문구 수정 -->
                     <img src="@@webRoot/static/images/goal/friend-sucess.png" alt="즐거워하는 키키">
                 </section> 
 
@@ -248,14 +251,14 @@
                         states: {
                             hover: {
                                 enabled: true,
-                                color:'#ffba53'
+                                color:chartBg[01] // 수정:2021-12-17 수정
                             }
                         }
                     }
                 },
                 series: [{
                     name: "현재",
-                    color: "#c6cbd0",
+                    color: chartBg[33], // 수정:2021-12-17 수정
                     pointPlacement: 0,
                     data: [1000, 4000, 3000, 5000]
                 }],

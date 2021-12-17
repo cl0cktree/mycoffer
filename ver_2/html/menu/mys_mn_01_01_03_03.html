@@ -25,19 +25,27 @@
                 <div class="page-step js-fixed">  
                     <div class="page-step-inner">
                         <div class="step" aria-label="총 3단계 중 현재 3단계">
-                            <span class="current">3</span>                        
-                            <span class="total">3</span>
+                            <span class="next">01</span>                        
+                            <span class="next">02</span>                        
+                            <span class="current">03</span>
                         </div>
-                        <h2 class="h1">인증서 선택</h2>
+                        <h2 class="h2">인증서 선택</h2>
                     </div>
                     <p class="page-step-desc">사용할 인증서를 선택해 주세요.</p>
                 </div>  
 
                 <!--// SECTION -->                
-                <section class="kb-sec">
+                <section class="kb-sec">                    
+                    <!-- 수정 : UI개선 // -->
+                    <div class="certificate-lists">
+                        <button type="button" data-state="active"><i class="icon-certificate-kb_40"></i><span>KB모바일인증서</span></button>
+                        <button type="button" data-state="inactive" data-call-layered="mys_mn_01_01_03_02_certificate"><span>공동인증서</span></button>
+                        <button type="button" data-state="preparing"><span>금융인증서</span></button>
+                    </div>
+                    <!-- // 수정 : UI개선 -->
                      
                     <!-- 수정:2021-12-09 // -->
-                    <ul class="certificate-list">
+                    <!-- <ul class="certificate-list">
                         <li>
                             <a href="javascript:;">
                                 <i class="icon-certificate-kb_40"></i> 
@@ -62,7 +70,7 @@
                                 <span class="link-arrow">바로가기</span>
                             </a>
                         </li> 
-                    </ul>
+                    </ul> -->
                     <!-- // 수정:2021-12-09 -->
                     
                 </section>

@@ -26,34 +26,199 @@
                 <section class="kb-sec search-organization-form">
                     <div class="kb-form mt12 search" data-status="">
                         <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="search" id="companyName" value="" placeholder="기관명" title="기관명"><!-- 수정 : ID 수정-->
+                            <input type="text" inputmode="search" id="companyName" value="" placeholder="기관명" title="기관명">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                             <button type="button" class="btn-search"><i class="icon-search">검색</i></button>
                         </div>
                     </div>
-                    <div class="autocomplete-box" id="autocompleteBox"></div><!-- 수정 : ID 추가, ul 제거-->
+                    <div class="autocomplete-box" id="autocompleteBox"></div>
                 </section>
 
-                <section class="kb-sec search-result-list">
+                <section class="kb-sec rdp-sec search-result-list">
                     <strong class="h4 list-tit"><span>KB</span> 검색 결과입니다.</strong>
-                    <strong class="h4">카드</strong>
-                    <ul class="checkbox-group result-list">
-                        <li><span class="form-checkbox"><input type="checkbox" id="select11"><label for="select11">KB국민은행</label></span></li>
-                        <li><span class="form-checkbox"><input type="checkbox" id="select12"><label for="select12">신한은행</label></span></li>
-                        <li><span class="form-checkbox"><input type="checkbox" id="select13" disabled><label for="select13">NH농협은행 <span class="status">연결 중</span></label></span></li>
-                    </ul>
-                    <strong class="h4">금융투자</strong>
-                    <ul class="checkbox-group result-list">
-                        <li><span class="form-checkbox"><input type="checkbox" id="select14"><label for="select14">KB증권</label></span></li>
-                        <li><span class="form-checkbox"><input type="checkbox" id="select15"><label for="select15">신한증권</label></span></li>
-                        <li><span class="form-checkbox"><input type="checkbox" id="select16" disabled><label for="select16">NH증권 <span class="status">연결 중</span></label></span></li>
-                    </ul>
-                    <strong class="h4">보험</strong>
-                    <ul class="checkbox-group result-list">
-                        <li><span class="form-checkbox"><input type="checkbox" id="select17"><label for="select17">KB보험</label></span></li>
-                        <li><span class="form-checkbox"><input type="checkbox" id="select18"><label for="select18">신한보험</label></span></li>
-                        <li><span class="form-checkbox"><input type="checkbox" id="select19" disabled><label for="select19">NH보험 <span class="status">연결 중</span></label></span></li>
-                    </ul>
+                    
+                    <!-- 수정:2021-12-17 // -->
+                    <div class="select-org-box">
+                        <div class="dl-type slide is-active">
+                            <div class="dt">
+                                <span class="tit">은행<span class="num">15</span></span>
+                            </div>
+                            <div class="dd">
+                                <ul class="checkbox-group">
+                                    <li>
+                                        <span class="form-checkbox_20 align-mid">
+                                            <input type="checkbox" id="org_option2-1" disabled>
+                                            <label for="org_option2-1">
+                                                <span class="img-resize_24"><img src="../../static/images/ci/D3AAOB0000.png" alt=""></span>
+                                                <span class="name">테스트용텍스트입니다.테스트용텍스트입니다.테스트용텍스트입니다.테스트용텍스트입니다.테스트용텍스트입니다.</span>
+                                                <span class="status connecting">연결 중</span>
+                                            </label>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="form-checkbox_20 align-mid">
+                                            <input type="checkbox" id="org_option2-2">
+                                            <label for="org_option2-2">
+                                                <span class="img-resize_24"><img src="../../static/images/ci/D1AAIP0000.png" alt=""></span>
+                                                <span class="name">신한은행</span>
+                                            </label>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="form-checkbox_20 align-mid">
+                                            <input type="checkbox" id="org_option2-3" disabled>
+                                            <label for="org_option2-3">
+                                                <span class="img-resize_24"><img src="../../static/images/ci/D3AAOB0000.png" alt=""></span>
+                                                <span class="name">NH농협은행</span>
+                                                <span class="status connecting">연결 중</span>
+                                            </label>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="form-checkbox_20 align-mid">
+                                            <input type="checkbox" id="org_option2-4">
+                                            <label for="org_option2-4">
+                                                <span class="img-resize_24"><img src="../../static/images/ci/D3AAOB0000.png" alt=""></span>
+                                                <span class="name">NH농협은행</span>
+                                            </label>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="form-checkbox_20 align-mid">
+                                            <input type="checkbox" id="org_option2-5">
+                                            <label for="org_option2-5">
+                                                <span class="img-resize_24"><img src="../../static/images/ci/D1AAIP0000.png" alt=""></span>
+                                                <span class="name">신한은행</span>
+                                            </label>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="form-checkbox_20 align-mid">
+                                            <input type="checkbox" id="org_option2-6">
+                                            <label for="org_option2-6">
+                                                <span class="img-resize_24"><img src="../../static/images/ci/D3AAOB0000.png" alt=""></span>
+                                                <span class="name">NH농협은행</span>
+                                            </label>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="dl-type slide">
+                            <div class="dt">
+                                <span class="tit">카드 <span class="num">15</span></span>
+                            </div>
+                            <div class="dd">
+                                <ul class="checkbox-group st-list">
+                                    <li>
+                                        <span class="form-checkbox_20 align-mid">
+                                            <input type="checkbox" id="org_option2-7">
+                                            <label for="org_option2-7">
+                                                <span class="img-resize_24"><img src="../../static/images/ci/F1AAJD0000.png" alt=""></span><!-- ci 없을 경우 -->
+                                                <span class="name">카드</span>   
+                                            </label>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="form-checkbox_20 align-mid">
+                                            <input type="checkbox" id="org_option2-8">
+                                            <label for="org_option2-8">
+                                                <span class="img-resize_24"><img src="../../static/images/ci/F1AAJD0000.png" alt=""></span><!-- ci 없을 경우 -->
+                                                <span class="name">카드</span>   
+                                            </label>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="form-checkbox_20 align-mid">
+                                            <input type="checkbox" id="org_option2-9">
+                                            <label for="org_option2-9">
+                                                <span class="img-resize_24"><img src="../../static/images/ci/F1AAJD0000.png" alt=""></span><!-- ci 없을 경우 -->
+                                                <span class="name">카드</span>   
+                                            </label>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>    
+                        <div class="dl-type slide">
+                            <div class="dt">
+                                <span class="tit">금융투자 <span class="num">15</span></span>
+                            </div>
+                            <div class="dd">
+                                <ul class="checkbox-group st-list">
+                                    <li>
+                                        <span class="form-checkbox_20 align-mid">
+                                            <input type="checkbox" id="org_option2-10">
+                                            <label for="org_option2-10">
+                                                <span class="img-resize_24"><img src="../../static/images/ci/F1AAJD0000.png" alt=""></span><!-- ci 없을 경우 -->
+                                                <span class="name">금융투자</span>
+                                            </label>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="dl-type slide">
+                            <div class="dt">
+                                <span class="tit">보험 <span class="num">15</span></span>
+                            </div>
+                            <div class="dd">
+                                <ul class="checkbox-group st-list">
+                                    <li>
+                                        <span class="form-checkbox_20 align-mid">
+                                            <input type="checkbox" id="org_option2-11">
+                                            <label for="org_option2-11">
+                                                <span class="img-resize_24"><img src="../../static/images/ci/F1AAJD0000.png" alt=""></span><!-- ci 없을 경우 -->
+                                                <span class="name">보험</span>
+                                            </label>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="dl-type slide">
+                            <div class="dt">
+                                <span class="tit">간편결제 <span class="num">15</span></span>
+                            </div>
+                            <div class="dd">
+                                <!-- 리스트 없음 -->
+                            </div>
+                        </div>
+                        <div class="dl-type slide">
+                            <div class="dt">
+                                <span class="tit">캐피탈 <span class="num">15</span></span>
+                            </div>
+                            <div class="dd">
+                                <!-- 리스트 없음 -->
+                            </div>   
+                        </div>
+                        <div class="dl-type slide">
+                            <div class="dt">
+                                <span class="tit">통신 <span class="num">15</span></span>
+                            </div>
+                            <div class="dd">
+                                <!-- 리스트 없음 -->
+                            </div>
+                        </div>
+                        <div class="dl-type slide">
+                            <div class="dt">
+                                <span class="tit">공공기관 <span class="num">15</span></span>
+                            </div>
+                            <div class="dd">
+                                <!-- 리스트 없음 -->
+                            </div>
+                        </div>
+                        <div class="dl-type slide">
+                            <div class="dt">
+                                <span class="tit">P2P/대부/인수채권업체 <span class="num">15</span>
+                            </div>
+                            <div class="dd">
+                                <!-- 리스트 없음 -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // 수정:2021-12-17 -->
+                    
                     <!-- [D] 검색 결과 없을 때 // -->
                     <div class="no-data">
                         <i class="icon-bang_60_gray"></i>
@@ -137,10 +302,7 @@
             };
         } );
 
-        setInterval(function(){
-            console.log($('.autocomplete-box ul').html())
-
-        },5000);
+        
     </script>
 
 </body>

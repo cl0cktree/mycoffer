@@ -1,0 +1,526 @@
+<!-- [MYS_CO_06_01_01_01] 전송요구방법(통합인증) > 기관 선택 (작성자: 누리어 시스템 변혜선, 최선화) // -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/html/_include/app-head.html',{
+        "title": "통합인증 기관선택 | 전송요구"
+    })
+</head>
+
+<body>
+    @@include('@@webRoot/html/_include/app-a11y.html')
+    <div class="app">
+
+        @@include('@@webRoot/html/_include/app-integrated-header.html',{
+            'pageTit':'자산 등록',
+            'type':'home'
+        })
+
+        <!-- app-container //-->
+        <div class="app-container">
+              
+            <!-- app-content // -->
+            <main class="app-content rdp-select-organization">
+                <div class="page-step js-fixed">    
+                    <div class="page-step-inner">
+                        <div class="step" aria-label="총 5단계 중 현재 1단계">
+                            <span class="current">01</span>                        
+                            <span class="next">02</span>                        
+                            <span class="next">03</span>                        
+                            <span class="next">04</span>                        
+                            <span class="total">05</span>
+                        </div>
+                        <h2 class="h2">연결기관 선택</h2>
+                    </div>
+                </div> 
+
+                <section class="kb-sec rdp-org-search">
+                    <a href="@@webRoot/html/common/mys_co_06_01_01_09.html" class="btn-search" role="button"><i class="icon-search">기관검색</i></a>
+                </section>
+
+                <section class="kb-sec rdp-sec">
+                    <div class="recommend-org-box">    
+                        <h3 class="is-hidden">추천 기관</h3>
+
+                        <div class="js-checkbox-selector">
+                            <div class="recomend-org-tit">
+                                <span class="form-checkbox">
+                                    <input type="checkbox" id="selectAll01">
+                                    <label for="selectAll01"><strong class="user-name text-line-yellow">홍길동</strong>님과 연관이 높은 기관 <span class="num">50</span>개</label>
+                                </span>
+                            </div>
+                            <div class="swiper-container-rdp">
+                                <div class="swiper-pagination"></div>
+
+                                <ul class="swiper-wrapper checkbox-group-icon">
+                                    <li class="swiper-slide item">
+                                        <span class="form-checkbox-icon">
+                                            <input type="checkbox" id="org_option01" class="js-exception" disabled><!-- 전체선택 제외 : .js-exception disabled -->
+                                            <label for="org_option01">
+                                                <span class="img-resize_24"><img src="@@webRoot/static/images/ci/C1AADA0000.png" alt=""></span>
+                                                <strong class="tit">KB국민카드</strong>
+                                                <span class="connecting">연결중</span><!-- 연결 중일 경우 -->
+                                            </label>
+                                        </span>
+                                    </li>
+                                    <li class="swiper-slide item">
+                                        <span class="form-checkbox-icon">
+                                            <input type="checkbox" id="org_option02" checked>
+                                            <label for="org_option02">
+                                                <span class="img-resize_24"><img src="@@webRoot/static/images/ci/A1AAER0000.png" alt=""></span>
+                                                <strong class="tit">신한카드</strong>
+                                            </label>
+                                        </span>
+                                    </li>
+                                    <li class="swiper-slide item">
+                                        <span class="form-checkbox-icon">
+                                            <input type="checkbox" id="org_option03">
+                                            <label for="org_option03">
+                                                <span class="img-resize_24"><img src="@@webRoot/static/images/ci/C1AAEY0000.png" alt=""></span>
+                                                <strong class="tit">삼성카드</strong>
+                                            </label>
+                                        </span>
+                                    </li>
+                                    <li class="swiper-slide item">
+                                        <span class="form-checkbox-icon">
+                                            <input type="checkbox" id="org_option04">
+                                            <label for="org_option04">
+                                                <span class="img-resize_24"><img src="@@webRoot/static/images/ci/D1AAFO0000.png" alt=""></span>
+                                                <strong class="tit">현대카드</strong>
+                                            </label>
+                                        </span>
+                                    </li>
+                                    <li class="swiper-slide item">
+                                        <span class="form-checkbox-icon">
+                                            <input type="checkbox" id="org_option05">
+                                            <label for="org_option05">
+                                                <span class="img-resize_24"><img src="@@webRoot/static/images/ci/D1AADO0000.png" alt=""></span>
+                                                <strong class="tit">롯데카드</strong>
+                                            </label>
+                                        </span>
+                                    </li>
+                                    <li class="swiper-slide item">
+                                        <span class="form-checkbox-icon">
+                                            <input type="checkbox" id="org_option06">
+                                            <label for="org_option06">
+                                                <span class="img-resize_24"><img src="@@webRoot/static/images/ci/D1AABJ0000.png" alt=""></span>
+                                                <strong class="tit">하나카드</strong>
+                                            </label>
+                                        </span>
+                                    </li>
+                                    <li class="swiper-slide item">
+                                        <span class="form-checkbox-icon">
+                                            <input type="checkbox" id="org_option07">
+                                            <label for="org_option07">
+                                                <span class="img-resize_24"><img src="@@webRoot/static/images/ci/A1AAER0000.png" alt=""></span>
+                                                <strong class="tit">신한카드</strong>
+                                            </label>
+                                        </span>
+                                    </li>
+                                    <li class="swiper-slide item">
+                                        <span class="form-checkbox-icon">
+                                            <input type="checkbox" id="org_option08">
+                                            <label for="org_option08">
+                                                <span class="img-resize_24"><img src="@@webRoot/static/images/ci/C1AAEY0000.png" alt=""></span>
+                                                <strong class="tit">삼성카드</strong>
+                                            </label>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>   
+                        </div>   
+                    </div>
+
+                </section>
+
+                <section class="kb-sec full rdp-sec">
+                    <h4 class="is-hidden">기관 선택</h4>
+
+                    <div class="tab swiper-container-spy js-fixed">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide is-active"><a href="javascript:;">은행</a></li>
+                            <li class="swiper-slide trigger"><a href="javascript:;">카드</a></li>
+                            <li class="swiper-slide"><a href="javascript:;">금융투자</a></li>
+                            <li class="swiper-slide"><a href="javascript:;">보험</a></li>
+                            <li class="swiper-slide"><a href="javascript:;">간편결제</a></li>
+                            <li class="swiper-slide"><a href="javascript:;">캐피탈</a></li>
+                            <li class="swiper-slide"><a href="javascript:;">통신</a></li>
+                            <li class="swiper-slide"><a href="javascript:;">통신</a></li>
+                            <li class="swiper-slide"><a href="javascript:;">공공기관</a></li>
+                            <li class="swiper-slide"><a href="javascript:;">P2P/대부/인수채권업체</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="select-org-box js-scroll-spy">
+                        <div class="dl-type slide is-active">
+                            <div class="dt">
+                                <span class="tit">은행<span class="num">15</span></span>
+                            </div>
+                            <div class="dd">
+                                <ul class="checkbox-group">
+                                    <li>
+                                        <span class="form-checkbox_20 align-mid">
+                                            <input type="checkbox" id="org_option2-1" disabled>
+                                            <label for="org_option2-1">
+                                                <span class="img-resize_24"><img src="../../static/images/ci/D3AAOB0000.png" alt=""></span>
+                                                <span class="name">테스트용텍스트입니다.테스트용텍스트입니다.테스트용텍스트입니다.테스트용텍스트입니다.테스트용텍스트입니다.</span>
+                                                <span class="status connecting">연결 중</span>
+                                            </label>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="form-checkbox_20 align-mid">
+                                            <input type="checkbox" id="org_option2-2">
+                                            <label for="org_option2-2">
+                                                <span class="img-resize_24"><img src="../../static/images/ci/D1AAIP0000.png" alt=""></span>
+                                                <span class="name">신한은행</span>
+                                            </label>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="form-checkbox_20 align-mid">
+                                            <input type="checkbox" id="org_option2-3" disabled>
+                                            <label for="org_option2-3">
+                                                <span class="img-resize_24"><img src="../../static/images/ci/D3AAOB0000.png" alt=""></span>
+                                                <span class="name">NH농협은행</span>
+                                                <span class="status connecting">연결 중</span>
+                                            </label>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="form-checkbox_20 align-mid">
+                                            <input type="checkbox" id="org_option2-4">
+                                            <label for="org_option2-4">
+                                                <span class="img-resize_24"><img src="../../static/images/ci/D3AAOB0000.png" alt=""></span>
+                                                <span class="name">NH농협은행</span>
+                                            </label>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="form-checkbox_20 align-mid">
+                                            <input type="checkbox" id="org_option2-5">
+                                            <label for="org_option2-5">
+                                                <span class="img-resize_24"><img src="../../static/images/ci/D1AAIP0000.png" alt=""></span>
+                                                <span class="name">신한은행</span>
+                                            </label>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="form-checkbox_20 align-mid">
+                                            <input type="checkbox" id="org_option2-6">
+                                            <label for="org_option2-6">
+                                                <span class="img-resize_24"><img src="../../static/images/ci/D3AAOB0000.png" alt=""></span>
+                                                <span class="name">NH농협은행</span>
+                                            </label>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="dl-type slide">
+                            <div class="dt">
+                                <span class="tit">카드 <span class="num">15</span></span>
+                            </div>
+                            <div class="dd">
+                                <ul class="checkbox-group st-list">
+                                    <li>
+                                        <span class="form-checkbox_20 align-mid">
+                                            <input type="checkbox" id="org_option2-7">
+                                            <label for="org_option2-7">
+                                                <span class="img-resize_24"><img src="../../static/images/ci/F1AAJD0000.png" alt=""></span><!-- ci 없을 경우 -->
+                                                <span class="name">카드</span>   
+                                            </label>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="form-checkbox_20 align-mid">
+                                            <input type="checkbox" id="org_option2-8">
+                                            <label for="org_option2-8">
+                                                <span class="img-resize_24"><img src="../../static/images/ci/F1AAJD0000.png" alt=""></span><!-- ci 없을 경우 -->
+                                                <span class="name">카드</span>   
+                                            </label>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="form-checkbox_20 align-mid">
+                                            <input type="checkbox" id="org_option2-9">
+                                            <label for="org_option2-9">
+                                                <span class="img-resize_24"><img src="../../static/images/ci/F1AAJD0000.png" alt=""></span><!-- ci 없을 경우 -->
+                                                <span class="name">카드</span>   
+                                            </label>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>    
+                        <div class="dl-type slide">
+                            <div class="dt">
+                                <span class="tit">금융투자 <span class="num">15</span></span>
+                            </div>
+                            <div class="dd">
+                                <ul class="checkbox-group st-list">
+                                    <li>
+                                        <span class="form-checkbox_20 align-mid">
+                                            <input type="checkbox" id="org_option2-10">
+                                            <label for="org_option2-10">
+                                                <span class="img-resize_24"><img src="../../static/images/ci/F1AAJD0000.png" alt=""></span><!-- ci 없을 경우 -->
+                                                <span class="name">금융투자</span>
+                                            </label>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="dl-type slide">
+                            <div class="dt">
+                                <span class="tit">보험 <span class="num">15</span></span>
+                            </div>
+                            <div class="dd">
+                                <ul class="checkbox-group st-list">
+                                    <li>
+                                        <span class="form-checkbox_20 align-mid">
+                                            <input type="checkbox" id="org_option2-11">
+                                            <label for="org_option2-11">
+                                                <span class="img-resize_24"><img src="../../static/images/ci/F1AAJD0000.png" alt=""></span><!-- ci 없을 경우 -->
+                                                <span class="name">보험</span>
+                                            </label>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="dl-type slide">
+                            <div class="dt">
+                                <span class="tit">간편결제 <span class="num">15</span></span>
+                            </div>
+                            <div class="dd">
+                                <!-- 리스트 없음 -->
+                            </div>
+                        </div>
+                        <div class="dl-type slide">
+                            <div class="dt">
+                                <span class="tit">캐피탈 <span class="num">15</span></span>
+                            </div>
+                            <div class="dd">
+                                <!-- 리스트 없음 -->
+                            </div>   
+                        </div>
+                        <div class="dl-type slide">
+                            <div class="dt">
+                                <span class="tit">통신 <span class="num">15</span></span>
+                            </div>
+                            <div class="dd">
+                                <!-- 리스트 없음 -->
+                            </div>
+                        </div>
+                        <div class="dl-type slide">
+                            <div class="dt">
+                                <span class="tit">공공기관 <span class="num">15</span></span>
+                            </div>
+                            <div class="dd">
+                                <!-- 리스트 없음 -->
+                            </div>
+                        </div>
+                        <div class="dl-type slide">
+                            <div class="dt">
+                                <span class="tit">P2P/대부/인수채권업체 <span class="num">15</span>
+                            </div>
+                            <div class="dd">
+                                <!-- 리스트 없음 -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="sticky-bottom">
+                    <div class="btn-area">
+                        <button type="button" class="btn-solid" data-call-layered="mys_co_06_01_01_01_bs01"><span>다음</span></button>
+                    </div>
+                </div>
+            </main>
+            <!-- // app-content -->
+
+        </div>
+        <!-- // app-container -->
+
+        <!-- Layer (modal, bottom sheet) // -->
+        <div class="layered">
+            <!-- 수정:2021-10-08 // -->
+            @@include('@@webRoot/html/common/layered/mys_co_06_01_01_01_bs01.html') 
+            <!-- // 수정:2021-10-08 -->
+        </div>
+        <!-- // Layer (modal, bottom sheet) -->
+    </div>
+
+    <!-- Script -->
+    @@include('@@webRoot/html/_include/common-js.html')
+    <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/js/ui.js"></script>
+    <!-- Add Script -->
+    <script>
+        $(document).ready(function(){
+            // 기획확인용
+            $('.btn-cancel').on('click', function() {
+                modalPopup({
+                    title: '',
+                    message: "마이데이터 서비스 이용을 위한 자산 등록을 취소하시겠습니까?",
+                    type: "confirm"
+                });
+            });
+
+           
+            // 추천기관 슬라이드
+            const SwiperRdp = new Swiper('.swiper-container-rdp', {
+                slidesPerView: 3, // 필요시 추가 : break point
+                grid: {
+                    rows: 2,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: 'true',
+                }
+            });
+
+            // 스와이퍼슬라이드 탭 형태
+            const TabSpySwiper = new Swiper('.swiper-container-spy', {
+                slidesPerView: 'auto',
+                watchOverflow: true,
+                on: {
+                    init : function(swiper){
+                        console.log(swiper)
+                        let width = 0;
+                        let $swiper = $('.tab.swiper-container-spy');
+                        let index = $swiper.find('.is-active').index();
+
+                        swiper.slideTo(index);
+                        console.log($swiper.find('.is-active'))
+                        if($swiper.is(':visible')){
+                            $swiper.find('.swiper-slide').each(function(){
+                                width += $(this).width();
+                            });
+                            if(width <= $(window).outerWidth() - 24) swiper.allowTouchMove = false;
+                        }
+                    },
+                    click : function(swiper, event){
+                        swiper.slideTo(swiper.clickedIndex);
+                    },
+                }
+            });
+
+            function jsScrollSpy ({
+                $tabContent : $tabContent = $('.swiper-container-spy'), // 탭컨테이너 top: 607
+                $tabLinks : $tabLinks = $tabContent.find("a, button"), // 탭
+                $container : $container = $('.js-scroll-spy'), // 연동될 슬라이드
+                $slides : $slides = $container.find('.slide'),
+                isActive : isActive = 'is-active',
+            }={}) {
+                let st = 0;
+                let slidePositionTopArray = []; // 스파이스크롤 슬라이드 포지션탑 배열
+                const tabHeight = $tabContent.outerHeight(); //
+                const tabTop = $tabContent.offset().top; //
+                const headerHeight = $('.app-header').outerHeight(); //
+                const winH = $(window).outerHeight(); 
+                // const wrapperTop = $container.parent().offset().top; 
+                const wrapperTop = $container.offset().top; 
+
+            
+                // 스파스크롤 슬라이드 탑 배열 
+                function init(){
+                    slidePositionTopArray = $slides.map(function(idx, item){
+                        // return Math.ceil($(item).offset().top - headerHeight - (tabHeight*2));
+                        return Math.ceil($(item).offset().top - headerHeight - tabHeight -39);
+                    });
+                }
+                
+                // 탭 클릭시 스크롤 이동 및 is-active 클래스 추가
+                $tabLinks.on('click', function() {
+                    let $link = $(this);
+                    let idx = $link.parent('li').index();
+                    // 
+                    if(!$tabContent.is('.is-fixed')){
+                        // $('html, body').stop().animate({'scrollTop':slidePositionTopArray[0]}, 500);
+                        moveScroll(idx, 200);
+                        console.log(999)
+                    }else{
+                        moveScroll(idx, 0); // 탭선택시 스크롤 duration : 0 으로 변경
+                        addClass(idx);
+                    }
+                        
+                });
+                
+                // 스크롤 이동
+                function moveScroll(idx, duration){
+                    // duration = duration == undefined ?(slidePositionTopArray[idx] - slidePositionTopArray[idx-1]) * 0.5 : 0;
+                    duration = (duration == 'undefined') ?  duration = 0 : duration = duration;
+                    console.log(duration)
+                    // let firstClick = slidePositionTopArray[idx];
+                    // firstClick = duration == undefined ?  slidePositionTopArray[idx] : firstClick - tabHeight;
+                    // $('html, body').stop().animate({'scrollTop': slidePositionTopArray[idx]-tabHeight}, duration);
+                    $('html, body').stop().animate({'scrollTop': slidePositionTopArray[idx]}, duration);
+                }
+
+                // 탭 이동
+                function moveTab(idx){
+                    TabSpySwiper.slideTo(idx);
+                    // TabSpySwiper.update(true);
+                }
+
+                // .is-active 클래스 넣기
+                function addClass(idx){
+                    $tabLinks.parent('li').removeClass(isActive);
+                    $tabLinks.eq(idx).parent('li').addClass(isActive);
+                    $slides.removeClass(isActive);
+                    $slides.eq(idx).addClass(isActive);
+                    // $slides.eq(idx).triggerHandler('click');
+                }
+
+                // 스크롤 스파이에 스크롤이 생길때 클래스 추가 및 탭 이동
+                // 스크롤 여역이 탭 위치에 왔을때 스크롤 이벤트 발생
+                $(window).on('scroll', function(){
+                    let st = Math.ceil($(window).scrollTop())
+                    
+                    ///////
+                    let prevFixedHeight = 0;
+                    if($tabContent.data('add-height')){
+                        prevFixedHeight = $('.js-fixed').eq(1).outerHeight();
+                        
+                    }
+
+
+
+                    for(var i = 0; i < slidePositionTopArray.length; i++){
+                        // 0
+                        if(i==0 && slidePositionTopArray[1] > st){
+                            // addClass(0);
+                            // moveTab(0);
+                            // $('.spy-scroll-wrapper').css('margin-top','100px')
+                        }
+                        // length-1
+                        else if(slidePositionTopArray.length-1 == i && slidePositionTopArray[slidePositionTopArray.length-1] < st && slidePositionTopArray[slidePositionTopArray.length-1] + $slides.eq(slidePositionTopArray.length-1).outerHeight() > st){
+                            addClass(slidePositionTopArray.length-1);
+                            moveTab(slidePositionTopArray.length-1);
+                            // $('.spy-scroll-wrapper').css('margin-top','0')
+                        }
+                        // 1 ~ length-1
+                        else if(slidePositionTopArray[i] <= st && slidePositionTopArray[i+1] > st) {
+                            addClass(i);
+                            moveTab(i);
+                        }
+                        // ~0
+                        else if(slidePositionTopArray[0] > st){
+                            addClass(0);
+                            moveTab(0);
+                        }
+                    }
+                    // console.log('scrollTop'+st)
+                })
+                
+                init();
+            };
+            jsScrollSpy();
+        });
+    </script>
+</body>
+
+</html>

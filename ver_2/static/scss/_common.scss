@@ -110,7 +110,8 @@
 .agree-term .box-info{@include text(15px);@include clfix;padding-top:1.5rem;padding-bottom:1.6rem;margin-top:5rem;border:1px solid $kb-ui09;border-width:1px 0 1px;/*background-color:$kb-ui10;*/color:$kb-ui02;} // GUI수정 2021-10-25
 .agree-term .box-info ul{margin:2.7rem 0;} // GUI수정 2021-10-25
 .agree-term .box-info strong{font-weight:bold;} // GUI수정 2021-10-25
-.agree-term .box-info .btn-text{float:right;margin-top:1.2rem;} // GUI수정 2021-10-25
+.agree-term .box-info .btn-text{float:right;margin-top:1.2rem;color:$kb-ui04;} // 컬러수정 2021-10-17
+.agree-term .box-info .btn-text .link-arrow{opacity:0.9;} // 컬러수정 2021-10-17
 .agree-term .box-info .btn-text i{margin-top:0.75rem;} // GUI수정 2021-10-25
 .agree-term .agreement-service-choice label{font-weight:bold;}// 전송요구 약관 전체동의 폰트 볼드
 .kb-sec.asset-sync{/*padding-top:12vh;*/text-align:center;} // 패딩 탑 삭제 2021-10-12
@@ -1048,10 +1049,11 @@ ol[data-style=number] li::before{content:counter(list-number)'.';margin-right:0.
 
 
 
-// text highlight 2021-12-10
+// text highlight
 .desc-box P strong,
 .desc-box > strong,
-.desc-box > h3
+.desc-box > h3,
+.text-line-yellow
 {
     display:inline;
     position:relative;
@@ -1061,3 +1063,393 @@ ol[data-style=number] li::before{content:counter(list-number)'.';margin-right:0.
     background-position: left bottom;
 }
 
+// right to data portability
+[class*=rdp-]{
+    .page-step{
+        .page-step-inner{
+            .step{
+                font-size:0;
+                span{
+                    position:relative;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    width:24px;
+                    height:24px;
+                    color:$kb-ui05;
+                    font-family:'roboto';
+                    font-size:1.3rem;
+                    line-height:1.3rem;
+                    font-weight:normal;
+                    
+                    &:first-child{
+                        margin-left:0;
+                    }
+                }
+                .before{
+                    color:$kb-ui02;
+                }
+                .current{
+                    margin-right:58px;
+                    margin-left:8px;
+                    border-radius:50%;
+                    color:$kb-ui11;
+                    background-color:$kb-ui02;
+                    &::after{
+                        content:'';
+                        position:absolute;
+                        top:49%;
+                        left:24px;
+                        display:block;
+                        width:40px;
+                        height:1px;
+                        margin-left:12px;
+                        background-color:$kb-ui02;
+                    }
+
+                }
+                .next{
+                    color:$kb-ui02;
+
+                }
+                .total{
+                    color:$kb-ui02;
+                    &::before{
+                        content:none;
+                    }
+
+                }
+            }
+            [class^=h]{
+                margin-top:11px;
+            }
+        }
+        &.is-fixed{
+            .step{
+                .next{
+                    display:none;
+    
+                }
+                .current{
+                    margin-right:0;
+                    &::after{
+                        content:none;
+                    }
+                }
+                .total{
+                    font-size:13px;
+                    &::before{
+                        content:'/';
+                    }
+
+                }
+
+            }
+            [class^=h]{
+                margin-top:0;
+                font-size:1.4rem;
+                line-height:24px;
+            }
+        }
+    }
+
+    .rdp-org-search{
+        position:relative;
+        margin-top:0;
+        .btn-search{
+            position:absolute;
+            right:26px;;
+            top:-28px;
+        }
+    }
+    .recommend-org-box{
+        padding-left:1px;
+        margin-top:53px;
+        margin-bottom:7px;
+        .recomend-org-tit{
+            margin-bottom:24px;
+            .num{
+                color:$color-red;
+            }
+        }
+        .user-name{
+            font-weight:bold;
+        }
+    }
+    .select-org-box{
+        margin-bottom:80px;
+        .dl-type{
+            &:first-child .dt{
+                margin-top:0;
+            }
+            .dt{
+                padding:20px 0 20px 2px;
+                margin-top:25px;
+                font-size:16px;font-weight:bold;
+                border-bottom:1px solid $kb-ui09;
+                line-height:1;
+                .num{
+                    margin-left:4px;
+                }
+            }
+            .dd{
+                word-break:break-word;
+                
+                .checkbox-group li{
+                    padding-left:2px;
+                    margin:0;
+                    border-bottom:1px solid $kb-ui09;
+                    > span{
+                        display:block;
+
+                    }
+                    label{
+                        display:flex;
+                        align-items:center;
+                        // height:100%;
+                        width:100%;
+                        padding:16px 0 16px 2.4rem;
+                        .name{
+                            flex:1 1 auto;
+                        }
+                    }
+                    .img-resize_24{
+                        flex:0 0 auto;
+                        margin-right:7px;
+                        margin-left:7px;
+                    }
+                    .status{
+                        flex:0 0 auto;
+                        margin-left:3px;
+                        font-size:12px;
+
+                    }
+                    .connecting{
+                        color:#287eff;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+// 추천 기관선택
+.checkbox-group-icon{
+    gap:0 0.8rem;
+    .item{
+        display:flex;
+        flex-direction:column;
+    }
+    .form-checkbox-icon{
+        input{
+            position:absolute;
+            width:1px;
+            height:1px;
+            padding:0;
+            margin:-1px;
+            clip:rect(0,0,0,0);
+            border:0;
+            overflow:hidden;
+            &.js-exception + label{
+                background-color:$kb-ui10;
+            }
+            &:checked + label{
+                border:2px solid $color-yellow;
+                box-shadow: 0px 8px 10px 0 rgba(4, 0, 0, 0.1);
+                .tit{
+                    font-weight:bold;
+                }
+            }
+        }
+        label{
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:space-between;
+            flex-wrap:wrap;
+            position:relative;
+            width:100%;
+            height:100%;
+            min-height:78px;
+            padding:1.5rem 0.2rem 1.3rem;
+            border:0.1rem solid $kb-ui08;
+            border-radius:8px;
+            .connecting{
+                position:absolute;
+                left:50%;
+                width:0;
+                height:0;
+                padding:0;
+                margin:-1px;
+                transform:translateX(27px);
+                clip:rect(0,1.6rem,1rem,0);
+                border:0;
+                font-size:0.1rem;
+                color:transparent;
+                &::after{
+                    content:'';
+                    position:absolute;        
+                    top:0.2rem;
+                    left:0.2rem;
+                    width: 1.2rem;
+                    height: .8rem;
+                    margin-top: -.2rem;
+                    transform: rotate(-45deg);
+                    border-top-left-radius: 1px;
+                    border-bottom: 2.5px solid $color-yellow-positive;
+                    border-bottom-right-radius: 2px;
+                    border-bottom-left-radius: 3px;
+                    border-left: 2.5px solid $color-yellow-positive;
+                    z-index: 1;
+                }
+            }
+        }
+        .tit{
+            font-size:13px;
+            font-weight:normal;
+            line-height:1;
+            letter-spacing:-0.52px;
+        }
+    }
+    
+}
+
+
+// 추천 기관 슬라이드
+.recommend-org-box .swiper-container-rdp {
+    position:relative;
+    height:19.4rem;
+    padding:0 24px 20px;
+    margin:0 -24px 0 -32px;
+    overflow:hidden;
+    .swiper-pagination{
+        top:174px;
+        z-index:10;
+    
+        .swiper-pagination-bullet{
+            width:6px;
+            height:6px;
+            margin:0 3px;
+            border-radius:50%;
+            background-color:$kb-ui08;
+            opacity:1;
+        }
+        .swiper-pagination-bullet-active{
+            width:20px;
+            border-radius:3px;
+            background-color:$kb-ui05;
+            
+        }
+    }
+}
+
+
+// RESET : swiper grid 
+.swiper-grid-column > .swiper-wrapper{
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content:space-between;
+    .swiper-slide{
+        display:flex;
+        width:calc(100% / 2);
+        height:calc(100% / 2);
+    }
+    .swiper-container-multirow-column > .swiper-wrapper {
+        flex-direction: inherit;
+    }
+}
+
+/* default spy-scroll css */
+.tab.swiper-container-spy{
+    position: relative;
+    padding:16px 0 0;
+    list-style: none;
+    overflow: hidden;
+    background-color:$kb-ui11;
+    z-index: 1;
+    .swiper-wrapper::after{
+        content:none;
+    }
+}
+
+.js-fixed.is-fixed.swiper-container-spy{
+    position:fixed;
+    top:calc(48px + 42px);
+    left:0;
+    z-index:$level40;
+    width:100%;
+    &+.select-org-box{
+        padding-top:115px;  
+    }
+}
+
+/* lottie */
+.btn-scroll-down{
+    position:fixed;
+    bottom:80px;
+    left:50%;
+    display:block;
+    width:40px;
+    height:40px;
+    padding:7px 7px 9px 7px;
+    margin-left:-20px;
+    box-sizing:border-box;
+    transform:rotate(180deg);
+    border-radius:100%;
+    font-size:1px;
+    background-color:#26282c;
+    opacity:0.6;
+    z-index:50;
+    span{
+        overflow:hidden;
+        display:block;
+        width:1px;
+        height:1px;
+    }
+}
+
+.btn-scroll-up{
+    position:fixed;
+    right:24px;
+    bottom:80px;
+    width:40px;
+    height:40px;
+    margin-left:-20px;
+    z-index:50;
+}
+
+// 기관검색
+.rdp-sec{
+    &.search-result-list{
+        
+    }
+}
+
+//mys_co_06_01_01_01_bs01 / mys_mn_01_01_01_bs01
+.btn-certificates{display:block;}
+.btn-certificates .btn-certificate{display:block;width:100%;padding-top:10px;padding-bottom:9px;border-radius:2px;background-color:$kb-ui09;}
+.btn-certificates .btn-certificate span{font-size:16px;display:block;text-align:center;}
+.btn-certificates .btn-certificate i + span{margin-top:10px;}
+.btn-certificates .btn-certificate:first-child{background-color:$color-yellow-negative}
+
+//mys_mn_01_01_03_03 / mys_co_06_01_01_13 / mys_mn_01_01_03_08
+.certificate-lists{display:flex;flex-wrap:wrap;}
+.certificate-lists button{width:calc(50% - 6px);padding:18px 4px 17px 4px;border:1px solid $kb-ui08;background-color:$kb-ui11;border-radius:4px;}
+.certificate-lists button span{@include text($size: 18px, $line-height:1, $weight:bold);display:block;}
+.certificate-lists button:first-child{position:relative;width:100%;border:2px solid $color-yellow;box-shadow: 0px 4px 10px 0 rgba(4, 0, 0, 0.1);}
+.certificate-lists button:not(:first-child){margin-top:12px;}
+.certificate-lists button:nth-child(2n+3){margin-left:12px;}
+.certificate-lists button:after{display:block;font-size:12px;margin-top:10px;}
+.certificate-lists button[data-state=active]:after{content:'사용가능';color:$color-blue;}
+.certificate-lists button[data-state=inactive]:after{content:'발급필요';color:$color-red;}
+.certificate-lists button[data-state=preparing]:after{content:'서비스 준비중';color:$kb-ui04;}
+.certificate-lists button:first-child:after{position:absolute;right:20px;top:18px;margin-top:0;}
+
+//mys_co_06_01_00_bs01
+.mydata-connect-info li{position:relative;}
+.mydata-connect-info li > i{position:absolute;left:0;top:0;}
+.mydata-connect-info li p{margin-left:65px;}
+.mydata-connect-info li button{margin-top:16px;}
+.mydata-connect-info li + li{padding-top:20px;margin-top:20px;border-top:1px solid $kb-ui09;}
+.mydata-connect-info li + li > i{top:20px;}

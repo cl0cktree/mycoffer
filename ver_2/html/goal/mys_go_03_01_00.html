@@ -17,7 +17,7 @@
 		<!-- app-container //-->
 		<div class="app-container">
 			<!-- app-content // -->
-			<main class="app-content goals-challenge">
+			<main class="app-content goals-challenge chartPatt"> <!-- 2021-12-17 수정 -->
                 <section class="kb-sec goals-noti">
                     <h2>커피 줄이기</h4>
                     <h3>카페인 샤워는 이제 그만!카페인 샤워는 이제 그만!카페인 샤워는 이제 그만!</h3> <!-- 2021-09-09 수정 -->
@@ -67,12 +67,12 @@
                                     <div class="challenge-info non-tit">
                                         <h2 class="tit flex-box goals-desc type2">비교그룹과 월별 소비금액을 비교했어요.</h2>
                                         <div class="chart-area" id="splineChart"></div>
-                                        <!-- 2021-09-09 수정 // -->
+                                        <!-- 2021-12-17 수정 // -->
                                         <ul class="legend-dot type2">
-                                            <li class="yellow">나</li>
-                                            <li class="red">비교그룹</li>
+                                            <li><i class="lc-marker01"></i> 나</li>
+                                            <li><i class="lc-marker10"></i> 비교그룹</li>
                                         </ul>
-                                        <!-- // 2021-09-09 수정 -->
+                                        <!-- // 2021-12-17 수정 -->
                                     </div>
                                 </div>
                             </div>
@@ -83,7 +83,7 @@
                 <hr class="hr-divide_48">  <!-- 2021-09-09 수정 -->
                 <section class="kb-sec goals-use-best">
                     <div class="ranking-list">
-                        <h2 class="ranking-tit"><strong>소비 Top 3</strong></h2> <!-- 2021-09-09 수정 -->
+                        <h2 class="ranking-tit"><strong>월평균 소비 Top 3</strong></h2> <!-- 2021-12-17 수정 -->
                         <ul class="ranking-view">
                             <li class="rank">할리스 전경련회관점 <strong class="num" data-unit-after="원">55,000</strong></li>
                             <li class="rank">제주스 전경련회관점 <strong class="num" data-unit-after="원">35,000</strong></li>
@@ -128,7 +128,7 @@
 	<script src="@@webRoot/static/js/ui.js"></script>
     
     <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
-    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
+    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>    
     <!-- 2021-09-09 수정 // -->
     <script>
         $(document).ready(function(){
@@ -232,7 +232,8 @@
                 },
                 series: [{
                     // linkedTo: "main",
-                    color: '#ffba53',
+                    color: '#ffba53',                    
+                    marker: lineMarker[1], //수정:2021-12-17 추가
                     data: [
                         [3, 15000],
                         [4, 20000],
@@ -241,7 +242,8 @@
                     ]
                 },{
                     // id: 'main',
-                    color: '#ff8a71',
+                    color: '#c6cbd0', //수정:2021-12-17 수정
+                    marker: lineMarker[10], //수정:2021-12-17 추가
                     data: [
                         [3, 20600],
                         [4, 35600],

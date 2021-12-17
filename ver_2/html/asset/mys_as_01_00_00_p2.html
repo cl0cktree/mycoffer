@@ -50,12 +50,8 @@
 						<span class="form-checkbox"><input type="checkbox" id="viewOnlyFinance"><label for="viewOnlyFinance">금융상품만 보기</label></span>
 						<!-- 금융상품만 보기: false // -->
 						<div class="chart-wrap" data-cwidx="1">
-							<div class="chart-area" id="barChart01">
-								<img class="temp" src="@@webRoot/static/images/_temp/chart_as0000_2_3.png" alt="차트 예시 이미지">
-							</div>
-							<div class="chart-area" id="barChart02">
-								<img class="temp" src="@@webRoot/static/images/_temp/chart_as0000_2_4.png" alt="차트 예시 이미지">
-							</div>
+							<div class="chart-area" id="barChart01"></div>
+							<div class="chart-area" id="barChart02"></div>
 							<!-- 차트샘플 /html/__guide/highchart/bar-graph05.html -->
 							<div class="legend-unit t02">
 								<ul>
@@ -75,12 +71,8 @@
 						<!-- 금융상품만 보기: true // -->
 						<div class="chart-wrap" data-cwidx="2">
 							<div class="chart-flex">
-								<div class="chart-area" id="donutChart01">
-									<img class="temp" src="@@webRoot/static/images/_temp/chart_as0000_2_1.png" alt="차트 예시 이미지">
-								</div>
-								<div class="chart-area" id="donutChart02">
-									<img class="temp" src="@@webRoot/static/images/_temp/chart_as0000_2_2.png" alt="차트 예시 이미지">
-								</div>
+								<div class="chart-area" id="donutChart01"></div>
+								<div class="chart-area" id="donutChart02"></div>
 							</div>
 							<!-- 차트샘플 /html/__guide/highchart/donut-graph01.html -->
 							<div class="legend-unit t02">
@@ -144,20 +136,15 @@
 						<span class="form-checkbox"><input type="checkbox" id="viewOnlyFinance2"><label for="viewOnlyFinance2">금융상품만 보기</label></span>
 
 						<div class="chart-wrap">
-							<!-- 2021-10-26 차트 유형 변경 // -->
-							<!-- [chart area] //-->
-							<!--
-								[차트 디자인 정보]
-								* 그래프 색상
-								- 나 :  #ffcf53
-								- 비교그룹 : #ffab53
-								- X축 텍스트 컬러/크기 : #26282c/13px
-							-->
-							<div class="chart-area" id="">
-								<img class="temp" src="@@webRoot/static/images/_temp/chart_as0000_3.png" alt="차트 예시 이미지">
+							<!-- [chart area] 하이차트 UI 추가 //-->
+							<div class="chart-area" id="columnChart03"></div>
+							<!--// [chart area] -->
+							<div class="legend-unit">
+								<ul>
+									<li class="cate1">나</li>
+									<li class="cate2">비교그룹</li>
+								</ul>
 							</div>
-							<!-- // [chart area] -->
-							<!-- // 2021-10-26 차트 유형 변경 // -->
 						</div>
 					</div>
 				</section>
@@ -185,6 +172,443 @@
 
 		//GNB 활성화 (번호:menu.js)
         gfn_gnb.select(1);
+
+
+		// highchart 공통 options 하이차트 UI 추가 start
+		Highcharts.setOptions({
+			title: { text: null },
+			subTitle: { text: null },
+			credits: { enabled: false },
+			label : { fontFamily: 'KBFGText'},
+			credits: { enabled: false },
+			exporting: { enabled: false },
+			lang: {
+				thousandsSep: ','
+			}
+		});
+
+        // 자산비중 나 bar chart 선언
+        var barChart1 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'barChart01', // chart 삽입 target ID                
+                type: 'bar',
+                height: 90,
+                margin: [28,0,15,0]
+            },
+            title: {
+                text: '나',
+                align: 'left',
+                style: {fontSize:'4vw',fontFamily: "KBFGText"}
+            },
+            subTitle: {
+                text: null
+            },
+            legend: {
+                enabled: false
+            },
+            credits: {
+                enabled: false
+            },
+            exporting: {
+                enabled: false
+            },
+            xAxis: {
+                visible: false
+            },
+            yAxis: {
+                visible: false,
+                max : 100, // 총 합이 100%
+            },
+            tooltip: {
+                formatter: function () { 
+                    return this.series.name + " " + this.y + "%"
+                },
+                shape: 'rect',
+                padding: 5,
+                backgroundColor: "#FFF",
+                shadow: true,
+                borderRadius: 4,
+                borderColor: '#f3f3f3',
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '4vw',
+                    fontFamily: "KBFGText",
+                }
+            },
+            accessibility: {
+                point: { valueSuffix: '%' }
+            },
+            plotOptions: {
+                series: {
+                    pointWidth: 22,  // 막대그래프 너비
+                    stacking: 'normal',
+                    borderWidth: 1,
+                }
+            },
+            series: [{
+                name: '입출금',
+                data: [30,0],
+				color: chartBg[1]
+            }, {
+                name: '예적금',
+                data: [23,0],
+				color: chartBg[2]
+            }, {
+                name: '투자',
+                data: [10,0],
+				color: chartBg[3]
+            }, {
+                name: '보험',
+                data: [10,0],
+				color: chartBg[4]
+            }, {
+                name: '외화',
+                data: [5,0],
+				color: chartBg[5]
+            }, {
+                name: '부동산',
+                data: [9,0],
+				color: chartBg[6]
+            }, {
+                name: '자동차',
+                data: [5,0],
+				color: chartBg[7]
+            }, {
+                name: '페이',
+                data: [8,0],
+				color: chartBg[8]
+            }, {
+                name: '대출&middot부채',
+                data: [0,20],
+				color: chartBg[33]
+            }].reverse()
+        });
+
+        // 자산비중 비교그룹 bar chart 선언
+        var barChart2 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'barChart02', // chart 삽입 target ID                
+                type: 'bar',
+                height: 90,
+                margin: [28,0,15,0]
+            },
+            title: {
+                text: '비교그룹',
+                align: 'left',
+                style: {fontSize:'4vw',fontFamily: "KBFGText"}
+            },
+            subTitle: {
+                text: null
+            },
+            legend: {
+                enabled: false
+            },
+            credits: {
+                enabled: false
+            },
+            exporting: {
+                enabled: false
+            },
+            xAxis: {
+                visible: false
+            },
+            yAxis: {
+                visible: false,
+                max : 100, // 총 합이 100%
+            },
+            tooltip: {
+                formatter: function () { 
+                    return this.series.name + " " + this.y + "%"
+                },
+                shape: 'rect',
+                padding: 5,
+                backgroundColor: "#FFF",
+                shadow: true,
+                borderRadius: 4,
+                borderColor: '#f3f3f3',
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '4vw',
+                    fontFamily: "KBFGText",
+                }
+            },
+            accessibility: {
+                point: { valueSuffix: '%' }
+            },
+            plotOptions: {
+                series: {
+                    pointWidth: 22,  // 막대그래프 너비
+                    stacking: 'normal',
+                    borderWidth: 1,
+                }
+            },
+            series: [{
+                name: '입출금',
+                data: [35,0],
+				color: chartBg[1]
+            }, {
+                name: '예적금',
+                data: [16,0],
+				color: chartBg[2]
+            }, {
+                name: '투자',
+                data: [12,0],
+				color: chartBg[3]
+            }, {
+                name: '보험',
+                data: [7,0],
+				color: chartBg[4]
+            }, {
+                name: '외화',
+                data: [8,0],
+				color: chartBg[5]
+            }, {
+                name: '부동산',
+                data: [10,0],
+				color: chartBg[6]
+            }, {
+                name: '자동차',
+                data: [7,0],
+				color: chartBg[7]
+            }, {
+                name: '페이',
+                data: [5,0],
+				color: chartBg[8]
+            }, {
+                name: '대출&middot부채',
+                data: [0,25],
+				color: chartBg[33]
+            }].reverse()
+        });
+
+        // 자산비중 - 금융상품만 나 donut chart 선언
+        var donutChart1 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'donutChart01',
+                type: 'pie',
+                height: 180,
+                margin: [0, 0, 0, 0]
+            },
+            title: {
+                text: '나',
+                align: 'center',
+                verticalAlign: 'middle',
+				y: 16,
+                style: {fontSize:'4vw',fontFamily: "KBFGText"}
+            },
+            tooltip: {
+                formatter: function () { 
+                    return this.y + "%"
+                },
+                padding: 10,
+                backgroundColor: "#FFF",
+                shadow: true,
+                borderRadius: 4,
+                verticalAlign: 'bottom',
+                borderColor: '#f3f3f3',
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '4vw',
+                    fontFamily: "KBFGText",
+                },
+                crosshairs: true
+            },
+            plotOptions: {
+                pie: {                    
+                    allowPointSelect: true,
+                    dataLabels: {
+                        enabled: false
+                    }
+                }
+            },
+            series: [{
+                innerSize: '50%',
+                borderWidth: 0,
+                data: [{
+                    name: '입출금',
+                    color: chartBg[1],
+                    y: 30
+                },{
+                    name: '예적금',
+                    color: chartBg[2],
+                    y: 25
+                },{
+                    name: '투자',
+                    color: chartBg[3],
+                    y: 20
+                },{
+                    name: '보험',
+                    color: chartBg[4],
+                    y: 15
+                },{
+                    name: '외화',
+                    color: chartBg[5],
+                    y: 5
+                },{
+                    name: '페이',
+                    color: chartBg[6],
+                    y: 5
+                }]
+            }]
+        });
+
+        // 자산비중 - 금융상품만 비교그룹 donut chart 선언
+        var donutChart2 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'donutChart02', // chart 삽입 target ID
+                type: 'pie',
+                height: 180,
+                margin: [0, 0, 0, 0]
+            },
+            title: {
+                text: '비교<br>그룹',
+                align: 'center',
+                verticalAlign: 'middle',
+                style: {fontSize:'4vw', fontFamily: "KBFGText"}
+            },
+            tooltip: {
+                formatter: function () { 
+                    return this.y + "%"
+                },
+                padding: 10,
+                backgroundColor: "#FFF",
+                shadow: true,
+                borderRadius: 4,
+                verticalAlign: 'bottom',
+                borderColor: '#f3f3f3',
+                style: {
+                    fontWeight: 'normal',
+                    fontSize: '4vw',
+                    fontFamily: "KBFGText",
+                },
+                crosshairs: true
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    dataLabels: { enabled: false }
+                }
+            },
+            series: [{
+                innerSize: '50%',
+                borderWidth: 0,
+                data: [{
+                    name: '입출금',
+                    color: chartBg[1],
+                    y: 35
+                },{
+                    name: '예적금',
+                    color: chartBg[2],
+                    y: 22
+                },{
+                    name: '투자',
+                    color: chartBg[3],
+                    y: 15
+                },{
+                    name: '보험',
+                    color: chartBg[4],
+                    y: 10
+                },{
+                    name: '외화',
+                    color: chartBg[5],
+                    y: 10
+                },{
+                    name: '페이',
+					color: chartBg[6],
+                    y: 8
+                }]
+            }]
+        });
+
+		// 자산흐름 chart 선언
+		var columnChart3 = new Highcharts.Chart({
+			chart: {
+				renderTo: 'columnChart03', // chart 삽입 target ID
+				type: "column",
+				marginLeft: 0,
+				marginRight: 0,
+				marginTop:0,
+				marginBottom: 25,
+				height: 185,
+				backgroundColor: "transparent",
+			},
+			legend: { 
+				enabled: false,
+				reversed: true, // order reversed
+				itemStyle: {
+					fontSize: '1.4rem',
+					fontFamily: 'KBFGText'
+				},
+				symbolWidth: 12,
+				symbolRadius: 6,
+				symbolHeight : 10,
+				symbolWidth : 10
+
+			},//html로 대체 
+			tooltip: {
+				useHTML: true,
+				headerFormat: '<div style="text-align:right;color:#696e76;font-size:1.4rem;">',
+				pointFormat: '{series.name}:'+'<span style="color:#26282c;font-size:1.5rem;" class="num">{point.y:,.0f}</span>원<br>',
+				footerFormat: '</div>',
+				shared: true,
+				padding: 7,
+				backgroundColor: "#fff",
+				shadow: true,
+				borderRadius: 4,
+				verticalAlign: 'bottom',
+				borderColor: '#f3f3f3',                
+				style: {
+					fontWeight: 'normal',
+					fontSize: '1.4rem',
+					fontFamily: "KBFGText",
+				},
+				crosshairs: false,
+			},
+			xAxis: {
+				type: "category",
+				categories: ["4월", "5월", "6월"],
+				labels: {
+					style: {
+						color: "#26282c",
+						fontSize: "1.2rem",
+						fontFamily: 'KBFGText',
+					}
+				},
+				lineColor: "#c6cbd0"
+			},
+			yAxis: {
+				endOnTick: false,
+				enabled: false,  // 사용 안함
+				labels: { enabled: false },  // 축 lebel 사용 안함
+				title: { enabled: false }, // 축 title 사용 안함
+				tickWidth: 0,  // 그리드 라인 너비
+				gridLineColor: 'transparsnt',  // 그리드 라인 컬러
+			},
+			plotOptions: {
+				series: {
+					grouping: false,
+					borderWidth: 0,
+					pointWidth: 6,  // 막대그래프 너비
+					borderRadiusTopLeft: "50%",  // radius 값
+					borderRadiusTopRight: "50%" // radius 값
+				}
+			},
+			series: [
+				{
+					name: "나",
+					color: chartBg[1],
+					data: [235670, 500000, 150000],
+					pointPlacement: -0.05,
+				},
+				{
+					name: "비교그룹",
+					color: chartBg[2],
+					data: [300000, 550000, 300000],
+					pointPlacement: 0.05,
+					
+				}
+			],
+		});
 	</script>
 </body>
 

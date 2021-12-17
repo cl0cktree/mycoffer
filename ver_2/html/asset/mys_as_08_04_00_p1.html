@@ -4,7 +4,7 @@
 
 <head>
     @@include('@@webRoot/html/_include/app-head.html',{
-    "title": "보험 세부조회 | 자산"
+    "title": "보험 상세조회 | 자산"
     })
 </head>
 
@@ -13,7 +13,7 @@
     <div class="app">
         <!-- app-header //-->
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
-        'pageTit' :'보험 세부조회',
+        'pageTit' :'보험 상세조회',
         'type':'home' //2021-10-05 마이머니앱 기준 / 뉴스뱅 'close'
         })
         <!-- // app-header -->
@@ -39,7 +39,7 @@
                                         <em class="agency"><span class="title">국민은행</span><span class="num">302-61680-96-002</span></em>
                                     </div>
                                     <p class="balance">
-                                        <span>누적납입금액 <b class="amount"><span class="num" data-unit-after="원">3,000,000</span></b></span>
+                                        <span>월 납입 보험료<b class="amount"><span class="num" data-unit-after="원">3,000,000</span></b></span><!-- 2021-12-17 문구수정 -->
                                     </p>
                                 </div>
                             </li>
@@ -78,6 +78,53 @@
                     </div>
                 </section>
                 <!-- // 보장성 -->
+                <!-- // 연금보험 2021-12-17 추가 -->
+                <section class="kb-sec full insurance">
+                    <div class="account-top">
+                        <ul>
+                            <li class="account-wrap">
+                                <div class="txt-con">
+                                    <span class="bank-book">연금보험</span>
+                                    <div class="agency-con">
+                                        <span class="agency-logo"><img src="@@webRoot/static/images/ci/A1AAEO0000.png" alt="은행별 아이콘"></span>
+                                        <em class="agency"><span class="title">삼성생명</span><span class="num">302-61680-96-002</span></em>
+                                    </div>
+                                    <p class="balance">
+                                        <span>월 납입 보험료<b class="amount"><span class="num" data-unit-after="원">120,000</span></b></span><!-- 2021-12-17 문구수정 -->
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="investment-desc">
+                                <ul class="description-list-variable">
+                                    <li>
+                                        <p class="tit">신규일</p>
+                                        <p class="amount"><em class="num">2012.09.04</em></p>
+                                    </li>
+                                    <li>
+                                        <p class="tit">납입종료일</p>
+                                        <p class="amount"><em class="num">2040.09.04</em></p>
+                                    </li>
+                                    <li>
+                                        <div class="tit">만기일<button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i><span>투자수익률</span></button>
+                                            <div class="tooltip">
+                                                <div class="cont">
+                                                    보험 계약을 보장 받을 수 있는 일자 
+                                                </div>
+                                                <button class="btn-close"><span>닫기</span></button>
+                                            </div>
+                                        </div>
+                                        <p class="amount"><em class="num">20</em>년</p>
+                                    </li>
+                                    <li>
+                                        <p class="tit">납입일</p>
+                                        <p class="amount"><em class="num">15</em>일</p>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- 연금보험 2021-12-17 추가 // -->
                 <!-- 외화보험 // -->
                 <section class="kb-sec full insurance">
                     <div class="account-top">
@@ -91,7 +138,7 @@
                                         <em class="agency"><span class="title">국민은행</span><span class="num">302-61680-96-002</span></em>
                                     </div>
                                     <p class="balance">
-                                        <span>누적납입금액 <b class="amount"><span class="num" data-unit-before="USD">2236.62</span></b></span>
+                                        <span>월 납입 보험료 <b class="amount"><span class="num" data-unit-before="USD">2236.62</span></b></span><!-- 2021-12-17 문구수정 -->
                                         <small class="num" data-unit-after="원">3,450,000</small>
                                     </p>
                                 </div>
@@ -144,7 +191,7 @@
                                         <em class="agency">서울보증보험<span class="num">302-61680-96-002</span></em>
                                     </div>
                                     <p class="balance">
-                                        <span>보험가입금액 <b class="amount"><span class="num" data-unit-after="원">3,450,000</span></b></span>
+                                        <span>보험 가입 금액 <b class="amount"><span class="num" data-unit-after="원">3,450,000</span></b></span><!-- 2021-12-17 문구수정 -->
                                     </p>
                                 </div>
                             </li>
@@ -167,7 +214,7 @@
                                         <p>분납</p>
                                     </li>
                                     <li>
-                                        <p class="tit">총납입보험도</p>
+                                        <p class="tit">총납입보험료</p>
                                         <p class="amount"><em class="num" data-unit-after="원">3,450,000</em></p>
                                     </li>
                                 </ul>
