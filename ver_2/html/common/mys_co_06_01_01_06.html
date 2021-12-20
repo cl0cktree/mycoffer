@@ -13,29 +13,33 @@
     <div class="app">
         
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
-            'pageTit':'자산 등록',
+            'pageTit':'상세정보 요청',
             'type':'step'
         })
         <!-- app-container //-->
         <div class="app-container">
 
             <!-- app-content // -->
-            <main class="app-content select-assets">
+            <main class="app-content select-assets rdp-content js-scroll-done js-scroll-down js-scroll-up"><!-- 수정:2021-12-20 -->
                 <div class="page-step js-fixed">  
-                    <!-- 수정:2021-10-08 // -->
+                    <!-- 수정:2021-12-20 // -->
                     <div class="page-step-inner">
                         <div class="step" aria-label="총 5단계 중 현재 4단계">
+                            <span class="prev">01</span>                        
+                            <span class="prev">02</span>                        
+                            <span class="prev">03</span>                        
                             <span class="current">4</span>                        
-                            <span class="total">5</span>
+                            <span class="total">05</span>
                         </div>
-                        <h2 class="h1">자산선택</h2>
+                        <h2 class="h2">자산 선택</h2>
                     </div>
-                    <!-- // 수정:2021-10-08 -->
-                    <p class="page-step-desc">상품(계좌)/정보를 선택해 주세요.</p>
+                    <!-- // 수정:2021-12-20 -->
+                    <p class="page-step-desc">상품(계좌) / 정보를 선택해 주세요.</p>
                 </div>
 
+                <!-- 수정:2021-12-20 // -->
                 <section class="kb-sec">   
-                    <h3 class="h4">연결 성공<span class="num">7</span></h3>
+                    <h3 class="h4">정보 수신 완료<span class="num">7</span></h3>
                     <dl class="accordion js-checkbox-selector">
                         <dt>
                             <span class="form-checkbox"><input type="checkbox" id="bank01"><label for="bank01">IBK기업은행</label></span>
@@ -103,22 +107,7 @@
                         </dd>
                     </dl>
 
-                    <h3 class="h4">연결 지연<span class="num">1</span></h3><!-- 수정:2021-09-24 -->
-                    <dl class="accordion js-checkbox-selector">
-                        <dt>
-                            <span>롯데오토리스</span>
-                            <button type="button" class="accordion-trigger"></button>
-                        </dt>
-                        <dd>
-                            <div class="data-delay">
-                                <i class="icon-delay-connection"></i>
-                                <p class="desc">연결이 지연되고 있습니다.</p>
-                                <button class="btn-line sm inline"><span>다시 연결</span></button>
-                            </div>
-                        </dd>
-                    </dl>
-                    
-                    <h3 class="h4">연결 실패<span class="num">1</span></h3><!-- 수정:2021-09-24 -->
+                    <h3 class="h4">정보 수신 없음<span class="num">1</span></h3>
                     
                     <dl class="accordion js-checkbox-selector">
                         <dt>
@@ -127,17 +116,18 @@
                         </dt>
                         <dd>
                             <div class="no-data">
-                                <i class="icon-bang_48_gray"></i><!-- 수정:2021-09-24 -->
+                                <i class="icon-bang_48_gray"></i>
                                 <p class="desc">연결 가능한 데이터가 없습니다.</p>
                             </div>
                         </dd>
                     </dl>
                     
                 </section>
+                <!-- // 수정:2021-12-20 -->
                 
                 <div class="sticky-bottom">
                     <div class="btn-area">
-                        <button type="button" class="btn-solid"><span>다음</span></button><!-- 수정:2021-10-08 -->
+                        <button type="button" class="btn-solid"><span>다음</span></button>
                     </div>
                 </div>
 
@@ -154,6 +144,7 @@
     <!-- Script -->
     @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/common/lib/lottie.min.js"></script><!-- lottie.js -->
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
     </script>

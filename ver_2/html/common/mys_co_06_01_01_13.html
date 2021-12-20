@@ -20,12 +20,13 @@
         <div class="app-container">
 
             <!-- app-content // -->
-            <main class="app-content select-certificate">
+            <!-- 수정:2021-12-20 // -->
+            <main class="app-content select-certificate rdp-content">
                 <div class="page-step js-fixed">    
                     <div class="page-step-inner">
                         <div class="step" aria-label="총 5단계 중 현재 3단계">
-                            <span class="next">01</span>                        
-                            <span class="next">02</span>                        
+                            <span class="prev">01</span>                        
+                            <span class="prev">02</span>                        
                             <span class="current">03</span>                        
                             <span class="next">04</span>                        
                             <span class="total">05</span>
@@ -34,43 +35,16 @@
                     </div>
                     <p class="page-step-desc">사용할 인증서를 선택해 주세요.</p> 
                 </div> 
-
+                
                 <section class="kb-sec">
-                    <!-- 수정 : UI개선 // -->
                     <div class="certificate-lists">
                         <button type="button" data-state="active"><i class="icon-certificate-kb_40"></i><span>KB모바일인증서</span></button>
                         <button type="button" data-state="inactive" data-call-layered="mys_mn_01_01_03_02_certificate"><span>공동인증서</span></button>
-                        <button type="button" data-state="preparing"><span>금융인증서</span></button>
+                        <button type="button" disabled="" data-state="preparing"><span>금융인증서</span></button>
                     </div>
-                    <!-- // 수정 : UI개선 -->
-                    <!-- 수정:2021-12-09 // -->
-                    <!-- <ul class="certificate-list">
-                        <li>
-                            <a href="javascript:;">
-                                <i class="icon-certificate-kb_40"></i> 
-                                <span class="txt"><span>KB모바일인증서</span><span class="tag-label t03 round">사용가능</span></span>
-                                <span class="link-arrow">바로가기</span>
-                            </a>
-                        </li> 
-                        <li>
-                            <a href="javascript:;">                                
-                                <span class="txt">
-                                    <span>공동인증서</span>
-                                    <span class="tag-label t03 round">발급필요</span>
-                                </span>
-                            </a>
-                        </li> 
-                        <li>
-                            <a href="javascript:;" class="is-disabled">
-                                <i class="icon-certificate-fin_40"></i> 
-                                <span class="txt"><span>금융인증서</span><span class="tag-label t03 round">서비스 준비중</span></span>
-                                <span class="link-arrow">바로가기</span>
-                            </a>
-                        </li> 
-                    </ul> -->
-                    <!-- // 수정:2021-12-09 -->
                 </section>
             </main>
+            <!-- // 수정:2021-12-20 -->
             <!-- // app-content -->
 
         </div>

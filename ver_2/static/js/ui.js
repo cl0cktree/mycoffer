@@ -2156,36 +2156,30 @@ $('body').on('click','button[data-toggle-class]',function(){
     $(this).toggleClass(toggleName);
 })
 
-
+// 높이값 관련 수정(before -> height)
 var jsFixed = {
     init: function(){
         $('.js-fixed').each(function(){
-            var top = $(this).offset().top + $(this).outerHeight();
+            let thisHeight = Math.ceil($(this).innerHeight());
+            var top = Math.ceil($(this).offset().top) + thisHeight;
             // 전송요구 수정
             if($(this).children('.page-step-desc').length){
                 top -= $(this).find('.page-step-desc').outerHeight();
             }
             $(this).attr('data-fix',top);
+            $(this).attr('data-height',thisHeight);
         });
     },
-    scroll : function(st, $this){
+    scroll : function(st, $this, triggerPoint){
         if($('.js-fixed').length){
             var fixedTop = $this.data('fix');
-            if(st >= fixedTop - 48){// fixed header
+            var fixedHeight = $this.data('height');
+            if(st >= fixedTop - triggerPoint){// fixed header
                 $this.addClass('is-fixed');
+                $this.css('height',fixedHeight); // :before -> height로 높이값 변경
             }else{
                 $this.removeClass('is-fixed');
-            }
-        }
-        // .js-fixed 추가시 TBD
-        if(2 == $('.js-fixed').length && $('.js-fixed').eq(0).hasClass('is-fixed')){
-            let prevFixedHeight = $('.js-fixed').eq(1).outerHeight(); // 추가 높이 더해지도록 수정하기 
-            $('.js-fixed').eq(1).attr('data-add-height', prevFixedHeight);
-            var fixedTop = $this.data('fix');
-            if(st >= fixedTop - prevFixedHeight - 48){// fixed header
-                $this.addClass('is-fixed');
-            }else{
-                $this.removeClass('is-fixed');
+                $this.css('height','auto');
             }
         }
     }
@@ -2270,10 +2264,13 @@ var jsScrollDown = {
     moveScrollDown: function(scrollValue){
         var duration = (scrollValue - st) * 0.5;                
         $('html, body').stop().animate({scrollTop : scrollValue}, duration);
-        this.disappear();
+        // this.disappear();
     },
     disappear: function(){
         this.options.$btn.fadeOut(300);
+    },
+    reappear: function(){
+        this.options.$btn.fadeIn(300);
     },
     moveNextInput: function(e){
         let thisIndex = jsScrollDown.options.$breakPointRadioAgree.index($(this)); // 이벤트 대상 선택자
@@ -2308,15 +2305,19 @@ var jsScrollDown = {
         
     },
     scroll: function(st){
-        st = Math.ceil(st) + 50;
+        // st = Math.ceil(st) + 50;
+        st = Math.ceil(st);
 
-        if (st >= this.options.dh - this.options.wh) {
+        if (st >= this.options.dh - this.options.wh - 50) {
             this.disappear();
         }
-        if (!!this.options.breakPointTop && st >= this.options.breakPointTop) {
-            this.disappear();
+        else{
+            this.reappear();
         }
 
+        if (!!this.options.breakPointTop && st >= this.options.breakPointTop - 50) {
+            this.disappear();
+        }
     },
     options: {
         $btn: {},
@@ -2397,10 +2398,10 @@ if(window.lottie){
 
 $(window).on('scroll',function(){
     st = $(this).scrollTop();
-    jsFixed.scroll(st, $('.page-step'));
+    jsFixed.scroll(st, $('.page-step'), 48); // 헤더 높이
+    jsFixed.scroll(st, $('.swiper-spy-wrapper'), 48+44+55); // 헤더 + 스텝 + 스파이연동탭 높이
     jsScrollDone.scroll(st, $(this));
     jsScrollAction.scroll(st, $('[data-scroll-fn]'));
-    jsFixed.scroll(st, $('.tab.swiper-container-spy')); // 스크롤 스파이 연동 탭
     jsScrollDown.scroll(st); 
     jsScrollUp.scroll(st);
 });

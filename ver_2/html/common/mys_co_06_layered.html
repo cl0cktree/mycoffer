@@ -18,7 +18,7 @@
         <div class="layer-call">
             <h2 class="h1">전송요구방법선택</h2>
             <!-- <button type="button" class="btn-line" data-call-layered="mys_co_06_01_00_bs01" data-page-id="MYS_CO_06_01_00_BS01"><span>전송 요구 방법 선택_당행 고객이 아닌 경우</span></button> --><!-- 수정:2021-10-08 -->
-            <button type="button" class="btn-line" data-call-layered="mys_co_06_01_01_01_bs01" data-page-id="MYS_CO_06_01_01_01_BS01"><spn>인증방법 선택하기</spn></button><!-- 추가:2021-10-08 -->
+            <button type="button" class="btn-line" data-call-layered="mys_co_06_01_01_01_bs01" data-page-id="MYS_CO_06_01_01_01_BS01"><spn>인증방법 선택하기</spn></button>
             
             <h2 class="h1 mt20">통합인증_기관선택</h2>
             <button type="button" class="btn-line" onclick="modalDemo1()"><span>기관 선택(초과 선택시)</span></button>
@@ -31,12 +31,14 @@
             <button type="button" class="btn-line" onclick="modalDemo11()"><span>휴대폰 본인인증 <br>(인증번호미수신)</span></button>
             <button type="button" class="btn-line" onclick="modalDemo4()"><span>비활성화 상태에서 다음 버튼 선택시<br>(화면스크롤 확인)</span></button>
             <button type="button" class="btn-line" onclick="modalDemo13()"><span>상세정보 전송요구서 화면에서 요청한 내용 변경 시</span></button><!-- 수정:2021-11-01 -->
+            <button type="button" class="btn-line" onclick="modalDemo15()"><span>개인신용정보 수집이용동의 동의하지 않음 클릭시</span></button><!-- 수정:2021-12-20 -->
 
             <button type="button" class="btn-line" data-call-layered="select-engineering-industry" data-page-id="MYS_CO_06_01_02_01_p1"><span>개별인증 기관선택(기관 업종 선택)</span></button>
             <button type="button" class="btn-line" data-call-layered="mys_mn_01_01_03_02_certificate" data-page-id="MYS_CO_06_01_01_13_BS01"><span>통합인증수단 선택(통합인증거래 이용동의)</span></button>
             <button type="button" class="btn-line" data-call-layered="mys_mn_01_01_03_02_certificate" data-page-id="MYS_CO_06_01_01_21_BS01"><span>통합인증수단 선택(통합인증거래 이용동의)</span></button>
 
             <button type="button" class="btn-line" data-call-layered="mys_co_06_01_01_08_result" data-page-id="MYS_CO_06_01_01_08_BS01"><span>마이데이터 정보 수신 결과</span></button><!-- 추가:2021-11-24 -->
+            <button type="button" class="btn-line" data-call-layered="mys_co_06_01_01_08_agree" data-page-id="MYS_CO_06_01_01_08_BS02"><span>마이데이터 정보 수신 결과</span></button><!-- 추가:2021-12-18 -->
             
             <h2 class="h1 mt20">정보제공자</h2>
             <button type="button" class="btn-line" onclick="modalDemo12()"><span>정보제공자_자산선택_은행 <br>(자산 미선택시)</span></button>
@@ -47,6 +49,7 @@
             @@include('@@webRoot/html/common/layered/mys_co_06_01_02_01_p1.html')
             @@include('@@webRoot/html/menu/layered/mys_mn_01_01_03_02_bs01.html')
             @@include('@@webRoot/html/common/layered/mys_co_06_01_01_08_bs01.html')
+            @@include('@@webRoot/html/common/layered/mys_co_06_01_01_08_bs02.html')
         </div>
     </div>
 
@@ -124,6 +127,14 @@
             modalPopup({
                 title: "",
                 message: "선택하신 기관에 대한 정보 제공 요청이 모두 실패하였습니다. <br>다시 거래하시겠습니까?",
+                type: "confirm"
+            });
+        }
+        // 요건추가 2021-12-20
+        function modalDemo15() {
+            modalPopup({
+                title: "",
+                message: "자산을 연결하기 위해 <br>동의함 버튼을 선택해 주세요.",
                 type: "confirm"
             });
         }

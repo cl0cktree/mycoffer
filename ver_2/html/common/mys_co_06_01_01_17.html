@@ -22,13 +22,14 @@
         <div class="app-container">
 
             <!-- app-content // -->
-            <main class="app-content select-assets-complete">
+            <main class="app-content select-assets-complete rdp-content"><!-- 수정:2021-12-20 -->
                 <section class="kb-sec">
                     <div class="complete-msg">
                         <i class="icon-complete_60"></i>
                         <strong class="tit">
                             고객님의 데이터를<br>안전하게 가져왔습니다.
                         </strong>
+                        <div class="go-service-info"><button type="button" class="btn-text link-arrow-after">수신결과 보기</button></div><!-- 수정:2021-12-20 -->
                     </div>
                 </section>
                 <section class="kb-sec select-recommend-employee">
@@ -42,7 +43,7 @@
                         <div class="kb-form_inner form-text" data-status="error">
                             <input type="text" id="recommendEmployees02" value="" placeholder="직원번호 입력" title="직원번호 입력">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
-                            <a href="@@webRoot/html/common/mys_co_05_02_02.html" class="btn-solid form"><span>검색</span></a>
+                            <a href="javascript:;" class="btn-solid form"><span>검색</span></a><!-- 수정:2021-12-20 -->
                         </div>                    
                         <em class="validation">정확한 직원번호를 입력해주세요</em>
                     </div>
@@ -124,6 +125,8 @@
 
         <!-- Layer (modal, bottom sheet) // -->
         <div class="layered">
+            @@include('@@webRoot/html/common/layered/mys_co_06_01_01_08_BS01.html')
+            @@include('@@webRoot/html/common/layered/mys_co_06_01_01_08_BS02.html')
         </div>
         <!-- // Layer (modal, bottom sheet) -->
     </div>
@@ -133,6 +136,14 @@
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
+    <script>
+        $(document).ready(function(){
+            gfn_layered.open('mys_co_06_01_01_08_agree');
+            $('.go-service-info').on('click',function(){
+                gfn_layered.open('mys_co_06_01_01_08_result');
+            });
+        });
+    </script>
 
 </body>
 
