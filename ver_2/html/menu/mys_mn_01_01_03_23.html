@@ -12,80 +12,74 @@
     @@include('@@webRoot/html/_include/app-a11y.html')
     <div class="app">
 
+        <!-- 수정:2021-12-21 // -->
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
-        'pageTit':'전송기간 연장',
-        'type':'step'
+            'pageTit':'연결기간 연장',
+            'type':'step'
         })
+		<!-- // 수정:2021-12-21 -->
 
         <!-- app-container //-->
         <div class="app-container">
 
             <!-- app-content // -->
-            <main class="app-content select-transmission-method js-scroll-done"><!-- 수정:2021-10-08 -->
+            <main class="app-content select-transmission-method rdp-content js-scroll-down js-scroll-up"><!-- 수정:2021-12-21 -->
 
                 <section class="kb-sec sec-tit">
-                    <h2 class="h1">개인(신용)정보 수집&middot;이용 동의서(상세정보 전송) (계속)</h2>
+                    <h2 class="h2">개인(신용)정보 수집&middot;이용 동의</h2><!-- 수정:2021-12-21 -->
                     <div class="terms-desc">
-                        <p>귀하는 개인(신용)정보 제공에 관한 동의를 거부하실 수 있습니다. 다만, 개인(신용)정보의 제공에 관한 동의는 본인신용정보 통합조회, 데이터분석 서비스, 마이데이터 서비스 가입현황 안내, 전송요구내역 통합조회 서비스 이용과 직접적으로 관련된 필수적 사항이므로 아래의 사항에 동의하셔야만 본인신용정보 통합조회, 데이터분석 서비스, 마이데이터 서비스 가입현황 안내, 전송요구내역 통합조회 서비스 이용과 제공이 가능합니다.</p><!-- 수정:2021-11-18 -->
+                        <p>귀하는 개인(신용)정보 제공에 관한 동의를 거부하실 수 있습니다. 다만, 개인(신용)정보의 제공에 관한 동의는 본인신용정보 통합조회, 데이터분석 서비스, 마이데이터 서비스 가입현황 안내, 전송요구내역 통합조회 서비스 이용과 직접적으로 관련된 필수적 사항이므로 아래의 사항에 동의하셔야만 본인신용정보 통합조회, 데이터분석 서비스, 마이데이터 서비스 가입현황 안내, 전송요구내역 통합조회 서비스 이용과 제공이 가능합니다.</p>
                     </div>  
                 </section>
                 
-                <!-- 수정:2021-11-18 // -->
+                <!-- 수정:2021-12-21 // -->
                 <section class="kb-sec transmission-request">
                     <div class="caution-txt_01">
-                        <h3 class="tit">제공받는 자 (정보제공기관 및 한국신용정보원 이하 동일)</h3>
+                        <h3 class="tit">제공받는 자</h3>
                         <div class="desc-box">
-                            <h4 class="h5">[정보 제공기관]</h4>
-                            <p class="mt12"><strong>신한은행</strong></p>
-                            <h4 class="h5 mt20">[한국 신용정보원]</h4>
-                            <p class="mt12">한국 신용정보원</p>
+                            <dl class="box-shadow">
+                                <dt>제공받는 자</dt>
+                                <dd>
+                                    <strong class="text-line-yellow">우체국, 신한은행, NH농협은행, KB국민은행, 하나카드, 현대카드, 우리카드, 롯데카드, 삼성카드, KB증권, KB손해보험, 현대해상, 신한생명, 라이나생명, ...</strong>
+                                </dd>
+                                <dt>제공받는 자의 이용목적</dt>
+                                <dd><strong class="text-line-yellow">본인확인 및 개인(신용)정보의 전송</strong></dd>
+                                <dt>보유 및 이용기간</dt>
+                                <dd><strong class="text-line-yellow">본인확인 및 개인(신용) 정보의 전송 목적 달성 시까지</strong></dd>
+                                <dt>제공 항목</dt>
+                                <dd>전자서명, CI, 인증서, 전송요구서</dd>
+                            </dl>
                         </div>                        
-                        <h3 class="tit">제공받는 자의 이용목적</h3>
-                        <div class="desc-box">
-                            <h4 class="h5">[정보 제공기관]</h4>
-                            <p class="mt12">본인확인 및 개인(신용)정보의 전송</p>
-                            <h4 class="h5 mt20">[한국 신용정보원]</h4>
-                            <p class="mt12">마이데이터서비스 가입현황 안내 및 전송요구내역 통합조회 서비스 제공</p>
-                        </div> 
-                        <h3 class="tit">보유 및 이용기간</h3>
-                        <div class="desc-box">
-                            <h4 class="h5">[정보 제공기관]</h4>
-                            <p class="mt12"><strong>본인확인 및 개인(신용) 정보의 전송 목적 달성 시까지</strong></p>
-                            <h4 class="h5 mt20">[한국 신용정보원]</h4>
-                            <p class="mt12"><strong>한국신용정보원의 마이데이터서비스 가입현황 안내 및 전송요구내역 통합조회 서비스 목적 달성시 까지</strong></p>
-                        </div> 
-                        <h3 class="tit">제공 항목</h3>
-                        <div class="desc-box">
-                            <h4 class="h5">[정보 제공기관]</h4>
-                            <p class="mt12">전자서명, CI, 인증서, 전송요구서</p>
-                            <h4 class="h5 mt20">[한국 신용정보원]</h4>
-                            <p class="mt12">회원 가입여부, 서비스목록수, 서비스목록, 클라이언트ID, 전송요구내역, 전송요구내역목록, 정보제공자 기관코드, 권한 범위, 전송요구일자, 전송요구종료시점</p>
-                        </div>
-                    </div>
-                </section> 
-                <!-- // 수정:2021-11-18 -->
 
+                        <h3 class="tit">한국신용정보원</h3>
+                        <div class="desc-box">
+                            <dl class="box-shadow">
+                                <dt>제공받는 자</dt>
+                                <dd><strong class="text-line-yellow">한국신용정보원</strong></dd>
+                                <dt>제공받는 자의 이용목적</dt>
+                                <dd><strong class="text-line-yellow">마이데이터서비스 가입현황 안내 및 전송요구내역 통합조회 서비스 제공</strong></dd>
+                                <dt>보유 및 이용기간</dt>
+                                <dd><strong class="text-line-yellow">한국신용정보원의 마이데이터서비스 가입현황 안내 및 전송요구내역 통합조회 서비스 목적 달성시 까지</strong></dd>
+                                <dt>제공 항목</dt>
+                                <dd>회원 가입여부, 서비스목록수, 서비스목록, 자격증명, 전송요구내역수, 전송요구내역목록, 정보제공자 기관코드, 권한 범위, 전송요구일자, 전송요구종료시점</dd>
+                            </dl>
+                        </div> 
+                    </div>
+                </section>
                 <section class="kb-sec confirm-agree">
                     <h4 class="is-hidden">동의하기</h4>
                     <div class="confirm-info">
                         <p class="question">위 개인(신용)정보 제공에 동의하십니까?</p>
-                        <ul class="radio-group">
-                            <li>
-                                <span class="form-checkbox"><input type="radio" id="radioAgree1-1" name="radioAgree1" checked=""><label for="radioAgree1-1">동의하지 않음</label></span>
-                            </li>
-                            <li>
-                                <span class="form-checkbox"><input type="radio" id="radioAgree1-2" name="radioAgree1"><label for="radioAgree1-2">동의함</label></span>
-                            </li>    
-                        </ul>
                     </div>
                 </section>
-
                 
                 <div class="sticky-bottom">
-                    <div class="btn-area">
-                        <button type="button" class="btn-solid"><span>다음</span></button>
+                    <div class="btn-area equal">
+                        <button type="button" class="btn-solid gray"><span>동의하지 않음</span></button>
+                        <button type="button" class="btn-solid"><span>동의함</span></button>
                     </div>
                 </div>
+                <!-- // 수정:2021-12-21 -->
             </main>
             <!-- // app-content -->
 
@@ -99,6 +93,7 @@
     <!-- Script -->
     @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/common/lib/lottie.min.js"></script><!-- lottie.js -->
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
     

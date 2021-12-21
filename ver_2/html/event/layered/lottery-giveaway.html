@@ -7,7 +7,7 @@
             <strong class="event-tit">KB마이데이터 <br>복권 이벤트</strong>
             <div class="select-giveaway">
                 <ul>
-                    <li><button type="button"><span>테슬라 자동차<br>(2명)</span></button></li>
+                    <li><button type="button" class="soldout"><span>테슬라 자동차<br>(2명)</span></button></li><!-- 수정 : 2021-12-21 경품소진 -->
                     <li><button type="button"><span>다이슨 에어랩<br>(10명)</span></button></li>
                     <li><button type="button"><span>신세계 상품권<br>5만원권<br>(1천명)</span></button></li>
                     <li><button type="button"><span>스타벅스<br>아메리카노<br>(1만명)</span></button></li>
@@ -108,10 +108,26 @@
         var selectedGiveaway = 0;
 
         $('.event-scratch02 .select-giveaway').on('click','button',function(){
-            $('.event-scratch02').removeClass('not-ready');
-            selectedGiveaway = $(this).parent('li').index();
-            scratchEv();
-
+            //수정 : 2021-12-21 경품소진 [s]
+            if(!$(this).hasClass('soldout')){
+                $('.event-scratch02').removeClass('not-ready');
+                selectedGiveaway = $(this).parent('li').index();
+                scratchEv();
+            }else{
+                var $giveaway = $(this).parents('ul');                
+                if($giveaway.find('.soldout').length != $giveaway.children('li').length){
+                    modalPopup({
+                        title: "",
+                        message: "소진된 경품입니다.<br>다른 경품을 선택해주세요.",
+                    });                     
+                }else{
+                    modalPopup({
+                        title: "",
+                        message: "모든 경품이 소진되었습니다. <br>감사합니다.",
+                    });
+                }
+            }
+            //수정 : 2021-12-21 경품소진 [e]
         });
         function scratchEv(){
             var prizeTxt;

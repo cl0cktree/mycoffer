@@ -12,35 +12,37 @@
     @@include('@@webRoot/html/_include/app-a11y.html')
     <div class="app">
 
-        <!-- 수정:2021-10-08 // -->
+        <!-- 수정:2021-12-21 // -->
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
-            'pageTit':'전송기간 연장',
+            'pageTit':'연결기간 연장',
             'type':'step'
         })
-		<!-- // 수정:2021-10-08 -->
+		<!-- // 수정:2021-12-21 -->
         
         <!-- app-container //-->
         <div class="app-container">
 
             <!-- app-content // -->
-            <main class="app-content select-transmission-method js-scroll-done"><!-- 수정:2021-10-08 -->
-                <!-- <h1 class="is-hidden">전송기간 연장</h1> --><!-- 수정:2021-09-28 -->
+            <main class="app-content select-transmission-method rdp-content js-scroll-done js-scroll-down js-scroll-up"><!-- 수정:2021-12-21 -->
+                <!-- 수정:2021-12-21 // -->
                 <div class="page-step js-fixed">
                     <div class="page-step-inner">
                         <div class="step" aria-label="총 2단계 중 현재 1단계">
                             <span class="current">1</span>
                             <span class="total">2</span>
                         </div>
-                        <h2 class="h1">상세 정보 전송 요청</h2>
+                        <h2 class="h2">상세 정보 전송 요구서</h2>
                     </div>
                     <p class="page-step-desc">상세정보를 가져오기 위한 요구사항을 확인하시고, 동의해 주세요.</p>
                 </div>
+                <!-- // 수정:2021-12-21 -->
 
+                <!-- 수정:2021-12-21 // -->
                 <section class="kb-sec transmission-request">
                     <div class="caution-txt_01">
                         <h3 class="tit">정보제공자(기관)</h3>
                         <div class="desc-box">
-                            <p>우체국, 신한은행, NH농협은행, KB국민은행, 하나카드, 현대카드, 우리카드, 롯데카드, 삼성카드, KB증권, KB손해보험, 현대해상, 신한생명, 라이나생명 ... </p>
+                            <p class="text-line-yellow">우체국, 신한은행, NH농협은행, KB국민은행, 하나카드, 현대카드, 우리카드, 롯데카드, 삼성카드, KB증권, KB손해보험, 현대해상, 신한생명, 라이나생명 ... </p>
                         </div>
                         
                         <h3 class="tit">전송을 요구하는 개인신용정보</h3>
@@ -60,55 +62,58 @@
                             <!-- // 상세정보 전송 시 업권별 신용거래정보 상세내용 -->
                         </div>
                     
-                    <!-- 수정:2021-11-01 // -->
                     </div>
                         
                     <div class="confirm-agree no-sec">
-                        <h3 class="tit h4">상품구매 카테고리 정보 <span>(선택 항목)</span></h3>
-                        <div class="confirm-info">
-                            <p class="tit">가전 및 전자 / 도서 및 문구 / 패션 및 의류 / 스포츠 / 화장품 / 아동 및 유아 / 식품 / 생활 및 가구 / 여행 및 교통 / 문화 및 레저 / 음식 / E쿠폰 및 기타서비스 카테고리 정보</p>
-                            <p class="question">위 상품구매정보를 전송요청 하시겠습니까?</p>
-                            <div class="wrap-checkbox alone">
-                                <span class="form-checkbox">
-                                    <input type="checkbox" id="radioAgree1">
-                                    <label for="radioAgree1">요청함</label>
-                                </span>
-                            </div>
-                            <p class="simple-message sq-bracket">[선불전자지급수단의 상품구매정보 항목]에는 실제 구매한 상품이 아닌 해당 상품의 카테고리(13항목으로 구분)가 포함되어 있습니다.</p>
-                        </div>
+                        <dl class="confirm-info box-shadow js-break-point"><!-- 수정:2021-12-22 -->
+                            <dt>상품구매 카테고리 정보 <span>(선택 항목)</span></dt>
+                            <dd>가전 및 전자 / 도서 및 문구 / 패션 및 의류 / 스포츠 / 화장품 / 아동 및 유아 / 식품 / 생활 및 가구 / 여행 및 교통 / 문화 및 레저 / 음식 / E쿠폰 및 기타서비스 카테고리 정보</dd>
+                            <dt>위 상품구매정보를 전송요청 하시겠습니까?</dt>
+                            <dd>
+                                <p>[선불전자지급수단의 상품구매정보 항목]에는 실제 구매한 상품이 아닌 해당 상품의 카테고리(13항목으로 구분)가 포함되어 있습니다.</p>
+                                <div class="checkbox-square">
+                                    <span class="form-checkbox">
+                                        <input type="checkbox" id="radioAgree1" checked>
+                                        <label for="radioAgree1">요청함</label>
+                                    </span>
+                                </div>
+                            </dd>
+                        </dl>
 
-                        <h3 class="tit h4">가맹점명 및 사업자등록번호 정보 <span>(선택 항목)</span></h3>
-                        <div class="confirm-info">
-                            <p class="tit">가맹점명 및 사업자등록번호 정보</p>
-                            <p class="question">위 가맹점명 및 사업자등록번호를 전송요청 하시겠습니까?</p>
-                            <div class="wrap-checkbox alone">
-                                <span class="form-checkbox">
-                                    <input type="checkbox" id="radioAgree2">
-                                    <label for="radioAgree2">요청함</label>
-                                </span>
-                            </div>
-                            <p class="simple-message sq-bracket">[카드청구 및 결제정보의 가맹점명 및 사업자등록번호 항목]에는 본인의 소비생활 등에 관련된 상세한 정보가 포함되어 있습니다.</p>
-                        </div>
+                        <dl class="confirm-info box-shadow js-break-point"><!-- 수정:2021-12-22 -->
+                            <dt>가맹점명 및 사업자등록번호 정보 <span>(선택 항목)</dt>
+                            <dd>가맹점명 및 사업자등록번호 정보</dd>
+                            <dt>위 가맹점명 및 사업자등록번호를 전송요청 하시겠습니까?</dt>
+                            <dd>
+                                <p>[카드청구 및 결제정보의 가맹점명 및 사업자등록번호 항목]에는 본인의 소비생활 등에 관련된 상세한 정보가 포함되어 있습니다.</p>
+                                <div class="checkbox-square">
+                                    <span class="form-checkbox">
+                                        <input type="checkbox" id="radioAgree2">
+                                        <label for="radioAgree2">요청함</label>
+                                    </span>
+                                </div>
+                            </dd>
+                        </dl>
 
-                        <h3 class="tit h4">적요 또는 거래메모 정보 <span>(선택 항목)</span></h3>
-                        <div class="confirm-info">
-                            <p class="tit">적요 또는 거래메모 정보</p>
-                            <p class="question">위 적요 또는 거래메모정보를 전송요청 하시겠습니까?</p>
-                            <div class="wrap-checkbox alone">
-                                <span class="form-checkbox">
-                                    <input type="checkbox" id="radioAgree3">
-                                    <label for="radioAgree3">요청함</label>
-                                </span>
-                            </div>
-                            <p class="simple-message sq-bracket">[계좌정보의 적요 항목]에는 송금인/수취인명정보 등 본인의 사생활 및 경제활동 등에 관련된 상세한 정보가 포함되어 있습니다.</p>
-                        </div>
+                        <dl class="confirm-info box-shadow js-break-point"><!-- 수정:2021-12-22 -->
+                            <dt>적요 또는 거래메모 정보 <span>(선택 항목)</dt>
+                            <dd>적요 또는 거래메모 정보</dd>
+                            <dt>위 적요 또는 거래메모정보를 전송요청 하시겠습니까?</dt>
+                            <dd>
+                                <p>[계좌정보의 적요 항목]에는 송금인/수취인명정보 등 본인의 사생활 및 경제활동 등에 관련된 상세한 정보가 포함되어 있습니다.</p>
+                                <div class="checkbox-square">
+                                    <span class="form-checkbox">
+                                        <input type="checkbox" id="radioAgree3">
+                                        <label for="radioAgree3">요청함</label>
+                                    </span>
+                                </div>
+                            </dd>
+                        </dl>
 
                         <p class="simple-message mt48">각 선택항목에 대한 정보 전송은 본인의 책임과 판단하에 신중하게 결정하여 주시기 바랍니다.</p>
                     </div>
                     
                     <div class="caution-txt_01">
-                    <!-- // 수정:2021-11-01 -->
-                        
                         <h3 class="tit">개인신용정보를 제공받는 자</h3>
                         <div class="desc-box">
                             <p>KB국민은행</p>
@@ -116,62 +121,66 @@
 
                         <h3 class="tit">전송을 요구하는 목적</h3>
                         <div class="desc-box">
-                            <p>전송요구를 통한 본인신용정보 통합조회, 데이터분석 서비스의 이용</p><!-- 수정:2021-11-18 -->
+                            <p>전송요구를 통한 본인신용정보 통합조회, 데이터분석 서비스의 이용</p>
                         </div>
 
                         <h3 class="tit">전송을 요구하는 개인신용정보 보유기간</h3>
                         <div class="desc-box">
                             <p>서비스 이용 종료 시 또는 삭제 요청 시까지</p>
                         </div>
-
-                        <h3 class="tit">정기적 전송 요구 여부 및 요구하는 경우 그 주기</h3>
-                        <div class="desc-box">
-                            <ul class="btn-segmented_radio">
-                                <li>
-                                    <input type="radio" name="btnradio1" id="btnradio1-1" checked="">
-                                    <label for="btnradio1-1">예(주1회)</label>
-                                </li>
-                                <li>
-                                    <input type="radio" name="btnradio1" id="btnradio1-2">
-                                    <label for="btnradio1-2">아니오</label>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <h3 class="tit">전송요구의 종료시점(전송요구서 유효기간)</h3>
-                        <div class="desc-box">
-                            <div class="kb-form" data-status="error">
-                                <div class="lookup-period">
-                                    <ul class="btn-segmented_radio">
-                                        <li>
-                                            <input type="radio" name="btnradio2" id="btnradio2-1" checked="">
-                                            <label for="btnradio2-1">1년</label>
-                                        </li>
-                                        <li>
-                                            <input type="radio" name="btnradio2" id="btnradio2-2">
-                                            <label for="btnradio2-2">직접입력(최대1년)</label>
-                                        </li>
-                                    </ul>
-                                    <div class="period-selector">
-                                        <input type="text" title="시작날짜" value="2021.08.28">
-                                        <span>~</span>
-                                        <input type="text" title="종료날짜" value="2021.08.31">
-                                    </div>
-                                    <em class="validation">최대 1년까지 선택 가능합니다.</em>
-                                    <em class="validation">종료일이 시작일보다 빠릅니다.</em>
-                                </div>
-                            </div>
-                        </div>    
                     </div>
-                </section>
+                </section>    
 
-                <!-- 수정:2021-10-08 // -->
+                <hr class="hr-divide_48">
+                    
+                <section class="kb-sec confirm-period">
+                    <h3 class="tit">정기적 전송 요구 여부 및 요구하는 경우 그 주기</h3>
+                    <div class="desc-box">
+                        <ul class="btn-segmented_radio">
+                            <li>
+                                <input type="radio" name="btnradio" id="btnradio1" checked="">
+                                <label for="btnradio1">예(주1회)</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="btnradio" id="btnradio2">
+                                <label for="btnradio2">아니오</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <h3 class="tit">전송요구의 종료시점(전송요구서 유효기간)</h3>
+                    <div class="desc-box">
+                        <div class="kb-form" data-status="error">
+                            <div class="lookup-period select-period">
+                                <ul class="btn-segmented_radio">
+                                    <li>
+                                        <input type="radio" name="btnradio1" id="btnradio3" checked>
+                                        <label for="btnradio3">1년</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="btnradio1" id="btnradio4">
+                                        <label for="btnradio4">직접입력(최대1년)</label>
+                                    </li>
+                                </ul>
+                                <div class="period-selector is-disabled">
+                                    <input type="text" title="시작날짜" value="2021.08.28" readonly>
+                                    <span>~</span>
+                                    <input type="text" title="종료날짜" value="2021.08.31" readonly>
+                                </div>
+                                <em class="validation">최대 1년까지 선택 가능합니다.</em>
+                                <em class="validation">종료일이 시작일보다 빠릅니다.</em>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </section>
+                <!-- // 수정:2021-12-21 -->
+
                 <div class="sticky-bottom">
                     <div class="btn-area">
                         <button type="button" class="btn-solid"><span>다음</span></button>
                     </div>
-                </div>
-                <!-- // 수정:2021-10-08 -->
+                </div>    
+                        
             </main>
             <!-- // app-content -->
 
@@ -186,6 +195,7 @@
     <!-- Script -->
     @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/common/lib/lottie.min.js"></script><!-- lottie.js -->
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
     <script>

@@ -13,7 +13,7 @@
     <div class="app">
         
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
-            'pageTit':'데이터 변경',
+            'pageTit':'연결정보 변경',
             'type':''
         })
         
@@ -21,17 +21,20 @@
         <div class="app-container">
 
             <!-- app-content // -->
-            <main class="app-content select-assets">
+            <main class="app-content select-assets rdp-content js-scroll-down js-scroll-up"><!-- 수정:2021-12-20 -->
+                <!-- 수정:2021-12-20 // -->
                 <div class="page-step js-fixed">  
                     <div class="page-step-inner">
                         <div class="step" aria-label="총 3단계 중 현재 1단계">
                             <span class="current">1</span>                        
+                            <span class="next">2</span>                        
                             <span class="total">3</span>
                         </div>
-                        <h2 class="h1">자산선택</h2>
+                        <h2 class="h2">자산 선택</h2>
                     </div>
-                    <p class="page-step-desc">상품(계좌)/정보를 선택해 주세요.</p>
+                    <p class="page-step-desc">상품(계좌) / 정보를 선택해 주세요.</p>
                 </div>
+                <!-- // 수정:2021-12-20 -->
 
                 <section class="kb-sec">
                     <h3 class="h4">연결 성공<span class="num">7</span></h3>
@@ -84,16 +87,16 @@
                             </ul>
                         </dd>
                         <dt>
-                            <span class="form-checkbox"><input type="checkbox" id="bank05"><label for="bank05">네이버파이낸셜</label></span>
+                            <span class="form-checkbox"><input type="checkbox" id="bank06"><label for="bank06">네이버페이</label></span>
                             <button type="button" class="accordion-trigger"></button>
                         </dt>
                         <dd>
                             <ul class="checkbox-group">
-                                <li><span class="form-checkbox_20 align-top"><input type="checkbox" id="bank5-1"><label for="bank5-1">선불전자지급수단<em class="num">ABCD123456781234</em></label></span></li>
+                                <li><span class="form-checkbox_20 align-top"><input type="checkbox" id="bank5-1"><label for="bank5-1">네이버페이 포인트<em class="num">ABCD123456781234</em></label></span></li>
                             </ul>
                         </dd>
                         <dt>
-                            <span class="form-checkbox"><input type="checkbox" id="bank05"><label for="bank05">NH농협카드</label></span>
+                            <span class="form-checkbox"><input type="checkbox" id="bank07"><label for="bank07">NH농협카드</label></span>
                             <button type="button" class="accordion-trigger"></button>
                         </dt>
                         <dd>
@@ -102,7 +105,8 @@
                             </ul>
                         </dd>
                     </dl>
-
+                    <!-- 수정:2021-12-20 // -->
+                    <!--  
                     <h2 class="h4">연결 지연<span class="num">1</span></h2>
                     <dl class="accordion js-checkbox-selector">
                         <dt>
@@ -117,6 +121,8 @@
                             </div>
                         </dd>
                     </dl>
+                    -->
+                    <!-- // 수정:2021-12-20 -->
                     
                     <h2 class="h4">연결 실패<span class="num">1</span></h2>
                     
@@ -137,7 +143,7 @@
                 
                 <div class="sticky-bottom">
                     <div class="btn-area">
-                        <button type="button" class="btn-solid"><span>확인</span></button>
+                        <button type="button" class="btn-solid"><span>다음</span></button><!-- 수정:2021-12-20 -->
                     </div>
                 </div>
 
@@ -154,6 +160,7 @@
     <!-- Script -->
     @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/common/lib/lottie.min.js"></script><!-- lottie.js -->
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
 

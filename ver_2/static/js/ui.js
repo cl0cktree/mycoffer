@@ -2229,42 +2229,60 @@ if($('.js-scroll-done').length) jsScrollDone.init();
 var jsScrollDown = {
     // Default Setting
     init: function({
-        $jsScrollDown = $('.js-scroll-down'),
-        $btn : $btn = $('<button class="btn-scroll-down"><span>스크롤내리기</span></button>'),
+        $jsScrollDown : $jsScrollDown = $('.js-scroll-down'),
+        $btn : $btn = $('<button class="btn-scroll-down" id="closeArrowAni"><span>스크롤내리기</span></button>'),
         $breakPoint : $breakPoint = $('.js-break-point'),
-        exceptH : exceptH = 48, // TBD 헤더 높이
+        exceptH : exceptH = $('.app-header').innerHeight(), // TBD 헤더 높이
     }={}){
+        this.options.$jsScrollDown = $jsScrollDown;
         this.options.$btn = $btn;
         this.options.$breakPoint = $breakPoint;
-        this.options.tf = 0;
         this.options.exceptH = exceptH;
-        let scrollValue = 0;
+        this.options.dh = $(document).outerHeight();
         
-        // 브레이크 포인트가 있는 경우 사용할 스크롤 값 저장
-        if($jsScrollDown.find($breakPoint).length){
-            this.options.breakPointTop = $breakPoint.offset().top;
-            scrollValue = this.options.breakPointTop - exceptH; // TBD
-        }else{
-            scrollValue = this.options.dh - this.options.wh;
-        }       
-        scrollValue = Math.ceil(scrollValue);
+        if($('.page-step.js-fixed').length){
+            this.options.exceptH += 44; // 스텝 높이
+        }
+        // 높이값 리셋
+        this.checkScrollValue();
 
         // 스크롤이 생길 경우 버튼 추가 & 이벤트 등록
         if($('body').hasScrollBar()){
             $jsScrollDown.append($btn);
-            $btn.on('click', () => {this.moveScrollDown(scrollValue)});
+            $btn.on('click', () => {this.moveScrollDown()});
         }
+        // 스크롤이 있고 브레이크 포인트가 있는 경우
+        // 브레이크 포인트가 있고 동의하기 라디오박스 중 인풋이 있는 경우
+        if($('body').hasScrollBar() && jsScrollDown.options.$breakPoint.length){
+            jsScrollDown.options.$breakPoint.data('touch-tf','false')
 
-        // 브레이크 포인트가 1개이상 있고 동의하기 라디오박스 중 동의함 인풋이 있는 경우
-        if($('body').hasScrollBar() && $jsScrollDown.find($breakPoint).length > 1 && $breakPoint.find('.radio-group input')){
-            jsScrollDown.options.$breakPointRadioAgree = $breakPoint.find('.radio-group input.btn-radio-agree1');
+            jsScrollDown.options.$breakPointRadioAgree = $breakPoint.find('input');
             jsScrollDown.options.$breakPointRadioAgree.on('click', jsScrollDown.moveNextInput);
         }
     },
-    moveScrollDown: function(scrollValue){
-        var duration = (scrollValue - st) * 0.5;                
-        $('html, body').stop().animate({scrollTop : scrollValue}, duration);
-        // this.disappear();
+    // 스크롤량 컨트롤
+    checkScrollValue: function(){
+        this.options.dh = $(document).outerHeight();
+        
+        // 브레이크 포인트가 있는 경우 사용할 스크롤 값 저장
+        if(this.options.$breakPoint.length){
+            this.options.breakPointTop = this.options.$breakPoint.offset().top;
+            this.options.scrollValue = this.options.breakPointTop - this.options.exceptH;
+        }else{
+            this.options.scrollValue = this.options.dh - this.options.wh;
+        }       
+
+        this.options.scrollValue = Math.ceil(this.options.scrollValue);
+    },
+    moveScrollDown: function(nextIndexTop, exceptH){
+        this.checkScrollValue();
+        var duration = (this.options.scrollValue - st) * 0.5;  
+        if(nextIndexTop !== undefined){
+            $('html, body').stop().animate({scrollTop : nextIndexTop}, 300);
+        }else{
+            console.log(66)
+            $('html, body').stop().animate({scrollTop :this.options.scrollValue}, duration);
+        }  
     },
     disappear: function(){
         this.options.$btn.fadeOut(300);
@@ -2272,63 +2290,33 @@ var jsScrollDown = {
     reappear: function(){
         this.options.$btn.fadeIn(300);
     },
-    moveNextInput: function(e){
-        let thisIndex = jsScrollDown.options.$breakPointRadioAgree.index($(this)); // 이벤트 대상 선택자
-        let $remainRadio = jsScrollDown.options.$breakPointRadioAgree.not(':checked');
+    moveNextInput: function(){
+        let $thisBreakPoint = $(this).parents('.js-break-point');
+        let thisBreakPointIndex = jsScrollDown.options.$breakPoint.index($thisBreakPoint);
 
-        // 선택자 다음 라디오박스 높이 값 찾기
-        // 선택되지 않은 동의함 체크박스가 남아 있고, 다음 라디오박스의 동의함 인풋이 체크 되지 않은 경우
-        if ($remainRadio.length !== 0 && jsScrollDown.options.$breakPointRadioAgree.eq(thisIndex + 1).prop('checked') == false){
-            let nextIndexTop = jsScrollDown.options.$breakPoint.eq(thisIndex + 1).offset().top - jsScrollDown.options.exceptH;
-            jsScrollDown.moveScrollDown(nextIndexTop);
+        $thisBreakPoint.data('touch-tf','true');
+        
+        if (jsScrollDown.options.$breakPoint.eq(thisBreakPointIndex + 1).data('touch-tf') == 'false'){
+            let nextBreakPointTop = jsScrollDown.options.$breakPoint.eq(thisBreakPointIndex + 1).offset().top - jsScrollDown.options.exceptH;
+            jsScrollDown.moveScrollDown(nextBreakPointTop);
         }
-
-        // 선택되지 않은 동의함 체크박스가 남아 있고, 다음 라디오박스의 동의함 인풋이 체크 되어 있을 경우
-        // 남아있는 체크되지 않은 동의함 인풋 박스로 스크롤 이동
-        if($remainRadio.length !== 0 && jsScrollDown.options.$breakPointRadioAgree.eq(thisIndex + 1).prop('checked') == true){
-            let nextIndex = jsScrollDown.options.$breakPointRadioAgree.index($remainRadio);
-            let nextIndexTop = jsScrollDown.options.$breakPoint.eq(nextIndex).offset().top - jsScrollDown.options.exceptH;
-            jsScrollDown.moveScrollDown(nextIndexTop);
-        }
-
-        // 마지막 라디오가 체크 되었을 때
-        if ($remainRadio.length !== 0 && thisIndex + 1 == jsScrollDown.options.$breakPointRadioAgree.length){
-            let nextIndex = jsScrollDown.options.$breakPointRadioAgree.index($remainRadio);
-            let nextIndexTop = jsScrollDown.options.$breakPoint.eq(nextIndex).offset().top - jsScrollDown.options.exceptH;
-            jsScrollDown.moveScrollDown(nextIndexTop);
-        }
-
-        // 라디오 전체 체크 됐을 때
-        if ($remainRadio.length == 0){
+        if (thisBreakPointIndex == jsScrollDown.options.$breakPoint.length-1){
             jsScrollDown.moveScrollDown(jsScrollDown.options.dh - jsScrollDown.options.wh);
         }
-        
     },
     scroll: function(st){
-        // st = Math.ceil(st) + 50;
-        st = Math.ceil(st);
-
-        if (st >= this.options.dh - this.options.wh - 50) {
-            this.disappear();
-        }
-        else{
-            this.reappear();
-        }
-
-        if (!!this.options.breakPointTop && st >= this.options.breakPointTop - 50) {
-            this.disappear();
-        }
+        this.disappear();
+        this.checkScrollValue();
     },
     options: {
         $btn: {},
         $breakPoint: {},
         tf : 0,
-        // $breakPointArray : [],
         $breakPointRadioAgree : {},
-        tfArray : [],
         breakPointTop : 0, 
         dh : $(document).outerHeight(),
         wh : $(window).outerHeight(),
+        scrollValue : 0,
     }
 }
 
@@ -2356,6 +2344,7 @@ var jsScrollUp = {
             this.options.$jsScrollUp.append(this.options.$btn);
             this.options.$btn.on('click', () => {this.moveScrollUp(300)});
         }
+        this.options.dh = $(document).outerHeight();
     },
     moveScrollUp: function(duration){
         $('html, body').stop().animate({scrollTop : 0}, st*0.3);

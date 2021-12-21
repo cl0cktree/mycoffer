@@ -12,80 +12,115 @@
     @@include('@@webRoot/html/_include/app-a11y.html')
     <div class="app">
 
+        <!-- 수정:2021-12-21 // -->
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
-        'pageTit':'전송기간 연장',
-        'type':'step'
+            'pageTit':'연결기간 연장',
+            'type':'step'
         })
+		<!-- // 수정:2021-12-21 -->
 
         <!-- app-container //-->
         <div class="app-container">
 
             <!-- app-content // -->
-            <main class="app-content select-transmission-method js-scroll-done"><!-- 수정:2021-10-08 -->
-
+            <main class="app-content select-transmission-method rdp-content js-scroll-down js-scroll-up"><!-- 수정:2021-12-22 -->
+                <!-- 수정:2021-12-21 // -->
                 <section class="kb-sec sec-tit">
-                    <h2 class="h1">개인(신용)정보 수집&middot;이용 동의서(상세정보 전송)</h2>
+                    <h2 class="h2">개인(신용)정보 수집&middot;이용 동의</h2>
                     <div class="terms-desc">
                         <p>KB국민은행은 「신용정보의 이용 및 보호에 관한 법률」, 「개인정보보호법」 등 관련 법령에 따라 다음과 같이 귀하의 개인(신용)정보를 처리합니다.</p>
                     </div>
                 </section>
+                <!-- // 수정:2021-12-21 -->
                 
                 <section class="kb-sec transmission-request">                    
                     <div class="caution-txt_01">
                         <h3 class="tit">수집&middot;이용목적</h3>
                         <div class="desc-box">
-                            <p>전송요구를 통한 본인신용정보 통합조회, 데이터분석 서비스의 이용</p><!-- 수정:2021-11-18 -->
+                            <p>전송요구를 통한 본인신용정보 통합조회, 데이터분석 서비스의 이용</p>
                         </div>  
                         <h3 class="tit">보유 및 이용기간</h3>
                         <div class="desc-box">
-                            <strong>서비스 이용 종료 시 또는 삭제 요청시까지</strong>
+                            <strong class="text-line-yellow">서비스 이용 종료 시 또는 삭제 요청시까지</strong>
                         </div>
                         <h3 class="tit">거부 권리 및 불이익</h3>
                         <div class="desc-box">
                             <p>귀하는 개인(신용)정보 수집&middot;이용에 관한 동의를 거부하실 수 있습니다. 다만, "필수 항목에 대한 수집&middot;이용에 관한 동의"는 본인신용정보 통합조회, 데이터분석 서비스의 이용을 위한 필수적 사항이므로 동의를 거부하실 경우 본인신용정보 통합조회 서비스의 이용이 제한될 수 있으며, "선택 항목에 대한 수집&middot;이용에 관한 동의"는 거부하실 경우 해당 선택항목에 대한 통합조회, 데이터분석 서비스는 이용이 제한될 수 있습니다.</p>
                         </div>   
                         <h3 class="tit">수집&middot;이용항목</h3>
-                        <div class="desc-box">
-                            <h4 class="h4">개인(신용)정보</h4>
-                            <h5 class="h5 mt20">개인(식별)정보 <span>(필수 항목)</span></h5>
-                            <p class="mt12">접근토큰</p><!-- 수정:2021-11-18 -->
-                            <h5 class="h5 mt20 mb12">신용거래정보 <span>(필수 항목)</span></h5>
-                            <!-- 상세정보 전송 시 업권별 신용거래정보 상세내용 참고 // -->
-                            <p class="simple-message">정보 주체가 전송요구 시 해당 정보를 선택하는 경우에 한함</p><!-- 수정:2021-11-18 --><!-- 위치 이동 -->
-                            <ul class="mt12" data-style="list"><!-- 수정:2021-11-18 -->
-                                <li>
-                                    <p>은행</p>
-                                    <ul>
-                                        <li><span>수신상품정보</span> : 계좌번호, 회차번호, 외화계좌여부, 상품명, 마이너스약정여부, 계좌구분, 계좌상태, 통화코드, 저축방법, 계좌개설일자, 만기일, 약정액, 월납입액, 현재잔액, 출금가능액, 적용금리, 최종납입회차, 거래일시(일자), 거래번호, 거래유형, 거래구분, 거래금액, 거래후 잔액, 납입회차 적요</li>
-                                        <li><span>대출상품정보</span> : 계좌번호, 회차번호, 대출일, 만기일, 최종적용금리, 월상환일, 상환방식, 자동이체기관, 상환계좌번호, 통화코드, 대출잔액, 대출원금, 다음 이자상환일, 거래일시(일자), 거래번호, 거래유형, 거래금액, 거래후 대출잔액, 거래금액 중 원금, 거래금액 중 이자, 환출이자, 이자적용시작일, 이자적용 종료일, 적용이율, 이자금액, 이자종류</li>
-                                        <li><span>투자상품정보</span> : 계좌번호, 회차번호, 표준펀드코드, 납입유형, 개서일, 만기일, 통화코드, 잔액, 평가금액, 투자원금, 보유좌수, 거래일시(일자), 거래번호, 거래유형, 기준가, 거래좌수, 거래금액, 거래후잔고 평가금액</li>
-                                        <li><span>개인형IRP정보</span> : 계좌번호, 상품명, 계좌잔액, 계좌평가금액, 사용자부담금, 가입자부담금, 개설일, 최초입금일, 최초 제도 가입일, 연금개시시작(예정)일, 운용상품수, 운용상품목록, 개운운영상품명, 상품유형, 평가금액, 납입(투자)원금, 보유좌수, 신규일, 만기일, 약정이자율, 거래일시(일자), 거래번호, 거래구분, 거래금액</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <!-- // 상세정보 전송 시 업권별 신용거래정보 상세내용 참고 -->
-                        </div>               
-                    </div>    
+                    </div>
                 </section>
 
+                <hr class="hr-divide_48">
+
+                <section class="kb-sec">
+                    <h4 class="h4 desc-tit">선택항목</h4>
+                    <p class="simple-message mt8">정보 주체가 전송요구 시 해당 정보를 선택하는 경우에 한함</p><!-- 수정:2021-12-21 // -->
+                    
+                    <div class="confirm-agree mt20">
+                        <dl class="confirm-info box-shadow js-break-point"><!-- 수정:2021-12-22 -->
+                            <dt>상품구매 카테고리 정보 <span>(선택 항목)</span></dt>
+                            <dd>가전 및 전자 / 도서 및 문구 / 패션 및 의류 / 스포츠 / 화장품 / 아동 및 유아 / 식품 / 생활 및 가구 / 여행 및 교통 / 문화 및 레저 / 음식 / E쿠폰 및 기타서비스 카테고리 정보</dd>
+                            <dt>위 상품구매정보 수집&middot;이용에 동의 하십니까?</dt>
+                            <dd>
+                                <div class="checkbox-square">
+                                    <ul class="radio-group">
+                                        <li>
+                                            <span class="form-checkbox"><input type="radio" id="radioAgree1-1" name="radioAgree1" checked=""><label for="radioAgree1-1">동의하지 않음</label></span>
+                                        </li>
+                                        <li>
+                                            <span class="form-checkbox"><input type="radio" id="radioAgree1-2" name="radioAgree1"><label for="radioAgree1-2">동의함</label></span>
+                                        </li>    
+                                    </ul>
+                                </div>
+                            </dd>
+                        </dl>
+                        <div class="confirm-info box-shadow js-break-point"><!-- 수정:2021-12-22 -->
+                            <div class="dt">가맹점명 및 사업자등록번호 정보</div>
+                            <div class="dt">위 가맹점명 및 사업자등록번호 정보 수집&middot;이용에 동의하십니까?</div>
+                            <div class="dd">
+                                <div class="checkbox-square">
+                                    <ul class="radio-group">
+                                        <li>
+                                            <span class="form-checkbox"><input type="radio" id="radioAgree2-1" name="radioAgree2" checked=""><label for="radioAgree2-1">동의하지 않음</label></span>
+                                        </li>
+                                        <li>
+                                            <span class="form-checkbox"><input type="radio" id="radioAgree2-2" name="radioAgree2"><label for="radioAgree2-2">동의함</label></span>
+                                        </li>    
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="confirm-info box-shadow js-break-point"><!-- 수정:2021-12-22 -->
+                            <div class="dt">적요 또는 거래메모 정보</div> 
+                            <div class="dt">위 적요 또는 거래메모정보 수집&middot;이용에 동의하십니까?</div>
+                            <div class="dd">
+                                <div class="checkbox-square">
+                                    <ul class="radio-group">
+                                        <li>
+                                            <span class="form-checkbox"><input type="radio" id="radioAgree3-1" name="radioAgree3" checked=""><label for="radioAgree3-1">동의하지 않음</label></span>
+                                        </li>
+                                        <li>
+                                            <span class="form-checkbox"><input type="radio" id="radioAgree3-2" name="radioAgree3"><label for="radioAgree3-2">동의함</label></span>
+                                        </li>    
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </section>
+                
                 <section class="kb-sec confirm-agree">
                     <h4 class="is-hidden">동의하기</h4>
                     <div class="confirm-info">
-                        <p class="question">위 개인(신용)정보 제공에 동의하십니까?</p>
-                        <ul class="radio-group">
-                            <li>
-                                <span class="form-checkbox"><input type="radio" id="radioAgree1-1" name="radioAgree1" checked=""><label for="radioAgree1-1">동의하지 않음</label></span>
-                            </li>
-                            <li>
-                                <span class="form-checkbox"><input type="radio" id="radioAgree1-2" name="radioAgree1"><label for="radioAgree1-2">동의함</label></span>
-                            </li>    
-                        </ul>
+                        <p class="question">위 개인(신용)정보 수집&middot;이용에 동의하십니까?</p><!-- 수정:2021-12-20 -->
                     </div>
                 </section>
                 
                 <div class="sticky-bottom">
-                    <div class="btn-area">
-                        <button type="button" class="btn-solid"><span>다음</span></button>
+                    <div class="btn-area equal">
+                        <button type="button" class="btn-solid gray"><span>동의하지 않음</span></button>
+                        <button type="button" class="btn-solid"><span>동의함</span></button>
                     </div>
                 </div>
             </main>
@@ -101,6 +136,7 @@
     <!-- Script -->
     @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
+    <script src="@@webRoot/static/common/lib/lottie.min.js"></script><!-- lottie.js -->
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
     

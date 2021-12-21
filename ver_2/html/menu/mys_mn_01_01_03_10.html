@@ -12,10 +12,12 @@
     @@include('@@webRoot/html/_include/app-a11y.html')
     <div class="app">
         
+        <!-- 수정:2021-12-21 // -->
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
-            'pageTit':'<span class="is-hidden">KB국민은행</span>',
-            'type':'kb'
+            'pageTit':'연결기간 연장',
+            'type':'step'
         })
+		<!-- // 수정:2021-12-21 -->
 
         <!-- app-container //-->
         <script>
@@ -25,12 +27,11 @@
 
             <!-- app-content // -->
             <main class="app-content">
-                <section class="kb-sec joint-certificate-password">   
+                <section class="kb-sec joint-certificate-password rdp-content"><!-- 수정:2021-12-21 -->
                     <h2>인증서 암호 입력</h2>                 
                     <div class="kb-form" data-status="error">
                         <div class="kb-form_inner form-text">                            
-                            <input type="password" id="jointCertificatePassword" value="" title="인증서 비밀번호 입력" placeholder="인증서 비밀번호"><!-- 수정:2021-09-27 -->
-                            
+                            <input type="password" id="jointCertificatePassword" value="" title="인증서 비밀번호 입력" placeholder="인증서 비밀번호">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
                         <em class="validation">인증서 암호를 입력해주세요.</em>

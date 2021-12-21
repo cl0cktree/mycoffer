@@ -26,6 +26,7 @@
             <button type="button" class="btn-line" onclick="modalDemo13()"><span>상세정보 전송요구서 화면에서 요청한 내용 변경 시</span></button><!-- 수정:2021-11-01 -->
             <button type="button" class="btn-line" onclick="modalDemo5()"><span>자산연동시 로딩 페이지<br>(30초 이상 1개 기관도 연동되지 않은 경우)</span></button><!-- 추가:2021-11-18 -->
             <button type="button" class="btn-line" onclick="modalDemo14()"><span>자산연동시 로딩 페이지<br>(상대기관에서의 응답메시지가 모두 재처리 진행 필요 없는 에러코드인 경우)</span></button><!-- 추가:2021-11-18 -->
+            <button type="button" class="btn-line" onclick="modalDemo15()"><span>개인신용정보 수집이용동의 동의하지 않음 클릭시</span></button><!-- 수정:2021-12-20 -->
             <!-- // 마이데이터 관리 -->
         </div>
 
@@ -70,6 +71,14 @@
             modalPopup({
                 title: "",
                 message: "선택하신 기관에 대한 정보 제공 요청이 모두 실패하였습니다. <br>다시 거래하시겠습니까?",
+                type: "confirm"
+            });
+        }
+        // 요건추가 2021-12-22
+        function modalDemo15() {
+            modalPopup({
+                title: "",
+                message: "자산을 연결하기 위해 <br>동의함 버튼을 선택해 주세요.",
                 type: "confirm"
             });
         }

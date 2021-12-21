@@ -42,7 +42,7 @@
             module = {
                 initialize: function() {
                     //if(!$module.prev('.dim').length) $module.before('<div class="dim" style="z-index:' + (layeredLevel - 1) + ';display:none;"></div>');
-                    $dimm = $module.prev();
+                    
                     module.bind.events();
                     module.instantiate();
                 },
@@ -99,6 +99,7 @@
                         if(!$module.prev('.dim').length) $module.before('<div class="dim" style="z-index:999999;"></div>');                    
                         $wrap.addClass("is-active").css('z-index', 1000000);
                     }
+                    $dimm = $module.prev('.dim');
 
                     $module.prev('.dim').fadeIn(settings.duration);
                     $wrap.fadeIn(settings.duration);
