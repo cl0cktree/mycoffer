@@ -108,7 +108,13 @@ if($appMenu.length){
     });
 
     $appMenu.on('click','.btn-close',function(){
-        $appMenu.removeClass('is-active');
+        $appMenu.addClass('appmenu-out');
+        $appMenu.one('animationend',function(){
+            $(this).removeClass('is-active appmenu-out');
+            $appHeader.find('.btn-allmenu').focus();
+        });
+
+        
         gfn_body.hold(false);
     });
 

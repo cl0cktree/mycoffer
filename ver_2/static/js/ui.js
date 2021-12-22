@@ -171,30 +171,8 @@ function gfn_NumberToKorean(number, unit){
 
 //WA focus
 var focusA11Y = {
-    memory: function($selector){
-        $selector = $selector != undefined ? $selector : $(this);
-        $selector.addClass('focus-memory');
-    },
-    forget: function(){
-        var $focusBack = $('.focus-memory');
-        if(!$focusBack.is(':focusable')){
-            $focusBack.find(':focusable').eq(0).focus();
-        }else{
-            $focusBack.focus();
-        }
-        $focusBack.removeClass('focus-memory');
-    },
-    focus: function($selector){
-        $selector = $selector != undefined ? $selector : $(this);
-        if(!$selector.is(':focusable')){
-            $selector.find(':focusable').eq(0).focus();
-        }else{
-            $selector.focus();
-        }
-    },
-    blur: function($selector){
-        $selector = $selector != undefined ? $selector : $(this);
-        $selector.blur();
+    back : function(){
+        $('.wa-focus').focus();
     }
 };
 
@@ -303,14 +281,17 @@ $('body').on('click','.dim',function(){
 
 var layeredLevel = 301;
 var gfn_layered = {
-    open: function(name, type){
+    open: function(name, type, trigger){
         // dim = dim == undefined ? true : dim;
         // duration = duration == undefined ? 200 : duration;
+                
         if(name != '' && name != undefined){
 
             var $selectedLayer = $('div[data-layered-name=' + name + ']');
 
             if ($selectedLayer.length === 0) return;
+
+            $selectedLayer.attr('tabindex','0');
 
             // if(dim){
             //     //스크롤 원위치
@@ -399,7 +380,7 @@ var gfn_layered = {
             $layered.children('div').removeClass('is-active is-expanded').removeAttr('style');
         }
 
-        focusA11Y.forget();
+        focusA11Y.back();
 
     }
 };
@@ -419,9 +400,9 @@ $('body')
 .on('click','[data-call-layered]',function(){
     var name = $(this).data('call-layered');
     if($(this).parents('.event-sticker').length || $(this).parents('.floating-banner').length){
-        gfn_layered.open(name, 'event');
+        gfn_layered.open(name, 'event', $(this));
     }else{
-        gfn_layered.open(name);
+        gfn_layered.open(name,'normal', $(this));
     }
     
     //if($(this).closest('.kb-form').length) $(this).closest('.kb-form').addClass('is-active');
@@ -647,7 +628,6 @@ var gfn_formSelect = {
                 // data-bsScroll에 저장된 스크롤 위치 값으로 bsSelect의 스크롤 제어
                 gfn_bsSelect.scroll($thisForm.data("bsScroll"));
             }
-            focusA11Y.memory($thisForm);
         }
     },
     // form-select 의 선택 옵션 바꾸는 메소드
@@ -708,8 +688,12 @@ $('.select-list').on('click','button',function(){
     if(!$selectList.hasClass('is-disabled')){
         if($selectList.data('selection') != 'multiple'){
             $(this).parent('li').addClass('is-active').siblings('li').removeClass('is-active');
+            $(this).parent('li').attr('title','선택됨').siblings('li').removeAttr('title');
         }else{
             $(this).parent('li').toggleClass('is-active');
+            $(this).attr('title', function(index, attr){
+                return attr == '선택됨' ? null : '선택됨';
+            });
         }
     }
 });
@@ -923,6 +907,17 @@ $body.on('click',function(e){
     }
 });
 
+//WA Focus
+$body.on('focusin',function(e){
+    var $target = $(e.target);
+    var condition = $target.parents('.popup').length === 0 && $target.parents('.bottom-sheet').length === 0 && $target.parents('.modal').length === 0;
+    var condition02 = !$target.is('.popup') && !$target.is('.bottom-sheet') && !$target.is('.modal');    
+    if(condition&&condition02){
+        $('.wa-focus').removeClass('wa-focus');
+        $(e.target).addClass('wa-focus');
+    }
+});
+
 if($('.textarea').length){
     $('.textarea').each(function(){
         var $textarea = $(this);
@@ -1045,6 +1040,7 @@ $('.tab.swiper-container').each(function(idx) {
     //WAI-ARIA
     $tab.attr('role','tablist');
     $tab.find('li > button, li > a').attr('role','tab');
+    $tab.find('li.is-active').attr('title','선택됨');
 
     if(!$tab.hasClass('app-sub') && !$tab.hasClass('app-gnb')){
 
@@ -1068,6 +1064,8 @@ $('.tab.swiper-container').each(function(idx) {
                 },
                 click : function(swiper, event){
                     swiper.slideTo(swiper.clickedIndex);
+                    
+                    $(swiper.$el).find('.is-active').addClass('ddd').siblings('li').removeClass('ddd')
                 },
             }
         }));
@@ -1075,10 +1073,10 @@ $('.tab.swiper-container').each(function(idx) {
             var $link = $(this);
             var idx = $link.parent('li').index();
             if (isContentsTab) {
-                $tabLinks.parent('li').removeClass('is-active');
-                $tabLinks.eq(idx).parent('li').addClass('is-active');
-                $tabContents.removeClass('is-active');
-                $tabContents.eq(idx).addClass('is-active');
+                $tabLinks.parent('li').removeClass('is-active').removeAttr('title');
+                $tabLinks.eq(idx).parent('li').addClass('is-active').attr('title','선택됨');
+                $tabContents.removeClass('is-active').removeAttr('title');
+                $tabContents.eq(idx).addClass('is-active').attr('title','선택됨');
                 if ($tabContents.eq(idx).data('swiper')) {
                     $tabContents.eq(idx).data('swiper').update();
                 }
@@ -1193,10 +1191,10 @@ if($('.accordion').length){
         var $btn = $(this);
         var $dt = $(this).parent('dt');
         if(!$dt.hasClass('is-active')){
-            $btn.attr('aria-expanded',true);
-            $dt.addClass('is-active').siblings('dt').removeClass('is-active').find('.accordion-trigger').attr('aria-expanded','false');
+            $btn.attr({'aria-expanded':true,'title':'선택됨'});
+            $dt.addClass('is-active').siblings('dt').removeClass('is-active').find('.accordion-trigger').attr({'aria-expanded':'false','title':''});
         }else{
-            $btn.attr('aria-expanded',false);
+            $btn.attr({'aria-expanded':'false','title':''});
             $dt.removeClass('is-active');
         }
     })
@@ -2239,10 +2237,12 @@ var jsScrollDown = {
         this.options.$breakPoint = $breakPoint;
         this.options.exceptH = exceptH;
         this.options.dh = $(document).outerHeight();
-        
+
+        // 스텝박스가 있는 경우 상단 높이 값 추가
         if($('.page-step.js-fixed').length){
             this.options.exceptH += 44; // 스텝 높이
         }
+
         // 높이값 리셋
         this.checkScrollValue();
 
@@ -2251,11 +2251,11 @@ var jsScrollDown = {
             $jsScrollDown.append($btn);
             $btn.on('click', () => {this.moveScrollDown()});
         }
-        // 스크롤이 있고 브레이크 포인트가 있는 경우
-        // 브레이크 포인트가 있고 동의하기 라디오박스 중 인풋이 있는 경우
+
+        // 스크롤이 있고 브레이크 포인트가 있는 경우 터치 여부
         if($('body').hasScrollBar() && jsScrollDown.options.$breakPoint.length){
             jsScrollDown.options.$breakPoint.data('touch-tf','false')
-
+            // 브레이크 포인트 내부 인풋을 선택자로 등록후 클릭 이벤트 등록 
             jsScrollDown.options.$breakPointRadioAgree = $breakPoint.find('input');
             jsScrollDown.options.$breakPointRadioAgree.on('click', jsScrollDown.moveNextInput);
         }
@@ -2267,7 +2267,7 @@ var jsScrollDown = {
         // 브레이크 포인트가 있는 경우 사용할 스크롤 값 저장
         if(this.options.$breakPoint.length){
             this.options.breakPointTop = this.options.$breakPoint.offset().top;
-            this.options.scrollValue = this.options.breakPointTop - this.options.exceptH;
+            this.options.scrollValue = this.options.breakPointTop - this.options.exceptH -10;
         }else{
             this.options.scrollValue = this.options.dh - this.options.wh;
         }       
@@ -2275,12 +2275,12 @@ var jsScrollDown = {
         this.options.scrollValue = Math.ceil(this.options.scrollValue);
     },
     moveScrollDown: function(nextIndexTop, exceptH){
+        // 기관목록 불러온 후 높이값 재 설정
         this.checkScrollValue();
         var duration = (this.options.scrollValue - st) * 0.5;  
         if(nextIndexTop !== undefined){
             $('html, body').stop().animate({scrollTop : nextIndexTop}, 300);
         }else{
-            console.log(66)
             $('html, body').stop().animate({scrollTop :this.options.scrollValue}, duration);
         }  
     },
@@ -2294,11 +2294,12 @@ var jsScrollDown = {
         let $thisBreakPoint = $(this).parents('.js-break-point');
         let thisBreakPointIndex = jsScrollDown.options.$breakPoint.index($thisBreakPoint);
 
+        // 터치시 데이터 값 변경
         $thisBreakPoint.data('touch-tf','true');
         
         if (jsScrollDown.options.$breakPoint.eq(thisBreakPointIndex + 1).data('touch-tf') == 'false'){
             let nextBreakPointTop = jsScrollDown.options.$breakPoint.eq(thisBreakPointIndex + 1).offset().top - jsScrollDown.options.exceptH;
-            jsScrollDown.moveScrollDown(nextBreakPointTop);
+            jsScrollDown.moveScrollDown(nextBreakPointTop -10);
         }
         if (thisBreakPointIndex == jsScrollDown.options.$breakPoint.length-1){
             jsScrollDown.moveScrollDown(jsScrollDown.options.dh - jsScrollDown.options.wh);
@@ -2320,11 +2321,8 @@ var jsScrollDown = {
     }
 }
 
-// 전송요구 동의하기 버튼이 있을 경우 스크롤 다운
-// jsScrollDown.init({$breakPoint : $('.confirm-agree')});
-
 // scroll down default 
-// jsScrollDown.init();
+jsScrollDown.init();
 
 // scroll down custom
 // jsScrollDown.init({
@@ -2332,9 +2330,6 @@ var jsScrollDown = {
 //     $btn : 스크롤다운버튼 제이쿼리 선택자
 // });
 
-jsScrollDown.init({
-    $btn : $('<button class="btn-scroll-down" id="closeArrowAni"><span>스크롤내리기</span></button>')
-});
 
 // 스크롤업
 var jsScrollUp = {

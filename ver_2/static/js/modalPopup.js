@@ -87,10 +87,7 @@
                 },
     
                 open: function() {
-                    focusA11Y.memory($('.is-focused'));
-                    //$body.addClass("is-hold");
                     gfn_body.hold(true);
-
                     
                     if(!settings.autoDestroy){
                         if(!$module.prev('.dim').length) $module.before('<div class="dim" style="z-index:' + (layeredLevel - 1) + ';"></div>');                    
@@ -102,14 +99,16 @@
                     $dimm = $module.prev('.dim');
 
                     $module.prev('.dim').fadeIn(settings.duration);
+                    $wrap.attr('tabindex','0');
                     $wrap.fadeIn(settings.duration);
-                    $wrap.find(':focusable').eq(0).focus();
+                    $wrap.focus();
+                    focusTrap($wrap);
 
                     layeredLevel = layeredLevel + 10;
                 },
     
                 close: function() {
-                    focusA11Y.forget();
+                    focusA11Y.back();
                     //$body.removeClass("is-hold");                    
                     gfn_body.hold(false);
                     $module.prev('.dim').fadeOut(settings.duration,function(){

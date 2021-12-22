@@ -596,6 +596,7 @@
 .joint-certificate-list li p{@include text($size: $text03, $line-height:1);color:$kb-ui04}
 .joint-certificate-list li p > span{display:inline-block;min-width:52px;margin-right:14px;}
 .joint-certificate-list li p > strong.num{@include number($size: 15px, $line-height:1);}
+.joint-certificate-list li p .tag-label{min-width:auto;margin-left:4px;margin-right:0 } // 211221 : 공인인증서 목록 날짜 정보 태그 여백 조정
 .joint-certificate-list li .icon-link_20{position:absolute;right:0;top:calc(50% - 8px);transform:translateY(-50%)}
 .joint-certificate-list li + li:first-child{margin-top: 18px;}
 .joint-certificate{padding-bottom:100px;}
@@ -1454,6 +1455,12 @@ ol[data-style=number] li::before{content:counter(list-number)'.';margin-right:0.
             margin-bottom:24px;
         }
     }
+    &.select-assets .js-checkbox-selector {
+        dt span{
+            vertical-align:bottom;
+        }
+    }
+    
 }
 
 // 바텀시트
@@ -1490,6 +1497,18 @@ ol[data-style=number] li::before{content:counter(list-number)'.';margin-right:0.
             .form-checkbox_20:first-child{
                 margin-top:5px
             }
+        }
+    }
+    .mydata-result-wrap .result-list{
+        li{vertical-align:bottom;}
+    }
+}
+// 바텀시트 헤더
+.rdp-header{
+    &.bottom-sheet_header {
+        .tit i:first-child{
+            margin-right:6px;
+            vertical-align:middle;
         }
     }
 }

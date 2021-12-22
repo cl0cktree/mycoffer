@@ -144,8 +144,18 @@ i[class*='icon-']{overflow:hidden;display:inline-block;white-space:nowrap;text-i
 // .tab.app-sub .swiper-wrapper:after{content:none;}
 
 //전체 메뉴
-.app-menu{position:fixed;top:0;left:100%;bottom:0;z-index:$level70;width:100%;background-color:#fff;transition: left .2s ease-in-out;}
-.app-menu.is-active{left:0;}
+.app-menu{display:none;position:fixed;top:0;left:100%;bottom:0;z-index:$level70;width:100%;background-color:#fff;}
+.app-menu.is-active{display:block;animation:appMenuIn 2s ease-in-out forwards}
+.app-menu.appmenu-out{animation:appMenuOut 2s ease-in-out forwards}
+
+@keyframes appMenuIn {
+    0%{left:100%}
+    100%{left:0%}    
+}
+@keyframes appMenuOut {
+    0%{left:0%}
+    100%{left:100%}    
+}
 .all-menu-top{padding:12px 24px 16px 24px;}
 .app-menu .util-menu{display:flex;justify-content:flex-end;font-size:0;}
 .app-menu .util-menu button,
