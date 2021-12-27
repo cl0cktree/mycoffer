@@ -302,12 +302,13 @@
 @mixin hidden{
     overflow: hidden;
     position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    clip:rect(0,0,0,0);
-    border: 0
+    opacity:0;
+    // width: 1px;
+    // height: 1px;
+    // padding: 0;
+    // margin: -1px;
+    // clip:rect(0,0,0,0);
+    // border: 0
 }
 
 //한줄 말줄임
@@ -695,8 +696,7 @@
     display:$display;
     position:relative;
     min-height: px-to-rem($size);
-
-    input{@include hidden;}
+    input{position:absolute;opacity:0;}
     input + label{display:inline-block;line-height:1.4;min-height:px-to-rem($size);}
     input + label:before,
     input + label:after{
@@ -704,10 +704,11 @@
         position:absolute;        
         top:0;transform:translateY(0);
     }
-    input:focus + label{outline:3px solid #ead3d7}
+    //input:focus + label{outline:2px solid rgba(40,126,255,0.2);outline-style: auto;}
     input + label:after{transform:translateY(0) rotate(315deg);}
     input:disabled + label{color:$kb-ui07;}
     @if (remove-units($size) == 24 or remove-units($size) == 2.4){
+        input{width:24px;height:24px;}
         label{padding-top:0.1rem;padding-left:34px;font-size:$text02;}
         input + label:before{left:0;width:2.4rem;height:2.4rem;border:2px solid $kb-ui05;border-radius:50%;}
         input + label:after{left: .6rem;top: .9rem;z-index: 1;width: 1.2rem;height: .8rem;margin-top: -.2rem;transform: rotate(-45deg);
@@ -729,6 +730,7 @@
         
         
     }@else if (remove-units($size) == 20 or remove-units($size) == 2){
+        input{width:24px;height:24px;}
         label{min-height:20px;padding-right:3rem;line-height:px-to-rem($size);font-size:px-to-rem($text02);}        
         input + label:after{top:5px;left: .4rem;width: 1.3rem;height: .8rem;transform: rotate(315deg);
             border-left: 2px solid #8c949e;
@@ -763,7 +765,8 @@
     position:relative;
     min-height:$size;
 
-    input{@include hidden;}
+    input{position:absolute;opacity:0;width:24px;height:24px;}
+    //input:focus + label{outline:2px solid rgba(40,126,255,0.2);outline-style: auto;}
     label{display:inline-block;min-height:24px;color:$kb-ui02;padding-top:2px;padding-left:32px;font-size:$text02;line-height:1.4;}
     label:before,
     label:after{position:absolute;transform:translateY(0);border-radius:50%;}

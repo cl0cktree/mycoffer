@@ -107,6 +107,18 @@
 .credit-score-up .keyvisual strong {display: block; padding: 0; margin-bottom: 10px; font-size: 28px; line-height: 39px; font-weight: bold; color: $kb-ui02;}
 .credit-score-up .keyvisual::after {content: ''; display: block; margin: 23px auto 32px; width: 327px; height: 180px; background: url(../images/special/img_up.png) no-repeat 0 0 / 100% 100%;}
 .credit-score-up + .toggle-notice {margin-top: 50px;}
+.credit-score-up + .monthly-payment-lists {margin-top: 48px;}
+
+.monthly-payment-lists .month {margin-bottom: 48px;}
+.monthly-payment-lists .month:last-child {margin-bottom: 0;}
+.monthly-payment-lists .month-label {font-size: 18px; font-weight: bold;}
+.monthly-payment-lists .month-lists {margin-top: 18px; border-top: 1px solid $kb-ui07;}
+.monthly-payment-lists .month-lists > li {@include clfix; padding: 20px 2px; border-bottom: 1px solid $kb-ui09;}
+.monthly-payment-lists .month-lists > li .mt {display: block; font-size: 16px; margin-bottom: 18px;}
+.monthly-payment-lists .month-lists > li .st {float: left; font-size: 16px; color: $kb-ui04;}
+.monthly-payment-lists .month-lists > li .pm {float: right; font-size: 17px;}
+.monthly-payment-lists .month-lists > li .pm::after {font-size: 16px;}
+.monthly-payment-lists + .toggle-notice {margin-top: 50px;}
 
 .credit-score-complete {position: relative;}
 .credit-score-complete .flex-top {margin: 32px 0 65px;}
@@ -332,7 +344,8 @@
 .compare-bar-area .row.me .bar {background-color: #ffcf53;}
 .compare-bar-area .row.avg .bar {background-color: #ffab53;}
 .compare-bar-area .row.all .bar {background-color: #fa844e;}
-.compare-bar-area .row.me .value {font-weight: bold;}
+.compare-bar-area .row.me .value,
+.compare-bar-area .row.me .value ::after {font-weight: bold;}
 
 .credit-point .button-area {margin-top: 28px;}
 .credit-point .compare-bar-area .row.avg {color: $kb-ui05;}

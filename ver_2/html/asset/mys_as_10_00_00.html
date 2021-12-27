@@ -60,7 +60,7 @@
                                                         <strong class="tit">대출</strong>
                                                         <div class="cont">
                                                             <ul data-style="list">
-                                                                <li>마이데이터 전송요구에 동의한 대출계좌의 합산 금액이며, 카드대출(현금서비스/카드론)을 포함하지 않습니다.</li>
+                                                                <li>마이데이터 전송요구에 동의한 대출계좌의 합산 금액이며, 카드대출(현금서비스)을 포함하지 않습니다.</li><!-- 2021-12-27 툴팁문구수정 -->
                                                                 <li>본 콘텐츠는 당행 금융정보, 당행에 등록된 오픈뱅킹정보, 마이데이터 전송요구권 동의 정보를 이용하여 제공합니다.</li>
                                                             </ul>
                                                         </div>
@@ -593,8 +593,8 @@
                             <div class="tooltip">
                                 <strong class="tit">비교그룹</strong>
                                 <div class="cont">
-                                    나와 비슷한 금융자산을 가진 그룹입니다.
-                                </div>
+                                    {연령구간}에서 나와 비슷한 금융자산을 가진 그룹입니다.
+                                </div><!-- 2021-12-23 툴팁 문구수정 -->
                                 <button class="btn-close"><span>닫기</span></button>
                             </div>
                         </div>
@@ -647,6 +647,11 @@
                                 <!-- 2021-11-05 수정 // -->
                                 <ul data-style="list">
                                     <li>리스, 인수채권/대부는 가중평균금리에 포함되지 않으며, 보험 대출은 마이테이터 정보에 의해 금리가 포함되지 않을 수 있습니다.</li><!-- 2021-12-10 문구수정 -->
+                                    <!-- 2021-12-23 내용추가 //-->
+                                    <li>
+                                        가중평균금리는 대출계좌별 금액비중을 반영한 고객님의 전체 대출의 평균이율을 계산한 금리입니다.
+                                    </li>
+                                    <!-- // 2021-12-23 내용추가 -->
                                     <li>예상 월 이자는 실제 이자와 다를 수 있으며, 보험대출, 인수채권/대부의 이자납입액과 리스 월 납입금은 조회 시점에 따라 계산에 포함되지 않을 수 있습니다.</li>
                                 </ul>
                                 <!-- // 2021-11-05 수정 -->
@@ -655,15 +660,7 @@
                         </div>
                     </h4>
                     <div class="rate-cut-box">
-                        <div class="tit">가중평균금리 <span class="num" data-unit-after="%">4.3</span> <button type="button" class="btn-question"><i
-                                    class="icon-tooltip-que_20"></i></button>
-                            <div class="tooltip">
-                                <strong class="tit">가중평균금리</strong>
-                                <div class="cont">
-                                    대출계좌별 금액비중을 반영한 고객님의 전체 대출의 평균이율을 계산한 금리입니다.
-                                </div>
-                                <button class="btn-close"><span>닫기</span></button>
-                            </div>
+                        <div class="tit">가중평균금리 <span class="num" data-unit-after="%">4.3</span><!-- 2021-12-23 툴팁삭제 -->
                         </div>
                         <div class="info amount">예상 월 이자&nbsp;<span class="num" data-unit-after="원">000,000</span></div>
                     </div>

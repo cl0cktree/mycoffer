@@ -43,7 +43,11 @@
 
                 <section class="kb-sec">                    
                     <h2 class="h3">차트 BG 패턴 목록</h2>
-                    <ul class="pattern mt8"></ul>
+                    <style>
+                        .pattern.js-pattern li span{position:relative;}
+                        .pattern.js-pattern li span:before{content:'';position:absolute;left:0;right:0;top:0;bottom:0;}
+                    </style>
+                    <ul class="pattern js-pattern mt8"></ul>
                 </section>
 
                 <hr class="hr-divide_24">
@@ -88,7 +92,7 @@
         chartBg.forEach(function(element, index){
             if(index != 0){
                 index = String(index).length != 1 ? index : "0" + index;
-                $('.pattern').append('<li><span class="pattern' + index + '"></span>chartBg[' + index  + ']</li>')
+                $('.js-pattern').append('<li><span class="pattern' + index + '"></span>chartBg[' + index  + ']</li>')
             }
         });        
         

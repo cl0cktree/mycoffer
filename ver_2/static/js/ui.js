@@ -688,7 +688,8 @@ $('.select-list').on('click','button',function(){
     if(!$selectList.hasClass('is-disabled')){
         if($selectList.data('selection') != 'multiple'){
             $(this).parent('li').addClass('is-active').siblings('li').removeClass('is-active');
-            $(this).parent('li').attr('title','선택됨').siblings('li').removeAttr('title');
+            $(this).attr('title','선택됨');
+            $(this).parent('li').siblings('li').find('button').removeAttr('title');
         }else{
             $(this).parent('li').toggleClass('is-active');
             $(this).attr('title', function(index, attr){
@@ -915,6 +916,14 @@ $body.on('focusin',function(e){
     if(condition&&condition02){
         $('.wa-focus').removeClass('wa-focus');
         $(e.target).addClass('wa-focus');
+        //talkback focus 이동되지 않음
+        // $('label.wa-focus').removeAttr('tabindex');
+        // if(!$(e.target).is('input:checkbox') && !$(e.target).is('input:radio')){
+        //     $(e.target).addClass('wa-focus');
+        // }else{
+        //     $(e.target).next('label').attr('tabindex','0');
+        //     $(e.target).next('label').addClass('wa-focus');
+        // }
     }
 });
 
@@ -977,13 +986,20 @@ if($('.textarea').length){
     });
 }
 
-$('input[type=checkbox], input[type=radio]').on('change',function(){
+$('input[type=checkbox], input[type=radio]')
+.on('change',function(){
     // 전체 동의에서 오류 발생 해결을 위해 추가....
     if ($(this).parents(".agreement-to-terms.expansion-mode").length) return;
 
     var tf = $(this).prop('checked');
     var name = $(this).next('label').data('call-layered');
     if(tf && name) gfn_layered.open(name);
+})
+.on('focusin',function(){
+    setTimeout(function(){
+        $(this).next('label').attr('tabindex','0');
+        $(this).next('label').focus();
+    },1)
 });
 
 function formFocusScroll($this){
@@ -1040,7 +1056,7 @@ $('.tab.swiper-container').each(function(idx) {
     //WAI-ARIA
     $tab.attr('role','tablist');
     $tab.find('li > button, li > a').attr('role','tab');
-    $tab.find('li.is-active').attr('title','선택됨');
+    $tab.find('li.is-active').find('button, a').attr('title','선택됨');
 
     if(!$tab.hasClass('app-sub') && !$tab.hasClass('app-gnb')){
 
@@ -1074,9 +1090,11 @@ $('.tab.swiper-container').each(function(idx) {
             var idx = $link.parent('li').index();
             if (isContentsTab) {
                 $tabLinks.parent('li').removeClass('is-active').removeAttr('title');
-                $tabLinks.eq(idx).parent('li').addClass('is-active').attr('title','선택됨');
+                $tabLinks.eq(idx).parent('li').addClass('is-active');
+                $tabLinks.eq(idx).parent('li').find('button, a').attr('title','선택됨');
                 $tabContents.removeClass('is-active').removeAttr('title');
-                $tabContents.eq(idx).addClass('is-active').attr('title','선택됨');
+                $tabContents.eq(idx).addClass('is-active');
+                $tabContents.eq(idx).find('button, a').attr('title','선택됨');
                 if ($tabContents.eq(idx).data('swiper')) {
                     $tabContents.eq(idx).data('swiper').update();
                 }
@@ -1111,6 +1129,10 @@ $('.tab.swiper-container').each(function(idx) {
         }
     }
 });
+
+//WA
+$('.tab_button').children().not('.is-active').removeAttr('title');
+$('.tab_button').find('.is-active').attr('title','선택됨');
 
 //Slider
 if($('.js-slider').length){
@@ -1638,12 +1660,18 @@ if($('.agreement-to-terms').length) gfn_agreementToTerms();
 //Tooltip
 if($('.btn-question').length){
     $('.btn-question').on('click',function(){
-        $(this).next('.tooltip').fadeIn(200);
+        $(this).next('.tooltip').fadeIn(200,function(){
+            $(this).attr('tabindex','0');
+            $(this).focus();
+        });
     });
 }
 if($('.tooltip').length){
     $('.tooltip').on('click','.btn-close',function(){
-        $(this).parent('.tooltip').fadeOut(200);
+        $(this).parent('.tooltip').fadeOut(200, function(){
+            $(this).removeAttr('tabindex');
+            $(this).prev('.btn-question').focus();
+        });
     });
 }
 
@@ -2381,6 +2409,7 @@ if(window.lottie){
 }
 
 $(window).on('scroll',function(){
+    vhFix();
     st = $(this).scrollTop();
     jsFixed.scroll(st, $('.page-step'), 48); // 헤더 높이
     jsFixed.scroll(st, $('.swiper-spy-wrapper'), 48+44+55); // 헤더 + 스텝 + 스파이연동탭 높이
@@ -2450,3 +2479,7 @@ var gfn_toastMsg = {
     }
 };
 //console.log("ui.js");
+
+//앱접근성
+$('.ios').find('hr').attr('aria-hidden',true);
+$('.hidden:not("label")').attr('aria-hidden',true);

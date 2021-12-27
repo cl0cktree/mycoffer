@@ -159,8 +159,9 @@
 
     <!-- 2021-09-09 추가 // -->
     
-    <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
-    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
+    <!-- <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script> 2021-12-28 삭제 -->
+    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>  	
+    <script src="@@webRoot/static/common/lib/highcharts/accessibility.js"></script> <!-- 2021-12-28 추가 -->
 
     <script>
          $(document).ready(function(){
@@ -188,7 +189,18 @@
                     marginBottom: 35,
                     height: 190,
                 },                
-                legend: { enabled: false },
+                legend: { enabled: false },  
+                //  2021-12-28 추가
+                accessibility:{
+                    screenReaderSection:{
+                        beforeChartFormat:'차트시작', // 차트 시작 msg
+                        afterChartFormat:'차트 끝', // 차트 끝 msg
+                    },  
+                    point:{
+                        valueDescriptionFormat:'{xDescription}. {point.y}원.', // 포인트 리딩                        
+                    }
+                },  
+                //  2021-12-28 추가    
                 xAxis: {
                     top:20,
                     type: "category",

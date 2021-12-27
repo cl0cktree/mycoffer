@@ -337,7 +337,8 @@
 	<!-- Add Library (this page only)-->
 	<script src="@@webRoot/static/js/ui.js"></script>
     
-    <script src="@@webRoot/static/common/lib/highcharts/highcharts-more.js"></script>
+    <script src="@@webRoot/static/common/lib/highcharts/highcharts-more.js"></script>    	
+    <script src="@@webRoot/static/common/lib/highcharts/accessibility.js"></script> <!-- 2021-12-28 추가 -->
     
     <script>        
         $(document).ready(function(){
@@ -362,7 +363,18 @@
                     height: 160,
                     margin:0,
                     marginTop:0
-                },            
+                },  
+                //  2021-12-28 추가
+                accessibility:{
+                    screenReaderSection:{
+                        beforeChartFormat:'차트시작', // 차트 시작 msg
+                        afterChartFormat:'차트 끝', // 차트 끝 msg
+                    },  
+                    point:{
+                        valueDescriptionFormat:'{xDescription}. {point.y}%.', // 포인트 리딩                        
+                    }
+                },  
+                //  2021-12-28 추가    
                 tooltip: { 
                     enabled: true, 
                     headerFormat: '',     

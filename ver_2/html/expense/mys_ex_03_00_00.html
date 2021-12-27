@@ -293,6 +293,24 @@
                 </section>
                 <!--// 인기카드 -->
 
+                <!-- 수정:2021-12-23 -->
+                <!-- 추천상품 영역 추가 //-->
+                <hr class="hr-divide_48"> <!-- [D] 추천상품 영역 삭제될 경우, 함께 삭제-->
+                <section class="kb-sec recommend-prod expense-unit">
+                    <h4 class="h4">추천상품</h4>
+                    <div class="kb-sec banner">
+                        <button type="button" data-call-layered="mys_as_05_00_01_bs01">
+                            <span class="title">추천서비스 동의하고 <br>나를 위한 맞춤상품 찾기!</span>
+                            <div class="hash-tag">
+                                <span>#나에게 딱 맞는</span>
+                                <span>#맞춤형 서비스</span>
+                            </div>    
+                        </button>
+                    </div>
+                    <!-- // 2021-12-09 상품서비스 안내 선택 동의 팝업 추가 -->
+                </section>
+                <!--// 추천상품 영역 추가 //-->
+
                 <!-- 수정:2021-11-16 -->
                 <!-- 현업 요청으로 인기카드와 추천카드 section 분리 //-->
                 <!-- 추천카드 //-->
@@ -436,6 +454,9 @@
             <!-- 수정:2021-10-08 -->
             <!-- 금소법 안내문구 팝업 추가 -->
             @@include('@@webRoot/html/expense/layered/mys_ex_03_00_01_p.html')
+            <!-- 수정:2021-12-23 -->
+            <!-- 서비스 선택 동의 팝업 추가 -->
+            @@include('@@webRoot/html/asset/layered/mys_as_05_00_01_bs01.html')
             <!-- // Modal -->
         </div>
     </div>
@@ -447,6 +468,8 @@
     
     <!-- 수정:2021-10-20 -->
     <!-- 그래프 조정 스크립트 추가 -->
+    <!-- 수정:2021-12-23 -->
+    <!-- 스크립트 수정 -->
     <script>
         $( function(){
             var $cardList = $('.card-list');
@@ -486,6 +509,22 @@
                 var $exct = $(this).siblings('.tooltip');
                 var $target = $(this).closest('.kb-sec').find('.tooltip').not($exct);
                 $target.hide();
+            });
+            // 211223 : 선택동의 확인버튼 클릭시 멘트 출력
+            $('button[data-action="agreeInformation"]').on('click', function () {
+                modalPopup({
+                    title: "",
+                    message: "마케팅 수신 동의(선택)을 하지 않으시는 경우 KB국민은행에서 제공하는 다양한 혜택 및 이벤트, 상품 등에 대한 유용한 정보를 받으실 수 없습니다.",
+                    type: "confirm",
+                    textOkButton: "확인",
+                    textCancelButton: "취소",
+                    onOk: function () {
+
+                    },
+                    onCancel: function () {
+
+                    }
+                });
             });
         });
     </script>

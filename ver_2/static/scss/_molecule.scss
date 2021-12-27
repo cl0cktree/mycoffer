@@ -47,8 +47,7 @@
 .btn-divide .btn-text i[class*=icon-]:first-child{margin-right:10px;vertical-align:top;}
 
 //버튼 바닥 고정
-.sticky-bottom:not(.popup_buttons){width:100%;margin-top:40px;margin-bottom:-32px;height:calc(constant(safe-area-inset-bottom) / 2 + 60px);height:calc(env(safe-area-inset-bottom) / 2 + 60px);}
-//.app-content.bg-gray-bottom .sticky-bottom{background-color:$kb-ui10;}
+.sticky-bottom:not(.popup_buttons){width:100%;margin-top:40px;margin-bottom:-32px;height:60px;height:calc(constant(safe-area-inset-bottom) / 2 + 60px);height:calc(env(safe-area-inset-bottom) / 2 + 60px);border-bottom:1px solid transparent;}
 .sticky-bottom:not(.popup_buttons) .btn-area,
 .app-content .sticky-bottom .btn-area{position:fixed;bottom:0;left:0;z-index:$level60;width:100%;}
 .popup_buttons .btn-solid,
@@ -58,7 +57,7 @@
 .popup_buttons .btn-solid > span,
 .bottom-sheet_buttons .btn-solid > span,
 .sticky-bottom .btn-area .btn-solid > span,
-.sticky-bottom .btn-area .btn-transparent > span{padding: 1.8rem .1rem;padding: 1.8rem .1rem calc(constant(safe-area-inset-bottom) / 2 + 18px);padding: 1.8rem .1rem calc(env(safe-area-inset-bottom) / 2 + 18px);line-height: 1.2;} // 좌추 패딩 수정 1rem -> .1rem
+.sticky-bottom .btn-area .btn-transparent > span{padding: 1.8rem .1rem;padding: 1.8rem .1rem 18px;padding: 1.8rem .1rem calc(constant(safe-area-inset-bottom) / 2 + 18px);padding: 1.8rem .1rem calc(env(safe-area-inset-bottom) / 2 + 18px);line-height: 1.2;} // 좌추 패딩 수정 1rem -> .1rem
 
 .scroll-done .sticky-bottom{position:relative;}
 .scroll-done .sticky-bottom .btn-transparent{position:absolute;top:0;bottom:0;left:0;width:100%;opacity:0;}
@@ -141,7 +140,7 @@
 	> li {flex:1;position:relative;}
 	> li + li label {border-left: 0;}
 	input[type=radio],
-	input[type=checkbox] {@include hidden;}
+	input[type=checkbox] {position:absolute;left:0;right:0;top:0;bottom:0;opacity:0;}
 	label {position: relative;height:100%;display:flex;justify-content:center;align-items:center;padding:12px 0 11px 0; line-height: 1.2; text-align: center; background-color: $kb-ui10; font-size: $text02; color: $kb-ui05;border:1px solid $kb-ui08; cursor:pointer;word-break: break-all;}
 	:checked+label {background-color: $kb-ui11; color: $kb-ui02; font-weight: bold;}
 	:checked+label::after {content: ''; position: absolute; top:-1px;left: -1px;bottom: -1px;right: -1px;border:1px solid $kb-ui02;z-index:1;}

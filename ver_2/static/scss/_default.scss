@@ -9,8 +9,9 @@ select:focus,
 input:focus, 
 textarea:focus, 
 button:focus, 
-*:focus, 
-a:focus{outline:2px solid rgba(40,126,255,0.2);outline-style: auto;}
+a:focus{outline:none}
+//{outline:2px solid rgba(40,126,255,0.2);outline-style: auto;}
+//*{-webkit-tap-highlight-color: transparent !important;}
 
 
 //IE FF remove Click Action
@@ -34,8 +35,7 @@ input::-webkit-inner-spin-button {-webkit-appearance: none;margin: 0;}
 //Firefox
 input[type=number] {-moz-appearance: textfield;}
 
-:root,
-html{font-size:10px;}
+:root{font-size:10px;}
 @media screen and (max-width: 359px){
 	:root,
 	html{font-size:9px;}
@@ -85,7 +85,7 @@ button:disabled{cursor:default;}
 .pl2{padding-left: 0.2rem;}
 
 //Default
-html,body{width:100%;height:100vh;min-height:-webkit-fill-available;}
+html,body{width:100%;height:100vh;min-height:-webkit-fill-available;-webkit-text-size-adjust:none;}
 //height:calc(var(--vh, 1vh) * 100); 으로 작업할시 짧은 화면에서 스크린의 100%를 활용하지 못함(viewport-fit:cover 무쓸모)
 body{min-width:320px;font-family:'KBFGText',sans-serif;font-size:1.6rem;line-height:1;color:$kb-ui02;letter-spacing:-0.02em;word-break:keep-all;word-wrap:break-word;}
 body.is-hold{overflow:hidden;position:fixed;}
@@ -113,7 +113,7 @@ textarea{width:100%;padding:1.6rem;font-size:1.6rem;}
 .app-lnb .tab:first-child{margin-top:16px;}
 .app-lnb .tab_button:first-child{margin-top:16px;}
 .app-lnb:empty{padding-top:0;}
-.app-content{padding-bottom:calc(constant(safe-area-inset-bottom) / 2 + 32px);padding-bottom:calc(env(safe-area-inset-bottom) / 2 + 32px);}
+.app-content{padding-bottom:32px;padding-bottom:calc(constant(safe-area-inset-bottom) / 2 + 32px);padding-bottom:calc(env(safe-area-inset-bottom) / 2 + 32px);}
 // .app-content.bg-gray-bottom{padding-bottom:0px;}
 // .app-content.bg-gray-bottom .kb-sec:last-of-type{padding-bottom:24px;}
 // .h1,

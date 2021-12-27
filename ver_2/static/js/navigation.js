@@ -30,7 +30,7 @@ var gfn_body = {
 //vh 문제점(변수화)
 var vhFix = function(){    
     var vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', vh + 'px');
+    document.documentElement.style.setProperty('--vh', vh + 'px');    
 };
 vhFix();
 

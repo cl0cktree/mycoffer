@@ -32,6 +32,8 @@
             <button type="button" class="btn-line" onclick="modalDemo4()"><span>비활성화 상태에서 다음 버튼 선택시<br>(화면스크롤 확인)</span></button>
             <button type="button" class="btn-line" onclick="modalDemo13()"><span>상세정보 전송요구서 화면에서 요청한 내용 변경 시</span></button><!-- 수정:2021-11-01 -->
             <button type="button" class="btn-line" onclick="modalDemo15()"><span>개인신용정보 수집이용동의 동의하지 않음 클릭시</span></button><!-- 수정:2021-12-20 -->
+            <button type="button" class="btn-line" onclick="modalDemo16()"><span>카테고리/가맹점명/적요 중 비동의 항목이1개 이상인 경우-전송요구서</span></button><!-- 수정:2021-12-23 -->
+            <button type="button" class="btn-line" onclick="modalDemo17()"><span>카테고리/가맹점명/적요 중 비동의 항목이1개 이상인 경우-수집이용동의</span></button><!-- 수정:2021-12-23 -->
 
             <button type="button" class="btn-line" data-call-layered="select-engineering-industry" data-page-id="MYS_CO_06_01_02_01_p1"><span>개별인증 기관선택(기관 업종 선택)</span></button>
             <button type="button" class="btn-line" data-call-layered="mys_mn_01_01_03_02_certificate" data-page-id="MYS_CO_06_01_01_13_BS01"><span>통합인증수단 선택(통합인증거래 이용동의)</span></button>
@@ -137,6 +139,20 @@
             modalPopup({
                 title: "",
                 message: "자산을 연결하기 위해 <br>동의함 버튼을 선택해 주세요.",
+                type: "confirm"
+            });
+        }
+        function modalDemo16() {
+            modalPopup({
+                title: "",
+                message: "전송 요청하지 않을 경우, 해당 정보를 확인 할 수 없어 서비스 이용이 불편할 수 있습니다. <br>전송 요청 하시겠습니까?.",
+                type: "confirm"
+            });
+        }
+        function modalDemo17() {
+            modalPopup({
+                title: "",
+                message: "동의하지 않을 경우, 해당 정보를 확인할 수 없어 서비스 이용이 불편할 수 있습니다. <br>정보 수집&middot;이용에 동의하시겠습니까?.",
                 type: "confirm"
             });
         }

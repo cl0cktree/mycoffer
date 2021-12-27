@@ -127,8 +127,9 @@
 	<!-- Add Library (this page only)-->
 	<script src="@@webRoot/static/js/ui.js"></script>
     
-    <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
-    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>    
+    <!-- <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script> 2021-12-28 삭제 -->
+    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>        	
+    <script src="@@webRoot/static/common/lib/highcharts/accessibility.js"></script> <!-- 2021-12-28 추가 -->
     <!-- 2021-09-09 수정 // -->
     <script>
         $(document).ready(function(){
@@ -161,7 +162,18 @@
                     marginBottom: 23,
                     backgroundColor: 'none',
                     height: 160
-                },
+                }, 
+                //  2021-12-28 추가
+                accessibility:{
+                    screenReaderSection:{
+                        beforeChartFormat:'차트시작', // 차트 시작 msg
+                        afterChartFormat:'차트 끝', // 차트 끝 msg
+                    },  
+                    point:{
+                        valueDescriptionFormat:'{point.x}월. {point.y}원.', // 포인트 리딩                        
+                    }
+                },  
+                //  2021-12-28 추가
                 xAxis: {
                     labels: {
                         style: {
@@ -232,6 +244,7 @@
                 },
                 series: [{
                     // linkedTo: "main",
+                    name:'나', //  2021-12-28 추가
                     color: '#ffba53',                    
                     marker: lineMarker[1], //수정:2021-12-17 추가
                     data: [
@@ -242,6 +255,7 @@
                     ]
                 },{
                     // id: 'main',
+                    name:'비교그룹', //  2021-12-28 추가
                     color: '#c6cbd0', //수정:2021-12-17 수정
                     marker: lineMarker[10], //수정:2021-12-17 추가
                     data: [

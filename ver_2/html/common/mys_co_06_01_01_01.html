@@ -52,7 +52,7 @@
                             </div>
                             <div class="swiper-container-rdp">
                                 <div class="swiper-pagination"></div>
-
+                                <!-- 수정:2021-12-22 // -->
                                 <ul class="swiper-wrapper checkbox-group-icon">
                                     <li class="swiper-slide item">
                                         <span class="form-checkbox-icon">
@@ -63,8 +63,6 @@
                                                 <span class="connecting">연결중</span><!-- 연결 중일 경우 -->
                                             </label>
                                         </span>
-                                    </li>
-                                    <li class="swiper-slide item">
                                         <span class="form-checkbox-icon">
                                             <input type="checkbox" id="org_option02" checked>
                                             <label for="org_option02">
@@ -81,8 +79,6 @@
                                                 <strong class="tit">삼성카드</strong>
                                             </label>
                                         </span>
-                                    </li>
-                                    <li class="swiper-slide item">
                                         <span class="form-checkbox-icon">
                                             <input type="checkbox" id="org_option04">
                                             <label for="org_option04">
@@ -99,8 +95,6 @@
                                                 <strong class="tit">롯데카드</strong>
                                             </label>
                                         </span>
-                                    </li>
-                                    <li class="swiper-slide item">
                                         <span class="form-checkbox-icon">
                                             <input type="checkbox" id="org_option06">
                                             <label for="org_option06">
@@ -117,8 +111,6 @@
                                                 <strong class="tit">신한카드</strong>
                                             </label>
                                         </span>
-                                    </li>
-                                    <li class="swiper-slide item">
                                         <span class="form-checkbox-icon">
                                             <input type="checkbox" id="org_option08">
                                             <label for="org_option08">
@@ -128,6 +120,7 @@
                                         </span>
                                     </li>
                                 </ul>
+                                <!-- // 수정:2021-12-22 -->
                             </div>   
                         </div>   
                     </div>
@@ -453,9 +446,10 @@
             // 추천기관 슬라이드
             const SwiperRdp = new Swiper('.swiper-container-rdp', {
                 slidesPerView: 3, // 필요시 추가 : break point
-                grid: {
-                    rows: 2,
-                },
+				// android 5
+                // grid: {
+                //     rows: 2,
+                // },
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: 'true',

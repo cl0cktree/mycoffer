@@ -26,10 +26,7 @@
         body.guide .highcharts-box .content-box-info .info-amount dt,
         body.guide .highcharts-box .content-box-info .info-amount dd{margin-top:0}
         body.guide .highcharts-box .highcharts-figure .chart-area{min-width:330px}
-
-        
-
-        
+               
         
     </style>
 </head>
@@ -204,6 +201,10 @@
                 1개의 그래프만 돋보이는 구조라면 나머지 그래프를 chartBg[33]을 사용<br>
                 패턴이 필요없을 때는 solidBg Array 사용
             </div>
+            <style>
+                .pattern.js-pattern li span{position:relative;}
+                .pattern.js-pattern li span:before{content:'';position:absolute;left:0;right:0;top:0;bottom:0;}
+            </style>
             <ul class="pattern js-pattern"></ul>
         </div>
         <hr>
@@ -216,7 +217,7 @@
                 1개의 그래프만 돋보이는 구조라면 나머지 그래프를 lineBg[10]을 사용<br><br>
                 lineMarker Array를 lineBg와 같은 색이며 10X10 사이즈의 이미지                
             </div>
-            <ul class="pattern js-marker"></ul>
+            <ul class="pattern line-chart-marker js-marker"></ul>
         </div>
         <hr>
 
@@ -272,10 +273,6 @@
     <script src="./resources/guide.js"></script>
 
     <script src="@@webRoot/static/js/ui.js"></script>
-    <!-- <script src="@@webRoot/static/common/lib/swiper.min.js"></script> -->
-    <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>
-    <script src="@@webRoot/static/common/lib/highcharts/pattern-fill.js"></script>
-    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
     <script>
 
         
@@ -283,7 +280,7 @@
         chartBg.forEach(function(element, index){
             if(index != 0){
                 index = String(index).length != 1 ? index : "0" + index;
-                $('.js-pattern').append('<li><span style="background-image:url(' + element.pattern + ');" class="pattern' + index + '"></span>chartBg[' + index  + ']</li>')
+                $('.js-pattern').append('<li><span class="pattern' + index + '"></span>chartBg[' + index  + ']</li>')
             }
         });
         

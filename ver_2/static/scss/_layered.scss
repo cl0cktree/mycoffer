@@ -8,7 +8,7 @@
 .popup{display:flex;flex-flow:column;position:fixed;top:-9999px;left:0;z-index: $level80;width:100%;height:100%;background-color:$kb-ui11;}
 .popup .popup_buttons{display:none;}
 .popup.is-active{top:0;}
-.popup.is-active .popup_buttons{display:block;flex:0 0 calc(60px + constant(safe-area-inset-bottom) / 2);flex:0 0 calc(60px + env(safe-area-inset-bottom) / 2);}
+.popup.is-active .popup_buttons{display:block;flex:0 0 60px;flex:0 0 calc(60px + constant(safe-area-inset-bottom) / 2);flex:0 0 calc(60px + env(safe-area-inset-bottom) / 2);}
 .popup_header{flex:0 0 48px;padding:12px 48px 11px 24px;text-align:left;}
 .popup_header .tit{@include text($size: $text01);display:inline-block;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;max-width:calc(100% - 72px);vertical-align: middle;}
 .popup_header .btn-history-back{vertical-align: middle;}
@@ -32,10 +32,10 @@
 .bottom-sheet_contents{@include text;flex:1;overflow:hidden;overflow-y:auto;padding-bottom:32px;}
 .bottom-sheet_contents .kb-sec:first-child{padding-top:0;}
 .bottom-sheet .not-today + .bottom-sheet_buttons{margin-top:0;}
-.bottom-sheet_buttons{display:flex;flex:0 0 calc(60px + constant(safe-area-inset-bottom) / 2);flex:0 0 calc(60px + env(safe-area-inset-bottom) / 2);}
+.bottom-sheet_buttons{display:flex;flex:0 0 60px;flex:0 0 calc(60px + constant(safe-area-inset-bottom) / 2);flex:0 0 calc(60px + env(safe-area-inset-bottom) / 2);}
 .bottom-sheet_buttons .btn-solid{flex:1;}
 .bottom-sheet_buttons .btn-solid + .btn-solid{flex: 0 0 60%}
-.no-btn .bottom-sheet_contents{padding-bottom:calc(constant(safe-area-inset-bottom) / 2 + 32px);padding-bottom:calc(env(safe-area-inset-bottom) / 2 + 32px);}
+.no-btn .bottom-sheet_contents{padding-bottom:32px;padding-bottom:calc(constant(safe-area-inset-bottom) / 2 + 32px);padding-bottom:calc(env(safe-area-inset-bottom) / 2 + 32px);}
 // .ios.homebar .bottom-sheet_buttons .btn-solid{padding-top:1rem;}
 // .ios.homebar .bottom-sheet_buttons .btn-solid > span{line-height:6rem;padding-bottom:1.2rem;}
 //For Admin IE

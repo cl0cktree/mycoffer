@@ -30,7 +30,9 @@
             </div>
             <!-- //app-lnb -->
             <!-- app-content // -->
-            <main class="app-content expense-home mf_v01"><!-- 수정:2021-12-15 --><!-- 버전 클래스 추가 : mf_v01 -->
+            <!-- 수정:2021-12-15 --><!-- 버전 클래스 추가 : mf_v01 -->
+            <!-- 수정:2021-12-23 --><!-- 버전 클래스 추가 : mf_v02 -->
+            <main class="app-content expense-home mf_v01 mf_v02">
                 <!-- 수정:2021-12-15 -->
                 <!-- 위치 이동, 디바이드(회색줄) 삭제, 아이콘 변경 -->
                 <!-- 자산 연결 영역 //-->
@@ -118,7 +120,7 @@
                                             <p>목표기간<i></i>일주일</p>
                                         </div>
                                         <div class="content">
-                                            <span class="img-character">
+                                            <span class="img-character" role="none presentation"><!-- 수정:2021-12-22 --><!-- [앱접근성] 초점 제거 위해 role 추가 -->
                                                 <img class="temp" src="@@webRoot/static/images/_temp/@icon_coffee.png" alt="커피">
                                             </span>
                                         </div>
@@ -139,7 +141,7 @@
                                             <p>목표기간<i></i>일주일</p>
                                         </div>
                                         <div class="content">
-                                            <span class="img-character">
+                                            <span class="img-character" role="none presentation"><!-- 수정:2021-12-22 --><!-- [앱접근성] 초점 제거 위해 role 추가 -->
                                                 <img class="temp" src="@@webRoot/static/images/_temp/@icon_delivery.png" alt="배달">
                                             </span>
                                         </div>
@@ -160,7 +162,7 @@
                                             <p>목표기간<i></i>일주일</p>
                                         </div>
                                         <div class="content">
-                                            <span class="img-character">
+                                            <span class="img-character" role="none presentation"><!-- 수정:2021-12-22 --><!-- [앱접근성] 초점 제거 위해 role 추가 -->
                                                 <img class="temp" src="@@webRoot/static/images/_temp/@icon_taxi.png" alt="택시">
                                             </span>
                                         </div>
@@ -250,11 +252,11 @@
                             <p>지출이 많은 김국민님을 위한 <span class="c-blue">추천 카드</span></p>
                         </div>
                         <div class="content-tit flex-box">
-                            <div class="tooltip-box"><strong class="h4">KB추천카드 Top<em class="num">5</em></strong> <button type="button" class="btn-question"><i class="icon-tooltip-que_20"></i></button>
+                            <div class="tooltip-box"><strong class="h4">KB추천카드 Top<em class="num">5</em></strong> <button type="button" class="btn-question" aria-describedby="recommend_card_tooltip"><i class="icon-tooltip-que_20" title="KB추천카드기준 설명 보기"></i></button>
                                 <!-- Tooltip (With title)-->
                                 <!-- 수정:2021-10-08 -->
                                 <!-- 툴팁 텍스트 수정 //-->
-                                <div class="tooltip">
+                                <div class="tooltip" role="tooltip" id="recommend_card_tooltip">
                                     <strong class="tit">KB추천카드기준</strong>
                                     <div class="cont">고객님의 지출 소비 패턴과 선호 브랜드를 분석해 가장 적합한 KB국민카드를 1위~5위까지 추천드립니다. <br>매 월 1일, 지난달 지출 통계 기준으로 업데이트욉니다.</div>
                                     <button class="btn-close"><span>닫기</span></button>
@@ -346,7 +348,31 @@
                         </div>
                         <!-- tab 추가, tab content 추가 -->
                     </div>
-                    <!-- 서비스 배너 영역 //-->
+                </section>
+                <!--// 카드 추천 -->
+
+                <!-- 수정:2021-12-23 -->
+                <!-- 추천상품 영역 추가 //-->
+                <hr class="hr-divide_48"> <!-- [D] 추천상품 영역 삭제될 경우, 함께 삭제-->
+                <section class="kb-sec recommend-prod expense-unit">
+                    <h4 class="h4">추천상품</h4>
+                    <div class="kb-sec banner">
+                        <button type="button" data-call-layered="mys_as_05_00_01_bs01">
+                            <span class="title">추천서비스 동의하고 <br>나를 위한 맞춤상품 찾기!</span>
+                            <div class="hash-tag">
+                                <span>#나에게 딱 맞는</span>
+                                <span>#맞춤형 서비스</span>
+                            </div>    
+                        </button>
+                    </div>
+                    <!-- // 2021-12-09 상품서비스 안내 선택 동의 팝업 추가 -->
+                </section>
+                <hr class="hr-divide_48"><!-- [D] 추천상품 영역 삭제될 경우, 함께 삭제-->
+                <!--// 추천상품 영역 추가 //-->
+
+                <!-- 수정:2021-12-23 -->
+                <!-- 서비스 배너 영역 분리 //-->
+                <section class="kb-sec service-banner">
                     <div class="notice-group">
                         <a href="mys_ex_03_00_00.html" role="button" class="link-box_block link-arrow-after notice-item"><!-- 수정:2021-11-16 --><!-- 마크업 오류 수정 -->
                             <strong class="h4">나의 카드관리<span class="tag-label t03 round" data-state="less">부족</span></strong>
@@ -363,9 +389,8 @@
                             </p>
                         </a>
                     </div>
-                    <!--// 서비스 배너 영역 -->
                 </section>
-                <!--// 카드 추천 -->
+                <!--// 서비스 배너 영역 분리 //-->
             </main>
             <!-- // app-content -->
 
@@ -378,6 +403,9 @@
             @@include('@@webRoot/html/expense/layered/mys_ex_00_00_01_p.html')
             <!-- 금소법 안내문구 팝업 추가 -->
             @@include('@@webRoot/html/expense/layered/mys_ex_03_00_01_p.html')
+            <!-- 수정:2021-12-23 -->
+            <!-- 서비스 선택 동의 팝업 추가 -->
+            @@include('@@webRoot/html/asset/layered/mys_as_05_00_01_bs01.html')
             <!-- // Modal -->
         </div>
     </div>
@@ -386,9 +414,29 @@
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
     <!-- Add Script -->
+    
+    <!-- 수정:2021-12-23 -->
+    <!-- 스크립트 수정 -->
     <script>
-        gfn_gnb.select(2);
-        $('#noticeAgreeToProvide').modalPopup('open');
+        $(function () {
+            gfn_gnb.select(2);
+            //선택동의 확인버튼 클릭시 멘트 출력
+            $('button[data-action="agreeInformation"]').on('click', function () {
+                modalPopup({
+                    title: "",
+                    message: "마케팅 수신 동의(선택)을 하지 않으시는 경우 KB국민은행에서 제공하는 다양한 혜택 및 이벤트, 상품 등에 대한 유용한 정보를 받으실 수 없습니다.",
+                    type: "confirm",
+                    textOkButton: "확인",
+                    textCancelButton: "취소",
+                    onOk: function () {
+
+                    },
+                    onCancel: function () {
+
+                    }
+                });
+            });
+        })
     </script>
 </body>
 
