@@ -563,7 +563,12 @@ $('.form-text')
 
 //form select
 var gfn_bsSelect = {
-    bind: function(){
+    init: function(){
+        $bsSelect.find('.bottom-sheet_select').find('li button').removeAttr('title');
+        $bsSelect.find('.bottom-sheet_select').find('li.is-selected button').attr({'title':'선택됨'});
+    },
+    bind: function(){        
+        gfn_bsSelect.init();
         $bsSelect.find('.bottom-sheet_select').on('click','button',function(e){
             e.stopPropagation();
             var idx = $(this).parent('li').index();
@@ -571,6 +576,8 @@ var gfn_bsSelect = {
 
             var $activeFormSelect = $activeForm.find('.form-select');
             $(this).parent('li').addClass('is-active').siblings('li').removeClass('is-active');
+            $(this).parent('li').siblings('li').removeAttr('title');
+            $(this).attr({'title':'선택됨'});
 
             //활성화된 select
             $activeFormSelect.find('option').eq(idx + 1).prop('selected',true);
@@ -2482,4 +2489,4 @@ var gfn_toastMsg = {
 
 //앱접근성
 $('.ios').find('hr').attr('aria-hidden',true);
-$('.hidden:not("label")').attr('aria-hidden',true);
+$('.is-hidden:not("label")').attr('aria-hidden',true);
