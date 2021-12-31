@@ -24,13 +24,15 @@
             <main class="app-content rdp-select-organization js-scroll-down js-scroll-up">
                 <div class="page-step js-fixed">    
                     <div class="page-step-inner">
-                        <div class="step" aria-label="총 5단계 중 현재 1단계">
+                        <!-- APP_A11Y // -->
+                        <div class="step" role="text" aria-label="총 5단계 중 현재 1단계">
                             <span class="current">01</span>                        
                             <span class="next">02</span>                        
                             <span class="next">03</span>                        
                             <span class="next">04</span>                        
                             <span class="total">05</span>
                         </div>
+                        <!-- // APP_A11Y -->
                         <h2 class="h2">연결기관 선택</h2>
                     </div>
                 </div> 
@@ -119,6 +121,22 @@
                                             </label>
                                         </span>
                                     </li>
+                                    <li class="swiper-slide item">
+                                        <span class="form-checkbox-icon">
+                                            <input type="checkbox" id="org_option09">
+                                            <label for="org_option09">
+                                                <span class="img-resize_24"><img src="@@webRoot/static/images/ci/A1AAER0000.png" alt=""></span>
+                                                <strong class="tit">신한카드</strong>
+                                            </label>
+                                        </span>
+                                        <span class="form-checkbox-icon">
+                                            <input type="checkbox" id="org_option10">
+                                            <label for="org_option10">
+                                                <span class="img-resize_24"><img src="@@webRoot/static/images/ci/C1AAEY0000.png" alt=""></span>
+                                                <strong class="tit">삼성카드</strong>
+                                            </label>
+                                        </span>
+                                    </li>
                                 </ul>
                                 <!-- // 수정:2021-12-22 -->
                             </div>   
@@ -131,25 +149,25 @@
                     <h4 class="is-hidden">기관 선택</h4>
 
                     <!-- 수정:2021-12-20 // -->
+                    <!-- APP_A11Y // -->
                     <div class="swiper-spy-wrapper js-fixed">
                         <div class="tab swiper-container-spy">
                             <ul class="swiper-wrapper">
-                                <li class="swiper-slide is-active"><a href="javascript:;">은행</a></li>
-                                <li class="swiper-slide trigger"><a href="javascript:;">카드</a></li>
-                                <li class="swiper-slide"><a href="javascript:;">금융투자</a></li>
-                                <li class="swiper-slide"><a href="javascript:;">보험</a></li>
-                                <li class="swiper-slide"><a href="javascript:;">간편결제</a></li>
-                                <li class="swiper-slide"><a href="javascript:;">캐피탈</a></li>
-                                <li class="swiper-slide"><a href="javascript:;">통신</a></li>
-                                <li class="swiper-slide"><a href="javascript:;">공공기관</a></li>
-                                <li class="swiper-slide"><a href="javascript:;">P2P/대부/인수채권업체</a></li>
+                                <li class="swiper-slide is-active"><a href="#bank">은행</a></li>
+                                <li class="swiper-slide trigger"><a href="#card">카드</a></li>
+                                <li class="swiper-slide"><a href="#investment">금융투자</a></li>
+                                <li class="swiper-slide"><a href="#insurance">보험</a></li>
+                                <li class="swiper-slide"><a href="#easyPay">간편결제</a></li>
+                                <li class="swiper-slide"><a href="#capital">캐피탈</a></li>
+                                <li class="swiper-slide"><a href="#telecom">통신</a></li>
+                                <li class="swiper-slide"><a href="#public">공공기관</a></li>
+                                <li class="swiper-slide"><a href="#etc">P2P/대부/인수채권업체</a></li>
                             </ul>
                         </div>
                     </div>
                     <!-- // 수정:2021-12-20 -->
-
                     <div class="select-org-box js-scroll-spy">
-                        <div class="dl-type slide is-active">
+                        <div class="dl-type slide is-active" id="bank" >
                             <div class="dt">
                                 <span class="tit">은행<span class="num">15</span></span>
                             </div>
@@ -214,7 +232,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="dl-type slide">
+                        <div class="dl-type slide" id="card">
                             <div class="dt">
                                 <span class="tit">카드 <span class="num">15</span></span>
                             </div>
@@ -250,7 +268,7 @@
                                 </ul>
                             </div>
                         </div>    
-                        <div class="dl-type slide">
+                        <div class="dl-type slide" id="investment">
                             <div class="dt">
                                 <span class="tit">금융투자 <span class="num">15</span></span>
                             </div>
@@ -268,7 +286,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="dl-type slide">
+                        <div class="dl-type slide" id="insurance">
                             <div class="dt">
                                 <span class="tit">보험 <span class="num">15</span></span>
                             </div>
@@ -313,7 +331,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="dl-type slide">
+                        <div class="dl-type slide" id="easyPay">
                             <div class="dt">
                                 <span class="tit">간편결제 <span class="num">15</span></span>
                             </div>
@@ -367,7 +385,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="dl-type slide">
+                        <div class="dl-type slide" id="capital">
                             <div class="dt">
                                 <span class="tit">캐피탈 <span class="num">15</span></span>
                             </div>
@@ -375,7 +393,7 @@
                                 <!-- 리스트 없음 -->
                             </div>   
                         </div>
-                        <div class="dl-type slide">
+                        <div class="dl-type slide" id="telecom">
                             <div class="dt">
                                 <span class="tit">통신 <span class="num">15</span></span>
                             </div>
@@ -383,7 +401,7 @@
                                 <!-- 리스트 없음 -->
                             </div>
                         </div>
-                        <div class="dl-type slide">
+                        <div class="dl-type slide" id="public">
                             <div class="dt">
                                 <span class="tit">공공기관 <span class="num">15</span></span>
                             </div>
@@ -391,7 +409,7 @@
                                 <!-- 리스트 없음 -->
                             </div>
                         </div>
-                        <div class="dl-type slide">
+                        <div class="dl-type slide" id="etc">
                             <div class="dt">
                                 <span class="tit">P2P/대부/인수채권업체 <span class="num">15</span>
                             </div>
@@ -400,6 +418,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- // APP_A11Y -->
                 </section>
 
                 <div class="sticky-bottom">
@@ -446,6 +465,7 @@
             // 추천기관 슬라이드
             const SwiperRdp = new Swiper('.swiper-container-rdp', {
                 slidesPerView: 3, // 필요시 추가 : break point
+                slidesPerGroup: 3, // 수정 : 2021-12-29
 				// android 5
                 // grid: {
                 //     rows: 2,

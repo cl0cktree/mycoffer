@@ -42,6 +42,7 @@
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/common/lib/highcharts/highcharts-more.js"></script>
     <script src="@@webRoot/static/js/ui.js"></script>
+    <script src="@@webRoot/static/common/lib/highcharts/accessibility.js"></script> <!-- APP_A11Y 추가 -->
     <style>
         /* .chart-tooltip li:last-child > div:nth-of-type(1){color:#333 !important;} */
         /* .chart-tooltip{background:red;display:table;} */
@@ -110,7 +111,18 @@
                 type: "spline",
                 height:330,
                 marginBottom:100,
-            },
+            },            				
+            //  APP_A11Y 추가//
+            accessibility:{
+                screenReaderSection:{
+                    beforeChartFormat:'차트시작', // 차트 시작 msg
+                    afterChartFormat:'차트 끝', // 차트 끝 msg
+                },  
+                point:{
+                    valueDescriptionFormat:'{xDescription} {value}원', // 포인트 리딩                        
+                }
+            },  
+            // //APP_A11Y 추가
             xAxis: {
                 type: "category",
                 categories: ["18.04", "18.11", "19.06", "20.01", "20.08", "21.03"],
@@ -245,7 +257,7 @@
                 lineWidth: 0,
                 fillOpacity: .2,                
                 zIndex: 0,
-                data: [[706000000,906000000], [507000000,707000000], [411000000,611000000], [633000000,833000000], [781000000,981000000], [467000000,667000000]],
+                data: [[706000000,906000000], [507000000,707000000], [411000000,611000000], [633000000,833000000], [781000000,981000000], [467000000,667000000]], 
                 tooltip: {
                     pointFormat: '<li><span class="dot" style="background:{series.color};width:1rem;height:1rem;border-radius:50%;left:.5rem;top:.3rem;"></span><div style="color#333;">{series.name}</div> <div><b class="num" style="font-size:13px;">{point.low:,.0f}~{point.high:,.0f}</b><span class="unit" style="vertical-align:0">원</span></div></li>',
                 },    

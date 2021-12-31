@@ -24,13 +24,15 @@
             <main class="app-content select-certificate rdp-content">
                 <div class="page-step js-fixed">    
                     <div class="page-step-inner">
-                        <div class="step" aria-label="총 5단계 중 현재 3단계">
+                        <!-- APP_A11Y // -->
+                        <div class="step" role="text" aria-label="총 5단계 중 현재 3단계">
                             <span class="prev">01</span>                        
                             <span class="prev">02</span>                        
                             <span class="current">03</span>                        
                             <span class="next">04</span>                        
                             <span class="total">05</span>
                         </div>
+                        <!-- // APP_A11Y -->
                         <h2 class="h2">인증서 선택</h2>
                     </div>
                     <p class="page-step-desc">사용할 인증서를 선택해 주세요.</p> 
@@ -38,7 +40,9 @@
                 
                 <section class="kb-sec">
                     <div class="certificate-lists">
-                        <button type="button" data-state="active"><i class="icon-certificate-kb_40"></i><span>KB모바일인증서</span></button>
+                        <!-- APP_A11Y // -->
+                        <button type="button" data-state="active"><i class="icon-certificate-kb_40">KB모바일인증서 아이콘</i><span>KB모바일인증서</span></button>
+                        <!-- // APP_A11Y -->
                         <button type="button" data-state="inactive" data-call-layered="mys_mn_01_01_03_02_certificate"><span>공동인증서</span></button>
                         <button type="button" disabled="" data-state="preparing"><span>금융인증서</span></button>
                     </div>

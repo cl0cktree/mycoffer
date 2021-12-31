@@ -174,7 +174,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .account-top .account-wrap{padding:20px 24px;}
 .my-asset .account-top .account-wrap .btn-hide-account{top:32px;right:24px;z-index:2;}
 .my-asset .account-wrap .prod-kind.maturity{margin-bottom:8px;}//보험상세 뱃지 추가 2021-10-14 kek
-.my-asset .account-wrap .bank-book{display:block;word-wrap: break-word;}//줄바꿈
+.my-asset .account-wrap .bank-book{display:block;word-break: break-word;}//줄바꿈
 .my-asset .account-wrap .agency-con{display:table;margin-top:10px;}
 .my-asset .account-wrap .agency-con .agency-logo{display:table-cell;width:24px;margin-right:7px;}
 .my-asset .account-wrap .agency-con .agency{display:table-cell;font-weight:normal;line-height:24px;font-size:18px;vertical-align:middle;padding-left:5px;}
@@ -281,9 +281,11 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .asset-summary .variance-box .description-list-variable .num{@include number($size:15px);display:inline-block;}
 .my-asset .asset-summary .variance-box .description-list-variable .num:after{font-size:$text03;vertical-align:0;color:$kb-ui02;}
 .my-asset .asset-summary .variance-box .description-list-variable .unit{font-size:1.4rem;vertical-align:0;}
+.my-asset .asset-summary .variance-box .description-list-variable .plus:after{content:'상승';color:transparent;font-size:.1rem;width:.1rem;height:.1rem;position:absolute;} // APP_A11y 상승 텍스트 추가
 .my-asset .asset-summary .variance-box .description-list-variable .plus .num{color:$color-red;position:relative;}
 .my-asset .asset-summary .variance-box .description-list-variable .plus .num:nth-child(1){margin-left:1.5rem;}
 .my-asset .asset-summary .variance-box .description-list-variable .plus .num:nth-child(1):before{position:absolute;content:'';display:inline-block;left:-1.5rem;top:calc(50% + 0rem);transform:translateY(-50%);border-left:.5rem solid transparent;border-right:.5rem solid transparent;border-bottom:.8rem solid $color-red;}
+.my-asset .asset-summary .variance-box .description-list-variable .minus:after{content:'하락';color:transparent;font-size:.1rem;width:.1rem;height:.1rem;position:absolute;} // APP_A11y 상승 텍스트 추가
 .my-asset .asset-summary .variance-box .description-list-variable .minus .num{color:$color-blue;position:relative;}
 .my-asset .asset-summary .variance-box .description-list-variable .minus .num:nth-child(1){margin-left:1.5rem;}
 .my-asset .asset-summary .variance-box .description-list-variable .minus .num:nth-child(1):before{position:absolute;content:'';display:inline-block;left:-1.5rem;top:calc(50% + 0rem);transform:translateY(-50%);border-left:.5rem solid transparent;border-right:.5rem solid transparent;border-top:.8rem solid $color-blue;}
@@ -924,7 +926,9 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset.investment .p-list .account-wrap a + .s-txt{margin-top:1rem;}
 //툴팁추가 end
 .my-asset.investment .p-list .account-wrap .s-txt .plus{color:$color-red;}
+.my-asset.investment .p-list .account-wrap .s-txt .plus:after{content:'상승';font-size:1px;color:transparent;}//수익률 표시
 .my-asset.investment .p-list .account-wrap .s-txt .minus{color:$color-blue;}
+.my-asset.investment .p-list .account-wrap .s-txt .minus:after{content:'감소';font-size:1px;color:transparent;}//수익률 표시
 .my-asset.investment .p-list .account-wrap .tooltip{left:0;width:100%;}
 .asset-insurance .asset-summary{padding-bottom:48px;}
 .warranty-details{border-top:10px solid $kb-ui10;}
@@ -1263,8 +1267,11 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset .house-data-list .description-list{margin:0 24px;border-bottom:1px solid $kb-ui09;padding-bottom:12px;}
 .my-asset .house-data-list.expens .description-list{border-top:1px solid $kb-ui07;margin-top:1.6rem;padding-top:1.6rem;}
 .my-asset .house-data-list .plus{position:relative;}
+.my-asset .house-data-list .plus:after{content:'상승';color:transparent;font-size:.1rem;width:.1rem;height:.1rem;position:absolute;top:0;} // APP_A11y 상승 텍스트 추가
 .my-asset .house-data-list .plus .num{color:$color-red;}
+.my-asset .house-data-list .minus{position:relative;} // APP_A11y 상승 텍스트 추가
 .my-asset .house-data-list .minus .num{color:$color-blue;}
+.my-asset .house-data-list .minus:after{content:'하락';color:transparent;font-size:.1rem;width:.1rem;height:.1rem;position:absolute;top:0;} // APP_A11y 상승 텍스트 추가
 // .my-asset .house-data-list .plus:before{color:$color-red;content:'▲';display:inline-block;margin-right:5px;}
 // .my-asset .house-data-list .minus:before{color:$color-blue;content:'▼';display:inline-block;margin-right:5px;}
 .my-asset .house-data-list .triangle{@include text($size:10px);}
@@ -1353,7 +1360,8 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .push-time-line .list .col.date:first-child{margin-top:1rem;} // 마진탑 2021-11-17
 .push-time-line .list .col.date .num{font-size:1.5rem;$color:$kb-ui03;} // 알림함 타입 추가 2021-10-08
 .push-time-line .list-item .col.tit{position:relative;display:flex;justify-content:space-between;align-items:flex-start;margin-top:2.2rem;} // GUI수정 2021-10-27
-.push-time-line .list-item .col.tit.new::before{content:'';position:absolute;top:-0.5rem;left:2.2rem;width:0.6rem;height:0.6rem;border-radius:50%;background-color:$color-red;} // GUI수정 2021-10-27
+.push-time-line .list-item .col.tit.new::after{content:'';position:absolute;top:-0.5rem;left:2.2rem;width:0.6rem;height:0.6rem;border-radius:50%;background-color:$color-red;} // APP_A11Y
+.push-time-line .list-item .col.tit.new::before{content:'새로운 알림';display:block;width:1px;height:1px;overflow:hidden;padding-top:1px;color:#f7f7f8;opacity:0;} // APP_A11Y
 .push-time-line .list-item .col.tit i:first-child{position:relative;margin-right:1.3rem;flex:0 1 auto;width:1.7rem;flex:0 0 auto;} // 알림함 타입 추가 2021-10-08 // GUI수정 2021-10-27
 .push-time-line .list-item .col.tit .txt{@include text($size:14px,$weight:bold);line-height:1.6rem;flex:1 1 auto;} // 알림함 타입 추가 2021-10-08
 .push-time-line .list-item .col.tit .time{@include text($size:12px,$line-height:16px);color:$kb-ui05;flex:0 0 auto;} // 알림함 타입 추가 2021-10-08
@@ -1528,11 +1536,13 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .asset-graph-lists .group-a .bar-area.ages .bar {background: #ffab53 url(../images/pattern/pattern_02.png) repeat; background-size: 9px;}
 .asset-graph-lists .group-b .bar-area.ages .bar {background: #fa844e url(../images/pattern/pattern_03.png) repeat; background-size: 4px;}
 .asset-graph-lists .group-c .bar-area.ages .bar {background: #5b75ce url(../images/pattern/pattern_04.png) repeat; background-size: 9px;}
-.asset-graph-lists .val {display: none; position: absolute; top: -28px; background-color: #fff; box-shadow: 0px 1px 5px 0 rgba(0, 0, 0, 0.2); border-radius: 3px; line-height: 1.2; padding: 4px 7px; text-overflow: ellipsis; white-space: nowrap;}
+.asset-graph-lists .val {opacity: 0; position: absolute; left: 0; right: 0; top: 0; bottom: 0; background-color: #fff; box-shadow: 0px 1px 5px 0 rgba(0, 0, 0, 0.2); border-radius: 3px; line-height: 1.2; padding: 4px 7px; text-overflow: ellipsis; white-space: nowrap;}
 .asset-graph-lists .val::after{position: absolute; bottom: -5px; left: 50%; margin-left: -6px; content: ''; display: block; width: 12px; height: 5px; background: url(../../static/images/asset/bg_d_day.png) no-repeat 0 0; background-size: contain;}
-.asset-graph-lists .is-active .val {display: block;}
-.asset-graph-lists .bar-area.ages .val {left: 0; transform: translateX(-40%);}
-.asset-graph-lists .bar-area.me .val {right: 0; transform: translateX(40%);}
+.asset-graph-lists .is-active .val {opacity: 1; top: -28px; left: auto; right: auto; bottom: auto;}
+.asset-graph-lists .bar-area.ages .val {left: 0;}
+.asset-graph-lists .bar-area.ages.is-active .val {transform: translateX(-40%);}
+.asset-graph-lists .bar-area.me .val {right: 0;}
+.asset-graph-lists .bar-area.me.is-active .val {transform: translateX(40%);}
 
 .my-asset-more {padding-bottom: 32px; margin-bottom: 48px; border-bottom:10px solid $kb-ui10;}
 .my-asset-more h2 {margin-bottom: 12px;}
@@ -1541,6 +1551,7 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .my-asset-more li {padding: 0 4px;}
 .my-asset-more li.on button {background-color: $kb-ui11; border-color: $kb-ui02;}
 .my-asset-more li.on button .name {font-weight: bold;}
+.my-asset-more li.on button::after {content: '선택됨'; position: absolute; font-size: 1px; color: transparent;}
 .my-asset-more button {display: block; width: 100%; height: 100px; padding: 10px 0 0; background-color: #f7f7f9; border: 1px solid $kb-ui09; border-radius: 4px;}
 .my-asset-more button span {display: block; @include text($text03, normal); color: $kb-ui02;}
 .my-asset-more button .status {font-size: 12px;}

@@ -26,6 +26,8 @@
                 
                 <!-- 수정:2021-09-30 -->
                 <!-- 필수입력안내란 삭제 -->
+
+                <!-- APP_A11Y : input title 추가 //-->
                 
                 <!-- 타이틀//-->
                 <section class="kb-sec tit-area_icon-bg">
@@ -36,7 +38,7 @@
                     <div class="kb-form" data-status="">
                         <label for="regularExpenseUserRegisterName">별명</label><!-- 수정:2021-10-08 --><!-- 별명 label 수정 -->
                         <div class="kb-form_inner form-text">
-                            <input type="text" id="regularExpenseUserRegisterName" value="" title="별명" placeholder="별명(최대10자)"><!-- 수정:2021-10-08 --><!-- 별명 placeholder 수정 -->
+                            <input type="text" id="regularExpenseUserRegisterName" value="" title="별명(최대10자)" placeholder="별명(최대10자)"><!-- 수정:2021-10-08 --><!-- 별명 placeholder 수정 -->
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
                     </div>
@@ -57,7 +59,7 @@
                     <div class="kb-form" data-status="">
                         <label for="regularExpenseUserRegisterAmount" class="required">이용요금</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" id="regularExpenseUserRegisterAmount" placeholder="금액을 입력해주세요" value="" data-unit="원" data-action="autoSeperator">
+                            <input type="text" inputmode="numeric" id="regularExpenseUserRegisterAmount" placeholder="금액을 입력해주세요" value="" data-unit="원" data-action="autoSeperator" title="금액을 입력해주세요">
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
                         <em class="validation">Message</em>
@@ -75,7 +77,8 @@
                         </div>
                         <!--// 이용주기 라디오 선택 추가 -->
                         <div class="kb-form_inner form-text">
-                                <input type="text" inputmode="numeric" data-unit="개월" data-numeric-type="number" id="regularExpenseUserRegisterPeriod" value="1" role="button" placeholder=""><!-- 수정:2021-10-08 --><!-- 단순텍스트 -> 숫자로 수정 -->
+                                <!-- APP_A11Y : input title 추가 - [D] title에 사용자가 선택한 카테고리가 입력되도록 처리 요청 -->
+                                <input type="text" inputmode="numeric" data-unit="개월" data-numeric-type="number" id="regularExpenseUserRegisterPeriod" value="1" role="button" placeholder="" title="1개월"><!-- 수정:2021-10-08 --><!-- 단순텍스트 -> 숫자로 수정 -->
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
                         <em class="validation">Success Message</em>
@@ -84,7 +87,7 @@
                         <div class="kb-form datepicker" data-status="">
                             <label for="regularExpenseUserRegisterPeriod" class="required">이용시작일</label>
                             <div class="kb-form_inner form-text">
-                                <input type="text" id="regularExpenseUserRegisterPeriod" value="2021.10.10">
+                                <input type="text" id="regularExpenseUserRegisterPeriod" value="2021.10.10" title="이용 시작일 입력"><!-- APP_A11Y : input title 추가 -->
                             </div>
                             <em class="validation">에러 메세지 영역 입니다.</em>
                         </div>
@@ -103,7 +106,7 @@
                     <div class="kb-form" data-status="">
                         <label for="regularExpenseUserRegisterPayDate" class="required">결제일</label>
                         <div class="kb-form_inner form-text">
-                            <input type="text" inputmode="numeric" placeholder="" data-unit="일" data-numeric-type="number" id="regularExpenseUserRegisterPayDate" value="12" role="button" placeholder="">
+                            <input type="text" inputmode="numeric" placeholder="" data-unit="일" data-numeric-type="number" id="regularExpenseUserRegisterPayDate" value="12" role="button" placeholder="" title="12일"><!-- APP_A11Y : input title 추가 - [D] title에 사용자가 선택한 카테고리가 입력되도록 처리 요청 -->
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
                         <em class="validation">Success Message</em>
@@ -118,6 +121,8 @@
                 </section>
             </main>
             <!-- // app-content -->
+
+            <!--// APP_A11Y : input title 추가 -->
 
         </div>
         <!-- // app-container -->

@@ -76,7 +76,7 @@
 
                 <section class="kb-sec goals-img-status type2">
                     <p>비교그룹보다<br><strong>저축이 <span class="num" data-unit-after="원">200,000</span> 적어요.</strong><br>부족한 <span class="num" data-unit-after="원">200,000</span> 더 저축해보세요.</p>
-                    <img src="@@webRoot/static/images/goal/friend-sucess.png" alt="즐거워하는 키키">
+                    <img src="@@webRoot/static/images/goal/friend-sucess.png" alt=""> <!-- APP_A11Y alt 내용 삭제 -->
                 </section>
                 
                 <!-- 수정:2021-11-15 삭제
@@ -115,7 +115,8 @@
 	<script src="@@webRoot/static/js/ui.js"></script>
     
     <!-- <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script> 2021-12-28 삭제 -->
-    <script src="@@webRoot/static/common/lib/highcharts/highcharts-more.js"></script> 
+    <script src="@@webRoot/static/common/lib/highcharts/highcharts-more.js"></script>        	
+    <script src="@@webRoot/static/common/lib/highcharts/accessibility.js"></script> <!-- APP_A11Y 추가 -->
     
     <script>                     
         $(document).ready(function(){
@@ -142,8 +143,19 @@
                     marginTop:0,
                     marginBottom:0,
                     height: 125
-                },            
-                tooltip: { enabled: false },
+                }, 
+                tooltip: { enabled: false },  
+                // APP_A11Y 추가//
+                accessibility:{
+                    screenReaderSection:{
+                        beforeChartFormat:'차트시작', // 차트 시작 msg
+                        afterChartFormat:'차트 끝', // 차트 끝 msg
+                    },  
+                    point:{
+                        valueDescriptionFormat:'{point.name} {point.value}원', // 포인트 리딩      
+                    }
+                },  
+                // //APP_A11Y 추가      
                 plotOptions: {
                     packedbubble: {
                         minSize: '60px',
@@ -206,7 +218,18 @@
                     marginBottom: 23,
                     backgroundColor: 'none',
                     height: 145
-                },
+                },    
+                // APP_A11Y 추가//
+                accessibility:{
+                    screenReaderSection:{
+                        beforeChartFormat:'차트시작', // 차트 시작 msg
+                        afterChartFormat:'차트 끝', // 차트 끝 msg
+                    },  
+                    point:{
+                        valueDescriptionFormat:'{point.x}월 {point.y}원', // 포인트 리딩                        
+                    }
+                },  
+                // //APP_A11Y 추가       
                 xAxis: {
                     labels: {
                         style: {
@@ -275,7 +298,8 @@
                     }
                 },
                 series: [{
-                    // linkedTo: "main",
+                    // linkedTo: "main",                    
+                    name:'나', // APP_A11Y 추가
                     color: '#ffba53',                 
                     marker: lineMarker[1], //수정:2021-12-17 추가
                     data: [
@@ -285,7 +309,8 @@
                         [6, 35000]
                     ]
                 },{
-                    // id: 'main',
+                    // id: 'main',                    
+                    name:'비교그룹', // APP_A11Y 추가
                     color: '#c6cbd0',                 
                     marker: lineMarker[10], //수정:2021-12-17 추가
                     data: [

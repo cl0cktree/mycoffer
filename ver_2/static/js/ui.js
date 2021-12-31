@@ -322,7 +322,9 @@ var gfn_layered = {
             $selectedLayer.addClass('is-active').css('z-index', zLv);
 
             //a11y
-            focusTrap($selectedLayer);  //focus loop in layered
+            $selectedLayer.attr('tabindex','0');
+            $selectedLayer.focus();
+            //focusTrap($selectedLayer);  //focus loop in layered
             // $selectedLayer.find(':focusable').eq(0).focus();
 
             //Transform 50% : Blur Issue 발생시
@@ -1053,7 +1055,7 @@ if($tab.length) tab();
 
 $('.tab.swiper-container').each(function(idx) {
     var $tab = $(this);
-    var $tabLinks = $tab.find("a, button");
+    var $tabLinks = $tab.find('.swiper-slide').children("a, button");
     var $tabContents = $tab.nextUntil('.app-container','.tab_contents').find('> div');
     var isContentsTab = $tab.nextUntil('.app-container','.tab_contents');
     var isContentsSwiper = $tab.parent().hasClass('tab-swiper-wrap');
@@ -1063,7 +1065,7 @@ $('.tab.swiper-container').each(function(idx) {
     //WAI-ARIA
     $tab.attr('role','tablist');
     $tab.find('li > button, li > a').attr('role','tab');
-    $tab.find('li.is-active').find('button, a').attr('title','선택됨');
+    $tab.find('li.is-active').find('button, a').attr({'aria-selected':true});
 
     if(!$tab.hasClass('app-sub') && !$tab.hasClass('app-gnb')){
 
@@ -1072,11 +1074,18 @@ $('.tab.swiper-container').each(function(idx) {
             slidesPerView: 'auto',
             //spaceBetween: space,
             watchOverflow: true,
+            a11y: {
+                slideRole: 'none presentation',
+                paginationBulletMessage : '{{index}}번 슬라이드로 이동'
+            },
             on: {
                 init : function(swiper){
                     var width = 0;
                     var $swiper = $('.tab.tab-'+idx);
                     var index = $swiper.find('.is-active').index();
+                    $swiper.find('.swiper-slide').each(function(){
+                        $(this).children('a, button').attr({'role' : 'tab'});
+                    });
                     swiper.slideTo(index);
                     if($swiper.is(':visible')){
                         $swiper.find('.swiper-slide').each(function(){
@@ -1087,8 +1096,8 @@ $('.tab.swiper-container').each(function(idx) {
                 },
                 click : function(swiper, event){
                     swiper.slideTo(swiper.clickedIndex);
-                    
-                    $(swiper.$el).find('.is-active').addClass('ddd').siblings('li').removeClass('ddd')
+                    $(swiper.$el).find('.swiper-slide').not('.is-active').find('a, button').attr({'aria-selected':false});
+                    $(swiper.$el).find('.is-active').find('a, button').attr({'aria-selected':true});
                 },
             }
         }));
@@ -1096,12 +1105,11 @@ $('.tab.swiper-container').each(function(idx) {
             var $link = $(this);
             var idx = $link.parent('li').index();
             if (isContentsTab) {
-                $tabLinks.parent('li').removeClass('is-active').removeAttr('title');
+                $tabLinks.parent('li').removeClass('is-active').find('a, button').attr({'aria-selected':false});
                 $tabLinks.eq(idx).parent('li').addClass('is-active');
-                $tabLinks.eq(idx).parent('li').find('button, a').attr('title','선택됨');
+                $tabLinks.eq(idx).parent('li').find('button, a').attr({'aria-selected':true});
                 $tabContents.removeClass('is-active').removeAttr('title');
                 $tabContents.eq(idx).addClass('is-active');
-                $tabContents.eq(idx).find('button, a').attr('title','선택됨');
                 if ($tabContents.eq(idx).data('swiper')) {
                     $tabContents.eq(idx).data('swiper').update();
                 }
@@ -1136,10 +1144,6 @@ $('.tab.swiper-container').each(function(idx) {
         }
     }
 });
-
-//WA
-$('.tab_button').children().not('.is-active').removeAttr('title');
-$('.tab_button').find('.is-active').attr('title','선택됨');
 
 //Slider
 if($('.js-slider').length){
@@ -1923,11 +1927,13 @@ $('body').on('click','.btn-segmented button, .btn-segmented a',function(){
     var tagName = this.tagName.toLowerCase();
     if(tagName == 'a'){
         if(!$(this).hasClass('is-disabled')){
-            $(this).addClass('is-selected').parent('li').siblings('li').find('a').removeClass('is-selected');
+            $(this).attr({'aria-selected':true});
+            $(this).addClass('is-selected').parent('li').siblings('li').find('a').removeClass('is-selected').attr({'aria-selected':false});
         }
     }else if(tagName == 'button'){
         if(!$(this).prop('disabled')){
-            $(this).addClass('is-selected').parent('li').siblings('li').find('button').removeClass('is-selected');
+            $(this).attr({'aria-selected':true});
+            $(this).addClass('is-selected').parent('li').siblings('li').find('button').removeClass('is-selected').attr({'aria-selected':false});
         }
     }
 });
@@ -2207,12 +2213,28 @@ var jsFixed = {
         if($('.js-fixed').length){
             var fixedTop = $this.data('fix');
             var fixedHeight = $this.data('height');
+
             if(st >= fixedTop - triggerPoint){// fixed header
                 $this.addClass('is-fixed');
-                $this.css('height',fixedHeight); // :before -> height로 높이값 변경
+                
+                // 2021-12-30
+                if($this.find('.page-step-desc').length){
+                    $this.find('.page-step-desc').css('margin-top','84px');
+                }
+                else{
+                    $this.css('height',fixedHeight); // :before -> height로 높이값 변경
+                }
+
             }else{
                 $this.removeClass('is-fixed');
-                $this.css('height','auto');
+                
+                // 2021-12-30
+                if($this.find('.page-step-desc').length){
+                    $this.find('.page-step-desc').css('margin-top','16px');
+                }
+                else{
+                    $this.css('height','auto');
+                }
             }
         }
     }
@@ -2280,6 +2302,8 @@ var jsScrollDown = {
 
         // 높이값 리셋
         this.checkScrollValue();
+        // breakpoint reset
+        this.checkBreakPoint();
 
         // 스크롤이 생길 경우 버튼 추가 & 이벤트 등록
         if($('body').hasScrollBar()){
@@ -2289,11 +2313,15 @@ var jsScrollDown = {
 
         // 스크롤이 있고 브레이크 포인트가 있는 경우 터치 여부
         if($('body').hasScrollBar() && jsScrollDown.options.$breakPoint.length){
-            jsScrollDown.options.$breakPoint.data('touch-tf','false')
+            jsScrollDown.options.$breakPoint.data('touch-tf','false');
             // 브레이크 포인트 내부 인풋을 선택자로 등록후 클릭 이벤트 등록 
             jsScrollDown.options.$breakPointRadioAgree = $breakPoint.find('input');
             jsScrollDown.options.$breakPointRadioAgree.on('click', jsScrollDown.moveNextInput);
         }
+    },
+    // breakpoint reset
+    checkBreakPoint: function(){
+        jsScrollDown.options.$breakPoint = $('.js-break-point');
     },
     // 스크롤량 컨트롤
     checkScrollValue: function(){
@@ -2490,3 +2518,15 @@ var gfn_toastMsg = {
 //앱접근성
 $('.ios').find('hr').attr('aria-hidden',true);
 $('.is-hidden:not("label")').attr('aria-hidden',true);
+
+//A11Y
+$('.tab_button').attr({'role':'tablist'});
+$('.tab_button').children().attr({'role':'tab'})
+$('.tab_button').children().not('.is-selected').attr({'aria-selected':false});
+$('.tab_button').find('.is-active').attr({'aria-selected':true});
+$('hr').attr({'aria-hidden': true});
+$('.btn-segmented').find('a,button').attr({'aria-selected': false});
+$('.btn-segmented').find('.is-selected').attr({'aria-selected': true});
+$('.kb-form').each(function(){
+    if($(this).find('label').hasClass('required')) $(this).find('input, select').attr('required', true);
+});

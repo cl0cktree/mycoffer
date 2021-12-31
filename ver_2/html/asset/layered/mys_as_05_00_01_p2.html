@@ -345,8 +345,21 @@
     <div class="bottom-sheet_buttons">
         <!-- 2021-12-22 취소버튼 추가 -->
         <button class="btn-solid gray" data-action="close"><span>취소</span></button>
-        <button class="btn-solid" data-action="moveKBStarBanking"><span>확인</span></button>
+        <button class="btn-solid" data-call-modal="goKBmodalPopup"><span>확인</span></button><!-- APP_A11Y 모달팝업수정 -->
     </div>
     <button class="btn-close" data-action="close"><span>닫기</span></button>
 </div>
 <!-- //상품안내팝업  -->
+
+
+<!-- APP_A11Y 모달팝업수정 // -->
+<div class="modal" id="goKBmodalPopup">
+    <div class="modal_contents">
+        KB스타뱅킹으로 이동하시겠습니까?
+    </div>
+    <div class="modal_buttons btn-area">
+        <button class="btn-solid gray cancel"><span>취소</span></button>
+        <a href="https://www.kbstar.com/" class="btn-solid ok" title="새창" target="_blank"><span>확인</span></a>
+    </div>
+</div>
+<!-- // APP_A11Y 모달팝업수정 -->

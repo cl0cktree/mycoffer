@@ -57,7 +57,7 @@
                                         
                                         <div class="character-graph goal low-top success" data-theme="pay"> <!-- 수정:2021-09-28 data-theme 변경 -->
                                             <div class="graph-area">
-                                                <span data-goal="100"><i><img src="@@webRoot/static/images/_temp/@progress_coffee.png" alt="커피"></i></span> <!-- 수정:2021-09-28 img 추가 -->
+                                                <span data-goal="100"><i><img src="@@webRoot/static/images/_temp/@progress_coffee.png" alt=""></i></span> <!-- APP_A11Y alt 내용 삭제 -->
                                                 <div class="flag"><i class="icon-flag-goal"></i></div>
                                             </div>
                                             
@@ -84,7 +84,7 @@
                     <h2>축하합니다.</h2>
                     <p>절약에 성공했습니다.</p>
                     <!-- //수정:2021-12-17 문구 수정 -->
-                    <img src="@@webRoot/static/images/goal/friend-sucess.png" alt="즐거워하는 키키">
+                    <img src="@@webRoot/static/images/goal/friend-sucess.png" alt=""> <!-- APP_A11Y alt 내용 삭제 -->
                 </section> 
 
                 <section class="kb-sec goals-pay-list">
@@ -161,7 +161,7 @@
     
     <!-- <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script> 2021-12-28 삭제 -->
     <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>  	
-    <script src="@@webRoot/static/common/lib/highcharts/accessibility.js"></script> <!-- 2021-12-28 추가 -->
+    <script src="@@webRoot/static/common/lib/highcharts/accessibility.js"></script> <!-- APP_A11Y 추가 -->
 
     <script>
          $(document).ready(function(){
@@ -190,17 +190,17 @@
                     height: 190,
                 },                
                 legend: { enabled: false },  
-                //  2021-12-28 추가
+                // APP_A11Y 추가//
                 accessibility:{
                     screenReaderSection:{
                         beforeChartFormat:'차트시작', // 차트 시작 msg
                         afterChartFormat:'차트 끝', // 차트 끝 msg
                     },  
                     point:{
-                        valueDescriptionFormat:'{xDescription}. {point.y}원.', // 포인트 리딩                        
+                        valueDescriptionFormat:'{xDescription} {point.y}원', // 포인트 리딩                        
                     }
                 },  
-                //  2021-12-28 추가    
+                // //APP_A11Y 추가    
                 xAxis: {
                     top:20,
                     type: "category",

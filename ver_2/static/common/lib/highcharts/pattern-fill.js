@@ -439,53 +439,53 @@ var lineMarker = [
     '',
     {
         symbol: 'url(' + patternPath + 'line-marker_01.png)',
-        width: 10,
-        height: 10
+        width: 6,
+        height: 6
     },
     {
         symbol: 'url(' + patternPath + 'line-marker_02.png)',
-        width: 10,
-        height: 10
+        width: 6,
+        height: 6
     },
     {
         symbol: 'url(' + patternPath + 'line-marker_03.png)',
-        width: 10,
-        height: 10
+        width: 6,
+        height: 6
     },
     {
         symbol: 'url(' + patternPath + 'line-marker_04.png)',
-        width: 10,
-        height: 10
+        width: 6,
+        height: 6
     },
     {
         symbol: 'url(' + patternPath + 'line-marker_05.png)',
-        width: 10,
-        height: 10
+        width: 6,
+        height: 6
     },
     {
         symbol: 'url(' + patternPath + 'line-marker_06.png)',
-        width: 10,
-        height: 10
+        width: 6,
+        height: 6
     },
     {
         symbol: 'url(' + patternPath + 'line-marker_07.png)',
-        width: 10,
-        height: 10
+        width: 6,
+        height: 6
     },
     {
         symbol: 'url(' + patternPath + 'line-marker_08.png)',
-        width: 10,
-        height: 10
+        width: 6,
+        height: 6
     },
     {
         symbol: 'url(' + patternPath + 'line-marker_09.png)',
-        width: 10,
-        height: 10
+        width: 6,
+        height: 6
     },
     {
         symbol: 'url(' + patternPath + 'line-marker_10.png)',
-        width: 10,
-        height: 10
+        width: 6,
+        height: 6
     }
 ];
 

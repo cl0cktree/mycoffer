@@ -201,7 +201,7 @@
                                                 <div class="agency-con">
                                                     <span class="agency-logo"><img
                                                             src="@@webRoot/static/images/ci/A1AAEO0000.png"
-                                                            alt="은행별 아이콘"></span>
+                                                            alt=""></span><!-- APP_A11Y alt값 수정 -->
                                                     <em class="agency"><span class="title">국민은행</span><span
                                                             class="num">9912801-00-285003</span></em>
                                                 </div>
@@ -236,7 +236,7 @@
                                                 <div class="agency-con">
                                                     <span class="agency-logo"><img
                                                             src="@@webRoot/static/images/ci/A1AAEO0000.png"
-                                                            alt="은행별 아이콘"></span>
+                                                            alt=""></span><!-- APP_A11Y alt값 수정 -->
                                                     <em class="agency"><span class="title">국민은행</span><span
                                                             class="num">9912801-00-285003</span></em>
                                                 </div>
@@ -285,7 +285,7 @@
                                                 <div class="agency-con">
                                                     <span class="agency-logo"><img
                                                             src="@@webRoot/static/images/ci/A1AAEO0000.png"
-                                                            alt="은행별 아이콘"></span>
+                                                            alt=""></span><!-- APP_A11Y alt값 수정 -->
                                                     <em class="agency"><span class="title">삼성화재</span><span
                                                             class="num">9912801-00-285003</span></em>
                                                 </div>
@@ -319,7 +319,7 @@
                                                 <div class="agency-con">
                                                     <span class="agency-logo"><img
                                                             src="@@webRoot/static/images/ci/A1AAEO0000.png"
-                                                            alt="은행별 아이콘"></span>
+                                                            alt=""></span><!-- APP_A11Y alt값 수정 -->
                                                     <em class="agency"><span class="title">삼성화재</span><span
                                                             class="num">9912801-00-285003</span></em>
                                                 </div>
@@ -364,7 +364,7 @@
                                                 <div class="agency-con">
                                                     <span class="agency-logo"><img
                                                             src="@@webRoot/static/images/ci/A1AAEO0000.png"
-                                                            alt="은행별 아이콘"></span>
+                                                            alt=""></span><!-- APP_A11Y alt값 수정 -->
                                                     <em class="agency"><span class="title">국민은행</span><span
                                                             class="num">9912801-00-285003</span></em>
                                                 </div>
@@ -399,7 +399,7 @@
                                                 <div class="agency-con">
                                                     <span class="agency-logo"><img
                                                             src="@@webRoot/static/images/ci/A1AAEO0000.png"
-                                                            alt="은행별 아이콘"></span>
+                                                            alt=""></span><!-- APP_A11Y alt값 수정 -->
                                                     <em class="agency"><span class="title">국민은행</span><span
                                                             class="num">9912801-00-285003</span></em>
                                                 </div>
@@ -427,7 +427,7 @@
                                         <div class="agency-con">
                                             <span class="agency-logo"><img
                                                     src="@@webRoot/static/images/ci/A1AAEO0000.png"
-                                                    alt="은행별 아이콘"></span>
+                                                    alt=""></span><!-- APP_A11Y alt값 수정 -->
                                             <b class="agency"><span class="title">국민은행</span>
                                             </b>
                                         </div>
@@ -532,7 +532,7 @@
                                         <div class="agency-con">
                                             <span class="agency-logo"><img
                                                     src="@@webRoot/static/images/ci/A1AAEO0000.png"
-                                                    alt="은행별 아이콘"></span>
+                                                    alt=""></span><!-- APP_A11Y alt값 수정 -->
                                             <b class="agency"><span class="title">삼성생명</span>
                                             </b>
                                         </div>
@@ -784,7 +784,7 @@
                                 </button>
                             </li>
                             <li data-status="not_possessed">
-                                <button type="button" title="미보유" data-action="moveKBStarBanking"><!-- 2021-11-08 수정 -->
+                                <button type="button" title="미보유" data-action="moveDetailPage"><!-- APP_A11Y  모달팝업수정  -->
                                     <span>치아보험</span>
                                 </button>
                             </li>
@@ -836,8 +836,7 @@
         @@include('@@webRoot/html/asset/layered/mys_as_05_00_01_p2.html')
         @@include('@@webRoot/html/asset/layered/mys_as_07_00_00_p1.html')
         @@include('@@webRoot/html/asset/layered/mys_as_08_00_00_p2.html')
-
-
+        
     </div>
 
     <!-- Script -->
@@ -888,21 +887,7 @@
             });
         });
 
-        $('button[data-action=moveKBStarBanking]').on('click', function () {
-            modalPopup({
-                title: "",
-                message: "선택한 상품의 상세 페이지로 이동합니다.",//2021-11-08 수정
-                type: "confirm",
-                textOkButton: "확인",
-                textCancelButton: "취소",
-                onOk: function () {
-
-                },
-                onCancel: function () {
-
-                }
-            });
-        });
+        
         // 2021-10-14 start
         $('button[data-action=moveDetailPage]').on('click', function () {
             modalPopup({

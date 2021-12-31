@@ -5,7 +5,7 @@
  * Version: 1.0.5
  * License: MIT License
  */
-(function (factory) {
+ (function (factory) {
     "use strict";
 
     if (typeof module === "object" && module.exports) {
@@ -31,10 +31,37 @@
                 y = shapeArgs.y;
 
             // Get the radius
-            var rTopLeft = rel(options.borderRadiusTopLeft || 0, w),
-                rTopRight = rel(options.borderRadiusTopRight || 0, w),
-                rBottomRight = rel(options.borderRadiusBottomRight || 0, w),
+            var rTopLeft, rTopRight, rBottomRight, rBottomLeft;
+            /* 
+            	Highchart 수정 (최용희)
+            	--------------------
+            	EX ) 
+            	plotOptions: {
+                    column:{
+                    	customRadius : 50
+                    },
+                ---------------------
+                customRadius 수치 입력시 해당y값에 맞추어 입력한 수치대로 borderRadius 시킴.(막대끝을 round) 
+            */
+            if(options.customRadius){
+        		//console.log(point);
+        		if(point.y>0){
+	             	rTopLeft = H.relativeLength(options.customRadius, w);
+	                rTopRight = H.relativeLength(options.customRadius, w);
+	                rBottomRight = rel(options.borderRadiusBottomRight || 0, w);
+	                rBottomLeft = rel(options.borderRadiusBottomLeft || 0, w);
+        		} else {
+	                rTopRight = rel(options.borderRadiusBottomRight || 0, w);
+	                rTopLeft = rel(options.borderRadiusBottomLeft || 0, w);
+	             	rBottomRight = H.relativeLength(options.customRadius, w);
+	                rBottomLeft = H.relativeLength(options.customRadius, w);
+				}        		
+            } else {
+             	rTopLeft = rel(options.borderRadiusTopLeft || 0, w);
+                rTopRight = rel(options.borderRadiusTopRight || 0, w);
+                rBottomRight = rel(options.borderRadiusBottomRight || 0, w);
                 rBottomLeft = rel(options.borderRadiusBottomLeft || 0, w);
+            }
         
             if (rTopLeft || rTopRight || rBottomRight || rBottomLeft) {
                 var maxR = Math.min(w, h) / 2

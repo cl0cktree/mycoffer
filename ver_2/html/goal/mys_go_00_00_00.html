@@ -47,7 +47,7 @@
                     <!-- 수정:2021-12-20 배너 추가// -->
                     <div class="sp_banner">
                         <button type="button">
-                            <img src="@@webRoot/static/images/goal/sp_banner.png" alt="대체텍스트">
+                            <img src="@@webRoot/static/images/goal/sp_banner.png" alt="My저금통과 함께하는 이만큼 챌린지 -룰렛 돌리러 가기-"> <!-- 수정:2021-12-30 alt 수정 -->
                         </button>
                     </div>
                     <!-- //수정:2021-12-20 배너 추가 -->
@@ -108,7 +108,7 @@
                                         <!-- // 추가 수정 -->
                                         <div class="character-graph type2" data-theme="pay">
                                             <div class="graph-area">
-                                                <span data-goal="50"><i><img src="@@webRoot/static/images/_temp/@progress_coffee.png" alt="커피"></i></span>
+                                                <span data-goal="50"><i><img src="@@webRoot/static/images/_temp/@progress_coffee.png" alt=""></i></span> <!-- APP_A11Y alt 내용 삭제 -->
                                             </div>
                                             <div class="graph-txt">
                                                 <p class="start-txt">나 <strong class="num" data-unit-after="원">150,000</strong></p>
@@ -147,7 +147,7 @@
                                         <!-- // 추가 수정 -->
                                         <div class="character-graph type2" data-theme="pay">
                                             <div class="graph-area">
-                                                <span data-goal="50"><i><img src="@@webRoot/static/images/_temp/@progress_shopping.png" alt="쇼핑백"></i></span>
+                                                <span data-goal="50"><i><img src="@@webRoot/static/images/_temp/@progress_shopping.png" alt=""></i></span> <!-- APP_A11Y alt 내용 삭제 -->
                                             </div>
                                             <div class="graph-txt">
                                                 <p class="start-txt">나 <strong class="num" data-unit-after="원">150,000</strong></p> <!-- 수정:2021-11-15 문구수정 -->
@@ -186,7 +186,7 @@
                                         <!-- // 추가 수정 -->
                                         <div class="character-graph type2" data-theme="pay">
                                             <div class="graph-area">
-                                                <span data-goal="50"><i><img src="@@webRoot/static/images/_temp/@progress_mobile.png" alt="휴대전화"></i></span>
+                                                <span data-goal="50"><i><img src="@@webRoot/static/images/_temp/@progress_mobile.png" alt=""></i></span> <!-- APP_A11Y alt 내용 삭제 -->
                                             </div>
                                             <div class="graph-txt">
                                                 <p class="start-txt">나 <strong class="num" data-unit-after="원">150,000</strong></p> <!-- 수정:2021-11-15 문구수정 -->
@@ -245,7 +245,7 @@
                                         <!-- // 추가 수정 -->
                                         <div class="content">
                                             <span class="img-character">
-                                                <img class="temp" src="@@webRoot/static/images/_temp/@icon_coffee.png" alt="커피">
+                                                <img class="temp" src="@@webRoot/static/images/_temp/@icon_coffee.png" alt=""> <!-- APP_A11Y alt 내용 삭제 -->
                                             </span>
                                             <!-- <span class="txt">도전자가 많은 인기 챌린지에 참여해보세요!</span> 수정:2021-09-27 삭제 -->
                                         </div>
@@ -274,7 +274,7 @@
                                         <!-- // 추가 수정 -->
                                         <div class="content">
                                             <span class="img-character">
-                                                <img class="temp" src="@@webRoot/static/images/_temp/@icon_alcohol.png" alt="맥주잔">
+                                                <img class="temp" src="@@webRoot/static/images/_temp/@icon_alcohol.png" alt=""> <!-- APP_A11Y alt 내용 삭제 -->
                                             </span>
                                             <!-- <span class="txt">도전자가 많은 인기 챌린지에 참여해보세요!</span> 수정:2021-09-27 삭제 -->
                                         </div>
@@ -303,7 +303,7 @@
                                         <!-- // 추가 수정 -->
                                         <div class="content">
                                             <span class="img-character">
-                                                <img class="temp" src="@@webRoot/static/images/_temp/@icon_store.png" alt="편의점">
+                                                <img class="temp" src="@@webRoot/static/images/_temp/@icon_store.png" alt=""> <!-- APP_A11Y alt 내용 삭제 -->
                                             </span>
                                             <!-- <span class="txt">도전자가 많은 인기 챌린지에 참여해보세요!</span> 수정:2021-09-27 삭제 -->
                                         </div>
@@ -338,7 +338,7 @@
 	<script src="@@webRoot/static/js/ui.js"></script>
     
     <script src="@@webRoot/static/common/lib/highcharts/highcharts-more.js"></script>    	
-    <script src="@@webRoot/static/common/lib/highcharts/accessibility.js"></script> <!-- 2021-12-28 추가 -->
+    <script src="@@webRoot/static/common/lib/highcharts/accessibility.js"></script> <!-- APP_A11Y 추가 -->
     
     <script>        
         $(document).ready(function(){
@@ -364,17 +364,17 @@
                     margin:0,
                     marginTop:0
                 },  
-                //  2021-12-28 추가
+                // APP_A11Y 추가//
                 accessibility:{
                     screenReaderSection:{
                         beforeChartFormat:'차트시작', // 차트 시작 msg
                         afterChartFormat:'차트 끝', // 차트 끝 msg
                     },  
                     point:{
-                        valueDescriptionFormat:'{xDescription}. {point.y}%.', // 포인트 리딩                        
+                        valueDescriptionFormat:'{xDescription} {point.y}%', // 포인트 리딩                        
                     }
                 },  
-                //  2021-12-28 추가    
+                // //APP_A11Y 추가    
                 tooltip: { 
                     enabled: true, 
                     headerFormat: '',     

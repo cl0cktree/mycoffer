@@ -96,7 +96,7 @@
 .pgbank-rules .character-selection .swiper-slide {display:block;margin-right:10px;width:14.4rem;height:21.5rem;}
 // .pgbank-rules .character-selection .swiper-slide:last-child {margin-right: 24px;}
 .pgbank-rules .character-selection .swiper-slide input[type=checkbox],
-.pgbank-rules .character-selection .swiper-slide input[type=radio] {position: absolute; left: -10000px; visibility: hidden;}
+.pgbank-rules .character-selection .swiper-slide input[type=radio] {position:absolute;z-index:10;/*left:-10000px;visibility:hidden;*/width:100%;height:100%;opacity:0;} // APP_A11Y 수정
 .pgbank-rules .character-selection .swiper-slide label {position:relative;display:block;width:inherit;height:inherit;text-align:center;border-radius:.6rem;overflow:hidden;background-size:cover;box-shadow:0 .2rem .2rem 0 rgba(0,0,0,.11);}
 
 // .pgbank-rules .character-selection .swiper-slide[data-theme='lamu'] label {background-image:url(../images/goal/card_lamu.png);}
@@ -345,8 +345,8 @@
 .challenge-box .add-card button{@include text($size:$text02,$weight:bold);color:$kb-ui02;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);}
 .challenge-box .add-card button i{display:block;margin:0 auto 20px;}
 .challenge-box .challenge-tit > button,
-.challenge-box .challenge-tit > a[role="button"]{width:calc(100% + 10px);position:absolute;text-align:right;} // a 버튼 포함
-.challenge-box .challenge-tit > button.type2{width:calc(100% + 10px);}
+.challenge-box .challenge-tit > a[role="button"]{width:2.4rem;right:0;position:absolute;text-align:right;} // APP_A11Y with 수정, right 추가
+.challenge-box .challenge-tit > button.type2{width:2.4rem;} // APP_A11Y with 수정
 .challenge-box .list-up .content-box{margin-left:0;margin-right:0;}
 .challenge-box .list-up .content-box + .content-box{margin-top:2.8rem;}
 .challenge-box .list-up .content-box[data-status=disabled] .challenge-tit h3,
@@ -421,6 +421,7 @@
 .icon-sel:not(ul) .icon-type[class*=form-checkbox]{overflow:visible;}
 .icon-sel .icon-type label{padding-left:0;width:100%;height:100%;position:relative;background:#f7f7f8;border-radius:.6rem;} // border-radius 수정
 .icon-sel .icon-type label i{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:6rem;height:auto;}
+.icon-sel .icon-type input + label span.ir{position:absolute;color:transparent;font-size:.1rem;width:.1rem;height:.1rem;opacity:0;} // APP_A11Y 추가
 .icon-sel .icon-type input + label:before{display:none;}
 .icon-sel .icon-type input:checked + label{background:#fff;}
 .icon-sel .icon-type input:checked + label:after{content:'';display:block;position:absolute;left:50%;top:50%;transform:translate(-50%, -50%);z-index:1;width:calc(100% + .2rem);height:calc(100% + .2rem);border:.2rem solid $color-yellow-positive;border-radius:.6rem;} // border 두께, 컬러 수정, border-radius 수정

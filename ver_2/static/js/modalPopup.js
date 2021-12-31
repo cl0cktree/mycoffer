@@ -102,7 +102,7 @@
                     $wrap.attr('tabindex','0');
                     $wrap.fadeIn(settings.duration);
                     $wrap.focus();
-                    focusTrap($wrap);
+                    //focusTrap($wrap);
 
                     layeredLevel = layeredLevel + 10;
                 },

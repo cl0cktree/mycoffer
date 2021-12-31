@@ -155,8 +155,8 @@
 .dashboard-items .last-update .datetime {font-size: 15px; font-family: 'Roboto', sans-serif;}
 .dashboard-items .num.up {color: #d20b0b;}
 .dashboard-items .num.down {color: #0058dc;}
-.dashboard-items .num.up::before {content: '▲';}
-.dashboard-items .num.down::before {content: '▼';}
+.dashboard-items .num.up::before {content: '상승'; display: inline-block; font-size: 1px; width: 0; height: 0; overflow: hidden; margin-right: 2px; border-style: solid; border-width: 0 6px 10px 6px; border-color: transparent transparent #d20b0b transparent;}
+.dashboard-items .num.down::before {content: '하락'; display: inline-block; font-size: 1px; width: 0; height: 0; overflow: hidden; margin-right: 2px; border-style: solid; border-width: 10px 6px 0 6px; border-color: #0058dc transparent transparent transparent;}
 .dashboard-items .num.up + .num.up::before {content: '';}
 .dashboard-items .num.down + .num.down::before {content: '';}
 .dashboard-items .num.up[data-unit-after="점"]::after,

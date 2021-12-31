@@ -51,7 +51,7 @@
 .modal[data-layered-name=modalLoginExtension] .login-extension-time{padding-top:22px; padding-bottom:22px;text-align:center;font-weight:bold;} //211105 : margin 삭제
 .modal[data-layered-name=modalLoginExtension] .login-extension-time strong{font-size:$heading01; font-weight:bold;display:inline-block;margin-right:8px;color:$color-blue;}
 //다른로그인 방법
-.login-certification01{padding-bottom:148px;}
+.login-certification01 .mm-manage-certificate{padding-bottom:148px;} // 211230 : 하단 padding_대상 선택자 변경
 .login-certification01 .login-certification01-h2{font-size: 15px; color:$kb-ui02; font-weight: normal; padding-top:2px; padding-bottom:8px;}
 .simple-password .other-login,
 .login-certification01 .other-login,
@@ -403,6 +403,7 @@
 .select-assets .checkbox-group .form-checkbox_20 label{display:block;padding-top:18px;padding-bottom:16px;word-break:break-word;} // breakword 2021-12-09
 .select-assets .checkbox-group .form-checkbox_20 label::before{top:2rem;} // 체크박스 수정 2021-10-08
 .select-assets .checkbox-group .form-checkbox_20 label::after{top:2.7rem;} // 체크박스 수정 2021-10-08
+.select-assets .checkbox-group .form-checkbox_20 input{top:1.9rem}// APP_A11Y
 
 .select-assets .agree-integrated-authentication{margin-top:56px;}
 .select-assets .agree-integrated-authentication .kb-form_inner{padding-bottom:20px;border-bottom:1px solid $kb-ui03}
@@ -1075,7 +1076,11 @@ ol[data-style=number] li::before{content:counter(list-number)'.';margin-right:0.
         margin-top:20px;
         .form-checkbox{
             width:100%;
-            
+            // APP_A11Y
+            input{
+                width:100%;
+                height:100%;
+            }
             input + label{
                 display:flex;
                 align-items:center;
@@ -1459,6 +1464,9 @@ ol[data-style=number] li::before{content:counter(list-number)'.';margin-right:0.
         dt span{
             vertical-align:bottom;
         }
+        dt.is-active label span{
+            font-weight:normal;
+        }
     }
     
 }
@@ -1521,6 +1529,7 @@ ol[data-style=number] li::before{content:counter(list-number)'.';margin-right:0.
         flex-direction:column;
     }
     .form-checkbox-icon{
+        position:relative;
         margin-right:8px; // android5
         &:first-child{
             margin-bottom:8px;
@@ -1528,12 +1537,9 @@ ol[data-style=number] li::before{content:counter(list-number)'.';margin-right:0.
         }
         input{
             position:absolute;
-            width:1px;
-            height:1px;
-            padding:0;
-            margin:-1px;
-            clip:rect(0,0,0,0);
-            border:0;
+            width:100%;
+            height:100%;
+            opacity:0;
             overflow:hidden;
             &.js-exception + label{
                 background-color:$kb-ui10;
@@ -1561,32 +1567,19 @@ ol[data-style=number] li::before{content:counter(list-number)'.';margin-right:0.
             border-radius:8px;
             .connecting{
                 position:absolute;
-                left:50%;
-                width:0;
-                height:0;
-                padding:0;
-                margin:-1px;
-                transform:translateX(27px);
-                clip:rect(0,1.6rem,1rem,0);
-                border:0;
-                font-size:0.1rem;
-                color:transparent;
-                &::after{
-                    content:'';
-                    position:absolute;        
-                    top:0.2rem;
-                    left:0.2rem;
-                    width: 1.2rem;
-                    height: .8rem;
-                    margin-top: -.2rem;
-                    transform: rotate(-45deg);
-                    border-top-left-radius: 1px;
-                    border-bottom: 2.5px solid $color-yellow-positive;
-                    border-bottom-right-radius: 2px;
-                    border-bottom-left-radius: 3px;
-                    border-left: 2.5px solid $color-yellow-positive;
-                    z-index: 1;
-                }
+                top:15px;
+                left:calc(50% + 27px);
+                width: 1.2rem;
+                height: .8rem;
+                margin-top: -.2rem;
+                transform: rotate(-45deg);
+                border-top-left-radius: 1px;
+                border-bottom: 2.5px solid $color-yellow-positive;
+                border-bottom-right-radius: 2px;
+                border-bottom-left-radius: 3px;
+                border-left: 2.5px solid $color-yellow-positive;
+                z-index: 1;
+                font-size:0;
             }
         }
         .tit{
@@ -1738,3 +1731,9 @@ ol[data-style=number] li::before{content:counter(list-number)'.';margin-right:0.
 .mydata-connect-info li button{margin-top:16px;}
 .mydata-connect-info li + li{padding-top:20px;margin-top:20px;border-top:1px solid $kb-ui09;}
 .mydata-connect-info li + li > i{top:20px;}
+
+// 211229 : 로그인방법 ui 수정
+// 다른로그인방법 (MYS_CO_04_05_00_P1)
+.bottom-sheet[data-layered-name="bsOtherLogin"] .form-image-radio i{width:4rem;height:4rem}
+.bottom-sheet[data-layered-name="bsOtherLogin"] .form-image-radio label{padding-left:0.5rem;padding-right:0.5rem;font-size:1.5rem;line-height:2.2rem}
+.bottom-sheet[data-layered-name="bsOtherLogin"] .form-image-radio input:checked + label > span{font-weight:normal}

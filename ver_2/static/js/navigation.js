@@ -103,8 +103,8 @@ if($appMenu.length){
     //header button
     $appHeader
     .on('click','.btn-allmenu',function(){
-        $appMenu.addClass('is-active');
-        gfn_body.hold(true);
+        $appMenu.addClass('is-active').find('.btn-logout').focus();
+        gfn_body.hold(true);        
     });
 
     $appMenu.on('click','.btn-close',function(){
@@ -168,6 +168,9 @@ $('.app-lnb').find('.tab.swiper-container').each(function(){
             slidesPerView: 'auto',
             //spaceBetween: 32,
             watchOverflow: true,
+            a11y: {
+                slideRole: 'none presentation',
+            },
             on: {
                 init: function(swiper, event){
                     var idx = $tab.find('.is-active').index();
@@ -207,9 +210,9 @@ var subMenuList = [];
 var $subMenu = $('.app-sub-wrap');
 var gfn_gnb = {
     init : function(){
-        // console.log(gnbArr)
+        //console.log(gnbArr)
         $.each(gnbArr, function(index, item){
-            gnbMenuList[index] = '<li class="swiper-slide" data-index="' + item.number+ '"><a href="' + item.link + '" data-sub="' + item.sub + '">' + item.name + '</a></li>';
+            gnbMenuList[index] = '<li class="swiper-slide" data-index="' + item.number+ '" role="none presentation"><a href="' + item.link + '" data-sub="' + item.sub + '" role="tab">' + item.name + '</a></li>';
         });
         gnbMenuSwiper.removeAllSlides();
         gnbMenuSwiper.appendSlide(gnbMenuList);
@@ -254,7 +257,8 @@ var gfn_gnb = {
             }
 
             //1depth activation
-            $gnb.find('.swiper-slide[data-index="' + gnbIdx + '"]').addClass('is-active').siblings('li').removeClass('is-active');
+            $gnb.find('.swiper-slide[data-index="' + gnbIdx + '"]').addClass('is-active').find('a').attr({'aria-selected':true});
+            $gnb.find('.swiper-slide[data-index="' + gnbIdx + '"]').siblings('li').removeClass('is-active').find('a').attr({'aria-selected':false});
             gnbMenuSwiper.slideTo(gnbIdx);
 
             depth1 = gnbIdx;
@@ -284,9 +288,10 @@ $(window)
 });
 
 //Web A11Y
-var waHTML = '<div class=\"skip-nav\"><a href=\"#content\">본문으로 이동하기</a></div>'    
-if(!$('.skip-nav').length) $('body').prepend(waHTML);
-if($('.app-content').attr('id') != 'content') $('.app-content').attr('id','content');
+// var waHTML = '<div class=\"skip-nav\"><a href=\"#content\">본문으로 이동하기</a></div>'    
+// if(!$('.skip-nav').length) $('body').prepend(waHTML);
+// if($('.app-content').attr('id') != 'content') $('.app-content').attr('id','content');
+if($('.skip-nav').length) $('.skip-nav').remove();
 
 
 //공통 스크롤 이벤트

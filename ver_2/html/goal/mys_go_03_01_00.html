@@ -49,7 +49,7 @@
                                         <h2 class="tit flex-box goals-desc type2">비교그룹과 평균 소비금액을 비교했어요.</h2>
                                         <div class="character-graph type2 lg" data-theme="pay"> <!-- 2021-09-09 수정 -->
                                             <div class="graph-area">
-                                                <span data-goal="10"><i><img src="@@webRoot/static/images/_temp/@progress_coffee.png" alt="커피"></i></span>
+                                                <span data-goal="10"><i><img src="@@webRoot/static/images/_temp/@progress_coffee.png" alt=""></i></span> <!-- APP_A11Y alt 내용 삭제 -->
                                             </div>
                                             <div class="graph-txt">
                                                 <p class="start-txt">나 <strong class="num" data-unit-after="원">150,000</strong></p>
@@ -129,7 +129,7 @@
     
     <!-- <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script> 2021-12-28 삭제 -->
     <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>        	
-    <script src="@@webRoot/static/common/lib/highcharts/accessibility.js"></script> <!-- 2021-12-28 추가 -->
+    <script src="@@webRoot/static/common/lib/highcharts/accessibility.js"></script> <!-- APP_A11Y 추가 -->
     <!-- 2021-09-09 수정 // -->
     <script>
         $(document).ready(function(){
@@ -163,17 +163,17 @@
                     backgroundColor: 'none',
                     height: 160
                 }, 
-                //  2021-12-28 추가
+                // APP_A11Y 추가//
                 accessibility:{
                     screenReaderSection:{
                         beforeChartFormat:'차트시작', // 차트 시작 msg
                         afterChartFormat:'차트 끝', // 차트 끝 msg
                     },  
                     point:{
-                        valueDescriptionFormat:'{point.x}월. {point.y}원.', // 포인트 리딩                        
+                        valueDescriptionFormat:'{point.x}월 {point.y}원', // 포인트 리딩                        
                     }
                 },  
-                //  2021-12-28 추가
+                // //APP_A11Y 추가
                 xAxis: {
                     labels: {
                         style: {
@@ -244,7 +244,7 @@
                 },
                 series: [{
                     // linkedTo: "main",
-                    name:'나', //  2021-12-28 추가
+                    name:'나', // APP_A11Y 추가
                     color: '#ffba53',                    
                     marker: lineMarker[1], //수정:2021-12-17 추가
                     data: [
@@ -255,7 +255,7 @@
                     ]
                 },{
                     // id: 'main',
-                    name:'비교그룹', //  2021-12-28 추가
+                    name:'비교그룹', // APP_A11Y 추가
                     color: '#c6cbd0', //수정:2021-12-17 수정
                     marker: lineMarker[10], //수정:2021-12-17 추가
                     data: [

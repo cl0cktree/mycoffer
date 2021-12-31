@@ -50,14 +50,14 @@
                         <div class="kb-form" data-status="error">
                             <label for="inputDate">날짜</label>
                             <div class="kb-form_inner form-text">
-                                <input type="text" id="inputDate" maxlength="6" placeholder="" value="2021.09.06" inputmode="numeric">
+                                <input type="text" id="inputDate" maxlength="6" placeholder="" value="2021.09.06" inputmode="numeric" title="2021.09.06"><!-- APP_A11Y : input title 추가 --><!-- [D] title에 사용자가 선택한 날짜가 입력되도록 처리 요청 -->
                                 <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                             </div>
                         </div>
                         <div class="kb-form" data-status="error">
-                            <label for="inputTime">사건</label>
+                            <label for="inputTime">시간</label> <!-- 수정:2021-12-28 --><!-- 오타 수정 -->
                             <div class="kb-form_inner form-text">
-                                <input type="text" id="inputTime" maxlength="6" placeholder="" value="18:34" inputmode="numeric">
+                                <input type="text" id="inputTime" maxlength="6" placeholder="" value="18:34" inputmode="numeric" title="18:34"><!-- APP_A11Y : input title 추가 --><!-- [D] title에 사용자가 선택한 시간이 입력되도록 처리 요청 -->
                                 <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                             </div>
                         </div>
@@ -71,7 +71,7 @@
                         <div class="kb-form_inner form-text">
                             <!-- 수정:2021-11-11 -->
                             <!-- 금액입력 placeholder 수정 (괄호 텍스트 삭제)-->
-                            <input type="text" inputmode="numeric" id="userRegisterExpenseFormsAccount" placeholder="금액입력" value="" data-unit="원" data-action="autoSeperator">
+                            <input type="text" inputmode="numeric" id="userRegisterExpenseFormsAccount" placeholder="금액입력" value="" data-unit="원" data-action="autoSeperator" title="금액입력"><!-- APP_A11Y : input title 추가 -->
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
                         <em class="validation">{필수입력항목}을 입력해 주세요.</em>
@@ -81,14 +81,14 @@
                     <div class="kb-form more-view-item" data-status="" data-view-option="show">
                         <strong class="form-tit required">카테고리</strong>
                         <div class="kb-form_inner form-text" data-role="popup">
-                            <input type="text" id="userRegisterExpenseFormsCategory" value="" role="button" placeholder="카테고리 선택" data-call-layered="bsUserRegisterSetCategory_transfer" readonly="">
+                            <input type="text" id="userRegisterExpenseFormsCategory" value="" role="button" placeholder="카테고리 선택" data-call-layered="bsUserRegisterSetCategory_transfer" readonly="" title="카테고리 선택"><!-- APP_A11Y : input title 추가 -->
                         </div>
                     </div>
                     <!-- 내역//-->
                     <div class="kb-form more-view-item" data-status="" data-view-option="show">
                         <strong class="form-tit required">내역</strong>
                         <div class="kb-form_inner form-text">
-                            <input type="text" id="userRegisterExpenseFormsTitle" value="스타벅스">
+                            <input type="text" id="userRegisterExpenseFormsTitle" value="스타벅스" title="내역 입력"><!-- APP_A11Y : input title 추가 -->
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
                         <em class="validation">Success Message</em>
@@ -101,14 +101,14 @@
                     <div class="kb-form more-view-item" data-status="" data-view-option="hide">
                         <strong class="form-tit optional">거래수단</strong><!-- 수정:2021-09-30 --><!-- class 추가 (optional) -->
                         <div class="kb-form_inner form-text" data-role="popup">
-                            <input type="text" id="userRegisterExpenseFormsMethod" value="" role="button" placeholder="거래수단 선택" data-call-layered="userRegisterExpenseFormsMethod" readonly="">
+                            <input type="text" id="userRegisterExpenseFormsMethod" value="" role="button" placeholder="거래수단 선택" data-call-layered="userRegisterExpenseFormsMethod" readonly="" title="거래수단 선택"><!-- APP_A11Y : input title 추가 -->
                         </div>
                     </div>
                     <!-- 메모//-->
                     <div class="kb-form more-view-item" data-status="" data-view-option="hide">
                         <strong class="form-tit optional">메모</strong><!-- 수정:2021-09-30 --><!-- class 추가 (optional) -->
                         <div class="kb-form_inner form-text">
-                            <input type="text" id="userRegisterExpenseFormsMemo" value="" placeholder="메모를 입력해주세요">
+                            <input type="text" id="userRegisterExpenseFormsMemo" value="" placeholder="메모를 입력해주세요" title="메모를 입력해주세요"> <!-- APP_A11Y : input title 추가 -->
                             <button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button>
                         </div>
                         <em class="validation">Success Message</em>

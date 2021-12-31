@@ -596,8 +596,9 @@
 	input[type=radio] {
 		position: absolute;
 		opacity:0;
-        width:100%;
-        height:100%;
+        width:44px;
+        height:25px;
+        right:0;
 	}
 	label {
 		position: relative;
@@ -708,7 +709,7 @@
     }
     //input:focus + label{outline:2px solid rgba(40,126,255,0.2);outline-style: auto;}
     input + label:after{transform:translateY(0) rotate(315deg);}
-    input:disabled + label{color:$kb-ui07;}
+    input:disabled + label{color:$kb-ui07;}    
     @if (remove-units($size) == 24 or remove-units($size) == 2.4){
         input{width:24px;height:24px;}
         label{padding-top:0.1rem;padding-left:34px;font-size:$text02;}
@@ -727,6 +728,7 @@
         input:disabled:checked + label:before{background-color:$kb-ui09;}
         input:disabled:checked + label:after{border-color:$kb-ui11;}
 
+        &.align-mid input{top:calc(50% - 1.2rem)}
         &.align-mid input + label:before,
         &.align-mid input + label:after{top:50%;transform:translateY(-50%) rotate(-45deg);}
         
@@ -752,7 +754,7 @@
             input + label:before{left:auto;right:0;}
 
         }
-
+        &.align-mid input{top:calc(50% - 1rem)}
         &.align-mid input + label:before{top:calc(50% - 10px);}        
         &.align-mid input + label:after{top:calc(50% - 4px);transform:rotate(-45deg);}        
         
@@ -779,6 +781,7 @@
     input:disabled + label:before{border-color:$kb-ui07;}
     input:disabled:checked + label:after{background-color:$kb-ui07;}
     input:disabled + label{color:$kb-ui07;}
+    &.align-mid input{top:calc(50% - 1.2rem)}
     &.align-mid input + label:before,
     &.align-mid input + label:after{top:50%;transform:translateY(-50%);}
 

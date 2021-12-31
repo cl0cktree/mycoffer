@@ -264,11 +264,8 @@
 	<!-- Script -->
 	@@include('@@webRoot/html/_include/common-js.html')
 	<!-- Add Library (this page only)-->
-	<script src="@@webRoot/static/js/ui.js"></script>
-
-	
-    <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
-    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
+	<script src="@@webRoot/static/js/ui.js"></script>	
+    <script src="@@webRoot/static/common/lib/highcharts/accessibility.js"></script> <!-- APP_A11Y 추가 -->
 
 	<!-- Add Script -->
 	<script>
@@ -342,7 +339,18 @@
 					height: 185,                
 					marginLeft: 0,
 					marginRight: 0
-				},
+				},				
+                //  APP_A11Y 추가//
+                accessibility:{
+                    screenReaderSection:{
+                        beforeChartFormat:'차트시작', // 차트 시작 msg
+                        afterChartFormat:'차트 끝', // 차트 끝 msg
+                    },  
+                    point:{
+                        valueDescriptionFormat:'{xDescription} {point.y}원', // 포인트 리딩                        
+                    }
+                },  
+                // //APP_A11Y 추가
 				tooltip: {
 					formatter: function () { 
 						return "<span style='font-size:1.4rem'>자산 <span style='font-size:1.5rem;font-family:Roboto;'>" + gfn_numKorean(this.y) + "</span>원</span>"
@@ -393,7 +401,10 @@
 					series: {
 						color: '#c7ccd1', // 기본색상
 						pointWidth: 6,  // 막대그래프 너비
-					}
+					},
+					column:{
+                    	customRadius : 50
+                    },
 				},
 				series: [{
 					data:[220002000, 680000000, -350000000, -680000000, 800000000, {y:660000000,color:'#ffcf53'}] // 2021-12-03 수정 [12/01 이후 적용건] 컬러수정
