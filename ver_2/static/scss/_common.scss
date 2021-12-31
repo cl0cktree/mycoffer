@@ -1072,8 +1072,22 @@ ol[data-style=number] li::before{content:counter(list-number)'.';margin-right:0.
     .desc-box p.text-line-yellow{
         font-size:16px;
     }
+    // 수정: 2021-12-31
     .checkbox-square{
         margin-top:20px;
+        >.form-checkbox{
+            input + label{
+                background-color:$kb-ui11;
+                border:2px solid $color-yellow;
+            }
+            input:checked + label{
+                border:2px solid $color-yellow;
+                background-color:$color-yellow;
+            }
+            label{
+                color:$kb-ui02;
+            }
+        }
         .form-checkbox{
             width:100%;
             // APP_A11Y
@@ -1088,17 +1102,17 @@ ol[data-style=number] li::before{content:counter(list-number)'.';margin-right:0.
                 width:100%;
                 height:40px;
                 padding-left:0;
-                border:1px solid $kb-ui08;
+                // border:1px solid $kb-ui08;
                 border-radius:2px;
                 font-size:15px;
-                background-color:$kb-ui10;
+                // background-color:$kb-ui10;
                 &::before, &::after{
                     content:none;
                 }
             }
             input:checked + label{
-                border:2px solid $color-yellow;
-                background-color:$kb-ui11;
+                // border:2px solid $color-yellow;
+                // background-color:$kb-ui11;
             }
         }
         .radio-group{
@@ -1109,6 +1123,14 @@ ol[data-style=number] li::before{content:counter(list-number)'.';margin-right:0.
             li{
                 width:calc(50% - 4px);
                 margin:0;
+            }
+            input + label{
+                border:1px solid $kb-ui08;
+                background-color:$kb-ui10;
+            }
+            input:checked + label{
+                border:2px solid $color-yellow;
+                background-color:$kb-ui11;
             }
         }
     }
