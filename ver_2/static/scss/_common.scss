@@ -239,7 +239,7 @@
 .employee-search .employee-search-list li button,
 .employee-search .branch-search-list li button{display:flex;width:100%;padding:2rem 0;text-align:left;}
 .employee-search .employee-search-list li button span,
-.employee-search .branch-search-list li button span{flex:1 0 auto;font-weight: normal;}
+.employee-search .branch-search-list li button span{flex:1 0 auto;font-weight: normal;word-break:break-word;} // 수정 2022-01-03
 .employee-search .employee-search-list .no-data,
 .employee-search .branch-search-list .no-data{margin-top:8.4rem;} // 마진수정 2021-11-12
 
@@ -550,7 +550,7 @@
 .mydata-kbinfo .mydata-kbinfo-summary-list02 dd [class^=h]:first-child{margin-top:2.6rem;}
 .mydata-kbinfo .mydata-kbinfo-summary-list02 [class^=h] .num{margin-left:7px;}
 .mydata-kbinfo .mydata-kbinfo-summary-list02 .accordion{margin-top:1.5rem;}
-.mydata-kbinfo .mydata-kbinfo-summary-list02 .accordion dt label{font-size:1.6rem;} // 원복 2021-12-07
+.mydata-kbinfo .mydata-kbinfo-summary-list02 .accordion dt label{font-size:1.6rem;word-break:break-word;} // 수정 2022-01-03
 .mydata-kbinfo .mydata-kbinfo-summary-list02 .accordion dt label .num{@include number($size: 17px, $weight: normal);margin-left:4px;}
 .mydata-kbinfo .mydata-kbinfo-summary-list02 .accordion dd{padding-top:1.5rem;}
 .mydata-kbinfo .mydata-kbinfo-summary-list02 .accordion .additional-info{@include text($size:$text02, $line-height:1);margin-top:8px;padding-left:3.5rem;color:$kb-ui05;}
@@ -1489,6 +1489,10 @@ ol[data-style=number] li::before{content:counter(list-number)'.';margin-right:0.
         dt.is-active label span{
             font-weight:normal;
         }
+		// 수정 2022-01-03 
+        label{
+            word-break:break-word;
+        }
     }
     
 }
@@ -1530,7 +1534,7 @@ ol[data-style=number] li::before{content:counter(list-number)'.';margin-right:0.
         }
     }
     .mydata-result-wrap .result-list{
-        li{vertical-align:bottom;}
+        li{vertical-align:bottom;word-break:break-word;} // 수정 2022-01-03
     }
 }
 // 바텀시트 헤더
