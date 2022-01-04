@@ -2259,11 +2259,21 @@ var jsScrollDone = {
             }
         });
 
+        // APP_A11Y
         $('.js-scroll-done').on('click','.btn-transparent',function(){
-            modalPopup({
-                title: '',
-                message: "화면을 스크롤하여 전송요구서/동의서 내용을 모두 확인해 주세요.",
-            });
+            let wScrollTop = $(window).scrollTop();
+            let wHeight = $(window).outerHeight();
+            let dHeight = $(document).outerHeight();
+            if(wScrollTop + 50 >= dHeight - wHeight){
+                $('html, body').stop().animate({scrollTop : dHeight - wHeight}, 200);
+                setTimeout(()=>{$('.sticky-bottom .btn-area .btn-solid').focus()},201);
+            }
+            else{
+                modalPopup({
+                    title: '',
+                    message: "화면을 스크롤하여 전송요구서/동의서 내용을 모두 확인해 주세요.",
+                });
+            }
         });
     },
     scroll : function(st, $this){
@@ -2307,7 +2317,7 @@ var jsScrollDown = {
 
         // 스크롤이 생길 경우 버튼 추가 & 이벤트 등록
         if($('body').hasScrollBar()){
-            $jsScrollDown.append($btn);
+            $jsScrollDown.parent().eq(0).prepend($btn); // APP_A11Y
             $btn.on('click', () => {this.moveScrollDown()});
         }
 
@@ -2345,6 +2355,27 @@ var jsScrollDown = {
             $('html, body').stop().animate({scrollTop : nextIndexTop}, 300);
         }else{
             $('html, body').stop().animate({scrollTop :this.options.scrollValue}, duration);
+            // APP_A11Y
+            // 브레이크포인트가 있으면 포커스 주기
+            if(jsScrollDown.options.$breakPoint.length){
+                jsScrollDown.options.$breakPoint.eq(0).attr('tabindex','0');
+                jsScrollDown.options.$breakPoint.eq(0).focus();
+            }
+            // 날짜 선택 인풋이 없고 가상 버튼이 있는 경우
+            // 스크롤이 내려가고 버튼이 활성화 됐을 때 버튼에 포커스 주기
+            else if(jsScrollDown.options.$jsScrollDown.find('.confirm-period').length == 0 && jsScrollDown.options.$jsScrollDown.find('.btn-transparent').length){
+                setTimeout(()=>{jsScrollDown.options.$jsScrollDown.find('.sticky-bottom .btn-area .btn-solid').eq(0).focus();}, duration + 1);
+                
+            }
+            else if(jsScrollDown.options.$jsScrollDown.find('.confirm-period').length == 0 && jsScrollDown.options.$jsScrollDown.find('.btn-transparent').length == 0){
+                if(jsScrollDown.options.$jsScrollDown.find('.sticky-bottom .btn-area .btn-solid').prop('disabled') == true){
+                    jsScrollDown.options.$jsScrollDown.find('.sticky-bottom .btn-area').attr('tabindex','0');
+                    jsScrollDown.options.$jsScrollDown.find('.sticky-bottom .btn-area').focus();
+                }else{
+                    jsScrollDown.options.$jsScrollDown.find('.sticky-bottom .btn-area .btn-solid').eq(0).focus();
+                }
+            }
+			else{jsScrollDown.options.$jsScrollDown.find('.sticky-bottom .btn-area .btn-solid').eq(0).focus();}
         }  
     },
     disappear: function(){
@@ -2363,9 +2394,19 @@ var jsScrollDown = {
         if (jsScrollDown.options.$breakPoint.eq(thisBreakPointIndex + 1).data('touch-tf') == 'false'){
             let nextBreakPointTop = jsScrollDown.options.$breakPoint.eq(thisBreakPointIndex + 1).offset().top - jsScrollDown.options.exceptH;
             jsScrollDown.moveScrollDown(nextBreakPointTop -10);
+            // APP_A11Y
+            jsScrollDown.options.$breakPoint.eq(thisBreakPointIndex+1).attr('tabindex','0');
+            jsScrollDown.options.$breakPoint.eq(thisBreakPointIndex+1).focus();
         }
         if (thisBreakPointIndex == jsScrollDown.options.$breakPoint.length-1){
             jsScrollDown.moveScrollDown(jsScrollDown.options.dh - jsScrollDown.options.wh);
+            // APP_A11Y
+            if(jsScrollDown.options.$jsScrollDown.find('.confirm-period').length){
+                jsScrollDown.options.$jsScrollDown.find('.confirm-period').attr('tabindex','0').focus();
+            }
+            else if(jsScrollDown.options.$jsScrollDown.find('.confirm-period').length == 0){
+                jsScrollDown.options.$jsScrollDown.find('.sticky-bottom .btn-area .btn-solid').focus();
+            }
         }
     },
     scroll: function(st){
