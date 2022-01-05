@@ -519,9 +519,9 @@
                 // 스크롤 이동
                 function moveScroll(idx, duration){
                     if(duration == undefined){
-                        duration = $slides.eq(idx).outerHeight() * 0.5;
+                        duration = $slides.eq(idx).outerHeight() * 0.2; // 수정: 2021-01-05
                     }else{
-                        duration = slidePositionTopArray[idx] * 0.5;
+                        duration = slidePositionTopArray[idx] * 0.2; // 수정: 2021-01-05
                     }
                     if(idx == 0){
                         $('html, body').stop().animate({'scrollTop': slidePositionTopArray[idx] - headerHeight - 40 - tabHeight}, duration);

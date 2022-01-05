@@ -407,7 +407,7 @@ ul.radio-group > li + li{margin-top:20px;}
 //기간선택
 .period-selector{@include number($size: 17px);display:flex;align-items:center;padding:6px 10px;border:1px solid $kb-ui08;border-radius:2px;}
 .period-selector > span{flex:0 0 46px;text-align:center;font-weight:normal;}
-.period-selector input{flex:1;min-width:40px;height:34px;line-height:34px;padding:0 0 0 16px;font-size:16px;border:none;}
+.period-selector input{flex:1;min-width:40px;height:34px;line-height:34px;padding:0 0 0 4px;font-size:16px;border:none;}
 .period-selector input + .btn-datepicker{flex:0 0 34px;}
 .period-selector.is-disabled{position:relative;background-color:$kb-ui10;}
 .period-selector.is-disabled:after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;}
@@ -419,18 +419,29 @@ ul.radio-group > li + li{margin-top:20px;}
 }
 
 //임시(개발요청)
-.period-selector_manual{@include number($size: 17px);display:flex;align-items:center;border:1px solid $kb-ui08;border-radius:2px;}
-.period-selector_manual > span{flex:0 0 12px;text-align:center;}
-.period-selector_manual input{flex:1;min-width:40px;height:46px;padding:0 20px;font-size:17px;border:none;}
-.period-selector_manual input + .btn-datepicker{flex:0 0 20px;margin-right:10px;}
+// .period-selector_manual{@include number($size: 17px);display:flex;align-items:center;border:1px solid $kb-ui08;border-radius:2px;}
+// .period-selector_manual > span{flex:0 0 12px;text-align:center;}
+// .period-selector_manual input{flex:1;min-width:40px;height:46px;padding:0 20px;font-size:17px;border:none;}
+// .period-selector_manual input + .btn-datepicker{flex:0 0 20px;margin-right:10px;}
+// .period-selector_manual.is-disabled{position:relative;background-color:$kb-ui10;}
+// .period-selector_manual.is-disabled input,
+// .period-selector_manual.is-disabled span{color:$kb-ui04;background-color:$kb-ui10;}
+//기간선택
+.period-selector_manual{@include number($size: 17px);display:flex;align-items:center;padding:6px 10px;border:1px solid $kb-ui08;border-radius:2px;}
+.period-selector_manual > span{flex:0 0 46px;text-align:center;font-weight:normal;}
+.period-selector_manual input{flex:1;min-width:40px;height:34px;line-height:34px;padding:0 0 0 4px;font-size:16px;border:none;}
+.period-selector_manual input + .btn-datepicker{flex:0 0 34px;}
 .period-selector_manual.is-disabled{position:relative;background-color:$kb-ui10;}
+.period-selector_manual.is-disabled:after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;}
 .period-selector_manual.is-disabled input,
 .period-selector_manual.is-disabled span{color:$kb-ui04;background-color:$kb-ui10;}
-
+.period-selector_manual + .error-msg{margin-top:8px;}
+.btn-segmented_radio + .period-selector_manual{margin-top:0.8rem;}
 
 @include smallDevice{
-	.period-selector input{padding:0 10px;font-size:15px;}
-
+	.period-selector input,
+	.period-selector_manual input{padding:0 0 0 14px;font-size:15px;}
+    .period-selector_manual{padding:6px 0;}
 }
 
 // .kb-sec .tab{padding-left:0;padding-right:0;}
