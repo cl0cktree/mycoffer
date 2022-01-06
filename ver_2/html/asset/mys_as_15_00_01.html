@@ -373,21 +373,21 @@
 
 
         // highchart 공통 options
-    Highcharts.setOptions({
-        title: { text: null },
-        subTitle: { text: null },
-        credits: { enabled: false },
-        label : { fontFamily: 'KBFGText'},
-        credits: { enabled: false },
-        exporting: { enabled: false },
-        lang: {
-            thousandsSep: ','
-        }
-    });
+        Highcharts.setOptions({
+            title: { text: null },
+            subTitle: { text: null },
+            credits: { enabled: false },
+            label : { fontFamily: 'KBFGText'},
+            credits: { enabled: false },
+            exporting: { enabled: false },
+            lang: {
+                thousandsSep: ','
+            }
+        });
 
 
-    //chart 선언
-    var doubleColumnChart = new Highcharts.Chart({
+        //chart 선언
+        var doubleColumnChart = new Highcharts.Chart({
             chart: {
                 renderTo: 'columnChart01', // chart 삽입 target ID
                 type: "column",
@@ -397,6 +397,17 @@
                 marginBottom: 35,
                 height: 165,
             },
+            // APP_A11Y 추가//
+			accessibility:{
+				screenReaderSection:{
+					beforeChartFormat:'차트시작', // 차트 시작 msg
+					afterChartFormat:'차트 끝', // 차트 끝 msg
+				},  
+				point:{
+					valueDescriptionFormat:'{xDescription} {point.y}원', // 포인트 리딩                        
+				}
+			},  
+			// //APP_A11Y 추가
             legend: { 
                 enabled: false,
                 reversed: true, // order reversed
@@ -489,7 +500,7 @@
         });
 
    
-    var columnChart = new Highcharts.Chart({
+        var columnChart = new Highcharts.Chart({
             chart: {
                 renderTo: 'areaSplineChart', // chart 삽입 target ID
                 type: "area",
@@ -503,8 +514,18 @@
                             swiperFunc() // chart swiper가 먼저 실행되는 것을 방지 
                         }
                 }
-
             },
+            // APP_A11Y 추가//
+			accessibility:{
+				screenReaderSection:{
+					beforeChartFormat:'차트시작', // 차트 시작 msg
+					afterChartFormat:'차트 끝', // 차트 끝 msg
+				},  
+				point:{
+					valueDescriptionFormat:'{xDescription} {point.y}원', // 포인트 리딩                        
+				}
+			},  
+			// //APP_A11Y 추가
             legend: { 
                 enabled: false,
             },

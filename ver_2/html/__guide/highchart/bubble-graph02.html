@@ -44,7 +44,8 @@
     <!-- Script -->
     @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
-    <script src="@@webRoot/static/js/ui.js"></script>
+    <script src="@@webRoot/static/js/ui.js"></script>  
+    <script src="@@webRoot/static/common/lib/highcharts/highcharts-more.js"></script> <!-- 추가 -->
     
     <script>
         // highchart 공통 options        
@@ -69,7 +70,18 @@
                     marginTop:0,
                     marginBottom:0,
                     height: 125
-                },            
+                },                       
+                // APP_A11Y 추가//
+                accessibility:{
+                    screenReaderSection:{
+                        beforeChartFormat:'차트시작', // 차트 시작 msg
+                        afterChartFormat:'차트 끝', // 차트 끝 msg
+                    },  
+                    point:{
+                        valueDescriptionFormat:'{xDescription} {point.y}일', // 포인트 리딩                        
+                    }
+                },  
+                // //APP_A11Y 추가                   
                 tooltip: { enabled: false },
                 plotOptions: {
                     packedbubble: {

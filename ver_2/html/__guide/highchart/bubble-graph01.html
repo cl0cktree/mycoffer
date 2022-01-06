@@ -44,7 +44,8 @@
     <!-- Script -->
     @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
-    <script src="@@webRoot/static/js/ui.js"></script>
+    <script src="@@webRoot/static/js/ui.js"></script>    
+    <script src="@@webRoot/static/common/lib/highcharts/highcharts-more.js"></script> <!-- 추가 -->
     
     
     <script>
@@ -69,7 +70,19 @@
                     height: 160,
                     margin:0,
                     marginTop:0
-                },            
+                },    
+                
+                // APP_A11Y 추가//
+                accessibility:{
+                    screenReaderSection:{
+                        beforeChartFormat:'차트시작', // 차트 시작 msg
+                        afterChartFormat:'차트 끝', // 차트 끝 msg
+                    },  
+                    point:{
+                        valueDescriptionFormat:'{xDescription} {point.y}%', // 포인트 리딩                        
+                    }
+                },  
+                // //APP_A11Y 추가           
                 tooltip: { 
                     enabled: true, 
                     headerFormat: '',     

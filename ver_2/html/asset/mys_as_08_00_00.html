@@ -942,21 +942,21 @@
 
 
         // highchart 공통 options 하이차트 UI 추가 start
-    Highcharts.setOptions({
-        title: { text: null },
-        subTitle: { text: null },
-        credits: { enabled: false },
-        label : { fontFamily: 'KBFGText'},
-        credits: { enabled: false },
-        exporting: { enabled: false },
-        lang: {
-            thousandsSep: ','
-        }
-    });
+        Highcharts.setOptions({
+            title: { text: null },
+            subTitle: { text: null },
+            credits: { enabled: false },
+            label : { fontFamily: 'KBFGText'},
+            credits: { enabled: false },
+            exporting: { enabled: false },
+            lang: {
+                thousandsSep: ','
+            }
+        });
 
 
-    //chart 선언
-    var ColumnChart01 = new Highcharts.Chart({
+        //chart 선언
+        var ColumnChart01 = new Highcharts.Chart({
             chart: {
                 renderTo: 'columnChart01', // chart 삽입 target ID
                 type: "column",
@@ -966,6 +966,17 @@
                 marginBottom: 35,
                 height: 165,
             },
+            // APP_A11Y 추가//
+			accessibility:{
+				screenReaderSection:{
+					beforeChartFormat:'차트시작', // 차트 시작 msg
+					afterChartFormat:'차트 끝', // 차트 끝 msg
+				},  
+				point:{
+					valueDescriptionFormat:'{xDescription} {point.y}원', // 포인트 리딩                        
+				}
+			},  
+			// //APP_A11Y 추가
             legend: { 
                 enabled: false,
             },//html로 대체 
@@ -1062,6 +1073,17 @@
                 marginBottom: 35,
                 height: 165,
             },
+            // APP_A11Y 추가//
+			accessibility:{
+				screenReaderSection:{
+					beforeChartFormat:'차트시작', // 차트 시작 msg
+					afterChartFormat:'차트 끝', // 차트 끝 msg
+				},  
+				point:{
+					valueDescriptionFormat:'{xDescription} {point.y}원', // 포인트 리딩                        
+				}
+			},  
+			// //APP_A11Y 추가
             legend: { 
                 enabled: false,
                 reversed: true, // order reversed
@@ -1169,6 +1191,17 @@
                     }
                 }
             },
+            // APP_A11Y 추가//
+			accessibility:{
+				screenReaderSection:{
+					beforeChartFormat:'차트시작', // 차트 시작 msg
+					afterChartFormat:'차트 끝', // 차트 끝 msg
+				},  
+				point:{
+					valueDescriptionFormat:'{xDescription} {point.y}원', // 포인트 리딩                        
+				}
+			},  
+			// //APP_A11Y 추가
             legend: { 
                 enabled: false,
                 reversed: true, // order reversed
@@ -1272,6 +1305,17 @@
                 height: 115,
                 top:0,
             },
+            // APP_A11Y 추가//
+			accessibility:{
+				screenReaderSection:{
+					beforeChartFormat:'차트시작', // 차트 시작 msg
+					afterChartFormat:'차트 끝', // 차트 끝 msg
+				},  
+				point:{
+					valueDescriptionFormat:'{xDescription} {point.y}원', // 포인트 리딩                        
+				}
+			},  
+			// //APP_A11Y 추가
             legend: { enabled: false },
             tooltip: {
                 useHTML: true,
@@ -1345,6 +1389,7 @@
                 }
             ]
         });
+
         var columnChart05 = new Highcharts.Chart({
             chart: {
                 renderTo: 'columnChart05', // chart 삽입 target ID
@@ -1361,6 +1406,17 @@
                     }
                 }
             },
+            // APP_A11Y 추가//
+			accessibility:{
+				screenReaderSection:{
+					beforeChartFormat:'차트시작', // 차트 시작 msg
+					afterChartFormat:'차트 끝', // 차트 끝 msg
+				},  
+				point:{
+					valueDescriptionFormat:'{xDescription} {point.y}원', // 포인트 리딩                        
+				}
+			},  
+			// //APP_A11Y 추가
             legend: { enabled: false },
             tooltip: {
                 useHTML: true,

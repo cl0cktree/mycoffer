@@ -76,7 +76,18 @@
                     fontFamily: "KBFGText",
                 },
                 crosshairs: true,
-            },
+            },                                 
+            // APP_A11Y 추가//
+            accessibility:{
+                screenReaderSection:{
+                    beforeChartFormat:'차트시작', // 차트 시작 msg
+                    afterChartFormat:'차트 끝', // 차트 끝 msg
+                },  
+                point:{
+                    valueDescriptionFormat:'{xDescription} {point.y}원', // 포인트 리딩                        
+                }
+            },  
+            // //APP_A11Y 추가     
             xAxis: {
                 type: "category",
                 categories: ["3월", "4월", "5월", "6.13"],

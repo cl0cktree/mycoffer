@@ -87,7 +87,18 @@
                 align: 'center',
                 verticalAlign: 'middle',
                 style: {fontSize:'4.5vw', fontFamily: "KBFGText"}
-            },
+            },                                      
+            // APP_A11Y 추가//
+            accessibility:{
+                screenReaderSection:{
+                    beforeChartFormat:'자산비중 차트시작', // 차트 시작 msg
+                    afterChartFormat:'자산비중 차트 끝', // 차트 끝 msg
+                },  
+                point:{
+                    valueDescriptionFormat:'{xDescription} {point.percentage:.1f}%', // 포인트 리딩                        
+                }
+            },  
+            // //APP_A11Y 추가     
             tooltip: {            
                 formatter: function () { 
                     return gfn_comma3Digit(this.y) + "만원"

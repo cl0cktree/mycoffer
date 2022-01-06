@@ -337,10 +337,12 @@
     <!-- Add Library (this page only)-->
     <script src="@@webRoot/static/js/ui.js"></script>
     
+    <!--
+        수정 2022-01-07 : head 내 소스 충돌
     <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script>    
-    <script src="@@webRoot/static/common/lib/highcharts/pattern-fill.js"></script> <!-- 211111 : chart pattern 적용 -->
+    <script src="@@webRoot/static/common/lib/highcharts/pattern-fill.js"></script>
+    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script> -->
     <script src="@@webRoot/static/common/lib/highcharts/highcharts-more.js"></script>
-    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>
     <!-- Add Script -->
     <script>
         gfn_gnb.select(2);
@@ -368,6 +370,17 @@
                 margin:0,
                 marginBottom:25
             },
+            // APP_A11Y 추가//
+			accessibility:{
+				screenReaderSection:{
+					beforeChartFormat:'차트시작', // 차트 시작 msg
+					afterChartFormat:'차트 끝', // 차트 끝 msg
+				},  
+				point:{
+					valueDescriptionFormat:'{xDescription} {point.y}원', // 포인트 리딩                        
+				}
+			},  
+			// //APP_A11Y 추가
             tooltip: {
                 formatter: function () { 
                     return gfn_comma3Digit(this.y) + "원"
@@ -439,6 +452,17 @@
                 margin:0,
                 marginBottom:25
             },
+            // APP_A11Y 추가//
+			accessibility:{
+				screenReaderSection:{
+					beforeChartFormat:'차트시작', // 차트 시작 msg
+					afterChartFormat:'차트 끝', // 차트 끝 msg
+				},  
+				point:{
+					valueDescriptionFormat:'{xDescription} {point.y}원', // 포인트 리딩                        
+				}
+			},  
+			// //APP_A11Y 추가
             tooltip: {
                 formatter: function () { 
                     return gfn_comma3Digit(this.y) + "원"
@@ -516,7 +540,18 @@
                 height: 160,
                 margin:0,
                 marginTop:0
-            },            
+            }, 
+            // APP_A11Y 추가//
+			accessibility:{
+				screenReaderSection:{
+					beforeChartFormat:'차트시작', // 차트 시작 msg
+					afterChartFormat:'차트 끝', // 차트 끝 msg
+				},  
+				point:{
+					valueDescriptionFormat:'{xDescription} {point.y}%', // 포인트 리딩                        
+				}
+			},  
+			// //APP_A11Y 추가           
             tooltip: { enabled: false },
             plotOptions: {
                 packedbubble: {
@@ -605,6 +640,17 @@
                 margin:0,
                 marginBottom:25
             },
+            // APP_A11Y 추가//
+			accessibility:{
+				screenReaderSection:{
+					beforeChartFormat:'차트시작', // 차트 시작 msg
+					afterChartFormat:'차트 끝', // 차트 끝 msg
+				},  
+				point:{
+					valueDescriptionFormat:'{xDescription} {point.y}원', // 포인트 리딩                        
+				}
+			},  
+			// //APP_A11Y 추가
             tooltip: {
                 formatter: function () { 
                     return gfn_comma3Digit(this.y) + "원"
@@ -681,6 +727,17 @@
                 margin:0,
                 marginBottom:25
             },
+            // APP_A11Y 추가//
+			accessibility:{
+				screenReaderSection:{
+					beforeChartFormat:'차트시작', // 차트 시작 msg
+					afterChartFormat:'차트 끝', // 차트 끝 msg
+				},  
+				point:{
+					valueDescriptionFormat:'{xDescription} {point.y}원', // 포인트 리딩                        
+				}
+			},  
+			// //APP_A11Y 추가
             tooltip: {
                 formatter: function () { 
                     return gfn_comma3Digit(this.y) + "원"
@@ -759,6 +816,17 @@
                 height: 134,
                 margin: [0, 0, 0, 0]
             },
+            // APP_A11Y 추가//
+			accessibility:{
+				screenReaderSection:{
+					beforeChartFormat:'자산비용 차트시작', // 차트 시작 msg
+					afterChartFormat:'자산비용 차트 끝', // 차트 끝 msg
+				},  
+				point:{
+					valueDescriptionFormat:'{xDescription} {point.y}%', // 포인트 리딩                        
+				}
+			},  
+			// //APP_A11Y 추가
             title: {
                 text: '자산<br>비용',
                 align: 'center',
@@ -842,6 +910,17 @@
                 marginBottom:25,
                 marginTop: 50
             },
+            // APP_A11Y 추가//
+			accessibility:{
+				screenReaderSection:{
+					beforeChartFormat:'차트시작', // 차트 시작 msg
+					afterChartFormat:'차트 끝', // 차트 끝 msg
+				},  
+				point:{
+					valueDescriptionFormat:'{xDescription} {point.y}원', // 포인트 리딩                        
+				}
+			},  
+			// //APP_A11Y 추가
             xAxis: {
                 type: "category",
                 categories: ["1월", "2월", "3월", "4월", "5월", "6월"],
@@ -947,6 +1026,17 @@
                 height: 134,
                 margin:0
             },
+            // APP_A11Y 추가//
+			accessibility:{
+				screenReaderSection:{
+					beforeChartFormat:'차트시작', // 차트 시작 msg
+					afterChartFormat:'차트 끝', // 차트 끝 msg
+				},  
+				point:{
+					valueDescriptionFormat:'{xDescription} {point.y}%', // 포인트 리딩                        
+				}
+			},  
+			// //APP_A11Y 추가
             title: { enabled: false },
             tooltip: {
                 formatter: function () { 
@@ -1010,6 +1100,17 @@
                 marginBottom:25,
                 marginTop: 50
             },
+            // APP_A11Y 추가//
+			accessibility:{
+				screenReaderSection:{
+					beforeChartFormat:'차트시작', // 차트 시작 msg
+					afterChartFormat:'차트 끝', // 차트 끝 msg
+				},  
+				point:{
+					valueDescriptionFormat:'{xDescription} {point.y}원', // 포인트 리딩                        
+				}
+			},  
+			// //APP_A11Y 추가
             tooltip: {
                 formatter: function () { 
                     return gfn_comma3Digit(this.y) + "원"
@@ -1106,6 +1207,17 @@
                 marginBottom:25,
                 marginTop: 50
             },
+            // APP_A11Y 추가//
+			accessibility:{
+				screenReaderSection:{
+					beforeChartFormat:'차트시작', // 차트 시작 msg
+					afterChartFormat:'차트 끝', // 차트 끝 msg
+				},  
+				point:{
+					valueDescriptionFormat:'{xDescription} {point.y}원', // 포인트 리딩                        
+				}
+			},  
+			// //APP_A11Y 추가
             xAxis: {
                 type: "category",
                 categories: ["1월", "2월", "3월", "4월", "5월", "6월"],

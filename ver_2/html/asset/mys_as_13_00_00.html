@@ -809,6 +809,8 @@
         });
         var unit = ['USD','JPY','EUR']; //통화종류
         var rate = [1186.37,10.60,1376.68]; //원화환율
+        
+        // var korMoney = gfn_comma3Digit(this.y * rate[0]),
         //chart 선언
         var ColumnChart01 = new Highcharts.Chart({
             chart: {
@@ -842,7 +844,18 @@
                     fontFamily: "KBFGText",
                 },
                 crosshairs: false,
-            },
+            },				                             				
+            //  APP_A11Y 추가//
+            accessibility:{
+                screenReaderSection:{
+                    beforeChartFormat:'차트시작', // 차트 시작 msg
+                    afterChartFormat:'차트 끝', // 차트 끝 msg
+                },  
+                point:{
+                    valueDescriptionFormat:"{xDescription} {point.y}달러", // 포인트 리딩                        
+                }
+            },  
+            // //APP_A11Y 추가
             xAxis: {
                 type: "category",
                 max: 5,
@@ -856,7 +869,7 @@
                 }
             },
             yAxis: {
-                endOnTick: false,
+                endOnTick: false ,
                 enabled: false,  // 사용 안함
                 labels: { enabled: false },  // 축 lebel 사용 안함
                 title: { enabled: false }, // 축 title 사용 안함
@@ -893,10 +906,28 @@
                     name: "월 납입금액",
                     color: '#c6cbd0',
                     pointPlacement: 0,
-                    data: [3000, 5500, 4000, 2000, 9900, {
-                                y:3500,
-                                color: '#ffd052',
-                            }]//2021-12-16 수정
+                    //  APP_A11Y 추가//
+                    data: [{
+                        accessibility:{description:gfn_comma3Digit(3000 * rate[0]) + '원' },
+                        y:3000
+                    }, {
+                        accessibility:{description:gfn_comma3Digit(5500 * rate[0]) + '원' },
+                        y:5500
+                    }, {
+                        accessibility:{description:gfn_comma3Digit(4000 * rate[0]) + '원' },
+                        y:4000
+                    }, {
+                        accessibility:{description:gfn_comma3Digit(2000 * rate[0]) + '원' },
+                        y:2000
+                    }, {
+                        accessibility:{description:gfn_comma3Digit(9900 * rate[0]) + '원' },
+                        y:9900
+                    }, {
+                        accessibility:{description:gfn_comma3Digit(3500 * rate[0]) + '원' },
+                        y:3500,
+                        color: '#ffd052',
+                    }]
+                    // //APP_A11Y 추가
                     
                 }
             ],

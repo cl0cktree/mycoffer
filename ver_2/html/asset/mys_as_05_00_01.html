@@ -555,6 +555,17 @@
                 marginBottom: 35,
                 height: 165,
             },
+            // APP_A11Y 추가//
+			accessibility:{
+				screenReaderSection:{
+					beforeChartFormat:'차트시작', // 차트 시작 msg
+					afterChartFormat:'차트 끝', // 차트 끝 msg
+				},  
+				point:{
+					valueDescriptionFormat:'{xDescription} {point.y}원', // 포인트 리딩                        
+				}
+			},  
+			// //APP_A11Y 추가
             legend: { 
                 enabled: false,
                 reversed: true, // order reversed
@@ -645,187 +656,208 @@
                 }
             ],
         });
-
-   
+  
     var columnChart = new Highcharts.Chart({
-            chart: {
-                renderTo: 'areaSplineChart', // chart 삽입 target ID
-                type: "area",
-                marginLeft: 0,
-                marginRight: 0,
-                marginTop:0,
-                marginBottom: 35,
-                height: 165,
-                events: {
-                        load: function () {
-                            swiperFunc() // 그래프 로딩 후 하이차트 swiper 실행
-                        }
-                }
+        chart: {
+            renderTo: 'areaSplineChart', // chart 삽입 target ID
+            type: "area",
+            marginLeft: 0,
+            marginRight: 0,
+            marginTop:0,
+            marginBottom: 35,
+            height: 165,
+            events: {
+                    load: function () {
+                        swiperFunc() // 그래프 로딩 후 하이차트 swiper 실행
+                    }
+            }
 
+        },
+        // APP_A11Y 추가//
+        accessibility:{
+            screenReaderSection:{
+                beforeChartFormat:'차트시작', // 차트 시작 msg
+                afterChartFormat:'차트 끝', // 차트 끝 msg
+            },  
+            point:{
+                valueDescriptionFormat:'{xDescription} {point.y}원', // 포인트 리딩                        
+            }
+        },  
+        // //APP_A11Y 추가
+        legend: { 
+            enabled: false,
+        },
+        tooltip: {
+            useHTML: true,
+            formatter: function () { 
+                return '<div style="color:#696e76;font-weight:normal;text-align:right;">' + this.x+ '<br>' + '잔액 ' + '<strong style="color:#26282c;font-size:1.5rem;font-weight:normal;" class="num">' + gfn_comma3Digit(this.y)+ '</strong>' + "원</div>"
             },
-            legend: { 
-                enabled: false,
+            padding: 10,
+            backgroundColor: "#fff",
+            shadow: true,
+            borderRadius: 4,
+            verticalAlign: 'bottom',
+            borderColor: '#f3f3f3',
+            style: {
+                fontWeight: 'bold',
+                fontSize: '1.4rem',
+                fontFamily: "KBFGText",
+                zIndex: 10
             },
-            tooltip: {
-                useHTML: true,
-                formatter: function () { 
-                    return '<div style="color:#696e76;font-weight:normal;text-align:right;">' + this.x+ '<br>' + '잔액 ' + '<strong style="color:#26282c;font-size:1.5rem;font-weight:normal;" class="num">' + gfn_comma3Digit(this.y)+ '</strong>' + "원</div>"
-                },
-                padding: 10,
-                backgroundColor: "#fff",
-                shadow: true,
-                borderRadius: 4,
-                verticalAlign: 'bottom',
-                borderColor: '#f3f3f3',
+            crosshairs: {
+                color: '#c7cbd0',
+                dashStyle: 'dash',
+                width: 1,
+            },
+            split: true,
+            shared: true,
+        },
+        
+        xAxis: {
+            type: "category",
+            categories: ["3월", "4월", "5월", "6월13일"],
+            labels: {
                 style: {
-                    fontWeight: 'bold',
-                    fontSize: '1.4rem',
-                    fontFamily: "KBFGText",
-                    zIndex: 10
-                },
-                crosshairs: {
-                    color: '#c7cbd0',
-                    dashStyle: 'dash',
-                    width: 1,
-                },
-                split: true,
-                shared: true,
-            },
+                    color: "#26282c",
+                    fontSize: '1.2rem',
+                    fontFamily: 'KBFGText',
+                }
+            },   
             
-            xAxis: {
-                type: "category",
-                categories: ["3월", "4월", "5월", "6월13일"],
-                labels: {
-                    style: {
-                        color: "#26282c",
-                        fontSize: '1.2rem',
-                        fontFamily: 'KBFGText',
+        },
+        yAxis: {
+            endOnTick: false,
+            enabled: false,  // 사용 안함
+            labels: { enabled: false },  // 축 lebel 사용 안함
+            title: { enabled: false }, // 축 title 사용 안함
+            tickWidth: 0,  // 그리드 라인 너비
+            gridLineColor: 'transparsnt',  // 그리드 라인 컬러,
+            plotLines: [{
+                color: '#c7cbd0',
+                width: 1,
+                value: 500000,
+                zIndex: 1,
+                dashStyle: 'dash'
+            }],
+        },
+        plotOptions: {
+            series: {
+                color: '#ffcf53', 
+                lineWidth: 2, 
+                states: {
+                    hover: {
+                        enabled: true,
+                        color:'#ffcf53',
+                        lineWidth: 2,
                     }
-                },   
-                
+                }
             },
-            yAxis: {
-                endOnTick: false,
-                enabled: false,  // 사용 안함
-                labels: { enabled: false },  // 축 lebel 사용 안함
-                title: { enabled: false }, // 축 title 사용 안함
-                tickWidth: 0,  // 그리드 라인 너비
-                gridLineColor: 'transparsnt',  // 그리드 라인 컬러,
-                plotLines: [{
-                    color: '#c7cbd0',
-                    width: 1,
-                    value: 500000,
-                    zIndex: 1,
-                    dashStyle: 'dash'
-                }],
-            },
-            plotOptions: {
-                series: {
-                    color: '#ffcf53', 
-                    lineWidth: 2, 
-                    states: {
-                        hover: {
-                            enabled: true,
-                            color:'#ffcf53',
-                            lineWidth: 2,
-                        }
-                    }
-                },
-            },
-            series: [{
-                marker: lineMarker[1], //패턴적용
-                lineColor: '#ffcf53',
-                color: 'transparent',
-                data: [450000, 230000, 1185210, 350000],
-            }]
-        });
+        },
+        series: [{
+            marker: lineMarker[1], //패턴적용
+            lineColor: '#ffcf53',
+            color: 'transparent',
+            data: [450000, 230000, 1185210, 350000],
+        }]
+    });
 
-        var columnChart02 = new Highcharts.Chart({
-            chart: {
-                renderTo: 'columnChart02', // chart 삽입 target ID
-                type: "column",
-                marginLeft: 0,
-                marginRight: 0,
-                marginTop:0,
-                marginBottom: 25,
-                height: 115,
-                top:0,
-            },
-            legend: { enabled: false },
-            tooltip: {
-                useHTML: true,
-                headerFormat: '<div style="text-align:right;color:#696e76;font-size:1.4rem;">',
-                pointFormat: '<span style="color:#26282c;font-size:1.5rem;" class="num">{point.y:,.0f}</span>원<br>',
-                footerFormat: '</div>',
-                padding: 10,
-                backgroundColor: "#FFF",
-                shadow: true,
-                borderRadius: 4,
-                verticalAlign: 'bottom',
-                borderColor: '#f3f3f3',
+    var columnChart02 = new Highcharts.Chart({
+        chart: {
+            renderTo: 'columnChart02', // chart 삽입 target ID
+            type: "column",
+            marginLeft: 0,
+            marginRight: 0,
+            marginTop:0,
+            marginBottom: 25,
+            height: 115,
+            top:0,
+        },
+        // APP_A11Y 추가//
+			accessibility:{
+            screenReaderSection:{
+                beforeChartFormat:'차트시작', // 차트 시작 msg
+                afterChartFormat:'차트 끝', // 차트 끝 msg
+            },  
+            point:{
+                valueDescriptionFormat:'{xDescription} {point.y}원', // 포인트 리딩                        
+            }
+        },  
+        // //APP_A11Y 추가
+        legend: { enabled: false },
+        tooltip: {
+            useHTML: true,
+            headerFormat: '<div style="text-align:right;color:#696e76;font-size:1.4rem;">',
+            pointFormat: '<span style="color:#26282c;font-size:1.5rem;" class="num">{point.y:,.0f}</span>원<br>',
+            footerFormat: '</div>',
+            padding: 10,
+            backgroundColor: "#FFF",
+            shadow: true,
+            borderRadius: 4,
+            verticalAlign: 'bottom',
+            borderColor: '#f3f3f3',
+            style: {
+                fontWeight: 'normal',
+                fontSize: '1.4rem',
+                fontFamily: "KBFGText",
+            }
+        },
+        xAxis: {
+            type: "category",
+            categories: ["나", "비교그룹"],
+            labels: {
                 style: {
-                    fontWeight: 'normal',
-                    fontSize: '1.4rem',
-                    fontFamily: "KBFGText",
+                    color: "#212328",
+                    fontSize: "1.4rem",
+                    fontFamily: 'KBFGText'
                 }
-            },
-            xAxis: {
-                type: "category",
-                categories: ["나", "비교그룹"],
-                labels: {
-                    style: {
-                        color: "#212328",
-                        fontSize: "1.4rem",
-                        fontFamily: 'KBFGText'
-                    }
-                }
-            },
-            yAxis: {
-                endOnTick: false,
-                enabled: false,  // 사용 안함
-                labels: { enabled: false },  // 축 lebel 사용 안함
-                title: { enabled: false }, // 축 title 사용 안함
-                tickWidth: 0,  // 그리드 라인 너비
-                gridLineColor: 'transparsnt',  // 그리드 라인 컬러 (없음)
-                plotLines: [
-                    {
-                        color: "#c7ccd1",
-                        width: 1,
-                        value: 520000,
-                        zIndex: 2,
-                        dashStyle: 'dash'
-                    },
-                ],
-                plotBands: [{ // 두 데이터 간의 gap 생성
-                    from: 420000,
-                    to: 620000,
-                    zIndex: 1,
-                    color: '#f7f7f8'
-                }],
-
-            },
-            plotOptions: {
-                series: {
-                    color: '#ffd338',//'#ffd338', // 패턴적용
-                    pointWidth: 40,  // 막대그래프 너비
-                    borderRadiusTopLeft: "7px",  // radius 값
-                    borderRadiusTopRight: "7px" // radius 값
-                }
-            },
-            series: [
+            }
+        },
+        yAxis: {
+            endOnTick: false,
+            enabled: false,  // 사용 안함
+            labels: { enabled: false },  // 축 lebel 사용 안함
+            title: { enabled: false }, // 축 title 사용 안함
+            tickWidth: 0,  // 그리드 라인 너비
+            gridLineColor: 'transparsnt',  // 그리드 라인 컬러 (없음)
+            plotLines: [
                 {
-                    data: [420000, 
-                        {
-                            y: 620000,
-                            color: '#c7ccd1',//'#c7ccd1', 패턴적용
-                            
-                        }
-                    ],
-                    pointPlacement: 0,
-                }
-            ]
-        });
-        //하이차트 UI 추가 end
+                    color: "#c7ccd1",
+                    width: 1,
+                    value: 520000,
+                    zIndex: 2,
+                    dashStyle: 'dash'
+                },
+            ],
+            plotBands: [{ // 두 데이터 간의 gap 생성
+                from: 420000,
+                to: 620000,
+                zIndex: 1,
+                color: '#f7f7f8'
+            }],
+
+        },
+        plotOptions: {
+            series: {
+                color: '#ffd338',//'#ffd338', // 패턴적용
+                pointWidth: 40,  // 막대그래프 너비
+                borderRadiusTopLeft: "7px",  // radius 값
+                borderRadiusTopRight: "7px" // radius 값
+            }
+        },
+        series: [
+            {
+                data: [420000, 
+                    {
+                        y: 620000,
+                        color: '#c7ccd1',//'#c7ccd1', 패턴적용
+                        
+                    }
+                ],
+                pointPlacement: 0,
+            }
+        ]
+    });
+    //하이차트 UI 추가 end
 
 </script>
 </body>

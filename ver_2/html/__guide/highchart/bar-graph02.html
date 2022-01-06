@@ -47,6 +47,7 @@
         Highcharts.setOptions({
             title: { text: null },
             subTitle: { text: null },
+            legend: { enabled: false },
             credits: { enabled: false },
             label : { fontFamily: 'KBFGText'},
             credits: { enabled: false },
@@ -87,7 +88,18 @@
                     fontSize: '4vw',
                     fontFamily: "KBFGText",
                 }
-            },
+            },                        				
+            //  APP_A11Y 추가//
+            accessibility:{
+                screenReaderSection:{
+                    beforeChartFormat:'차트시작', // 차트 시작 msg
+                    afterChartFormat:'차트 끝', // 차트 끝 msg
+                },  
+                point:{
+                    valueDescriptionFormat:'{xDescription} {point.y}원', // 포인트 리딩                        
+                }
+            },  
+            // //APP_A11Y 추가
             xAxis: {
                 type: "category",
                 max: 5,
@@ -121,8 +133,8 @@
                     grouping: false,
                     borderWidth: 0,
                     pointWidth: 16,  // 막대그래프 너비
-                    borderRadiusTopLeft: "50%",  // radius 값
-                    borderRadiusTopRight: "50%" // radius 값
+                    // borderRadiusTopLeft: "50%",  // radius 값
+                    // borderRadiusTopRight: "50%" // radius 값
                 }
             },
             series: [

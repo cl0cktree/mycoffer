@@ -874,21 +874,21 @@
         })//2021-09-16 수정
 
         // highchart 공통 options 하이차트 UI 추가 start
-    Highcharts.setOptions({
-        title: { text: null },
-        subTitle: { text: null },
-        credits: { enabled: false },
-        label : { fontFamily: 'KBFGText'},
-        credits: { enabled: false },
-        exporting: { enabled: false },
-        lang: {
-            thousandsSep: ','
-        }
-    });
+        Highcharts.setOptions({
+            title: { text: null },
+            subTitle: { text: null },
+            credits: { enabled: false },
+            label : { fontFamily: 'KBFGText'},
+            credits: { enabled: false },
+            exporting: { enabled: false },
+            lang: {
+                thousandsSep: ','
+            }
+        });
 
 
-    //chart 선언
-    var doubleColumnChart = new Highcharts.Chart({
+        //chart 선언
+        var doubleColumnChart = new Highcharts.Chart({
             chart: {
                 renderTo: 'columnChart01', // chart 삽입 target ID
                 type: "column",
@@ -903,6 +903,17 @@
                     }
                 }
             },
+            // APP_A11Y 추가//
+			accessibility:{
+				screenReaderSection:{
+					beforeChartFormat:'차트시작', // 차트 시작 msg
+					afterChartFormat:'차트 끝', // 차트 끝 msg
+				},  
+				point:{
+					valueDescriptionFormat:'{xDescription} {point.y}%', // 포인트 리딩                        
+				}
+			},  
+			// //APP_A11Y 추가
             legend: { 
                 enabled: false,
 
@@ -985,6 +996,17 @@
                 height: '100%',
                 margin: [0, 0, 0, 0]
             },
+            // APP_A11Y 추가//
+			accessibility:{
+				screenReaderSection:{
+					beforeChartFormat:'예적금 비중 차트시작', // 차트 시작 msg
+					afterChartFormat:'예적금 비중 차트 끝', // 차트 끝 msg
+				},  
+				point:{
+					valueDescriptionFormat:'{xDescription} {point.y}%', // 포인트 리딩                        
+				}
+			},  
+			// //APP_A11Y 추가
             title: {
                 text: '예적금 <br>비중',
                 align: 'center',
@@ -1040,6 +1062,7 @@
                 },]
             }]
         });
+        
         var columnChart02 = new Highcharts.Chart({
             chart: {
                 renderTo: 'columnChart02', // chart 삽입 target ID
@@ -1051,6 +1074,17 @@
                 height: 115,
                 top:0,
             },
+            // APP_A11Y 추가//
+			accessibility:{
+				screenReaderSection:{
+					beforeChartFormat:'차트시작', // 차트 시작 msg
+					afterChartFormat:'차트 끝', // 차트 끝 msg
+				},  
+				point:{
+					valueDescriptionFormat:'{xDescription} {point.y}원', // 포인트 리딩                        
+				}
+			},  
+			// //APP_A11Y 추가
             legend: { enabled: false },
             tooltip: {
                 useHTML: true,

@@ -62,16 +62,31 @@
     <!-- Script -->
     @@include('@@webRoot/html/_include/common-js.html')
     <!-- Add Library (this page only)-->
-    <script src="@@webRoot/static/js/ui.js"></script>
+    <script src="@@webRoot/static/js/ui.js"></script>  
+    <script src="@@webRoot/static/common/lib/highcharts/highcharts-more.js"></script> <!-- 추가 -->
     <!-- Add Script -->
     
     <script>
-        // 첫번째 bar chart 선언
-        var barChart = new Highcharts.Chart({
+
+        // highchart 공통 options 하이차트 UI 추가 start
+		Highcharts.setOptions({
+			title: { text: null },
+			subTitle: { text: null },
+			credits: { enabled: false },
+			label : { fontFamily: 'KBFGText'},
+			credits: { enabled: false },
+			exporting: { enabled: false },
+			lang: {
+				thousandsSep: ','
+			}
+		});
+
+		// 자산비중 나 bar chart 선언
+        var barChart1 = new Highcharts.Chart({
             chart: {
                 renderTo: 'barChart01', // chart 삽입 target ID                
                 type: 'bar',
-                height: '30%',
+                height: 90,
                 margin: [28,0,15,0]
             },
             title: {
@@ -91,9 +106,20 @@
             exporting: {
                 enabled: false
             },
+			//  APP_A11Y 추가//
+			accessibility:{
+				screenReaderSection:{
+					beforeChartFormat:'나 차트시작', // 차트 시작 msg
+					afterChartFormat:'나 차트 끝', // 차트 끝 msg
+				},  
+				point:{
+					valueDescriptionFormat:'{point.name} {point.y}%', // 포인트 리딩                        
+				}
+			},    
+			// //APP_A11Y 추가
             xAxis: {
-                visible: false
-            },
+                visible: false,
+            },	
             yAxis: {
                 visible: false,
                 max : 100, // 총 합이 100%
@@ -114,9 +140,6 @@
                     fontFamily: "KBFGText",
                 }
             },
-            accessibility: {
-                point: { valueSuffix: '%' }
-            },
             plotOptions: {
                 series: {
                     pointWidth: 22,  // 막대그래프 너비
@@ -124,43 +147,54 @@
                     borderWidth: 1,
                 }
             },
-            colors: ['#ffba53','#ff8a71','#ff6391','#ff445a','#d090ee','#bc63e5','#7fa2ed','#55c1e3','#c6cbd0'].reverse(),
+            
+            // APP_A11Y 수정
             series: [{
                 name: '입출금',
-                data: [30,0]
+                data: [30],
+				color: chartBg[1]
             }, {
                 name: '예적금',
-                data: [23,0]
+                data: [23],
+				color: chartBg[2]
             }, {
                 name: '투자',
-                data: [10,0]
+                data: [10],
+				color: chartBg[3]
             }, {
                 name: '보험',
-                data: [10,0]
+                data: [10],
+				color: chartBg[4]
             }, {
                 name: '외화',
-                data: [5,0]
+                data: [5],
+				color: chartBg[5]
             }, {
                 name: '부동산',
-                data: [9,0]
+                data: [9],
+				color: chartBg[6]
             }, {
                 name: '자동차',
-                data: [5,0]
+                data: [5],
+				color: chartBg[7]
             }, {
                 name: '페이',
-                data: [8,0]
+                data: [8],
+				color: chartBg[8]
             }, {
-                name: '대출&middot부채',
-                data: [0,20]
-            }].reverse()
+                name: '대출·부채',
+                data: [{y:0,accessibility:{enabled:false}},20],
+				color: chartBg[33]
+            }].reverse()            
+            // //APP_A11Y 수정
         });
 
-        // 두번째 bar chart 선언
+        // 자산비중 비교그룹 bar chart 선언
         var barChart2 = new Highcharts.Chart({
             chart: {
                 renderTo: 'barChart02', // chart 삽입 target ID                
                 type: 'bar',
-                height: '30%',
+                height: 90,
                 margin: [28,0,15,0]
             },
             title: {
@@ -180,6 +214,17 @@
             exporting: {
                 enabled: false
             },
+			//  APP_A11Y 추가//
+			accessibility:{
+				screenReaderSection:{
+					beforeChartFormat:'비교그룹 차트시작', // 차트 시작 msg
+					afterChartFormat:'비교그룹 차트 끝', // 차트 끝 msg
+				},  
+				point:{
+					valueDescriptionFormat:'{point.name} {point.y}%', // 포인트 리딩                        
+				}
+			},    
+			// //APP_A11Y 추가
             xAxis: {
                 visible: false
             },
@@ -203,9 +248,6 @@
                     fontFamily: "KBFGText",
                 }
             },
-            accessibility: {
-                point: { valueSuffix: '%' }
-            },
             plotOptions: {
                 series: {
                     pointWidth: 22,  // 막대그래프 너비
@@ -213,35 +255,46 @@
                     borderWidth: 1,
                 }
             },
-            colors: ['#ffba53','#ff8a71','#ff6391','#ff445a','#d090ee','#bc63e5','#7fa2ed','#55c1e3','#c6cbd0'].reverse(),
+            // APP_A11Y 수정//
             series: [{
                 name: '입출금',
-                data: [35,0]
+                data: [35],
+				color: chartBg[1]
             }, {
                 name: '예적금',
-                data: [16,0]
+                data: [16],
+				color: chartBg[2]
             }, {
                 name: '투자',
-                data: [12,0]
+                data: [12],
+				color: chartBg[3]
             }, {
                 name: '보험',
-                data: [7,0]
+                data: [7],
+				color: chartBg[4]
             }, {
                 name: '외화',
-                data: [8,0]
+                data: [8],
+				color: chartBg[5]
             }, {
                 name: '부동산',
-                data: [10,0]
+                data: [10],
+				color: chartBg[6]
             }, {
                 name: '자동차',
-                data: [7,0]
+                data: [7],
+				color: chartBg[7]
             }, {
                 name: '페이',
-                data: [5,0]
+                data: [5],
+				color: chartBg[8]
             }, {
-                name: '대출&middot부채',
-                data: [0,25]
+                name: '대출·부채',
+                data: [{y:0,accessibility:{enabled:false}},25],
+				color: chartBg[33]
             }].reverse()
+            
+            // //APP_A11Y 수정
         });
 
     </script>
