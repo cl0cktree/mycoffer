@@ -293,9 +293,16 @@
                 },
                 select: function( event, ui ) {
                     // 선택 했을 때 동작
-                    console.log('select!!')
-                    $( "#companyName" ).val( ui.item.label + ui.item.value );
-
+                    //console.log('select!!')
+                    var currentVal = $( "#companyName" ).val();
+                    var result = ui.item.label + ui.item.value;
+                    console.log(currentVal.toLowerCase(), result.toLowerCase())
+                    
+                    if(currentVal.toLowerCase() == result.toLowerCase()){
+                        $( "#companyName" ).val( ui.item.label + ui.item.value );
+                    }
+                    $( "#companyName" ).siblings('.btn-search').trigger('click');
+                    
                     return false;
                 }
             })

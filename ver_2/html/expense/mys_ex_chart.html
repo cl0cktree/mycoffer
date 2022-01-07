@@ -358,6 +358,15 @@
             label : { fontFamily: 'KBFGText'},
             credits: { enabled: false },
             exporting: { enabled: false },
+            lang:{
+                accessibility:{
+                    series:{
+                        summary:{
+                            line: "{name}, {ix} / {numPoints}.",
+                        }
+                    }
+                }
+            },
         });
 
 // 지출 > 홈
@@ -998,7 +1007,7 @@
                 },
             },
             series: [
-                {
+                {   name: 'My자산',
                     linkedTo: "main",
                     lineColor: lineBg[1],
                     lineWidth: 1,
@@ -1007,6 +1016,7 @@
                     data: [48000000, 30000000, 65000000, 11000000, 41000000, 57000000]
                 },
                 {
+                    name: 'My부채',
                     id: 'main',
                     lineColor: lineBg[2],
                     lineWidth: 1,
@@ -1298,7 +1308,8 @@
                 },
             },
             series: [
-                {
+                {   
+                    name:'현대카드',
                     lineColor: lineBg[1],
                     lineWidth: 1,
                     color: 'transparent',
@@ -1306,6 +1317,7 @@
                     data: [1200000, 600000, 1250000, 380000, 550000, 250000]
                 },
                 {
+                    name:'우리카드',
                     lineColor: lineBg[2],
                     lineWidth: 1,
                     color: 'transparent',
@@ -1313,6 +1325,7 @@
                     data: [1000000, 1050000, 1500000, 1100000, 1250000, 1600000]
                 },
                 {
+                    name:'KB국민카드',
                     lineColor: lineBg[3],
                     lineWidth: 1,
                     color: 'transparent',

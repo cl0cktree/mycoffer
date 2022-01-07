@@ -541,7 +541,7 @@
     </script>
     
     <!-- <script src="@@webRoot/static/common/lib/highcharts/highcharts.js"></script> 2021-12-28 삭제 -->
-    <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script>    
+    <!-- <script src="@@webRoot/static/common/lib/highcharts/rounded-corners.js"></script> APP_A11Y 삭제-->
     <script src="@@webRoot/static/common/lib/highcharts/highcharts-more.js"></script>
 
     <style>
@@ -587,13 +587,14 @@
                 },
                 legend: { enabled: false },                 
                 // APP_A11Y 추가//
+                lang:{accessibility:{series:{summary:{column:'{name} 막대 차트  {numSeries}개중 {ix}번째 {numPoints}개의 데이터 포함'}}}}, //{name}, bar series {ix} of {numSeries} with {numPoints} {#plural(numPoints, bars, bar)}
                 accessibility:{
                     screenReaderSection:{
                         beforeChartFormat:'차트시작', // 차트 시작 msg
                         afterChartFormat:'차트 끝', // 차트 끝 msg
-                    },  
+                    }, 
                     point:{
-                        valueDescriptionFormat:'{xDescription}월 {point.y}원', // 포인트 리딩                        
+                        valueDescriptionFormat:'{xDescription} {point.y}원', // 포인트 리딩                        
                     }
                 },  
                 // //APP_A11Y 추가
@@ -663,7 +664,7 @@
                     name:'나', // APP_A11Y 추가
                     color: chartBg[01], // APP_A11Y 수정
                     pointPlacement: -0.12,
-                    data: [1000, 2000, 3000, 5000, 1500, 8000]
+                    data: [1000, 2000, 3000, 5000, 1500, 8000],
                 },{
                     name:'비교그룹', // APP_A11Y 추가
                     color: chartBg[33], // APP_A11Y 수정

@@ -539,7 +539,17 @@
         credits: { enabled: false },
         exporting: { enabled: false },
         lang: {
-            thousandsSep: ','
+            thousandsSep: ',',
+            // //APP_A11Y 추가
+            accessibility:{
+                series:{
+                    summary:{
+                        bar: "{name}, {ix} / {numSeries}.",
+                        column: "{name}",
+                    }
+                }
+            }
+            // //APP_A11Y 추가
         }
     });
 
@@ -647,10 +657,11 @@
                     id: "main",
                     name: "출금",
                     color: chartBg[2],//'#ffab53', 패턴적용
-                    dataSorting: {
-                        enabled: true,
-                        matchByName: true
-                    },
+                    // 순차적용을 위해 삭제
+                    // dataSorting: {
+                    //     enabled: true,
+                    //     matchByName: true
+                    // },
                     data: [3000000, 550000, 40000, 2000, 990000, 3500]
                     
                 }
