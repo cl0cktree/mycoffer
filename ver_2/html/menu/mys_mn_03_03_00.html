@@ -46,6 +46,14 @@
                                 <span class="link-arrow">바로가기</span>
                             </a>
                         </li>
+                        <!-- 수정 : 2022-01-11 // -->
+                        <li>
+                            <a href="javascript:;" data-action="creditInfo" title="새창열림">
+                                <strong class="tit">신용정보 활용체제</strong>
+                                <span class="link-arrow">바로가기</span>
+                            </a>
+                        </li>
+                        <!-- // 수정 : 2022-01-11 -->
                     </ul>
                 </section>
 
@@ -75,6 +83,19 @@
                     type: "confirm",
                 });
             });
+
+            //수정 : 2022-01-11
+            $('a[data-action=creditInfo]').on('click',function(){
+                modalPopup({
+                    title: "",
+                    message: "신용정보 활용체제 웹페이지로 이동하시겠습니까?",
+                    type: "confirm",
+                    onOk: function(){
+                        //아래 주소 외부링크
+                        //https://obank.kbstar.com/quics?page=C067922&QViewPC=N&viewMode=
+                    }
+                });
+            });            
         });
     </script>
 
