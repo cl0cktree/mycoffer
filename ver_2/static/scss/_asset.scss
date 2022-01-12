@@ -1791,8 +1791,11 @@ div.percentage-graph.yellow .graph-area > span{background-color:$color-yellow-ne
 .ios .license-list.aos{display:none;}
 .license-list{margin-top:4rem;}
 .license-list .link-arrow-after li:after{top:50%;}
+.license-list .link{word-break: break-all;}
+.license-list ul li{padding-right:0;} //오픈소스 라이선스 터치 영역 확대
+.license-list ul li:after{z-index:-1;} //오픈소스 라이선스 터치 영역 확대
 .license-list li + li{margin-top:2.4rem;padding-top:2.4rem;border-top:1px solid $kb-ui06;}
-.license-list li a{display:block;}
+.license-list li a{display:block;padding-right:3rem;} //오픈소스 라이선스 터치 영역 확대
 .license-list li strong{display:block;@include text($text02, bold);}
 .license-list li small{display:block;@include text($text03, normal);color:$kb-ui06;}
 .license-list li .link{display:block;@include text(1.2rem, normal);color:$color-blue;margin-top:.4rem;text-decoration:underline;}

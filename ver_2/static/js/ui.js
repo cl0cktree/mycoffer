@@ -1970,6 +1970,11 @@ if($recommendEmployees.length){
     });
 }
 
+//직원검색
+$('.checkbox-group[data-type="radio"]').on('change','input',function(){
+    $(this).parent().siblings().find('input').prop('checked',false);
+});
+
 
 // swiper
 $(".js-swiper").each(function() {
@@ -2555,6 +2560,8 @@ var gfn_toastMsg = {
     }
 };
 //console.log("ui.js");
+
+
 
 //앱접근성
 $('.ios').find('hr').attr('aria-hidden',true);
