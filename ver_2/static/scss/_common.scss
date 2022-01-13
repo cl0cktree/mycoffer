@@ -534,7 +534,7 @@
 // .mydata-kbinfo .no-data{margin-top:10rem;} // 노데이터가이드적용 2021-11-22
 .mydata-kbinfo .mydata-kbinfo-nodata p{@include text;margin-top:20px;}
 .mydata-kbinfo .kb-sec.bg-gray:first-of-type + .kb-sec.line-b,
-.mydata-kbinfo .kb-sec.line-b{margin-top:0;border-bottom:1rem solid $kb-ui10;}
+// .mydata-kbinfo .kb-sec.line-b{margin-top:0;border-bottom:1rem solid $kb-ui10;} // line-b 삭제
 .mydata-kbinfo .kb-sec.line-b [class^=btn-]{margin:4rem 0 4.8rem;}
 .mydata-kbinfo .mydata-kbinfo-summary-list li{display:flex;justify-content:space-between;align-items:center;padding-top:4.4rem;padding-bottom:1.5rem;border-bottom:1px solid $kb-ui09;}
 .mydata-kbinfo .mydata-kbinfo-summary-list li .tit{@include text($size:$text01, $line-height:1, $weight:bold);} // 원복 2021-12-07
@@ -1513,6 +1513,10 @@ ol[data-style=number] li::before{content:counter(list-number)'.';margin-right:0.
             color:$kb-ui02;
         }
     }
+    // 패딩수정
+    .mydata-kbinfo-summary-list02 .mydata-kbinfo-summary-list li:first-child{
+        padding-top:0;
+    }
 }
 
 // 바텀시트
@@ -1553,6 +1557,7 @@ ol[data-style=number] li::before{content:counter(list-number)'.';margin-right:0.
     }
     .mydata-result-wrap .result-list{
         li{vertical-align:bottom;word-break:break-word;} // 수정 2022-01-03
+    
     }
 }
 // 바텀시트 헤더

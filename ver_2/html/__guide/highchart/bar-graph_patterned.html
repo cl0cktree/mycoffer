@@ -166,7 +166,18 @@
                         }
                     }
                 ]
-            },
+            },                        
+            // APP_A11Y_02 추가//
+            accessibility:{
+                screenReaderSection:{
+                    beforeChartFormat:'차트시작', // 차트 시작 msg
+                    afterChartFormat:'차트 끝', // 차트 끝 msg
+                },  
+                point:{
+                    valueDescriptionFormat:'{xDescription} {point.y}원', // 포인트 리딩                        
+                }
+            },  
+            // //APP_A11Y_02 추가    
             plotOptions: {
                 series: {
                     color: '#c7ccd1', // 기본색상
@@ -235,9 +246,23 @@
                     fontFamily: "KBFGText",
                 }
             },
+            // APP_A11Y_02 삭제
+            // accessibility: {
+            //     point: { valueSuffix: '%' }
+            // },           
+             
+            
+            //  APP_A11Y_02 추가//
             accessibility: {
-                point: { valueSuffix: '%' }
+                screenReaderSection: {
+                    beforeChartFormat: '비교그룹 차트시작', // 차트 시작 msg
+                    afterChartFormat: '비교그룹 차트 끝', // 차트 끝 msg
+                },
+                point: {
+                    valueDescriptionFormat: '{point.name} {point.y}%', // 포인트 리딩                        
+                }
             },
+            // //APP_A11Y_02 추가 
             plotOptions: {
                 series: {
                     pointWidth: 22,  // 막대그래프 너비
@@ -245,35 +270,51 @@
                     borderWidth: 1,
                 }
             },
-            colors: [chartBg[3],chartBg[4],chartBg[5],chartBg[6],chartBg[7],chartBg[8],chartBg[9],chartBg[10],chartBg[12]].reverse(),
+            // APP_A11Y_02 수정//
             series: [{
                 name: '입출금',
-                data: [35,0]
+                data: [35],
+                color: chartBg[1]
             }, {
                 name: '예적금',
-                data: [16,0]
+                data: [16],
+                color: chartBg[2]
             }, {
                 name: '투자',
-                data: [12,0]
+                data: [12],
+                color: chartBg[3]
             }, {
                 name: '보험',
-                data: [7,0]
+                data: [7],
+                color: chartBg[4]
             }, {
                 name: '외화',
-                data: [8,0]
+                data: [8],
+                color: chartBg[5]
             }, {
                 name: '부동산',
-                data: [10,0]
+                data: [10],
+                color: chartBg[6]
             }, {
                 name: '자동차',
-                data: [7,0]
+                data: [7],
+                color: chartBg[7]
             }, {
                 name: '페이',
-                data: [5,0]
+                data: [5],
+                color: chartBg[8]
             }, {
-                name: '대출&middot부채',
-                data: [0,25]
+                name: '대출·부채',
+                data: [{
+                    y: 0,
+                    accessibility: {
+                        enabled: false
+                    }
+                }, 25],
+                color: chartBg[33]
             }].reverse()
+
+            // //APP_A11Y_02 수정
         });
     
         // donut chart 선언
@@ -290,6 +331,17 @@
                 verticalAlign: 'middle',
                 style: {fontSize:'4vw',fontFamily: "KBFGText"}
             },
+            // APP_A11Y_02 추가//
+            accessibility: {
+                screenReaderSection: {
+                    beforeChartFormat: '도넛 차트시작', // 차트 시작 msg
+                    afterChartFormat: '도넛 차트 끝', // 차트 끝 msg
+                },
+                point: {
+                    valueDescriptionFormat: '{xDescription} {point.y}%', // 포인트 리딩                        
+                }
+            },
+            // //APP_A11Y_02 추가      
             tooltip: {
                 formatter: function () { 
                     return this.y + "%"
@@ -369,7 +421,18 @@
                     fontFamily: "KBFGText",
                 },
                 crosshairs: true,
-            },
+            },                        
+            // APP_A11Y_02 추가//
+            accessibility:{
+                screenReaderSection:{
+                    beforeChartFormat:'차트시작', // 차트 시작 msg
+                    afterChartFormat:'차트 끝', // 차트 끝 msg
+                },  
+                point:{
+                    valueDescriptionFormat:'{xDescription} {name} {point.y}원', // 포인트 리딩                        
+                }
+            },  
+            // //APP_A11Y_02 추가 
             xAxis: {
                 type: "category",
                 categories: ["3월", "4월", "5월", "6.13"],
