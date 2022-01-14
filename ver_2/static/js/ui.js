@@ -291,8 +291,6 @@ var gfn_layered = {
 
             if ($selectedLayer.length === 0) return;
 
-            $selectedLayer.attr('tabindex','0');
-
             // if(dim){
             //     //스크롤 원위치
             //     $selectedLayer.find('.popup_contents, .botttom-sheet_contents, .modal_contents').scrollTop(0);
@@ -1679,9 +1677,9 @@ if($('.btn-question').length){
 }
 if($('.tooltip').length){
     $('.tooltip').on('click','.btn-close',function(){
+        $(this).parent('.tooltip').prev('.btn-question').focus();
         $(this).parent('.tooltip').fadeOut(200, function(){
             $(this).removeAttr('tabindex');
-            $(this).prev('.btn-question').focus();
         });
     });
 }
