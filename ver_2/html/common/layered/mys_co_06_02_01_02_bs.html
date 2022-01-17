@@ -6,73 +6,78 @@
     <div class="bottom-sheet_contents mydata-connection-info">
         <!-- 바텀 시트 내용 -->
         <section class="kb-sec data-collection-error">
-            <h3 class="h4">KB국민은행 수집</h3>
-            <div class="error-lists">
-                <dl class="accordion">
-                    <dt>
-                        <div>오류수집내용</div>
-                        <button type="button" class="accordion-trigger"></button>
-                    </dt>
-                    <dd>
-                        <p class="error-text">오류메시지를 보여줍니다. 내부 스크롤 없이 전체 오류내용을 보여줍니다.</p>
-                        <span class="error-code">[오류코드]</span>
-                    </dd>
-                </dl>
+            <!-- 개발 요청한 형식으로 수정 // -->
+            <div id="kbSection">
+                <h3 class="h4">KB국민은행 수집</h3>
+                <div class="error-lists">
+                    <dl class="accordion">
+                        <dt>
+                            <div>오류수집내용</div>
+                            <button type="button" class="accordion-trigger"></button>
+                        </dt>
+                        <dd>
+                            <p class="error-text">오류메시지를 보여줍니다. 내부 스크롤 없이 전체 오류내용을 보여줍니다.</p>
+                            <span class="error-code">[오류코드]</span>
+                        </dd>
+                    </dl>
+                </div>
+            </div>            
+            <div id="mydataSection">
+                <h3 class="h4">마이데이터 기관 수집</h3>
+                <div class="error-lists">
+                    <dl class="accordion">
+                        <dt>
+                            <div>신한은행</div>
+                            <button type="button" class="accordion-trigger"></button>
+                        </dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <div class="error-tit">은행-001(예적금목록)</div>
+                                    <p class="error-text">API를 통해서 전달된 오류내용을 보여줍니다.</p>
+                                    <span class="error-code">[오류코드]</span>
+                                    <p class="error-text">국민은행에서 등록한 오류내용이 있을 경우 보여줍니다.</p>
+                                </li>
+                                <li>
+                                    <div class="error-tit">은행-004(거래내역)</div>
+                                    <p class="error-text">API를 통해서 전달된 오류내용을 보여줍니다.</p>
+                                    <span class="error-code">[오류코드]</span>
+                                </li>
+                                <li>
+                                    <div class="error-tit">은행-006(대출내역)</div>
+                                    <p class="error-text">API를 통해서 전달된 오류내용을 보여줍니다.</p>
+                                    <span class="error-code">[오류코드]</span>
+                                </li>
+                            </ul>
+                        </dd>
+                        <dt>
+                            <div>우리은행</div>
+                            <button type="button" class="accordion-trigger"></button>
+                        </dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <div class="error-tit">은행-001(예적금목록)</div>
+                                    <p class="error-text">API를 통해서 전달된 오류내용을 보여줍니다.</p>
+                                    <span class="error-code">[오류코드]</span>
+                                    <p class="error-text">국민은행에서 등록한 오류내용이 있을 경우 보여줍니다.</p>
+                                </li>
+                                <li>
+                                    <div class="li-tit">은행-004(거래내역)</div>
+                                    <p class="error-text">API를 통해서 전달된 오류내용을 보여줍니다.</p>
+                                    <span class="error-code">[오류코드]</span>
+                                </li>
+                                <li>
+                                    <div class="li-tit">은행-006(대출내역)</div>
+                                    <p class="error-text">API를 통해서 전달된 오류내용을 보여줍니다.</p>
+                                    <span class="error-code">[오류코드]</span>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
             </div>
-
-            <h3 class="h4">마이데이터 기관 수집</h3>
-            <div class="error-lists">
-                <dl class="accordion">
-                    <dt>
-                        <div>신한은행</div>
-                        <button type="button" class="accordion-trigger"></button>
-                    </dt>
-                    <dd>
-                        <ul>
-                            <li>
-                                <div class="error-tit">은행-001(예적금목록)</div>
-                                <p class="error-text">API를 통해서 전달된 오류내용을 보여줍니다.</p>
-                                <span class="error-code">[오류코드]</span>
-                                <p class="error-text">국민은행에서 등록한 오류내용이 있을 경우 보여줍니다.</p>
-                            </li>
-                            <li>
-                                <div class="error-tit">은행-004(거래내역)</div>
-                                <p class="error-text">API를 통해서 전달된 오류내용을 보여줍니다.</p>
-                                <span class="error-code">[오류코드]</span>
-                            </li>
-                            <li>
-                                <div class="error-tit">은행-006(대출내역)</div>
-                                <p class="error-text">API를 통해서 전달된 오류내용을 보여줍니다.</p>
-                                <span class="error-code">[오류코드]</span>
-                            </li>
-                        </ul>
-                    </dd>
-                    <dt>
-                        <div>우리은행</div>
-                        <button type="button" class="accordion-trigger"></button>
-                    </dt>
-                    <dd>
-                        <ul>
-                            <li>
-                                <div class="error-tit">은행-001(예적금목록)</div>
-                                <p class="error-text">API를 통해서 전달된 오류내용을 보여줍니다.</p>
-                                <span class="error-code">[오류코드]</span>
-                                <p class="error-text">국민은행에서 등록한 오류내용이 있을 경우 보여줍니다.</p>
-                            </li>
-                            <li>
-                                <div class="li-tit">은행-004(거래내역)</div>
-                                <p class="error-text">API를 통해서 전달된 오류내용을 보여줍니다.</p>
-                                <span class="error-code">[오류코드]</span>
-                            </li>
-                            <li>
-                                <div class="li-tit">은행-006(대출내역)</div>
-                                <p class="error-text">API를 통해서 전달된 오류내용을 보여줍니다.</p>
-                                <span class="error-code">[오류코드]</span>
-                            </li>
-                        </ul>
-                    </dd>
-                </dl>
-            </div>
+            <!-- // 개발 요청한 형식으로 수정 -->
         </section>
     </div>
     <div class="bottom-sheet_buttons">

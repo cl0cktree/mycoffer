@@ -2563,7 +2563,7 @@ var gfn_toastMsg = {
 
 //앱접근성
 $('.ios').find('hr').attr('aria-hidden',true);
-$('.is-hidden:not("label")').attr('aria-hidden',true);
+//$('.is-hidden:not("label")').attr('aria-hidden',true);
 
 //A11Y
 $('.tab_button').attr({'role':'tablist'});
