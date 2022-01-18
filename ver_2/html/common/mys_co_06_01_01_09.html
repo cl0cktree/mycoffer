@@ -306,9 +306,8 @@
                     return false;
                 }
             })
-            .autocomplete( "instance" )._renderItem = function( ul, item ) {
-                
-                return $( "<li>" ).append( "<span>" + item.label + "</span>" + item.value ).appendTo(ul);
+            .autocomplete( "instance" )._renderItem = function( ul, item ) {                
+                return $( "<li role='button'>" ).append( "<span>" + item.label + "</span>" + item.value ).appendTo(ul); //APP_A11Y_02
             };
         } );
 

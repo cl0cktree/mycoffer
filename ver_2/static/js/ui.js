@@ -533,7 +533,7 @@ $('.form-text')
         $('.kb-form').removeClass('is-active').find('.kb-form_inner').removeClass('is-focused');
 
         if($(this).data('call-layered') != '' && $(this).data('call-layered') != undefined){
-            gfn_layered.open($(this).data('call-layered'));
+            if(!$(this).hasClass('wa-focus')) gfn_layered.open($(this).data('call-layered'));   //layer 닫히면서 focus back 됐을때 동작하지 않게끔 수정
         }else{
             setTimeout(function(){
                 $thisForm.addClass('is-active').find('.kb-form_inner').addClass('is-focused');
