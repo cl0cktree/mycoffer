@@ -167,15 +167,50 @@ function gfn_NumberToKorean(number, unit){
     return result ;
 }
 
+//APP_A11Y_02 (LAYER 간 포커스 이동)
+var priorityLayerMax = 0;
+var priorityLayerArr = [];
+var priorityLayer = {
+    add : function(priority, prev){
+        priorityLayer.remove(prev);
+        priorityLayerArr.push(priority);        
+        //console.log('remove 실행 값:' , prev);
+        //console.log('add 실행 후:' , priorityLayerArr);
+    },
+    remove : function(priority){
+        if(priority != undefined && priority != null){
+            for(let i = 0; i < priorityLayerArr.length; i++) {            
+                if(priorityLayerArr[i] == priority)  {
+                    priorityLayerArr.splice(i, 1);
+                    i--;
+                }
+            }
+            priorityLayerMax = priorityLayerArr.reduce( function (previous, current) { 
+                return previous > current ? previous:current;
+            });
+            //console.log('remove 실행 후:', priorityLayerArr, priorityLayerMax);
+        }
+    },
+    focus : function(){
+        $('[data-layered-priority = ' + priorityLayerMax + ']').find('.wa-layered-focus').focus();
+    }    
+}
 
 
 //WA focus
 var focusA11Y = {
-    back : function(){
-        $('.wa-focus').focus();
+    back : function(priority){
+        var activatedLayer = $('[data-layered-name].is-active');
+        var activatedLayerSize = activatedLayer.length;
+        if(activatedLayerSize > 0){
+            priorityLayer.remove(priority);
+            priorityLayer.focus();
+
+        }else{
+            $('.wa-focus').focus();
+        }
     }
 };
-
 
 //Foucs Trap (for WA)
 var focusTrap = function($target) {
@@ -319,9 +354,11 @@ var gfn_layered = {
             //level
             $selectedLayer.addClass('is-active').css('z-index', zLv);
 
-            //a11y
-            $selectedLayer.attr('tabindex','0');
+            //APP_A11Y02
+            var prev = $selectedLayer.attr('data-layered-priority');
+            $selectedLayer.attr({'tabindex':'0', 'data-layered-priority' : zLv});
             $selectedLayer.focus();
+            priorityLayer.add(zLv, prev);
             //focusTrap($selectedLayer);  //focus loop in layered
             // $selectedLayer.find(':focusable').eq(0).focus();
 
@@ -356,32 +393,34 @@ var gfn_layered = {
         duration = duration == undefined ? 200 : duration;
         if(name != '' && name != undefined){
             var $selectedLayer = $('div[data-layered-name=' + name + ']');
+            var priority = $selectedLayer.attr('data-layered-priority');
             gfn_body.hold(false);
             //$selectedLayer.removeClass('is-active is-expanded').removeAttr('style');
             if($selectedLayer.hasClass('popup') || $selectedLayer.hasClass('floating-banner')){
-                $selectedLayer.removeClass('is-active').removeAttr('style');
+                $selectedLayer.removeClass('is-active').removeAttr('style','tabindex','data-layered-priority');
                 gfn_dim.hide($selectedLayer.prev('.dim'), duration);
+                focusA11Y.back(priority);
             }else if($selectedLayer.hasClass('bottom-sheet')){
                 //$selectedLayer.removeClass('is-active is-expanded').removeAttr('style');
                 $selectedLayer.addClass('bs-out');
                 $selectedLayer.one('animationend',function(){
-                    if($selectedLayer.hasClass('bs-out')) $selectedLayer.removeClass('is-active is-expanded bs-out').removeAttr('style');
+                    if($selectedLayer.hasClass('bs-out')) $selectedLayer.removeClass('is-active is-expanded bs-out').removeAttr('style','tabindex','data-layered-priority');
                     gfn_dim.hide($selectedLayer.prev('.dim'), duration);
+                    focusA11Y.back(priority);
                 });
             }else if($selectedLayer.hasClass('modal')){
                 $selectedLayer.addClass('modal-out');
                 $selectedLayer.one('animationend',function(){
-                    if($selectedLayer.hasClass('modal-out')) $selectedLayer.removeClass('is-active is-expanded modal-out').removeAttr('style');
+                    if($selectedLayer.hasClass('modal-out')) $selectedLayer.removeClass('is-active is-expanded modal-out').removeAttr('style','tabindex','data-layered-priority');
                     gfn_dim.hide($selectedLayer.prev('.dim'), duration);
+                    focusA11Y.back(priority);
                 });
             }
         }else{
             gfn_dim.hide();
-            $layered.children('div').removeClass('is-active is-expanded').removeAttr('style');
+            $layered.children('div').removeClass('is-active is-expanded').removeAttr('style','tabindex','data-layered-priority');
+            focusA11Y.back(priority);
         }
-
-        focusA11Y.back();
-
     }
 };
 //markup 상 is-active 가 있으면 호출
@@ -923,14 +962,10 @@ $body.on('focusin',function(e){
     if(condition&&condition02){
         $('.wa-focus').removeClass('wa-focus');
         $(e.target).addClass('wa-focus');
-        //talkback focus 이동되지 않음
-        // $('label.wa-focus').removeAttr('tabindex');
-        // if(!$(e.target).is('input:checkbox') && !$(e.target).is('input:radio')){
-        //     $(e.target).addClass('wa-focus');
-        // }else{
-        //     $(e.target).next('label').attr('tabindex','0');
-        //     $(e.target).next('label').addClass('wa-focus');
-        // }
+    }else{//for layered (APP_A11Y_02)
+        //wa-layered-focus
+        $(e.target).closest('[data-layered-name]').removeClass('wa-layered-focus').find('.wa-layered-focus').removeClass('wa-layered-focus');
+        $(e.target).addClass('wa-layered-focus');
     }
 });
 
@@ -1201,49 +1236,58 @@ if($('.js-slider').length){
 }
 
 //accordion
-if($('.accordion').length){
-    $('.accordion').each(function(i){
-        var accordionNum = i;
-        $(this).children().each(function(i){
-            var accordionEach = i;
-            var tagName = this.tagName.toLowerCase();
-            var $trigger = $(this).find('.accordion-trigger');
-            if(tagName == 'dt'){
-                $trigger.attr('id','accordion' + accordionNum + accordionEach);
-                !$(this).hasClass('is-active') ? $trigger.attr('aria-expanded', false) : $trigger.attr('aria-expanded',true)
-            }else if(tagName == 'dd'){
-                $(this).attr('aria-labelledby','accordion' + accordionNum + accordionEach);
+var gfn_accordion = {
+    ready : function(){
+        $('.accordion').each(function(i){
+            if(!$(this).hasClass('is-ready')){
+                var accordionNum = i;            
+                $(this).children().each(function(i){
+                    var accordionEach = i;
+                    var tagName = this.tagName.toLowerCase();
+                    var $trigger = $(this).find('.accordion-trigger');
+                    if(tagName == 'dt'){                
+                        $trigger.attr({'aria-controls': 'sect' + accordionNum + accordionEach, 'id': 'accordion' + accordionNum + accordionEach})
+                        !$(this).hasClass('is-active') ? $trigger.attr('aria-expanded', false) : $trigger.attr('aria-expanded',true)
+                    }else if(tagName == 'dd'){
+                        accordionEach = accordionEach - 1;
+                        $(this).attr({'aria-labelledby': 'accordion' + accordionNum + accordionEach, 'id': 'sect' + accordionNum + accordionEach, 'role' : 'region'})
+                    }
+                });
+                $(this).addClass('is-ready');
+                gfn_accordion.bind($(this));
             }
         });
-    })
-    $('.accordion')
-    .on('click','.accordion-trigger',function(e){
-        e.stopPropagation();
-        var $btn = $(this);
-        var $dt = $(this).parent('dt');
-        if(!$dt.hasClass('is-active')){
-            $btn.attr({'aria-expanded':true,'title':'선택됨'});
-            $dt.addClass('is-active').siblings('dt').removeClass('is-active').find('.accordion-trigger').attr({'aria-expanded':'false','title':''});
-        }else{
-            $btn.attr({'aria-expanded':'false','title':''});
-            $dt.removeClass('is-active');
-        }
-    })
-    .on('click','a[href]',function(e){
-        if($(this).attr('href').indexOf('#') >= 0 || $(this).attr('href') != '') e.stopPropagation();
-    })
-    .on('click','dt',function(e){
-        e.stopPropagation();
-        $(this).find('.accordion-trigger').trigger('click');
-        if(e.target.nodeName.toLowerCase() == 'label') return;
-    });
-}
+    },
+    bind : function($this){
+        $this
+        .on('click','.accordion-trigger',function(e){
+            e.stopPropagation();
+            var $btn = $(this);
+            var $dt = $(this).parent('dt');
+            if(!$dt.hasClass('is-active')){
+                $btn.attr({'aria-expanded':true,'title':'선택됨'});
+                $dt.addClass('is-active').siblings('dt').removeClass('is-active').find('.accordion-trigger').attr({'aria-expanded':'false','title':''});
+            }else{
+                $btn.attr({'aria-expanded':'false','title':''});
+                $dt.removeClass('is-active');
+            }
+        })
+        .on('click','a[href]',function(e){
+            if($(this).attr('href').indexOf('#') >= 0 || $(this).attr('href') != '') e.stopPropagation();
+        })
+        .on('click','dt',function(e){
+            e.stopPropagation();
+            $(this).find('.accordion-trigger').trigger('click');
+            if(e.target.nodeName.toLowerCase() == 'label') return;
+        });
+    }
+};
+if($('.accordion').length) gfn_accordion.ready();
 
 //btn-more-view
 $('body').on('click','.more-view-box .btn-more-view',function(){
-    $(this).closest('.more-view-box').toggleClass('is-show');
-})
-
+    $(this).closest('.more-view-box').toggleClass('is-show').find('[data-view-option=hide]').focus();
+});
 
 
 //폼 수정 및 추가
@@ -1311,7 +1355,7 @@ if($('.add-form-box').length){
 
 // 알려드립니다 (토글)
 if($('.toggle-notice').length){
-    $(".toggle-notice").each(function(){
+    $(".toggle-notice").each(function(i){
         var $this = $(this);
         var $button = $this.find('.header button');
         var $list = $this.find('.notice-list');
@@ -1319,14 +1363,21 @@ if($('.toggle-notice').length){
             if ($this.hasClass('is-closed')) {
                 $this.removeClass('is-closed');
                 $list.slideDown(300);
+                $button.attr({'aria-expend': true});
             } else {
                 $this.addClass('is-closed');
                 $list.slideUp(300);
+                $button.attr({'aria-expend': false});
             }
         });
+        $button.attr({'aria-controls': 'sect' + i, 'id': 'toggleNotice' + i})
+        $list.attr({'aria-labelledby': 'toggleNotice' + i, 'id': 'sect' + i, 'role' : 'region'})
         // default가 is-closed인 경우
         if ($this.hasClass('is-closed')) {
             $list.slideUp(0);
+            $button.attr({'aria-expend': false});
+        }else{
+            $button.attr({'aria-expend': true});
         }
     });
 }
@@ -2564,6 +2615,7 @@ var gfn_toastMsg = {
 //앱접근성
 $('.ios').find('hr').attr('aria-hidden',true);
 //$('.is-hidden:not("label")').attr('aria-hidden',true);
+$('h1.is-hidden, h2.is-hidden, h3.is-hidden, h4.is-hidden, h5.is-hidden, h6.is-hidden').attr('aria-hidden',true);
 
 //A11Y
 $('.tab_button').attr({'role':'tablist'});

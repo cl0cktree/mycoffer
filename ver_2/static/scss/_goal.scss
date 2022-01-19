@@ -394,7 +394,8 @@
 .goals-state .period-con{border-bottom:1px solid transparent;padding:2.4rem 0 0;text-align:right;} // 검색날짜영역 추가
 .goals-state .period-con .num{font-size:1.5rem;} // 검색날짜영역 추가
 .goals-state ul{margin-top:2.4rem;}
-.goals-state li{position:relative;display:flex;justify-content:space-between;padding:1.4rem 1.5rem 1.4rem 5.5rem;border:1px solid $kb-ui08;border-radius:2px;font-size:14px;line-height:22px;border-radius:.8rem;}
+.goals-state li{position:relative;}
+.goals-state li > a{display:flex;justify-content:space-between;padding:1.4rem 1.5rem 1.4rem 5.5rem;border:1px solid $kb-ui08;border-radius:2px;font-size:14px;line-height:22px;border-radius:.8rem;}
 .goals-state li + li{margin-top:10px;}
 .goals-state li .info > i{position:absolute;top:50%;left:1.5rem;transform:translateY(-50%);}
 .goals-state li .info{width:calc(100% - 7rem);}
@@ -406,7 +407,6 @@
 .goals-state li .stamp.type2{margin-right:15px;}
 .goals-state li .stamp.type2:after{content:'';width:24px;height:24px;display:block;background:url(../images/goal/go_detail_24.png) no-repeat;background-size:contain;position:absolute;right:-30px;top:0;}
 .goals-state .goals-desc button.btn-text u{font-size:14px;color:$kb-ui04;}
-.goals-state li a.btn-trans{position:absolute;width:100%;height:100%;top:0;left:0;z-index:1;}
 .goals-state .goals-desc .info-desc{@include text($size:$text03,$weight:normal);}
 .goals-state + .mt32{margin-top:2.4rem;} // 더보기 버튼 간격 수정
 
@@ -420,6 +420,7 @@
 .icon-sel:not(ul) .icon-type[class*=form-checkbox]{height:90px;border:1px solid #e3e6e8;border-radius:.6rem;width:calc(33% - 8px);margin:5px 0;overflow:hidden;} // border-radius 수정
 .icon-sel:not(ul) .icon-type[class*=form-checkbox]:nth-child(3n-1){margin-left:12px;margin-right:12px;}
 .icon-sel:not(ul) .icon-type[class*=form-checkbox]{overflow:visible;}
+.icon-sel .icon-type input{width:100%;height:100%;}
 .icon-sel .icon-type label{padding-left:0;width:100%;height:100%;position:relative;background:#f7f7f8;border-radius:.6rem;} // border-radius 수정
 .icon-sel .icon-type label i{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:6rem;height:auto;}
 .icon-sel .icon-type input + label span.ir{position:absolute;color:transparent;font-size:.1rem;width:.1rem;height:.1rem;opacity:0;} // APP_A11Y 추가

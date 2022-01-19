@@ -10,6 +10,7 @@
             <div id="kbSection">
                 <h3 class="h4">KB국민은행 수집</h3>
                 <div class="error-lists">
+                    <!-- 2022-01-18 개선건 적용 : 아코디언 제거
                     <dl class="accordion">
                         <dt>
                             <div>오류수집내용</div>
@@ -19,7 +20,12 @@
                             <p class="error-text">오류메시지를 보여줍니다. 내부 스크롤 없이 전체 오류내용을 보여줍니다.</p>
                             <span class="error-code">[오류코드]</span>
                         </dd>
-                    </dl>
+                    </dl> // -->
+                    <!-- 2022-01-18 개선건 적용 : .error-lists__conts 추가 시작 -->
+                    <div class="error-lists__conts">
+                        <p class="error-text">은행정보, 통신정보 수집시 오류가 발생하였습니다. </p>
+                    </div>
+                    <!-- 2022-01-18 개선건 적용 : .error-lists__conts 추가 끝 // -->
                 </div>
             </div>            
             <div id="mydataSection">
@@ -33,22 +39,40 @@
                         <dd>
                             <ul>
                                 <li>
-                                    <div class="error-tit">은행-001(예적금목록)</div>
-                                    <p class="error-text">API를 통해서 전달된 오류내용을 보여줍니다.</p>
+                                    <div class="error-tit">
+                                        은행-001(예적금목록)
+                                        <span class="error-code">[오류코드 : 4001]</span> <!-- 2022-01-18 개선건 적용 : .error-code 위치 변경 // -->
+                                    </div>
+                                    <!-- 2022-01-18 개선건 적용 : 기존거 삭제
+                                        <p class="error-text">API를 통해서 전달된 오류내용을 보여줍니다.</p>
                                     <span class="error-code">[오류코드]</span>
-                                    <p class="error-text">국민은행에서 등록한 오류내용이 있을 경우 보여줍니다.</p>
+                                    <p class="error-text">국민은행에서 등록한 오류내용이 있을 경우 보여줍니다.</p> 
+                                     // -->
                                 </li>
                                 <li>
-                                    <div class="error-tit">은행-004(거래내역)</div>
+                                    <div class="error-tit">
+                                        은행-004(거래내역)
+                                        <span class="error-code">[오류코드 : 4001]</span> <!-- 2022-01-18 개선건 적용 : .error-code 위치 변경 // -->
+                                    </div>
+                                    <!-- 2022-01-18 개선건 적용 : 기존거 삭제
                                     <p class="error-text">API를 통해서 전달된 오류내용을 보여줍니다.</p>
-                                    <span class="error-code">[오류코드]</span>
+                                    <span class="error-code">[오류코드]</span> // -->
                                 </li>
                                 <li>
-                                    <div class="error-tit">은행-006(대출내역)</div>
+                                    <div class="error-tit">
+                                        은행-006(대출내역)
+                                        <span class="error-code">[오류코드 : 4001]</span> <!-- 2022-01-18 개선건 적용 : .error-code 위치 변경 // -->
+                                    </div>
+                                    <!-- 2022-01-18 개선건 적용 : 기존거 삭제
                                     <p class="error-text">API를 통해서 전달된 오류내용을 보여줍니다.</p>
-                                    <span class="error-code">[오류코드]</span>
+                                    <span class="error-code">[오류코드]</span> // -->
                                 </li>
                             </ul>
+                            <!-- 2022-01-18 개선건 적용 : .simple-message 추가 시작 -->
+                            <p class="simple-message">
+                                지속적으로 동일한 오류발생시 해당 기관으로 문의하시기 바랍니다.
+                            </p>
+                            <!-- 2022-01-18 개선건 적용 : .simple-message 추가 끝 // -->
                         </dd>
                         <dt>
                             <div>우리은행</div>
@@ -57,22 +81,36 @@
                         <dd>
                             <ul>
                                 <li>
-                                    <div class="error-tit">은행-001(예적금목록)</div>
-                                    <p class="error-text">API를 통해서 전달된 오류내용을 보여줍니다.</p>
+                                    <div class="error-tit">
+                                        은행-001(예적금목록)
+                                        <span class="error-code">[오류코드 : 4001]</span> <!-- 2022-01-18 개선건 적용 : .error-code 위치 변경 // -->
+                                    </div>
+                                    <!-- 2022-01-18 개선건 적용 : 기존거 삭제 <p class="error-text">API를 통해서 전달된 오류내용을 보여줍니다.</p>
                                     <span class="error-code">[오류코드]</span>
-                                    <p class="error-text">국민은행에서 등록한 오류내용이 있을 경우 보여줍니다.</p>
+                                    <p class="error-text">국민은행에서 등록한 오류내용이 있을 경우 보여줍니다.</p> -->
                                 </li>
                                 <li>
-                                    <div class="li-tit">은행-004(거래내역)</div>
-                                    <p class="error-text">API를 통해서 전달된 오류내용을 보여줍니다.</p>
-                                    <span class="error-code">[오류코드]</span>
+                                    <div class="error-tit"> <!-- 2022-01-18 개선건 적용 : 클래스명 변경 (li-tit 에서 error-tit 로 변경 ) // -->
+                                        은행-004(거래내역)
+                                        <span class="error-code">[오류코드 : 4001]</span> <!-- 2022-01-18 개선건 적용 : .error-code 위치 변경 // -->
+                                    </div>
+                                    <!-- 2022-01-18 개선건 적용 : 기존거 삭제 <p class="error-text">API를 통해서 전달된 오류내용을 보여줍니다.</p>
+                                    <span class="error-code">[오류코드]</span> -->
                                 </li>
                                 <li>
-                                    <div class="li-tit">은행-006(대출내역)</div>
-                                    <p class="error-text">API를 통해서 전달된 오류내용을 보여줍니다.</p>
-                                    <span class="error-code">[오류코드]</span>
+                                    <div class="error-tit"> <!-- 2022-01-18 개선건 적용 : 클래스명 변경 (li-tit 에서 error-tit 로 변경 ) // -->
+                                        은행-006(대출내역)
+                                        <span class="error-code">[오류코드 : 4001]</span> <!-- 2022-01-18 개선건 적용 : .error-code 위치 변경 // -->
+                                    </div>
+                                    <!-- 2022-01-18 개선건 적용 : 기존거 삭제 <p class="error-text">API를 통해서 전달된 오류내용을 보여줍니다.</p>
+                                    <span class="error-code">[오류코드]</span> -->
                                 </li>
                             </ul>
+                            <!-- 2022-01-18 개선건 적용 : .simple-message 추가 시작 -->
+                            <p class="simple-message">
+                                지속적으로 동일한 오류발생시 해당 기관으로 문의하시기 바랍니다.
+                            </p>
+                            <!-- 2022-01-18 개선건 적용 : .simple-message 추가 끝 // -->
                         </dd>
                     </dl>
                 </div>
