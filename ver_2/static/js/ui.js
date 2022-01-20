@@ -178,7 +178,7 @@ var priorityLayer = {
         //console.log('add 실행 후:' , priorityLayerArr);
     },
     remove : function(priority){
-        if(priority != undefined && priority != null){
+        if(priority != undefined && priority != null && priorityLayerArr.length > 0){
             for(let i = 0; i < priorityLayerArr.length; i++) {            
                 if(priorityLayerArr[i] == priority)  {
                     priorityLayerArr.splice(i, 1);
@@ -205,8 +205,8 @@ var focusA11Y = {
         if(activatedLayerSize > 0){
             priorityLayer.remove(priority);
             priorityLayer.focus();
-
-        }else{
+        }else{         
+            priorityLayerArr = []; 
             $('.wa-focus').focus();
         }
     }
