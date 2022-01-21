@@ -1,11 +1,11 @@
-//touch Event
-var clickEvent = (function() {
-    if ('ontouchstart' in document.documentElement === true) {
-        return 'touchstart';
-    } else {
-        return 'click';
-    }
-})();
+// //touch Event
+// var clickEvent = (function() {
+//     if ('ontouchstart' in document.documentElement === true) {
+//         return 'touchstart';
+//     } else {
+//         return 'click';
+//     }
+// })();
 
 //세자리수 콤마
 function gfn_comma3Digit(number){
@@ -140,7 +140,7 @@ function gfn_NumberToKorean(number, unit){
     var number = String(number).replace(/(^\s*)|(\s*$)/gi, '').replace(regExp, '');
     var numKor = ["", "일", "이", "삼", "사","오","육","칠","팔","구","십"]; // 숫자 문자
     var unitKor = ["", "십", "백", "천", "", "십", "백", "천", "", "십", "백", "천", "", "십", "백", "천","", "십", "백", "천", "", "십", "백", "천", "", "십", "백", "천", "", "십", "백", "천"]; // 만위 문자열
-    var unitSlice = ["만","억","조","경","해","자"]
+    var unitSlice = ["만","억","조","경","해","자"];
 
     if(unit == '만원'){
         unitKor.splice(0,4);
@@ -194,7 +194,7 @@ var priorityLayer = {
     focus : function(){
         $('[data-layered-priority = ' + priorityLayerMax + ']').find('.wa-layered-focus').focus();
     }    
-}
+};
 
 
 //WA focus
@@ -208,6 +208,7 @@ var focusA11Y = {
         }else{         
             priorityLayerArr = []; 
             $('.wa-focus').focus();
+            gfn_body.hold(false);
         }
     }
 };
@@ -242,7 +243,7 @@ var focusTrap = function($target) {
     $target.on('keyup', function(e){
       if (e.keyCode === 27 ) {
         $target.hide();
-      };
+      }
     });
 };
 
@@ -394,7 +395,7 @@ var gfn_layered = {
         if(name != '' && name != undefined){
             var $selectedLayer = $('div[data-layered-name=' + name + ']');
             var priority = $selectedLayer.attr('data-layered-priority');
-            gfn_body.hold(false);
+            //gfn_body.hold(false);
             //$selectedLayer.removeClass('is-active is-expanded').removeAttr('style');
             if($selectedLayer.hasClass('popup') || $selectedLayer.hasClass('floating-banner')){
                 $selectedLayer.removeClass('is-active').removeAttr('style','tabindex','data-layered-priority');
@@ -419,7 +420,7 @@ var gfn_layered = {
         }else{
             gfn_dim.hide();
             $layered.children('div').removeClass('is-active is-expanded').removeAttr('style','tabindex','data-layered-priority');
-            focusA11Y.back(priority);
+            focusA11Y.back();
         }
     }
 };
@@ -468,7 +469,7 @@ var gfn_formText = {
             $thisForm.removeClass('not-ready');
             $thisForm.find('.form-text').addClass('is-filled');
         }else{
-            $thisForm.addClass('not-ready')
+            $thisForm.addClass('not-ready');
             $thisForm.find('.form-text').removeClass('is-filled');
         }
     },
@@ -782,7 +783,7 @@ if($('.bottom-sheet').length){
             $bottomSheet.find('.bottom-sheet_contents').attr('id','bsTabScroll' + i);
             var $bsCont = document.getElementById('bsTabScroll' + i);
 
-            $bsCont.addEventListener("touchstart", touchStart, false);
+            $bsCont.addEventListener("touchstart", touchStart, {passive: false});
             $bsCont.addEventListener("touchend", function(ev){
                 touchEnd(ev);
                 var scrollStatus = this.getAttribute('data-scroll');
@@ -790,7 +791,7 @@ if($('.bottom-sheet').length){
                     //터치시 scroll이 꼭대기일때 작아짐
                     this.closest('.bottom-sheet').classList.remove("is-expanded");
                 }
-            }, false);
+            }, {passive: false});
         }
 
         if(!$bottomSheet.find('.bottom-sheet_buttons').length) $bottomSheet.addClass('no-btn');
@@ -809,6 +810,7 @@ if($('.bottom-sheet').length){
         startY = ev.changedTouches[0].clientY;
         return startY;
     }
+
     function touchEnd(ev) {
         endY = ev.changedTouches[0].clientY;
         bsTouchDirection = startY - endY;
@@ -845,7 +847,7 @@ var btnDatepicker = {
     "off" : function(){
         $('.btn-datepicker').off('click');
     }
-}
+};
 var btnTimepicker = {
     "on" : function(){
         btnTimepicker.off();
@@ -856,7 +858,7 @@ var btnTimepicker = {
     "off" : function(){
         $('.btn-datepicker').off('click');
     }
-}
+};
 
 //날짜 선택
 $('.datepicker').each(function(){
@@ -869,7 +871,7 @@ $('.datepicker').each(function(){
     $(this).find('input').attr('inputmode','numeric');
     $(this).find('.btn-data-clear, .btn-datepicker').remove();
     $(this).find('input').after('<button class="btn-data-clear"><i class="icon-data-clear_24">지우기</i></button><button class="btn-datepicker" type="button"><span>날짜선택</span></button>');
-    btnDatepicker.on();
+    //btnDatepicker.on(); //2022-01-20
 });
 
 //날짜 선택
@@ -894,7 +896,7 @@ $('.period-selector').each(function(){
     }
     $(this).find('input').attr('inputmode','numeric');
     $(this).find('input').after('<button class="btn-datepicker" type="button"><span>날짜선택</span></button>');
-    btnDatepicker.on();
+    //btnDatepicker.on(); //2022-01-20
 });
 
 if($('.form-select').length){
@@ -917,9 +919,9 @@ if($('.form-select').length){
         var $thisForm = $thisFormSelect.parent('.kb-form');
         if($thisFormSelect.find('option:selected').index() != 0){
             $thisFormSelect.addClass('is-selected');
-            $thisForm.removeClass('not-ready')
+            $thisForm.removeClass('not-ready');
         }else{
-            $thisForm.addClass('not-ready')
+            $thisForm.addClass('not-ready');
         }
         $thisFormSelect.find('.selected-option').text($(this).find('option:selected').text());
     })
@@ -955,7 +957,7 @@ $body.on('click',function(e){
 });
 
 //WA Focus
-$body.on('focusin',function(e){
+$body.on('focusin',function(e){    
     var $target = $(e.target);
     var condition = $target.parents('.popup').length === 0 && $target.parents('.bottom-sheet').length === 0 && $target.parents('.modal').length === 0;
     var condition02 = !$target.is('.popup') && !$target.is('.bottom-sheet') && !$target.is('.modal');    
@@ -1036,13 +1038,13 @@ $('input[type=checkbox], input[type=radio]')
     var tf = $(this).prop('checked');
     var name = $(this).next('label').data('call-layered');
     if(tf && name) gfn_layered.open(name);
-})
-.on('focusin',function(){
-    setTimeout(function(){
-        $(this).next('label').attr('tabindex','0');
-        $(this).next('label').focus();
-    },1)
 });
+// .on('focusin',function(){
+//     setTimeout(function(){
+//         $(this).next('label').attr('tabindex','0');
+//         $(this).next('label').focus();
+//     },1);
+// });
 
 function formFocusScroll($this){
     var $form = $this.parents('.kb-form');
@@ -1092,8 +1094,6 @@ $('.tab.swiper-container').each(function(idx) {
     var $tabContents = $tab.nextUntil('.app-container','.tab_contents').find('> div');
     var isContentsTab = $tab.nextUntil('.app-container','.tab_contents');
     var isContentsSwiper = $tab.parent().hasClass('tab-swiper-wrap');
-
-
 
     //WAI-ARIA
     $tab.attr('role','tablist');
@@ -1231,7 +1231,7 @@ if($('.js-slider').length){
                     $(this).removeClass('right left');
                 }
             }
-          });
+        });
     });
 }
 
@@ -1246,11 +1246,15 @@ var gfn_accordion = {
                     var tagName = this.tagName.toLowerCase();
                     var $trigger = $(this).find('.accordion-trigger');
                     if(tagName == 'dt'){                
-                        $trigger.attr({'aria-controls': 'sect' + accordionNum + accordionEach, 'id': 'accordion' + accordionNum + accordionEach})
-                        !$(this).hasClass('is-active') ? $trigger.attr('aria-expanded', false) : $trigger.attr('aria-expanded',true)
+                        $trigger.attr({'aria-controls': 'sect' + accordionNum + accordionEach, 'id': 'accordion' + accordionNum + accordionEach});
+                        if(!$(this).hasClass('is-active')){
+                            $trigger.attr('aria-expanded', false);
+                        }else{
+                            $trigger.attr('aria-expanded', true);
+                        }
                     }else if(tagName == 'dd'){
                         accordionEach = accordionEach - 1;
-                        $(this).attr({'aria-labelledby': 'accordion' + accordionNum + accordionEach, 'id': 'sect' + accordionNum + accordionEach, 'role' : 'region'})
+                        $(this).attr({'aria-labelledby': 'accordion' + accordionNum + accordionEach, 'id': 'sect' + accordionNum + accordionEach, 'role' : 'region'});
                     }
                 });
                 $(this).addClass('is-ready');
@@ -1370,8 +1374,8 @@ if($('.toggle-notice').length){
                 $button.attr({'aria-expend': false});
             }
         });
-        $button.attr({'aria-controls': 'sect' + i, 'id': 'toggleNotice' + i})
-        $list.attr({'aria-labelledby': 'toggleNotice' + i, 'id': 'sect' + i, 'role' : 'region'})
+        $button.attr({'aria-controls': 'sect' + i, 'id': 'toggleNotice' + i});
+        $list.attr({'aria-labelledby': 'toggleNotice' + i, 'id': 'sect' + i, 'role' : 'region'});
         // default가 is-closed인 경우
         if ($this.hasClass('is-closed')) {
             $list.slideUp(0);
@@ -1551,7 +1555,7 @@ var gfn_agreementToTerms = function(){
             });
         }
     });
-}
+};
 
 // 동일 data 값을 가진 체크박스 동시 변경, 전체동의 타입2
 // CO_05_02_01, MN_03_03_01_01
@@ -1924,9 +1928,6 @@ $(".kb-form .form-text input[data-default]").each(function(){
     });
 });
 
-
-
-
 //DATEPICKER
 $.datepicker.parseDate = function(format, value) {
     return moment(value, format).toDate();
@@ -1946,17 +1947,30 @@ calendarDateSet(date);
 var now = moment();
 $('.calendar-nav').on('click','button',function(){
     var cls = $(this).attr('class');
-    if(cls == 'btn-text'){
+    if(cls.indexOf('btn-text') >= 0){        
         now = moment();
-    }else if(cls == 'btn-prev'){
-        now = now.subtract(1, 'M');
-    }else if(cls == 'btn-next'){
-        now = now.add(1, 'M');
-    }else if(cls == 'btn-first'){
-        now = now.subtract(1, 'Y');
-    }else if(cls == 'btn-last'){
-        now = now.add(1, 'Y');
+    }else if(cls.indexOf('btn-prev') >= 0){
+        now = (function(){
+            now.subtract(1, 'M');
+            return now;
+        })();
+    }else if(cls.indexOf('btn-next') >= 0){
+        now = (function(){
+            now.add(1, 'M');
+            return now;
+        })();
+    }else if(cls.indexOf('btn-first') >= 0){
+        now = (function(){
+            now.subtract(1, 'Y');
+            return now;
+        })();
+    }else if(cls.indexOf('btn-last') >= 0){
+        now = (function(){
+            now.add(1, 'Y');
+            return now;
+        })();
     }
+
     $('#datepicker').datepicker('setDate', now.format("yyyy.MM.DD"));
     var changedDate = $('#datepicker').datepicker('getDate');
     calendarDateSet(changedDate);
@@ -2031,7 +2045,7 @@ $(".js-swiper").each(function() {
     if ($this.data('init-call')) {
         window[$this.data('init-call')] = function() {
             jsSwiperInit($this);
-        }
+        };
     } else {
         jsSwiperInit($this);
     }
@@ -2071,7 +2085,7 @@ if($pageStepSwiper.length){
         var buttons = $pageStepSwiper.find('.swiper-slide').eq(activeIdx).find('.btn-area').html();
         $pageStepWrap.find('.page-step .current').text((activeIdx) + 1);
         $pageStepWrap.find('.page-step h2').attr('data-step', (activeIdx + 1) + '. ');
-        $pageStepWrap.find('.page-step h2').text(tit)
+        $pageStepWrap.find('.page-step h2').text(tit);
         $pageStepWrap.find('.sticky-bottom .btn-area').empty().append(buttons);
     }
 
@@ -2083,9 +2097,6 @@ if($pageStepSwiper.length){
         pageStepSwiper.slideNext();
     });
 }
-
-
-
 
 // SVG Gauge Functions
 var defsPattern = [''];
@@ -2101,7 +2112,7 @@ function drawInsuranceGauge(selector, current) {
         "good": "#4dabff",
         "caution": "#ffd338",
         "short": "#d672f6"
-    }
+    };
     setGauge(selector, current, 100, colors[status]);
 }
 
@@ -2187,7 +2198,7 @@ if($('.character-graph').length > 0){
         if(itemBar.width() - 8 < item.width()){
             itemBar.addClass('min-size');
             if(itemBar.width() < 10){
-                itemBar.css("border", "none")
+                itemBar.css("border", "none");
             }
         }else{
             itemBar.removeClass('min-size');
@@ -2227,12 +2238,8 @@ function currentTxtPosition(obj){
         }else{
             $(this).find('.current-txt').css('margin-left','-'+currentWidth+"px");
         }
-    })
+    });
 }
-
-
-
-
 
 //BS 조건 선택
 $('.select-period').on('change','input:radio',function(){
@@ -2247,7 +2254,7 @@ $('.select-period').on('change','input:radio',function(){
 $('body').on('click','button[data-toggle-class]',function(){
     var toggleName = $(this).data('toggle-class');
     $(this).toggleClass(toggleName);
-})
+});
 
 // 높이값 관련 수정(before -> height)
 var jsFixed = {
@@ -2320,7 +2327,9 @@ var jsScrollDone = {
             let dHeight = $(document).outerHeight();
             if(wScrollTop + 50 >= dHeight - wHeight){
                 $('html, body').stop().animate({scrollTop : dHeight - wHeight}, 200);
-                setTimeout(()=>{$('.sticky-bottom .btn-area .btn-solid').focus()},201);
+                setTimeout(()=>{
+                    $('.sticky-bottom .btn-area .btn-solid').focus();
+                },201);
             }
             else{
                 modalPopup({
@@ -2372,7 +2381,9 @@ var jsScrollDown = {
         // 스크롤이 생길 경우 버튼 추가 & 이벤트 등록
         if($('body').hasScrollBar()){
             $jsScrollDown.parent().eq(0).prepend($btn); // APP_A11Y
-            $btn.on('click', () => {this.moveScrollDown()});
+            $btn.on('click', () => {
+                this.moveScrollDown();
+            });
         }
 
         // 스크롤이 있고 브레이크 포인트가 있는 경우 터치 여부
@@ -2477,7 +2488,7 @@ var jsScrollDown = {
         wh : $(window).outerHeight(),
         scrollValue : 0,
     }
-}
+};
 
 // scroll down default 
 jsScrollDown.init();
@@ -2495,7 +2506,9 @@ var jsScrollUp = {
     init: function(){
         if(this.options.$jsScrollUp.length){
             this.options.$jsScrollUp.append(this.options.$btn);
-            this.options.$btn.on('click', () => {this.moveScrollUp(300)});
+            this.options.$btn.on('click', () => {
+                this.moveScrollUp(300);
+            });
         }
         this.options.dh = $(document).outerHeight();
     },
@@ -2516,7 +2529,7 @@ var jsScrollUp = {
         dh : $(document).outerHeight(),
         wh : $(window).outerHeight(),
     }
-}
+};
 jsScrollUp.init();
 
 if(window.lottie){
@@ -2581,7 +2594,7 @@ var jsScrollAction = {
             }
         });
     }
-}
+};
 $(window).on('load',function(){
     if('[data-scroll-fn]'.length) jsScrollAction.scroll(st, $('[data-scroll-fn]'));
 });
@@ -2590,7 +2603,7 @@ $(window).on('load',function(){
 var toastAni;
 var gfn_toastMsg = {
     'show' : function(msg, duration){
-        duration ? duration : 2000;
+        duration = duration!=undefined ? duration : 2000;
         $('.toast-popup').remove();
         $('.app').append('<div class="toast-popup">' + msg + '</div>');
         $('.toast-popup').addClass('toast-in');
@@ -2610,8 +2623,6 @@ var gfn_toastMsg = {
 };
 //console.log("ui.js");
 
-
-
 //앱접근성
 $('.ios').find('hr').attr('aria-hidden',true);
 //$('.is-hidden:not("label")').attr('aria-hidden',true);
@@ -2619,10 +2630,9 @@ $('h1.is-hidden, h2.is-hidden, h3.is-hidden, h4.is-hidden, h5.is-hidden, h6.is-h
 
 //A11Y
 $('.tab_button').attr({'role':'tablist'});
-$('.tab_button').children().attr({'role':'tab'})
+$('.tab_button').children().attr({'role':'tab'});
 $('.tab_button').children().not('.is-selected').attr({'aria-selected':false});
 $('.tab_button').find('.is-active').attr({'aria-selected':true});
-$('hr').attr({'aria-hidden': true});
 $('.btn-segmented').find('a,button').attr({'aria-selected': false});
 $('.btn-segmented').find('.is-selected').attr({'aria-selected': true});
 $('.kb-form').each(function(){
