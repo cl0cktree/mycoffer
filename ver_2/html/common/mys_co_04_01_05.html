@@ -11,12 +11,12 @@
 <body>
     @@include('@@webRoot/html/_include/app-a11y.html')
     <div class="app">
-        
+
         @@include('@@webRoot/html/_include/app-integrated-header.html',{
             'pageTit':'공동인증서 로그인',
             'type':'step'
         })
-        
+
         <!-- app-container //-->
         <div class="app-container">
 
@@ -26,15 +26,15 @@
                 <section class="kb-sec mm-manage-certificate">
                     <h2 class="h4">공동인증서 가져오기</h2>
                     <ul class="manage-certificate">
-                        <li><a href="javascript:;">PC에서 가져오기<span class="link-arrow">바로가기</span></a></li>
-                        <li><a href="javascript:;">스마트폰에서 가져오기<span class="link-arrow">바로가기</span></a></li>                        
+                        <li><a href="javascript:;" role="button">PC에서 가져오기<span class="link-arrow">바로가기</span></a></li><!-- APP_A11Y_03 -->
+                        <li><a href="javascript:;" role="button">스마트폰에서 가져오기<span class="link-arrow">바로가기</span></a></li><!-- APP_A11Y_03 -->
                     </ul>
                     <h2 class="h4">공동인증서 발급하기</h2>
                     <ul class="manage-certificate">
-                        <li><a href="javascript:;" onclick="modalDemo3()">KB스타뱅킹 인증센터<span class="link-arrow">바로가기</span></a></li>                       
+                        <li><a href="javascript:;" onclick="modalDemo3()" role="button">KB스타뱅킹 인증센터<span class="link-arrow">바로가기</span></a></li><!-- APP_A11Y_03 -->
                     </ul>
-                </section>  
-                
+                </section>
+
                 <!-- // 공동 인증서 없을 때 -->
 
             </main>
@@ -59,7 +59,8 @@
             modalPopup({
                 title: "",
                 message: "KB스타뱅킹으로 이동하시겠습니까?",
-                type: "confirm",                
+                target: 'KB스타뱅킹 앱으로 이동', //APP_A11Y_03
+                type: "confirm",
                 textCancelButton: "취소",
                 textOkButton: "확인",
             });

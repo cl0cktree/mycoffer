@@ -100,19 +100,19 @@
 
                     $module.prev('.dim').fadeIn(settings.duration);
                     $wrap.attr('tabindex','0');
-                    $wrap.fadeIn(settings.duration);
-                    $wrap.focus();
+                    $wrap.fadeIn(settings.duration,function(){
+                        $(this).focus();
+                    });                    
                     //focusTrap($wrap);
 
                     layeredLevel = layeredLevel + 10;
                 },
     
-                close: function() {
-                    focusA11Y.back();
-                    //$body.removeClass("is-hold");                    
+                close: function() {                                  
                     gfn_body.hold(false);
                     $module.prev('.dim').fadeOut(settings.duration,function(){
                         $(this).remove();
+                        focusA11Y.back();
                     });
                     $wrap.addClass('modal-out');
                     $wrap.one('animationend',function(){
@@ -208,6 +208,7 @@
             title: "알림",
             message: "알림 메시지",
             type: "alert",	// alert , confirm
+            target: '',
             textOkButton: "확인",
             textCancelButton: "취소",
             onOk: undefined,
@@ -245,9 +246,9 @@
         // html += `		</div>`;
         // html += `	</div>`;
         if(settings.commonUse != ''){
-            html += `	<div class="modal" data-layered-name="${id}" id="${id}" data-common-use="${settings.commonUse}">`;
+            html += `	<div class="modal" data-layered-name="${id}" id="${id}" data-common-use="${settings.commonUse}" tabindex="0">`;
         }else{
-            html += `	<div class="modal" data-layered-name="${id}" id="${id}">`;
+            html += `	<div class="modal" data-layered-name="${id}" id="${id}" tabindex="0">`;
         }        
         if (settings.title != "") {
             html += `		<div class="modal_header">`;
@@ -260,8 +261,12 @@
         html += `		<div class="modal_buttons btn-area">`;
         if (settings.type === "confirm") {
             html += `					<button class="btn-solid gray cancel"><span>${settings.textCancelButton}</span></button>`;
+        }        
+        if ($.trim(settings.target).length > 0) {
+            html += `					<button class="btn-solid ok" title="${settings.target}"><span>${settings.textOkButton}</span></button>`;
+        }else{
+            html += `			<button class="btn-solid ok"><span>${settings.textOkButton}</span></button>`;
         }
-        html += `			<button class="btn-solid ok"><span>${settings.textOkButton}</span></button>`;
         html += `		</div>`;
         html += `	</div>`;
     
@@ -275,11 +280,12 @@
             opts.onOk = settings.onOk;
         }
         if (typeof settings.onCancel === "function") {
-            opts.onCancel = settings.onCancel;
+            opts.onCancel = settings.onCancel;            
         }
         
         $id.modalPopup(opts);
         $id.modalPopup("open");
+        $id.focus();
 
         //Ntm Log
         var name = id;
