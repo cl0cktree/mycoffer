@@ -193,7 +193,6 @@ var priorityLayer = {
     },
     focus : function(){
         $('[data-layered-priority = ' + priorityLayerMax + ']').find('.wa-layered-focus').focus();
-        $('[data-layered-priority = ' + priorityLayerMax + ']').find('.wa-layered-focus').css({'border':'2px solid red'});
     }    
 };
 
@@ -209,11 +208,8 @@ var focusA11Y = {
         }else{         
             priorityLayerArr = []; 
             $('.wa-focus').focus();
-            $('.wa-focus').css({'border':'2px solid red'});
-            console.log(111)
             gfn_body.hold(false);
         }
-        console.log(activatedLayerSize)
     }
 };
 

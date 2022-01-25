@@ -9,11 +9,11 @@
 
 <body>
 	@@include('@@webRoot/html/_include/app-a11y.html')
-	<div class="app" data-page="submain">
+	<div class="app">
 
 		@@include('@@webRoot/html/_include/app-integrated-header.html', {
-			'pageTit': '신용관리',
-			'type': 'submain'
+			'pageTit': '약관 동의',
+			'type': ''
 		})
 
 		<!-- app-container //-->
@@ -32,13 +32,13 @@
 					</div>
 					<div class="agreement-to-terms expansion-mode">
 						<div class="header">
-							<span class="form-checkbox"><input type="checkbox" id="agreeAllCheck"><label for="agreeAllCheck">전체동의</label><a class="alink" href="@@webRoot/html/special/mys_sp_01_01_00_p4.html"><span>전문보기</span></a></span>
+							<span class="form-checkbox"><input type="checkbox" id="agreeAllCheck" title="체크하시면 약관 페이지로 이동합니다."><label for="agreeAllCheck">전체동의</label></span><!-- APP_A11Y_03 -->
 						</div>
 						<div class="checkbox-group st_list">
 							<!-- APP_A11Y : 전문보기 대체텍스트 문구 수정 // -->
-							<span class="form-checkbox_20"><input type="checkbox" id="agreeCheck1"><label for="agreeCheck1">[필수]신용관리서비스 이용약관 및 서비스설명서</label><a class="alink" href="@@webRoot/html/special/mys_sp_01_01_00_p1.html"><span>신용관리서비스 이용약관 및 서비스설명서 전문보기</span></a></span>
-							<span class="form-checkbox_20"><input type="checkbox" id="agreeCheck2"><label for="agreeCheck2">[필수]개인(신용)정보 수집·이용·제공 동의서(신용관리서비스용)</label><a class="alink" href="@@webRoot/html/special/mys_sp_01_01_00_p2.html"><span>개인(신용)정보 수집·이용·제공 동의서(신용관리서비스용) 전문보기</span></a></span>
-							<span class="form-checkbox_20"><input type="checkbox" id="agreeCheck3"><label for="agreeCheck3">[필수]NICE신용관리서비스 이용약관</label><a class="alink" href="@@webRoot/html/special/mys_sp_01_01_00_p3.html"><span>NICE신용관리서비스 이용약관 전문보기</span></a></span>
+							<span class="form-checkbox_20 link-arrow-after"><input type="checkbox" id="agreeCheck1" title="체크하시면 약관 페이지로 이동합니다."><label for="agreeCheck1">[필수]신용관리서비스 이용약관 및 서비스설명서</label></span><!-- APP_A11Y_03 -->
+							<span class="form-checkbox_20 link-arrow-after"><input type="checkbox" id="agreeCheck2" title="체크하시면 약관 페이지로 이동합니다."><label for="agreeCheck2">[필수]개인(신용)정보 수집·이용·제공 동의서(신용관리서비스용)</label></span><!-- APP_A11Y_03 -->
+							<span class="form-checkbox_20 link-arrow-after"><input type="checkbox" id="agreeCheck3" title="체크하시면 약관 페이지로 이동합니다."><label for="agreeCheck3">[필수]NICE신용관리서비스 이용약관</label></span><!-- APP_A11Y_03 -->
 							<!-- // APP_A11Y : 전문보기 대체텍스트 문구 수정 -->
 						</div>
 					</div>

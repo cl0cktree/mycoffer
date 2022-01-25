@@ -276,6 +276,12 @@ $(window)
     //remove unneccessary LNB
     if($('.app-lnb').is(':empty')) $('.app-lnb').remove();
     if($('.app-sub-wrap').length) $('.app-sub-wrap').remove();
+
+    //submain page 의 page title 변경
+    var appHeaderType = $('.app-header').data('type');
+    if(appHeaderType == 'submain' || appHeaderType == 'bridge'){
+        $('.app-header').find('.page-tit').text('KB 마이머니');
+    }
 })
 .on('resize',function(){
     if($gnb.length){
