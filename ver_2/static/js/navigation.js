@@ -282,6 +282,12 @@ $(window)
     if(appHeaderType == 'submain' || appHeaderType == 'bridge'){
         $('.app-header').find('.page-tit').text('KB 마이머니');
     }
+
+    //(앱접근성 2차 피드백)간헐적으로 focus overlay가 페이지 특정 부분에 남아있는 경우 대비     
+    if($('html').hasClass('ios') && $('[data-layered-name].is-active').length == 0){//IOS && 활성화 되어있는 레이어팝업이 존재 하지 않으면
+        $('*').blur();
+    }
+    
 })
 .on('resize',function(){
     if($gnb.length){
